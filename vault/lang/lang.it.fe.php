@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.08.18).
+ * This file: Italian language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Ci sono particolare firme di
 $phpMussel['lang']['config_signatures_Active'] = 'Un elenco dei file di firme attivi, delimitati da virgole.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No; True = Sì [Predefinito].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? False = No; True = Sì [Predefinito].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'Dovrebbe phpMussel rilevare e bloccare i file crittografati? False = No; True = Sì [Predefinito].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'Dovrebbe phpMussel utilizzare le firme per il rilevamento di scherzo/inganno malware/virus? False = No; True = Sì [Predefinito].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'Dovrebbe phpMussel utilizzare le firme per il rilevamento di confezionatori e dati confezionati? False = No; True = Sì [Predefinito].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Dovrebbe phpMussel utilizzare le firme per il rilevamento di PUAs/PUPs? False = No; True = Sì [Predefinito].';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.08.18).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'कुछ ऐसे phpMusse
 $phpMussel['lang']['config_signatures_Active'] = 'सक्रिय हस्ताक्षर फाइलों की एक सूची, अल्पविराम से अलग।';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'एडवेयर का पता लगाने के लिए phpMussel प्रक्रिया हस्ताक्षर चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'क्या डीफ़ेसेशमेंट और डिफैक्चर का पता लगाने के लिए phpMussel प्रक्रिया हस्ताक्षर चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'क्या phpMussel एन्क्रिप्ट की गई फ़ाइलों का पता लगाना और ब्लॉक करना चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'मजाक/धोखाधड़ी मैलवेयर/वायरस का पता लगाने के लिए phpMussel प्रक्रिया हस्ताक्षर चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'पैकर्स और पैक किए गए डेटा का पता लगाने के लिए phpMussel प्रक्रिया हस्ताक्षर चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'PUP/PUA का पता लगाने के लिए क्या phpMussel प्रक्रिया हस्ताक्षर चाहिए? False(झूठी) = नहीं; True(सच्चे) = हाँ [डिफ़ॉल्ट]।';

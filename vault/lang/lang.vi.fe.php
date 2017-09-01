@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.08.18).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,9 +74,10 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Có một số chữ ký c�
 $phpMussel['lang']['config_signatures_Active'] = 'Một danh sách các kích hoạt tập tin chữ ký, giới hạn bởi dấu phẩy.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel nên sử dụng chữ ký cho phát hiện adware? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel nên sử dụng chữ ký cho phát hiện deface và công cụ làm xấu? False = Không; True = Vâng [Mặc định].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMussel nên phát hiện và chặn các tập tin mật mã? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel nên sử dụng chữ ký cho phát hiện câu nói đùa và chơi khăm phần mềm độc hại và vi rút? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel nên sử dụng chữ ký cho phát hiện đóng gói tập tin và dữ liệu đã đóng gói? False = Không; True = Vâng [Mặc định].';
-$phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel nên sử dụng chữ ký cho phát hiện PUAs/PUPs? False = Không; True = Vâng [Mặc định].';
+$phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel nên sử dụng chữ ký cho phát hiện các PUA/PUP? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel nên sử dụng chữ ký cho phát hiện shell script? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel nên báo cáo khi mở rộng bị mất? Nếu <code>fail_extensions_silently</code> được vô hiệu hóa, mở rộng bị mất sẽ được báo cáo khi quét, và nếu <code>fail_extensions_silently</code> được kích hoạt, mở rộng bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Vô hiệu hóa tùy chọn này có khả năng có thể làm tăng bảo mật của bạn, nhưng cũng có thể dẫn đến sự gia tăng giả tích cực. False = Không cho phép; True = Cho phép [Mặc định].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu <code>fail_silently</code> được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu <code>fail_silently</code> được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].';

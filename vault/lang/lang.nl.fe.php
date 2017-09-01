@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.08.18).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Er zijn bepaalde signatures 
 $phpMussel['lang']['config_signatures_Active'] = 'Een lijst van de actief signature-bestanden, gescheiden door komma\'s.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Moet phpMussel verwerken signatures voor het detecteren van adware? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Moet phpMussel verwerken signatures voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'Moet phpMussel gecodeerde bestanden detecteren en blokkeren? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'Moet phpMussel verwerken signatures voor het detecteren van grap/beetnemerij malware/virussen? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'Moet phpMussel verwerken signatures voor het detecteren van verpakkers en verpakt gegevens? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Moet phpMussel verwerken signatures voor het detecteren van PUAs/PUPs? False = Nee; True = Ja [Standaard].';

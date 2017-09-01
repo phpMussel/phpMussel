@@ -451,6 +451,9 @@ Konfiguration der Signaturen.
 "detect_adware"
 - Soll phpMussel Signaturen für die Erkennung von Adware parsen? False = Nein; True = Ja [Standardeinstellung].
 
+"detect_encryption"
+- Soll phpMussel verschlüsselte Dateien erkennen und blockieren? False = Nein; True = Ja [Standardeinstellung].
+
 "detect_joke_hoax"
 - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren parsen? False = Nein; True = Ja [Standardeinstellung].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 17 August 2017 (2017.08.17).
+Zuletzt aktualisiert: 1 September 2017 (2017.09.01).

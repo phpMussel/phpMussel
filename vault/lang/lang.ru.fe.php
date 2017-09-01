@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.08.18).
+ * This file: Russian language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'phpMussel имеет опр�
 $phpMussel['lang']['config_signatures_Active'] = 'Список активных файлов сигнатур, разделенных запятыми.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Интерпретировать подписей для обнаружить рекламное программное? False = Нет; True = Да [Стандарт].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Интерпретировать подписей для обнаружить дифейсмент/обезображивание программы? False = Нет; True = Да [Стандарт].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'Должен ли phpMussel обнаруживать и блокировать зашифрованные файлы? False = Нет; True = Да [Стандарт].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'Интерпретировать подписей для обнаружить шутка вредоносные/вирусы программы? False = Нет; True = Да [Стандарт].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'Интерпретировать подписей для обнаружить упаковщики и упакованные данные? False = Нет; True = Да [Стандарт].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Интерпретировать подписей для обнаружить PUAs/PUPs (потенциально нежелательных программы/приложений)? False = Нет; True = Да [Стандарт].';

@@ -451,6 +451,9 @@ Configuração por assinaturas.
 "detect_adware"
 - Deve phpMussel usam assinaturas para detectar adware? False = Não; True = Sim [Padrão].
 
+"detect_encryption"
+- Deve phpMussel detectar e bloquear arquivos criptografados? False = Não; True = Sim [Padrão].
+
 "detect_joke_hoax"
 - Deve phpMussel usam assinaturas para detectar piada/engano malwares/vírus? False = Não; True = Sim [Padrão].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 17 Agosto 2017 (2017.08.17).
+Última Atualização: 1 Setembro 2017 (2017.09.01).

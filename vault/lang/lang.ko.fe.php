@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.18).
+ * This file: Korean language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'phpMussel이 파일은 의�
 $phpMussel['lang']['config_signatures_Active'] = '쉼표로 구분 된 활성 시그니처 파일의 목록입니다.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel 애드웨어 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel를 위조 및 디훼사 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMussel이 암호화 된 파일을 탐지하고 차단해야합니까? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel 장난 / 위조 및 악성 코드 / 바이러스 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel는 패커와 팩 데이터 검출을 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel는 PUAs/PUPs 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';

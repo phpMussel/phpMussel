@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.08.18).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Şüpheli ve potansiyel olar
 $phpMussel['lang']['config_signatures_Active'] = 'Aktif imza dosyalarının virgülle ayrılmış bir listesi.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel reklam yazılımlarını algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel bozulmalar ve defacement ları tespiti için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMussel şifrelenmiş dosyaları algılayıp bloke etmeli mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel sahtekarlık programlarını tespit etmek için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel paketleyicileri ve paketlenmiş verileri algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel PU(A/P)\'ları algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';

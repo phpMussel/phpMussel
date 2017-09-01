@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.18).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = '有某些签名的phpMussel�
 $phpMussel['lang']['config_signatures_Active'] = '活性签名文件的列表，​以逗号分隔。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel应该使用签名为广告软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel应该使用签名为污损和污损软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMussel应该检测并阻止加密的文件吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel应该使用签名为病毒/恶意软件笑话/恶作剧检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel应该使用签名为打包机和打包数据检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel应该使用签名为PUP/PUA（可能无用/非通缉程序/软件）检测吗？​False（假）=不检查，​True（真）=检查【默认】。';

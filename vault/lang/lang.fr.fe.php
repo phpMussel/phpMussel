@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.08.18).
+ * This file: French language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Il ya certaines signatures d
 $phpMussel['lang']['config_signatures_Active'] = 'Une liste des fichiers de signatures active, délimitée par des virgules.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Devrait phpMussel utiliser signatures pour détecter les adwares ? False = Non ; True = Oui [Défaut].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Devrait phpMussel utiliser signatures pour détecter les defacements and defacers ? False = Non ; True = Oui [Défaut].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'Devrait phpMussel détecter et bloquer les fichiers cryptés ? False = Non ; True = Oui [Défaut].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'Devrait phpMussel utiliser signatures pour détecter les blagues/canulars malware/virus ? False = Non ; True = Oui [Défaut].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'Devrait phpMussel utiliser signatures pour détecter les emballeurs et des données emballés ? False = Non ; True = Oui [Défaut].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs ? False = Non ; True = Oui [Défaut].';

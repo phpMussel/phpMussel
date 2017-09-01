@@ -508,6 +508,11 @@
  <li>هل يجب على توقيعات phpMussel الكشف عن تجسس؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
 </ul></div>
 
+<div dir="rtl">"detect_encryption"<br /></div>
+<div dir="rtl"><ul>
+ <li>يجب phpMussel كشف ومنع الملفات المشفرة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
+
 <div dir="rtl">"detect_joke_hoax"<br /></div>
 <div dir="rtl"><ul>
  <li>هل يجب على توقيعات phpMussel الكشف عن خدعة البرمجيات الخبيثة / الفيروسات؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
@@ -1056,4 +1061,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 17 أغسطس 2017 (2017.08.17).</div>
+<div dir="rtl">آخر تحديث: 1 سبتمبر 2017 (2017.09.01).</div>

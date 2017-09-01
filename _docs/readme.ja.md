@@ -451,6 +451,9 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 "detect_adware" （ディテクト・アドウェア）
 - phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
 
+"detect_encryption" （ディテクト・エンクリプション）
+- phpMusselは暗号化ファイルを検出してブロックする必要がありますか？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
+
 "detect_joke_hoax" （ディテクト・ジョーク・ホークス）
 - phpMusselは悪戯/偽造やマルウェア/ウィルス検出のためにシグネチャを分析すべきか否か？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年8月17日。
+最終アップデート：2017年9月1日。

@@ -16,6 +16,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   now reports the number of added/removed bytes and the total time required for
   when updating/installing/uninstalling components.
 
+- [2017.09.01; Minor code change; Maikuolan]: Added an optional directive to
+  determine whether to detect and block encrypted files ("detect_encryption").
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

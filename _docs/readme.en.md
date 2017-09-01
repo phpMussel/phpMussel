@@ -451,6 +451,9 @@ Signatures configuration.
 "detect_adware"
 - Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default].
 
+"detect_encryption"
+- Should phpMussel detect and block encrypted files? False = No; True = Yes [Default].
+
 "detect_joke_hoax"
 - Should phpMussel parse signatures for detecting joke/hoax malware/viruses? False = No; True = Yes [Default].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Last Updated: 17 August 2017 (2017.08.17).
+Last Updated: 1 September 2017 (2017.09.01).

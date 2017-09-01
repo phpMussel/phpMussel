@@ -451,6 +451,9 @@ Konfigurasi untuk tanda tangan.
 "detect_adware"
 - Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware? False = Tidak; True = Ya [Default].
 
+"detect_encryption"
+- Harus phpMussel mendeteksi dan memblokir file terenkripsi? False = Tidak; True = Ya [Default].
+
 "detect_joke_hoax"
 - Harus phpMussel menggunakan tanda tangan untuk mendeteksi lelucon/kebohongan malware/virus? False = Tidak; True = Ya [Default].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 17 Agustus 2017 (2017.08.17).
+Terakhir Diperbarui: 1 September 2017 (2017.09.01).

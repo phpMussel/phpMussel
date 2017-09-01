@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.08.18).
+ * This file: Thai language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'ลายเซ็น phpMus
 $phpMussel['lang']['config_signatures_Active'] = 'รายการไฟล์ลายเซ็นที่ใช้งานอยู่, คั่นด้วยเครื่องหมายจุลภาค.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'ควร phpMussel แยกวิเคราะห์ลายเซ็นสำหรับตรวจจับแอดแวร์หรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'ควร phpMussel แยกวิเคราะห์ลายเซ็นเพื่อตรวจหา defacements และ defacers หรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'ควร phpMussel ตรวจพบและบล็อกไฟล์ที่เข้ารหัสลับโดยหรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'ควร phpMussel แยกวิเคราะห์ลายเซ็นสำหรับการตรวจจับมัลแวร์และไวรัสที่ตหลอกลวงหรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'ควร phpMussel แยกวิเคราะห์ลายเซ็นสำหรับตรวจจับเครื่องบรรจุหีบห่อและข้อมูลที่บรรจุหรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'ควร phpMussel แยกวิเคราะห์ลายเซ็นสำหรับตรวจจับ PUA/PUP หรือไม่? False = ไม่แยกวิเคราะห์; True = แยกวิเคราะห์ [ค่าเริ่มต้น].';

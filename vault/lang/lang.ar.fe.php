@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.08.18).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'هناك توقيعات مع
 $phpMussel['lang']['config_signatures_Active'] = 'قائمة من الملفات توقيع النشطة، محدد بفواصل.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'هل يجب على توقيعات phpMussel الكشف عن تجسس؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'هل يجب على توقيعات phpMussel الكشف عن مهاجمات وdefacers؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'يجب phpMussel كشف ومنع الملفات المشفرة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'هل يجب على توقيعات phpMussel الكشف عن خدعة البرمجيات الخبيثة / الفيروسات؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'هل يجب على توقيعات phpMussel الكشف عن تعبئة والبيانات المعبأة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'هل يجب على توقيعات phpMussel الكشف عن PUAs؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';

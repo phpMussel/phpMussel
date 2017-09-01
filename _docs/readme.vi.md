@@ -451,11 +451,14 @@ Cấu hình cho chữ ký.
 "detect_adware"
 - phpMussel nên sử dụng chữ ký cho phát hiện adware? False = Không; True = Vâng [Mặc định].
 
+"detect_encryption"
+- phpMussel nên phát hiện và chặn các tập tin mật mã? False = Không; True = Vâng [Mặc định].
+
 "detect_joke_hoax"
 - phpMussel nên sử dụng chữ ký cho phát hiện câu nói đùa và chơi khăm phần mềm độc hại và vi rút? False = Không; True = Vâng [Mặc định].
 
 "detect_pua_pup"
-- phpMussel nên sử dụng chữ ký cho phát hiện PUAs/PUPs? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện các PUA/PUP? False = Không; True = Vâng [Mặc định].
 
 "detect_packer_packed"
 - phpMussel nên sử dụng chữ ký cho phát hiện đóng gói tập tin và dữ liệu đã đóng gói? False = Không; True = Vâng [Mặc định].
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 17 Tháng Tám 2017 (2017.08.17).
+Lần cuối cập nhật: 1 Tháng Chín 2017 (2017.09.01).

@@ -451,6 +451,9 @@ Configuratie voor signatures.
 "detect_adware"
 - Moet phpMussel verwerken signatures voor het detecteren van adware? False = Nee; True = Ja [Standaard].
 
+"detect_encryption"
+- Moet phpMussel gecodeerde bestanden detecteren en blokkeren? False = Nee; True = Ja [Standaard].
+
 "detect_joke_hoax"
 - Moet phpMussel verwerken signatures voor het detecteren van grap/beetnemerij malware/virussen? False = Nee; True = Ja [Standaard].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 17 Augustus 2017 (2017.08.17).
+Laatste Bijgewerkt: 1 September 2017 (2017.09.01).

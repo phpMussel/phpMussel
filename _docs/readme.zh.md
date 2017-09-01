@@ -451,6 +451,9 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 “detect_adware”
 - phpMussel应该使用签名为广告软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。
 
+“detect_encryption”
+- phpMussel应该检测并阻止加密的文件吗？​False（假）=不检查，​True（真）=检查【默认】。
+
 “detect_joke_hoax”
 - phpMussel应该使用签名为病毒/恶意软件笑话/恶作剧检测吗？​False（假）=不检查，​True（真）=检查【默认】。
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年8月17日。
+最后更新：2017年9月1日。

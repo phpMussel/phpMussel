@@ -202,6 +202,10 @@ detect_shell=true
 ; False = No; True = Yes [Default].
 detect_deface=true
 
+; Should phpMussel detect and block encrypted files? False = No; True = Yes
+; [Default].
+detect_encryption=true
+
 
 [files]
 

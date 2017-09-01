@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.22).
+ * This file: Functions file (last modified: 2017.09.01).
  */
 
 /**
@@ -1152,6 +1152,11 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
             $out .= 'CyberBomb.';
         } elseif ($n[1] === 9) {
             $out .= 'Malvertisement.';
+        } elseif ($n[1] === 13) {
+            $out .= 'Encrypted.';
+            if (!$phpMussel['Config']['signatures']['detect_encryption']) {
+                $phpMussel['memCache']['ignoreme'] = true;
+            }
         } elseif ($n[1] === 15) {
             $out .= 'BadURL.';
         }
@@ -1615,17 +1620,19 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $pdf_magic = ($fourcc == '25504446');
 
     /** Corresponds to the "detect_adware" configuration directive. */
-    $detect_adware = ($phpMussel['Config']['signatures']['detect_adware']) ? 1 : 0;
+    $detect_adware = $phpMussel['Config']['signatures']['detect_adware'] ? 1 : 0;
+    /** Corresponds to the "detect_encryption" configuration directive. */
+    $detect_encryption = $phpMussel['Config']['signatures']['detect_encryption'] ? 1 : 0;
     /** Corresponds to the "detect_joke_hoax" configuration directive. */
-    $detect_joke_hoax = ($phpMussel['Config']['signatures']['detect_joke_hoax']) ? 1 : 0;
+    $detect_joke_hoax = $phpMussel['Config']['signatures']['detect_joke_hoax'] ? 1 : 0;
     /** Corresponds to the "detect_pua_pup" configuration directive. */
-    $detect_pua_pup = ($phpMussel['Config']['signatures']['detect_pua_pup']) ? 1 : 0;
+    $detect_pua_pup = $phpMussel['Config']['signatures']['detect_pua_pup'] ? 1 : 0;
     /** Corresponds to the "detect_packer_packed" configuration directive. */
-    $detect_packer_packed = ($phpMussel['Config']['signatures']['detect_packer_packed']) ? 1 : 0;
+    $detect_packer_packed = $phpMussel['Config']['signatures']['detect_packer_packed'] ? 1 : 0;
     /** Corresponds to the "detect_shell" configuration directive. */
-    $detect_shell = ($phpMussel['Config']['signatures']['detect_shell']) ? 1 : 0;
+    $detect_shell = $phpMussel['Config']['signatures']['detect_shell'] ? 1 : 0;
     /** Corresponds to the "detect_deface" configuration directive. */
-    $detect_deface = ($phpMussel['Config']['signatures']['detect_deface']) ? 1 : 0;
+    $detect_deface = $phpMussel['Config']['signatures']['detect_deface'] ? 1 : 0;
 
     list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
     $CoExMeta .= '$xt:' . $xt . ';$xts:' . $xts . ';';
@@ -5886,20 +5893,18 @@ $phpMussel['ErrorHandler_1'] = function ($errno) use (&$phpMussel) {
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
-    if (
-        !empty($phpMussel['ForceVersionWarning']) ||
-        $phpMussel['VersionCompare']($Version, '5.4.43') ||
-        (!$phpMussel['VersionCompare']($Version, '5.5.0') && $phpMussel['VersionCompare']($Version, '5.5.32')) ||
-        (!$phpMussel['VersionCompare']($Version, '5.6.0') && $phpMussel['VersionCompare']($Version, '5.6.18')) ||
-        (!$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.3'))
-    ) {
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.31') || (
+        !$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.17')
+    ) || (
+        !$phpMussel['VersionCompare']($Version, '7.1.0') && $phpMussel['VersionCompare']($Version, '7.1.3')
+    )) {
         $Level += 2;
     }
-    if (
-        $phpMussel['VersionCompare']($Version, '7.0.0') ||
-        (!$phpMussel['VersionCompare']($Date, '2017.12.3') && $phpMussel['VersionCompare']($Version, '7.1.0')) ||
-        (!$phpMussel['VersionCompare']($Date, '2018.12.1') && $phpMussel['VersionCompare']($Version, '7.2.0'))
-    ) {
+    if ($phpMussel['VersionCompare']($Version, '7.0.0') || (
+        !$phpMussel['VersionCompare']($Date, '2017.12.3') && $phpMussel['VersionCompare']($Version, '7.1.0')
+    ) || (
+        !$phpMussel['VersionCompare']($Date, '2018.12.1') && $phpMussel['VersionCompare']($Version, '7.2.0')
+    )) {
         $Level += 1;
     }
     $phpMussel['ForceVersionWarning'] = false;

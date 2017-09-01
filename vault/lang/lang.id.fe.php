@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.08.18).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'Ada tanda tangan tertentu da
 $phpMussel['lang']['config_signatures_Active'] = 'Daftar file tanda tangan yang aktif, dipisahkan oleh koma.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi perusakan dan perusak? False = Tidak; True = Ya [Default].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'Harus phpMussel mendeteksi dan memblokir file terenkripsi? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi lelucon/kebohongan malware/virus? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi pengepakan dan file dikemas? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi PUAs/PUPs? False = Tidak; True = Ya [Default].';

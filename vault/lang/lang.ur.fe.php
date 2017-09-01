@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.08.18).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,7 @@ $phpMussel['lang']['config_heuristic_threshold'] = 'فائلوں کی مشکوک
 $phpMussel['lang']['config_signatures_Active'] = 'فعال دستخط کی فائلوں کی ایک فہرست، کوما سے ختم ہونے والی.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel ایڈویئر کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel defacements اور defacers کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';
+$phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMussel کو خفیہ کاری فائلوں کا پتہ لگانے اور بلاک کرنا چاہئے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';
 $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel مذاق / چکما میلویئر / وائرس کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel پیکرز اور پیک کے اعداد و شمار کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel PUA/PUP کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].';

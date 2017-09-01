@@ -217,6 +217,9 @@ Config Defaults:
   detect_deface:
    type: bool
    default: true
+  detect_encryption:
+   type: bool
+   default: true
  files:
   max_uploads:
    type: int

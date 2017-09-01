@@ -232,17 +232,17 @@ Fichier | Description
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /_testfiles/ | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
-/_testfiles/ascii_standard_testfile.txt | Fichier pour tester phpMussel normalisé ASCII signatures.
+/_testfiles/ascii_standard_testfile.txt | Fichier pour tester phpMussel signatures ASCII/ANSI normalisé.
 /_testfiles/coex_testfile.rtf | Fichier pour tester phpMussel signatures complexes étendues.
-/_testfiles/exe_standard_testfile.exe | Fichier pour tester phpMussel PE signatures.
-/_testfiles/general_standard_testfile.txt | Fichier pour tester phpMussel générales signatures.
-/_testfiles/graphics_standard_testfile.gif | Fichier pour tester phpMussel graphiques signatures.
-/_testfiles/html_standard_testfile.html | Fichier pour tester phpMussel normalisé HTML signatures.
-/_testfiles/md5_testfile.txt | Fichier pour tester phpMussel MD5 signatures.
-/_testfiles/ole_testfile.ole | Fichier pour tester phpMussel OLE signatures.
-/_testfiles/pdf_standard_testfile.pdf | Fichier pour tester phpMussel PDF signatures.
-/_testfiles/pe_sectional_testfile.exe | Fichier pour tester phpMussel PE Sectional signatures.
-/_testfiles/swf_standard_testfile.swf | Fichier pour tester phpMussel SWF signatures.
+/_testfiles/exe_standard_testfile.exe | Fichier pour tester phpMussel signatures PE.
+/_testfiles/general_standard_testfile.txt | Fichier pour tester phpMussel signatures générales.
+/_testfiles/graphics_standard_testfile.gif | Fichier pour tester phpMussel signatures graphiques.
+/_testfiles/html_standard_testfile.html | Fichier pour tester phpMussel signatures HTML normalisé.
+/_testfiles/md5_testfile.txt | Fichier pour tester phpMussel signatures MD5.
+/_testfiles/ole_testfile.ole | Fichier pour tester phpMussel signatures OLE.
+/_testfiles/pdf_standard_testfile.pdf | Fichier pour tester phpMussel signatures PDF.
+/_testfiles/pe_sectional_testfile.exe | Fichier pour tester phpMussel signatures PE sectionnelle.
+/_testfiles/swf_standard_testfile.swf | Fichier pour tester phpMussel signatures SWF.
 /vault/ | Voûte répertoire (contient divers fichiers).
 /vault/cache/ | Cache répertoire (pour les données temporaires).
 /vault/cache/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -451,6 +451,9 @@ Configuration pour les signatures.
 « detect_adware »
 - Devrait phpMussel utiliser signatures pour détecter les adwares ? False = Non ; True = Oui [Défaut].
 
+« detect_encryption »
+- Devrait phpMussel détecter et bloquer les fichiers cryptés ? False = Non ; True = Oui [Défaut].
+
 « detect_joke_hoax »
 - Devrait phpMussel utiliser signatures pour détecter les blagues/canulars malware/virus ? False = Non ; True = Oui [Défaut].
 
@@ -638,8 +641,8 @@ Type | Octet | Description
 `Normalised_RegEx` | `6?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par ANSI. Les signatures peuvent contenir des expressions régulières.
 `HTML` | `7?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par HTML.
 `HTML_RegEx` | `8?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par HTML. Les signatures peuvent contenir des expressions régulières.
-`PE_Extended` | `9?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE (autres que les métadonnées PE sectional).
-`PE_Sectional` | `A?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE sectional.
+`PE_Extended` | `9?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE (autres que les métadonnées PE sectionnelle).
+`PE_Sectional` | `A?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE sectionnelle.
 `Complex_Extended` | `B?` | Pour les fichiers de signatures qui fonctionnent avec diverses règles basées sur les métadonnées étendues générées par phpMussel.
 `URL_Scanner` | `C?` | Pour les fichiers de signatures qui fonctionnent avec les URLs.
 
@@ -652,7 +655,7 @@ Toutes les signatures pour les noms de fichiers suivez le format:
 
 `NOM:FNRX`
 
-Où NOM est le nom à citer pour la signature et FNRX est l'expression rationnelle pour faire correspondre les (non codé) noms de fichiers.
+Où NOM est le nom à citer pour la signature et FNRX est l'expression régulière pour faire correspondre les (non codé) noms de fichiers.
 
 #### *SIGNATURES HASH*
 Toutes les signatures HASH suivez le format:
@@ -661,8 +664,8 @@ Toutes les signatures HASH suivez le format:
 
 Où HASH est le hachage (généralement MD5) d'un ensemble du fichier, TAILLE est la totale taille du fichier et NOM est le nom à citer pour la signature.
 
-#### *SIGNATURES PE SECTIONAL*
-Toutes les signatures PE Sectional suivez le format:
+#### *SIGNATURES PE SECTIONNELLE*
+Toutes les signatures PE sectionnelle suivez le format:
 
 `TAILLE:HASH:NOM`
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 17 Août 2017 (2017.08.17).
+Dernière mise à jour : 1 Septembre 2017 (2017.09.01).

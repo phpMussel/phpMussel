@@ -508,6 +508,11 @@
  <li>phpMussel ایڈویئر کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [ڈیفالٹ].</li>
 </ul></div>
 
+<div dir="rtl">"detect_encryption"<br /></div>
+<div dir="rtl"><ul>
+ <li>phpMussel کو خفیہ کاری فائلوں کا پتہ لگانے اور بلاک کرنا چاہئے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [طے شدہ].</li>
+</ul></div>
+
 <div dir="rtl">"detect_joke_hoax"<br /></div>
 <div dir="rtl"><ul>
  <li>phpMussel مذاق/چکما میلویئر/وائرس کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ سچا = جی ہاں [ڈیفالٹ].</li>
@@ -1056,4 +1061,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 17 اگست 2017 (2017.08.17).</div>
+<div dir="rtl">آخری تازہ کاری: 1 ستمبر 2017 (2017.09.01).</div>

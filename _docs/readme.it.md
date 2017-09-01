@@ -451,6 +451,9 @@ Configurazione per firme.
 "detect_adware"
 - Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No; True = Sì [Predefinito].
 
+"detect_encryption"
+- Dovrebbe phpMussel rilevare e bloccare i file crittografati? False = No; True = Sì [Predefinito].
+
 "detect_joke_hoax"
 - Dovrebbe phpMussel utilizzare le firme per il rilevamento di scherzo/inganno malware/virus? False = No; True = Sì [Predefinito].
 
@@ -911,4 +914,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Ultimo Aggiornamento: 17 Agosto 2017 (2017.08.17).
+Ultimo Aggiornamento: 1 Settembre 2017 (2017.09.01).
