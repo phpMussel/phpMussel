@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.08.22).
+ * This file: Configuration handler (last modified: 2017.09.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -176,3 +176,8 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $phpMussel['Query'] = '';
     $phpMussel['QueryVars'] = array();
 }
+
+/** Set default hashing algorithm. */
+$phpMussel['DefaultAlgo'] = (
+    !empty($phpMussel['Config']['general']['default_algo']) && defined($phpMussel['Config']['general']['default_algo'])
+) ? constant($phpMussel['Config']['general']['default_algo']) : 1;

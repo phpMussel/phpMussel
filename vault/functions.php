@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.01).
+ * This file: Functions file (last modified: 2017.09.08).
  */
 
 /**
@@ -5762,6 +5762,17 @@ $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
 $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
     $Path = $phpMussel['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
+};
+
+/**
+ * Filter the available hash algorithms provided by the configuration page on
+ * the basis of their availability.
+ *
+ * @param string $ChoiceKey Hash algorithm.
+ * @return bool Valid/Invalid.
+ */
+$phpMussel['FilterAlgo'] = function ($ChoiceKey) use (&$phpMussel) {
+    return ($ChoiceKey === 'PASSWORD_ARGON2I') ? !$phpMussel['VersionCompare'](PHP_VERSION, '7.2.0RC1') : true;
 };
 
 /**

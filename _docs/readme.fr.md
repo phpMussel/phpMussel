@@ -436,6 +436,9 @@ Configuration générale pour phpMussel.
 « maintenance_mode »
 - Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.
 
+« default_algo »
+- Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).
+
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
@@ -914,4 +917,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 1 Septembre 2017 (2017.09.01).
+Dernière mise à jour : 8 Septembre 2017 (2017.09.08).

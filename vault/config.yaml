@@ -189,6 +189,14 @@ Config Defaults:
   maintenance_mode:
    type: bool
    default: false
+  default_algo:
+   type: string
+   default: "PASSWORD_DEFAULT"
+   choices:
+    PASSWORD_DEFAULT: PASSWORD_DEFAULT
+    PASSWORD_BCRYPT: PASSWORD_BCRYPT
+    PASSWORD_ARGON2I: PASSWORD_ARGON2I (PHP >= 7.2.0)
+   choice_filter: "FilterAlgo"
  signatures:
   Active:
    type: string

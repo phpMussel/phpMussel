@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.26).
+ * This file: Front-end handler (last modified: 2017.09.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -232,7 +232,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
                 setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $phpMussel['FE']['UserState'] = 1;
                 $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
-                    $phpMussel['FE']['SessionKey'], PASSWORD_DEFAULT
+                    $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
                 ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
                 $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
                 $phpMussel['FE']['Rebuild'] = true;
@@ -311,7 +311,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                     $phpMussel['FE']['SessionList'], "\n", $phpMussel['FE']['SessionOffset']
                 ), $phpMussel['FE']['SessionOffset'] * -1)
             );
-            $phpMussel['FE']['SEDelimiter'] = strpos($phpMussel['FE']['SessionEntry'], ',');
+            $phpMussel['FE']['SEDelimiter'] = strrpos($phpMussel['FE']['SessionEntry'], ',');
             if ($phpMussel['FE']['SEDelimiter'] !== false) {
                 $phpMussel['FE']['Expiry'] = (int)substr($phpMussel['FE']['SessionEntry'], $phpMussel['FE']['SEDelimiter'] + 1);
                 $phpMussel['FE']['UserHash'] = substr($phpMussel['FE']['SessionEntry'], 0, $phpMussel['FE']['SEDelimiter']);
@@ -616,7 +616,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
         /** Create a new account. */
         if ($_POST['do'] === 'create-account' && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['permissions'])) {
             $phpMussel['FE']['NewUser'] = $_POST['username'];
-            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], $phpMussel['DefaultAlgo']);
             $phpMussel['FE']['NewPerm'] = (int)$_POST['permissions'];
             $phpMussel['FE']['NewUserB64'] = base64_encode($_POST['username']);
             if (strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['NewUserB64'] . ',') !== false) {
@@ -690,7 +690,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
         /** Update an account password. */
         if ($_POST['do'] === 'update-password' && !empty($_POST['username']) && !empty($_POST['password'])) {
             $phpMussel['FE']['User64'] = base64_encode($_POST['username']);
-            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], $phpMussel['DefaultAlgo']);
             $phpMussel['FE']['UserLinePos'] = strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['User64'] . ',');
             if ($phpMussel['FE']['UserLinePos'] === false) {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_accounts_doesnt_exist'];
@@ -739,28 +739,28 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
             $phpMussel['FE']['NewLineOffset'] + 1,
             $phpMussel['FE']['NewLinePos'] - $phpMussel['FE']['NewLineOffset'] - 1
         );
-        $phpMussel['RowInfo'] = explode(',', $phpMussel['FE']['NewLine'], 3);
-        $phpMussel['RowInfo'][3] = (strpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo'][0] . ',') !== false);
-        $phpMussel['RowInfo'][0] = htmlentities(base64_decode($phpMussel['RowInfo'][0]));
-        if ($phpMussel['RowInfo'][1] === $phpMussel['FE']['DefaultPassword']) {
-            $phpMussel['RowInfo'][1] = '<br /><div class="txtRd">' . $phpMussel['lang']['state_default_password'] . '</div>';
-        } elseif (strlen($phpMussel['RowInfo'][1]) !== 60 || !preg_match('/^\$2.\$[0-9]{2}\$/', $phpMussel['RowInfo'][1])) {
-            $phpMussel['RowInfo'][1] = '<br /><div class="txtRd">' . $phpMussel['lang']['state_password_not_valid'] . '</div>';
-        } else {
-            $phpMussel['RowInfo'][1] = '';
+        $phpMussel['RowInfo'] = array('DelPos' => strpos($phpMussel['FE']['NewLine'], ','), 'AccWarnings' => '');
+        $phpMussel['RowInfo']['AccUsername'] = substr($phpMussel['FE']['NewLine'], 0, $phpMussel['RowInfo']['DelPos']);
+        $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['FE']['NewLine'], $phpMussel['RowInfo']['DelPos'] + 1);
+        $phpMussel['RowInfo']['AccPermissions'] = (
+            (int)substr($phpMussel['RowInfo']['AccPassword'], -1) === 1
+        ) ? $phpMussel['lang']['state_complete_access'] : $phpMussel['lang']['state_logs_access_only'];
+        $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['RowInfo']['AccPassword'], 0, -2);
+        if ($phpMussel['RowInfo']['AccPassword'] === $phpMussel['FE']['DefaultPassword']) {
+            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_default_password'] . '</div>';
+        } elseif ((
+            strlen($phpMussel['RowInfo']['AccPassword']) !== 60 && strlen($phpMussel['RowInfo']['AccPassword']) !== 96
+        ) || (
+            strlen($phpMussel['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$[0-9]{2}\$/', $phpMussel['RowInfo']['AccPassword'])
+        ) || (
+            strlen($phpMussel['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $phpMussel['RowInfo']['AccPassword'])
+        )) {
+            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_password_not_valid'] . '</div>';
         }
-        if ($phpMussel['RowInfo'][3]) {
-            $phpMussel['RowInfo'][1] .= '<br /><div class="txtGn">' . $phpMussel['lang']['state_logged_in'] . '</div>';
+        if (strrpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo']['AccUsername'] . ',') !== false) {
+            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $phpMussel['lang']['state_logged_in'] . '</div>';
         }
-        $phpMussel['RowInfo'][2] = (int)$phpMussel['RowInfo'][2];
-        $phpMussel['RowInfo'] = array(
-            'username' => $phpMussel['RowInfo'][0],
-            'warning' => $phpMussel['RowInfo'][1],
-            'permissions' =>
-                ($phpMussel['RowInfo'][2] === 1) ?
-                $phpMussel['lang']['state_complete_access'] :
-                $phpMussel['lang']['state_logs_access_only']
-        );
+        $phpMussel['RowInfo']['AccUsername'] = htmlentities(base64_decode($phpMussel['RowInfo']['AccUsername']));
         $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
         $phpMussel['FE']['Accounts'] .= $phpMussel['ParseVars'](
             $phpMussel['lang'] + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']

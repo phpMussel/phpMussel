@@ -155,6 +155,11 @@ disable_webfonts=false
 ; CMS, frameworks, etc.
 maintenance_mode=false
 
+; Defines which algorithm to use for all future passwords and sessions.
+; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
+; (requires PHP >= 7.2.0).
+default_algo='PASSWORD_DEFAULT'
+
 
 [signatures]
 

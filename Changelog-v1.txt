@@ -22,6 +22,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.09.01; Bug-fix; Maikuolan]: Found and fixed a bug introduced on
   2017.08.22 relating to signature offsets.
 
+- [2017.09.08; NEW FEATURE; Maikuolan]: Added support for Argon2 hashing for
+  passwords and sessions (requires PHP => 7.2.0; updating from older versions
+  of the package won't affect compatibility with older PHP versions, but the
+  option for using Argon2 simply won't be provided for versions < 7.2.0). A
+  new configuration directive ("default_algo") has been added, to allow users
+  to switch between the defined PHP default password hashing algorithm, BCRYPT,
+  and Argon2 (all options are still considered cryptographically secure at this
+  time and remain safe to use, but adding this additional support provides
+  additional choice and control to the end-user regarding encryption). Also
+  rewrote the code for the front-end accounts page accordingly.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

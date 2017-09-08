@@ -436,6 +436,9 @@ Algemene configuratie voor phpMussel.
 "maintenance_mode"
 - Inschakelen de onderhoudsmodus? True = Ja; False = Nee [Standaard]. Schakelt alles anders dan het frontend uit. Soms nuttig bij het bijwerken van uw CMS, frameworks, enz.
 
+"default_algo"
+- Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP >= 7.2.0).
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -914,4 +917,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 1 September 2017 (2017.09.01).
+Laatste Bijgewerkt: 8 September 2017 (2017.09.08).
