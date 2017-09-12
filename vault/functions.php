@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.08).
+ * This file: Functions file (last modified: 2017.09.12).
  */
 
 /**
@@ -5171,6 +5171,40 @@ $phpMussel['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$phpM
 };
 
 /**
+ * Can be used to delete some files via the front-end.
+ *
+ * @param string $File The file to delete.
+ * @return bool Success or failure.
+ */
+$phpMussel['Delete'] = function ($File) use (&$phpMussel) {
+    if (!empty($File) && file_exists($phpMussel['Vault'] . $File) && $phpMussel['Traverse']($File)) {
+        if (!unlink($phpMussel['Vault'] . $File)) {
+            return false;
+        }
+        $phpMussel['DeleteDirectory']($File);
+        return true;
+    }
+    return false;
+};
+
+/**
+ * Can be used to delete some empty directories via the front-end.
+ *
+ * @param string $Dir The directory to delete.
+ */
+$phpMussel['DeleteDirectory'] = function ($Dir) use (&$phpMussel) {
+    while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
+        $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
+        $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
+        if (is_dir($phpMussel['Vault'] . $Dir) && $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $Dir)) {
+            rmdir($phpMussel['Vault'] . $Dir);
+        } else {
+            break;
+        }
+    }
+};
+
+/**
  * Used to generate new salts when necessary, which may be occasionally used by
  * some specific optional peripheral features (note: should not be considered
  * cryptographically secure; especially so for versions of PHP < 7).
@@ -5959,11 +5993,12 @@ $phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) 
         'Latin-4' => [',', ' ', 3, false, 0],
         'Latin-5' => ['·', ',', 3, false, 0],
         'China-1' => ['.', ',', 4, false, 0],
+        'India-1' => ['.', ',', 2, false, -1],
+        'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1],
+        'Bengali-1' => ['.', ',', 2, ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'], -1],
         'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
         'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-        'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0],
-        'India-1' => ['.', ',', 2, false, -1],
-        'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1]
+        'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0]
     );
     $Set = empty($Sets[$phpMussel['Config']['general']['numbers']]) ? 'Latin-1' : $Sets[$phpMussel['Config']['general']['numbers']];
     $DecPos = strpos($Number, '.') ?: strlen($Number);
@@ -6012,11 +6047,12 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
         'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
         'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
         'China-1' => ['.', ',', 4, 'return l10nd', 1],
+        'India-1' => ['.', ',', 2, 'return l10nd', 0],
+        'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
+        'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
         'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
         'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
         'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
-        'India-1' => ['.', ',', 2, 'return l10nd', 0],
-        'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0]
     );
     if (!empty($phpMussel['Config']['general']['numbers']) && isset($Sets[$phpMussel['Config']['general']['numbers']])) {
         $Set = $Sets[$phpMussel['Config']['general']['numbers']];

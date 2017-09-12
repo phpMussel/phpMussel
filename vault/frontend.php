@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.08).
+ * This file: Front-end handler (last modified: 2017.09.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -127,9 +127,8 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
 
     if ($phpMussel['Success']) {
         die;
-    } else {
-        unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
     }
+    unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
 
 }
 
@@ -1254,18 +1253,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                             ) {
                                 $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
                                 unlink($phpMussel['Vault'] . $ThisFile);
-                                while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
-                                    $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
-                                    $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
-                                    if (
-                                        is_dir($phpMussel['Vault'] . $ThisFile) &&
-                                        $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $ThisFile)
-                                    ) {
-                                        rmdir($phpMussel['Vault'] . $ThisFile);
-                                    } else {
-                                        break;
-                                    }
-                                }
+                                $phpMussel['DeleteDirectory']($ThisFile);
                             }
                         });
                     }
@@ -1375,18 +1363,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     ) {
                         $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
                         unlink($phpMussel['Vault'] . $ThisFile);
-                        while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
-                            $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
-                            $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
-                            if (
-                                is_dir($phpMussel['Vault'] . $ThisFile) &&
-                                $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $ThisFile)
-                            ) {
-                                rmdir($phpMussel['Vault'] . $ThisFile);
-                            } else {
-                                break;
-                            }
-                        }
+                        $phpMussel['DeleteDirectory']($ThisFile);
                     }
                 });
                 $phpMussel['Handle'] =
@@ -2027,11 +2004,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         );
 
         /** If the filename already exists, delete the old file before moving the new file. */
-        if (
-            $phpMussel['SafeToContinue'] &&
-            file_exists($phpMussel['Vault'] . $_FILES['upload-file']['name']) &&
-            is_readable($phpMussel['Vault'] . $_FILES['upload-file']['name'])
-        ) {
+        if ($phpMussel['SafeToContinue'] && is_readable($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
             if (is_dir($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
                 if ($phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
                     rmdir($phpMussel['Vault'] . $_FILES['upload-file']['name']);
@@ -2076,18 +2049,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 unlink($phpMussel['Vault'] . $_POST['filename']);
 
                 /** Remove empty directories. */
-                while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
-                    $phpMussel['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
-                    $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $phpMussel['Separator']));
-                    if (
-                        is_dir($phpMussel['Vault'] . $_POST['filename']) &&
-                        $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_POST['filename'])
-                    ) {
-                        rmdir($phpMussel['Vault'] . $_POST['filename']);
-                    } else {
-                        break;
-                    }
-                }
+                $phpMussel['DeleteDirectory']($_POST['filename']);
 
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_file_deleted'];
             }
@@ -2140,18 +2102,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     if (rename($phpMussel['Vault'] . $_POST['filename'], $phpMussel['Vault'] . $_POST['filename_new'])) {
 
                         /** Remove empty directories. */
-                        while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
-                            $phpMussel['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
-                            $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $phpMussel['Separator']));
-                            if (
-                                is_dir($phpMussel['Vault'] . $_POST['filename']) &&
-                                $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_POST['filename'])
-                            ) {
-                                rmdir($phpMussel['Vault'] . $_POST['filename']);
-                            } else {
-                                break;
-                            }
-                        }
+                        $phpMussel['DeleteDirectory']($_POST['filename']);
 
                         $phpMussel['FE']['state_msg'] = (is_dir($phpMussel['Vault'] . $_POST['filename_new'])) ?
                             $phpMussel['lang']['response_directory_renamed'] : $phpMussel['lang']['response_file_renamed'];
