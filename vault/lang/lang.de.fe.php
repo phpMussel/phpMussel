@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.09.08).
+ * This file: German language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Löschung-Fehler!';
 $phpMussel['lang']['response_directory_deleted'] = 'Verzeichnis erfolgreich gelöscht!';
 $phpMussel['lang']['response_directory_renamed'] = 'Verzeichnis erfolgreich umbenannt!';
 $phpMussel['lang']['response_error'] = 'Fehler';
+$phpMussel['lang']['response_failed_to_install'] = 'Installation fehlgeschlagen!';
+$phpMussel['lang']['response_failed_to_update'] = 'Aktualisierung fehlgeschlagen!';
 $phpMussel['lang']['response_file_deleted'] = 'Datei erfolgreich gelöscht!';
 $phpMussel['lang']['response_file_edited'] = 'Datei erfolgreich geändert!';
 $phpMussel['lang']['response_file_renamed'] = 'Datei erfolgreich umbenannt!';

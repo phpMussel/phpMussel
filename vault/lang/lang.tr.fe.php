@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.08).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -132,8 +132,8 @@ $phpMussel['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini 
 $phpMussel['lang']['field_true'] = 'True (Doğru)';
 $phpMussel['lang']['field_uninstall'] = 'Kaldır';
 $phpMussel['lang']['field_update'] = 'Güncelle';
-$phpMussel['lang']['field_update_all'] = 'Tümünü Güncelle';
-$phpMussel['lang']['field_upload_file'] = 'Yeni Dosya Yükle';
+$phpMussel['lang']['field_update_all'] = 'Tümünü güncelle';
+$phpMussel['lang']['field_upload_file'] = 'Yeni dosya yükle';
 $phpMussel['lang']['field_username'] = 'Kullanıcı adı';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Silinemedi!';
 $phpMussel['lang']['response_directory_deleted'] = 'Dizin başarıyla silindi!';
 $phpMussel['lang']['response_directory_renamed'] = 'Dizin başarıyla yeniden adlandırıldı!';
 $phpMussel['lang']['response_error'] = 'Hata';
+$phpMussel['lang']['response_failed_to_install'] = 'Yükleme başarısız!';
+$phpMussel['lang']['response_failed_to_update'] = 'Güncelleme başarısız!';
 $phpMussel['lang']['response_file_deleted'] = 'Dosya başarıyla silindi!';
 $phpMussel['lang']['response_file_edited'] = 'Dosya başarıyla değiştirildi!';
 $phpMussel['lang']['response_file_renamed'] = 'Dosya başarıyla yeniden adlandırıldı!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.08).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -132,7 +132,7 @@ $phpMussel['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem
 $phpMussel['lang']['field_true'] = 'True (Benar)';
 $phpMussel['lang']['field_uninstall'] = 'Uninstal';
 $phpMussel['lang']['field_update'] = 'Perbarui';
-$phpMussel['lang']['field_update_all'] = 'Memperbarui Semua';
+$phpMussel['lang']['field_update_all'] = 'Memperbarui semua';
 $phpMussel['lang']['field_upload_file'] = 'Mengupload file baru';
 $phpMussel['lang']['field_username'] = 'Nama Pengguna';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Gagal menghapus!';
 $phpMussel['lang']['response_directory_deleted'] = 'Direktori berhasil dihapus!';
 $phpMussel['lang']['response_directory_renamed'] = 'Nama direktori berhasil dimodifikasi!';
 $phpMussel['lang']['response_error'] = 'Kesalahan';
+$phpMussel['lang']['response_failed_to_install'] = 'Gagal menginstal!';
+$phpMussel['lang']['response_failed_to_update'] = 'Gagal memperbarui!';
 $phpMussel['lang']['response_file_deleted'] = 'File berhasil dihapus!';
 $phpMussel['lang']['response_file_edited'] = 'File berhasil diubah!';
 $phpMussel['lang']['response_file_renamed'] = 'Nama file berhasil dimodifikasi!';

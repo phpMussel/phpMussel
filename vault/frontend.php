@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.12).
+ * This file: Front-end handler (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -621,14 +621,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
             if (strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['NewUserB64'] . ',') !== false) {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_accounts_already_exists'];
             } else {
-                $phpMussel['FE']['NewAccount'] =
-                    $phpMussel['FE']['NewUserB64'] . ',' .
-                    $phpMussel['FE']['NewPass'] . ',' .
-                    $phpMussel['FE']['NewPerm'] . "\n";
                 $phpMussel['AccountsArray'] = array(
                     'Iterate' => 0,
                     'Count' => 1,
-                    'ByName' => array($phpMussel['FE']['NewUser'] => $phpMussel['FE']['NewAccount'])
+                    'ByName' => array(
+                        $phpMussel['FE']['NewUser'] =>
+                            $phpMussel['FE']['NewUserB64'] . ',' .
+                            $phpMussel['FE']['NewPass'] . ',' .
+                            $phpMussel['FE']['NewPerm'] . "\n"
+                    )
                 );
                 $phpMussel['FE']['NewLineOffset'] = 0;
                 while (($phpMussel['FE']['NewLinePos'] = strpos(
@@ -1020,38 +1021,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     $phpMussel['FE']['UpdatesFormTarget'] = 'phpmussel-page=updates';
     $phpMussel['FE']['UpdatesFormTargetControls'] = '';
-    $phpMussel['QueryTemp'] = array('Switched' => false);
-    foreach (array('hide-non-outdated', 'hide-unused') as $phpMussel['QueryTemp']['Param']) {
-        $phpMussel['QueryTemp']['Switch'] = (
-            !empty($_POST['updates-form-target-selecter']) &&
-            $_POST['updates-form-target-selecter'] === $phpMussel['QueryTemp']['Param']
-        );
-        if (empty($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']])) {
-            $phpMussel['FE'][$phpMussel['QueryTemp']['Param']] = false;
-        } else {
-            $phpMussel['FE'][$phpMussel['QueryTemp']['Param']] = (
-                ($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']] === 'true' && !$phpMussel['QueryTemp']['Switch']) ||
-                ($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']] !== 'true' && $phpMussel['QueryTemp']['Switch'])
-            );
-        }
-        if ($phpMussel['QueryTemp']['Switch']) {
-            $phpMussel['QueryTemp']['Switched'] = true;
-        }
-        if ($phpMussel['FE'][$phpMussel['QueryTemp']['Param']]) {
-            $phpMussel['FE']['UpdatesFormTarget'] .= '&' . $phpMussel['QueryTemp']['Param'] . '=true';
-            $phpMussel['QueryTemp']['LangOpt'] = 'switch-' . $phpMussel['QueryTemp']['Param'] . '-set-false';
-        } else {
-            $phpMussel['FE']['UpdatesFormTarget'] .= '&' . $phpMussel['QueryTemp']['Param'] . '=false';
-            $phpMussel['QueryTemp']['LangOpt'] = 'switch-' . $phpMussel['QueryTemp']['Param'] . '-set-true';
-        }
-        $phpMussel['FE']['UpdatesFormTargetControls'] .=
-            '<option value="' . $phpMussel['QueryTemp']['Param'] . '">' . $phpMussel['lang'][$phpMussel['QueryTemp']['LangOpt']] . '</option>';
-    }
-    if ($phpMussel['QueryTemp']['Switched']) {
+    $phpMussel['StateModified'] = false;
+    $phpMussel['FilterSwitch'](
+        array('hide-non-outdated', 'hide-unused'),
+        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+        $phpMussel['StateModified'],
+        $phpMussel['FE']['UpdatesFormTarget'],
+        $phpMussel['FE']['UpdatesFormTargetControls']
+    );
+    if ($phpMussel['StateModified']) {
         header('Location: ?' . $phpMussel['FE']['UpdatesFormTarget']);
         die;
     }
-    unset($phpMussel['QueryTemp']);
+    unset($phpMussel['StateModified']);
 
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = array('Meta' => array(), 'RemoteMeta' => array());

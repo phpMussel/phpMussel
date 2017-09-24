@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.09.08).
+ * This file: French language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Échec du suppriment !';
 $phpMussel['lang']['response_directory_deleted'] = 'Répertoire supprimé avec succès !';
 $phpMussel['lang']['response_directory_renamed'] = 'Répertoire renommé avec succès !';
 $phpMussel['lang']['response_error'] = 'Erreur';
+$phpMussel['lang']['response_failed_to_install'] = 'Échec de l\'installation!';
+$phpMussel['lang']['response_failed_to_update'] = 'Échec de la mise à jour!';
 $phpMussel['lang']['response_file_deleted'] = 'Fichier supprimé avec succès !';
 $phpMussel['lang']['response_file_edited'] = 'Fichier modifié avec succès !';
 $phpMussel['lang']['response_file_renamed'] = 'Fichier renommé avec succès !';

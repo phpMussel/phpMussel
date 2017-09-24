@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.09.08).
+ * This file: English language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -132,8 +132,8 @@ $phpMussel['lang']['field_system_timezone'] = 'Use system default timezone.';
 $phpMussel['lang']['field_true'] = 'True';
 $phpMussel['lang']['field_uninstall'] = 'Uninstall';
 $phpMussel['lang']['field_update'] = 'Update';
-$phpMussel['lang']['field_update_all'] = 'Update All';
-$phpMussel['lang']['field_upload_file'] = 'Upload New File';
+$phpMussel['lang']['field_update_all'] = 'Update all';
+$phpMussel['lang']['field_upload_file'] = 'Upload new file';
 $phpMussel['lang']['field_username'] = 'Username';
 $phpMussel['lang']['field_your_version'] = 'Your Version';
 $phpMussel['lang']['header_login'] = 'Please log in to continue.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Failed to delete!';
 $phpMussel['lang']['response_directory_deleted'] = 'Directory successfully deleted!';
 $phpMussel['lang']['response_directory_renamed'] = 'Directory successfully renamed!';
 $phpMussel['lang']['response_error'] = 'Error';
+$phpMussel['lang']['response_failed_to_install'] = 'Failed to install!';
+$phpMussel['lang']['response_failed_to_update'] = 'Failed to update!';
 $phpMussel['lang']['response_file_deleted'] = 'File successfully deleted!';
 $phpMussel['lang']['response_file_edited'] = 'File successfully modified!';
 $phpMussel['lang']['response_file_renamed'] = 'File successfully renamed!';

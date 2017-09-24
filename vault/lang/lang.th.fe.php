@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.09.08).
+ * This file: Thai language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'ล้มเหลวลบ!';
 $phpMussel['lang']['response_directory_deleted'] = 'ไดเรกทอรีสำเร็จแล้วลบ!';
 $phpMussel['lang']['response_directory_renamed'] = 'ไดเรกทอรีสำเร็จแล้วเปลี่ยนชื่อ!';
 $phpMussel['lang']['response_error'] = 'ข้อผิดพลาด';
+$phpMussel['lang']['response_failed_to_install'] = 'การติดตั้งล้มเหลว!';
+$phpMussel['lang']['response_failed_to_update'] = 'การอัพเดทล้มเหลว!';
 $phpMussel['lang']['response_file_deleted'] = 'ไฟล์สำเร็จแล้วลบ!';
 $phpMussel['lang']['response_file_edited'] = 'ไฟล์สำเร็จแล้วเปลี่ยนแปลง!';
 $phpMussel['lang']['response_file_renamed'] = 'ไฟล์สำเร็จแล้วเปลี่ยนชื่อ!';

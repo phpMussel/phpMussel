@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.08).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = '削除に失敗しました！';
 $phpMussel['lang']['response_directory_deleted'] = 'ディレクトリが正常に削除されました！';
 $phpMussel['lang']['response_directory_renamed'] = 'ディレクトリの名前が変更されました！';
 $phpMussel['lang']['response_error'] = 'エラー';
+$phpMussel['lang']['response_failed_to_install'] = 'インストールに失敗しました！';
+$phpMussel['lang']['response_failed_to_update'] = 'アップデートに失敗しました！';
 $phpMussel['lang']['response_file_deleted'] = 'ファイルを削除が成功しました！';
 $phpMussel['lang']['response_file_edited'] = 'ファイルは正常に変更されました！';
 $phpMussel['lang']['response_file_renamed'] = 'ファイルの名前が変更されました！';

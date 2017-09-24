@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.08).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'فشلت في حذف!';
 $phpMussel['lang']['response_directory_deleted'] = 'تم حذف الدليل بنجاح!';
 $phpMussel['lang']['response_directory_renamed'] = 'تم اعادة تسمية الدليل بنجاح!';
 $phpMussel['lang']['response_error'] = 'خطأ';
+$phpMussel['lang']['response_failed_to_install'] = 'فشل التثبيت!';
+$phpMussel['lang']['response_failed_to_update'] = 'فشل التحديث!';
 $phpMussel['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
 $phpMussel['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
 $phpMussel['lang']['response_file_renamed'] = 'ملف إعادة تسمية بنجاح!';

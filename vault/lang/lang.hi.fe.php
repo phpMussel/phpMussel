@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.09.08).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'हटाने में वि�
 $phpMussel['lang']['response_directory_deleted'] = 'निर्देशिका को सफलतापूर्वक हटाया गया!';
 $phpMussel['lang']['response_directory_renamed'] = 'निर्देशिका को सफलतापूर्वक नाम दिया गया!';
 $phpMussel['lang']['response_error'] = 'त्रुटि';
+$phpMussel['lang']['response_failed_to_install'] = 'इनस्टॉल करने में विफल!';
+$phpMussel['lang']['response_failed_to_update'] = 'अपडेट करने में विफल!';
 $phpMussel['lang']['response_file_deleted'] = 'सफलतापूर्वक फाइल हटाया गया!';
 $phpMussel['lang']['response_file_edited'] = 'सफलतापूर्वक फाइल संशोधित किया गया!';
 $phpMussel['lang']['response_file_renamed'] = 'सफलतापूर्वक फाइल नाम दिया गया!';

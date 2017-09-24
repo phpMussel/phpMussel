@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.09.08).
+ * This file: Italian language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -132,8 +132,8 @@ $phpMussel['lang']['field_system_timezone'] = 'Utilizza il fuso orario predefini
 $phpMussel['lang']['field_true'] = 'True (Vero)';
 $phpMussel['lang']['field_uninstall'] = 'Disinstallarlo';
 $phpMussel['lang']['field_update'] = 'Aggiornarlo';
-$phpMussel['lang']['field_update_all'] = 'Aggiorna Tutto';
-$phpMussel['lang']['field_upload_file'] = 'Carica Nuovo File';
+$phpMussel['lang']['field_update_all'] = 'Aggiorna tutto';
+$phpMussel['lang']['field_upload_file'] = 'Carica nuovo file';
 $phpMussel['lang']['field_username'] = 'Nome Utente';
 $phpMussel['lang']['field_your_version'] = 'La Vostra Versione';
 $phpMussel['lang']['header_login'] = 'Per favore accedi per continuare.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Non riuscito a eliminare!';
 $phpMussel['lang']['response_directory_deleted'] = 'Elenco eliminato con successo!';
 $phpMussel['lang']['response_directory_renamed'] = 'Elenco rinominato con successo!';
 $phpMussel['lang']['response_error'] = 'Errore';
+$phpMussel['lang']['response_failed_to_install'] = 'Non è riuscito ad installare!';
+$phpMussel['lang']['response_failed_to_update'] = 'Non è riuscito ad aggiornare!';
 $phpMussel['lang']['response_file_deleted'] = 'File eliminato con successo!';
 $phpMussel['lang']['response_file_edited'] = 'File modificato con successo!';
 $phpMussel['lang']['response_file_renamed'] = 'File rinominato con successo!';

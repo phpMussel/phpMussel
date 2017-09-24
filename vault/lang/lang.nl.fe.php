@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.08).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -132,8 +132,8 @@ $phpMussel['lang']['field_system_timezone'] = 'Gebruik de systeem standaard tijd
 $phpMussel['lang']['field_true'] = 'True (Waar)';
 $phpMussel['lang']['field_uninstall'] = 'Verwijderen';
 $phpMussel['lang']['field_update'] = 'Bijwerken';
-$phpMussel['lang']['field_update_all'] = 'Bijwerken Alles';
-$phpMussel['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
+$phpMussel['lang']['field_update_all'] = 'Bijwerken alles';
+$phpMussel['lang']['field_upload_file'] = 'Nieuw bestand uploaden';
 $phpMussel['lang']['field_username'] = 'Gebruikersnaam';
 $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
 $phpMussel['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
 $phpMussel['lang']['response_directory_renamed'] = 'De naam van de bestandsmap met succes veranderd!';
 $phpMussel['lang']['response_error'] = 'Fout';
+$phpMussel['lang']['response_failed_to_install'] = 'Installatie mislukt!';
+$phpMussel['lang']['response_failed_to_update'] = 'Update mislukt!';
 $phpMussel['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
 $phpMussel['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
 $phpMussel['lang']['response_file_renamed'] = 'De naam van de bestand met succes veranderd!';

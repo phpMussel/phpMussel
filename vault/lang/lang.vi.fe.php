@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.08).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -109,7 +109,7 @@ $phpMussel['lang']['field_filename'] = 'Tên tập tin: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Thư Mục';
 $phpMussel['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
 $phpMussel['lang']['field_filetype_unknown'] = 'Không Xác Định';
-$phpMussel['lang']['field_install'] = 'Cài Đặt';
+$phpMussel['lang']['field_install'] = 'Cài đặt';
 $phpMussel['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $phpMussel['lang']['field_log_in'] = 'Đăng Nhập';
 $phpMussel['lang']['field_more_fields'] = 'Thêm Lĩnh Vực';
@@ -130,9 +130,9 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Tình Trạng';
 $phpMussel['lang']['field_system_timezone'] = 'Sử dụng múi giờ mặc định của hệ thống.';
 $phpMussel['lang']['field_true'] = 'True (Đúng)';
-$phpMussel['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
-$phpMussel['lang']['field_update'] = 'Cập Nhật';
-$phpMussel['lang']['field_update_all'] = 'Cập Nhật Tất Cả';
+$phpMussel['lang']['field_uninstall'] = 'Gỡ bỏ cài đặt';
+$phpMussel['lang']['field_update'] = 'Cập nhật';
+$phpMussel['lang']['field_update_all'] = 'Cập nhật tất cả';
 $phpMussel['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Không thể xóa!';
 $phpMussel['lang']['response_directory_deleted'] = 'Thư mục xóa thành công!';
 $phpMussel['lang']['response_directory_renamed'] = 'Đổi tên thư mục thành công!';
 $phpMussel['lang']['response_error'] = 'Lỗi';
+$phpMussel['lang']['response_failed_to_install'] = 'Cài đặt không thành công!';
+$phpMussel['lang']['response_failed_to_update'] = 'Cập nhật không thành công!';
 $phpMussel['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
 $phpMussel['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
 $phpMussel['lang']['response_file_renamed'] = 'Đổi tên tập tin thành công!';

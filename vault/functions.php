@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.12).
+ * This file: Functions file (last modified: 2017.09.23).
  */
 
 /**
@@ -5931,6 +5931,7 @@ $phpMussel['ErrorHandler_1'] = function ($errno) use (&$phpMussel) {
  * - secure.php.net/supported-versions.php
  * - cvedetails.com/vendor/74/PHP.html
  * - maikuolan.github.io/Compatibility-Charts/
+ * - maikuolan.github.io/Vulnerability-Charts/php.html
  *
  * @param string $Version The PHP version used (defaults to PHP_VERSION).
  * return int Warning level.
@@ -6119,4 +6120,39 @@ $phpMussel['Swap'] = function(&$First, &$Second) {
     $Working = $First;
     $First = $Second;
     $Second = $Working;
+};
+
+/**
+ * Switch control for front-end page filters.
+ *
+ * @param array $Switches Names of available switches.
+ * @param string $Selector Switch selector variable.
+ * @param bool $StateModified Determines whether the filter state has been modified.
+ * @param string $Redirect Reconstructed path to redirect to when the state changes.
+ * @param string $Options Recontructed filter controls.
+ */
+$phpMussel['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$phpMussel) {
+    foreach ($Switches as $Switch) {
+        $State = (!empty($Selector) && $Selector === $Switch);
+        if (empty($phpMussel['QueryVars'][$Switch])) {
+            $phpMussel['FE'][$Switch] = false;
+        } else {
+            $phpMussel['FE'][$Switch] = (
+                ($phpMussel['QueryVars'][$Switch] === 'true' && !$State) ||
+                ($phpMussel['QueryVars'][$Switch] !== 'true' && $State)
+            );
+        }
+        if ($State) {
+            $StateModified = true;
+        }
+        if ($phpMussel['FE'][$Switch]) {
+            $Redirect .= '&' . $Switch . '=true';
+            $LangItem = 'switch-' . $Switch . '-set-false';
+        } else {
+            $Redirect .= '&' . $Switch . '=false';
+            $LangItem = 'switch-' . $Switch . '-set-true';
+        }
+        $Label = isset($phpMussel['lang'][$LangItem]) ? $phpMussel['lang'][$LangItem] : $LangItem;
+        $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
+    }
 };

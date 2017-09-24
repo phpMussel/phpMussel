@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.08).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = '無法刪除！';
 $phpMussel['lang']['response_directory_deleted'] = '文件夾成功刪除！';
 $phpMussel['lang']['response_directory_renamed'] = '文件夾成功改名！';
 $phpMussel['lang']['response_error'] = '錯誤';
+$phpMussel['lang']['response_failed_to_install'] = '無法安裝！';
+$phpMussel['lang']['response_failed_to_update'] = '無法更新！';
 $phpMussel['lang']['response_file_deleted'] = '文件成功刪除！';
 $phpMussel['lang']['response_file_edited'] = '文件成功改性！';
 $phpMussel['lang']['response_file_renamed'] = '文件成功改名！';

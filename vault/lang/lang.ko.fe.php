@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.08).
+ * This file: Korean language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = '삭제에 실패했습니다!';
 $phpMussel['lang']['response_directory_deleted'] = '디렉토리가 성공적으로 삭제되었습니다!';
 $phpMussel['lang']['response_directory_renamed'] = '디렉토리의 이름이 변경되었습니다!';
 $phpMussel['lang']['response_error'] = '오류';
+$phpMussel['lang']['response_failed_to_install'] = '설치하지 못했습니다!';
+$phpMussel['lang']['response_failed_to_update'] = '업데이트하지 못했습니다!';
 $phpMussel['lang']['response_file_deleted'] = '파일 삭제가 성공했습니다!';
 $phpMussel['lang']['response_file_edited'] = '파일이 성공적으로 변경되었습니다!';
 $phpMussel['lang']['response_file_renamed'] = '파일 이름이 변경되었습니다!';

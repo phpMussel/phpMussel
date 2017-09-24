@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.08).
+ * This file: Russian language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -120,7 +120,7 @@ $phpMussel['lang']['field_password'] = 'Пароль';
 $phpMussel['lang']['field_permissions'] = 'Разрешения';
 $phpMussel['lang']['field_rename_file'] = 'Переименовывать';
 $phpMussel['lang']['field_reset'] = 'Сбросить';
-$phpMussel['lang']['field_set_new_password'] = 'Установить Новый Пароль';
+$phpMussel['lang']['field_set_new_password'] = 'Установить новый пароль';
 $phpMussel['lang']['field_size'] = 'Общий Размер: ';
 $phpMussel['lang']['field_size_bytes'] = 'байтов';
 $phpMussel['lang']['field_size_GB'] = 'ГБ';
@@ -132,8 +132,8 @@ $phpMussel['lang']['field_system_timezone'] = 'Использовать часо
 $phpMussel['lang']['field_true'] = 'True (Правда)';
 $phpMussel['lang']['field_uninstall'] = 'Удалить';
 $phpMussel['lang']['field_update'] = 'Обновить';
-$phpMussel['lang']['field_update_all'] = 'Обновить Все';
-$phpMussel['lang']['field_upload_file'] = 'Загрузить Новый Файл';
+$phpMussel['lang']['field_update_all'] = 'Обновить все';
+$phpMussel['lang']['field_upload_file'] = 'Загрузить новый файл';
 $phpMussel['lang']['field_username'] = 'Имя Пользователя';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['response_delete_error'] = 'Не удалось удалит�
 $phpMussel['lang']['response_directory_deleted'] = 'Каталог успешно удален!';
 $phpMussel['lang']['response_directory_renamed'] = 'Каталог успешно переименован!';
 $phpMussel['lang']['response_error'] = 'Ошибка';
+$phpMussel['lang']['response_failed_to_install'] = 'Не удалось установить!';
+$phpMussel['lang']['response_failed_to_update'] = 'Не удалось обновить!';
 $phpMussel['lang']['response_file_deleted'] = 'Файл успешно удален!';
 $phpMussel['lang']['response_file_edited'] = 'Файл успешно изменен!';
 $phpMussel['lang']['response_file_renamed'] = 'Файл успешно переименован!';
