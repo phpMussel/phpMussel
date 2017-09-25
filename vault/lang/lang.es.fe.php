@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.09.24).
+ * This file: Spanish language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Tu Versión';
 $phpMussel['lang']['header_login'] = 'Por favor iniciar sesión para continuar.';
 $phpMussel['lang']['label_active_config_file'] = 'Archivo de configuración activo: ';
 $phpMussel['lang']['label_branch'] = 'Branch más nuevo estable:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'Uso del disco por phpMussel: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Espacio en disco libre: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Uso del disco total: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Espacio en disco total: ';
 $phpMussel['lang']['label_os'] = 'Sistema operativo utilizada:';
 $phpMussel['lang']['label_php'] = 'Versión PHP utilizada:';
 $phpMussel['lang']['label_phpmussel'] = 'Versión phpMussel utilizada:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Componente in
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado con éxito.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Se ha producido un error al intentar desinstalar el componente.';
-$phpMussel['lang']['response_component_update_error'] = 'Se ha producido un error al intentar actualizar el componente.';
 $phpMussel['lang']['response_configuration_updated'] = 'Configuración actualizado con éxito.';
 $phpMussel['lang']['response_deactivated'] = 'Se ha desactivado correctamente.';
 $phpMussel['lang']['response_deactivation_failed'] = '¡No se pudo desactivar!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis es un servicio gratuito para analizar malware proporcionado por <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Especialistas informáticos contra malware.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Útiles foros de discusión enfocados en el malware.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Listas de vulnerabilidades</a> – Lista las versiones seguras/inseguras de varios paquetes (PHP, HHVM, etc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Listas de compatibilidades</a> – Lista información de compatibilidad para varios paquetes (CIDRAM, phpMussel, etc).</li>
         </ul>';

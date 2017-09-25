@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.24).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi phpMussel: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Gói cài đ�
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
-$phpMussel['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
 $phpMussel['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
 $phpMussel['lang']['response_deactivated'] = 'Vô hiệu hóa thành công.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Không thể vô hiệu hóa!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu íc
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
         </ul>';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.09.24).
+ * This file: Thai language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'เวอร์ชั่นของ
 $phpMussel['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
 $phpMussel['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
 $phpMussel['lang']['label_branch'] = 'สาขาเสถียรล่าสุด:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'เนื้อที่ดิสก์ที่ phpMussel ใช้: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'พื้นที่ว่างในดิสก์: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ดิสก์ที่ใช้ทั้งหมด: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
 $phpMussel['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $phpMussel['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';
 $phpMussel['lang']['label_phpmussel'] = 'รุ่น phpMussel ในการใช้งาน:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'คอมโ�
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'คอมโพเนนต์สำเร็จแล้วอัปเดต.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'เกิดขึ้นผิดพลาดขณะพยายามถอนการติดตั้งคอมโพเนนต์.';
-$phpMussel['lang']['response_component_update_error'] = 'เกิดขึ้นผิดพลาดขณะพยายามอัปเดตคอมโพเนนต์.';
 $phpMussel['lang']['response_configuration_updated'] = 'การกำหนดค่าสำเร็จแล้วอัปเดต.';
 $phpMussel['lang']['response_deactivated'] = 'สำเร็จแล้วปิดใช้งาน.';
 $phpMussel['lang']['response_deactivation_failed'] = 'ล้มเหลวปิดใช้งาน!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป�
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (PHP, HHVM, ฯลฯ).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (ชาร์ตความเข้ากันได้)</a> – แสดงข้อมูลความเข้ากันได้ของแพคเกจต่างๆ (CIDRAM, phpMussel, ฯลฯ).</li>
         </ul>';

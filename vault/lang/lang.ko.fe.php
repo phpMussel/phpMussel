@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.24).
+ * This file: Korean language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel 디스크 사용 : ';
+$phpMussel['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
+$phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제:';
 $phpMussel['lang']['label_php'] = '사용 된 PHP 버전:';
 $phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = '구성 요소
 $phpMussel['lang']['response_component_successfully_uninstalled'] = '구성 요소의 제거는 성공했습니다.';
 $phpMussel['lang']['response_component_successfully_updated'] = '구성 요소의 업데이트에 성공했습니다!';
 $phpMussel['lang']['response_component_uninstall_error'] = '구성 요소 제거하는 동안 오류가 발생했습니다.';
-$phpMussel['lang']['response_component_update_error'] = '구성 요소를 업데이트하는 동안 오류가 발생했습니다.';
 $phpMussel['lang']['response_configuration_updated'] = '구성 업데이트가 성공했습니다.';
 $phpMussel['lang']['response_deactivated'] = '비활성화했습니다.';
 $phpMussel['lang']['response_deactivation_failed'] = '비활성화에 실패했습니다!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="http://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
         </ul>';

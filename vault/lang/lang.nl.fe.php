@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.24).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $phpMussel['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
 $phpMussel['lang']['label_branch'] = 'Branch laatste stabiele:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel-schijfgebruik: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_php'] = 'PHP versie gebruikt:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel versie gebruikt:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Component suc
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om de component te verwijderen.';
-$phpMussel['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om de component te bijwerken.';
 $phpMussel['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
 $phpMussel['lang']['response_deactivated'] = 'Succesvol gedeactiveerd.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Mislukt om te deactiveren!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware-specialisten.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, ezv).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
         </ul>';

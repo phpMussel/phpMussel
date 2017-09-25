@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.23).
+ * This file: Functions file (last modified: 2017.09.25).
  */
 
 /**
@@ -5507,6 +5507,9 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
             $Arr[$Key]['CanEdit'] = true;
             $Arr[$Key]['Directory'] = false;
             $Arr[$Key]['Filesize'] = filesize($Item);
+            if (isset($phpMussel['FE']['TotalSize'])) {
+                $phpMussel['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
+            }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
                 if (!$Ext) {

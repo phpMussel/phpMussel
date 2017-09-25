@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.24).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk kullanımı: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $phpMussel['lang']['label_phpmussel'] = 'Kullanılan phpMussel sürümü:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Bileşen baş
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Bileşen başarıyla kaldırıldı.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Bileşen başarıyla güncellendi.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Bileşeni kaldırmaya çalışırken bir hata oluştu.';
-$phpMussel['lang']['response_component_update_error'] = 'Bileşeni güncelleştirmeye çalışılırken bir hata oluştu.';
 $phpMussel['lang']['response_configuration_updated'] = 'Yapılandırma başarıyla güncellendi.';
 $phpMussel['lang']['response_deactivated'] = 'Başarıyla devre dışı bırakıldı.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Devre dışı bırakılamadı!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantıla
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="http://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb.) güvenli/güvensiz sürümlerini listeler.</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
         </ul>';

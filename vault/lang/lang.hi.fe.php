@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.09.24).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'आपका संस्करण';
 $phpMussel['lang']['header_login'] = 'जारी रखने के लिए कृपया लॉग इन करें।';
 $phpMussel['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
 $phpMussel['lang']['label_branch'] = 'शाखा नवीनतम स्थिर:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel डिस्क उपयोग: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'खाली डिस्क स्पेस: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'कुल डिस्क उपयोग: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'कुल डिस्क स्पेस: ';
 $phpMussel['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
 $phpMussel['lang']['label_php'] = 'PHP संस्करण का इस्तेमाल किया:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel संस्करण का इस्तेमाल किया:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'घटक स
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'घटक सफलतापूर्वक अनइंस्टॉल किया गया।';
 $phpMussel['lang']['response_component_successfully_updated'] = 'घटक सफलतापूर्वक अपडेट किया गया';
 $phpMussel['lang']['response_component_uninstall_error'] = 'घटक को अनइंस्टॉल करते समय त्रुटि।';
-$phpMussel['lang']['response_component_update_error'] = 'घटक को अपडेट करते समय त्रुटि।';
 $phpMussel['lang']['response_configuration_updated'] = 'कॉन्फ़िगरेशन सफलतापूर्वक अपडेट किया गया।';
 $phpMussel['lang']['response_deactivated'] = 'सफलतापूर्वक निष्क्रिय।';
 $phpMussel['lang']['response_deactivation_failed'] = 'निष्क्रिय करने में विफल!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'कुछ उपयोगी ल
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis <a href="http://www.payload-security.com/">Payload Security</a> द्वारा प्रदान की जाने वाली एक मुफ्त मैलवेयर विश्लेषण सेवा है।</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – कंप्यूटर एंटी-मैलवेयर विशेषज्ञ।</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
         </ul>';

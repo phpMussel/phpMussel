@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.24).
+ * This file: Russian language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $phpMussel['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
 $phpMussel['lang']['label_branch'] = 'Ветвь последние стабильный:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel Использование диска: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Свободное место на диске: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использование диска: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $phpMussel['lang']['label_os'] = 'Используемая операционная система:';
 $phpMussel['lang']['label_php'] = 'Используемая версия PHP:';
 $phpMussel['lang']['label_phpmussel'] = 'Используемая версия phpMussel:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Компон�
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Произошла ошибка при попытке удалить компонент.';
-$phpMussel['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
 $phpMussel['lang']['response_configuration_updated'] = 'Конфигурация успешно обновлено.';
 $phpMussel['lang']['response_deactivated'] = 'Успешно деактивирован.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Не удалось дезактивировать!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезн�
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis представляет бесплатный сервис для анализа вредоносного программного, предоставленной <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Специалисты в области защиты от вредоносных программ.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Полезные вредоносные программы сфокусированные дискуссионных форумов.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (PHP, HHVM, и т.д.).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
         </ul>';

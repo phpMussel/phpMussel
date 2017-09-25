@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.09.24).
+ * This file: Italian language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'La Vostra Versione';
 $phpMussel['lang']['header_login'] = 'Per favore accedi per continuare.';
 $phpMussel['lang']['label_active_config_file'] = 'File di configurazione attivo: ';
 $phpMussel['lang']['label_branch'] = 'Branch più recente stabile:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'Utilizzo del disco da parte di phpMussel: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Spazio libero su disco: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilizzo del disco totale: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Spazio totale su disco: ';
 $phpMussel['lang']['label_os'] = 'Sistema operativo utilizzata:';
 $phpMussel['lang']['label_php'] = 'Versione PHP utilizzata:';
 $phpMussel['lang']['label_phpmussel'] = 'Versione phpMussel utilizzata:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Componente in
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Componente disinstallato con successo.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Componente aggiornato con successo.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'C\'è stato un errore durante il tentativo di disinstallare il componente.';
-$phpMussel['lang']['response_component_update_error'] = 'C\'è stato un errore durante il tentativo di aggiornare il componente.';
 $phpMussel['lang']['response_configuration_updated'] = 'Configurazione aggiornato con successo.';
 $phpMussel['lang']['response_deactivated'] = 'Disattivato con successo.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Non poteva essere disattivato!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis è un servizio gratuito per l\'analisi del malware fornito da <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Specialisti del malware di computer.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Forum di discussione utili concentrati su di malware.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (PHP, HHVM, ecc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
         </ul>';

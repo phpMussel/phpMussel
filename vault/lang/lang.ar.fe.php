@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.24).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel إستخدام القرص: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'تم تثبي
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'تم الغاء تثبيت الوحدة بنجاح';
 $phpMussel['lang']['response_component_successfully_updated'] = 'تم تحديث الوحدة بنجاح';
 $phpMussel['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة.';
-$phpMussel['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
 $phpMussel['lang']['response_configuration_updated'] = 'تم تحديث التكوين بنجاح';
 $phpMussel['lang']['response_deactivated'] = 'نجحت في جعل غير نشطة';
 $phpMussel['lang']['response_deactivation_failed'] = 'فشلت في جعله غير نشطة!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفي
             <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
             <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
         </ul>';

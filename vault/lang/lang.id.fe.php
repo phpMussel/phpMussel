@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.24).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk phpMussel: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_php'] = 'Versi PHP digunakan:';
 $phpMussel['lang']['label_phpmussel'] = 'Versi phpMussel digunakan:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Komponen berh
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Terjadi kesalahan saat mencoba untuk menguninstal komponen ini.';
-$phpMussel['lang']['response_component_update_error'] = 'Terjadi kesalahan saat mencoba untuk memperbarui komponen ini.';
 $phpMussel['lang']['response_configuration_updated'] = 'Konfigurasi berhasil diperbarui.';
 $phpMussel['lang']['response_deactivated'] = 'Berhasil dinonaktifkan.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Kegagalan penonaktifan!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Komputer spesialis anti-malware.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';

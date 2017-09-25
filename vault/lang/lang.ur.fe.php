@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.24).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'آپ کے ورژن';
 $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
 $phpMussel['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel ڈسک استعمال: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $phpMussel['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel ورژن استعمال کیا:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'اجزاء ک
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'اجزاء کامیابی سے ان انسٹال.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'اجزاء کامیابی سے اپ ڈیٹ.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'جزو انسٹال کرنے کی کوشش کرتے ہوئے ایک خرابی واقع ہوئی.';
-$phpMussel['lang']['response_component_update_error'] = 'جزو کو اپ ڈیٹ کرنے کی کوشش کرتے ہوئے ایک خرابی واقع ہوئی.';
 $phpMussel['lang']['response_configuration_updated'] = 'کنفگریشن کامیابی سے اپ ڈیٹ.';
 $phpMussel['lang']['response_deactivated'] = 'کامیابی کے ساتھ غیر فعال.';
 $phpMussel['lang']['response_deactivation_failed'] = 'غیر فعال کرنے میں ناکام ہو گیا!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="http://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
             <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
             <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
         </ul>';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.24).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量： ';
+$phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'コンポー�
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'コンポーネントのアンインストールは成功しました。';
 $phpMussel['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $phpMussel['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
-$phpMussel['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
 $phpMussel['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
 $phpMussel['lang']['response_deactivated'] = '非アクティブにしました。';
 $phpMussel['lang']['response_deactivation_failed'] = '非アクティブ化に失敗しました！';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysisは、​<a href="http://www.payload-security.com/">Payload Security</a>が提供する無料のマルウェア分析サービスで。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – コンピュータのマルウェア対策専門家。</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – 便利なマルウェア対策ディスカッションフォーラム。</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
         </ul>';

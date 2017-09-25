@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.24).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
 $phpMussel['lang']['label_branch'] = '分支最新稳定：';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel使用的磁盘空间： ';
+$phpMussel['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
+$phpMussel['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $phpMussel['lang']['label_os'] = '目前使用操作系统：';
 $phpMussel['lang']['label_php'] = '目前使用PHP版本：';
 $phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = '组件成功�
 $phpMussel['lang']['response_component_successfully_uninstalled'] = '组件成功卸载。';
 $phpMussel['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $phpMussel['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
-$phpMussel['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
 $phpMussel['lang']['response_configuration_updated'] = '配置成功更新。';
 $phpMussel['lang']['response_deactivated'] = '已成功停用。';
 $phpMussel['lang']['response_deactivation_failed'] = '无法停用！';
@@ -255,4 +258,6 @@ $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免费恶意软件分析服务。​</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 电脑反恶意软件专家。​</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的讨论论坛关于恶意软件。​</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';

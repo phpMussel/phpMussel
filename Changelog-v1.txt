@@ -33,6 +33,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   additional choice and control to the end-user regarding encryption). Also
   rewrote the code for the front-end accounts page accordingly.
 
+- [2017.09.25; Sub-minor code change; Maikuolan]: Added rollback capability to
+  the front-end updates page for failed updates/installs (this should help to
+  prevent any corruption or broken installs from occurring due to unforeseen
+  problems, failed connectivity, etc). Added disk space/usage information to
+  the front-end file manager. Added links to vulnerability and compatibility
+  charts onto the front-end homepage.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.09.24).
+ * This file: English language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,6 +139,10 @@ $phpMussel['lang']['field_your_version'] = 'Your Version';
 $phpMussel['lang']['header_login'] = 'Please log in to continue.';
 $phpMussel['lang']['label_active_config_file'] = 'Active configuration file: ';
 $phpMussel['lang']['label_branch'] = 'Branch latest stable:';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk usage: ';
+$phpMussel['lang']['label_fmgr_free_space'] = 'Free disk space: ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
+$phpMussel['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $phpMussel['lang']['label_os'] = 'Operating system used:';
 $phpMussel['lang']['label_php'] = 'PHP version used:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel version used:';
@@ -177,7 +181,6 @@ $phpMussel['lang']['response_component_successfully_installed'] = 'Component suc
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';
-$phpMussel['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
 $phpMussel['lang']['response_configuration_updated'] = 'Configuration successfully updated.';
 $phpMussel['lang']['response_deactivated'] = 'Successfully deactivated.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Failed to deactivate!';
@@ -254,4 +257,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
         </ul>';
