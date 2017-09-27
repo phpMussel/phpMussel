@@ -1147,6 +1147,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     );
                     $phpMussel['Count'] = count($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
                     $phpMussel['RemoteFiles'] = array();
+                    $phpMussel['IgnoredFiles'] = array();
                     $phpMussel['Rollback'] = false;
                     /** Write new and updated files and directories. */
                     for ($phpMussel['Iterate'] = 0; $phpMussel['Iterate'] < $phpMussel['Count']; $phpMussel['Iterate']++) {
@@ -1158,6 +1159,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         if ($phpMussel['Rollback']) {
                             if (
                                 isset($phpMussel['RemoteFiles'][$phpMussel['ThisFileName']]) &&
+                                !isset($phpMussel['IgnoredFiles'][$phpMussel['ThisFileName']]) &&
                                 is_readable($phpMussel['Vault'] . $phpMussel['ThisFileName'])
                             ) {
                                 $phpMussel['Components']['BytesAdded'] -= filesize($phpMussel['Vault'] . $phpMussel['ThisFileName']);
@@ -1170,13 +1172,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                             continue;
                         }
                         if (
-                            (
-                                !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]) &&
-                                !empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]) && (
-                                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']] ===
-                                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]
-                                )
-                            ) ||
+                            !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]) &&
+                            !empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]) && (
+                                $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']] ===
+                                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$phpMussel['Iterate']]
+                            )
+                        ) {
+                            $phpMussel['IgnoredFiles'][$phpMussel['ThisFileName']] = true;
+                            continue;
+                        }
+                        if (
                             empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$phpMussel['Iterate']]) ||
                             !($phpMussel['ThisFile'] = $phpMussel['Request'](
                                 $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$phpMussel['Iterate']]
@@ -1211,7 +1216,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                             $phpMussel['Rollback'] = true;
                             continue;
                         }
-                        $phpMussel['RemoteFiles'][$phpMussel['ThisFileName']] = true;
                         $phpMussel['ThisName'] = $phpMussel['ThisFileName'];
                         $phpMussel['ThisPath'] = $phpMussel['Vault'];
                         while (strpos($phpMussel['ThisName'], '/') !== false || strpos($phpMussel['ThisName'], "\\") !== false) {
@@ -1232,7 +1236,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         }
                         $phpMussel['Components']['BytesAdded'] += strlen($phpMussel['ThisFile']);
                         $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['ThisFileName'], 'w');
-                        fwrite($phpMussel['Handle'], $phpMussel['ThisFile']);
+                        $phpMussel['RemoteFiles'][$phpMussel['ThisFileName']] = fwrite($phpMussel['Handle'], $phpMussel['ThisFile']);
+                        $phpMussel['RemoteFiles'][$phpMussel['ThisFileName']] = ($phpMussel['RemoteFiles'][$phpMussel['ThisFileName']] !== false);
                         fclose($phpMussel['Handle']);
                         $phpMussel['ThisFile'] = '';
                     }
@@ -1259,7 +1264,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                     if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
                                         unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
                                     }
-                                    if (!isset($phpMussel['RemoteFiles'][$ThisFile]) && file_exists($phpMussel['Vault'] . $ThisFile)) {
+                                    if (
+                                        !isset($phpMussel['RemoteFiles'][$ThisFile]) &&
+                                        !isset($phpMussel['IgnoredFiles'][$ThisFile]) &&
+                                        file_exists($phpMussel['Vault'] . $ThisFile)
+                                    ) {
                                         $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
                                         unlink($phpMussel['Vault'] . $ThisFile);
                                         $phpMussel['DeleteDirectory']($ThisFile);
@@ -1331,6 +1340,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['FileData'],
                 $phpMussel['ThisFileName'],
                 $phpMussel['Rollback'],
+                $phpMussel['IgnoredFiles'],
                 $phpMussel['RemoteFiles'],
                 $phpMussel['ThisReannotate']
             );
