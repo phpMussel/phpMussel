@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.09.25).
+ * This file: Thai language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'เนื้อที่ดิส
 $phpMussel['lang']['label_fmgr_free_space'] = 'พื้นที่ว่างในดิสก์: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ดิสก์ที่ใช้ทั้งหมด: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
+$phpMussel['lang']['label_hide'] = 'ปิดบัง';
 $phpMussel['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $phpMussel['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';
 $phpMussel['lang']['label_phpmussel'] = 'รุ่น phpMussel ในการใช้งาน:';
 $phpMussel['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
+$phpMussel['lang']['label_show'] = 'แสดง';
 $phpMussel['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $phpMussel['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
 $phpMussel['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';

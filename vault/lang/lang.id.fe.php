@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.25).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
+$phpMussel['lang']['label_hide'] = 'Menyembunyikan';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_php'] = 'Versi PHP digunakan:';
 $phpMussel['lang']['label_phpmussel'] = 'Versi phpMussel digunakan:';
 $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
+$phpMussel['lang']['label_show'] = 'Menunjukkan';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
 $phpMussel['lang']['label_unstable'] = 'Terbaru tidak stabil:';

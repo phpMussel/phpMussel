@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.09.25).
+ * This file: French language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'Utilisation du disque par phpMuss
 $phpMussel['lang']['label_fmgr_free_space'] = 'Espace disque libre : ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilisation du disque totale : ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
+$phpMussel['lang']['label_hide'] = 'Cacher';
 $phpMussel['lang']['label_os'] = 'Système opérateur utilisée :';
 $phpMussel['lang']['label_php'] = 'Version PHP utilisée :';
 $phpMussel['lang']['label_phpmussel'] = 'Version phpMussel utilisée :';
 $phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
+$phpMussel['lang']['label_show'] = 'Montrer';
 $phpMussel['lang']['label_stable'] = 'Dernier stable :';
 $phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
 $phpMussel['lang']['label_unstable'] = 'Dernier instable :';

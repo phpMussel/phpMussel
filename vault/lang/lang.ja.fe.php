@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.25).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量：
 $phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
+$phpMussel['lang']['label_hide'] = '隠す';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
 $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
+$phpMussel['lang']['label_show'] = '表示する';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $phpMussel['lang']['label_unstable'] = '最新不安定：';

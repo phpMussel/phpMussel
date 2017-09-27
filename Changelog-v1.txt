@@ -40,6 +40,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   the front-end file manager. Added links to vulnerability and compatibility
   charts onto the front-end homepage.
 
+- [2017.09.27; Minor code change; Maikuolan]: Added a pie chart to the file
+  manager, allowing users to visually interpret the footprint imposed by the
+  various files attributed to phpMussel and its components. Also did some
+  general refactoring of the front-end code.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

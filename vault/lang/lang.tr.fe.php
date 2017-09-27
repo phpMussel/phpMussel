@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.25).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
+$phpMussel['lang']['label_hide'] = 'Saklamak';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $phpMussel['lang']['label_phpmussel'] = 'Kullanılan phpMussel sürümü:';
 $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
+$phpMussel['lang']['label_show'] = 'Göstermek';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $phpMussel['lang']['label_unstable'] = 'En yeni kararsız:';

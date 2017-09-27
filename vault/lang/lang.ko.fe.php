@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.25).
+ * This file: Korean language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
+$phpMussel['lang']['label_hide'] = '숨기다';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제:';
 $phpMussel['lang']['label_php'] = '사용 된 PHP 버전:';
 $phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전:';
 $phpMussel['lang']['label_sapi'] = '사용 된 SAPI:';
+$phpMussel['lang']['label_show'] = '보여';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보:';
 $phpMussel['lang']['label_unstable'] = '최신 불안정 :';

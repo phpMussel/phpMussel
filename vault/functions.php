@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.25).
+ * This file: Functions file (last modified: 2017.09.27).
  */
 
 /**
@@ -5479,7 +5479,7 @@ $phpMussel['AppendToString'] = function (&$String, $Delimit = '', $Append = '') 
 };
 
 /**
- * Used by the File Manager to generate a list of the files contained in a
+ * Used by the file manager to generate a list of the files contained in a
  * working directory (normally, the vault).
  *
  * @param string $Base The path to the working directory.
@@ -5509,6 +5509,35 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
             $Arr[$Key]['Filesize'] = filesize($Item);
             if (isset($phpMussel['FE']['TotalSize'])) {
                 $phpMussel['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
+            }
+            if (isset($phpMussel['Components']['Components'])) {
+                $ThisNameFixed = str_replace("\\", '/', $ThisName);
+                if (isset($phpMussel['Components']['Files'][$ThisNameFixed])) {
+                    if (!empty($phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]])) {
+                        $Component = $phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]];
+                        if (is_array($Component)) {
+                            $phpMussel['IsolateL10N']($Component, $phpMussel['Config']['general']['lang']);
+                        }
+                    } else {
+                        $Component = $phpMussel['Components']['Files'][$ThisNameFixed];
+                    }
+                    $Component = $phpMussel['lang']['field_component'] . ' – ' . $Component;
+                } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
+                    $Component = $phpMussel['lang']['link_config'];
+                } else {
+                    $LastFour = strtolower(substr($ThisNameFixed, -4));
+                    if ($LastFour === '.log' || $LastFour === '.txt') {
+                        $Component = $phpMussel['lang']['link_logs'];
+                    } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
+                        $Component = $phpMussel['ParseVars'](array('EXT' => 'YAML/DAT'), $phpMussel['lang']['field_filetype_info']);
+                    } else {
+                        $Component = $phpMussel['lang']['field_filetype_unknown'];
+                    }
+                }
+                if (!isset($phpMussel['Components']['Components'][$Component])) {
+                    $phpMussel['Components']['Components'][$Component] = 0;
+                }
+                $phpMussel['Components']['Components'][$Component] += $Arr[$Key]['Filesize'];
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
@@ -5586,6 +5615,24 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
         }
     }
     return $Arr;
+};
+
+/**
+ * Used by the file manager and the updates pages to fetch the components list.
+ *
+ * @param string $Base The path to the working directory.
+ * @param array $Arr The array to use for rendering components file YAML data.
+ */
+$phpMussel['FetchComponentsLists'] = function ($Base, &$Arr) use (&$phpMussel) {
+    $Files = new DirectoryIterator($Base);
+    foreach ($Files as $ThisFile) {
+        if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
+            $Data = $phpMussel['ReadFile']($Base . $ThisFile);
+            if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
+                $phpMussel['YAML'](substr($Data, 4, $EoYAML - 4), $Arr);
+            }
+        }
+    }
 };
 
 /**

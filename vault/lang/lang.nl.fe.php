@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.25).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel-schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
+$phpMussel['lang']['label_hide'] = 'Verbergen';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_php'] = 'PHP versie gebruikt:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel versie gebruikt:';
 $phpMussel['lang']['label_sapi'] = 'SAPI gebruikt:';
+$phpMussel['lang']['label_show'] = 'Zien';
 $phpMussel['lang']['label_stable'] = 'Laatste stabiele:';
 $phpMussel['lang']['label_sysinfo'] = 'Systeem informatie:';
 $phpMussel['lang']['label_unstable'] = 'Laatste onstabiele:';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.09.25).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel डिस्क उप�
 $phpMussel['lang']['label_fmgr_free_space'] = 'खाली डिस्क स्पेस: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'कुल डिस्क उपयोग: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'कुल डिस्क स्पेस: ';
+$phpMussel['lang']['label_hide'] = 'छिपाना';
 $phpMussel['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
 $phpMussel['lang']['label_php'] = 'PHP संस्करण का इस्तेमाल किया:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel संस्करण का इस्तेमाल किया:';
 $phpMussel['lang']['label_sapi'] = 'SAPI का इस्तेमाल किया:';
+$phpMussel['lang']['label_show'] = 'दिखाना';
 $phpMussel['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $phpMussel['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';
 $phpMussel['lang']['label_unstable'] = 'नवीनतम अस्थिर:';

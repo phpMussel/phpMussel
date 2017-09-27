@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.25).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel إستخدام القر
 $phpMussel['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
+$phpMussel['lang']['label_hide'] = 'إخفائه';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';
 $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
+$phpMussel['lang']['label_show'] = 'اظهره';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
 $phpMussel['lang']['label_unstable'] = 'أحدث غير مستقرة:';

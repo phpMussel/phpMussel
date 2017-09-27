@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa b
 $phpMussel['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
+$phpMussel['lang']['label_hide'] = 'Che giấu';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
 $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
+$phpMussel['lang']['label_show'] = 'Hiển thị';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $phpMussel['lang']['label_unstable'] = 'Không ổn định mới nhất:';

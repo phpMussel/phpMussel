@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.25).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel使用的磁盘空间：
 $phpMussel['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
 $phpMussel['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
+$phpMussel['lang']['label_hide'] = '隐藏';
 $phpMussel['lang']['label_os'] = '目前使用操作系统：';
 $phpMussel['lang']['label_php'] = '目前使用PHP版本：';
 $phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
 $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
+$phpMussel['lang']['label_show'] = '显示';
 $phpMussel['lang']['label_stable'] = '最新稳定：';
 $phpMussel['lang']['label_sysinfo'] = '系统信息：';
 $phpMussel['lang']['label_unstable'] = '最新不稳定：';

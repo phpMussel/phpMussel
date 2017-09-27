@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.25).
+ * This file: Russian language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,10 +143,12 @@ $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel Использован�
 $phpMussel['lang']['label_fmgr_free_space'] = 'Свободное место на диске: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использование диска: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
+$phpMussel['lang']['label_hide'] = 'Скрывать';
 $phpMussel['lang']['label_os'] = 'Используемая операционная система:';
 $phpMussel['lang']['label_php'] = 'Используемая версия PHP:';
 $phpMussel['lang']['label_phpmussel'] = 'Используемая версия phpMussel:';
 $phpMussel['lang']['label_sapi'] = 'Используемая SAPI:';
+$phpMussel['lang']['label_show'] = 'Показать';
 $phpMussel['lang']['label_stable'] = 'Последние стабильный:';
 $phpMussel['lang']['label_sysinfo'] = 'Системная информация:';
 $phpMussel['lang']['label_unstable'] = 'Последние нестабильный:';
