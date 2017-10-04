@@ -490,6 +490,11 @@
  <li>اس بات کی وضاحت کرتا ہے جو تمام مستقبل کے پاس ورڈ اور سیشن کے لئے الگورتھم استعمال کرنا ہے. اختیارات: PASSWORD_DEFAULT (ڈیفالٹ), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 کی ضرورت ہے).</li>
 </ul></div>
 
+<div dir="rtl">"statistics"<br /></div>
+<div dir="rtl"><ul>
+ <li>phpMussel استعمال کے اعداد و شمار کو ٹریک کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (قسم)<br /></div>
 <div dir="rtl">دستخط ترتیب.<br /><br /></div>
 
@@ -1066,4 +1071,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 8 ستمبر 2017 (2017.09.08).</div>
+<div dir="rtl">آخری تازہ کاری: 3 اکتوبر 2017 (2017.10.03).</div>

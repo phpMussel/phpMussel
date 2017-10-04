@@ -439,6 +439,9 @@ General configuración para phpMussel.
 "default_algo"
 - Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP >= 7.2.0).
 
+"statistics"
+- ¿Seguir las estadísticas de uso de phpMussel? True = Sí; False = No [Predefinido].
+
 #### "signatures" (Categoría)
 Configuración de firmas.
 
@@ -917,4 +920,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Actualización: 8 Septiembre 2017 (2017.09.08).
+Última Actualización: 3 Octubre 2017 (2017.10.03).

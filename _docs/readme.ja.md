@@ -439,6 +439,9 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 "default_algo" （ディフォールト・アルゴ）
 - 将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。
 
+"statistics" （スタティスティックス/統計）
+- phpMussel使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。
+
 #### "signatures" （シグネチャーズ、​カテゴリ）
 シグネチャの設定。
 
@@ -917,4 +920,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年9月8日。
+最終アップデート：2017年10月3日。

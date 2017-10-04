@@ -439,6 +439,9 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 『default_algo』
 - 定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
+『statistics』
+- 跟踪phpMussel使用情況統計？​True（真）=跟踪； False（假）=不跟踪【標準】。
+
 #### 『signatures』 （類別）
 簽名配置。
 
@@ -917,4 +920,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2017年9月8日。
+最後更新：2017年10月3日。

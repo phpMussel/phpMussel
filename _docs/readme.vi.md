@@ -431,13 +431,16 @@ Cấu hình chung cho phpMussel.
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "disable_webfonts"
-- Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
+- Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].
 
 "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
 
 "default_algo"
 - Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP >= 7.2.0).
+
+"statistics"
+- Giám sát thống kê sử dụng phpMussel? True = Vâng; False = Không [Mặc định].
 
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -917,4 +920,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 8 Tháng Chín 2017 (2017.09.08).
+Lần cuối cập nhật: 3 Tháng Mười 2017 (2017.10.03).
