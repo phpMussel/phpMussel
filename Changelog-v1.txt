@@ -45,6 +45,16 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   various files attributed to phpMussel and its components. Also did some
   general refactoring of the front-end code.
 
+- [2017.09.27; Bug-fix; Maikuolan]: See issue #138 (update bug preventing some
+  specific components from updating at all).
+
+- [2017.10.02; Sub-minor code change; Maikuolan]: Slightly improved the way
+  that the front-end logs page behaves.
+
+- [2017.10.03; NEW FEATURE; Maikuolan]: Added a new page to the front-end for
+  viewing phpMussel usage statistics, and a corresponding configuration
+  directive to enable/disable tracking phpMussel usage statistics.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

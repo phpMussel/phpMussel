@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.27).
+ * This file: Front-end handler (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2018,6 +2018,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     /** Load pie chart template file upon request. */
     $phpMussel['PieFile'] = empty($phpMussel['QueryVars']['show']) ? '' : $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_piechart.html'));
 
+    /** Set vault path for pie chart display. */
+    $phpMussel['FE']['VaultPath'] = str_replace("\\", '/', $phpMussel['Vault']) . '*';
+
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = array('Files', 'Components', 'Names');
 
@@ -2369,6 +2372,69 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
 }
 
+/** Statistics. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics') {
+
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_statistics'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_statistics']
+    );
+
+    /** Display how to enable statistics if currently disabled. */
+    if (!$phpMussel['Config']['general']['statistics']) {
+        $phpMussel['FE']['state_msg'] .= '<span class="txtRd">' . $phpMussel['lang']['tip_statistics_disabled'] . '</span><br />';
+    }
+
+    /** Fetch statistics cache data. */
+    $phpMussel['Cache'] = file_exists($phpMussel['Vault'] . 'cache.dat') ? unserialize($phpMussel['ReadFile']($phpMussel['Vault'] . 'cache.dat')) : array();
+
+    /** Statistics have been counted since... */
+    if (empty($phpMussel['Cache']['Statistics']['Other-Since'])) {
+        $phpMussel['FE']['Other-Since'] = '<span class="s">-</span>';
+    } else {
+        $phpMussel['FE']['Other-Since'] = '<span class="s">' . $phpMussel['TimeFormat'](
+            $phpMussel['Cache']['Statistics']['Other-Since'],
+            $phpMussel['Config']['general']['timeFormat']
+        ) . '</span>';
+    }
+
+    /** Active signature files. */
+    if (empty($phpMussel['Config']['signatures']['Active'])) {
+        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['Number_L10N'](0) . '</span>';
+    } else {
+        $phpMussel['FE']['Other-Active'] = 0;
+        $phpMussel['StatWorking'] = explode(',', $phpMussel['Config']['signatures']['Active']);
+        array_walk($phpMussel['StatWorking'], function ($SigFile) use (&$phpMussel) {
+            if (!empty($SigFile) && is_readable($phpMussel['sigPath'] . $SigFile)) {
+                $phpMussel['FE']['Other-Active']++;
+            }
+        });
+        $phpMussel['StatColour'] = $phpMussel['FE']['Other-Active'] ? 'txtGn' : 'txtRd';
+        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['Number_L10N'](
+            $phpMussel['FE']['Other-Active']
+        ) . '</span>';
+    }
+
+    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+
+    /** Parse output. */
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_statistics.html'))
+    );
+
+    /** Send output. */
+    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+
+    /** Cleanup. */
+    unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Cache']);
+
+}
+
 /** Logs. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
 
@@ -2395,16 +2461,30 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         'Out' => ''
     );
 
+    /** Text mode switch link base. */
+    $phpMussel['FE']['TextModeSwitchLink'] = '';
+
+    /** How to display the log data? */
+    if (empty($phpMussel['QueryVars']['text-mode']) || $phpMussel['QueryVars']['text-mode'] === 'false') {
+        $phpMussel['FE']['TextModeLinks'] = 'false';
+        $phpMussel['FE']['TextMode'] = false;
+    } else {
+        $phpMussel['FE']['TextModeLinks'] = 'true';
+        $phpMussel['FE']['TextMode'] = true;
+    }
+
     /** Define log data. */
     if (empty($phpMussel['QueryVars']['logfile'])) {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_no_logfile_selected'];
     } elseif (empty($phpMussel['FE']['LogFiles']['Files'][$phpMussel['QueryVars']['logfile']])) {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_logfile_doesnt_exist'];
     } else {
-        $phpMussel['FE']['logfileData'] = str_replace(
-            array('<', '>', "\r", "\n"),
-            array('&lt;', '&gt;', '', "<br />\n"),
-            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile'])
+        $phpMussel['FE']['TextModeSwitchLink'] .= '?phpmussel-page=logs&logfile=' . $phpMussel['QueryVars']['logfile'] . '&text-mode=';
+        $phpMussel['FE']['logfileData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']);
+        $phpMussel['FE']['logfileData'] = $phpMussel['FE']['TextMode'] ? str_replace(
+            array('<', '>', "\r", "\n"), array('&lt;', '&gt;', '', "<br />\n"), $phpMussel['FE']['logfileData']
+        ) : str_replace(
+            array('<', '>', "\r"), array('&lt;', '&gt;', ''), $phpMussel['FE']['logfileData']
         );
         $phpMussel['FE']['mod_class_nav'] = ' big';
         $phpMussel['FE']['mod_class_right'] = ' extend';
@@ -2413,13 +2493,28 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['FE']['mod_class_nav'] = ' extend';
         $phpMussel['FE']['mod_class_right'] = ' big';
     }
+    if (empty($phpMussel['FE']['TextModeSwitchLink'])) {
+        $phpMussel['FE']['TextModeSwitchLink'] .= '?phpmussel-page=logs&text-mode=';
+    }
+
+    /** Text mode switch link formatted. */
+    $phpMussel['FE']['TextModeSwitchLink'] = sprintf(
+        $phpMussel['lang']['link_textmode'],
+        $phpMussel['FE']['TextModeSwitchLink']
+    );
+
+    /** Prepare log data formatting. */
+    if (!$phpMussel['FE']['TextMode']) {
+        $phpMussel['FE']['logfileData'] = '<textarea readonly>' . $phpMussel['FE']['logfileData'] . '</textarea>';
+    }
 
     /** Define logfile list. */
     array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel) {
         $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
-            '            <a href="?phpmussel-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
+            '            <a href="?phpmussel-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
             $Arr['Filename'],
-            $Arr['Filesize']
+            $Arr['Filesize'],
+            $phpMussel['FE']['TextModeLinks']
         ) . "\n";
     });
 

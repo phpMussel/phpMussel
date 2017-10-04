@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.27).
+ * This file: Functions file (last modified: 2017.10.04).
  */
 
 /**
@@ -5511,6 +5511,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                 $phpMussel['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
             }
             if (isset($phpMussel['Components']['Components'])) {
+                $Component = $phpMussel['lang']['field_filetype_unknown'];
                 $ThisNameFixed = str_replace("\\", '/', $ThisName);
                 if (isset($phpMussel['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]])) {
@@ -5526,12 +5527,17 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     $Component = $phpMussel['lang']['link_config'];
                 } else {
                     $LastFour = strtolower(substr($ThisNameFixed, -4));
-                    if ($LastFour === '.log' || $LastFour === '.txt') {
+                    if (
+                        $LastFour === '.tmp' ||
+                        $ThisNameFixed === 'index.dat' ||
+                        $ThisNameFixed === 'fe_assets/frontend.dat' ||
+                        substr($ThisNameFixed, -9) === '.rollback'
+                    ) {
+                        $Component = $phpMussel['lang']['label_fmgr_cache_data'];
+                    } elseif ($LastFour === '.log' || $LastFour === '.txt') {
                         $Component = $phpMussel['lang']['link_logs'];
                     } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
-                        $Component = $phpMussel['ParseVars'](array('EXT' => 'YAML/DAT'), $phpMussel['lang']['field_filetype_info']);
-                    } else {
-                        $Component = $phpMussel['lang']['field_filetype_unknown'];
+                        $Component = $phpMussel['lang']['label_fmgr_updates_metadata'];
                     }
                 }
                 if (!isset($phpMussel['Components']['Components'][$Component])) {

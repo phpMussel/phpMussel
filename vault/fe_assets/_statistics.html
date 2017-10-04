@@ -1,0 +1,69 @@
+<table>
+<tr>
+    <td class="nav big">
+{nav}    </td>
+    <td class="right extend">
+        <div class="s">{state_msg}</div>
+        <table><tr><td class="spanner">
+            <form action="?phpmussel-page=statistics" method="POST">
+                <input name="ClearStats" type="hidden" value="1" />
+                <input type="submit" value="{field_clear_all}" class="auto" />
+            </form>
+        </td></tr></table>
+        <table>
+            <tr><td class="center h4f" colspan="2"><div class="s">Web</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{label_events}</div></td>
+                <td class="h3f">{Web-Events}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_scanned_uploads}</div></td>
+                <td class="h3f">{Web-Scanned}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_blocked}</div></td>
+                <td class="h3f">{Web-Blocked}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_quarantined}</div></td>
+                <td class="h3f">{Web-Quarantined}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">CLI</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{label_events}</div></td>
+                <td class="h3f">{CLI-Events}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_scanned_objects}</div></td>
+                <td class="h3f">{CLI-Scanned}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_flagged}</div></td>
+                <td class="h3f">{CLI-Flagged}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">API</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{label_events}</div></td>
+                <td class="h3f">{API-Events}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_scanned_objects}</div></td>
+                <td class="h3f">{API-Scanned}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_flagged}</div></td>
+                <td class="h3f">{API-Flagged}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-Since}</div></td>
+                <td class="h3f">{Other-Since}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-Active}</div></td>
+                <td class="h3f">{Other-Active}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>

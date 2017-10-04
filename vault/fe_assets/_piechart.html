@@ -11,7 +11,8 @@
 {PieChartValues}
                     ]);
                     var options = {
-                        title: '{label_fmgr_disk_usage}',
+                        title: '{label_fmgr_disk_usage} ({VaultPath})',
+                        sliceVisibilityThreshold: .001,
                         backgroundColor: 'none'
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
