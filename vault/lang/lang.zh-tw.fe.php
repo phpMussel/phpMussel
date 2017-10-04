@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.27).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = '多長時間應該phpM
 $phpMussel['lang']['config_general_scan_kills'] = '文件為記錄在所有受阻或已殺上傳。​指定一個文件名，​或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log'] = '文件為記錄在所有掃描結果。​指定一個文件名，​或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '文件為記錄在所有掃描結果（它採用序列化格式）。​指定一個文件名，​或留空以關閉。';
+$phpMussel['lang']['config_general_statistics'] = '跟踪phpMussel使用情況統計？​True（真）=跟踪； False（假）=不跟踪【標準】。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel使用的日期符號格式。​可根據要求增加附加選項。';
 $phpMussel['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $phpMussel['lang']['config_general_timezone'] = '您的時區。';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（見上面的說明�
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作為標準，​phpMussel將限制什麼文件它掃描通過使用【Virus Total API】為那些文件它考慮作為『可疑』。​您可以可選調整這個局限性通過修改的<code>vt_suspicion_level</code>指令數值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel應使用掃描結果使用【Virus Total API】作為檢測或作為檢測重量嗎？​這個指令存在，​因為，​雖說掃描一個文件使用多AV引擎（例如怎麼樣VirusTotal做） 應結果有一個增加檢測率（和因此在一個更惡意文件被抓），​它可以還結果有更假陽性，​和因此，​為某些情況，​掃描結果可能被更好使用作為一個置信得分而不是作為一個明確結論。​如果一個數值的<code>0</code>是使用，​掃描結果使用【Virus Total API】將會適用作為檢測，​和因此，​如果任何AV引擎使用通過VirusTotal標致文件被掃描作為惡意，​phpMussel將考慮文件作為惡意。​如果任何其他數值是使用，​掃描結果使用【Virus Total API】將會適用作為檢測重量，​和因此，​數的AV引擎使用通過VirusTotal標致文件被掃描作為惡意將服務作為一個置信得分（或檢測重量） 為如果文件被掃描應會考慮惡意通過phpMussel（數值使用將代表最低限度的置信得分或重量需要以被考慮惡意）。​一個數值的<code>0</code>是使用作為標準。';
 $phpMussel['lang']['field_activate'] = '啟用';
+$phpMussel['lang']['field_clear_all'] = '撤銷所有';
 $phpMussel['lang']['field_component'] = '組件';
 $phpMussel['lang']['field_create_new_account'] = '創建新賬戶';
 $phpMussel['lang']['field_deactivate'] = '停用';
@@ -138,16 +140,27 @@ $phpMussel['lang']['field_username'] = '用戶名';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '請登錄以繼續。';
 $phpMussel['lang']['label_active_config_file'] = '活動配置文件：';
+$phpMussel['lang']['label_blocked'] = '上傳已阻止';
 $phpMussel['lang']['label_branch'] = '分支最新穩定：';
+$phpMussel['lang']['label_events'] = '掃描事件';
+$phpMussel['lang']['label_flagged'] = '對像已標記';
+$phpMussel['lang']['label_fmgr_cache_data'] = '緩存數據和臨時文件';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel使用的磁盤空間： ';
 $phpMussel['lang']['label_fmgr_free_space'] = '可用磁盤空間： ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間： ';
 $phpMussel['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $phpMussel['lang']['label_hide'] = '隱藏';
 $phpMussel['lang']['label_os'] = '目前使用操作系統：';
+$phpMussel['lang']['label_other'] = '其他';
+$phpMussel['lang']['label_other-Active'] = '活動簽名文件';
+$phpMussel['lang']['label_other-Since'] = '開始日期';
 $phpMussel['lang']['label_php'] = '目前使用PHP版本：';
 $phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
+$phpMussel['lang']['label_quarantined'] = '上傳已隔離';
 $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
+$phpMussel['lang']['label_scanned_objects'] = '對像已掃描';
+$phpMussel['lang']['label_scanned_uploads'] = '上傳已掃描';
 $phpMussel['lang']['label_show'] = '顯示';
 $phpMussel['lang']['label_stable'] = '最新穩定：';
 $phpMussel['lang']['label_sysinfo'] = '系統信息：';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = '文檔';
 $phpMussel['lang']['link_file_manager'] = '文件管理器';
 $phpMussel['lang']['link_home'] = '主頁';
 $phpMussel['lang']['link_logs'] = '日誌';
+$phpMussel['lang']['link_statistics'] = '統計';
+$phpMussel['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">簡單</a> – <a href="%1$strue">漂亮</a>';
 $phpMussel['lang']['link_updates'] = '更新';
 $phpMussel['lang']['link_upload_test'] = '上傳測試';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = '登錄失敗！​用�
 $phpMussel['lang']['response_login_password_field_empty'] = '密碼輸入是空的！';
 $phpMussel['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
 $phpMussel['lang']['response_rename_error'] = '無法改名！';
+$phpMussel['lang']['response_statistics_cleared'] = '統計刪除。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $phpMussel['lang']['response_updates_not_installed'] = '組件不安裝！';
 $phpMussel['lang']['response_updates_not_installed_php'] = '組件不安裝（它需要PHP {V}）！';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = '你好，​{username}。​<br />這是phpMus
 $phpMussel['lang']['tip_login'] = '標準用戶名：<span class="txtRd">admin</span> – 標準密碼：<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，​{username}。​<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
 $phpMussel['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh-TW.md#SECTION7">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
+$phpMussel['lang']['tip_statistics'] = '你好，​{username}。​<br />此頁面顯示了有關phpMussel安裝的一些基本使用統計信息。';
+$phpMussel['lang']['tip_statistics_disabled'] = '注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。';
 $phpMussel['lang']['tip_updates'] = '你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新phpMussel的各種組件（核心包，​簽名，​插件，​L10N文件，​等等）。';
 $phpMussel['lang']['tip_upload_test'] = '你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 帳戶';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – 文件管理器';
 $phpMussel['lang']['title_home'] = 'phpMussel – 主頁';
 $phpMussel['lang']['title_login'] = 'phpMussel – 登錄';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日誌';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上傳測試';
 $phpMussel['lang']['warning'] = '警告：';

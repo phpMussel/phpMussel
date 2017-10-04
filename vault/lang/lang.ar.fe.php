@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.27).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'إلى متى يجب �
 $phpMussel['lang']['config_general_scan_kills'] = 'اسم الملف من ملف لتسجيل كل سجلات الملفات التي منعت او اوقفت من .تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $phpMussel['lang']['config_general_scan_log'] = 'اسم الملف لملف تسجيل جميع نتائج المسح. قم بتعيين اسم الملف، أو اتركه فارغا للتعطيل.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'اسم الملف من ملف لتسجيل جميع نتائج المسح إلى (باستخدام تنسيق متسلسل). تحديد اسم الملف، أو اتركه فارغا للتعطيل.';
+$phpMussel['lang']['config_general_statistics'] = 'هل تريد تتبع إحصاءات استخدام phpMussel؟ True = نعم؛ False = لا [افتراضي].';
 $phpMussel['lang']['config_general_timeFormat'] = 'شكل التواريخ المستخدم من قبل phpMussel. ويمكن إضافة خيارات إضافية عند الطلب.';
 $phpMussel['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';
 $phpMussel['lang']['config_general_timezone'] = 'المنطقة الزمنية.';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(انظر الوصف أ
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'افتراضيا، سوف يقوم phpMussel بتقييد الملفات التي تقوم بمسح باستخدام الفيروسات API الكلي لتلك الملفات التي تعتبرها "المشبوهة". يمكنك ضبط اختياريا هذا التقييد عن طريق تغيير قيمة التوجيه "vt_suspicion_level".';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'هل phpMussel يطبق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة أو الممكن كشفها؟ يوجد هذا التوجيه لأنه على الرغم من أن مسح ملف باستخدام محركات متعددة (كما فايروس توتال لا) ينبغي أن يؤدي في معدل اكتشاف زيادة (وبالتالي في عدد أكبر من الملفات الخبيثة الوقوع)، فإنه يمكن أن يؤدي أيضا إلى ارتفاع عدد كاذبة الإيجابيات، وبالتالي، في بعض الظروف، فإن نتائج المسح يمكن الاستفادة بشكل أفضل كما على درجة الثقة بدلا من أن تكون نتيجة محددة. إذا تم استخدام قيمة 0، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة و بالتالي إذا أي محرك تستخدم من قبل الفيروسات مجموع أعلام الملف تم مسحها ضوئيا بأنها خبيثة، وphpMussel النظر في الملف إلى تكون ضارة. إذا تم استخدام أي قيمة أخرى، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما الترجيح الكشف و بالتالي فإن عدد من المحركات المستخدمة من قبل الفيروسات إجمالي هذا العلم الملف تم مسحها ضوئيا بأنها خبيثة سيكون بمثابة نتيجة الثقة (أو الترجيح الكشف) عن ما إذا كان ملف تم مسحها ضوئيا ينبغي النظر الخبيثة التي كتبها phpMussel (القيمة المستخدمة سيمثل الحد الأدنى من الثقة يسجل أو الوزن المطلوب من أجل أن تعتبر ضارة). يتم استخدام قيمة 0 افتراضيا.';
 $phpMussel['lang']['field_activate'] = 'جعله نشطة';
+$phpMussel['lang']['field_clear_all'] = 'امسح الكل';
 $phpMussel['lang']['field_component'] = 'وحدة';
 $phpMussel['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
 $phpMussel['lang']['field_deactivate'] = 'جعلها غير نشطة';
@@ -138,16 +140,27 @@ $phpMussel['lang']['field_username'] = 'اسم المستخدم';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$phpMussel['lang']['label_blocked'] = 'تم حظر التحميلات';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
+$phpMussel['lang']['label_events'] = 'مسح الأحداث';
+$phpMussel['lang']['label_flagged'] = 'تم الإبلاغ عن الكائنات';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel إستخدام القرص: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $phpMussel['lang']['label_hide'] = 'إخفائه';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
+$phpMussel['lang']['label_other'] = 'آخر';
+$phpMussel['lang']['label_other-Active'] = 'ملفات التوقيع النشطة';
+$phpMussel['lang']['label_other-Since'] = 'تاريخ البدء';
 $phpMussel['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';
+$phpMussel['lang']['label_quarantined'] = 'تم عزل وحدات التحميل';
 $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
+$phpMussel['lang']['label_scanned_objects'] = 'الكائنات التي الممسوحة ضوئيا';
+$phpMussel['lang']['label_scanned_uploads'] = 'التحميلات الممسوحة ضوئيا';
 $phpMussel['lang']['label_show'] = 'اظهره';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = 'توثيق';
 $phpMussel['lang']['link_file_manager'] = 'مدير الملفات';
 $phpMussel['lang']['link_home'] = 'الرئيسية';
 $phpMussel['lang']['link_logs'] = 'سجلات';
+$phpMussel['lang']['link_statistics'] = 'الإحصاء';
+$phpMussel['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a>';
 $phpMussel['lang']['link_updates'] = 'التحديثات';
 $phpMussel['lang']['link_upload_test'] = 'تحميل اختبار';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'فشل تسجيل ال�
 $phpMussel['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
+$phpMussel['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $phpMussel['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'وحدة غير مثبت (يتطلب PHP {V})!';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو ال
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
+$phpMussel['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت phpMussel.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
 $phpMussel['lang']['tip_upload_test'] = 'مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – حسابات';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – مدير الملفا�
 $phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';
 $phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
 $phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – الإحصاء';
 $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';
 $phpMussel['lang']['warning'] = 'تحذيرات:';

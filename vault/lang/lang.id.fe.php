@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.27).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Untuk berapa lama haru
 $phpMussel['lang']['config_general_scan_kills'] = 'Nama dari fata untuk mencatat semua rekord dari upload terblok atau terbunuh. Spesifikan nama atau biarkan kosong untuk menonaktifkan.';
 $phpMussel['lang']['config_general_scan_log'] = 'Nama dari file untuk mencatat semua hasil pemindaian. Spesifikasikan nama atau biarkan kosong untuk menonaktifkan.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Nama dari file untuk mencatat semua hasil pemindaian (menggunakan format serial). Spesifikasikan nama atau biarkan kosong untuk menonaktifkan.';
+$phpMussel['lang']['config_general_statistics'] = 'Lacak statistik penggunaan phpMussel? True = Ya; False = Tidak [Default].';
 $phpMussel['lang']['config_general_timeFormat'] = 'Format notasi tanggal/waktu yang digunakan oleh phpMussel. Opsi tambahan dapat ditambahkan atas permintaan.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $phpMussel['lang']['config_general_timezone'] = 'Zona waktu Anda.';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Lihat uraian di atas).
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Secara default, phpMussel akan membatasi file dipindai menggunakan Virus Total API untuk file-file yang dianggap "mencurigakan". Anda dapat menyesuaikan pembatasan ini dengan mengubah nilai direktif <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Apakah Anda ingin phpMussel menerapkan hasil pemindaian menggunakan Virus Total API sebagai deteksi atau deteksi pembobotan? Direktif ini ada, karena, meskipun memindai file menggunakan mesin-mesin kelipatan (sebagai Virus Total melakukannya) harus menghasilkan tingkat deteksi meningkat (dan demikian lebih banyak file berbahaya tertangkap), juga dapat menghasilkan jumlah yang lebih banyak dari positif palsu, dan demikian, dalam kondisi beberapa, hasil pemindaian dapat digunakan lebih efektif sebagai nilai keyakinan daripada daripada sebagai kesimpulan definitif. Jika nilai 0 digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai pendeteksian, dan demikian, jika mesin-mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya, phpMussel akan menganggap file yang berbahaya. Jika nilai lain yang digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai deteksi pembobotan, dan demikian, jumlah mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya akan berfungsi sebagai nilai keyakinan (atau deteksi pembobotan) untuk jika file dipindai harus dianggap berbahaya oleh phpMussel (nilai digunakan akan mewakili nilai keyakinan minimum atau pembobotan minimum diperlukan untuk dianggap berbahaya). Nilai 0 digunakan secara default.';
 $phpMussel['lang']['field_activate'] = 'Mengaktifkan';
+$phpMussel['lang']['field_clear_all'] = 'Cabut semua';
 $phpMussel['lang']['field_component'] = 'Komponen';
 $phpMussel['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $phpMussel['lang']['field_deactivate'] = 'Menonaktifkan';
@@ -138,16 +140,27 @@ $phpMussel['lang']['field_username'] = 'Nama Pengguna';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$phpMussel['lang']['label_blocked'] = 'Upload diblokir';
 $phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
+$phpMussel['lang']['label_events'] = 'Pindai acara';
+$phpMussel['lang']['label_flagged'] = 'Obyek ditandai';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $phpMussel['lang']['label_hide'] = 'Menyembunyikan';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
+$phpMussel['lang']['label_other'] = 'Lain';
+$phpMussel['lang']['label_other-Active'] = 'File tanda tangan aktif';
+$phpMussel['lang']['label_other-Since'] = 'Mulai tanggal';
 $phpMussel['lang']['label_php'] = 'Versi PHP digunakan:';
 $phpMussel['lang']['label_phpmussel'] = 'Versi phpMussel digunakan:';
+$phpMussel['lang']['label_quarantined'] = 'Upload dikarantina';
 $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
+$phpMussel['lang']['label_scanned_objects'] = 'Obyek dipindai';
+$phpMussel['lang']['label_scanned_uploads'] = 'Upload dipindai';
 $phpMussel['lang']['label_show'] = 'Menunjukkan';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = 'Dokumentasi';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
 $phpMussel['lang']['link_home'] = 'Halaman Utama';
 $phpMussel['lang']['link_logs'] = 'Log';
+$phpMussel['lang']['link_statistics'] = 'Statistik';
+$phpMussel['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhana</a> – <a href="%1$strue">Terformat</a>';
 $phpMussel['lang']['link_updates'] = 'Pembaruan';
 $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama p
 $phpMussel['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
+$phpMussel['lang']['response_statistics_cleared'] = 'Statistik dicabut';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'Komponen tidak diinstal (membutuhkan PHP {V})!';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman uta
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
+$phpMussel['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi phpMussel Anda.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Catatan: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
 $phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';
 $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – Statistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
 $phpMussel['lang']['warning'] = 'Peringatan:';

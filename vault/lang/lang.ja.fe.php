@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.27).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMusselはスキャ�
 $phpMussel['lang']['config_general_scan_kills'] = 'ブロックしたか削除したアップロードの全てを記録するファイのファイル名。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を記録するファイルのファイル名。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
+$phpMussel['lang']['config_general_statistics'] = 'phpMussel使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。';
 $phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（上記の説明を�
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'デフォルト設定では、​phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。​<code>vt_suspicion_level</code>ディレクティブを編集することのより、​この制限を変更することが可能です。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、​検出の重み付けとして扱うべきか？​複数のエンジン（Virus Totalのように）を使用したスキャニングは、​検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、​このディレクティブが存在します。​したがって、​スキャニング結果は、​決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。​値が０の場合、​Virus Total APIを使ったスキャンは検出として扱われ、​Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、​phpMusselもマルウェアと判断します。​その他の値の場合は結果は検出の重み付けとなり、​スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、​あるいは重み）。​デフォルト値は０です。';
 $phpMussel['lang']['field_activate'] = 'アクティブにする';
+$phpMussel['lang']['field_clear_all'] = 'すべてキャンセル';
 $phpMussel['lang']['field_component'] = 'コンポーネント';
 $phpMussel['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $phpMussel['lang']['field_deactivate'] = '非アクティブにする';
@@ -138,16 +140,27 @@ $phpMussel['lang']['field_username'] = 'ユーザー名';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$phpMussel['lang']['label_blocked'] = 'ブロックされたアップロード';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
+$phpMussel['lang']['label_events'] = 'スキャンイベント';
+$phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量： ';
 $phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $phpMussel['lang']['label_hide'] = '隠す';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
+$phpMussel['lang']['label_other'] = 'その他';
+$phpMussel['lang']['label_other-Active'] = 'アクティブなシグネチャ・ファイル';
+$phpMussel['lang']['label_other-Since'] = '開始日';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
+$phpMussel['lang']['label_quarantined'] = '隔離されたアップロード';
 $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
+$phpMussel['lang']['label_scanned_objects'] = 'スキャンされたオブジェクト';
+$phpMussel['lang']['label_scanned_uploads'] = 'スキャンしたアップロード';
 $phpMussel['lang']['label_show'] = '表示する';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = 'ドキュメンテーション';
 $phpMussel['lang']['link_file_manager'] = 'ファイル・マネージャー';
 $phpMussel['lang']['link_home'] = 'ホーム';
 $phpMussel['lang']['link_logs'] = 'ロゴス';
+$phpMussel['lang']['link_statistics'] = '統計';
+$phpMussel['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a>';
 $phpMussel['lang']['link_updates'] = 'アップデート';
 $phpMussel['lang']['link_upload_test'] = 'アップロード・テスト';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'ログイン失敗！�
 $phpMussel['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
+$phpMussel['lang']['response_statistics_cleared'] = '統計はクリアされました。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $phpMussel['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'コンポーネントのインストールされていません（PHP {V}が必要です）！';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = 'こんにちは、​{username}。​<br />こ
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
 $phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';
+$phpMussel['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br />このページには、phpMusselのインストールに関する基本的な使用状況の統計情報が表示されます。';
+$phpMussel['lang']['tip_statistics_disabled'] = '注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_updates'] = 'こんにちは、​{username}。​<br />アップデート・ページは、​phpMusselのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​プラグイン、​L10Nファイル、​等）。';
 $phpMussel['lang']['tip_upload_test'] = 'こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – アカウント';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – ファイル・マネ�
 $phpMussel['lang']['title_home'] = 'phpMussel – ホーム';
 $phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
 $phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
 $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';
 $phpMussel['lang']['warning'] = '警告：';

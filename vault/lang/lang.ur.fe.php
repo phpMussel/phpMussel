@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.27).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'کب تک phpMussel س
 $phpMussel['lang']['config_general_scan_kills'] = 'فائل کا نام مسل کو مسدود یا ہلاک کر کے اپ لوڈز کے تمام ریکارڈ لاگ ان کریں. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $phpMussel['lang']['config_general_scan_log'] = 'فائل کا نام مسل تمام سکیننگ نتائج کے لاگ ان کرنے کے لئے. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'فائل کا نام مسل تمام سکیننگ کے نتائج کو (serialized فارمیٹ استعمال کرتے ہوئے) لاگ ان کریں. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
+$phpMussel['lang']['config_general_statistics'] = 'phpMussel استعمال کے اعداد و شمار کو ٹریک کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel کی طرف سے استعمال کی تاریخوں کا فارم. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے.';
 $phpMussel['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $phpMussel['lang']['config_general_timezone'] = 'آپ کے ٹائم زون.';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(مندرجہ بالا 
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'بطور ڈیفالٹ، phpMussel جس فائلوں کی یہ "مشکوک" سمجھتی ہے کہ ان فائلوں کو وائرس کل API کا استعمال کرتے ہوئے کو سکین کرتا ہے کو محدود کریں گے. آپ اختیاری <code> vt_suspicion_level </code> کے ہدایت کی قدر میں تبدیلی کرتے ہوئے اس پابندی کو ایڈجسٹ کر سکتے ہیں.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel detections کر کے طور پر یا پتہ لگانے weighting کے طور وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کو درخواست دینی چاہیے؟ (اور بدنیتی پر مبنی فائلوں کی ایک بڑی تعداد پکڑے جانے لہذا میں) ایک سے زیادہ کے انجن کو استعمال کرتے ہوئے (جیسا وائرس کل کرتا ہے) ایک فائل کو سکین ایک اضافہ کا پتہ لگانے کی شرح کے نتیجے چاہئے، اگرچہ، یہ بھی جھوٹے کی زیادہ تعداد کے نتیجے کر سکتے ہیں، کیونکہ یہ ہدایت موجود ہے، مثبت ہے، اور اس وجہ سے، کچھ حالات میں، سکیننگ کے نتائج بہتر ایک حتمی نتیجے پر اس اعتماد کا سکور کے طور پر کی بجائے استعمال کیا جا سکتا ہے. 0 کی قدر استعمال کیا جاتا ہے تو، وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کسی بھی انجن وائرس کل پرچم فائل کو بدنیتی پر مبنی ہونے کے طور پر سکین کیا جا رہا ہے کی طرف سے استعمال کیا جاتا ہے تو، detections کر کے طور پر لاگو کیا جائے گا، اور اس وجہ سے، phpMussel بدنیتی پر مبنی ہونے کے لئے فائل پر غور کریں گے . کسی دوسرے کی قدر استعمال کیا جاتا ہے تو، وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کا پتہ لگانے weighting کے طور پر لاگو کیا جائے گا، اور اس وجہ سے، فائل پرچم کہ وائرس کل کی طرف سے استعمال کے انجن کی تعداد سکین کیا جا رہا ہے درنساوناپورن ہونے (ایک اعتماد سکور کے طور پر کام کرے گا کے طور پر یا پتہ لگانے weighting کے) کے لئے ہے یا نہیں کی فائل کو سکین کیا جا رہا phpMussel طرف بدنیتی پر مبنی سمجھا جانا چاہئے (استعمال کیا کم از کم اعتماد کی نمائندگی کریں گے ویلیو سکور یا ترتیب میں کی ضرورت وزن بدنیتی پر مبنی سمجھا جائے). 0 کی قدر سے طے شدہ کی طرف سے استعمال کیا جاتا ہے.';
 $phpMussel['lang']['field_activate'] = 'فعال کریں';
+$phpMussel['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $phpMussel['lang']['field_component'] = 'اجزاء';
 $phpMussel['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
 $phpMussel['lang']['field_deactivate'] = 'بے عمل';
@@ -138,16 +140,27 @@ $phpMussel['lang']['field_username'] = 'صارف کا نام';
 $phpMussel['lang']['field_your_version'] = 'آپ کے ورژن';
 $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
+$phpMussel['lang']['label_blocked'] = 'بلاک اپ لوڈ';
 $phpMussel['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
+$phpMussel['lang']['label_events'] = 'واقعات اسکین کریں';
+$phpMussel['lang']['label_flagged'] = 'نشان لگا دیا گیا آبجیکٹ';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel ڈسک استعمال: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $phpMussel['lang']['label_hide'] = 'چھپائیں';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
+$phpMussel['lang']['label_other'] = 'دیگر';
+$phpMussel['lang']['label_other-Active'] = 'فعال دستخط فائلیں';
+$phpMussel['lang']['label_other-Since'] = 'شروع کرنے کی تاریخ';
 $phpMussel['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel ورژن استعمال کیا:';
+$phpMussel['lang']['label_quarantined'] = 'قرنطین میں اپ لوڈ';
 $phpMussel['lang']['label_sapi'] = 'SAPI استعمال کیا:';
+$phpMussel['lang']['label_scanned_objects'] = 'سکین کیا آبجیکٹ';
+$phpMussel['lang']['label_scanned_uploads'] = 'سکین کیا اپ لوڈ';
 $phpMussel['lang']['label_show'] = 'دکھائیں';
 $phpMussel['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $phpMussel['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = 'دستاویزی';
 $phpMussel['lang']['link_file_manager'] = 'فائل منیجر';
 $phpMussel['lang']['link_home'] = 'ہوم';
 $phpMussel['lang']['link_logs'] = 'لاگز';
+$phpMussel['lang']['link_statistics'] = 'اعداد و شمار';
+$phpMussel['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse">سادہ</a> – <a href="%1$strue">خوبصورت</a>';
 $phpMussel['lang']['link_updates'] = 'تازہ ترین معلومات کے';
 $phpMussel['lang']['link_upload_test'] = 'اپ لوڈ کریں ٹیسٹ';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'منتخب شدہ لاگ فائل موجود نہیں ہے!';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'لاگ ان ناکام�
 $phpMussel['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدان خالی!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
 $phpMussel['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
+$phpMussel['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'پہلے سے اپ ڈیٹ.';
 $phpMussel['lang']['response_updates_not_installed'] = 'اجزاء انسٹال نہیں!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'اجزاء انسٹال نہیں (PHP ضرورت ہوتی {V})!';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ phpMussel س�
 $phpMussel['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ur.md#SECTION7">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
+$phpMussel['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ آپ کے phpMussel کی تنصیب کے لئے کچھ استعمال کے اعداد و شمار ظاہر کرتا ہے.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $phpMussel['lang']['tip_upload_test'] = 'ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – اکاؤنٹس';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – فائل مینیجر'
 $phpMussel['lang']['title_home'] = 'phpMussel – ہوم';
 $phpMussel['lang']['title_login'] = 'phpMussel – لاگ ان';
 $phpMussel['lang']['title_logs'] = 'phpMussel – لاگز';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – اعداد و شمار';
 $phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلومات کے';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';
 $phpMussel['lang']['warning'] = 'انتباہ:';

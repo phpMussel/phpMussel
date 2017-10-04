@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.27).
+ * This file: Korean language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -40,9 +40,9 @@ $phpMussel['lang']['config_files_filesize_archives'] = '파일 크기 블랙리�
 $phpMussel['lang']['config_files_filesize_limit'] = '파일 크기 제한의 단위는 KB입니다. 65536 = 64MB (Default / 기본 설정); 0 = 제한하지 않습니다 (제한없이 항상 그레이리스트 화) 양수이면 무엇이든 상관 없습니다. PHP 설정에서 메모리에 제한이 있고, 업로드 파일 크기 제한이 설정되어있는 경우에 효과적입니다.';
 $phpMussel['lang']['config_files_filesize_response'] = '최대 크기보다 큰 파일을 처리하는 방법에 관한 것입니다. <code>false</code> = Whitelist/화이트리스트; <code>true</code> = Blacklist/블랙리스트 (Default / 기본 설정).';
 $phpMussel['lang']['config_files_filetype_archives'] = '파일 타입 블랙리스트/화이트리스트 화를 아카이브의 컨텐츠에 반입 여부? <code>false</code> = 아니오 (단지 그레이리스트 모두) (Default / 기본 설정); <code>true</code> = 예.';
-$phpMussel['lang']['config_files_filetype_blacklist'] = '파일 유형 블랙리스트:';
-$phpMussel['lang']['config_files_filetype_greylist'] = '파일 유형 그레이리스트:';
-$phpMussel['lang']['config_files_filetype_whitelist'] = '시스템이 특정 유형의 파일 만 업로드를 허용하거나 거절하는 경우 파일 유형을 적절히 화이트리스트, 블랙리스트, 그레이리스트로 분류 해두면 파일 유형에 튀겨 진 파일은 스캔을 건너 뛸 수 때문에 속도로 연결됩니다. 형식은 CSV (쉼표로 구분)입니다. 목록에 의하지 않고 모두를 검사 할 경우 변수는 빈 상태로 유지하고 화이트리스트 / 블랙리스트 / 그레이리스트를 해제합니다. 프로세스의 논리적 순서 : 파일 형식이 화이트리스트에 포함되어 있으면, 스캔하지 않고 블록하지 않고 블랙리스트 및 그레이리스트에 체크를하지 않습니다. 파일 형식이 블랙리스트에 있으면 스캔하지 않고 즉시 차단하고 그레이리스트에 체크를하지 않습니다. 회색 목록이 비어 또는 그레이리스트가 하늘이 아닌 한편 그 파일 타입이 있으면 정상적으로 스캔 차단 여부를 판단합니다. 그레이리스트가 하늘이 아닌 한편 그 파일 유형이 포함되어 있지 않으면 블랙리스트와 같은 취급을 할 수 있고 스캔없이 차단합니다. 파일 유형 화이트리스트:';
+$phpMussel['lang']['config_files_filetype_blacklist'] = '파일 유형 블랙리스트 :';
+$phpMussel['lang']['config_files_filetype_greylist'] = '파일 유형 그레이리스트 :';
+$phpMussel['lang']['config_files_filetype_whitelist'] = '시스템이 특정 유형의 파일 만 업로드를 허용하거나 거절하는 경우 파일 유형을 적절히 화이트리스트, 블랙리스트, 그레이리스트로 분류 해두면 파일 유형에 튀겨 진 파일은 스캔을 건너 뛸 수 때문에 속도로 연결됩니다. 형식은 CSV (쉼표로 구분)입니다. 목록에 의하지 않고 모두를 검사 할 경우 변수는 빈 상태로 유지하고 화이트리스트 / 블랙리스트 / 그레이리스트를 해제합니다. 프로세스의 논리적 순서 : 파일 형식이 화이트리스트에 포함되어 있으면, 스캔하지 않고 블록하지 않고 블랙리스트 및 그레이리스트에 체크를하지 않습니다. 파일 형식이 블랙리스트에 있으면 스캔하지 않고 즉시 차단하고 그레이리스트에 체크를하지 않습니다. 회색 목록이 비어 또는 그레이리스트가 하늘이 아닌 한편 그 파일 타입이 있으면 정상적으로 스캔 차단 여부를 판단합니다. 그레이리스트가 하늘이 아닌 한편 그 파일 유형이 포함되어 있지 않으면 블랙리스트와 같은 취급을 할 수 있고 스캔없이 차단합니다. 파일 유형 화이트리스트 :';
 $phpMussel['lang']['config_files_max_recursion'] = '아카이브에 대한 최대 재귀 깊이입니다. 기본 설정 = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = '한 번에 스캔 할 수있는 업로드 파일 수 제한으로이를 초과하면 스캔을 중단하고 사용자에게 그 사실을 알리고 논리적 공격으로부터 보호 역할을합니다. 시스템과 CMS가 DDoS 공격을 만나 phpMussel가 오버로드하여 PHP 프로세스에 지장을 초래하는 일이 없도록하기 위해서입니다. 권장 수는 10이지만, 하드웨어의 속도에 따라 더 이상 / 이하이 좋은 것도있을 것입니다. 이 숫자는 아카이브의 내용을 포함하지 않는 것을 기억하십시오.';
 $phpMussel['lang']['config_general_cleanup'] = '처음 업로드 후 변수 및 캐시 설정을 클리어 여부에 대한 스크립트입니다. <code>false</code> (가짜) = 아니오;<code>true</code> (진정한) = 예 (Default / 기본 설정). 처음 업로드 스캐닝 이외로 사용할 수 없으면,<code>true</code> (참)로 메모리 사용량을 최소화합니다. 사용하는 경우,<code>false</code> (가짜)으로 메모리에 불필요한 중복 데이터를 다시로드하는 것을 방지합니다. 일반적으로<code>true</code> (진정한). 로 설정하고 있지만, 처음 업로드 스캐닝에 대해서만 사용할 수 없음을 기억하십시오. CLI 모드에서 영향을주지 않습니다.';
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMussel는 스캐닝
 $phpMussel['lang']['config_general_scan_kills'] = '차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
 $phpMussel['lang']['config_general_scan_log'] = '전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름 지정하거나, 해제하려면 비워하십시오.';
+$phpMussel['lang']['config_general_statistics'] = 'phpMussel 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
 $phpMussel['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $phpMussel['lang']['config_general_timezone'] = '귀하의 시간대.';
@@ -96,6 +97,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(위의 설명 참조).
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '기본 설정은 phpMussel이 Virus Total API를 사용하여 스캔 파일 (疑がわし 주물)에 제한이 있습니다. <code>vt_suspicion_level</code> 지시문을 편집 할 더, 이 제한을 변경할 수 있습니다.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel이 Virus Total API를 사용한 스캐닝 결과를 감지으로 대우하거나, 검색 가중치로 취급 할 것인가? 여러 엔진 (Virus Total처럼)을 사용한 스캐닝은 검색 속도 향상 (더 많은 악성 코드가 감지)을 가져다 한편 오진의 증가도 발생하므로이 지시어가 존재합니다. 따라서 스캐닝 결과는 결정적인 판단이 아니라 신뢰 점수로 사용하는 것이 적절한 경우도 있습니다. 값이 0이면 Virus Total API를 사용한 검색은 검색으로 처리되어 Virus Total 엔진이 악성 코드 및 플래그가 지정된 파일은 phpMussel도 악성 코드로 판단합니다. 다른 값의 경우 결과는 검출 가중되고, 스캔 된 파일이 악성 코드 여부 phpMussel가 결정하는 신뢰 점수 (또는 감지 가중치)입니다 (값은 악성이라고 판단하기위한 최소 신뢰 점수 또는 가중치). 기본값은 0입니다.';
 $phpMussel['lang']['field_activate'] = '활성화';
+$phpMussel['lang']['field_clear_all'] = '모두 취소';
 $phpMussel['lang']['field_component'] = '구성 요소';
 $phpMussel['lang']['field_create_new_account'] = '새로운 계정 만들기';
 $phpMussel['lang']['field_deactivate'] = '비활성화';
@@ -113,7 +115,7 @@ $phpMussel['lang']['field_install'] = '설치';
 $phpMussel['lang']['field_latest_version'] = '최신 버전';
 $phpMussel['lang']['field_log_in'] = '로그인';
 $phpMussel['lang']['field_more_fields'] = '필드를 추가합니다';
-$phpMussel['lang']['field_new_name'] = '새 이름:';
+$phpMussel['lang']['field_new_name'] = '새 이름 :';
 $phpMussel['lang']['field_ok'] = '승인';
 $phpMussel['lang']['field_options'] = '옵션';
 $phpMussel['lang']['field_password'] = '비밀번호';
@@ -138,19 +140,30 @@ $phpMussel['lang']['field_username'] = '사용자 이름';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$phpMussel['lang']['label_blocked'] = '차단 된 업로드';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
+$phpMussel['lang']['label_events'] = '스캔 이벤트';
+$phpMussel['lang']['label_flagged'] = '신고 된 개체';
+$phpMussel['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $phpMussel['lang']['label_hide'] = '숨기다';
-$phpMussel['lang']['label_os'] = '사용 된 운영 체제:';
-$phpMussel['lang']['label_php'] = '사용 된 PHP 버전:';
-$phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전:';
-$phpMussel['lang']['label_sapi'] = '사용 된 SAPI:';
+$phpMussel['lang']['label_os'] = '사용 된 운영 체제 :';
+$phpMussel['lang']['label_other'] = '다른';
+$phpMussel['lang']['label_other-Active'] = '활성 서명 파일';
+$phpMussel['lang']['label_other-Since'] = '시작일';
+$phpMussel['lang']['label_php'] = '사용 된 PHP 버전 :';
+$phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전 :';
+$phpMussel['lang']['label_quarantined'] = '격리 된 업로드';
+$phpMussel['lang']['label_sapi'] = '사용 된 SAPI :';
+$phpMussel['lang']['label_scanned_objects'] = '스캔 한 개체';
+$phpMussel['lang']['label_scanned_uploads'] = '스캔 한 업로드';
 $phpMussel['lang']['label_show'] = '보여';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
-$phpMussel['lang']['label_sysinfo'] = '시스템 정보:';
+$phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';
 $phpMussel['lang']['label_unstable'] = '최신 불안정 :';
 $phpMussel['lang']['link_accounts'] = '계정';
 $phpMussel['lang']['link_config'] = '구성';
@@ -158,6 +171,8 @@ $phpMussel['lang']['link_documentation'] = '문서';
 $phpMussel['lang']['link_file_manager'] = '파일 관리자';
 $phpMussel['lang']['link_home'] = '홈';
 $phpMussel['lang']['link_logs'] = '로고스';
+$phpMussel['lang']['link_statistics'] = '통계';
+$phpMussel['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
 $phpMussel['lang']['link_updates'] = '업데이트';
 $phpMussel['lang']['link_upload_test'] = '업로드 테스트';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지 않습니다!';
@@ -201,6 +216,7 @@ $phpMussel['lang']['response_login_invalid_username'] = '로그인 실패! 사�
 $phpMussel['lang']['response_login_password_field_empty'] = '암호가 비어 있습니다!';
 $phpMussel['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
 $phpMussel['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
+$phpMussel['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '이미 최신 상태입니다.';
 $phpMussel['lang']['response_updates_not_installed'] = '구성 요소 설치되어 있지 않습니다!';
 $phpMussel['lang']['response_updates_not_installed_php'] = '구성 요소 설치되어 있지 않습니다 (PHP {V}가 필요합니다)!';
@@ -230,6 +246,8 @@ $phpMussel['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 ph
 $phpMussel['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
 $phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';
+$phpMussel['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 phpMussel 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
+$phpMussel['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $phpMussel['lang']['tip_upload_test'] = '안녕하세요, {username}.<br />업로드 테스트 페이지 표준 파일 업로드 양식을 포함합니다 파일이 일반적 차단 여부를 테스트 할 수 있습니다.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 계정';
@@ -238,6 +256,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – 파일 관리자';
 $phpMussel['lang']['title_home'] = 'phpMussel – 홈';
 $phpMussel['lang']['title_login'] = 'phpMussel – 로그인';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 로고스';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – 통계';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
 $phpMussel['lang']['warning'] = '경고 :';
