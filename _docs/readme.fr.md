@@ -261,6 +261,7 @@ Fichier | Description
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_upload_test.html | Un modèle HTML pour les tests de téléchargement.
@@ -920,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 3 Octobre 2017 (2017.10.03).
+Dernière mise à jour : 5 Octobre 2017 (2017.10.05).

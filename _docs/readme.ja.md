@@ -261,6 +261,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/_logs.html | フロントエンドのロゴスページのＨＴＭＬテンプレート。
 /vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​は完全なアクセスのためのものです。
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​はログのみにアクセスのためのものです。
+/vault/fe_assets/_statistics.html | フロントエンドの統計ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_upload_test.html | アップロード・テスト・ページのＨＴＭＬテンプレート。
@@ -920,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年10月3日。
+最終アップデート：2017年10月5日。

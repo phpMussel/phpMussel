@@ -261,6 +261,7 @@ Data | Deskripsi
 /vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
 /vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
 /vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
 /vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/_upload_test.html | Template HTML untuk halaman upload test.
@@ -920,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 3 Oktober 2017 (2017.10.03).
+Terakhir Diperbarui: 5 Oktober 2017 (2017.10.05).

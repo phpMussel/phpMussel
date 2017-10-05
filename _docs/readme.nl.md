@@ -261,6 +261,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_upload_test.html | Een HTML sjabloon voor de upload test pagina.
@@ -920,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 3 Oktober 2017 (2017.10.03).
+Laatste Bijgewerkt: 5 Oktober 2017 (2017.10.05).
