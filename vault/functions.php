@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.04).
+ * This file: Functions file (last modified: 2017.10.05).
  */
 
 /**
@@ -5522,7 +5522,9 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     } else {
                         $Component = $phpMussel['Components']['Files'][$ThisNameFixed];
                     }
-                    $Component = $phpMussel['lang']['field_component'] . ' – ' . $Component;
+                    if ($Component === 'phpMussel') {
+                        $Component .= ' (' . $phpMussel['lang']['field_component'] . ')';
+                    }
                 } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
                     $Component = $phpMussel['lang']['link_config'];
                 } else {
@@ -5922,9 +5924,10 @@ $phpMussel['HashAlias'] = function ($Alias, $Data) {
  * Get the appropriate path for a specified asset as per the defined theme.
  *
  * @param string $Asset The asset filename.
+ * @param bool $CanFail Is failure acceptable? (Default: False)
  * @return string The asset path.
  */
-$phpMussel['GetAssetPath'] = function ($Asset) use (&$phpMussel) {
+$phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMussel) {
     if (
         $phpMussel['Config']['template_data']['theme'] !== 'default' &&
         file_exists($phpMussel['Vault'] . 'fe_assets/' . $phpMussel['Config']['template_data']['theme'] . '/' . $Asset)
@@ -5933,6 +5936,9 @@ $phpMussel['GetAssetPath'] = function ($Asset) use (&$phpMussel) {
     }
     if (file_exists($phpMussel['Vault'] . 'fe_assets/' . $Asset)) {
         return $phpMussel['Vault'] . 'fe_assets/' . $Asset;
+    }
+    if ($CanFail) {
+        return '';
     }
     throw new \Exception('Asset not found');
 };

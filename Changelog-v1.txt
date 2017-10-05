@@ -42,8 +42,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.09.27; Minor code change; Maikuolan]: Added a pie chart to the file
   manager, allowing users to visually interpret the footprint imposed by the
-  various files attributed to phpMussel and its components. Also did some
-  general refactoring of the front-end code.
+  various files attributed to phpMussel and its components (requires installing
+  Chart.js via the front-end updates page). Also did some general refactoring
+  of the front-end code.
 
 - [2017.09.27; Bug-fix; Maikuolan]: See issue #138 (update bug preventing some
   specific components from updating at all).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.03).
+ * This file: Front-end handler (last modified: 2017.10.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,11 +97,7 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
         $phpMussel['FileManager-PathSecurityCheck']($phpMussel['QueryVars']['phpmussel-asset']) &&
         !preg_match('~[^0-9a-z._]~i', $phpMussel['QueryVars']['phpmussel-asset'])
     ) {
-        try {
-            $phpMussel['ThisAsset'] = $phpMussel['GetAssetPath']($phpMussel['QueryVars']['phpmussel-asset']);
-        } catch (\Exception $e) {
-            $phpMussel['ThisAsset'] = false;
-        }
+        $phpMussel['ThisAsset'] = $phpMussel['GetAssetPath']($phpMussel['QueryVars']['phpmussel-asset'], true);
         if (
             $phpMussel['ThisAsset'] &&
             is_readable($phpMussel['ThisAsset']) &&
@@ -112,15 +108,21 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
                 $phpMussel['ThisAssetType'] = 'jpg';
             }
             if (preg_match('/^(gif|jpg|png|webp)$/', $phpMussel['ThisAssetType'])) {
-                /** Set asset mime-type. */
+                /** Set asset mime-type (images). */
                 header('Content-Type: image/' . $phpMussel['ThisAssetType']);
+                $phpMussel['Success'] = true;
+            } elseif ($phpMussel['ThisAssetType'] === 'js') {
+                /** Set asset mime-type (JavaScript). */
+                header('Content-Type: text/javascript');
+                $phpMussel['Success'] = true;
+            }
+            if ($phpMussel['Success']) {
                 if (!empty($phpMussel['QueryVars']['theme'])) {
                     /** Prevents needlessly reloading static assets. */
                     header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($phpMussel['ThisAsset'])));
                 }
                 /** Send asset data. */
                 echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
-                $phpMussel['Success'] = true;
             }
         }
     }
@@ -2016,7 +2018,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
     /** Load pie chart template file upon request. */
-    $phpMussel['PieFile'] = empty($phpMussel['QueryVars']['show']) ? '' : $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_piechart.html'));
+    if (empty($phpMussel['QueryVars']['show'])) {
+        $phpMussel['FE']['ChartJSPath'] = $phpMussel['PieFile'] = $phpMussel['PiePath'] = '';
+    } else {
+        if ($phpMussel['PiePath'] = $phpMussel['GetAssetPath']('_chartjs.html', true)) {
+            $phpMussel['PieFile'] = $phpMussel['ReadFile']($phpMussel['PiePath']);
+        } else {
+            $phpMussel['PieFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{PieChartHTML}</div></td></tr>';
+        }
+        $phpMussel['FE']['ChartJSPath'] = $phpMussel['GetAssetPath']('Chart.min.js', true) ? '?phpmussel-asset=Chart.min.js&theme=default' : '';
+    }
 
     /** Set vault path for pie chart display. */
     $phpMussel['FE']['VaultPath'] = str_replace("\\", '/', $phpMussel['Vault']) . '*';
@@ -2272,8 +2283,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         /** Sort pie chart values. */
         arsort($phpMussel['Components']['Components']);
 
-        /** Prepare pie chart string. */
-        $phpMussel['FE']['PieChartValues'] = '';
+        /** Initialise pie chart values. */
+        $phpMussel['FE']['PieChartValues'] = array();
+
+        /** Initialise pie chart labels. */
+        $phpMussel['FE']['PieChartLabels'] = array();
+
+        /** Initialise pie chart colours. */
+        $phpMussel['FE']['PieChartColours'] = array();
+
+        /** Initialise pie chart legend. */
+        $phpMussel['FE']['PieChartHTML'] = '';
 
         /** Building pie chart values. */
         foreach ($phpMussel['Components']['Components'] as $phpMussel['Components']['ThisName'] => $phpMussel['Components']['ThisData']) {
@@ -2283,23 +2303,42 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             $phpMussel['Components']['ThisSize'] = $phpMussel['Components']['ThisData'];
             $phpMussel['FormatFilesize']($phpMussel['Components']['ThisSize']);
             $phpMussel['Components']['ThisName'] .= ' – ' . $phpMussel['Components']['ThisSize'];
-            $phpMussel['FE']['PieChartValues'] .= sprintf(
-                "                        ['%s', %s],\n",
-                $phpMussel['Components']['ThisName'],
-                $phpMussel['Components']['ThisData']
-            );
+            $phpMussel['FE']['PieChartValues'][] = $phpMussel['Components']['ThisData'];
+            $phpMussel['FE']['PieChartLabels'][] = $phpMussel['Components']['ThisName'];
+            if ($phpMussel['PiePath']) {
+                $phpMussel['Components']['ThisColour'] = substr(md5($phpMussel['Components']['ThisName']), 0, 6);
+                $phpMussel['Components']['RGB'] =
+                    hexdec(substr($phpMussel['Components']['ThisColour'], 0, 2)) . ',' .
+                    hexdec(substr($phpMussel['Components']['ThisColour'], 2, 2)) . ',' .
+                    hexdec(substr($phpMussel['Components']['ThisColour'], 4, 2));
+                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour'];
+                $phpMussel['FE']['PieChartHTML'] .=
+                    '<span style="background:linear-gradient(90deg,rgba(' .
+                    $phpMussel['Components']['RGB'] . ',0.3),rgba(' .
+                    $phpMussel['Components']['RGB'] . ',0))"><span style="color:#' .
+                    $phpMussel['Components']['ThisColour'] . '">➖</span> ' .
+                    $phpMussel['Components']['ThisName'] . "</span><br />\n";
+            } else {
+                $phpMussel['FE']['PieChartHTML'] .= '➖ ' . $phpMussel['Components']['ThisName'] . "<br />\n";
+            }
         }
 
-        /** Finalising pie chart string. */
-        $phpMussel['FE']['PieChartValues'] = substr($phpMussel['FE']['PieChartValues'], 0, -2) . "\n";
+        /** Finalise pie chart values. */
+        $phpMussel['FE']['PieChartValues'] = '[' . implode(', ', $phpMussel['FE']['PieChartValues']) . ']';
 
-        /** Finalising pie chart. */
+        /** Finalise pie chart labels. */
+        $phpMussel['FE']['PieChartLabels'] = '["' . implode('", "', $phpMussel['FE']['PieChartLabels']) . '"]';
+
+        /** Finalise pie chart colours. */
+        $phpMussel['FE']['PieChartColours'] = '["' . implode('", "', $phpMussel['FE']['PieChartColours']) . '"]';
+
+        /** Finalise pie chart. */
         $phpMussel['FE']['PieChart'] = $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['PieFile']);
 
     }
 
     /** Cleanup. */
-    unset($phpMussel['PieFile'], $phpMussel['Components']);
+    unset($phpMussel['PieFile'], $phpMussel['PiePath'], $phpMussel['Components']);
 
     /** Process files data. */
     array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
