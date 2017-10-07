@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.05).
+ * This file: Front-end handler (last modified: 2017.10.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1057,8 +1057,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             $phpMussel['Components']['Target'] = $_POST['ID'];
             $phpMussel['Arrayify']($phpMussel['Components']['Target']);
             $phpMussel['FileData'] = array();
+            $phpMussel['Annotations'] = array();
             foreach ($phpMussel['Components']['Target'] as $phpMussel['Components']['ThisTarget']) {
-                if (!isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'])) {
+                if (
+                    !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']) ||
+                    !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Reannotate'])
+                ) {
                     continue;
                 }
                 $phpMussel['Components']['BytesAdded'] = 0;
@@ -1070,14 +1074,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
                 );
                 if (!$phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']) {
-                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] =
-                        $phpMussel['Request']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']);
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['Request'](
+                        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
+                    );
                     if (
                         strtolower(substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'], -2)) === 'gz' &&
                         substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 2) === "\x1f\x8b"
                     ) {
-                        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] =
-                            gzdecode($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']);
+                        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = gzdecode(
+                            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']
+                        );
                     }
                     if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'])) {
                         $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = '-';
@@ -1119,8 +1125,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         !empty($phpMussel['FileData'][$phpMussel['ThisReannotate']]) &&
                         $phpMussel['Components']['OldMeta'] = $phpMussel['FileData'][$phpMussel['ThisReannotate']]
                     ) || (
-                        $phpMussel['FileData'][$phpMussel['ThisReannotate']] = $phpMussel['Components']['OldMeta'] =
-                            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['ThisReannotate'])
+                        $phpMussel['FileData'][$phpMussel['ThisReannotate']] = $phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
+                            $phpMussel['Vault'] . $phpMussel['ThisReannotate']
+                        )
                     )) &&
                     preg_match(
                         "\x01(\n" . preg_quote($phpMussel['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
@@ -1279,7 +1286,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                             });
                             unset($phpMussel['ThisArr']);
                         }
+                        /** Assign updated component annotation. */
                         $phpMussel['FileData'][$phpMussel['ThisReannotate']] = $phpMussel['Components']['NewMeta'];
+                        if (!isset($phpMussel['Annotations'][$phpMussel['ThisReannotate']])) {
+                            $phpMussel['Annotations'][$phpMussel['ThisReannotate']] = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'];
+                        }
                         $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
                         if (
                             empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
@@ -1329,6 +1340,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             }
             /** Update annotations. */
             foreach ($phpMussel['FileData'] as $phpMussel['ThisKey'] => $phpMussel['ThisFile']) {
+                /** Remove superfluous metadata. */
+                if (!empty($phpMussel['Annotations'][$phpMussel['ThisKey']])) {
+                    $phpMussel['ThisFile'] = $phpMussel['Congruency']($phpMussel['ThisFile'], $phpMussel['Annotations'][$phpMussel['ThisKey']]);
+                }
                 $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['ThisKey'], 'w');
                 fwrite($phpMussel['Handle'], $phpMussel['ThisFile']);
                 fclose($phpMussel['Handle']);
@@ -1339,6 +1354,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['ThisName'],
                 $phpMussel['ThisKey'],
                 $phpMussel['ThisFile'],
+                $phpMussel['Annotations'],
                 $phpMussel['FileData'],
                 $phpMussel['ThisFileName'],
                 $phpMussel['Rollback'],
@@ -1384,13 +1400,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['Components']['OldMeta']
                 );
                 array_walk($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
-                    if (
-                        !empty($ThisFile) &&
-                        file_exists($phpMussel['Vault'] . $ThisFile) &&
-                        $phpMussel['Traverse']($ThisFile)
-                    ) {
-                        $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
-                        unlink($phpMussel['Vault'] . $ThisFile);
+                    if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
+                        if (file_exists($phpMussel['Vault'] . $ThisFile)) {
+                            $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
+                            unlink($phpMussel['Vault'] . $ThisFile);
+                        }
+                        if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
+                            $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile . '.rollback');
+                            unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
+                        }
                         $phpMussel['DeleteDirectory']($ThisFile);
                     }
                 });

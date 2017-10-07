@@ -56,6 +56,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   viewing phpMussel usage statistics, and a corresponding configuration
   directive to enable/disable tracking phpMussel usage statistics.
 
+- [2017.10.07; Sub-minor code change; Maikuolan]: Added a simple metadata
+  cleanup routine to the front-end updates page.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

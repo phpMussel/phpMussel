@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.05).
+ * This file: Functions file (last modified: 2017.10.07).
  */
 
 /**
@@ -5094,6 +5094,39 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
         }
     }
     return true;
+};
+
+/**
+ * Validates or ensures that two different sets of component metadata share the
+ * same base elements (or components). One set acts as a model for which base
+ * elements are expected, and if additional/superfluous entries are found in
+ * the other set (the base), they'll be removed. Installed components are
+ * ignored as to future-proof legacy support (just removes non-installed
+ * components).
+ *
+ * @param string $Base The base set (generally, the local copy).
+ * @param string $Model The model set (generally, the remote copy).
+ * @param bool $Validate Validate (true) or ensure congruency (false; default).
+ * @return string|bool If $Validate is true, returns true|false according to
+ *      whether the sets are congruent. If $Validate is false, returns the
+ *      corrected $Base set.
+ */
+$phpMussel['Congruency'] = function ($Base, $Model, $Validate = false) use (&$phpMussel) {
+    if (empty($Base) || empty($Model)) {
+        return $Validate ? false : '';
+    }
+    $BaseArr = $ModelArr = array();
+    $phpMussel['YAML']($Base, $BaseArr);
+    $phpMussel['YAML']($Model, $ModelArr);
+    foreach ($BaseArr as $Element => $Data) {
+        if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($ModelArr[$Element])) {
+            if ($Validate) {
+                return false;
+            }
+            $Base = preg_replace("~\n" . $Element . ":?(\n [^\n]*)*\n~i", "\n", $Base);
+        }
+    }
+    return $Validate ? true : $Base;
 };
 
 /**
