@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.07).
+ * This file: Functions file (last modified: 2017.10.08).
  */
 
 /**
@@ -412,57 +412,53 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Block
  * @return array|bool Same as with file(), but won't trigger warnings.
  */
 $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = false) {
-    if (!file_exists($Filename) || !is_readable($Filename)) {
+    if (!is_readable($Filename)) {
         return false;
     }
     if (!$Context) {
-        if (!$Flags) {
-            return file($Filename);
-        }
-        return file($Filename, $Flags);
+        return !$Flags ? file($Filename) : file($Filename, $Flags);
     }
     return file($Filename, $Flags, $Context);
 };
 
 /** Deletes expired cache entries and regenerates cache files. */
 $phpMussel['CleanCache'] = function () use (&$phpMussel) {
-    if (isset($phpMussel['memCache']['CacheCleaned']) && $phpMussel['memCache']['CacheCleaned']) {
+    if (!empty($phpMussel['memCache']['CacheCleaned'])) {
         return true;
     }
     $phpMussel['memCache']['CacheCleaned'] = true;
     $CacheFiles = array();
     $FileIndex = $phpMussel['Vault'] . 'cache/index.dat';
+    if (!is_readable($FileIndex)) {
+        return false;
+    }
     $FileDataOld = $FileData = $phpMussel['ReadFile']($FileIndex);
     if (substr_count($FileData, ';')) {
         $FileData = explode(';', $FileData);
-        $c = count($FileData);
-        for ($i = 0; $i < $c; $i++) {
-            if (substr_count($FileData[$i], ':')) {
-                $FileData[$i] = explode(':', $FileData[$i], 3);
-                if ($phpMussel['Time'] > $FileData[$i][1]) {
-                    $xf = bin2hex(substr($FileData[$i][0], 0, 1));
-                    if (!isset($CacheFiles[$xf])) {
-                        $CacheFiles[$xf] =
-                            (!file_exists($phpMussel['cachePath'] . $xf . '.tmp')) ?
-                            '' :
-                            $phpMussel['ReadFile']($phpMussel['cachePath'] . $xf . '.tmp', 0, true);
-                    }
-                    while (substr_count($CacheFiles[$xf], $FileData[$i][0] . ':')) {
-                        $CacheFiles[$xf] = str_ireplace(
-                            $FileData[$i][0] . ':' . $phpMussel['substrbf']($phpMussel['substraf']($CacheFiles[$xf], $FileData[$i][0] . ':'), ';') . ';',
-                            '',
-                            $CacheFiles[$xf]
-                        );
-                    }
-                    $FileData[$i] = '';
-                } else {
-                    $FileData[$i] = $FileData[$i][0] . ':' . $FileData[$i][1];
-                }
-            } else {
-                $FileData[$i] = '';
+        foreach ($FileData as &$ThisData) {
+            if (strpos($ThisData, ':') === false) {
+                $ThisData = '';
+                continue;
             }
+            $ThisData = explode(':', $ThisData, 3);
+            if ($ThisData[1] > 0 && $phpMussel['Time'] > $ThisData[1]) {
+                $FileKey = bin2hex(substr($ThisData[0], 0, 1));
+                if (!isset($CacheFiles[$FileKey])) {
+                    $CacheFiles[$FileKey] = !is_readable(
+                        $phpMussel['cachePath'] . $FileKey . '.tmp'
+                    ) ? '' : $phpMussel['ReadFile']($phpMussel['cachePath'] . $FileKey . '.tmp', 0, true);
+                }
+                while (strpos($CacheFiles[$FileKey], $ThisData[0] . ':') !== false) {
+                    $CacheFiles[$FileKey] = str_ireplace($ThisData[0] . ':' . $phpMussel['substrbf'](
+                        $phpMussel['substraf']($CacheFiles[$FileKey], $ThisData[0] . ':'), ';'
+                    ) . ';', '', $CacheFiles[$FileKey]);
+                }
+                $ThisData = '';
+                continue;
+            }
+            $ThisData = $ThisData[0] . ':' . $ThisData[1];
         }
-        $FileData = str_ireplace(';;', ';', implode(';', $FileData) . ';');
+        $FileData = str_replace(';;', ';', implode(';', array_filter($FileData)) . ';');
         if ($FileDataOld !== $FileData) {
             $Handle = fopen($FileIndex, 'w');
             fwrite($Handle, $FileData);
@@ -474,11 +470,11 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
             if (file_exists($phpMussel['cachePath'] . $CacheEntryKey . '.tmp')) {
                 unlink($phpMussel['cachePath'] . $CacheEntryKey . '.tmp');
             }
-        } else {
-            $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'w');
-            fwrite($Handle, $CacheEntryValue);
-            fclose($Handle);
+            continue;
         }
+        $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'w');
+        fwrite($Handle, $CacheEntryValue);
+        fclose($Handle);
     }
     return true;
 };
@@ -486,82 +482,79 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
 /**
  * Retrieves cache entries.
  *
- * @param string|array $entry The name of the cache entry/entries to retrieve;
+ * @param string|array $Entry The name of the cache entry/entries to retrieve;
  *      Can be a string to specify a single entry, or an array of strings to
  *      specify multiple entries.
  * @return string|array Contents of the cache entry/entries.
  */
-$phpMussel['FetchCache'] = function ($entry = '') use (&$phpMussel) {
+$phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
     $phpMussel['CleanCache']();
-    if (!$entry) {
+    if (!$Entry) {
         return '';
     }
-    if (is_array($entry)) {
+    if (is_array($Entry)) {
         $Out = array();
-        array_walk($entry, function($Value, $Key) use (&$phpMussel, &$Out) {
+        array_walk($Entry, function($Value, $Key) use (&$phpMussel, &$Out) {
             $Out[$Key] = $phpMussel['FetchCache']($Value);
         });
         return $Out;
     }
-    $f = $phpMussel['cachePath'] . bin2hex($entry[0]) . '.tmp';
-    if (!file_exists($f) || !$d = $phpMussel['ReadFile']($f, 0, true)) {
+    $File = $phpMussel['cachePath'] . bin2hex(substr($Entry, 0, 1)) . '.tmp';
+    if (!is_readable($File) || !$FileData = $phpMussel['ReadFile']($File, 0, true)) {
         return '';
     }
-    $item =
-        (substr_count($d, $entry . ':')) ?
-        $entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($d, $entry . ':'), ';') . ';' :
-        '';
-    if (!$item) {
+    if (!$Item = strpos($FileData, $Entry . ':') !== false ? $Entry . ':' . $phpMussel['substrbf'](
+        $phpMussel['substraf']($FileData, $Entry . ':'), ';'
+    ) . ';' : '') {
         return '';
     }
-    $item_ex = $phpMussel['substrbf']($phpMussel['substraf']($item, $entry . ':'), ':');
-    if ($phpMussel['Time'] > $item_ex) {
-        while (substr_count($d, $entry . ':')) {
-            $d = str_ireplace($item, '', $d);
+    $Expiry = $phpMussel['substrbf']($phpMussel['substraf']($Item, $Entry . ':'), ':');
+    if ($phpMussel['Time'] > $Expiry) {
+        while (substr_count($FileData, $Entry . ':')) {
+            $FileData = str_ireplace($Item, '', $FileData);
         }
-        $Handle = fopen($f, 'w');
-        fwrite($Handle, $d);
+        $Handle = fopen($File, 'w');
+        fwrite($Handle, $FileData);
         fclose($Handle);
         return '';
     }
-    if (!$item_data = $phpMussel['substrbf']($phpMussel['substraf']($item, $entry . ':' . $item_ex . ':'), ';')) {
+    if (!$ItemData = $phpMussel['substrbf']($phpMussel['substraf']($Item, $Entry . ':' . $Expiry . ':'), ';')) {
         return '';
     }
-    return $phpMussel['Function']('GZ', $phpMussel['HexSafe']($item_data)) ?: '';
+    return $phpMussel['Function']('GZ', $phpMussel['HexSafe']($ItemData)) ?: '';
 };
 
 /**
  * Creates cache entry and saves it to the cache.
  *
- * @param string $entry The name of the cache entry to create.
- * @param int $item_ex The time (in unix time) after which the cache entry
- *      should expire.
- * @param string $item_data Contents of the cache entry.
+ * @param string $Entry Name of the cache entry to create.
+ * @param int $Expiry Unix time until the cache entry expires.
+ * @param string $ItemData Contents of the cache entry.
  * @return bool This should always return true, unless something goes wrong.
  */
-$phpMussel['SaveCache'] = function ($entry = '', $item_ex = 0, $item_data = '') use (&$phpMussel) {
+$phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') use (&$phpMussel) {
     $phpMussel['CleanCache']();
-    if (!$entry || !$item_data) {
+    if (!$Entry || !$ItemData) {
         return false;
     }
-    if (!$item_ex) {
-        $item_ex = $phpMussel['Time'];
+    if (!$Expiry) {
+        $Expiry = $phpMussel['Time'];
     }
-    $f = $phpMussel['cachePath'] . bin2hex($entry[0]) . '.tmp';
+    $f = $phpMussel['cachePath'] . bin2hex($Entry[0]) . '.tmp';
     $d = (!file_exists($f)) ? '' : $phpMussel['ReadFile']($f, 0, true);
-    while (substr_count($d, $entry . ':')) {
-        $d = str_ireplace($entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($d, $entry . ':'), ';') . ';', '', $d);
+    while (substr_count($d, $Entry . ':')) {
+        $d = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($d, $Entry . ':'), ';') . ';', '', $d);
     }
-    $d .= $entry . ':' . $item_ex . ':' . bin2hex(gzdeflate($item_data,9)) . ';';
+    $d .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData,9)) . ';';
     $Handle = fopen($f, 'w');
     fwrite($Handle, $d);
     fclose($Handle);
     $IndexFile = $phpMussel['Vault'] . 'cache/index.dat';
     $IndexNewData = $IndexData = (file_exists($IndexFile)) ? $phpMussel['ReadFile']($IndexFile, 0, true) : '';
-    while (substr_count($IndexNewData, $entry . ':')) {
-        $IndexNewData = str_ireplace($entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $entry . ':'), ';') . ';', '', $IndexNewData);
+    while (substr_count($IndexNewData, $Entry . ':')) {
+        $IndexNewData = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $Entry . ':'), ';') . ';', '', $IndexNewData);
     }
-    $IndexNewData .= $entry . ':' . $item_ex . ';';
+    $IndexNewData .= $Entry . ':' . $Expiry . ';';
     if ($IndexNewData !== $IndexData) {
         $IndexHandle = fopen($IndexFile, 'w');
         fwrite($IndexHandle, $IndexNewData);
@@ -780,7 +773,7 @@ $phpMussel['lv_match'] = function ($needle, $haystack, $pos_A = 0, $pos_Z = 0, $
     }
     $hlen = strlen($haystack);
     if ($nlen < 1 || $hlen < 1) {
-        return ($bool) ? false : 0;
+        return $bool ? false : 0;
     }
     if ($nlen > $hlen) {
         $x = array($needle, $nlen, $haystack, $hlen);
@@ -790,20 +783,19 @@ $phpMussel['lv_match'] = function ($needle, $haystack, $pos_A = 0, $pos_Z = 0, $
         $nlen = $x[3];
     }
     if ($cost_ins === 1 && $cost_rep === 1 && $cost_del === 1) {
-        $lv =
-            ($case) ?
-            levenshtein($haystack, $needle) :
-            levenshtein(strtolower($haystack), strtolower($needle));
+        $lv = $case ? levenshtein(
+            $haystack, $needle
+        ) : levenshtein(
+            strtolower($haystack), strtolower($needle)
+        );
     } else {
-        $lv =
-            ($case) ?
-            levenshtein($haystack, $needle, $cost_ins, $cost_rep, $cost_del) :
-            levenshtein(strtolower($haystack), strtolower($needle), $cost_ins, $cost_rep, $cost_del);
+        $lv = $case ? levenshtein(
+            $haystack, $needle, $cost_ins, $cost_rep, $cost_del
+        ) : levenshtein(
+            strtolower($haystack), strtolower($needle), $cost_ins, $cost_rep, $cost_del
+        );
     }
-    if ($bool) {
-        return (($min === 0 || $lv >= $min) && ($max === -1 || $lv <= $max));
-    }
-    return $lv;
+    return $bool ? (($min === 0 || $lv >= $min) && ($max === -1 || $lv <= $max)) : $lv;
 };
 
 /**
