@@ -509,7 +509,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
         return '';
     }
     $Expiry = $phpMussel['substrbf']($phpMussel['substraf']($Item, $Entry . ':'), ':');
-    if ($phpMussel['Time'] > $Expiry) {
+    if ($Expiry > 0 && $phpMussel['Time'] > $Expiry) {
         while (substr_count($FileData, $Entry . ':')) {
             $FileData = str_ireplace($Item, '', $FileData);
         }
