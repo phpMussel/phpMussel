@@ -27,6 +27,7 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_logs.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_nav_complete_access.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_nav_logs_access_only.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_statistics.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_updates.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_updates_row.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_upload_test.html
