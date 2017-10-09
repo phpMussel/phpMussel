@@ -261,6 +261,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_upload_test.html | Een HTML sjabloon voor de upload test pagina.
@@ -438,6 +439,9 @@ Algemene configuratie voor phpMussel.
 
 "default_algo"
 - Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP >= 7.2.0).
+
+"statistics"
+- Track phpMussel gebruiksstatistieken? True = Ja; False = Nee [Standaard].
 
 #### "signatures" (Categorie)
 Configuratie voor signatures.
@@ -917,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 8 September 2017 (2017.09.08).
+Laatste Bijgewerkt: 5 Oktober 2017 (2017.10.05).

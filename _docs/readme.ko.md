@@ -261,6 +261,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/_logs.html | 프론트 엔드 로고스 페이지의 HTML 템플릿.
 /vault/fe_assets/_nav_complete_access.html | 프론트 엔드의 탐색 링크의 HTML 템플릿, 완전한 액세스를위한 것입니다.
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
+/vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates_row.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/_upload_test.html | 업로드 테스트 페이지의 HTML 템플릿.
@@ -438,6 +439,9 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 
 "default_algo"
 - 향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 가 필요합니다).
+
+"statistics"
+- phpMussel 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).
 
 #### "signatures" (카테고리)
 시그니처.
@@ -917,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 9월 8일.
+최종 업데이트 : 2017년 10월 5일.

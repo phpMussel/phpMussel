@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.27).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMussel tarama sonu�
 $phpMussel['lang']['config_general_scan_kills'] = 'Engellenen ve silinen yüklemelerin tüm kayıtlarını kaydetmek için kullanılan dosyanın adı. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $phpMussel['lang']['config_general_scan_log'] = 'Tüm tarama sonuçlarını günlüğe kaydetmek için dosyanın adı. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Tüm tarama sonuçlarını kaydetmek için dosyanın adı (seri hale getirilmiş bir format kullanarak). Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
+$phpMussel['lang']['config_general_statistics'] = 'phpMussel kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';
 $phpMussel['lang']['config_general_timezone'] = 'Zaman diliminiz.';
@@ -95,7 +96,9 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total API doküma
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Yukarıdaki açıklamaya bakın).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Varsayılan olarak, phpMussel, "şüpheli" olarak gördüğü dosyalara Virus Total API\'sını kullanarak taradığı dosyaları sınırlar. Bu sınırlamayı, <code>vt_suspicion_level</code> yönergesinin değerini değiştirerek ayarlayabilirsiniz.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Virus Total API tarama sonuçları algılar mı yoksa algılama ağırlığı olarak mı uygulanmalıdır? Bir dosyayı birden çok motor kullanarak tarama yapmak (Virus Total\'in yaptığı gibi) artan algılama hızıyla sonuçlanmalıdır (ve dolayısıyla daha çok sayıda kötü amaçlı dosyanın yakalanmasıyla), ancak daha fazla yanlış pozitif sayıya neden olabilir, ve bu nedenle, bazı durumlarda, tarama sonuçları kesin bir sonuç olmaktan çok bir güven puanı olarak daha iyi kullanılabilir; Bu nedenle bu direktifin mevcut olması. 0 değeri kullanılırsa, Virus Total API tarama sonuçları algılar olarak uygulanır, ve bu nedenle eğer herhangi bir motor zararlı olarak dosyaya bayrak atarsa, phpMussel dosyayı kötü amaçlı olarak değerlendirir. Başka herhangi bir değer kullanılırsa, Virus Total API tarama sonuçları algılama ağırlığı olarak uygulanır, ve bu nedenle, dosyayı kötü amaçlı olarak işaretleyen motor sayısı bir güven puanı görevi görür (kullanılan değer dosyanın kötü amaçlı olarak değerlendirilebilmesi için gereken minimum güven puanı temsil edecektir). Varsayılan olarak 0 değeri kullanılır.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['field_activate'] = 'Etkinleştir';
+$phpMussel['lang']['field_clear_all'] = 'Hepsini temizle';
 $phpMussel['lang']['field_component'] = 'Bileşen';
 $phpMussel['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
 $phpMussel['lang']['field_deactivate'] = 'Devre dışı bırak';
@@ -138,16 +141,27 @@ $phpMussel['lang']['field_username'] = 'Kullanıcı adı';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$phpMussel['lang']['label_blocked'] = 'Yüklemeler engellendi';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
+$phpMussel['lang']['label_events'] = 'Tara olayları';
+$phpMussel['lang']['label_flagged'] = 'İşaretlenen nesneler';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $phpMussel['lang']['label_hide'] = 'Saklamak';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
+$phpMussel['lang']['label_other'] = 'Diğer';
+$phpMussel['lang']['label_other-Active'] = 'Etkin imza dosyaları';
+$phpMussel['lang']['label_other-Since'] = 'Başlangıç tarihi';
 $phpMussel['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $phpMussel['lang']['label_phpmussel'] = 'Kullanılan phpMussel sürümü:';
+$phpMussel['lang']['label_quarantined'] = 'Karantinaya yüklenenler';
 $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
+$phpMussel['lang']['label_scanned_objects'] = 'Nesneler tarandı';
+$phpMussel['lang']['label_scanned_uploads'] = 'Yüklenenler tarandı';
 $phpMussel['lang']['label_show'] = 'Göstermek';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
@@ -158,6 +172,8 @@ $phpMussel['lang']['link_documentation'] = 'Belgeler';
 $phpMussel['lang']['link_file_manager'] = 'Dosya Yöneticisi';
 $phpMussel['lang']['link_home'] = 'Ana Sayfa';
 $phpMussel['lang']['link_logs'] = 'Kayıtlar';
+$phpMussel['lang']['link_statistics'] = 'İstatistik';
+$phpMussel['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a>';
 $phpMussel['lang']['link_updates'] = 'Güncellemeler';
 $phpMussel['lang']['link_upload_test'] = 'Yükleme Testi';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!';
@@ -201,6 +217,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Giriş başarısız! Ku
 $phpMussel['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
 $phpMussel['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
+$phpMussel['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Zaten güncel.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Bileşen yüklü değil!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'Bileşen yüklü değil (PHP {V} gerektirir)!';
@@ -230,6 +247,8 @@ $phpMussel['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, phpMussel ön u�
 $phpMussel['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">belgelere</a> bakın.';
+$phpMussel['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $phpMussel['lang']['tip_upload_test'] = 'Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Hesaplar';
@@ -238,6 +257,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Dosya Yöneticisi';
 $phpMussel['lang']['title_home'] = 'phpMussel – Ana Sayfa';
 $phpMussel['lang']['title_login'] = 'phpMussel – Giriş';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Kayıtlar';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – İstatistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Güncellemeler';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Yükleme Testi';
 $phpMussel['lang']['warning'] = 'Uyarılar:';

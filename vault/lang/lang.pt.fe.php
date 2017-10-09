@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.09.27).
+ * This file: Portuguese language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -54,7 +54,7 @@ $phpMussel['lang']['config_general_disable_webfonts'] = 'Desativar webfonts? Tru
 $phpMussel['lang']['config_general_enable_plugins'] = 'Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200); True = Sim (403) [Padrão].';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
-$phpMussel['lang']['config_general_honeypot_mode'] = 'Quando o honeypot modo é ativada, phpMussel vai tenta coloca no quarentena todos os arquivos uploads que ele encontras, independentemente de se ou não o arquivo que está sendo carregado corresponde a qualquer incluídos assinaturas, e zero análise desses tentados arquivos carregamentos vai ocorrer. Esta funcionalidade deve ser útil por aqueles que desejam utilizar phpMussel por os fins de vírus/malware pesquisa, mas não é recomendado para ativar essa funcionalidade se o planejado uso de phpMussel pelo utilizador é por o real análise dos arquivos carregamentos nem recomendado para usar essa funcionalidade por fins outros que o uso do honeypot. Por padrão, essa opção está desativada. False = Desativado [Padrão]; True = Ativado.';
+$phpMussel['lang']['config_general_honeypot_mode'] = 'Quando o honeypot modo é ativada, phpMussel vai tente colocar no quarentena todos os uploads de arquivos que ele encontras, independentemente de se ou não o arquivo que está sendo carregado corresponde a qualquer incluídos assinaturas, e zero análise desses tentados arquivos carregamentos vai ocorrer. Esta funcionalidade deve ser útil por aqueles que desejam utilizar phpMussel por os fins de vírus/malware pesquisa, mas não é recomendado para ativar essa funcionalidade se o planejado uso de phpMussel pelo utilizador é por o real análise dos arquivos carregamentos nem recomendado para usar essa funcionalidade por fins outros que o uso do honeypot. Por padrão, essa opção está desativada. False = Desativado [Padrão]; True = Ativado.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
 $phpMussel['lang']['config_general_lang'] = 'Especificar o padrão da linguagem por phpMussel.';
 $phpMussel['lang']['config_general_maintenance_mode'] = 'Ativar o modo de manutenção? True = Sim; False = Não [Padrão]. Desativa tudo além do front-end. Às vezes útil para quando atualiza seu CMS, frameworks, etc.';
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Por quanto tempo deve 
 $phpMussel['lang']['config_general_scan_kills'] = 'Nome do arquivo para registrar todos os bloqueados ou matados carregamentos. Especifique um arquivo nome, ou deixe branco para desativar.';
 $phpMussel['lang']['config_general_scan_log'] = 'Nome do arquivo para registrar todos os resultados do análises. Especifique um arquivo nome, ou deixe branco para desativar.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Nome do arquivo para registrar todos os resultados do análises (formato é serializado). Especifique um arquivo nome, ou deixe branco para desativar.';
+$phpMussel['lang']['config_general_statistics'] = 'Monitorar as estatísticas de uso do phpMussel? True = Sim; False = Não [Padrão].';
 $phpMussel['lang']['config_general_timeFormat'] = 'O formato de notação de data/tempo utilizado pelo phpMussel. Opções adicionais podem ser adicionadas a pedido.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Deslocamento do fuso horário em minutos.';
 $phpMussel['lang']['config_general_timezone'] = 'O seu fuso horário.';
@@ -95,7 +96,9 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'De acordo com o Virus T
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Ver descrição acima).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Por padrão, phpMussel restringirá os arquivos que são verificado usando o Virus Total API a esses arquivos que considera "suspeito". Opcionalmente, você pode ajustar essa restrição via alterando o valor ao <code>vt_suspicion_level</code> directiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de arquivos maliciosos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'O pacote principal (menos as assinaturas, documentação e configuração).';
 $phpMussel['lang']['field_activate'] = 'Ativar';
+$phpMussel['lang']['field_clear_all'] = 'Cancelar tudo';
 $phpMussel['lang']['field_component'] = 'Componente';
 $phpMussel['lang']['field_create_new_account'] = 'Criar Nova Conta';
 $phpMussel['lang']['field_deactivate'] = 'Desativar';
@@ -138,16 +141,27 @@ $phpMussel['lang']['field_username'] = 'Nome de Usuário';
 $phpMussel['lang']['field_your_version'] = 'Sua Versão';
 $phpMussel['lang']['header_login'] = 'Por favor faça o login para continuar.';
 $phpMussel['lang']['label_active_config_file'] = 'Arquivo de configuração ativo: ';
+$phpMussel['lang']['label_blocked'] = 'Uploads bloqueados';
 $phpMussel['lang']['label_branch'] = 'Mais novo de estável de branch:';
+$phpMussel['lang']['label_events'] = 'Eventos de análise';
+$phpMussel['lang']['label_flagged'] = 'Objetos marcados';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'Dados de cache e arquivos temporários';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Uso do disco pelo phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Espaço livre no disco: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Uso total do disco: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espaço total no disco: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'Metadados para atualização de componentes';
 $phpMussel['lang']['label_hide'] = 'Ocultar';
 $phpMussel['lang']['label_os'] = 'Sistema operacional usada:';
+$phpMussel['lang']['label_other'] = 'Outros';
+$phpMussel['lang']['label_other-Active'] = 'Arquivos de assinaturas ativos';
+$phpMussel['lang']['label_other-Since'] = 'Data de início';
 $phpMussel['lang']['label_php'] = 'Versão do PHP usada:';
 $phpMussel['lang']['label_phpmussel'] = 'Versão do phpMussel usada:';
+$phpMussel['lang']['label_quarantined'] = 'Uploads em quarentena';
 $phpMussel['lang']['label_sapi'] = 'SAPI usada:';
+$phpMussel['lang']['label_scanned_objects'] = 'Objetos analisados';
+$phpMussel['lang']['label_scanned_uploads'] = 'Uploads analisados';
 $phpMussel['lang']['label_show'] = 'Mostrar';
 $phpMussel['lang']['label_stable'] = 'Mais novo de estável:';
 $phpMussel['lang']['label_sysinfo'] = 'Informação do sistema:';
@@ -158,6 +172,8 @@ $phpMussel['lang']['link_documentation'] = 'Documentação';
 $phpMussel['lang']['link_file_manager'] = 'Gerenciador de Arquivos';
 $phpMussel['lang']['link_home'] = 'Página Principal';
 $phpMussel['lang']['link_logs'] = 'Arquivos de Registro';
+$phpMussel['lang']['link_statistics'] = 'Estatisticas';
+$phpMussel['lang']['link_textmode'] = 'Formatação de texto: <a href="%1$sfalse">Simples</a> – <a href="%1$strue">Chique</a>';
 $phpMussel['lang']['link_updates'] = 'Atualizações';
 $phpMussel['lang']['link_upload_test'] = 'Carregar Teste';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Arquivo de registro selecionado não existe!';
@@ -201,6 +217,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Falha no login! Esse us
 $phpMussel['lang']['response_login_password_field_empty'] = 'Entrada de senha vazio!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Entrada de nome de usuário vazio!';
 $phpMussel['lang']['response_rename_error'] = 'Falha ao renomear!';
+$phpMussel['lang']['response_statistics_cleared'] = 'Estatísticas apagadas.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Já atualizado.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Componente não instalado!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'Componente não instalado (requer PHP {V})!';
@@ -230,6 +247,8 @@ $phpMussel['lang']['tip_home'] = 'Olá, {username}.<br />Esta é a página princ
 $phpMussel['lang']['tip_login'] = 'Nome de usuário padrão: <span class="txtRd">admin</span> – Senha padrão: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Consulte a <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.pt.md#SECTION7">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos.';
+$phpMussel['lang']['tip_statistics'] = 'Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do phpMussel.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração.';
 $phpMussel['lang']['tip_updates'] = 'Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do phpMussel (o pacote principal, assinaturas, plugins, arquivos de L10N, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Olá, {username}.<br />A página de carregar teste contém um formulário padrão para carregando arquivos, permitindo que você teste se um arquivo seria normalmente bloqueado através phpMussel quando carregando.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Contas';
@@ -238,6 +257,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Gerenciador de Arquivo
 $phpMussel['lang']['title_home'] = 'phpMussel – Página Principal';
 $phpMussel['lang']['title_login'] = 'phpMussel – Login';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Arquivos de Registro';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – Estatisticas';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Atualizações';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Carregar Teste';
 $phpMussel['lang']['warning'] = 'Atenção:';

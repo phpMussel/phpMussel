@@ -160,6 +160,9 @@ maintenance_mode=false
 ; (requires PHP >= 7.2.0).
 default_algo='PASSWORD_DEFAULT'
 
+; Track phpMussel usage statistics?
+statistics=false
+
 
 [signatures]
 

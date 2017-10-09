@@ -261,6 +261,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/fe_assets/_logs.html | 前端日志页面的HTML模板。
 /vault/fe_assets/_nav_complete_access.html | 前端导航链接的HTML模板，​由那些与完全访问使用。
 /vault/fe_assets/_nav_logs_access_only.html | 前端导航链接的HTML模板，​由那些与仅日志访问使用。
+/vault/fe_assets/_statistics.html | 前端统计页面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_upload_test.html | 上传测试页面的HTML模板。
@@ -438,6 +439,9 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 
 “default_algo”
 - 定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
+
+“statistics”
+- 跟踪phpMussel使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。
 
 #### “signatures” （类别）
 签名配置。
@@ -917,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年9月8日。
+最后更新：2017年10月5日。

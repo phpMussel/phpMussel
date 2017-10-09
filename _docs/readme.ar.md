@@ -257,6 +257,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة السجلات.</div> | /vault/fe_assets/_logs.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع وصول كامل.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates_row.html
 &nbsp; <div dir="rtl" style="display:inline;">قالب HTML لصفحة التحميل الاختبار.</div> | /vault/fe_assets/_upload_test.html
@@ -488,6 +489,11 @@
 <div dir="rtl">"default_algo"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP >= 7.2.0).</li>
+</ul></div>
+
+<div dir="rtl">"statistics"<br /></div>
+<div dir="rtl"><ul>
+ <li>هل تريد تتبع إحصاءات استخدام phpMussel؟ True = نعم؛ False = لا [افتراضي].</li>
 </ul></div>
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
@@ -1066,4 +1072,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 8 سبتمبر 2017 (2017.09.08).</div>
+<div dir="rtl">آخر تحديث: 5 اكتوبر 2017 (2017.10.05).</div>

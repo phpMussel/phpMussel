@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.09.27).
+ * This file: Italian language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Per quanto tempo deve 
 $phpMussel['lang']['config_general_scan_kills'] = 'Il nome del file per registrare tutti i record di bloccato o ucciso caricamenti. Specificare un nome del file, o lasciare vuoto per disattivarlo.';
 $phpMussel['lang']['config_general_scan_log'] = 'Il nome del file per registrare tutti i risultati di la scansione. Specificare un nome del file, o lasciare vuoto per disattivarlo.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Il nome del file per registrare tutti i risultati di la scansione (utilizzando un formato serializzato). Specificare un nome del file, o lasciare vuoto per disattivarlo.';
+$phpMussel['lang']['config_general_statistics'] = 'Monitorare le statistiche di utilizzo di phpMussel? True = Sì; False = No [Predefinito].';
 $phpMussel['lang']['config_general_timeFormat'] = 'Il formato della data/ora di notazione usata da phpMussel. Ulteriori opzioni possono essere aggiunti su richiesta.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Fuso orario offset in minuti.';
 $phpMussel['lang']['config_general_timezone'] = 'Il vostro fuso orario.';
@@ -95,7 +96,9 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Secondo a la Virus Tota
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Vedi descrizione precedente).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando il Virus Total API ai quei file che considera "sospettose". Facoltativamente, è possibile modificare questa restrizione per mezzo di modificando il valore del <code>vt_suspicion_level</code> direttiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Dovrebbe phpMussel applica i risultati della scansione utilizzando il Virus Total API come rilevamenti o il ponderazione rilevamenti? Questa direttiva esiste, perché, sebbene scansione di un file utilizzando più motori (come Virus Total fa) dovrebbe risulta in un maggiore tasso di rilevamenti (e quindi in un maggiore numero di maligni file essere catturati), può anche risulta in un maggiore numero di falsi positivi, e quindi, in certe circostanze, i risultati della scansione possono essere meglio utilizzato come un punteggio di confidenza anziché come una conclusione definitiva. Se viene utilizzato un valore di 0, i risultati della scansione utilizzando il Virus Total API saranno applicati come rilevamenti, e quindi, se qualsiasi motori utilizzati da Virus Total che marca il file sottoposto a scansione come maligno, phpMussel considererà il file come maligno. Se qualsiasi altro valore è utilizzato, i risultati della scansione utilizzando il Virus Total API saranno applicati come ponderazione rilevamenti, e quindi, il numero di motori utilizzati da Virus Total marcando il file sottoposto a scansione come maligno servirà come un punteggio di confidenza (o ponderazione rilevamenti) per se il file sottoposto a scansione deve essere considerato maligno per phpMussel (il valore utilizzato rappresenterà il minimo punteggio di confidenza o ponderazione richiesto per essere considerato maligno). Un valore di 0 è utilizzato per predefinita.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
 $phpMussel['lang']['field_activate'] = 'Attivarlo';
+$phpMussel['lang']['field_clear_all'] = 'Revoca tutto';
 $phpMussel['lang']['field_component'] = 'Componente';
 $phpMussel['lang']['field_create_new_account'] = 'Crea un nuovo account';
 $phpMussel['lang']['field_deactivate'] = 'Disattivarlo';
@@ -138,16 +141,27 @@ $phpMussel['lang']['field_username'] = 'Nome Utente';
 $phpMussel['lang']['field_your_version'] = 'La Vostra Versione';
 $phpMussel['lang']['header_login'] = 'Per favore accedi per continuare.';
 $phpMussel['lang']['label_active_config_file'] = 'File di configurazione attivo: ';
+$phpMussel['lang']['label_blocked'] = 'Caricamenti bloccati';
 $phpMussel['lang']['label_branch'] = 'Branch più recente stabile:';
+$phpMussel['lang']['label_events'] = 'Scansioni eventi';
+$phpMussel['lang']['label_flagged'] = 'Oggetti contrassegnati';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'Dati di cache e file temporanei';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Utilizzo del disco da parte di phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Spazio libero su disco: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilizzo del disco totale: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Spazio totale su disco: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'Componente aggiorna metadati';
 $phpMussel['lang']['label_hide'] = 'Nascondere';
 $phpMussel['lang']['label_os'] = 'Sistema operativo utilizzata:';
+$phpMussel['lang']['label_other'] = 'Altro';
+$phpMussel['lang']['label_other-Active'] = 'File di firme attivi';
+$phpMussel['lang']['label_other-Since'] = 'Data d\'inizio';
 $phpMussel['lang']['label_php'] = 'Versione PHP utilizzata:';
 $phpMussel['lang']['label_phpmussel'] = 'Versione phpMussel utilizzata:';
+$phpMussel['lang']['label_quarantined'] = 'Caricamenti in quarantena';
 $phpMussel['lang']['label_sapi'] = 'SAPI utilizzata:';
+$phpMussel['lang']['label_scanned_objects'] = 'Oggetti scansionati';
+$phpMussel['lang']['label_scanned_uploads'] = 'Caricamenti scansionati';
 $phpMussel['lang']['label_show'] = 'Mostrare';
 $phpMussel['lang']['label_stable'] = 'Più recente stabile:';
 $phpMussel['lang']['label_sysinfo'] = 'Informazioni sul sistema:';
@@ -158,6 +172,8 @@ $phpMussel['lang']['link_documentation'] = 'Documentazione';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
 $phpMussel['lang']['link_home'] = 'Pagina Principale';
 $phpMussel['lang']['link_logs'] = 'File di Log';
+$phpMussel['lang']['link_statistics'] = 'Statistiche';
+$phpMussel['lang']['link_textmode'] = 'Formattazione del testo: <a href="%1$sfalse">Semplice</a> – <a href="%1$strue">Formattato</a>';
 $phpMussel['lang']['link_updates'] = 'Aggiornamenti';
 $phpMussel['lang']['link_upload_test'] = 'Carica Testare';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Log selezionato non esiste!';
@@ -201,6 +217,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Accedi non riuscito! No
 $phpMussel['lang']['response_login_password_field_empty'] = 'L\'input password era vuoto!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'L\'input nome utente era vuoto!';
 $phpMussel['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
+$phpMussel['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Aggiornato già.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Componente non installato!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'Componente non installato (richiede PHP {V})!';
@@ -230,6 +247,8 @@ $phpMussel['lang']['tip_home'] = 'Salve, {username}.<br />Questa è la pagina pr
 $phpMussel['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salve, {username}.<br />Selezionare un file di log dall\'elenco sottostante per visualizzare il contenuto di tale file di log.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Vedere la <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.it.md#SECTION7">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi.';
+$phpMussel['lang']['tip_statistics'] = 'Salve, {username}.<br />Questa pagina mostra alcune statistiche di utilizzo relative all\'installazione di phpMussel.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Nota: Il monitoraggio delle statistiche è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione.';
 $phpMussel['lang']['tip_updates'] = 'Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di phpMussel (il pacchetto di base, le firme, plugins, file per L10N, ecc).';
 $phpMussel['lang']['tip_upload_test'] = 'Salve, {username}.<br />La pagina di carica testare contiene un modulo per i caricamenti file standard, che permette di verificare se un file viene normalmente essere bloccata da phpMussel quando si cerca di caricarlo.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Utenti';
@@ -238,6 +257,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Pagina Principale';
 $phpMussel['lang']['title_login'] = 'phpMussel – Accedi';
 $phpMussel['lang']['title_logs'] = 'phpMussel – File di Log';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiche';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Aggiornamenti';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Carica Testare';
 $phpMussel['lang']['warning'] = 'Avvertimenti:';

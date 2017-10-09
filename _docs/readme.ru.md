@@ -261,6 +261,7 @@ phpMussel функционирует полностью в автономном 
 /vault/fe_assets/_logs.html | Шаблон HTML для лог-файлы страница в фронтенд.
 /vault/fe_assets/_nav_complete_access.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с полным доступом.
 /vault/fe_assets/_nav_logs_access_only.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с доступом только к лог-файлы.
+/vault/fe_assets/_statistics.html | Шаблон HTML для страница статистики в фронтенд.
 /vault/fe_assets/_updates.html | Шаблон HTML для обновления страница в фронтенд.
 /vault/fe_assets/_updates_row.html | Шаблон HTML для обновления страница в фронтенд.
 /vault/fe_assets/_upload_test.html | Шаблон HTML для тестовая загрузка страница.
@@ -438,6 +439,9 @@ phpMussel функционирует полностью в автономном 
 
 «default_algo»
 - Определяет, какой алгоритм использовать для всех будущих паролей и сеансов. Опции: PASSWORD_DEFAULT (стандарт), PASSWORD_BCRYPT, PASSWORD_ARGON2I (требует PHP >= 7.2.0).
+
+«statistics»
+- Отслеживать статистику использования phpMussel? True = Да; False = Нет [Стандарт].
 
 #### «signatures» (Категория)
 Конфигурация подписями.
@@ -917,4 +921,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Последнее обновление: 8 Сентябрь 2017 (2017.09.08).
+Последнее обновление: 5 Октябрь 2017 (2017.10.05).

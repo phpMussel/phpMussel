@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -50,7 +50,7 @@ $phpMussel['lang']['config_general_default_algo'] = 'Xác định thuật toán 
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp kho lưu trữ, các toàn bộ kho lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các kho lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức.';
 $phpMussel['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho phpMussel dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý phpMussel từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].';
-$phpMussel['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Cho phép hỗ trợ cho plugins của phpMussel? False = Không; True = Vâng [Mặc định].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel nên gửi 403 Forbidden chúng với các thông điệp tải lên tập tin bị chặn, hoặc chỉ sử dụng 200 OK? False = Không (200); True = Vâng (403) [Mặc định].';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
@@ -67,6 +67,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Trong bao lâu phpMuss
 $phpMussel['lang']['config_general_scan_kills'] = 'Tên của tập tin để ghi lại tất cả hồ sơ của bị chặn hay bị giết tải lên. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $phpMussel['lang']['config_general_scan_log'] = 'Tên của tập tin để ghi lại tất cả các kết quả quét. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Tên của tập tin để ghi lại tất cả các kết quả quét (sử dụng một định dạng tuần tự). Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
+$phpMussel['lang']['config_general_statistics'] = 'Giám sát thống kê sử dụng phpMussel? True = Vâng; False = Không [Mặc định].';
 $phpMussel['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi phpMussel. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
 $phpMussel['lang']['config_general_timezone'] = 'Múi giờ của bạn.';
@@ -95,8 +96,10 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Theo tài liệu VirusT
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Xem mô tả ở trên).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Theo mặc định, phpMussel sẽ hạn chế các tập tin nó quét bằng cách sử dụng Virus Total API đến các tập tin mà nó coi như là "đáng ngờ". Bạn có thể tùy chọn điều chỉnh hạn chế này bằng cách thay đổi các giá trị của tùy chọn <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel nên áp dụng các kết quả quét từ sử dụng Virus Total API như các phát hiện hoặc như các cân nặng phát hiện? Tùy chọn này tồn tại, bởi vì, mặc dù quét một tập tin sử dụng nhiều công cụ (như Virus Total làm) nên dẫn đến một tỷ lệ phát hiện tăng (và do đó ở một số cao hơn các tập tin độc hại bị bắt), nó cũng có thể dẫn đến một số cao hơn của sai tích cực, và vì thế, trong một số trường hợp, các kết quả quét có thể là tốt hơn sử dụng như một điểm tự tin chứ không phải là một kết luận dứt khoát. Nếu giá trị 0 được sử dụng, các kết quả quét từ sử dụng Virus Total API sẽ được áp dụng như phát hiện, và vì thế, nếu bất kỳ công cụ được sử dụng bởi Virus Total đánh dấu các tập tin được quét như độc hại, phpMussel sẽ cân nhắc các tập tin đến được độc hại. Nếu bất kỳ giá trị nào khác được sử dụng, các kết quả quét từ sử dụng Virus Total API sẽ được áp dụng như cân nặng phát hiện, và vì thế, các số lượng động cơ được sử dụng bởi Virus Total mà đánh dấu các tập tin được quét như được độc hại sẽ phục vụ như là một điểm tin (hay cân nặng phát hiện) cho nếu các tập tin được quét nên được xem như độc hại bởi phpMussel (giá trị sử dụng sẽ đại diện cho số điểm tin cậy hay cân nặng tối thiểu mà là cần thiết để có thể được coi độc hại). Giá trị 0 được sử dụng bởi mặc định.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
 $phpMussel['lang']['field_activate'] = 'Kích hoạt';
-$phpMussel['lang']['field_component'] = 'Gói';
+$phpMussel['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
+$phpMussel['lang']['field_component'] = 'Thành phần';
 $phpMussel['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $phpMussel['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $phpMussel['lang']['field_delete_account'] = 'Xóa tài khoản';
@@ -138,16 +141,27 @@ $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$phpMussel['lang']['label_blocked'] = 'Tải lên bị chặn';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
+$phpMussel['lang']['label_events'] = 'Sự kiện quét';
+$phpMussel['lang']['label_flagged'] = 'Đối tượng bị gắn cờ';
+$phpMussel['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
+$phpMussel['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $phpMussel['lang']['label_hide'] = 'Che giấu';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
+$phpMussel['lang']['label_other'] = 'Khác';
+$phpMussel['lang']['label_other-Active'] = 'Tập tin chữ ký kích hoạt';
+$phpMussel['lang']['label_other-Since'] = 'Ngày bắt đầu';
 $phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
+$phpMussel['lang']['label_quarantined'] = 'Tải lên trong kiểm dịch';
 $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
+$phpMussel['lang']['label_scanned_objects'] = 'Đối tượng được quét';
+$phpMussel['lang']['label_scanned_uploads'] = 'Tải lên được quét';
 $phpMussel['lang']['label_show'] = 'Hiển thị';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
@@ -158,6 +172,8 @@ $phpMussel['lang']['link_documentation'] = 'Tài Liệu';
 $phpMussel['lang']['link_file_manager'] = 'Quản Lý Tập Tin';
 $phpMussel['lang']['link_home'] = 'Trang Chủ';
 $phpMussel['lang']['link_logs'] = 'Bản Ghi';
+$phpMussel['lang']['link_statistics'] = 'Số liệu thống kê';
+$phpMussel['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse">Đơn giản</a> – <a href="%1$strue">Đẹp</a>';
 $phpMussel['lang']['link_updates'] = 'Cập Nhật';
 $phpMussel['lang']['link_upload_test'] = 'Kiểm Tra Tải Lên';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
@@ -179,10 +195,10 @@ $phpMussel['lang']['response_accounts_password_updated'] = 'Mật khẩu cập n
 $phpMussel['lang']['response_activated'] = 'Kích hoạt thành công.';
 $phpMussel['lang']['response_activation_failed'] = 'Không thể kích hoạt!';
 $phpMussel['lang']['response_checksum_error'] = 'Kiểm tra lỗi! Tập tin bị từ chối!';
-$phpMussel['lang']['response_component_successfully_installed'] = 'Gói cài đặt thành công.';
-$phpMussel['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
-$phpMussel['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
-$phpMussel['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
+$phpMussel['lang']['response_component_successfully_installed'] = 'Thành phần cài đặt thành công.';
+$phpMussel['lang']['response_component_successfully_uninstalled'] = 'Thành phần gỡ bỏ cài đặt thành công.';
+$phpMussel['lang']['response_component_successfully_updated'] = 'Thành phần cập nhật thành công.';
+$phpMussel['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt thành phần.';
 $phpMussel['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
 $phpMussel['lang']['response_deactivated'] = 'Vô hiệu hóa thành công.';
 $phpMussel['lang']['response_deactivation_failed'] = 'Không thể vô hiệu hóa!';
@@ -201,6 +217,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Thất bại đăng nh�
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
+$phpMussel['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
 $phpMussel['lang']['response_updates_not_installed_php'] = 'Gói không được cài đặt (đòi hỏi PHP {V})!';
@@ -210,9 +227,9 @@ $phpMussel['lang']['response_updates_outdated_php_version'] = 'Hết hạn (đò
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
-$phpMussel['lang']['state_component_is_active'] = 'Gói này đang kích hoạt.';
-$phpMussel['lang']['state_component_is_inactive'] = 'Gói này đang vô hiệu hóa.';
-$phpMussel['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
+$phpMussel['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
@@ -230,6 +247,8 @@ $phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang ch
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
+$phpMussel['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt phpMussel của bạn.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Tài Khoản';
@@ -238,6 +257,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản Lý Tập Tin';
 $phpMussel['lang']['title_home'] = 'phpMussel – Trang Chủ';
 $phpMussel['lang']['title_login'] = 'phpMussel – Đăng Nhập';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Bản Ghi';
+$phpMussel['lang']['title_statistics'] = 'phpMussel – Số liệu thống kê';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
 $phpMussel['lang']['warning'] = 'Cảnh báo:';
