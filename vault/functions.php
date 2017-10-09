@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.08).
+ * This file: Functions file (last modified: 2017.10.09).
  */
 
 /**
@@ -540,17 +540,17 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     if (!$Expiry) {
         $Expiry = $phpMussel['Time'];
     }
-    $f = $phpMussel['cachePath'] . bin2hex($Entry[0]) . '.tmp';
-    $d = (!file_exists($f)) ? '' : $phpMussel['ReadFile']($f, 0, true);
-    while (substr_count($d, $Entry . ':')) {
-        $d = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($d, $Entry . ':'), ';') . ';', '', $d);
+    $File = $phpMussel['cachePath'] . bin2hex($Entry[0]) . '.tmp';
+    $Data = $phpMussel['ReadFile']($File) ?: '';
+    while (substr_count($Data, $Entry . ':')) {
+        $Data = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($Data, $Entry . ':'), ';') . ';', '', $Data);
     }
-    $d .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData,9)) . ';';
-    $Handle = fopen($f, 'w');
-    fwrite($Handle, $d);
+    $Data .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData,9)) . ';';
+    $Handle = fopen($File, 'w');
+    fwrite($Handle, $Data);
     fclose($Handle);
     $IndexFile = $phpMussel['Vault'] . 'cache/index.dat';
-    $IndexNewData = $IndexData = (file_exists($IndexFile)) ? $phpMussel['ReadFile']($IndexFile, 0, true) : '';
+    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
     while (substr_count($IndexNewData, $Entry . ':')) {
         $IndexNewData = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $Entry . ':'), ';') . ';', '', $IndexNewData);
     }
@@ -571,7 +571,7 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
         $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
         $Build = array();
         foreach ($phpMussel['HashCache']['Data'] as $CacheItem) {
-            if (substr_count($CacheItem, ':')) {
+            if (strpos($CacheItem, ':') !== false) {
                 $CacheItem = explode(':', $CacheItem, 4);
                 if (!($phpMussel['Time'] > $CacheItem[1])) {
                     $Build[$CacheItem[0]] = $CacheItem;
@@ -640,6 +640,9 @@ $phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
     $Handle = fopen($phpMussel['qfuPath'] . $id . '.qfu', 'a');
     fwrite($Handle, $Out);
     fclose($Handle);
+    if (!$phpMussel['EOF']) {
+        $phpMussel['Stats-Increment']('Web-Quarantined', 1);
+    }
     return true;
 };
 
@@ -1532,6 +1535,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Generate cache ID. */
     $phpMussel['HashCacheData'] = $md5 . md5($ofn);
 
+    /** Register object scanned. */
+    if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] == 'cli_scan') {
+        $phpMussel['Stats-Increment']('CLI-Scanned', 1);
+    } else {
+        $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Scanned' : 'Web-Scanned', 1);
+    }
+
     /**
      * Check for the existence of a cache entry corresponding to the file
      * being scanned, and if it exists, use it instead of scanning the file.
@@ -1568,9 +1578,17 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             );
         }
 
+        /** Object not flagged. */
         if (!$out) {
             return array(1, '');
         }
+        /** Register object flagged. */
+        if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] == 'cli_scan') {
+            $phpMussel['Stats-Increment']('CLI-Flagged', 1);
+        } else {
+            $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Flagged' : 'Web-Blocked', 1);
+        }
+        /** Object flagged. */
         return array(2, $out);
     }
 
@@ -3649,6 +3667,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $phpMussel['DebugArr'][$phpMussel['DebugArrKey']]['Output'] = $out;
     }
 
+    if ($out) {
+        /** Register object flagged. */
+        if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] == 'cli_scan') {
+            $phpMussel['Stats-Increment']('CLI-Flagged', 1);
+        } else {
+            $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Flagged' : 'Web-Blocked', 1);
+        }
+    }
+
     /** Exit data handler. */
     return !$out ? array(1, '') : array(2, $out);
 };
@@ -3962,13 +3989,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if (is_dir($f)) {
         if (!is_readable($f)) {
             $phpMussel['memCache']['scan_errors']++;
-            return (!$n) ? 0 :
+            return !$n ? 0 :
                 $lnap . $phpMussel['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
                 $phpMussel['lang']['_exclamation_final'] . "\n";
-            $Dir = array();
-        } else {
-            $Dir = $phpMussel['DirectoryRecursiveList']($f);
         }
+        $Dir = $phpMussel['DirectoryRecursiveList']($f);
         foreach ($Dir as &$Sub) {
             try {
                 $Sub = $phpMussel['Recursor']($f . '/' . $Sub, $n, false, $dpt, $Sub);
@@ -4006,11 +4031,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     /** Plugin hook: "before_scan". */
     $phpMussel['Execute_Hook']('before_scan');
 
-    $d = is_file($f);
     $fnCRC = hash('crc32b', $ofn);
 
     /** Kill it here if the scan target isn't a valid file. */
-    if (!$d || !$f) {
+    if (!$f || !$d = is_file($f)) {
         return (!$n) ? 0 :
             $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
@@ -4783,6 +4807,10 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
         $phpMussel['OrganiseSigFiles']();
         $phpMussel['memCache']['OrganisedSigFiles'] = true;
     }
+
+    /** Initialise statistics if they've been enabled. */
+    $phpMussel['Stats-Initialise']();
+
     if ($phpMussel['EOF']) {
         $phpMussel['PrepareHashCache']();
     }
@@ -4831,6 +4859,16 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             unset($phpMussel['ThisItem'], $phpMussel['HashCache']['Data']);
         }
     }
+
+    /** Register scan event. */
+    $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Events' : 'Web-Events', 1);
+
+    /** Update statistics. */
+    if ($phpMussel['CacheModified']) {
+        $phpMussel['Statistics'] = $phpMussel['SaveCache']('Statistics', -1, serialize($phpMussel['Statistics']));
+    }
+
+    /** Exit scan process. */
     return $r;
 };
 
@@ -5279,26 +5317,23 @@ $phpMussel['GenerateSalt'] = function () {
     return $Salt;
 };
 
-/**
- * Clears expired entries from a list.
- */
+/** Clears expired entries from a list. */
 $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
     if ($List) {
         $End = 0;
         while (true) {
             $Begin = $End;
-            if ($End = strpos($List, "\n", $Begin + 1)) {
-                $Line = substr($List, $Begin, $End - $Begin);
-                if ($Split = strrpos($Line, ',')) {
-                    $Expiry = (int)substr($Line, $Split + 1);
-                    if ($Expiry < $phpMussel['Time']) {
-                        $List = str_replace($Line, '', $List);
-                        $End = 0;
-                        $Check = true;
-                    }
-                }
-            } else {
+            if (!$End = strpos($List, "\n", $Begin + 1)) {
                 break;
+            }
+            $Line = substr($List, $Begin, $End - $Begin);
+            if ($Split = strrpos($Line, ',')) {
+                $Expiry = (int)substr($Line, $Split + 1);
+                if ($Expiry < $phpMussel['Time']) {
+                    $List = str_replace($Line, '', $List);
+                    $End = 0;
+                    $Check = true;
+                }
             }
         }
     }
@@ -5309,20 +5344,15 @@ $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
  * contained values aren't integers, and otherwise, returns the sum total.
  */
 $phpMussel['ZeroMin'] = function () {
-    $Values = func_get_args();
-    $Count = count($Values);
     $Sum = 0;
-    for ($Index = 0; $Index < $Count; $Index++) {
-        $ThisValue = (int)$Values[$Index];
-        if ($ThisValue !== $Values[$Index]) {
+    foreach (func_get_args() as $Value) {
+        $IntValue = (int)$Value;
+        if ($IntValue !== $Value) {
             return 0;
         }
-        $Sum += $ThisValue;
+        $Sum += $IntValue;
     }
-    if ($Sum < 0) {
-        return 0;
-    }
-    return $Sum;
+    return $Sum < 0 ? 0 : $Sum;
 };
 
 /** Wrap state message for front-end. */
@@ -5541,9 +5571,6 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                 if (isset($phpMussel['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]])) {
                         $Component = $phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]];
-                        if (is_array($Component)) {
-                            $phpMussel['IsolateL10N']($Component, $phpMussel['Config']['general']['lang']);
-                        }
                     } else {
                         $Component = $phpMussel['Components']['Files'][$ThisNameFixed];
                     }
@@ -5718,10 +5745,9 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
         if (
             preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) ||
             !preg_match('~(?:logfile|\.(txt|log)$)~i', $Item) ||
-            !file_exists($Item) ||
-            is_dir($Item) ||
             !is_file($Item) ||
-            !is_readable($Item)
+            !is_readable($Item) ||
+            is_dir($Item)
         ) {
             continue;
         }
@@ -5816,13 +5842,29 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
     }
 };
 
-/** Duplication avoidance (front-end updates page). */
-$phpMussel['PrepareExtendedDescription'] = function (&$Arr) use (&$phpMussel) {
-    if (empty($Arr['Extended Description'])) {
+/** Prepares component extended description (front-end updates page). */
+$phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$phpMussel) {
+    $Key = 'Extended Description: ' . $Key;
+    if (isset($phpMussel['lang'][$Key])) {
+        $Arr['Extended Description'] = $phpMussel['lang'][$Key];
+    } elseif (empty($Arr['Extended Description'])) {
         $Arr['Extended Description'] = '';
     }
     if (is_array($Arr['Extended Description'])) {
         $phpMussel['IsolateL10N']($Arr['Extended Description'], $phpMussel['Config']['general']['lang']);
+    }
+};
+
+/** Prepares component name (front-end updates page). */
+$phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
+    $Key = 'Name: ' . $Key;
+    if (isset($phpMussel['lang'][$Key])) {
+        $Arr['Name'] = $phpMussel['lang'][$Key];
+    } elseif (empty($Arr['Name'])) {
+        $Arr['Name'] = '';
+    }
+    if (is_array($Arr['Name'])) {
+        $phpMussel['IsolateL10N']($Arr['Name'], $phpMussel['Config']['general']['lang']);
     }
 };
 
@@ -5997,10 +6039,7 @@ $phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMu
         echo "\r         ";
         return $Returnable;
     }
-    if (is_file($Params)) {
-        return $Callable($Params);
-    }
-    return $Params . $phpMussel['lang']['cli_is_not_a'] . "\n";
+    return is_file($Params) ? $Callable($Params) : $Params . $phpMussel['lang']['cli_is_not_a'] . "\n";
 };
 
 /** Handles errors (will expand this later). */
@@ -6221,14 +6260,10 @@ $phpMussel['Swap'] = function(&$First, &$Second) {
 $phpMussel['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$phpMussel) {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
-        if (empty($phpMussel['QueryVars'][$Switch])) {
-            $phpMussel['FE'][$Switch] = false;
-        } else {
-            $phpMussel['FE'][$Switch] = (
-                ($phpMussel['QueryVars'][$Switch] === 'true' && !$State) ||
-                ($phpMussel['QueryVars'][$Switch] !== 'true' && $State)
-            );
-        }
+        $phpMussel['FE'][$Switch] = empty($phpMussel['QueryVars'][$Switch]) ? false : (
+            ($phpMussel['QueryVars'][$Switch] === 'true' && !$State) ||
+            ($phpMussel['QueryVars'][$Switch] !== 'true' && $State)
+        );
         if ($State) {
             $StateModified = true;
         }
@@ -6241,5 +6276,41 @@ $phpMussel['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$R
         }
         $Label = isset($phpMussel['lang'][$LangItem]) ? $phpMussel['lang'][$LangItem] : $LangItem;
         $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
+    }
+};
+
+/** Increments statistics if they've been enabled. */
+$phpMussel['Stats-Increment'] = function ($Statistic, $Amount) use (&$phpMussel) {
+    if ($phpMussel['Config']['general']['statistics'] && isset($phpMussel['Statistics'][$Statistic])) {
+        $phpMussel['Statistics'][$Statistic] += $Amount;
+        $phpMussel['CacheModified'] = true;
+    }
+};
+
+/** Initialise statistics if they've been enabled. */
+$phpMussel['Stats-Initialise'] = function () use (&$phpMussel) {
+    if ($phpMussel['Config']['general']['statistics']) {
+        $phpMussel['CacheModified'] = false;
+
+        if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: array())) {
+            $phpMussel['Statistics'] = unserialize($phpMussel['Statistics']) ?: array();
+        }
+
+        if (empty($phpMussel['Statistics']['Other-Since'])) {
+            $phpMussel['Statistics'] = array(
+                'Other-Since' => $phpMussel['Time'],
+                'Web-Events' => 0,
+                'Web-Scanned' => 0,
+                'Web-Blocked' => 0,
+                'Web-Quarantined' => 0,
+                'CLI-Events' => 0,
+                'CLI-Scanned' => 0,
+                'CLI-Flagged' => 0,
+                'API-Events' => 0,
+                'API-Scanned' => 0,
+                'API-Flagged' => 0
+            );
+            $phpMussel['CacheModified'] = true;
+        }
     }
 };

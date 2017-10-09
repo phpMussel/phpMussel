@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.03).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,6 +96,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根據【Virus Total AP
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（見上面的說明）。';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作為標準，​phpMussel將限制什麼文件它掃描通過使用【Virus Total API】為那些文件它考慮作為『可疑』。​您可以可選調整這個局限性通過修改的<code>vt_suspicion_level</code>指令數值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel應使用掃描結果使用【Virus Total API】作為檢測或作為檢測重量嗎？​這個指令存在，​因為，​雖說掃描一個文件使用多AV引擎（例如怎麼樣VirusTotal做） 應結果有一個增加檢測率（和因此在一個更惡意文件被抓），​它可以還結果有更假陽性，​和因此，​為某些情況，​掃描結果可能被更好使用作為一個置信得分而不是作為一個明確結論。​如果一個數值的<code>0</code>是使用，​掃描結果使用【Virus Total API】將會適用作為檢測，​和因此，​如果任何AV引擎使用通過VirusTotal標致文件被掃描作為惡意，​phpMussel將考慮文件作為惡意。​如果任何其他數值是使用，​掃描結果使用【Virus Total API】將會適用作為檢測重量，​和因此，​數的AV引擎使用通過VirusTotal標致文件被掃描作為惡意將服務作為一個置信得分（或檢測重量） 為如果文件被掃描應會考慮惡意通過phpMussel（數值使用將代表最低限度的置信得分或重量需要以被考慮惡意）。​一個數值的<code>0</code>是使用作為標準。';
+$phpMussel['lang']['Extended Description: phpMussel'] = '主包（沒有簽名文件，文檔，和配置）。';
 $phpMussel['lang']['field_activate'] = '啟用';
 $phpMussel['lang']['field_clear_all'] = '撤銷所有';
 $phpMussel['lang']['field_component'] = '組件';

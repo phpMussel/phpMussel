@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.07).
+ * This file: Front-end handler (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1577,17 +1577,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     /** Prepare installed component metadata and options for display. */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
-        if (empty($phpMussel['Components']['ThisComponent']['Name'])) {
+        if (empty($phpMussel['Components']['ThisComponent']['Name']) && empty($phpMussel['lang']['Name: ' . $phpMussel['Components']['Key']])) {
             $phpMussel['Components']['ThisComponent'] = '';
             continue;
         }
-        if (is_array($phpMussel['Components']['ThisComponent']['Name'])) {
-            $phpMussel['IsolateL10N'](
-                $phpMussel['Components']['ThisComponent']['Name'],
-                $phpMussel['Config']['general']['lang']
-            );
-        }
-        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent']);
+        $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
+        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
         $phpMussel['Components']['ThisComponent']['Options'] = '';
         $phpMussel['Components']['ThisComponent']['StatusOptions'] = '';
@@ -1642,22 +1637,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Name'])) {
                 $phpMussel['Components']['ThisComponent']['Name'] =
                     $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Name'];
-                if (is_array($phpMussel['Components']['ThisComponent']['Name'])) {
-                    $phpMussel['IsolateL10N'](
-                        $phpMussel['Components']['ThisComponent']['Name'],
-                        $phpMussel['Config']['general']['lang']
-                    );
-                }
+                $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
             }
             if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Extended Description'])) {
                 $phpMussel['Components']['ThisComponent']['Extended Description'] =
                     $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Extended Description'];
-                if (is_array($phpMussel['Components']['ThisComponent']['Extended Description'])) {
-                    $phpMussel['IsolateL10N'](
-                        $phpMussel['Components']['ThisComponent']['Extended Description'],
-                        $phpMussel['Config']['general']['lang']
-                    );
-                }
+                $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
             }
             if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 if (
@@ -1886,13 +1871,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']] = substr(
             $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']], 0, $phpMussel['ThisOffset']
         ) . $phpMussel['Components']['RemoteDataThis'] . "\n";
-        if (is_array($phpMussel['Components']['ThisComponent']['Name'])) {
-            $phpMussel['IsolateL10N'](
-                $phpMussel['Components']['ThisComponent']['Name'],
-                $phpMussel['Config']['general']['lang']
-            );
-        }
-        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent']);
+        $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
+        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
         $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['Components']['ThisComponent']['Version'];
         $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['lang']['response_updates_not_installed'];
@@ -2076,6 +2056,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     $phpMussel['Components']['Files'][$phpMussel['Components']['ThisFile']] = $phpMussel['Components']['ThisName'];
                 }
             }
+            $phpMussel['PrepareName']($phpMussel['Components']['ThisData'], $phpMussel['Components']['ThisName']);
             if (!empty($phpMussel['Components']['ThisData']['Name'])) {
                 $phpMussel['Components']['Names'][$phpMussel['Components']['ThisName']] = $phpMussel['Components']['ThisData']['Name'];
             }
@@ -2447,15 +2428,42 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics') {
     }
 
     /** Fetch statistics cache data. */
-    $phpMussel['Cache'] = file_exists($phpMussel['Vault'] . 'cache.dat') ? unserialize($phpMussel['ReadFile']($phpMussel['Vault'] . 'cache.dat')) : array();
+    if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: array())) {
+        $phpMussel['Statistics'] = unserialize($phpMussel['Statistics']) ?: array();
+    }
+
+    /** Clear statistics. */
+    if (!empty($_POST['ClearStats'])) {
+        $phpMussel['SaveCache']('Statistics', 1, '-');
+        $phpMussel['Statistics'] = array();
+        $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_statistics_cleared'] . '<br />';
+    }
 
     /** Statistics have been counted since... */
-    if (empty($phpMussel['Cache']['Statistics']['Other-Since'])) {
+    if (empty($phpMussel['Statistics']['Other-Since'])) {
         $phpMussel['FE']['Other-Since'] = '<span class="s">-</span>';
     } else {
         $phpMussel['FE']['Other-Since'] = '<span class="s">' . $phpMussel['TimeFormat'](
-            $phpMussel['Cache']['Statistics']['Other-Since'],
+            $phpMussel['Statistics']['Other-Since'],
             $phpMussel['Config']['general']['timeFormat']
+        ) . '</span>';
+    }
+
+    /** Fetch and process various statistics. */
+    foreach (array(
+        'Web-Events',
+        'Web-Scanned',
+        'Web-Blocked',
+        'Web-Quarantined',
+        'CLI-Events',
+        'CLI-Scanned',
+        'CLI-Flagged',
+        'API-Events',
+        'API-Scanned',
+        'API-Flagged'
+    ) as $phpMussel['TheseStats']) {
+        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['Number_L10N'](
+            empty($phpMussel['Statistics'][$phpMussel['TheseStats']]) ? 0 : $phpMussel['Statistics'][$phpMussel['TheseStats']]
         ) . '</span>';
     }
 
@@ -2488,7 +2496,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics') {
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
     /** Cleanup. */
-    unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Cache']);
+    unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Statistics']);
 
 }
 

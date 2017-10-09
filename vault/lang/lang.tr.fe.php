@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.03).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,6 +96,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total API doküma
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Yukarıdaki açıklamaya bakın).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Varsayılan olarak, phpMussel, "şüpheli" olarak gördüğü dosyalara Virus Total API\'sını kullanarak taradığı dosyaları sınırlar. Bu sınırlamayı, <code>vt_suspicion_level</code> yönergesinin değerini değiştirerek ayarlayabilirsiniz.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Virus Total API tarama sonuçları algılar mı yoksa algılama ağırlığı olarak mı uygulanmalıdır? Bir dosyayı birden çok motor kullanarak tarama yapmak (Virus Total\'in yaptığı gibi) artan algılama hızıyla sonuçlanmalıdır (ve dolayısıyla daha çok sayıda kötü amaçlı dosyanın yakalanmasıyla), ancak daha fazla yanlış pozitif sayıya neden olabilir, ve bu nedenle, bazı durumlarda, tarama sonuçları kesin bir sonuç olmaktan çok bir güven puanı olarak daha iyi kullanılabilir; Bu nedenle bu direktifin mevcut olması. 0 değeri kullanılırsa, Virus Total API tarama sonuçları algılar olarak uygulanır, ve bu nedenle eğer herhangi bir motor zararlı olarak dosyaya bayrak atarsa, phpMussel dosyayı kötü amaçlı olarak değerlendirir. Başka herhangi bir değer kullanılırsa, Virus Total API tarama sonuçları algılama ağırlığı olarak uygulanır, ve bu nedenle, dosyayı kötü amaçlı olarak işaretleyen motor sayısı bir güven puanı görevi görür (kullanılan değer dosyanın kötü amaçlı olarak değerlendirilebilmesi için gereken minimum güven puanı temsil edecektir). Varsayılan olarak 0 değeri kullanılır.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['field_activate'] = 'Etkinleştir';
 $phpMussel['lang']['field_clear_all'] = 'Hepsini temizle';
 $phpMussel['lang']['field_component'] = 'Bileşen';

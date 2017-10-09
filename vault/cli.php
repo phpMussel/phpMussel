@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.08.17).
+ * This file: CLI handler (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,7 +49,16 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $phpMussel['PrepareHashCache']();
             }
             try {
+                /** Initialise statistics if they've been enabled. */
+                $phpMussel['Stats-Initialise']();
+                /** Register scan event. */
+                $phpMussel['Stats-Increment']('CLI-Events', 1);
+                /** Call recursor. */
                 echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
+                /** Update statistics. */
+                if ($phpMussel['CacheModified']) {
+                    $phpMussel['Statistics'] = $phpMussel['SaveCache']('Statistics', -1, serialize($phpMussel['Statistics']));
+                }
             } catch (\Exception $e) {
                 die($e->getMessage());
             }

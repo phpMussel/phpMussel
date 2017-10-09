@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.10.03).
+ * This file: Spanish language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,6 +96,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'En acuerdo con la docum
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Ver descripción arriba).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Por predefinido, phpMussel restringirá qué archivos se escaneado usando el Virus Total API a esos archivos que se considera "sospechosa". Opcionalmente, usted puede ajustar esta restricción por manera de cambiando el valor de la <code>vt_suspicion_level</code> directiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = '¿Debería phpMussel aplicar los resultados del escaneo utilizando el Virus Total API como detecciones o como detección peso? Esta directiva existe, por razón de que, aunque escanear un archivo usando múltiples motores (como Virus Total hacer) debería resultar en un aumento detección cuenta (y por lo tanto en un mayor número de maliciosos archivos ser atrapado), esta también puede resultar en un mayor número de falsos positivos, y por lo tanto, en algunas circunstancias, los resultados del escanear pueden ser mejor utilizados como una puntuación de confianza y no como una definitiva conclusión. Si un valor de 0 es utiliza, los resultados del escaneo utilizando el Virus Total API se aplicará como detecciones, y por lo tanto, si cualquier motor utilizado por Virus Total marca el archivo está escaneando como malicioso, phpMussel considerará el archivo a ser malicioso. Si cualquier otro valor es utiliza, los resultados del escaneo utilizando el Virus Total API se aplicará como detección peso, y por lo tanto, el número de motores utilizados por Virus Total que marca el archivo está escaneando como malicioso servirá como una puntuación de confianza (o detección peso) para si el archivo que ser escanear debe ser considerado malicioso por phpMussel (el valor utilizado representará el mínima puntuación de confianza o peso requerido con el fin de ser considerado malicioso). Un valor de 0 es utilizado por predefinido.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'El paquete principal (menos las firmas, la documentación, y la configuración).';
 $phpMussel['lang']['field_activate'] = 'Activar';
 $phpMussel['lang']['field_clear_all'] = 'Anular todo';
 $phpMussel['lang']['field_component'] = 'Componente';

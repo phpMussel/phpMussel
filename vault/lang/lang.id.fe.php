@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.03).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,6 +96,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Menurut Virus Total dok
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Lihat uraian di atas).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Secara default, phpMussel akan membatasi file dipindai menggunakan Virus Total API untuk file-file yang dianggap "mencurigakan". Anda dapat menyesuaikan pembatasan ini dengan mengubah nilai direktif <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Apakah Anda ingin phpMussel menerapkan hasil pemindaian menggunakan Virus Total API sebagai deteksi atau deteksi pembobotan? Direktif ini ada, karena, meskipun memindai file menggunakan mesin-mesin kelipatan (sebagai Virus Total melakukannya) harus menghasilkan tingkat deteksi meningkat (dan demikian lebih banyak file berbahaya tertangkap), juga dapat menghasilkan jumlah yang lebih banyak dari positif palsu, dan demikian, dalam kondisi beberapa, hasil pemindaian dapat digunakan lebih efektif sebagai nilai keyakinan daripada daripada sebagai kesimpulan definitif. Jika nilai 0 digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai pendeteksian, dan demikian, jika mesin-mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya, phpMussel akan menganggap file yang berbahaya. Jika nilai lain yang digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai deteksi pembobotan, dan demikian, jumlah mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya akan berfungsi sebagai nilai keyakinan (atau deteksi pembobotan) untuk jika file dipindai harus dianggap berbahaya oleh phpMussel (nilai digunakan akan mewakili nilai keyakinan minimum atau pembobotan minimum diperlukan untuk dianggap berbahaya). Nilai 0 digunakan secara default.';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $phpMussel['lang']['field_activate'] = 'Mengaktifkan';
 $phpMussel['lang']['field_clear_all'] = 'Cabut semua';
 $phpMussel['lang']['field_component'] = 'Komponen';

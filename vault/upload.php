@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.08.17).
+ * This file: Upload handler (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -113,23 +113,20 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         }
         /** Begin normalising the $_FILES data to the "FilesData" array. */
         if (!is_array($_FILES[$phpMussel['upload']['FilesData']['k']]['error'])) {
-            $phpMussel['upload']['FilesData']['FileSet'] = array();
-            $phpMussel['upload']['FilesData']['FileSet']['name'] =
-                array($_FILES[$phpMussel['upload']['FilesData']['k']]['name']);
-            $phpMussel['upload']['FilesData']['FileSet']['type'] =
-                array($_FILES[$phpMussel['upload']['FilesData']['k']]['type']);
-            $phpMussel['upload']['FilesData']['FileSet']['tmp_name'] =
-                array($_FILES[$phpMussel['upload']['FilesData']['k']]['tmp_name']);
-            $phpMussel['upload']['FilesData']['FileSet']['error'] =
-                array($_FILES[$phpMussel['upload']['FilesData']['k']]['error']);
-            $phpMussel['upload']['FilesData']['FileSet']['size'] =
-                array($_FILES[$phpMussel['upload']['FilesData']['k']]['size']);
+            $phpMussel['upload']['FilesData']['FileSet'] = array(
+                'name' => array($_FILES[$phpMussel['upload']['FilesData']['k']]['name']),
+                'type' => array($_FILES[$phpMussel['upload']['FilesData']['k']]['type']),
+                'tmp_name' => array($_FILES[$phpMussel['upload']['FilesData']['k']]['tmp_name']),
+                'error' => array($_FILES[$phpMussel['upload']['FilesData']['k']]['error']),
+                'size' => array($_FILES[$phpMussel['upload']['FilesData']['k']]['size'])
+            );
         } else {
             $phpMussel['upload']['FilesData']['FileSet'] =
                 $_FILES[$phpMussel['upload']['FilesData']['k']];
         }
-        $phpMussel['upload']['FilesData']['FileSet']['c'] =
-            count($phpMussel['upload']['FilesData']['FileSet']['error']);
+        $phpMussel['upload']['FilesData']['FileSet']['c'] = count(
+            $phpMussel['upload']['FilesData']['FileSet']['error']
+        );
 
         for (
             $phpMussel['upload']['FilesData']['FileSet']['i'] = 0, $phpMussel['SkipSerial'] = true;
