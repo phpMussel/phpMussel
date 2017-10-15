@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.09).
+ * This file: Functions file (last modified: 2017.10.15).
  */
 
 /**
@@ -90,7 +90,9 @@ $phpMussel['ParseVars'] = function ($Needle, $Haystack) {
         return '';
     }
     array_walk($Needle, function($Value, $Key) use (&$Haystack) {
-        $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+        if (!is_array($Value)) {
+            $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+        }
     });
     return $Haystack;
 };
@@ -5362,13 +5364,7 @@ $phpMussel['WrapRedText'] = function($Err) {
 
 /** Format filesize information. */
 $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
-    $Scale = array(
-        $phpMussel['lang']['field_size_bytes'],
-        $phpMussel['lang']['field_size_KB'],
-        $phpMussel['lang']['field_size_MB'],
-        $phpMussel['lang']['field_size_GB'],
-        $phpMussel['lang']['field_size_TB']
-    );
+    $Scale = array('field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB');
     $Iterate = 0;
     $Filesize = (int)$Filesize;
     while ($Filesize > 1024) {
@@ -5378,7 +5374,7 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
             break;
         }
     }
-    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $phpMussel['Plural']($Filesize, $phpMussel['lang'][$Scale[$Iterate]]);
 };
 
 /**
@@ -6313,4 +6309,21 @@ $phpMussel['Stats-Initialise'] = function () use (&$phpMussel) {
             $phpMussel['CacheModified'] = true;
         }
     }
+};
+
+/** Default language plurality rule. */
+$phpMussel['Plural-Rule'] = function($Num) {
+    return $Num === 1 ? 0 : 1;
+};
+
+/** Select string based on plural rule. */
+$phpMussel['Plural'] = function($Num, $String) use (&$phpMussel) {
+    if (!is_array($String)) {
+        return $String;
+    }
+    $Choice = $phpMussel['Plural-Rule']($Num);
+    if (!empty($String[$Choice])) {
+        return $String[$Choice];
+    }
+    return empty($String[0]) ? '' : $String[0];
 };

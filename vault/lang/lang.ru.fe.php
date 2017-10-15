@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.09).
+ * This file: Russian language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -125,7 +125,7 @@ $phpMussel['lang']['field_rename_file'] = 'Переименовывать';
 $phpMussel['lang']['field_reset'] = 'Сбросить';
 $phpMussel['lang']['field_set_new_password'] = 'Установить новый пароль';
 $phpMussel['lang']['field_size'] = 'Общий Размер: ';
-$phpMussel['lang']['field_size_bytes'] = 'байтов';
+$phpMussel['lang']['field_size_bytes'] = ['байт', 'байта', 'байтов'];
 $phpMussel['lang']['field_size_GB'] = 'ГБ';
 $phpMussel['lang']['field_size_KB'] = 'КБ';
 $phpMussel['lang']['field_size_MB'] = 'МБ';

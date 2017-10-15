@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.09).
+ * This file: Front-end handler (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -862,7 +862,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             'ent.all&&!document.getElementById?document.all.%1$s_preview.innerHTML=t:' .
                             '\'\'};%1$s_function();</script>',
                         $phpMussel['ThisDir']['DirLangKey'],
-                        $phpMussel['lang']['field_size_bytes'],
+                        $phpMussel['Plural'](0, $phpMussel['lang']['field_size_bytes']),
                         $phpMussel['lang']['field_size_KB'],
                         $phpMussel['lang']['field_size_MB'],
                         $phpMussel['lang']['field_size_GB'],

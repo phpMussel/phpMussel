@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.10.09).
+ * This file: Italian language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */

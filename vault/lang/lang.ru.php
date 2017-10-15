@@ -11,13 +11,21 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.08.12).
+ * This file: Russian language data (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
 if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
+
+/** Language plurality rule. */
+$phpMussel['Plural-Rule'] = function($Num) {
+    if ($Num % 10 === 1 && $Num % 100 !== 11) {
+        return 0;
+    }
+    return $Num % 10 >= 2 && $Num % 10 <= 4 && ($Num % 100 < 10 || $Num % 100 >= 20) ? 1 : 2;
+};
 
 $phpMussel['lang']['bad_command'] = 'Извините, команда непонятна.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Не удалось завершить процесс сканирования';

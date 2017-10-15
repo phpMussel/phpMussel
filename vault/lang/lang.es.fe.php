@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.10.09).
+ * This file: Spanish language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -125,7 +125,7 @@ $phpMussel['lang']['field_rename_file'] = 'Cambiar el nombre';
 $phpMussel['lang']['field_reset'] = 'Reiniciar';
 $phpMussel['lang']['field_set_new_password'] = 'Crear Nueva Contraseña';
 $phpMussel['lang']['field_size'] = 'Tamaño Total: ';
-$phpMussel['lang']['field_size_bytes'] = 'bytes';
+$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';

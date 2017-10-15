@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.08.12).
+ * This file: Urdu language data (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,9 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+/** Language text direction (RTL). */
 $phpMussel['lang']['textDir'] = 'rtl';
+
 $phpMussel['lang']['bad_command'] = 'میں نے اس حکم کو نہیں سمجھتے افسوس.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'سکیننگ کے عمل کو مکمل کرنے میں ناکام';
 $phpMussel['lang']['cli_is_not_a'] = ' یک فائل یا ڈائریکٹری نہیں ہے.';

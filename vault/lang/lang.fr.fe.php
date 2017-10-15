@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.10.09).
+ * This file: French language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -125,7 +125,7 @@ $phpMussel['lang']['field_rename_file'] = 'Renommer';
 $phpMussel['lang']['field_reset'] = 'Réinitialiser';
 $phpMussel['lang']['field_set_new_password'] = 'Définir nouveau mot de passe';
 $phpMussel['lang']['field_size'] = 'Taille totale : ';
-$phpMussel['lang']['field_size_bytes'] = 'octets';
+$phpMussel['lang']['field_size_bytes'] = ['octet', 'octets'];
 $phpMussel['lang']['field_size_GB'] = 'Go';
 $phpMussel['lang']['field_size_KB'] = 'Ko';
 $phpMussel['lang']['field_size_MB'] = 'Mo';

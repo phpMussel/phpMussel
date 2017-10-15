@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.09).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -48,8 +48,8 @@ $phpMussel['lang']['config_files_max_uploads'] = 'Yükleme taraması sırasında
 $phpMussel['lang']['config_general_cleanup'] = 'İlk yükleme taramasından sonra komut dosyası tarafından kullanılan değişkenleri ve önbellek ayarını kaldırın mı? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan]. Yüklemeleri taramak için yalnızca betiği kullanıyorsanız, bunu <code>true</code> (evet) olarak ayarlamanız gerekir, bellek kullanımını en aza indirgemek için. Senaryoyu başka şeyler için kullanıyorsanız, onu <code>false</code> (hayır) olarak ayarlamanız, yinelenen verilerin belleğe yeniden yüklenmesini önlemek için. Genel uygulamada genellikle <code>true</code> olarak ayarlanmalıdır, ancak bunu yaparsanız, betiği dosya yüklemelerini taramaktan başka bir şey için kullanamazsınız. CLI modunda hiçbir etkisi yoktur.';
 $phpMussel['lang']['config_general_default_algo'] = 'Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 gerektirir).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Bu yönergeyi etkinleştirmek, komut dosyasına, imzalar yoluyla veya başka şekilde herhangi bir algılama ölçütüyle eşleşen tüm taranan yüklemeleri derhal silmesini söyleyecektir. Temiz olduğu düşünülen dosyalara dokunulmaz. Arşiv durumunda tüm arşiv silinir. Dosya yükleme taraması için, genellikle bu yönergeyi etkinleştirmek gerekli değildir, çünkü genellikle yürütme tamamlandığında PHP otomatik olarak önbellek içeriğini temizleyecektir (yükleme nedeniyle geçici olarak saklanan dosyaları sileceğini belirtir). Bu yönerge, burada PHP\'nin kopyaları her zaman beklendiği gibi davranmayanlar için ek bir güvenlik tedbiri olarak eklenmiştir. Yanlış/False = Taramadan sonra, dosyayı yalnız bırakın [Varsayılan]; Doğru/True = Taramadan sonra, temiz değilse hemen silin.';
-$phpMussel['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak?';
-$phpMussel['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak?';
+$phpMussel['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak? CLI modu varsayılan olarak etkindir, ancak bazen bazı test araçlarına (örneğin PHPUnit) ve diğer CLI tabanlı uygulamalara müdahale edebilir. CLI modunu devre dışı bırakmanız gerekmiyorsa, bu direktif görmezden almalısınız. False = CLI modunu etkinleştir [Varsayılan]; True = CLI modunu devre dışı bırak.';
+$phpMussel['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak? Ön uç erişimi phpMussel\'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. phpMussel\'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan].';
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'phpMussel eklentileri için desteği etkinleştirilsin mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel, dosya yüklemesi engellenen mesajla birlikte hangi başlıkları göndermelidir? Yanlış/False = 200 OK (Tamam); Doğru/True = 403 Forbidden (Yasak) [Varsayılan].';
@@ -125,7 +125,7 @@ $phpMussel['lang']['field_rename_file'] = 'Adını değiştirmek';
 $phpMussel['lang']['field_reset'] = 'Sıfırla';
 $phpMussel['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
 $phpMussel['lang']['field_size'] = 'Toplam Boyut: ';
-$phpMussel['lang']['field_size_bytes'] = 'Bayt';
+$phpMussel['lang']['field_size_bytes'] = 'bayt';
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
