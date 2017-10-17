@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.10.15).
+ * This file: German language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'Komponente';
 $phpMussel['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
 $phpMussel['lang']['field_deactivate'] = 'Deaktivieren';
 $phpMussel['lang']['field_delete_account'] = 'Konto löschen';
+$phpMussel['lang']['field_delete_all'] = 'Alles löschen';
 $phpMussel['lang']['field_delete_file'] = 'Löschen';
 $phpMussel['lang']['field_download_file'] = 'Herunterladen';
 $phpMussel['lang']['field_edit_file'] = 'Bearbeiten';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Optionen';
 $phpMussel['lang']['field_password'] = 'Passwort';
 $phpMussel['lang']['field_permissions'] = 'Berechtigungen';
+$phpMussel['lang']['field_quarantine_key'] = 'Quarantäneschlüssel';
 $phpMussel['lang']['field_rename_file'] = 'Umbenennen';
 $phpMussel['lang']['field_reset'] = 'Zurücksetzen';
+$phpMussel['lang']['field_restore_file'] = 'Wiederherstellen';
 $phpMussel['lang']['field_set_new_password'] = 'Neues Passwort eingeben';
 $phpMussel['lang']['field_size'] = 'Gesamtgröße: ';
 $phpMussel['lang']['field_size_bytes'] = ['Byte', 'Bytes'];
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI verwendet:';
 $phpMussel['lang']['label_scanned_objects'] = 'Objekte gescannt';
 $phpMussel['lang']['label_scanned_uploads'] = 'Uploads gescannt';
 $phpMussel['lang']['label_show'] = 'Zeig';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Größe in Quarantäne: ';
 $phpMussel['lang']['label_stable'] = 'Neueste stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'System Information:';
 $phpMussel['lang']['label_unstable'] = 'Neueste instabil:';
+$phpMussel['lang']['label_upload_date'] = 'Datum des Hochladens: ';
+$phpMussel['lang']['label_upload_hash'] = 'Hash des Hochladen: ';
+$phpMussel['lang']['label_upload_origin'] = 'Ursprung des Hochladen: ';
+$phpMussel['lang']['label_upload_size'] = 'Größe des Hochladen: ';
 $phpMussel['lang']['link_accounts'] = 'Konten';
 $phpMussel['lang']['link_config'] = 'Konfiguration';
 $phpMussel['lang']['link_documentation'] = 'Dokumentation';
 $phpMussel['lang']['link_file_manager'] = 'Dateimanager';
 $phpMussel['lang']['link_home'] = 'Startseite';
 $phpMussel['lang']['link_logs'] = 'Protokolldateien';
+$phpMussel['lang']['link_quarantine'] = 'Quarantäne';
 $phpMussel['lang']['link_statistics'] = 'Statistiken';
 $phpMussel['lang']['link_textmode'] = 'Textformatierung: <a href="%1$sfalse">Einfach</a> – <a href="%1$strue">Schick</a>';
 $phpMussel['lang']['link_updates'] = 'Aktualisierungen';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Aktualisierung fehlgeschlagen
 $phpMussel['lang']['response_file_deleted'] = 'Datei erfolgreich gelöscht!';
 $phpMussel['lang']['response_file_edited'] = 'Datei erfolgreich geändert!';
 $phpMussel['lang']['response_file_renamed'] = 'Datei erfolgreich umbenannt!';
+$phpMussel['lang']['response_file_restored'] = 'Datei erfolgreich wiederhergestellt!';
 $phpMussel['lang']['response_file_uploaded'] = 'Datei erfolgreich hochgeladen!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Einloggen-Fehler! Ungültiges Passwort!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Einloggen-Fehler! Benutzername existiert nicht!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
 $phpMussel['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
+$phpMussel['lang']['response_restore_error_1'] = 'Fehler beim Wiederherstellen! Beschädigte Datei!';
+$phpMussel['lang']['response_restore_error_2'] = 'Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistiken gelöscht.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'Eingeloggt.';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
+$phpMussel['lang']['state_quarantine'] = ['Es befinden sich derzeit %s Datei in der Quarantäne.', 'Es befinden sich derzeit %s Dateien in der Quarantäne.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateim
 $phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der phpMussel Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $phpMussel['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
+$phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Diese Seite erleichtert die Verwaltung von, und listet alle Dateien auf, die sich derzeit in der Quarantäne befinden.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Hinweis: Die Quarantäne ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Siehe die <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.de.md#SECTION7">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken.';
 $phpMussel['lang']['tip_statistics'] = 'Hallo, {username}.<br />Diese Seite zeigt einige grundlegende Nutzungsstatistiken zu Ihrer phpMussel-Installation.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Dateimanager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Startseite';
 $phpMussel['lang']['title_login'] = 'phpMussel – Einloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Protokolldateien';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantäne';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiken';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Aktualisierungen';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload-Prüfung';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.10.15).
+ * This file: Dutch language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'Component';
 $phpMussel['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $phpMussel['lang']['field_deactivate'] = 'Deactiveren';
 $phpMussel['lang']['field_delete_account'] = 'Account Verwijderen';
+$phpMussel['lang']['field_delete_all'] = 'Verwijder alles';
 $phpMussel['lang']['field_delete_file'] = 'Verwijder';
 $phpMussel['lang']['field_download_file'] = 'Download';
 $phpMussel['lang']['field_edit_file'] = 'Bewerk';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opties';
 $phpMussel['lang']['field_password'] = 'Wachtwoord';
 $phpMussel['lang']['field_permissions'] = 'Machtigingen';
+$phpMussel['lang']['field_quarantine_key'] = 'Quarantaine sleutel';
 $phpMussel['lang']['field_rename_file'] = 'Naam veranderen';
 $phpMussel['lang']['field_reset'] = 'Resetten';
+$phpMussel['lang']['field_restore_file'] = 'Herstellen';
 $phpMussel['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $phpMussel['lang']['field_size'] = 'Totale Grootte: ';
 $phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI gebruikt:';
 $phpMussel['lang']['label_scanned_objects'] = 'Objecten gescand';
 $phpMussel['lang']['label_scanned_uploads'] = 'Uploads gescand';
 $phpMussel['lang']['label_show'] = 'Zien';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Grootte in quarantaine: ';
 $phpMussel['lang']['label_stable'] = 'Laatste stabiele:';
 $phpMussel['lang']['label_sysinfo'] = 'Systeem informatie:';
 $phpMussel['lang']['label_unstable'] = 'Laatste onstabiele:';
+$phpMussel['lang']['label_upload_date'] = 'Upload datum: ';
+$phpMussel['lang']['label_upload_hash'] = 'Upload hash: ';
+$phpMussel['lang']['label_upload_origin'] = 'Upload oorsprong: ';
+$phpMussel['lang']['label_upload_size'] = 'Upload grootte: ';
 $phpMussel['lang']['link_accounts'] = 'Accounts';
 $phpMussel['lang']['link_config'] = 'Configuratie';
 $phpMussel['lang']['link_documentation'] = 'Documentatie';
 $phpMussel['lang']['link_file_manager'] = 'Bestandsbeheer';
 $phpMussel['lang']['link_home'] = 'Startpagina';
 $phpMussel['lang']['link_logs'] = 'Logbestanden';
+$phpMussel['lang']['link_quarantine'] = 'Quarantaine';
 $phpMussel['lang']['link_statistics'] = 'Statistieken';
 $phpMussel['lang']['link_textmode'] = 'Tekstformaat: <a href="%1$sfalse">Eenvoudig</a> – <a href="%1$strue">Geformatteerde</a>';
 $phpMussel['lang']['link_updates'] = 'Updates';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Update mislukt!';
 $phpMussel['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
 $phpMussel['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
 $phpMussel['lang']['response_file_renamed'] = 'De naam van de bestand met succes veranderd!';
+$phpMussel['lang']['response_file_restored'] = 'Bestand succesvol hersteld!';
 $phpMussel['lang']['response_file_uploaded'] = 'Bestand succesvol uploadet!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $phpMussel['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
+$phpMussel['lang']['response_restore_error_1'] = 'Kan niet herstellen! Beschadigd bestand!';
+$phpMussel['lang']['response_restore_error_2'] = 'Kan niet herstellen! Onjuiste quarantaine sleutel!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Component niet geïnstalleerd!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'Ingelogd.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_maintenance_mode'] = 'Waarschuwing: De onderhoudsmodus is ingeschakeld!';
 $phpMussel['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
+$phpMussel['lang']['state_quarantine'] = ['Er is momenteel %s bestand in quarantaine.', 'Er zijn momenteel %s bestanden in quarantaine.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeh
 $phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de phpMussel frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $phpMussel['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Deze pagina bevat een lijst met alle bestanden die momenteel in quarantaine staan en het beheer van die bestanden vergemakkelijkt.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Notitie: Quarantaine is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.nl.md#SECTION7">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
 $phpMussel['lang']['tip_statistics'] = 'Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw phpMussel-installatie.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Bestandsbeheer';
 $phpMussel['lang']['title_home'] = 'phpMussel – Startpagina';
 $phpMussel['lang']['title_login'] = 'phpMussel – Inloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Logbestanden';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantaine';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistieken';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';

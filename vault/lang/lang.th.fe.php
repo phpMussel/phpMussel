@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.10.15).
+ * This file: Thai language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'คอมโพเนนต์';
 $phpMussel['lang']['field_create_new_account'] = 'สร้างบัญชีใหม่';
 $phpMussel['lang']['field_deactivate'] = 'ปิดใช้งาน';
 $phpMussel['lang']['field_delete_account'] = 'ลบบัญชี';
+$phpMussel['lang']['field_delete_all'] = 'ลบทั้งหมด';
 $phpMussel['lang']['field_delete_file'] = 'ลบ';
 $phpMussel['lang']['field_download_file'] = 'ดาวน์โหลด';
 $phpMussel['lang']['field_edit_file'] = 'เปลี่ยนแปลง';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'ตกลง';
 $phpMussel['lang']['field_options'] = 'ตัวเลือก';
 $phpMussel['lang']['field_password'] = 'รหัสผ่าน';
 $phpMussel['lang']['field_permissions'] = 'สิทธิ์';
+$phpMussel['lang']['field_quarantine_key'] = 'คีย์กักกัน';
 $phpMussel['lang']['field_rename_file'] = 'เปลี่ยนชื่อ';
 $phpMussel['lang']['field_reset'] = 'รีเซ็ต';
+$phpMussel['lang']['field_restore_file'] = 'ฟื้นฟู';
 $phpMussel['lang']['field_set_new_password'] = 'ตั้งรหัสผ่านใหม่';
 $phpMussel['lang']['field_size'] = 'ขนาดรวม: ';
 $phpMussel['lang']['field_size_bytes'] = 'ไบต์';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $phpMussel['lang']['label_scanned_objects'] = 'วัตถุถูกสแกน';
 $phpMussel['lang']['label_scanned_uploads'] = 'อัปโหลดถูกสแกน';
 $phpMussel['lang']['label_show'] = 'แสดง';
+$phpMussel['lang']['label_size_in_quarantine'] = 'ขนาดในกักกัน: ';
 $phpMussel['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $phpMussel['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
 $phpMussel['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';
+$phpMussel['lang']['label_upload_date'] = 'อัปโหลดวันที่: ';
+$phpMussel['lang']['label_upload_hash'] = 'อัปโหลดแฮช: ';
+$phpMussel['lang']['label_upload_origin'] = 'อัปโหลดที่มา: ';
+$phpMussel['lang']['label_upload_size'] = 'อัปโหลดขนาด: ';
 $phpMussel['lang']['link_accounts'] = 'บัญชี';
 $phpMussel['lang']['link_config'] = 'การกำหนดค่า';
 $phpMussel['lang']['link_documentation'] = 'เอกสาร';
 $phpMussel['lang']['link_file_manager'] = 'ตัวจัดการไฟล์';
 $phpMussel['lang']['link_home'] = 'โฮมเพจ';
 $phpMussel['lang']['link_logs'] = 'บันทึก';
+$phpMussel['lang']['link_quarantine'] = 'กักกัน';
 $phpMussel['lang']['link_statistics'] = 'สถิติ';
 $phpMussel['lang']['link_textmode'] = 'การจัดรูปแบบข้อความ: <a href="%1$sfalse">ง่าย</a> – <a href="%1$strue">แฟนซี</a>';
 $phpMussel['lang']['link_updates'] = 'อัปเดต';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'การอัพเดท�
 $phpMussel['lang']['response_file_deleted'] = 'ไฟล์สำเร็จแล้วลบ!';
 $phpMussel['lang']['response_file_edited'] = 'ไฟล์สำเร็จแล้วเปลี่ยนแปลง!';
 $phpMussel['lang']['response_file_renamed'] = 'ไฟล์สำเร็จแล้วเปลี่ยนชื่อ!';
+$phpMussel['lang']['response_file_restored'] = 'ฟื้นฟูไฟล์สำเร็จแล้ว!';
 $phpMussel['lang']['response_file_uploaded'] = 'ไฟล์สำเร็จแล้วอัปโหลด!';
 $phpMussel['lang']['response_login_invalid_password'] = 'ความล้มเหลวในการเข้าสู่ระบบ! รหัสผ่านไม่ถูกต้อง!';
 $phpMussel['lang']['response_login_invalid_username'] = 'ความล้มเหลวในการเข้าสู่ระบบ! ชื่อผู้ใช้ไม่มีอยู่จริง!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'รหัสผ่านฟิลด์ว่างเปล่า!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ชื่อผู้ใช้ฟิลด์ว่างเปล่า!';
 $phpMussel['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
+$phpMussel['lang']['response_restore_error_1'] = 'ไม่สามารถฟื้นฟู! ไฟล์ที่เสียหาย!';
+$phpMussel['lang']['response_restore_error_2'] = 'ไม่สามารถฟื้นฟู! คีย์กักกันไม่ถูกต้อง!';
 $phpMussel['lang']['response_statistics_cleared'] = 'สถิติลบแล้ว';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'อัปเดตแล้ว.';
 $phpMussel['lang']['response_updates_not_installed'] = 'คอมโพเนนต์ไม่ได้ติดตั้ง!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $phpMussel['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';
 $phpMussel['lang']['state_maintenance_mode'] = 'คำเตือน: เปิดใช้งานโหมดการบำรุงรักษา!';
 $phpMussel['lang']['state_password_not_valid'] = 'คำเตือน: บัญชีนี้ไม่ได้ใช้รหัสผ่านถูกต้อง!';
+$phpMussel['lang']['state_quarantine'] = 'อยู่ในกักกัน %s ไฟล์.';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'อย่าซ่อนไม่ใช่ล้าสมัย';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'ซ่อนไม่ใช่ล้าสมัย';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'อย่าซ่อนไม่ได้ใช้';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'สวัสดี, {username}.<br />�
 $phpMussel['lang']['tip_home'] = 'สวัสดี, {username}.<br />นี่คือโฮมเพจสำหรับ front-end ของ phpMussel. เลือกลิงค์จากเมนูนำทางด้านซ้ายเพื่อดำเนินการต่อ.';
 $phpMussel['lang']['tip_login'] = 'ค่าเริ่มต้นชื่อผู้ใช้: <span class="txtRd">admin</span> – ค่าเริ่มต้นรหัสผ่าน: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'สวัสดี, {username}.<br />เลือกไฟล์บันทึกจากรายการด้านล่างเพื่อดูเนื้อหาของไฟล์บันทึกนั้น.';
+$phpMussel['lang']['tip_quarantine'] = 'สวัสดี, {username}.<br />หน้านี้แสดงรายการไฟล์ทั้งหมดที่อยู่ในกักกันและอำนวยความสะดวกในการจัดการไฟล์เหล่านี้.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'บันทึก: กักกันถูกปิดใช้งานอยู่ แต่สามารถเปิดใช้งานได้ผ่านทางหน้ากำหนดค่า.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'ดูที่<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา.';
 $phpMussel['lang']['tip_statistics'] = 'สวัสดี, {username}.<br />หน้านี้แสดงสถิติการใช้งานขั้นพื้นฐานเกี่ยวกับการติดตั้ง phpMussel ของคุณ.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'บันทึก: ขณะนี้การติดตามผลสถิติถูกปิดใช้งาน แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – ตัวจัดก�
 $phpMussel['lang']['title_home'] = 'phpMussel – โฮมเพจ';
 $phpMussel['lang']['title_login'] = 'phpMussel – เข้าสู่ระบบ';
 $phpMussel['lang']['title_logs'] = 'phpMussel – บันทึก';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – กักกัน';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – สถิติ';
 $phpMussel['lang']['title_updates'] = 'phpMussel – อัปเดต';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – ทดสอบการอัปโหลด';

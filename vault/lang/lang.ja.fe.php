@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.15).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'コンポーネント';
 $phpMussel['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $phpMussel['lang']['field_deactivate'] = '非アクティブにする';
 $phpMussel['lang']['field_delete_account'] = 'アカウントを削除する';
+$phpMussel['lang']['field_delete_all'] = 'すべて削除';
 $phpMussel['lang']['field_delete_file'] = '削除';
 $phpMussel['lang']['field_download_file'] = 'ダウンロード';
 $phpMussel['lang']['field_edit_file'] = '編集';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'ＯＫ';
 $phpMussel['lang']['field_options'] = 'オプション';
 $phpMussel['lang']['field_password'] = 'パスワード';
 $phpMussel['lang']['field_permissions'] = 'パーミッション';
+$phpMussel['lang']['field_quarantine_key'] = '検疫キー';
 $phpMussel['lang']['field_rename_file'] = '名前を変更する';
 $phpMussel['lang']['field_reset'] = 'リセット';
+$phpMussel['lang']['field_restore_file'] = '復元';
 $phpMussel['lang']['field_set_new_password'] = '新しいパスワードを設定します';
 $phpMussel['lang']['field_size'] = '合計サイズ：';
 $phpMussel['lang']['field_size_bytes'] = 'バイト';
@@ -146,10 +149,10 @@ $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
 $phpMussel['lang']['label_events'] = 'スキャンイベント';
 $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
-$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量： ';
+$phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量：';
 $phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
-$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
-$phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
+$phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計：';
+$phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $phpMussel['lang']['label_hide'] = '隠す';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
@@ -158,20 +161,26 @@ $phpMussel['lang']['label_other-Active'] = 'アクティブなシグネチャ・
 $phpMussel['lang']['label_other-Since'] = '開始日';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
-$phpMussel['lang']['label_quarantined'] = '隔離されたアップロード';
+$phpMussel['lang']['label_quarantined'] = '検疫されたアップロード';
 $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
 $phpMussel['lang']['label_scanned_objects'] = 'スキャンされたオブジェクト';
 $phpMussel['lang']['label_scanned_uploads'] = 'スキャンしたアップロード';
 $phpMussel['lang']['label_show'] = '表示する';
+$phpMussel['lang']['label_size_in_quarantine'] = '検疫のサイズ：';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $phpMussel['lang']['label_unstable'] = '最新不安定：';
+$phpMussel['lang']['label_upload_date'] = 'アップロード日：';
+$phpMussel['lang']['label_upload_hash'] = 'アップロードのハッシュ：';
+$phpMussel['lang']['label_upload_origin'] = 'アップロードの起源：';
+$phpMussel['lang']['label_upload_size'] = 'アップロード・サイズ：';
 $phpMussel['lang']['link_accounts'] = 'アカウント';
 $phpMussel['lang']['link_config'] = 'コンフィギュレーション';
 $phpMussel['lang']['link_documentation'] = 'ドキュメンテーション';
 $phpMussel['lang']['link_file_manager'] = 'ファイル・マネージャー';
 $phpMussel['lang']['link_home'] = 'ホーム';
 $phpMussel['lang']['link_logs'] = 'ロゴス';
+$phpMussel['lang']['link_quarantine'] = '検疫';
 $phpMussel['lang']['link_statistics'] = '統計';
 $phpMussel['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a>';
 $phpMussel['lang']['link_updates'] = 'アップデート';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'アップデートに失敗�
 $phpMussel['lang']['response_file_deleted'] = 'ファイルを削除が成功しました！';
 $phpMussel['lang']['response_file_edited'] = 'ファイルは正常に変更されました！';
 $phpMussel['lang']['response_file_renamed'] = 'ファイルの名前が変更されました！';
+$phpMussel['lang']['response_file_restored'] = 'ファイルは正常に復元されました！';
 $phpMussel['lang']['response_file_uploaded'] = 'ファイルは正常にアップロードされました！';
 $phpMussel['lang']['response_login_invalid_password'] = 'ログイン失敗！​無効なパスワード！';
 $phpMussel['lang']['response_login_invalid_username'] = 'ログイン失敗！​ユーザー名は存在しません！';
 $phpMussel['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
+$phpMussel['lang']['response_restore_error_1'] = '復元に失敗しました！​破損したファイル！';
+$phpMussel['lang']['response_restore_error_2'] = '復元に失敗しました！​検疫キーが間違っています！';
 $phpMussel['lang']['response_statistics_cleared'] = '統計はクリアされました。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $phpMussel['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'ログインしています。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
+$phpMussel['lang']['state_quarantine'] = '現在、%sつのファイルが検疫されています。';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<
 $phpMussel['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
+$phpMussel['lang']['tip_quarantine'] = 'こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。';
+$phpMussel['lang']['tip_quarantine_disabled'] = '注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';
 $phpMussel['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br />このページには、phpMusselのインストールに関する基本的な使用状況の統計情報が表示されます。';
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – ファイル・マネ�
 $phpMussel['lang']['title_home'] = 'phpMussel – ホーム';
 $phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
 $phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – 検疫';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
 $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';

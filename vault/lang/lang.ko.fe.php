@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.10.15).
+ * This file: Korean language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = '구성 요소';
 $phpMussel['lang']['field_create_new_account'] = '새로운 계정 만들기';
 $phpMussel['lang']['field_deactivate'] = '비활성화';
 $phpMussel['lang']['field_delete_account'] = '계정 삭제';
+$phpMussel['lang']['field_delete_all'] = '모두 삭제';
 $phpMussel['lang']['field_delete_file'] = '삭제';
 $phpMussel['lang']['field_download_file'] = '다운로드';
 $phpMussel['lang']['field_edit_file'] = '편집';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = '승인';
 $phpMussel['lang']['field_options'] = '옵션';
 $phpMussel['lang']['field_password'] = '비밀번호';
 $phpMussel['lang']['field_permissions'] = '권한';
+$phpMussel['lang']['field_quarantine_key'] = '격리 키';
 $phpMussel['lang']['field_rename_file'] = '이름을 변경하려면';
 $phpMussel['lang']['field_reset'] = '재설정';
+$phpMussel['lang']['field_restore_file'] = '복구';
 $phpMussel['lang']['field_set_new_password'] = '새 암호를 설정합니다';
 $phpMussel['lang']['field_size'] = '전체 크기 : ';
 $phpMussel['lang']['field_size_bytes'] = '바이트';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = '사용 된 SAPI :';
 $phpMussel['lang']['label_scanned_objects'] = '스캔 한 개체';
 $phpMussel['lang']['label_scanned_uploads'] = '스캔 한 업로드';
 $phpMussel['lang']['label_show'] = '보여';
+$phpMussel['lang']['label_size_in_quarantine'] = '격리 크기 : ';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';
 $phpMussel['lang']['label_unstable'] = '최신 불안정 :';
+$phpMussel['lang']['label_upload_date'] = '업로드 날짜 : ';
+$phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';
+$phpMussel['lang']['label_upload_origin'] = '업로드 원점 : ';
+$phpMussel['lang']['label_upload_size'] = '업로드 크기 : ';
 $phpMussel['lang']['link_accounts'] = '계정';
 $phpMussel['lang']['link_config'] = '구성';
 $phpMussel['lang']['link_documentation'] = '문서';
 $phpMussel['lang']['link_file_manager'] = '파일 관리자';
 $phpMussel['lang']['link_home'] = '홈';
 $phpMussel['lang']['link_logs'] = '로고스';
+$phpMussel['lang']['link_quarantine'] = '격리';
 $phpMussel['lang']['link_statistics'] = '통계';
 $phpMussel['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
 $phpMussel['lang']['link_updates'] = '업데이트';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = '업데이트하지 못했습�
 $phpMussel['lang']['response_file_deleted'] = '파일 삭제가 성공했습니다!';
 $phpMussel['lang']['response_file_edited'] = '파일이 성공적으로 변경되었습니다!';
 $phpMussel['lang']['response_file_renamed'] = '파일 이름이 변경되었습니다!';
+$phpMussel['lang']['response_file_restored'] = '파일이 성공적으로 복원되었습니다!';
 $phpMussel['lang']['response_file_uploaded'] = '파일이 성공적으로 업로드되었습니다!';
 $phpMussel['lang']['response_login_invalid_password'] = '로그인 실패! 잘못된 암호!';
 $phpMussel['lang']['response_login_invalid_username'] = '로그인 실패! 사용자 이름은 존재하지 않습니다!';
 $phpMussel['lang']['response_login_password_field_empty'] = '암호가 비어 있습니다!';
 $phpMussel['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
 $phpMussel['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
+$phpMussel['lang']['response_restore_error_1'] = '복원하지 못했습니다! 손상된 파일!';
+$phpMussel['lang']['response_restore_error_2'] = '복원하지 못했습니다! 잘못된 격리 키!';
 $phpMussel['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '이미 최신 상태입니다.';
 $phpMussel['lang']['response_updates_not_installed'] = '구성 요소 설치되어 있지 않습니다!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = '로그인 있습니다.';
 $phpMussel['lang']['state_logs_access_only'] = '로그에만 액세스';
 $phpMussel['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';
 $phpMussel['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';
+$phpMussel['lang']['state_quarantine'] = '현재 %s 개의 파일이 격리 보관소에 있습니다.';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파�
 $phpMussel['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 phpMussel 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $phpMussel['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
+$phpMussel['lang']['tip_quarantine'] = '안녕하세요, {username}.<br />관리를 용이하게하기 위해, 현재 격리 저장소에있는 모든 파일이이 페이지에 나열됩니다.';
+$phpMussel['lang']['tip_quarantine_disabled'] = '노트 : 격리는 현재 비활성화되어 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';
 $phpMussel['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 phpMussel 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
 $phpMussel['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – 파일 관리자';
 $phpMussel['lang']['title_home'] = 'phpMussel – 홈';
 $phpMussel['lang']['title_login'] = 'phpMussel – 로그인';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 로고스';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – 격리';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 통계';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';

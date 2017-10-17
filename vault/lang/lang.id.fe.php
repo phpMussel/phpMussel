@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.15).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'Komponen';
 $phpMussel['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $phpMussel['lang']['field_deactivate'] = 'Menonaktifkan';
 $phpMussel['lang']['field_delete_account'] = 'Hapus Akun';
+$phpMussel['lang']['field_delete_all'] = 'Menghapus semua';
 $phpMussel['lang']['field_delete_file'] = 'Menghapus';
 $phpMussel['lang']['field_download_file'] = 'Mendownload';
 $phpMussel['lang']['field_edit_file'] = 'Mengedit';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opsi';
 $phpMussel['lang']['field_password'] = 'Kata Sandi';
 $phpMussel['lang']['field_permissions'] = 'Izin';
+$phpMussel['lang']['field_quarantine_key'] = 'Kunci karantina';
 $phpMussel['lang']['field_rename_file'] = 'Memodifikasi nama';
 $phpMussel['lang']['field_reset'] = 'Mengatur Kembali';
+$phpMussel['lang']['field_restore_file'] = 'Memulihkan';
 $phpMussel['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
 $phpMussel['lang']['field_size'] = 'Ukuran Total: ';
 $phpMussel['lang']['field_size_bytes'] = 'byte';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
 $phpMussel['lang']['label_scanned_objects'] = 'Obyek dipindai';
 $phpMussel['lang']['label_scanned_uploads'] = 'Upload dipindai';
 $phpMussel['lang']['label_show'] = 'Menunjukkan';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Ukuran dalam karantina: ';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
 $phpMussel['lang']['label_unstable'] = 'Terbaru tidak stabil:';
+$phpMussel['lang']['label_upload_date'] = 'Tanggal pengunggahan: ';
+$phpMussel['lang']['label_upload_hash'] = 'Hash pengunggahan: ';
+$phpMussel['lang']['label_upload_origin'] = 'Asal pengunggahan: ';
+$phpMussel['lang']['label_upload_size'] = 'Ukuran pengunggahan: ';
 $phpMussel['lang']['link_accounts'] = 'Akun';
 $phpMussel['lang']['link_config'] = 'Konfigurasi';
 $phpMussel['lang']['link_documentation'] = 'Dokumentasi';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
 $phpMussel['lang']['link_home'] = 'Halaman Utama';
 $phpMussel['lang']['link_logs'] = 'Log';
+$phpMussel['lang']['link_quarantine'] = 'Karantina';
 $phpMussel['lang']['link_statistics'] = 'Statistik';
 $phpMussel['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhana</a> – <a href="%1$strue">Terformat</a>';
 $phpMussel['lang']['link_updates'] = 'Pembaruan';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Gagal memperbarui!';
 $phpMussel['lang']['response_file_deleted'] = 'File berhasil dihapus!';
 $phpMussel['lang']['response_file_edited'] = 'File berhasil diubah!';
 $phpMussel['lang']['response_file_renamed'] = 'Nama file berhasil dimodifikasi!';
+$phpMussel['lang']['response_file_restored'] = 'File berhasil dipulihkan!';
 $phpMussel['lang']['response_file_uploaded'] = 'File berhasil diupload!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Kegagalan masuk! Kata sandi salah!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama pengguna tidak ada!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
+$phpMussel['lang']['response_restore_error_1'] = 'Gagal memulihkan! File rusak!';
+$phpMussel['lang']['response_restore_error_2'] = 'Gagal memulihkan! Kunci karantina salah!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistik dicabut';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
+$phpMussel['lang']['state_quarantine'] = 'Ada %s file yang saat ini di karantina.';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager m
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$phpMussel['lang']['tip_quarantine'] = 'Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Catatan: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $phpMussel['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi phpMussel Anda.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Catatan: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';
 $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';

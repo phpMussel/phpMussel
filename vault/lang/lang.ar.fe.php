@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.15).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'وحدة';
 $phpMussel['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
 $phpMussel['lang']['field_deactivate'] = 'جعلها غير نشطة';
 $phpMussel['lang']['field_delete_account'] = 'حذف حساب';
+$phpMussel['lang']['field_delete_all'] = 'حذف الكل';
 $phpMussel['lang']['field_delete_file'] = 'حذف';
 $phpMussel['lang']['field_download_file'] = 'تحميل';
 $phpMussel['lang']['field_edit_file'] = 'تحرير';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'حسنا';
 $phpMussel['lang']['field_options'] = 'خيارات';
 $phpMussel['lang']['field_password'] = 'كلمه السر';
 $phpMussel['lang']['field_permissions'] = 'أذونات';
+$phpMussel['lang']['field_quarantine_key'] = 'الحجر الصحي مفتاح';
 $phpMussel['lang']['field_rename_file'] = 'إعادة تسمية';
 $phpMussel['lang']['field_reset'] = 'إعادة تعيين';
+$phpMussel['lang']['field_restore_file'] = 'استعادة';
 $phpMussel['lang']['field_set_new_password'] = 'تحديد جديد كلمه السر';
 $phpMussel['lang']['field_size'] = 'الحجم الإجمالي: ';
 $phpMussel['lang']['field_size_bytes'] = 'بايت';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $phpMussel['lang']['label_scanned_objects'] = 'الكائنات التي الممسوحة ضوئيا';
 $phpMussel['lang']['label_scanned_uploads'] = 'التحميلات الممسوحة ضوئيا';
 $phpMussel['lang']['label_show'] = 'اظهره';
+$phpMussel['lang']['label_size_in_quarantine'] = 'الحجر الصحي بحجم: ';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
 $phpMussel['lang']['label_unstable'] = 'أحدث غير مستقرة:';
+$phpMussel['lang']['label_upload_date'] = 'تحميل تاريخ: ';
+$phpMussel['lang']['label_upload_hash'] = 'تحميل التجزئة: ';
+$phpMussel['lang']['label_upload_origin'] = 'تحميل الأصل: ';
+$phpMussel['lang']['label_upload_size'] = 'تحميل بحجم: ';
 $phpMussel['lang']['link_accounts'] = 'حسابات';
 $phpMussel['lang']['link_config'] = 'التكوين';
 $phpMussel['lang']['link_documentation'] = 'توثيق';
 $phpMussel['lang']['link_file_manager'] = 'مدير الملفات';
 $phpMussel['lang']['link_home'] = 'الرئيسية';
 $phpMussel['lang']['link_logs'] = 'سجلات';
+$phpMussel['lang']['link_quarantine'] = 'الحجر الصحي';
 $phpMussel['lang']['link_statistics'] = 'الإحصاء';
 $phpMussel['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a>';
 $phpMussel['lang']['link_updates'] = 'التحديثات';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'فشل التحديث!';
 $phpMussel['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
 $phpMussel['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
 $phpMussel['lang']['response_file_renamed'] = 'ملف إعادة تسمية بنجاح!';
+$phpMussel['lang']['response_file_restored'] = 'تمت استعادة الملف بنجاح!';
 $phpMussel['lang']['response_file_uploaded'] = 'ملف تحميلها بنجاح!';
 $phpMussel['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! كلمة السر غير صالحة!';
 $phpMussel['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
+$phpMussel['lang']['response_restore_error_1'] = 'أخفق الاستعادة! ملف معطوب!';
+$phpMussel['lang']['response_restore_error_2'] = 'أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!';
 $phpMussel['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $phpMussel['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'حاليا على.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';
 $phpMussel['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة !';
+$phpMussel['lang']['state_quarantine'] = ['هناك ملف %s موجود حاليا في وحدة العزل.', 'هناك ملفات %s موجودة حاليا في وحدة العزل.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير
 $phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
+$phpMussel['lang']['tip_quarantine'] = 'مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
 $phpMussel['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت phpMussel.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – مدير الملفا�
 $phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';
 $phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
 $phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – الحجر الصحي';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – الإحصاء';
 $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';

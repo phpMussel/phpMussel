@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.15).
+ * This file: Russian language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'Компонент';
 $phpMussel['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
 $phpMussel['lang']['field_deactivate'] = 'Дезактивировать';
 $phpMussel['lang']['field_delete_account'] = 'Удалить Аккаунт';
+$phpMussel['lang']['field_delete_all'] = 'Удалить все';
 $phpMussel['lang']['field_delete_file'] = 'Удалить';
 $phpMussel['lang']['field_download_file'] = 'Скачать';
 $phpMussel['lang']['field_edit_file'] = 'Редактировать';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'ОК';
 $phpMussel['lang']['field_options'] = 'Опции';
 $phpMussel['lang']['field_password'] = 'Пароль';
 $phpMussel['lang']['field_permissions'] = 'Разрешения';
+$phpMussel['lang']['field_quarantine_key'] = 'Карантинный ключ';
 $phpMussel['lang']['field_rename_file'] = 'Переименовывать';
 $phpMussel['lang']['field_reset'] = 'Сбросить';
+$phpMussel['lang']['field_restore_file'] = 'Восстановить';
 $phpMussel['lang']['field_set_new_password'] = 'Установить новый пароль';
 $phpMussel['lang']['field_size'] = 'Общий Размер: ';
 $phpMussel['lang']['field_size_bytes'] = ['байт', 'байта', 'байтов'];
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'Используемая SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Объекты сканированные';
 $phpMussel['lang']['label_scanned_uploads'] = 'Загружает сканированные';
 $phpMussel['lang']['label_show'] = 'Показать';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Размер в карантине: ';
 $phpMussel['lang']['label_stable'] = 'Последние стабильный:';
 $phpMussel['lang']['label_sysinfo'] = 'Системная информация:';
 $phpMussel['lang']['label_unstable'] = 'Последние нестабильный:';
+$phpMussel['lang']['label_upload_date'] = 'Дата загрузки: ';
+$phpMussel['lang']['label_upload_hash'] = 'Хеш загрузки: ';
+$phpMussel['lang']['label_upload_origin'] = 'Происхождение загрузки: ';
+$phpMussel['lang']['label_upload_size'] = 'Размер загрузки: ';
 $phpMussel['lang']['link_accounts'] = 'Учетными Записями';
 $phpMussel['lang']['link_config'] = 'Конфигурация';
 $phpMussel['lang']['link_documentation'] = 'Документация';
 $phpMussel['lang']['link_file_manager'] = 'Файловый Менеджер';
 $phpMussel['lang']['link_home'] = 'Домашняя Страница';
 $phpMussel['lang']['link_logs'] = 'Лог-Файлы';
+$phpMussel['lang']['link_quarantine'] = 'Карантинный';
 $phpMussel['lang']['link_statistics'] = 'Статистика';
 $phpMussel['lang']['link_textmode'] = 'Форматирование текста: <a href="%1$sfalse">Просто</a> – <a href="%1$strue">Маскарадный</a>';
 $phpMussel['lang']['link_updates'] = 'Обновления';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Не удалось обно�
 $phpMussel['lang']['response_file_deleted'] = 'Файл успешно удален!';
 $phpMussel['lang']['response_file_edited'] = 'Файл успешно изменен!';
 $phpMussel['lang']['response_file_renamed'] = 'Файл успешно переименован!';
+$phpMussel['lang']['response_file_restored'] = 'Файл успешно восстановлен!';
 $phpMussel['lang']['response_file_uploaded'] = 'Файл успешно загружен!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Войти провал! Неверный пароль!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Войти провал! Имя пользователя не существует!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Пароль пусто!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Имя пользователя пусто!';
 $phpMussel['lang']['response_rename_error'] = 'Не удалось переименовать!';
+$phpMussel['lang']['response_restore_error_1'] = 'Не удалось восстановить! Поврежденный файл!';
+$phpMussel['lang']['response_restore_error_2'] = 'Не удалось восстановить! Неправильный карантинный ключ!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Статистика очищена.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Уже обновлено.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Компонент не установлен!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'В настоящее время вош
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_maintenance_mode'] = 'Предупреждение: Включен режим обслуживания!';
 $phpMussel['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';
+$phpMussel['lang']['state_quarantine'] = ['В карантине есть %s файл.', 'В карантине есть %s файла.', 'В карантине есть %s файлов.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают не-устаревший';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'Привет, {username}.<br />Фай�
 $phpMussel['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $phpMussel['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
+$phpMussel['lang']['tip_quarantine'] = 'Привет, {username}.<br />На этой странице перечислены все файлы, находящиеся в настоящее время в карантине, и облегчает управление этими файлами.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Заметка: В настоящее время карантин отключен, но может быть включен через страницу конфигурации.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ru.md#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей.';
 $phpMussel['lang']['tip_statistics'] = 'Привет, {username}.<br />На этой странице показаны основные статистические данные об использовании вашей phpMussel-инсталляция.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Файловый Ме�
 $phpMussel['lang']['title_home'] = 'phpMussel – Домашняя Страница';
 $phpMussel['lang']['title_login'] = 'phpMussel – Войти';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Лог-Файлы';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Карантинный';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Статистика';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Обновления';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Тестовая Загрузка';

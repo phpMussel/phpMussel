@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,9 +103,10 @@ $phpMussel['lang']['field_component'] = 'Thành phần';
 $phpMussel['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $phpMussel['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $phpMussel['lang']['field_delete_account'] = 'Xóa tài khoản';
-$phpMussel['lang']['field_delete_file'] = 'Xóa Bỏ';
-$phpMussel['lang']['field_download_file'] = 'Tải Về';
-$phpMussel['lang']['field_edit_file'] = 'Chỉnh Sửa';
+$phpMussel['lang']['field_delete_all'] = 'Xóa bỏ tất cả';
+$phpMussel['lang']['field_delete_file'] = 'Xóa bỏ';
+$phpMussel['lang']['field_download_file'] = 'Tải về';
+$phpMussel['lang']['field_edit_file'] = 'Chỉnh sửa';
 $phpMussel['lang']['field_false'] = 'False (Sai)';
 $phpMussel['lang']['field_file'] = 'Tập Tin';
 $phpMussel['lang']['field_filename'] = 'Tên tập tin: ';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Tùy Chọn';
 $phpMussel['lang']['field_password'] = 'Mật Khẩu';
 $phpMussel['lang']['field_permissions'] = 'Quyền';
+$phpMussel['lang']['field_quarantine_key'] = 'Khóa kiểm dịch';
 $phpMussel['lang']['field_rename_file'] = 'Đổi tên';
 $phpMussel['lang']['field_reset'] = 'Thiết Lập Lại';
+$phpMussel['lang']['field_restore_file'] = 'Khôi phục';
 $phpMussel['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
 $phpMussel['lang']['field_size'] = 'Kích thước tổng: ';
 $phpMussel['lang']['field_size_bytes'] = 'byte';
@@ -163,19 +166,25 @@ $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $phpMussel['lang']['label_scanned_objects'] = 'Đối tượng được quét';
 $phpMussel['lang']['label_scanned_uploads'] = 'Tải lên được quét';
 $phpMussel['lang']['label_show'] = 'Hiển thị';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Kích thước trong kiểm dịch: ';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $phpMussel['lang']['label_unstable'] = 'Không ổn định mới nhất:';
+$phpMussel['lang']['label_upload_date'] = 'Ngày tải lên: ';
+$phpMussel['lang']['label_upload_hash'] = 'Băm tải lên: ';
+$phpMussel['lang']['label_upload_origin'] = 'Nguồn gốc tải lên: ';
+$phpMussel['lang']['label_upload_size'] = 'Kích thước tải lên: ';
 $phpMussel['lang']['link_accounts'] = 'Tài Khoản';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';
-$phpMussel['lang']['link_documentation'] = 'Tài Liệu';
-$phpMussel['lang']['link_file_manager'] = 'Quản Lý Tập Tin';
+$phpMussel['lang']['link_documentation'] = 'Tài liệu';
+$phpMussel['lang']['link_file_manager'] = 'Quản lý tập tin';
 $phpMussel['lang']['link_home'] = 'Trang Chủ';
 $phpMussel['lang']['link_logs'] = 'Bản Ghi';
+$phpMussel['lang']['link_quarantine'] = 'Kiểm dịch';
 $phpMussel['lang']['link_statistics'] = 'Số liệu thống kê';
 $phpMussel['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse">Đơn giản</a> – <a href="%1$strue">Đẹp</a>';
 $phpMussel['lang']['link_updates'] = 'Cập Nhật';
-$phpMussel['lang']['link_upload_test'] = 'Kiểm Tra Tải Lên';
+$phpMussel['lang']['link_upload_test'] = 'Kiểm tra tải lên';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Cập nhật không thành c�
 $phpMussel['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
 $phpMussel['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
 $phpMussel['lang']['response_file_renamed'] = 'Đổi tên tập tin thành công!';
+$phpMussel['lang']['response_file_restored'] = 'Tập tin khôi phục thành công!';
 $phpMussel['lang']['response_file_uploaded'] = 'Tập tin tải lên thành công!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Thất bại đăng nhập! Mật khẩu không hợp lệ!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
+$phpMussel['lang']['response_restore_error_1'] = 'Không thể khôi phục! Tập tin bị hỏng!';
+$phpMussel['lang']['response_restore_error_2'] = 'Không thể khôi phục! Khóa kiểm dịch sai rồi!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_maintenance_mode'] = 'Cảnh báo: Đã bật chế độ bảo trì!';
 $phpMussel['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
+$phpMussel['lang']['state_quarantine'] = 'Kiểm dịch hiện có %s tập tin.';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
@@ -246,20 +259,23 @@ $phpMussel['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý
 $phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$phpMussel['lang']['tip_quarantine'] = 'Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
 $phpMussel['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt phpMussel của bạn.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Tài Khoản';
-$phpMussel['lang']['title_config'] = 'phpMussel – Cấu Hình';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản Lý Tập Tin';
+$phpMussel['lang']['title_accounts'] = 'phpMussel – Tài khoản';
+$phpMussel['lang']['title_config'] = 'phpMussel – Cấu hình';
+$phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản lý tập tin';
 $phpMussel['lang']['title_home'] = 'phpMussel – Trang Chủ';
-$phpMussel['lang']['title_login'] = 'phpMussel – Đăng Nhập';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Bản Ghi';
+$phpMussel['lang']['title_login'] = 'phpMussel – Đăng nhập';
+$phpMussel['lang']['title_logs'] = 'phpMussel – Bản ghi';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Kiểm dịch';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Số liệu thống kê';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
+$phpMussel['lang']['title_updates'] = 'phpMussel – Cập nhật';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm tra tải lên';
 $phpMussel['lang']['warning'] = 'Cảnh báo:';
 $phpMussel['lang']['warning_php_1'] = 'Phiên bản PHP của bạn không được hỗ trợ tích cực nữa! Đang cập nhật được khuyến khích!';
 $phpMussel['lang']['warning_php_2'] = 'Phiên bản PHP của bạn rất dễ bị tổn thương! Đang cập nhật được khuyến khích mạnh mẽ!';

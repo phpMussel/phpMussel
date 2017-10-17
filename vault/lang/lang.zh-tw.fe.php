@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = '組件';
 $phpMussel['lang']['field_create_new_account'] = '創建新賬戶';
 $phpMussel['lang']['field_deactivate'] = '停用';
 $phpMussel['lang']['field_delete_account'] = '刪除賬戶';
+$phpMussel['lang']['field_delete_all'] = '刪除所有';
 $phpMussel['lang']['field_delete_file'] = '刪除';
 $phpMussel['lang']['field_download_file'] = '下載';
 $phpMussel['lang']['field_edit_file'] = '編輯';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = '選項';
 $phpMussel['lang']['field_password'] = '密碼';
 $phpMussel['lang']['field_permissions'] = '權限';
+$phpMussel['lang']['field_quarantine_key'] = '隔離鑰匙';
 $phpMussel['lang']['field_rename_file'] = '改名';
 $phpMussel['lang']['field_reset'] = '重啟';
+$phpMussel['lang']['field_restore_file'] = '恢復';
 $phpMussel['lang']['field_set_new_password'] = '保存新密碼';
 $phpMussel['lang']['field_size'] = '總大小：';
 $phpMussel['lang']['field_size_bytes'] = '字節';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
 $phpMussel['lang']['label_scanned_objects'] = '對像已掃描';
 $phpMussel['lang']['label_scanned_uploads'] = '上傳已掃描';
 $phpMussel['lang']['label_show'] = '顯示';
+$phpMussel['lang']['label_size_in_quarantine'] = '大小在檢疫：';
 $phpMussel['lang']['label_stable'] = '最新穩定：';
 $phpMussel['lang']['label_sysinfo'] = '系統信息：';
 $phpMussel['lang']['label_unstable'] = '最新不穩定：';
+$phpMussel['lang']['label_upload_date'] = '上傳日期：';
+$phpMussel['lang']['label_upload_hash'] = '上傳哈希：';
+$phpMussel['lang']['label_upload_origin'] = '上傳原點：';
+$phpMussel['lang']['label_upload_size'] = '上傳大小：';
 $phpMussel['lang']['link_accounts'] = '賬戶';
 $phpMussel['lang']['link_config'] = '配置';
 $phpMussel['lang']['link_documentation'] = '文檔';
 $phpMussel['lang']['link_file_manager'] = '文件管理器';
 $phpMussel['lang']['link_home'] = '主頁';
 $phpMussel['lang']['link_logs'] = '日誌';
+$phpMussel['lang']['link_quarantine'] = '隔離';
 $phpMussel['lang']['link_statistics'] = '統計';
 $phpMussel['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">簡單</a> – <a href="%1$strue">漂亮</a>';
 $phpMussel['lang']['link_updates'] = '更新';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = '無法更新！';
 $phpMussel['lang']['response_file_deleted'] = '文件成功刪除！';
 $phpMussel['lang']['response_file_edited'] = '文件成功改性！';
 $phpMussel['lang']['response_file_renamed'] = '文件成功改名！';
+$phpMussel['lang']['response_file_restored'] = '文件成功恢復！';
 $phpMussel['lang']['response_file_uploaded'] = '文件成功上傳！';
 $phpMussel['lang']['response_login_invalid_password'] = '登錄失敗！​密碼無效！';
 $phpMussel['lang']['response_login_invalid_username'] = '登錄失敗！​用戶名不存在！';
 $phpMussel['lang']['response_login_password_field_empty'] = '密碼輸入是空的！';
 $phpMussel['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
 $phpMussel['lang']['response_rename_error'] = '無法改名！';
+$phpMussel['lang']['response_restore_error_1'] = '無法恢復！損壞的文件！';
+$phpMussel['lang']['response_restore_error_2'] = '無法恢復！不正確的隔離鑰匙！';
 $phpMussel['lang']['response_statistics_cleared'] = '統計刪除。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $phpMussel['lang']['response_updates_not_installed'] = '組件不安裝！';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = '目前在線。';
 $phpMussel['lang']['state_logs_access_only'] = '僅日誌訪問';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：維護模式是啟用！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此帳戶不​使用有效的密碼！';
+$phpMussel['lang']['state_quarantine'] = '目前有%s個文件在隔離區。';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過時';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '隱藏非過時';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '不要隱藏非用過';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = '你好，​{username}。​<br />文�
 $phpMussel['lang']['tip_home'] = '你好，​{username}。​<br />這是phpMussel的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。';
 $phpMussel['lang']['tip_login'] = '標準用戶名：<span class="txtRd">admin</span> – 標準密碼：<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，​{username}。​<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
+$phpMussel['lang']['tip_quarantine'] = '你好，​{username}。​<br />此頁面列出當前在隔離中的所有文件，並可以用來管理這些文件。';
+$phpMussel['lang']['tip_quarantine_disabled'] = '注意：隔離目前禁用，但可以通過配置頁面啟用。';
 $phpMussel['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh-TW.md#SECTION7">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
 $phpMussel['lang']['tip_statistics'] = '你好，​{username}。​<br />此頁面顯示了有關phpMussel安裝的一些基本使用統計信息。';
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – 文件管理器';
 $phpMussel['lang']['title_home'] = 'phpMussel – 主頁';
 $phpMussel['lang']['title_login'] = 'phpMussel – 登錄';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日誌';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – 隔離';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上傳測試';

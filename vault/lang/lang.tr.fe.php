@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.15).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'Bileşen';
 $phpMussel['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
 $phpMussel['lang']['field_deactivate'] = 'Devre dışı bırak';
 $phpMussel['lang']['field_delete_account'] = 'Hesabı sil';
+$phpMussel['lang']['field_delete_all'] = 'Hepsini sil';
 $phpMussel['lang']['field_delete_file'] = 'Sil';
 $phpMussel['lang']['field_download_file'] = 'İndir';
 $phpMussel['lang']['field_edit_file'] = 'Düzenle';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'Tamam';
 $phpMussel['lang']['field_options'] = 'Seçenekler';
 $phpMussel['lang']['field_password'] = 'Parola';
 $phpMussel['lang']['field_permissions'] = 'İzinler';
+$phpMussel['lang']['field_quarantine_key'] = 'Karantina anahtarı';
 $phpMussel['lang']['field_rename_file'] = 'Adını değiştirmek';
 $phpMussel['lang']['field_reset'] = 'Sıfırla';
+$phpMussel['lang']['field_restore_file'] = 'Canlandır';
 $phpMussel['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
 $phpMussel['lang']['field_size'] = 'Toplam Boyut: ';
 $phpMussel['lang']['field_size_bytes'] = 'bayt';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Nesneler tarandı';
 $phpMussel['lang']['label_scanned_uploads'] = 'Yüklenenler tarandı';
 $phpMussel['lang']['label_show'] = 'Göstermek';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Karantinadaki boyutu: ';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $phpMussel['lang']['label_unstable'] = 'En yeni kararsız:';
+$phpMussel['lang']['label_upload_date'] = 'Yükleme tarihi: ';
+$phpMussel['lang']['label_upload_hash'] = 'Yükleme karması: ';
+$phpMussel['lang']['label_upload_origin'] = 'Yükleme menşe: ';
+$phpMussel['lang']['label_upload_size'] = 'Yükleme boyutu: ';
 $phpMussel['lang']['link_accounts'] = 'Hesaplar';
 $phpMussel['lang']['link_config'] = 'Yapılandırma';
 $phpMussel['lang']['link_documentation'] = 'Belgeler';
 $phpMussel['lang']['link_file_manager'] = 'Dosya Yöneticisi';
 $phpMussel['lang']['link_home'] = 'Ana Sayfa';
 $phpMussel['lang']['link_logs'] = 'Kayıtlar';
+$phpMussel['lang']['link_quarantine'] = 'Karantina';
 $phpMussel['lang']['link_statistics'] = 'İstatistik';
 $phpMussel['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a>';
 $phpMussel['lang']['link_updates'] = 'Güncellemeler';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'Güncelleme başarısız!';
 $phpMussel['lang']['response_file_deleted'] = 'Dosya başarıyla silindi!';
 $phpMussel['lang']['response_file_edited'] = 'Dosya başarıyla değiştirildi!';
 $phpMussel['lang']['response_file_renamed'] = 'Dosya başarıyla yeniden adlandırıldı!';
+$phpMussel['lang']['response_file_restored'] = 'Dosya başarıyla canlandırıldı!';
 $phpMussel['lang']['response_file_uploaded'] = 'Dosya başarıyla yüklendi!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Giriş başarısız! Geçersiz parola!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Giriş başarısız! Kullanıcı adı yok!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
 $phpMussel['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
+$phpMussel['lang']['response_restore_error_1'] = 'Canlanamadı! Bozuk dosya!';
+$phpMussel['lang']['response_restore_error_2'] = 'Canlanamadı! Yanlış karantina anahtarı!';
 $phpMussel['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Zaten güncel.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Bileşen yüklü değil!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $phpMussel['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
 $phpMussel['lang']['state_maintenance_mode'] = 'Uyarı: Bakım modu etkin!';
 $phpMussel['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şifre kullanmıyor!';
+$phpMussel['lang']['state_quarantine'] = ['Şu anda karantina içinde %s dosya var.', 'Şu anda karantina içinde %s dosyalar var.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Kullanılmayanları gizleme';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'Merhaba, {username}.<br />Dosya yönet
 $phpMussel['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, phpMussel ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin.';
 $phpMussel['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
+$phpMussel['lang']['tip_quarantine'] = 'Merhaba, {username}.<br />Bu sayfada, şu anda karantinadaki tüm dosyaları listeler ve bu dosyaların yönetimini kolaylaştırır.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Not: Karantina şu anda devre dışıdır, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">belgelere</a> bakın.';
 $phpMussel['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – Dosya Yöneticisi';
 $phpMussel['lang']['title_home'] = 'phpMussel – Ana Sayfa';
 $phpMussel['lang']['title_login'] = 'phpMussel – Giriş';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Kayıtlar';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – İstatistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Güncellemeler';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Yükleme Testi';

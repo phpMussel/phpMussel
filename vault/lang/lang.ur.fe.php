@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.10.15).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,6 +103,7 @@ $phpMussel['lang']['field_component'] = 'اجزاء';
 $phpMussel['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
 $phpMussel['lang']['field_deactivate'] = 'بے عمل';
 $phpMussel['lang']['field_delete_account'] = 'کھاتہ مٹا دو';
+$phpMussel['lang']['field_delete_all'] = 'تمام حذف کریں';
 $phpMussel['lang']['field_delete_file'] = 'حذف کریں';
 $phpMussel['lang']['field_download_file'] = 'نیچے بوجھ';
 $phpMussel['lang']['field_edit_file'] = 'میں ترمیم کریں';
@@ -121,8 +122,10 @@ $phpMussel['lang']['field_ok'] = 'ٹھیک ہے';
 $phpMussel['lang']['field_options'] = 'اختیارات';
 $phpMussel['lang']['field_password'] = 'پاس ورڈ';
 $phpMussel['lang']['field_permissions'] = 'اجازتیں';
+$phpMussel['lang']['field_quarantine_key'] = 'قرنطین کلید';
 $phpMussel['lang']['field_rename_file'] = 'نام تبدیل کریں';
 $phpMussel['lang']['field_reset'] = 'پھر سیٹ کریں';
+$phpMussel['lang']['field_restore_file'] = 'بحال';
 $phpMussel['lang']['field_set_new_password'] = 'نیا پاس ورڈ مقرر';
 $phpMussel['lang']['field_size'] = 'کل سائز: ';
 $phpMussel['lang']['field_size_bytes'] = 'بائٹس';
@@ -163,15 +166,21 @@ $phpMussel['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $phpMussel['lang']['label_scanned_objects'] = 'سکین کیا آبجیکٹ';
 $phpMussel['lang']['label_scanned_uploads'] = 'سکین کیا اپ لوڈ';
 $phpMussel['lang']['label_show'] = 'دکھائیں';
+$phpMussel['lang']['label_size_in_quarantine'] = 'قرنطین میں سائز: ';
 $phpMussel['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $phpMussel['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
 $phpMussel['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
+$phpMussel['lang']['label_upload_date'] = 'اپ لوڈ وقت/تاریخ: ';
+$phpMussel['lang']['label_upload_hash'] = 'اپ لوڈ ہیش: ';
+$phpMussel['lang']['label_upload_origin'] = 'اپ لوڈ کی اصل: ';
+$phpMussel['lang']['label_upload_size'] = 'اپ لوڈ کا سائز: ';
 $phpMussel['lang']['link_accounts'] = 'اکاؤنٹس';
 $phpMussel['lang']['link_config'] = 'کنفگریشن';
 $phpMussel['lang']['link_documentation'] = 'دستاویزی';
 $phpMussel['lang']['link_file_manager'] = 'فائل منیجر';
 $phpMussel['lang']['link_home'] = 'ہوم';
 $phpMussel['lang']['link_logs'] = 'لاگز';
+$phpMussel['lang']['link_quarantine'] = 'قرنطین';
 $phpMussel['lang']['link_statistics'] = 'اعداد و شمار';
 $phpMussel['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse">سادہ</a> – <a href="%1$strue">خوبصورت</a>';
 $phpMussel['lang']['link_updates'] = 'تازہ ترین معلومات کے';
@@ -211,12 +220,15 @@ $phpMussel['lang']['response_failed_to_update'] = 'اپ ڈیٹ کرنے میں �
 $phpMussel['lang']['response_file_deleted'] = 'کامیابی خارج کر دیا فائل!';
 $phpMussel['lang']['response_file_edited'] = 'کامیابی نظر ثانی شدہ فائل!';
 $phpMussel['lang']['response_file_renamed'] = 'کامیابی کا نام دے دیا فائل!';
+$phpMussel['lang']['response_file_restored'] = 'فائل کو کامیابی سے بحال!';
 $phpMussel['lang']['response_file_uploaded'] = 'کامیابی اپ لوڈ کردہ فائل!';
 $phpMussel['lang']['response_login_invalid_password'] = 'لاگ ان ناکامی! غلط پاسورڈ!';
 $phpMussel['lang']['response_login_invalid_username'] = 'لاگ ان ناکامی! صارف کا نام موجود نہیں ہے!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدان خالی!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
 $phpMussel['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
+$phpMussel['lang']['response_restore_error_1'] = 'بحال کرنے میں ناکام! خراب فائل!';
+$phpMussel['lang']['response_restore_error_2'] = 'بحال کرنے میں ناکام! غلط قرنطین کلید!';
 $phpMussel['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'پہلے سے اپ ڈیٹ.';
 $phpMussel['lang']['response_updates_not_installed'] = 'اجزاء انسٹال نہیں!';
@@ -235,6 +247,7 @@ $phpMussel['lang']['state_logged_in'] = 'لاگ ان.';
 $phpMussel['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $phpMussel['lang']['state_maintenance_mode'] = 'انتباہ: بحالی کا موڈ فعال ہے!';
 $phpMussel['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ ایک درست پاس ورڈ کا استعمال نہیں کر رہا ہے!';
+$phpMussel['lang']['state_quarantine'] = 'فی الحال قرنطین میں %s فائلیں موجود ہیں.';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ مت چھپاو';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';
@@ -246,6 +259,8 @@ $phpMussel['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل �
 $phpMussel['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ phpMussel سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $phpMussel['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
+$phpMussel['lang']['tip_quarantine'] = 'ہیلو، {username}.<br />انتظامیہ کو سہولت دینے کے لئے، اس صفحہ کو فی الحال قرنطین میں موجود تمام فائلوں کی فہرست.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'نوٹ: قرنطین فی الحال غیر فعال ہے، لیکن ترتیب ترتیب کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ur.md#SECTION7">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
 $phpMussel['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ آپ کے phpMussel کی تنصیب کے لئے کچھ استعمال کے اعداد و شمار ظاہر کرتا ہے.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
@@ -257,6 +272,7 @@ $phpMussel['lang']['title_file_manager'] = 'phpMussel – فائل مینیجر'
 $phpMussel['lang']['title_home'] = 'phpMussel – ہوم';
 $phpMussel['lang']['title_login'] = 'phpMussel – لاگ ان';
 $phpMussel['lang']['title_logs'] = 'phpMussel – لاگز';
+$phpMussel['lang']['title_quarantine'] = 'phpMussel – قرنطین';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – اعداد و شمار';
 $phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلومات کے';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';
