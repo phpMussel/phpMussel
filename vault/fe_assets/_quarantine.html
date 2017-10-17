@@ -1,0 +1,27 @@
+<script type="text/javascript">
+function showid(e){b=document.getElementById(e),b.style.display='inline'}function hideid(e){b=document.getElementById(e),b.style.display='none'}function qOpt(e){b=document.getElementById(e+'-S'),'delete-file'==b.value?hideid(e):showid(e)}
+</script>
+<table>
+<tr>
+    <td class="nav big">
+{nav}    </td>
+    <td class="right extend">
+        <div class="s">{state_msg}</div>
+        <table>
+        <tr>
+            <td class="h4"><div class="s">{field_file}</div></td>
+            <td class="h4f"><div class="s">{field_options}</div></td>
+        </tr>
+        <tr>
+            <td class="h3" colspan="2">
+            <div class="bNav"><form action="?phpmussel-page=quarantine" method="POST">
+                <input name="DeleteAll" type="hidden" value="1" />
+                <input type="submit" value="{field_delete_all}" class="auto" />
+            </form></div>
+            </td>
+        </tr>
+{FilesInQuarantine}
+        </table>
+    </td>
+</tr>
+</table>

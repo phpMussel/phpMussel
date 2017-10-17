@@ -64,6 +64,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.10.15; Sub-minor code change; Maikuolan]: Improved L10N pluralisation.
 
+- [2017.10.16; NEW FEATURE; Maikuolan]: Added a new page to the front-end for
+  viewing and handling quarantined files.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

@@ -1,0 +1,21 @@
+        <tr>
+            <form action="?phpmussel-page=quarantine" method="POST"><input name="qfu" type="hidden" value="{QFU-Name}" />
+                <td class="h3">
+                    <span class="s">{QFU-Name}</span><br />
+                    {label_upload_date}{Upload-Date}<br />
+                    {label_upload_origin}{Upload-Origin}<br />
+                    {label_upload_size}{Upload-Size}<br />
+                    {label_upload_hash}{Upload-MD5}<br />
+                    {label_size_in_quarantine}{QFU-Size}<br />
+                </td>
+                <td class="h3f">
+                    <select id="{QFU-JS-ID}-S" name="do" onchange="javascript:qOpt('{QFU-JS-ID}')">
+                        <option value="delete-file">{field_delete_file}</option>
+                        <option value="restore-file">{field_restore_file}</option>
+                        <option value="download-file">{field_download_file}</option>
+                    </select>
+                    <input type="text" name="qkey" id="{QFU-JS-ID}" style="display:none" placeholder="{field_quarantine_key}" />
+                    <input type="submit" value="{field_ok}" class="auto" />
+                </td>
+            </form>
+        </tr>

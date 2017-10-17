@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.15).
+ * This file: Functions file (last modified: 2017.10.16).
  */
 
 /**
@@ -4967,12 +4967,9 @@ $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
     );
     $values['d'] = (int)$values['dd'];
     $values['m'] = (int)$values['mm'];
-    if (is_array($In)) {
-        return array_map(function ($Item) use (&$values, &$phpMussel) {
-            return $phpMussel['ParseVars']($values, $Item);
-        }, $In);
-    }
-    return $phpMussel['ParseVars']($values, $In);
+    return is_array($In) ? array_map(function ($Item) use (&$values, &$phpMussel) {
+        return $phpMussel['ParseVars']($values, $Item);
+    }, $In) : $phpMussel['ParseVars']($values, $In);
 };
 
 /**
@@ -6326,4 +6323,108 @@ $phpMussel['Plural'] = function($Num, $String) use (&$phpMussel) {
         return $String[$Choice];
     }
     return empty($String[0]) ? '' : $String[0];
+};
+
+/** Quarantine file list generator (returns an array of quarantined files). */
+$phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$phpMussel) {
+    $Arr = array();
+    $Key = -1;
+    $Offset = strlen($phpMussel['qfuPath']);
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($phpMussel['qfuPath']), RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($List as $Item => $List) {
+        /** Skips if not a quarantined file. */
+        if (!preg_match('~\.qfu$~i', $Item) || is_dir($Item) || !is_file($Item) || !is_readable($Item)) {
+            continue;
+        }
+        /** Deletes all files in quarantine. */
+        if ($DeleteMode) {
+            $DeleteMe = substr($Item, $Offset);
+            $phpMussel['FE']['state_msg'] .= '<code>' . $DeleteMe . '</code> ' . (unlink(
+                $phpMussel['qfuPath'] . $DeleteMe
+            ) ? $phpMussel['lang']['response_file_deleted'] : $phpMussel['lang']['response_delete_error']) . '<br />';
+            continue;
+        }
+        $Key++;
+        $Arr[$Key] = array(
+            'QFU-Name' => substr($Item, $Offset),
+            'QFU-JS-ID' => substr($Item, $Offset, -4),
+            'QFU-Size' => filesize($Item)
+        );
+        $phpMussel['FormatFilesize']($Arr[$Key]['QFU-Size']);
+        $Head = $phpMussel['ReadFile']($Item, 256);
+        /** Upload date/time. */
+        $Arr[$Key]['Upload-Date'] = (
+            ($DatePos = strpos($Head, 'Time/Date Uploaded: ')) !== false
+        ) ? $phpMussel['TimeFormat'](
+            (int)substr($Head, $DatePos + 20, 16),
+            $phpMussel['Config']['general']['timeFormat']
+        ) : $phpMussel['lang']['field_filetype_unknown'];
+        /** Upload origin. */
+        $Arr[$Key]['Upload-Origin'] = (
+            ($OriginStartPos = strpos($Head, 'Uploaded From: ')) !== false &&
+            ($OriginEndPos = strpos($Head, ' ', $OriginStartPos + 15)) !== false
+        ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['lang']['field_filetype_unknown'];
+        /** If the phpMussel QFU (Quarantined File Upload) header isn't found, it probably isn't a quarantined file. */
+        if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\x01")) {
+            $Head = substr($Head, $HeadPos);
+            $Arr[$Key]['Upload-MD5'] = bin2hex(substr($Head, 11, 16));
+            $Arr[$Key]['Upload-Size'] = $phpMussel['UnpackSafe']('l*', substr($Head, 27, 4));
+            $Arr[$Key]['Upload-Size'] = isset($Arr[$Key]['Upload-Size'][1]) ? (int)$Arr[$Key]['Upload-Size'][1] : 0;
+            $phpMussel['FormatFilesize']($Arr[$Key]['Upload-Size']);
+        } else {
+            $Arr[$Key]['Upload-MD5'] = $phpMussel['lang']['field_filetype_unknown'];
+            $Arr[$Key]['Upload-Size'] = $phpMussel['lang']['field_filetype_unknown'];
+        }
+        /** Appends Virus Total search URL for this hash onto the hash. */
+        if (strlen($Arr[$Key]['Upload-MD5']) === 32) {
+            $Arr[$Key]['Upload-MD5'] = sprintf(
+                '<a href="https://www.virustotal.com/#/file/%1$s">%1$s</a>',
+                $Arr[$Key]['Upload-MD5']
+            );
+        }
+    }
+    return $Arr;
+};
+
+/** Restore a quarantined file (returns the restored file data or false on failure). */
+$phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
+    $phpMussel['RestoreStatus'] = 1;
+    if (!$File || !$Key) {
+        return false;
+    }
+    $Data = $phpMussel['ReadFile']($File);
+    /** Fetch headers. */
+    if (($HeadPos = strpos($Data, "\xa1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\x01")) {
+        $phpMussel['RestoreStatus'] = 2;
+        return false;
+    }
+    $Data = substr($Data, $HeadPos);
+    $UploadMD5 = bin2hex(substr($Data, 11, 16));
+    $UploadSize = $phpMussel['UnpackSafe']('l*', substr($Data, 27, 4));
+    $UploadSize = isset($UploadSize[1]) ? (int)$UploadSize[1] : 0;
+    $Data = substr($Data, 32);
+    $DataLen = strlen($Data);
+    if ($Key < 128) {
+        $Key = $phpMussel['HexSafe'](hash('sha512', $Key) . hash('whirlpool', $Key));
+    }
+    $KeyLen = strlen($Key);
+    $Output = '';
+    $Cycle = 0;
+    while ($Cycle < $DataLen) {
+        for ($Inner = 0; $Inner < $KeyLen; $Inner++, $Cycle++) {
+            if (strlen($Output) >= $UploadSize) {
+                break 2;
+            }
+            $L = substr($Data, $Cycle, 1);
+            $R = substr($Key, $Inner, 1);
+            $Output .= ($L === false ? "\x00" : $L) ^ ($R === false ? "\x00" : $R);
+        }
+    }
+    $Output = gzinflate($Output);
+    if (empty($Output) || md5($Output) !== $UploadMD5) {
+        $phpMussel['RestoreStatus'] = 3;
+        return false;
+    }
+    $phpMussel['RestoreStatus'] = 0;
+    return $Output;
 };

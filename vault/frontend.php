@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.15).
+ * This file: Front-end handler (last modified: 2017.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2106,7 +2106,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     elseif (
         isset($_POST['filename']) &&
         isset($_POST['do']) &&
-        file_exists($phpMussel['Vault'] . $_POST['filename']) &&
         is_readable($phpMussel['Vault'] . $_POST['filename']) &&
         $phpMussel['FileManager-PathSecurityCheck']($_POST['filename'])
     ) {
@@ -2403,6 +2402,130 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_upload_test.html'))
+    );
+
+    /** Send output. */
+    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+
+}
+
+/** Quarantine. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
+
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_quarantine'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_quarantine']
+    );
+
+    /** Display how to enable quarantine if currently disabled. */
+    if (!$phpMussel['Config']['general']['quarantine_key']) {
+        $phpMussel['FE']['state_msg'] .= '<span class="txtRd">' . $phpMussel['lang']['tip_quarantine_disabled'] . '</span><br />';
+    }
+
+    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+
+    /** A form was submitted. */
+    if (
+        !empty($_POST['qfu']) &&
+        !empty($_POST['do']) &&
+        !is_dir($phpMussel['qfuPath'] . $_POST['qfu']) &&
+        is_readable($phpMussel['qfuPath'] . $_POST['qfu']) &&
+        $phpMussel['FileManager-PathSecurityCheck']($_POST['qfu'])
+    ) {
+
+        /** Delete a file. */
+        if ($_POST['do'] === 'delete-file') {
+
+            $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . (unlink(
+                $phpMussel['qfuPath'] . $_POST['qfu']
+            ) ? $phpMussel['lang']['response_file_deleted'] : $phpMussel['lang']['response_delete_error']) . '<br />';
+
+        /** Download or restore a file. */
+        } elseif ($_POST['do'] === 'download-file' || $_POST['do'] === 'restore-file') {
+
+            if (empty($_POST['qkey'])) {
+                $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['lang']['response_restore_error_2'] . '<br />';
+            } else {
+                /** Attempt to restore the file. */
+                $phpMussel['Restored'] = $phpMussel['Quarantine-Restore']($phpMussel['qfuPath'] . $_POST['qfu'], $_POST['qkey']);
+
+                /** Restore success! */
+                if (empty($phpMussel['RestoreStatus'])) {
+
+                    /** Download the file. */
+                    if ($_POST['do'] === 'download-file') {
+                        header('Content-Type: application/octet-stream');
+                        header('Content-Transfer-Encoding: Binary');
+                        header('Content-disposition: attachment; filename="' . basename($_POST['qfu']) . '.restored"');
+                        echo $phpMussel['Restored'];
+                        die;
+                    }
+
+                    /** Restore the file. */
+                    $phpMussel['Handle'] = fopen($phpMussel['qfuPath'] . $_POST['qfu'] . '.restored', 'w');
+                    fwrite($phpMussel['Handle'], $phpMussel['Restored']);
+                    fclose($phpMussel['Handle']);
+                    $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '.restored</code> ' . $phpMussel['lang']['response_file_restored'] . '<br />';
+
+                }
+
+                /** Corrupted file! */
+                elseif ($phpMussel['RestoreStatus'] === 2) {
+                    $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['lang']['response_restore_error_1'] . '<br />';
+                }
+
+                /** Incorrect quarantine key! */
+                else {
+                    $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['lang']['response_restore_error_2'] . '<br />';
+                }
+
+                /** Cleanup. */
+                unset($phpMussel['RestoreStatus'], $phpMussel['Restored']);
+            }
+
+        }
+
+    }
+
+    /** Delete all files in quarantine. */
+    $DeleteMode = !empty($_POST['DeleteAll']);
+
+    /** Template for quarantine files row. */
+    $phpMussel['FE']['QuarantineRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_quarantine_row.html'));
+
+    /** Fetch quarantine data array. */
+    $phpMussel['FilesInQuarantine'] = $phpMussel['Quarantine-RecursiveList']($DeleteMode);
+
+    /** Number of files in quarantine. */
+    $phpMussel['FilesInQuarantineCount'] = count($phpMussel['FilesInQuarantine']);
+
+    /** Number of files in quarantine state message. */
+    $phpMussel['FE']['state_msg'] .= sprintf(
+        $phpMussel['Plural']($phpMussel['FilesInQuarantineCount'], $phpMussel['lang']['state_quarantine']),
+        '<span class="txtRd">' . $phpMussel['Number_L10N']($phpMussel['FilesInQuarantineCount']) . '</span>'
+    ) . '<br />';
+
+    /** Initialise quarantine data string. */
+    $phpMussel['FE']['FilesInQuarantine'] = '';
+
+    /** Process quarantine files data. */
+    array_walk($phpMussel['FilesInQuarantine'], function ($ThisFile) use (&$phpMussel) {
+        $phpMussel['FE']['FilesInQuarantine'] .= $phpMussel['ParseVars'](
+            $phpMussel['lang'] + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['QuarantineRow']
+        );
+    });
+
+    /** Cleanup. */
+    unset($phpMussel['FilesInQuarantineCount'], $phpMussel['FilesInQuarantine']);
+
+    /** Parse output. */
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_quarantine.html'))
     );
 
     /** Send output. */
