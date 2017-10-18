@@ -261,6 +261,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
 /vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_quarantine.html | Một tập tin mẫu HTML cho các trang kiểm dịch của front-end.
+/vault/fe_assets/_quarantine_row.html | Một tập tin mẫu HTML cho các trang kiểm dịch của front-end.
 /vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
 /vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Mười 2017 (2017.10.05).
+Lần cuối cập nhật: 18 Tháng Mười 2017 (2017.10.18).

@@ -261,6 +261,8 @@ File | Description
 /vault/fe_assets/_logs.html | An HTML template for the front-end logs page.
 /vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access.
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
+/vault/fe_assets/_quarantine.html | An HTML template for the front-end quarantine page.
+/vault/fe_assets/_quarantine_row.html | An HTML template for the front-end quarantine page.
 /vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Last Updated: 5 October 2017 (2017.10.05).
+Last Updated: 18 October 2017 (2017.10.18).

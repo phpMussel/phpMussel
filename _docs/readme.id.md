@@ -261,6 +261,8 @@ Data | Deskripsi
 /vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
 /vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
 /vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_quarantine.html | Template HTML untuk akses bagian depan halaman karantina.
+/vault/fe_assets/_quarantine_row.html | Template HTML untuk akses bagian depan halaman karantina.
 /vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
 /vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
@@ -441,7 +443,7 @@ Konfigurasi umum dari phpMussel.
 - Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP >= 7.2.0).
 
 "statistics"
-- Lacak statistik penggunaan CIDRAM? True = Ya; False = Tidak [Default].
+- Lacak statistik penggunaan phpMussel? True = Ya; False = Tidak [Default].
 
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 5 Oktober 2017 (2017.10.05).
+Terakhir Diperbarui: 18 Oktober 2017 (2017.10.18).

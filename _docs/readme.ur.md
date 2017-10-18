@@ -257,6 +257,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
 &nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
@@ -1072,4 +1074,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 5 اکتوبر 2017 (2017.10.05).</div>
+<div dir="rtl">آخری تازہ کاری: 18 اکتوبر 2017 (2017.10.18).</div>

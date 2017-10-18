@@ -261,6 +261,8 @@ phpMussel функционирует полностью в автономном 
 /vault/fe_assets/_logs.html | Шаблон HTML для лог-файлы страница в фронтенд.
 /vault/fe_assets/_nav_complete_access.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с полным доступом.
 /vault/fe_assets/_nav_logs_access_only.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с доступом только к лог-файлы.
+/vault/fe_assets/_quarantine.html | Шаблон HTML для карантинная страница в фронтенд.
+/vault/fe_assets/_quarantine_row.html | Шаблон HTML для карантинная страница в фронтенд.
 /vault/fe_assets/_statistics.html | Шаблон HTML для страница статистики в фронтенд.
 /vault/fe_assets/_updates.html | Шаблон HTML для обновления страница в фронтенд.
 /vault/fe_assets/_updates_row.html | Шаблон HTML для обновления страница в фронтенд.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Последнее обновление: 5 Октябрь 2017 (2017.10.05).
+Последнее обновление: 18 Октябрь 2017 (2017.10.18).

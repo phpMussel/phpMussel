@@ -261,6 +261,8 @@ Archivo | Descripción
 /vault/fe_assets/_logs.html | Un archivo HTML para el front-end página de los archivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso de registros solamente.
+/vault/fe_assets/_quarantine.html | Un archivo HTML para el front-end página de cuarentena.
+/vault/fe_assets/_quarantine_row.html | Un archivo HTML para el front-end página de cuarentena.
 /vault/fe_assets/_statistics.html | Un archivo HTML para el front-end página de estadísticas.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Actualización: 5 Octubre 2017 (2017.10.05).
+Última Actualización: 18 Octubre 2017 (2017.10.18).

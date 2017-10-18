@@ -261,6 +261,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/fe_assets/_logs.html | 前端日志页面的HTML模板。
 /vault/fe_assets/_nav_complete_access.html | 前端导航链接的HTML模板，​由那些与完全访问使用。
 /vault/fe_assets/_nav_logs_access_only.html | 前端导航链接的HTML模板，​由那些与仅日志访问使用。
+/vault/fe_assets/_quarantine.html | 前端隔离页面的HTML模板。
+/vault/fe_assets/_quarantine_row.html | 前端隔离页面的HTML模板。
 /vault/fe_assets/_statistics.html | 前端统计页面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年10月5日。
+最后更新：2017年10月18日。

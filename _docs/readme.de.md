@@ -261,6 +261,8 @@ Datei | Beschreibung
 /vault/fe_assets/_logs.html | Ein HTML-Template für das Front-End Protokolldateien-Seite.
 /vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
 /vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_quarantine.html | Ein HTML-Template für die Front-End Quarantäneseite.
+/vault/fe_assets/_quarantine_row.html | Ein HTML-Template für die Front-End Quarantäneseite.
 /vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
 /vault/fe_assets/_updates.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
 /vault/fe_assets/_updates_row.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 5 Oktober 2017 (2017.10.05).
+Zuletzt aktualisiert: 18 Oktober 2017 (2017.10.18).

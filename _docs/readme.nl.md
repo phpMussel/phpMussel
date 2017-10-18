@@ -261,6 +261,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_quarantine.html | Een HTML sjabloon voor de frontend quarantaine pagina.
+/vault/fe_assets/_quarantine_row.html | Een HTML sjabloon voor de frontend quarantaine pagina.
 /vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
@@ -270,46 +272,46 @@ Bestand | Beschrijving
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
-/vault/lang/ | Bevat phpMussel taaldata/taalgegevens.
+/vault/lang/ | Bevat phpMussel lokalisaties.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
-/vault/lang/lang.de.fe.php | Duitse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
-/vault/lang/lang.en.fe.php | Engels taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
-/vault/lang/lang.es.fe.php | Spaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
-/vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
-/vault/lang/lang.hi.fe.php | Hindi taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.hi.php | Hindi taaldata/taalgegevens.
-/vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
-/vault/lang/lang.it.fe.php | Italiaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
-/vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
-/vault/lang/lang.ko.fe.php | Koreaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ko.php | Koreaanse taaldata/taalgegevens.
-/vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
-/vault/lang/lang.pt.fe.php | Portugees taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
-/vault/lang/lang.ru.fe.php | Russische taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
-/vault/lang/lang.th.fe.php | Thaise taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.th.php | Thaise taaldata/taalgegevens.
-/vault/lang/lang.tr.fe.php | Turks taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.tr.php | Turks taaldata/taalgegevens.
-/vault/lang/lang.ur.fe.php | Urdu taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ur.php | Urdu taaldata/taalgegevens.
-/vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
+/vault/lang/lang.ar.fe.php | Arabisch lokalisatie voor het frontend.
+/vault/lang/lang.ar.php | Arabisch lokalisatie.
+/vault/lang/lang.de.fe.php | Duitse lokalisatie voor het frontend.
+/vault/lang/lang.de.php | Duitse lokalisatie.
+/vault/lang/lang.en.fe.php | Engels lokalisatie voor het frontend.
+/vault/lang/lang.en.php | Engels lokalisatie.
+/vault/lang/lang.es.fe.php | Spaanse lokalisatie voor het frontend.
+/vault/lang/lang.es.php | Spaanse lokalisatie.
+/vault/lang/lang.fr.fe.php | Franse lokalisatie voor het frontend.
+/vault/lang/lang.fr.php | Franse lokalisatie.
+/vault/lang/lang.hi.fe.php | Hindi lokalisatie voor het frontend.
+/vault/lang/lang.hi.php | Hindi lokalisatie.
+/vault/lang/lang.id.fe.php | Indonesisch lokalisatie voor het frontend.
+/vault/lang/lang.id.php | Indonesisch lokalisatie.
+/vault/lang/lang.it.fe.php | Italiaanse lokalisatie voor het frontend.
+/vault/lang/lang.it.php | Italiaanse lokalisatie.
+/vault/lang/lang.ja.fe.php | Japanse lokalisatie voor het frontend.
+/vault/lang/lang.ja.php | Japanse lokalisatie.
+/vault/lang/lang.ko.fe.php | Koreaanse lokalisatie voor het frontend.
+/vault/lang/lang.ko.php | Koreaanse lokalisatie.
+/vault/lang/lang.nl.fe.php | Nederlandse lokalisatie voor het frontend.
+/vault/lang/lang.nl.php | Nederlandse lokalisatie.
+/vault/lang/lang.pt.fe.php | Portugees lokalisatie voor het frontend.
+/vault/lang/lang.pt.php | Portugees lokalisatie.
+/vault/lang/lang.ru.fe.php | Russische lokalisatie voor het frontend.
+/vault/lang/lang.ru.php | Russische lokalisatie.
+/vault/lang/lang.th.fe.php | Thaise lokalisatie voor het frontend.
+/vault/lang/lang.th.php | Thaise lokalisatie.
+/vault/lang/lang.tr.fe.php | Turks lokalisatie voor het frontend.
+/vault/lang/lang.tr.php | Turks lokalisatie.
+/vault/lang/lang.ur.fe.php | Urdu lokalisatie voor het frontend.
+/vault/lang/lang.ur.php | Urdu lokalisatie.
+/vault/lang/lang.vi.fe.php | Vietnamees lokalisatie voor het frontend.
+/vault/lang/lang.vi.php | Vietnamees lokalisatie.
+/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) lokalisatie voor het frontend.
+/vault/lang/lang.zh-tw.php | Chinees (traditioneel) lokalisatie.
+/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) lokalisatie voor het frontend.
+/vault/lang/lang.zh.php | Chinees (vereenvoudigd) lokalisatie.
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/signatures/ | Signatures bestandsmap (signature bestanden bevat).
@@ -423,7 +425,7 @@ Algemene configuratie voor phpMussel.
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
 
 "disable_frontend"
-- Uitschakelen frontend toegang? frontend toegang kan phpMussel beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om phpMussel te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
+- Uitschakelen frontend toegang? Frontend toegang kan phpMussel beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om phpMussel te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
 
 "max_login_attempts"
 - Maximum aantal inlogpogingen (frontend). Standaard = 5.
@@ -921,4 +923,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 5 Oktober 2017 (2017.10.05).
+Laatste Bijgewerkt: 18 Oktober 2017 (2017.10.18).
