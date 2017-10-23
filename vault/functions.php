@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.16).
+ * This file: Functions file (last modified: 2017.10.21).
  */
 
 /**
@@ -5583,6 +5583,8 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                         $Component = $phpMussel['lang']['label_fmgr_cache_data'];
                     } elseif ($LastFour === '.log' || $LastFour === '.txt') {
                         $Component = $phpMussel['lang']['link_logs'];
+                    } elseif ($LastFour === '.qfu') {
+                        $Component = $phpMussel['lang']['label_quarantined'];
                     } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
                         $Component = $phpMussel['lang']['label_fmgr_updates_metadata'];
                     }

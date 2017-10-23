@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.07.13).
+ * This file: The loader (last modified: 2017.10.21).
  */
 
 /**
@@ -132,8 +132,14 @@ if (!defined('phpMussel')) {
                 die('[phpMussel] ' . $phpMussel['Config']['lang']['plugins_directory_nonexistent']);
             }
             $phpMussel['MusselPlugins']['tempdata'] = array();
-            if ($phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')) {
-                while (false !== ($phpMussel['MusselPlugins']['tempdata']['f'] = readdir($phpMussel['MusselPlugins']['tempdata']['d']))) {
+            if ((
+                $phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')
+            ) && is_resource($phpMussel['MusselPlugins']['tempdata']['d'])) {
+                while (true) {
+                    $phpMussel['MusselPlugins']['tempdata']['f'] = readdir($phpMussel['MusselPlugins']['tempdata']['d']);
+                    if (empty($phpMussel['MusselPlugins']['tempdata']['f'])) {
+                        break;
+                    }
                     if (
                         $phpMussel['MusselPlugins']['tempdata']['f'] !== '.' &&
                         $phpMussel['MusselPlugins']['tempdata']['f'] !== '..' &&
@@ -144,8 +150,8 @@ if (!defined('phpMussel')) {
                         require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
                     }
                 }
+                closedir($phpMussel['MusselPlugins']['tempdata']['d']);
             }
-            closedir($phpMussel['MusselPlugins']['tempdata']['d']);
             unset($phpMussel['MusselPlugins']['tempdata']);
         }
 
