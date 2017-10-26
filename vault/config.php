@@ -108,10 +108,10 @@ if (empty($phpMussel['Config']['Config Defaults'])) {
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */
-$phpMussel['Config']['Temp'] = array();
+$phpMussel['Config']['Temp'] = [];
 foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']['KeyCat'] => $phpMussel['Config']['Temp']['DCat']) {
     if (!isset($phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']])) {
-        $phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']] = array();
+        $phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']] = [];
     }
     if (isset($phpMussel['Config']['Temp']['Cat'])) {
         unset($phpMussel['Config']['Temp']['Cat']);
@@ -174,7 +174,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     parse_str($_SERVER['QUERY_STRING'], $phpMussel['QueryVars']);
 } else {
     $phpMussel['Query'] = '';
-    $phpMussel['QueryVars'] = array();
+    $phpMussel['QueryVars'] = [];
 }
 
 /** Set default hashing algorithm. */

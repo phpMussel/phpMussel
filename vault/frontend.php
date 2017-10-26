@@ -11,13 +11,21 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.16).
+ * This file: Front-end handler (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
 if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
+
+/** Kill the script if the front-end functions file doesn't exist. */
+if (!file_exists($phpMussel['Vault'] . 'frontend_functions.php')) {
+    header('Content-Type: text/plain');
+    die('[phpMussel] Front-end functions file missing! Please reinstall phpMussel.');
+}
+/** Load the front-end functions file. */
+require $phpMussel['Vault'] . 'frontend_functions.php';
 
 /** Set page selector if not already set. */
 if (empty($phpMussel['QueryVars']['phpmussel-page'])) {
@@ -56,21 +64,19 @@ if (is_readable($phpMussel['Pips_Path'])) {
 
 /** Handle webfonts. */
 if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
-    $phpMussel['FE']['Template'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $phpMussel['FE']['Template']);
+    $phpMussel['FE']['Template'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $phpMussel['FE']['Template']);
 } else {
-    $phpMussel['WebFontPos'] = array(
+    $phpMussel['WebFontPos'] = [
         'Begin' => strpos($phpMussel['FE']['Template'], '<!-- WebFont Begin -->'),
         'End' => strpos($phpMussel['FE']['Template'], '<!-- WebFont End -->')
+    ];
+    $phpMussel['FE']['Template'] = substr(
+        $phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']
+    ) . substr(
+        $phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20
     );
-    $phpMussel['FE']['Template'] =
-        substr($phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']) . substr($phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20);
     unset($phpMussel['WebFontPos']);
 }
-
-/** Traversal detection. */
-$phpMussel['Traverse'] = function ($Path) {
-    return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
-};
 
 /** A fix for correctly displaying LTR/RTL text. */
 if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {
@@ -270,7 +276,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
         if ($phpMussel['Config']['general']['FrontEndLog']) {
             $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['FE']['state_msg'] . "\n";
         }
-        $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['FE']['state_msg']);
+        $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['FE']['state_msg'] . '<br /><br /></div>';
     } elseif ($phpMussel['Config']['general']['FrontEndLog']) {
         $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['lang']['state_logged_in'] . "\n";
     }
@@ -452,7 +458,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
 
     } else {
 
-        $phpMussel['Remote-YAML-phpMussel-Array'] = array();
+        $phpMussel['Remote-YAML-phpMussel-Array'] = [];
         $phpMussel['YAML']($phpMussel['Remote-YAML-phpMussel'], $phpMussel['Remote-YAML-phpMussel-Array']);
 
         /** phpMussel latest stable. */
@@ -493,7 +499,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
 
     } else {
 
-        $phpMussel['Remote-YAML-PHP-Array'] = array();
+        $phpMussel['Remote-YAML-PHP-Array'] = [];
         $phpMussel['YAML']($phpMussel['Remote-YAML-PHP'], $phpMussel['Remote-YAML-PHP-Array']);
 
         /** PHP latest stable. */
@@ -1038,7 +1044,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     unset($phpMussel['StateModified']);
 
     /** Prepare components metadata working array. */
-    $phpMussel['Components'] = array('Meta' => array(), 'RemoteMeta' => array());
+    $phpMussel['Components'] = array('Meta' => [], 'RemoteMeta' => []);
 
     /** Fetch components lists. */
     $phpMussel['FetchComponentsLists']($phpMussel['Vault'], $phpMussel['Components']['Meta']);
@@ -1047,7 +1053,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     unset($phpMussel['Components']['Files']);
 
     /** Indexes. */
-    $phpMussel['FE']['Indexes'] = array();
+    $phpMussel['FE']['Indexes'] = [];
 
     /** A form has been submitted. */
     if ($phpMussel['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
@@ -1056,8 +1062,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         if ($_POST['do'] === 'update-component' && !empty($_POST['ID'])) {
             $phpMussel['Components']['Target'] = $_POST['ID'];
             $phpMussel['Arrayify']($phpMussel['Components']['Target']);
-            $phpMussel['FileData'] = array();
-            $phpMussel['Annotations'] = array();
+            $phpMussel['FileData'] = [];
+            $phpMussel['Annotations'] = [];
             foreach ($phpMussel['Components']['Target'] as $phpMussel['Components']['ThisTarget']) {
                 if (
                     !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']) ||
@@ -1068,7 +1074,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Components']['BytesAdded'] = 0;
                 $phpMussel['Components']['BytesRemoved'] = 0;
                 $phpMussel['Components']['TimeRequired'] = microtime(true);
-                $phpMussel['Components']['RemoteMeta'] = array();
+                $phpMussel['Components']['RemoteMeta'] = [];
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['FECacheGet'](
                     $phpMussel['FE']['Cache'],
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
@@ -1155,8 +1161,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         $phpMussel['Components']['OldMeta']
                     );
                     $phpMussel['Count'] = count($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
-                    $phpMussel['RemoteFiles'] = array();
-                    $phpMussel['IgnoredFiles'] = array();
+                    $phpMussel['RemoteFiles'] = [];
+                    $phpMussel['IgnoredFiles'] = [];
                     $phpMussel['Rollback'] = false;
                     /** Write new and updated files and directories. */
                     for ($phpMussel['Iterate'] = 0; $phpMussel['Iterate'] < $phpMussel['Count']; $phpMussel['Iterate']++) {
@@ -1569,10 +1575,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     $phpMussel['Components'] = array(
         'Meta' => $phpMussel['Components']['Meta'],
         'RemoteMeta' => $phpMussel['Components']['RemoteMeta'],
-        'Remotes' => array(),
-        'Dependencies' => array(),
-        'Outdated' => array(),
-        'Out' => array()
+        'Remotes' => [],
+        'Dependencies' => [],
+        'Outdated' => [],
+        'Out' => []
     );
 
     /** Prepare installed component metadata and options for display. */
@@ -1796,13 +1802,20 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             );
             $phpMussel['Components']['ThisComponent']['Options'] = '';
         }
-        $phpMussel['Components']['ThisComponent']['Changelog'] =
-            empty($phpMussel['Components']['ThisComponent']['Changelog']) ? '' :
-            '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        /** Append changelog. */
+        $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
+            $phpMussel['Components']['ThisComponent']['Changelog']
+        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        /** Append tests. */
+        if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisComponent']['ID']]['Tests'])) {
+            $phpMussel['AppendTests']($phpMussel['Components']['ThisComponent']);
+        }
+        /** Append filename. */
         $phpMussel['Components']['ThisComponent']['Filename'] = (
             empty($phpMussel['Components']['ThisComponent']['Files']['To']) ||
             count($phpMussel['Components']['ThisComponent']['Files']['To']) !== 1
         ) ? '' : '<br />' . $phpMussel['lang']['field_filename'] . $phpMussel['Components']['ThisComponent']['Files']['To'][0];
+        /** Finalise entry. */
         if (
             !($phpMussel['FE']['hide-non-outdated'] && empty($phpMussel['Components']['ThisComponent']['Outdated'])) &&
             !($phpMussel['FE']['hide-unused'] && empty($phpMussel['Components']['ThisComponent']['Files']['To']))
@@ -1861,7 +1874,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         ) !== "---\n") {
             continue;
         }
-        $phpMussel['ThisOffset'] = array(0 => array());
+        $phpMussel['ThisOffset'] = array(0 => []);
         $phpMussel['ThisOffset'][1] = preg_match(
             '/(\n+)$/',
             $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']],
@@ -1913,10 +1926,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             '<br /><select name="do" class="auto"><option value="update-component">' .
             $phpMussel['lang']['field_install'] . '</option></select><input type="submit" value="' .
             $phpMussel['lang']['field_ok'] . '" class="auto" />';
-        $phpMussel['Components']['ThisComponent']['Changelog'] =
-            empty($phpMussel['Components']['ThisComponent']['Changelog']) ? '' :
-            '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        /** Append changelog. */
+        $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
+            $phpMussel['Components']['ThisComponent']['Changelog']
+        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        /** Append tests. */
+        if (!empty($phpMussel['Components']['ThisComponent']['Tests'])) {
+            $phpMussel['AppendTests']($phpMussel['Components']['ThisComponent']);
+        }
+        /** Append filename (empty). */
         $phpMussel['Components']['ThisComponent']['Filename'] = '';
+        /** Finalise entry. */
         if (!$phpMussel['FE']['hide-unused']) {
             $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
                 '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
@@ -1939,23 +1959,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     });
 
     /** Finalise output and unset working data. */
-    $phpMussel['UpdatesSortFunc'] = function ($A, $B) {
-        $CheckA = preg_match('/^l10n/i', $A);
-        $CheckB = preg_match('/^l10n/i', $B);
-        if (($CheckA && !$CheckB) || ($A === 'phpMussel' && $B !== 'phpMussel')) {
-            return -1;
-        }
-        if (($CheckB && !$CheckA) || ($B === 'phpMussel' && $A !== 'phpMussel')) {
-            return 1;
-        }
-        if ($A < $B) {
-            return -1;
-        }
-        if ($A > $B) {
-            return 1;
-        }
-        return 0;
-    };
     uksort($phpMussel['FE']['Indexes'], $phpMussel['UpdatesSortFunc']);
     $phpMussel['FE']['Indexes'] = implode('', $phpMussel['FE']['Indexes']);
     uksort($phpMussel['Components']['Out'], $phpMussel['UpdatesSortFunc']);
@@ -1994,7 +1997,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     }
 
     /** Cleanup. */
-    unset($phpMussel['UpdatesSortFunc'], $phpMussel['Components'], $phpMussel['Count'], $phpMussel['Iterate']);
+    unset($phpMussel['Components'], $phpMussel['Count'], $phpMussel['Iterate']);
 
     /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
@@ -2282,13 +2285,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         arsort($phpMussel['Components']['Components']);
 
         /** Initialise pie chart values. */
-        $phpMussel['FE']['PieChartValues'] = array();
+        $phpMussel['FE']['PieChartValues'] = [];
 
         /** Initialise pie chart labels. */
-        $phpMussel['FE']['PieChartLabels'] = array();
+        $phpMussel['FE']['PieChartLabels'] = [];
 
         /** Initialise pie chart colours. */
-        $phpMussel['FE']['PieChartColours'] = array();
+        $phpMussel['FE']['PieChartColours'] = [];
 
         /** Initialise pie chart legend. */
         $phpMussel['FE']['PieChartHTML'] = '';
@@ -2551,14 +2554,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics') {
     }
 
     /** Fetch statistics cache data. */
-    if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: array())) {
-        $phpMussel['Statistics'] = unserialize($phpMussel['Statistics']) ?: array();
+    if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: [])) {
+        $phpMussel['Statistics'] = unserialize($phpMussel['Statistics']) ?: [];
     }
 
     /** Clear statistics. */
     if (!empty($_POST['ClearStats'])) {
         $phpMussel['SaveCache']('Statistics', 1, '-');
-        $phpMussel['Statistics'] = array();
+        $phpMussel['Statistics'] = [];
         $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_statistics_cleared'] . '<br />';
     }
 

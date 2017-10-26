@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Polyfills for PHP 5.4.X (last modified: 2017.06.09).
+ * This file: Polyfills for PHP 5.4.X (last modified: 2017.10.26).
  */
 
 if (!defined('PASSWORD_BCRYPT')) {
@@ -23,9 +23,9 @@ if (!defined('PASSWORD_DEFAULT')) {
 }
 
 if (!function_exists('password_hash')) {
-    function password_hash($Password, $Algo, array $Options = array()) {
+    function password_hash($Password, $Algo, array $Options = []) {
 
-        $Cost = (empty($Options['cost'])) ? 10 : (int)$Options['cost'];
+        $Cost = empty($Options['cost']) ? 10 : (int)$Options['cost'];
 
         if (empty($Options['salt'])) {
 
