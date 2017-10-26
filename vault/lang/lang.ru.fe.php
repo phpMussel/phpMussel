@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.16).
+ * This file: Russian language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'Показать';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Размер в карантине: ';
 $phpMussel['lang']['label_stable'] = 'Последние стабильный:';
 $phpMussel['lang']['label_sysinfo'] = 'Системная информация:';
+$phpMussel['lang']['label_tests'] = 'Испытания:';
 $phpMussel['lang']['label_unstable'] = 'Последние нестабильный:';
 $phpMussel['lang']['label_upload_date'] = 'Дата загрузки: ';
 $phpMussel['lang']['label_upload_hash'] = 'Хеш загрузки: ';

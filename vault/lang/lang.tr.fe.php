@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.16).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'Göstermek';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Karantinadaki boyutu: ';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
+$phpMussel['lang']['label_tests'] = 'Testler:';
 $phpMussel['lang']['label_unstable'] = 'En yeni kararsız:';
 $phpMussel['lang']['label_upload_date'] = 'Yükleme tarihi: ';
 $phpMussel['lang']['label_upload_hash'] = 'Yükleme karması: ';

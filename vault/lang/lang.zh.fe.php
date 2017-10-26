@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.16).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = '显示';
 $phpMussel['lang']['label_size_in_quarantine'] = '大小在检疫：';
 $phpMussel['lang']['label_stable'] = '最新稳定：';
 $phpMussel['lang']['label_sysinfo'] = '系统信息：';
+$phpMussel['lang']['label_tests'] = '测试：';
 $phpMussel['lang']['label_unstable'] = '最新不稳定：';
 $phpMussel['lang']['label_upload_date'] = '上传日期：';
 $phpMussel['lang']['label_upload_hash'] = '上传哈希：';

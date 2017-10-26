@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.16).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = '表示する';
 $phpMussel['lang']['label_size_in_quarantine'] = '検疫のサイズ：';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
+$phpMussel['lang']['label_tests'] = 'テスト：';
 $phpMussel['lang']['label_unstable'] = '最新不安定：';
 $phpMussel['lang']['label_upload_date'] = 'アップロード日：';
 $phpMussel['lang']['label_upload_hash'] = 'アップロードのハッシュ：';

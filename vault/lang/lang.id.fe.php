@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.16).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'Menunjukkan';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Ukuran dalam karantina: ';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
+$phpMussel['lang']['label_tests'] = 'Pengujian:';
 $phpMussel['lang']['label_unstable'] = 'Terbaru tidak stabil:';
 $phpMussel['lang']['label_upload_date'] = 'Tanggal pengunggahan: ';
 $phpMussel['lang']['label_upload_hash'] = 'Hash pengunggahan: ';

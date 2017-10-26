@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.10.16).
+ * This file: Hindi language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'दिखाना';
 $phpMussel['lang']['label_size_in_quarantine'] = 'संगरोध में आकार: ';
 $phpMussel['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $phpMussel['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';
+$phpMussel['lang']['label_tests'] = 'परीक्षण:';
 $phpMussel['lang']['label_unstable'] = 'नवीनतम अस्थिर:';
 $phpMussel['lang']['label_upload_date'] = 'अपलोड की तारीख: ';
 $phpMussel['lang']['label_upload_hash'] = 'अपलोड का हैश: ';
