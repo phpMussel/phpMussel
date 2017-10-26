@@ -326,6 +326,7 @@ Data | Deskripsi
 /vault/config.php | Modul konfigurasi.
 /vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk phpMussel.
 /vault/frontend.php | Modul untuk akses bagian depan.
+/vault/frontend_functions.php | Modul untuk fungsi akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
 /vault/lang.php | File bahasa.
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 18 Oktober 2017 (2017.10.18).
+Terakhir Diperbarui: 26 Oktober 2017 (2017.10.26).

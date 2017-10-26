@@ -67,6 +67,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.10.16; NEW FEATURE; Maikuolan]: Added a new page to the front-end for
   viewing and handling quarantined files.
 
+- [2017.10.26; Sub-minor code change; Maikuolan]: Added CI reports/tests to the
+  front-end updates page. Split the functions file into two distinct files (one
+  containing closures specifically intended for the front-end, and one for
+  everything else; this should increase code maintainability and make things
+  less confusing for future contributors).
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

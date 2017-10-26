@@ -322,6 +322,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لphpMussel.</div> | /vault/config.yaml
 &nbsp; <div dir="rtl" style="display:inline;">معالج front-end.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline;">ملف وظائف front-end.</div> | /vault/frontend_functions.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على phpMussel أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
 &nbsp; <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
@@ -1074,4 +1075,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 18 اكتوبر 2017 (2017.10.18).</div>
+<div dir="rtl">آخر تحديث: 26 اكتوبر 2017 (2017.10.26).</div>

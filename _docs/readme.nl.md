@@ -326,6 +326,7 @@ Bestand | Beschrijving
 /vault/config.php | Configuratie handler.
 /vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de phpMussel configuratie.
 /vault/frontend.php | Frontend-handler.
+/vault/frontend_functions.php | Frontend-functies bestand.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted signatures aangeeft om phpMussel waarop signatures moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
 /vault/lang.php | Taal-handler.
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 18 Oktober 2017 (2017.10.18).
+Laatste Bijgewerkt: 26 Oktober 2017 (2017.10.26).

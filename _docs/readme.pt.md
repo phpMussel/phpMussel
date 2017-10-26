@@ -326,6 +326,7 @@ Arquivo | Descrição
 /vault/config.php | Módulo de configuração.
 /vault/config.yaml | Arquivo de valores padrão para a configuração; Contém valores padrão para a configuração de phpMussel.
 /vault/frontend.php | Módulo do front-end.
+/vault/frontend_functions.php | Arquivo de funções do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/greylist.csv | CSV de greylisted assinaturas indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
 /vault/lang.php | Dados lingüísticos.
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 18 Outubro 2017 (2017.10.18).
+Última Atualização: 26 Outubro 2017 (2017.10.26).

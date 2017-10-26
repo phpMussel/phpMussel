@@ -326,6 +326,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/config.php | 配置处理文件。
 /vault/config.yaml | 配置默认文件；包含phpMussel的默认配置值。
 /vault/frontend.php | 前端处理文件。
+/vault/frontend_functions.php | 前端功能处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
 /vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
 /vault/lang.php | 语言数据。
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年10月18日。
+最后更新：2017年10月26日。
