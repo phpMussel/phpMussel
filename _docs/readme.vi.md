@@ -325,7 +325,8 @@ Tập tin | Chi tiết
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho phpMussel.
-/vault/frontend.php | Tập tin cho xử lý các front-end.
+/vault/frontend.php | Tập tin cho xử lý front-end.
+/vault/frontend_functions.php | Tập tin cho chức năng front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
 /vault/lang.php | Dữ liệu tiếng.
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Mười 2017 (2017.10.18).
+Lần cuối cập nhật: 26 Tháng Mười 2017 (2017.10.26).

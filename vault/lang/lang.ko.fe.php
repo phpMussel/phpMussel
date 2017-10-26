@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.10.16).
+ * This file: Korean language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,7 +27,7 @@ $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '실행 파일
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '파일도 아니고 PHP 아카이브도 인식 할 수없는 파일에서 PHP 헤더를 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, RAR, GZ 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = '헤더가 잘못 오피스 문서를 찾습니다 (DOC, DOT, PPS, PPT, XLA XLS, WIZ 지원). <code>false</code> = 해제; <code>true</code> = 온.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF의 PSD, PDD, WEBP 지원). <code>false</code> = 해제; <code>true</code> = 온.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '헤더가 잘못 PDF 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '손상된 파일과 오류 분석. <code>false</code> = 무시; <code>true</code> = 차단 (Default / 기본 설정). 손상의 가능성이있는 PE 파일을 차단 검출 여부? 관한 것입니다. PE 파일의 일부가 손상되어 제대로 분석 할 수없는 것은 드물지 않고, 바이러스 감염을 보는 바로미터가됩니다. PE 파일의 바이러스를 감지하는 안티 바이러스 프로그램은 PE 파일 분석을 실시 합니다만, 바이러스를 만드는 사람이 바이러스가 검출되지 않도록 그것을 피하려고 할 것이기 때문입니다.';
 $phpMussel['lang']['config_attack_specific_decode_threshold'] = '디코드 명령이 감지 될 원시 데이터의 길이 제한 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 기본값 = 512KB. 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다 (파일 크기의 제한을 제거합니다).';
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = '보여';
 $phpMussel['lang']['label_size_in_quarantine'] = '격리 크기 : ';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';
+$phpMussel['lang']['label_tests'] = '테스트 :';
 $phpMussel['lang']['label_unstable'] = '최신 불안정 :';
 $phpMussel['lang']['label_upload_date'] = '업로드 날짜 : ';
 $phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.10.16).
+ * This file: German language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'Zeig';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Größe in Quarantäne: ';
 $phpMussel['lang']['label_stable'] = 'Neueste stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'System Information:';
+$phpMussel['lang']['label_tests'] = 'Tests:';
 $phpMussel['lang']['label_unstable'] = 'Neueste instabil:';
 $phpMussel['lang']['label_upload_date'] = 'Datum des Hochladens: ';
 $phpMussel['lang']['label_upload_hash'] = 'Hash des Hochladen: ';

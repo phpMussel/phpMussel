@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.16).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'Hiển thị';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Kích thước trong kiểm dịch: ';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
+$phpMussel['lang']['label_tests'] = 'Kiểm tra:';
 $phpMussel['lang']['label_unstable'] = 'Không ổn định mới nhất:';
 $phpMussel['lang']['label_upload_date'] = 'Ngày tải lên: ';
 $phpMussel['lang']['label_upload_hash'] = 'Băm tải lên: ';

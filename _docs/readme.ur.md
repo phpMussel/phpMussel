@@ -322,6 +322,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ phpMussel لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
 &nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
 &nbsp; <div dir="rtl" style="display:inline;">phpMussel (فائل خود کار طریقے سے خارج کر دیا ہے تو دوبارہ) اسے نظر انداز کیا جانا چاہئے دستخط جس سے اشارہ greylisted دستخط کی CSV.</div> | /vault/greylist.csv
 &nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
@@ -1074,4 +1075,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 18 اکتوبر 2017 (2017.10.18).</div>
+<div dir="rtl">آخری تازہ کاری: 26 اکتوبر 2017 (2017.10.26).</div>

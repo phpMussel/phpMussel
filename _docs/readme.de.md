@@ -326,6 +326,7 @@ Datei | Beschreibung
 /vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für phpMussel.
 /vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für phpMussel; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/frontend.php | Front-End-Handler.
+/vault/frontend_functions.php | Front-End-Funktionen-Datei.
 /vault/functions.php | Funktionen-Datei.
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
 /vault/lang.php | Sprachdateien.
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 18 Oktober 2017 (2017.10.18).
+Zuletzt aktualisiert: 26 Oktober 2017 (2017.10.26).

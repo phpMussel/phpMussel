@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.10.16).
+ * This file: Thai language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'แสดง';
 $phpMussel['lang']['label_size_in_quarantine'] = 'ขนาดในกักกัน: ';
 $phpMussel['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $phpMussel['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
+$phpMussel['lang']['label_tests'] = 'การทดสอบ:';
 $phpMussel['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';
 $phpMussel['lang']['label_upload_date'] = 'อัปโหลดวันที่: ';
 $phpMussel['lang']['label_upload_hash'] = 'อัปโหลดแฮช: ';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.16).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['lang']['label_show'] = 'اظهره';
 $phpMussel['lang']['label_size_in_quarantine'] = 'الحجر الصحي بحجم: ';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
+$phpMussel['lang']['label_tests'] = 'اختبارات:';
 $phpMussel['lang']['label_unstable'] = 'أحدث غير مستقرة:';
 $phpMussel['lang']['label_upload_date'] = 'تحميل تاريخ: ';
 $phpMussel['lang']['label_upload_hash'] = 'تحميل التجزئة: ';

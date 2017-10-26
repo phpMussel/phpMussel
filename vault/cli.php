@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.10.09).
+ * This file: CLI handler (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -31,12 +31,12 @@ set_error_handler($phpMussel['ErrorHandler_1']);
 if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['general']['maintenance_mode']) {
 
     /** Check if any arguments have been parsed via CLI. */
-    $phpMussel['cli_args'] = array(
+    $phpMussel['cli_args'] = [
         isset($argv[0]) ? $argv[0] : '',
         isset($argv[1]) ? $argv[1] : '',
         isset($argv[2]) ? $argv[2] : '',
         isset($argv[3]) ? $argv[3] : ''
-    );
+    ];
 
     /** Triggered by the forked child process in CLI-mode. */
     if ($phpMussel['cli_args'][1] == 'cli_scan') {
@@ -105,7 +105,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $Data = $phpMussel['ReadFile']($Params, 0, true);
                 $Returnable = '';
                 if (substr($Data, 0, 2) === 'MZ') {
-                    $PEArr = array();
+                    $PEArr = [];
                     $PEArr['Len'] = strlen($Data);
                     $PEArr['Offset'] = $phpMussel['UnpackSafe']('S', substr($Data, 60, 4));
                     $PEArr['Offset'] = $PEArr['Offset'][1];
@@ -265,7 +265,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         if ($phpMussel['cmd'] === 'url_sig') {
             echo "\n";
             $phpMussel['stdin_clean'] = $phpMussel['prescan_normalise'](substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1));
-            $phpMussel['URL'] = array('avoidme' => '', 'forthis' => '');
+            $phpMussel['URL'] = ['avoidme' => '', 'forthis' => ''];
             if (
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['domain']) ||
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['url'])

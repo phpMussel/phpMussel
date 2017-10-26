@@ -326,6 +326,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/config.yaml | 設定・デフォルトス・ファイル；phpMusselのデフォルト設定値が含まれます。
 /vault/frontend.php | フロントエンド・ハンドラ。
+/vault/frontend_functions.php | フロントエンド機能ファイル。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/greylist.csv | グレーリスト化されたシグネチャのＣＳＶで、​phpMusselがどのシグネチャを無視すべきかを指示するものです（削除しても自動的に再作成されます）。
 /vault/lang.php | 言語・ハンドラ。
@@ -923,4 +924,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年10月18日。
+最終アップデート：2017年10月26日。

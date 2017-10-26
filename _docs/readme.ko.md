@@ -326,6 +326,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/config.php | 구성 핸들러.
 /vault/config.yaml | 설정 기본값 스 파일; phpMussel의 기본 설정이 포함되어 있습니다.
 /vault/frontend.php | 프론트 엔드 핸들러.
+/vault/frontend_functions.php | 프론트 엔드 기능 파일.
 /vault/functions.php | 기능 파일 (기본적으로 파일).
 /vault/greylist.csv | 그레이리스트 된 서명 CSV에서 phpMussel이 어떤 서명을 무시해야하는지 알려줍니다 (삭제해도 자동으로 다시 만들어집니다).
 /vault/lang.php | 언어 처리기.
@@ -533,7 +534,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - 헤더가 잘못 오피스 문서를 찾습니다 (DOC, DOT, PPS, PPT, XLA XLS, WIZ 지원).
 
 "chameleon_to_img"
-- 헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF의 PSD, PDD, WEBP 지원).
+- 헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP 지원).
 
 "chameleon_to_pdf"
 - 헤더가 잘못 PDF 파일을 찾습니다.
