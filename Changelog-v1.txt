@@ -73,6 +73,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   everything else; this should increase code maintainability and make things
   less confusing for future contributors).
 
+- [2017.10.27; Sub-minor code change; Maikuolan]: Removed old PHP < 5.4.0 array
+  syntax in favour of newer, short array syntax.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 
