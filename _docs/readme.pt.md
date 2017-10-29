@@ -272,6 +272,7 @@ Arquivo | Descrição
 /vault/fe_assets/frontend.html | O arquivo modelo HTML principal para o front-end.
 /vault/fe_assets/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
 /vault/fe_assets/pips.php | Módulo de pips (usado pelo gerenciador de arquivos do front-end).
+/vault/fe_assets/scripts.js | Contém dados de JavaScript do front-end.
 /vault/lang/ | Contém dados lingüísticos.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/lang/lang.ar.fe.php | Dados lingüísticos Árabe para o front-end.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 26 Outubro 2017 (2017.10.26).
+Última Atualização: 28 Outubro 2017 (2017.10.28).

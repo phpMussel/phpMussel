@@ -272,6 +272,7 @@ Fichier | Description
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
 /vault/fe_assets/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/fe_assets/pips.php | Gestionnaire de pips (utilisé par le gestionnaire de fichiers de l'accès frontal).
+/vault/fe_assets/scripts.js | Contient des données JavaScript pour l'accès frontal.
 /vault/lang/ | Contient données linguistiques.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.fe.php | Données linguistiques en Arabe pour l'accès frontal.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 26 Octobre 2017 (2017.10.26).
+Dernière mise à jour : 28 Octobre 2017 (2017.10.28).

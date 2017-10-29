@@ -272,6 +272,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/fe_assets/icons.php | アイコン・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
 /vault/fe_assets/pips.php | ピップス・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
+/vault/fe_assets/scripts.js | フロントエンドJavaScriptデータが含まれています。
 /vault/lang/ | phpMusselの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年10月26日。
+最終アップデート：2017年10月28日。

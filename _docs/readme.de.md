@@ -272,6 +272,7 @@ Datei | Beschreibung
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
 /vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
+/vault/fe_assets/scripts.js | Enthält Front-End-JavaScript-Daten.
 /vault/lang/ | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 26 Oktober 2017 (2017.10.26).
+Zuletzt aktualisiert: 28 Oktober 2017 (2017.10.28).

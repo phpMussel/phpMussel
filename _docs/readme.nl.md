@@ -272,6 +272,7 @@ Bestand | Beschrijving
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
+/vault/fe_assets/scripts.js | Bevat frontend JavaScript-gegevens.
 /vault/lang/ | Bevat phpMussel lokalisaties.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/lang/lang.ar.fe.php | Arabisch lokalisatie voor het frontend.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 26 Oktober 2017 (2017.10.26).
+Laatste Bijgewerkt: 28 Oktober 2017 (2017.10.28).

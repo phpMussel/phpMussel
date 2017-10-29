@@ -76,6 +76,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.10.27; Sub-minor code change; Maikuolan]: Removed old PHP < 5.4.0 array
   syntax in favour of newer, short array syntax.
 
+- [2017.10.28; Sub-minor code change; Maikuolan]: Added cookie notice to the
+  front-end login page. Made the categories on the front-end configuration page
+  collapsable/expandable (this should help to make the page look less cluttered
+  and easier to navigate).
+
+- [2017.10.28; Bug-fix; Maikuolan]: Bug found preventing the activation or
+  deactivation of components via the front-end updates page for multi-domain
+  installations when certain specific conditions were met; Fixed.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

@@ -272,6 +272,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/frontend.html | 프론트 엔드 메인 템플릿 파일.
 /vault/fe_assets/icons.php | 아이콘 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
+/vault/fe_assets/scripts.js | 프런트 엔드 JavaScript 데이터가 들어 있습니다.
 /vault/lang/ | phpMussel 언어 데이터가 포함되어 있습니다.
 /vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 10월 18일.
+최종 업데이트 : 2017년 10월 28일.

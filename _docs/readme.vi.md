@@ -272,6 +272,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
 /vault/fe_assets/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
 /vault/fe_assets/pips.php | Tập tin cho các pip (được sử dụng bởi các quản lý tập tin front-end).
+/vault/fe_assets/scripts.js | Chứa dữ liệu JavaScript cho front-end.
 /vault/lang/ | Chứa dữ liệu tiếng cho phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
@@ -924,4 +925,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 26 Tháng Mười 2017 (2017.10.26).
+Lần cuối cập nhật: 28 Tháng Mười 2017 (2017.10.28).
