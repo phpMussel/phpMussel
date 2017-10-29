@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.10.26).
+ * This file: Thai language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'ซ่อนไม่ได
 $phpMussel['lang']['tip_accounts'] = 'สวัสดี, {username}.<br />หน้าบัญชีช่วยให้คุณสามารถควบคุมผู้ที่สามารถเข้าถึง front-end ของ phpMussel.';
 $phpMussel['lang']['tip_config'] = 'สวัสดี, {username}.<br />หน้าการกำหนดค่าช่วยให้คุณสามารถแก้ไขการกำหนดค่าสำหรับ phpMussel จาก front-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ให้บริการฟรี, แต่ถ้าคุณต้องการบริจาคให้กับโครงการ, คุณสามารถทำได้โดยคลิกที่ปุ่มบริจาค.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'บันทึก: phpMussel ใช้คุกกี้เพื่อตรวจสอบการเข้าสู่ระบบ. เมื่อคุณลงชื่อเข้าใช้คุณยินยอมให้คุกกี้สร้างขึ้นและจัดเก็บโดยเบราเซอร์ของคุณ.';
 $phpMussel['lang']['tip_file_manager'] = 'สวัสดี, {username}.<br />ตัวจัดการไฟล์ ช่วยให้คุณสามารถลบบัญชี, แก้ไข, อัปโหลด, และดาวน์โหลดไฟล์. ใช้ด้วยความระมัดระวัง (คุณสามารถทำลายการติดตั้งของคุณด้วยนี้).';
 $phpMussel['lang']['tip_home'] = 'สวัสดี, {username}.<br />นี่คือโฮมเพจสำหรับ front-end ของ phpMussel. เลือกลิงค์จากเมนูนำทางด้านซ้ายเพื่อดำเนินการต่อ.';
 $phpMussel['lang']['tip_login'] = 'ค่าเริ่มต้นชื่อผู้ใช้: <span class="txtRd">admin</span> – ค่าเริ่มต้นรหัสผ่าน: <span class="txtRd">password</span>';

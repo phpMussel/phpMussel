@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.10.26).
+ * This file: English language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'Hide unused';
 $phpMussel['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the phpMussel front-end.';
 $phpMussel['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for phpMussel from the front-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel is offered free of charge, but if you want to donate to the project, you can do so by clicking the donate button.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'Note: phpMussel uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser.';
 $phpMussel['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this).';
 $phpMussel['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue.';
 $phpMussel['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';

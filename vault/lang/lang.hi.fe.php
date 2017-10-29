@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.10.26).
+ * This file: Hindi language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'अप्रयुक्त
 $phpMussel['lang']['tip_accounts'] = 'हैलो, {username}।<br />खाता पृष्ठ आपको यह नियंत्रित करने की अनुमति देता है कि कौन phpMussel सामने के अंत तक पहुंच सकता है।';
 $phpMussel['lang']['tip_config'] = 'हैलो, {username}।<br />कॉन्फ़िगरेशन पेज आपको सामने के अंत से phpMussel के लिए कॉन्फ़िगरेशन को संशोधित करने की अनुमति देता है।';
 $phpMussel['lang']['tip_donate'] = 'phpMussel मुफ्त पेशकश की जाती है, लेकिन अगर आप इस परियोजना के लिए दान करना चाहते हैं, आप दान बटन पर क्लिक करके ऐसा कर सकते हैं।';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'नोट: phpMussel लॉगिन प्रमाणित करने के लिए कुकी का उपयोग करता है। लॉगिन करके, आप अपने ब्राउज़र द्वारा बनाई गई और संग्रहीत की जाने वाली कुकी के लिए आपकी सहमति देते हैं।';
 $phpMussel['lang']['tip_file_manager'] = 'हैलो, {username}।<br />फाइल प्रबंधक आपको फाइलों को हटाने, संपादित करने, अपलोड करने और डाउनलोड करने की अनुमति देता है। सावधानी से प्रयोग करें (आप इस के साथ अपनी इंस्टॉल को तोड़ सकते हैं)।';
 $phpMussel['lang']['tip_home'] = 'हैलो, {username}।<br />यह phpMussel सामने के अंत के होमपेज है। जारी रखने के लिए बाईं ओर नेविगेशन मेनू से एक लिंक का चयन करें।';
 $phpMussel['lang']['tip_login'] = 'डिफ़ॉल्ट उपयोगकर्ता नाम: <span class="txtRd">admin</span> – डिफ़ॉल्ट पासवर्ड: <span class="txtRd">password</span>';

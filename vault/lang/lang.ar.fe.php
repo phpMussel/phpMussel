@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.26).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستع�
 $phpMussel['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end phpMussel.';
 $phpMussel['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين phpMussel عن طريق ألfront-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'الملاحظة: يستخدم phpMussel ملف تعريف ارتباط لمصادقة تسجيلات الدخول. من خلال تسجيل الدخول، فإنك تعطي موافقتك على إنشاء ملف تعريف ارتباط وتخزينه بواسطة المتصفح.';
 $phpMussel['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';

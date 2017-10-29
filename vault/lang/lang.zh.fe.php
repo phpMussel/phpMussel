@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.26).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
 $phpMussel['lang']['tip_accounts'] = '你好，​{username}。​<br />账户页面允许您控制谁可以访问phpMussel前端。';
 $phpMussel['lang']['tip_config'] = '你好，​{username}。​<br />配置页面允许您修改phpMussel配置从前端。';
 $phpMussel['lang']['tip_donate'] = 'phpMussel是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。';
+$phpMussel['lang']['tip_fe_cookie_warning'] = '注意：phpMussel使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。';
 $phpMussel['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。';
 $phpMussel['lang']['tip_home'] = '你好，​{username}。​<br />这是phpMussel的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
 $phpMussel['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';

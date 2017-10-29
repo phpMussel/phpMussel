@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.10.26).
+ * This file: French language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -166,15 +166,15 @@ $phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
 $phpMussel['lang']['label_scanned_objects'] = 'Objets analysés';
 $phpMussel['lang']['label_scanned_uploads'] = 'Téléchargements analysés';
 $phpMussel['lang']['label_show'] = 'Montrer';
-$phpMussel['lang']['label_size_in_quarantine'] = 'Taille en quarantaine : ';
+$phpMussel['lang']['label_size_in_quarantine'] = 'Taille en quarantaine : ';
 $phpMussel['lang']['label_stable'] = 'Dernier stable :';
 $phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
 $phpMussel['lang']['label_tests'] = 'Tests :';
 $phpMussel['lang']['label_unstable'] = 'Dernier instable :';
-$phpMussel['lang']['label_upload_date'] = 'Date de téléchargement : ';
-$phpMussel['lang']['label_upload_hash'] = 'Hash de téléchargement : ';
-$phpMussel['lang']['label_upload_origin'] = 'Origine du téléchargement : ';
-$phpMussel['lang']['label_upload_size'] = 'Taille du téléchargement : ';
+$phpMussel['lang']['label_upload_date'] = 'Date de téléchargement : ';
+$phpMussel['lang']['label_upload_hash'] = 'Hash de téléchargement : ';
+$phpMussel['lang']['label_upload_origin'] = 'Origine du téléchargement : ';
+$phpMussel['lang']['label_upload_size'] = 'Taille du téléchargement : ';
 $phpMussel['lang']['link_accounts'] = 'Comptes';
 $phpMussel['lang']['link_config'] = 'Configuration';
 $phpMussel['lang']['link_documentation'] = 'Documentation';
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'Masquer inutilisé';
 $phpMussel['lang']['tip_accounts'] = 'Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l\'accès frontal de phpMussel.';
 $phpMussel['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour phpMussel à l\'accès frontal.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'Remarque : phpMussel utilise un cookie pour authentifier les connexions. En vous connectant, vous donnez votre consentement pour qu\'un cookie soit créé et stocké par votre navigateur.';
 $phpMussel['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci).';
 $phpMussel['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de phpMussel. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $phpMussel['lang']['tip_login'] = 'Nom d\'utilisateur défaut : <span class="txtRd">admin</span> – Mot de passe défaut : <span class="txtRd">password</span>';

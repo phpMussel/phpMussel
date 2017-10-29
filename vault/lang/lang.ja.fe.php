@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.26).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,6 +256,7 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
 $phpMussel['lang']['tip_accounts'] = 'こんにちは、​{username}。​<br />アカウント・ページは、​phpMusselフロントエンドにアクセスできるユーザーを制御できます。';
 $phpMussel['lang']['tip_config'] = 'こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからphpMusselの設定を変更することができます。';
 $phpMussel['lang']['tip_donate'] = 'phpMusselは無料で提供されています、​しかし、​あなたがしたい場合、​寄付ボタンをクリックすると、​プロジェクトに寄付することができます。';
+$phpMussel['lang']['tip_fe_cookie_warning'] = '注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。';
 $phpMussel['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。';
 $phpMussel['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
