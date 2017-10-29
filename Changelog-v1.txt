@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.1.0 ===
+MINOR RELEASE.
+
 - [2017.08.22; Minor code change; Maikuolan]: Improved ability to scan within
   specific PE sections (can identify PE sections intended for being scanned and
   confine source data to the associated offsets). Added new options for offsets
@@ -84,6 +89,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.10.28; Bug-fix; Maikuolan]: Bug found preventing the activation or
   deactivation of components via the front-end updates page for multi-domain
   installations when certain specific conditions were met; Fixed.
+
+- [2017.10.29; NEW FEATURE; Maikuolan]: Added an API for Cronable, allowing
+  phpMussel to be updated automatically via cron.
+
+Caleb M (Maikuolan),
+29th October 2017.
 
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
