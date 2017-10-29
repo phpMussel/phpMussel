@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.09.08).
+ * This file: Configuration handler (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
