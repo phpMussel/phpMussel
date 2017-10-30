@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.10.27).
+ * This file: Front-end functions file (last modified: 2017.10.30).
  */
 
 /**
@@ -935,29 +935,28 @@ $phpMussel['AppendTests'] = function (&$Component) use (&$phpMussel) {
         $TestsPassed = 0;
         $TestDetails = '';
         foreach ($TestData['statuses'] as $ThisStatus) {
+            if (empty($ThisStatus['context']) || empty($ThisStatus['state'])) {
+                continue;
+            }
             $TestsTotal++;
             $StatusHead = '';
-            if (
-                !empty($ThisStatus['context']) &&
-                !empty($ThisStatus['target_url']) &&
-                !empty($ThisStatus['state'])
-            ) {
-                if ($ThisStatus['state'] === 'success') {
-                    if ($TestsPassed !== '?') {
-                        $TestsPassed++;
-                    }
-                    $StatusHead .= '<span class="txtGn">✔️ ';
-                } elseif ($ThisStatus['state'] === 'pending') {
-                    $TestsPassed = '?';
-                    $StatusHead .= '<span class="txtOe">❓ ';
-                } else {
-                    $StatusHead .= '<span class="txtRd">❌ ';
+            if ($ThisStatus['state'] === 'success') {
+                if ($TestsPassed !== '?') {
+                    $TestsPassed++;
                 }
+                $StatusHead .= '<span class="txtGn">✔️ ';
+            } elseif ($ThisStatus['state'] === 'pending') {
+                $TestsPassed = '?';
+                $StatusHead .= '<span class="txtOe">❓ ';
+            } else {
+                $StatusHead .= '<span class="txtRd">❌ ';
             }
-            $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">';
-            $phpMussel['AppendToString']($TestDetails, '<br />',
-                $StatusHead . $ThisStatus['context'] . '</a></span>'
-            );
+            if (empty($ThisStatus['target_url'])) {
+                $StatusHead .= $ThisStatus['context'];
+            } else {
+                $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
+            }
+            $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
         }
         if ($TestsTotal === $TestsPassed) {
             $TestClr = 'txtGn';
@@ -965,7 +964,7 @@ $phpMussel['AppendTests'] = function (&$Component) use (&$phpMussel) {
             $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
         }
         $TestsTotal = sprintf(
-            '<span class="%1$s">%2$s/%3$s</span> <span id="%4$s-showtests">' .
+            '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
             '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
             '</span><span id="%4$s-hidetests" style="display:none">' .
             '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .

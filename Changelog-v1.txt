@@ -7,7 +7,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2017.10.30; Bug-fix; Maikuolan]: Cancelled or pending CI tests sometimes
+  wouldn't display correctly on the updates page; Fixed.
 
 === Version/Release 1.1.0 ===
 MINOR RELEASE.
