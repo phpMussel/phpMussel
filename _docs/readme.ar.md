@@ -1073,6 +1073,10 @@ var_dump($Foo);
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
+<div dir="rtl">هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
+
+<div dir="rtl">نعم. يتم تضمين API في front-end للتفاعل مع صفحة التحديثات عبر النصوص البرمجية الخارجية. وهناك نص منفصل، <a href="https://github.com/Maikuolan/Cronable">Cronable</a>، هو متاح، ويمكن استخدامها من قبل مدير كرون أو كرون جدولة لتحديث هذا وغيرها من الحزم المعتمدة تلقائيا (يوفر هذا البرنامج النصي وثائقه الخاصة).<br /><br /></div>
+
 ---
 
 

@@ -922,6 +922,10 @@ Nếu bạn muốn, mảng này có thể bị phá hủy bằng cách sử dụ
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
+#### Tôi có thể sử dụng cron để cập nhật tự động không?
+
+Vâng. API được tích hợp trong front-end để tương tác với trang cập nhật thông qua các kịch bản bên ngoài. Một kịch bản riêng biệt, "[Cronable](https://github.com/Maikuolan/Cronable)", là có sẵn, và có thể được sử dụng bởi cron manager hay cron scheduler để tự động cập nhật gói này và gói hỗ trợ khác (kịch bản này cung cấp tài liệu riêng của nó).
+
 ---
 
 

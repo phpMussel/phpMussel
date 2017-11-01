@@ -922,6 +922,10 @@ var_dump($Foo);
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
+#### Cronを使って自動的にアップデートできますか？
+
+はい。​外部スクリプトを介してアップデート・ページと対話するためのＡＰＩがフロントエンドに組み込まれています。​別のスクリプト、「[Cronable](https://github.com/Maikuolan/Cronable)」、が利用可能です。​これは「cron manager （クロン・マネージャー）」や「cron scheduler （クロン・スケジューラ）」がこれと他のサポートされているパッケージを自動的に更新するために使うことができます（このスクリプトは独自のドキュメントを提供しています）。
+
 ---
 
 

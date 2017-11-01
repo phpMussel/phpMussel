@@ -31,7 +31,7 @@ Un spécial merci à ClamAV pour l'inspiration du le projet et pour les signatur
 
 Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet fichiers, à [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) pour l'hébergement du phpMussel discussion forums, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
 
-Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de:
+Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de :
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
@@ -60,11 +60,11 @@ Enregistrer le fichier, fermer, rétélécharger.
 
 -- OU ALTERNATIVEMENT --
 
-Si vous utilisez un Apache serveur web et si vous avez accès à `php.ini`, vous pouvez utiliser la `auto_prepend_file` directive à préfixer phpMussel chaque fois qu'une demande de PHP est faite. Quelque chose comme:
+Si vous utilisez un Apache serveur web et si vous avez accès à `php.ini`, vous pouvez utiliser la `auto_prepend_file` directive à préfixer phpMussel chaque fois qu'une demande de PHP est faite. Quelque chose comme :
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
-Ou cette dans le `.htaccess` fichier:
+Ou cette dans le `.htaccess` fichier :
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
@@ -121,12 +121,12 @@ phpMussel devrait être capable de fonctionner correctement avec des exigences m
 
 L'analyses des téléchargements des fichiers est automatisée et activée par défaut, donc rien est nécessaire à partir de vous pour cette fonction particulière.
 
-Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que la configuration appropriée est imposé dans le `config.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est attaché à phpMussel, utilisez la fonction suivante dans votre code:
+Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que la configuration appropriée est imposé dans le `config.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est attaché à phpMussel, utilisez la fonction suivante dans votre code :
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` peut être une chaîne, un tableau, ou un tableau de tableaux, et indique quel fichier, fichiers, répertoire et/ou répertoires à analyser.
-- `$output_type` est un booléen, indiquant le format dont les résultats d'analyse doivent être retournées sous. `false` instruit la fonction à retourner des résultats comme un entier. `true` instruit la fonction à retourner des résultats sous forme de texte lisible par humain. De plus, dans tout le cas, les résultats peuvent être accessibles via les variables globales après l'analyse est terminée. Cette variable est optionnel, imposé par défaut comme `false`. Ce qui suit décrit les résultats entiers:
+- `$output_type` est un booléen, indiquant le format dont les résultats d'analyse doivent être retournées sous. `false` instruit la fonction à retourner des résultats comme un entier. `true` instruit la fonction à retourner des résultats sous forme de texte lisible par humain. De plus, dans tout le cas, les résultats peuvent être accessibles via les variables globales après l'analyse est terminée. Cette variable est optionnel, imposé par défaut comme `false`. Ce qui suit décrit les résultats entiers :
 
 | Résultats | Description |
 |---|---|
@@ -139,14 +139,14 @@ Cependant, vous êtes également capable d'instruire phpMussel à analyser spéc
 
 - `$output_flatness` est un booléen, indiquant à la fonction soit à retourner les résultats de l'analyse (quand il ya plusieurs cibles d'analyse) comme un tableau ou une chaîne. `false` sera retour les résultats comme un tableau. `true` sera retour les résultats comme une chaîne. Cette variable est optionnel, imposé par défaut comme `false`.
 
-Exemples:
+Exemples :
 
 ```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
-Retours quelque chose comme ça (comme une string):
+Retours quelque chose comme ça (comme une string) :
 
 ```
  Wed, 16 Sep 2013 02:49:46 +0000 Commencé.
@@ -202,7 +202,7 @@ phpMussel peut être exécuté comme un analyseur de fichiers interactif en mode
 
 Pour une liste des disponibles CLI commandes, à l'invite CLI, tapez « c », et appuyez sur Entrée.
 
-En outre, pour les personnes intéressées, un didacticiel vidéo pour savoir comment utiliser phpMussel en le mode CLI est disponible ici:
+En outre, pour les personnes intéressées, un didacticiel vidéo pour savoir comment utiliser phpMussel en le mode CLI est disponible ici :
 - <https://youtu.be/H-Pa740-utc>
 
 ---
@@ -375,7 +375,7 @@ Configuration générale pour phpMussel.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
 
-*Exemples:*
+*Exemples :*
 - *`scan_log='scan_log.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -494,7 +494,7 @@ Configuration générale pour les gestion des fichiers.
 
 « filetype_whitelist », « filetype_blacklist », « filetype_greylist »
 - Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes gris peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris.
-- L'ordre logique de l'application est:
+- L'ordre logique de l'application est :
   - Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise.
   - Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise.
   - Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon.
@@ -662,40 +662,40 @@ L'octet suivant `[x10]` est une nouvelle ligne `[0A]`, et conclut l'en-tête du 
 Chaque ligne non vide par la suite est une signature ou une règle. Chaque signature ou règle occupe une seule ligne. Les formats de signatures supportées sont décrits ci-dessous.
 
 #### *SIGNATURES POUR LES NOMS DE FICHIERS*
-Toutes les signatures pour les noms de fichiers suivez le format:
+Toutes les signatures pour les noms de fichiers suivez le format :
 
 `NOM:FNRX`
 
 Où NOM est le nom à citer pour la signature et FNRX est l'expression régulière pour faire correspondre les (non codé) noms de fichiers.
 
 #### *SIGNATURES HASH*
-Toutes les signatures HASH suivez le format:
+Toutes les signatures HASH suivez le format :
 
 `HASH:TAILLE:NOM`
 
 Où HASH est le hachage (généralement MD5) d'un ensemble du fichier, TAILLE est la totale taille du fichier et NOM est le nom à citer pour la signature.
 
 #### *SIGNATURES PE SECTIONNELLE*
-Toutes les signatures PE sectionnelle suivez le format:
+Toutes les signatures PE sectionnelle suivez le format :
 
 `TAILLE:HASH:NOM`
 
 Où HASH est le hachage MD5 d'un section du PE fichier, TAILLE est la totale taille de cet section et NOM est le nom à citer pour la signature.
 
 #### *SIGNATURES PE ÉTENDUES*
-Toutes les signatures PE étendues suivez le format:
+Toutes les signatures PE étendues suivez le format :
 
 `$VAR:HASH:TAILLE:NOM`
 
 Où $VAR est le nom de la PE variable à comparer contre, HASH est le MD5 hachage de cette variable, TAILLE est la taille totale de cette variable et NOM est le nom de à pour cette signature.
 
 #### *SIGNATURES COMPLEXES ÉTENDUES*
-Signatures complexes étendues sont assez différentes pour les autres types de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre plusieurs critères. Les critères sont délimitées par « ; » et le type et les données de chacun critères est délimitée par « : » comme ainsi le format de ces signatures tendances à semble un peu comme:
+Signatures complexes étendues sont assez différentes pour les autres types de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre plusieurs critères. Les critères sont délimitées par « ; » et le type et les données de chacun critères est délimitée par « : » comme ainsi le format de ces signatures tendances à semble un peu comme :
 
 `$variable1:CERTAINSDONNÉES;$variable2:CERTAINSDONNÉES;SignatureNom`
 
 #### *TOUT LE RESTE*
-Toutes les autres signatures suivez le format:
+Toutes les autres signatures suivez le format :
 
 `NOM:HEX:FROM:TO`
 
@@ -799,7 +799,7 @@ Résultats connexes lors de tester pour une condition peut être décrit en util
 
 Dans le contexte de phpMussel, ces termes réfèrent à les signatures de phpMussel et les fichiers qu'ils bloquent. Quand phpMussel bloque un fichier en raison du mauvais, obsolète ou signatures incorrectes, mais ne devrait pas l'avoir fait, ou quand il le fait pour les mauvaises raisons, nous référons à cet événement comme un « faux positif ». Quand phpMussel ne parvient pas à bloquer un fichier qui aurait dû être bloqué, en raison de menaces imprévues, signatures manquantes ou déficits dans ses signatures, nous référons à cet événement comme un « détection manquée » ou « missed detection » (qui est analogue à un « faux négatif »).
 
-Ceci peut être résumé par le tableau ci-dessous:
+Ceci peut être résumé par le tableau ci-dessous :
 
 &nbsp; | phpMussel ne devrait *PAS* bloquer un fichier | phpMussel *DEVRAIT* bloquer un fichier
 ---|---|---
@@ -877,7 +877,7 @@ $Results = $phpMussel['Scan']('/chemin/du/fichier/...');
 var_dump($Foo);
 ```
 
-Le tableau est un tableau multidimensionnel composé d'éléments représentant chaque fichier analysé et des sous-éléments représentant les détails de ces fichiers. Ces sous-éléments sont les suivants:
+Le tableau est un tableau multidimensionnel composé d'éléments représentant chaque fichier analysé et des sous-éléments représentant les détails de ces fichiers. Ces sous-éléments sont les suivants :
 
 - Filename (`string`)
 - FromCache (`bool`)
@@ -916,11 +916,15 @@ Le tableau est un tableau multidimensionnel composé d'éléments représentant 
 
 *‡ - Fourni lors de l'analyse des fichiers PE seulement.*
 
-En option, ce tableau peut être détruit en utilisant ce qui suit:
+En option, ce tableau peut être détruit en utilisant ce qui suit :
 
 ```PHP
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
+
+#### Puis-je utiliser cron pour mettre à jour automatiquement ?
+
+Oui. Une API est intégrée dans le frontal pour interagir avec la page des mises à jour via des scripts externes. Un script séparé, « [Cronable](https://github.com/Maikuolan/Cronable) », est disponible, et peut être utilisé par votre gestionnaire de cron ou cron scheduler pour mettre à jour ce paquet et d'autres paquets supportés automatiquement (ce script fournit sa propre documentation).
 
 ---
 

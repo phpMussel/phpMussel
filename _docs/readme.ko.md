@@ -23,7 +23,7 @@ phpMussel을 이용해 주셔서 감사합니다. phpMussel는 ClamAV를 비롯�
 
 phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
-본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License"(일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다:
+본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License"(일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -64,7 +64,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
-또는 `.htaccess`에서:
+또는 `.htaccess`에서 :
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
@@ -139,7 +139,7 @@ phpMussel은 특별한 환경을 필요로하지 않는 스크립트입니다. �
 
 - `$output_flatness` 는 부레안에서 검색 결과를 배열로 반환하거나 문자열로 반환할지 여부를 지정합니다 (대상이 여러 경우). `false` (가짜)은 배열, `true` (진정한)은 문자열의 결과입니다. `$output_flatness` 는 옵션으로 디폴트 설정은`false` (가짜)입니다.
 
-예:
+예 :
 
 ```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
@@ -202,7 +202,7 @@ phpMussel는 윈도우 기반 시스템에서는 CLI 모드에서 대화식 파�
 
 CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 CLI 명령의 목록이 표시됩니다.
 
-또한 관심있는 사람들을 위해, CLI 모드에서 phpMussel를 사용하는 방법에 대한 비디오 자습서는 여기에서 볼 수 있습니다:
+또한 관심있는 사람들을 위해, CLI 모드에서 phpMussel를 사용하는 방법에 대한 비디오 자습서는 여기에서 볼 수 있습니다 :
 - <https://youtu.be/H-Pa740-utc>
 
 ---
@@ -375,7 +375,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
 
-*예:*
+*예 :*
 - *`scan_log='scan_log.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -574,7 +574,7 @@ phpMussel 호환성 지시문.
 VirusTotal.com 지시문 그림.
 
 "vt_public_api_key"
-- 옵션이지만, phpMussel은 Virus Total API를 사용하여 파일을 검색 할 수 있습니다. 바이러스, 트로이 목마, 악성 코드 및 기타 공격에 매우 효과적으로 작동합니다. 기본적으로 Virus Total API를 사용한 스캐닝은 비활성화되어 있습니다. 활성화하려면 Virus Total의 API 키가 필요합니다. 이점이 매우 크기 때문에 사용하는 것이 좋습니다. Virus Total API의 사용에 있어서는 Virus Total 문서에있는대로 이용 규정 및 지침을 준수하지 않으면 안됩니다. 이 통합 기능을 사용하기 위해서는:
+- 옵션이지만, phpMussel은 Virus Total API를 사용하여 파일을 검색 할 수 있습니다. 바이러스, 트로이 목마, 악성 코드 및 기타 공격에 매우 효과적으로 작동합니다. 기본적으로 Virus Total API를 사용한 스캐닝은 비활성화되어 있습니다. 활성화하려면 Virus Total의 API 키가 필요합니다. 이점이 매우 크기 때문에 사용하는 것이 좋습니다. Virus Total API의 사용에 있어서는 Virus Total 문서에있는대로 이용 규정 및 지침을 준수하지 않으면 안됩니다. 이 통합 기능을 사용하기 위해서는 :
  - Virus Total와 API의 서비스 규정을 읽고 동의해야합니다. [서비스 규정은 여기에서](https://www.virustotal.com/en/about/terms-of-service/).
  - 최소 Virus Total Public API 문서의 전문을 읽고 이해하여 (VirusTotalPublic API v2.0 이후 Contents "콘텐츠"이전까지). Virus Total Public API [문서는 여기에서](https://www.virustotal.com/en/documentation/public-api/).
 
@@ -921,6 +921,10 @@ var_dump($Foo);
 ```PHP
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
+
+#### Cron을 사용하여 자동으로 업데이트 할 수 있습니까?
+
+예. 외부 스크립트를 통해 업데이트 페이지와 상호 작용하기위한 프런트 엔드에 API가 내장되어 있습니다. 별도의 스크립트 인 "[Cronable](https://github.com/Maikuolan/Cronable)"을 사용할 수 있습니다. Cron 관리자 또는 Cron 스케줄러가이 사용할 수 있습니다, 패키지 및 기타 지원되는 패키지를 자동으로 업데이트하는 데 사용할 수 있습니다 (이 스크립트는 자체 문서를 제공합니다.).
 
 ---
 

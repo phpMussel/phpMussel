@@ -922,6 +922,10 @@ Optionally, this array can be destroyed by using the following:
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
+#### Can I use cron to update automatically?
+
+Yes. An API is built into the front-end for interacting with the updates page via external scripts. A separate script, "[Cronable](https://github.com/Maikuolan/Cronable)", is available, and can be used by your cron manager or cron scheduler to update this and other supported packages automatically (this script provides its own documentation).
+
 ---
 
 
