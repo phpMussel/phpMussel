@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.10.28).
+ * This file: Portuguese language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Falha no login! Senha i
 $phpMussel['lang']['response_login_invalid_username'] = 'Falha no login! Esse usuário não existe!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Entrada de senha vazio!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Entrada de nome de usuário vazio!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Ponto final errado!';
 $phpMussel['lang']['response_rename_error'] = 'Falha ao renomear!';
 $phpMussel['lang']['response_restore_error_1'] = 'Falha ao restaurar! Arquivo corrompido!';
 $phpMussel['lang']['response_restore_error_2'] = 'Falha ao restaurar! Chave de quarentena incorreta!';

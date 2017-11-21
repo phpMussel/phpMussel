@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.10.15).
+ * This file: French language data (last modified: 2017.11.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -39,7 +39,7 @@ $phpMussel['lang']['denied'] = 'Téléchargement Refusé !';
 $phpMussel['lang']['denied_reason'] = 'Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous :';
 $phpMussel['lang']['detected'] = 'Détecté {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Caractères de contrôle ont été détectés';
-$phpMussel['lang']['encrypted_archive'] = 'Archive cryptée détectée; Archives cryptées interdites';
+$phpMussel['lang']['encrypted_archive'] = 'Archive cryptée détectée ; Archives cryptées interdites';
 $phpMussel['lang']['failed_to_access'] = 'Échec d\'accès ';
 $phpMussel['lang']['file'] = 'Fichier';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Taille limite fichier dépassée';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_6'] = 'Répertoire de téléchargement manquant
 $phpMussel['lang']['upload_error_7'] = 'Erreur d\'écriture disque ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
 $phpMussel['lang']['upload_error_8'] = 'Mauvaise configuration PHP détectée ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Limite de téléchargement dépassée';
-$phpMussel['lang']['wrong_password'] = 'Mauvais mot de passe; Action rejetée.';
+$phpMussel['lang']['wrong_password'] = 'Mauvais mot de passe ; Action rejetée.';
 $phpMussel['lang']['x_does_not_exist'] = 'n\'existe pas';
 $phpMussel['lang']['_exclamation'] = ' ! ';
 $phpMussel['lang']['_exclamation_final'] = ' !';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.10.28).
+ * This file: Italian language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Accedi non riuscito! Pa
 $phpMussel['lang']['response_login_invalid_username'] = 'Accedi non riuscito! Nome utente non esiste!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'L\'input password era vuoto!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'L\'input nome utente era vuoto!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Punto finale errato!';
 $phpMussel['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
 $phpMussel['lang']['response_restore_error_1'] = 'Failed to restore! File corrotto!';
 $phpMussel['lang']['response_restore_error_2'] = 'Failed to restore! La chiave di quarantena è errata!';

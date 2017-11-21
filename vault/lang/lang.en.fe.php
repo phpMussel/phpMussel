@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.10.28).
+ * This file: English language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Login failure! Invalid 
 $phpMussel['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password field empty!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Username field empty!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Wrong endpoint!';
 $phpMussel['lang']['response_rename_error'] = 'Failed to rename!';
 $phpMussel['lang']['response_restore_error_1'] = 'Failed to restore! Corrupted file!';
 $phpMussel['lang']['response_restore_error_2'] = 'Failed to restore! Incorrect quarantine key!';

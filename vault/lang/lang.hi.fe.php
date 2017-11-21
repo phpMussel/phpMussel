@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.10.28).
+ * This file: Hindi language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'लॉगिन वि�
 $phpMussel['lang']['response_login_invalid_username'] = 'लॉगिन विफलता! उपयोगकर्ता नाम मौजूद नहीं!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'पासवर्ड फ़ील्ड खाली है!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'उपयोगकर्ता नाम फ़ील्ड खाली!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'गलत समापन बिंदु!';
 $phpMussel['lang']['response_rename_error'] = 'नाम बदलने में विफल!';
 $phpMussel['lang']['response_restore_error_1'] = 'पुनर्स्थापित करने में विफल! दूषित फाइल!';
 $phpMussel['lang']['response_restore_error_2'] = 'पुनर्स्थापित करने में विफल! गलत संगरोध कुंजी!';

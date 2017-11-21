@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.28).
+ * This file: Front-end handler (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -99,6 +99,9 @@ $phpMussel['FE'] = [
 
     /** State reflecting whether the current request is cronable. */
     'CronMode' => !empty($_POST['CronMode']),
+
+    /** The user agent of the current request. */
+    'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
 
     /** Will be populated by the page title. */
     'FE_Title' => ''
@@ -283,17 +286,24 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                 $phpMussel['FECacheRemove'](
                     $phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']]
                 );
-                $phpMussel['FE']['UserState'] = 1;
-                if (!$phpMussel['FE']['CronMode']) {
-                    $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
-                    $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-                    setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
-                    $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
-                        $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
-                    ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
-                    $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
+                if (($phpMussel['FE']['Permissions'] === 3 && (
+                    !$phpMussel['FE']['CronMode'] || substr($phpMussel['FE']['UA'], 0, 10) !== 'Cronable v'
+                )) || !($phpMussel['FE']['Permissions'] > 0 && $phpMussel['FE']['Permissions'] <= 3)) {
+                    $phpMussel['FE']['Permissions'] = 0;
+                    $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_login_wrong_endpoint'];
+                } else {
+                    $phpMussel['FE']['UserState'] = 1;
+                    if (!$phpMussel['FE']['CronMode']) {
+                        $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
+                        $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
+                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+                        $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
+                            $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
+                        ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
+                        $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
+                    }
+                    $phpMussel['FE']['Rebuild'] = true;
                 }
-                $phpMussel['FE']['Rebuild'] = true;
             } else {
                 $phpMussel['FE']['Permissions'] = 0;
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_login_invalid_password'];

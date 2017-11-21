@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.28).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = '登錄失敗！​密�
 $phpMussel['lang']['response_login_invalid_username'] = '登錄失敗！​用戶名不存在！';
 $phpMussel['lang']['response_login_password_field_empty'] = '密碼輸入是空的！';
 $phpMussel['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
+$phpMussel['lang']['response_login_wrong_endpoint'] = '錯誤的端點！';
 $phpMussel['lang']['response_rename_error'] = '無法改名！';
 $phpMussel['lang']['response_restore_error_1'] = '無法恢復！損壞的文件！';
 $phpMussel['lang']['response_restore_error_2'] = '無法恢復！不正確的隔離鑰匙！';

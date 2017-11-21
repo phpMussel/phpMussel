@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.10.28).
+ * This file: German language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Einloggen-Fehler! Ungü
 $phpMussel['lang']['response_login_invalid_username'] = 'Einloggen-Fehler! Benutzername existiert nicht!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Falscher Endpunkt!';
 $phpMussel['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
 $phpMussel['lang']['response_restore_error_1'] = 'Fehler beim Wiederherstellen! Beschädigte Datei!';
 $phpMussel['lang']['response_restore_error_2'] = 'Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!';

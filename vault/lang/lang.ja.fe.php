@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.28).
+ * This file: Japanese language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'ログイン失敗！�
 $phpMussel['lang']['response_login_invalid_username'] = 'ログイン失敗！​ユーザー名は存在しません！';
 $phpMussel['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
+$phpMussel['lang']['response_login_wrong_endpoint'] = '間違ったエンドポイント！';
 $phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $phpMussel['lang']['response_restore_error_1'] = '復元に失敗しました！​破損したファイル！';
 $phpMussel['lang']['response_restore_error_2'] = '復元に失敗しました！​検疫キーが間違っています！';

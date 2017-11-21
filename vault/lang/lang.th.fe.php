@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.10.28).
+ * This file: Thai language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'ความล้ม�
 $phpMussel['lang']['response_login_invalid_username'] = 'ความล้มเหลวในการเข้าสู่ระบบ! ชื่อผู้ใช้ไม่มีอยู่จริง!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'รหัสผ่านฟิลด์ว่างเปล่า!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ชื่อผู้ใช้ฟิลด์ว่างเปล่า!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'จุดเชื่อมต่อ ไม่ถูกต้อง!';
 $phpMussel['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
 $phpMussel['lang']['response_restore_error_1'] = 'ไม่สามารถฟื้นฟู! ไฟล์ที่เสียหาย!';
 $phpMussel['lang']['response_restore_error_2'] = 'ไม่สามารถฟื้นฟู! คีย์กักกันไม่ถูกต้อง!';

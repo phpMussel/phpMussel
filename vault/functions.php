@@ -3278,7 +3278,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             }
         }
         if ($xt === 'bz2') {
-            if (substr($str_hex,0,6) !== '425a68') {
+            if (substr($str_hex, 0, 6) !== '425a68') {
                 if (!$flagged) {
                     $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                     $flagged = true;
@@ -3365,7 +3365,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $xt === 'jpeg' ||
             $xt === 'jpg'
         ) {
-            if (substr($str_hex,0,6) !== 'ffd8ff') {
+            if (substr($str_hex, 0, 6) !== 'ffd8ff') {
                 if (!$flagged) {
                     $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                     $flagged = true;

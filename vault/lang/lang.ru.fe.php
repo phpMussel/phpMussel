@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.28).
+ * This file: Russian language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Войти провал
 $phpMussel['lang']['response_login_invalid_username'] = 'Войти провал! Имя пользователя не существует!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Пароль пусто!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Имя пользователя пусто!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Неправильная конечная точка!';
 $phpMussel['lang']['response_rename_error'] = 'Не удалось переименовать!';
 $phpMussel['lang']['response_restore_error_1'] = 'Не удалось восстановить! Поврежденный файл!';
 $phpMussel['lang']['response_restore_error_2'] = 'Не удалось восстановить! Неправильный карантинный ключ!';

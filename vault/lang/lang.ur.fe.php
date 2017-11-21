@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.10.28).
+ * This file: Urdu language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'لاگ ان ناکام�
 $phpMussel['lang']['response_login_invalid_username'] = 'لاگ ان ناکامی! صارف کا نام موجود نہیں ہے!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدان خالی!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'غلط رسائی پوائنٹ!';
 $phpMussel['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
 $phpMussel['lang']['response_restore_error_1'] = 'بحال کرنے میں ناکام! خراب فائل!';
 $phpMussel['lang']['response_restore_error_2'] = 'بحال کرنے میں ناکام! غلط قرنطین کلید!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.28).
+ * This file: Indonesian language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Kegagalan masuk! Kata s
 $phpMussel['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama pengguna tidak ada!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Jalur akses salah!';
 $phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $phpMussel['lang']['response_restore_error_1'] = 'Gagal memulihkan! File rusak!';
 $phpMussel['lang']['response_restore_error_2'] = 'Gagal memulihkan! Kunci karantina salah!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.28).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Thất bại đăng nh�
 $phpMussel['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Điểm truy cập không đúng!';
 $phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $phpMussel['lang']['response_restore_error_1'] = 'Không thể khôi phục! Tập tin bị hỏng!';
 $phpMussel['lang']['response_restore_error_2'] = 'Không thể khôi phục! Khóa kiểm dịch sai rồi!';

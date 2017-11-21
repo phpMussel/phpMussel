@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.28).
+ * This file: Arabic language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'فشل تسجيل ال�
 $phpMussel['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'نقطة نهاية خاطئة!';
 $phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $phpMussel['lang']['response_restore_error_1'] = 'أخفق الاستعادة! ملف معطوب!';
 $phpMussel['lang']['response_restore_error_2'] = 'أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!';

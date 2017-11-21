@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.28).
+ * This file: Turkish language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Giriş başarısız! Ge
 $phpMussel['lang']['response_login_invalid_username'] = 'Giriş başarısız! Kullanıcı adı yok!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Yanlış bitiş noktası!';
 $phpMussel['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
 $phpMussel['lang']['response_restore_error_1'] = 'Canlanamadı! Bozuk dosya!';
 $phpMussel['lang']['response_restore_error_2'] = 'Canlanamadı! Yanlış karantina anahtarı!';

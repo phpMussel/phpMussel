@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.10.28).
+ * This file: Dutch language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongel
 $phpMussel['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Verkeerd eindpunt!';
 $phpMussel['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $phpMussel['lang']['response_restore_error_1'] = 'Kan niet herstellen! Beschadigd bestand!';
 $phpMussel['lang']['response_restore_error_2'] = 'Kan niet herstellen! Onjuiste quarantaine sleutel!';

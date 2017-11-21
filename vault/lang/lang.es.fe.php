@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.10.28).
+ * This file: Spanish language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -227,6 +227,7 @@ $phpMussel['lang']['response_login_invalid_password'] = '¡Error al iniciar sesi
 $phpMussel['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $phpMussel['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $phpMussel['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = 'Punto final equivocado!';
 $phpMussel['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
 $phpMussel['lang']['response_restore_error_1'] = '¡Error al restaurar! Archivo corrupto!';
 $phpMussel['lang']['response_restore_error_2'] = '¡Error al restaurar! Clave de cuarentena incorrecta!';
