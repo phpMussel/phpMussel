@@ -716,71 +716,14 @@ phpMussel签名文件前9个字节（`[x0-x8]`）是`phpMussel`。​它作为�
 
 在大多数情况下，​phpMussel应该相当兼容性与大多数杀毒软件。​然，​冲突已经报道由多个用户以往。​下面这些信息是从VirusTotal.com，​和它描述了一个数的假阳性报告的各种杀毒软件针对phpMussel。​虽说这个信息是不绝对保证的如果您会遇到兼容性问题间phpMussel和您的杀毒软件，​如果您的杀毒软件注意冲突针对phpMussel，​您应该考虑关闭它之前使用phpMussel或您应该考虑替代选项从您的杀毒软件或从phpMussel。
 
-这个信息最后更新2016年8月29日和是准确为至少phpMussel的两个最近次要版本（v0.10.0-v1.0.0）在这个现在时候的写作。
+这个信息最后更新2017年12月1日和是准确为至少phpMussel的两个最近次要版本（v1.0.0-v1.1.0）在这个现在时候的写作。
 
-| 扫描器               |  结果                                 |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  无冲突 |
-| AegisLab             |  无冲突 |
-| Agnitum              |  无冲突 |
-| AhnLab-V3            |  无冲突 |
-| Alibaba              |  无冲突 |
-| ALYac                |  无冲突 |
-| AntiVir              |  无冲突 |
-| Antiy-AVL            |  无冲突 |
-| Arcabit              |  无冲突 |
-| Avast                |  报告 “JS:ScriptSH-inf [Trj]” |
-| AVG                  |  无冲突 |
-| Avira                |  无冲突 |
-| AVware               |  无冲突 |
-| Baidu                |  报告 “VBS.Trojan.VBSWG.a” |
-| Baidu-International  |  无冲突 |
-| BitDefender          |  无冲突 |
-| Bkav                 |  报告 “VEXC640.Webshell”、“VEXD737.Webshell”、“VEX5824.Webshell”、“VEXEFFC.Webshell”|
-| ByteHero             |  无冲突 |
-| CAT-QuickHeal        |  无冲突 |
-| ClamAV               |  无冲突 |
-| CMC                  |  无冲突 |
-| Commtouch            |  无冲突 |
-| Comodo               |  无冲突 |
-| Cyren                |  无冲突 |
-| DrWeb                |  无冲突 |
-| Emsisoft             |  无冲突 |
-| ESET-NOD32           |  无冲突 |
-| F-Prot               |  无冲突 |
-| F-Secure             |  无冲突 |
-| Fortinet             |  无冲突 |
-| GData                |  无冲突 |
-| Ikarus               |  无冲突 |
-| Jiangmin             |  无冲突 |
-| K7AntiVirus          |  无冲突 |
-| K7GW                 |  无冲突 |
-| Kaspersky            |  无冲突 |
-| Kingsoft             |  无冲突 |
-| Malwarebytes         |  无冲突 |
-| McAfee               |  报告 “New Script.c” |
-| McAfee-GW-Edition    |  报告 “New Script.c” |
-| Microsoft            |  无冲突 |
-| MicroWorld-eScan     |  无冲突 |
-| NANO-Antivirus       |  无冲突 |
-| Norman               |  无冲突 |
-| nProtect             |  无冲突 |
-| Panda                |  无冲突 |
-| Qihoo-360            |  无冲突 |
-| Rising               |  无冲突 |
-| Sophos               |  无冲突 |
-| SUPERAntiSpyware     |  无冲突 |
-| Symantec             |  无冲突 |
-| Tencent              |  无冲突 |
-| TheHacker            |  无冲突 |
-| TotalDefense         |  无冲突 |
-| TrendMicro           |  无冲突 |
-| TrendMicro-HouseCall |  无冲突 |
-| VBA32                |  无冲突 |
-| VIPRE                |  无冲突 |
-| ViRobot              |  无冲突 |
-| Zillya               |  无冲突 |
-| Zoner                |  无冲突 |
+*此信息仅适用于主包装。​结果可能因安装的签名文件，插件，和其他外围组件而异。*
+
+| 扫描器 | 结果 |
+|---|---|
+| AVware | 报告 “BPX.Shell.PHP” |
+| Bkav | 报告 “VEXA3F5.Webshell” |
 
 ---
 
@@ -929,4 +872,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年10月28日。
+最后更新：2017年12月1日。

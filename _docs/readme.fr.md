@@ -716,71 +716,14 @@ Toute forme de regex comprise et préparé correctement par PHP devrait aussi ê
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été mise à jour le 29 Août 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
+Cette information a été mise à jour 2017.12.01 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v1.0.0-v1.1.0) au moment de la rédaction de cette.
 
-| Scanner              |  Résultats                           |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  Pas problèmes connus                |
-| AegisLab             |  Pas problèmes connus                |
-| Agnitum              |  Pas problèmes connus                |
-| AhnLab-V3            |  Pas problèmes connus                |
-| Alibaba              |  Pas problèmes connus                |
-| ALYac                |  Pas problèmes connus                |
-| AntiVir              |  Pas problèmes connus                |
-| Antiy-AVL            |  Pas problèmes connus                |
-| Arcabit              |  Pas problèmes connus                |
-| Avast                |  Rapports « JS:ScriptSH-inf [Trj] »  |
-| AVG                  |  Pas problèmes connus                |
-| Avira                |  Pas problèmes connus                |
-| AVware               |  Pas problèmes connus                |
-| Baidu                |  Rapports « VBS.Trojan.VBSWG.a »     |
-| Baidu-International  |  Pas problèmes connus                |
-| BitDefender          |  Pas problèmes connus                |
-| Bkav                 |  Rapports « VEXC640.Webshell », « VEXD737.Webshell », « VEX5824.Webshell », « VEXEFFC.Webshell »|
-| ByteHero             |  Pas problèmes connus                |
-| CAT-QuickHeal        |  Pas problèmes connus                |
-| ClamAV               |  Pas problèmes connus                |
-| CMC                  |  Pas problèmes connus                |
-| Commtouch            |  Pas problèmes connus                |
-| Comodo               |  Pas problèmes connus                |
-| Cyren                |  Pas problèmes connus                |
-| DrWeb                |  Pas problèmes connus                |
-| Emsisoft             |  Pas problèmes connus                |
-| ESET-NOD32           |  Pas problèmes connus                |
-| F-Prot               |  Pas problèmes connus                |
-| F-Secure             |  Pas problèmes connus                |
-| Fortinet             |  Pas problèmes connus                |
-| GData                |  Pas problèmes connus                |
-| Ikarus               |  Pas problèmes connus                |
-| Jiangmin             |  Pas problèmes connus                |
-| K7AntiVirus          |  Pas problèmes connus                |
-| K7GW                 |  Pas problèmes connus                |
-| Kaspersky            |  Pas problèmes connus                |
-| Kingsoft             |  Pas problèmes connus                |
-| Malwarebytes         |  Pas problèmes connus                |
-| McAfee               |  Rapports « New Script.c »           |
-| McAfee-GW-Edition    |  Rapports « New Script.c »           |
-| Microsoft            |  Pas problèmes connus                |
-| MicroWorld-eScan     |  Pas problèmes connus                |
-| NANO-Antivirus       |  Pas problèmes connus                |
-| Norman               |  Pas problèmes connus                |
-| nProtect             |  Pas problèmes connus                |
-| Panda                |  Pas problèmes connus                |
-| Qihoo-360            |  Pas problèmes connus                |
-| Rising               |  Pas problèmes connus                |
-| Sophos               |  Pas problèmes connus                |
-| SUPERAntiSpyware     |  Pas problèmes connus                |
-| Symantec             |  Pas problèmes connus                |
-| Tencent              |  Pas problèmes connus                |
-| TheHacker            |  Pas problèmes connus                |
-| TotalDefense         |  Pas problèmes connus                |
-| TrendMicro           |  Pas problèmes connus                |
-| TrendMicro-HouseCall |  Pas problèmes connus                |
-| VBA32                |  Pas problèmes connus                |
-| VIPRE                |  Pas problèmes connus                |
-| ViRobot              |  Pas problèmes connus                |
-| Zillya               |  Pas problèmes connus                |
-| Zoner                |  Pas problèmes connus                |
+*Cette information s'applique uniquement au paquet principal. Les résultats peuvent varier en fonction des fichiers de signature installés, des plugins, et d'autres composants périphériques.*
+
+| Scanner | Résultats |
+|---|---|
+| AVware | Rapports « BPX.Shell.PHP » |
+| Bkav | Rapports « VEXA3F5.Webshell » |
 
 ---
 
@@ -929,4 +872,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 28 Octobre 2017 (2017.10.28).
+Dernière mise à jour : 1 Décembre 2017 (2017.12.01).

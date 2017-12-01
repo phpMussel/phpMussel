@@ -381,7 +381,7 @@ Konfigurasi umum dari phpMussel.
 - *`scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate"
-- Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catatan: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.
+- Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.
 
 "timeOffset"
 - Jika waktu server Anda tidak cocok waktu lokal Anda, Anda dapat menentukan offset sini untuk menyesuaikan informasi tanggal/waktu dihasilkan oleh phpMussel sesuai dengan kebutuhan Anda. Ini umumnya direkomendasikan sebagai gantinya untuk menyesuaikan direktif zona waktu dalam file `php.ini` Anda, tapi terkadang (seperti ketika bekerja dengan terbatas penyedia shared hosting) ini tidak selalu mungkin untuk melakukan, dan demikian, opsi ini disediakan disini. Offset adalah dalam menit.
@@ -716,71 +716,14 @@ Setiap bentuk dari regex mengerti dan dengan benar diproses oleh PHP seharusnya 
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 29 Agustus 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 2017.12.01 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v1.0.0-v1.1.0) pada waktu saya menuliskan ini.
 
-| Scanner              |  Hasil                               |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  Tidak masalah                       |
-| AegisLab             |  Tidak masalah                       |
-| Agnitum              |  Tidak masalah                       |
-| AhnLab-V3            |  Tidak masalah                       |
-| Alibaba              |  Tidak masalah                       |
-| ALYac                |  Tidak masalah                       |
-| AntiVir              |  Tidak masalah                       |
-| Antiy-AVL            |  Tidak masalah                       |
-| Arcabit              |  Tidak masalah                       |
-| Avast                |  Melaporkan "JS:ScriptSH-inf [Trj]"  |
-| AVG                  |  Tidak masalah                       |
-| Avira                |  Tidak masalah                       |
-| AVware               |  Tidak masalah                       |
-| Baidu                |  Melaporkan "VBS.Trojan.VBSWG.a"     |
-| Baidu-International  |  Tidak masalah                       |
-| BitDefender          |  Tidak masalah                       |
-| Bkav                 |  Melaporkan "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
-| ByteHero             |  Tidak masalah                       |
-| CAT-QuickHeal        |  Tidak masalah                       |
-| ClamAV               |  Tidak masalah                       |
-| CMC                  |  Tidak masalah                       |
-| Commtouch            |  Tidak masalah                       |
-| Comodo               |  Tidak masalah                       |
-| Cyren                |  Tidak masalah                       |
-| DrWeb                |  Tidak masalah                       |
-| Emsisoft             |  Tidak masalah                       |
-| ESET-NOD32           |  Tidak masalah                       |
-| F-Prot               |  Tidak masalah                       |
-| F-Secure             |  Tidak masalah                       |
-| Fortinet             |  Tidak masalah                       |
-| GData                |  Tidak masalah                       |
-| Ikarus               |  Tidak masalah                       |
-| Jiangmin             |  Tidak masalah                       |
-| K7AntiVirus          |  Tidak masalah                       |
-| K7GW                 |  Tidak masalah                       |
-| Kaspersky            |  Tidak masalah                       |
-| Kingsoft             |  Tidak masalah                       |
-| Malwarebytes         |  Tidak masalah                       |
-| McAfee               |  Melaporkan "New Script.c"           |
-| McAfee-GW-Edition    |  Melaporkan "New Script.c"           |
-| Microsoft            |  Tidak masalah                       |
-| MicroWorld-eScan     |  Tidak masalah                       |
-| NANO-Antivirus       |  Tidak masalah                       |
-| Norman               |  Tidak masalah                       |
-| nProtect             |  Tidak masalah                       |
-| Panda                |  Tidak masalah                       |
-| Qihoo-360            |  Tidak masalah                       |
-| Rising               |  Tidak masalah                       |
-| Sophos               |  Tidak masalah                       |
-| SUPERAntiSpyware     |  Tidak masalah                       |
-| Symantec             |  Tidak masalah                       |
-| Tencent              |  Tidak masalah                       |
-| TheHacker            |  Tidak masalah                       |
-| TotalDefense         |  Tidak masalah                       |
-| TrendMicro           |  Tidak masalah                       |
-| TrendMicro-HouseCall |  Tidak masalah                       |
-| VBA32                |  Tidak masalah                       |
-| VIPRE                |  Tidak masalah                       |
-| ViRobot              |  Tidak masalah                       |
-| Zillya               |  Tidak masalah                       |
-| Zoner                |  Tidak masalah                       |
+*Informasi ini hanya berlaku untuk paket utama. Hasil dapat bervariasi berdasarkan file tanda tangan yang diinstal, plugin, dan komponen periferal lainnya.*
+
+| Scanner | Hasil |
+|---|---|
+| AVware | Melaporkan "BPX.Shell.PHP" |
+| Bkav | Melaporkan "VEXA3F5.Webshell" |
 
 ---
 
@@ -929,4 +872,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 28 Oktober 2017 (2017.10.28).
+Terakhir Diperbarui: 1 Desember 2017 (2017.12.01).

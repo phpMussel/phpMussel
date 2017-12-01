@@ -716,71 +716,14 @@ PHP는 정규 표현식 판단 처리하는 형식이면 phpMussel과 서명에 
 
 phpMussel은 대개 바이러스 검사 소프트웨어에 호환성이 있습니다. 그러나 과거에는 고객이 비 호환성보고가 있었던 것도 사실입니다. 다음 정보는 VirusTotal.com 의한 것이며, phpMussel 대해 안티 바이러스 프로그램에 의해보고 된 오류 검출을 기재하고 있습니다. phpMussel와 사용중인 안티 바이러스 소프트웨어의 호환성 문제가 명시된 지시 사항을 반드시 발생하거나 발생하지 않도록 보장하는 것은 아니지만, 만약 안티 바이러스 소프트웨어와 phpMussel 동작에 현저한 모순이 인정한다면, 노트 둘 중 하나를 해제하는 등의 대책을 검토해야 할 것이다.
 
-다음의 정보는 2016 년 8 월 29 일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v0.10.0-v1.0.0) 현황입니다.
+다음의 정보는 2017년 12월 1일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v1.0.0-v1.1.0) 현황입니다.
+
+*이 정보는 기본 패키지에만 적용됩니다. 결과는 설치된 서명 파일, 플러그인 및 기타 주변 구성 요소에 따라 다를 수 있습니다.*
 
 | 스캐너 | 결과 |
-|----------------------|--------------------------------------|
-| Ad-Aware | 문제는보고되지 않습니다 |
-| AegisLab | 문제는보고되지 않습니다 |
-| Agnitum | 문제는보고되지 않습니다 |
-| AhnLab-V3 | 문제는보고되지 않습니다 |
-| Alibaba | 문제는보고되지 않습니다 |
-| ALYac | 문제는보고되지 않습니다 |
-| AntiVir | 문제는보고되지 않습니다 |
-| Antiy-AVL | 문제는보고되지 않습니다 |
-| Arcabit | 문제는보고되지 않습니다 |
-| Avast | 리포트 "JS:ScriptSH-inf [Trj]" |
-| AVG | 문제는보고되지 않습니다 |
-| Avira | 문제는보고되지 않습니다 |
-| AVware | 문제는보고되지 않습니다 |
-| Baidu | 리포트 "VBS.Trojan.VBSWG.a" |
-| Baidu-International | 문제는보고되지 않습니다 |
-| BitDefender | 문제는보고되지 않습니다 |
-| Bkav | 리포트 "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
-| ByteHero | 문제는보고되지 않습니다 |
-| CAT-QuickHeal | 문제는보고되지 않습니다 |
-| ClamAV | 문제는보고되지 않습니다 |
-| CMC | 문제는보고되지 않습니다 |
-| Commtouch | 문제는보고되지 않습니다 |
-| Comodo | 문제는보고되지 않습니다 |
-| Cyren | 문제는보고되지 않습니다 |
-| DrWeb | 문제는보고되지 않습니다 |
-| Emsisoft | 문제는보고되지 않습니다 |
-| ESET-NOD32 | 문제는보고되지 않습니다 |
-| F-Prot | 문제는보고되지 않습니다 |
-| F-Secure | 문제는보고되지 않습니다 |
-| Fortinet | 문제는보고되지 않습니다 |
-| GData | 문제는보고되지 않습니다 |
-| Ikarus | 문제는보고되지 않습니다 |
-| Jiangmin | 문제는보고되지 않습니다 |
-| K7AntiVirus | 문제는보고되지 않습니다 |
-| K7GW | 문제는보고되지 않습니다 |
-| Kaspersky | 문제는보고되지 않습니다 |
-| Kingsoft | 문제는보고되지 않습니다 |
-| Malwarebytes | 문제는보고되지 않습니다 |
-| McAfee | 리포트 "New Script.c" |
-| McAfee-GW-Edition | 리포트 "New Script.c" |
-| Microsoft | 문제는보고되지 않습니다 |
-| MicroWorld-eScan | 문제는보고되지 않습니다 |
-| NANO-Antivirus | 문제는보고되지 않습니다 |
-| Norman | 문제는보고되지 않습니다 |
-| nProtect | 문제는보고되지 않습니다 |
-| Panda | 문제는보고되지 않습니다 |
-| Qihoo-360 | 문제는보고되지 않습니다 |
-| Rising | 문제는보고되지 않습니다 |
-| Sophos | 문제는보고되지 않습니다 |
-| SUPERAntiSpyware | 문제는보고되지 않습니다 |
-| Symantec | 문제는보고되지 않습니다 |
-| Tencent | 문제는보고되지 않습니다 |
-| TheHacker | 문제는보고되지 않습니다 |
-| TotalDefense | 문제는보고되지 않습니다 |
-| TrendMicro | 문제는보고되지 않습니다 |
-| TrendMicro-HouseCall | 문제는보고되지 않습니다 |
-| VBA32 | 문제는보고되지 않습니다 |
-| VIPRE | 문제는보고되지 않습니다 |
-| ViRobot | 문제는보고되지 않습니다 |
-| Zillya | 문제는보고되지 않습니다 |
-| Zoner | 문제는보고되지 않습니다 |
+|---|---|
+| AVware | 리포트 "BPX.Shell.PHP" |
+| Bkav | 리포트 "VEXA3F5.Webshell" |
 
 ---
 
@@ -929,4 +872,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 10월 28일.
+최종 업데이트 : 2017년 12월 1일.

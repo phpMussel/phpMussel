@@ -866,71 +866,14 @@
 
 <div dir="rtl">زیادہ تر حصے کے لیے، phpMussel سب سے زیادہ دیگر وائرس سکیننگ سافٹ ویئر کے ساتھ کافی ہم آہنگ ہونا چاہئے. تاہم، تنازعات ماضی میں صارفین کی ایک بڑی تعداد کی طرف سے رپورٹ کیا گیا ہے. یہ معلومات ذیل میں VirusTotal.com سے ہے، اور یہ جھوٹے مثبت phpMussel خلاف مختلف اینٹی وائرس پروگرام کی طرف سے رپورٹ کی ایک بڑی تعداد کی وضاحت. یہ معلومات آپ phpMussel اور آپ کے اینٹی وائرس سافٹ ویئر کے درمیان مطابقت کے مسائل کا سامنا کریں گے یا نہیں کا ایک مکمل ضمانت نہیں ہے، اگرچہ، آپ کے اینٹی وائرس سافٹ ویئر phpMussel خلاف پرچم لگانے کے طور پر بیان کیا گیا ہے تو، آپ کے ساتھ کام کرنے سے پہلے اس کو غیر فعال کرنے کے بارے میں غور کرنا چاہئے یا تو phpMussel یا آپ کے اینٹی وائرس سافٹ ویئر یا phpMussel یا تو کرنے کے لئے متبادل آپشنز پر غور کرنا چاہئے.<br /><br /></div>
 
-<div dir="rtl">یہ معلومات کی آخری تازہ کاری کے 29 اگست 2016 اور دو سب سے حالیہ معمولی ورژن (v0.10.0-v1.0.0) اس تحریر کے وقت کے تمام phpMussel ریلیز کے لئے موجودہ ہے.<br /><br /></div>
+<div dir="rtl">یہ معلومات کی آخری تازہ کاری کے 2017.12.01 اور دو سب سے حالیہ معمولی ورژن (v1.0.0-v1.1.0) اس تحریر کے وقت کے تمام phpMussel ریلیز کے لئے موجودہ ہے.<br /><br /></div>
+
+<div dir="rtl"><em>یہ معلومات صرف اہم پیکج پر لاگو ہوتا ہے. نصب شدہ دستخط فائلوں، پلگ ان اور دوسرے پردیوی اجزاء کے مطابق نتائج مختلف ہوں گے.</em><br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">سکینر</div> | <div dir="rtl" style="display:inline;">نتائج</div>
 ----|----
-Ad-Aware | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-AegisLab | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Agnitum | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-AhnLab-V3 | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Alibaba | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-ALYac | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-AntiVir | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Antiy-AVL | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Arcabit | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Avast | <div dir="rtl" style="display:inline;">رپورٹیں "JS:ScriptSH-inf [Trj]"</div>
-AVG | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Avira | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-AVware | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Baidu | <div dir="rtl" style="display:inline;">رپورٹیں "VBS.Trojan.VBSWG.a"</div>
-Baidu-International | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-BitDefender | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXC640.Webshell"، "VEXD737.Webshell"، "VEX5824.Webshell"، "VEXEFFC.Webshell"</div>
-ByteHero | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-CAT-QuickHeal | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-ClamAV | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-CMC | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Commtouch | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Comodo | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Cyren | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-DrWeb | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Emsisoft | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-ESET-NOD32 | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-F-Prot | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-F-Secure | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Fortinet | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-GData | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Ikarus | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Jiangmin | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-K7AntiVirus | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-K7GW | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Kaspersky | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Kingsoft | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Malwarebytes | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-McAfee | <div dir="rtl" style="display:inline;">رپورٹیں "New Script.c"</div>
-McAfee-GW-Edition | <div dir="rtl" style="display:inline;">رپورٹیں "New Script.c"</div>
-Microsoft | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-MicroWorld-eScan | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-NANO-Antivirus | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Norman | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-nProtect | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Panda | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Qihoo-360 | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Rising | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Sophos | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-SUPERAntiSpyware | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Symantec | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Tencent | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-TheHacker | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-TotalDefense | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-TrendMicro | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-TrendMicro-HouseCall | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-VBA32 | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-VIPRE | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-ViRobot | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Zillya | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
-Zoner | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</div>
+AVware | <div dir="rtl" style="display:inline;">رپورٹیں "BPX.Shell.PHP"</div>
+Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXA3F5.Webshell"</div>
 
 ---
 
@@ -1080,4 +1023,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 28 اکتوبر 2017 (2017.10.28).</div>
+<div dir="rtl">آخری تازہ کاری: 1 دسمبر 2017 (2017.12.01).</div>

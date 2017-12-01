@@ -716,71 +716,14 @@ Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook cor
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.10.0-v1.0.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 2017.12.01 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v1.0.0-v1.1.0) op het moment van schrijven dit.
 
-| Scanner              |  Resultaten                          |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  Geen bekend problemen               |
-| AegisLab             |  Geen bekend problemen               |
-| Agnitum              |  Geen bekend problemen               |
-| AhnLab-V3            |  Geen bekend problemen               |
-| Alibaba              |  Geen bekend problemen               |
-| ALYac                |  Geen bekend problemen               |
-| AntiVir              |  Geen bekend problemen               |
-| Antiy-AVL            |  Geen bekend problemen               |
-| Arcabit              |  Geen bekend problemen               |
-| Avast                |  Berichten "JS:ScriptSH-inf [Trj]"   |
-| AVG                  |  Geen bekend problemen               |
-| Avira                |  Geen bekend problemen               |
-| AVware               |  Geen bekend problemen               |
-| Baidu                |  Berichten "VBS.Trojan.VBSWG.a"      |
-| Baidu-International  |  Geen bekend problemen               |
-| BitDefender          |  Geen bekend problemen               |
-| Bkav                 |  Berichten "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
-| ByteHero             |  Geen bekend problemen               |
-| CAT-QuickHeal        |  Geen bekend problemen               |
-| ClamAV               |  Geen bekend problemen               |
-| CMC                  |  Geen bekend problemen               |
-| Commtouch            |  Geen bekend problemen               |
-| Comodo               |  Geen bekend problemen               |
-| Cyren                |  Geen bekend problemen               |
-| DrWeb                |  Geen bekend problemen               |
-| Emsisoft             |  Geen bekend problemen               |
-| ESET-NOD32           |  Geen bekend problemen               |
-| F-Prot               |  Geen bekend problemen               |
-| F-Secure             |  Geen bekend problemen               |
-| Fortinet             |  Geen bekend problemen               |
-| GData                |  Geen bekend problemen               |
-| Ikarus               |  Geen bekend problemen               |
-| Jiangmin             |  Geen bekend problemen               |
-| K7AntiVirus          |  Geen bekend problemen               |
-| K7GW                 |  Geen bekend problemen               |
-| Kaspersky            |  Geen bekend problemen               |
-| Kingsoft             |  Geen bekend problemen               |
-| Malwarebytes         |  Geen bekend problemen               |
-| McAfee               |  Berichten "New Script.c"            |
-| McAfee-GW-Edition    |  Berichten "New Script.c"            |
-| Microsoft            |  Geen bekend problemen               |
-| MicroWorld-eScan     |  Geen bekend problemen               |
-| NANO-Antivirus       |  Geen bekend problemen               |
-| Norman               |  Geen bekend problemen               |
-| nProtect             |  Geen bekend problemen               |
-| Panda                |  Geen bekend problemen               |
-| Qihoo-360            |  Geen bekend problemen               |
-| Rising               |  Geen bekend problemen               |
-| Sophos               |  Geen bekend problemen               |
-| SUPERAntiSpyware     |  Geen bekend problemen               |
-| Symantec             |  Geen bekend problemen               |
-| Tencent              |  Geen bekend problemen               |
-| TheHacker            |  Geen bekend problemen               |
-| TotalDefense         |  Geen bekend problemen               |
-| TrendMicro           |  Geen bekend problemen               |
-| TrendMicro-HouseCall |  Geen bekend problemen               |
-| VBA32                |  Geen bekend problemen               |
-| VIPRE                |  Geen bekend problemen               |
-| ViRobot              |  Geen bekend problemen               |
-| Zillya               |  Geen bekend problemen               |
-| Zoner                |  Geen bekend problemen               |
+*Dit informatie is alleen van toepassing op het hoofdpakket. Resultaten kunnen variëren op basis van geïnstalleerde signature bestanden, plug-ins, en andere randapparatuur.*
+
+| Scanner | Resultaten |
+|---|---|
+| AVware | Berichten "BPX.Shell.PHP" |
+| Bkav | Berichten "VEXA3F5.Webshell" |
 
 ---
 
@@ -929,4 +872,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 28 Oktober 2017 (2017.10.28).
+Laatste Bijgewerkt: 1 December 2017 (2017.12.01).

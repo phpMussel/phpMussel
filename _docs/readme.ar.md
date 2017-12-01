@@ -866,71 +866,14 @@
 
 <div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون phpMussel متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد phpMussel. على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين phpMussel وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه phpMussel، يجب عليك إما النظر في تعطيله قبل العمل مع phpMussel أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو phpMussel.<br /><br /></div>
 
-<div dir="rtl">آخر تحديث لهذه المعلومات كان في 29 أغسطس 2016 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.10.0-v1.0.0) من phpMussel.<br /><br /></div>
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 2017.12.01 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v1.0.0-v1.1.0) من phpMussel.<br /><br /></div>
+
+<div dir="rtl"><em>تنطبق هذه المعلومات فقط على الحزمة الرئيسية. قد تختلف النتائج استنادا إلى ملفات التوقيع المثبتة، والمكونات الإضافية، والمكونات الطرفية الأخرى.</em><br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">برنامج فحص الفيروسات</div> | <div dir="rtl" style="display:inline;">النتيجة</div>
 ----|----
-Ad-Aware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-AegisLab | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Agnitum | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-AhnLab-V3 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Alibaba | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-ALYac | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-AntiVir | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Antiy-AVL | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Arcabit | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Avast | <div dir="rtl" style="display:inline;">"JS:ScriptSH-inf [Trj]" تقارير</div>
-AVG | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Avira | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-AVware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Baidu | <div dir="rtl" style="display:inline;">"VBS.Trojan.VBSWG.a" تقارير</div>
-Baidu-International | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-BitDefender | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Bkav | <div dir="rtl" style="display:inline;">"VEXC640.Webshell"، "VEXD737.Webshell"، "VEX5824.Webshell"، "VEXEFFC.Webshell" تقارير</div>
-ByteHero | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-CAT-QuickHeal | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-ClamAV | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-CMC | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Commtouch | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Comodo | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Cyren | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-DrWeb | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Emsisoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-ESET-NOD32 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-F-Prot | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-F-Secure | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Fortinet | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-GData | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Ikarus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Jiangmin | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-K7AntiVirus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-K7GW | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Kaspersky | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Kingsoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Malwarebytes | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-McAfee | <div dir="rtl" style="display:inline;">"New Script.c" تقارير</div>
-McAfee-GW-Edition | <div dir="rtl" style="display:inline;">"New Script.c" تقارير</div>
-Microsoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-MicroWorld-eScan | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-NANO-Antivirus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Norman | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-nProtect | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Panda | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Qihoo-360 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Rising | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Sophos | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-SUPERAntiSpyware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Symantec | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Tencent | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-TheHacker | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-TotalDefense | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-TrendMicro | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-TrendMicro-HouseCall | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-VBA32 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-VIPRE | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-ViRobot | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Zillya | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+AVware | <div dir="rtl" style="display:inline;">"BPX.Shell.PHP" تقارير</div>
+Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</div>
 
 ---
 
@@ -1080,4 +1023,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 28 اكتوبر 2017 (2017.10.28).</div>
+<div dir="rtl">آخر تحديث: 1 ديسمبر 2017 (2017.12.01).</div>

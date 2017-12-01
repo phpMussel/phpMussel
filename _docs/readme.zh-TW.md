@@ -716,71 +716,14 @@ phpMussel簽名文件前9個字節（`[x0-x8]`）是`phpMussel`。​它作為�
 
 在大多數情況下，​phpMussel應該相當兼容性與大多數殺毒軟件。​然，​衝突已經報導由多個用戶以往。​下面這些信息是從VirusTotal.com，​和它描述了一個數的假陽性報告的各種殺毒軟件針對phpMussel。​雖說這個信息是不絕對保證的如果您會遇到兼容性問題間phpMussel和您的殺毒軟件，​如果您的殺毒軟件注意衝突針對phpMussel，​您應該考慮關閉它之前使用phpMussel或您應該考慮替代選項從您的殺毒軟件或從phpMussel。
 
-這個信息最後更新2016年8月29日和是準確為至少phpMussel的兩個最近次要版本（v0.10.0-v1.0.0）在這個現在時候的寫作。
+這個信息最後更新2017年12月1日和是準確為至少phpMussel的兩個最近次要版本（v1.0.0-v1.1.0）在這個現在時候的寫作。
 
-| 掃描器               |  結果                                 |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  無衝突 |
-| AegisLab             |  無衝突 |
-| Agnitum              |  無衝突 |
-| AhnLab-V3            |  無衝突 |
-| Alibaba              |  無衝突 |
-| ALYac                |  無衝突 |
-| AntiVir              |  無衝突 |
-| Antiy-AVL            |  無衝突 |
-| Arcabit              |  無衝突 |
-| Avast                |  報告 『JS:ScriptSH-inf [Trj]』 |
-| AVG                  |  無衝突 |
-| Avira                |  無衝突 |
-| AVware               |  無衝突 |
-| Baidu                |  報告 『VBS.Trojan.VBSWG.a』 |
-| Baidu-International  |  無衝突 |
-| BitDefender          |  無衝突 |
-| Bkav                 |  報告 『VEXC640.Webshell』、『VEXD737.Webshell』、『VEX5824.Webshell』、『VEXEFFC.Webshell』|
-| ByteHero             |  無衝突 |
-| CAT-QuickHeal        |  無衝突 |
-| ClamAV               |  無衝突 |
-| CMC                  |  無衝突 |
-| Commtouch            |  無衝突 |
-| Comodo               |  無衝突 |
-| Cyren                |  無衝突 |
-| DrWeb                |  無衝突 |
-| Emsisoft             |  無衝突 |
-| ESET-NOD32           |  無衝突 |
-| F-Prot               |  無衝突 |
-| F-Secure             |  無衝突 |
-| Fortinet             |  無衝突 |
-| GData                |  無衝突 |
-| Ikarus               |  無衝突 |
-| Jiangmin             |  無衝突 |
-| K7AntiVirus          |  無衝突 |
-| K7GW                 |  無衝突 |
-| Kaspersky            |  無衝突 |
-| Kingsoft             |  無衝突 |
-| Malwarebytes         |  無衝突 |
-| McAfee               |  報告 『New Script.c』 |
-| McAfee-GW-Edition    |  報告 『New Script.c』 |
-| Microsoft            |  無衝突 |
-| MicroWorld-eScan     |  無衝突 |
-| NANO-Antivirus       |  無衝突 |
-| Norman               |  無衝突 |
-| nProtect             |  無衝突 |
-| Panda                |  無衝突 |
-| Qihoo-360            |  無衝突 |
-| Rising               |  無衝突 |
-| Sophos               |  無衝突 |
-| SUPERAntiSpyware     |  無衝突 |
-| Symantec             |  無衝突 |
-| Tencent              |  無衝突 |
-| TheHacker            |  無衝突 |
-| TotalDefense         |  無衝突 |
-| TrendMicro           |  無衝突 |
-| TrendMicro-HouseCall |  無衝突 |
-| VBA32                |  無衝突 |
-| VIPRE                |  無衝突 |
-| ViRobot              |  無衝突 |
-| Zillya               |  無衝突 |
-| Zoner                |  無衝突 |
+*此信息僅適用於主包裝。​結果可能因安裝的簽名文件，插件，和其他外圍組件而異。*
+
+| 掃描器 | 結果 |
+|---|---|
+| AVware | 報告 『BPX.Shell.PHP』 |
+| Bkav | 報告 『VEXA3F5.Webshell』 |
 
 ---
 
@@ -929,4 +872,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2017年10月28日。
+最後更新：2017年12月1日。

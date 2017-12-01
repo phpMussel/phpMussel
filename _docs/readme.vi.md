@@ -716,71 +716,14 @@ Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người dùng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 2017.12.01 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v1.0.0-v1.1.0) vào thời gian cái này được viết.
 
-| Chương trình quét    |  Kết quả                             |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  Không có vấn đề                     |
-| AegisLab             |  Không có vấn đề                     |
-| Agnitum              |  Không có vấn đề                     |
-| AhnLab-V3            |  Không có vấn đề                     |
-| Alibaba              |  Không có vấn đề                     |
-| ALYac                |  Không có vấn đề                     |
-| AntiVir              |  Không có vấn đề                     |
-| Antiy-AVL            |  Không có vấn đề                     |
-| Arcabit              |  Không có vấn đề                     |
-| Avast                |  Báo cáo "JS:ScriptSH-inf [Trj]"     |
-| AVG                  |  Không có vấn đề                     |
-| Avira                |  Không có vấn đề                     |
-| AVware               |  Không có vấn đề                     |
-| Baidu                |  Báo cáo "VBS.Trojan.VBSWG.a"        |
-| Baidu-International  |  Không có vấn đề                     |
-| BitDefender          |  Không có vấn đề                     |
-| Bkav                 |  Báo cáo "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
-| ByteHero             |  Không có vấn đề                     |
-| CAT-QuickHeal        |  Không có vấn đề                     |
-| ClamAV               |  Không có vấn đề                     |
-| CMC                  |  Không có vấn đề                     |
-| Commtouch            |  Không có vấn đề                     |
-| Comodo               |  Không có vấn đề                     |
-| Cyren                |  Không có vấn đề                     |
-| DrWeb                |  Không có vấn đề                     |
-| Emsisoft             |  Không có vấn đề                     |
-| ESET-NOD32           |  Không có vấn đề                     |
-| F-Prot               |  Không có vấn đề                     |
-| F-Secure             |  Không có vấn đề                     |
-| Fortinet             |  Không có vấn đề                     |
-| GData                |  Không có vấn đề                     |
-| Ikarus               |  Không có vấn đề                     |
-| Jiangmin             |  Không có vấn đề                     |
-| K7AntiVirus          |  Không có vấn đề                     |
-| K7GW                 |  Không có vấn đề                     |
-| Kaspersky            |  Không có vấn đề                     |
-| Kingsoft             |  Không có vấn đề                     |
-| Malwarebytes         |  Không có vấn đề                     |
-| McAfee               |  Báo cáo "New Script.c"              |
-| McAfee-GW-Edition    |  Báo cáo "New Script.c"              |
-| Microsoft            |  Không có vấn đề                     |
-| MicroWorld-eScan     |  Không có vấn đề                     |
-| NANO-Antivirus       |  Không có vấn đề                     |
-| Norman               |  Không có vấn đề                     |
-| nProtect             |  Không có vấn đề                     |
-| Panda                |  Không có vấn đề                     |
-| Qihoo-360            |  Không có vấn đề                     |
-| Rising               |  Không có vấn đề                     |
-| Sophos               |  Không có vấn đề                     |
-| SUPERAntiSpyware     |  Không có vấn đề                     |
-| Symantec             |  Không có vấn đề                     |
-| Tencent              |  Không có vấn đề                     |
-| TheHacker            |  Không có vấn đề                     |
-| TotalDefense         |  Không có vấn đề                     |
-| TrendMicro           |  Không có vấn đề                     |
-| TrendMicro-HouseCall |  Không có vấn đề                     |
-| VBA32                |  Không có vấn đề                     |
-| VIPRE                |  Không có vấn đề                     |
-| ViRobot              |  Không có vấn đề                     |
-| Zillya               |  Không có vấn đề                     |
-| Zoner                |  Không có vấn đề                     |
+*Thông tin này chỉ áp dụng cho gói chính. Kết quả có thể khác nhau dựa trên tập tin chữ ký đã cài đặt, plugin, và các thành phần ngoại vi khác.*
+
+| Chương trình quét | Kết quả |
+|---|---|
+| AVware | Báo cáo "BPX.Shell.PHP" |
+| Bkav | Báo cáo "VEXA3F5.Webshell" |
 
 ---
 
@@ -929,4 +872,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Mười 2017 (2017.10.28).
+Lần cuối cập nhật: 1 Tháng Mười Hai 2017 (2017.12.01).
