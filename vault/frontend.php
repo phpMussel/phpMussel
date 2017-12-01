@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.20).
+ * This file: Front-end handler (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -577,9 +577,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
             $phpMussel['ThisBranch'] = 'php' . $phpMussel['ThisBranch'];
             $phpMussel['FE']['info_php_branch'] = empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
                 $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
-            $phpMussel['ForceVersionWarning'] = (!empty($phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin']) && (
-                $phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin'] === '*' ||
-                $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin'])
+            $phpMussel['ForceVersionWarning'] = (!empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin']) && (
+                $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin'] === '*' ||
+                $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin'])
             ));
         } else {
             $phpMussel['FE']['info_php_branch'] = $phpMussel['lang']['response_error'];

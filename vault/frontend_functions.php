@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.10.30).
+ * This file: Front-end functions file (last modified: 2017.11.30).
  */
 
 /**
@@ -651,10 +651,10 @@ $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMusse
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.31') || (
-        !$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.17')
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.32') || (
+        !$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.25')
     ) || (
-        !$phpMussel['VersionCompare']($Version, '7.1.0') && $phpMussel['VersionCompare']($Version, '7.1.3')
+        !$phpMussel['VersionCompare']($Version, '7.1.0') && $phpMussel['VersionCompare']($Version, '7.1.11')
     )) {
         $Level += 2;
     }
