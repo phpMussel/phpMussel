@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.10.26).
+ * This file: The loader (last modified: 2017.12.06).
  */
 
 /**
@@ -63,6 +63,11 @@ if (!defined('phpMussel')) {
     $phpMussel['Direct'] = function () {
         return (str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__)));
     };
+
+    /** Checks whether we're calling phpMussel through an alternative pathway (e.g., Cronable). */
+    $phpMussel['Alternate'] = (
+        class_exists('\Maikuolan\Cronable\Cronable')
+    );
 
     /** Kill the script if the functions file doesn't exist. */
     if (!file_exists($phpMussel['Vault'] . 'functions.php')) {
@@ -150,13 +155,13 @@ if (!defined('phpMussel')) {
             unset($phpMussel['MusselPlugins']['tempdata']);
         }
 
-        /* This code block only executed if we're NOT in CLI mode. */
-        if (!$phpMussel['Mussel_sapi']) {
+        /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+        if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
 
             /**
              * Check whether the upload handler exists and attempt to load it.
              */
-            if (file_exists($phpMussel['Vault'] . 'upload.php')) {
+            if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
                 require $phpMussel['Vault'] . 'upload.php';
             }
 
@@ -167,17 +172,14 @@ if (!defined('phpMussel')) {
             if (
                 !$phpMussel['Config']['general']['disable_frontend'] &&
                 file_exists($phpMussel['Vault'] . 'frontend.php') &&
-                $phpMussel['Direct']()
+                ($phpMussel['Direct']() || $phpMussel['Alternate'])
             ) {
                 require $phpMussel['Vault'] . 'frontend.php';
             }
 
         }
 
-        /**
-         * Check whether the CLI handler exists and attempt to load it.
-         * This code block only executed if we're in CLI mode.
-         */
+        /** This code block only executed if we're in CLI mode. */
         elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
             require $phpMussel['Vault'] . 'cli.php';
         }

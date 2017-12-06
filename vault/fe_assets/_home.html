@@ -7,13 +7,13 @@
         <hr />
         {label_sysinfo}<br />
         <ul>
-            <li>{label_phpmussel} <code>{ScriptVersion}</code><small class="branchline"><br />
-                {label_branch} <code>{info_phpmussel_branch}</code> – {label_stable} <code>{info_phpmussel_stable}</code> – {label_unstable} <code>{info_phpmussel_unstable}</code>
-            </small></li>
-            <li>{label_php} <code>{info_php}</code><small class="branchline"><br />
-                {label_branch} <code>{info_php_branch}</code> – {label_stable} <code>{info_php_stable}</code> – {label_unstable} <code>{info_php_unstable}</code>
-            </small></li>
-            <li><span class="branchline">{label_sapi} <code>{info_sapi}</code></span></li>
+            <li class="branchline">{label_phpmussel} <code>{ScriptVersion}</code><br />
+                <small>{label_branch} <code>{info_phpmussel_branch}</code> – {label_stable} <code>{info_phpmussel_stable}</code> – {label_unstable} <code>{info_phpmussel_unstable}</code></small>
+            </li>
+            <li class="branchline">{label_php} <code>{info_php}</code><br />
+                <small>{label_branch} <code>{info_php_branch}</code> – {label_stable} <code>{info_php_stable}</code> – {label_unstable} <code>{info_php_unstable}</code></small>
+            </li>
+            <li class="branchline">{label_sapi} <code>{info_sapi}</code></li>
             <li>{label_os} <code>{info_os}</code></li>
         </ul>{Warnings}
     </div></td>

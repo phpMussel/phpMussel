@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.11.30).
+ * This file: Front-end functions file (last modified: 2017.12.06).
  */
 
 /**
@@ -564,11 +564,12 @@ $phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
 
 /** Duplication avoidance (front-end updates page). */
 $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
-    if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files'])) {
-        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']);
-        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
-        $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
-            $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
+    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files'])) {
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']);
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']);
+        $phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['InUse'] = $phpMussel['IsInUse'](
+            $phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']
+        );
     }
 };
 
@@ -1003,4 +1004,493 @@ $phpMussel['UpdatesSortFunc'] = function ($A, $B) {
         return 1;
     }
     return 0;
+};
+
+/** Updates handler. */
+$phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
+
+    /** Define component targets. */
+    $phpMussel['Targets'] = $ID;
+
+    /** Update a component. */
+    if ($_POST['do'] === 'update-component') {
+        $phpMussel['Arrayify']($ID);
+        $FileData = [];
+        $Annotations = [];
+        foreach ($ID as $phpMussel['Components']['ThisTarget']) {
+            if (
+                !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']) ||
+                !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Reannotate'])
+            ) {
+                continue;
+            }
+            $phpMussel['Components']['BytesAdded'] = 0;
+            $phpMussel['Components']['BytesRemoved'] = 0;
+            $phpMussel['Components']['TimeRequired'] = microtime(true);
+            $phpMussel['Components']['RemoteMeta'] = [];
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['FECacheGet'](
+                $phpMussel['FE']['Cache'],
+                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
+            );
+            if (!$phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']) {
+                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['Request'](
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
+                );
+                if (
+                    strtolower(substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'], -2)) === 'gz' &&
+                    substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 2) === "\x1f\x8b"
+                ) {
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = gzdecode(
+                        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']
+                    );
+                }
+                if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'])) {
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = '-';
+                }
+                $phpMussel['FECacheAdd'](
+                    $phpMussel['FE']['Cache'],
+                    $phpMussel['FE']['Rebuild'],
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'],
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'],
+                    $phpMussel['Time'] + 3600
+                );
+            }
+            $phpMussel['UpdateFailed'] = false;
+            if (
+                substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 4) === "---\n" &&
+                ($phpMussel['Components']['EoYAML'] = strpos(
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], "\n\n"
+                )) !== false &&
+                $phpMussel['YAML'](
+                    substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
+                    $phpMussel['Components']['RemoteMeta']
+                ) &&
+                !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required']) &&
+                !$phpMussel['VersionCompare'](
+                    $phpMussel['ScriptVersion'],
+                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required']
+                ) &&
+                (
+                    empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required PHP']) ||
+                    !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required PHP'])
+                ) &&
+                !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']) &&
+                !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']) &&
+                !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
+                $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
+                ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
+                file_exists($phpMussel['Vault'] . $ThisReannotate) &&
+                ((
+                    !empty($FileData[$ThisReannotate]) &&
+                    $phpMussel['Components']['OldMeta'] = $FileData[$ThisReannotate]
+                ) || (
+                    $FileData[$ThisReannotate] = $phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
+                        $phpMussel['Vault'] . $ThisReannotate
+                    )
+                )) &&
+                preg_match(
+                    "\x01(\n" . preg_quote($phpMussel['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                    $phpMussel['Components']['OldMeta'],
+                    $phpMussel['Components']['OldMetaMatches']
+                ) &&
+                ($phpMussel['Components']['OldMetaMatches'] = $phpMussel['Components']['OldMetaMatches'][0]) &&
+                ($phpMussel['Components']['NewMeta'] = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']) &&
+                preg_match(
+                    "\x01(\n" . preg_quote($phpMussel['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                    $phpMussel['Components']['NewMeta'],
+                    $phpMussel['Components']['NewMetaMatches']
+                ) &&
+                ($phpMussel['Components']['NewMetaMatches'] = $phpMussel['Components']['NewMetaMatches'][0])
+            ) {
+                $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']);
+                $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
+                $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']);
+                if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'])) {
+                    $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum']);
+                }
+                $phpMussel['Components']['NewMeta'] = str_replace(
+                    $phpMussel['Components']['OldMetaMatches'],
+                    $phpMussel['Components']['NewMetaMatches'],
+                    $phpMussel['Components']['OldMeta']
+                );
+                $Count = count($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
+                $RemoteFiles = [];
+                $IgnoredFiles = [];
+                $Rollback = false;
+                /** Write new and updated files and directories. */
+                for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
+                    if (empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'][$Iterate])) {
+                        continue;
+                    }
+                    $ThisFileName = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'][$Iterate];
+                    /** Rolls back to previous version or uninstalls if an update/install fails. */
+                    if ($Rollback) {
+                        if (
+                            isset($RemoteFiles[$ThisFileName]) &&
+                            !isset($IgnoredFiles[$ThisFileName]) &&
+                            is_readable($phpMussel['Vault'] . $ThisFileName)
+                        ) {
+                            $phpMussel['Components']['BytesAdded'] -= filesize($phpMussel['Vault'] . $ThisFileName);
+                            unlink($phpMussel['Vault'] . $ThisFileName);
+                            if (is_readable($phpMussel['Vault'] . $ThisFileName . '.rollback')) {
+                                $phpMussel['Components']['BytesRemoved'] -= filesize($phpMussel['Vault'] . $ThisFileName . '.rollback');
+                                rename($phpMussel['Vault'] . $ThisFileName . '.rollback', $phpMussel['Vault'] . $ThisFileName);
+                            }
+                        }
+                        continue;
+                    }
+                    if (
+                        !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
+                        !empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) && (
+                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] ===
+                            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]
+                        )
+                    ) {
+                        $IgnoredFiles[$ThisFileName] = true;
+                        continue;
+                    }
+                    if (
+                        empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate]) ||
+                        !($ThisFile = $phpMussel['Request'](
+                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate]
+                        ))
+                    ) {
+                        $Iterate = 0;
+                        $Rollback = true;
+                        continue;
+                    }
+                    if (
+                        strtolower(substr(
+                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate], -2
+                        )) === 'gz' &&
+                        strtolower(substr($ThisFileName, -2)) !== 'gz' &&
+                        substr($ThisFile, 0, 2) === "\x1f\x8b"
+                    ) {
+                        $ThisFile = gzdecode($ThisFile);
+                    }
+                    if (
+                        !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
+                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] !==
+                            md5($ThisFile) . ':' . strlen($ThisFile)
+                    ) {
+                        $phpMussel['FE']['state_msg'] .=
+                            '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
+                            '<code>' . $ThisFileName . '</code> – ' .
+                            $phpMussel['lang']['response_checksum_error'] . '<br />';
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
+                        }
+                        $Iterate = 0;
+                        $Rollback = true;
+                        continue;
+                    }
+                    $ThisName = $ThisFileName;
+                    $ThisPath = $phpMussel['Vault'];
+                    while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
+                        $phpMussel['Separator'] = (strpos($ThisName, '/') !== false) ? '/' : "\\";
+                        $phpMussel['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $phpMussel['Separator']));
+                        $ThisPath .= $phpMussel['ThisDir'] . '/';
+                        $ThisName = substr($ThisName, strlen($phpMussel['ThisDir']) + 1);
+                        if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+                            mkdir($ThisPath);
+                        }
+                    }
+                    if (is_readable($phpMussel['Vault'] . $ThisFileName)) {
+                        $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFileName);
+                        if (file_exists($phpMussel['Vault'] . $ThisFileName . '.rollback')) {
+                            unlink($phpMussel['Vault'] . $ThisFileName . '.rollback');
+                        }
+                        rename($phpMussel['Vault'] . $ThisFileName, $phpMussel['Vault'] . $ThisFileName . '.rollback');
+                    }
+                    $phpMussel['Components']['BytesAdded'] += strlen($ThisFile);
+                    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $ThisFileName, 'w');
+                    $RemoteFiles[$ThisFileName] = fwrite($phpMussel['Handle'], $ThisFile);
+                    $RemoteFiles[$ThisFileName] = ($RemoteFiles[$ThisFileName] !== false);
+                    fclose($phpMussel['Handle']);
+                    $ThisFile = '';
+                }
+                if ($Rollback) {
+                    /** Prune unwanted empty directories (update/install failure+rollback). */
+                    if (
+                        !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']) &&
+                        is_array($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'])
+                    ) {
+                        array_walk($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+                            if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
+                                $phpMussel['DeleteDirectory']($ThisFile);
+                            }
+                        });
+                    }
+                    $phpMussel['UpdateFailed'] = true;
+                } else {
+                    /** Prune unwanted files and directories (update/install success). */
+                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['To'])) {
+                        $ThisArr = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['To'];
+                        $phpMussel['Arrayify']($ThisArr);
+                        array_walk($ThisArr, function ($ThisFile) use (&$phpMussel) {
+                            if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
+                                if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
+                                    unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
+                                }
+                                if (
+                                    !isset($RemoteFiles[$ThisFile]) &&
+                                    !isset($IgnoredFiles[$ThisFile]) &&
+                                    file_exists($phpMussel['Vault'] . $ThisFile)
+                                ) {
+                                    $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
+                                    unlink($phpMussel['Vault'] . $ThisFile);
+                                    $phpMussel['DeleteDirectory']($ThisFile);
+                                }
+                            }
+                        });
+                        unset($ThisArr);
+                    }
+                    /** Assign updated component annotation. */
+                    $FileData[$ThisReannotate] = $phpMussel['Components']['NewMeta'];
+                    if (!isset($Annotations[$ThisReannotate])) {
+                        $Annotations[$ThisReannotate] = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'];
+                    }
+                    $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
+                    if (
+                        empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
+                        empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
+                    ) {
+                        $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_installed'];
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds']);
+                        }
+                    } else {
+                        $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_updated'];
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds']);
+                        }
+                    }
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']] =
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']];
+                }
+            } else {
+                $phpMussel['UpdateFailed'] = true;
+            }
+            if ($phpMussel['UpdateFailed']) {
+                $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
+                if (
+                    empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
+                    empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
+                ) {
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_failed_to_install'];
+                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails']);
+                    }
+                } else {
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_failed_to_update'];
+                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails']);
+                    }
+                }
+            }
+            $phpMussel['FormatFilesize']($phpMussel['Components']['BytesAdded']);
+            $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
+            $phpMussel['FE']['state_msg'] .= sprintf(
+                $phpMussel['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+                $phpMussel['Components']['BytesAdded'],
+                $phpMussel['Components']['BytesRemoved'],
+                $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+            );
+        }
+        /** Update annotations. */
+        foreach ($FileData as $ThisKey => $ThisFile) {
+            /** Remove superfluous metadata. */
+            if (!empty($Annotations[$ThisKey])) {
+                $ThisFile = $phpMussel['Congruency']($ThisFile, $Annotations[$ThisKey]);
+            }
+            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $ThisKey, 'w');
+            fwrite($phpMussel['Handle'], $ThisFile);
+            fclose($phpMussel['Handle']);
+        }
+    }
+
+    /** Uninstall a component. */
+    if ($_POST['do'] === 'uninstall-component') {
+        $phpMussel['ComponentFunctionUpdatePrep']();
+        $phpMussel['Components']['BytesRemoved'] = 0;
+        $phpMussel['Components']['TimeRequired'] = microtime(true);
+        if (
+            empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
+            !empty($phpMussel['Components']['Meta'][$ID]['Files']['To']) &&
+            ($ID !== 'l10n/' . $phpMussel['Config']['general']['lang']) &&
+            ($ID !== 'theme/' . $phpMussel['Config']['template_data']['theme']) &&
+            ($ID !== 'phpMussel') &&
+            !empty($phpMussel['Components']['Meta'][$ID]['Reannotate']) &&
+            !empty($phpMussel['Components']['Meta'][$ID]['Uninstallable']) &&
+            ($phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
+                $phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate']
+            )) &&
+            preg_match(
+                "\x01(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n\x01i",
+                $phpMussel['Components']['OldMeta'],
+                $phpMussel['Components']['OldMetaMatches']
+            ) &&
+            ($phpMussel['Components']['OldMetaMatches'] = $phpMussel['Components']['OldMetaMatches'][0])
+        ) {
+            $phpMussel['Components']['NewMeta'] = str_replace(
+                $phpMussel['Components']['OldMetaMatches'],
+                preg_replace(
+                    ["/\n Files:(\n  [^\n]*)*\n/i", "/\n Version: [^\n]*\n/i"],
+                    "\n",
+                    $phpMussel['Components']['OldMetaMatches']
+                ),
+                $phpMussel['Components']['OldMeta']
+            );
+            array_walk($phpMussel['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+                if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
+                    if (file_exists($phpMussel['Vault'] . $ThisFile)) {
+                        $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
+                        unlink($phpMussel['Vault'] . $ThisFile);
+                    }
+                    if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
+                        $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile . '.rollback');
+                        unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
+                    }
+                    $phpMussel['DeleteDirectory']($ThisFile);
+                }
+            });
+            $phpMussel['Handle'] =
+                fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], 'w');
+            fwrite($phpMussel['Handle'], $phpMussel['Components']['NewMeta']);
+            fclose($phpMussel['Handle']);
+            $phpMussel['Components']['Meta'][$ID]['Version'] = false;
+            $phpMussel['Components']['Meta'][$ID]['Files'] = false;
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_successfully_uninstalled'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds']);
+            }
+        } else {
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_uninstall_error'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails']);
+            }
+        }
+        $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
+        $phpMussel['FE']['state_msg'] .= sprintf(
+            $phpMussel['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
+            $phpMussel['Components']['BytesRemoved'],
+            $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+        );
+    }
+
+    /** Activate a component. */
+    if ($_POST['do'] === 'activate-component') {
+        $phpMussel['Activation'] = [
+            'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
+            'Active' => $phpMussel['Config']['signatures']['Active'],
+            'Modified' => false
+        ];
+        $phpMussel['ComponentFunctionUpdatePrep']();
+        if (
+            empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
+            !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])
+        ) {
+            $phpMussel['Activation']['Active'] = array_unique(array_filter(
+                explode(',', $phpMussel['Activation']['Active']),
+                function ($Component) use (&$phpMussel) {
+                    return ($Component && file_exists($phpMussel['sigPath'] . $Component));
+                }
+            ));
+            foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $phpMussel['Activation']['ThisFile']) {
+                if (
+                    !empty($phpMussel['Activation']['ThisFile']) &&
+                    file_exists($phpMussel['Vault'] . $phpMussel['Activation']['ThisFile']) &&
+                    substr($phpMussel['Activation']['ThisFile'], 0, 11) === 'signatures/' &&
+                    $phpMussel['Traverse']($phpMussel['Activation']['ThisFile'])
+                ) {
+                    $phpMussel['Activation']['Active'][] = substr($phpMussel['Activation']['ThisFile'], 11);
+                }
+            }
+            if (count($phpMussel['Activation']['Active'])) {
+                sort($phpMussel['Activation']['Active']);
+            }
+            $phpMussel['Activation']['Active'] = implode(',', $phpMussel['Activation']['Active']);
+            if ($phpMussel['Activation']['Active'] !== $phpMussel['Config']['signatures']['Active']) {
+                $phpMussel['Activation']['Modified'] = true;
+            }
+        }
+        if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activation_failed'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Fails'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails']);
+            }
+        } else {
+            $phpMussel['Activation']['Config'] = str_replace(
+                "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
+                "\r\nActive='" . $phpMussel['Activation']['Active'] . "'\r\n",
+                $phpMussel['Activation']['Config']
+            );
+            $phpMussel['Config']['signatures']['Active'] = $phpMussel['Activation']['Active'];
+            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
+            fwrite($phpMussel['Handle'], $phpMussel['Activation']['Config']);
+            fclose($phpMussel['Handle']);
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activated'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds']);
+            }
+        }
+        unset($phpMussel['Activation']);
+    }
+
+    /** Deactivate a component. */
+    if ($_POST['do'] === 'deactivate-component') {
+        $phpMussel['Deactivation'] = [
+            'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
+            'Active' => $phpMussel['Config']['signatures']['Active'],
+            'Modified' => false
+        ];
+        $phpMussel['ComponentFunctionUpdatePrep']();
+        if (
+            !empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
+            !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])
+        ) {
+            $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
+                explode(',', $phpMussel['Deactivation']['Active']),
+                function ($Component) use (&$phpMussel) {
+                    return ($Component && file_exists($phpMussel['sigPath'] . $Component));
+                }
+            ));
+            if (count($phpMussel['Deactivation']['Active'])) {
+                sort($phpMussel['Deactivation']['Active']);
+            }
+            $phpMussel['Deactivation']['Active'] = ',' . implode(',', $phpMussel['Deactivation']['Active']) . ',';
+            foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $phpMussel['Deactivation']['ThisFile']) {
+                if (substr($phpMussel['Deactivation']['ThisFile'], 0, 11) === 'signatures/') {
+                    $phpMussel['Deactivation']['Active'] =
+                        str_replace(',' . substr($phpMussel['Deactivation']['ThisFile'], 11) . ',', ',', $phpMussel['Deactivation']['Active']);
+                }
+            }
+            $phpMussel['Deactivation']['Active'] = substr($phpMussel['Deactivation']['Active'], 1, -1);
+            if ($phpMussel['Deactivation']['Active'] !== $phpMussel['Config']['signatures']['Active']) {
+                $phpMussel['Deactivation']['Modified'] = true;
+            }
+        }
+        if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivation_failed'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails']);
+            }
+        } else {
+            $phpMussel['Deactivation']['Config'] = str_replace(
+                "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
+                "\r\nActive='" . $phpMussel['Deactivation']['Active'] . "'\r\n",
+                $phpMussel['Deactivation']['Config']
+            );
+            $phpMussel['Config']['signatures']['Active'] = $phpMussel['Deactivation']['Active'];
+            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
+            fwrite($phpMussel['Handle'], $phpMussel['Deactivation']['Config']);
+            fclose($phpMussel['Handle']);
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivated'];
+            if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
+                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds']);
+            }
+        }
+        unset($phpMussel['Deactivation']);
+    }
+
 };

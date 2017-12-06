@@ -13,6 +13,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.12.01; Bug-fix; Maikuolan]: PHP version warnings on the front-end
   homepage weren't always displaying correctly; Fixed.
 
+- [2017.12.05; Minor code change; Maikuolan]: Improved Cronable API, allowing
+  updates to occur without sending external requests (uses different methods).
+  Shifted a number of update closures from the front-end handler to the
+  front-end functions file for slightly improved efficiency.
+
 === Version/Release 1.1.0 ===
 MINOR RELEASE.
 
