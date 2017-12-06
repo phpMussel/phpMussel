@@ -442,11 +442,6 @@ if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
 
     }
 
-    /** Execute hotfixes. */
-    if (file_exists($phpMussel['Vault'] . 'hotfixes.php')) {
-        require $phpMussel['Vault'] . 'hotfixes.php';
-    }
-
 }
 
 $phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
