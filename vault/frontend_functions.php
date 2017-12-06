@@ -1534,7 +1534,9 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                     }
                 }
             }
-            $phpMussel['FE']['state_msg'] .= $Passed ? $phpMussel['lang']['response_verification_success'] : $phpMussel['lang']['response_verification_failed'];
+            $phpMussel['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
+                $Passed ? $phpMussel['lang']['response_verification_success'] : $phpMussel['lang']['response_verification_failed']
+            ) . '<br />';
         }
         return;
     }

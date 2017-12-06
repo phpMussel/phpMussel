@@ -1159,6 +1159,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Remotes' => [],
         'Dependencies' => [],
         'Outdated' => [],
+        'Verify' => [],
         'Out' => []
     ];
 
@@ -1345,6 +1346,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         ) {
             $phpMussel['Components']['ThisComponent']['Options'] .=
                 '<option value="verify-component">' . $phpMussel['lang']['field_verify'] . '</option>';
+            $phpMussel['Components']['Verify'][] = $phpMussel['Components']['Key'];
             array_walk($phpMussel['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $phpMussel['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
@@ -1366,8 +1368,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         ) {
             array_walk($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                    $phpMussel['Components']['ThisComponent']['LatestSize'] +=
-                        (int)substr($Checksum, $Delimiter + 1);
+                    $phpMussel['Components']['ThisComponent']['LatestSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
             });
         }
@@ -1553,19 +1554,34 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     uksort($phpMussel['Components']['Out'], $phpMussel['UpdatesSortFunc']);
     $phpMussel['FE']['Components'] = implode('', $phpMussel['Components']['Out']);
 
+    $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
+    $phpMussel['Components']['CountVerify'] = count($phpMussel['Components']['Verify']);
+    
+    /** Preparing for update all and verify all buttons. */
+    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+
     /** Instructions to update everything at once. */
-    if (count($phpMussel['Components']['Outdated'])) {
-        $phpMussel['FE']['UpdateAll'] =
-            '<hr /><form action="?' . $phpMussel['FE']['UpdatesFormTarget'] .
-            '" method="POST"><input name="phpmussel-form-target" type="hidden" value="updates" />' .
+    if ($phpMussel['Components']['CountOutdated']) {
+        $phpMussel['FE']['UpdateAll'] .=
+            '<form action="?' . $phpMussel['FE']['UpdatesFormTarget'] .
+            '" method="POST" style="display:inline"><input name="phpmussel-form-target" type="hidden" value="updates" />' .
             '<input name="do" type="hidden" value="update-component" />';
         foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['ThisOutdated']) {
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
         }
+        $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['lang']['field_update_all'] . '" class="auto" /></form>';
+    }
+
+    /** Instructions to verify everything at once. */
+    if ($phpMussel['Components']['CountVerify']) {
         $phpMussel['FE']['UpdateAll'] .=
-            '<input type="submit" value="' . $phpMussel['lang']['field_update_all'] . '" class="auto" /></form>';
-    } else {
-        $phpMussel['FE']['UpdateAll'] = '';
+            '<form action="?' . $phpMussel['FE']['UpdatesFormTarget'] .
+            '" method="POST" style="display:inline"><input name="phpmussel-form-target" type="hidden" value="updates" />' .
+            '<input name="do" type="hidden" value="verify-component" />';
+        foreach ($phpMussel['Components']['Verify'] as $phpMussel['Components']['ThisVerify']) {
+            $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisVerify'] . '" />';
+        }
+        $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['lang']['field_verify_all'] . '" class="auto" /></form>';
     }
 
     /** Parse output. */
