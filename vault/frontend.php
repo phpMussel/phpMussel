@@ -1111,21 +1111,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     $phpMussel['FE']['UpdatesFormTarget'] = 'phpmussel-page=updates';
     $phpMussel['FE']['UpdatesFormTargetControls'] = '';
-    if (!$phpMussel['FE']['CronMode']) {
-        $phpMussel['StateModified'] = false;
-        $phpMussel['FilterSwitch'](
-            ['hide-non-outdated', 'hide-unused'],
-            isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
-            $phpMussel['StateModified'],
-            $phpMussel['FE']['UpdatesFormTarget'],
-            $phpMussel['FE']['UpdatesFormTargetControls']
-        );
-        if ($phpMussel['StateModified']) {
-            header('Location: ?' . $phpMussel['FE']['UpdatesFormTarget']);
-            die;
-        }
-        unset($phpMussel['StateModified']);
+    $phpMussel['StateModified'] = false;
+    $phpMussel['FilterSwitch'](
+        ['hide-non-outdated', 'hide-unused'],
+        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+        $phpMussel['StateModified'],
+        $phpMussel['FE']['UpdatesFormTarget'],
+        $phpMussel['FE']['UpdatesFormTargetControls']
+    );
+    if ($phpMussel['StateModified']) {
+        header('Location: ?' . $phpMussel['FE']['UpdatesFormTarget']);
+        die;
     }
+    unset($phpMussel['StateModified']);
 
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = ['Meta' => [], 'RemoteMeta' => []];
@@ -1592,10 +1590,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         /** Normal page output. */
         echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
     } elseif (!empty($UpdateAll)) {
-        $Results = json_encode([
         /** Returned state message for cronable (locally updating). */
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])
-        ]);
+        $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])];
     } elseif (!empty($phpMussel['FE']['state_msg'])) {
         /** Returned state message for cronable. */
         echo json_encode([
@@ -2346,7 +2342,7 @@ if ($phpMussel['FE']['CronMode'] && $phpMussel['FE']['state_msg'] && $phpMussel[
     if (empty($UpdateAll)) {
         echo json_encode(['state_msg' => $phpMussel['FE']['state_msg']]);
     } else {
-        $Results = json_encode(['state_msg' => $phpMussel['FE']['state_msg']]);
+        $Results = ['state_msg' => $phpMussel['FE']['state_msg']];
     }
 }
 
