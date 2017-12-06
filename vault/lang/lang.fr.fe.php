@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.11.20).
+ * This file: French language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Mettre à jour';
 $phpMussel['lang']['field_update_all'] = 'Tout mettre à jour';
 $phpMussel['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
 $phpMussel['lang']['field_username'] = 'Nom d\'Utilisateur';
+$phpMussel['lang']['field_verify'] = 'Vérifier';
+$phpMussel['lang']['field_verify_all'] = 'Vérifier tous';
 $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Erreur de connexion ! N
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mot de passe entrée était vide !';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide !';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Mauvais point final !';
+$phpMussel['lang']['response_possible_problem_found'] = 'Problème possible trouvé.';
 $phpMussel['lang']['response_rename_error'] = 'Échec du renomment !';
 $phpMussel['lang']['response_restore_error_1'] = 'Échec de la restauration ! Fichier corrompu !';
 $phpMussel['lang']['response_restore_error_2'] = 'Échec de la restauration ! Clé de quarantaine incorrecte !';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vou
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP {V}) !';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $phpMussel['lang']['response_upload_error'] = 'Échec du téléchargement !';
+$phpMussel['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';
+$phpMussel['lang']['response_verification_success'] = 'Succès de la vérification ! Aucun problème trouvé.';
 $phpMussel['lang']['state_complete_access'] = 'Accès complet';
 $phpMussel['lang']['state_component_is_active'] = 'Le composant est actif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';

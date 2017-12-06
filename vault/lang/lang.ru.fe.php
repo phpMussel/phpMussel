@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.11.20).
+ * This file: Russian language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Обновить';
 $phpMussel['lang']['field_update_all'] = 'Обновить все';
 $phpMussel['lang']['field_upload_file'] = 'Загрузить новый файл';
 $phpMussel['lang']['field_username'] = 'Имя Пользователя';
+$phpMussel['lang']['field_verify'] = 'Проверить';
+$phpMussel['lang']['field_verify_all'] = 'Проверить все';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $phpMussel['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Войти провал
 $phpMussel['lang']['response_login_password_field_empty'] = 'Пароль пусто!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Имя пользователя пусто!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Неправильная конечная точка!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Возможная проблема.';
 $phpMussel['lang']['response_rename_error'] = 'Не удалось переименовать!';
 $phpMussel['lang']['response_restore_error_1'] = 'Не удалось восстановить! Поврежденный файл!';
 $phpMussel['lang']['response_restore_error_2'] = 'Не удалось восстановить! Неправильный карантинный ключ!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Устаревший
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Устаревший (требует PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Невозможно определить.';
 $phpMussel['lang']['response_upload_error'] = 'Не удалось загрузить!';
+$phpMussel['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
+$phpMussel['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
 $phpMussel['lang']['state_complete_access'] = 'Полный доступ';
 $phpMussel['lang']['state_component_is_active'] = 'Компонент активен.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';

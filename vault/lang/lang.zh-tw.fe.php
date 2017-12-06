@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.20).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = '更新';
 $phpMussel['lang']['field_update_all'] = '更新一切';
 $phpMussel['lang']['field_upload_file'] = '上傳新文件';
 $phpMussel['lang']['field_username'] = '用戶名';
+$phpMussel['lang']['field_verify'] = '驗證';
+$phpMussel['lang']['field_verify_all'] = '驗證全部';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '請登錄以繼續。';
 $phpMussel['lang']['label_active_config_file'] = '活動配置文件：';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = '登錄失敗！​用�
 $phpMussel['lang']['response_login_password_field_empty'] = '密碼輸入是空的！';
 $phpMussel['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
 $phpMussel['lang']['response_login_wrong_endpoint'] = '錯誤的端點！';
+$phpMussel['lang']['response_possible_problem_found'] = '可能的問題發現。';
 $phpMussel['lang']['response_rename_error'] = '無法改名！';
 $phpMussel['lang']['response_restore_error_1'] = '無法恢復！損壞的文件！';
 $phpMussel['lang']['response_restore_error_2'] = '無法恢復！不正確的隔離鑰匙！';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = '過時（請更新�
 $phpMussel['lang']['response_updates_outdated_php_version'] = '過時（它需要PHP {V}）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '無法確定。';
 $phpMussel['lang']['response_upload_error'] = '無法上傳！';
+$phpMussel['lang']['response_verification_failed'] = '驗證失敗！組件可能已損壞。';
+$phpMussel['lang']['response_verification_success'] = '驗證成功！沒有發現問題。';
 $phpMussel['lang']['state_complete_access'] = '完全訪問';
 $phpMussel['lang']['state_component_is_active'] = '組件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '組件是非活性。';

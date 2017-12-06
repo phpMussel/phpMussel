@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.11.20).
+ * This file: Portuguese language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Atualizar';
 $phpMussel['lang']['field_update_all'] = 'Atualize tudo';
 $phpMussel['lang']['field_upload_file'] = 'Carregar um novo ficheiro';
 $phpMussel['lang']['field_username'] = 'Nome de Usuário';
+$phpMussel['lang']['field_verify'] = 'Verifique isso';
+$phpMussel['lang']['field_verify_all'] = 'Verifique tudo';
 $phpMussel['lang']['field_your_version'] = 'Sua Versão';
 $phpMussel['lang']['header_login'] = 'Por favor faça o login para continuar.';
 $phpMussel['lang']['label_active_config_file'] = 'Arquivo de configuração ativo: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Falha no login! Esse us
 $phpMussel['lang']['response_login_password_field_empty'] = 'Entrada de senha vazio!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Entrada de nome de usuário vazio!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Ponto final errado!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Possível problema encontrado.';
 $phpMussel['lang']['response_rename_error'] = 'Falha ao renomear!';
 $phpMussel['lang']['response_restore_error_1'] = 'Falha ao restaurar! Arquivo corrompido!';
 $phpMussel['lang']['response_restore_error_2'] = 'Falha ao restaurar! Chave de quarentena incorreta!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Desatualizado (por f
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Desatualizado (requer PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Não foi possível determinar.';
 $phpMussel['lang']['response_upload_error'] = 'Falha ao carregar!';
+$phpMussel['lang']['response_verification_failed'] = 'Verificação falhada! Componente pode estar corrompido.';
+$phpMussel['lang']['response_verification_success'] = 'Verificação sucesso! Não foram encontrados problemas.';
 $phpMussel['lang']['state_complete_access'] = 'Acesso completo';
 $phpMussel['lang']['state_component_is_active'] = 'Componente está ativo.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Componente está inativo.';

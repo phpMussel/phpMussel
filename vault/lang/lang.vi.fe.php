@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.11.20).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Cập nhật';
 $phpMussel['lang']['field_update_all'] = 'Cập nhật tất cả';
 $phpMussel['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
+$phpMussel['lang']['field_verify'] = 'Xác minh';
+$phpMussel['lang']['field_verify_all'] = 'Xác minh tất cả';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Thất bại đăng nh�
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Điểm truy cập không đúng!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Có thể tìm thấy vấn đề.';
 $phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $phpMussel['lang']['response_restore_error_1'] = 'Không thể khôi phục! Tập tin bị hỏng!';
 $phpMussel['lang']['response_restore_error_2'] = 'Không thể khôi phục! Khóa kiểm dịch sai rồi!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lò
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Hết hạn (đòi hỏi PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
+$phpMussel['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
+$phpMussel['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $phpMussel['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';

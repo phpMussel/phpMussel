@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.11.20).
+ * This file: Urdu language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'اپ ڈیٹ';
 $phpMussel['lang']['field_update_all'] = 'تمام تجدید کریں';
 $phpMussel['lang']['field_upload_file'] = 'نئی فائل اپ لوڈ کریں';
 $phpMussel['lang']['field_username'] = 'صارف کا نام';
+$phpMussel['lang']['field_verify'] = 'تصدیق کریں';
+$phpMussel['lang']['field_verify_all'] = 'سب کی توثیق کریں';
 $phpMussel['lang']['field_your_version'] = 'آپ کے ورژن';
 $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'لاگ ان ناکام�
 $phpMussel['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدان خالی!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'غلط رسائی پوائنٹ!';
+$phpMussel['lang']['response_possible_problem_found'] = 'ممکنہ مسئلہ پایا.';
 $phpMussel['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
 $phpMussel['lang']['response_restore_error_1'] = 'بحال کرنے میں ناکام! خراب فائل!';
 $phpMussel['lang']['response_restore_error_2'] = 'بحال کرنے میں ناکام! غلط قرنطین کلید!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'فرسودہ (دست
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'فرسودہ (درکار PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'اس بات کا تعین کرنے سے قاصر ہے.';
 $phpMussel['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
+$phpMussel['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
+$phpMussel['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $phpMussel['lang']['state_complete_access'] = 'مکمل رسائی';
 $phpMussel['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $phpMussel['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';

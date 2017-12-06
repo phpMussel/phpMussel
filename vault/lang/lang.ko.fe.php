@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.11.20).
+ * This file: Korean language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = '업데이트';
 $phpMussel['lang']['field_update_all'] = '모두 업데이트';
 $phpMussel['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $phpMussel['lang']['field_username'] = '사용자 이름';
+$phpMussel['lang']['field_verify'] = '검증';
+$phpMussel['lang']['field_verify_all'] = '모두 검증';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = '로그인 실패! 사�
 $phpMussel['lang']['response_login_password_field_empty'] = '암호가 비어 있습니다!';
 $phpMussel['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = '잘못된 끝점!';
+$phpMussel['lang']['response_possible_problem_found'] = '가능한 문제가 발견되었습니다.';
 $phpMussel['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
 $phpMussel['lang']['response_restore_error_1'] = '복원하지 못했습니다! 손상된 파일!';
 $phpMussel['lang']['response_restore_error_2'] = '복원하지 못했습니다! 잘못된 격리 키!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = '구식입니다 (수
 $phpMussel['lang']['response_updates_outdated_php_version'] = '구식입니다 (PHP {V}가 필요합니다)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '결정 수 없습니다.';
 $phpMussel['lang']['response_upload_error'] = '업로드에 실패했습니다!';
+$phpMussel['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
+$phpMussel['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $phpMussel['lang']['state_complete_access'] = '전체 액세스';
 $phpMussel['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $phpMussel['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';

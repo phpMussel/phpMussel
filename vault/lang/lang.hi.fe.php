@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.11.20).
+ * This file: Hindi language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'अपडेट करो';
 $phpMussel['lang']['field_update_all'] = 'सब कुछ अपडेट करें';
 $phpMussel['lang']['field_upload_file'] = 'नई फाइल अपलोड करें';
 $phpMussel['lang']['field_username'] = 'उपयोगकर्ता नाम';
+$phpMussel['lang']['field_verify'] = 'सत्यापित करें';
+$phpMussel['lang']['field_verify_all'] = 'सभी को सत्यापित करें';
 $phpMussel['lang']['field_your_version'] = 'आपका संस्करण';
 $phpMussel['lang']['header_login'] = 'जारी रखने के लिए कृपया लॉग इन करें।';
 $phpMussel['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'लॉगिन वि�
 $phpMussel['lang']['response_login_password_field_empty'] = 'पासवर्ड फ़ील्ड खाली है!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'उपयोगकर्ता नाम फ़ील्ड खाली!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'गलत समापन बिंदु!';
+$phpMussel['lang']['response_possible_problem_found'] = 'संभव समस्या मिली।';
 $phpMussel['lang']['response_rename_error'] = 'नाम बदलने में विफल!';
 $phpMussel['lang']['response_restore_error_1'] = 'पुनर्स्थापित करने में विफल! दूषित फाइल!';
 $phpMussel['lang']['response_restore_error_2'] = 'पुनर्स्थापित करने में विफल! गलत संगरोध कुंजी!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'पदावनत (
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'पदावनत (PHP {V} की आवश्यकता है)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'निर्धारित करने में असमर्थ।';
 $phpMussel['lang']['response_upload_error'] = 'अपलोड करने में विफल!';
+$phpMussel['lang']['response_verification_failed'] = 'सत्यापन असफल! घटक भ्रष्ट हो सकता है।';
+$phpMussel['lang']['response_verification_success'] = 'सत्यापन सफलता! कोई समस्या नहीं मिली।';
 $phpMussel['lang']['state_complete_access'] = 'पूरा पहुंच';
 $phpMussel['lang']['state_component_is_active'] = 'घटक सक्रिय है।';
 $phpMussel['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';

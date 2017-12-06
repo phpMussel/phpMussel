@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.11.20).
+ * This file: Turkish language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Güncelle';
 $phpMussel['lang']['field_update_all'] = 'Tümünü güncelle';
 $phpMussel['lang']['field_upload_file'] = 'Yeni dosya yükle';
 $phpMussel['lang']['field_username'] = 'Kullanıcı adı';
+$phpMussel['lang']['field_verify'] = 'Doğrula';
+$phpMussel['lang']['field_verify_all'] = 'Tümünü doğrula';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Giriş başarısız! Ku
 $phpMussel['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Yanlış bitiş noktası!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Olası problem bulundu.';
 $phpMussel['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
 $phpMussel['lang']['response_restore_error_1'] = 'Canlanamadı! Bozuk dosya!';
 $phpMussel['lang']['response_restore_error_2'] = 'Canlanamadı! Yanlış karantina anahtarı!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Eski (lütfen manuel
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Eski (PHP {V} gerektirir)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Belirlenemedi.';
 $phpMussel['lang']['response_upload_error'] = 'Yüklenemedi!';
+$phpMussel['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
+$phpMussel['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
 $phpMussel['lang']['state_complete_access'] = 'Tam erişim';
 $phpMussel['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';

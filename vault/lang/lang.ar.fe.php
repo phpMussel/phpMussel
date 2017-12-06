@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.11.20).
+ * This file: Arabic language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'تحديث';
 $phpMussel['lang']['field_update_all'] = 'تحديث الجميع';
 $phpMussel['lang']['field_upload_file'] = 'تحميل ملف جديد';
 $phpMussel['lang']['field_username'] = 'اسم المستخدم';
+$phpMussel['lang']['field_verify'] = 'التحقق';
+$phpMussel['lang']['field_verify_all'] = 'التحقق من الكل';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'فشل تسجيل ال�
 $phpMussel['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'نقطة نهاية خاطئة!';
+$phpMussel['lang']['response_possible_problem_found'] = 'تم العثور على مشكلة محتملة.';
 $phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $phpMussel['lang']['response_restore_error_1'] = 'أخفق الاستعادة! ملف معطوب!';
 $phpMussel['lang']['response_restore_error_2'] = 'أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'عفا عليها ا
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'عفا عليها الزمن (يتطلب PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
 $phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
+$phpMussel['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
+$phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
 $phpMussel['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';

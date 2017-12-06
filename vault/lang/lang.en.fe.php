@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.11.20).
+ * This file: English language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Update';
 $phpMussel['lang']['field_update_all'] = 'Update all';
 $phpMussel['lang']['field_upload_file'] = 'Upload new file';
 $phpMussel['lang']['field_username'] = 'Username';
+$phpMussel['lang']['field_verify'] = 'Verify';
+$phpMussel['lang']['field_verify_all'] = 'Verify all';
 $phpMussel['lang']['field_your_version'] = 'Your Version';
 $phpMussel['lang']['header_login'] = 'Please log in to continue.';
 $phpMussel['lang']['label_active_config_file'] = 'Active configuration file: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Login failure! Username
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password field empty!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Username field empty!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Wrong endpoint!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Possible problem found.';
 $phpMussel['lang']['response_rename_error'] = 'Failed to rename!';
 $phpMussel['lang']['response_restore_error_1'] = 'Failed to restore! Corrupted file!';
 $phpMussel['lang']['response_restore_error_2'] = 'Failed to restore! Incorrect quarantine key!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Outdated (please upd
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Outdated (requires PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
 $phpMussel['lang']['response_upload_error'] = 'Failed to upload!';
+$phpMussel['lang']['response_verification_failed'] = 'Verification failed! Component could be corrupted.';
+$phpMussel['lang']['response_verification_success'] = 'Verification success! No problems found.';
 $phpMussel['lang']['state_complete_access'] = 'Complete access';
 $phpMussel['lang']['state_component_is_active'] = 'Component is active.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactive.';

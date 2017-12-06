@@ -18,6 +18,16 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Shifted a number of update closures from the front-end handler to the
   front-end functions file for slightly improved efficiency.
 
+- [2017.12.06; Bug-fix; Maikuolan]: Fixed a CRITICAL bug introduced yesterday
+  that could result in the updates page deleting files pertinent to components
+  being updated, thus corrupting those components and potentially rendering
+  the package inoperable.
+
+- [2017.12.06; Sub-minor code change; Maikuolan]: Added a component file
+  verification option to the updates page. Removed the hotfixes file (this
+  file was intended to fix a number of older problems from previous versions of
+  the package that aren't relevant anymore).
+
 === Version/Release 1.1.0 ===
 MINOR RELEASE.
 

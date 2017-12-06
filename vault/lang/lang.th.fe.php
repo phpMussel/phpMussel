@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.11.20).
+ * This file: Thai language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'อัปเดต';
 $phpMussel['lang']['field_update_all'] = 'อัพเดททั้งสิ้น';
 $phpMussel['lang']['field_upload_file'] = 'อัปโหลดไฟล์ใหม่';
 $phpMussel['lang']['field_username'] = 'ชื่อผู้ใช้';
+$phpMussel['lang']['field_verify'] = 'ตรวจสอบ';
+$phpMussel['lang']['field_verify_all'] = 'ตรวจสอบทั้งหมด';
 $phpMussel['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $phpMussel['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
 $phpMussel['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'ความล้ม�
 $phpMussel['lang']['response_login_password_field_empty'] = 'รหัสผ่านฟิลด์ว่างเปล่า!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ชื่อผู้ใช้ฟิลด์ว่างเปล่า!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'จุดเชื่อมต่อ ไม่ถูกต้อง!';
+$phpMussel['lang']['response_possible_problem_found'] = 'พบปัญหาที่เป็นไปได้.';
 $phpMussel['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
 $phpMussel['lang']['response_restore_error_1'] = 'ไม่สามารถฟื้นฟู! ไฟล์ที่เสียหาย!';
 $phpMussel['lang']['response_restore_error_2'] = 'ไม่สามารถฟื้นฟู! คีย์กักกันไม่ถูกต้อง!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'ล้าสมั�
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'ล้าสมัยแล้ว (ต้องการ PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'ไม่สามารถกำหนดได้.';
 $phpMussel['lang']['response_upload_error'] = 'ล้มเหลวอัปโหลด!';
+$phpMussel['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
+$phpMussel['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
 $phpMussel['lang']['state_complete_access'] = 'เข้าถึงได้อย่างสมบูรณ์';
 $phpMussel['lang']['state_component_is_active'] = 'คอมโพเนนต์ใช้งานอยู่.';
 $phpMussel['lang']['state_component_is_inactive'] = 'คอมโพเนนต์ไม่ใช้งาน.';

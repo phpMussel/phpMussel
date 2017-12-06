@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.11.20).
+ * This file: Japanese language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'アップデート';
 $phpMussel['lang']['field_update_all'] = 'すべてアップデートする';
 $phpMussel['lang']['field_upload_file'] = '新しいファイルをアップロードする';
 $phpMussel['lang']['field_username'] = 'ユーザー名';
+$phpMussel['lang']['field_verify'] = '検証する';
+$phpMussel['lang']['field_verify_all'] = 'すべてを検証する';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'ログイン失敗！�
 $phpMussel['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $phpMussel['lang']['response_login_wrong_endpoint'] = '間違ったエンドポイント！';
+$phpMussel['lang']['response_possible_problem_found'] = '考えられる問題が見つかりました。';
 $phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $phpMussel['lang']['response_restore_error_1'] = '復元に失敗しました！​破損したファイル！';
 $phpMussel['lang']['response_restore_error_2'] = '復元に失敗しました！​検疫キーが間違っています！';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = '時代遅れです�
 $phpMussel['lang']['response_updates_outdated_php_version'] = '時代遅れです（PHP {V}が必要です）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しました！';
+$phpMussel['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
+$phpMussel['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
 $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';

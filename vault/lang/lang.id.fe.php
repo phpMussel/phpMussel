@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.11.20).
+ * This file: Indonesian language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -71,7 +71,7 @@ $phpMussel['lang']['config_general_statistics'] = 'Lacak statistik penggunaan ph
 $phpMussel['lang']['config_general_timeFormat'] = 'Format notasi tanggal/waktu yang digunakan oleh phpMussel. Opsi tambahan dapat ditambahkan atas permintaan.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $phpMussel['lang']['config_general_timezone'] = 'Zona waktu Anda.';
-$phpMussel['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catatan: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
+$phpMussel['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Ada tanda tangan tertentu dari phpMussel yang dimaksudkan untuk mengidentifikasi kualitas yang mencurigakan dan berpotensi berbahaya pada file-file yang di-upload tanpa di diri mereka mengidentifikasi file-file yang di-upload spesifik sebagai berbahaya. Ini "threshold" nilai memberitahu phpMussel apa total berat maksimum untuk kualitas yang mencurigakan dan berpotensi berbahaya pada file-file yang di-upload yang diijinkan adalah sebelum file-file yang akan diidentifikasi sebagai berbahaya. Definisi berat dalam konteks ini adalah jumlah total kualitas mencurigakan dan berpotensi berbahaya diidentifikasi. Secara default, nilai ini akan ditetapkan sebagai 3. Sebuah nilai lebih rendah umumnya akan menghasilkan sebagai lebih tinggi positif palsu kejadian tapi sebuah jumlah lebih tinggi file berbahaya diidentifikasi, sedangkan sebuah nilai lebih tinggi umumnya akan menghasilkan sebagai lebih rendah positif palsu kejadian tapi sebuah jumlah lebih rendah pada file berbahaya yang diidentifikasi. Ini umumnya terbaik untuk meninggalkan nilai ini di default kecuali jika Anda mengalami masalah berhubungan dengan itu.';
 $phpMussel['lang']['config_signatures_Active'] = 'Daftar file tanda tangan yang aktif, dipisahkan oleh koma.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware? False = Tidak; True = Ya [Default].';
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Perbarui';
 $phpMussel['lang']['field_update_all'] = 'Memperbarui semua';
 $phpMussel['lang']['field_upload_file'] = 'Mengupload file baru';
 $phpMussel['lang']['field_username'] = 'Nama Pengguna';
+$phpMussel['lang']['field_verify'] = 'Memverifikasi';
+$phpMussel['lang']['field_verify_all'] = 'Memverifikasi semua';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama p
 $phpMussel['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Jalur akses salah!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Kemungkinan masalah ditemukan.';
 $phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $phpMussel['lang']['response_restore_error_1'] = 'Gagal memulihkan! File rusak!';
 $phpMussel['lang']['response_restore_error_2'] = 'Gagal memulihkan! Kunci karantina salah!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Tidak yang terbaru (membutuhkan PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
 $phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
+$phpMussel['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
+$phpMussel['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
 $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
@@ -257,16 +262,16 @@ $phpMussel['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunaka
 $phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel.';
 $phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
-$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catatan: phpMussel menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: phpMussel menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
 $phpMussel['lang']['tip_quarantine'] = 'Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut.';
-$phpMussel['lang']['tip_quarantine_disabled'] = 'Catatan: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi.';
+$phpMussel['lang']['tip_quarantine_disabled'] = 'Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $phpMussel['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi phpMussel Anda.';
-$phpMussel['lang']['tip_statistics_disabled'] = 'Catatan: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
+$phpMussel['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
 $phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.11.20).
+ * This file: Dutch language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -141,6 +141,8 @@ $phpMussel['lang']['field_update'] = 'Bijwerken';
 $phpMussel['lang']['field_update_all'] = 'Bijwerken alles';
 $phpMussel['lang']['field_upload_file'] = 'Nieuw bestand uploaden';
 $phpMussel['lang']['field_username'] = 'Gebruikersnaam';
+$phpMussel['lang']['field_verify'] = 'Verifiëren';
+$phpMussel['lang']['field_verify_all'] = 'Verifiëren alles';
 $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $phpMussel['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
@@ -228,6 +230,7 @@ $phpMussel['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebru
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $phpMussel['lang']['response_login_wrong_endpoint'] = 'Verkeerd eindpunt!';
+$phpMussel['lang']['response_possible_problem_found'] = 'Mogelijk probleem gevonden.';
 $phpMussel['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $phpMussel['lang']['response_restore_error_1'] = 'Kan niet herstellen! Beschadigd bestand!';
 $phpMussel['lang']['response_restore_error_2'] = 'Kan niet herstellen! Onjuiste quarantaine sleutel!';
@@ -240,6 +243,8 @@ $phpMussel['lang']['response_updates_outdated_manually'] = 'Verouderd (neem hand
 $phpMussel['lang']['response_updates_outdated_php_version'] = 'Verouderd (heeft nodig PHP {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
+$phpMussel['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
+$phpMussel['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
 $phpMussel['lang']['state_component_is_active'] = 'Component is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactief.';

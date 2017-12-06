@@ -1190,18 +1190,20 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
             }
         }
-        if (empty($phpMussel['Components']['ThisComponent']['Remote'])) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['lang']['response_updates_unable_to_determine'];
-            if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
-                $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
-            }
-        } else {
+        if (!empty($phpMussel['Components']['ThisComponent']['Files'])) {
             $phpMussel['Arrayify']($phpMussel['Components']['ThisComponent']['Files']);
             $phpMussel['Arrayify']($phpMussel['Components']['ThisComponent']['Files']['To']);
             $phpMussel['Arrayify']($phpMussel['Components']['ThisComponent']['Files']['From']);
             if (isset($phpMussel['Components']['ThisComponent']['Files']['Checksum'])) {
                 $phpMussel['Arrayify']($phpMussel['Components']['ThisComponent']['Files']['Checksum']);
             }
+        }
+        if (empty($phpMussel['Components']['ThisComponent']['Remote'])) {
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['lang']['response_updates_unable_to_determine'];
+            if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
+                $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
+            }
+        } else {
             $phpMussel['FetchRemote']();
             if (
                 substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 4) === "---\n" &&
@@ -1346,10 +1348,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             !empty($phpMussel['Components']['ThisComponent']['Files']['Checksum']) &&
             is_array($phpMussel['Components']['ThisComponent']['Files']['Checksum'])
         ) {
+            $phpMussel['Components']['ThisComponent']['Options'] .=
+                '<option value="verify-component">' . $phpMussel['lang']['field_verify'] . '</option>';
             array_walk($phpMussel['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                    $phpMussel['Components']['ThisComponent']['VersionSize'] +=
-                        (int)substr($Checksum, $Delimiter + 1);
+                    $phpMussel['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
             });
         }
