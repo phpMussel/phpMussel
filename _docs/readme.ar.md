@@ -920,7 +920,7 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
 
 <div dir="rtl">هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
-<div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل "http://www.some-domain.tld/"، أطلق عليه اسما "some-domain.tld.config.ini". اسم النطاق يأتي من "HTTP_HOST". يتم تجاهل "www".<br /><br /></div>
+<div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل "<code dir="ltr">http://www.some-domain.tld/</code>"، أطلق عليه اسما "<code dir="ltr">some-domain.tld.config.ini</code>". اسم النطاق يأتي من "<code dir="ltr">HTTP_HOST</code>". يتم تجاهل "<code dir="ltr">www</code>".<br /><br /></div>
 
 <div dir="rtl">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
 
