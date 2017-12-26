@@ -220,7 +220,7 @@ l10n/es:
 l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
- Version: 2017.339.562
+ Version: 2017.359.582
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -233,13 +233,13 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 6f4977fa47b58fb3967c9bbb7f0b11c2:51387
+   - 867dd7bde5acdf92a3885d68cde6d7ea:51380
    - c9f6259aec86f3841ef5753cf3d3d35a:8357
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2017.339.562
+ Version: 2017.359.582
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -252,7 +252,7 @@ l10n/hi:
    - lang/lang.hi.fe.php
    - lang/lang.hi.php
   Checksum:
-   - b4924a09b9356c0af48d33ed4fb9529a:83630
+   - 116b27b1171cdcfa20a0b5ebc8017e28:83643
    - d3c53c0d2c690e4186df61d2c0efad24:12635
  Reannotate: components.dat
 l10n/id:

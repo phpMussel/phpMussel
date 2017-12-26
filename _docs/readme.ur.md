@@ -177,9 +177,9 @@
 
 #### <div dir="rtl">٤.١ سامنے کے آخر میں فعال کرنے کا طریقہ.<br /><br /></div>
 
-<div dir="rtl">١. اندر "<code dir="ltr">config.ini</code>"، "<code dir="ltr">disable_frontend</code>" ہدایت کو تلاش کریں اور "false" کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے "true" ہو جائے گا).<br /><br /></div>
+<div dir="rtl">١. اندر <code dir="ltr">"config.ini"</code>، <code dir="ltr">"disable_frontend"</code> ہدایت کو تلاش کریں اور "false" کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے "true" ہو جائے گا).<br /><br /></div>
 
-<div dir="rtl">٢. رسائی اپنے براؤزر سے "<code dir="ltr">loader.php</code>" (جیسے، "<code dir="ltr">http://localhost/phpmussel/loader.php</code>").<br /><br /></div>
+<div dir="rtl">٢. رسائی اپنے براؤزر سے <code dir="ltr">"loader.php"</code> (جیسے، <code dir="ltr">"http://localhost/phpmussel/loader.php"</code>).<br /><br /></div>
 
 <div dir="rtl">٣. پہلے سے طے شدہ صارف کا نام اور پاس ورڈ کے ساتھ لاگ ان کریں (admin/password).<br /><br /></div>
 
@@ -571,7 +571,7 @@
  <li>کیا فائل کی حد سے تجاوز ہے کہ (اگر موجود ہو) فائلوں کے ساتھ کیا کرنا. False (جھوٹی) = وائٹ لسٹ؛ سچا = بلیک لسٹ [ڈیفالٹ].</li>
 </ul></div>
 
-<div dir="rtl">"<code dir="ltr">filetype_whitelist</code>"، "<code dir="ltr">filetype_blacklist</code>"، "<code dir="ltr">filetype_greylist</code>"<br /></div>
+<div dir="rtl"><code dir="ltr">"filetype_whitelist"</code>، <code dir="ltr">"filetype_blacklist"</code>، <code dir="ltr">"filetype_greylist"</code><br /></div>
 <div dir="rtl"><ul>
  <li>آپ کے سسٹم صرف فائلوں کی مخصوص اقسام اپ لوڈ کیا جا کرنے کی اجازت دیتا ہے، یا آپ کے سسٹم کو واضح طور پر، فائلوں کی بعض اقسام کی تردید کرتے ہیں وائٹ لسٹیں، بلیک لسٹ اور سرمئی فہرستوں میں ان قسم کی فائلوں کی وضاحت جس میں رفتار سکیننگ جائیں کرنے سکرپٹ اجازت دے کر کیا جاتا ہے بڑھا سکتے ہیں اگر تو بعض قسم کی فائلوں کے دوران. ڈاک CSV (علامت سے علیحدہ اقدار) ہے. آپ کو سب کچھ، بلکہ وائٹ لسٹ، بلیک لسٹ یا بھوری رنگ کی فہرست کے مقابلے میں اسکین کرنے کے لئے چاہتے ہیں، متغیر خالی چھوڑ؛ ایسا کرنے سے وائٹ لسٹ/بلیک لسٹ/سرمئی فہرست کو غیر فعال کریں گے.</li>
  <li><strong>پروسیسنگ کے منطقی حکم ہے:</strong></li>
@@ -920,7 +920,7 @@ Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXA3F5.Webshell"<
 
 <div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد phpMussel تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
 
-<div dir="rtl">جی ہاں. phpMussel ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. phpMussel یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم phpMussel هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے "<code dir="ltr">http://www.some-domain.tld/</code>"، اس کا نام ہے "<code dir="ltr">some-domain.tld.config.ini</code>". ڈومین نام "<code dir="ltr">HTTP_HOST</code>" سے آتا ہے. "<code dir="ltr">www</code>" نظر انداز کر دیا جاتا ہے.<br /><br /></div>
+<div dir="rtl">جی ہاں. phpMussel ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. phpMussel یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم phpMussel هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے <code dir="ltr">"http://www.some-domain.tld/"</code>، اس کا نام ہے <code dir="ltr">"some-domain.tld.config.ini"</code>. ڈومین نام <code dir="ltr">"HTTP_HOST"</code> سے آتا ہے. <code dir="ltr">"www"</code> نظر انداز کر دیا جاتا ہے.<br /><br /></div>
 
 <div dir="rtl">میں نے اس پر وقت خرچ نہیں کرنا چاہتا (اسے انسٹال، اس کے قیام، وغیرہ)؛ میں نے آپ کو ایسا کرنے کے لئے ادا کر سکتے ہیں؟<br /><br /></div>
 

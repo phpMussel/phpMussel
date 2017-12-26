@@ -177,9 +177,9 @@
 
 #### <div dir="rtl">٤.١ كيفية تمكين FRONT-END.<br /><br /></div>
 
-<div dir="rtl">١. العثور "<code dir="ltr">disable_frontend</code>" من في "<code dir="ltr">config.ini</code>"، وتعيينها إلى false (القيمة القياسية هي true).<br /><br /></div>
+<div dir="rtl">١. العثور <code dir="ltr">"disable_frontend"</code> من في <code dir="ltr">"config.ini"</code>، وتعيينها إلى false (القيمة القياسية هي true).<br /><br /></div>
 
-<div dir="rtl">٢. الوصول إلى "<code dir="ltr">loader.php</code>" من المتصفح (مثلا، "<code dir="ltr">http://localhost/phpmussel/loader.php</code>").<br /><br /></div>
+<div dir="rtl">٢. الوصول إلى <code dir="ltr">"loader.php"</code> من المتصفح (مثلا، <code dir="ltr">"http://localhost/phpmussel/loader.php"</code>).<br /><br /></div>
 
 <div dir="rtl">٣. تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الافتراضية (admin/password).<br /><br /></div>
 
@@ -571,7 +571,7 @@
  <li>ماذا تفعل مع الملفات التي تتجاوز الحد الأقصى لحجم الملف (إن وجد). كاذبة = القائمة البيضاء. صحيح = القائمة السوداء [افتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"<code dir="ltr">filetype_whitelist</code>"، "<code dir="ltr">filetype_blacklist</code>"، "<code dir="ltr">filetype_greylist</code>"<br /></div>
+<div dir="rtl"><code dir="ltr">"filetype_whitelist"</code>، <code dir="ltr">"filetype_blacklist"</code>، <code dir="ltr">"filetype_greylist"</code><br /></div>
 <div dir="rtl"><ul>
  <li>إذا كان النظام يسمح فقط أنواع معينة من الملفات المراد تحميلها، أو إذا كان النظام ينفي صراحة أنواع معينة من الملفات، تحديد تلك نوع الملف في قوائم بيضاء، القوائم السوداء و القوائم الرمادية يمكن أن تزيد من السرعة التي يتم تنفيذ المسح من خلال السماح للبرنامج بتخطي بعض أنواع الملفات. الشكل هو CSV (قيم مفصولة بفواصل). إذا كنت ترغب في مسح كل شيء، وليس من القائمة البيضاء، القائمة السوداء أو القائمة الرمادية، وترك المتغير (/ ث) فارغة. وبذلك تعطيل القائمة البيضاء / السوداء / القائمة الرمادية.</li>
  <li><strong>الترتيب المنطقي للمعالجة هو:</strong></li>
@@ -920,7 +920,7 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
 
 <div dir="rtl">هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
-<div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل "<code dir="ltr">http://www.some-domain.tld/</code>"، أطلق عليه اسما "<code dir="ltr">some-domain.tld.config.ini</code>". اسم النطاق يأتي من "<code dir="ltr">HTTP_HOST</code>". يتم تجاهل "<code dir="ltr">www</code>".<br /><br /></div>
+<div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل <code dir="ltr">"http://www.some-domain.tld/"</code>، أطلق عليه اسما <code dir="ltr">"some-domain.tld.config.ini"</code>. اسم النطاق يأتي من <code dir="ltr">"HTTP_HOST"</code>. يتم تجاهل <code dir="ltr">"www"</code>.<br /><br /></div>
 
 <div dir="rtl">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
 
