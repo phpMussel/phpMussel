@@ -163,7 +163,7 @@ l10n/en:
 l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
- Version: 2017.339.562
+ Version: 2017.359.568
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -176,7 +176,7 @@ l10n/ar:
    - lang/lang.ar.fe.php
    - lang/lang.ar.php
   Checksum:
-   - 7b6df17f0acd4c91ba904433cf4514e6:60439
+   - 4a651f817a739ba3d4466e7b94927951:60568
    - efa247fcf1901e4c282809b8b58c6b52:8867
  Reannotate: components.dat
 l10n/de:
@@ -429,7 +429,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2017.339.562
+ Version: 2017.359.568
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -442,7 +442,7 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - 933ddc51de9809a29c588355e6e4a675:66467
+   - 838ef293d8a13c26fabeb156b610e3ff:66647
    - c7410f4bf9c9c0e88f860cb073224de9:9517
  Reannotate: components.dat
 l10n/vi:
