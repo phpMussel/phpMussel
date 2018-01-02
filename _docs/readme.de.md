@@ -349,7 +349,7 @@ Datei | Beschreibung
 /README.md | Projektübersicht.
 /web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 
-※ Der Dateiname kann je nach Konfiguratuion in der `config.ini` variieren.
+※ Der Dateiname kann je nach Konfiguration in der `config.ini` variieren.
 
 ---
 
