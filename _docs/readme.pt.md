@@ -515,7 +515,7 @@ Configuração geral por a manipulação de arquivos.
 - Máxima recursão profundidade limite por compactados arquivos. Padrão = 10.
 
 "block_encrypted_archives"
-- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas protecções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
+- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas proteções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
 
 #### "attack_specific" (Categoria)
 Configuração por específicas ataque detecções.
@@ -680,7 +680,7 @@ Todas as assinaturas PE Seccional seguir o formato:
 
 `TAMANHO:HASH:NOME`
 
-Onde HASH é o hash MD5 de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
+Onde HASH é o hash MD5 de uma seção do PE arquivo, TAMANHO é o total tamanho da seção e NOME é o nome para citar por essa assinatura.
 
 #### *ASSINATURAS PE ESTENDIDAS*
 Todas as assinaturas PE estendidas seguir o formato:
