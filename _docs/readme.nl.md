@@ -80,7 +80,9 @@ Of dit in het `.htaccess` bestand:
 
 4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden PHP en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in het bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `loader.php` bestand in het bestandsmap van uw phpMussel installatie, Sla het bestand op met een `.bat` extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
 
-5) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien phpMussel en probeer het scannen van de `_testfiles` bestandsmap die bij het pakket.
+5) Installeer alle signatures die u nodig hebt. *Zien: [SIGNATURES INSTALLEREN](#INSTALLING_SIGNATURES).*
+
+6) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien phpMussel en probeer het scannen van de `_testfiles` bestandsmap die bij het pakket.
 
 #### 2.2 INSTALLEREN MET COMPOSER
 
@@ -872,4 +874,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 1 December 2017 (2017.12.01).
+Laatste Bijgewerkt: 13 Januari 2018 (2018.01.13).

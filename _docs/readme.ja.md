@@ -80,7 +80,9 @@ Apacheウェブサーバーを利用していて、​かつ`php.ini`を編集�
 
 ４） オプションですが、​バッチファイルを作成することにより、​phpMusselのＣＬＩモードでの使用を容易にすることができます。​バッチファイルはＰＨＰとphpMusselを自動的にロードするものです。​まず、​Notepadか Notepad++のようなテキストエディタを開いて下さい。​そして、​インストールしたＰＨＰの`php.exe`の絶対パス、​半角スペース、​`loader.php`の絶対パスをタイプして、​拡張子「.bat」でファイルを目につくところに保存します。​このファイルをダブルクリックすることでphpMusselを起動することができます。
 
-５） テストを行いましょう。​パッケージ内の`_testfiles`をphpMusselでスキャンしてみて下さい。
+５） あなたが必要とするシグネチャをインストールしてください。 参照：​[シグネチャ・インストール](#INSTALLING_SIGNATURES)。
+
+６） テストを行いましょう。​パッケージ内の`_testfiles`をphpMusselでスキャンしてみて下さい。
 
 #### 2.2 COMPOSERを使用してインストールする
 
@@ -576,7 +578,7 @@ VirusTotal.comディレクティブズ。
 "vt_public_api_key" （ヴィティ・パブリック・エイピーアイ・キー）
 - オプションですが、​phpMusselはVirus Total APIを使ってファイルをスキャンすることができます。​ウィルス、​トロイの木馬、​マルウェア、​その他の攻撃に対して非常に効果的に機能します。​デフォルトではVirus Total APIを使ったスキャニングは無効になっています。​有効にするには、​Virus TotalのAPIキーが必要です。​メリットが極めて大きいため、​有効にすることを強く推奨します。​Virus Total APIの使用にあたっては、​Virus Totalのドキュメンテーションにある通り、​利用規定ならびにガイドラインを遵守しなくてはなりません。​この統合機能を使用するためには：
  - Virus TotalとAPIのサービス規定を読み同意すること。​[サービス規定はこちらから](https://www.virustotal.com/en/about/terms-of-service/)。
- - 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents「コンテンツ」前まで）。​Virus Total Public APIの[ドキュメンテーションはこちらから](https://www.virustotal.com/en/documentation/public-api/)。
+ - 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（「VirusTotal Public API v2.0」以降、「Contents」前まで）。​Virus Total Public APIの[ドキュメンテーションはこちらから](https://www.virustotal.com/en/documentation/public-api/)。
 
 注意：Virus Total API使用したスキャニングが無効になっている場合、​このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。​無効であれば、​どれも機能しません。​Virus Total APIキーを取得するには、​Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、​必要事項を記入しサインアップします。​インストラクションに従ってパブリックAPIキーを取得した後、​`config.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
 
@@ -872,4 +874,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年12月1日。
+最終アップデート：2018年1月13日。

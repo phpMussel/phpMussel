@@ -80,7 +80,9 @@ Ou isso no `.htaccess` arquivo:
 
 4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o caminho completo para o arquivo `php.exe` no diretório de instalação do PHP, seguido por um espaço, seguido pelo caminho completo para o arquivo `loader.php` no diretório da sua instalação do phpMussel, salvar o arquivo com a extensão `.bat` Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
 
-5) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar phpMussel, executar phpMussel e tentar analisar o diretório `_testfiles` fornecida com o pacote.
+5) Instale todas as assinaturas que você precisará. *Vejo: [INSTALANDO ASSINATURAS](#INSTALLING_SIGNATURES).*
+
+6) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar phpMussel, executar phpMussel e tentar analisar o diretório `_testfiles` fornecida com o pacote.
 
 #### 2.2 INSTALANDO COM COMPOSER
 
@@ -872,4 +874,4 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 ---
 
 
-Última Atualização: 1 Dezembro 2017 (2017.12.01).
+Última Atualização: 13 Janeiro 2018 (2018.01.13).

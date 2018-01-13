@@ -80,7 +80,9 @@ Atau ini di file `.htaccess`:
 
 4) Secara fakultatif, Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri Anda sendiri dengan menciptakan file batch untuk secara automatis memuat PHP dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong seperti Notepad atau Notepad++, ketikkan jalur dari file `php.exe` di dalam direktori dari instalasi PHP Anda, diikuti spasi, diikuti dengan jalur lengkap dari file `loader.php` di dalam direktori dari instalasi phpMussel, simpan file dengan ekstensi `.bat` di simpan di tempat yang Anda mudah temukan dan klik dua kali pada file itu untuk menjalankan phpMussel di masa yang akan datang.
 
-5) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan phpMussel dan coba memindai `_testfiles` direktori yang disediakan dengan ini paket.
+5) Instal semua tanda tangan yang Anda perlukan. *Lihat: [MENGINSTAL TANDA TANGAN](#INSTALLING_SIGNATURES).*
+
+6) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan phpMussel dan coba memindai `_testfiles` direktori yang disediakan dengan ini paket.
 
 #### 2.2 MENGINSTAL DENGAN COMPOSER
 
@@ -872,4 +874,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 1 Desember 2017 (2017.12.01).
+Terakhir Diperbarui: 13 Januari 2018 (2018.01.13).

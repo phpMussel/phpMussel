@@ -80,7 +80,9 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 您如果您創建一個批處理文件來自動加載的PHP和phpMussel，​那麼使用phpMussel的CLI模式將更加方便。​要做到這一點，​打開一個純文本編輯器例如Notepad或Notepad++，​輸入php.exe的完整路徑（注意是絕對路徑不是相對路徑），​其次是一個空格，​然後是`loader.php`的路徑（同php.exe），​最後，​保存此文件使用一個`.bat`擴展名放在常用的位置；在您指定的位置，​能通過雙擊您保存的`.bat`文件來調用phpMussel。
 
-5） 到這裡，​您完成了CLI模式的安裝！​當然您應測試以確保正常運行。​如果要測試phpMussel，​請通過phpMussel嘗試掃描`_testfiles`文件夾內提供的文件。
+5） 安裝您需要的任何簽名。​看到：[安裝簽名](#INSTALLING_SIGNATURES)。
+
+6） 到這裡，​您完成了CLI模式的安裝！​當然您應測試以確保正常運行。​如果要測試phpMussel，​請通過phpMussel嘗試掃描`_testfiles`文件夾內提供的文件。
 
 #### 2.2 與COMPOSER安裝
 
@@ -574,11 +576,11 @@ phpMussel兼容性指令。
 VirusTotal.com指令。
 
 『vt_public_api_key』
-- 可選的，​phpMussel可以掃描文件使用【Virus Total API】作為一個方法提供一個顯著的改善保護級別針對病毒，​木馬，​惡意軟件和其他威脅。​作為默認，​掃描文件使用【Virus Total API】是關閉。​以激活它，​一個API密鑰從VirusTotal是需要。​因為的顯著好處這個可以提供為您，​它是某物我很推薦激活。​請注意，​然而，​以使用的【Virus Total API】，​您必須同意他們的服務條款和您必須堅持所有方針按照說明通過VirusTotal閱讀材料！​您是不允許使用這個積分功能除非：
-  - 您已閱讀和您同意服務條款的VirusTotal和它的API。​服務條款的VirusTotal和它的API可以發現[這裡](https://www.virustotal.com/en/about/terms-of-service/)。
-  - 您已閱讀和您了解至少序言的VirusTotal公共API閱讀材料(一切之後『VirusTotal Public API v2.0』但之前『Contents』）。​VirusTotal公共API閱讀材料可以發現[這裡](https://www.virustotal.com/en/documentation/public-api/)。
+- 可選的，​phpMussel可以掃描文件使用【Virus Total API】作為一個方法提供一個顯著的改善保護級別針對病毒，​木馬，​惡意軟件和其他威脅。​作為默認，​掃描文件使用【Virus Total API】是關閉。​以激活它，​一個API密鑰從Virus Total是需要。​因為的顯著好處這個可以提供為您，​它是某物我很推薦激活。​請注意，​然而，​以使用的【Virus Total API】，​您必須同意他們的服務條款和您必須堅持所有方針按照說明通過Virus Total閱讀材料！​您是不允許使用這個積分功能除非：
+  - 您已閱讀和您同意服務條款的Virus Total和它的API。​服務條款的Virus Total和它的API可以發現[這裡](https://www.virustotal.com/en/about/terms-of-service/)。
+  - 您已閱讀和您了解至少序言的Virus Total公共API閱讀材料(一切之後『VirusTotal Public API v2.0』但之前『Contents』）。​Virus Total公共API閱讀材料可以發現[這裡](https://www.virustotal.com/en/documentation/public-api/)。
 
-請注意：如果掃描文件使用【Virus Total API】是關閉，​您不需要修改任何指令在這個類別（`virustotal`），​因為沒有人將做任何事如果這個是關閉。​以獲得一個VirusTotalAPI密鑰，​從隨地在他們的網站，​點擊『進入我們的社區』連接位於朝向右上方的頁面，​輸入在信息請求，​和點擊『註冊』在做完。​跟隨所有指令提供，​和當您有您的公共API密鑰，​複製/粘貼您的公共API密鑰到`vt_public_api_key`指令的`config.ini`配置文件。
+請注意：如果掃描文件使用【Virus Total API】是關閉，​您不需要修改任何指令在這個類別（`virustotal`），​因為沒有人將做任何事如果這個是關閉。​以獲得一個Virus Total API密鑰，​從隨地在他們的網站，​點擊『進入我們的社區』連接位於朝向右上方的頁面，​輸入在信息請求，​和點擊『註冊』在做完。​跟隨所有指令提供，​和當您有您的公共API密鑰，​複製/粘貼您的公共API密鑰到`vt_public_api_key`指令的`config.ini`配置文件。
 
 『vt_suspicion_level』
 - 作為標準，​phpMussel將限制什麼文件它掃描通過使用【Virus Total API】為那些文件它考慮作為『可疑』。​您可以可選調整這個局限性通過修改的`vt_suspicion_level`指令數值。
@@ -589,10 +591,10 @@ VirusTotal.com指令。
 請注意：無論的可疑級別，​任何文件任一已黑名單或已白名單通過phpMussel不會掃描使用【Virus Total API】，​因為那些文件將會已標誌作為惡意或良性通過phpMussel到的時候他們將會否則掃描通過【Virus Total API】，​和因此，​另外掃描不會需要。​能力的phpMussel掃描文件使用【Virus Total API】是意味為建更置信為如果一個文件是惡意或良性在那些情況哪裡phpMussel是不完全確定如果一個文件是惡意或良性。
 
 『vt_weighting』
-- phpMussel應使用掃描結果使用【Virus Total API】作為檢測或作為檢測重量嗎？​這個指令存在，​因為，​雖說掃描一個文件使用多AV引擎（例如怎麼樣VirusTotal做） 應結果有一個增加檢測率（和因此在一個更惡意文件被抓），​它可以還結果有更假陽性，​和因此，​為某些情況，​掃描結果可能被更好使用作為一個置信得分而不是作為一個明確結論。​如果一個數值的`0`是使用，​掃描結果使用【Virus Total API】將會適用作為檢測，​和因此，​如果任何AV引擎使用通過VirusTotal標致文件被掃描作為惡意，​phpMussel將考慮文件作為惡意。​如果任何其他數值是使用，​掃描結果使用【Virus Total API】將會適用作為檢測重量，​和因此，​數的AV引擎使用通過VirusTotal標致文件被掃描作為惡意將服務作為一個置信得分（或檢測重量） 為如果文件被掃描應會考慮惡意通過phpMussel（數值使用將代表最低限度的置信得分或重量需要以被考慮惡意）。​一個數值的`0`是使用作為標準。
+- phpMussel應使用掃描結果使用【Virus Total API】作為檢測或作為檢測重量嗎？​這個指令存在，​因為，​雖說掃描一個文件使用多AV引擎（例如怎麼樣Virus Total做） 應結果有一個增加檢測率（和因此在一個更惡意文件被抓），​它可以還結果有更假陽性，​和因此，​為某些情況，​掃描結果可能被更好使用作為一個置信得分而不是作為一個明確結論。​如果一個數值的`0`是使用，​掃描結果使用【Virus Total API】將會適用作為檢測，​和因此，​如果任何AV引擎使用通過Virus Total標致文件被掃描作為惡意，​phpMussel將考慮文件作為惡意。​如果任何其他數值是使用，​掃描結果使用【Virus Total API】將會適用作為檢測重量，​和因此，​數的AV引擎使用通過Virus Total標致文件被掃描作為惡意將服務作為一個置信得分（或檢測重量） 為如果文件被掃描應會考慮惡意通過phpMussel（數值使用將代表最低限度的置信得分或重量需要以被考慮惡意）。​一個數值的`0`是使用作為標準。
 
 『vt_quota_rate』和『vt_quota_time』
-- 根據【Virus Total API】閱讀材料，​它是限於最大的`4`請求的任何類型在任何`1`分鐘大致時間。​如果您經營一個『honeyclient』，​蜜罐或任何其他自動化將會提供資源為VirusTotal和不只取回報告您是有權一個更高請求率配額。​作為標準，​phpMussel將嚴格的堅持這些限制，​但因為可能性的這些率配額被增加，​這些二指令是提供為您指示phpMussel為什麼限它應堅持。​除非您是指示這樣做，​它是不推薦為您增加這些數值，​但，​如果您遇到問題相關的到達您的率配額，​減少這些數值可能有時幫助您解析這些問題。​您的率限是決定作為`vt_quota_rate`請求的任何類型在任何`vt_quota_time`分鐘大致時間。
+- 根據【Virus Total API】閱讀材料，​它是限於最大的`4`請求的任何類型在任何`1`分鐘大致時間。​如果您經營一個『honeyclient』，​蜜罐或任何其他自動化將會提供資源為Virus Total和不只取回報告您是有權一個更高請求率配額。​作為標準，​phpMussel將嚴格的堅持這些限制，​但因為可能性的這些率配額被增加，​這些二指令是提供為您指示phpMussel為什麼限它應堅持。​除非您是指示這樣做，​它是不推薦為您增加這些數值，​但，​如果您遇到問題相關的到達您的率配額，​減少這些數值可能有時幫助您解析這些問題。​您的率限是決定作為`vt_quota_rate`請求的任何類型在任何`vt_quota_time`分鐘大致時間。
 
 #### 『urlscanner』 （類別）
 phpMussel包含URL掃描程序，​能夠檢測惡意URL在任何數據或文件它掃描。
@@ -872,4 +874,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2017年12月1日。
+最後更新：2018年1月13日。

@@ -80,7 +80,9 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 4) 옵션이지만, 배치 파일을 작성하여 phpMussel의 CLI 모드에서의 사용을 용이하게 할 수 있습니다. 배치 파일은 PHP와 phpMussel를 자동으로로드하는 것입니다. 먼저 Notepad 또는 Notepad ++과 같은 텍스트 편집기를 엽니 다. 그리고 설치 한 PHP의`php.exe`의 절대 경로 공백`loader.php`의 절대 경로를 입력하고 확장자 `.bat`파일을 눈에 띄는 곳에 저장합니다. 이 파일을 더블 클릭하여 phpMussel을 시작할 수 있습니다.
 
-5) 테스트를합시다. 패키지의`_testfiles`을 phpMussel로 스캔 해보세요.
+5) 당신이 필요로하는 서명을 설치하십시오. *참조 : [서명 설치](#INSTALLING_SIGNATURES).*
+
+6) 테스트를합시다. 패키지의`_testfiles`을 phpMussel로 스캔 해보세요.
 
 #### 2.2 COMPOSER를 사용하여 설치한다
 
@@ -576,7 +578,7 @@ VirusTotal.com 지시문 그림.
 "vt_public_api_key"
 - 옵션이지만, phpMussel은 Virus Total API를 사용하여 파일을 검색 할 수 있습니다. 바이러스, 트로이 목마, 악성 코드 및 기타 공격에 매우 효과적으로 작동합니다. 기본적으로 Virus Total API를 사용한 스캐닝은 비활성화되어 있습니다. 활성화하려면 Virus Total의 API 키가 필요합니다. 이점이 매우 크기 때문에 사용하는 것이 좋습니다. Virus Total API의 사용에 있어서는 Virus Total 문서에있는대로 이용 규정 및 지침을 준수하지 않으면 안됩니다. 이 통합 기능을 사용하기 위해서는 :
  - Virus Total와 API의 서비스 규정을 읽고 동의해야합니다. [서비스 규정은 여기에서](https://www.virustotal.com/en/about/terms-of-service/).
- - 최소 Virus Total Public API 문서의 전문을 읽고 이해하여 (VirusTotalPublic API v2.0 이후 Contents "콘텐츠"이전까지). Virus Total Public API [문서는 여기에서](https://www.virustotal.com/en/documentation/public-api/).
+ - 최소 Virus Total Public API 문서의 전문을 읽고 이해하여 ("VirusTotal Public API v2.0"이후 "Contents"이전까지). Virus Total Public API [문서는 여기에서](https://www.virustotal.com/en/documentation/public-api/).
 
 주의 : Virus Total API 사용한 스캐닝이 비활성화되어있는 경우, 이 카테고리 (`virustotal`) 지시문을 참조 할 필요가 없습니다. 무효이면, 모두 작동하지 않습니다. Virus Total API 키를 얻으려면, Virus Total 사이트의 페이지 오른쪽 상단에있는 링크 "커뮤니티에 가입"을 클릭하여 필요한 사항을 기입하여 가입합니다. 지침에 따라 공용 API 키를 취득한 후`config.ini` 설정 파일`vt_public_api_key` 지시문 그것을 복사 및 붙여 넣기하십시오.
 
@@ -872,4 +874,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 12월 1일.
+최종 업데이트 : 2018년 1월 13일.

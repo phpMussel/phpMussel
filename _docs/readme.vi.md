@@ -80,7 +80,9 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `loader.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung `.bat` một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
 
-5) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel, chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
+5) Cài đặt bất kỳ chữ ký mà bạn sẽ cần. *Xem: [CÀI ĐẶT CHỮ KÝ](#INSTALLING_SIGNATURES).*
+
+6) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel, chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
 
 #### 2.2 CÀI ĐẶT VỚI COMPOSER
 
@@ -872,4 +874,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Mười Hai 2017 (2017.12.01).
+Lần cuối cập nhật: 13 Tháng Một 2018 (2018.01.13).

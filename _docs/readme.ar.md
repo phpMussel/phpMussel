@@ -83,7 +83,9 @@
 
 <div dir="rtl">٤. بشكل إختياري، يمكنك إستخدام phpMussel لواجهة سطر الأوامر بإنشاء ملف "باتش" لتحميل PHP و phpMussel تلقائياً، للقيام بهذا إفتح محرر النصوص مثل Notepad++ ثم أكتب المسار الكامل لملف "php.exe" الموجود في دليل التثبيت متبوع بمسافة ثم المسار الكامل لملف "loader.php" احفظ الملف بصيغة "bat."، إفتح الملف الذي قمت بإنشاءه لتشغيل phpMussel في المستقبل.<br /><br /></div>
 
-<div dir="rtl">٥. في هذه المرحلة، لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار phpMussel، قم بتشغيله و حاول فحص الدليل "_testfiles" المتوفر مع الحزمة.<br /><br /></div>
+<div dir="rtl">٥. تثبيت أي التوقيعات التي ستحتاج إليها. <em>نرى: <a href="#INSTALLING_SIGNATURES">تثبيت التوقيعات</a>).</em><br /><br /></div>
+
+<div dir="rtl">٦. في هذه المرحلة، لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار phpMussel، قم بتشغيله و حاول فحص الدليل "_testfiles" المتوفر مع الحزمة.<br /><br /></div>
 
 #### <div dir="rtl">٢.٢ تثبيت مع COMPOSER</div>
 
@@ -98,7 +100,7 @@
 <div dir="rtl"><ul>
  <li>١. تثبيت تلقائيا باستخدام الصفحة الأمامية التحديثات.</li>
  <li>٢. توليد التوقيعات باستخدام "SigTool" وتثبيت يدويا.</li>
- <li>٣. تحميل التوقيعات من "phpMussel/Signatures" وتثبيت يدويا.</li>
+ <li>٣. تحميل التوقيعات من <code dir="ltr">"phpMussel/Signatures"</code> وتثبيت يدويا.</li>
 </ul></div>
 
 ##### <div dir="rtl">٢.٣.١ تثبيت تلقائيا باستخدام الصفحة الأمامية التحديثات.</div>
@@ -111,9 +113,9 @@
 
 <div dir="rtl">نرى: <a href="https://github.com/phpMussel/SigTool#documentation">وثائق SigTool</a>.<br /><br /></div>
 
-##### <div dir="rtl">٢.٣.٣ تحميل التوقيعات من "phpMussel/Signatures" وتثبيت يدويا.</div>
+##### <div dir="rtl">٢.٣.٣ تحميل التوقيعات من <code dir="ltr">"phpMussel/Signatures"</code> وتثبيت يدويا.</div>
 
-<div dir="rtl">أولا، اذهب إلى <a href="https://github.com/phpMussel/Signatures">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل <code dir="ltr">/vault/signatures</code> لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه <code dir="ltr">Active</code> في تهيئة phpMussel لتنشيطها.<br /><br /></div>
+<div dir="rtl">أولا، اذهب إلى <a href="https://github.com/phpMussel/Signatures" dir="ltr">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل <code dir="ltr">/vault/signatures</code> لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه <code dir="ltr">Active</code> في تهيئة phpMussel لتنشيطها.<br /><br /></div>
 
 ---
 
@@ -1023,4 +1025,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 1 ديسمبر 2017 (2017.12.01).</div>
+<div dir="rtl">آخر تحديث: 13 يناير 2018 (2018.01.13).</div>
