@@ -28,6 +28,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   file was intended to fix a number of older problems from previous versions of
   the package that aren't relevant anymore).
 
+- [2018.01.16; Bug-fix; Maikuolan]: Direct closure sometimes produced errors
+  when running phpMussel via Cron (e.g., via Cronable) due to SCRIPT_FILENAME
+  sometimes not being defined in that context; Fixed via isset check.
+
 === Version/Release 1.1.0 ===
 MINOR RELEASE.
 
