@@ -5,12 +5,14 @@
     <td class="right extend">
         <form enctype="multipart/form-data" name="upload" action="" method="post">
             <input type="hidden" name="MAX_FILE_SIZE" value="{MaxFilesize}" />
-            <table><tr>
-                <td><div id="upload_fields" style="display:inline"></div></td>
-                <td><input type="button" onclick="javascript:more()" value="{field_more_fields}" /> <input type="submit" value="{field_ok}" /></td>
-            </tr></table>
+            <div id="upload_fields" style="display:inline">
+                <div class="spanner">
+                <input type="button" onclick="javascript:more()" value="{field_more_fields}" />
+                <input type="submit" value="{field_ok}" />
+                </div>
+            </div>
         </form>
-        <script language="Javascript">var a='<input type="file" name="upload_test[]" value="" /><br />',more=function(){(document.getElementById)?(document.getElementById('upload_fields').innerHTML=document.getElementById('upload_fields').innerHTML+a):(document.all&&!document.getElementById)?(document.all['upload_fields'].innerHTML=document.all['upload_fields'].innerHTML+a):''};more()</script>
+        <script language="Javascript">var a='<div class="spanner"><input type="file" name="upload_test[]" value="" /></div>',more=function(){(document.getElementById)?(document.getElementById('upload_fields').innerHTML=document.getElementById('upload_fields').innerHTML+a):(document.all&&!document.getElementById)?(document.all['upload_fields'].innerHTML=document.all['upload_fields'].innerHTML+a):''};more()</script>
     </td>
 </tr>
 </table>

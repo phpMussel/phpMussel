@@ -32,6 +32,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   when running phpMussel via Cron (e.g., via Cronable) due to SCRIPT_FILENAME
   sometimes not being defined in that context; Fixed via isset check.
 
+- [2018.01.17; Sub-minor code change; Maikuolan]: Performed some minor
+  refactoring. Added checks for whether there's been any changes to the list of
+  active signature files, or for whether they've been updated, which clears out
+  the hash cache if found to be the case.
+
 === Version/Release 1.1.0 ===
 MINOR RELEASE.
 

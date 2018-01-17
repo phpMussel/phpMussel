@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.10.26).
+ * This file: Upload handler (last modified: 2018.01.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -66,21 +66,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     ) ? $phpMussel['FetchCache']('HashCache') : '';
 
     /** Process the hash cache. */
-    if (!empty($phpMussel['HashCache']['Data'])) {
-        $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
-        $phpMussel['HashCache']['Build'] = [];
-        foreach ($phpMussel['HashCache']['Data'] as &$phpMussel['HashCache']['This']) {
-            if (strpos($phpMussel['HashCache']['This'], ':') !== false) {
-                $phpMussel['HashCache']['This'] = explode(':', $phpMussel['HashCache']['This'], 4);
-                if ($phpMussel['Time'] <= $phpMussel['HashCache']['This'][1]) {
-                    $phpMussel['HashCache']['Build'][$phpMussel['HashCache']['This'][0]] =
-                        $phpMussel['HashCache']['This'];
-                }
-            }
-        }
-        $phpMussel['HashCache']['Data'] = $phpMussel['HashCache']['Build'];
-        unset($phpMussel['HashCache']['This'], $phpMussel['HashCache']['Build']);
-    }
+    $phpMussel['PrepareHashCache']();
 
     /** Reset the $_FILES caret. */
     reset($_FILES);

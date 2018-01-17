@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.27).
+ * This file: Functions file (last modified: 2018.01.17).
  */
 
 /**
@@ -422,7 +422,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
     }
     $phpMussel['memCache']['CacheCleaned'] = true;
     $CacheFiles = [];
-    $FileIndex = $phpMussel['Vault'] . 'cache/index.dat';
+    $FileIndex = $phpMussel['cachePath'] . 'index.dat';
     if (!is_readable($FileIndex)) {
         return false;
     }
@@ -543,7 +543,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     $Handle = fopen($File, 'w');
     fwrite($Handle, $Data);
     fclose($Handle);
-    $IndexFile = $phpMussel['Vault'] . 'cache/index.dat';
+    $IndexFile = $phpMussel['cachePath'] . 'index.dat';
     $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
     while (substr_count($IndexNewData, $Entry . ':')) {
         $IndexNewData = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $Entry . ':'), ';') . ';', '', $IndexNewData);
@@ -559,15 +559,15 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
 
 /** Reads and prepares cached hash data. */
 $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
-    $phpMussel['HashCache']['Data'] =
-        $phpMussel['Config']['general']['scan_cache_expiry'] > 0 ? $phpMussel['FetchCache']('HashCache') : '';
-    if (!empty($phpMussel['HashCache']['Data'])) {
+    if ($phpMussel['HashCache']['Data'] = (
+        $phpMussel['Config']['general']['scan_cache_expiry'] > 0
+    ) ? $phpMussel['FetchCache']('HashCache') : '') {
         $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
         $Build = [];
         foreach ($phpMussel['HashCache']['Data'] as $CacheItem) {
             if (strpos($CacheItem, ':') !== false) {
                 $CacheItem = explode(':', $CacheItem, 4);
-                if (!($phpMussel['Time'] > $CacheItem[1])) {
+                if ($CacheItem[1] > $phpMussel['Time']) {
                     $Build[$CacheItem[0]] = $CacheItem;
                 }
             }
@@ -1214,41 +1214,41 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
     /** Generate a reference for the cache entry for this lookup. */
     $cacheRef = md5($arr) . ':' . $c . ':' . strlen($arr) . ':';
     /** This will contain the lookup response. */
-    $response = '';
+    $Response = '';
     /** Check if this lookup has already been performed. */
-    while (substr_count($phpMussel['memCache']['urlscanner_google'], $cacheRef)) {
-        $response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_google'], $cacheRef), ';');
+    while (strpos($phpMussel['memCache']['urlscanner_google'], $cacheRef) !== false) {
+        $Response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_google'], $cacheRef), ';');
         /** Safety mechanism. */
-        if (!$response || !substr_count($phpMussel['memCache']['urlscanner_google'], $cacheRef . $response . ';')) {
-            $response = '';
+        if (!$Response || strpos($phpMussel['memCache']['urlscanner_google'], $cacheRef . $Response . ';') === false) {
+            $Response = '';
             break;
         }
-        $expiry = $phpMussel['substrbf']($response, ':');
+        $expiry = $phpMussel['substrbf']($Response, ':');
         if ($expiry > $phpMussel['Time']) {
-            $response = $phpMussel['substraf']($response, ':');
+            $Response = $phpMussel['substraf']($Response, ':');
             break;
         }
         $phpMussel['memCache']['urlscanner_google'] =
-            str_ireplace($cacheRef . $response . ';', '', $phpMussel['memCache']['urlscanner_google']);
-        $response = '';
+            str_ireplace($cacheRef . $Response . ';', '', $phpMussel['memCache']['urlscanner_google']);
+        $Response = '';
     }
     /** If this lookup has already been performed, return the results without repeating it. */
-    if ($response) {
+    if ($Response) {
         /** Update the cache entry for Google Safe Browsing. */
         $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
-        if ($response === '200') {
+        if ($Response === '200') {
             /** Potentially harmful URL detected. */
             return 200;
-        } elseif ($response === '204') {
+        } elseif ($Response === '204') {
             /** Potentially harmful URL *NOT* detected. */
             return 204;
-        } elseif ($response === '400') {
+        } elseif ($Response === '400') {
             /** Bad/malformed request. */
             return 400;
-        } elseif ($response === '401') {
+        } elseif ($Response === '401') {
             /** Unauthorised (possibly a bad API key). */
             return 401;
-        } elseif ($response === '503') {
+        } elseif ($Response === '503') {
             /** Service unavailable. */
             return 503;
         }
@@ -1262,39 +1262,39 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
         $phpMussel['Config']['urlscanner']['google_api_key'];
 
     /** cURL stuff here. */
-    $request = curl_init($uri);
-    curl_setopt($request, CURLOPT_FRESH_CONNECT, true);
-    curl_setopt($request, CURLOPT_HEADER, false);
-    curl_setopt($request, CURLOPT_POST, true);
+    $Request = curl_init($uri);
+    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
+    curl_setopt($Request, CURLOPT_HEADER, false);
+    curl_setopt($Request, CURLOPT_POST, true);
     /** Ensure it knows we're sending JSON data. */
-    curl_setopt($request, CURLOPT_HTTPHEADER, ['Content-type: application/json']);
+    curl_setopt($Request, CURLOPT_HTTPHEADER, ['Content-type: application/json']);
     /** The Google Safe Browsing API requires HTTPS+SSL (there's no way around this). */
-    curl_setopt($request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-    curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
     /*
      * Setting "CURLOPT_SSL_VERIFYPEER" to false can be somewhat risky due to man-in-the-middle attacks, but lookups
      * seemed to always fail when it was set to true during testing, so, for the sake of this actually working at all,
      * I'm setting it as false, but we should try to fix this in the future at some point.
      */
-    curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
     /* We don't want to leave the client waiting for *too* long. */
-    curl_setopt($request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
-    curl_setopt($request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
-    curl_setopt($request, CURLOPT_POSTFIELDS, $arr);
+    curl_setopt($Request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
+    curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
+    curl_setopt($Request, CURLOPT_POSTFIELDS, $arr);
 
     /** Execute and get the response. */
-    $response = curl_exec($request);
+    $Response = curl_exec($Request);
     $phpMussel['LookupCount']++;
 
     /** Check for errors and print to the screen if there were any. */
-    if (!$response) {
-        throw new \Exception(curl_error($request));
+    if (!$Response) {
+        throw new \Exception(curl_error($Request));
     }
 
     /** Close the cURL session. */
-    curl_close($request);
+    curl_close($Request);
 
-    if (substr_count($response, '"matches":')) {
+    if (substr_count($Response, '"matches":')) {
         /** Potentially harmful URL detected. */
         $returnVal = 200;
     } else {
@@ -4800,6 +4800,8 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
+
+    /** Prepare signature files for the scan process. */
     if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
         $phpMussel['OrganiseSigFiles']();
         $phpMussel['memCache']['OrganisedSigFiles'] = true;
@@ -5268,9 +5270,19 @@ $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
 
 /** Fetch information about signature files and prepare for use with the scan process. */
 $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
+
+    $LastActive = $phpMussel['FetchCache']('Active') ?: '';
     if (empty($phpMussel['Config']['signatures']['Active'])) {
+        if ($LastActive) {
+            $phpMussel['ClearHashCache']();
+        }
         return false;
     }
+    if ($phpMussel['Config']['signatures']['Active'] !== $LastActive) {
+        $phpMussel['ClearHashCache']();
+        $phpMussel['SaveCache']('Active', -1, $phpMussel['Config']['signatures']['Active']);
+    }
+
     $Classes = [
         'General_Command_Detections',
         'Filename',
@@ -5286,6 +5298,7 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
         'Complex_Extended',
         'URL_Scanner'
     ];
+
     $List = explode(',', $phpMussel['Config']['signatures']['Active']);
     foreach ($List as $File) {
         $Handle = fopen($phpMussel['sigPath'] . $File, 'rb');
@@ -5303,6 +5316,7 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
             $phpMussel['memCache'][$Classes[$Nibbles[0]]] .= $File . ',';
         }
     }
+
 };
 
 /** A simple safety wrapper for unpack. */
@@ -5506,4 +5520,31 @@ $phpMussel['Stats-Initialise'] = function () use (&$phpMussel) {
             $phpMussel['CacheModified'] = true;
         }
     }
+};
+
+/** Clears out the hash cache. */
+$phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
+    $File = $phpMussel['cachePath'] . '48.tmp';
+    $Data = $phpMussel['ReadFile']($File) ?: '';
+    while (strpos($Data, 'HashCache:') !== false) {
+        $Data = str_ireplace('HashCache:' . $phpMussel['substrbf']($phpMussel['substraf']($Data, 'HashCache:'), ';') . ';', '', $Data);
+    }
+    if (strlen($Data) < 2) {
+        unset($File);
+    } else {
+        $Handle = fopen($File, 'w');
+        fwrite($Handle, $Data);
+        fclose($Handle);
+    }
+    $IndexFile = $phpMussel['cachePath'] . 'index.dat';
+    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
+    while (strpos($IndexNewData, 'HashCache:') !== false) {
+        $IndexNewData = str_ireplace('HashCache:' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, 'HashCache:'), ';') . ';', '', $IndexNewData);
+    }
+    if ($IndexNewData !== $IndexData) {
+        $IndexHandle = fopen($IndexFile, 'w');
+        fwrite($IndexHandle, $IndexNewData);
+        fclose($IndexHandle);
+    }
+    return true;
 };
