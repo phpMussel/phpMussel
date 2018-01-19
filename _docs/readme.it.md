@@ -157,11 +157,14 @@ Restituisce qualcosa come (in forma di una stringa):
  Wed, 16 Sep 2013 02:49:47 +0000 Finito.
 ```
 
-Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante le sue scansioni e come le sue gestisce queste firme, fare riferimento alla Firma Formato sezione di questo file README.
+Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante le sue scansioni e come le sue gestisce queste firme, fare riferimento alla [FIRMA FORMATO](#SECTION8) sezione di questo file README.
 
 Se si incontrano qualsiasi falsi positivi, se si incontrano qualcosa nuova che si pensa dovrebbe essere bloccato, o per qualsiasi altri scopi o materia a riguardo delle firme, si prega di contattare me a riguardo esso così che io possa apportare le necessarie modifiche, di cui, se si non contatto me, io non necessariamente essere consapevole ne. *(Vedere: [Che cosa è un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi positivi specifico alle vostri scopi di cui non dovrebbero normalmente essere rimosso dalla mainline), fare riferimento alle note per greylisting all'interno della GESTIONE FRONT-END sezione di questo file README.
+
+*Guarda anche:*
+- *[Come accedere a dettagli specifici sui file quando vengono scansionati?](#SCAN_DEBUGGING)*
 
 #### 3.1 COME USARE (PER CLI)
 
@@ -805,7 +808,7 @@ Valore | Utilizzando
 *Definito dalla configurazione del server.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Nessun proxy inverso (valore predefinito).
 
-#### Come accedere a dettagli specifici sui file quando vengono scansionati?
+#### <a name="SCAN_DEBUGGING"></a>Come accedere a dettagli specifici sui file quando vengono scansionati?
 
 È possibile accedere a dettagli specifici sui file quando vengono scansionati da assegnando un'array da utilizzare a tale scopo prima di istruire phpMussel per eseguire la scansione.
 

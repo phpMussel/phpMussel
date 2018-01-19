@@ -157,11 +157,14 @@ Retours quelque chose comme ça (comme une string) :
  Wed, 16 Sep 2013 02:49:47 +0000 Terminé.
 ```
 
-Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour l'analyse et la façon dont il gère ces signatures, référer à la Signature Format section de ce fichier README.
+Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour l'analyse et la façon dont il gère ces signatures, référer à la [SIGNATURE FORMAT](#SECTION8) section de ce fichier README.
 
 Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau que vous pensez doit être bloqué, ou pour toute autre chose en ce qui concerne les signatures, s'il vous plaît, contactez moi à ce sujet afin que je puisse effectuer les nécessaires changements, dont, si vous ne contactez moi pas, j'ai peut n'être pas conscient. *(Voir : [Qu'est-ce qu'un « faux positif » ?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans la GESTION L'ACCÈS FRONTAL section de ce fichier README.
+
+*Voir également :*
+- *[Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)*
 
 #### 3.1 COMMENT UTILISER (POUR CLI)
 
@@ -805,7 +808,7 @@ Valeur | En utilisant
 *Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
-#### Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?
+#### <a name="SCAN_DEBUGGING"></a>Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?
 
 Vous pouvez accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés en attribuant un tableau à utiliser à cet effet avant de demander à phpMussel de les analyser.
 

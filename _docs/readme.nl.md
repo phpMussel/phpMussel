@@ -157,11 +157,14 @@ Retourneren iets als dit (als een string):
  Wed, 16 Sep 2013 02:49:47 +0000 Afgewerkt.
 ```
 
-Voor een volledige beschrijving van de soorten van de signatures gebruikt door phpMussel tijdens de scans en hoe het omgaat met deze signatures, raadpleeg de Signature Formaat sectie van dit README bestand.
+Voor een volledige beschrijving van de soorten van de signatures gebruikt door phpMussel tijdens de scans en hoe het omgaat met deze signatures, raadpleeg de [SIGNATURE FORMAAT](#SECTION8) sectie van dit README bestand.
 
 Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking tot signatures, neem dan contact met mij over het zo dat ik de noodzakelijke veranderingen kunnen maken, die, als u niet contact met mij over, ik zou niet per se bewust van. *(Zien: [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Voor uitschakelen om de signatures die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de FRONTEND MANAGEMENT sectie van dit README bestand.
+
+*Zie ook:*
+- *[Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?](#SCAN_DEBUGGING)*
 
 #### 3.1 HOE TE GEBRUIKEN (VOOR CLI)
 
@@ -805,7 +808,7 @@ Waarde | Gebruik makend van
 *Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
 
-#### Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?
+#### <a name="SCAN_DEBUGGING"></a>Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?
 
 U kunt toegang krijgen tot specifieke gegevens over bestanden als ze worden gescand door een array toe te wijzen om hiervoor te gebruiken voordat u phpMussel instructeert om ze te scannen.
 

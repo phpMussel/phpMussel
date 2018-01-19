@@ -157,11 +157,14 @@ Devuelve algo como esto (como una cadena):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 ```
 
-Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección formatos de firmas de este archivo README.
+Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección [FORMATOS DE FIRMAS](#SECTION8) de este archivo README.
 
 Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta. *(Ver: [¿Qué es un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
+
+*Ver también:*
+- *[¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)*
 
 #### 3.1 CÓMO USAR (PARA CLI)
 
@@ -805,7 +808,7 @@ Valor | Utilizando
 *Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
 
-#### ¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?
+#### <a name="SCAN_DEBUGGING"></a>¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?
 
 Puede acceder a detalles específicos sobre los archivos cuando se analizan por medio de asignando una matriz para utilizarla con este fin antes de instruir a phpMussel para que los escanee.
 

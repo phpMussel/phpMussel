@@ -157,11 +157,14 @@ Trả về một cái gì đó như thế này (như một string):
  Wed, 16 Sep 2013 02:49:47 +0000 Hoàn thành.
 ```
 
-Đối với một phân tích đầy đủ những gì sắp xếp của chữ ký phpMussel sử dụng trong quá trình quét của nó và cách nó xử lý chữ ký của nó, tham khảo các phần Định Dạng Của Chử Ký của tập tin README này.
+Đối với một phân tích đầy đủ những gì sắp xếp của chữ ký phpMussel sử dụng trong quá trình quét của nó và cách nó xử lý chữ ký của nó, tham khảo các phần [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION8) của tập tin README này.
 
 Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số điều mới bạn nghĩ rằng nên bị chặn, hay cho bất cứ điều gì khác có liên quan đến chữ ký, xin vui lòng liên hệ với tôi vì vậy mà tôi có thể thực hiện các thay đổi cần thiết, mà, nếu bạn không liên hệ với tôi, tôi có thể không nhất thiết phải nhận thức được. *(Xem: ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần QUẢN LÝ FRONT-END của tập tin README này.
+
+*Xem thêm:*
+- *[Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)*
 
 #### 3.1 CÁCH SỬ DỤNG (CHO CLI)
 
@@ -805,7 +808,7 @@ Giá trị | Sử dụng
 *Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
 
-#### Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?
+#### <a name="SCAN_DEBUGGING"></a>Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?
 
 Bạn có thể truy cập chi tiết cụ thể về các tập tin khi chúng được quét bằng cách gán một mảng để sử dụng cho mục đích này trước khi hướng dẫn phpMussel để quét chúng.
 

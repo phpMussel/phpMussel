@@ -157,11 +157,14 @@ Returns something like this (as a string):
  Wed, 16 Sep 2013 02:49:47 +0000 Finished.
 ```
 
-For a full break-down of what sort of signatures phpMussel uses during its scans and how it handles these signatures, refer to the Signature Format section of this README file.
+For a full break-down of what sort of signatures phpMussel uses during its scans and how it handles these signatures, refer to the [SIGNATURE FORMAT](#SECTION8) section of this README file.
 
 If you encounter any false positives, if you encounter something new that you think should be blocked, or for anything else regarding signatures, please contact me about it so that I may make the necessary changes, which, if you do not contact me, I may not necessarily be aware of. *(See: [What is a "false positive"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), refer to the Greylisting notes within the FRONT-END MANAGEMENT section of this README file.
+
+*See also:*
+- *[How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)*
 
 #### 3.1 HOW TO USE (FOR CLI)
 
@@ -805,7 +808,7 @@ Value | Using
 *Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | No reverse proxy (default value).
 
-#### How to access specific details about files when they are scanned?
+#### <a name="SCAN_DEBUGGING"></a>How to access specific details about files when they are scanned?
 
 You can access specific details about files when they are scanned by assigning an array to use for this purpose prior to instructing phpMussel to scan them.
 

@@ -157,11 +157,14 @@ Retorna algo tal como esta (como uma string):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 ```
 
-Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a formatos de assinaturas seção deste arquivo README.
+Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a [FORMATOS DE ASSINATURAS](#SECTION8) seção deste arquivo README.
 
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de. *(Vejo: [O que é um "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
+
+*Veja também:*
+- *[Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)*
 
 #### 3.1 COMO USAR (PARA CLI)
 
@@ -805,7 +808,7 @@ Valor | Usando
 *Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
 
-#### Como acessar detalhes específicos sobre os arquivos quando eles são analisados?
+#### <a name="SCAN_DEBUGGING"></a>Como acessar detalhes específicos sobre os arquivos quando eles são analisados?
 
 Você pode acessar detalhes específicos sobre arquivos quando eles são analisados, atribuindo uma matriz para usar para esse propósito antes de instruir o phpMussel para analisá-los.
 

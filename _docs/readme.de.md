@@ -157,11 +157,14 @@ Gibt so etwas wie dies (als ein String):
  Wed, 16 Sep 2013 02:49:47 +0000 Fertig.
 ```
 
-Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verarbeitet werden, finden Sie im Abschnitt SIGNATURENFORMAT.
+Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verarbeitet werden, finden Sie im Abschnitt [SIGNATURENFORMAT](#SECTION8).
 
 Sollten irgendwelche Fehlalarme (oder "Falsch-Positivs") auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
+
+*Siehe auch:*
+- *[Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)*
 
 #### 3.1 BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
@@ -805,7 +808,7 @@ Wert | Verwenden
 *Definiert durch Server-Konfiguration.* | [Nginx Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Kein Reverse Proxy (Standardwert).
 
-#### Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?
+#### <a name="SCAN_DEBUGGING"></a>Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?
 
 Sie können auf spezifische Details über Dateien zugreifen, wenn sie gescannt werden, indem Sie ein Array zuweisen, das zu diesem Zweck verwendet werden soll, bevor Sie phpMussel anweisen, sie zu scannen.
 
