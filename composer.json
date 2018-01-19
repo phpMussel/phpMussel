@@ -3,7 +3,7 @@
     "description": "PHP-based anti-virus anti-trojan anti-malware solution.",
     "keywords": ["anti-virus","anti-trojan","anti-malware","anti-exploit","anti-spam","antivirus","uploads","security","protection"],
     "homepage": "https://phpmussel.github.io/",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "support": {
         "issues": "https://github.com/phpMussel/phpMussel/issues",
         "forum": "http://www.spambotsecurity.com/forum/viewforum.php?f=55",
