@@ -163,8 +163,7 @@ Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que 
 
 Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
 
-*Veja também:*
-- *[Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)*
+*Veja também: [Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)*
 
 #### 3.1 COMO USAR (PARA CLI)
 
@@ -877,4 +876,4 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 ---
 
 
-Última Atualização: 13 Janeiro 2018 (2018.01.13).
+Última Atualização: 20 Janeiro 2018 (2018.01.20).

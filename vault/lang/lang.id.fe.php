@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.12.06).
+ * This file: Indonesian language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Daftar Abu-Abu:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Jika sistem Anda hanya mengizinkan tipe file spesifik menjadi diupload, atau jika sistem Anda secara eksplisit menolak tipe file-file tertentu, menspesifikasikan tipe file dalam bertanda putih, bertanda hitam dan bertanda abu-abu dapat menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip untuk mengabaikan tipe file tertentu. Format adalah CSV (comma separated values). Jika Anda ingin memindai semuanya, daripada daftar putih, daftar hitam atau daftar abu-abu, tinggalkan variabel kosong; Melakukannya akan menonaktifkan dafter putih/hitam/abu-abu. Urutan logis dari pengolahan: Jika tipe file bertanda putih, tidak memindai dan tidak memblokir file, dan tidak memeriksa file terhadap daftar hitam atau daftar abu-abu. Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu. Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun. Daftar Putih:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Batas kedalaman rekursi maksimum untuk arsip. Default = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Maksimum jumla file-file yang diizinkan untuk dipindai selama pemindaian upload file sebelum menghentikan pemindaian dan menginformasikan pengguna bahwa pengguna mengupload terlalu banyak! Menyediakan perlindungan pada serangan teoritis dimana penyerang mencoba DDoS pada sistem Anda atau CMS ada dengan overloading phpMussel supaya berjalan lambat. Proses PHP ke penghentian keras. Recommendasi: 10. Anda dapat menaikkan atau menurunkan angka ini bergantung dari kecepatan hardware Anda. Catat itu nomor ini tidak mengakuntabilitas atau mengikutkan konten dari file terkompres.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $phpMussel['lang']['config_general_cleanup'] = 'Membersihkan variabel skrip dan cache setelah eksekusi? False = Tidak; True = Ya [Default]. Jika Anda tidak menggukan skrip di bawah pemindaian upload inisial, harus diset ke <code>true</code> (ya) untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk tujuan di bawah pemindaian upload inisial, harus diset ke <code>false</code> (tidak), untuk menghindari reload duplikat file ke memori. Dalam praktek umum, haru diset ke <code>true</code>, tapi jika kamu melakukannya, kamu tidak bisa menggunakan skrip untuk hal lain kecuali pemindaian upload file. Tidak memiliki pengaruh di dalam mode CLI.';
 $phpMussel['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP >= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus file apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali file yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload file biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus file terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan disini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak selalu bersikap pada perilaku yang diharapkan. False = Setelah pemindahaian, biarkan file [Default]; True = Setelah pemindaian, jika tidak bersih, hapus langsung.';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bag
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya; False = Tidak [Default].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Mengaktifkan dukungan untuk plugin phpMussel? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload file yang terblok, atau cocok dengan 200 OK? False = Tidak (200); True = Ya (403) [Default].';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Bila modus honeypot diaktifkan, phpMussel akan mencoba untuk karantina setiap file upload yang dia menemui, terlepas dari apakah atau tidak file yang di-upload cocok dengan tanda tangan yang disertakan, dan tidak ada pemindaian aktual atau analisis dari upload file akan terjadi. Fungsi ini akan berguna bagi mereka yang ingin menggunakan phpMussel untuk tujuan virus/malware penelitian, tapi tidak direkomendasikan untuk mengaktifkan fungsi ini jika tujuan penggunaan dari phpMussel oleh pengguna adalah bagi aktual upload file pemindaian dan juga tidak direkomendasikan untuk menggunakan fungsi honeypot untuk tujuan selain bagi honeypot. Biasanya, opsi ini dinonaktifkan. False = Dinonaktifkan [Default]; True = Diaktifkan.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $phpMussel['lang']['config_general_lang'] = 'Tentukan bahasa default untuk phpMussel.';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Harus phpMussel menggu
 $phpMussel['lang']['config_signatures_detect_shell'] = 'Harus phpMussel menggunakan tanda tangan untuk mendeteksi skrip shell? False = Tidak; True = Ya [Default].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Seharusnya laporan phpMussel ketika ekstensi hilang? Jika <code>fail_extensions_silently</code> dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_extensions_silently</code> diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika <code>fail_silently</code> dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_silently</code> diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].';
-$phpMussel['lang']['config_template_data_css_url'] = 'File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.';
 $phpMussel['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
+$phpMussel['lang']['config_template_data_css_url'] = 'File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.';
 $phpMussel['lang']['config_template_data_theme'] = 'Tema default untuk phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan.';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Menurut Virus Total dok
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Lihat uraian di atas).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Secara default, phpMussel akan membatasi file dipindai menggunakan Virus Total API untuk file-file yang dianggap "mencurigakan". Anda dapat menyesuaikan pembatasan ini dengan mengubah nilai direktif <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Apakah Anda ingin phpMussel menerapkan hasil pemindaian menggunakan Virus Total API sebagai deteksi atau deteksi pembobotan? Direktif ini ada, karena, meskipun memindai file menggunakan mesin-mesin kelipatan (sebagai Virus Total melakukannya) harus menghasilkan tingkat deteksi meningkat (dan demikian lebih banyak file berbahaya tertangkap), juga dapat menghasilkan jumlah yang lebih banyak dari positif palsu, dan demikian, dalam kondisi beberapa, hasil pemindaian dapat digunakan lebih efektif sebagai nilai keyakinan daripada daripada sebagai kesimpulan definitif. Jika nilai 0 digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai pendeteksian, dan demikian, jika mesin-mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya, phpMussel akan menganggap file yang berbahaya. Jika nilai lain yang digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai deteksi pembobotan, dan demikian, jumlah mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya akan berfungsi sebagai nilai keyakinan (atau deteksi pembobotan) untuk jika file dipindai harus dianggap berbahaya oleh phpMussel (nilai digunakan akan mewakili nilai keyakinan minimum atau pembobotan minimum diperlukan untuk dianggap berbahaya). Nilai 0 digunakan secara default.';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $phpMussel['lang']['field_activate'] = 'Mengaktifkan';
 $phpMussel['lang']['field_clear_all'] = 'Cabut semua';
 $phpMussel['lang']['field_component'] = 'Komponen';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'Mengatur Kembali';
 $phpMussel['lang']['field_restore_file'] = 'Memulihkan';
 $phpMussel['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
 $phpMussel['lang']['field_size'] = 'Ukuran Total: ';
-$phpMussel['lang']['field_size_bytes'] = 'byte';
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = 'byte';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem.';
 $phpMussel['lang']['field_true'] = 'True (Benar)';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhan
 $phpMussel['lang']['link_updates'] = 'Pembaruan';
 $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak.';
 $phpMussel['lang']['previewer_days'] = 'Hari';
 $phpMussel['lang']['previewer_hours'] = 'Jam';

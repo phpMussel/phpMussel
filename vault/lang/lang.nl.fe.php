@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.12.06).
+ * This file: Dutch language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'De primaire pakket (zonder de handtekeningen, documentatie en configuratie).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Greylist:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Als uw systeem vergunningen alleen specifieke bestandstypen te uploaden, of als uw systeem expliciet ontkent bepaalde bestandstypen, specificeren deze bestandstypen in whitelists, blacklists en greylists kunt toenemen de snelheid waarin scannen is uitgevoerd via vergunningen het script te negeren bepaalde bestandstypen. Formaat is CSV (komma\'s gescheiden waarden). Als u wilt te scannen alles, eerder dan whitelist, blacklist of greylist, laat de variabele(/n) leeg; doen zo zal uitschakelen whitelist/blacklist/greylist. Logische volgorde van de verwerking is: Als het bestandstype is op de whitelist, niet scannen en niet blokkeren het bestand, en niet controleer het bestand tegen de blacklist of de greylist. Als het bestandstype is op de blacklist, niet scannen het bestand maar blokkeren het niettemin, en niet controleer het bestand tegen de greylist. Als de greylist is leeg of als de greylist is niet leeg en het bestandstype is op de greylist, scannen het bestand als per normaal en bepalen als om het gebaseerd op de resultaten van de scan te blokkeren, maar als de greylist is niet leeg en het bestandstype is niet op de greylist, behandel het bestand alsof op de blacklist, dus om het niet te scannen, maar toch blokkeren het niettemin. Whitelist:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Maximale recursiediepte limiet voor archieven. Standaard = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Maximaal toegestane aantal bestanden te scannen tijdens bestandsupload scan voordat aborteren de scan en informeren de gebruiker ze zijn uploaden van te veel in een keer! Biedt bescherming tegen een theoretische aanval waardoor een aanvaller probeert te DDoS uw systeem of CMS door overbelasting phpMussel te vertragen het PHP proces tot stilstand. Aanbevolen: 10. U zou kunnen wil te verhogen of verlagen dit nummer afhankelijk van de snelheid van uw hardware. Noteren dat dit aantal niet verklaren voor of opnemen de inhoud van de archieven.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $phpMussel['lang']['config_general_cleanup'] = 'Vrijmaken script variabelen en de cache na de uitvoering? False = Nee; True = Ja [Standaard]. Als u niet gebruik het script na de eerste scan van upload, moet zetten op <code>true</code> (ja), om minimaliseren de geheugengebruik. Als u gebruik het script voor de doeleinden na de eerste scan van upload, moet zetten op <code>false</code> (nee), om te voorkomen dat onnodig herladen dubbele gegevens in het geheugen. In de huisartspraktijk, moet waarschijnlijk worden zetten op <code>true</code> (ja), maar, als u dit doet, het zal niet mogelijk zijn om het script te gebruiken voor iets anders dan het scannen van bestand uploaden. Heeft geen invloed in CLI-modus.';
 $phpMussel['lang']['config_general_default_algo'] = 'Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP >= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Het inschakelen van dit richtlijn zal instrueren het script om elke gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie criteria te proberen onmiddellijk verwijderen, via signatures of anderszins. Bestanden vastbesloten te zijn schoon zal niet worden aangeraakt. In het geval van archieven, het hele archief wordt verwijderd, ongeacht of niet het overtredende bestand is slechts één van meerdere bestanden vervat in het archief. Voor het geval van bestand upload scannen, doorgaans, het is niet nodig om dit richtlijn te inschakelen, omdat doorgaans, PHP zal automatisch zuiveren de inhoud van zijn cache wanneer de uitvoering is voltooid, wat betekent dat het doorgans zal verwijdert ieder bestanden geüpload doorheen aan de server tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn is toegevoegd hier als een extra maatregel van veiligheid voor degenen wier kopies van PHP misschien niet altijd gedragen op de manier verwacht. False = Na het scannen, met rust laten het bestand [Standaard]; True = Na het scannen, als niet schoon, onmiddellijk verwijderen.';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend t
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja; False = Nee [Standaard].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Activeer ondersteuning voor phpMussel plugins? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Moet phpMussel reageren met 403 headers met het bestanden upload geblokkeerd bericht, of blijven met de gebruikelijke 200 OK? False = Nee (200); True = Ja (403) [Standaard].';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Wanneer honeypot-modus is ingeschakeld, phpMussel zal proberen om ieder bestandsupload dat het tegenkomt in quarantaine plaatsen, ongeacht of niet het bestand wordt geüpload is gecontroleerd tegen een meegeleverde signatures, en geen daadwerkelijke scannen of analyse van deze gevlagd geprobeerd bestandsuploads zal daadwerkelijk optreedt. Dit functionaliteit moet nuttig zijn voor degenen dat willen gebruik phpMussel voor de toepassing van virus/malware onderzoek, maar het is niet aanbevolen om dit functionaliteit te inschakelen wanneer het beoogde gebruik van phpMussel door de gebruiker is voor werkelijke bestandsupload scannen, noch aanbevolen te gebruik de honeypot functionaliteit voor andere doeleinden andere dan honeypotting. Als standaard, dit optie is uitgeschakeld. False = Uitgeschakeld [Standaard]; True = Ingeschakeld.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
 $phpMussel['lang']['config_general_lang'] = 'Geef de standaardtaal voor phpMussel.';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Moet phpMussel verwerk
 $phpMussel['lang']['config_signatures_detect_shell'] = 'Moet phpMussel verwerken signatures voor het detecteren van shell scripts? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als <code>fail_extensions_silently</code> is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als <code>fail_extensions_silently</code> is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als <code>fail_silently</code> is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als <code>fail_silently</code> is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].';
-$phpMussel['lang']['config_template_data_css_url'] = 'De sjabloonbestand voor aangepaste thema\'s maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema\'s te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema\'s CSS-bestanden via de <code>css_url</code> variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.';
 $phpMussel['lang']['config_template_data_Magnification'] = 'Lettergrootte vergroting. Standaard = 1.';
+$phpMussel['lang']['config_template_data_css_url'] = 'De sjabloonbestand voor aangepaste thema\'s maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema\'s te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema\'s CSS-bestanden via de <code>css_url</code> variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.';
 $phpMussel['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Hoe lang (in seconden) moeten de resultaten van de API verzoeken worden gecached voor? Standaard is 3600 seconden (1 uur).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Inschakelt gebruik van de Google Safe Browsing API wanneer de noodzakelijke API sleutel wordt gedefinieerd.';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Volgens de Virus Total 
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Zie bovenstaande beschrijving).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Normaal, phpMussel zal beperken welke bestanden scant met behulp van de Virus Total API om het bestanden die zijn beschouwd "achterdochtig". Optioneel, u kan dit beperking aan te passen door de waarde van het <code>vt_suspicion_level</code> richtlijn.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Moeten phpMussel de resultaten van het scannen met behulp van de Virus Total API toe te passen als detecties of detectie weging? Dit richtlijn bestaat, omdat, hoewel het scannen van een bestand met behulp van meerdere motoren (als Virus Total doet) moet leiden tot een verhoogde aantal van detecties (en dus in een hoger aantal van kwaadaardige bestanden worden gedetecteerd), het kan ook resulteren in een hoger aantal van valse positieven, en daarom, in sommige gevallen, de resultaten van de scan kan beter worden benut als betrouwbaarheidsscore eerder dan als een definitieve conclusie. Als een waarde van 0 wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detecties, en zo, als een motor gebruikt door Virus Total vlaggen het bestand wordt gescand als kwaadaardige, phpMussel zal het bestand overwegen kwaadaardig te zijn. Als een andere waarde wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detectie weging, en zo, het aantal van motoren gebruikt door Virus Total dat vlag het bestand wordt gescand als kwaadaardige zal dienen als een betrouwbaarheidsscore (of detectie weging) voor of het bestand dat wordt gescand moet worden beschouwd als kwaadaardige door phpMussel (de waarde die wordt gebruikt zal vertegenwoordigen de minimale betrouwbaarheidsscore of weging vereist om kwaadaardige te worden beschouwd). Een waarde van 0 wordt standaard gebruikt.';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'De primaire pakket (zonder de handtekeningen, documentatie en configuratie).';
 $phpMussel['lang']['field_activate'] = 'Activeren';
 $phpMussel['lang']['field_clear_all'] = 'Annuleer alles';
 $phpMussel['lang']['field_component'] = 'Component';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'Resetten';
 $phpMussel['lang']['field_restore_file'] = 'Herstellen';
 $phpMussel['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $phpMussel['lang']['field_size'] = 'Totale Grootte: ';
-$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_status'] = 'Toestand';
 $phpMussel['lang']['field_system_timezone'] = 'Gebruik de systeem standaard tijdzone.';
 $phpMussel['lang']['field_true'] = 'True (Waar)';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'Tekstformaat: <a href="%1$sfalse">Eenvoud
 $phpMussel['lang']['link_updates'] = 'Updates';
 $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Geen logbestand geselecteerd.';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximum aantal inlogpogingen overschreden; Toegang geweigerd.';
 $phpMussel['lang']['previewer_days'] = 'Dagen';
 $phpMussel['lang']['previewer_hours'] = 'Uur';

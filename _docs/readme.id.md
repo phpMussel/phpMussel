@@ -163,8 +163,7 @@ Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru ya
 
 Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu di dalam MANAJEMEN BAGIAN DEPAN dari file README.
 
-*Lihat juga:*
-- *[Bagaimana cara mengakses rincian spesifik tentang file saat dipindai?](#SCAN_DEBUGGING)*
+*Lihat juga: [Bagaimana cara mengakses rincian spesifik tentang file saat dipindai?](#SCAN_DEBUGGING)*
 
 #### 3.1 BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
 
@@ -877,4 +876,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 13 Januari 2018 (2018.01.13).
+Terakhir Diperbarui: 20 Januari 2018 (2018.01.20).

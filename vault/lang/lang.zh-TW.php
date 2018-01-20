@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.10.15).
+ * This file: Chinese (traditional) language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = '可能有害的URL檢測';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API請求錯誤';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API授權錯誤';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API服務不可用';
+$phpMussel['lang']['SafeBrowseLookup_999'] = '未知API錯誤';
+$phpMussel['lang']['_exclamation'] = '！';
+$phpMussel['lang']['_exclamation_final'] = '！';
+$phpMussel['lang']['_fullstop'] = '。';
+$phpMussel['lang']['_fullstop_final'] = '。';
 $phpMussel['lang']['bad_command'] = '我不明白的命令，​對不起。';
 $phpMussel['lang']['cli_failed_to_complete'] = '完成掃描過程失敗';
 $phpMussel['lang']['cli_is_not_a'] = '不是文件或文件夾。';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = '插件文件夾不存在�
 $phpMussel['lang']['quarantined_as'] = "隔離為『/vault/quarantine/{QFU}.qfu』。\n";
 $phpMussel['lang']['recursive'] = '遞歸深度超過是限制';
 $phpMussel['lang']['required_variables_not_defined'] = '需要的變量是未定義：無法繼續。';
-$phpMussel['lang']['SafeBrowseLookup_200'] = '可能有害的URL檢測';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API請求錯誤';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API授權錯誤';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API服務不可用';
-$phpMussel['lang']['SafeBrowseLookup_999'] = '未知API錯誤';
 $phpMussel['lang']['scan_aborted'] = '掃描中止！';
 $phpMussel['lang']['scan_chameleon'] = '{x}变色龙攻击检测';
 $phpMussel['lang']['scan_checking'] = '檢查';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = '完成';
 $phpMussel['lang']['scan_extensions_missing'] = '失败（失踪必需的扩展）！';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = '文件名操控檢測';
 $phpMussel['lang']['scan_missing_filename'] = '文件名是失踪';
-$phpMussel['lang']['scan_not_archive'] = '失敗（空或不是存檔）！';
 $phpMussel['lang']['scan_no_problems_found'] = '沒有任何問題發現。';
+$phpMussel['lang']['scan_not_archive'] = '失敗（空或不是存檔）！';
 $phpMussel['lang']['scan_reading'] = '閱讀';
 $phpMussel['lang']['scan_signature_file_corrupted'] = '簽名文件是損壞';
 $phpMussel['lang']['scan_signature_file_missing'] = '簽名文件是失踪';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP配置錯誤是檢測！​請聯繫�
 $phpMussel['lang']['upload_limit_exceeded'] = '超過上傳限制';
 $phpMussel['lang']['wrong_password'] = '密碼錯誤；行動拒絕。';
 $phpMussel['lang']['x_does_not_exist'] = '不存在';
-$phpMussel['lang']['_exclamation'] = '！';
-$phpMussel['lang']['_exclamation_final'] = '！';
-$phpMussel['lang']['_fullstop'] = '。';
-$phpMussel['lang']['_fullstop_final'] = '。';
 
 $phpMussel['lang']['cli_commands'] = " q
  - 戒菸CLI模式。

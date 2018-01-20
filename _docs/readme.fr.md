@@ -163,8 +163,7 @@ Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau q
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans la GESTION L'ACCÈS FRONTAL section de ce fichier README.
 
-*Voir également :*
-- *[Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)*
+*Voir également : [Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)*
 
 #### 3.1 COMMENT UTILISER (POUR CLI)
 
@@ -877,4 +876,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 13 Janvier 2018 (2018.01.13).
+Dernière mise à jour : 20 Janvier 2018 (2018.01.20).

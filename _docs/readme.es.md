@@ -163,8 +163,7 @@ Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que cree
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
 
-*Ver también:*
-- *[¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)*
+*Ver también: [¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)*
 
 #### 3.1 CÓMO USAR (PARA CLI)
 
@@ -877,4 +876,4 @@ Sí. Una API está integrada en el front-end para interactuar con la página de 
 ---
 
 
-Última Actualización: 13 Enero 2018 (2018.01.13).
+Última Actualización: 20 Enero 2018 (2018.01.20).

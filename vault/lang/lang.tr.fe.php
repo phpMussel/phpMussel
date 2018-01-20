@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.12.06).
+ * This file: Turkish language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Gri liste:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Sisteminiz yalnızca belirli dosya türlerinin yüklenmesine izin veriyorsa, veya sisteminiz belli dosya türlerini açıkça reddetiyorsa, bu dosya türlerini beyaz listelerde, kara listelerde ve gri listelerde belirtmek taramanın hızını artırabilir, komut dosyası belirli dosya türlerini atlamak için izin vererek. Biçim CSV (virgülle ayrılmış değerler). Her şeyi taramak istiyorsanız, bu değişkenleri boş bırakın; Bunu yapmak beyaz/kara/gri listeyi devre dışı bırakır. İşlem mantığı şu şekildedir: Dosya türü beyaz listede bulunuyorsa, dosyayı taramayın ve engellemeyin ve dosyayı kara listeye veya gri listeye karşı kontrol etmeyin. Dosya türü kara listede bulunuyorsa, dosyayı taramayın, ancak yine de engelleyin ve dosyayı gri liste karşı kontrol etmeyin. Gri liste boşsa, ya da gri liste boş değilse ve dosya türü gri listede bulunuyorsa, dosyayı normal göre tara ve taramanın sonuçlarına dayanarak engelleyip engellemeyeceğini belirleme, ancak gri liste boş değilse ve dosya türü gri listede değil, dosyayı kara listede olduğu gibi davranın, bu nedenle tarama değil, yine de engelleme. Beyaz liste:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Arşivler için maksimum özyineleme derinliği sınırı. Varsayılan = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Yükleme taraması sırasında taranacak maksimum dosya sayısı. Bu sayıyı aşmak taramayı durduracak ve kullanıcıya çok fazla yükleme yaptıkları bildirilecektir! Sisteminizi veya CMS\'nizi DDoS girişiminde bulunduran teorik bir saldırıya karşı koruma sağlar. Tavsiye edilen: 10. Donanımınızın hızına bağlı olarak bu sayıyı yükseltebilir veya azaltabilirsiniz. Bu numaranın arşiv içeriğini hesaba katmadığını unutmayın.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $phpMussel['lang']['config_general_cleanup'] = 'İlk yükleme taramasından sonra komut dosyası tarafından kullanılan değişkenleri ve önbellek ayarını kaldırın mı? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan]. Yüklemeleri taramak için yalnızca betiği kullanıyorsanız, bunu <code>true</code> (evet) olarak ayarlamanız gerekir, bellek kullanımını en aza indirgemek için. Senaryoyu başka şeyler için kullanıyorsanız, onu <code>false</code> (hayır) olarak ayarlamanız, yinelenen verilerin belleğe yeniden yüklenmesini önlemek için. Genel uygulamada genellikle <code>true</code> olarak ayarlanmalıdır, ancak bunu yaparsanız, betiği dosya yüklemelerini taramaktan başka bir şey için kullanamazsınız. CLI modunda hiçbir etkisi yoktur.';
 $phpMussel['lang']['config_general_default_algo'] = 'Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 gerektirir).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Bu yönergeyi etkinleştirmek, komut dosyasına, imzalar yoluyla veya başka şekilde herhangi bir algılama ölçütüyle eşleşen tüm taranan yüklemeleri derhal silmesini söyleyecektir. Temiz olduğu düşünülen dosyalara dokunulmaz. Arşiv durumunda tüm arşiv silinir. Dosya yükleme taraması için, genellikle bu yönergeyi etkinleştirmek gerekli değildir, çünkü genellikle yürütme tamamlandığında PHP otomatik olarak önbellek içeriğini temizleyecektir (yükleme nedeniyle geçici olarak saklanan dosyaları sileceğini belirtir). Bu yönerge, burada PHP\'nin kopyaları her zaman beklendiği gibi davranmayanlar için ek bir güvenlik tedbiri olarak eklenmiştir. Yanlış/False = Taramadan sonra, dosyayı yalnız bırakın [Varsayılan]; Doğru/True = Taramadan sonra, temiz değilse hemen silin.';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devr
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'phpMussel eklentileri için desteği etkinleştirilsin mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel, dosya yüklemesi engellenen mesajla birlikte hangi başlıkları göndermelidir? Yanlış/False = 200 OK (Tamam); Doğru/True = 403 Forbidden (Yasak) [Varsayılan].';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Honeypot modu etkinleştirildiğinde, phpMussel karşılaştığı her dosya yüklemesini karantinaya almaya çalışacaktır, dahil olan imzalardan herhangi biriyle eşleşip eşleşmediğine bakılmaksızın, ve aslında hiçbir tarama ya da analiz yapılmayacaktır. Bu işlevsellik, kötücül yazılım araştırması için yararlı olmalıdır, ancak normal şartlar altında bu işlevselliği etkinleştirmeniz önerilmez. Varsayılan olarak, bu seçenek devre dışıdır. Yanlış/False = Devre dışı [Varsayılan]; Doğru/True = Etkinleştirildi.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $phpMussel['lang']['config_general_lang'] = 'phpMussel için varsayılan dili belirleyin.';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel PU(A/P)\'lar
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel kabuk komut dosyalarını algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Uzantılar eksik olduğunda phpMussel raporlamalı mı? <code>fail_extensions_silently</code> devre dışı bırakılırsa, eksik uzantılar tarama sırasında raporlanacak, ve <code>fail_extensions_silently</code> etkinleştirilmişse, eksik uzantılar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Bu yönergenin devre dışı bırakılması, potansiyel olarak güvenliğinizi artırabilir, ancak yanlış pozitifliklerin artmasına neden olabilir. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'İmzalar dosyaları eksik veya bozuk olduğunda phpMussel raporlamalı mı? <code>fail_silently</code> devre dışı bırakılırsa, eksik veya bozuk dosyalar tarama sırasında rapor edilecektir, ve <code>fail_silently</code> etkinleştirilmişse, eksik ve bozuk dosyalar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Sorun yaşamadığınız sürece bu yalnız bırakılmalıdır. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan].';
-$phpMussel['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $phpMussel['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. Varsayılan = 1.';
+$phpMussel['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $phpMussel['lang']['config_template_data_theme'] = 'phpMussel için kullanılacak varsayılan tema.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'API aramalarının sonuçları ne kadar süreyle (saniye olarak) önbelleğe alınır? Varsayılan değer 3600 saniyedir (1 saat).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Gerekli API anahtarı tanımlandığında Google Güvenli Tarama API\'sı için API aramalarını etkinleştirir.';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total API doküma
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Yukarıdaki açıklamaya bakın).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Varsayılan olarak, phpMussel, "şüpheli" olarak gördüğü dosyalara Virus Total API\'sını kullanarak taradığı dosyaları sınırlar. Bu sınırlamayı, <code>vt_suspicion_level</code> yönergesinin değerini değiştirerek ayarlayabilirsiniz.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Virus Total API tarama sonuçları algılar mı yoksa algılama ağırlığı olarak mı uygulanmalıdır? Bir dosyayı birden çok motor kullanarak tarama yapmak (Virus Total\'in yaptığı gibi) artan algılama hızıyla sonuçlanmalıdır (ve dolayısıyla daha çok sayıda kötü amaçlı dosyanın yakalanmasıyla), ancak daha fazla yanlış pozitif sayıya neden olabilir, ve bu nedenle, bazı durumlarda, tarama sonuçları kesin bir sonuç olmaktan çok bir güven puanı olarak daha iyi kullanılabilir; Bu nedenle bu direktifin mevcut olması. 0 değeri kullanılırsa, Virus Total API tarama sonuçları algılar olarak uygulanır, ve bu nedenle eğer herhangi bir motor zararlı olarak dosyaya bayrak atarsa, phpMussel dosyayı kötü amaçlı olarak değerlendirir. Başka herhangi bir değer kullanılırsa, Virus Total API tarama sonuçları algılama ağırlığı olarak uygulanır, ve bu nedenle, dosyayı kötü amaçlı olarak işaretleyen motor sayısı bir güven puanı görevi görür (kullanılan değer dosyanın kötü amaçlı olarak değerlendirilebilmesi için gereken minimum güven puanı temsil edecektir). Varsayılan olarak 0 değeri kullanılır.';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['field_activate'] = 'Etkinleştir';
 $phpMussel['lang']['field_clear_all'] = 'Hepsini temizle';
 $phpMussel['lang']['field_component'] = 'Bileşen';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'Sıfırla';
 $phpMussel['lang']['field_restore_file'] = 'Canlandır';
 $phpMussel['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
 $phpMussel['lang']['field_size'] = 'Toplam Boyut: ';
-$phpMussel['lang']['field_size_bytes'] = 'bayt';
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = 'bayt';
 $phpMussel['lang']['field_status'] = 'Durum';
 $phpMussel['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini kullanın.';
 $phpMussel['lang']['field_true'] = 'True (Doğru)';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse"
 $phpMussel['lang']['link_updates'] = 'Güncellemeler';
 $phpMussel['lang']['link_upload_test'] = 'Yükleme Testi';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Hiçbir günlük dosyası seçilmedi.';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'Maksimum giriş denemesi aşıldı; Erişim reddedildi.';
 $phpMussel['lang']['previewer_days'] = 'Günler';
 $phpMussel['lang']['previewer_hours'] = 'Saatler';

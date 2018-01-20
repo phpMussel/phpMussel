@@ -163,8 +163,7 @@ If you encounter any false positives, if you encounter something new that you th
 
 To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), refer to the Greylisting notes within the FRONT-END MANAGEMENT section of this README file.
 
-*See also:*
-- *[How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)*
+*See also: [How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)*
 
 #### 3.1 HOW TO USE (FOR CLI)
 
@@ -877,4 +876,4 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 ---
 
 
-Last Updated: 13 January 2018 (2018.01.13).
+Last Updated: 20 January 2018 (2018.01.20).

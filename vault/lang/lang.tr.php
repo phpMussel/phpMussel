@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.10.15).
+ * This file: Turkish language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,15 @@ $phpMussel['Plural-Rule'] = function($Num) {
     return $Num <= 1 ? 0 : 1;
 };
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potansiyel olarak zararlı URL tespit edildi';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API istek hatası';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API yetkilendirme hatası';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API hizmeti kullanılamıyor';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Bilinmeyen API hatası';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Bu komutu anlamıyorum, üzgünüm.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Tarama işlemini tamamlama başarısız';
 $phpMussel['lang']['cli_is_not_a'] = ' bir dosya veya dizin değil.';
@@ -60,11 +69,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Eklentiler dizini yok!';
 $phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/{QFU}.qfu\" olarak karantinaya alındı.\n";
 $phpMussel['lang']['recursive'] = 'Yineleme derinliği sınırı aşıldı';
 $phpMussel['lang']['required_variables_not_defined'] = 'Gerekli değişkenler tanımlanmamış: Devam edemiyorum.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potansiyel olarak zararlı URL tespit edildi';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API istek hatası';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API yetkilendirme hatası';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API hizmeti kullanılamıyor';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Bilinmeyen API hatası';
 $phpMussel['lang']['scan_aborted'] = 'Tarama iptal edildi!';
 $phpMussel['lang']['scan_chameleon'] = '{x} bukalemun saldırısı tespit edildi';
 $phpMussel['lang']['scan_checking'] = 'Kontrol etme';
@@ -74,8 +78,8 @@ $phpMussel['lang']['scan_complete'] = 'Tamamlayınız';
 $phpMussel['lang']['scan_extensions_missing'] = 'Başarısız oldu (gerekli uzantıları eksik)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Dosya adı işleme algılandı';
 $phpMussel['lang']['scan_missing_filename'] = 'Dosya adı eksik';
-$phpMussel['lang']['scan_not_archive'] = 'Başarısız oldu (boş veya bir arşiv değil)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Hiçbir sorun bulunamadı.';
+$phpMussel['lang']['scan_not_archive'] = 'Başarısız oldu (boş veya bir arşiv değil)!';
 $phpMussel['lang']['scan_reading'] = 'Okuma';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'İmza dosyası bozulmuş';
 $phpMussel['lang']['scan_signature_file_missing'] = 'İmza dosyası eksik';
@@ -93,10 +97,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP yanlış yapılandırması tespit ed
 $phpMussel['lang']['upload_limit_exceeded'] = 'Yükleme sınırı aşıldı';
 $phpMussel['lang']['wrong_password'] = 'Yanlış şifre; Eylem reddedildi.';
 $phpMussel['lang']['x_does_not_exist'] = 'varolmayan';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI\'den çıkın.

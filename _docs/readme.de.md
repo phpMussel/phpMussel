@@ -163,8 +163,7 @@ Sollten irgendwelche Fehlalarme (oder "Falsch-Positivs") auftreten, Sie etwas en
 
 Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
 
-*Siehe auch:*
-- *[Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)*
+*Siehe auch: [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)*
 
 #### 3.1 BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
@@ -877,4 +876,4 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 ---
 
 
-Zuletzt aktualisiert: 13 Januar 2018 (2018.01.13).
+Zuletzt aktualisiert: 20 Januar 2018 (2018.01.20).

@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.2.0 ===
+MINOR RELEASE.
+
 - [2017.10.30; Bug-fix; Maikuolan]: Cancelled or pending CI tests sometimes
   wouldn't display correctly on the updates page; Fixed.
 
@@ -36,6 +41,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   refactoring. Added checks for whether there's been any changes to the list of
   active signature files, or for whether they've been updated, which clears out
   the hash cache if found to be the case.
+
+Caleb M (Maikuolan),
+Jan 20, 2018.
 
 === Version/Release 1.1.0 ===
 MINOR RELEASE.

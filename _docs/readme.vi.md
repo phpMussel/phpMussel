@@ -163,8 +163,7 @@ Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số đi�
 
 Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần QUẢN LÝ FRONT-END của tập tin README này.
 
-*Xem thêm:*
-- *[Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)*
+*Xem thêm: [Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)*
 
 #### 3.1 CÁCH SỬ DỤNG (CHO CLI)
 
@@ -877,4 +876,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 13 Tháng Một 2018 (2018.01.13).
+Lần cuối cập nhật: 20 Tháng Một 2018 (2018.01.20).

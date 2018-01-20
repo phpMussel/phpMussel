@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.10.15).
+ * This file: Vietnamese language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'URL đó là có khả năng có hại đã được phát hiện';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'Lỗi yêu cầu API';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'Lỗi ủy quyền API';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'Dịch vụ của API không có sẵn';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Lỗi API không xác định';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Xin lỗi, tôi không hiểu câu lệnh này.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Quá trình quét chưa được hoàn thành';
 $phpMussel['lang']['cli_is_not_a'] = ' không phải là file hoạc thư mục.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Thư mực plugin không 
 $phpMussel['lang']['quarantined_as'] = "Đã được kiểm dịch là \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Độ sâu đệ quy bị quá giới hạn';
 $phpMussel['lang']['required_variables_not_defined'] = 'Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'URL đó là có khả năng có hại đã được phát hiện';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'Lỗi yêu cầu API';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'Lỗi ủy quyền API';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'Dịch vụ của API không có sẵn';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Lỗi API không xác định';
 $phpMussel['lang']['scan_aborted'] = 'Hủy bỏ quét!';
 $phpMussel['lang']['scan_chameleon'] = '{x} tấn công tắc kè hoa được phát hiện';
 $phpMussel['lang']['scan_checking'] = 'Đang kiểm tra';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'Đã hoàn toàn';
 $phpMussel['lang']['scan_extensions_missing'] = 'Thất bại (phần nối cần thiết bị thiểu)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Sự thay đổi của tên tập tin được phát hiện';
 $phpMussel['lang']['scan_missing_filename'] = 'Tên tập tin bị thiểu';
-$phpMussel['lang']['scan_not_archive'] = 'Thất bại (tróng hoạc không phải trong kho lưu trữ)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Không tiềm được vấn đề.';
+$phpMussel['lang']['scan_not_archive'] = 'Thất bại (tróng hoạc không phải trong kho lưu trữ)!';
 $phpMussel['lang']['scan_reading'] = 'Đang đọc';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Tập tin quan trọng bị lỗi';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Tập tin quan trọng bị mất';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'Phát hiện PHP sai! Xin vui lòng liê
 $phpMussel['lang']['upload_limit_exceeded'] = 'Đã quá giới hạn tải lên';
 $phpMussel['lang']['wrong_password'] = 'Mật khẩu sai; Hành động bị từ chối.';
 $phpMussel['lang']['x_does_not_exist'] = 'không tồn tại';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Thoát ra CLI.

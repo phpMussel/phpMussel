@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.12.06).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = '主包（没有签名文件，文档，和配置）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，​而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。​这个名单，​作为是作为标准，​名单那些格式使用最常见的横过多数的系统和CMS，​但有意是不全面。';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = '灰名单：';
 $phpMussel['lang']['config_files_filetype_whitelist'] = '如果您的系统只允许具体文件类型被上传，​或如果您的系统明确地否认某些文件类型，​指定那些文件类型在白名单，​黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。​格式是CSV（逗号分隔变量）。​如果您想扫描一切，​而不是白名单，​黑名单或灰名单，​留变量空；这样做将关闭白名单/黑名单/灰名单。​进程逻辑顺序是：如果文件类型已白名单，​不扫描和不受阻文件，​和不匹配文件对照黑名单或灰名单。​如果文件类型已黑名单，​不扫描文件但阻止它无论如何，​和不匹配文件对照灰名单。​如果灰名单是空，​或如果灰名单不空和文件类型已灰名单，​扫描文件像正常和确定如果阻止它基于扫描结果，​但如果灰名单不空和文件类型不灰名单，​过程文件仿佛已黑名单，​因此不扫描它但阻止它无论如何。​白名单：';
 $phpMussel['lang']['config_files_max_recursion'] = '最大存档递归深度限。​默认=10。';
 $phpMussel['lang']['config_files_max_uploads'] = '最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！​提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。​推荐：10。​您可能想增加或减少这个数值，​根据速度的您的硬件。​注意这个数值不交待为或包括存档内容。';
+$phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $phpMussel['lang']['config_general_cleanup'] = '【反设置/删除/清洁】脚本变量和缓存【Cache】之后执行吗？​如果您不使用脚本外初始上传扫描，​应该设置True【真/正】，​为了最小化内存使用。​如果您使用脚本为目的外初始上传扫描，​应该设置False【假/负】，​为了避免不必要重新加载复制数据在内存。​在一般的做法，​它应该设置True【真/正】，​但，​如果您做这样，​您将不能够使用脚本为任何目的以外文件上传扫描。​无影响在CLI模式。';
 $phpMussel['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = '激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，​是否通过签名或任何事其他。​文件已确定是清洁将会忽略。​如果是存档，​全存档将会删除，​不管如果违规文件是只有一个的几个文件包含在存档。​为文件上传扫描，​按说，​它不必要为您激活这个指令，​因为按说，​PHP将自动清洗内容的它的缓存当执行是完，​意思它将按说删除任何文件上传从它向服务器如果不已移动，​复制或删除。​这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。​False【假/负】：之后扫描，​忽略文件【标准】，​True【真/正】：之后扫描，​如果不清洁，​马上删除。';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = '关闭前端访问吗�
 $phpMussel['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭； False（假）=不关闭【标准】。';
 $phpMussel['lang']['config_general_enable_plugins'] = '启用phpMussel插件支持吗？​False（假）=不要启用； True（真）=要启用【标准】。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel应该发送<code>403</code>头随着文件上传受阻信息，​或坚持标准<code>200 OK</code>？​False（假）=发送<code>200</code>； True（真）=发送<code>403</code>【标准】。';
-$phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $phpMussel['lang']['config_general_honeypot_mode'] = '当这个指令（蜜罐模式）是激活，​phpMussel将尝试检疫所有文件上传它遇到，​无论的如果文件上传是匹配任何包括签名，​和没有扫描或分析的那些文件上传将发生。​这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，​但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，​也不推荐使用蜜罐功能为目的以外蜜罐。​作为标准，​这个指令是关闭。​False（假）=是关闭【标准】； True（真）=是激活。';
 $phpMussel['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）标准是<code>REMOTE_ADDR</code>。​警告！​不要修改此除非您知道什么您做着！';
 $phpMussel['lang']['config_general_lang'] = '指定标准phpMussel语言。';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel应该使用�
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel应该使用签名为webshell脚本检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel应该报告当扩展是失踪吗？​如果<code>fail_extensions_silently</code>是关闭，​失踪扩展将会报告当扫描，​和如果<code>fail_extensions_silently</code>是激活，​失踪扩展将会忽略，​有扫描报告为那些文件哪里没有任何问题。​关闭的这个指令可能的可以增加您的安全，​但可能还导致一个增加的假阳性。​False（假）=是关闭； True（真）=是激活【默认】。';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel应该报告当签名文件是失踪或损坏吗？​如果<code>fail_silently</code>是关闭，​失踪和损坏文件将会报告当扫描，​和如果<code>fail_silently</code>是激活，​失踪和损坏文件将会忽略，​有扫描报告为那些文件哪里没有问题。​这个应该按说被留下除非您遇到失败或有其他类似问题。​False（假）=是关闭； True（真）=是激活【默认】。';
-$phpMussel['lang']['config_template_data_css_url'] = '模板文件为个性化主题使用外部CSS属性，​而模板文件为t标准主题使用内部CSS属性。​以指示phpMussel使用模板文件为个性化主题，​指定公共HTTP地址的您的个性化主题的CSS文件使用<code>css_url</code>变量。​如果您离开这个变量空白，​phpMussel将使用模板文件为默认主题。';
 $phpMussel['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
+$phpMussel['lang']['config_template_data_css_url'] = '模板文件为个性化主题使用外部CSS属性，​而模板文件为t标准主题使用内部CSS属性。​以指示phpMussel使用模板文件为个性化主题，​指定公共HTTP地址的您的个性化主题的CSS文件使用<code>css_url</code>变量。​如果您离开这个变量空白，​phpMussel将使用模板文件为默认主题。';
 $phpMussel['lang']['config_template_data_theme'] = '用于phpMussel的默认主题。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = '多长时间（以秒为单位）应API结果被缓存？​默认是3600秒（1小时）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '激活Google Safe Browsing API当API密钥是设置。';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根据【Virus Total AP
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（见上面的说明）。';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作为标准，​phpMussel将限制什么文件它扫描通过使用【Virus Total API】为那些文件它考虑作为“可疑”。​您可以可选调整这个局限性通过修改的<code>vt_suspicion_level</code>指令数值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel应使用扫描结果使用【Virus Total API】作为检测或作为检测重量吗？​这个指令存在，​因为，​虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做） 应结果有一个增加检测率（和因此在一个更恶意文件被抓），​它可以还结果有更假阳性，​和因此，​为某些情况，​扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。​如果一个数值的<code>0</code>是使用，​扫描结果使用【Virus Total API】将会适用作为检测，​和因此，​如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意，​phpMussel将考虑文件作为恶意。​如果任何其他数值是使用，​扫描结果使用【Virus Total API】将会适用作为检测重量，​和因此，​数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量） 为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。​一个数值的<code>0</code>是使用作为标准。';
-$phpMussel['lang']['Extended Description: phpMussel'] = '主包（没有签名文件，文档，和配置）。';
 $phpMussel['lang']['field_activate'] = '启用';
 $phpMussel['lang']['field_clear_all'] = '撤销所有';
 $phpMussel['lang']['field_component'] = '组件';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = '重启';
 $phpMussel['lang']['field_restore_file'] = '恢复';
 $phpMussel['lang']['field_set_new_password'] = '保存新密码';
 $phpMussel['lang']['field_size'] = '总大小：';
-$phpMussel['lang']['field_size_bytes'] = '字节';
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = '字节';
 $phpMussel['lang']['field_status'] = '状态';
 $phpMussel['lang']['field_system_timezone'] = '使用系统默认时区。';
 $phpMussel['lang']['field_true'] = 'True（真）';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">简�
 $phpMussel['lang']['link_updates'] = '更新';
 $phpMussel['lang']['link_upload_test'] = '上传测试';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '选择的日志不存在！';
-$phpMussel['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $phpMussel['lang']['logs_no_logfile_selected'] = '没有选择的日志。';
+$phpMussel['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $phpMussel['lang']['max_login_attempts_exceeded'] = '最大登录尝试次数已经超过；拒绝访问。';
 $phpMussel['lang']['previewer_days'] = '天';
 $phpMussel['lang']['previewer_hours'] = '小时';

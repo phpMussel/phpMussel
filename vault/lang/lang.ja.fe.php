@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.12.06).
+ * This file: Japanese language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'ファイルタイプ・
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'システムが特定タイプのファイルのみアップロードを許可する、​あるいは拒絶する場合は、​ファイルタイプを適切にホワイトリスト、​ブラックリスト、​グレーリストにて分類しておくと、​ファイルタイプによって弾かれるファイルはスキャンをスキップできるため、​スピードアップに繋がります。​フォーマットはＣＳＶ（カンマ区切り）です。​リストによらず全てをスキャンしたい場合は、​変数は空白のままとし、​ホワイトリスト/ブラックリスト/グレーリストを無効にします。​プロセスの論理的順序: ファイルタイプがホワイトリストに記載されていれば、​スキャンせず、​ブロックせず、​ブラックリストおよびグレイリストに対してチェックを行いません。​ファイルタイプがブラックリストに記載されていれば、​スキャンすることなく、​直ちににブロックし、​グレーリストに対してチェックを行いません。​グレーリストが空、​あるいはグレーリストが空でなくかつそのファイルタイプがあれば、​通常通りスキャンしブロックするか否かを判断します。​グレーリストが空でなくかつそのファイルタイプが含まれていなければ、​ブラックリストと同様の扱いをすることになり、​スキャンなしにブロックします。​ファイルタイプ・ホワイトリスト:';
 $phpMussel['lang']['config_files_max_recursion'] = 'アーカイブに対する最大再帰深さです。​デフォルト＝１０。';
 $phpMussel['lang']['config_files_max_uploads'] = '一度にスキャンできるアップロードファイル数の上限で、​これを超えるとスキャンを中断し、​ユーザーにその旨を知らせ、​論理攻撃からの保護として機能します。​システムやＣＭＳがDDoS攻撃にあい、​phpMusselがオーバーロードしてＰＨＰプロセスに支障をきたすことがないようにするためです。​推奨数は１０ですが、​ハードウェアのスピードによっては、​これ以上/以下がよいということもあるでしょう。​この数は、​アーカイブのコンテンツは含まないことを覚えておいて下さい。';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_cleanup'] = '初回アップロード後に変数とキャッシュの設定をクリアするか否かについてのスクリプトです。​<code>false</code>(偽） = いいえ；​<code>true</code>（真） = はい 「Default/デフォルト設定」。​初回アップロードスキャニング以外で使用することがなければ、​<code>true</code>（真）としメモリーの使用量を最小にします。​使用するのであれば、​<code>false</code>（偽）とし、​メモリーに不要な重複データを再ロードするのを防ぎます。​通常は<code>true</code>（真）。​に設定しますが、​初回アップロードスキャニングに対してしか使用できないことを覚えておいて下さい。​ＣＬＩモードでは影響しません。';
 $phpMussel['lang']['config_general_default_algo'] = '将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​<code>false</code>（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​<code>true</code>（真） = スキャニング後、​クリーンでなければ直ちに削除。';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'フロントエンド�
 $phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_enable_plugins'] = 'プラグインのサポートを有効にしますか？​<code>false</code> = いいえ；​<code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'アップロードファイルがブロックされたメッセージと共に、​phpMusselから４０３ヘッダーを送るべきか、​通常の２００でよいかどうかについて。​<code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」；​<code>true</code>（真） = はい（４０３）。';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効 （Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。';
 $phpMussel['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $phpMussel['lang']['config_general_lang'] = 'phpMusselのデフォルト言語を設定します。';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMusselはＰＵＡ/
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMusselはshellスクリプト検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = '拡張子がない場合にphpMusselがそれをレポートすべきか否か？​<code>fail_extensions_silently</code>が無効の場合、​拡張子なしはスキャニング時にレポートされ、​有効の場合は無視され問題は報告されません。​このディレクティブを無効にすることは、​セキュリティーを向上させるかもしれませんが、​誤検出も増加する恐れがあります。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャファイルがない、​あるいは破損している場合に、​phpMusselがそれをリポートすべきか否か？​<code>fail_silently</code>が無効ならば、​問題はリポートされ、​有効であれば、​問題は無視されたスキャニングレポートが作成されます。​クラッシュするというような害がなければ、​デフォルト設定のままにしておくべきです。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
-$phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。';
 $phpMussel['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
+$phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。';
 $phpMussel['lang']['config_template_data_theme'] = 'phpMusselに使用するデフォルトテーマ。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？​デフォルトは３６００秒（一時間）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '必要なＡＰＩ鍵が定義されれば、​ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total APIのド�
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（上記の説明を参照）。';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'デフォルト設定では、​phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。​<code>vt_suspicion_level</code>ディレクティブを編集することのより、​この制限を変更することが可能です。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、​検出の重み付けとして扱うべきか？​複数のエンジン（Virus Totalのように）を使用したスキャニングは、​検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、​このディレクティブが存在します。​したがって、​スキャニング結果は、​決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。​値が０の場合、​Virus Total APIを使ったスキャンは検出として扱われ、​Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、​phpMusselもマルウェアと判断します。​その他の値の場合は結果は検出の重み付けとなり、​スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、​あるいは重み）。​デフォルト値は０です。';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
 $phpMussel['lang']['field_activate'] = 'アクティブにする';
 $phpMussel['lang']['field_clear_all'] = 'すべてキャンセル';
 $phpMussel['lang']['field_component'] = 'コンポーネント';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'リセット';
 $phpMussel['lang']['field_restore_file'] = '復元';
 $phpMussel['lang']['field_set_new_password'] = '新しいパスワードを設定します';
 $phpMussel['lang']['field_size'] = '合計サイズ：';
-$phpMussel['lang']['field_size_bytes'] = 'バイト';
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = 'バイト';
 $phpMussel['lang']['field_status'] = '状態';
 $phpMussel['lang']['field_system_timezone'] = 'システムのデフォルトタイムゾーンを使用します。';
 $phpMussel['lang']['field_true'] = 'True （真）';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'テキスト・フォーマット： <a h
 $phpMussel['lang']['link_updates'] = 'アップデート';
 $phpMussel['lang']['link_upload_test'] = 'アップロード・テスト';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
 $phpMussel['lang']['previewer_days'] = '日';
 $phpMussel['lang']['previewer_hours'] = '時';

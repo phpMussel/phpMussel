@@ -163,8 +163,7 @@ Se si incontrano qualsiasi falsi positivi, se si incontrano qualcosa nuova che s
 
 Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi positivi specifico alle vostri scopi di cui non dovrebbero normalmente essere rimosso dalla mainline), fare riferimento alle note per greylisting all'interno della GESTIONE FRONT-END sezione di questo file README.
 
-*Guarda anche:*
-- *[Come accedere a dettagli specifici sui file quando vengono scansionati?](#SCAN_DEBUGGING)*
+*Guarda anche: [Come accedere a dettagli specifici sui file quando vengono scansionati?](#SCAN_DEBUGGING)*
 
 #### 3.1 COME USARE (PER CLI)
 
@@ -877,4 +876,4 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 ---
 
 
-Ultimo Aggiornamento: 13 Gennaio 2018 (2018.01.13).
+Ultimo Aggiornamento: 20 Gennaio 2018 (2018.01.20).

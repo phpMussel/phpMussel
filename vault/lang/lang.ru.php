@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.10.15).
+ * This file: Russian language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,15 @@ $phpMussel['Plural-Rule'] = function($Num) {
     return $Num % 10 >= 2 && $Num % 10 <= 4 && ($Num % 100 < 10 || $Num % 100 >= 20) ? 1 : 2;
 };
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'Потенциально вредное URL обнаружено';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'Ошибка запроса API';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'Ошибка авторизации API';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'Сервис недоступен API';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Неизвестная API ошибка';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Извините, команда непонятна.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Не удалось завершить процесс сканирования';
 $phpMussel['lang']['cli_is_not_a'] = ' не файл или каталог.';
@@ -63,11 +72,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Каталог плаги
 $phpMussel['lang']['quarantined_as'] = "Помещен на карантин в \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Лимит глубины рекурсии превышена';
 $phpMussel['lang']['required_variables_not_defined'] = 'Обязательные переменные не установлены: Продолжение невозможно.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Потенциально вредное URL обнаружено';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'Ошибка запроса API';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'Ошибка авторизации API';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'Сервис недоступен API';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Неизвестная API ошибка';
 $phpMussel['lang']['scan_aborted'] = 'Сканирование прерывается!';
 $phpMussel['lang']['scan_chameleon'] = 'Обнаружена {x} хамелеон-атака';
 $phpMussel['lang']['scan_checking'] = 'Проверить';
@@ -77,8 +81,8 @@ $phpMussel['lang']['scan_complete'] = 'Завершено';
 $phpMussel['lang']['scan_extensions_missing'] = 'Не удалось (отсутствуют необходимые расширения)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Обнаружена манипуляция имени файла';
 $phpMussel['lang']['scan_missing_filename'] = 'Отсутствует имя файла';
-$phpMussel['lang']['scan_not_archive'] = 'Не удалось (пуст или не архив)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Проблемы не найдены.';
+$phpMussel['lang']['scan_not_archive'] = 'Не удалось (пуст или не архив)!';
 $phpMussel['lang']['scan_reading'] = 'Чтение';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Повреждена подпись файла';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Отсутствует подпись файла';
@@ -96,10 +100,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP реконфигурация обн�
 $phpMussel['lang']['upload_limit_exceeded'] = 'Лимит загрузки превышен';
 $phpMussel['lang']['wrong_password'] = 'Неправильный пароль; Действие отказано.';
 $phpMussel['lang']['x_does_not_exist'] = 'не существует';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Прекратить CLI.

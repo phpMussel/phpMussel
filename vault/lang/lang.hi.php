@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2017.10.15).
+ * This file: Hindi language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'संभावित हानिकारक URL का पता चला';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API अनुरोध त्रुटि';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API प्राधिकरण त्रुटि';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API सेवा उप्लब्ध् नहीं है';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'अज्ञात API त्रुटि';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '। ';
+$phpMussel['lang']['_fullstop_final'] = '।';
 $phpMussel['lang']['bad_command'] = 'मुझे यह आज्ञा नहीं समझती, खेद है।';
 $phpMussel['lang']['cli_failed_to_complete'] = 'स्कैनिंग प्रक्रिया को पूरा करने में विफल';
 $phpMussel['lang']['cli_is_not_a'] = ' एक फाइल या निर्देशिका नहीं है।';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'प्लगइन्स 
 $phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/{QFU}.qfu\" के रूप में क्वारंटाइन।\n";
 $phpMussel['lang']['recursive'] = 'पुनरावर्ती गहराई सीमा पार हो गई';
 $phpMussel['lang']['required_variables_not_defined'] = 'आवश्यक चर परिभाषित नहीं हैं: जारी नहीं कर सकते।';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'संभावित हानिकारक URL का पता चला';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API अनुरोध त्रुटि';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API प्राधिकरण त्रुटि';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API सेवा उप्लब्ध् नहीं है';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'अज्ञात API त्रुटि';
 $phpMussel['lang']['scan_aborted'] = 'स्कैनिंग निरस्त कर दी गई!';
 $phpMussel['lang']['scan_chameleon'] = '{x} गिरगिट के हमले का पता चला';
 $phpMussel['lang']['scan_checking'] = 'जाँच हो रही है';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'पूर्ण';
 $phpMussel['lang']['scan_extensions_missing'] = 'अनुत्तीर्ण होना (आवश्यक एक्सटेंशन लापता)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'फाइलनाम हेरफेर का पता चला';
 $phpMussel['lang']['scan_missing_filename'] = 'गुम फाइल नाम';
-$phpMussel['lang']['scan_not_archive'] = 'अनुत्तीर्ण होना (खाली या नहीं एक संग्रह)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'कोई समस्या नहीं मिली।';
+$phpMussel['lang']['scan_not_archive'] = 'अनुत्तीर्ण होना (खाली या नहीं एक संग्रह)!';
 $phpMussel['lang']['scan_reading'] = 'पढ़ना';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'हस्ताक्षर फाइल दूषित';
 $phpMussel['lang']['scan_signature_file_missing'] = 'हस्ताक्षर फाइल लापता है';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP गलत कॉन्फ़िग�
 $phpMussel['lang']['upload_limit_exceeded'] = 'अपलोड की सीमा पार हो गई';
 $phpMussel['lang']['wrong_password'] = 'गलत पासवर्ड; कार्रवाई से इनकार किया।';
 $phpMussel['lang']['x_does_not_exist'] = 'अस्तित्व में नहीं है';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '। ';
-$phpMussel['lang']['_fullstop_final'] = '।';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI से बाहर निकलें।

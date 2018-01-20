@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.10.15).
+ * This file: Korean language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = '잠재적으로 유해한 URL이 감지되었습니다';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API 요청이 부정';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API 인증 오류';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API 서비스 이용 불가';
+$phpMussel['lang']['SafeBrowseLookup_999'] = '알 수없는 API 오류';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = '미안 해요, 명령을 이해할 수 없습니다.';
 $phpMussel['lang']['cli_failed_to_complete'] = '검색을 완료 할 수 없습니다';
 $phpMussel['lang']['cli_is_not_a'] = '파일에서 디렉토리도 없습니다.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = '플러그인 디렉토리
 $phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/{QFU}.qfu\"로 격리.\n";
 $phpMussel['lang']['recursive'] = '재귀 정의 호출의 반복 횟수를 초과했습니다';
 $phpMussel['lang']['required_variables_not_defined'] = '요청이 있었던 변수가 정의되어 있지 않기 때문에 계속할 수 없습니다.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = '잠재적으로 유해한 URL이 감지되었습니다';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API 요청이 부정';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API 인증 오류';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API 서비스 이용 불가';
-$phpMussel['lang']['SafeBrowseLookup_999'] = '알 수없는 API 오류';
 $phpMussel['lang']['scan_aborted'] = '스캐닝 중단!';
 $phpMussel['lang']['scan_chameleon'] = '{x} 카멜레온 공격이 감지되었습니다';
 $phpMussel['lang']['scan_checking'] = '확인 중';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = '완료';
 $phpMussel['lang']['scan_extensions_missing'] = '실패 (요청한 확장자가 없습니다)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = '파일 네이무 조작이 감지되었습니다';
 $phpMussel['lang']['scan_missing_filename'] = '파일 이름이 존재하지 않습니다';
-$phpMussel['lang']['scan_not_archive'] = '실패 (내용이 없거나 보관하지 않습니다)!';
 $phpMussel['lang']['scan_no_problems_found'] = '문제는 발견되지 않았습니다.';
+$phpMussel['lang']['scan_not_archive'] = '실패 (내용이 없거나 보관하지 않습니다)!';
 $phpMussel['lang']['scan_reading'] = '로드 중입니다';
 $phpMussel['lang']['scan_signature_file_corrupted'] = '서명 파일이 오염되어 있습니다';
 $phpMussel['lang']['scan_signature_file_missing'] = '서명 파일이 없습니다';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = '잘못된 PHP 설정이 감지되었습�
 $phpMussel['lang']['upload_limit_exceeded'] = '업로드 제한을 초과합니다.';
 $phpMussel['lang']['wrong_password'] = '잘못된 암호; 액션은 부정되었다.';
 $phpMussel['lang']['x_does_not_exist'] = '존재하지 않습니다';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI 종료.

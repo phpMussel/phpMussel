@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.10.15).
+ * This file: Dutch language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentieel schadelijke URL gedetecteerd';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API aanvraag foute';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API niet geautoriseerd';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API dienst niet beschikbaar';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Onbekende API fout';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Mislukt om het voltooien te scannen';
 $phpMussel['lang']['cli_is_not_a'] = ' is geen bestand of map.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap besta
 $phpMussel['lang']['quarantined_as'] = "In quarantaine geplaatst als \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursie dieptelimiet overschreden';
 $phpMussel['lang']['required_variables_not_defined'] = 'Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentieel schadelijke URL gedetecteerd';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API aanvraag foute';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API niet geautoriseerd';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API dienst niet beschikbaar';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Onbekende API fout';
 $phpMussel['lang']['scan_aborted'] = 'Scannen afgebroken!';
 $phpMussel['lang']['scan_chameleon'] = '{x} kameleon aanval gedetecteerd';
 $phpMussel['lang']['scan_checking'] = 'Verifiëren';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'Voltooid';
 $phpMussel['lang']['scan_extensions_missing'] = 'Mislukt (ontbrekende vereiste extensies)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Bestandsnaam manipulatie ontdekt';
 $phpMussel['lang']['scan_missing_filename'] = 'Ontbrekende bestandsnaam';
-$phpMussel['lang']['scan_not_archive'] = 'Mislukt (leeg of is geen archief)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Geen problemen gevonden.';
+$phpMussel['lang']['scan_not_archive'] = 'Mislukt (leeg of is geen archief)!';
 $phpMussel['lang']['scan_reading'] = 'Lezen van';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature bestand beschadigd';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Signature bestand ontbreekt';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP misconfiguratie gedetecteerd! Contac
 $phpMussel['lang']['upload_limit_exceeded'] = 'Uploadlimiet overschreden';
 $phpMussel['lang']['wrong_password'] = 'Verkeerd wachtwoord; Actie geweigerd.';
 $phpMussel['lang']['x_does_not_exist'] = 'niet bestaat';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Verlaten CLI.

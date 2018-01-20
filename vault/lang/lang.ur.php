@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.10.15).
+ * This file: Urdu language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,15 @@ if (!defined('phpMussel')) {
 /** Language text direction (RTL). */
 $phpMussel['lang']['textDir'] = 'rtl';
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'ممکنہ طور پر نقصان دہ URL پتہ چلنے پر';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API کی درخواست کی خرابی';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API کیلئے اجازت کی خرابی';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API سروس دستیاب نہیں';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'نامعلوم API کی خرابی';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'میں نے اس حکم کو نہیں سمجھتے افسوس.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'سکیننگ کے عمل کو مکمل کرنے میں ناکام';
 $phpMussel['lang']['cli_is_not_a'] = ' یک فائل یا ڈائریکٹری نہیں ہے.';
@@ -58,11 +67,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'پلگ انز ڈائرک�
 $phpMussel['lang']['quarantined_as'] = "طور قرنطینہ \"/والٹ / سنگرودھ/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تکرار کی گہرائی کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['required_variables_not_defined'] = 'مطلوبہ متغیر کی وضاحت نہیں کر رہے ہیں: جاری نہیں رکھ سکتے.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'ممکنہ طور پر نقصان دہ URL پتہ چلنے پر';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API کی درخواست کی خرابی';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API کیلئے اجازت کی خرابی';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API سروس دستیاب نہیں';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'نامعلوم API کی خرابی';
 $phpMussel['lang']['scan_aborted'] = 'سکیننگ کے اسقاط حمل!';
 $phpMussel['lang']['scan_chameleon'] = '{x} گرگٹ حملے کا پتہ چلا';
 $phpMussel['lang']['scan_checking'] = 'پڑتال کر رہا ہے';
@@ -72,8 +76,8 @@ $phpMussel['lang']['scan_complete'] = 'مکمل';
 $phpMussel['lang']['scan_extensions_missing'] = 'ناکام ہوگیا (ضروری ملانے کے لاپتہ)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'فائل کا نام ہیرا پھیری کے پتہ';
 $phpMussel['lang']['scan_missing_filename'] = 'لاپتہ فائل کا نام';
-$phpMussel['lang']['scan_not_archive'] = 'ناکام ہوگیا (خالی یا ایک آرکائیو نہیں)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'کوئی مسئلہ نہیں پایا.';
+$phpMussel['lang']['scan_not_archive'] = 'ناکام ہوگیا (خالی یا ایک آرکائیو نہیں)!';
 $phpMussel['lang']['scan_reading'] = 'پڑھنا';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'دستخط فائل خراب';
 $phpMussel['lang']['scan_signature_file_missing'] = 'دستخط کی فائل لاپتہ';
@@ -91,10 +95,6 @@ $phpMussel['lang']['upload_error_8'] = 'پی ایچ پی کی غلط کنفیگ�
 $phpMussel['lang']['upload_limit_exceeded'] = 'اپ لوڈ کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['wrong_password'] = 'غلط پاس ورڈ؛ ایکشن تردید.';
 $phpMussel['lang']['x_does_not_exist'] = 'موجود نہیں ہے';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI چھوڑو.

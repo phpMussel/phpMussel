@@ -163,8 +163,7 @@ Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt 
 
 Voor uitschakelen om de signatures die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de FRONTEND MANAGEMENT sectie van dit README bestand.
 
-*Zie ook:*
-- *[Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?](#SCAN_DEBUGGING)*
+*Zie ook: [Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?](#SCAN_DEBUGGING)*
 
 #### 3.1 HOE TE GEBRUIKEN (VOOR CLI)
 
@@ -877,4 +876,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 13 Januari 2018 (2018.01.13).
+Laatste Bijgewerkt: 20 Januari 2018 (2018.01.20).

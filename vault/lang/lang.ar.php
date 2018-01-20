@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.10.15).
+ * This file: Arabic language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,15 @@ if (!defined('phpMussel')) {
 /** Language text direction (RTL). */
 $phpMussel['lang']['textDir'] = 'rtl';
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'يحتمل أن تكون ضارة URL الكشف';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API الخدمة غير متوفرة';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'خطأ API غير معروف';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'أنا لا أفهم هذا الأمر، آسف.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'فشل في إكمال عملية المسح.';
 $phpMussel['lang']['cli_is_not_a'] = ' ليس ملف أو مجلد.';
@@ -58,11 +67,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'مجلد الإضافات
 $phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تجاوزت الحد عمق العودية';
 $phpMussel['lang']['required_variables_not_defined'] = 'المتغيرات المطلوبة لم يتم تعريف: لا يمكن أن يستمر.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'يحتمل أن تكون ضارة URL الكشف';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API الخدمة غير متوفرة';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'خطأ API غير معروف';
 $phpMussel['lang']['scan_aborted'] = 'مسح تم الالغاء!';
 $phpMussel['lang']['scan_chameleon'] = 'الكشف هجوم الحرباء {x}';
 $phpMussel['lang']['scan_checking'] = 'فحص';
@@ -72,8 +76,8 @@ $phpMussel['lang']['scan_complete'] = 'تم الانتهاء من';
 $phpMussel['lang']['scan_extensions_missing'] = 'فشل (مفقود ملحقات المطلوبة)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'الكشف تلاعب اسم الملف';
 $phpMussel['lang']['scan_missing_filename'] = 'مفقود اسم الملف';
-$phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'الكشف لا مشاكل.';
+$phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
 $phpMussel['lang']['scan_reading'] = 'قراءة';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'تلف ملف التوقيع';
 $phpMussel['lang']['scan_signature_file_missing'] = 'مفقود ملف التوقيع';
@@ -91,10 +95,6 @@ $phpMussel['lang']['upload_error_8'] = 'الكشف تكوين الخطأ PHP! ي
 $phpMussel['lang']['upload_limit_exceeded'] = 'تجاوزت الحد تحميل';
 $phpMussel['lang']['wrong_password'] = 'كلمة مرور خاطئة؛ رفض العمل.';
 $phpMussel['lang']['x_does_not_exist'] = 'غير موجود';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI للخروج.

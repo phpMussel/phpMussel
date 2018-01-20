@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.12.06).
+ * This file: Portuguese language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'O pacote principal (menos as assinaturas, documentação e configuração).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Sair</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Sair</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Greylist:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Se o seu sistema só permite certos tipos de arquivos sejam carregado, ou se o seu sistema explicitamente nega certos tipos de arquivos, especificando esses tipos de arquivos no whitelists, blacklists e greylists pode aumentar a velocidado em que a análise é realizada através de permitindo o script para ignorar certos tipos de arquivos. O formato CSV (Comma Separated Values). Se você quer analisar tudo, ao invés de fazendo whitelist, blacklist ou greylist, deixe as variáveis em branco; Isso irá desativar whitelist/blacklist/greylist). Lógico ordem de processamento é: Se o tipo de arquivo está na whitelist, não verificar e não bloqueia o arquivo, e não verificar o arquivo contra o blacklist ou greylist. Se o tipo de arquivo está na blacklist, não verificar o arquivo, mas bloqueá-lo de qualquer maneira, e não verificar o arquivo contra o greylist. Se o greylist está vazia ou se o greylist não está vazia e o tipo de arquivo é no greylist, verificar o arquivo como por normal e determinar se a bloqueá-lo com base nos resultados do verificando, mas se o greylist não está vazia e o tipo de arquivo não é no greylist, tratar o arquivo da mesma maneira como está na blacklist, portanto não verificá-lo, mas bloqueá-lo de qualquer maneira. Whitelist:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Máxima recursão profundidade limite por compactados arquivos. Padrão = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'O máximo permitido número de arquivos para analisar durante os arquivos carregamentos análise antes de abortar a análise e informando ao usuário eles estão carregando demais muito de uma vez! Oferece proteção contra um teórico ataque pelo qual um atacante tenta DDoS o seu sistema ou CMS por meio de sobrecarregando phpMussel a fim de retardar o PHP processo para uma parada. Recomendado: 10. Você pode querer aumentar ou diminuir esse número, dependendo das atributos do seu hardware. Note-se que este número não lev. Em conta ou incluir o conteúdos dos compactados arquivos.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
 $phpMussel['lang']['config_general_cleanup'] = 'Deletar script variáveis e cache após a execução? False = Não; True = Sim [Padrão]. Se você não estiver usar o script além da inicial verificação de carregamentos, deve definir a <code>true</code> (sim), para minimizar o uso de memória. Se você estiver usar o script por fins além da inicial verificação de carregamentos, deve definir a <code>false</code> (não), para evitar desnecessariamente duplicados dados recarregando em memória. Em prática geral, deve provavelmente ser definido como <code>true</code> (sim), mas, se você fizer isso, você não será capaz de usando o script por qualquer outra fim além analisando arquivos carregamentos. Não tem influência em CLI modo.';
 $phpMussel['lang']['config_general_default_algo'] = 'Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP >= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. False = Após a análise, deixe o arquivo sozinho [Padrão]; True = Após a análise, se não limpo, deletar imediatamente.';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'Desativar o acesso fron
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Desativar webfonts? True = Sim; False = Não [Padrão].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200); True = Sim (403) [Padrão].';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Quando o honeypot modo é ativada, phpMussel vai tente colocar no quarentena todos os uploads de arquivos que ele encontras, independentemente de se ou não o arquivo que está sendo carregado corresponde a qualquer incluídos assinaturas, e zero análise desses tentados arquivos carregamentos vai ocorrer. Esta funcionalidade deve ser útil por aqueles que desejam utilizar phpMussel por os fins de vírus/malware pesquisa, mas não é recomendado para ativar essa funcionalidade se o planejado uso de phpMussel pelo utilizador é por o real análise dos arquivos carregamentos nem recomendado para usar essa funcionalidade por fins outros que o uso do honeypot. Por padrão, essa opção está desativada. False = Desativado [Padrão]; True = Ativado.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
 $phpMussel['lang']['config_general_lang'] = 'Especificar o padrão da linguagem por phpMussel.';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Deve phpMussel usam as
 $phpMussel['lang']['config_signatures_detect_shell'] = 'Deve phpMussel usam assinaturas para detectar shell scripts? False = Não; True = Sim [Padrão].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Deve phpMussel reportar quando extensões não estão disponíveis? Se <code>fail_extensions_silently</code> está desativado, extensões indisponíveis serão reportado durante análise, e se <code>fail_extensions_silently</code> está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. False = Desativado; True = Ativado [Padrão].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se <code>fail_silently</code> está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se <code>fail_silently</code> está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].';
-$phpMussel['lang']['config_template_data_css_url'] = 'O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a <code>css_url</code> variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.';
 $phpMussel['lang']['config_template_data_Magnification'] = 'Ampliação de fonte. Padrão = 1.';
+$phpMussel['lang']['config_template_data_css_url'] = 'O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a <code>css_url</code> variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.';
 $phpMussel['lang']['config_template_data_theme'] = 'Tema padrão a ser usado para phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Permite o uso do Google Safe Browsing API quando a API chave necessária está definida.';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'De acordo com o Virus T
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Ver descrição acima).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Por padrão, phpMussel restringirá os arquivos que são verificado usando o Virus Total API a esses arquivos que considera "suspeito". Opcionalmente, você pode ajustar essa restrição via alterando o valor ao <code>vt_suspicion_level</code> directiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de arquivos maliciosos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão.';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'O pacote principal (menos as assinaturas, documentação e configuração).';
 $phpMussel['lang']['field_activate'] = 'Ativar';
 $phpMussel['lang']['field_clear_all'] = 'Cancelar tudo';
 $phpMussel['lang']['field_component'] = 'Componente';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'Reiniciar';
 $phpMussel['lang']['field_restore_file'] = 'Restaurar';
 $phpMussel['lang']['field_set_new_password'] = 'Definir Nova Senha';
 $phpMussel['lang']['field_size'] = 'Tamanho Total: ';
-$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_status'] = 'Estado';
 $phpMussel['lang']['field_system_timezone'] = 'Usar o fuso horário padrão do sistema.';
 $phpMussel['lang']['field_true'] = 'True (Verdadeiro)';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'Formatação de texto: <a href="%1$sfalse
 $phpMussel['lang']['link_updates'] = 'Atualizações';
 $phpMussel['lang']['link_upload_test'] = 'Carregar Teste';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Arquivo de registro selecionado não existe!';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'Não quaisquer arquivos de registro disponíveis.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Não qualquer arquivo de registro selecionado.';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'Não quaisquer arquivos de registro disponíveis.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'Número máximo de tentativas de login foi excedido; Acesso negado.';
 $phpMussel['lang']['previewer_days'] = 'Dias';
 $phpMussel['lang']['previewer_hours'] = 'Horas';

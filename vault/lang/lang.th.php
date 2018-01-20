@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.10.15).
+ * This file: Thai language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'URL อาจเป็นอันตรายถูกตรวจพบ';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'ข้อผิดพลาดคำขอ API';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'ข้อผิดพลาดอนุมัติ API';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'ไม่สามารถให้บริการได้ API';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'ข้อผิดพลาดที่ไม่รู้จัก API';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'ฉันไม่เข้าใจคำสั่งนั้นขอโทษ.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'ไม่สามารถเสร็จสิ้นขั้นตอนการสแกน.';
 $phpMussel['lang']['cli_is_not_a'] = ' ไม่ใช่ไฟล์หรือไดเรกทอรี.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'ไดเรกทอร�
 $phpMussel['lang']['quarantined_as'] = "เป็นกักกันที่ \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'จำกัดความลึกสำหรับการทับซ้ำเกินแล้ว';
 $phpMussel['lang']['required_variables_not_defined'] = 'ตัวแปรที่จำเป็นไม่ได้กำหนดไว้: ไม่สามารถดำเนินการต่อได้.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'URL อาจเป็นอันตรายถูกตรวจพบ';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'ข้อผิดพลาดคำขอ API';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'ข้อผิดพลาดอนุมัติ API';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'ไม่สามารถให้บริการได้ API';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'ข้อผิดพลาดที่ไม่รู้จัก API';
 $phpMussel['lang']['scan_aborted'] = 'สแกนยกเลิกการแล้ว!';
 $phpMussel['lang']['scan_chameleon'] = 'กิ้งก่าโจมตี {x} ถูกตรวจพบ';
 $phpMussel['lang']['scan_checking'] = 'การตรวจสอบ';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'เสร็จแล้ว';
 $phpMussel['lang']['scan_extensions_missing'] = 'ล้มเหลว (ส่วนขยายที่จำเป็นหายไป)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'การปลอมแปลงชื่อไฟล์ถูกตรวจพบ';
 $phpMussel['lang']['scan_missing_filename'] = 'ไม่มีชื่อไฟล์';
-$phpMussel['lang']['scan_not_archive'] = 'ล้มเหลว (ว่างเปล่าหรือไม่ใช่ที่เก็บถาวร)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'ไม่พบปัญหาใด.';
+$phpMussel['lang']['scan_not_archive'] = 'ล้มเหลว (ว่างเปล่าหรือไม่ใช่ที่เก็บถาวร)!';
 $phpMussel['lang']['scan_reading'] = 'การอ่าน';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'ไฟล์ลายเซ็นเสียหาย';
 $phpMussel['lang']['scan_signature_file_missing'] = 'ไฟล์ลายเซ็นหายไป';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'การกำหนดค่า PHP �
 $phpMussel['lang']['upload_limit_exceeded'] = 'จำกัดการอัปโหลดเกินแล้วแล้ว';
 $phpMussel['lang']['wrong_password'] = 'รหัสผ่านผิด; การกระทำถูกปฏิเสธ.';
 $phpMussel['lang']['x_does_not_exist'] = 'ไม่ได้อยู่';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - ออกจาก CLI.

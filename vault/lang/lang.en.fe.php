@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.12.06).
+ * This file: English language data for the front-end (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: phpMussel'] = 'The main package (minus the signatures, documentation, and configuration).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you\'re adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can\'t be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn\'t necessarily comprehensive.';
@@ -45,6 +46,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Greylist:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist. Logical order of processing is: If the filetype is whitelisted, don\'t scan and don\'t block the file, and don\'t check the file against the blacklist or the greylist. If the filetype is blacklisted, don\'t scan the file but block it anyway, and don\'t check the file against the greylist. If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway. Whitelist:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Maximum recursion depth limit for archives. Default = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn\'t account for or include the contents of archives.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';
 $phpMussel['lang']['config_general_cleanup'] = 'Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren\'t- using the script beyond the initial scanning of uploads, you should set this to <code>true</code> (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to <code>false</code> (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to <code>true</code>, but, if you do this, you won\'t be able to use the script for anything other than the initial file upload scanning. Has no influence in CLI mode.';
 $phpMussel['lang']['config_general_default_algo'] = 'Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP >= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won\'t be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn\'t necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it\'ll usually delete any files uploaded through it to the server unless they\'ve been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn\'t always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately.';
@@ -53,7 +55,6 @@ $phpMussel['lang']['config_general_disable_frontend'] = 'Disable front-end acces
 $phpMussel['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes; False = No [Default].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Enable support for phpMussel plugins? False = No; True = Yes [Default].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it\'s neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. False = Disabled [Default]; True = Enabled.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don\'t change this unless you know what you\'re doing!';
 $phpMussel['lang']['config_general_lang'] = 'Specify the default language for phpMussel.';
@@ -83,8 +84,8 @@ $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'Should phpMussel parse
 $phpMussel['lang']['config_signatures_detect_shell'] = 'Should phpMussel parse signatures for detecting shell scripts? False = No; True = Yes [Default].';
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Should phpMussel report when extensions are missing? If <code>fail_extensions_silently</code> is disabled, missing extensions will be reported on scanning, and if <code>fail_extensions_silently</code> is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren\'t any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Should phpMussel report when signatures files are missing or corrupted? If <code>fail_silently</code> is disabled, missing and corrupted files will be reported on scanning, and if <code>fail_silently</code> is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren\'t any problems. This should generally be left alone unless you\'re experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].';
-$phpMussel['lang']['config_template_data_css_url'] = 'The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme\'s CSS files using the <code>css_url</code> variable. If you leave this variable blank, phpMussel will use the template file for the default theme.';
 $phpMussel['lang']['config_template_data_Magnification'] = 'Font magnification. Default = 1.';
+$phpMussel['lang']['config_template_data_css_url'] = 'The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme\'s CSS files using the <code>css_url</code> variable. If you leave this variable blank, phpMussel will use the template file for the default theme.';
 $phpMussel['lang']['config_template_data_theme'] = 'Default theme to use for phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Enables API lookups to the Google Safe Browsing API when the necessary API key is defined.';
@@ -96,7 +97,6 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'According to the Virus 
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(See description above).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the <code>vt_suspicion_level</code> directive.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'The main package (minus the signatures, documentation, and configuration).';
 $phpMussel['lang']['field_activate'] = 'Activate';
 $phpMussel['lang']['field_clear_all'] = 'Clear all';
 $phpMussel['lang']['field_component'] = 'Component';
@@ -128,11 +128,11 @@ $phpMussel['lang']['field_reset'] = 'Reset';
 $phpMussel['lang']['field_restore_file'] = 'Restore';
 $phpMussel['lang']['field_set_new_password'] = 'Set new password';
 $phpMussel['lang']['field_size'] = 'Total Size: ';
-$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_size_GB'] = 'GB';
 $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_system_timezone'] = 'Use system default timezone.';
 $phpMussel['lang']['field_true'] = 'True';
@@ -189,8 +189,8 @@ $phpMussel['lang']['link_textmode'] = 'Text formatting: <a href="%1$sfalse">Simp
 $phpMussel['lang']['link_updates'] = 'Updates';
 $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
-$phpMussel['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'No logfile selected.';
+$phpMussel['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximum number of login attempts exceeded; Access denied.';
 $phpMussel['lang']['previewer_days'] = 'Days';
 $phpMussel['lang']['previewer_hours'] = 'Hours';

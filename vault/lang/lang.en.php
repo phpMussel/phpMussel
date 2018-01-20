@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2017.10.15).
+ * This file: English language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentially harmful URL detected';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API service unavailable';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Unknown API error';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'I don\'t understand that command, sorry.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Failed to complete scanning process';
 $phpMussel['lang']['cli_is_not_a'] = ' is not a file or directory.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins directory doesn\'
 $phpMussel['lang']['quarantined_as'] = "Quarantined as \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursion depth limit exceeded';
 $phpMussel['lang']['required_variables_not_defined'] = 'Required variables aren\'t defined: Can\'t continue.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentially harmful URL detected';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API service unavailable';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Unknown API error';
 $phpMussel['lang']['scan_aborted'] = 'Scanning aborted!';
 $phpMussel['lang']['scan_chameleon'] = '{x} chameleon attack detected';
 $phpMussel['lang']['scan_checking'] = 'Checking';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'Complete';
 $phpMussel['lang']['scan_extensions_missing'] = 'Failed (missing required extensions)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Filename manipulation detected';
 $phpMussel['lang']['scan_missing_filename'] = 'Missing filename';
-$phpMussel['lang']['scan_not_archive'] = 'Failed (empty or not an archive)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'No problems found.';
+$phpMussel['lang']['scan_not_archive'] = 'Failed (empty or not an archive)!';
 $phpMussel['lang']['scan_reading'] = 'Reading';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature file corrupted';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Signature file missing';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP misconfiguration detected! Please co
 $phpMussel['lang']['upload_limit_exceeded'] = 'Upload limit exceeded';
 $phpMussel['lang']['wrong_password'] = 'Wrong password; Action denied.';
 $phpMussel['lang']['x_does_not_exist'] = 'does not exist';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Quit CLI.

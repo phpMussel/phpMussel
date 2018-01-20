@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.10.15).
+ * This file: Japanese language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = '潜在的に有害なＵＲＬが検出されました';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'ＡＰＩリクエストが不正である';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'ＡＰＩ認証エラー';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'ＡＰＩサービス利用不可';
+$phpMussel['lang']['SafeBrowseLookup_999'] = '不明なＡＰＩエラー';
+$phpMussel['lang']['_exclamation'] = '！';
+$phpMussel['lang']['_exclamation_final'] = '！';
+$phpMussel['lang']['_fullstop'] = '。';
+$phpMussel['lang']['_fullstop_final'] = '。';
 $phpMussel['lang']['bad_command'] = 'すみませんが、​コマンドが理解できません。';
 $phpMussel['lang']['cli_failed_to_complete'] = 'スキャンを完了できませんでした';
 $phpMussel['lang']['cli_is_not_a'] = 'はファイルでもディレクトリでもありません。';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'プラグインデイレ�
 $phpMussel['lang']['quarantined_as'] = "「/vault/quarantine/{QFU}.qfu」として隔離。\n";
 $phpMussel['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
 $phpMussel['lang']['required_variables_not_defined'] = 'リクエストのあった変数は定義されていないため、​続行できません。';
-$phpMussel['lang']['SafeBrowseLookup_200'] = '潜在的に有害なＵＲＬが検出されました';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'ＡＰＩリクエストが不正である';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'ＡＰＩ認証エラー';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'ＡＰＩサービス利用不可';
-$phpMussel['lang']['SafeBrowseLookup_999'] = '不明なＡＰＩエラー';
 $phpMussel['lang']['scan_aborted'] = 'スキャニング中断！';
 $phpMussel['lang']['scan_chameleon'] = '{x} Chameleon（カメレオン）攻撃が検出されました';
 $phpMussel['lang']['scan_checking'] = 'チェック中';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = '完了';
 $phpMussel['lang']['scan_extensions_missing'] = '失敗（要求のあった拡張子がありません）！';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'ファイルネイム不正操作が検出されました';
 $phpMussel['lang']['scan_missing_filename'] = 'ファイル名が存在しません';
-$phpMussel['lang']['scan_not_archive'] = '失敗（中身が存在しないかアーカイブではありません）！';
 $phpMussel['lang']['scan_no_problems_found'] = '問題は検出されませんでした。';
+$phpMussel['lang']['scan_not_archive'] = '失敗（中身が存在しないかアーカイブではありません）！';
 $phpMussel['lang']['scan_reading'] = '読み込んでいます';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'シグネチャファイルが汚染されています';
 $phpMussel['lang']['scan_signature_file_missing'] = 'シグネチャファイルがありません';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = '不適切なPHP設定が検出されま�
 $phpMussel['lang']['upload_limit_exceeded'] = 'アップロードの制限を超えています。';
 $phpMussel['lang']['wrong_password'] = '不正パスワード；アクションは否定されました。';
 $phpMussel['lang']['x_does_not_exist'] = '存在しません';
-$phpMussel['lang']['_exclamation'] = '！';
-$phpMussel['lang']['_exclamation_final'] = '！';
-$phpMussel['lang']['_fullstop'] = '。';
-$phpMussel['lang']['_fullstop_final'] = '。';
 
 $phpMussel['lang']['cli_commands'] = " q
  - ＣＬＩ終了。

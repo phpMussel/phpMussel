@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.10.15).
+ * This file: Indonesian language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,15 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'Berpotensi URL berbahaya terdeteksi';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'Kesalahan permintaan API';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'Kesalahan otorisasi API';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'Layanan API tidak tersedia';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'Kesalahan API tidak diketahui';
+$phpMussel['lang']['_exclamation'] = '! ';
+$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_fullstop'] = '. ';
+$phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Saya tidak mengerti perintah itu, maaf.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Gagal untuk menyelesaikan memindai proses';
 $phpMussel['lang']['cli_is_not_a'] = ' bukan file atau direktori.';
@@ -55,11 +64,6 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Direktori plugin tidak ad
 $phpMussel['lang']['quarantined_as'] = "Dikarantina sebagai \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Batas kedalaman rekursi melebihi';
 $phpMussel['lang']['required_variables_not_defined'] = 'Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Berpotensi URL berbahaya terdeteksi';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'Kesalahan permintaan API';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'Kesalahan otorisasi API';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'Layanan API tidak tersedia';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Kesalahan API tidak diketahui';
 $phpMussel['lang']['scan_aborted'] = 'Memindai dibatalkan!';
 $phpMussel['lang']['scan_chameleon'] = 'Bunglon {x} serangan terdeteksi';
 $phpMussel['lang']['scan_checking'] = 'Memeriksa';
@@ -69,8 +73,8 @@ $phpMussel['lang']['scan_complete'] = 'Selesai';
 $phpMussel['lang']['scan_extensions_missing'] = 'Gagal (hilang ekstensi yang dibutuhkan)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'File nama manipulasi terdeteksi';
 $phpMussel['lang']['scan_missing_filename'] = 'Hilang nama file';
-$phpMussel['lang']['scan_not_archive'] = 'Gagal (kosong atau tidak sebuah arsip)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Tidak ada masalah yang diketahui.';
+$phpMussel['lang']['scan_not_archive'] = 'Gagal (kosong atau tidak sebuah arsip)!';
 $phpMussel['lang']['scan_reading'] = 'Bacaan';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Tanda tangan file rusak';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Tanda tangan file hilang';
@@ -88,10 +92,6 @@ $phpMussel['lang']['upload_error_8'] = 'PHP salah-konfigurasi terdeteksi! Silahk
 $phpMussel['lang']['upload_limit_exceeded'] = 'Upload batas melebihi';
 $phpMussel['lang']['wrong_password'] = 'Password yang salah; Aksi ditolak.';
 $phpMussel['lang']['x_does_not_exist'] = 'tidak ada';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
-$phpMussel['lang']['_fullstop'] = '. ';
-$phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Berhenti CLI.
