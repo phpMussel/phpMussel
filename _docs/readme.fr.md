@@ -29,10 +29,10 @@ Ce script est un logiciel libre ; vous pouvez redistribuer et/ou le modifier se
 
 Un spécial merci à ClamAV pour l'inspiration du le projet et pour les signatures que ce script utilise, sans qui, le script ne seraient probablement pas exister, ou, au mieux, auraient avoir un très limité valeur.
 
-Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet fichiers, à [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) pour l'hébergement du phpMussel discussion forums, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
+Un spécial merci à SourceForge et GitHub pour l'hébergement du projet fichiers, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
 
 Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de :
-- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [SourceForge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -762,8 +762,7 @@ La fréquence de mise à jour varie selon les fichiers de signature en question.
 - Utilisez-vous la dernière version du logiciel ? Utilisez-vous les dernières versions de vos fichiers de signature ? Si la réponse à l'une ou l'autre de ces deux est non, essayez de tout mettre à jour tout d'abord, et vérifier si le problème persiste. Si elle persiste, continuez à lire.
 - Avez-vous vérifié toute la documentation ? Si non, veuillez le faire. Si le problème ne peut être résolu en utilisant la documentation, continuez à lire.
 - Avez-vous vérifié la **[page des problèmes](https://github.com/phpMussel/phpMussel/issues)**, pour voir si le problème a été mentionné avant ? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
-- Avez-vous vérifié le **[forum de support pour phpMussel fourni par Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, pour voir si le problème a été mentionné avant ? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
-- Si le problème persiste, veuillez nous en informer en créant un nouveau discussion sur la page des problèmes ou en le forum de support.
+- Si le problème persiste, veuillez nous en informer en créant un nouveau discussion sur la page des problèmes.
 
 #### Je veux utiliser phpMussel avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
 
@@ -876,4 +875,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 20 Janvier 2018 (2018.01.20).
+Dernière mise à jour : 5 Février 2018 (2018.02.05).

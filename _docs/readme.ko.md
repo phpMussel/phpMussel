@@ -29,10 +29,10 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](http://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
 
-본 프로젝트 파일의 호스트 처인 Sourceforge와 GitHub, phpMussel 토론 포럼의 호스트 처인 [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55), phpMussel이 이용하는 서명 제공처이다 : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
+본 프로젝트 파일의 호스트 처인 SourceForge와 GitHub, phpMussel이 이용하는 서명 제공처이다 : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
-- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [SourceForge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -762,8 +762,7 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 - 당신은 최신 소프트웨어 버전을 사용하고 있습니까? 당신은 최신 서명 파일 버전을 사용하고 있습니까? 그렇지 않은 경우, 먼저 업 데이트하십시오. 문제가 해결되지 여부를 확인하십시오. 그것이 계속되면 읽어보십시오.
 - 당신은 문서를 확인 했습니까? 만약 그렇지 않으면, 그렇지하십시오. 문서를 사용하여 문제를 해결할 수없는 경우, 계속 읽어보십시오.
 - **[이슈 페이지를](https://github.com/phpMussel/phpMussel/issues)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
-- **[Spambot Security가 제공하는 phpMussel 지원 포럼을](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
-- 문제가 해결되지 않으면 알려 주시기 바랍니다. 이슈 페이지 또는 지원 포럼과 새로운 토론을 창조한다.
+- 문제가 해결되지 않으면 알려 주시기 바랍니다. 이슈 페이지에서 토론을 창조한다.
 
 #### 5.4.0보다 오래된 PHP 버전에서 phpMussel을 사용하고 싶습니다; 도울 수 있니?
 
@@ -876,4 +875,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2018년 1월 20일.
+최종 업데이트 : 2018년 2월 5일.

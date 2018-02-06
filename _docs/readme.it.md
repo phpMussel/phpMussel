@@ -29,10 +29,10 @@ Questo script è un software "libero"; è possibile ridistribuirlo e/o modificar
 
 Uno speciale grazie a [ClamAV](http://www.clamav.net/) per l'ispirazione del progetto e per le firme che questo script usi, senza la quale, lo script sarebbe probabilmente non esisterebbe, o nel migliore, avrebbe un molto limitato valore.
 
-Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file, a [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) per ospitare le phpMussel discussione forum, e le risorse di un certo numero di firme utilizzata da phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) e altri, e un grazie a tutti coloro che sostengono il progetto, a chiunque altro che io possa avere altrimenti dimenticato di menzionare, e per voi, per l'utilizzo dello script.
+Uno speciale grazie a SourceForge e GitHub per ospitare i progetto file, e le risorse di un certo numero di firme utilizzata da phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) e altri, e un grazie a tutti coloro che sostengono il progetto, a chiunque altro che io possa avere altrimenti dimenticato di menzionare, e per voi, per l'utilizzo dello script.
 
 Questo documento ed il pacchetto associato ad esso possono essere scaricati liberamente da:
-- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [SourceForge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -762,8 +762,7 @@ Frequenza di aggiornamento varia a seconda delle file di firma in questione. Tut
 - Si sta utilizzando la versione più recente del software? Si sta utilizzando le ultime versioni dei file di firma? Se la risposta a una di queste due domande è no, provare ad aggiornare tutto prima, e verificare se il problema persiste. Se persiste, continuare a leggere.
 - Hai controllato attraverso tutta la documentazione? In caso non fatto, si prega di farlo. Se il problema non può essere risolto utilizzando la documentazione, continuare a leggere.
 - Hai controllato la **[pagina dei problemi](https://github.com/phpMussel/phpMussel/issues)**, per vedere se il problema è stato accennato prima? Se è stato accennato prima, verificare se sono stati forniti qualsiasi suggerimenti, idee, e/o soluzioni, e seguire come necessario per cercare di risolvere il problema.
-- Hai controllato il **[forum di supporto per phpMussel fornito da Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, per vedere se il problema è stato accennato prima? Se è stato accennato prima, verificare se sono stati forniti qualsiasi suggerimenti, idee, e/o soluzioni, e seguire come necessario per cercare di risolvere il problema.
-- Se il problema persiste, fatecelo sapere su di esso con la creazione di una nuova discussione sulla pagina dei problemi o sul forum di supporto.
+- Se il problema persiste, fatecelo sapere su di esso con la creazione di una nuova discussione sulla pagina dei problemi.
 
 #### Voglio usare phpMussel con una versione di PHP più vecchio di 5.4.0; Puoi aiutami?
 
@@ -876,4 +875,4 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 ---
 
 
-Ultimo Aggiornamento: 20 Gennaio 2018 (2018.01.20).
+Ultimo Aggiornamento: 5 Febbraio 2018 (2018.02.05).

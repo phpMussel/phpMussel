@@ -7,7 +7,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2018.02.06; Maikuolan]: The support forum for the project hosted by Spambot
+  Security has effectively become inoperable and defunct due to unmitigable
+  circumstances concerning its server. Accordingly, the project support forum
+  is hereby deprecated, and all references to the project support forum and to
+  Spambot Security have been removed from the codebase and all documentation.
+  The issues page for the project at GitHub remains as the uncontested primary
+  support endpoint for the project.
 
 === Version/Release 1.2.0 ===
 MINOR RELEASE.

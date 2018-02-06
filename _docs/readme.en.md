@@ -29,10 +29,10 @@ This script is free software; you can redistribute it and/or modify it under the
 
 Special thanks to [ClamAV](http://www.clamav.net/) for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value.
 
-Special thanks to Sourceforge and GitHub for hosting the project files, to [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) for hosting the phpMussel discussion forums, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
+Special thanks to SourceForge and GitHub for hosting the project files, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
 
 This document and its associated package can be downloaded for free from:
-- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [SourceForge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -762,8 +762,7 @@ Update frequency varies depending on the signature files in question. All mainta
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/phpMussel/phpMussel/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- Have you checked the **[phpMussel support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+- If the problem still persists, please let us know about it by creating a new issue on the issues page.
 
 #### I want to use phpMussel with a PHP version older than 5.4.0; Can you help?
 
@@ -876,4 +875,4 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 ---
 
 
-Last Updated: 20 January 2018 (2018.01.20).
+Last Updated: 5 February 2018 (2018.02.05).

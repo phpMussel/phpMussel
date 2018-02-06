@@ -29,10 +29,10 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 谢谢[ClamAV](http://www.clamav.net/)为本脚本提供文件签名库访问许可。​没有它，​这个脚本很可能不会存在，​或者其价值有限。
 
-谢谢Sourceforge和GitHub开通了，​[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的讨论论坛，​谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，​[PhishTank](http://www.phishtank.com/)，​[NLNetLabs](http://nlnetlabs.nl/)，​还有更多的我忘了提及的人（抱歉，​语文水平有限，​这句话实在不知道怎么翻译才通顺）。
+谢谢SourceForge和GitHub为项目托管，​还有谢谢这些组织为提供一些签名：​[SecuriteInfo.com](http://www.securiteinfo.com/)，​[PhishTank](http://www.phishtank.com/)，​[NLNetLabs](http://nlnetlabs.nl/)，​等人。
 
 现在phpMussel的代码文件和关联包可以从以下地址免费下载：
-- [Sourceforge](http://phpmussel.sourceforge.net/)。
+- [SourceForge](http://phpmussel.sourceforge.net/)。
 - [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
@@ -446,7 +446,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 - 启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。
 
 “default_algo”
-- 定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
+- 定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
 “statistics”
 - 跟踪phpMussel使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。
@@ -762,8 +762,7 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 - 您使用软件的最新版本吗？​您使用签名文件的最新版本吗？​如果这两个问题的答案是不，​尝试首先更新一切，​然后检查问题是否仍然存在。​如果它仍然存在，​继续阅读。
 - 您检查过所有的文档吗？​如果没有做，​请这样做。​如果文档不能解决问题，​继续阅读。
 - 您检查过 **[问题页面](https://github.com/phpMussel/phpMussel/issues)** 吗？​检查是否已经提到了问题。​如果已经提到了，​请检查是否提供了任何建议，​想法或解决方案。​按照需要尝试解决问题。
-- 您检查过 **[由Spambot Security提供的phpMussel支持论坛](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** 吗？​检查是否已经提到了问题。​如果已经提到了，​请检查是否提供了任何建议，​想法或解决方案。​按照需要尝试解决问题。
-- 如果问题仍然存在，​请让我们知道；在问题页面或支持论坛上开始新的讨论。
+- 如果问题仍然存在，​请让我们知道；在问题页面上开始新的讨论。
 
 #### 我想使用phpMussel与早于5.4.0的PHP版本；​您能帮我吗？
 
@@ -876,4 +875,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2018年1月20日。
+最后更新：2018年2月5日。
