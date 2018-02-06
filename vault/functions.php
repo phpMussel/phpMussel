@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.01.17).
+ * This file: Functions file (last modified: 2018.02.05).
  */
 
 /**
@@ -847,43 +847,40 @@ $phpMussel['implode_bits'] = function ($n) {
 };
 
 /**
- * Translates the virus name/identifier shorthand adopted by phpMussel to
- * proper virus names/identifiers and makes some determinations regarding
- * detections based upon the interpretation and understanding of that shorthand
- * against the phpMussel configuration (for example, whether some certain
+ * Expands phpMussel detection shorthand to proper virus names/identifiers and
+ * makes some determinations based on the interpretation of that shorthand
+ * against the phpMussel configuration (e.g., whether particular
  * classifications, such as hoax/joke viruses, adware, etc, should be entirely
  * ignored by the scanner, or should be identified as malicious, and therefore
  * blocked).
  *
- * Originally, this function was created to allow a way for phpMussel to
- * partially compress its signatures without jeopardising speed, performance or
- * processing efficiency, because, by allowing phpMussel to partially compress
- * its signatures, the total footprint of its signature files could be reduced,
- * therefore allowing the inclusion of a greater number of signatures in the
- * signature files without causing an excessive bloat in the total footprint.
+ * Originally, this function was created to allow phpMussel to partially
+ * compress its signatures without jeopardising speed, performance or
+ * efficiency, because, by allowing phpMussel to partially compress its
+ * signatures, the total signature file footprint could be reduced, thus
+ * allowing the inclusion of a greater number of signatures without causing
+ * excessive footprint bloat.
  *
- * However, since then, its purpose has expanded, to determining whether a
- * signature should be considered a weighted signature (for more complex
- * detections involving multiple signatures) or a non-weighted signature (for
- * signatures that are detections in their own right, not requiring additional
- * signatures for the detection to occur), and to determining whether or not a
- * signature should be ignored, based upon its classification.
+ * Since then though, its purpose has expanded to determining whether a
+ * signature should be considered weighted (for more complex detections
+ * involving multiple signatures) or non-weighted (for signatures serving as
+ * detections in their own right), and whether a signature should be ignored,
+ * based on its classification.
  *
- * The function takes an input string (the shorthand virus name), and if byte 0
- * of the input string is "\x1A" (the substitute character), the input string
- * is a shorthand virus name, and processing continues; If it doesn't begin
- * with "\x1A", it isn't a shorthand virus name, and the input string should be
- * returned to the calling scope unmodified. When processing continues, the
- * function splits the nibbles of bytes 1-2, and uses that information to
- * reconstruct a complete virus name from the shorthand virus name; 1H
- * represents the signature vendor name and 1L optionally provides some
- * additional generic indicators (heuristic, CVE, etc), except when 1H == 8 (in
- * which case, 1L represents the signature vendor name, 1H == 8 being used to
- * access that additional set of allocations), 2H+2L represents the virus
- * target (i.e., the file format or system that the virus that the signature is
- * intended to detect is intended to be targeting), and 3H+3L represents the
- * nature of what the signature is intended to detect (i.e., whether we should
- * call it a virus, a trojan, adware, ransomware, etc).
+ * The function takes an input string, and if byte 0 of the input string is
+ * "\x1A" (the substitute character), the input string is detection shorthand,
+ * and processing continues; If it doesn't begin with "\x1A", it isn't
+ * detection shorthand, and the input string should be returned to the calling
+ * scope verbatim. When processing continues, the function splits the nibbles
+ * of bytes 1-2, and uses that information to reconstruct a complete identifier
+ * from the detection shorthand; 1H represents the signature vendor name and 1L
+ * optionally provides some additional generic indicators (heuristic, CVE,
+ * etc), except when 1H == 8 (in which case, 1L represents the signature vendor
+ * name, 1H == 8 being used to access that additional set of allocations),
+ * 2H+2L represents the virus target (i.e., the file format or system that the
+ * detection targets), and 3H+3L represents the nature of what the signature is
+ * intended to detect (i.e., whether we should call it a virus, a trojan,
+ * adware, ransomware, etc).
  *
  * Warning: When modifying these allocations (such as to include a new vendor
  * or a new type of detection), be very careful to ensure that your choice of
@@ -895,8 +892,8 @@ $phpMussel['implode_bits'] = function ($n) {
  * character/byte), \x3A and \x3B. Also avoid using the null character ("\x00")
  * in particular, because it can severely break things in certain situations.
  *
- * @param string $VN The shorthand virus name.
- * @return string The full-length "translated" virus name.
+ * @param string $VN The detection shorthand.
+ * @return string The expanded identifier (or input returned verbatim).
  */
 $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
     $phpMussel['memCache']['weighted'] = false;
