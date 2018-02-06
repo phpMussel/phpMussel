@@ -24,8 +24,6 @@ Anyone interested in contributing to the project is encouraged to do so.
 
 **Can you spread the word?**
 - phpMussel won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited).
-- Submit reviews about phpMussel to various software review sites where it's listed (for example, [SourceForge](https://sourceforge.net/projects/phpmussel/reviews?source=navbar), [HotScripts](https://www.hotscripts.com/listing/phpmussel/)), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
+- Submit reviews about phpMussel to various software review sites where it's listed (e.g., [SourceForge](https://sourceforge.net/projects/phpmussel/reviews?source=navbar), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
 
----
-
-*Last modified: 9 June 2017 (2017.06.09).*
+*Last Updated: 5 February 2018 (2018.02.05).*
