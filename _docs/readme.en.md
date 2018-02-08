@@ -161,7 +161,7 @@ For a full break-down of what sort of signatures phpMussel uses during its scans
 
 If you encounter any false positives, if you encounter something new that you think should be blocked, or for anything else regarding signatures, please contact me about it so that I may make the necessary changes, which, if you do not contact me, I may not necessarily be aware of. *(See: [What is a "false positive"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
-To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), refer to the Greylisting notes within the FRONT-END MANAGEMENT section of this README file.
+To disable specific signatures included with phpMussel (such as, if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), add the names of the specific signature to be disabled to the signatures greylist file (`/vault/greylist.csv`), separated by commas.
 
 *See also: [How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)*
 

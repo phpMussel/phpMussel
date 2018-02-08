@@ -161,7 +161,7 @@ Para una descripción completa del tipo de firmas phpMussel utiliza durante el e
 
 Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta. *(Ver: [¿Qué es un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
-Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
+Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), agregue los nombres de las firmas específicas que deberían estar deshabilitados a la greylist de firmas (`/vault/greylist.csv`), separado por comas.
 
 *Ver también: [¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)*
 
@@ -333,7 +333,7 @@ Archivo | Descripción
 /vault/frontend.php | Módulo del front-end.
 /vault/frontend_functions.php | Archivo de funciones del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
-/vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
+/vault/greylist.csv | CSV de las firmas en la greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
 /vault/lang.php | Lingüísticos datos.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necesario para la retrocompatibilidad de PHP 5.4.X; seguro para eliminar por versiones más recientes de PHP).
 ※ /vault/scan_kills.txt | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.

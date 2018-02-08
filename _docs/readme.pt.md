@@ -161,7 +161,7 @@ Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a an�
 
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de. *(Vejo: [O que é um "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
-Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
+Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), adicione os nomes das assinaturas específicas a ser desabilitadas para o arquivo greyist das assinaturas (`/vault/greylist.csv`), separados por vírgulas.
 
 *Veja também: [Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)*
 
@@ -333,7 +333,7 @@ Arquivo | Descrição
 /vault/frontend.php | Módulo do front-end.
 /vault/frontend_functions.php | Arquivo de funções do front-end.
 /vault/functions.php | Arquivo de funções.
-/vault/greylist.csv | CSV de greylisted assinaturas indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
+/vault/greylist.csv | Um arquivo indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
 /vault/lang.php | Dados lingüísticos.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necessário para compatibilidade reversa com PHP 5.4.X; seguro para deletar por versões de PHP mais recentes).
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.

@@ -161,7 +161,7 @@ Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verar
 
 Sollten irgendwelche Fehlalarme (oder "Falsch-Positivs") auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
-Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
+Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, fügen Sie die Namen der spezifischen Signatur, die deaktiviert werden soll, durch Kommata abgetrennt, in die Signaturen-Greylist-Datei ein (`/vault/greylist.csv`).
 
 *Siehe auch: [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)*
 
