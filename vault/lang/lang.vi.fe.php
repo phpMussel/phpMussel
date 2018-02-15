@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.02.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác 
 $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $phpMussel['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
+$phpMussel['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $phpMussel['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
+$phpMussel['lang']['state_loading'] = 'Trong tiến trình...';
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_maintenance_mode'] = 'Cảnh báo: Đã bật chế độ bảo trì!';

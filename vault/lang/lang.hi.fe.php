@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.02.05).
+ * This file: Hindi language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'निर्धा
 $phpMussel['lang']['response_upload_error'] = 'अपलोड करने में विफल!';
 $phpMussel['lang']['response_verification_failed'] = 'सत्यापन असफल! घटक भ्रष्ट हो सकता है।';
 $phpMussel['lang']['response_verification_success'] = 'सत्यापन सफलता! कोई समस्या नहीं मिली।';
+$phpMussel['lang']['state_async_deny'] = 'अनुमतियाँ अतुल्यकालिक अनुरोध करने के लिए पर्याप्त नहीं हैं। फिर से लॉग इन करने का प्रयास करें';
 $phpMussel['lang']['state_complete_access'] = 'पूरा पहुंच';
 $phpMussel['lang']['state_component_is_active'] = 'घटक सक्रिय है।';
 $phpMussel['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';
 $phpMussel['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $phpMussel['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
+$phpMussel['lang']['state_loading'] = 'लोड हो रहा है...';
 $phpMussel['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $phpMussel['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $phpMussel['lang']['state_maintenance_mode'] = 'चेतावनी: रखरखाव मोड सक्षम है!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.02.05).
+ * This file: Urdu language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'اس بات کا �
 $phpMussel['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
 $phpMussel['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $phpMussel['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
+$phpMussel['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
 $phpMussel['lang']['state_complete_access'] = 'مکمل رسائی';
 $phpMussel['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $phpMussel['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
 $phpMussel['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $phpMussel['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
+$phpMussel['lang']['state_loading'] = 'لوڈ کر رہا ہے ...';
 $phpMussel['lang']['state_logged_in'] = 'لاگ ان.';
 $phpMussel['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $phpMussel['lang']['state_maintenance_mode'] = 'انتباہ: بحالی کا موڈ فعال ہے!';

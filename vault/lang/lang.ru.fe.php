@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.02.05).
+ * This file: Russian language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Невозможн
 $phpMussel['lang']['response_upload_error'] = 'Не удалось загрузить!';
 $phpMussel['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
 $phpMussel['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
+$phpMussel['lang']['state_async_deny'] = 'Разрешения не подходят для выполнения асинхронных запросов. Попробуйте снова войти в систему.';
 $phpMussel['lang']['state_complete_access'] = 'Полный доступ';
 $phpMussel['lang']['state_component_is_active'] = 'Компонент активен.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $phpMussel['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
+$phpMussel['lang']['state_loading'] = 'В ходе выполнения...';
 $phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_maintenance_mode'] = 'Предупреждение: Включен режим обслуживания!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.02.05).
+ * This file: Turkish language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Belirlenemedi.';
 $phpMussel['lang']['response_upload_error'] = 'Yüklenemedi!';
 $phpMussel['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
 $phpMussel['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
+$phpMussel['lang']['state_async_deny'] = 'İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin.';
 $phpMussel['lang']['state_complete_access'] = 'Tam erişim';
 $phpMussel['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $phpMussel['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
+$phpMussel['lang']['state_loading'] = 'Yükleniyor...';
 $phpMussel['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $phpMussel['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
 $phpMussel['lang']['state_maintenance_mode'] = 'Uyarı: Bakım modu etkin!';

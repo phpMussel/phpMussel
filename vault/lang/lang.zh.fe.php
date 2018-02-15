@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.02.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '无法确定。';
 $phpMussel['lang']['response_upload_error'] = '无法上传！';
 $phpMussel['lang']['response_verification_failed'] = '验证失败！组件可能已损坏。';
 $phpMussel['lang']['response_verification_success'] = '验证成功！没有发现问题。';
+$phpMussel['lang']['state_async_deny'] = '权限不足以执行异步请求。尝试再次登录。';
 $phpMussel['lang']['state_complete_access'] = '完全访问';
 $phpMussel['lang']['state_component_is_active'] = '组件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '组件是非活性。';
 $phpMussel['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $phpMussel['lang']['state_default_password'] = '警告：它使用标准密码！';
+$phpMussel['lang']['state_loading'] = '载入中...';
 $phpMussel['lang']['state_logged_in'] = '目前在线。';
 $phpMussel['lang']['state_logs_access_only'] = '仅日志访问';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：维护模式是启用！';

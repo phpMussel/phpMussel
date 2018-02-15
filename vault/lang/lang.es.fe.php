@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.02.05).
+ * This file: Spanish language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapaz de determi
 $phpMussel['lang']['response_upload_error'] = '¡No se pudo subir!';
 $phpMussel['lang']['response_verification_failed'] = '¡No se pudo verificar! Componente podría estar dañado.';
 $phpMussel['lang']['response_verification_success'] = '¡Verificado con éxito! No se encontraron problemas.';
+$phpMussel['lang']['state_async_deny'] = 'Permisos no adecuados para realizar solicitudes asincrónicas. Intenta iniciar sesión de nuevo.';
 $phpMussel['lang']['state_complete_access'] = 'Acceso completo';
 $phpMussel['lang']['state_component_is_active'] = 'Componente está activo.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Componente está inactivo.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Componente está provisional.';
 $phpMussel['lang']['state_default_password'] = '¡Advertencia: Usando la contraseña estándar!';
+$phpMussel['lang']['state_loading'] = 'Cargando...';
 $phpMussel['lang']['state_logged_in'] = 'Conectado.';
 $phpMussel['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $phpMussel['lang']['state_maintenance_mode'] = 'Advertencia: ¡El modo de mantenimiento está activado!';

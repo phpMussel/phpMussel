@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.02.05).
+ * This file: Thai language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'ไม่สาม
 $phpMussel['lang']['response_upload_error'] = 'ล้มเหลวอัปโหลด!';
 $phpMussel['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
 $phpMussel['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
+$phpMussel['lang']['state_async_deny'] = 'สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง.';
 $phpMussel['lang']['state_complete_access'] = 'เข้าถึงได้อย่างสมบูรณ์';
 $phpMussel['lang']['state_component_is_active'] = 'คอมโพเนนต์ใช้งานอยู่.';
 $phpMussel['lang']['state_component_is_inactive'] = 'คอมโพเนนต์ไม่ใช้งาน.';
 $phpMussel['lang']['state_component_is_provisional'] = 'คอมโพเนนต์เป็นครั้งคราว.';
 $phpMussel['lang']['state_default_password'] = 'คำเตือน: ใช้ค่าเริ่มต้นรหัสผ่าน!';
+$phpMussel['lang']['state_loading'] = 'กำลังโหลด ...';
 $phpMussel['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $phpMussel['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';
 $phpMussel['lang']['state_maintenance_mode'] = 'คำเตือน: เปิดใช้งานโหมดการบำรุงรักษา!';

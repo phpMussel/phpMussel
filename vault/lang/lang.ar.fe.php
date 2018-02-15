@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.02.05).
+ * This file: Arabic language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر ع
 $phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
 $phpMussel['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
+$phpMussel['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
 $phpMussel['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $phpMussel['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
+$phpMussel['lang']['state_loading'] = 'جار التحميل...';
 $phpMussel['lang']['state_logged_in'] = 'حاليا على.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';

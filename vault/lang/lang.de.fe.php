@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.02.05).
+ * This file: German language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermitte
 $phpMussel['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein.';
 $phpMussel['lang']['response_verification_success'] = 'Verifizierung war Erfolg! Keine Probleme gefunden.';
+$phpMussel['lang']['state_async_deny'] = 'Berechtigungen sind nicht ausreichend, um asynchrone Anforderungen auszuführen. Versuchen Sie sich erneut anzumelden.';
 $phpMussel['lang']['state_complete_access'] = 'Vollständiger Zugriff';
 $phpMussel['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
+$phpMussel['lang']['state_loading'] = 'Wird geladen...';
 $phpMussel['lang']['state_logged_in'] = 'Eingeloggt.';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';

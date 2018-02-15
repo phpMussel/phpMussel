@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.02.05).
+ * This file: Korean language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '결정 수 없습�
 $phpMussel['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $phpMussel['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $phpMussel['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
+$phpMussel['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
 $phpMussel['lang']['state_complete_access'] = '전체 액세스';
 $phpMussel['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $phpMussel['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
 $phpMussel['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
 $phpMussel['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
+$phpMussel['lang']['state_loading'] = '로드 중 ...';
 $phpMussel['lang']['state_logged_in'] = '로그인 있습니다.';
 $phpMussel['lang']['state_logs_access_only'] = '로그에만 액세스';
 $phpMussel['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.02.05).
+ * This file: Japanese language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '決定すること
 $phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $phpMussel['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $phpMussel['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
+$phpMussel['lang']['state_async_deny'] = 'あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
 $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
+$phpMussel['lang']['state_loading'] = '読み込んでいます...';
 $phpMussel['lang']['state_logged_in'] = 'ログインしています。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';

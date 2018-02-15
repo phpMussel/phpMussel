@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.02.05).
+ * This file: Indonesian language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menent
 $phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
 $phpMussel['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
+$phpMussel['lang']['state_async_deny'] = 'Izin tidak memadai untuk melakukan permintaan asinkron. Coba masuk lagi.';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
 $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
+$phpMussel['lang']['state_loading'] = 'Pemuatan...';
 $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';

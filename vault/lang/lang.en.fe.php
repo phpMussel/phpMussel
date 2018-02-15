@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.02.05).
+ * This file: English language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Unable to determin
 $phpMussel['lang']['response_upload_error'] = 'Failed to upload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verification failed! Component could be corrupted.';
 $phpMussel['lang']['response_verification_success'] = 'Verification success! No problems found.';
+$phpMussel['lang']['state_async_deny'] = 'Permissions not adequate to perform asynchronous requests. Try logging in again.';
 $phpMussel['lang']['state_complete_access'] = 'Complete access';
 $phpMussel['lang']['state_component_is_active'] = 'Component is active.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactive.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Component is provisional.';
 $phpMussel['lang']['state_default_password'] = 'Warning: Using default password!';
+$phpMussel['lang']['state_loading'] = 'Loading...';
 $phpMussel['lang']['state_logged_in'] = 'Logged in.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logs access only';
 $phpMussel['lang']['state_maintenance_mode'] = 'Warning: Maintenance mode is enabled!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.02.05).
+ * This file: Dutch language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $phpMussel['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $phpMussel['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
+$phpMussel['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
 $phpMussel['lang']['state_component_is_active'] = 'Component is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
+$phpMussel['lang']['state_loading'] = 'Bezig met laden...';
 $phpMussel['lang']['state_logged_in'] = 'Ingelogd.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_maintenance_mode'] = 'Waarschuwing: De onderhoudsmodus is ingeschakeld!';

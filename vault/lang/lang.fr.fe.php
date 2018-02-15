@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.02.05).
+ * This file: French language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -245,11 +245,13 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapable de déte
 $phpMussel['lang']['response_upload_error'] = 'Échec du téléchargement !';
 $phpMussel['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';
 $phpMussel['lang']['response_verification_success'] = 'Succès de la vérification ! Aucun problème trouvé.';
+$phpMussel['lang']['state_async_deny'] = 'Les autorisations ne sont pas suffisantes pour effectuer des requêtes asynchrones. Essayez de vous reconnecter.';
 $phpMussel['lang']['state_complete_access'] = 'Accès complet';
 $phpMussel['lang']['state_component_is_active'] = 'Le composant est actif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $phpMussel['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
+$phpMussel['lang']['state_loading'] = 'Chargement...';
 $phpMussel['lang']['state_logged_in'] = 'Connecté.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $phpMussel['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';
