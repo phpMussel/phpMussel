@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.01.17).
+ * This file: Front-end handler (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -38,8 +38,8 @@ $phpMussel['FE'] = [
     /** Main front-end HTML template file. */
     'Template' => $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.html')),
 
-    /** Main front-end JavaScript data. */
-    'JS' => $phpMussel['ReadFile']($phpMussel['GetAssetPath']('scripts.js')),
+    /** Populated by front-end JavaScript data as per needed. */
+    'JS' => '',
 
     /** Default password hash ("password"). */
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
@@ -57,9 +57,6 @@ $phpMussel['FE'] = [
 
     /** Define active configuration file. */
     'ActiveConfigFile' => !empty($phpMussel['Overrides']) ? $phpMussel['Domain'] . '.config.ini' : 'config.ini',
-
-    /** Number localisation JavaScript. */
-    'Number_L10N_JS' => $phpMussel['Number_L10N_JS'](),
 
     /** Current time and date. */
     'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
@@ -102,6 +99,9 @@ $phpMussel['FE'] = [
 
     /** The user agent of the current request. */
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
+
+    /** Asynchronous mode. */
+    'ASYNC' => !empty($_POST['ASYNC']),
 
     /** Will be populated by the page title. */
     'FE_Title' => ''
@@ -410,6 +410,14 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
 
 }
 
+/** The user is attempting an asynchronous request without adequate permissions. */
+if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['ASYNC']) {
+    header('HTTP/1.0 403 Forbidden');
+    header('HTTP/1.1 403 Forbidden');
+    header('Status: 403 Forbidden');
+    die($phpMussel['lang']['state_async_deny']);
+}
+
 /** Only execute this code block for users that are logged in. */
 if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
 
@@ -449,11 +457,8 @@ $phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br 
 /** The user hasn't logged in. Show them the login page. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_login'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['lang']['tip_login'];
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_login'], $phpMussel['lang']['tip_login'], false);
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
@@ -462,7 +467,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
@@ -472,8 +477,8 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
  */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['CronMode']) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_home'];
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_home'], $phpMussel['lang']['tip_home'], false);
 
     /** phpMussel version used. */
     $phpMussel['FE']['ScriptVersion'] = $phpMussel['ScriptVersion'];
@@ -486,12 +491,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Operating system used. */
     $phpMussel['FE']['info_os'] = php_uname();
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_home']
-    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_logout'];
 
@@ -610,7 +609,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
@@ -781,87 +780,99 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
     }
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_accounts'];
+    if (!$phpMussel['FE']['ASYNC']) {
 
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_accounts']
-    );
+        /** Page initial prepwork. */
+        $phpMussel['InitialPrepwork']($phpMussel['lang']['title_accounts'], $phpMussel['lang']['tip_accounts']);
 
-    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+        /** Append async globals. */
+        $phpMussel['FE']['JS'] .=
+            "window['phpmussel-form-target']='accounts';function acc(e,d,i,t){" .
+            "var o=function(e){w('stateMsg',e)},a=function(){w('stateMsg','" .
+            $phpMussel['lang']['state_loading'] . "')};" .
+            'window.username=document.getElementById(e).value,window.password=document.getElementById(d).value,window.do=document.getElementById(t).value,' .
+            "'delete-account'==window.do&&\$('POST','',['phpmussel-form-target','username','password','do'],a,function(e){w('stateMsg',e),hideid(i)},o)," .
+            "'update-password'==window.do&&\$('POST','',['phpmussel-form-target','username','password','do'],a,o,o)}\n";
 
-    $phpMussel['FE']['AccountsRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts_row.html'));
-    $phpMussel['FE']['Accounts'] = '';
-    $phpMussel['FE']['NewLineOffset'] = 0;
+        $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
-    while (($phpMussel['FE']['NewLinePos'] = strpos(
-        $phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['NewLineOffset'] + 1
-    )) !== false) {
-        $phpMussel['FE']['NewLine'] = substr(
-            $phpMussel['FE']['UserList'],
-            $phpMussel['FE']['NewLineOffset'] + 1,
-            $phpMussel['FE']['NewLinePos'] - $phpMussel['FE']['NewLineOffset'] - 1
-        );
-        $phpMussel['RowInfo'] = ['DelPos' => strpos($phpMussel['FE']['NewLine'], ','), 'AccWarnings' => ''];
-        $phpMussel['RowInfo']['AccUsername'] = substr($phpMussel['FE']['NewLine'], 0, $phpMussel['RowInfo']['DelPos']);
-        $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['FE']['NewLine'], $phpMussel['RowInfo']['DelPos'] + 1);
-        $phpMussel['RowInfo']['AccPermissions'] = (int)substr($phpMussel['RowInfo']['AccPassword'], -1);
-        if ($phpMussel['RowInfo']['AccPermissions'] === 1) {
-            $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['state_complete_access'];
-        } elseif ($phpMussel['RowInfo']['AccPermissions'] === 2) {
-            $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['state_logs_access_only'];
-        } elseif ($phpMussel['RowInfo']['AccPermissions'] === 3) {
-            $phpMussel['RowInfo']['AccPermissions'] = 'Cronable';
-        } else {
-            $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['response_error'];
+        $phpMussel['FE']['AccountsRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts_row.html'));
+        $phpMussel['FE']['Accounts'] = '';
+        $phpMussel['FE']['NewLineOffset'] = 0;
+
+        while (($phpMussel['FE']['NewLinePos'] = strpos(
+            $phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['NewLineOffset'] + 1
+        )) !== false) {
+            $phpMussel['FE']['NewLine'] = substr(
+                $phpMussel['FE']['UserList'],
+                $phpMussel['FE']['NewLineOffset'] + 1,
+                $phpMussel['FE']['NewLinePos'] - $phpMussel['FE']['NewLineOffset'] - 1
+            );
+            $phpMussel['RowInfo'] = ['DelPos' => strpos($phpMussel['FE']['NewLine'], ','), 'AccWarnings' => ''];
+            $phpMussel['RowInfo']['AccUsername'] = substr($phpMussel['FE']['NewLine'], 0, $phpMussel['RowInfo']['DelPos']);
+            $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['FE']['NewLine'], $phpMussel['RowInfo']['DelPos'] + 1);
+            $phpMussel['RowInfo']['AccPermissions'] = (int)substr($phpMussel['RowInfo']['AccPassword'], -1);
+            if ($phpMussel['RowInfo']['AccPermissions'] === 1) {
+                $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['state_complete_access'];
+            } elseif ($phpMussel['RowInfo']['AccPermissions'] === 2) {
+                $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['state_logs_access_only'];
+            } elseif ($phpMussel['RowInfo']['AccPermissions'] === 3) {
+                $phpMussel['RowInfo']['AccPermissions'] = 'Cronable';
+            } else {
+                $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['lang']['response_error'];
+            }
+            $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['RowInfo']['AccPassword'], 0, -2);
+            if ($phpMussel['RowInfo']['AccPassword'] === $phpMussel['FE']['DefaultPassword']) {
+                $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_default_password'] . '</div>';
+            } elseif ((
+                strlen($phpMussel['RowInfo']['AccPassword']) !== 60 && strlen($phpMussel['RowInfo']['AccPassword']) !== 96
+            ) || (
+                strlen($phpMussel['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$[0-9]{2}\$/', $phpMussel['RowInfo']['AccPassword'])
+            ) || (
+                strlen($phpMussel['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $phpMussel['RowInfo']['AccPassword'])
+            )) {
+                $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_password_not_valid'] . '</div>';
+            }
+            if (strrpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo']['AccUsername'] . ',') !== false) {
+                $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $phpMussel['lang']['state_logged_in'] . '</div>';
+            }
+            $phpMussel['RowInfo']['AccID'] = bin2hex($phpMussel['RowInfo']['AccUsername']);
+            $phpMussel['RowInfo']['AccUsername'] = htmlentities(base64_decode($phpMussel['RowInfo']['AccUsername']));
+            $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
+            $phpMussel['FE']['Accounts'] .= $phpMussel['ParseVars'](
+                $phpMussel['lang'] + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']
+            );
         }
-        $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['RowInfo']['AccPassword'], 0, -2);
-        if ($phpMussel['RowInfo']['AccPassword'] === $phpMussel['FE']['DefaultPassword']) {
-            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_default_password'] . '</div>';
-        } elseif ((
-            strlen($phpMussel['RowInfo']['AccPassword']) !== 60 && strlen($phpMussel['RowInfo']['AccPassword']) !== 96
-        ) || (
-            strlen($phpMussel['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$[0-9]{2}\$/', $phpMussel['RowInfo']['AccPassword'])
-        ) || (
-            strlen($phpMussel['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $phpMussel['RowInfo']['AccPassword'])
-        )) {
-            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['lang']['state_password_not_valid'] . '</div>';
-        }
-        if (strrpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo']['AccUsername'] . ',') !== false) {
-            $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $phpMussel['lang']['state_logged_in'] . '</div>';
-        }
-        $phpMussel['RowInfo']['AccUsername'] = htmlentities(base64_decode($phpMussel['RowInfo']['AccUsername']));
-        $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
-        $phpMussel['FE']['Accounts'] .= $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']
-        );
+        unset($phpMussel['RowInfo']);
+
     }
-    unset($phpMussel['RowInfo']);
 
-    /** Parse output. */
-    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts.html'))
-    );
+    if ($phpMussel['FE']['ASYNC']) {
+        /** Send output (async). */
+        echo $phpMussel['FE']['state_msg'];
+    } else {
 
-    /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+        /** Parse output. */
+        $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts.html'))
+        );
+
+        /** Send output. */
+        echo $phpMussel['SendOutput']();
+
+    }
 
 }
 
 /** Configuration. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['Permissions'] === 1) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_config'];
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_config'], $phpMussel['lang']['tip_config']);
 
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_config']
-    );
+    /** Append number localosation JS. */
+    $phpMussel['FE']['JS'] .= $phpMussel['Number_L10N_JS']() . "\n";
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1097,7 +1108,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
@@ -1140,14 +1151,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     }
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_updates'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_updates']
-    );
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_updates'], $phpMussel['lang']['tip_updates']);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1556,7 +1561,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
     $phpMussel['Components']['CountVerify'] = count($phpMussel['Components']['Verify']);
-    
+
     /** Preparing for update all and verify all buttons. */
     $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
 
@@ -1602,7 +1607,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     /** Send output. */
     if (!$phpMussel['FE']['CronMode']) {
         /** Normal page output. */
-        echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+        echo $phpMussel['SendOutput']();
     } elseif (!empty($UpdateAll)) {
         /** Returned state message for cronable (locally updating). */
         $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])];
@@ -1627,14 +1632,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 /** File Manager. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMussel['FE']['Permissions'] === 1) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_file_manager'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_file_manager']
-    );
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_file_manager'], $phpMussel['lang']['tip_file_manager'], false);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1824,8 +1823,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 );
 
                 /** Send output. */
-                echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
-
+                echo $phpMussel['SendOutput']();
                 die;
 
             }
@@ -1860,8 +1858,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 );
 
                 /** Send output. */
-                echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
-
+                echo $phpMussel['SendOutput']();
                 die;
 
             }
@@ -2001,23 +1998,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     $phpMussel['FormatFilesize']($phpMussel['FE']['TotalUsage']);
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
 /** Upload Test. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMussel['FE']['Permissions'] === 1) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_upload_test'];
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_upload_test'], $phpMussel['lang']['tip_upload_test'], false);
 
     $phpMussel['FE']['MaxFilesize'] = $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit']);
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_upload_test']
-    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -2028,21 +2019,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
 /** Quarantine. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_quarantine'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_quarantine']
-    );
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_quarantine'], $phpMussel['lang']['tip_quarantine']);
 
     /** Display how to enable quarantine if currently disabled. */
     if (!$phpMussel['Config']['general']['quarantine_key']) {
@@ -2155,21 +2140,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 
 /** Statistics. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel['FE']['Permissions'] === 1) {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_statistics'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_statistics']
-    );
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_statistics'], $phpMussel['lang']['tip_statistics'], false);
 
     /** Display how to enable statistics if currently disabled. */
     if (!$phpMussel['Config']['general']['statistics']) {
@@ -2242,7 +2221,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     );
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
     /** Cleanup. */
     unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Statistics']);
@@ -2252,14 +2231,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 /** Logs. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
 
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_logs'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        ['username' => $phpMussel['FE']['UserRaw']],
-        $phpMussel['lang']['tip_logs']
-    );
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_logs'], $phpMussel['lang']['tip_logs'], false);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -2336,7 +2309,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
     $phpMussel['FE']['LogFiles'] = $phpMussel['FE']['LogFiles']['Out'] ?: $phpMussel['lang']['logs_no_logfiles_available'];
 
     /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    echo $phpMussel['SendOutput']();
 
 }
 

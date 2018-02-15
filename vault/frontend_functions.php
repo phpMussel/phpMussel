@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.06).
+ * This file: Front-end functions file (last modified: 2018.02.15).
  */
 
 /**
@@ -652,16 +652,17 @@ $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMusse
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.32') || (
-        !$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.25')
+    $Minor = substr($Version, 0, 4);
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.27')
     ) || (
-        !$phpMussel['VersionCompare']($Version, '7.1.0') && $phpMussel['VersionCompare']($Version, '7.1.11')
+        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.14')
+    ) || (
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.1')
     )) {
         $Level += 2;
     }
-    if ($phpMussel['VersionCompare']($Version, '7.0.0') || (
-        !$phpMussel['VersionCompare']($Date, '2017.12.3') && $phpMussel['VersionCompare']($Version, '7.1.0')
-    ) || (
+    if ($phpMussel['VersionCompare']($Version, '7.1.0') || (
         !$phpMussel['VersionCompare']($Date, '2018.12.1') && $phpMussel['VersionCompare']($Version, '7.2.0')
     )) {
         $Level += 1;
@@ -911,7 +912,7 @@ $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
 };
 
 /** Duplication avoidance (front-end updates page). */
-$phpMussel['AppendTests'] = function (&$Component) use (&$phpMussel) {
+$phpMussel['AppendTests'] = function (&$Component, $ReturnState = false) use (&$phpMussel) {
     $TestData = $phpMussel['FECacheGet'](
         $phpMussel['FE']['Cache'],
         $phpMussel['Components']['RemoteMeta'][$Component['ID']]['Tests']
@@ -950,6 +951,9 @@ $phpMussel['AppendTests'] = function (&$Component) use (&$phpMussel) {
                 $TestsPassed = '?';
                 $StatusHead .= '<span class="txtOe">❓ ';
             } else {
+                if ($ReturnState) {
+                    return false;
+                }
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
             if (empty($ThisStatus['target_url'])) {
@@ -957,28 +961,37 @@ $phpMussel['AppendTests'] = function (&$Component) use (&$phpMussel) {
             } else {
                 $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
             }
-            $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
+            if (!$ReturnState) {
+                $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
+            }
         }
-        if ($TestsTotal === $TestsPassed) {
-            $TestClr = 'txtGn';
-        } else {
-            $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
+        if (!$ReturnState) {
+            if ($TestsTotal === $TestsPassed) {
+                $TestClr = 'txtGn';
+            } else {
+                $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
+            }
+            $TestsTotal = sprintf(
+                '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
+                '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
+                '</span><span id="%4$s-hidetests" style="display:none">' .
+                '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
+                '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
+                $TestClr,
+                ($TestsPassed === '?' ? '?' : $phpMussel['Number_L10N']($TestsPassed)),
+                $phpMussel['Number_L10N']($TestsTotal),
+                $Component['ID'],
+                $TestDetails
+            );
+            $phpMussel['AppendToString'](
+                $Component['StatusOptions'],
+                '<hr />',
+                '<div class="s">' . $phpMussel['lang']['label_tests'] . ' ' . $TestsTotal
+            );
         }
-        $TestsTotal = sprintf(
-            '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
-            '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
-            '</span><span id="%4$s-hidetests" style="display:none">' .
-            '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
-            '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
-            $TestClr,
-            ($TestsPassed === '?' ? '?' : $phpMussel['Number_L10N']($TestsPassed)),
-            $phpMussel['Number_L10N']($TestsTotal),
-            $Component['ID'],
-            $TestDetails
-        );
-        $phpMussel['AppendToString']($Component['StatusOptions'], '<hr />',
-            '<div class="s">' . $phpMussel['lang']['label_tests'] . ' ' . $TestsTotal
-        );
+    }
+    if ($ReturnState) {
+        return true;
     }
 };
 
@@ -1100,7 +1113,10 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                     $phpMussel['Components']['NewMeta'],
                     $phpMussel['Components']['NewMetaMatches']
                 ) &&
-                ($phpMussel['Components']['NewMetaMatches'] = $phpMussel['Components']['NewMetaMatches'][0])
+                ($phpMussel['Components']['NewMetaMatches'] = $phpMussel['Components']['NewMetaMatches'][0]) &&
+                (!$phpMussel['FE']['CronMode'] || empty(
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Tests']
+                ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']], true))
             ) {
                 $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']);
                 $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
@@ -1541,4 +1557,28 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
         return;
     }
 
+};
+
+/** Assign some basic variables (initial prepwork for most front-end pages). */
+$phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$phpMussel) {
+
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $Title;
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = empty(
+        $phpMussel['FE']['UserRaw']
+    ) ? $Tips : $phpMussel['ParseVars'](['username' => $phpMussel['FE']['UserRaw']], $Tips);
+
+    /** Load main front-end JavaScript data. */
+    $phpMussel['FE']['JS'] = $JS ? $phpMussel['ReadFile']($phpMussel['GetAssetPath']('scripts.js')) : '';
+
+};
+
+/** Send page output for front-end pages (plus some other final prepwork). */
+$phpMussel['SendOutput'] = function () use (&$phpMussel) {
+    if ($phpMussel['FE']['JS']) {
+        $phpMussel['FE']['JS'] = "\n<script type=\"text/javascript\">" . $phpMussel['FE']['JS'] . '</script>';
+    }
+    return $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 };
