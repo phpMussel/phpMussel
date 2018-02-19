@@ -8,6 +8,7 @@
 * text eol=lf
 *.ini text eol=crlf
 *.renameme text eol=crlf
+*.RenameMe text eol=crlf
 *.txt text eol=crlf
 *.cvd binary
 *.dat binary
