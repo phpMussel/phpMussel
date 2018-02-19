@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.02.15).
+ * This file: Front-end functions file (last modified: 2018.02.20).
  */
 
 /**
@@ -1219,10 +1219,10 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                         rename($phpMussel['Vault'] . $ThisFileName, $phpMussel['Vault'] . $ThisFileName . '.rollback');
                     }
                     $phpMussel['Components']['BytesAdded'] += strlen($ThisFile);
-                    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $ThisFileName, 'w');
-                    $phpMussel['RemoteFiles'][$ThisFileName] = fwrite($phpMussel['Handle'], $ThisFile);
+                    $Handle = fopen($phpMussel['Vault'] . $ThisFileName, 'w');
+                    $phpMussel['RemoteFiles'][$ThisFileName] = fwrite($Handle, $ThisFile);
                     $phpMussel['RemoteFiles'][$ThisFileName] = ($phpMussel['RemoteFiles'][$ThisFileName] !== false);
-                    fclose($phpMussel['Handle']);
+                    fclose($Handle);
                     $ThisFile = '';
                 }
                 if ($Rollback) {
@@ -1319,9 +1319,9 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
             if (!empty($Annotations[$ThisKey])) {
                 $ThisFile = $phpMussel['Congruency']($ThisFile, $Annotations[$ThisKey]);
             }
-            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $ThisKey, 'w');
-            fwrite($phpMussel['Handle'], $ThisFile);
-            fclose($phpMussel['Handle']);
+            $Handle = fopen($phpMussel['Vault'] . $ThisKey, 'w');
+            fwrite($Handle, $ThisFile);
+            fclose($Handle);
         }
         /** Cleanup. */
         unset($phpMussel['RemoteFiles'], $phpMussel['IgnoredFiles']);
@@ -1374,10 +1374,10 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                     $phpMussel['DeleteDirectory']($ThisFile);
                 }
             });
-            $phpMussel['Handle'] =
+            $Handle =
                 fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], 'w');
-            fwrite($phpMussel['Handle'], $phpMussel['Components']['NewMeta']);
-            fclose($phpMussel['Handle']);
+            fwrite($Handle, $phpMussel['Components']['NewMeta']);
+            fclose($Handle);
             $phpMussel['Components']['Meta'][$ID]['Version'] = false;
             $phpMussel['Components']['Meta'][$ID]['Files'] = false;
             $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_successfully_uninstalled'];
@@ -1441,15 +1441,16 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails']);
             }
         } else {
+            $EOL = (strpos($phpMussel['Activation']['Config'], "\r\nActive=") !== false) ? "\r\n" : "\n";
             $phpMussel['Activation']['Config'] = str_replace(
-                "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
-                "\r\nActive='" . $phpMussel['Activation']['Active'] . "'\r\n",
+                $EOL . "Active='" . $phpMussel['Config']['signatures']['Active'] . "'" . $EOL,
+                $EOL . "Active='" . $phpMussel['Activation']['Active'] . "'" . $EOL,
                 $phpMussel['Activation']['Config']
             );
             $phpMussel['Config']['signatures']['Active'] = $phpMussel['Activation']['Active'];
-            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
-            fwrite($phpMussel['Handle'], $phpMussel['Activation']['Config']);
-            fclose($phpMussel['Handle']);
+            $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
+            fwrite($Handle, $phpMussel['Activation']['Config']);
+            fclose($Handle);
             $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activated'];
             if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds']);
@@ -1498,15 +1499,16 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails']);
             }
         } else {
+            $EOL = (strpos($phpMussel['Deactivation']['Config'], "\r\nActive=") !== false) ? "\r\n" : "\n";
             $phpMussel['Deactivation']['Config'] = str_replace(
-                "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
-                "\r\nActive='" . $phpMussel['Deactivation']['Active'] . "'\r\n",
+                $EOL . "Active='" . $phpMussel['Config']['signatures']['Active'] . "'" . $EOL,
+                $EOL . "Active='" . $phpMussel['Deactivation']['Active'] . "'" . $EOL,
                 $phpMussel['Deactivation']['Config']
             );
             $phpMussel['Config']['signatures']['Active'] = $phpMussel['Deactivation']['Active'];
-            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
-            fwrite($phpMussel['Handle'], $phpMussel['Deactivation']['Config']);
-            fclose($phpMussel['Handle']);
+            $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
+            fwrite($Handle, $phpMussel['Deactivation']['Config']);
+            fclose($Handle);
             $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivated'];
             if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds']);

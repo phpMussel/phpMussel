@@ -22,6 +22,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.02.15; Sub-minor code change; Maikuolan]: Component update/installation
   via Cronable should fail if unit tests fail; Added code for this accordingly.
 
+- [2018.02.20; Bug-fix; Maikuolan]: The closures for activating and
+  deactivating components via the front-end updates page would fail if non-CRLF
+  linebreaks were used by the configuration file (thanks to senky for reporting
+  this bug); Fixed.
+  Refer github.com/phpMussel/phpMussel/issues/151
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 
