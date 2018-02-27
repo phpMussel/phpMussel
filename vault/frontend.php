@@ -108,6 +108,9 @@ $phpMussel['FE'] = [
 
 ];
 
+/** Plugin hook: "frontend_before". */
+$phpMussel['Execute_Hook']('frontend_before');
+
 /** Fetch pips data. */
 $phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php', true);
 if (!empty($phpMussel['Pips_Path']) && is_readable($phpMussel['Pips_Path'])) {
