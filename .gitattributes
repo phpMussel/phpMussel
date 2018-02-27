@@ -10,7 +10,6 @@
 *.renameme text eol=crlf
 *.RenameMe text eol=crlf
 *.txt text eol=crlf
-*.cvd binary
 *.dat binary
 *.exe binary
 *.gif binary

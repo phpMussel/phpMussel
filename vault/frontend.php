@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.02.14).
+ * This file: Front-end handler (last modified: 2018.02.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
