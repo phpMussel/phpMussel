@@ -28,6 +28,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   this bug); Fixed.
   Refer github.com/phpMussel/phpMussel/issues/151
 
+- [2018.02.27; Sub-minor code change; Maikuolan]: Added internal language
+  support for Bangla (20 language localisations now completed and available).
+  Translation is very fuzzy though (auditing/checking is invited/encouraged).
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

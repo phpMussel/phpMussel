@@ -179,6 +179,25 @@ l10n/ar:
    - 012a5af1487f49cd94577b310d24caed:60591
    - be082fabf3251edf1635ec843e954a59:8867
  Reannotate: components.dat
+l10n/bn:
+ Name: L10N: বাংলা
+ Extended Description: বাংলা ভাষার তথ্য
+ Version: 2018.57.315
+ Minimum Required: 1.2.0
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.bn.fe.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.bn.php
+  To:
+   - lang/lang.bn.fe.php
+   - lang/lang.bn.php
+  Checksum:
+   - 139643c7105143742b5695383cac0cb2:81874
+   - f8dab9131fe898adcd4a6a4d63fc9e15:12692
+ Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
