@@ -32,6 +32,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   support for Bangla (20 language localisations now completed and available).
   Translation is very fuzzy though (auditing/checking is invited/encouraged).
 
+- [2018.02.27; Sub-minor code change; senky]: Added a new plugin hook,
+  "frontend_before", executed towards the beginning of the front-end handler.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

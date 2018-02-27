@@ -281,6 +281,8 @@ Tập tin | Chi tiết
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
 /vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.bn.fe.php | Dữ liệu tiếng Bengal cho các front-end.
+/vault/lang/lang.bn.php | Dữ liệu tiếng Bengal.
 /vault/lang/lang.de.fe.php | Dữ liệu tiếng Đức cho các front-end.
 /vault/lang/lang.de.php | Dữ liệu tiếng Đức.
 /vault/lang/lang.en.fe.php | Dữ liệu tiếng Anh cho các front-end.
@@ -344,6 +346,7 @@ Tập tin | Chi tiết
 /vault/themes.dat | Tập tin cho các chủ đề; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/upload.php | Tập tin cho xử lý tải lên.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/.gitignore | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog-v1.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
 /CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
@@ -875,4 +878,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Hai 2018 (2018.02.05).
+Lần cuối cập nhật: 27 Tháng Hai 2018 (2018.02.27).

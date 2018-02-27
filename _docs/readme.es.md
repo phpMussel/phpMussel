@@ -281,6 +281,8 @@ Archivo | Descripción
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/lang.ar.fe.php | Lingüísticos datos Árabe para el front-end.
 /vault/lang/lang.ar.php | Lingüísticos datos Árabe.
+/vault/lang/lang.bn.fe.php | Lingüísticos datos Bangla para el front-end.
+/vault/lang/lang.bn.php | Lingüísticos datos Bangla.
 /vault/lang/lang.de.fe.php | Lingüísticos datos Alemán para el front-end.
 /vault/lang/lang.de.php | Lingüísticos datos Alemán.
 /vault/lang/lang.en.fe.php | Lingüísticos datos Inglés para el front-end.
@@ -344,6 +346,7 @@ Archivo | Descripción
 /vault/themes.dat | Archivo de temas; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/upload.php | Módulo de subida.
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
+/.gitignore | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /Changelog-v1.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
 /CONTRIBUTING.md | Información en respecto a cómo contribuir al proyecto.
@@ -875,4 +878,4 @@ Sí. Una API está integrada en el front-end para interactuar con la página de 
 ---
 
 
-Última Actualización: 5 Febrero 2018 (2018.02.05).
+Última Actualización: 27 Febrero 2018 (2018.02.27).

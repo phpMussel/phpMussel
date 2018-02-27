@@ -281,6 +281,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
 /vault/lang/lang.ar.php | 아랍어 언어 데이터.
+/vault/lang/lang.bn.fe.php | 프론트 엔드 벵골어 언어 데이터.
+/vault/lang/lang.bn.php | CLI 벵골어 언어 데이터.
 /vault/lang/lang.de.fe.php | 프론트 엔드 독일어 언어 데이터.
 /vault/lang/lang.de.php | 독일어 언어 데이터.
 /vault/lang/lang.en.fe.php | 프론트 엔드 영어 데이터.
@@ -344,6 +346,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/themes.dat | 테마 파일. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
 /vault/upload.php | 업로드 핸들러.
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
+/.gitignore | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog-v1.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
 /CONTRIBUTING.md | 프로젝트에 기여하는 방법.
@@ -875,4 +878,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2018년 2월 5일.
+최종 업데이트 : 2018년 2월 27일.

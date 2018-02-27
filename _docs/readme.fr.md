@@ -281,6 +281,8 @@ Fichier | Description
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.fe.php | Données linguistiques en Arabe pour l'accès frontal.
 /vault/lang/lang.ar.php | Données linguistiques en Arabe.
+/vault/lang/lang.bn.fe.php | Données linguistiques en Bangla pour l'accès frontal.
+/vault/lang/lang.bn.php | Données linguistiques en Bangla.
 /vault/lang/lang.de.fe.php | Données linguistiques en Allemande pour l'accès frontal.
 /vault/lang/lang.de.php | Données linguistiques en Allemande.
 /vault/lang/lang.en.fe.php | Données linguistiques en Anglais pour l'accès frontal.
@@ -344,6 +346,7 @@ Fichier | Description
 /vault/themes.dat | Fichier des thèmes ; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/upload.php | Module de téléchargements.
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
+/.gitignore | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog-v1.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
 /CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
@@ -875,4 +878,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 5 Février 2018 (2018.02.05).
+Dernière mise à jour : 27 Février 2018 (2018.02.27).

@@ -162,6 +162,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 如果您遇到任何误报，​如果您遇到无法检测的新类型，​或者关于签名的其他任何问题，​请联系我以便于后续的版本支持，​该，​如果您不联系我，​我可能不会知道并在下一版本中进行处理。 *(看到：[什么是“假阳性”？​](#WHAT_IS_A_FALSE_POSITIVE))。​*
 
 如果您遇到误报严重或者不需要检测该签名下的文件或者其他不需要使用签名验证的场景，​将要禁用的特定签名的名称添加到签名灰名单文件（`/vault/greylist.csv`），被逗号隔开。
+
 *也可以看看： [扫描时如何访问文件的具体细节？](#SCAN_DEBUGGING)*
 
 #### 3.1 如何使用（CLI）
@@ -280,6 +281,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/lang/lang.ar.fe.php | 阿拉伯文前端语言数据。
 /vault/lang/lang.ar.php | 阿拉伯文语言数据。
+/vault/lang/lang.bn.fe.php | 孟加拉文前端语言数据。
+/vault/lang/lang.bn.php | 孟加拉文语言数据。
 /vault/lang/lang.de.fe.php | 德文前端语言数据。
 /vault/lang/lang.de.php | 德文语言数据。
 /vault/lang/lang.en.fe.php | 英文前端语言数据。
@@ -343,6 +346,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/themes.dat | 主题文件；它使用通过更新功能从前端。
 /vault/upload.php | 上传处理文件。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
+/.gitignore | GitHub文件（不需要为正确经营脚本）。
 /Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
 /CONTRIBUTING.md | 相关信息如何有助于该项目。
@@ -874,4 +878,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2018年2月5日。
+最后更新：2018年2月27日。

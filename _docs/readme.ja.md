@@ -281,6 +281,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
 /vault/lang/lang.ar.php | アラビア語言語データ。
+/vault/lang/lang.bn.fe.php | フロントエンドのベンガル語言語データ。
+/vault/lang/lang.bn.php | ベンガル語言語データ。
 /vault/lang/lang.de.fe.php | フロントエンドのドイツ語言語データ。
 /vault/lang/lang.de.php | ドイツ語言語データ。
 /vault/lang/lang.en.fe.php | フロントエンドの英語言語データ。
@@ -344,6 +346,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/themes.dat | テーマ・ファイル。​アップデート機能で使用（フロントエンドが提供します）。
 /vault/upload.php | アップロード・ハンドラ。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
+/.gitignore | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
 /CONTRIBUTING.md | プロジェクトに貢献する方法について。
@@ -875,4 +878,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2018年2月5日。
+最終アップデート：2018年2月27日。

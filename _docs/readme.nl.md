@@ -281,6 +281,8 @@ Bestand | Beschrijving
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/lang/lang.ar.fe.php | Arabisch lokalisatie voor het frontend.
 /vault/lang/lang.ar.php | Arabisch lokalisatie.
+/vault/lang/lang.bn.fe.php | Bengalees lokalisatie voor het frontend.
+/vault/lang/lang.bn.php | Bengalees lokalisatie.
 /vault/lang/lang.de.fe.php | Duitse lokalisatie voor het frontend.
 /vault/lang/lang.de.php | Duitse lokalisatie.
 /vault/lang/lang.en.fe.php | Engels lokalisatie voor het frontend.
@@ -344,6 +346,7 @@ Bestand | Beschrijving
 /vault/themes.dat | Thema bestand; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/upload.php | Upload handler.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
+/.gitignore | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
@@ -875,4 +878,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 5 Februari 2018 (2018.02.05).
+Laatste Bijgewerkt: 27 Februari 2018 (2018.02.27).

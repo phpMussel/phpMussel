@@ -281,6 +281,8 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/lang/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/lang/lang.ar.fe.php | 阿拉伯文前端語言數據。
 /vault/lang/lang.ar.php | 阿拉伯文語言數據。
+/vault/lang/lang.bn.fe.php | 孟加拉文前端語言數據。
+/vault/lang/lang.bn.php | 孟加拉文語言數據。
 /vault/lang/lang.de.fe.php | 德文前端語言數據。
 /vault/lang/lang.de.php | 德文語言數據。
 /vault/lang/lang.en.fe.php | 英文前端語言數據。
@@ -344,6 +346,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/themes.dat | 主題文件；它使用通過更新功能從前端。
 /vault/upload.php | 上傳處理文件。
 /.gitattributes | GitHub文件（不需要為正確經營腳本）。
+/.gitignore | GitHub文件（不需要為正確經營腳本）。
 /Changelog-v1.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。
@@ -875,4 +878,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2018年2月5日。
+最後更新：2018年2月27日。

@@ -281,6 +281,8 @@ Datei | Beschreibung
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
 /vault/lang/lang.ar.php | Arabische Sprachdateien.
+/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Front-End.
+/vault/lang/lang.bn.php | Bangla Sprachdateien.
 /vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Front-End.
 /vault/lang/lang.de.php | Deutsche Sprachdateien.
 /vault/lang/lang.en.fe.php | Englische Sprachdateien für das Front-End.
@@ -344,6 +346,7 @@ Datei | Beschreibung
 /vault/themes.dat | Themen-Datei; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/upload.php | Upload-Handler.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
+/.gitignore | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog-v1.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
 /CONTRIBUTING.md | Wie Sie dazu beitragen für das Projekt.
@@ -875,4 +878,4 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 ---
 
 
-Zuletzt aktualisiert: 5 Februar 2018 (2018.02.05).
+Zuletzt aktualisiert: 27 Februar 2018 (2018.02.27).

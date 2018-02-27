@@ -281,6 +281,8 @@ File | Descrizione
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/lang.ar.fe.php | Dati linguistici Araba per il front-end.
 /vault/lang/lang.ar.php | Dati linguistici Araba.
+/vault/lang/lang.bn.fe.php | Dati linguistici Bengalese per il front-end.
+/vault/lang/lang.bn.php | Dati linguistici Bengalese.
 /vault/lang/lang.de.fe.php | Dati linguistici Tedesca per il front-end.
 /vault/lang/lang.de.php | Dati linguistici Tedesca.
 /vault/lang/lang.en.fe.php | Dati linguistici Inglese per il front-end.
@@ -344,6 +346,7 @@ File | Descrizione
 /vault/themes.dat | File di temi; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/upload.php | Gestore di caricamenti.
 /.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
+/.gitignore | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
 /Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /CONTRIBUTING.md | Informazioni su come contribuire al progetto.
@@ -875,4 +878,4 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 ---
 
 
-Ultimo Aggiornamento: 5 Febbraio 2018 (2018.02.05).
+Ultimo Aggiornamento: 27 Febbraio 2018 (2018.02.27).

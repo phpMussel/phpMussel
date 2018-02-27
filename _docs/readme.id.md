@@ -281,6 +281,8 @@ Data | Deskripsi
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/lang.ar.fe.php | File Bahasa Arab untuk bagian depan.
 /vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.bn.fe.php | File Bahasa Benggala untuk bagian depan.
+/vault/lang/lang.bn.php | File Bahasa Benggala.
 /vault/lang/lang.de.fe.php | File Bahasa Jerman untuk bagian depan.
 /vault/lang/lang.de.php | File Bahasa Jerman.
 /vault/lang/lang.en.fe.php | File Bahasa Inggris untuk bagian depan.
@@ -344,6 +346,7 @@ Data | Deskripsi
 /vault/themes.dat | File tema; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/upload.php | Modul upload.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/.gitignore | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog-v1.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
@@ -875,4 +878,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 5 Februari 2018 (2018.02.05).
+Terakhir Diperbarui: 27 Februari 2018 (2018.02.27).
