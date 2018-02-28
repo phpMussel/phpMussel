@@ -254,6 +254,7 @@ Bestand | Beschrijving
 /vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_cache.html | Een HTML sjabloon voor de frontend cachegegevens pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
@@ -878,4 +879,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 27 Februari 2018 (2018.02.27).
+Laatste Bijgewerkt: 28 Februari 2018 (2018.02.28).

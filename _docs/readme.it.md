@@ -254,6 +254,7 @@ File | Descrizione
 /vault/fe_assets/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/fe_assets/_accounts.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
+/vault/fe_assets/_cache.html | Un modello HTML per il front-end pagina di dati della cache.
 /vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_config_row.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_files.html | Un modello HTML per il file manager.
@@ -878,4 +879,4 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 ---
 
 
-Ultimo Aggiornamento: 27 Febbraio 2018 (2018.02.27).
+Ultimo Aggiornamento: 28 Febbraio 2018 (2018.02.28).

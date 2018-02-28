@@ -254,8 +254,9 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/fe_assets/_accounts.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
-/vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのＨＴＭＬテンプレート。
-/vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーションページのＨＴＭＬテンプレート。
+/vault/fe_assets/_cache.html | フロントエンドのキャッシュ・データ・ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_config.html | フロントエンドのコンフィギュレーション・ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーション・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_files.html | ファイル・マネージャのＨＴＭＬテンプレート。
 /vault/fe_assets/_files_edit.html | ファイル・マネージャのＨＴＭＬテンプレート。
 /vault/fe_assets/_files_rename.html | ファイル・マネージャのＨＴＭＬテンプレート。
@@ -878,4 +879,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2018年2月27日。
+最終アップデート：2018年2月28日。

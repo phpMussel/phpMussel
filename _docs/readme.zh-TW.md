@@ -254,6 +254,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
 /vault/fe_assets/_accounts_row.html | 前端賬戶頁面的HTML模板。
+/vault/fe_assets/_cache.html | 前端緩存數據頁面的HTML模板。
 /vault/fe_assets/_config.html | 前端配置頁面的HTML模板。
 /vault/fe_assets/_config_row.html | 前端配置頁面的HTML模板。
 /vault/fe_assets/_files.html | 文件管理器的HTML模板。
@@ -878,4 +879,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2018年2月27日。
+最後更新：2018年2月28日。

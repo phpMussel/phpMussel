@@ -254,6 +254,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_cache.html | Một tập tin mẫu HTML cho các trang dữ liệu cache của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
@@ -878,4 +879,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Hai 2018 (2018.02.27).
+Lần cuối cập nhật: 28 Tháng Hai 2018 (2018.02.28).

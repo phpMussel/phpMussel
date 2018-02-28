@@ -254,6 +254,7 @@ Archivo | Descripción
 /vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
+/vault/fe_assets/_cache.html | Un archivo HTML para el front-end página del datos de caché.
 /vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_config_row.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_files.html | Un archivo HTML para el administración de archivos.
@@ -878,4 +879,4 @@ Sí. Una API está integrada en el front-end para interactuar con la página de 
 ---
 
 
-Última Actualización: 27 Febrero 2018 (2018.02.27).
+Última Actualización: 28 Febrero 2018 (2018.02.28).

@@ -250,6 +250,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
 &nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
@@ -1029,4 +1030,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 27 فروری 2018 (2018.02.27).</div>
+<div dir="rtl">آخری تازہ کاری: 28 فروری 2018 (2018.02.28).</div>

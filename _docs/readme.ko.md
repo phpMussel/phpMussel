@@ -254,6 +254,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
+/vault/fe_assets/_cache.html | 프론트 엔드 데이터 캐쉬 페이지의 HTML 템플릿.
 /vault/fe_assets/_config.html | 프론트 엔드 구성 페이지의 HTML 템플릿.
 /vault/fe_assets/_config_row.html | 프론트 엔드 구성 페이지의 HTML 템플릿.
 /vault/fe_assets/_files.html | 파일 관리자의 HTML 템플릿.
@@ -878,4 +879,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2018년 2월 27일.
+최종 업데이트 : 2018년 2월 28일.

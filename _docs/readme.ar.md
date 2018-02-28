@@ -250,6 +250,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/fe_assets/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة بيانات ذاكرة التخزين المؤقت.</div> | /vault/fe_assets/_cache.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config_row.html
 &nbsp; <div dir="rtl" style="display:inline;">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files.html
@@ -1029,4 +1030,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 27 فبراير 2018 (2018.02.27).</div>
+<div dir="rtl">آخر تحديث: 28 فبراير 2018 (2018.02.28).</div>

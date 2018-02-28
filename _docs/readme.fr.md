@@ -254,6 +254,7 @@ Fichier | Description
 /vault/fe_assets/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_cache.html | Un modèle HTML pour la page del données de cache de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_config_row.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
@@ -878,4 +879,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 27 Février 2018 (2018.02.27).
+Dernière mise à jour : 28 Février 2018 (2018.02.28).

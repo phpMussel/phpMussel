@@ -254,6 +254,7 @@ Data | Deskripsi
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_cache.html | Template HTML untuk akses bagian depan halaman data cache.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
@@ -878,4 +879,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 27 Februari 2018 (2018.02.27).
+Terakhir Diperbarui: 28 Februari 2018 (2018.02.28).
