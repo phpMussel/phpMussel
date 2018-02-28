@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.02.14).
+ * This file: Arabic language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النش
 $phpMussel['lang']['label_blocked'] = 'تم حظر التحميلات';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $phpMussel['lang']['label_events'] = 'مسح الأحداث';
+$phpMussel['lang']['label_expires'] = 'تنتهي: ';
 $phpMussel['lang']['label_flagged'] = 'تم الإبلاغ عن الكائنات';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel إستخدام القرص: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $phpMussel['lang']['label_hide'] = 'إخفائه';
+$phpMussel['lang']['label_never'] = 'أبدا';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_other'] = 'آخر';
 $phpMussel['lang']['label_other-Active'] = 'ملفات التوقيع النشطة';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'تحميل التجزئة: ';
 $phpMussel['lang']['label_upload_origin'] = 'تحميل الأصل: ';
 $phpMussel['lang']['label_upload_size'] = 'تحميل بحجم: ';
 $phpMussel['lang']['link_accounts'] = 'حسابات';
+$phpMussel['lang']['link_cache_data'] = 'بيانات ذاكرة التخزين المؤقت';
 $phpMussel['lang']['link_config'] = 'التكوين';
 $phpMussel['lang']['link_documentation'] = 'توثيق';
 $phpMussel['lang']['link_file_manager'] = 'مدير الملفات';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
 $phpMussel['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $phpMussel['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
+$phpMussel['lang']['state_cache_is_empty'] = 'ذاكرة التخزين المؤقت فارغة.';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
 $phpMussel['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير ع�
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
 $phpMussel['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end phpMussel.';
+$phpMussel['lang']['tip_cache_data'] = 'مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت.';
 $phpMussel['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين phpMussel عن طريق ألfront-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'الملاحظة: يستخدم phpMussel ملف تعريف ارتباط لمصادقة تسجيلات الدخول. من خلال تسجيل الدخول، فإنك تعطي موافقتك على إنشاء ملف تعريف ارتباط وتخزينه بواسطة المتصفح.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل
 $phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
 $phpMussel['lang']['tip_upload_test'] = 'مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – حسابات';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – بيانات ذاكرة التخزين المؤقت';
 $phpMussel['lang']['title_config'] = 'phpMussel – التكوين';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – مدير الملفات';
 $phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';

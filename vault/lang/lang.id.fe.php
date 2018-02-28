@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.02.14).
+ * This file: Indonesian language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $phpMussel['lang']['label_blocked'] = 'Upload diblokir';
 $phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $phpMussel['lang']['label_events'] = 'Pindai acara';
+$phpMussel['lang']['label_expires'] = 'Kedaluwarsa: ';
 $phpMussel['lang']['label_flagged'] = 'Obyek ditandai';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk phpMussel: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $phpMussel['lang']['label_hide'] = 'Menyembunyikan';
+$phpMussel['lang']['label_never'] = 'Tak pernah';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_other'] = 'Lain';
 $phpMussel['lang']['label_other-Active'] = 'File tanda tangan aktif';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Hash pengunggahan: ';
 $phpMussel['lang']['label_upload_origin'] = 'Asal pengunggahan: ';
 $phpMussel['lang']['label_upload_size'] = 'Ukuran pengunggahan: ';
 $phpMussel['lang']['link_accounts'] = 'Akun';
+$phpMussel['lang']['link_cache_data'] = 'Data Cache';
 $phpMussel['lang']['link_config'] = 'Konfigurasi';
 $phpMussel['lang']['link_documentation'] = 'Dokumentasi';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
 $phpMussel['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
 $phpMussel['lang']['state_async_deny'] = 'Izin tidak memadai untuk melakukan permintaan asinkron. Coba masuk lagi.';
+$phpMussel['lang']['state_cache_is_empty'] = 'Cache kosong.';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
 $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbar
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
 $phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel.';
+$phpMussel['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: phpMussel menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
 $phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Data Cache';
 $phpMussel['lang']['title_config'] = 'phpMussel – Konfigurasi';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';

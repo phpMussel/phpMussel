@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.02.14).
+ * This file: Russian language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'Активный файл ко
 $phpMussel['lang']['label_blocked'] = 'Загружает блокировки';
 $phpMussel['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $phpMussel['lang']['label_events'] = 'События сканирования';
+$phpMussel['lang']['label_expires'] = 'Истекает: ';
 $phpMussel['lang']['label_flagged'] = 'Помеченные объекты';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel Использование диска: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использова
 $phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $phpMussel['lang']['label_hide'] = 'Скрывать';
+$phpMussel['lang']['label_never'] = 'Никогда';
 $phpMussel['lang']['label_os'] = 'Используемая операционная система:';
 $phpMussel['lang']['label_other'] = 'Другие';
 $phpMussel['lang']['label_other-Active'] = 'Активные файлы сигнатур';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Хеш загрузки: ';
 $phpMussel['lang']['label_upload_origin'] = 'Происхождение загрузки: ';
 $phpMussel['lang']['label_upload_size'] = 'Размер загрузки: ';
 $phpMussel['lang']['link_accounts'] = 'Учетными Записями';
+$phpMussel['lang']['link_cache_data'] = 'Данные Кэша';
 $phpMussel['lang']['link_config'] = 'Конфигурация';
 $phpMussel['lang']['link_documentation'] = 'Документация';
 $phpMussel['lang']['link_file_manager'] = 'Файловый Менеджер';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Не удалось загруз�
 $phpMussel['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
 $phpMussel['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
 $phpMussel['lang']['state_async_deny'] = 'Разрешения не подходят для выполнения асинхронных запросов. Попробуйте снова войти в систему.';
+$phpMussel['lang']['state_cache_is_empty'] = 'Кэш пуст.';
 $phpMussel['lang']['state_complete_access'] = 'Полный доступ';
 $phpMussel['lang']['state_component_is_active'] = 'Компонент активен.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
 $phpMussel['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к phpMussel фронтенд.';
+$phpMussel['lang']['tip_cache_data'] = 'Привет, {username}.<br />Здесь вы можете просмотреть содержимое кеша.';
 $phpMussel['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для phpMussel от фронтенд.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Заметка: phpMussel использует cookie для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла cookie вашим браузером.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Заметка: Отслежи�
 $phpMussel['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов phpMussel (пакет ядра, сигнатуры, плагины, L10N файлы, итд).';
 $phpMussel['lang']['tip_upload_test'] = 'Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Учетными Записями';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Данные Кэша';
 $phpMussel['lang']['title_config'] = 'phpMussel – Конфигурация';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – Файловый Менеджер';
 $phpMussel['lang']['title_home'] = 'phpMussel – Домашняя Страница';

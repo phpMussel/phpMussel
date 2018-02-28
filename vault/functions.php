@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.02.05).
+ * This file: Functions file (last modified: 2018.02.28).
  */
 
 /**
@@ -415,8 +415,13 @@ $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = fals
     return file($Filename, $Flags, $Context);
 };
 
-/** Deletes expired cache entries and regenerates cache files. */
-$phpMussel['CleanCache'] = function () use (&$phpMussel) {
+/**
+ * Deletes expired cache entries and regenerates cache files.
+ *
+ * @param string $Delete Forcibly delete a specific cache entry (optional).
+ * @return bool Operation succeeded (true) or failed (false).
+ */
+$phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
     if (!empty($phpMussel['memCache']['CacheCleaned'])) {
         return true;
     }
@@ -427,7 +432,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
         return false;
     }
     $FileDataOld = $FileData = $phpMussel['ReadFile']($FileIndex);
-    if (substr_count($FileData, ';')) {
+    if (strpos($FileData, ';') !== false) {
         $FileData = explode(';', $FileData);
         foreach ($FileData as &$ThisData) {
             if (strpos($ThisData, ':') === false) {
@@ -435,7 +440,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
                 continue;
             }
             $ThisData = explode(':', $ThisData, 3);
-            if ($ThisData[1] > 0 && $phpMussel['Time'] > $ThisData[1]) {
+            if (($Delete && $Delete === $ThisData[0]) || ($ThisData[1] > 0 && $phpMussel['Time'] > $ThisData[1])) {
                 $FileKey = bin2hex(substr($ThisData[0], 0, 1));
                 if (!isset($CacheFiles[$FileKey])) {
                     $CacheFiles[$FileKey] = !is_readable(
@@ -1321,14 +1326,13 @@ $phpMussel['BuildPharList'] = function ($PharFile, $PharDepth = 0) use (&$phpMus
     $PharDepth++;
     $Out = '';
     $PharDir = scandir('phar://' . $PharFile);
-    $PharCount = count($PharDir);
-    for ($PharIter = 0; $PharIter < $PharCount; $PharIter++) {
-        if (is_dir('phar://' . $PharFile . '/' . $PharDir[$PharIter])) {
-            $PharDir[$PharIter] = $phpMussel['BuildPharList']($PharFile . '/' . $PharDir[$PharIter], $PharDepth);
+    foreach ($PharDir as $ThisPhar) {
+        if (is_dir('phar://' . $PharFile . '/' . $ThisPhar)) {
+            $ThisPhar = $phpMussel['BuildPharList']($PharFile . '/' . $ThisPhar, $PharDepth);
         } else {
-            $PharDir[$PharIter] = $PharDepth . ' ' . $PharFile . '/' . $PharDir[$PharIter];
+            $ThisPhar = $PharDepth . ' ' . $PharFile . '/' . $ThisPhar;
         }
-        $Out .= $PharDir[$PharIter] . "\n";
+        $Out .= $ThisPhar . "\n";
     }
     return $Out;
 };
@@ -4269,23 +4273,24 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $PharData = $phpMussel['BuildPharList']($f, $dpt);
             $PharData = explode("\n", $PharData);
             $PharCount = count($PharData);
+
             /** Iterate through each item in the PHARable file/object. */
-            for ($PharIter = 0; $PharIter < $PharCount; $PharIter++) {
-                if (empty($PharData[$PharIter])) {
+            foreach ($PharData[$PharIter] as $ThisPhar) {
+                if (empty($ThisPhar)) {
                     continue;
                 }
-                $PharData[$PharIter] = [
+                $ThisPhar = [
                     'DoScan' => true,
-                    'Depth' => $phpMussel['substrbf']($PharData[$PharIter], ' '),
-                    'Path' => $phpMussel['substraf']($PharData[$PharIter], ' ')
+                    'Depth' => $phpMussel['substrbf']($ThisPhar, ' '),
+                    'Path' => $phpMussel['substraf']($ThisPhar, ' ')
                 ];
-                $PharData[$PharIter]['Data'] = $phpMussel['ReadFile']('phar://' . $PharData[$PharIter]['Path']);
-                $PharData[$PharIter]['Filename'] =
-                        (substr_count($PharData[$PharIter]['Path'], '/')) ?
-                        $phpMussel['substral']($PharData[$PharIter]['Path'], '/') :
-                        $PharData[$PharIter]['Path'];
-                $PharData[$PharIter]['ItemRef'] = $ofn . '>' . $PharData[$PharIter]['Path'];
+                $ThisPhar['Data'] = $phpMussel['ReadFile']('phar://' . $ThisPhar['Path']);
+                $ThisPhar['Filename'] = (
+                    substr_count($ThisPhar['Path'], '/')
+                ) ? $phpMussel['substral']($ThisPhar['Path'], '/') : $ThisPhar['Path'];
+                $ThisPhar['ItemRef'] = $ofn . '>' . $ThisPhar['Path'];
             }
+
         } else {
             /** Default to the parent if the parent isn't PHARable. */
             $PharData = [0 => ['DoScan' => false, 'Depth' => 1, 'Path' => $f, 'Data' => $in]];
@@ -5365,15 +5370,13 @@ $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
  */
 $phpMussel['DirectoryRecursiveList'] = function ($Base) {
     $Arr = [];
-    $Key = -1;
     $Offset = strlen($Base);
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
-        if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) || !is_readable($Item) || is_dir($Item)) {
+        if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) || !is_readable($Item)) {
             continue;
         }
-        $Key++;
-        $Arr[$Key] = substr($Item, $Offset);
+        $Arr[] = substr($Item, $Offset);
     }
     return $Arr;
 };

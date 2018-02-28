@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.02.14).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích ho
 $phpMussel['lang']['label_blocked'] = 'Tải lên bị chặn';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $phpMussel['lang']['label_events'] = 'Sự kiện quét';
+$phpMussel['lang']['label_expires'] = 'Hết hạn: ';
 $phpMussel['lang']['label_flagged'] = 'Đối tượng bị gắn cờ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi phpMussel: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng �
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $phpMussel['lang']['label_hide'] = 'Che giấu';
+$phpMussel['lang']['label_never'] = 'Không bao giờ';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_other'] = 'Khác';
 $phpMussel['lang']['label_other-Active'] = 'Tập tin chữ ký kích hoạt';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Băm tải lên: ';
 $phpMussel['lang']['label_upload_origin'] = 'Nguồn gốc tải lên: ';
 $phpMussel['lang']['label_upload_size'] = 'Kích thước tải lên: ';
 $phpMussel['lang']['link_accounts'] = 'Tài Khoản';
+$phpMussel['lang']['link_cache_data'] = 'Dữ liệu cache';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';
 $phpMussel['lang']['link_documentation'] = 'Tài liệu';
 $phpMussel['lang']['link_file_manager'] = 'Quản lý tập tin';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $phpMussel['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $phpMussel['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
+$phpMussel['lang']['state_cache_is_empty'] = 'Bộ nhớ cache là trống.';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $phpMussel['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hế
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
 $phpMussel['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end phpMussel.';
+$phpMussel['lang']['tip_cache_data'] = 'Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache.';
 $phpMussel['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình phpMussel từ các front-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Lưu ý: phpMussel sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Tài khoản';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Dữ liệu cache';
 $phpMussel['lang']['title_config'] = 'phpMussel – Cấu hình';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản lý tập tin';
 $phpMussel['lang']['title_home'] = 'phpMussel – Trang Chủ';

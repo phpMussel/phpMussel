@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.02.14).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = '活動配置文件：';
 $phpMussel['lang']['label_blocked'] = '上傳已阻止';
 $phpMussel['lang']['label_branch'] = '分支最新穩定：';
 $phpMussel['lang']['label_events'] = '掃描事件';
+$phpMussel['lang']['label_expires'] = '過期： ';
 $phpMussel['lang']['label_flagged'] = '對像已標記';
 $phpMussel['lang']['label_fmgr_cache_data'] = '緩存數據和臨時文件';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel使用的磁盤空間： ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間
 $phpMussel['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $phpMussel['lang']['label_hide'] = '隱藏';
+$phpMussel['lang']['label_never'] = '決不';
 $phpMussel['lang']['label_os'] = '目前使用操作系統：';
 $phpMussel['lang']['label_other'] = '其他';
 $phpMussel['lang']['label_other-Active'] = '活動簽名文件';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = '上傳哈希：';
 $phpMussel['lang']['label_upload_origin'] = '上傳原點：';
 $phpMussel['lang']['label_upload_size'] = '上傳大小：';
 $phpMussel['lang']['link_accounts'] = '賬戶';
+$phpMussel['lang']['link_cache_data'] = '緩存數據';
 $phpMussel['lang']['link_config'] = '配置';
 $phpMussel['lang']['link_documentation'] = '文檔';
 $phpMussel['lang']['link_file_manager'] = '文件管理器';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = '無法上傳！';
 $phpMussel['lang']['response_verification_failed'] = '驗證失敗！組件可能已損壞。';
 $phpMussel['lang']['response_verification_success'] = '驗證成功！沒有發現問題。';
 $phpMussel['lang']['state_async_deny'] = '權限不足以執行異步請求。嘗試再次登錄。';
+$phpMussel['lang']['state_cache_is_empty'] = '緩存是空的。';
 $phpMussel['lang']['state_complete_access'] = '完全訪問';
 $phpMussel['lang']['state_component_is_active'] = '組件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '組件是非活性。';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '隱藏非過時';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '不要隱藏非用過';
 $phpMussel['lang']['switch-hide-unused-set-true'] = '隱藏非用過';
 $phpMussel['lang']['tip_accounts'] = '你好，​{username}。​<br />賬戶頁面允許您控制誰可以訪問phpMussel前端。';
+$phpMussel['lang']['tip_cache_data'] = '你好，​{username}。<br />在這裡您可以查看緩存的內容。';
 $phpMussel['lang']['tip_config'] = '你好，​{username}。​<br />配置頁面允許您修改phpMussel配置從前端。';
 $phpMussel['lang']['tip_donate'] = 'phpMussel是免費提供的，​但如果您想捐贈給項目，​您可以通過點擊捐贈按鈕這樣做。';
 $phpMussel['lang']['tip_fe_cookie_warning'] = '注意：phpMussel使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計跟踪目前已�
 $phpMussel['lang']['tip_updates'] = '你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新phpMussel的各種組件（核心包，​簽名，​插件，​L10N文件，​等等）。';
 $phpMussel['lang']['tip_upload_test'] = '你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 帳戶';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – 緩存數據';
 $phpMussel['lang']['title_config'] = 'phpMussel – 配置';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – 文件管理器';
 $phpMussel['lang']['title_home'] = 'phpMussel – 主頁';

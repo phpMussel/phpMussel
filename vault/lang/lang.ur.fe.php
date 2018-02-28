@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.02.14).
+ * This file: Urdu language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن ف
 $phpMussel['lang']['label_blocked'] = 'بلاک اپ لوڈ';
 $phpMussel['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $phpMussel['lang']['label_events'] = 'واقعات اسکین کریں';
+$phpMussel['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
 $phpMussel['lang']['label_flagged'] = 'نشان لگا دیا گیا آبجیکٹ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel ڈسک استعمال: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال:
 $phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $phpMussel['lang']['label_hide'] = 'چھپائیں';
+$phpMussel['lang']['label_never'] = 'کبھی نہیں';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $phpMussel['lang']['label_other'] = 'دیگر';
 $phpMussel['lang']['label_other-Active'] = 'فعال دستخط فائلیں';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'اپ لوڈ ہیش: ';
 $phpMussel['lang']['label_upload_origin'] = 'اپ لوڈ کی اصل: ';
 $phpMussel['lang']['label_upload_size'] = 'اپ لوڈ کا سائز: ';
 $phpMussel['lang']['link_accounts'] = 'اکاؤنٹس';
+$phpMussel['lang']['link_cache_data'] = 'کیش ڈیٹا';
 $phpMussel['lang']['link_config'] = 'کنفگریشن';
 $phpMussel['lang']['link_documentation'] = 'دستاویزی';
 $phpMussel['lang']['link_file_manager'] = 'فائل منیجر';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں نا�
 $phpMussel['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $phpMussel['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $phpMussel['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
+$phpMussel['lang']['state_cache_is_empty'] = 'کیش خالی ہے.';
 $phpMussel['lang']['state_complete_access'] = 'مکمل رسائی';
 $phpMussel['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $phpMussel['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ �
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'غیر استعمال شدہ چھپائیں';
 $phpMussel['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ phpMussel سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
+$phpMussel['lang']['tip_cache_data'] = 'ہیلو، {username}.<br />یہاں آپ کیش کے مندرجات کا جائزہ لے سکتے ہیں.';
 $phpMussel['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے phpMussel لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel بلا معاوضہ پیش کی جاتی ہے، لیکن آپ کو اس منصوبے کے لئے عطیہ کرنا چاہتے ہیں تو، آپ کو عطیہ کے بٹن پر کلک کر کے ایسا کر سکتے ہیں.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'نوٹ: لاگز کی تصدیق کے لئے phpMussel کوکی کا استعمال کرتا ہے. لاگ ان کرکے، آپ کو اپنے براؤزر کی طرف سے تخلیق اور ذخیرہ کرنے کے لئے ایک کوکی کے لئے آپ کی رضامندی دیتے ہیں.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار 
 $phpMussel['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $phpMussel['lang']['tip_upload_test'] = 'ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – اکاؤنٹس';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – کیش ڈیٹا';
 $phpMussel['lang']['title_config'] = 'phpMussel – کنفگریشن';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – فائل مینیجر';
 $phpMussel['lang']['title_home'] = 'phpMussel – ہوم';

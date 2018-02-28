@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.02.14).
+ * This file: Italian language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'File di configurazione attivo:
 $phpMussel['lang']['label_blocked'] = 'Caricamenti bloccati';
 $phpMussel['lang']['label_branch'] = 'Branch più recente stabile:';
 $phpMussel['lang']['label_events'] = 'Scansioni eventi';
+$phpMussel['lang']['label_expires'] = 'Scade: ';
 $phpMussel['lang']['label_flagged'] = 'Oggetti contrassegnati';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Dati di cache e file temporanei';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Utilizzo del disco da parte di phpMussel: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilizzo del disco totale: 
 $phpMussel['lang']['label_fmgr_total_space'] = 'Spazio totale su disco: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Componente aggiorna metadati';
 $phpMussel['lang']['label_hide'] = 'Nascondere';
+$phpMussel['lang']['label_never'] = 'Mai';
 $phpMussel['lang']['label_os'] = 'Sistema operativo utilizzata:';
 $phpMussel['lang']['label_other'] = 'Altro';
 $phpMussel['lang']['label_other-Active'] = 'File di firme attivi';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Hash del caricamento: ';
 $phpMussel['lang']['label_upload_origin'] = 'L\'origine del caricamento: ';
 $phpMussel['lang']['label_upload_size'] = 'Dimensione del caricamento: ';
 $phpMussel['lang']['link_accounts'] = 'Utenti';
+$phpMussel['lang']['link_cache_data'] = 'Dati della Cache';
 $phpMussel['lang']['link_config'] = 'Configurazione';
 $phpMussel['lang']['link_documentation'] = 'Documentazione';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Non riuscito a caricare!';
 $phpMussel['lang']['response_verification_failed'] = 'Non è riuscito a verificare! Componente potrebbe essere danneggiato.';
 $phpMussel['lang']['response_verification_success'] = 'Verificato con successo! Nessun problema trovato.';
 $phpMussel['lang']['state_async_deny'] = 'Autorizzazioni non adeguate per eseguire richieste asincrone. Prova ad accedere di nuovo.';
+$phpMussel['lang']['state_cache_is_empty'] = 'La cache è vuota.';
 $phpMussel['lang']['state_complete_access'] = 'Accesso completo';
 $phpMussel['lang']['state_component_is_active'] = 'Componente è attivo.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Componente è inattivo.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiorn
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Non nascondere il inutilizzato';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Nascondere il inutilizzato';
 $phpMussel['lang']['tip_accounts'] = 'Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di phpMussel.';
+$phpMussel['lang']['tip_cache_data'] = 'Salve, {username}.<br />Qui puoi rivedere il contenuto della cache.';
 $phpMussel['lang']['tip_config'] = 'Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per phpMussel dal front-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel è offerto gratuitamente, ma se si vuole donare al progetto, è possibile farlo facendo clic sul pulsante donare.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Nota: phpMussel utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il tuo consenso per creare e memorizzare un cookie dal tuo browser.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Nota: Il monitoraggio delle sta
 $phpMussel['lang']['tip_updates'] = 'Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di phpMussel (il pacchetto di base, le firme, plugins, file per L10N, ecc).';
 $phpMussel['lang']['tip_upload_test'] = 'Salve, {username}.<br />La pagina di carica testare contiene un modulo per i caricamenti file standard, che permette di verificare se un file viene normalmente essere bloccata da phpMussel quando si cerca di caricarlo.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Utenti';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Dati della Cache';
 $phpMussel['lang']['title_config'] = 'phpMussel – Configurazione';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Pagina Principale';

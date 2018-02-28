@@ -35,6 +35,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.02.27; Sub-minor code change; senky]: Added a new plugin hook,
   "frontend_before", executed towards the beginning of the front-end handler.
 
+- [2018.02.28; Minor code change; Maikuolan]: Added a new front-end page,
+  "Cache Data", enabling users to review the contents of their cache.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

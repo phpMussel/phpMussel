@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.02.14).
+ * This file: Turkish language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası:
 $phpMussel['lang']['label_blocked'] = 'Yüklemeler engellendi';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $phpMussel['lang']['label_events'] = 'Tara olayları';
+$phpMussel['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
 $phpMussel['lang']['label_flagged'] = 'İşaretlenen nesneler';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk kullanımı: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $phpMussel['lang']['label_hide'] = 'Saklamak';
+$phpMussel['lang']['label_never'] = 'Asla';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_other'] = 'Diğer';
 $phpMussel['lang']['label_other-Active'] = 'Etkin imza dosyaları';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Yükleme karması: ';
 $phpMussel['lang']['label_upload_origin'] = 'Yükleme menşe: ';
 $phpMussel['lang']['label_upload_size'] = 'Yükleme boyutu: ';
 $phpMussel['lang']['link_accounts'] = 'Hesaplar';
+$phpMussel['lang']['link_cache_data'] = 'Önbellek Verileri';
 $phpMussel['lang']['link_config'] = 'Yapılandırma';
 $phpMussel['lang']['link_documentation'] = 'Belgeler';
 $phpMussel['lang']['link_file_manager'] = 'Dosya Yöneticisi';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Yüklenemedi!';
 $phpMussel['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
 $phpMussel['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
 $phpMussel['lang']['state_async_deny'] = 'İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin.';
+$phpMussel['lang']['state_cache_is_empty'] = 'Önbellek boş.';
 $phpMussel['lang']['state_complete_access'] = 'Tam erişim';
 $phpMussel['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Kullanılmayanları gizleme';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Kullanılmayanları gizle';
 $phpMussel['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, phpMussel ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
+$phpMussel['lang']['tip_cache_data'] = 'Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz.';
 $phpMussel['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, phpMussel için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ücretsiz olarak sunulmaktadır, ancak projeye bağış yapmak isterseniz, bağış düğmesini tıklayarak bunu yapabilirsiniz.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Not: phpMussel, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu and
 $phpMussel['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $phpMussel['lang']['tip_upload_test'] = 'Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Hesaplar';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Önbellek Verileri';
 $phpMussel['lang']['title_config'] = 'phpMussel – Yapılandırma';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – Dosya Yöneticisi';
 $phpMussel['lang']['title_home'] = 'phpMussel – Ana Sayfa';

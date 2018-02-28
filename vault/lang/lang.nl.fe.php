@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.02.14).
+ * This file: Dutch language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
 $phpMussel['lang']['label_blocked'] = 'Uploads geblokkeerd';
 $phpMussel['lang']['label_branch'] = 'Branch laatste stabiele:';
 $phpMussel['lang']['label_events'] = 'Scan gebeurtenissen';
+$phpMussel['lang']['label_expires'] = 'Verloopt: ';
 $phpMussel['lang']['label_flagged'] = 'Objecten gemarkeerd';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel-schijfgebruik: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $phpMussel['lang']['label_hide'] = 'Verbergen';
+$phpMussel['lang']['label_never'] = 'Nooit';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_other'] = 'Anders';
 $phpMussel['lang']['label_other-Active'] = 'Actieve signature bestanden';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Upload hash: ';
 $phpMussel['lang']['label_upload_origin'] = 'Upload oorsprong: ';
 $phpMussel['lang']['label_upload_size'] = 'Upload grootte: ';
 $phpMussel['lang']['link_accounts'] = 'Accounts';
+$phpMussel['lang']['link_cache_data'] = 'Cachegegevens';
 $phpMussel['lang']['link_config'] = 'Configuratie';
 $phpMussel['lang']['link_documentation'] = 'Documentatie';
 $phpMussel['lang']['link_file_manager'] = 'Bestandsbeheer';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $phpMussel['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $phpMussel['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $phpMussel['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
+$phpMussel['lang']['state_cache_is_empty'] = 'De cache is leeg.';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
 $phpMussel['lang']['state_component_is_active'] = 'Component is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactief.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verb
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
 $phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend.';
+$phpMussel['lang']['tip_cache_data'] = 'Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken.';
 $phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor phpMussel te modificeren vanaf de frontend.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel wordt gratis aangeboden, maar als u wilt doneren aan het project, kan u dit doen door te klikken op de knop doneren.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Notitie: phpMussel gebruikt een cookie om aanmeldingen te verifiëren. Door in te loggen, geeft u uw toestemming voor het maken en opslaan van een cookie door uw browser.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Notitie: Statistische tracking 
 $phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende phpMussel componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, plugins, L10N bestanden, ezv).';
 $phpMussel['lang']['tip_upload_test'] = 'Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Accounts';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Cachegegevens';
 $phpMussel['lang']['title_config'] = 'phpMussel – Configuratie';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – Bestandsbeheer';
 $phpMussel['lang']['title_home'] = 'phpMussel – Startpagina';

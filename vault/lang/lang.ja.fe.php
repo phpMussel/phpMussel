@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.02.14).
+ * This file: Japanese language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィ
 $phpMussel['lang']['label_blocked'] = 'ブロックされたアップロード';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
 $phpMussel['lang']['label_events'] = 'スキャンイベント';
+$phpMussel['lang']['label_expires'] = '有効期限： ';
 $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量：';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $phpMussel['lang']['label_hide'] = '隠す';
+$phpMussel['lang']['label_never'] = '決して';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_other'] = 'その他';
 $phpMussel['lang']['label_other-Active'] = 'アクティブなシグネチャ・ファイル';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'アップロードのハッシュ：'
 $phpMussel['lang']['label_upload_origin'] = 'アップロードの起源：';
 $phpMussel['lang']['label_upload_size'] = 'アップロード・サイズ：';
 $phpMussel['lang']['link_accounts'] = 'アカウント';
+$phpMussel['lang']['link_cache_data'] = 'キャッシュ・データ';
 $phpMussel['lang']['link_config'] = 'コンフィギュレーション';
 $phpMussel['lang']['link_documentation'] = 'ドキュメンテーション';
 $phpMussel['lang']['link_file_manager'] = 'ファイル・マネージャー';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しま
 $phpMussel['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $phpMussel['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
 $phpMussel['lang']['state_async_deny'] = 'あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。';
+$phpMussel['lang']['state_cache_is_empty'] = 'キャッシュは空です。';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
 $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠
 $phpMussel['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
 $phpMussel['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
 $phpMussel['lang']['tip_accounts'] = 'こんにちは、​{username}。​<br />アカウント・ページは、​phpMusselフロントエンドにアクセスできるユーザーを制御できます。';
+$phpMussel['lang']['tip_cache_data'] = 'こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。';
 $phpMussel['lang']['tip_config'] = 'こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからphpMusselの設定を変更することができます。';
 $phpMussel['lang']['tip_donate'] = 'phpMusselは無料で提供されています、​しかし、​あなたがしたい場合、​寄付ボタンをクリックすると、​プロジェクトに寄付することができます。';
 $phpMussel['lang']['tip_fe_cookie_warning'] = '注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計トラッキン�
 $phpMussel['lang']['tip_updates'] = 'こんにちは、​{username}。​<br />アップデート・ページは、​phpMusselのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​プラグイン、​L10Nファイル、​等）。';
 $phpMussel['lang']['tip_upload_test'] = 'こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – アカウント';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – キャッシュ・データ';
 $phpMussel['lang']['title_config'] = 'phpMussel – コンフィギュレーション';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – ファイル・マネージャー';
 $phpMussel['lang']['title_home'] = 'phpMussel – ホーム';

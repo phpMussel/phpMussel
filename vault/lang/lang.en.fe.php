@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.02.14).
+ * This file: English language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = 'Active configuration file: ';
 $phpMussel['lang']['label_blocked'] = 'Uploads blocked';
 $phpMussel['lang']['label_branch'] = 'Branch latest stable:';
 $phpMussel['lang']['label_events'] = 'Scan events';
+$phpMussel['lang']['label_expires'] = 'Expires: ';
 $phpMussel['lang']['label_flagged'] = 'Objects flagged';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk usage: ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $phpMussel['lang']['label_hide'] = 'Hide';
+$phpMussel['lang']['label_never'] = 'Never';
 $phpMussel['lang']['label_os'] = 'Operating system used:';
 $phpMussel['lang']['label_other'] = 'Other';
 $phpMussel['lang']['label_other-Active'] = 'Active signature files';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = 'Upload hash: ';
 $phpMussel['lang']['label_upload_origin'] = 'Upload origin: ';
 $phpMussel['lang']['label_upload_size'] = 'Upload size: ';
 $phpMussel['lang']['link_accounts'] = 'Accounts';
+$phpMussel['lang']['link_cache_data'] = 'Cache Data';
 $phpMussel['lang']['link_config'] = 'Configuration';
 $phpMussel['lang']['link_documentation'] = 'Documentation';
 $phpMussel['lang']['link_file_manager'] = 'File Manager';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = 'Failed to upload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verification failed! Component could be corrupted.';
 $phpMussel['lang']['response_verification_success'] = 'Verification success! No problems found.';
 $phpMussel['lang']['state_async_deny'] = 'Permissions not adequate to perform asynchronous requests. Try logging in again.';
+$phpMussel['lang']['state_cache_is_empty'] = 'The cache is empty.';
 $phpMussel['lang']['state_complete_access'] = 'Complete access';
 $phpMussel['lang']['state_component_is_active'] = 'Component is active.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactive.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Hide unused';
 $phpMussel['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the phpMussel front-end.';
+$phpMussel['lang']['tip_cache_data'] = 'Hello, {username}.<br />Here you can review the contents of the cache.';
 $phpMussel['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for phpMussel from the front-end.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel is offered free of charge, but if you want to donate to the project, you can do so by clicking the donate button.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = 'Note: phpMussel uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = 'Note: Statistics tracking is cu
 $phpMussel['lang']['tip_updates'] = 'Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of phpMussel (the core package, signatures, plugins, L10N files, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Hello, {username}.<br />The upload test page contains a standard file upload form, allowing you to test whether a file would normally be blocked by phpMussel when attempting to upload it.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Accounts';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – Cache Data';
 $phpMussel['lang']['title_config'] = 'phpMussel – Configuration';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Home';

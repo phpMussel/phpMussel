@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.02.14).
+ * This file: Korean language data for the front-end (last modified: 2018.02.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $phpMussel['lang']['label_blocked'] = '차단 된 업로드';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
 $phpMussel['lang']['label_events'] = '스캔 이벤트';
+$phpMussel['lang']['label_expires'] = '만료일 : ';
 $phpMussel['lang']['label_flagged'] = '신고 된 개체';
 $phpMussel['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel 디스크 사용 : ';
@@ -157,6 +158,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $phpMussel['lang']['label_hide'] = '숨기다';
+$phpMussel['lang']['label_never'] = '못';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제 :';
 $phpMussel['lang']['label_other'] = '다른';
 $phpMussel['lang']['label_other-Active'] = '활성 서명 파일';
@@ -178,6 +180,7 @@ $phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';
 $phpMussel['lang']['label_upload_origin'] = '업로드 원점 : ';
 $phpMussel['lang']['label_upload_size'] = '업로드 크기 : ';
 $phpMussel['lang']['link_accounts'] = '계정';
+$phpMussel['lang']['link_cache_data'] = '데이터 캐쉬';
 $phpMussel['lang']['link_config'] = '구성';
 $phpMussel['lang']['link_documentation'] = '문서';
 $phpMussel['lang']['link_file_manager'] = '파일 관리자';
@@ -246,6 +249,7 @@ $phpMussel['lang']['response_upload_error'] = '업로드에 실패했습니다!'
 $phpMussel['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $phpMussel['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $phpMussel['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
+$phpMussel['lang']['state_cache_is_empty'] = '캐시가 비어 있습니다.';
 $phpMussel['lang']['state_complete_access'] = '전체 액세스';
 $phpMussel['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $phpMussel['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
@@ -262,6 +266,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기'
 $phpMussel['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
 $phpMussel['lang']['switch-hide-unused-set-true'] = '미사용 숨기기';
 $phpMussel['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 phpMussel 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
+$phpMussel['lang']['tip_cache_data'] = '안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다.';
 $phpMussel['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 phpMussel의 설정을 변경할 수 있습니다.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다.';
 $phpMussel['lang']['tip_fe_cookie_warning'] = '노트 : phpMussel은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다.';
@@ -277,6 +282,7 @@ $phpMussel['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현�
 $phpMussel['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $phpMussel['lang']['tip_upload_test'] = '안녕하세요, {username}.<br />업로드 테스트 페이지 표준 파일 업로드 양식을 포함합니다 파일이 일반적 차단 여부를 테스트 할 수 있습니다.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 계정';
+$phpMussel['lang']['title_cache_data'] = 'phpMussel – 데이터 캐쉬';
 $phpMussel['lang']['title_config'] = 'phpMussel – 구성';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – 파일 관리자';
 $phpMussel['lang']['title_home'] = 'phpMussel – 홈';
