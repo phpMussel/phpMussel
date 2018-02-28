@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2018.01.16).
+ * This file: The loader (last modified: 2018.02.28).
  */
 
 /**
@@ -29,7 +29,7 @@ if (!defined('phpMussel')) {
     }
 
     /** Create an array for our working data. */
-    $phpMussel = array();
+    $phpMussel = [];
 
     /** Determine the location of the "vault" directory. */
     $phpMussel['Vault'] = __DIR__ . '/vault/';
@@ -37,11 +37,7 @@ if (!defined('phpMussel')) {
     /** Kill the script if we can't find the vault directory. */
     if (!is_dir($phpMussel['Vault'])) {
         header('Content-Type: text/plain');
-        die(
-            '[phpMussel] Vault directory not correctly set: Can\'t continue.' .
-            ' Refer to documentation if this is a first-time run, and if pro' .
-            'blems persist, seek assistance.'
-        );
+        die('[phpMussel] Vault directory not correctly set: Can\'t continue.');
     }
 
     /** Define the location of the "cache" directory. */
@@ -99,18 +95,12 @@ if (!defined('phpMussel')) {
     /** Load the language handler. */
     require $phpMussel['Vault'] . 'lang.php';
 
-    /** PHP binary version-specific switch variables. */
-    $phpMussel['binary_versions'] = array(
-        '7.0.0' => version_compare(PHP_VERSION, '7.0.0', '>='),
-        '5.6.0' => version_compare(PHP_VERSION, '5.6.0', '>=')
-    );
-
     /**
      * Create an array to use as a temporary memory cache for scanning
      * operations (note: this has nothing to do with the memCache extension of
      * PHP; the variable name is coincidental).
      */
-    $phpMussel['memCache'] = array();
+    $phpMussel['memCache'] = [];
 
     /**
      * Used to determine whether we've reached the end of this file without
@@ -128,13 +118,13 @@ if (!defined('phpMussel')) {
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck')) {
 
         /** Plugins are detected and processed by phpMussel here. */
-        $phpMussel['MusselPlugins'] = array('hooks' => array(), 'closures' => array());
+        $phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
         if ($phpMussel['Config']['general']['enable_plugins']) {
             if (!is_dir($phpMussel['Vault'] . 'plugins')) {
                 header('Content-Type: text/plain');
                 die('[phpMussel] ' . $phpMussel['Config']['lang']['plugins_directory_nonexistent']);
             }
-            $phpMussel['MusselPlugins']['tempdata'] = array();
+            $phpMussel['MusselPlugins']['tempdata'] = [];
             if ((
                 $phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')
             ) && is_resource($phpMussel['MusselPlugins']['tempdata']['d'])) {
@@ -212,9 +202,11 @@ if (!defined('phpMussel')) {
 
 } else {
     header('Content-Type: text/plain');
-    echo
-        (!isset($phpMussel['Config']['lang']['instance_already_active'])) ?
-        '[phpMussel] Instance already active! Please double-check your hooks.' :
+    echo (
+        !isset($phpMussel['Config']['lang']['instance_already_active'])
+    ) ?
+        '[phpMussel] Instance already active! Please double-check your hooks.'
+    :
         '[phpMussel] ' . $phpMussel['Config']['lang']['instance_already_active'];
     die;
 }
