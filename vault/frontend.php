@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.02.28).
+ * This file: Front-end handler (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1150,6 +1150,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                                 '<code>' . ($phpMussel['ThisHash'][3] ? str_replace(['<', '>'], ['&lt;', '&gt;'], $phpMussel['HexSafe']($phpMussel['ThisHash'][3])) : $phpMussel['lang']['scan_no_problems_found']) . '</code>'
                             ) . '</small><hr />';
                         }
+                        unset($phpMussel['ThisHash']);
                     }
                 }
             }
@@ -1188,17 +1189,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                     continue;
                 }
                 $phpMussel['CacheIndexData'] = explode(':', $phpMussel['CacheIndexData']);
-                if ($phpMussel['ThisCacheData'] = $phpMussel['FetchCache']($phpMussel['CacheIndexData'][0])) {
-                    $phpMussel['CacheIndexData'][2] = strlen($phpMussel['ThisCacheData']);
-                } else {
-                    $phpMussel['CacheIndexData'][2] = 0;
+                if ($phpMussel['CacheIndexData'][0] > 0 && $phpMussel['Time'] >= $phpMussel['CacheIndexData'][0]) {
+                    continue;
                 }
+                $phpMussel['CacheIndexData'][2] = (
+                    $phpMussel['ThisCacheData'] = $phpMussel['FetchCache']($phpMussel['CacheIndexData'][0])
+                ) ? strlen($phpMussel['ThisCacheData']) : 0;
                 $phpMussel['FormatFilesize']($phpMussel['CacheIndexData'][2]);
+                $phpMussel['CacheIndexData'][3] = bin2hex(substr($phpMussel['CacheIndexData'][0], 0, 1)) . '.tmp';
                 $phpMussel['FE']['CacheData'] .= sprintf(
                     "\n        " .
-                    '<div class="ng1" id="%1$sContainer"><span class="s">"%1$s"<br /><small>%6$s%3$s<br />%7$s%2$s</small><div id="%1$sID">' .
-                    '<input onclick="javascript:cdd(\'%1$s\')" type="button" value="%5$s" class="auto" /> ' .
-                    '<input onclick="javascript:cdd(\'%1$s\',1)" id="%1$sSB" type="button" value="%4$s" class="auto" />' .
+                    '<div class="ng1" id="%1$sContainer"><span class="s">"cache/%4$s" -&gt; "%1$s"<br /><small>%7$s%3$s<br />%8$s%2$s</small><div id="%1$sID">' .
+                    '<input onclick="javascript:cdd(\'%1$s\')" type="button" value="%6$s" class="auto" /> ' .
+                    '<input onclick="javascript:cdd(\'%1$s\',1)" id="%1$sSB" type="button" value="%5$s" class="auto" />' .
                     '</div></span></div>',
                     $phpMussel['CacheIndexData'][0],
                     ($phpMussel['CacheIndexData'][1] >= 0 ? $phpMussel['TimeFormat'](
@@ -1206,6 +1209,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                         $phpMussel['Config']['general']['timeFormat']
                     ) : $phpMussel['lang']['label_never']),
                     $phpMussel['CacheIndexData'][2],
+                    $phpMussel['CacheIndexData'][3],
                     $phpMussel['lang']['label_show'],
                     $phpMussel['lang']['field_delete_file'],
                     $phpMussel['lang']['field_size'],
@@ -1226,7 +1230,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                 $phpMussel['FormatFilesize']($phpMussel['CacheIndexData'][3]);
                 $phpMussel['FE']['CacheData'] .= sprintf(
                     "\n        " .
-                    '<div class="ng1" id="%1$sFEContainer"><span class="s">"%1$s"<br /><small>%2$s%3$s<br />%4$s%5$s</small><div id="%1$sFEID">' .
+                    '<div class="ng1" id="%1$sFEContainer"><span class="s">"fe_assets/frontend.dat" -&gt; "%1$s"<br /><small>%2$s%3$s<br />%4$s%5$s</small><div id="%1$sFEID">' .
                     '<input onclick="javascript:fecdd(\'%1$s\')" type="button" value="%7$s" class="auto" /> ' .
                     '<input onclick="javascript:fecdd(\'%1$s\',1)" id="%1$sFESB" type="button" value="%6$s" class="auto" />' .
                     '</div></span></div>',
