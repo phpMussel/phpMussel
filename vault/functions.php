@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.02.28).
+ * This file: Functions file (last modified: 2018.03.25).
  */
 
 /**
@@ -81,7 +81,7 @@ $phpMussel['ParseVars'] = function ($Needle, $Haystack) {
     if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
-    array_walk($Needle, function($Value, $Key) use (&$Haystack) {
+    array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
         if (!is_array($Value)) {
             $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
         }
@@ -493,7 +493,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
     }
     if (is_array($Entry)) {
         $Out = [];
-        array_walk($Entry, function($Value, $Key) use (&$phpMussel, &$Out) {
+        array_walk($Entry, function ($Value, $Key) use (&$phpMussel, &$Out) {
             $Out[$Key] = $phpMussel['FetchCache']($Value);
         });
         return $Out;
@@ -1312,13 +1312,13 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
 };
 
 /**
- * Constructs a list of files contained within a PHARable file (in this
- * context, a PHARable file is defined as a file of any the following formats:
+ * Constructs a list of files contained within a pharable file (in this
+ * context, a pharable file is defined as a file of any the following formats:
  * TAR, ZIP, PHAR) and returns that list as a string, entries delimited by a
  * linefeed (\x0A) and preceeded by an integer representing the depth of the
- * entry (in relation to where it exists within the tree of the PHARable file).
+ * entry (in relation to where it exists within the tree of the pharable file).
  *
- * @param string $PharFile The PHARable file to analyse.
+ * @param string $PharFile The pharable file to analyse.
  * @param int $PharDepth An offset for the depth of entries.
  * @return string The constructed list (as per described above).
  */
@@ -3849,6 +3849,22 @@ $phpMussel['FetchExt'] = function ($ofn) {
 };
 
 /**
+ * Remove occurrence of $A from leading substring of $B.
+ */
+$phpMussel['RemoveLeadMatch'] = function ($A, $B) {
+    $LenA = strlen($A);
+    $LenB = strlen($B);
+    for ($Iter = 0; $Iter < $LenA && $Iter < $LenB; $Iter++) {
+        $CharA = substr($A, $Iter, 1);
+        $CharB = substr($B, $Iter, 1);
+        if ($CharA !== $CharB) {
+            break;
+        }
+    }
+    return ($Iter === $LenB) ? '' : substr($B, $Iter);
+};
+
+/**
  * Responsible for recursing through any files given to it to be scanned, which
  * may be necessary for the case of archives and directories. It performs the
  * preparations necessary for scanning files using the "data handler" and the
@@ -4265,15 +4281,43 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $PharType = '';
         }
 
-        /** Check if PHARable, and if so, generate an array of the contents. */
-        if (is_dir('phar://' . $f) && is_readable('phar://' . $f)) {
-            $x .=
-                '-' . $lnap . $phpMussel['lang']['scan_reading'] .
-                ' \'' . $ofn . "' (PHAR):\n";
-            $PharData = $phpMussel['BuildPharList']($f, $dpt);
-            $PharData = explode("\n", $PharData);
+        /** Set default state for our array of phar'd files. */
+        $PharData = [];
 
-            /** Iterate through each item in the PHARable file/object. */
+        /** Alternative archive analysis method accounting for dotless Phar bug.
+         * - https://bugs.php.net/bug.php?id=76061
+         * https://github.com/phpMussel/phpMussel/issues/155
+         */
+        if ($PharType === 'ZIP' && strpos($f, '.') === false) {
+            $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
+            $PharIter = 0;
+
+            $Handle = zip_open($f);
+            if (is_resource($Handle)) {
+                while (($EntryID = zip_read($Handle)) && is_resource($EntryID) && zip_entry_open($Handle, $EntryID, 'rb')) {
+                    $PharData[$PharIter] = ['DoScan' => true, 'Depth' => 1, 'Path' => zip_entry_name($EntryID)];
+                    $PharData[$PharIter]['Data'] = zip_entry_read($EntryID, zip_entry_filesize($EntryID));
+                    $PharData[$PharIter]['Filename'] = (
+                        strpos($PharData[$PharIter]['Path'], '/') !== false
+                    ) ? $phpMussel['substral']($PharData[$PharIter]['Path'], '/') : ((
+                        strpos($PharData[$PharIter]['Path'], "\\") !== false
+                    ) ? $phpMussel['substral']($PharData[$PharIter]['Path'], "\\") : $PharData[$PharIter]['Path']);
+                    $PharData[$PharIter]['Path'] = $phpMussel['RemoveLeadMatch']($ofn, $PharData[$PharIter]['Path']);
+                    $PharData[$PharIter]['Path'] = preg_replace('~^[\\/]~', '', $PharData[$PharIter]['Path']);
+                    $PharData[$PharIter]['ItemRef'] = $ofn . '>' . $PharData[$PharIter]['Path'];
+                    zip_entry_close($EntryID);
+                    $PharIter++;
+                }
+                zip_close($f);
+            }
+        }
+
+        /** Check if pharable, and if so, generate an array of the contents. */
+        elseif (is_dir('phar://' . $f) && is_readable('phar://' . $f)) {
+            $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
+            $PharData = explode("\n", $phpMussel['BuildPharList']($f, $dpt)) ?: [];
+
+            /** Iterate through each item in the pharable file/object. */
             foreach ($PharData as &$ThisPhar) {
                 if (empty($ThisPhar)) {
                     continue;
@@ -4286,18 +4330,21 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $ThisPhar['Data'] = $phpMussel['ReadFile']('phar://' . $ThisPhar['Path']);
                 $ThisPhar['Filename'] = (
                     strpos($ThisPhar['Path'], '/') !== false
-                ) ? $phpMussel['substral']($ThisPhar['Path'], '/') : $ThisPhar['Path'];
+                ) ? $phpMussel['substral']($ThisPhar['Path'], '/') : ((
+                    strpos($ThisPhar['Path'], "\\") !== false
+                ) ? $phpMussel['substral']($ThisPhar['Path'], "\\") : $ThisPhar['Path']);
+                $ThisPhar['Path'] = $phpMussel['RemoveLeadMatch']($ofn, $ThisPhar['Path']);
+                $ThisPhar['Path'] = preg_replace('~^[\\/]~', '', $ThisPhar['Path']);
                 $ThisPhar['ItemRef'] = $ofn . '>' . $ThisPhar['Path'];
             }
-
-        } else {
-            /** Default to the parent if the parent isn't PHARable. */
-            $PharData = [0 => ['DoScan' => false, 'Depth' => 1, 'Path' => $f, 'Data' => $in]];
-            $PharData[0]['Filename'] = (substr_count($f, '/')) ? $phpMussel['substral']($f, '/') : $f;
-            $PharData[0]['ItemRef'] = $ofn . '>' . $PharData[0]['Path'];
         }
 
-        /** And now we begin processing our PHARable contents array. */
+        /** Give an error message if the archive is empty or can't be read. */
+        if (empty($PharData)) {
+            $x .= str_repeat('-', $dpt + 1) . $lnap . $phpMussel['lang']['scan_not_archive'] . "\n";
+        }
+
+        /** And now we begin processing our pharable contents array. */
         foreach ($PharData as &$ThisPhar) {
             if (empty($ThisPhar)) {
                 continue;

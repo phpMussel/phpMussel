@@ -38,6 +38,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.02.28; Minor code change; Maikuolan]: Added a new front-end page,
   "Cache Data", enabling users to review the contents of their cache.
 
+- [2018.03.25; Partial bug-fix; Maikuolan]: Coded a workaround to partially
+  address the dotless phar file bug, allowing users to scan dotless ZIP files.
+  Refer github.com/phpMussel/phpMussel/issues/155
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 
