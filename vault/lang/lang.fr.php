@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.01.20).
+ * This file: French language data (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** Language plurality rule. */
-$phpMussel['Plural-Rule'] = function($Num) {
+$phpMussel['Plural-Rule'] = function ($Num) {
     return ($Num >= 0 || $Num <= 1) ? 0 : 1;
 };
 
@@ -37,15 +37,15 @@ $phpMussel['lang']['bad_command'] = 'Je ne comprends pas cette commande, désol�
 $phpMussel['lang']['cli_failed_to_complete'] = 'Échec du terminer le processus d\'analyse';
 $phpMussel['lang']['cli_is_not_a'] = ' n\'est pas un fichier ou un répertoire.';
 $phpMussel['lang']['cli_ln2'] = " Merci d\'utiliser phpMussel, un script PHP pour la détection de virus, logiciels\n malveillants et autres menaces dans les fichiers téléchargés sur votre système\n partout où le script est accroché, basé sur les signatures de ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez que phpMussel analyse et appuyez sur\n Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes du mode\n CLI ; Tapez 'q' et appuyez sur Entrée pour quitter :";
+$phpMussel['lang']['cli_ln3'] = " Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez que phpMussel analyse et appuyez sur\n Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes du mode\n CLI ; Tapez 'q' et appuyez sur Entrée pour quitter :";
 $phpMussel['lang']['cli_pe1'] = 'Pas un valide PE fichier !';
-$phpMussel['lang']['cli_pe2'] = 'Sections du PE :';
+$phpMussel['lang']['cli_pe2'] = 'Sections du PE :';
 $phpMussel['lang']['cli_signature_placeholder'] = 'NOM-DE-SIGNATURE';
 $phpMussel['lang']['cli_working'] = 'En cours';
 $phpMussel['lang']['corrupted'] = 'PE corrompu détecté';
 $phpMussel['lang']['data_not_available'] = 'Les données ne sont pas disponibles.';
 $phpMussel['lang']['denied'] = 'Téléchargement Refusé !';
-$phpMussel['lang']['denied_reason'] = 'Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous :';
+$phpMussel['lang']['denied_reason'] = 'Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous :';
 $phpMussel['lang']['detected'] = 'Détecté {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Caractères de contrôle ont été détectés';
 $phpMussel['lang']['encrypted_archive'] = 'Archive cryptée détectée ; Archives cryptées interdites';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.02.28).
+ * This file: French language data for the front-end (last modified: 2018.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -41,9 +41,9 @@ $phpMussel['lang']['config_files_filesize_archives'] = 'Étendre taille du fichi
 $phpMussel['lang']['config_files_filesize_limit'] = 'Limite de taille des fichiers en Ko. 65536 = 64Mo [Défaut] ; 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu\'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Que faire avec des fichiers qui dépassent la limite de taille des fichiers (si existant). False = Énumérer Blanche ; True = Énumérer Noire [Défaut].';
 $phpMussel['lang']['config_files_filetype_archives'] = 'Étendre type de fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut].';
-$phpMussel['lang']['config_files_filetype_blacklist'] = 'Liste Noire :';
-$phpMussel['lang']['config_files_filetype_greylist'] = 'Liste Gris :';
-$phpMussel['lang']['config_files_filetype_whitelist'] = 'Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes gris peut augmenter la vitesse à laquelle l\'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris. L\'ordre logique de l\'application est : Si le type de fichier est listé blanche, n\'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n\'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n\'est vide pas et le type de fichier est listé grise, analyser le fichier comme d\'habitude et déterminer si de bloquer basés des résultats de l\'analyse, mais si la liste grise n\'est vide pas et le type de fichier n\'est listé grise pas, traiter le fichier comme listé noire, donc n\'analyse pas mais bloque de toute façon. Liste Blanche :';
+$phpMussel['lang']['config_files_filetype_blacklist'] = 'Liste Noire :';
+$phpMussel['lang']['config_files_filetype_greylist'] = 'Liste Gris :';
+$phpMussel['lang']['config_files_filetype_whitelist'] = 'Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes gris peut augmenter la vitesse à laquelle l\'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris. L\'ordre logique de l\'application est : Si le type de fichier est listé blanche, n\'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n\'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n\'est vide pas et le type de fichier est listé grise, analyser le fichier comme d\'habitude et déterminer si de bloquer basés des résultats de l\'analyse, mais si la liste grise n\'est vide pas et le type de fichier n\'est listé grise pas, traiter le fichier comme listé noire, donc n\'analyse pas mais bloque de toute façon. Liste Blanche :';
 $phpMussel['lang']['config_files_max_recursion'] = 'Maximum récursivité profondeur limite pour archives. Défaut = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Maximum admissible nombre de fichiers pour analyse lorsque l\'analyse de fichier téléchargements avant d\'abandonner l\'analyse et informer l\'utilisateur qu\'ils sont téléchargement trop à la fois! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé : 10. Vous pouvez désirer d\'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
@@ -117,7 +117,7 @@ $phpMussel['lang']['field_install'] = 'Installer';
 $phpMussel['lang']['field_latest_version'] = 'Dernière Version';
 $phpMussel['lang']['field_log_in'] = 'Connecter';
 $phpMussel['lang']['field_more_fields'] = 'Plus de Champs';
-$phpMussel['lang']['field_new_name'] = 'Nouveau nom :';
+$phpMussel['lang']['field_new_name'] = 'Nouveau nom :';
 $phpMussel['lang']['field_ok'] = 'D\'accord';
 $phpMussel['lang']['field_options'] = 'Options';
 $phpMussel['lang']['field_password'] = 'Mot de Passe';
@@ -147,7 +147,7 @@ $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
 $phpMussel['lang']['label_blocked'] = 'Téléchargements bloqués';
-$phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
+$phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
 $phpMussel['lang']['label_events'] = 'événements d\'analyse';
 $phpMussel['lang']['label_expires'] = 'Expire : ';
 $phpMussel['lang']['label_flagged'] = 'Objets marqués';
@@ -159,22 +159,22 @@ $phpMussel['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
 $phpMussel['lang']['label_hide'] = 'Cacher';
 $phpMussel['lang']['label_never'] = 'Jamais';
-$phpMussel['lang']['label_os'] = 'Système opérateur utilisée :';
+$phpMussel['lang']['label_os'] = 'Système opérateur utilisée :';
 $phpMussel['lang']['label_other'] = 'Autres';
 $phpMussel['lang']['label_other-Active'] = 'Fichiers de signatures actifs';
 $phpMussel['lang']['label_other-Since'] = 'Date de début';
-$phpMussel['lang']['label_php'] = 'Version PHP utilisée :';
-$phpMussel['lang']['label_phpmussel'] = 'Version phpMussel utilisée :';
+$phpMussel['lang']['label_php'] = 'Version PHP utilisée :';
+$phpMussel['lang']['label_phpmussel'] = 'Version phpMussel utilisée :';
 $phpMussel['lang']['label_quarantined'] = 'Téléchargements mis en quarantaine';
-$phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
+$phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
 $phpMussel['lang']['label_scanned_objects'] = 'Objets analysés';
 $phpMussel['lang']['label_scanned_uploads'] = 'Téléchargements analysés';
 $phpMussel['lang']['label_show'] = 'Montrer';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Taille en quarantaine : ';
-$phpMussel['lang']['label_stable'] = 'Dernier stable :';
-$phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
-$phpMussel['lang']['label_tests'] = 'Tests :';
-$phpMussel['lang']['label_unstable'] = 'Dernier instable :';
+$phpMussel['lang']['label_stable'] = 'Dernier stable :';
+$phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
+$phpMussel['lang']['label_tests'] = 'Tests :';
+$phpMussel['lang']['label_unstable'] = 'Dernier instable :';
 $phpMussel['lang']['label_upload_date'] = 'Date de téléchargement : ';
 $phpMussel['lang']['label_upload_hash'] = 'Hash de téléchargement : ';
 $phpMussel['lang']['label_upload_origin'] = 'Origine du téléchargement : ';
@@ -292,7 +292,7 @@ $phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantaine';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiques';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';
-$phpMussel['lang']['warning'] = 'Avertissements :';
+$phpMussel['lang']['warning'] = 'Avertissements :';
 $phpMussel['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
 $phpMussel['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
 $phpMussel['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';

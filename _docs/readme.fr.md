@@ -163,7 +163,7 @@ Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau q
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), ajouter les noms des signatures spécifiques à désactiver dans la liste grise des signatures (`/vault/greylist.csv`), séparé par des virgules.
 
-*Voir également : [Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)*
+*Voir également : [Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)*
 
 #### 3.1 COMMENT UTILISER (POUR CLI)
 
@@ -644,7 +644,7 @@ Modèles données est liée à la sortie HTML utilisé pour générer le message
 
 ### 8. <a name="SECTION8"></a>FORMATS DE SIGNATURES
 
-*Voir également :*
+*Voir également :*
 - *[Qu'est-ce qu'une « signature » ?](#WHAT_IS_A_SIGNATURE)*
 
 Les 9 premiers octets `[x0-x8]` d'un fichier des signatures de phpMussel sont `phpMussel`, et agir comme un « numéro magique » (magic number), afin de les identifier en tant que fichiers de signature (cela aide à empêcher phpMussel de tenter accidentellement d'utiliser des fichiers qui ne sont pas des fichiers de signature). L'octet suivant `[x9]` identifie le type de fichier des signatures, que phpMussel doit savoir pour pouvoir interpréter correctement le fichier de signatures. Les types de fichiers de signatures suivants sont reconnus :

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.02.28).
+ * This file: Korean language data for the front-end (last modified: 2018.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -147,7 +147,7 @@ $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $phpMussel['lang']['label_blocked'] = '차단 된 업로드';
-$phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
+$phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
 $phpMussel['lang']['label_events'] = '스캔 이벤트';
 $phpMussel['lang']['label_expires'] = '만료일 : ';
 $phpMussel['lang']['label_flagged'] = '신고 된 개체';
@@ -171,10 +171,10 @@ $phpMussel['lang']['label_scanned_objects'] = '스캔 한 개체';
 $phpMussel['lang']['label_scanned_uploads'] = '스캔 한 업로드';
 $phpMussel['lang']['label_show'] = '보여';
 $phpMussel['lang']['label_size_in_quarantine'] = '격리 크기 : ';
-$phpMussel['lang']['label_stable'] = '최신 안정 :';
+$phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';
 $phpMussel['lang']['label_tests'] = '테스트 :';
-$phpMussel['lang']['label_unstable'] = '최신 불안정 :';
+$phpMussel['lang']['label_unstable'] = '최신 불안정 :';
 $phpMussel['lang']['label_upload_date'] = '업로드 날짜 : ';
 $phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';
 $phpMussel['lang']['label_upload_origin'] = '업로드 원점 : ';
@@ -292,7 +292,7 @@ $phpMussel['lang']['title_quarantine'] = 'phpMussel – 격리';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 통계';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
-$phpMussel['lang']['warning'] = '경고 :';
+$phpMussel['lang']['warning'] = '경고 :';
 $phpMussel['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적으로 지원되지 않습니다! 업데이트하는 것이 좋습니다!';
 $phpMussel['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
 $phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.01.20).
+ * This file: Turkish language data (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** Language plurality rule. */
-$phpMussel['Plural-Rule'] = function($Num) {
+$phpMussel['Plural-Rule'] = function ($Num) {
     return $Num <= 1 ? 0 : 1;
 };
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2017.12.06).
+ * This file: Language handler (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,12 +27,12 @@ $phpMussel['Swap'] = function(&$First, &$Second) {
 };
 
 /** Default language plurality rule. */
-$phpMussel['Plural-Rule'] = function($Num) {
+$phpMussel['Plural-Rule'] = function ($Num) {
     return $Num === 1 ? 0 : 1;
 };
 
 /** Select string based on plural rule. */
-$phpMussel['Plural'] = function($Num, $String) use (&$phpMussel) {
+$phpMussel['Plural'] = function ($Num, $String) use (&$phpMussel) {
     if (!is_array($String)) {
         return $String;
     }
