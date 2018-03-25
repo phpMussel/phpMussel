@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.02.28).
+ * This file: German language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -48,7 +48,7 @@ $phpMussel['lang']['config_files_max_recursion'] = 'Maximale Grenze der Rekursio
 $phpMussel['lang']['config_files_max_uploads'] = 'Maximale erlaubte Anzahl zu überprüfender Dateien während eines Dateiuploads bevor der Scan abgebrochen und der Nutzer darüber informiert wird, dass er zu viele Dateien auf einmal hochgeladen hat. Bietet einen Schutz gegen den theoretischen Angriff eines DDoS auf Ihr System oder CMS, indem der Angreifer phpMussel überlastet und den PHP-Prozess zum Stillstand bringt. Empfohlen: 10. Sie können den Wert abhängig von Ihrer Hardware erhöhen oder senken. Beachten Sie, dass dieser Wert nicht den Inhalt von Archiven berücksichtigt.';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $phpMussel['lang']['config_general_cleanup'] = 'Löscht die Scriptvariablen und den Cache nach der Ausführung. False = Nicht löschen; True = Löschen [Standardeinstellung]. Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen Sie diese Option auf <code>true</code>, um die Speichernutzung zu minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option auf <code>false</code>, um unnötiges mehrfaches Einlesen der Daten in den Speicher zu vermeiden. Normalerweise sollte diese Option auf <code>true</code> gesetzt werden, allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden. Kein Einfluss im CLI-Modus.';
-$phpMussel['lang']['config_general_default_algo'] = 'Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).';
+$phpMussel['lang']['config_general_default_algo'] = 'Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP &gt;= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Diese Option weist das Script an, Dateien während eines Scans sofort zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder andere Methoden, zutrifft. Dateien, die als nicht infiziert eingestuft werden, werden nicht berührt. Im Falle von Archiven wird das gesamte Archiv gelöscht, auch wenn nur eine einzige Datei im Archiv infiziert sein sollte. Normalerweise ist es bei einem Dateiupload nicht notwendig, diese Option zu aktivieren, da PHP nach der Ausführung von Scripten den Inhalt vom Cache löscht, d.h. PHP löscht jede Datei, die über den Server hochgeladen wird, sofern Sie nicht verschoben, kopiert oder bereits gelöscht wurde. Diese Option wurde als zusätzliches Mass an Sicherheit hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem üblichen Verhalten entspricht. False = Nach der Überprüfung wird die Datei so belassen [Standardeinstellung]; True = Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie infiziert ist.';
 $phpMussel['lang']['config_general_disable_cli'] = 'CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivieren? Front-End-Access kann machen phpMussel einfacher zu handhaben, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, phpMussel über die Back-End-Access zu verwalten, aber Front-End-Access vorgesehen ist, für wenn es nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].';
@@ -240,10 +240,10 @@ $phpMussel['lang']['response_restore_error_2'] = 'Fehler beim Wiederherstellen! 
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistiken gelöscht.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
-$phpMussel['lang']['response_updates_not_installed_php'] = 'Komponente nicht installiert (erfordert PHP {V})!';
+$phpMussel['lang']['response_updates_not_installed_php'] = 'Komponente nicht installiert (erfordert PHP &gt;= {V})!';
 $phpMussel['lang']['response_updates_outdated'] = 'Veraltet!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Veraltet (bitte manuell aktualisieren)!';
-$phpMussel['lang']['response_updates_outdated_php_version'] = 'Veraltet (erfordert PHP {V})!';
+$phpMussel['lang']['response_updates_outdated_php_version'] = 'Veraltet (erfordert PHP &gt;= {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermittelt werden.';
 $phpMussel['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein.';

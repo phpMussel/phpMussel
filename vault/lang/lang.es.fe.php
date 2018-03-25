@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.02.28).
+ * This file: Spanish language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -48,7 +48,7 @@ $phpMussel['lang']['config_files_max_recursion'] = 'Máximo recursividad nivel l
 $phpMussel['lang']['config_files_max_uploads'] = 'Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de PHP a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos.';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.';
 $phpMussel['lang']['config_general_cleanup'] = 'Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como <code>true</code> (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como <code>false</code> (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como <code>true</code>, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos. No tiene influencia en CLI modo.';
-$phpMussel['lang']['config_general_default_algo'] = 'Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP >= 7.2.0).';
+$phpMussel['lang']['config_general_default_algo'] = 'Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP &gt;= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. False = Después escaneando, dejar el archivo solo [Predefinido]; True = Después escaneando, si no se limpia, eliminar inmediatamente.';
 $phpMussel['lang']['config_general_disable_cli'] = '¿Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.';
 $phpMussel['lang']['config_general_disable_frontend'] = '¿Desactivar el acceso front-end? El acceso front-end puede hacer phpMussel más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar phpMussel a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].';
@@ -240,10 +240,10 @@ $phpMussel['lang']['response_restore_error_2'] = '¡Error al restaurar! Clave de
 $phpMussel['lang']['response_statistics_cleared'] = 'Estadística anulado.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Ya está actualizado.';
 $phpMussel['lang']['response_updates_not_installed'] = '¡El componente no se instala!';
-$phpMussel['lang']['response_updates_not_installed_php'] = '¡El componente no se instala (requiere PHP {V})!';
+$phpMussel['lang']['response_updates_not_installed_php'] = '¡El componente no se instala (requiere PHP &gt;= {V})!';
 $phpMussel['lang']['response_updates_outdated'] = '¡Anticuado!';
 $phpMussel['lang']['response_updates_outdated_manually'] = '¡Anticuado (por favor, actualizar manualmente)!';
-$phpMussel['lang']['response_updates_outdated_php_version'] = '¡Anticuado (requiere PHP {V})!';
+$phpMussel['lang']['response_updates_outdated_php_version'] = '¡Anticuado (requiere PHP &gt;= {V})!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapaz de determinar.';
 $phpMussel['lang']['response_upload_error'] = '¡No se pudo subir!';
 $phpMussel['lang']['response_verification_failed'] = '¡No se pudo verificar! Componente podría estar dañado.';

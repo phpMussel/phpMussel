@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.03.24).
+ * This file: French language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -48,7 +48,7 @@ $phpMussel['lang']['config_files_max_recursion'] = 'Maximum récursivité profon
 $phpMussel['lang']['config_files_max_uploads'] = 'Maximum admissible nombre de fichiers pour analyse lorsque l\'analyse de fichier téléchargements avant d\'abandonner l\'analyse et informer l\'utilisateur qu\'ils sont téléchargement trop à la fois! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé : 10. Vous pouvez désirer d\'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $phpMussel['lang']['config_general_cleanup'] = 'Déensemble variables du script et cache après l\'exécution ? False = Non ; True = Oui [Défaut]. Si vous ne utilisez pas le script au-delà l\'initiale analyse du téléchargements, devrait ensemble à <code>true</code> (oui) à minimiser l\'utilisation de la mémoire. Si vous utilisez le script à des fins au-delà l\'initiale analyse du téléchargements, devrait ensemble à <code>false</code> (non), pour éviter recharger inutilement dupliqué données dans la mémoire. Dans la pratique générale, il devrait probablement être ensemblé à <code>true</code>, mais, si vous faites cela, vous ne serez pas être capable d\'utiliser le script pour tout chose autre que l\'analyse des fichiers téléchargements. N\'a pas d\'influence en le mode CLI.';
-$phpMussel['lang']['config_general_default_algo'] = 'Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l\'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).';
+$phpMussel['lang']['config_general_default_algo'] = 'Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l\'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0).';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées propre ne seront pas touchés. Dans le cas des archives, l\'ensemble d\'archive sera supprimé (indépendamment de si le incriminé fichier est que l\'un de plusieurs fichiers contenus dans l\'archive). Pour le cas d\'analyse de fichiers téléchargement, généralement, il n\'est pas nécessaire d\'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l\'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu\'ils ont déménagé, copié ou supprimé déjà. L\'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l\'analyse, laissez le fichier tel quel [Défaut] ; True = Après l\'analyse, si pas propre, supprimer immédiatement.';
 $phpMussel['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d\'autres applications basées sur CLI. Si vous n\'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal ? L\'accès frontal peut rendre phpMussel plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer phpMussel via le back-end chaque fois que possible, mais l\'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l\'accès frontal ; True = Désactiver l\'accès frontal [Défaut].';
@@ -240,10 +240,10 @@ $phpMussel['lang']['response_restore_error_2'] = 'Échec de la restauration ! Cl
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistiques annulées.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Déjà mise à jour.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Composant pas installé !';
-$phpMussel['lang']['response_updates_not_installed_php'] = 'Composant pas installé (il nécessite PHP {V}) !';
+$phpMussel['lang']['response_updates_not_installed_php'] = 'Composant pas installé (il nécessite PHP &gt;= {V}) !';
 $phpMussel['lang']['response_updates_outdated'] = 'Dépassé !';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous plaît mettre à jour manuellement) !';
-$phpMussel['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP {V}) !';
+$phpMussel['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP &gt;= {V}) !';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $phpMussel['lang']['response_upload_error'] = 'Échec du téléchargement !';
 $phpMussel['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.03.03).
+ * This file: Front-end handler (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1494,7 +1494,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             ) {
                 $phpMussel['Components']['ThisComponent']['Options'] .=
                     '<option value="update-component">' . $phpMussel['lang']['field_install'] . '</option>';
-            } elseif ($phpMussel['Components']['ThisComponent']['StatusOptions'] == $phpMussel['lang']['response_updates_not_installed']) {
+            } elseif ($phpMussel['Components']['ThisComponent']['StatusOptions'] === $phpMussel['lang']['response_updates_not_installed']) {
                 $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars'](
                     ['V' => $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']],
                     $phpMussel['lang']['response_updates_not_installed_php']
