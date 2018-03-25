@@ -42,6 +42,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   address the dotless phar file bug, allowing users to scan dotless ZIP files.
   Refer github.com/phpMussel/phpMussel/issues/155
 
+- [2018.03.25; Bug-fix; Maikuolan]: "VersionCompare" function gave incorrect
+  results when comparing against certain, specific Ubuntu builds of PHP; Fixed.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

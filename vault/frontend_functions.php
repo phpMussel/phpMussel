@@ -186,7 +186,7 @@ $phpMussel['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match('~^v?([0-9]+)$~i', $Ver, $Matches) ?:
             preg_match('~^v?([0-9]+)\.([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[.0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$~i', $Ver, $Matches);
         $Ver = [
