@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.25).
+ * This file: Front-end functions file (last modified: 2018.03.29).
  */
 
 /**
@@ -567,10 +567,11 @@ $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files'])) {
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']);
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']);
-        $phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['InUse'] = $phpMussel['IsInUse'](
+        return $phpMussel['IsInUse'](
             $phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']
         );
     }
+    return false;
 };
 
 /**
@@ -654,11 +655,11 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Level = 0;
     $Minor = substr($Version, 0, 4);
     if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.27')
+        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.28')
     ) || (
         $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.14')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.1')
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.2')
     )) {
         $Level += 2;
     }
@@ -1331,11 +1332,11 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
 
     /** Uninstall a component. */
     if ($Action === 'uninstall-component') {
-        $phpMussel['ComponentFunctionUpdatePrep']();
+        $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
         $phpMussel['Components']['BytesRemoved'] = 0;
         $phpMussel['Components']['TimeRequired'] = microtime(true);
         if (
-            empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
+            empty($InUse) &&
             !empty($phpMussel['Components']['Meta'][$ID]['Files']['To']) &&
             ($ID !== 'l10n/' . $phpMussel['Config']['general']['lang']) &&
             ($ID !== 'theme/' . $phpMussel['Config']['template_data']['theme']) &&
@@ -1374,8 +1375,7 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
                     $phpMussel['DeleteDirectory']($ThisFile);
                 }
             });
-            $Handle =
-                fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], 'w');
+            $Handle = fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], 'w');
             fwrite($Handle, $phpMussel['Components']['NewMeta']);
             fclose($Handle);
             $phpMussel['Components']['Meta'][$ID]['Version'] = false;
@@ -1406,9 +1406,9 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
             'Active' => $phpMussel['Config']['signatures']['Active'],
             'Modified' => false
         ];
-        $phpMussel['ComponentFunctionUpdatePrep']();
+        $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
         if (
-            empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
+            empty($InUse) &&
             !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])
         ) {
             $phpMussel['Activation']['Active'] = array_unique(array_filter(
@@ -1467,11 +1467,8 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
             'Active' => $phpMussel['Config']['signatures']['Active'],
             'Modified' => false
         ];
-        $phpMussel['ComponentFunctionUpdatePrep']();
-        if (
-            !empty($phpMussel['Components']['Meta'][$ID]['Files']['InUse']) &&
-            !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])
-        ) {
+        $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
+        if (!empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
             $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
                 explode(',', $phpMussel['Deactivation']['Active']),
                 function ($Component) use (&$phpMussel) {
