@@ -738,6 +738,22 @@ Diese Informationen wurden zuletzt am 2017.12.01 aktualisiert und gelten für al
 
 ### 10. <a name="SECTION10"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
+- [Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE)
+- [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)
+- [Wie häufig werden Signaturen aktualisiert?](#SIGNATURE_UPDATE_FREQUENCY)
+- [Ich habe ein Problem bei der Verwendung von phpMussel und ich weiß nicht was ich tun soll! Bitte helfen Sie!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [Ich möchte phpMussel mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?](#MINIMUM_PHP_VERSION)
+- [Kann ich eine einzige phpMussel-Installation verwenden, um mehrere Domains zu schützen?](#PROTECT_MULTIPLE_DOMAINS)
+- [Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?](#PAY_YOU_TO_DO_IT)
+- [Kann ich Sie oder einen der Entwickler dieses Projektes für private Arbeit einstellen?](#HIRE_FOR_PRIVATE_WORK)
+- [Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?](#SPECIALIST_MODIFICATIONS)
+- [Ich bin ein Entwickler, Website-Designer oder Programmierer. Kann ich die Arbeit an diesem Projekt annehmen oder anbieten?](#ACCEPT_OR_OFFER_WORK)
+- [Ich möchte zum Projekt beitragen; Darf ich das machen?](#WANT_TO_CONTRIBUTE)
+- [Empfohlene Werte für "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)
+- [Kann ich cron verwenden, um automatisch zu aktualisieren?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?](#SCAN_NON_ANSI)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
 Im Kontext von phpMussel, eine "Signatur" bezieht sich auf Daten, die als Indikator/Identifikator fungieren, für etwas Bestimmtes das wir suchen, in der Regel in Form eines sehr kleinen, deutlichen, unschädlichen Segments von etwas Größerem und sonst schädlich, so wie ein Virus oder Trojaner, oder in Form einer Datei-Prüfsumme, Hash oder einer anderen identifizierenden Indikator, und enthält in der Regel ein Label, und einige andere Daten zu helfen, zusätzliche Kontext, die von phpMussel verwendet werden können, um den besten Weg zu bestimmen, wenn es aufsieht was wir suchen.
@@ -757,48 +773,48 @@ Dies kann durch die folgende Tabelle zusammengefasst werden:
 phpMussel tut blockiert eine Datei *NICHT* | Wahr-Negativ (korrekte Folgerung) | Verpasste Erkennung (analog zu Falsch-Negativ)
 phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrekte Folgerung)
 
-#### Wie häufig werden Signaturen aktualisiert?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Wie häufig werden Signaturen aktualisiert?
 
 Die Aktualisierungshäufigkeit hängt von den betreffenden Signaturdateien ab. In der Regel, alle Betreuer für phpMussel Signaturdateien versuchen ihre Signaturen so aktuell wie möglich zu halten, aber da haben wir alle anderen Verpflichtungen, unser Leben außerhalb des Projekts, und da für unsere Bemühungen um das Projekt, keiner von uns wird finanziell entschädigt (d.h., bezahlt), ein genauer Aktualisierungs-Zeitplan kann nicht garantiert werden. In der Regel, Signaturen werden aktualisiert, wann immer es genügend Zeit gibt sie zu aktualisieren, und Betreuer versuchen auf der Grundlage der Notwendigkeit und auf der Grundlage wie häufig Veränderungen unter den Bereichen auftreten zu priorisieren. Hilfe wird immer geschätzt, wenn Sie bereit bist, irgendwelche anzubieten.
 
-#### Ich habe ein Problem bei der Verwendung von phpMussel und ich weiß nicht was ich tun soll! Bitte helfen Sie!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Ich habe ein Problem bei der Verwendung von phpMussel und ich weiß nicht was ich tun soll! Bitte helfen Sie!
 
 - Verwenden Sie die neueste Version der Software? Verwenden Sie die neuesten Versionen Ihrer Signaturdateien? Wenn die Antwort auf eine dieser beiden Fragen nein ist, Versuchen alles zuerst zu aktualisieren, und überprüfen Sie ob das Problem weiterhin besteht. Wenn es weiterhin besteht, lesen Sie weiter.
 - Haben Sie alle der Dokumentation überprüft? Wenn nicht, bitte tun Sie dies. Wenn das Problem nicht mit der Dokumentation gelöst werden kann, lesen Sie weiter.
 - Haben Sie die **[Frage-Seite](https://github.com/phpMussel/phpMussel/issues)** überprüft, ob das Problem vorher erwähnt wurde? Wenn es vorher erwähnt wurde, überprüfen Sie ob irgendwelche Vorschläge, Ideen und/oder Lösungen zur Verfügung gestellt wurden, und folge wie nötig um das Problem zu lösen.
 - Wenn das Problem weiterhin besteht, informieren Sie uns bitte darüber, indem Sie eine neue Diskussion auf der Frage-Seite erstellen.
 
-#### Ich möchte phpMussel mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
+#### <a name="MINIMUM_PHP_VERSION"></a>Ich möchte phpMussel mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
 
 Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) im Jahr 2014, und Sicherheits-Unterstützung wurde im Jahr 2015 beendet. Zum Zeitpunkt des Schreibens dieses, es ist 2017 und PHP 7.1.0 ist bereits vorhanden. An dieser Zeitpunkt, Unterstützung wird für die Verwendung von phpMussel mit PHP 5.4.0 und allen verfügbaren neueren PHP Versionen zur Verfügung, aber wenn Sie versuchen phpMussel mit älteren PHP Versionen zu verwenden, Unterstützung wird zur Verfügung nicht.
 
 *Siehe auch: [Kompatibilitätstabellen](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Kann ich eine einzige phpMussel-Installation verwenden, um mehrere Domains zu schützen?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Kann ich eine einzige phpMussel-Installation verwenden, um mehrere Domains zu schützen?
 
 Ja. phpMussel-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, und kann daher zum Schutz mehrerer Domains verwendet werden. Allgemein, wir verweisen auf phpMussel-Installationen die nur eine Domain schützen als "Single-Domain-Installationen", und Wir verweisen auf phpMussel-Installationen die mehrere Domains und/oder Subdomains schützen als "Multi-Domain-Installationen". Wenn Sie eine Multi-Domain-Installation betreiben und müssen verschiedene Sätze von Signaturdateien für verschiedene Domains verwenden, oder für verschiedene Domains muss unterschiedliche Konfiguration verwenden, das ist möglich. Nach dem Laden der Konfigurationsdatei (`config.ini`), phpMussel prüft auf die Existenz einer "Konfiguration-Überschreibt Datei", die für die Domain (oder Subdomain) spezifisch angefordert ist (`die-domain-angefordert.tld.config.ini`), und wenn gefunden, alle von der Konfiguration-Überschreibt Datei definierten Konfigurationswerte wird für die Ausführungsinstanz verwendet, anstelle der von der Konfigurationsdatei definierten Konfigurationswerte. Konfiguration-Überschreibt Dateien sind identisch mit der Konfigurationsdatei, und nach eigenem Ermessen, kann entweder die Gesamtheit aller Konfigurationsrichtlinien für phpMussel enthalten, oder was auch immer kleiner Unterabschnitt erforderlich ist die sich normalerweise von der Konfigurationsdatei definierten Konfigurationswerte unterscheidet. Konfiguration-Überschreibt Dateien werden nach der Domain für die sie bestimmt sind benannt (so zum Beispiel, wenn Sie eine Konfiguration-Überschreibt Dateien benötigen für die Domäne, `http://www.some-domain.tld/`, seine Konfiguration-Überschreibt Datei sollte benannt werden als `some-domain.tld.config.ini`, und sollte in der vault neben der Konfigurationsdatei `config.ini` platziert werden). Der Domains-Name für die Ausführungsinstanz wird aus dem `HTTP_HOST`-Header der Anforderung abgeleitet; "www" wird ignoriert.
 
-#### Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?
+#### <a name="PAY_YOU_TO_DO_IT"></a>Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?
 
 Vielleicht. Dies wird von Fall zu Fall berücksichtigt. Sag uns was du brauchst, was du anbietet, und wir werden Ihnen sagen, ob wir helfen können.
 
-#### Kann ich Sie oder einen der Entwickler dieses Projektes für private Arbeit einstellen?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Kann ich Sie oder einen der Entwickler dieses Projektes für private Arbeit einstellen?
 
 *Siehe oben.*
 
-#### Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?
 
 *Siehe oben.*
 
-#### Ich bin ein Entwickler, Website-Designer oder Programmierer. Kann ich die Arbeit an diesem Projekt annehmen oder anbieten?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>Ich bin ein Entwickler, Website-Designer oder Programmierer. Kann ich die Arbeit an diesem Projekt annehmen oder anbieten?
 
 Ja. Unsere Lizenz verbietet dies nicht.
 
-#### Ich möchte zum Projekt beitragen; Darf ich das machen?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Ich möchte zum Projekt beitragen; Darf ich das machen?
 
 Ja. Beiträge zum Projekt sind sehr willkommen. Bitte beachten Sie "CONTRIBUTING.md" für weitere Informationen.
 
-#### Empfohlene Werte für "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Empfohlene Werte für "ipaddr".
 
 Wert | Verwenden
 ---|---
@@ -872,11 +888,68 @@ Optional, kann dieses Array zerstört werden, indem man folgendes verwendet:
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
-#### Kann ich cron verwenden, um automatisch zu aktualisieren?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Kann ich cron verwenden, um automatisch zu aktualisieren?
 
 Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der Update-Seite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
+
+#### <a name="SCAN_NON_ANSI"></a>Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?
+
+Nehmen wir an, es gibt ein Verzeichnis, das Sie scannen möchten. In diesem Verzeichnis haben Sie einige Dateien mit nicht-ANSI-Namen.
+- `Пример.txt`
+- `一个例子.txt`
+- `例です.txt`
+
+Angenommen, Sie verwenden entweder den CLI-Modus oder die phpMussel-API zum Scannen.
+
+Wenn PHP < 7.1.0 verwendet wird, kann phpMussel diese Dateien auf einigen Systemen nicht sehen, wenn er versucht, das Verzeichnis zu scannen, und daher phpMussel kann diese Dateien scannen nicht. Sie werden wahrscheinlich die gleichen Ergebnisse sehen, als würden Sie ein leeres Verzeichnis scannen:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Gestartet.
+ Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
+```
+
+Auch, wenn Sie PHP < 7.1.0 verwenden, scannen der Dateien Individuen produziert Ergebnisse wie diese:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Gestartet.
+ > Überprüfung 'X:/directory/Пример.txt' (FN: b831eb8f):
+ -> Ungültige Datei!
+ Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
+```
+
+Oder diese:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Gestartet.
+ > X:/directory/??????.txt ist keine Datei oder ein Verzeichnis.
+ Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
+```
+
+Dies liegt an der Art und Weise, wie PHP nicht-ANSI-Dateinamen vor PHP 7.1.0 behandelt hat. Wenn dieses Problem auftritt, besteht die Lösung darin, Ihre PHP-Installation auf 7.1.0 oder höher zu aktualisieren. In PHP >= 7.1.0 werden nicht-ANSI-Dateinamen besser gehandhabt und phpMussel sollte in der Lage sein, die Dateien richtig zu scannen.
+
+Zum Vergleich die Ergebnisse beim Versuch, das Verzeichnis mit PHP >= 7.1.0 zu scannen:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Gestartet.
+ -> Überprüfung '\Пример.txt' (FN: b2ce2d31; FD: 27cbe813):
+ --> Keine Probleme gefunden.
+ -> Überprüfung '\一个例子.txt' (FN: 50debed5; FD: 27cbe813):
+ --> Keine Probleme gefunden.
+ -> Überprüfung '\例です.txt' (FN: ee20a2ae; FD: 27cbe813):
+ --> Keine Probleme gefunden.
+ Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
+```
+
+Und versuche, die Dateien einzeln zu scannen:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Gestartet.
+ > Überprüfung 'X:/directory/Пример.txt' (FN: b831eb8f; FD: 27cbe813):
+ -> Keine Probleme gefunden.
+ Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
+```
 
 ---
 
 
-Zuletzt aktualisiert: 28 Februar 2018 (2018.02.28).
+Zuletzt aktualisiert: 31 März 2018 (2018.03.31).

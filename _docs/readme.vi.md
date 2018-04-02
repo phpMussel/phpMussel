@@ -738,6 +738,22 @@ Thông tin này được cập nhật lần cứơi vào ngày 2017.12.01 và c�
 
 ### 10. <a name="SECTION10"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
+- ["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE)
+- ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)
+- [Tần suất cập nhật chữ ký là bao nhiêu?](#SIGNATURE_UPDATE_FREQUENCY)
+- [Tôi đã gặp một vấn đề trong khi sử dụng phpMussel và tôi không biết phải làm gì về nó! Hãy giúp tôi!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [Tôi muốn sử dụng phpMussel với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?](#MINIMUM_PHP_VERSION)
+- [Tôi có thể sử dụng một cài đặt phpMussel để bảo vệ nhiều tên miền?](#PROTECT_MULTIPLE_DOMAINS)
+- [Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?](#PAY_YOU_TO_DO_IT)
+- [Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?](#HIRE_FOR_PRIVATE_WORK)
+- [Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?](#SPECIALIST_MODIFICATIONS)
+- [Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?](#ACCEPT_OR_OFFER_WORK)
+- [Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?](#WANT_TO_CONTRIBUTE)
+- [Giá trị được đề xuất cho "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)
+- [Tôi có thể sử dụng cron để cập nhật tự động không?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [Có thể phpMussel quét các tập tin có tên không ANSI?](#SCAN_NON_ANSI)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
 Trong bối cảnh của phpMussel, "chữ ký" đề cập đến dữ liệu hoạt động như một chỉ thị hay cơ chế định danh cho một cái gì đó cụ thể mà chúng tôi đang tìm kiếm, thường là một đoạn nhỏ và không nguy hiểm của một cái gì đó lớn hơn và có hại, chẳng hạn như vi rút hoặc trojan, hoặc, một tập tin băm, hoặc các chỉ số nhận dạng tương tự khác, và nó thường bao gồm một nhãn, và một số dữ liệu khác để giúp cung cấp bối cảnh bổ sung mà có thể được sử dụng bởi phpMussel để xác định cách tốt nhất để tiến hành khi nó gặp những gì chúng ta đang tìm kiếm.
@@ -757,48 +773,48 @@ Trong bối cảnh phpMussel, các từ ngữ đề cập đến chữ ký của
 phpMussel *KHÔNG* chặn một tập tin | Đúng tiêu cực (suy luận đúng) | Phát hiện mất tích (điều tương tự như sai tiêu cực)
 phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy luận đúng)
 
-#### Tần suất cập nhật chữ ký là bao nhiêu?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Tần suất cập nhật chữ ký là bao nhiêu?
 
 Tần suất cập nhật thay đổi tùy thuộc vào các tập tin chữ ký trong câu hỏi. Nói chung là, tất cả các người bảo trì cho các tất cả tập tin chữ ký cố gắng đảm bảo rằng chữ ký của họ được cập nhật càng nhiều càng tốt, nhưng bởi vì tất cả chúng ta đều có nhiều cam kết khác, cuộc sống của chúng ta bên ngoài dự án, và bởi vì không ai trong chúng ta được bồi thường tài chính (hay được thanh toán) cho các nỗ lực dự án của chúng tôi, Một lịch trình cập nhật chính xác không thể được đảm bảo. Nói chung là, chữ ký được cập nhật bất cứ khi nào có đủ thời gian để cập nhật chúng, và các người bảo trì cố gắng ưu tiên dựa trên sự cần thiết và dựa trên tần suất của thay đổi giữa các phạm vi. Trợ giúp luôn được đánh giá cao nếu bạn sẵn sàng cung cấp bất kỳ.
 
-#### Tôi đã gặp một vấn đề trong khi sử dụng phpMussel và tôi không biết phải làm gì về nó! Hãy giúp tôi!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Tôi đã gặp một vấn đề trong khi sử dụng phpMussel và tôi không biết phải làm gì về nó! Hãy giúp tôi!
 
 - Bạn đang sử dụng phiên bản mới nhất của phần mềm? Bạn đang sử dụng phiên bản mới nhất của tập tin chữ ký của bạn? Nếu câu trả lời cho một trong hai những câu hỏi này là không, cố gắng cập nhật mọi thứ đầu tiên, và kiểm tra nếu vấn đề vẫn còn. Nếu nó vẫn còn, tiếp tục đọc.
 - Bạn đã kiểm tra tất cả các tài liệu chưa? Nếu không, xin hãy làm như vậy. Nếu vấn đề không thể giải quyết bằng cách sử dụng tài liệu, hãy tiếp tục đọc.
 - Bạn đã kiểm tra các **[trang vấn đề](https://github.com/phpMussel/phpMussel/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
 - Nếu vấn đề vẫn còn, vui lòng nói cho chúng tôi bằng cách bắt đầu một cuộc thảo luận mới trên các trang vấn đề.
 
-#### Tôi muốn sử dụng phpMussel với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
+#### <a name="MINIMUM_PHP_VERSION"></a>Tôi muốn sử dụng phpMussel với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
 
 Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộc sống) chính thức vào năm 2014, và hỗ trợ an ninh mở rộng đã được chấm dứt vào năm 2015. Khi viết này, nó là năm 2017, và PHP 7.1.0 đã có sẵn. Tại thời điểm này, hỗ trợ được cung cấp để sử dụng phpMussel với PHP 5.4.0 và tất cả các phiên bản PHP có sẵn mới hơn, nhưng nếu bạn cố gắng sử dụng phpMussel với bất kỳ phiên bản PHP lớn hơn, hỗ trợ sẽ không được cung cấp.
 
 *Xem thêm: [Biểu đồ tương thích](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Tôi có thể sử dụng một cài đặt phpMussel để bảo vệ nhiều tên miền?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Tôi có thể sử dụng một cài đặt phpMussel để bảo vệ nhiều tên miền?
 
 Vâng. Cài đặt phpMussel không bị khóa vào các tên miền cụ thể, và do đó có thể được sử dụng để bảo vệ nhiều tên miền. Nói chung là, chúng tôi đề cập đến cài đặt phpMussel chỉ bảo vệ một miền như "cài đặt miền đơn" ("single-domain installations"), và chúng tôi đề cập đến cài đặt phpMussel bảo vệ nhiều miền hay miền phụ như "cài đặt nhiều miền" ("multi-domain installations"). Nếu bạn sử dụng một cài đặt nhiều miền và cần phải sử dụng các bộ tập tin chữ ký khác nhau cho các miền khác nhau, hoặc cần phpMussel được cấu hình khác nhau cho các miền khác nhau, điều này có thể làm được. Sau khi tải tập tin cấu hình (`config.ini`), phpMussel sẽ kiểm tra sự tồn tại của một "tập tin ghi đè cấu hình" cụ thể cho miền được yêu cầu (`miền-được-yêu-cầu.tld.config.ini`), và nếu được tìm thấy, bất kỳ giá trị cấu hình nào được xác định bởi tập tin ghi đè cấu hình sẽ được sử dụng cho trường hợp thực hiện thay vì các giá trị cấu hình được định nghĩa bởi tập tin cấu hình. Các tập tin ghi đè cấu hình giống với tập tin cấu hình, và tùy theo quyết định của bạn, có thể chứa toàn bộ các chỉ thị cấu hình sẵn có cho phpMussel, hoặc bất kỳ phần bắt buộc nào mà khác với các giá trị được xác định bởi tập tin cấu hình. Các tập tin ghi đè cấu hình được đặt tên theo miền mà chúng được dự định (vì vậy, ví dụ, nếu bạn cần một tập tin ghi đè cấu hình cho miền, `http://www.some-domain.tld/`, các tập tin ghi đè cấu hình của nó nên được đặt tên là `some-domain.tld.config.ini`, và nên được đặt trong vault với tập tin cấu hình, `config.ini`). Tên miền cho trường hợp thực hiện được bắt nguồn từ header (tiêu đề) `HTTP_HOST` của các yêu cầu; "www" bị bỏ qua.
 
-#### Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?
+#### <a name="PAY_YOU_TO_DO_IT"></a>Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?
 
 Có lẽ. Điều này được xem xét theo từng trường hợp cụ thể. Cho chúng tôi biết những gì bạn cần, những gì bạn đang cung cấp, và chúng tôi sẽ cho bạn biết liệu chúng tôi có thể giúp đỡ hay không.
 
-#### Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?
 
 *Xem ở trên.*
 
-#### Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?
 
 *Xem ở trên.*
 
-#### Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?
 
 Vâng. Giấy phép của chúng tôi không cấm điều này.
 
-#### Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?
 
 Vâng. Đóng góp cho dự án rất được hoan nghênh. Vui lòng xem "CONTRIBUTING.md" để biết thêm thông tin.
 
-#### Giá trị được đề xuất cho "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Giá trị được đề xuất cho "ipaddr".
 
 Giá trị | Sử dụng
 ---|---
@@ -872,11 +888,68 @@ Nếu bạn muốn, mảng này có thể bị phá hủy bằng cách sử dụ
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
-#### Tôi có thể sử dụng cron để cập nhật tự động không?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Tôi có thể sử dụng cron để cập nhật tự động không?
 
 Vâng. API được tích hợp trong front-end để tương tác với trang cập nhật thông qua các kịch bản bên ngoài. Một kịch bản riêng biệt, "[Cronable](https://github.com/Maikuolan/Cronable)", là có sẵn, và có thể được sử dụng bởi cron manager hay cron scheduler để tự động cập nhật gói này và gói hỗ trợ khác (kịch bản này cung cấp tài liệu riêng của nó).
+
+#### <a name="SCAN_NON_ANSI"></a>Có thể phpMussel quét các tập tin có tên không ANSI?
+
+Giả sử có một thư mục bạn muốn quét. Trong thư mục này, bạn có một số tập tin có tên không ANSI.
+- `Пример.txt`
+- `一个例子.txt`
+- `例です.txt`
+
+Giả sử rằng bạn đang sử dụng chế độ CLI hoặc phpMussel API để quét.
+
+Khi sử dụng PHP < 7.1.0, trên một số hệ thống, phpMussel sẽ không thấy các tập tin này khi cố gắng quét thư mục, và do đó, sẽ không thể quét các tập tin này. Bạn có thể sẽ thấy kết quả tương tự như khi bạn quét một thư mục rỗng:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Đã bắt đầu.
+ Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
+```
+
+Ngoài ra, khi sử dụng PHP < 7.1.0, quét các tập tin riêng lẻ tạo kết quả như sau:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Đã bắt đầu.
+ > Đang kiểm tra 'X:/directory/Пример.txt' (FN: b831eb8f):
+ -> Tập tin không hợp lệ!
+ Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
+```
+
+Hoặc những điều sau:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Đã bắt đầu.
+ > X:/directory/??????.txt không phải là file hoạc thư mục.
+ Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
+```
+
+Điều này là do cách mà PHP xử lý các tên tập tin không phải ANSI trước PHP 7.1.0. Nếu bạn gặp vấn đề này, giải pháp là cập nhật cài đặt PHP lên phiên bản 7.1.0 trở lên. Trong PHP >= 7.1.0, tên tập tin không phải ANSI được xử lý tốt hơn, và phpMussel sẽ có thể quét các tập tin đúng cách.
+
+Để so sánh, kết quả khi cố gắng quét các thư mục bằng cách sử dụng PHP >= 7.1.0:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Đã bắt đầu.
+ -> Đang kiểm tra '\Пример.txt' (FN: b2ce2d31; FD: 27cbe813):
+ --> Không tiềm được vấn đề.
+ -> Đang kiểm tra '\一个例子.txt' (FN: 50debed5; FD: 27cbe813):
+ --> Không tiềm được vấn đề.
+ -> Đang kiểm tra '\例です.txt' (FN: ee20a2ae; FD: 27cbe813):
+ --> Không tiềm được vấn đề.
+ Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
+```
+
+Và cố gắng để quét các tập tin riêng biệt:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Đã bắt đầu.
+ > Đang kiểm tra 'X:/directory/Пример.txt' (FN: b831eb8f; FD: 27cbe813):
+ -> Không tiềm được vấn đề.
+ Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
+```
 
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Hai 2018 (2018.02.28).
+Lần cuối cập nhật: 31 Tháng Ba 2018 (2018.03.31).

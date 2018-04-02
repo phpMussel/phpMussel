@@ -888,6 +888,24 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
 
 ### <div dir="rtl">١٠. <a name="SECTION10"></a>أسئلة وأجوبة (FAQ)</div>
 
+<div dir="rtl"><ul>
+ <li><a href="#WHAT_IS_A_SIGNATURE">ما هو "التوقيع"؟</a></li>
+ <li><a href="#WHAT_IS_A_FALSE_POSITIVE">ما هو "إيجابية خاطئة"؟</a></li>
+ <li><a href="#SIGNATURE_UPDATE_FREQUENCY">عدد المرات التي يتم تحديثها التوقيعات؟</a></li>
+ <li><a href="#ENCOUNTERED_PROBLEM_WHAT_TO_DO">لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</a></li>
+ <li><a href="#MINIMUM_PHP_VERSION">أريد استخدام phpMussel مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟</a></li>
+ <li><a href="#PROTECT_MULTIPLE_DOMAINS">هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟</a></li>
+ <li><a href="#PAY_YOU_TO_DO_IT">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟</a></li>
+ <li><a href="#HIRE_FOR_PRIVATE_WORK">هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟</a></li>
+ <li><a href="#SPECIALIST_MODIFICATIONS">أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟</a></li>
+ <li><a href="#ACCEPT_OR_OFFER_WORK">أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟</a></li>
+ <li><a href="#WANT_TO_CONTRIBUTE">أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟</a></li>
+ <li><a href="#RECOMMENDED_VALUES_FOR_IPADDR">القيم الموصى بها ل "ipaddr".</a></li>
+ <li><a href="#SCAN_DEBUGGING">كيفية الوصول إلى تفاصيل محددة حول الملفات عند مسحها ضوئيا؟</a></li>
+ <li><a href="#CRON_TO_UPDATE_AUTOMATICALLY">هل يمكنني استخدام cron لتحديث تلقائيا؟</a></li>
+ <li><a href="#SCAN_NON_ANSI">هل يمكن فحص ملفات phpMussel بأسماء غير ANSI؟</a></li>
+</ul></div>
+
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ما هو "التوقيع"؟<br /><br /></div>
 
 <div dir="rtl">في phpMussel، يشير "التوقيع" إلى البيانات التي تعمل كمعرف، وعادة ما تكون قطعة صغيرة من الكل أكبر لشيء نسعى. تتضمن عادة تصنيفا، وبيانات مفيدة أخرى للمساعدة في توفير سياق إضافي. وهذا يمكن أن يساعدنا على تحديد أفضل طريقة للمضي قدما عندما نجد ذلك.<br /><br /></div>
@@ -907,11 +925,11 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
 &nbsp; <div dir="rtl" style="display:inline;">سلبي صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;">افتقد (التناظرية من سلبي خاطئة)</div> | <div dir="rtl" style="display:inline;"><strong>phpMussel لا يمنع ملف</strong></div>
 &nbsp; <div dir="rtl" style="display:inline;"><strong>إيجابية خاطئة</strong></div> | <div dir="rtl" style="display:inline;">إيجابية صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;"><strong>phpMussel منع ملف</strong></div>
 
-#### <div dir="rtl">عدد المرات التي يتم تحديثها التوقيعات؟<br /><br /></div>
+#### <div dir="rtl"><a name="SIGNATURE_UPDATE_FREQUENCY"></a>عدد المرات التي يتم تحديثها التوقيعات؟<br /><br /></div>
 
 <div dir="rtl">أنه يختلف. نحن نحاول قدر الإمكان، ولكن نظرا لالتزامات أخرى، حياتنا اليومية، وعدم حصولهم على رواتبهم، تحديث الجدول الزمني الدقيق لا يمكن أن تكون مضمونة. الأولوية لضرورة. ورحب المساعدة دائما.<br /><br /></div>
 
-<div dir="rtl">لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</div>
+#### <div dir="rtl"><a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</div>
 <div dir="rtl"><ul>
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
@@ -919,37 +937,37 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
  <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
 </ul></div>
 
-<div dir="rtl">أريد استخدام phpMussel مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟<br /><br /></div>
+#### <div dir="rtl"><a name="MINIMUM_PHP_VERSION"></a>أريد استخدام phpMussel مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟<br /><br /></div>
 
 <div dir="rtl">لا. PHP 5.4.0 دعم إنهاء عام 2014. الدعم الأمني الموسع إنهاء في عام 2015. حاليا، فمن عام 2017، وPHP 7.1.0 متاحة بالفعل. يتم توفير دعم لاستخدام phpMussel مع PHP 5.4.0 و كل ما هو متاح أحدث إصدارات PHP. لن تكون معتمدة الإصدارات القديمة PHP.<br /><br /></div>
 
 <div dir="rtl"><em>انظر أيضا: <a href="https://maikuolan.github.io/Compatibility-Charts/">مخططات التوافق</a>.</em><br /><br /></div>
 
-<div dir="rtl">هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟<br /><br /></div>
+#### <div dir="rtl"><a name="PROTECT_MULTIPLE_DOMAINS"></a>هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
 <div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل <code dir="ltr">"http://www.some-domain.tld/"</code>، أطلق عليه اسما <code dir="ltr">"some-domain.tld.config.ini"</code>. اسم النطاق يأتي من <code dir="ltr">"HTTP_HOST"</code>. يتم تجاهل <code dir="ltr">"www"</code>.<br /><br /></div>
 
-<div dir="rtl">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
+#### <div dir="rtl"><a name="PAY_YOU_TO_DO_IT"></a>أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
 
 <div dir="rtl">ربما. وينظر في ذلك على أساس كل حالة على حدة. أخبرنا احتياجاتك وما تقدمه. سنخبرك بما إذا كنا نستطيع مساعدتك أم لا.<br /><br /></div>
 
-<div dir="rtl">هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟<br /><br /></div>
+#### <div dir="rtl"><a name="HIRE_FOR_PRIVATE_WORK"></a>هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟<br /><br /></div>
 
 <div dir="rtl"><em>راجع اإلجابة أعاله.</em><br /><br /></div>
 
-<div dir="rtl">أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟<br /><br /></div>
+#### <div dir="rtl"><a name="SPECIALIST_MODIFICATIONS"></a>أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟<br /><br /></div>
 
 <div dir="rtl"><em>راجع اإلجابة أعاله.</em><br /><br /></div>
 
-<div dir="rtl">أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟<br /><br /></div>
+#### <div dir="rtl"><a name="ACCEPT_OR_OFFER_WORK"></a>أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟<br /><br /></div>
 
 <div dir="rtl">نعم. ترخيصنا لا يحظر هذا.<br /><br /></div>
 
-<div dir="rtl">أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟<br /><br /></div>
+#### <div dir="rtl"><a name="WANT_TO_CONTRIBUTE"></a>أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟<br /><br /></div>
 
 <div dir="rtl">نعم. المساهمة في المشروع هو موضع ترحيب كبير. يرجى الاطلاع على "CONTRIBUTING.md" لمزيد من المعلومات.<br /><br /></div>
 
-<div dir="rtl">القيم الموصى بها ل "ipaddr".<br /><br /></div>
+#### <div dir="rtl"><a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>القيم الموصى بها ل "ipaddr".<br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
 ---|---
@@ -961,7 +979,7 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
 &nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
 
-<div dir="rtl"><a name="SCAN_DEBUGGING"></a>كيفية الوصول إلى تفاصيل محددة حول الملفات عند مسحها ضوئيا؟<br /><br /></div>
+#### <div dir="rtl"><a name="SCAN_DEBUGGING"></a>كيفية الوصول إلى تفاصيل محددة حول الملفات عند مسحها ضوئيا؟<br /><br /></div>
 
 <div dir="rtl">يمكنك الوصول إلى تفاصيل محددة حول الملفات عند مسحها عن طريق تعيين مصفوفة لاستخدامها لهذا الغرض قبل توجيه phpMussel لمسحها.<br /><br /></div>
 
@@ -1023,11 +1041,69 @@ var_dump($Foo);
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
-<div dir="rtl">هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
+#### <div dir="rtl"><a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
 
 <div dir="rtl">نعم. يتم تضمين API في front-end للتفاعل مع صفحة التحديثات عبر النصوص البرمجية الخارجية. وهناك نص منفصل، <a href="https://github.com/Maikuolan/Cronable">Cronable</a>، هو متاح، ويمكن استخدامها من قبل مدير كرون أو كرون جدولة لتحديث هذا وغيرها من الحزم المعتمدة تلقائيا (يوفر هذا البرنامج النصي وثائقه الخاصة).<br /><br /></div>
+
+#### <div dir="rtl"><a name="SCAN_NON_ANSI"></a>هل يمكن فحص ملفات phpMussel بأسماء غير ANSI؟<br /><br /></div>
+
+<div dir="rtl">لنفترض أن هناك مجلدًا تريد مسحه ضوئيًا. في هذا المجلد، لديك بعض الملفات ذات أسماء غير ANSI.<br /><br /></div>
+
+- `Пример.txt`
+- `一个例子.txt`
+- `例です.txt`
+
+<div dir="rtl">لنفترض أنك إما تستخدم وضع CLI أو واجهة برمجة تطبيقات phpMussel لإجراء المسح الضوئي.<br /><br /></div>
+
+<div dir="rtl">عند استخدام <code dir="ltr">PHP &lt; 7.1.0</code>، على بعض الأنظمة، لن يرى phpMussel هذه الملفات عند محاولة مسح المجلد، وبالتالي، لن تتمكن من فحص هذه الملفات ضوئيًا. من المرجح أن ترى النتائج نفسها كما لو كنت تفحص مجلدًا فارغًا:<br /><br /></div>
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+<div dir="rtl">بالإضافة إلى ذلك، عند استخدام <code dir="ltr">PHP &lt; 7.1.0</code>، ينتج عن فحص الملفات بشكل فردي نتائج مثل هذه:<br /><br /></div>
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > Checking 'X:/directory/Пример.txt' (FN: b831eb8f):
+ -> Invalid file!
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+<div dir="rtl">أو هذه:<br /><br /></div>
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > X:/directory/??????.txt is not a file or directory.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+<div dir="rtl">هذا بسبب الطريقة التي تعامل بها PHP مع أسماء ملفات غير ANSI قبل <code dir="ltr">PHP 7.1.0</code>. إذا واجهت هذه المشكلة ، فإن الحل هو تحديث تثبيت PHP الخاص بك إلى الإصدار <code dir="ltr">7.1.0</code> أو الأحدث. في <code dir="ltr">PHP &gt;= 7.1.0</code>، يتم التعامل مع أسماء ملفات غير ANSI بشكل أفضل، ويجب أن يكون phpMussel قادرًا على فحص الملفات بشكل صحيح.<br /><br /></div>
+
+<div dir="rtl">للمقارنة، فإن النتائج عند محاولة مسح المجلد باستخدام <code dir="ltr">PHP &gt;= 7.1.0</code>:<br /><br /></div>
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ -> Checking '\Пример.txt' (FN: b2ce2d31; FD: 27cbe813):
+ --> No problems found.
+ -> Checking '\一个例子.txt' (FN: 50debed5; FD: 27cbe813):
+ --> No problems found.
+ -> Checking '\例です.txt' (FN: ee20a2ae; FD: 27cbe813):
+ --> No problems found.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+<div dir="rtl">ومحاولة مسح الملفات بشكل فردي:<br /><br /></div>
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > Checking 'X:/directory/Пример.txt' (FN: b831eb8f; FD: 27cbe813):
+ -> No problems found.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
 
 ---
 
 
-<div dir="rtl">آخر تحديث: 28 فبراير 2018 (2018.02.28).</div>
+<div dir="rtl">آخر تحديث: 31 مارس 2018 (2018.03.31).</div>

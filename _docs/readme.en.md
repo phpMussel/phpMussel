@@ -738,6 +738,22 @@ This information was last updated 2017.12.01 and is current for all phpMussel re
 
 ### 10. <a name="SECTION10"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
+- [What is a "signature"?](#WHAT_IS_A_SIGNATURE)
+- [What is a "false positive"?](#WHAT_IS_A_FALSE_POSITIVE)
+- [How frequently are signatures updated?](#SIGNATURE_UPDATE_FREQUENCY)
+- [I've encountered a problem while using phpMussel and I don't know what to do about it! Please help!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [I want to use phpMussel with a PHP version older than 5.4.0; Can you help?](#MINIMUM_PHP_VERSION)
+- [Can I use a single phpMussel installation to protect multiple domains?](#PROTECT_MULTIPLE_DOMAINS)
+- [I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?](#PAY_YOU_TO_DO_IT)
+- [Can I hire you or any of the developers of this project for private work?](#HIRE_FOR_PRIVATE_WORK)
+- [I need specialist modifications, customisations, etc; Can you help?](#SPECIALIST_MODIFICATIONS)
+- [I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?](#ACCEPT_OR_OFFER_WORK)
+- [I want to contribute to the project; Can I do this?](#WANT_TO_CONTRIBUTE)
+- [Recommended values for "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)
+- [Can I use cron to update automatically?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [Can phpMussel scan files with non-ANSI names?](#SCAN_NON_ANSI)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
 In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
@@ -757,48 +773,48 @@ This can be summarised by the table below:
 phpMussel does *NOT* block a file | True negative (correct inference) | Missed detection (analogous to false negative)
 phpMussel *DOES* block a file | __False positive__ | True positive (correct inference)
 
-#### How frequently are signatures updated?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>How frequently are signatures updated?
 
 Update frequency varies depending on the signature files in question. All maintainers for phpMussel signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
 
-#### I've encountered a problem while using phpMussel and I don't know what to do about it! Please help!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>I've encountered a problem while using phpMussel and I don't know what to do about it! Please help!
 
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/phpMussel/phpMussel/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
 - If the problem still persists, please let us know about it by creating a new issue on the issues page.
 
-#### I want to use phpMussel with a PHP version older than 5.4.0; Can you help?
+#### <a name="MINIMUM_PHP_VERSION"></a>I want to use phpMussel with a PHP version older than 5.4.0; Can you help?
 
 No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using phpMussel with PHP 5.4.0 and all available newer PHP versions, but if you try to use phpMussel with any older PHP versions, support won't be provided.
 
 *See also: [Compatibility Charts](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Can I use a single phpMussel installation to protect multiple domains?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Can I use a single phpMussel installation to protect multiple domains?
 
 Yes. phpMussel installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to phpMussel installations protecting only one domain as "single-domain installations", and we refer to phpMussel installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need phpMussel to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), phpMussel will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to phpMussel, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
 
-#### I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?
+#### <a name="PAY_YOU_TO_DO_IT"></a>I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?
 
 Maybe. This is considered on a case-by-case basis. Let us know what you need, what you're offering, and we'll let you know whether we can help.
 
-#### Can I hire you or any of the developers of this project for private work?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Can I hire you or any of the developers of this project for private work?
 
 *See above.*
 
-#### I need specialist modifications, customisations, etc; Can you help?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>I need specialist modifications, customisations, etc; Can you help?
 
 *See above.*
 
-#### I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?
 
 Yes. Our license does not prohibit this.
 
-#### I want to contribute to the project; Can I do this?
+#### <a name="WANT_TO_CONTRIBUTE"></a>I want to contribute to the project; Can I do this?
 
 Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
 
-#### Recommended values for "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Recommended values for "ipaddr".
 
 Value | Using
 ---|---
@@ -872,11 +888,68 @@ Optionally, this array can be destroyed by using the following:
 $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ```
 
-#### Can I use cron to update automatically?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Can I use cron to update automatically?
 
 Yes. An API is built into the front-end for interacting with the updates page via external scripts. A separate script, "[Cronable](https://github.com/Maikuolan/Cronable)", is available, and can be used by your cron manager or cron scheduler to update this and other supported packages automatically (this script provides its own documentation).
+
+#### <a name="SCAN_NON_ANSI"></a>Can phpMussel scan files with non-ANSI names?
+
+Let's say there's a directory you want to scan. In this directory, you have some files with non-ANSI names.
+- `Пример.txt`
+- `一个例子.txt`
+- `例です.txt`
+
+Let's assume that you're either using CLI mode or the phpMussel API to scan.
+
+When using PHP < 7.1.0, on some systems, phpMussel won't see these files when attempting to scan the directory, and so, won't be able to scan these files. You'll likely see the same results as if you were to scan an empty directory:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+Additionally, when using PHP < 7.1.0, scanning the files individually produces results like these:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > Checking 'X:/directory/Пример.txt' (FN: b831eb8f):
+ -> Invalid file!
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+Or these:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > X:/directory/??????.txt is not a file or directory.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+This is because of the way that PHP handled non-ANSI filenames prior to PHP 7.1.0. If you experience this problem, the solution is to update your PHP installation to 7.1.0 or newer. In PHP >= 7.1.0, non-ANSI filenames are handled better, and phpMussel should be able to scan the files properly.
+
+For comparison, the results when attempting to scan the directory using PHP >= 7.1.0:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ -> Checking '\Пример.txt' (FN: b2ce2d31; FD: 27cbe813):
+ --> No problems found.
+ -> Checking '\一个例子.txt' (FN: 50debed5; FD: 27cbe813):
+ --> No problems found.
+ -> Checking '\例です.txt' (FN: ee20a2ae; FD: 27cbe813):
+ --> No problems found.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
+
+And attempting to scan the files individually:
+
+```
+ Sun, 01 Apr 2018 22:27:41 +0800 Started.
+ > Checking 'X:/directory/Пример.txt' (FN: b831eb8f; FD: 27cbe813):
+ -> No problems found.
+ Sun, 01 Apr 2018 22:27:41 +0800 Finished.
+```
 
 ---
 
 
-Last Updated: 28 February 2018 (2018.02.28).
+Last Updated: 31 March 2018 (2018.03.31).
