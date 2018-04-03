@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2018.01.20).
+ * This file: Vietnamese language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'Lỗi yêu cầu API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Lỗi ủy quyền API';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'Dịch vụ của API không có sẵn';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Lỗi API không xác định';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Xin lỗi, tôi không hiểu câu lệnh này.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Quá trình quét chưa được hoàn thành';
-$phpMussel['lang']['cli_is_not_a'] = ' không phải là file hoạc thư mục.';
+$phpMussel['lang']['cli_is_not_a'] = '%s không phải là file hoạc thư mục.';
 $phpMussel['lang']['cli_ln2'] = " Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện\n trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong những\n các tập tin tài lên trên máy của bạn. Bất cứ nơi nào mà bản đã được nối, dưa\n trên chử ký của ClamAV và những người khác.\n\n BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " phpMussel đang chạy trong chế độ CLI (command line interface).\n\n Đễ quét tập tin hoạc thư mục, hảy đánh vào 'scan', sau đó tên của tập tin\n hoạc thư mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào 'c' và bấm\n Enter đễ xem những loại chế độ CLI; Đánh 'q' và bấm Enter đế thoát ra:";
 $phpMussel['lang']['cli_pe1'] = 'Tập tin PE không hợp lệ!';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = 'Lối của PE đã được phát hiện ra'
 $phpMussel['lang']['data_not_available'] = 'Dữ liệu không có sẵn.';
 $phpMussel['lang']['denied'] = 'Sự tải lên đã bị từ chối!';
 $phpMussel['lang']['denied_reason'] = 'Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây:';
-$phpMussel['lang']['detected'] = 'Đã được phát hiện {vn}';
+$phpMussel['lang']['detected'] = 'Đã được phát hiện %s';
 $phpMussel['lang']['detected_control_characters'] = 'Ký tự điều khiển đã được phát hiện';
 $phpMussel['lang']['encrypted_archive'] = 'Kho đã mã hóa đã được phát hiện; Kho đã mã hóa chưa có sự cho phép';
-$phpMussel['lang']['failed_to_access'] = 'Truy cập bị thức bại ';
+$phpMussel['lang']['failed_to_access'] = 'Không thể truy cập "%s"!';
 $phpMussel['lang']['file'] = 'Tập tin';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Cở của tập tin đã bị quá giới hạn';
 $phpMussel['lang']['filetype_blacklisted'] = 'Loại tập tin đã vào danh sách đen';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = 'URL không hợp lệ!';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Ngoài ra hình ảnh, những tập tin khác không được phép tải lên';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Thư mực plugin không tồn tại!';
-$phpMussel['lang']['quarantined_as'] = "Đã được kiểm dịch là \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "Đã được kiểm dịch là \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Độ sâu đệ quy bị quá giới hạn';
 $phpMussel['lang']['required_variables_not_defined'] = 'Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';
 $phpMussel['lang']['scan_aborted'] = 'Hủy bỏ quét!';
-$phpMussel['lang']['scan_chameleon'] = '{x} tấn công tắc kè hoa được phát hiện';
+$phpMussel['lang']['scan_chameleon'] = '%s tấn công tắc kè hoa được phát hiện';
 $phpMussel['lang']['scan_checking'] = 'Đang kiểm tra';
 $phpMussel['lang']['scan_checking_contents'] = 'Thành công! Tiến hành sự kiểm tra nội dung.';
 $phpMussel['lang']['scan_command_injection'] = 'Nỗ lực lệnh chích được phát hiện';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'Đĩa ghi bị lỗi! Xin vui lòng liê
 $phpMussel['lang']['upload_error_8'] = 'Phát hiện PHP sai! Xin vui lòng liên lạc với hostmaster để được giúp đỡ! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Đã quá giới hạn tải lên';
 $phpMussel['lang']['wrong_password'] = 'Mật khẩu sai; Hành động bị từ chối.';
-$phpMussel['lang']['x_does_not_exist'] = 'không tồn tại';
+$phpMussel['lang']['x_does_not_exist'] = '%s không tồn tại';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Thoát ra CLI.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2018.01.20).
+ * This file: English language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API service unavailable';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Unknown API error';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'I don\'t understand that command, sorry.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Failed to complete scanning process';
-$phpMussel['lang']['cli_is_not_a'] = ' is not a file or directory.';
+$phpMussel['lang']['cli_is_not_a'] = '%s is not a file or directory.';
 $phpMussel['lang']['cli_ln2'] = " Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " Currently running phpMussel in CLI mode (command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
 $phpMussel['lang']['cli_pe1'] = 'Not a valid PE file!';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = 'Detected corrupted PE';
 $phpMussel['lang']['data_not_available'] = 'Data not available.';
 $phpMussel['lang']['denied'] = 'Upload Denied!';
 $phpMussel['lang']['denied_reason'] = 'Your upload was blocked for the reasons listed below:';
-$phpMussel['lang']['detected'] = 'Detected {vn}';
+$phpMussel['lang']['detected'] = 'Detected %s';
 $phpMussel['lang']['detected_control_characters'] = 'Detected control characters';
 $phpMussel['lang']['encrypted_archive'] = 'Detected encrypted archive; Encrypted archives not permitted';
-$phpMussel['lang']['failed_to_access'] = 'Failed to access ';
+$phpMussel['lang']['failed_to_access'] = 'Failed to access "%s"!';
 $phpMussel['lang']['file'] = 'File';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Filesize limit exceeded';
 $phpMussel['lang']['filetype_blacklisted'] = 'Filetype blacklisted';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = 'Invalid URL!';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Uploading files other than images isn\'t permitted';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins directory doesn\'t exist!';
-$phpMussel['lang']['quarantined_as'] = "Quarantined as \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "Quarantined as \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursion depth limit exceeded';
 $phpMussel['lang']['required_variables_not_defined'] = 'Required variables aren\'t defined: Can\'t continue.';
 $phpMussel['lang']['scan_aborted'] = 'Scanning aborted!';
-$phpMussel['lang']['scan_chameleon'] = '{x} chameleon attack detected';
+$phpMussel['lang']['scan_chameleon'] = '%s chameleon attack detected';
 $phpMussel['lang']['scan_checking'] = 'Checking';
 $phpMussel['lang']['scan_checking_contents'] = 'Success! Proceeding to check contents.';
 $phpMussel['lang']['scan_command_injection'] = 'Command injection attempt detected';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'Disc-write error! Please contact the hos
 $phpMussel['lang']['upload_error_8'] = 'PHP misconfiguration detected! Please contact the hostmaster for assistance! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Upload limit exceeded';
 $phpMussel['lang']['wrong_password'] = 'Wrong password; Action denied.';
-$phpMussel['lang']['x_does_not_exist'] = 'does not exist';
+$phpMussel['lang']['x_does_not_exist'] = '%s does not exist';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Quit CLI.

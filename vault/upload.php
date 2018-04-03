@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.01.17).
+ * This file: Upload handler (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -174,12 +174,11 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']],
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
                 );
-                $phpMussel['whyflagged'] .= sprintf(
-                    '%s (%s)%s',
+                $phpMussel['whyflagged'] .= sprintf($phpMussel['lang']['_exclamation'], sprintf(
+                    '%s (%s)',
                     $phpMussel['lang']['scan_unauthorised_upload'],
-                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
-                    $phpMussel['lang']['_exclamation']
-                );
+                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
+                ));
             } elseif (
                 !$phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] ||
                 !$phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]

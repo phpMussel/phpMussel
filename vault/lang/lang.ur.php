@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.01.20).
+ * This file: Urdu language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,13 +27,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API کی درخواست کی خر�
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API کیلئے اجازت کی خرابی';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API سروس دستیاب نہیں';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'نامعلوم API کی خرابی';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'میں نے اس حکم کو نہیں سمجھتے افسوس.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'سکیننگ کے عمل کو مکمل کرنے میں ناکام';
-$phpMussel['lang']['cli_is_not_a'] = ' یک فائل یا ڈائریکٹری نہیں ہے.';
+$phpMussel['lang']['cli_is_not_a'] = '%s یک فائل یا ڈائریکٹری نہیں ہے.';
 $phpMussel['lang']['cli_ln2'] = " phpMussel، ایک پی ایچ پی کی سکرپٹ ٹروجن\n پتہ لگانے کے لئے ڈیزائن کیا استعمال\n کرنے کا شکریہ، وائرس، مالویئر اور فائلوں\n کے اندر اندر دیگر خطرات سے آپ کے سسٹم پر\n اپ لوڈ کردہ جہاں کہیں سکرپٹ جھکا ہے،\n ClamAV اور دوسروں کے دستخط پر مبنی.\n\n PHPMUSSEL کاپی رائٹ 2013 اور کالب M کی طرف GNU/GPLv2 اجازت پرے (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " فی الحال CLI موڈ (کمانڈ لائن انٹرفیس) میں phpMussel چلانے.\n\n فائل کا نام یا کے بعد ایک فائل یا ڈائریکٹری، قسم 'سکین'، اسکین کرنے\n آپ phpMussel اسکین کرنے اور انٹر دبائیں چاہتے ہیں کہ ڈائریکٹری؛ 'سی' اور پریس ٹائپ کریں\n CLI موڈ حکم دیتا ہے کی ایک فہرست کے لئے درج کریں؛ 'س' اور پریس چھوڑنے کا درج ٹائپ کریں:";
 $phpMussel['lang']['cli_pe1'] = 'ایک درست PE فائل!';
@@ -44,10 +44,10 @@ $phpMussel['lang']['corrupted'] = 'کے پتہ خراب PE';
 $phpMussel['lang']['data_not_available'] = 'ڈیٹا دستیاب نہیں ہے.';
 $phpMussel['lang']['denied'] = 'اپ لوڈ کریں تردید!';
 $phpMussel['lang']['denied_reason'] = 'آپ کا اپ لوڈ ذیل میں درج وجوہات کی بنا پر بلاک کر دیا گیا:';
-$phpMussel['lang']['detected'] = 'کے پتہ {VN}';
+$phpMussel['lang']['detected'] = 'کے پتہ %s';
 $phpMussel['lang']['detected_control_characters'] = 'پتہ چلنے پر کنٹرول حروف';
 $phpMussel['lang']['encrypted_archive'] = 'مرموز محفوظ شدہ دستاویزات سے پتہ چلا؛ خفیہ کردہ ابلیھاگاروں کی اجازت نہیں';
-$phpMussel['lang']['failed_to_access'] = 'تک رسائی حاصل کرنے میں ناکام ہو گیا ';
+$phpMussel['lang']['failed_to_access'] = '"%s" تک رسائی حاصل کرنے میں ناکام!';
 $phpMussel['lang']['file'] = 'فائل';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'فائل کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['filetype_blacklisted'] = 'قسم کی فائل کو بلیک لسٹ';
@@ -64,11 +64,11 @@ $phpMussel['lang']['invalid_url'] = 'غلط URL!';
 $phpMussel['lang']['ok'] = 'ٹھیک ہے';
 $phpMussel['lang']['only_allow_images'] = 'تصاویر کے علاوہ دیگر اپ لوڈ کی فائلوں کی اجازت نہیں ہے';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'پلگ انز ڈائرکٹری کا کوئی وجود نہیں!';
-$phpMussel['lang']['quarantined_as'] = "طور قرنطینہ \"/والٹ / سنگرودھ/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "طور قرنطینہ \"/والٹ / سنگرودھ/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تکرار کی گہرائی کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['required_variables_not_defined'] = 'مطلوبہ متغیر کی وضاحت نہیں کر رہے ہیں: جاری نہیں رکھ سکتے.';
 $phpMussel['lang']['scan_aborted'] = 'سکیننگ کے اسقاط حمل!';
-$phpMussel['lang']['scan_chameleon'] = '{x} گرگٹ حملے کا پتہ چلا';
+$phpMussel['lang']['scan_chameleon'] = '%s گرگٹ حملے کا پتہ چلا';
 $phpMussel['lang']['scan_checking'] = 'پڑتال کر رہا ہے';
 $phpMussel['lang']['scan_checking_contents'] = 'کامیابی! مندرجات کی جانچ کرنا نکلتا ہے.';
 $phpMussel['lang']['scan_command_injection'] = 'کمان انجکشن کی کوشش کا پتہ چلا';
@@ -94,7 +94,7 @@ $phpMussel['lang']['upload_error_7'] = 'غلطی کو ڈسک لکھنے! امد�
 $phpMussel['lang']['upload_error_8'] = 'پی ایچ پی کی غلط کنفیگریشن کے پتہ! امداد کے لیے میزبان ماسٹر سے رابطہ کریں! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'اپ لوڈ کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['wrong_password'] = 'غلط پاس ورڈ؛ ایکشن تردید.';
-$phpMussel['lang']['x_does_not_exist'] = 'موجود نہیں ہے';
+$phpMussel['lang']['x_does_not_exist'] = '%s موجود نہیں ہے';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI چھوڑو.

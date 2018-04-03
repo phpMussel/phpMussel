@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2018.01.20).
+ * This file: Italian language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'Errore di richiesta delle API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Errore di autorizzazione delle API';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'Servizio delle API è non disponibile';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Errore di API è sconosciuto';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Non capisco quel comando, mi dispiace.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Completamento del processo di controllo fallito';
-$phpMussel['lang']['cli_is_not_a'] = ' non è né un file né una cartella.';
+$phpMussel['lang']['cli_is_not_a'] = '%s non è né un file né una cartella.';
 $phpMussel['lang']['cli_ln2'] = " Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare\n trojan, virus, malware ed altre minacce nei file caricati sul tuo sistama\n dovunque il programma stesso è collegato, basato sulle firme di ClamAV\n ed altri.\n\n PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " Attualmente in esecuzione in modalità CLI (interfaccia a riga di comando).\n\n Per controllare un file o una cartella digita 'scan' seguito dal nome del\n file o della cartella e premi Invio; digita 'c' e premi Invio per l'elenco\n dei comandi in modalità CLI; digita 'q' e premi Invio per uscire.";
 $phpMussel['lang']['cli_pe1'] = 'Non è un PE file valida!';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = 'Rilevato PE corrotto';
 $phpMussel['lang']['data_not_available'] = 'Dati non disponibili.';
 $phpMussel['lang']['denied'] = 'Caricamento Negato!';
 $phpMussel['lang']['denied_reason'] = 'Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito:';
-$phpMussel['lang']['detected'] = 'Rilevato {vn}';
+$phpMussel['lang']['detected'] = 'Rilevato %s';
 $phpMussel['lang']['detected_control_characters'] = 'Rilevati caratteri di controllo';
 $phpMussel['lang']['encrypted_archive'] = 'Rilevato archivio criptato; Archivi criptati non ammessi';
-$phpMussel['lang']['failed_to_access'] = 'Fallito l\'accesso a ';
+$phpMussel['lang']['failed_to_access'] = 'Impossibile accedere a "%s"!';
 $phpMussel['lang']['file'] = 'File';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Dimensione massima del file superata';
 $phpMussel['lang']['filetype_blacklisted'] = 'Tipo di file nella lista nera';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = 'URL non valido!';
 $phpMussel['lang']['ok'] = 'Fatto';
 $phpMussel['lang']['only_allow_images'] = 'Il caricamento di file che non sono immagini non è consentito';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Direttorio dei plugin non esiste!';
-$phpMussel['lang']['quarantined_as'] = "In quarantena come \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "In quarantena come \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Limite di profondità di controllo superato';
 $phpMussel['lang']['required_variables_not_defined'] = 'Variabili obbligatori non sono definite: Impossibile di continuare.';
 $phpMussel['lang']['scan_aborted'] = 'Controllo interrotto!';
-$phpMussel['lang']['scan_chameleon'] = 'Rilevato attacco camaleonte {x}';
+$phpMussel['lang']['scan_chameleon'] = 'Rilevato attacco camaleonte %s';
 $phpMussel['lang']['scan_checking'] = 'Verifica';
 $phpMussel['lang']['scan_checking_contents'] = 'Successo! Procedo a verificare i contenuti.';
 $phpMussel['lang']['scan_command_injection'] = 'Rilevato tentativo di iniezione dei comandi';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'Errore nella scrittura del disco! Contat
 $phpMussel['lang']['upload_error_8'] = 'Rilevata una malconfigurazione di PHP! Contatta l\'hostmaster per assistenza! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Limite di caricamento superato';
 $phpMussel['lang']['wrong_password'] = 'Password sbagliata; azione negata.';
-$phpMussel['lang']['x_does_not_exist'] = 'non esiste';
+$phpMussel['lang']['x_does_not_exist'] = '%s non esiste';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Esci dall'interfaccia a riga di comando.

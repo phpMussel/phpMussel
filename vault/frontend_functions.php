@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.29).
+ * This file: Front-end functions file (last modified: 2018.04.03).
  */
 
 /**
@@ -654,12 +654,12 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.28')
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.35') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.29')
     ) || (
-        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.14')
+        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.15')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.2')
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.3')
     )) {
         $Level += 2;
     }

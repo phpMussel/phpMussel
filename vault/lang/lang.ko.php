@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.01.20).
+ * This file: Korean language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,27 +24,27 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API 요청이 부정';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API 인증 오류';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API 서비스 이용 불가';
 $phpMussel['lang']['SafeBrowseLookup_999'] = '알 수없는 API 오류';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = '미안 해요, 명령을 이해할 수 없습니다.';
 $phpMussel['lang']['cli_failed_to_complete'] = '검색을 완료 할 수 없습니다';
-$phpMussel['lang']['cli_is_not_a'] = '파일에서 디렉토리도 없습니다.';
+$phpMussel['lang']['cli_is_not_a'] = '%s는 파일 또는 디렉토리가 아닙니다.';
 $phpMussel['lang']['cli_ln2'] = " phpMussel을 이용해 주셔서 감사합니다. \n phpMussel는 ClamAV를 비롯한 서명을 이용하여 시스템에 업로드 된\n 파일을 대상하여 트로이 바이러스 나 악성 코드 등을 감지하도록 설계된\n PHP 스크립트입니다.\n\n phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다.\n\n 파일 또는 디렉토리 – 스캔하려면 \"scan\"를 입력하고 계속 파일\n 또는 디렉터리 이름을 입력하고 엔터를 눌러주세요.\n CLI 모드 명령의 목록을 얻으려면 'c'를 입력하고 엔터를 눌러주세요;\n 종료는 \"q\"를 입력하고 엔터를 누릅니다. ";
 $phpMussel['lang']['cli_pe1'] = '올바른 PE 파일이 없습니다!';
-$phpMussel['lang']['cli_pe2'] = 'PE 섹션:';
+$phpMussel['lang']['cli_pe2'] = 'PE 섹션 :';
 $phpMussel['lang']['cli_signature_placeholder'] = '서명-이름';
 $phpMussel['lang']['cli_working'] = '처리 중';
 $phpMussel['lang']['corrupted'] = '손상 PE를 발견했습니다';
 $phpMussel['lang']['data_not_available'] = '데이터를 사용할 수 없습니다.';
 $phpMussel['lang']['denied'] = '업로드 거부!';
-$phpMussel['lang']['denied_reason'] = '다음과 같은 이유로 업로드가 거부되었습니다:';
-$phpMussel['lang']['detected'] = '{vn}을 발견했습니다';
+$phpMussel['lang']['denied_reason'] = '다음과 같은 이유로 업로드가 거부되었습니다 :';
+$phpMussel['lang']['detected'] = '%s을 발견했습니다';
 $phpMussel['lang']['detected_control_characters'] = '제어 문자를 발견했습니다';
 $phpMussel['lang']['encrypted_archive'] = '암호화 된 아카이브 검색 : 암호화 된 아카이브는 허용되지 않습니다';
-$phpMussel['lang']['failed_to_access'] = '액세스에 실패했습니다';
+$phpMussel['lang']['failed_to_access'] = '"%s"에 액세스하지 못했습니다!';
 $phpMussel['lang']['file'] = '파일';
 $phpMussel['lang']['filesize_limit_exceeded'] = '용 범위를 벗어난 파일 크기입니다';
 $phpMussel['lang']['filetype_blacklisted'] = '파일 형식이 블랙리스트입니다';
@@ -61,12 +61,12 @@ $phpMussel['lang']['invalid_url'] = '유효하지 않은 URL!';
 $phpMussel['lang']['ok'] = '괜찮아';
 $phpMussel['lang']['only_allow_images'] = '이미지 이외의 파일을 업로드하는 것은 허용되지 않습니다';
 $phpMussel['lang']['plugins_directory_nonexistent'] = '플러그인 디렉토리가 존재하지 않습니다!';
-$phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/{QFU}.qfu\"로 격리.\n";
+$phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/%s.qfu\"로 격리.\n";
 $phpMussel['lang']['recursive'] = '재귀 정의 호출의 반복 횟수를 초과했습니다';
 $phpMussel['lang']['required_variables_not_defined'] = '요청이 있었던 변수가 정의되어 있지 않기 때문에 계속할 수 없습니다.';
 $phpMussel['lang']['scan_aborted'] = '스캐닝 중단!';
-$phpMussel['lang']['scan_chameleon'] = '{x} 카멜레온 공격이 감지되었습니다';
-$phpMussel['lang']['scan_checking'] = '확인 중';
+$phpMussel['lang']['scan_chameleon'] = '%s 카멜레온 공격이 감지되었습니다';
+$phpMussel['lang']['scan_checking'] = '현재 분석 중 :';
 $phpMussel['lang']['scan_checking_contents'] = '성공! 내용을 확인하고 있습니다.';
 $phpMussel['lang']['scan_command_injection'] = '명령 주입 공격이 감지되었습니다';
 $phpMussel['lang']['scan_complete'] = '완료';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = '디스크에 쓸 수 없습니다! 호�
 $phpMussel['lang']['upload_error_8'] = '잘못된 PHP 설정이 감지되었습니다! 호스트 책임자와 상담하십시오! ';
 $phpMussel['lang']['upload_limit_exceeded'] = '업로드 제한을 초과합니다.';
 $phpMussel['lang']['wrong_password'] = '잘못된 암호; 액션은 부정되었다.';
-$phpMussel['lang']['x_does_not_exist'] = '존재하지 않습니다';
+$phpMussel['lang']['x_does_not_exist'] = '%s는 존재하지 않습니다';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI 종료.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.01.20).
+ * This file: German language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API-Anforderungsfehler';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API-Berechtigungsfehler';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API-Dienst nicht verfügbar';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Unbekannt API-Fehler';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Entschuldigung, ich verstehe diesen Befehl nicht.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Ein vollständiger Scan konnte nicht durchgeführt werden';
-$phpMussel['lang']['cli_is_not_a'] = ' ist keine Datei oder ein Verzeichnis.';
+$phpMussel['lang']['cli_is_not_a'] = '%s ist keine Datei oder ein Verzeichnis.';
 $phpMussel['lang']['cli_ln2'] = " Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " phpMussel befindet sich im CLI-Modus (Command Line Interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
 $phpMussel['lang']['cli_pe1'] = 'Keine gültige PE-Datei!';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = 'Beschädigte PE entdeckt';
 $phpMussel['lang']['data_not_available'] = 'Keine Daten verfügbar.';
 $phpMussel['lang']['denied'] = 'Upload verweigert!';
 $phpMussel['lang']['denied_reason'] = 'Der Upload wurde aus den unten aufgeführten Gründen blockiert:';
-$phpMussel['lang']['detected'] = 'Entdeckt {vn}';
+$phpMussel['lang']['detected'] = 'Entdeckt %s';
 $phpMussel['lang']['detected_control_characters'] = 'Steuerzeichen erkannt';
 $phpMussel['lang']['encrypted_archive'] = 'Verschlüsseltes Archiv entdeckt; Verschlüsselte Archive sind nicht erlaubt';
-$phpMussel['lang']['failed_to_access'] = 'Zugriff fehlgeschlagen auf ';
+$phpMussel['lang']['failed_to_access'] = 'Fehler beim Zugriff auf "%s"!';
 $phpMussel['lang']['file'] = 'Datei';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Dateigröße überschritten';
 $phpMussel['lang']['filetype_blacklisted'] = 'Dateityp auf Blacklist';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = 'Ungültige URL!';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Upload von Nicht-Bilddateien ist nicht erlaubt';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugin-Verzeichnis nicht vorhanden!';
-$phpMussel['lang']['quarantined_as'] = "Als \"/vault/quarantine/{QFU}.qfu\" unter Quarantäne gestellt.\n";
+$phpMussel['lang']['quarantined_as'] = "Als \"/vault/quarantine/%s.qfu\" unter Quarantäne gestellt.\n";
 $phpMussel['lang']['recursive'] = 'Rekursionstiefe-Limit überschritten';
 $phpMussel['lang']['required_variables_not_defined'] = 'Benötigte Variablen sind nicht definiert: Kann nicht fortfahren.';
 $phpMussel['lang']['scan_aborted'] = 'Scan abgebrochen!';
-$phpMussel['lang']['scan_chameleon'] = '{x}-Chamäleon-Angriff erkannt';
+$phpMussel['lang']['scan_chameleon'] = '%s-Chamäleon-Angriff erkannt';
 $phpMussel['lang']['scan_checking'] = 'Überprüfung';
 $phpMussel['lang']['scan_checking_contents'] = 'Erfolg! Überprüfe Inhalte.';
 $phpMussel['lang']['scan_command_injection'] = 'CMD-Injektion erkannt';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'Festplatten-Schreibfehler! Bitte kontakt
 $phpMussel['lang']['upload_error_8'] = 'PHP-Fehlkonfiguration erkannt! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Uploadlimit überschritten';
 $phpMussel['lang']['wrong_password'] = 'Falsches Passwort; Ausführung des Befehls verweigert.';
-$phpMussel['lang']['x_does_not_exist'] = 'nicht vorhanden';
+$phpMussel['lang']['x_does_not_exist'] = '%s existiert nicht';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Beendet den CLI-Modus.

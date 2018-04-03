@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.03.25).
+ * This file: Turkish language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,13 +29,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API istek hatası';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API yetkilendirme hatası';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API hizmeti kullanılamıyor';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Bilinmeyen API hatası';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Bu komutu anlamıyorum, üzgünüm.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Tarama işlemini tamamlama başarısız';
-$phpMussel['lang']['cli_is_not_a'] = ' bir dosya veya dizin değil.';
+$phpMussel['lang']['cli_is_not_a'] = '%s bir dosya veya dizin değil.';
 $phpMussel['lang']['cli_ln2'] = " phpMussel programını kullandığınız için teşekkür ederiz; Sisteminize yüklenen\n dosyalardaki truva atlarını, virüsleri, zararlı yazılımları ve diğer tehditleri\n tespit etmek için tasarlanmış bir PHP betiği, ClamAV imzalarına ve diğerlerine\n dayalı olarak.\n\n PHPMUSSEL TELIF HAKKI 2013 ve sonrası GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " Şu anda CLI modunda çalışan phpMussel (komut\n satırı arabirimi).\n\n Bir dosyayı veya dizini taramak için 'scan' yazın, taramak istediğiniz\n dosyanın veya dizinin adını yazın ve Enter tuşuna basın; CLI modu komutlarının\n bir listesi için 'c' yazın ve Enter tuşuna basın; Çıkmak için 'q' yazın ve\n Enter tuşuna basın:";
 $phpMussel['lang']['cli_pe1'] = 'Geçerli bir PE dosyası değil!';
@@ -46,10 +46,10 @@ $phpMussel['lang']['corrupted'] = 'Bozuk PE saptandı';
 $phpMussel['lang']['data_not_available'] = 'Veri mevcut değil.';
 $phpMussel['lang']['denied'] = 'Yükleme Reddedildi!';
 $phpMussel['lang']['denied_reason'] = 'Yükleme aşağıda belirtilen nedenlerle engellendi:';
-$phpMussel['lang']['detected'] = '{vn} algılandı';
+$phpMussel['lang']['detected'] = '%s algılandı';
 $phpMussel['lang']['detected_control_characters'] = 'Algılanan kontrol karakterleri';
 $phpMussel['lang']['encrypted_archive'] = 'Algılanan şifreli arşiv; Şifrelenmiş arşivlere izin verilmiyor';
-$phpMussel['lang']['failed_to_access'] = 'Erişemiyorum: ';
+$phpMussel['lang']['failed_to_access'] = '"%s" erişilemedi!';
 $phpMussel['lang']['file'] = 'Dosya';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Dosya boyutu sınırı aşıldı';
 $phpMussel['lang']['filetype_blacklisted'] = 'Filetype kara listeye alındı';
@@ -66,11 +66,11 @@ $phpMussel['lang']['invalid_url'] = 'Geçersiz URL!';
 $phpMussel['lang']['ok'] = 'Tamam';
 $phpMussel['lang']['only_allow_images'] = 'Resim dışındaki dosyaları yüklemek izin verilmez';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Eklentiler dizini yok!';
-$phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/{QFU}.qfu\" olarak karantinaya alındı.\n";
+$phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/%s.qfu\" olarak karantinaya alındı.\n";
 $phpMussel['lang']['recursive'] = 'Yineleme derinliği sınırı aşıldı';
 $phpMussel['lang']['required_variables_not_defined'] = 'Gerekli değişkenler tanımlanmamış: Devam edemiyorum.';
 $phpMussel['lang']['scan_aborted'] = 'Tarama iptal edildi!';
-$phpMussel['lang']['scan_chameleon'] = '{x} bukalemun saldırısı tespit edildi';
+$phpMussel['lang']['scan_chameleon'] = '%s bukalemun saldırısı tespit edildi';
 $phpMussel['lang']['scan_checking'] = 'Kontrol etme';
 $phpMussel['lang']['scan_checking_contents'] = 'Başarı! İçeriği kontrol etmeye devam etmek.';
 $phpMussel['lang']['scan_command_injection'] = 'Komuta enjeksiyon girişimi tespit edildi';
@@ -96,7 +96,7 @@ $phpMussel['lang']['upload_error_7'] = 'Disk yazma hatası! Lütfen yardım içi
 $phpMussel['lang']['upload_error_8'] = 'PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Yükleme sınırı aşıldı';
 $phpMussel['lang']['wrong_password'] = 'Yanlış şifre; Eylem reddedildi.';
-$phpMussel['lang']['x_does_not_exist'] = 'varolmayan';
+$phpMussel['lang']['x_does_not_exist'] = '%s mevcut değil';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI\'den çıkın.

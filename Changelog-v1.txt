@@ -45,6 +45,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.03.25; Bug-fix; Maikuolan]: "VersionCompare" function gave incorrect
   results when comparing against certain, specific Ubuntu builds of PHP; Fixed.
 
+- [2018.04.02; Documentation; Maikuolan]: Added an index to the FAQ. Added some
+  information to the FAQ regarding the issue described by #61.
+
+- [2018.04.03; Sub-minor code change; Maikuolan]: Various small improvements to
+  L10N data and its representation by the package in output.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

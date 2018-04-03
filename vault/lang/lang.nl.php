@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.01.20).
+ * This file: Dutch language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API aanvraag foute';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API niet geautoriseerd';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API dienst niet beschikbaar';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Onbekende API fout';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Mislukt om het voltooien te scannen';
-$phpMussel['lang']['cli_is_not_a'] = ' is geen bestand of map.';
+$phpMussel['lang']['cli_is_not_a'] = '%s is geen bestand of map.';
 $phpMussel['lang']['cli_ln2'] = " Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,\n virussen, malware en andere bedreigingen te ontworpen, binnen bestanden\n geüpload naar uw systeem waar het script is haakte, gebaseerd op de\n signatures van ClamAV en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " Momenteel phpMussel is in CLI-modus (commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
 $phpMussel['lang']['cli_pe1'] = 'Geen geldig PE-bestand!';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = 'Gedetecteerd beschadigd PE';
 $phpMussel['lang']['data_not_available'] = 'Gegevens niet beschikbaar.';
 $phpMussel['lang']['denied'] = 'Upload Geweigerd!';
 $phpMussel['lang']['denied_reason'] = 'De upload poging werd geblokkeerd voor de hieronder vermelde redenen:';
-$phpMussel['lang']['detected'] = 'Gedetecteerd {vn}';
+$phpMussel['lang']['detected'] = 'Gedetecteerd %s';
 $phpMussel['lang']['detected_control_characters'] = 'Gedetecteerd controle karakters';
 $phpMussel['lang']['encrypted_archive'] = 'Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan';
-$phpMussel['lang']['failed_to_access'] = 'Mislukt om toegang ';
+$phpMussel['lang']['failed_to_access'] = 'Toegang tot "%s" is mislukt!';
 $phpMussel['lang']['file'] = 'Bestand';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Bestandsgrootte limiet overschreden';
 $phpMussel['lang']['filetype_blacklisted'] = 'Bestandstype in zwarte lijst';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = 'Ongeldige URL!';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Uploaden van niet-beeldbestanden is niet toegestaan';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap bestaat niet!';
-$phpMussel['lang']['quarantined_as'] = "In quarantaine geplaatst als \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "In quarantaine geplaatst als \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursie dieptelimiet overschreden';
 $phpMussel['lang']['required_variables_not_defined'] = 'Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
 $phpMussel['lang']['scan_aborted'] = 'Scannen afgebroken!';
-$phpMussel['lang']['scan_chameleon'] = '{x} kameleon aanval gedetecteerd';
+$phpMussel['lang']['scan_chameleon'] = '%s kameleon aanval gedetecteerd';
 $phpMussel['lang']['scan_checking'] = 'Verifiëren';
 $phpMussel['lang']['scan_checking_contents'] = 'Succes! Gaan tot verifiëren de inhoud.';
 $phpMussel['lang']['scan_command_injection'] = 'Command injectie poging gedetecteerd';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'Disc-schrijffout! Contact op met de host
 $phpMussel['lang']['upload_error_8'] = 'PHP misconfiguratie gedetecteerd! Contact op met de hostmaster voor hulp! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Uploadlimiet overschreden';
 $phpMussel['lang']['wrong_password'] = 'Verkeerd wachtwoord; Actie geweigerd.';
-$phpMussel['lang']['x_does_not_exist'] = 'niet bestaat';
+$phpMussel['lang']['x_does_not_exist'] = '%s bestaat niet';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Verlaten CLI.

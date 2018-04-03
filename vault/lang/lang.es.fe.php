@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.03.25).
+ * This file: Spanish language data for the front-end (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -56,7 +56,7 @@ $phpMussel['lang']['config_general_disable_webfonts'] = '¿Desactivar webfonts? 
 $phpMussel['lang']['config_general_enable_plugins'] = '¿Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].';
 $phpMussel['lang']['config_general_forbid_on_block'] = '¿Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? False = No (200); True = Sí (403) [Predefinido].';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivos subidos que encuentra, independientemente de si o no el archivo que se está subido coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos subidos van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo subido escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. False = Desactivado [Predefinido]; True = Activado.';
-$phpMussel['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
+$phpMussel['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
 $phpMussel['lang']['config_general_lang'] = 'Especifique la predefinido del lenguaje para phpMussel.';
 $phpMussel['lang']['config_general_maintenance_mode'] = '¿Activar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Número máximo de intentos de login (front-end). Predefinido = 5.';
@@ -206,10 +206,10 @@ $phpMussel['lang']['response_accounts_already_exists'] = '¡Una cuenta con ese n
 $phpMussel['lang']['response_accounts_created'] = '¡Cuenta creada con éxito!';
 $phpMussel['lang']['response_accounts_deleted'] = '¡Cuenta eliminada con éxito!';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Esa cuenta no existe.';
-$phpMussel['lang']['response_accounts_password_updated'] = 'Contraseña actualizado con éxito!';
+$phpMussel['lang']['response_accounts_password_updated'] = '¡Contraseña actualizado con éxito!';
 $phpMussel['lang']['response_activated'] = 'Se ha activado correctamente.';
 $phpMussel['lang']['response_activation_failed'] = '¡No se pudo activar!';
-$phpMussel['lang']['response_checksum_error'] = 'Error de suma de comprobación! Archivo rechazado!';
+$phpMussel['lang']['response_checksum_error'] = '¡Error de suma de comprobación! Archivo rechazado!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Componente instalado con éxito.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado con éxito.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
@@ -232,7 +232,7 @@ $phpMussel['lang']['response_login_invalid_password'] = '¡Error al iniciar sesi
 $phpMussel['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $phpMussel['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $phpMussel['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
-$phpMussel['lang']['response_login_wrong_endpoint'] = 'Punto final equivocado!';
+$phpMussel['lang']['response_login_wrong_endpoint'] = '¡Punto final equivocado!';
 $phpMussel['lang']['response_possible_problem_found'] = 'Posible problema encontrado.';
 $phpMussel['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
 $phpMussel['lang']['response_restore_error_1'] = '¡Error al restaurar! Archivo corrupto!';
@@ -258,7 +258,7 @@ $phpMussel['lang']['state_default_password'] = '¡Advertencia: Usando la contras
 $phpMussel['lang']['state_loading'] = 'Cargando...';
 $phpMussel['lang']['state_logged_in'] = 'Conectado.';
 $phpMussel['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
-$phpMussel['lang']['state_maintenance_mode'] = 'Advertencia: ¡El modo de mantenimiento está activado!';
+$phpMussel['lang']['state_maintenance_mode'] = '¡Advertencia: El modo de mantenimiento está activado!';
 $phpMussel['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';
 $phpMussel['lang']['state_quarantine'] = ['Hay %s archivo actualmente en cuarentena.', 'Hay %s archivos actualmente en cuarentena.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'No ocultar no anticuado';

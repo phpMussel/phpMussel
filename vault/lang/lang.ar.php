@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.01.20).
+ * This file: Arabic language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,13 +27,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API الخدمة غير متوفرة';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'خطأ API غير معروف';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'أنا لا أفهم هذا الأمر، آسف.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'فشل في إكمال عملية المسح.';
-$phpMussel['lang']['cli_is_not_a'] = ' ليس ملف أو مجلد.';
+$phpMussel['lang']['cli_is_not_a'] = '%s ليس ملف أو مجلد.';
 $phpMussel['lang']['cli_ln2'] = " شكراً لك على إستخدام phpMussel، المبرمج بلغة PHP للكشف عن ملفات الإختراق\n والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على\n توقيعات ClamAV وغيرها.\n\n حقوق النشر محفوظة ل PHPMUSSEL لعام 2013 وما بعده تحت رخصة\n GNU/GPLv2 للمبرمج (Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " حاليا على تنفيذ phpMussel في وضع CLI (واجهة سطر الأوامر).\n\n لمسح ملف أو دليل، اكتب 'scan'، ثم اسم ملف أو دليل الذي تريد phpMussel إلى لمسح\n واضغط Enter؛ اكتب 'c' واضغط Enter للحصول على قائمة أوامر وضع CLI؛\n اكتب 'q' واضغط Enter للخروج:";
 $phpMussel['lang']['cli_pe1'] = 'ليس ملف PE صالح!';
@@ -44,10 +44,10 @@ $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
 $phpMussel['lang']['data_not_available'] = 'البيانات غير متوفرة.';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
 $phpMussel['lang']['denied_reason'] = 'تم حجب التحميل للأسباب الواردة أدناه:';
-$phpMussel['lang']['detected'] = 'الكشف {vn}';
+$phpMussel['lang']['detected'] = 'الكشف %s';
 $phpMussel['lang']['detected_control_characters'] = 'الكشف أحرف التحكم';
 $phpMussel['lang']['encrypted_archive'] = 'كشف أرشيف المشفرة؛ أرشيف المشفرة غير مسموح';
-$phpMussel['lang']['failed_to_access'] = 'فشل الوصول إلى ';
+$phpMussel['lang']['failed_to_access'] = 'فشل في الوصول إلى "%s"!';
 $phpMussel['lang']['file'] = 'ملف';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'تجاوز حد حجم ملف';
 $phpMussel['lang']['filetype_blacklisted'] = 'نوع الملف في القائمة السوداء';
@@ -64,11 +64,11 @@ $phpMussel['lang']['invalid_url'] = 'URL غير صالح!';
 $phpMussel['lang']['ok'] = 'حسنا';
 $phpMussel['lang']['only_allow_images'] = 'تحميل ملفات غير صورة غير مسموح';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'مجلد الإضافات لا وجود!';
-$phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تجاوزت الحد عمق العودية';
 $phpMussel['lang']['required_variables_not_defined'] = 'المتغيرات المطلوبة لم يتم تعريف: لا يمكن أن يستمر.';
 $phpMussel['lang']['scan_aborted'] = 'مسح تم الالغاء!';
-$phpMussel['lang']['scan_chameleon'] = 'الكشف هجوم الحرباء {x}';
+$phpMussel['lang']['scan_chameleon'] = 'الكشف هجوم الحرباء %s';
 $phpMussel['lang']['scan_checking'] = 'فحص';
 $phpMussel['lang']['scan_checking_contents'] = 'نجاح! فحص محتويات الآن.';
 $phpMussel['lang']['scan_command_injection'] = 'الكشف محاولة حقن القيادة';
@@ -94,7 +94,7 @@ $phpMussel['lang']['upload_error_7'] = 'خطأ القرص الكتابة! يرج
 $phpMussel['lang']['upload_error_8'] = 'الكشف تكوين الخطأ PHP! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'تجاوزت الحد تحميل';
 $phpMussel['lang']['wrong_password'] = 'كلمة مرور خاطئة؛ رفض العمل.';
-$phpMussel['lang']['x_does_not_exist'] = 'غير موجود';
+$phpMussel['lang']['x_does_not_exist'] = 'لا يوجد %s';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI للخروج.

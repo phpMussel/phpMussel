@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.10.26).
+ * This file: CLI handler (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -345,7 +345,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             if (is_dir($phpMussel['stdin_clean'])) {
                 if (!is_readable($phpMussel['stdin_clean'])) {
-                    $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $phpMussel['stdin_clean'] . "\".\n";
+                    $out = '> ' . sprintf($phpMussel['lang']['failed_to_access'], $phpMussel['stdin_clean']) . "\n";
                 } else {
                     $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
@@ -359,7 +359,10 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                         echo $Percent . ' ' . $phpMussel['lang']['scan_complete'] . $phpMussel['lang']['_fullstop_final'];
                         $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'] . $Item, $Item);
                         if (!$out) {
-                            $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . ' (' . $Item . ')' . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $out = '> ' . sprintf(
+                                $phpMussel['lang']['_exclamation_final'],
+                                $phpMussel['lang']['cli_failed_to_complete'] . ' (' . $Item . ')'
+                            ) . "\n";
                         }
                         $r .= $out;
                         echo "\r" . $phpMussel['prescan_decode']($out);
@@ -369,10 +372,13 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             } elseif (is_file($phpMussel['stdin_clean'])) {
                 $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'], $phpMussel['stdin_clean']);
                 if (!$out) {
-                    $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . $phpMussel['lang']['_exclamation_final'] . "\n";
+                    $out = '> ' . sprintf(
+                        $phpMussel['lang']['_exclamation_final'],
+                        $phpMussel['lang']['cli_failed_to_complete']
+                    ) . "\n";
                 }
             } elseif (!$out) {
-                $out = '> ' . $phpMussel['stdin_clean'] . $phpMussel['lang']['cli_is_not_a'] . "\n";
+                $out = '> ' . sprintf($phpMussel['lang']['cli_is_not_a'], $phpMussel['stdin_clean']) . "\n";
             }
             $r .= $out;
             if ($out) {
@@ -418,10 +424,14 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         /** Show the greylist. **/
         if ($phpMussel['cmd'] === 'greylist_show' || $phpMussel['cmd'] === 'gs') {
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
-            echo
-                file_exists($phpMussel['Vault'] . 'greylist.csv') ?
-                "\n greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv'))) :
-                "\n greylist.csv " . $phpMussel['lang']['x_does_not_exist'] . $phpMussel['lang']['_exclamation_final'];
+            echo file_exists(
+                $phpMussel['Vault'] . 'greylist.csv'
+            ) ? "\n greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile'](
+                $phpMussel['Vault'] . 'greylist.csv'
+            ))) : "\n " . sprintf(
+                $phpMussel['lang']['_exclamation_final'],
+                sprintf($phpMussel['lang']['x_does_not_exist'], 'greylist.csv')
+            );
         }
 
         /** Print the command list. **/

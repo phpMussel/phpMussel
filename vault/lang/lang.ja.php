@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.01.20).
+ * This file: Japanese language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,13 +24,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'ＡＰＩリクエストが不正�
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'ＡＰＩ認証エラー';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'ＡＰＩサービス利用不可';
 $phpMussel['lang']['SafeBrowseLookup_999'] = '不明なＡＰＩエラー';
-$phpMussel['lang']['_exclamation'] = '！';
-$phpMussel['lang']['_exclamation_final'] = '！';
+$phpMussel['lang']['_exclamation'] = '%s！';
+$phpMussel['lang']['_exclamation_final'] = '%s！';
 $phpMussel['lang']['_fullstop'] = '。';
 $phpMussel['lang']['_fullstop_final'] = '。';
 $phpMussel['lang']['bad_command'] = 'すみませんが、​コマンドが理解できません。';
 $phpMussel['lang']['cli_failed_to_complete'] = 'スキャンを完了できませんでした';
-$phpMussel['lang']['cli_is_not_a'] = 'はファイルでもディレクトリでもありません。';
+$phpMussel['lang']['cli_is_not_a'] = '%sはファイルでもディレクトリでもありません。';
 $phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マッスル）のご愛顧に感謝します。​phpMusselは、​トロイの木馬型をはじめ、​\n 各種ウィルス、​マルウェアがアップロードファイルからシステムに侵入しようとするのを検知するよう設計されたPHPスクリプトです。\n\n ClamAVやその他のシグネチャに基づきシステム内のどこに配置されても機能します。\n\n PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利について：​Caleb M (Maikuolan)著。\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " ＣＬＩモード（コマンドラインインターフェイス）でphpMusselを実行中です。\n\n ファイルまたはディレクトリ―をスキャンするには、​「scan」とタイプし、​続けてファイル名またはディレクトリ名をタイプしてエンターを押して下さい。\n ＣＬＩモードコマンドのリストを得るには「c」とタイプしてエンターを押して下さい；終了には「q」とタイプしてエンターを押します。";
 $phpMussel['lang']['cli_pe1'] = '正しいＰＥファイルではありません！';
@@ -41,10 +41,10 @@ $phpMussel['lang']['corrupted'] = '破損ＰＥを検出しました';
 $phpMussel['lang']['data_not_available'] = 'データは入手できません。';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
 $phpMussel['lang']['denied_reason'] = '以下の理由でアップロードは拒否されました：';
-$phpMussel['lang']['detected'] = '{vn}を検出しました';
+$phpMussel['lang']['detected'] = '%sを検出しました';
 $phpMussel['lang']['detected_control_characters'] = '制御文字を検出しました';
 $phpMussel['lang']['encrypted_archive'] = '暗号化されたアーカイブ検出：暗号化されたアーカイブは許可されていません';
-$phpMussel['lang']['failed_to_access'] = 'アクセスに失敗しました';
+$phpMussel['lang']['failed_to_access'] = '「%s」にアクセスできませんでした！';
 $phpMussel['lang']['file'] = 'ファイル';
 $phpMussel['lang']['filesize_limit_exceeded'] = '容範囲外ファイルサイズです';
 $phpMussel['lang']['filetype_blacklisted'] = 'ファイルタイプがブラックリスト記載です';
@@ -61,11 +61,11 @@ $phpMussel['lang']['invalid_url'] = '不正ＵＲＬ！';
 $phpMussel['lang']['ok'] = 'ＯＫです';
 $phpMussel['lang']['only_allow_images'] = '画像以外のファイルをアップロードするのは許可されていません';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'プラグインデイレクトリが存在しません！';
-$phpMussel['lang']['quarantined_as'] = "「/vault/quarantine/{QFU}.qfu」として隔離。\n";
+$phpMussel['lang']['quarantined_as'] = "「/vault/quarantine/%s.qfu」として隔離。\n";
 $phpMussel['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
 $phpMussel['lang']['required_variables_not_defined'] = 'リクエストのあった変数は定義されていないため、​続行できません。';
 $phpMussel['lang']['scan_aborted'] = 'スキャニング中断！';
-$phpMussel['lang']['scan_chameleon'] = '{x} Chameleon（カメレオン）攻撃が検出されました';
+$phpMussel['lang']['scan_chameleon'] = '%s Chameleon（カメレオン）攻撃が検出されました';
 $phpMussel['lang']['scan_checking'] = 'チェック中';
 $phpMussel['lang']['scan_checking_contents'] = '成功！​コンテンツをチェックしています。';
 $phpMussel['lang']['scan_command_injection'] = 'コマンドインジェクション攻撃が検出されました';
@@ -91,7 +91,7 @@ $phpMussel['lang']['upload_error_7'] = 'ディスクに書き込めません！�
 $phpMussel['lang']['upload_error_8'] = '不適切なPHP設定が検出されました！​ホスト責任者に相談して下さい！';
 $phpMussel['lang']['upload_limit_exceeded'] = 'アップロードの制限を超えています。';
 $phpMussel['lang']['wrong_password'] = '不正パスワード；アクションは否定されました。';
-$phpMussel['lang']['x_does_not_exist'] = '存在しません';
+$phpMussel['lang']['x_does_not_exist'] = '「%s」は存在しません';
 
 $phpMussel['lang']['cli_commands'] = " q
  - ＣＬＩ終了。

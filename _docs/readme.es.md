@@ -352,7 +352,7 @@ Archivo | Descripción
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
 /CONTRIBUTING.md | Información en respecto a cómo contribuir al proyecto.
 /LICENSE.txt | Una copia de la GNU/GPLv2 licencia (no se requiere para usar la script).
-/loader.php | El cargador. Esto es lo que se supone debe enganchando (esencial)!
+/loader.php | El cargador. Esto es lo que se supone debe enganchando (esencial).
 /PEOPLE.md | Información en respecto a las personas involucradas en el proyecto.
 /README.md | Sumario información del proyecto.
 /web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
@@ -399,7 +399,7 @@ General configuración para phpMussel.
 - El formato de notación de fecha/hora usado por phpMussel. Predefinido = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr"
-- Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+- Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "enable_plugins"
 - ¿Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
@@ -913,7 +913,7 @@ Además, al usar PHP < 7.1.0, el escaneo de los archivos individualmente produce
 ```
  Sun, 01 Apr 2018 22:27:41 +0800 Iniciado.
  > Comprobando 'X:/directory/Пример.txt' (FN: b831eb8f):
- -> Archivo no válido!
+ -> ¡Archivo no válido!
  Sun, 01 Apr 2018 22:27:41 +0800 Terminado.
 ```
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.03.25).
+ * This file: Russian language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -32,13 +32,13 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'Ошибка запроса API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Ошибка авторизации API';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'Сервис недоступен API';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Неизвестная API ошибка';
-$phpMussel['lang']['_exclamation'] = '! ';
-$phpMussel['lang']['_exclamation_final'] = '!';
+$phpMussel['lang']['_exclamation'] = '%s! ';
+$phpMussel['lang']['_exclamation_final'] = '%s!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Извините, команда непонятна.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Не удалось завершить процесс сканирования';
-$phpMussel['lang']['cli_is_not_a'] = ' не файл или каталог.';
+$phpMussel['lang']['cli_is_not_a'] = '%s не файл или каталог.';
 $phpMussel['lang']['cli_ln2'] = " Спасибо за использование phpMussel, PHP сценария предназначенного для\n обнаружения троянов, вирусов, вредоносных программ и других угроз для файлов\n загруженных в вашу систему, на основе подписей ClamAV и других.\n\n PHPMUSSEL АВТОРСКИЕ ПРАВА 2013 и позже GNU/GPLv2 от Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " В настоящее время phpMussel работает в CLI режиме (командной строки интерфейс).\n\n Для сканирования файла или каталога, введите 'scan', а затем имя файла или\n каталога который вы хотите просканировать, и нажмите Enter; Введите 'c' и\n нажмите Enter для списка CLI режима команды; Введите 'q' и нажмите Enter для\n окончания:";
 $phpMussel['lang']['cli_pe1'] = 'Не ПЭ Файл!';
@@ -49,10 +49,10 @@ $phpMussel['lang']['corrupted'] = 'Обнаружена поврежденная
 $phpMussel['lang']['data_not_available'] = 'Данные недоступны.';
 $phpMussel['lang']['denied'] = 'Загрузка Отказана!';
 $phpMussel['lang']['denied_reason'] = 'Ваша загрузка была заблокирована по причинам перечисленным ниже:';
-$phpMussel['lang']['detected'] = 'Обнаружено {vn}';
+$phpMussel['lang']['detected'] = 'Обнаружено %s';
 $phpMussel['lang']['detected_control_characters'] = 'Обнаружены символы управления';
 $phpMussel['lang']['encrypted_archive'] = 'Обнаружен зашифрованный архив; Зашифрованные архивы не допускаются';
-$phpMussel['lang']['failed_to_access'] = 'Не удалось получить доступ ';
+$phpMussel['lang']['failed_to_access'] = 'Не удалось получить доступ к «%s»!';
 $phpMussel['lang']['file'] = 'файл';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Размер файла превышает лимит';
 $phpMussel['lang']['filetype_blacklisted'] = 'Тип файла находится в черном списке';
@@ -69,11 +69,11 @@ $phpMussel['lang']['invalid_url'] = 'Неверный URL!';
 $phpMussel['lang']['ok'] = 'Хорошо';
 $phpMussel['lang']['only_allow_images'] = 'Загрузка файлов, которые не являются изображением, не допускается';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Каталог плагины не существует!';
-$phpMussel['lang']['quarantined_as'] = "Помещен на карантин в \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['quarantined_as'] = "Помещен на карантин в \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Лимит глубины рекурсии превышена';
 $phpMussel['lang']['required_variables_not_defined'] = 'Обязательные переменные не установлены: Продолжение невозможно.';
 $phpMussel['lang']['scan_aborted'] = 'Сканирование прерывается!';
-$phpMussel['lang']['scan_chameleon'] = 'Обнаружена {x} хамелеон-атака';
+$phpMussel['lang']['scan_chameleon'] = 'Обнаружена %s хамелеон-атака';
 $phpMussel['lang']['scan_checking'] = 'Проверить';
 $phpMussel['lang']['scan_checking_contents'] = 'Сделано! Исходная проверка содержимого.';
 $phpMussel['lang']['scan_command_injection'] = 'Обнаружена попытка командной инъекции';
@@ -99,7 +99,7 @@ $phpMussel['lang']['upload_error_7'] = 'Ошибка диск-записи! По
 $phpMussel['lang']['upload_error_8'] = 'PHP реконфигурация обнаружена! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Лимит загрузки превышен';
 $phpMussel['lang']['wrong_password'] = 'Неправильный пароль; Действие отказано.';
-$phpMussel['lang']['x_does_not_exist'] = 'не существует';
+$phpMussel['lang']['x_does_not_exist'] = '%s не существует';
 
 $phpMussel['lang']['cli_commands'] = " q
  - Прекратить CLI.
