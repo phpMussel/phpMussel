@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.04.04).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $phpMussel['lang']['label_blocked'] = 'Tải lên bị chặn';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
+$phpMussel['lang']['label_clientinfo'] = 'Thông tin người dùng:';
 $phpMussel['lang']['label_events'] = 'Sự kiện quét';
 $phpMussel['lang']['label_expires'] = 'Hết hạn: ';
 $phpMussel['lang']['label_flagged'] = 'Đối tượng bị gắn cờ';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'Ngày tải lên: ';
 $phpMussel['lang']['label_upload_hash'] = 'Băm tải lên: ';
 $phpMussel['lang']['label_upload_origin'] = 'Nguồn gốc tải lên: ';
 $phpMussel['lang']['label_upload_size'] = 'Kích thước tải lên: ';
+$phpMussel['lang']['label_your_ip'] = 'IP của bạn:';
+$phpMussel['lang']['label_your_ua'] = 'UA của bạn:';
 $phpMussel['lang']['link_accounts'] = 'Tài Khoản';
 $phpMussel['lang']['link_cache_data'] = 'Dữ liệu cache';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';

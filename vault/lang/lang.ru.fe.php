@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.04.04).
+ * This file: Russian language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'Пожалуйста войдите что
 $phpMussel['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
 $phpMussel['lang']['label_blocked'] = 'Загружает блокировки';
 $phpMussel['lang']['label_branch'] = 'Ветвь последние стабильный:';
+$phpMussel['lang']['label_clientinfo'] = 'Информация о клиенте:';
 $phpMussel['lang']['label_events'] = 'События сканирования';
 $phpMussel['lang']['label_expires'] = 'Истекает: ';
 $phpMussel['lang']['label_flagged'] = 'Помеченные объекты';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'Дата загрузки: ';
 $phpMussel['lang']['label_upload_hash'] = 'Хеш загрузки: ';
 $phpMussel['lang']['label_upload_origin'] = 'Происхождение загрузки: ';
 $phpMussel['lang']['label_upload_size'] = 'Размер загрузки: ';
+$phpMussel['lang']['label_your_ip'] = 'Ваш IP:';
+$phpMussel['lang']['label_your_ua'] = 'Ваш UA:';
 $phpMussel['lang']['link_accounts'] = 'Учетными Записями';
 $phpMussel['lang']['link_cache_data'] = 'Данные Кэша';
 $phpMussel['lang']['link_config'] = 'Конфигурация';

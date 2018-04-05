@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.04.04).
+ * This file: Japanese language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = '継続するには、​ログインして
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
 $phpMussel['lang']['label_blocked'] = 'ブロックされたアップロード';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
+$phpMussel['lang']['label_clientinfo'] = 'クライアント情報：';
 $phpMussel['lang']['label_events'] = 'スキャンイベント';
 $phpMussel['lang']['label_expires'] = '有効期限： ';
 $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'アップロード日：';
 $phpMussel['lang']['label_upload_hash'] = 'アップロードのハッシュ：';
 $phpMussel['lang']['label_upload_origin'] = 'アップロードの起源：';
 $phpMussel['lang']['label_upload_size'] = 'アップロード・サイズ：';
+$phpMussel['lang']['label_your_ip'] = 'あなたのＩＰ：';
+$phpMussel['lang']['label_your_ua'] = 'あなたのＵＡ：';
 $phpMussel['lang']['link_accounts'] = 'アカウント';
 $phpMussel['lang']['link_cache_data'] = 'キャッシュ・データ';
 $phpMussel['lang']['link_config'] = 'コンフィギュレーション';

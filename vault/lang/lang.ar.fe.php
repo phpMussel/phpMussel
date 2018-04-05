@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.04.04).
+ * This file: Arabic language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول لل�
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
 $phpMussel['lang']['label_blocked'] = 'تم حظر التحميلات';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
+$phpMussel['lang']['label_clientinfo'] = 'معلومات المستخدممعلومات المستخدم:';
 $phpMussel['lang']['label_events'] = 'مسح الأحداث';
 $phpMussel['lang']['label_expires'] = 'تنتهي: ';
 $phpMussel['lang']['label_flagged'] = 'تم الإبلاغ عن الكائنات';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'تحميل تاريخ: ';
 $phpMussel['lang']['label_upload_hash'] = 'تحميل التجزئة: ';
 $phpMussel['lang']['label_upload_origin'] = 'تحميل الأصل: ';
 $phpMussel['lang']['label_upload_size'] = 'تحميل بحجم: ';
+$phpMussel['lang']['label_your_ip'] = 'عنوان IP الخاص بك:';
+$phpMussel['lang']['label_your_ua'] = 'وكيل المستخدم الخاص بك:';
 $phpMussel['lang']['link_accounts'] = 'حسابات';
 $phpMussel['lang']['link_cache_data'] = 'بيانات ذاكرة التخزين المؤقت';
 $phpMussel['lang']['link_config'] = 'التكوين';

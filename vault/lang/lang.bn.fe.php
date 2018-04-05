@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.04.04).
+ * This file: Bangla language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'চালিয়ে যেতে দয�
 $phpMussel['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
 $phpMussel['lang']['label_blocked'] = 'আপলোডগুলি অবরুদ্ধ';
 $phpMussel['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
+$phpMussel['lang']['label_clientinfo'] = 'ক্লায়েন্ট তথ্য:';
 $phpMussel['lang']['label_events'] = 'স্ক্যান ঘটনা';
 $phpMussel['lang']['label_expires'] = 'মেয়াদ শেষ: ';
 $phpMussel['lang']['label_flagged'] = 'অবজেক্টস পতাকাঙ্কিত';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'আপলোড তারিখ: ';
 $phpMussel['lang']['label_upload_hash'] = 'আপলোড হ্যাশ: ';
 $phpMussel['lang']['label_upload_origin'] = 'আপলোড উত্স: ';
 $phpMussel['lang']['label_upload_size'] = 'আপলোড আকার: ';
+$phpMussel['lang']['label_your_ip'] = 'আপনার IP:';
+$phpMussel['lang']['label_your_ua'] = 'আপনার UA:';
 $phpMussel['lang']['link_accounts'] = 'অ্যাকাউন্ট';
 $phpMussel['lang']['link_cache_data'] = 'ক্যাশ ডেটা';
 $phpMussel['lang']['link_config'] = 'কনফিগারেশন';

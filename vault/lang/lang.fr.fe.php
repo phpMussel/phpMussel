@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.04.04).
+ * This file: French language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
 $phpMussel['lang']['label_blocked'] = 'Téléchargements bloqués';
 $phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
+$phpMussel['lang']['label_clientinfo'] = 'Informations sur le client :';
 $phpMussel['lang']['label_events'] = 'événements d\'analyse';
 $phpMussel['lang']['label_expires'] = 'Expire : ';
 $phpMussel['lang']['label_flagged'] = 'Objets marqués';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'Date de téléchargement : ';
 $phpMussel['lang']['label_upload_hash'] = 'Hash de téléchargement : ';
 $phpMussel['lang']['label_upload_origin'] = 'Origine du téléchargement : ';
 $phpMussel['lang']['label_upload_size'] = 'Taille du téléchargement : ';
+$phpMussel['lang']['label_your_ip'] = 'Votre adresse IP :';
+$phpMussel['lang']['label_your_ua'] = 'Votre UA :';
 $phpMussel['lang']['link_accounts'] = 'Comptes';
 $phpMussel['lang']['link_cache_data'] = 'Données de Cache';
 $phpMussel['lang']['link_config'] = 'Configuration';

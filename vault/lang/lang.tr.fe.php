@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.04.04).
+ * This file: Turkish language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $phpMussel['lang']['label_blocked'] = 'Yüklemeler engellendi';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
+$phpMussel['lang']['label_clientinfo'] = 'Kullanıcı bilgisi:';
 $phpMussel['lang']['label_events'] = 'Tara olayları';
 $phpMussel['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
 $phpMussel['lang']['label_flagged'] = 'İşaretlenen nesneler';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'Yükleme tarihi: ';
 $phpMussel['lang']['label_upload_hash'] = 'Yükleme karması: ';
 $phpMussel['lang']['label_upload_origin'] = 'Yükleme menşe: ';
 $phpMussel['lang']['label_upload_size'] = 'Yükleme boyutu: ';
+$phpMussel['lang']['label_your_ip'] = 'Senin IP:';
+$phpMussel['lang']['label_your_ua'] = 'Senin UA:';
 $phpMussel['lang']['link_accounts'] = 'Hesaplar';
 $phpMussel['lang']['link_cache_data'] = 'Önbellek Verileri';
 $phpMussel['lang']['link_config'] = 'Yapılandırma';

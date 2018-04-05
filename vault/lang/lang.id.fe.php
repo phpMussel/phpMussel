@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.04.04).
+ * This file: Indonesian language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $phpMussel['lang']['label_blocked'] = 'Upload diblokir';
 $phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
+$phpMussel['lang']['label_clientinfo'] = 'Informasi klien:';
 $phpMussel['lang']['label_events'] = 'Pindai acara';
 $phpMussel['lang']['label_expires'] = 'Kedaluwarsa: ';
 $phpMussel['lang']['label_flagged'] = 'Obyek ditandai';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'Tanggal pengunggahan: ';
 $phpMussel['lang']['label_upload_hash'] = 'Hash pengunggahan: ';
 $phpMussel['lang']['label_upload_origin'] = 'Asal pengunggahan: ';
 $phpMussel['lang']['label_upload_size'] = 'Ukuran pengunggahan: ';
+$phpMussel['lang']['label_your_ip'] = 'IP Anda:';
+$phpMussel['lang']['label_your_ua'] = 'UA Anda:';
 $phpMussel['lang']['link_accounts'] = 'Akun';
 $phpMussel['lang']['link_cache_data'] = 'Data Cache';
 $phpMussel['lang']['link_config'] = 'Konfigurasi';

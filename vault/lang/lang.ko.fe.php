@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.04.04).
+ * This file: Korean language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $phpMussel['lang']['label_blocked'] = '차단 된 업로드';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
+$phpMussel['lang']['label_clientinfo'] = '사용자 정보 :';
 $phpMussel['lang']['label_events'] = '스캔 이벤트';
 $phpMussel['lang']['label_expires'] = '만료일 : ';
 $phpMussel['lang']['label_flagged'] = '신고 된 개체';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = '업로드 날짜 : ';
 $phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';
 $phpMussel['lang']['label_upload_origin'] = '업로드 원점 : ';
 $phpMussel['lang']['label_upload_size'] = '업로드 크기 : ';
+$phpMussel['lang']['label_your_ip'] = '당신의 IP :';
+$phpMussel['lang']['label_your_ua'] = '당신의 UA :';
 $phpMussel['lang']['link_accounts'] = '계정';
 $phpMussel['lang']['link_cache_data'] = '데이터 캐쉬';
 $phpMussel['lang']['link_config'] = '구성';

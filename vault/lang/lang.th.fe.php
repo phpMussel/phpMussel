@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.04.04).
+ * This file: Thai language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'เข้าสู่ระบบเพื
 $phpMussel['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
 $phpMussel['lang']['label_blocked'] = 'อัปโหลดถูกบล็อก';
 $phpMussel['lang']['label_branch'] = 'สาขาเสถียรล่าสุด:';
+$phpMussel['lang']['label_clientinfo'] = 'ข้อมูลผู้ใช้:';
 $phpMussel['lang']['label_events'] = 'สแกนเหตุการณ์';
 $phpMussel['lang']['label_expires'] = 'หมดอายุ: ';
 $phpMussel['lang']['label_flagged'] = 'วัตถุที่ถูกตั้งค่าสถานะ';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'อัปโหลดวันที�
 $phpMussel['lang']['label_upload_hash'] = 'อัปโหลดแฮช: ';
 $phpMussel['lang']['label_upload_origin'] = 'อัปโหลดที่มา: ';
 $phpMussel['lang']['label_upload_size'] = 'อัปโหลดขนาด: ';
+$phpMussel['lang']['label_your_ip'] = 'IP ของคุณ:';
+$phpMussel['lang']['label_your_ua'] = 'UA ของคุณ:';
 $phpMussel['lang']['link_accounts'] = 'บัญชี';
 $phpMussel['lang']['link_cache_data'] = 'ข้อมูลแคช';
 $phpMussel['lang']['link_config'] = 'การกำหนดค่า';

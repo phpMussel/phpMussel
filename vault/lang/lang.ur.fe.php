@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.04.04).
+ * This file: Urdu language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ا�
 $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
 $phpMussel['lang']['label_blocked'] = 'بلاک اپ لوڈ';
 $phpMussel['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
+$phpMussel['lang']['label_clientinfo'] = 'کلائنٹ کی معلومات:';
 $phpMussel['lang']['label_events'] = 'واقعات اسکین کریں';
 $phpMussel['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
 $phpMussel['lang']['label_flagged'] = 'نشان لگا دیا گیا آبجیکٹ';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'اپ لوڈ وقت/تاریخ: ';
 $phpMussel['lang']['label_upload_hash'] = 'اپ لوڈ ہیش: ';
 $phpMussel['lang']['label_upload_origin'] = 'اپ لوڈ کی اصل: ';
 $phpMussel['lang']['label_upload_size'] = 'اپ لوڈ کا سائز: ';
+$phpMussel['lang']['label_your_ip'] = 'آپ کے IP:';
+$phpMussel['lang']['label_your_ua'] = 'آپ کے UA:';
 $phpMussel['lang']['link_accounts'] = 'اکاؤنٹس';
 $phpMussel['lang']['link_cache_data'] = 'کیش ڈیٹا';
 $phpMussel['lang']['link_config'] = 'کنفگریشن';

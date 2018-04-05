@@ -57,6 +57,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   disabled by default, but can be enabled via configuration).
   Refer github.com/phpMussel/phpMussel/issues/156
 
+- [2018.04.05; Sub-minor code change; Maikuolan]: Added "client information" to
+  the front-end homepage (currently just lists your IP address and user agent).
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

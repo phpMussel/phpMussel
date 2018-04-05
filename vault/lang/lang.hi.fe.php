@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.04.04).
+ * This file: Hindi language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = 'जारी रखने के लिए
 $phpMussel['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
 $phpMussel['lang']['label_blocked'] = 'अपलोड अवरुद्ध';
 $phpMussel['lang']['label_branch'] = 'शाखा नवीनतम स्थिर:';
+$phpMussel['lang']['label_clientinfo'] = 'क्लाइंट की सूचना:';
 $phpMussel['lang']['label_events'] = 'स्कैन घटनाओं';
 $phpMussel['lang']['label_expires'] = 'समय समाप्ति: ';
 $phpMussel['lang']['label_flagged'] = 'फ़्लैग किए गए ऑब्जेक्ट';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = 'अपलोड की तारी�
 $phpMussel['lang']['label_upload_hash'] = 'अपलोड का हैश: ';
 $phpMussel['lang']['label_upload_origin'] = 'अपलोड की उत्पत्ति: ';
 $phpMussel['lang']['label_upload_size'] = 'अपलोड का आकार: ';
+$phpMussel['lang']['label_your_ip'] = 'तुम्हारी IP:';
+$phpMussel['lang']['label_your_ua'] = 'तुम्हारी UA:';
 $phpMussel['lang']['link_accounts'] = 'खातों';
 $phpMussel['lang']['link_cache_data'] = 'कैश डेटा';
 $phpMussel['lang']['link_config'] = 'कॉन्फ़िगरेशन';

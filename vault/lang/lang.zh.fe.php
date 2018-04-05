@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.04.04).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,7 @@ $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
 $phpMussel['lang']['label_blocked'] = '上传已阻止';
 $phpMussel['lang']['label_branch'] = '分支最新稳定：';
+$phpMussel['lang']['label_clientinfo'] = '客户信息：';
 $phpMussel['lang']['label_events'] = '扫描事件';
 $phpMussel['lang']['label_expires'] = '过期： ';
 $phpMussel['lang']['label_flagged'] = '对象已标记';
@@ -180,6 +181,8 @@ $phpMussel['lang']['label_upload_date'] = '上传日期：';
 $phpMussel['lang']['label_upload_hash'] = '上传哈希：';
 $phpMussel['lang']['label_upload_origin'] = '上传原点：';
 $phpMussel['lang']['label_upload_size'] = '上传大小：';
+$phpMussel['lang']['label_your_ip'] = '您的IP：';
+$phpMussel['lang']['label_your_ua'] = '您的UA：';
 $phpMussel['lang']['link_accounts'] = '账户';
 $phpMussel['lang']['link_cache_data'] = '缓存数据';
 $phpMussel['lang']['link_config'] = '配置';
