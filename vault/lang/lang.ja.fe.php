@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.03.25).
+ * This file: Japanese language data for the front-end (last modified: 2018.04.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -47,6 +47,7 @@ $phpMussel['lang']['config_files_filetype_whitelist'] = 'システムが特定�
 $phpMussel['lang']['config_files_max_recursion'] = 'アーカイブに対する最大再帰深さです。​デフォルト＝１０。';
 $phpMussel['lang']['config_files_max_uploads'] = '一度にスキャンできるアップロードファイル数の上限で、​これを超えるとスキャンを中断し、​ユーザーにその旨を知らせ、​論理攻撃からの保護として機能します。​システムやＣＭＳがDDoS攻撃にあい、​phpMusselがオーバーロードしてＰＨＰプロセスに支障をきたすことがないようにするためです。​推奨数は１０ですが、​ハードウェアのスピードによっては、​これ以上/以下がよいということもあるでしょう。​この数は、​アーカイブのコンテンツは含まないことを覚えておいて下さい。';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
+$phpMussel['lang']['config_general_allow_symlinks'] = '場合によっては、phpMusselが特定の方法で名前を付けられたときにファイルに直接アクセスすることができません。​シンボリックリンク（symlink）を介して間接的にファイルにアクセスすると、この問題を解決することがあります。​ただし、シンボリックリンク（symlink）の使用が禁止されたり、管理者権限が必要なシステムもありますので、これは必ずしも実行可能な解決策ではありません。​直接アクセスが不可能な場合、このディレクティブは、phpMusselがシンボリックリンク（symlink）を使って間接的にファイルにアクセスしようとするかどうかを決定します。​True = シンボリックリンクを有効にする；​False = シンボリックリンクを無効にする（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_cleanup'] = '初回アップロード後に変数とキャッシュの設定をクリアするか否かについてのスクリプトです。​<code>false</code>(偽） = いいえ；​<code>true</code>（真） = はい 「Default/デフォルト設定」。​初回アップロードスキャニング以外で使用することがなければ、​<code>true</code>（真）としメモリーの使用量を最小にします。​使用するのであれば、​<code>false</code>（偽）とし、​メモリーに不要な重複データを再ロードするのを防ぎます。​通常は<code>true</code>（真）。​に設定しますが、​初回アップロードスキャニングに対してしか使用できないことを覚えておいて下さい。​ＣＬＩモードでは影響しません。';
 $phpMussel['lang']['config_general_default_algo'] = '将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​<code>false</code>（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​<code>true</code>（真） = スキャニング後、​クリーンでなければ直ちに削除。';

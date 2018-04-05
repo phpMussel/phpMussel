@@ -455,6 +455,9 @@ Generelle Konfiguration von phpMussel.
 "statistics"
 - phpMussel-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].
 
+"allow_symlinks"
+- Manchmal kann phpMussel nicht direkt auf eine Datei zugreifen, wenn sie auf eine bestimmte Art benannt ist. Der indirekte Zugriff auf die Datei über Symlinks kann dieses Problem manchmal beheben. Dies ist jedoch nicht immer eine praktikable Lösung, da auf einigen Systemen die Verwendung von Symlinks verboten sein kann oder Administratorrechte erfordern. Diese Anweisung wird verwendet, um zu bestimmen, ob phpMussel versuchen sollte, Symlinks zu verwenden, um indirekt auf Dateien zuzugreifen, wenn ein direkter Zugriff auf sie nicht möglich ist. True = Aktivieren Symlinks; False = Deaktivieren Symlinks [Standardeinstellung].
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -952,4 +955,4 @@ Und versuche, die Dateien einzeln zu scannen:
 ---
 
 
-Zuletzt aktualisiert: 31 März 2018 (2018.03.31).
+Zuletzt aktualisiert: 4 April 2018 (2018.04.04).

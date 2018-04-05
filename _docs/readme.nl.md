@@ -455,6 +455,9 @@ Algemene configuratie voor phpMussel.
 "statistics"
 - Track phpMussel gebruiksstatistieken? True = Ja; False = Nee [Standaard].
 
+"allow_symlinks"
+- Soms heeft phpMussel geen toegang tot een bestand als het op een bepaalde manier wordt genoemd. Indirect toegang tot het bestand via symlinks kan dit probleem soms oplossen. Dit is echter niet altijd een haalbare oplossing, omdat op sommige systemen het gebruik van symlinks kan worden verboden of beheerdersbevoegdheden kunnen vereisen. Deze richtlijn wordt gebruikt om te bepalen of phpMussel moet proberen om symlinks te gebruiken om indirect toegang te krijgen tot bestanden, wanneer directe toegang tot deze bestanden niet mogelijk is. True = Schakel symlinks in; False = Schakel symlinks uit [Standaard].
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -952,4 +955,4 @@ En probeer de bestanden afzonderlijk te scannen:
 ---
 
 
-Laatste Bijgewerkt: 31 Maart 2018 (2018.03.31).
+Laatste Bijgewerkt: 4 April 2018 (2018.04.04).

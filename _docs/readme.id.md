@@ -455,6 +455,9 @@ Konfigurasi umum dari phpMussel.
 "statistics"
 - Lacak statistik penggunaan phpMussel? True = Ya; False = Tidak [Default].
 
+"allow_symlinks"
+- Kadang-kadang phpMussel tidak dapat mengakses file secara langsung ketika diberi nama dengan cara tertentu. Mengakses file secara tidak langsung melalui symlink terkadang dapat menyelesaikan masalah ini. Namun, ini tidak selalu merupakan solusi yang layak, karena pada beberapa sistem, menggunakan symlink mungkin dilarang, atau mungkin memerlukan hak administratif. Direktif ini digunakan untuk menentukan apakah phpMussel harus mencoba menggunakan symlink untuk mengakses file secara tidak langsung, ketika mengaksesnya secara langsung tidak mungkin. True = Aktifkan symlink; False = Nonaktifkan symlink [Default].
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -952,4 +955,4 @@ Dan mencoba memindai file secara individual:
 ---
 
 
-Terakhir Diperbarui: 31 Maret 2018 (2018.03.31).
+Terakhir Diperbarui: 4 April 2018 (2018.04.04).

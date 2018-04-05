@@ -455,6 +455,9 @@ General configuración para phpMussel.
 "statistics"
 - ¿Seguir las estadísticas de uso de phpMussel? True = Sí; False = No [Predefinido].
 
+"allow_symlinks"
+- A veces, phpMussel no puede acceder a un archivo directamente cuando se nombra de cierta manera. Acceder al archivo indirectamente a través de symlinks a veces puede resolver este problema. Pero, esta no siempre es una solución viable, porque en algunos sistemas, el uso de symlinks puede estar prohibido, o puede requerir privilegios administrativos. Esta directiva se utiliza para determinar si phpMussel debe intentar usar symlinks para acceder a los archivos de forma indirecta, cuando acceder a ellos directamente no es posible. True = Habilitar symlinks; False = Deshabilitar symlinks [Predefinido].
+
 #### "signatures" (Categoría)
 Configuración de firmas.
 
@@ -952,4 +955,4 @@ E intentando escanear los archivos individualmente:
 ---
 
 
-Última Actualización: 31 Marzo 2018 (2018.03.31).
+Última Actualización: 4 Abril 2018 (2018.04.04).

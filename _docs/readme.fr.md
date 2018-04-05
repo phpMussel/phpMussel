@@ -455,6 +455,9 @@ Configuration générale pour phpMussel.
 « statistics »
 - Suivre les statistiques d'utilisation pour phpMussel ? True = Oui ; False = Non [Défaut].
 
+« allow_symlinks »
+- Parfois, phpMussel n'est pas capable d'accéder directement à un fichier lorsqu'il est nommé d'une certaine manière. L'accès indirect au fichier via des liens symboliques peut parfois résoudre ce problème. Cependant, ce n'est pas toujours une solution viable, car sur certains systèmes, l'utilisation de liens symboliques peut être interdite, ou nécessiter des privilèges administratifs. Cette directive est utilisée pour déterminer si phpMussel doit tenter d'utiliser des liens symboliques pour accéder aux fichiers de manière indirecte, lorsqu'il n'est pas possible de les accéder directement. True = Activer les liens symboliques ; False = Désactiver les liens symboliques [Défaut].
+
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
@@ -952,4 +955,4 @@ Et en analysant les fichiers individuellement :
 ---
 
 
-Dernière mise à jour : 31 Mars 2018 (2018.03.31).
+Dernière mise à jour : 4 Avril 2018 (2018.04.04).

@@ -455,6 +455,9 @@ Cấu hình chung cho phpMussel.
 "statistics"
 - Giám sát thống kê sử dụng phpMussel? True = Vâng; False = Không [Mặc định].
 
+"allow_symlinks"
+- Đôi khi phpMussel không thể truy cập tập tin trực tiếp khi nó được đặt tên theo một cách nhất định. Việc truy cập tập tin gián tiếp thông qua các symlink (liên kết tượng trưng) đôi khi có thể giải quyết vấn đề này. Tuy nhiên, đây không phải lúc nào cũng là một giải pháp khả thi, bởi vì trên một số hệ thống, sử dụng các symlink (liên kết tượng trưng) có thể bị cấm, hoặc có thể cần đặc quyền hành chính. Chỉ thị này được sử dụng để xác định liệu phpMussel nên cố gắng sử dụng các symlink (liên kết tượng trưng) để truy cập các tập tin gián tiếp, khi truy cập trực tiếp vào chúng thì không thể. True = Cho phép các symlink; False = Không cho phép các symlink [Mặc định].
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -952,4 +955,4 @@ Và cố gắng để quét các tập tin riêng biệt:
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Ba 2018 (2018.03.31).
+Lần cuối cập nhật: 4 Tháng Tư 2018 (2018.04.04).

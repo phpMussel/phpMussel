@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.25).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.04.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -47,12 +47,13 @@ $phpMussel['lang']['config_files_filetype_whitelist'] = '如果您的系統只�
 $phpMussel['lang']['config_files_max_recursion'] = '最大存檔遞歸深度限。​默認=10。';
 $phpMussel['lang']['config_files_max_uploads'] = '最大允許數值的文件為掃描當文件上傳掃描之前中止掃描和告訴用戶他們是上傳太多在同一時間！​提供保護針對一個理論攻擊哪裡一個攻擊者嘗試DDoS您的系統或CMS通過超載phpMussel以減速PHP進程到一個停止。​推薦：10。​您可能想增加或減少這個數值，​根據速度的您的硬件。​注意這個數值不交待為或包括存檔內容。';
 $phpMussel['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。';
+$phpMussel['lang']['config_general_allow_symlinks'] = '有時，phpMussel無法直接訪問以特定名稱的文件。​通過符號鏈接間接訪問文件有時可以解決此問題。​但是，這並不總是一個可行的解決方案，因為在某些系統上，使用符號鏈接可能是被禁止的，或者可能需要管理權限。​該指令確定是否phpMussel應嘗試間接使用符號鏈接來訪問文件，當直接訪問它們是不可能的。​True（真）=啟用符號鏈接；False（假）=禁用符號鏈接【標準】。';
 $phpMussel['lang']['config_general_cleanup'] = '【反設置/刪除/清潔】腳本變量和緩存【Cache】之後執行嗎？​如果您不使用腳本外初始上傳掃描，​應該設置True【真/正】，​為了最小化內存使用。​如果您使用腳本為目的外初始上傳掃描，​應該設置False【假/負】，​為了避免不必要重新加載複製數據在內存。​在一般的做法，​它應該設置True【真/正】，​但，​如果您做這樣，​您將不能夠使用腳本為任何目的以外文件上傳掃描。​無影響在CLI模式。';
 $phpMussel['lang']['config_general_default_algo'] = '定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = '激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。';
 $phpMussel['lang']['config_general_disable_cli'] = '關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】； True（真）=關閉CLI模式。';
 $phpMussel['lang']['config_general_disable_frontend'] = '關閉前端訪問嗎？​前端訪問可以使phpMussel更易於管理，​但也可能是潛在的安全風險。​建議管理phpMussel通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問； True（真）=關閉前端訪問【標準】。';
-$phpMussel['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？​True（真）=關閉； False（假）=不關閉【標準】。';
+$phpMussel['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？​True（真）=關閉；False（假）=不關閉【標準】。';
 $phpMussel['lang']['config_general_enable_plugins'] = '啟用phpMussel插件支持嗎？​False（假）=不要啟用； True（真）=要啟用【標準】。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel應該發送<code>403</code>頭隨著文件上傳受阻信息，​或堅持標準<code>200 OK</code>？​False（假）=發送<code>200</code>； True（真）=發送<code>403</code>【標準】。';
 $phpMussel['lang']['config_general_honeypot_mode'] = '當這個指令（蜜罐模式）是激活，​phpMussel將嘗試檢疫所有文件上傳它遇到，​無論的如果文件上傳是匹配任何包括簽名，​和沒有掃描或分析的那些文件上傳將發生。​這個功能應有用為那些想使用的phpMussel為目的病毒或惡意軟件研究，​但它是不推薦激活這個功能如果預期的用的phpMussel通過用戶是為標準文件上傳掃描，​也不推薦使用蜜罐功能為目的以外蜜罐。​作為標準，​這個指令是關閉。​False（假）=是關閉【標準】； True（真）=是激活。';
@@ -68,7 +69,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = '多長時間應該phpM
 $phpMussel['lang']['config_general_scan_kills'] = '文件為記錄在所有受阻或已殺上傳。​指定一個文件名，​或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log'] = '文件為記錄在所有掃描結果。​指定一個文件名，​或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '文件為記錄在所有掃描結果（它採用序列化格式）。​指定一個文件名，​或留空以關閉。';
-$phpMussel['lang']['config_general_statistics'] = '跟踪phpMussel使用情況統計？​True（真）=跟踪； False（假）=不跟踪【標準】。';
+$phpMussel['lang']['config_general_statistics'] = '跟踪phpMussel使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel使用的日期符號格式。​可根據要求增加附加選項。';
 $phpMussel['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $phpMussel['lang']['config_general_timezone'] = '您的時區。';

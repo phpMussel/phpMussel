@@ -206,6 +206,9 @@ Config Defaults:
   statistics:
    type: bool
    default: false
+  allow_symlinks:
+   type: bool
+   default: false
  signatures:
   Active:
    type: string

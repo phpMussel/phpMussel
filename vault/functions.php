@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.04.03).
+ * This file: Functions file (last modified: 2018.04.05).
  */
 
 /**
@@ -4257,6 +4257,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
         /** Reset container definition. */
         $phpMussel['memCache']['container'] = 'none';
+
+        /** Try to generate symlinks if enabled and useful for the instance. */
+        if ($phpMussel['Config']['general']['allow_symlinks'] && strpos($f, '.') === false) {
+            $Try = $phpMussel['cachePath'] . bin2hex($f) . '.tmp';
+            $ReadFrom = symlink($f, $Try) ? $Try : $f;
+            unset($Try);
+        } else {
+            $ReadFrom = $f;
+        }
+
         /** Set appropriate container definitions. */
         if (substr($in, 0, 2) === 'PK') {
             if ($xt === 'ole') {
@@ -4310,10 +4320,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
          * - https://bugs.php.net/bug.php?id=76061
          * - https://github.com/phpMussel/phpMussel/issues/155
          */
-        if (substr($in, 0, 2) === 'PK' && strpos($f, '.') === false) {
+        if (substr($in, 0, 2) === 'PK' && strpos($ReadFrom, '.') === false) {
             $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
             $PharIter = 0;
-            $Handle = zip_open($f);
+            $Handle = zip_open($ReadFrom);
             if (is_resource($Handle)) {
                 while (($EntryID = zip_read($Handle)) && is_resource($EntryID) && zip_entry_open($Handle, $EntryID, 'rb')) {
                     $PharData[$PharIter] = ['DoScan' => true, 'Depth' => 1, 'Path' => zip_entry_name($EntryID)];
@@ -4325,15 +4335,15 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     $PharIter++;
                 }
                 unset($EntryID);
-                zip_close($f);
+                zip_close($Handle);
             }
             unset($Handle, $PharIter);
         }
 
         /** Check if pharable, and if so, generate an array of the contents. */
-        elseif (is_dir('phar://' . $f) && is_readable('phar://' . $f)) {
+        elseif (is_dir('phar://' . $ReadFrom) && is_readable('phar://' . $ReadFrom)) {
             $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
-            $PharData = explode("\n", $phpMussel['BuildPharList']($f, $dpt)) ?: [];
+            $PharData = explode("\n", $phpMussel['BuildPharList']($ReadFrom, $dpt)) ?: [];
 
             /** Iterate through each item in the pharable file/object. */
             foreach ($PharData as &$ThisPhar) {
@@ -4355,7 +4365,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         /** Default to the parent if PharData is empty. */
         if (empty($PharData)) {
             $PharData = [0 => ['DoScan' => false, 'Depth' => 1, 'Data' => $in]];
-            $PharData[0]['Filename'] = $phpMussel['SubstrAfterFinalSlash']($f);
+            $PharData[0]['Filename'] = $phpMussel['SubstrAfterFinalSlash']($ReadFrom);
             $PharData[0]['Path'] = ltrim($phpMussel['RemoveLeadMatch']($ofn, $f), "\\/");
             $PharData[0]['ItemRef'] = $ofn . '>' . $PharData[0]['Path'];
         }
@@ -4719,7 +4729,14 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 break;
             }
         }
-        unset($ThisPhar, $PharData, $PharType);
+
+        /** Remove old symlinks. */
+        if ($phpMussel['Config']['general']['allow_symlinks'] && $ReadFrom !== $f && is_link($ReadFrom)) {
+            unlink($ReadFrom);
+        }
+
+        /** Cleanup. */
+        unset($ThisPhar, $PharData, $PharType, $ReadFrom);
     }
     if ($r === 2) {
         if (

@@ -453,7 +453,10 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 - 定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
 “statistics”
-- 跟踪phpMussel使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。
+- 跟踪phpMussel使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。
+
+“allow_symlinks”
+- 有时，phpMussel无法直接访问以特定名称的文件。​通过符号链接间接访问文件有时可以解决此问题。​但是，这并不总是一个可行的解决方案，因为在某些系统上，使用符号链接可能是被禁止的，或者可能需要管理权限。​该指令确定是否phpMussel应尝试间接使用符号链接来访问文件，当直接访问它们是不可能的。​True（真）=启用符号链接；False（假）=禁用符号链接【标准】。
 
 #### “signatures” （类别）
 签名配置。
@@ -952,4 +955,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2018年3月31日。
+最后更新：2018年4月4日。

@@ -51,6 +51,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.04.03; Sub-minor code change; Maikuolan]: Various small improvements to
   L10N data and its representation by the package in output.
 
+- [2018.04.05; NEW FEATURE; Maikuolan]: Added the ability for phpMussel to
+  access files indirectly via symlinks, which could assist phpMussel in being
+  able to read files when doing so directly isn't possible (this feature is
+  disabled by default, but can be enabled via configuration).
+  Refer github.com/phpMussel/phpMussel/issues/156
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 
