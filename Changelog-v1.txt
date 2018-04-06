@@ -60,6 +60,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.04.05; Sub-minor code change; Maikuolan]: Added "client information" to
   the front-end homepage (currently just lists your IP address and user agent).
 
+- [2018.04.06; Sub-minor code change; Maikuolan]: Modified logging mechanisms
+  as so that new directories will now be automatically generated when necessary
+  when writing new log data.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

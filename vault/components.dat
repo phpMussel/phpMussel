@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.3.0-DEV+18094589
+ Version: 1.3.0-DEV+18095227
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -132,7 +132,7 @@ phpMussel:
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - e7b86cdde2f23ef72dce0cf63de8aaed:135229
    - df742a8fe0796200775f09d6a96cfe82:78042
-   - eda3e894099a6fb781c5a80f2c1138ce:262182
+   - a6f026021fbaba3d97a33105d64ebac8:262886
    - f68948c5b10f16d8506eb1611fd5d8db:4818
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703
@@ -142,7 +142,7 @@ phpMussel:
    - 2c5e1906295c889436749adc4441ffa4:3233
    - caed7b1d78502266f746797a028146b1:1140
    - df2e543957a5c95438a31c67e163fdcc:2039
-   - ef8d66d1bdc8e32c6f16a36ef28a8153:19469
+   - 2070f74bfdca0e518cf10ee5892960a2:20221
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

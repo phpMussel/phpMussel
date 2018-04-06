@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.04.03).
+ * This file: Upload handler (last modified: 2018.04.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -238,14 +238,23 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         is_array($phpMussel['memCache']['Handle'])
     ) {
         $phpMussel['memCache']['Handle']['File'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills']);
+        $phpMussel['memCache']['Handle']['WriteMode'] = (
+            !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']) || (
+                $phpMussel['Config']['general']['truncate'] > 0 &&
+                filesize($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+            )
+        ) ? 'w' : 'a';
         if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File'])) {
-            $phpMussel['memCache']['Handle']['qdata'] =
-                $phpMussel['safety'] . "\n\n" . $phpMussel['memCache']['Handle']['qdata'];
+            $phpMussel['memCache']['Handle']['qdata'] = $phpMussel['safety'] . "\n\n" . $phpMussel['memCache']['Handle']['qdata'];
         }
-        $phpMussel['memCache']['Handle']['Stream'] =
-            fopen($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File'], 'a');
-        fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['qdata']);
-        fclose($phpMussel['memCache']['Handle']['Stream']);
+        if ($phpMussel['BuildLogPath']($phpMussel['memCache']['Handle']['File'])) {
+            $phpMussel['memCache']['Handle']['Stream'] = fopen(
+                $phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File'],
+                $phpMussel['memCache']['Handle']['WriteMode']
+            );
+            fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['qdata']);
+            fclose($phpMussel['memCache']['Handle']['Stream']);
+        }
         $phpMussel['memCache']['Handle'] = '';
     }
 
@@ -315,8 +324,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     filesize($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
                 )
             ) ? 'w' : 'a';
-            $phpMussel['memCache']['Handle']['Data'] =
-                !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']) ? $phpMussel['safety'] . "\n\n" : '';
+            $phpMussel['memCache']['Handle']['Data'] = file_exists(
+                $phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']
+            ) ? '' : $phpMussel['safety'] . "\n\n";
             $phpMussel['memCache']['Handle']['Data'] .=
                 'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
                 "\nIP ADDRESS: " . $_SERVER[$phpMussel['Config']['general']['ipaddr']] .
@@ -330,10 +340,14 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['PEData'];
             }
             $phpMussel['memCache']['Handle']['Data'] .= "\n";
-            $phpMussel['memCache']['Handle']['Stream'] =
-                fopen($phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File'], $phpMussel['memCache']['Handle']['WriteMode']);
-            fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['Data']);
-            fclose($phpMussel['memCache']['Handle']['Stream']);
+            if ($phpMussel['BuildLogPath']($phpMussel['memCache']['Handle']['File'])) {
+                $phpMussel['memCache']['Handle']['Stream'] = fopen(
+                    $phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File'],
+                    $phpMussel['memCache']['Handle']['WriteMode']
+                );
+                fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['Data']);
+                fclose($phpMussel['memCache']['Handle']['Stream']);
+            }
             $phpMussel['memCache']['Handle'] = '';
         }
 

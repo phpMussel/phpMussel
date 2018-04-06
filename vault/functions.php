@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.04.05).
+ * This file: Functions file (last modified: 2018.04.06).
  */
 
 /**
@@ -4974,10 +4974,12 @@ $phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$
             $phpMussel['Config']['general']['truncate'] > 0 &&
             filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
         )) ? 'w' : 'a';
-        $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
-        fwrite($Stream, $Handle['Data']);
-        fclose($Stream);
-        return true;
+        if ($phpMussel['BuildLogPath']($Handle['File'])) {
+            $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
+            fwrite($Stream, $Handle['Data']);
+            fclose($Stream);
+            return true;
+        }
     }
     return false;
 };
@@ -4998,10 +5000,12 @@ $phpMussel['WriteScanLog'] = function ($Data) use (&$phpMussel) {
             $phpMussel['Config']['general']['truncate'] > 0 &&
             filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
         )) ? 'w' : 'a';
-        $Handle = fopen($phpMussel['Vault'] . $File, 'a');
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        return true;
+        if ($phpMussel['BuildLogPath']($File)) {
+            $Handle = fopen($phpMussel['Vault'] . $File, 'a');
+            fwrite($Handle, $Data);
+            fclose($Handle);
+            return true;
+        }
     }
     return false;
 };
@@ -5610,6 +5614,23 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
         $IndexHandle = fopen($IndexFile, 'w');
         fwrite($IndexHandle, $IndexNewData);
         fclose($IndexHandle);
+    }
+    return true;
+};
+
+/** Build directory path for logfiles. */
+$phpMussel['BuildLogPath'] = function($File) use (&$phpMussel) {
+    $ThisPath = $phpMussel['Vault'];
+    $File = str_replace("\\", '/', $File);
+    while (strpos($File, '/') !== false) {
+        $Dir = substr($File, 0, strpos($File, '/'));
+        $ThisPath .= $Dir . '/';
+        $File = substr($File, strlen($Dir) + 1);
+        if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+            if (!mkdir($ThisPath)) {
+                return false;
+            }
+        }
     }
     return true;
 };
