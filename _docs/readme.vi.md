@@ -76,7 +76,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài PHP, theo hướng dẫn được cung cấp bởi người cài đặt PHP.
 
-3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hay chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
+3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hay chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) – Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
 4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `loader.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung `.bat` một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
 
@@ -756,6 +756,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 2017.12.01 và c�
 - [Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)
 - [Tôi có thể sử dụng cron để cập nhật tự động không?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Có thể phpMussel quét các tập tin có tên không ANSI?](#SCAN_NON_ANSI)
+- [Danh sách đen – Danh sách trắng – Danh sách xám – Họ là gì, và làm cách nào để sử dụng chúng?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -952,7 +953,23 @@ Và cố gắng để quét các tập tin riêng biệt:
  Sun, 01 Apr 2018 22:27:41 +0800 Hoàn thành.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Danh sách đen – Danh sách trắng – Danh sách xám – Họ là gì, và làm cách nào để sử dụng chúng?
+
+Các thuật ngữ mang ý nghĩa khác nhau trong các ngữ cảnh khác nhau. Trong phpMussel, có ba ngữ cảnh mà các thuật ngữ này được sử dụng: Đáp ứng kích thước tập tin, đáp ứng loại tập tin, và danh sách xám cho chữ ký.
+
+Để đạt được một kết quả mong muốn với chi phí tối thiểu để xử lý, có một số điều đơn giản mà phpMussel có thể kiểm tra trước khi thực sự quét các tập tin, chẳng hạn như các kích thước, các tên, và các phần mở rộng của tập tin. Ví dụ; Nếu một tập tin quá lớn, hay nếu phần mở rộng của tập tin đó cho biết loại tập tin mà chúng tôi không muốn cho phép trên các trang web của chúng tôi, chúng tôi có thể đánh dấu tập tin ngay lập tức, và không cần quét nó.
+
+Đáp ứng kích thước tập tin là cách mà phpMussel đáp ứng khi tập tin vượt quá giới hạn được chỉ định. Mặc dù không có danh sách thực tế, một tập tin có thể được xem là có hiệu quả trong danh sách đen, danh sách trắng hoặc danh sách xám, dựa trên kích thước của tập tin. Hai chỉ thị cấu hình khác biệt tồn tại để chỉ định một giới hạn và đáp ứng mong muốn tương ứng.
+
+Đáp ứng loại tập tin là cách mà phpMussel đáp ứng với phần mở rộng của tập tin. Có ba chỉ thị cấu hình khác biệt tồn tại để chỉ định các phần mở rộng nào sẽ nằm trong danh sách đen, danh sách trắng hoặc danh sách xám. Một tập tin có thể được xem xét có hiệu quả trên danh sách đen, danh sách trắng hoặc danh sách xám nếu phần mở rộng của nó khớp với bất kỳ phần mở rộng được chỉ định tương ứng.
+
+Trong hai ngữ cảnh này, nằm trong danh sách trắng có nghĩa là không được quét hoặc gắn cờ; nằm trong danh sách đen có nghĩa là nó phải được gắn cờ (và do đó không cần phải quét nó); và nằm trong danh sách xám có nghĩa là phân tích thêm là cần thiết để xác định xem chúng ta nên gắn cờ nó (và như vậy, nó nên được quét).
+
+Danh sách xám cho chữ ký là một danh sách các chữ ký mà về cơ bản sẽ được bỏ qua (điều này đã được đề cập trước đó trong tài liệu). Khi một chữ ký trên danh sách xám được kích hoạt, phpMussel tiếp tục làm việc thông qua các chữ ký của nó và không có hành động cụ thể liên quan đến chữ ký trên danh sách xám. Không có danh sách đen chữ ký, bởi vì hành vi ngụ ý là hành vi bình thường cho chữ ký kích hoạt, và không có danh sách trắng chữ ký, bởi vì hành vi ngụ ý sẽ không thực sự có ý nghĩa trong việc xem xét như thế nào phpMussel hoạt động bình thường và những điều đã có thể đã làm.
+
+Danh sách xám chữ ký rất hữu ích nếu bạn cần giải quyết các vấn đề gây ra bởi một chữ ký cụ thể mà không cần vô hiệu hoặc gỡ cài đặt toàn bộ tập tin chữ ký.
+
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Tư 2018 (2018.04.04).
+Lần cuối cập nhật: 10 Tháng Tư 2018 (2018.04.10).

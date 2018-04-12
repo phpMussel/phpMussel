@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.3.0-DEV+18095227
+ Version: 1.3.0
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -242,7 +242,7 @@ l10n/es:
 l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
- Version: 2018.94.589
+ Version: 2018.101.838
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -255,13 +255,13 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 098b527319d81530616a3724fc3a800c:52807
+   - d70dcf40601510385c786ced5a5b8e6d:52809
    - f29833d9f72d6fb72f5c87a0a682c5cb:8386
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2018.94.589
+ Version: 2018.101.838
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -274,7 +274,7 @@ l10n/hi:
    - lang/lang.hi.fe.php
    - lang/lang.hi.php
   Checksum:
-   - c59407360c5014b27e97fa41d089ab4b:86149
+   - 3ba9a5eb5c282916f6f5221710cd03ea:86149
    - c0044854e194367d4bfda3fb1462416b:12624
  Reannotate: components.dat
 l10n/id:
@@ -375,7 +375,7 @@ l10n/nl:
 l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
- Version: 2018.94.589
+ Version: 2018.101.838
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -388,7 +388,7 @@ l10n/pt:
    - lang/lang.pt.fe.php
    - lang/lang.pt.php
   Checksum:
-   - 89365ca6ee6aa9322280d50766cd0375:50215
+   - e81a6d2edc608216af60aa933902d1d4:50212
    - 5ee7125720a4bde20c8ce5daaef07368:7880
  Reannotate: components.dat
 l10n/ru:
@@ -451,7 +451,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2018.94.589
+ Version: 2018.101.838
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -464,7 +464,7 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - 8d3b21bbba5ad9a9aa2062a84ed1a93a:68549
+   - 3c25cd51febec91005afb24e2c3c138f:68549
    - 5855f14eb512da31fbc4bb7448083b6b:9513
  Reannotate: components.dat
 l10n/vi:

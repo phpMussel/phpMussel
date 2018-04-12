@@ -76,7 +76,7 @@ Ou isso no `.htaccess` arquivo:
 
 2) phpMussel requer PHP instalado na máquina host para poder executar. Se você não ainda tem PHP instalado em sua máquina, por favor instalar o PHP em sua máquina, seguindo as instruções fornecidas pelo instalador do PHP.
 
-3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `config.ini` (localizado dentro `vault`) - Este arquivo contém todas as diretivas disponíveis para phpMussel. Acima de cada opção deve ter um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, feche.
+3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `config.ini` (localizado dentro `vault`) – Este arquivo contém todas as diretivas disponíveis para phpMussel. Acima de cada opção deve ter um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, feche.
 
 4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o caminho completo para o arquivo `php.exe` no diretório de instalação do PHP, seguido por um espaço, seguido pelo caminho completo para o arquivo `loader.php` no diretório da sua instalação do phpMussel, salvar o arquivo com a extensão `.bat` Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
 
@@ -555,7 +555,7 @@ Chameleon ataque detecções: False = Inativo; True = Ativo.
 - Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.
 
 "block_control_characters"
-- Bloquear todos os arquivos que contenham quaisquer caracteres de controle (exceto linha quebras) - `[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`? Se você está _**APENAS**_ carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. False = Não bloquear [Padrão]; True = Bloquear.
+- Bloquear todos os arquivos que contenham quaisquer caracteres de controle, exceto linha quebras (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`)? Se você está _**APENAS**_ carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. False = Não bloquear [Padrão]; True = Bloquear.
 
 "corrupted_exe"
 - Corrompidos arquivos e erros de análise. False = Ignorar; True = Bloquear [Padrão]. Detectar e bloquear potencialmente corrompidos PE (Portátil Executável) arquivos? Frequentemente (mas não sempre), quando certos aspectos de um PE arquivo é corrompido ou não pode ser analisado corretamente, essa pode ser indicativo de uma viral infecção. Os processos utilizados pela maioria dos anti-vírus programas para detectar vírus em PE arquivos requerem analisando os arquivos de certas maneiras, que, se o programador de um vírus é consciente de, especificamente irá tentar impedir, a fim de permitir seu vírus para permanecer não detectado.
@@ -756,6 +756,7 @@ Esta informação foi atualizada 2017.12.01 e é corrente para todas phpMussel l
 - [Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)
 - [Posso usar o cron para atualizar automaticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [O phpMussel pode analisar arquivos com nomes não-ANSI?](#SCAN_NON_ANSI)
+- [Blacklists (listas negras) – Whitelists (listas brancas) – Greylists (listas cinzentas) – Quais são eles e como eu os uso?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
@@ -952,7 +953,23 @@ E tentando analisar os arquivos individualmente:
  Sun, 01 Apr 2018 22:27:41 +0800 Terminado.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Blacklists (listas negras) – Whitelists (listas brancas) – Greylists (listas cinzentas) – Quais são eles e como eu os uso?
+
+Os termos têm diferentes significados em diferentes contextos. No phpMussel, existem três contextos em que esses termos são usados: Resposta do tamanho do arquivo, resposta do tipo de arquivo, e a lista cinza das assinaturas.
+
+A fim de alcançar um resultado desejado a um custo mínimo para o processamento, existem algumas coisas simples que o phpMussel pode verificar antes de realmente verificar os arquivos, como tamanho, nome e extensão de um arquivo. Por exemplo; Se um arquivo é muito grande, ou se sua extensão indicar um tipo de arquivo que não queremos permitir em nossos sites de qualquer maneira, podemos marcar o arquivo imediatamente e não há necessidade de analisá-lo.
+
+A resposta do tamanho do arquivo é a maneira como o phpMussel responde quando um arquivo excede um limite especificado. Embora nenhuma lista real esteja envolvida, um arquivo pode ser considerado na lista negra, na lista branca, ou na lista cinza, com base em seu tamanho. Existem duas diretivas de configuração opcionais separadas para especificar um limite e uma resposta desejada, respectivamente.
+
+A resposta do tipo de arquivo é a maneira como o phpMussel responde à extensão do arquivo. Existem três diretivas de configuração opcionais separadas para especificar explicitamente quais extensões devem ser colocadas na lista negra, na lista de branca, ou na lista cinza. Um arquivo pode ser considerado na lista negra, na lista de branca, ou na lista cinza, se sua extensão corresponder a qualquer uma das extensões especificadas, respectivamente.
+
+Nestes dois contextos, a lista branca significa que não deve ser analisada ou marcada; estar na lista negra significa que deve ser marcada (e que, portanto, não precisamos analisá-lo); e estar na lista cinza significa uma análise mais aprofundada é necessária para determinar se devemos marcá-lo (isto é, deve ser analisado).
+
+A lista cinza da assinaturas é uma lista de assinaturas que devem ser essencialmente ignoradas (isso é brevemente mencionado anteriormente na documentação). Quando uma assinatura na lista cinza é desencadeadas, o phpMussel continua a trabalhar através de suas assinaturas e não toma nenhuma ação específica em relação à assinatura na lista cinza. Não há lista negra da assinaturas, porque o comportamento implícito é o comportamento normal para assinaturas desencadeadas de qualquer maneira, e não há lista branca da assinaturas, porque o comportamento implícito não faria realmente sentido em relação ao funcionamento normal do phpMussel e aos recursos que ele já possui.
+
+A lista de cinza da assinaturas é útil se você precisar resolver problemas causados por uma assinatura específica sem desabilitar ou desinstalar todo os arquivo do assinaturas.
+
 ---
 
 
-Última Atualização: 4 Abril 2018 (2018.04.04).
+Última Atualização: 10 Abril 2018 (2018.04.10).

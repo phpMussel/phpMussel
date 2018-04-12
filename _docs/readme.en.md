@@ -76,7 +76,7 @@ Or this in the `.htaccess` file:
 
 2) phpMussel requires PHP to be installed on the host machine in order to execute. If you don't have PHP installed on your machine, please install PHP on your machine, following any instructions supplied by the PHP installer.
 
-3) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `config.ini` (located inside `vault`) - This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+3) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `config.ini` (located inside `vault`) – This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
 
 4) Optionally, you can make using phpMussel in CLI mode easier for yourself by creating a batch file to automatically load PHP and phpMussel. To do this, open a plain text editor such as Notepad or Notepad++, type the complete path to the `php.exe` file in the directory of your PHP installation, followed by a space, followed by the complete path to the `loader.php` file in the directory of your phpMussel installation, save the file with a `.bat` extension somewhere that you'll find it easily, and double-click on that file to run phpMussel in the future.
 
@@ -756,6 +756,7 @@ This information was last updated 2017.12.01 and is current for all phpMussel re
 - [How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)
 - [Can I use cron to update automatically?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Can phpMussel scan files with non-ANSI names?](#SCAN_NON_ANSI)
+- [Blacklists – Whitelists – Greylists – What are they, and how do I use them?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
@@ -952,7 +953,23 @@ And attempting to scan the files individually:
  Sun, 01 Apr 2018 22:27:41 +0800 Finished.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Blacklists – Whitelists – Greylists – What are they, and how do I use them?
+
+The terms convey different meanings in different contexts. In phpMussel, there are three contexts where these terms are used: Filesize response, filetype response, and the signature greylist.
+
+In order to achieve a desired outcome at minimal cost to processing, there are some simple things that phpMussel can check prior to actually scanning files, such as a file's size, name, and extension. For example; If a file is too large, or if its extension indicates a type of file that we don't want to allow onto our websites anyway, we can flag the file immediately, and don't need to scan it.
+
+Filesize response is the way that phpMussel responds when a file exceeds a specified limit. Though no actual lists are involved, a file may be considered effectively blacklisted, whitelisted, or greylisted, based on its size. Two separate, optional configuration directives exist to specify a limit and desired response respectively.
+
+Filetype response is the way that phpMussel responds to file's extension. Three separate, optional configuration directives exist to explicitly specify which extensions should be blacklisted, whitelisted, or greylisted. A file may be considered effectively blacklisted, whitelisted, or greylisted if its extension matches any of the specified extensions respectively.
+
+In these two contexts, being whitelisted means that it shouldn't be scanned or flagged; being blacklisted means that it should be flagged (and therefore don't need to scan it); and being greylisted means further analysis is required to determine whether we should flag it (i.e., it should be scanned).
+
+The signature greylist is a list of signatures that should essentially be ignored (this is briefly mentioned earlier in the documentation). When a signature on the signature greylist is triggered, phpMussel continues working through its signatures and takes no particular action in regards to the greylisted signature. There's no signature blacklist, because the implied behaviour is normal behaviour for triggered signatures anyway, and there's no signature whitelist, because the implied behaviour wouldn't really make sense in consideration of how phpMussel normal works and the capabilities it already has.
+
+The signature greylist is useful if you need to resolve problems caused by a particular signature without disabling or uninstalling the entire signature file.
+
 ---
 
 
-Last Updated: 4 April 2018 (2018.04.04).
+Last Updated: 10 April 2018 (2018.04.10).

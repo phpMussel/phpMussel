@@ -76,7 +76,7 @@ O esto en el archivo `.htaccess`:
 
 2) phpMussel requiere PHP para ser instalado en la host máquina para ejecutar. Si usted no has PHP instalado en su máquina, por favor, instalar PHP en su máquina, siguiendo las instrucciones suministradas por el PHP instalador.
 
-3) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrir `config.ini` (situado en el interior del `vault`) - Este archivo contiene todas las disponibles operativas opciones para phpMussel. Por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
+3) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrir `config.ini` (situado en el interior del `vault`) – Este archivo contiene todas las disponibles operativas opciones para phpMussel. Por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
 
 4) Opcionalmente, usted puede hacer uso de phpMussel en CLI modo más fácil para ti mismo mediante la creación de un batch archivo para automáticamente cargar PHP y phpMussel. Para ello, abra un texto editor como Notepad o Notepad++, escriba la completa ruta al `php.exe` archivo dentro lo directorio de la PHP instalación, seguido de un espacio, seguido de la completa ruta al `loader.php` archivo dentro lo directorio de su phpMussel instalación, guardar el archivo con la `.bat` extensión en alguna parte que usted lo encontrará fácilmente, y haga doble clic en ese archivo para ejecutar phpMussel en el futuro.
 
@@ -756,6 +756,7 @@ Esta información ha sido actualizado 2017.12.01 y es a hoy para todas las phpMu
 - [¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)
 - [¿Puedo usar cron para actualizar automáticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [¿Puede phpMussel escanear archivos con nombres que no sean ANSI?](#SCAN_NON_ANSI)
+- [Listas negras – Listas blancas – Listas grises – ¿Qué son y cómo los uso?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
@@ -952,7 +953,23 @@ E intentando escanear los archivos individualmente:
  Sun, 01 Apr 2018 22:27:41 +0800 Terminado.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Listas negras – Listas blancas – Listas grises – ¿Qué son y cómo los uso?
+
+Los términos transmiten diferentes significados en diferentes contextos. En phpMussel, hay tres contextos en los que se usan estos términos: Respuesta del tamaño de archivo, respuesta del tipo de archivo, y la lista gris de firmas.
+
+Para lograr un resultado deseado con un costo mínimo de procesamiento, hay algunas cosas simples que phpMussel puede verificar antes de escanear archivos, como el tamaño, el nombre y la extensión de un archivo. Por ejemplo; Si un archivo es demasiado grande o si su extensión indica un tipo de archivo que de todos modos no queremos permitir en nuestros sitios web, podemos marcar el archivo inmediatamente y no es necesario que lo analice.
+
+La respuesta del tamaño de archivo es la forma en que phpMussel responde cuando un archivo excede un límite especificado. Aunque no hay listas reales, un archivo se puede considerar efectivamente incluido en la lista negra, en la lista blanca o en la lista gris, según su tamaño. Existen dos directivas de configuración opcionales independientes para especificar un límite y la respuesta deseada, respectivamente.
+
+La respuesta del tipo de archivo es la forma en que phpMussel responde a la extensión del archivo. Existen tres directivas de configuración opcionales independientes para especificar explícitamente qué extensiones deben incluirse en la lista negra, en la lista blanca, o en la lista gris. Un archivo puede considerarse efectivamente incluido en la lista negra, en la lista blanca, o en la lista gris si su extensión coincide con cualquiera de las extensiones especificadas, respectivamente.
+
+En estos dos contextos, al ser incluido en la lista blanca significa que no debe escanearse ni marcarse; estar en la lista negra significa que debe estar marcado (y por lo tanto no es necesario escanearlo); y estar en la lista gris significa que se requiere un análisis adicional para determinar si debemos marcarlo (es decir, debe escanearse).
+
+La lista gris de firmas es una lista de firmas que esencialmente deben ignorarse (esto se menciona brevemente anteriormente en la documentación). Cuando se desencadena una firma en la lista gris de la firma, phpMussel continúa trabajando a través de sus firmas y no toma ninguna medida particular con respecto a la firma desencadenada. No hay una lista negra de firmas, porque el comportamiento implícito es un comportamiento normal para las firmas desencadenadas de todos modos, y no hay una lista blanca de firmas, porque el comportamiento implícito no tendría sentido considerando el funcionamiento normal de phpMussel y las capacidades que ya posee.
+
+La lista gris de firmas es útil si necesita resolver problemas causados por una firma particular sin deshabilitar o desinstalar todo el archivo de firmas.
+
 ---
 
 
-Última Actualización: 4 Abril 2018 (2018.04.04).
+Última Actualización: 10 Abril 2018 (2018.04.10).

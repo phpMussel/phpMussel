@@ -76,7 +76,7 @@ O questo nel `.htaccess` file:
 
 2) phpMussel richiede PHP essere installato sulla macchina per eseguire. Se non lo avete PHP installato sul vostra macchina, prego installare PHP sul vostra macchina seguendo le istruzioni fornite dal PHP installazione programma.
 
-3) Facoltativamente (fortemente consigliata per gli avanzati utenti, ma non è consigliata per i principianti o per gli inesperti), apri `config.ini` (situato della `vault`) - Questo file contiene tutte le direttive disponibili per phpMussel. Sopra ogni opzione dovrebbe essere un breve commento che descrive ciò che fa e ciò che è per. Regolare queste opzioni come meglio credi, come per ciò che è appropriato per la vostre particolare configurazione. Salvare il file, chiudere.
+3) Facoltativamente (fortemente consigliata per gli avanzati utenti, ma non è consigliata per i principianti o per gli inesperti), apri `config.ini` (situato della `vault`) – Questo file contiene tutte le direttive disponibili per phpMussel. Sopra ogni opzione dovrebbe essere un breve commento che descrive ciò che fa e ciò che è per. Regolare queste opzioni come meglio credi, come per ciò che è appropriato per la vostre particolare configurazione. Salvare il file, chiudere.
 
 4) Facoltativamente, si può rendere utilizzando di phpMussel in modalità CLI facile per voi stessi per creando un batch file ai fini della automaticamente caricare PHP e phpMussel. Per fare questo, aprire un testo editor come Notepad o Notepad++, digitare il completo percorso della `php.exe` file nella cartella della vostra installazione di PHP, seguito da uno spazio, seguito dal completo percorso della `loader.php` file nella cartella della vostra installazione di phpMussel, salvare il file con un `.bat` estensione qualche parte che lo troverete facilmente, e fare doppio clic su tale file per eseguire phpMussel in futuro.
 
@@ -756,6 +756,7 @@ Questa informazione è stato lo scorso aggiornato 2017.12.01 ed è in corso per 
 - [Come accedere a dettagli specifici sui file quando vengono scansionati?](#SCAN_DEBUGGING)
 - [Posso utilizzare il cron per aggiornare automaticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [phpMussel può eseguire la scansione di file con nomi non ANSI?](#SCAN_NON_ANSI)
+- [Blacklists (liste nere) – Whitelists (liste bianche) – Greylists (liste grigie) – Cosa sono e come li uso?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Che cosa è una "firma"?
 
@@ -952,7 +953,23 @@ E tentando di scansionare i file individualmente:
  Sun, 01 Apr 2018 22:27:41 +0800 Finito.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Blacklists (liste nere) – Whitelists (liste bianche) – Greylists (liste grigie) – Cosa sono e come li uso?
+
+I termini hanno significati diversi in diversi contesti. In phpMussel, ci sono tre contesti in cui vengono utilizzati questi termini: Risposta alla dimensione del file, risposta al tipo di file e, greylist delle firme.
+
+Al fine di ottenere un risultato desiderato con un costo minimo per l'elaborazione, ci sono alcune cose semplici che phpMussel può controllare prima di eseguire effettivamente la scansione dei file, come la dimensione, il nome e l'estensione di un file. Per esempio; Se un file è troppo grande, o se la sua estensione indica un tipo di file che non vogliamo autorizzare sui nostri siti web, possiamo immediatamente contrassegnare il file e non è necessario eseguirne la scansione.
+
+La risposta alle dimensioni del file è il modo in cui phpMussel risponde quando un file supera un limite specificato. Sebbene non siano presenti elenchi effettivi, un file può essere considerato efficacemente nella blacklist, nella whitelist, o nella greylist, in base alle sue dimensioni. Esistono due direttive di configurazione opzionali per specificare rispettivamente un limite e una risposta desiderata.
+
+La risposta del tipo di file è il modo in cui phpMussel risponde all'estensione del file. Esistono tre direttive di configurazione opzionali per specificare esplicitamente quali estensioni dovrebbero essere inserite nella blacklist, nella whitelist, o nella greylist. Un file può essere considerato effettivamente nella blacklist, nella whitelist, o nella greylist se la sua estensione corrisponde rispettivamente a una delle estensioni specificate.
+
+In questi due contesti, essere nella whitelist significa che non dovrebbe essere scansionato o contrassegnato; essere nella blacklist significa che dovrebbe essere contrassegnato (e quindi non è necessario scansionarlo); ed essere nella greylist significa che è necessaria un'ulteriore analisi per determinare se dovremmo contrassegnarlo (cioè, dovrebbe essere scansionato).
+
+La greylist delle firme è una lista di firme che dovrebbe essere essenzialmente ignorata (questo è brevemente menzionato prima nella documentazione). Quando viene innescata una firma nella greylist delle firme, phpMussel continua a lavorare attraverso le sue firme e non intraprende alcuna azione particolare riguardo alla firma nella greylist. Non esiste una blacklist delle firme, perché il comportamento implicito è comunque un comportamento normale per le firme innescate, e non esiste una whitelist delle firme, perché il comportamento implicito non avrebbe davvero senso in considerazione di come funziona phpMussel normal e delle funzionalità che già possiede.
+
+La greylist delle firme è utile se è necessario risolvere i problemi causati da una particolare firma senza disabilitare o disinstallare l'intero file di firme.
+
 ---
 
 
-Ultimo Aggiornamento: 4 Aprile 2018 (2018.04.04).
+Ultimo Aggiornamento: 10 Aprile 2018 (2018.04.10).

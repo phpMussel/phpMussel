@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.3.0 ===
+MINOR RELEASE.
+
 - [2018.02.06; Maikuolan]: The support forum for the project hosted by Spambot
   Security has effectively become inoperable and defunct due to unmitigable
   circumstances concerning its server. Accordingly, the project support forum
@@ -63,6 +68,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.04.06; Sub-minor code change; Maikuolan]: Modified logging mechanisms
   as so that new directories will now be automatically generated when necessary
   when writing new log data.
+
+- [2018.04.12; Documentation; Maikuolan]: Added information to the FAQ to add
+  some clarity regarding blacklists, whitelists, and greylists (may build on
+  this later, but it should be adequate for now).
+
+Caleb M (Maikuolan),
+Apr 12, 2018.
 
 === Version/Release 1.2.0 ===
 MINOR RELEASE.

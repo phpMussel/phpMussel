@@ -76,7 +76,7 @@ Oder das in der `.htaccess` Datei:
 
 2) phpMussel benötigt eine installierte PHP-Umgebung, um ausgeführt werden zu können. Sofern PHP bei Ihnen nicht installiert ist, installieren Sie es bitte nach den Anweisungen des PHP-Installers.
 
-3) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `config.ini` im `vault`-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
+3) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `config.ini` im `vault`-Verzeichnis) – Diese Datei beinhaltet alle funktionalen Optionen für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
 
 4) Optional, Sie können den Start von phpMussel vereinfachen, indem Sie mittels einer Stapelverarbeitungsdatei PHP und phpMussel automatisch laden. Öffnen Sie einen einfachen Texteditor wie Editor oder Notepad++, tragen Sie den vollständigen Pfad zu Ihrer `php.exe` im Verzeichnis Ihrer PHP-Installation ein, gefolgt von einem Leerzeichen und dem vollständigen Pfad zur `loader.php` im Verzeichnis Ihrer phpMussel-Installation, speichern diese Datei mit einer `.bat`-Dateierweiterung an einem Ort, wo Sie sie leicht finden können und führen Sie sie zukünfig nur noch mit einem Doppelklick aus.
 
@@ -756,6 +756,7 @@ Diese Informationen wurden zuletzt am 2017.12.01 aktualisiert und gelten für al
 - [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)
 - [Kann ich cron verwenden, um automatisch zu aktualisieren?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?](#SCAN_NON_ANSI)
+- [Blacklists – Whitelists – Greylists – Was sind sie und wie benutze ich sie?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -952,7 +953,23 @@ Und versuche, die Dateien einzeln zu scannen:
  Sun, 01 Apr 2018 22:27:41 +0800 Fertig.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Blacklists – Whitelists – Greylists – Was sind sie und wie benutze ich sie?
+
+Die Begriffe vermitteln unterschiedliche Bedeutungen in verschiedenen Kontexten. In phpMussel gibt es drei Kontexte, in denen diese Begriffe verwendet werden: Dateigröße Antwort, Dateityp Antwort, und die Signatur-Greylist.
+
+Um ein gewünschtes Ergebnis bei minimalen Kosten für die Verarbeitung zu erzielen, gibt es einige einfache Dinge, die phpMussel vor dem eigentlichen Scannen von Dateien überprüfen kann, wie Dateigröße, Name und Erweiterung. Beispielsweise; Wenn eine Datei zu groß ist, oder ihre Erweiterung einen Dateityp angibt, den wir auf unseren Websites sowieso nicht zulassen möchten, können wir die Datei sofort markieren und müssen sie nicht scannen.
+
+Dateigröße Antwort ist die Art, wie phpMussel reagiert, wenn eine Datei ein bestimmtes Limit überschreitet. Obwohl keine tatsächlichen Listen betroffen sind, kann eine Datei basierend auf ihrer Größe als effektiv auf Blacklists, Whitelists oder Greylists betrachtet werden. Es gibt zwei separate, optionale Konfigurationsdirektiven, um jeweils ein Limit und eine gewünschte Antwort anzugeben.
+
+Dateityp Antwort ist die Art, wie phpMussel auf die Dateierweiterung reagiert. Es gibt drei separate, optionale Konfigurationsdirektiven, mit denen explizit angegeben werden kann, welche Erweiterungen auf die Blacklist, Whitelist oder Greylist gesetzt werden sollen. Eine Datei kann in einer dieser Listen effektiv betrachtet werden, wenn ihre Erweiterung mit einer der angegebenen Erweiterungen übereinstimmt.
+
+In diesen beiden Kontexten, Whitelist bedeutet, dass es nicht gescannt oder markiert werden sollte; Blacklist bedeutet, dass es markiert werden sollte (und muss daher nicht gescannt werden); und Greylist bedeutet, dass eine weitere Analyse erforderlich ist, um festzustellen, ob wir sie markieren sollten (d.h., es sollte gescannt werden).
+
+Die Signatur-Greylist ist eine Liste von Signaturen, die im Wesentlichen ignoriert werden sollten (Dies wird kurz in der Dokumentation erwähnt). Wenn eine Signatur auf der Signatur-Greylist ausgelöst wird, arbeitet phpMussel weiter durch seine Signaturen und unternimmt keine besondere Aktion in Bezug auf die Signatur auf der Greylist. Es gibt keine Signatur-Blacklist, da das implizierte Verhalten ohnehin normal für ausgelöste Signaturen ist, und es gibt keine Signatur-Whitelist, weil das implizierte Verhalten keinen Sinn ergibt, wenn man bedenkt, wie phpMussel normal funktioniert und welche Fähigkeiten es bereits hat.
+
+Die Signatur-Greylist ist nützlich, wenn Sie Probleme beheben müssen, die von einer bestimmten Signatur verursacht werden, ohne die gesamte Signaturdatei zu deaktivieren oder zu deinstallieren.
+
 ---
 
 
-Zuletzt aktualisiert: 4 April 2018 (2018.04.04).
+Zuletzt aktualisiert: 10 April 2018 (2018.04.10).

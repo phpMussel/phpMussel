@@ -76,7 +76,7 @@ Of dit in het `.htaccess` bestand:
 
 2) phpMussel vereist van PHP moet worden geïnstalleerd op de host machine om uit te werken correct. Als u niet heeft PHP geïnstalleerd op uw machine, installeer PHP op uw machine, volgende instructies door de PHP installateur geleverd.
 
-3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Wijzigen deze opties volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) – Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Wijzigen deze opties volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
 4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden PHP en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in het bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `loader.php` bestand in het bestandsmap van uw phpMussel installatie, Sla het bestand op met een `.bat` extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
 
@@ -756,6 +756,7 @@ Dit informatie werd laatst bijgewerkt 2017.12.01 en is op de hoogte voor alle ph
 - [Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?](#SCAN_DEBUGGING)
 - [Kan ik cron gebruiken om automatisch bij te werken?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kan phpMussel bestanden met niet-ANSI-namen scannen?](#SCAN_NON_ANSI)
+- [Blacklists (zwarte lijsten) – Whitelists (witte lijsten) – Greylists (grijze lijst) – Wat zijn ze en hoe gebruik ik ze?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -952,7 +953,23 @@ En probeer de bestanden afzonderlijk te scannen:
  Sun, 01 Apr 2018 22:27:41 +0800 Afgewerkt.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Blacklists (zwarte lijsten) – Whitelists (witte lijsten) – Greylists (grijze lijst) – Wat zijn ze en hoe gebruik ik ze?
+
+De termen brengen verschillende betekenissen over in verschillende contexten. In phpMussel zijn er drie contexten waarin deze termen worden gebruikt: Bestandsgrootte respons, bestandstype respons, en de signature greylist.
+
+Om een gewenst resultaat te bereiken tegen minimale kosten voor verwerking, zijn er enkele eenvoudige dingen die phpMussel kan controleren voordat bestanden daadwerkelijk worden gescand, zoals de grootte, de naam en de extensie van een bestand. Bijvoorbeeld; Als een bestand te groot is, of als de extensie een bestandstype aangeeft dat we sowieso niet willen toestaan op onze websites, we kunnen het bestand onmiddellijk markeren en hoeven het niet te scannen.
+
+Bestandsgrootte respons is de manier waarop phpMussel reageert wanneer een bestand een opgegeven limiet overschrijdt. Hoewel er geen echte lijsten bij betrokken zijn, kan een bestand op basis van zijn grootte als effectief op de zwarte lijst, op de witte lijst of in de grijze lijst worden beschouwd. Er zijn twee afzonderlijke, optionele configuratie richtlijnen om respectievelijk een limiet en een gewenst antwoord op te geven.
+
+Bestandstype respons is de manier waarop phpMussel reageert op de extensie van het bestand. Er zijn drie afzonderlijke, optionele configuratie richtlijnen om expliciet aan te geven welke extensies op de zwarte lijst, op de witte lijst of in de grijze lijst moeten staan. Een bestand kan als effectief worden beschouwd op de zwarte lijst, op de witte lijst of in de grijze lijst als de extensie overeenkomt met een van de opgegeven extensies.
+
+In deze twee contexten, op de witte lijst staan betekent dat deze niet mag worden gescand of gemarkeerd; op de zwarte lijst staan betekent dat deze moet worden gemarkeerd (en daarom hoeft het niet te scannen); en op de grijze lijst staan betekent dat verdere analyse vereist is om te bepalen of we het moeten markeren (d.w.z, het moet worden gescand).
+
+De signature greylist is een lijst met signatures die in essentie moet worden genegeerd (dit wordt eerder in de documentatie kort genoemd). Wanneer een signature op de signature greylist wordt geactiveerd, blijft phpMussel werken door zijn signatures en onderneemt geen specifieke actie met betrekking tot de signature dat op de greylist staat. Er is geen zwarte lijst, omdat het impliciete gedrag is hetzelfde als het normaal gedrag voor getriggerde signatures, en er is geen signature witte lijst, omdat het impliciete gedrag niet echt zinvol is in overweging van hoe phpMussel normaal werkt en de mogelijkheden die het al heeft.
+
+De signature grijze lijst is handig als u problemen wilt oplossen die door een bepaalde signature worden veroorzaakt zonder het volledige signature bestand uit te schakelen of te deinstalleren.
+
 ---
 
 
-Laatste Bijgewerkt: 4 April 2018 (2018.04.04).
+Laatste Bijgewerkt: 10 April 2018 (2018.04.10).

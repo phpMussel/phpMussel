@@ -76,7 +76,7 @@ Ou cette dans le `.htaccess` fichier :
 
 2) phpMussel exige PHP d'être installé sur l'ordinateur hôte afin d'exécuter. Si vous n'avez pas de PHP installé sur votre machine, s'il vous plaît, installer PHP sur votre machine, suivant les instructions fournies par le programme d'installation de PHP.
 
-3) Facultativement (fortement recommandé pour les utilisateurs avancés, mais pas recommandé pour les débutants ou pour les novices), ouvrir `config.ini` (situé à l'intérieur de `vault`) - Ce fichier contient toutes les directives disponible pour phpMussel. Au-dessus de chaque option devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour. Réglez ces options comme bon vous semble, selon ce qui est approprié pour votre particulière configuration. Enregistrer le fichier, fermer.
+3) Facultativement (fortement recommandé pour les utilisateurs avancés, mais pas recommandé pour les débutants ou pour les novices), ouvrir `config.ini` (situé à l'intérieur de `vault`) – Ce fichier contient toutes les directives disponible pour phpMussel. Au-dessus de chaque option devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour. Réglez ces options comme bon vous semble, selon ce qui est approprié pour votre particulière configuration. Enregistrer le fichier, fermer.
 
 4) Facultativement, vous pouvez faire utilisant phpMussel en le mode CLI plus facile pour vous-même par la création d'un fichier de commandes pour automatique charger PHP et phpMussel. Pour ce faire, ouvrir un éditeur de texte comme Notepad ou Notepad++, taper le complet chemin vers le `php.exe` fichier dans le répertoire de votre installation de PHP, suivi d'un espace, suivi par le complet chemin vers le `loader.php` fichier dans le répertoire de votre installation de phpMussel, enregistrer le fichier avec un `.bat` suffixe quelque part que vous trouverez facile, et double-cliquer sur ce fichier pour exécuter phpMussel à l'avenir.
 
@@ -504,7 +504,7 @@ Configuration générale pour les gestion des fichiers.
 - Que faire avec des fichiers qui dépassent la limite de taille des fichiers (si existant). False = Énumérer Blanche ; True = Énumérer Noire [Défaut].
 
 « filetype_whitelist », « filetype_blacklist », « filetype_greylist »
-- Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes gris peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris.
+- Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris.
 - L'ordre logique de l'application est :
   - Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise.
   - Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise.
@@ -756,6 +756,7 @@ Cette information a été mise à jour 2017.12.01 et est courant pour toutes les
 - [Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)
 - [Puis-je utiliser cron pour mettre à jour automatiquement ?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Est-ce que phpMussel peut analyser des fichiers avec des noms non-ANSI ?](#SCAN_NON_ANSI)
+- [Listes noires – Listes blanches – Listes grises – Quels sont-ils, et comment puis-je les utiliser ?](#BLACK_WHITE_GREY)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Qu'est-ce qu'une « signature » ?
 
@@ -952,7 +953,23 @@ Et en analysant les fichiers individuellement :
  Sun, 01 Apr 2018 22:27:41 +0800 Terminé.
 ```
 
+#### <a name="BLACK_WHITE_GREY"></a>Listes noires – Listes blanches – Listes grises – Quels sont-ils, et comment puis-je les utiliser ?
+
+Les termes véhiculent des significations différentes dans différents contextes. Dans phpMussel, il existe trois contextes où ces termes sont utilisés : La réponse à la taille du fichier, la réponse au type du fichier, et la liste grise des signatures.
+
+Afin d'obtenir un résultat souhaité à un coût minimal pour le traitement, il existe des choses simples que phpMussel peut vérifier avant de scanner les fichiers, tels que la taille, le nom et l'extension d'un fichier. Par exemple ; Si un fichier est trop volumineux, ou si son extension indique un type de fichier que nous ne voulons pas autoriser sur nos sites web, nous pouvons signaler le fichier immédiatement et ne pas avoir besoin de le scanner.
+
+La réponse à la taille du fichier correspond à la réponse de phpMussel lorsqu'un fichier dépasse une limite spécifiée. Bien qu'aucune liste ne soit en cause, un fichier peut être considéré comme effectivement mis sur liste noire, sur liste blanche, ou sur liste grise, en fonction de sa taille. Deux directives de configuration facultatives distinctes existent pour spécifier respectivement une limite et la réponse souhaitée.
+
+La réponse au type du fichier est la façon dont phpMussel répond à l'extension du fichier. Trois directives de configuration facultatives distinctes existent pour spécifier explicitement quelles extensions doivent être mises en liste noire, en liste blanche, ou en liste grise. Un fichier peut être considéré comme effectivement mis sur liste noire, sur liste blanche, ou sur liste grise si son extension correspond respectivement à l'une des extensions spécifiées.
+
+Dans ces deux contextes, être sur liste blanche signifie qu'il ne doit pas être scanné ou marqué ; être sur la liste noire signifie qu'il devrait être marqué (et n'a donc pas besoin de le scanner) ; et être sur la liste grise signifie une analyse plus approfondie est nécessaire pour déterminer si nous devrions le marquer (c'est-à-dire, qu'il devrait être scanné).
+
+La liste grise des signatures est une liste de signatures qui devraient être ignorées (ceci est brièvement mentionné plus haut dans la documentation). Quand une signature sur le liste grise des signatures est déclenchée, phpMussel continue à travailler à travers ses signatures et ne prend aucune action particulière en ce qui concerne la signature sur le liste grise. Il n'y a pas de liste noire des signatures, car le comportement implicite est un comportement normal pour les signatures déclenchées en tous cas, et il n'y a pas de liste blanche des signatures, parce que le comportement implicite n'aurait pas vraiment de sens compte tenu du fonctionnement normal de phpMussel et des capacités qu'il possède déjà.
+
+Le liste grise des signatures est utile si vous avez besoin de résoudre des problèmes causés par une signature particulière sans désactiver ou désinstaller le fichier de signatures entier.
+
 ---
 
 
-Dernière mise à jour : 4 Avril 2018 (2018.04.04).
+Dernière mise à jour : 10 Avril 2018 (2018.04.10).
