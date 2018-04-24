@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.04.05).
+ * This file: Front-end handler (last modified: 2018.04.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1447,18 +1447,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 }
             }
             if (!empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
-                $phpMussel['Activable'] = (
-                    !empty($phpMussel['Components']['ThisComponent']['Files']['To'][0]) &&
-                    substr($phpMussel['Components']['ThisComponent']['Files']['To'][0], 0, 11) === 'signatures/'
-                );
+                $phpMussel['Activable'] = $phpMussel['IsActivable']($phpMussel['Components']['ThisComponent']);
                 if (
                     ($phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang']) ||
                     ($phpMussel['Components']['Key'] === 'theme/' . $phpMussel['Config']['template_data']['theme']) ||
                     ($phpMussel['Components']['Key'] === 'phpMussel') ||
-                    $phpMussel['IsInUse'](
-                        $phpMussel['Components']['ThisComponent']['Files']['To'],
-                        $phpMussel['Components']['ThisComponent']['Extended Description']
-                    )
+                    $phpMussel['IsInUse']($phpMussel['Components']['ThisComponent'])
                 ) {
                     $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $phpMussel['lang']['state_component_is_active'] . '</div>'

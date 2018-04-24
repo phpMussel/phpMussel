@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.04.06).
+ * This file: Functions file (last modified: 2018.04.25).
  */
 
 /**
@@ -1773,7 +1773,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $theSwitch = $Switch[0];
         $ThisRule = (strpos($ThisRule, ';') === false) ? [$ThisRule] : explode(';', $phpMussel['substrbl']($ThisRule, ';'));
         foreach ($ThisRule as $Fragment) {
-            $Fragment = (strpos($Fragment, ':') === false) ? false : explode(':', $Fragment, 7);
+            $Fragment = (strpos($Fragment, ':') === false) ? false : $phpMussel['SplitSigParts']($Fragment, 7);
             if (empty($Fragment[0])) {
                 continue 2;
             }
@@ -2512,7 +2512,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             }
                             if ($sxc > 0) {
                                 for ($sxi = 0; $sxi < $sxc; $sxi++) {
-                                    $xsig[$xi][$sxi] = explode(':', $xsig[$xi][$sxi], 7);
+                                    $xsig[$xi][$sxi] = $phpMussel['SplitSigParts']($xsig[$xi][$sxi], 7);
                                     if ($xsig[$xi][$sxi][0] === 'LV') {
                                         if (!isset($xsig[$xi][$sxi][1]) || substr($xsig[$xi][$sxi][1], 0, 1) !== '$') {
                                             continue 2;
@@ -2806,7 +2806,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         continue;
                     }
                     if (strpos($ThisSig, ':') !== false) {
-                        $VN = explode(':', $ThisSig);
+                        $VN = $phpMussel['SplitSigParts']($ThisSig);
                         if ($ThisConf[3] === 0) {
                             $ThisSig = preg_split('/[^a-fA-F0-9>]+/i', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
                             $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
@@ -2818,17 +2818,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $xstrt = isset($VN[3]) ? $VN[3] : '*';
                             $VN = $phpMussel['vn_shorthand']($VN[0]);
                             $VNLC = strtolower($VN);
-                            if (
-                                ($is_not_php && (
-                                    substr_count($VNLC, '-php') ||
-                                    substr_count($VNLC, '.php')
-                                )) ||
-                                ($is_not_html && (
-                                    substr_count($VNLC, '-htm') ||
-                                    substr_count($VNLC, '.htm')
-                                )) ||
-                                $$DataSourceLen < $ThisSigLen
-                            ) {
+                            if (($is_not_php && (
+                                    substr_count($VNLC, '-php') || substr_count($VNLC, '.php')
+                            )) || ($is_not_html && (
+                                    substr_count($VNLC, '-htm') || substr_count($VNLC, '.htm')
+                            )) || $$DataSourceLen < $ThisSigLen) {
                                 continue;
                             }
                             if (
@@ -2868,16 +2862,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $xstrt = isset($VN[3]) ? $VN[3] : '*';
                             $VN = $phpMussel['vn_shorthand']($VN[0]);
                             $VNLC = strtolower($VN);
-                            if (
-                                ($is_not_php && (
-                                    substr_count($VNLC, '-php') ||
-                                    substr_count($VNLC, '.php')
-                                )) ||
-                                ($is_not_html && (
-                                    substr_count($VNLC, '-htm') ||
-                                    substr_count($VNLC, '.htm')
-                                ))
-                            ) {
+                            if (($is_not_php && (
+                                substr_count($VNLC, '-php') || substr_count($VNLC, '.php')
+                            )) || ($is_not_html && (
+                                substr_count($VNLC, '-htm') || substr_count($VNLC, '.htm')
+                            ))) {
                                 continue;
                             }
                             if (
@@ -3689,6 +3678,17 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Exit data handler. */
     return !$out ? [1, ''] : [2, $out];
+};
+
+/**
+ * Splits a signature into its constituent parts (name, pattern, etc).
+ *
+ * @param string $Sig The signature.
+ * @param int $Max The maximum number of parts to return (optional).
+ * @return array The parts.
+ */
+$phpMussel['SplitSigParts'] = function ($Sig, $Max = -1) {
+    return preg_split('~(?<!\?|\<)\:~', $Sig, $Max, PREG_SPLIT_NO_EMPTY);
 };
 
 /**

@@ -9,6 +9,21 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 (none)
 
+=== Version/Release 1.3.1 ===
+PATCH RELEASE.
+
+- [2018.04.16; Sub-minor code change; Maikuolan]: Slightly refactored some of
+  the front-end code.
+
+- [2018.04.25; Bug-fix; Maikuolan]: Found a problem whereby the way that the
+  data handler split signatures into their constituent parts (signature name,
+  detection criteria, etc) during the scan process could result in expression
+  compilation failures and an inability to utilise the affected signatures;
+  Fixed. Refer github.com/phpMussel/phpMussel/issues/157
+
+Caleb M (Maikuolan),
+Apr 25, 2018.
+
 === Version/Release 1.3.0 ===
 MINOR RELEASE.
 

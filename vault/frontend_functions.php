@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.04.03).
+ * This file: Front-end functions file (last modified: 2018.04.16).
  */
 
 /**
@@ -491,18 +491,14 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     return $Arr;
 };
 
-/**
- * Checks whether a component is in use (front-end closure).
- *
- * @param array $Files The list of files to be checked.
- * @return bool Returns true (in use) or false (not in use).
- */
-$phpMussel['IsInUse'] = function ($Files) use (&$phpMussel) {
+/** Checks whether a component is in use (front-end closure). */
+$phpMussel['IsInUse'] = function (&$Component) use (&$phpMussel) {
+    $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
     foreach ($Files as $File) {
-        if (
-            substr($File, 0, 11) === 'signatures/' &&
-            strpos(',' . $phpMussel['Config']['signatures']['Active'] . ',', ',' . substr($File, 11) . ',') !== false
-        ) {
+        if (substr($File, 0, 11) === 'signatures/' && strpos(
+            ',' . $phpMussel['Config']['signatures']['Active'] . ',',
+            ',' . substr($File, 11) . ','
+        ) !== false) {
             return true;
         }
     }
@@ -536,6 +532,11 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
     }
 };
 
+/** Check whether component is activable. */
+$phpMussel['IsActivable'] = function (&$Component) {
+    return (!empty($Component['Files']['To'][0]) && substr($Component['Files']['To'][0], 0, 11) === 'signatures/');
+};
+
 /** Prepares component extended description (front-end updates page). */
 $phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$phpMussel) {
     $Key = 'Extended Description: ' . $Key;
@@ -567,9 +568,7 @@ $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files'])) {
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']);
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']);
-        return $phpMussel['IsInUse'](
-            $phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']
-        );
+        return $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$phpMussel['Targets']]);
     }
     return false;
 };
