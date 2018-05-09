@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.04.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,8 @@ $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel应该发送<co
 $phpMussel['lang']['config_general_honeypot_mode'] = '当这个指令（蜜罐模式）是激活，​phpMussel将尝试检疫所有文件上传它遇到，​无论的如果文件上传是匹配任何包括签名，​和没有扫描或分析的那些文件上传将发生。​这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，​但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，​也不推荐使用蜜罐功能为目的以外蜜罐。​作为标准，​这个指令是关闭。​False（假）=是关闭【标准】； True（真）=是激活。';
 $phpMussel['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）标准是<code>REMOTE_ADDR</code>。​警告！​不要修改此除非您知道什么您做着！';
 $phpMussel['lang']['config_general_lang'] = '指定标准phpMussel语言。';
+$phpMussel['lang']['config_general_log_rotation_action'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。​“Delete”=删除最旧的日志文件，直到不再超出限制。​“Archive”=首先归档，然后删除最旧的日志文件，直到不再超出限制。';
+$phpMussel['lang']['config_general_log_rotation_limit'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。';
 $phpMussel['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登录尝试次数（前端）。​标准=5。';
 $phpMussel['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';

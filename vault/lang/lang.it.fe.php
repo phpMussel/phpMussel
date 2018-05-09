@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.04.05).
+ * This file: Italian language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,8 @@ $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel dovrebbe rispo
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in quarantena ogni file caricamenti che esso incontra, indipendentemente di se il file che essere caricato corrisponde d\'alcuna incluso firma, e zero reale scansionare o analisi di quei tentati file caricati sarà avvenire. Questa funzionalità dovrebbe essere utile per coloro che desiderano utilizzare phpMussel a fini di virus/malware ricerca, ma non si raccomandato di abilitare questa funzionalità se l\'uso previsto de phpMussel da parte dell\'utente è per l\'effettivo scansione dei file caricamenti né raccomandato di utilizzare la funzionalità di honeypot per fini diversi da l\'uso de honeypot. Da predefinita, questo opzione è disattivato. False = Disattivato [Predefinito]; True = Attivato.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $phpMussel['lang']['config_general_lang'] = 'Specifica la lingua predefinita per phpMussel.';
+$phpMussel['lang']['config_general_log_rotation_action'] = 'La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l\'azione specificata. Qui puoi specificare l\'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato.';
+$phpMussel['lang']['config_general_log_rotation_limit'] = 'La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l\'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log.';
 $phpMussel['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l\'aggiornamento del CMS, dei framework, ecc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso (front-end). Predefinito = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Come preferisci che i numeri siano visualizzati? Seleziona l\'esempio che ti sembra più corretto.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.04.10).
+ * This file: French language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,8 @@ $phpMussel['lang']['config_general_forbid_on_block'] = 'Devrait phpMussel envoye
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Quand le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu\'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n\'est recommandé d\'activer cette fonctionnalité si l\'utilisation prévue de phpMussel par l\'utilisateur est l\'analyse de fichier téléchargements comme la norme, ni est-il recommandé d\'utiliser la honeypot fonctionnalité pour fins autres que celles du honeypot. Par défaut, cette option est désactivée. False = Désactivé [Défaut] ; True = Activé.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $phpMussel['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour phpMussel.';
+$phpMussel['lang']['config_general_log_rotation_action'] = 'La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l\'action spécifiée sera effectuée. Vous pouvez spécifier l\'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu\'à ce que la limite ne soit plus dépassée. Archive = Tout d\'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu\'à ce que la limite ne soit plus dépassée.';
+$phpMussel['lang']['config_general_log_rotation_limit'] = 'La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l\'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal.';
 $phpMussel['lang']['config_general_maintenance_mode'] = 'Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l\'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion (l\'accès frontal). Défaut = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Comment préférez-vous que les nombres soient affichés ? Sélectionnez l\'exemple qui vous paraît le plus approprié.';

@@ -391,6 +391,14 @@ Generale configurazione per phpMussel.
 "truncate"
 - Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in B/KB/MB/GB/TB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0KB disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente.
 
+"log_rotation_limit"
+- La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log.
+
+"log_rotation_action"
+- La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato.
+
+*Chiarimento tecnico: In questo contesto, "più vecchi" significa modificato meno di recente.*
+
 "timeOffset"
 - Se il tempo del server non corrisponde l'ora locale, è possibile specificare un offset qui per regolare le informazioni di data/tempo generato da phpMussel in base alle proprie esigenze. È generalmente raccomandato invece, regolare à la direttiva fuso orario nel file `php.ini`, ma a volte (come ad esempio quando si lavora con i fornitori di hosting condiviso limitati) questo non è sempre possibile fare, e così, questa opzione è fornito qui. Offset è in minuti.
 - Esempio (per aggiungere un'ora): `timeOffset=60`
@@ -972,4 +980,4 @@ La greylist delle firme è utile se è necessario risolvere i problemi causati d
 ---
 
 
-Ultimo Aggiornamento: 10 Aprile 2018 (2018.04.10).
+Ultimo Aggiornamento: 7 Maggio 2018 (2018.05.07).

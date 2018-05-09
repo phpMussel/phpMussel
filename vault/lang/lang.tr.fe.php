@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.04.05).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,8 @@ $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel, dosya yüklem
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Honeypot modu etkinleştirildiğinde, phpMussel karşılaştığı her dosya yüklemesini karantinaya almaya çalışacaktır, dahil olan imzalardan herhangi biriyle eşleşip eşleşmediğine bakılmaksızın, ve aslında hiçbir tarama ya da analiz yapılmayacaktır. Bu işlevsellik, kötücül yazılım araştırması için yararlı olmalıdır, ancak normal şartlar altında bu işlevselliği etkinleştirmeniz önerilmez. Varsayılan olarak, bu seçenek devre dışıdır. Yanlış/False = Devre dışı [Varsayılan]; Doğru/True = Etkinleştirildi.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $phpMussel['lang']['config_general_lang'] = 'phpMussel için varsayılan dili belirleyin.';
+$phpMussel['lang']['config_general_log_rotation_action'] = 'Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar.';
+$phpMussel['lang']['config_general_log_rotation_limit'] = 'Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır.';
 $phpMussel['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS\'nizi, çerçeveleri vb. güncellenirken yararlıdır.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
 $phpMussel['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
