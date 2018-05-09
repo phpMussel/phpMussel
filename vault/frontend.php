@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.04.16).
+ * This file: Front-end handler (last modified: 2018.05.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -302,7 +302,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     if (!$phpMussel['FE']['CronMode']) {
                         $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
                         $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HTTP_HOST'], false, true);
                         $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
                             $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
                         ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
@@ -320,14 +320,13 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
 
     }
 
+    $phpMussel['FrontEndLogFile'] = '';
     if ($phpMussel['Config']['general']['FrontEndLog']) {
-        if (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) {
-            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['TimeFormat'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['FrontEndLog']
-            );
-        }
-        $phpMussel['FrontEndLog'] = $_SERVER[$phpMussel['Config']['general']['ipaddr']] . ' - ' . $phpMussel['FE']['DateTime'] . ' - ';
+        $phpMussel['FrontEndLogFile'] = (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) ? $phpMussel['TimeFormat'](
+            $phpMussel['Now'],
+            $phpMussel['Config']['general']['FrontEndLog']
+        ) : $phpMussel['Config']['general']['FrontEndLog'];
+        $phpMussel['FrontEndLog'] = $_SERVER[$phpMussel['IPAddr']] . ' - ' . $phpMussel['FE']['DateTime'] . ' - ';
         $phpMussel['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
     }
     if ($phpMussel['FE']['state_msg']) {
@@ -351,15 +350,20 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
     }
     if ($phpMussel['Config']['general']['FrontEndLog']) {
         $phpMussel['WriteMode'] = (
-            !file_exists($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']) || (
+            !file_exists($phpMussel['Vault'] . $phpMussel['FrontEndLogFile']) || (
                 $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+                filesize($phpMussel['Vault'] . $phpMussel['FrontEndLogFile']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
             )
         ) ? 'w' : 'a';
-        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], $phpMussel['WriteMode']);
-        fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
-        fclose($phpMussel['Handle']);
-        unset($phpMussel['WriteMode'], $phpMussel['FrontEndLog']);
+        if ($phpMussel['BuildLogPath']($phpMussel['FrontEndLogFile'])) {
+            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FrontEndLogFile'], $phpMussel['WriteMode']);
+            fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
+            fclose($phpMussel['Handle']);
+            if ($phpMussel['WriteMode'] === 'w') {
+                $phpMussel['LogRotation']($phpMussel['Config']['general']['FrontEndLog']);
+            }
+        }
+        unset($phpMussel['WriteMode'], $phpMussel['FrontEndLog'], $phpMussel['FrontEndLogFile']);
     }
 }
 
@@ -434,7 +438,7 @@ if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
         $phpMussel['FE']['ThisSession'] = '';
         $phpMussel['FE']['Rebuild'] = true;
         $phpMussel['FE']['UserState'] = $phpMussel['FE']['Permissions'] = 0;
-        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HTTP_HOST'], false, true);
 
     }
 
@@ -1861,7 +1865,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         /** If the filename already exists, delete the old file before moving the new file. */
         if ($phpMussel['SafeToContinue'] && is_readable($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
             if (is_dir($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
-                if ($phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
+                if ($phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
                     rmdir($phpMussel['Vault'] . $_FILES['upload-file']['name']);
                 } else {
                     $phpMussel['SafeToContinue'] = false;
@@ -1893,7 +1897,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         if ($_POST['do'] === 'delete-file') {
 
             if (is_dir($phpMussel['Vault'] . $_POST['filename'])) {
-                if ($phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_POST['filename'])) {
+                if ($phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename'])) {
                     rmdir($phpMussel['Vault'] . $_POST['filename']);
                     $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_directory_deleted'];
                 } else {
@@ -1927,7 +1931,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     is_readable($phpMussel['Vault'] . $_POST['filename_new'])
                 ) {
                     if (is_dir($phpMussel['Vault'] . $_POST['filename_new'])) {
-                        if ($phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $_POST['filename_new'])) {
+                        if ($phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename_new'])) {
                             rmdir($phpMussel['Vault'] . $_POST['filename_new']);
                         } else {
                             $phpMussel['SafeToContinue'] = false;
@@ -2118,7 +2122,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     /** Process files data. */
     array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
         $ThisFile['ThisOptions'] = '';
-        if (!$ThisFile['Directory'] || $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
+        if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
             $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $phpMussel['lang']['field_delete_file'] . '</option>';
             $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $phpMussel['lang']['field_rename_file'] . '</option>';
         }

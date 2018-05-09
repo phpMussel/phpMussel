@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.04.25).
+ * This file: Functions file (last modified: 2018.05.09).
  */
 
 /**
@@ -4978,6 +4978,9 @@ $phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$
             $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
             fwrite($Stream, $Handle['Data']);
             fclose($Stream);
+            if ($WriteMode === 'w') {
+                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log_serialized']);
+            }
             return true;
         }
     }
@@ -5004,6 +5007,9 @@ $phpMussel['WriteScanLog'] = function ($Data) use (&$phpMussel) {
             $Handle = fopen($phpMussel['Vault'] . $File, 'a');
             fwrite($Handle, $Data);
             fclose($Handle);
+            if ($WriteMode === 'w') {
+                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log']);
+            }
             return true;
         }
     }
@@ -5633,4 +5639,105 @@ $phpMussel['BuildLogPath'] = function($File) use (&$phpMussel) {
         }
     }
     return true;
+};
+
+/**
+ * Checks whether the specified directory is empty.
+ *
+ * @param string $Directory The directory to check.
+ * @return bool True if empty; False if not empty.
+ */
+$phpMussel['IsDirEmpty'] = function ($Directory) {
+    return !((new \FilesystemIterator($Directory))->valid());
+};
+
+/**
+ * Deletes empty directories (used by some front-end functions and log rotation).
+ *
+ * @param string $Dir The directory to delete.
+ */
+$phpMussel['DeleteDirectory'] = function ($Dir) use (&$phpMussel) {
+    while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
+        $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
+        $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
+        if (!is_dir($phpMussel['Vault'] . $Dir) || !$phpMussel['IsDirEmpty']($phpMussel['Vault'] . $Dir)) {
+            break;
+        }
+        rmdir($phpMussel['Vault'] . $Dir);
+    }
+};
+
+/** Convert configuration directives for logfiles to regexable patterns. */
+$phpMussel['BuildLogPattern'] = function ($Str) {
+    return '~^' . preg_replace(
+        ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+        ['\d{2}', '\d{4}', '[a-z]{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
+        preg_quote(str_replace("\\", '/', $Str))
+    ) . '$~i';
+};
+
+/**
+ * GZ-compress a file (used by log rotation).
+ *
+ * @param string $File The file to GZ-compress.
+ */
+$phpMussel['GZCompressFile'] = function ($File) {
+    if (!is_file($File) || !is_readable($File)) {
+        return false;
+    }
+    static $Blocksize = 131072;
+    $Filesize = filesize($File);
+    $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
+    if ($Size > 0) {
+        $Handle = fopen($File, 'rb');
+        $HandleGZ = gzopen($File . '.gz', 'wb');
+        $Block = 0;
+        while ($Block < $Size) {
+            $Data = fread($Handle, $Blocksize);
+            gzwrite($HandleGZ, $Data);
+            $Block++;
+        }
+        gzclose($HandleGZ);
+        fclose($Handle);
+    }
+    return true;
+};
+
+/** Log rotation. */
+$phpMussel['LogRotation'] = function($Pattern) use (&$phpMussel) {
+    $Action = empty($phpMussel['Config']['general']['log_rotation_action']) ? '' : $phpMussel['Config']['general']['log_rotation_action'];
+    $Limit = empty($phpMussel['Config']['general']['log_rotation_limit']) ? 0 : $phpMussel['Config']['general']['log_rotation_limit'];
+    if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {
+        return false;
+    }
+    $Pattern = $phpMussel['BuildLogPattern']($Pattern);
+    $Arr = [];
+    $Offset = strlen($phpMussel['Vault']);
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($phpMussel['Vault']), RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($List as $Item => $List) {
+        $ItemFixed = str_replace("\\", '/', substr($Item, $Offset));
+        if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {
+            $Arr[$ItemFixed] = filemtime($Item);
+        }
+    }
+    unset($ItemFixed, $List, $Offset);
+    $Count = count($Arr);
+    $Err = 0;
+    if ($Count > $Limit) {
+        asort($Arr, SORT_NUMERIC);
+        foreach ($Arr as $Item => $Modified) {
+            if ($Action === 'Archive') {
+                $Err += !$phpMussel['GZCompressFile']($phpMussel['Vault'] . $Item);
+            }
+            $Err += !unlink($phpMussel['Vault'] . $Item);
+            if (strpos($Item, '/') !== false) {
+                $phpMussel['DeleteDirectory']($Item);
+            }
+            $Count--;
+            if (!($Count > $Limit)) {
+                break;
+            }
+        }
+    }
+    return $Err ? false : true;
 };

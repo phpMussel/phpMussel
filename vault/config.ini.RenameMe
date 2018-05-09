@@ -30,6 +30,20 @@ scan_kills='scan_kills.txt'
 ; collectively.
 truncate='0KB'
 
+; Log rotation limits the number of logfiles that should exist at any one time.
+; When new logfiles are created, if the total number of logfiles exceeds the
+; specified limit, the specified action will be performed. You can specify the
+; desired limit here. A value of 0 will disable log rotation.
+log_rotation_limit=0
+
+; Log rotation limits the number of logfiles that should exist at any one time.
+; When new logfiles are created, if the total number of logfiles exceeds the
+; specified limit, the specified action will be performed. You can specify the
+; desired action here. Delete = Delete the oldest logfiles, until the limit is
+; no longer exceeded. Archive = Firstly archive, and then delete the oldest
+; logfiles, until the limit is no longer exceeded.
+log_rotation_action='Delete'
+
 ; Your timezone.
 timezone='SYSTEM'
 

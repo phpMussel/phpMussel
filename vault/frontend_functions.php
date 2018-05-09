@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.04.16).
+ * This file: Front-end functions file (last modified: 2018.05.09).
  */
 
 /**
@@ -62,23 +62,6 @@ $phpMussel['Delete'] = function ($File) use (&$phpMussel) {
         return true;
     }
     return false;
-};
-
-/**
- * Can be used to delete some empty directories via the front-end.
- *
- * @param string $Dir The directory to delete.
- */
-$phpMussel['DeleteDirectory'] = function ($Dir) use (&$phpMussel) {
-    while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
-        $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
-        $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
-        if (is_dir($phpMussel['Vault'] . $Dir) && $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $Dir)) {
-            rmdir($phpMussel['Vault'] . $Dir);
-        } else {
-            break;
-        }
-    }
 };
 
 /**
@@ -310,6 +293,8 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     }
                 } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
                     $Component = $phpMussel['lang']['link_config'];
+                } elseif ($phpMussel['FileManager-IsLogFile']($ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['link_logs'];
                 } else {
                     $LastFour = strtolower(substr($ThisNameFixed, -4));
                     if (
@@ -319,8 +304,6 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                         substr($ThisNameFixed, -9) === '.rollback'
                     ) {
                         $Component = $phpMussel['lang']['label_fmgr_cache_data'];
-                    } elseif ($LastFour === '.log' || $LastFour === '.txt') {
-                        $Component = $phpMussel['lang']['link_logs'];
                     } elseif ($LastFour === '.qfu') {
                         $Component = $phpMussel['lang']['label_quarantined'];
                     } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
@@ -455,16 +438,6 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
 };
 
 /**
- * Checks whether the specified directory is empty.
- *
- * @param string $Directory The directory to check.
- * @return bool True if empty; False if not empty.
- */
-$phpMussel['FileManager-IsDirEmpty'] = function ($Directory) {
-    return !((new \FilesystemIterator($Directory))->valid());
-};
-
-/**
  * Used by the logs viewer to generate a list of the logfiles contained in a
  * working directory (normally, the vault).
  *
@@ -475,16 +448,10 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     $Arr = [];
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
-        if (
-            preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) ||
-            !preg_match('~(?:logfile|\.(txt|log)$)~i', $Item) ||
-            !is_file($Item) ||
-            !is_readable($Item) ||
-            is_dir($Item)
-        ) {
+        $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
+        if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$phpMussel['FileManager-IsLogFile']($ThisName)) {
             continue;
         }
-        $ThisName = substr($Item, strlen($Base));
         $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
         $phpMussel['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
@@ -653,12 +620,12 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.35') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.29')
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.36') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.30')
     ) || (
-        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.15')
+        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.17')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.3')
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.5')
     )) {
         $Level += 2;
     }
@@ -1579,4 +1546,35 @@ $phpMussel['SendOutput'] = function () use (&$phpMussel) {
         $phpMussel['FE']['JS'] = "\n<script type=\"text/javascript\">" . $phpMussel['FE']['JS'] . '</script>';
     }
     return $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+};
+
+/** Confirm whether a file is a logfile (used by the file manager and logs viewer). */
+$phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
+    static $Pattern_scan_log = false;
+    if (!$Pattern_scan_log && $phpMussel['Config']['general']['scan_log']) {
+        $Pattern_scan_log = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log']);
+    }
+    static $Pattern_scan_log_serialized = false;
+    if (!$Pattern_scan_log_serialized && $phpMussel['Config']['general']['scan_log_serialized']) {
+        $Pattern_scan_log_serialized = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log_serialized']);
+    }
+    static $Pattern_scan_kills = false;
+    if (!$Pattern_scan_kills && $phpMussel['Config']['general']['scan_kills']) {
+        $Pattern_scan_kills = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_kills']);
+    }
+    static $Pattern_FrontEndLog = false;
+    if (!$Pattern_FrontEndLog && $phpMussel['Config']['general']['FrontEndLog']) {
+        $Pattern_FrontEndLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['FrontEndLog']);
+    }
+    return (
+        strtolower(substr($File, -4)) === '.log'
+    ) || (
+        $phpMussel['Config']['general']['scan_log'] && preg_match($Pattern_scan_log, $File)
+    ) || (
+        $phpMussel['Config']['general']['scan_log_serialized'] && preg_match($Pattern_scan_log_serialized, $File)
+    ) || (
+        $phpMussel['Config']['general']['scan_kills'] && preg_match($Pattern_scan_kills, $File)
+    ) || (
+        $phpMussel['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
+    );
 };

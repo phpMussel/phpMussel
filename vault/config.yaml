@@ -16,6 +16,15 @@ Config Defaults:
    type: kb
    default: "0KB"
    preview: kb
+  log_rotation_limit:
+   type: int
+   default: 0
+  log_rotation_action:
+   type: string
+   default: "Delete"
+   choices:
+    Delete: Delete
+    Archive: Archive
   timezone:
    type: timezone
    default: "SYSTEM"

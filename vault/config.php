@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.04.25).
+ * This file: Configuration handler (last modified: 2018.05.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '1.3.1';
+$phpMussel['ScriptVersion'] = '1.4.0';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
@@ -33,6 +33,11 @@ $phpMussel['Timeout'] = 12;
 
 /** Determine PHP path. */
 $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
+
+/** Fetch domain segment of HTTP_HOST (needed for writing cookies safely). */
+$phpMussel['HTTP_HOST'] = empty($_SERVER['HTTP_HOST']) ? '' : (
+    strpos($_SERVER['HTTP_HOST'], ':') === false ? $_SERVER['HTTP_HOST'] : substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ':'))
+);
 
 /** phpMussel favicon. */
 $phpMussel['favicon'] =

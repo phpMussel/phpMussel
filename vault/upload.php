@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.04.06).
+ * This file: Upload handler (last modified: 2018.05.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -254,6 +254,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             );
             fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['qdata']);
             fclose($phpMussel['memCache']['Handle']['Stream']);
+            if ($phpMussel['memCache']['Handle']['WriteMode'] === 'w') {
+                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
+            }
         }
         $phpMussel['memCache']['Handle'] = '';
     }
@@ -347,6 +350,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 );
                 fwrite($phpMussel['memCache']['Handle']['Stream'], $phpMussel['memCache']['Handle']['Data']);
                 fclose($phpMussel['memCache']['Handle']['Stream']);
+                if ($phpMussel['memCache']['Handle']['WriteMode'] === 'w') {
+                    $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
+                }
             }
             $phpMussel['memCache']['Handle'] = '';
         }
