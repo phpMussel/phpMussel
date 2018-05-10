@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.09).
+ * This file: Functions file (last modified: 2018.05.10).
  */
 
 /**
@@ -5625,7 +5625,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
 };
 
 /** Build directory path for logfiles. */
-$phpMussel['BuildLogPath'] = function($File) use (&$phpMussel) {
+$phpMussel['BuildLogPath'] = function ($File) use (&$phpMussel) {
     $ThisPath = $phpMussel['Vault'];
     $File = str_replace("\\", '/', $File);
     while (strpos($File, '/') !== false) {
@@ -5703,8 +5703,13 @@ $phpMussel['GZCompressFile'] = function ($File) {
     return true;
 };
 
-/** Log rotation. */
-$phpMussel['LogRotation'] = function($Pattern) use (&$phpMussel) {
+/**
+ * Log rotation.
+ *
+ * @param string $Pattern What to identify logfiles by (should be supplied via the relevant logging directive).
+ * @return bool False when log rotation is disabled or errors occur; True otherwise.
+ */
+$phpMussel['LogRotation'] = function ($Pattern) use (&$phpMussel) {
     $Action = empty($phpMussel['Config']['general']['log_rotation_action']) ? '' : $phpMussel['Config']['general']['log_rotation_action'];
     $Limit = empty($phpMussel['Config']['general']['log_rotation_limit']) ? 0 : $phpMussel['Config']['general']['log_rotation_limit'];
     if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {
