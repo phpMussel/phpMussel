@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.09).
+ * This file: Front-end functions file (last modified: 2018.05.14).
  */
 
 /**
@@ -1552,23 +1552,22 @@ $phpMussel['SendOutput'] = function () use (&$phpMussel) {
 $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
     static $Pattern_scan_log = false;
     if (!$Pattern_scan_log && $phpMussel['Config']['general']['scan_log']) {
-        $Pattern_scan_log = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log']);
+        $Pattern_scan_log = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log'], true);
     }
     static $Pattern_scan_log_serialized = false;
     if (!$Pattern_scan_log_serialized && $phpMussel['Config']['general']['scan_log_serialized']) {
-        $Pattern_scan_log_serialized = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log_serialized']);
+        $Pattern_scan_log_serialized = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_log_serialized'], true);
     }
     static $Pattern_scan_kills = false;
     if (!$Pattern_scan_kills && $phpMussel['Config']['general']['scan_kills']) {
-        $Pattern_scan_kills = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_kills']);
+        $Pattern_scan_kills = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['scan_kills'], true);
     }
     static $Pattern_FrontEndLog = false;
     if (!$Pattern_FrontEndLog && $phpMussel['Config']['general']['FrontEndLog']) {
-        $Pattern_FrontEndLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['FrontEndLog']);
+        $Pattern_FrontEndLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['FrontEndLog'], true);
     }
-    return (
-        strtolower(substr($File, -4)) === '.log'
-    ) || (
+    $FileLC = strtolower($File);
+    return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
         $phpMussel['Config']['general']['scan_log'] && preg_match($Pattern_scan_log, $File)
     ) || (
         $phpMussel['Config']['general']['scan_log_serialized'] && preg_match($Pattern_scan_log_serialized, $File)

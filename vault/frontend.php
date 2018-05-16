@@ -2428,7 +2428,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_logfile_doesnt_exist'];
     } else {
         $phpMussel['FE']['TextModeSwitchLink'] .= '?phpmussel-page=logs&logfile=' . $phpMussel['QueryVars']['logfile'] . '&text-mode=';
-        $phpMussel['FE']['logfileData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']);
+        if (strtolower(substr($phpMussel['QueryVars']['logfile'], -3)) === '.gz') {
+            $phpMussel['GZLogHandler'] = gzopen($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile'], 'rb');
+            $phpMussel['FE']['logfileData'] = '';
+            if (is_resource($phpMussel['GZLogHandler'])) {
+                while (!gzeof($phpMussel['GZLogHandler'])) {
+                    $phpMussel['FE']['logfileData'] .= gzread($phpMussel['GZLogHandler'], 131072);
+                }
+                gzclose($phpMussel['GZLogHandler']);
+            }
+            unset($phpMussel['GZLogHandler']);
+        } else {
+            $phpMussel['FE']['logfileData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']);
+        }
         $phpMussel['FE']['logfileData'] = $phpMussel['FE']['TextMode'] ? str_replace(
             ['<', '>', "\r", "\n"], ['&lt;', '&gt;', '', "<br />\n"], $phpMussel['FE']['logfileData']
         ) : str_replace(
