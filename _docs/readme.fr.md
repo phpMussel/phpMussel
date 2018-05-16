@@ -11,6 +11,7 @@
 - 8. [FORMATS DE SIGNATURES](#SECTION8)
 - 9. [PROBLÈMES DE COMPATIBILITÉ CONNUS](#SECTION9)
 - 10. [QUESTIONS FRÉQUEMMENT POSÉES (FAQ)](#SECTION10)
+- 11. [INFORMATION LÉGALE](#SECTION11)
 
 *Note concernant les traductions : En cas d'erreurs (par exemple, différences entre les traductions, fautes de frappe, etc), la version Anglaise du README est considérée comme la version originale et faisant autorité. Si vous trouvez des erreurs, votre aide pour les corriger serait bienvenue.*
 
@@ -452,7 +453,7 @@ Configuration générale pour phpMussel.
 - Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
 
 « disable_webfonts »
-- Désactiver les webfonts ? True = Oui ; False = Non [Défaut].
+- Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.
 
 « maintenance_mode »
 - Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.
@@ -635,6 +636,14 @@ Configuration du scanner d'URLs API chercher.
 
 « cache_time »
 - Combien de temps (en secondes) devrait les résultats du cherches de l'API être conservé dans le cache ? Défaut est 3600 secondes (1 heure).
+
+#### « legal » (Catégorie)
+Configuration relative aux exigences légales.
+
+*Pour plus d'informations sur les exigences légales et comment cela peut affecter vos exigences de configuration, veuillez vous référer à la section « [INFORMATION LÉGALE](#SECTION11) » de la documentation.*
+
+« pseudonymise_ip_addresses »
+- Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
 #### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
@@ -980,4 +989,11 @@ Le liste grise des signatures est utile si vous avez besoin de résoudre des pro
 ---
 
 
-Dernière mise à jour : 7 Mai 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMATION LÉGALE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Dernière mise à jour : 16 Mai 2018 (2018.05.16).

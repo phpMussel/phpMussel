@@ -11,6 +11,7 @@
 - 8. [FORMAT TANDA TANGAN](#SECTION8)
 - 9. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION9)
 - 10. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION10)
+- 11. [INFORMASI HUKUM](#SECTION11)
 
 *Catatan tentang terjemahan: Dalam hal kesalahan (misalnya, perbedaan antara terjemahan, kesalahan cetak, dll), versi bahasa Inggris dari README dianggap versi asli dan berwibawa. Jika Anda menemukan kesalahan, bantuan Anda dalam mengoreksi mereka akan disambut.*
 
@@ -167,7 +168,7 @@ Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (s
 
 #### 3.1 BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
 
-Mohon merujuk pada seksi "MENGINSTAL SECARA MANUAL (UNTUK CLI)" dari file README.
+Silahkan lihat "MENGINSTAL SECARA MANUAL (UNTUK CLI)" dari file README.
 
 Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner *on-access* (dengan pengecualian upload file, pada saat upload), dan tidak seperti anti virus, tidak memonitor memori aktif! phpMussel hanya mendeteksi virus dalam upload file dan dalam file yang Anda perintahkan untuk dipindai.
 
@@ -202,7 +203,7 @@ Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menj
 
 ### 5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
-phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTAL (UNTUK CLI)" dari file README untuk lebih detail.
+phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Lihat "BAGAIMANA CARA MENGINSTAL (UNTUK CLI)" dari file README untuk lebih detail.
 
 Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan Enter.
 
@@ -452,7 +453,7 @@ Konfigurasi umum dari phpMussel.
 - File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 "disable_webfonts"
-- Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
+- Menonaktifkan webfonts? True = Ya [Default]; False = Tidak.
 
 "maintenance_mode"
 - Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
@@ -635,6 +636,14 @@ Konfigurasi scanner URL memeriksa API.
 
 "cache_time"
 - Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).
+
+#### "legal" (Kategori)
+Konfigurasi yang berkaitan dengan persyaratan hukum.
+
+*Untuk informasi lebih lanjut tentang persyaratan hukum dan bagaimana ini dapat mempengaruhi persyaratan konfigurasi Anda, silahkan lihat bagian "[LEGAL INFORMATION](#SECTION11)" pada dokumentasi.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].
 
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
@@ -824,7 +833,7 @@ Ya. Lisensi kami tidak melarang hal ini.
 
 #### <a name="WANT_TO_CONTRIBUTE"></a>Saya ingin berkontribusi pada proyek ini; Dapatkah saya melakukan ini?
 
-Ya. Kontribusi untuk proyek ini sangat disambut baik. Silakan lihat "CONTRIBUTING.md" untuk informasi lebih lanjut.
+Ya. Kontribusi untuk proyek ini sangat disambut baik. Silahkan lihat "CONTRIBUTING.md" untuk informasi lebih lanjut.
 
 #### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Nilai yang disarankan untuk "ipaddr".
 
@@ -980,4 +989,11 @@ Daftar abu-abu tanda tangan berguna jika Anda perlu menyelesaikan masalah yang d
 ---
 
 
-Terakhir Diperbarui: 7 Mei 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMASI HUKUM
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Terakhir Diperbarui: 16 Mei 2018 (2018.05.16).

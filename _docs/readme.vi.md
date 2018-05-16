@@ -11,6 +11,7 @@
 - 8. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION8)
 - 9. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION9)
 - 10. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION10)
+- 11. [THÔNG TIN HỢP PHÁP](#SECTION11)
 
 *Lưu ý về bản dịch: Trong trường hợp có sai sót (ví dụ, sự khác biệt giữa bản dịch, lỗi chính tả, vv), phiên bản tiếng Anh của README được coi là phiên bản gốc và có thẩm quyền. Nếu bạn tìm thấy bất kỳ lỗi, giúp đỡ của bạn trong việc điều chỉnh họ sẽ được hoan nghênh.*
 
@@ -452,7 +453,7 @@ Cấu hình chung cho phpMussel.
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "disable_webfonts"
-- Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].
+- Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không.
 
 "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
@@ -635,6 +636,14 @@ Cấu hình cho tra cứu API của máy quét URL.
 
 "cache_time"
 - Kết quả tra cứu API nên được lưu trữ trong (trong giây) bao lâu? Mặc định là 3600 giây (1 giờ).
+
+#### "legal" (Thể loại)
+Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
+
+*Để biết thêm thông tin về các nghĩa vụ hợp pháp và cách nó có thể ảnh hưởng đến các nghĩa vụ cấu hình của bạn, vui lòng tham khảo phần "[THÔNG TIN HỢP PHÁP](#SECTION11)" của các tài liệu.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
 
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
@@ -980,4 +989,11 @@ Danh sách xám chữ ký rất hữu ích nếu bạn cần giải quyết các
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Năm 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>THÔNG TIN HỢP PHÁP
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Lần cuối cập nhật: 16 Tháng Năm 2018 (2018.05.16).

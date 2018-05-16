@@ -11,6 +11,7 @@
 - 8. [SIGNATURENFORMAT](#SECTION8)
 - 9. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION9)
 - 10. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION10)
+- 11. [RECHTSINFORMATION](#SECTION11)
 
 *Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
 
@@ -452,7 +453,7 @@ Generelle Konfiguration von phpMussel.
 - Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 "disable_webfonts"
-- Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
+- Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein.
 
 "maintenance_mode"
 - Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.
@@ -635,6 +636,14 @@ URL-Scanner API-Abfrage Konfiguration.
 
 "cache_time"
 - Wie lange (in Sekunden) sollen die Ergebnisse von API-Abfragen zwischengespeichert werden? Standardeinstellung ist 3600 Sekunden (1 Stunde).
+
+#### "legal" (Kategorie)
+Konfiguration für gesetzliche Anforderungen.
+
+*Für weitere Informationen zu gesetzlichen Anforderungen und wie sich dies auf Ihre Konfiguration-Anforderungen auswirken könnte, bitte beachten Sie den Sektion "[RECHTSINFORMATION](#SECTION11)" der Dokumentation.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
 
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
@@ -980,4 +989,11 @@ Die Signatur-Greylist ist nützlich, wenn Sie Probleme beheben müssen, die von 
 ---
 
 
-Zuletzt aktualisiert: 7 Mai 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>RECHTSINFORMATION
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Zuletzt aktualisiert: 16 Mai 2018 (2018.05.16).

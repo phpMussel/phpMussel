@@ -11,6 +11,7 @@
 - 8. [SIGNATURE FORMAAT](#SECTION8)
 - 9. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION9)
 - 10. [VEELGESTELDE VRAGEN (FAQ)](#SECTION10)
+- 11. [LEGALE INFORMATIE](#SECTION11)
 
 *Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
 
@@ -452,7 +453,7 @@ Algemene configuratie voor phpMussel.
 - Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
 "disable_webfonts"
-- Uitschakelen webfonts? True = Ja; False = Nee [Standaard].
+- Uitschakelen webfonts? True = Ja [Standaard]; False = Nee.
 
 "maintenance_mode"
 - Inschakelen de onderhoudsmodus? True = Ja; False = Nee [Standaard]. Schakelt alles anders dan het frontend uit. Soms nuttig bij het bijwerken van uw CMS, frameworks, enz.
@@ -635,6 +636,14 @@ URL scanner API configuratie.
 
 "cache_time"
 - Hoe lang (in seconden) moeten de resultaten van de API verzoeken worden gecached voor? Standaard is 3600 seconden (1 uur).
+
+#### "legal" (Category)
+Configuratie met betrekking tot wettelijke vereisten.
+
+*Voor meer informatie over wettelijke vereisten en hoe dit uw configuratie-eisen kan beïnvloeden, zie het sectie "[LEGALE INFORMATIE](#SECTION11)" van de documentatie.*
+
+"pseudonymise_ip_addresses"
+- Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].
 
 #### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
@@ -980,4 +989,11 @@ De signature grijze lijst is handig als u problemen wilt oplossen die door een b
 ---
 
 
-Laatste Bijgewerkt: 7 Mei 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>LEGALE INFORMATIE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Laatste Bijgewerkt: 16 Mei 2018 (2018.05.16).

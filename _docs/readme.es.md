@@ -11,6 +11,7 @@
 - 8. [FORMATOS DE FIRMAS](#SECTION8)
 - 9. [CONOCIDOS PROBLEMAS DE COMPATIBILIDAD](#SECTION9)
 - 10. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION10)
+- 11. [INFORMACIÓN LEGAL](#SECTION11)
 
 *Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlo sera bienvenida.*
 
@@ -452,7 +453,7 @@ General configuración para phpMussel.
 - Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.
 
 "disable_webfonts"
-- ¿Desactivar webfonts? True = Sí; False = No [Predefinido].
+- ¿Desactivar webfonts? True = Sí [Predefinido]; False = No.
 
 "maintenance_mode"
 - ¿Activar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.
@@ -635,6 +636,14 @@ URL escáner API configuración.
 
 "cache_time"
 - Por cuánto tiempo (en segundos) debe los resultados de las API búsquedas ser almacenan en caché? Predefinido es 3600 segundos (1 horas).
+
+#### "legal" (Categoría)
+Configuración relacionada con los requisitos legales.
+
+*Para obtener más información acerca de los requisitos legales y cómo esto podría afectar sus requisitos de configuración, consulte la sección "[INFORMACIÓN LEGAL](#SECTION11)" de la documentación.*
+
+"pseudonymise_ip_addresses"
+- ¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí; False = No [Predefinido].
 
 #### "template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
@@ -980,4 +989,11 @@ La lista gris de firmas es útil si necesita resolver problemas causados por una
 ---
 
 
-Última Actualización: 7 Mayo de 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMACIÓN LEGAL
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Última Actualización: 16 Mayo de 2018 (2018.05.16).

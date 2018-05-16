@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.08).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -53,7 +53,7 @@ $phpMussel['lang']['config_general_default_algo'] = '将来のすべてのパス
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​<code>false</code>（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​<code>true</code>（真） = スキャニング後、​クリーンでなければ直ちに削除。';
 $phpMussel['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​<code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​<code>true</code>（真） = ＣＬＩモードを無効にします。';
 $phpMussel['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​phpMusselをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。';
-$phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $phpMussel['lang']['config_general_enable_plugins'] = 'プラグインのサポートを有効にしますか？​<code>false</code> = いいえ；​<code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'アップロードファイルがブロックされたメッセージと共に、​phpMusselから４０３ヘッダーを送るべきか、​通常の２００でよいかどうかについて。​<code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」；​<code>true</code>（真） = はい（４０３）。';
 $phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効 （Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。';
@@ -77,6 +77,7 @@ $phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーンオフセ�
 $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
 $phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？​値は、​ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。​注：個々のログファイルに適用されます。​ログファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMusselは改ざんやディフェーサー検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';

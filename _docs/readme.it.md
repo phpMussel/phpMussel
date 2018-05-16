@@ -11,6 +11,7 @@
 - 8. [FIRMA FORMATO](#SECTION8)
 - 9. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION9)
 - 10. [DOMANDE FREQUENTI (FAQ)](#SECTION10)
+- 11. [INFORMAZIONE LEGALE](#SECTION11)
 
 *Nota per quanto riguarda le traduzioni: In caso di errori (per esempio, discrepanze tra le traduzioni, errori di battitura, ecc), la versione Inglese del README è considerata la versione originale e autorevole. Se trovate errori, il vostro aiuto a correggerli sarebbe il benvenuto.*
 
@@ -452,7 +453,7 @@ Generale configurazione per phpMussel.
 - File per la registrazione di l'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
 "disable_webfonts"
-- Disabilita webfonts? True = Sì; False = No [Predefinito].
+- Disabilita webfonts? True = Sì [Predefinito]; False = No.
 
 "maintenance_mode"
 - Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l'aggiornamento del CMS, dei framework, ecc.
@@ -635,6 +636,14 @@ API configurazione per l'URL scanner.
 
 "cache_time"
 - Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
+
+#### "legal" (Categoria)
+Configurazione relativa ai requisiti legali.
+
+*Per ulteriori informazioni sui requisiti legali e su come ciò potrebbe influire sui requisiti di configurazione, si prega di fare riferimento alla sezione "[INFORMAZIONE LEGALE](#SECTION11)" della documentazione.*
+
+"pseudonymise_ip_addresses"
+- Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì; False = No [Predefinito].
 
 #### "template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
@@ -980,4 +989,11 @@ La greylist delle firme è utile se è necessario risolvere i problemi causati d
 ---
 
 
-Ultimo Aggiornamento: 7 Maggio 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMAZIONE LEGALE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Ultimo Aggiornamento: 16 Maggio 2018 (2018.05.16).

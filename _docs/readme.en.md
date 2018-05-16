@@ -11,6 +11,7 @@
 - 8. [SIGNATURE FORMAT](#SECTION8)
 - 9. [KNOWN COMPATIBILITY PROBLEMS](#SECTION9)
 - 10. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION10)
+- 11. [LEGAL INFORMATION](#SECTION11)
 
 *Note regarding translations: In the event of errors (e.g., discrepancies between translations, typos, etc), the English version of the README is considered the original and authoritative version. If you find any errors, your assistance in correcting them would be welcomed.*
 
@@ -452,7 +453,7 @@ General phpMussel configuration.
 - File for logging front-end login attempts. Specify a filename, or leave blank to disable.
 
 "disable_webfonts"
-- Disable webfonts? True = Yes; False = No [Default].
+- Disable webfonts? True = Yes [Default]; False = No.
 
 "maintenance_mode"
 - Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc.
@@ -635,6 +636,14 @@ URL scanner API lookup configuration.
 
 "cache_time"
 - How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
+#### "legal" (Category)
+Configuration relating to legal requirements.
+
+*For more information about legal requirements and how this could affect your configuration requirements, please refer to the "[LEGAL INFORMATION](#SECTION11)" section of the documentation.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymise IP addresses when logging? True = Yes; False = No [Default].
 
 #### "template_data" (Category)
 Directives/Variables for templates and themes.
@@ -980,4 +989,11 @@ The signature greylist is useful if you need to resolve problems caused by a par
 ---
 
 
-Last Updated: 7 May 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>LEGAL INFORMATION
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Last Updated: 16 May 2018 (2018.05.16).

@@ -12,6 +12,7 @@
  <li>٨. <a href="#SECTION8">شكل/تنسيق التوقيع</a></li>
  <li>٩. <a href="#SECTION9">مشاكل التوافق المعروفة</a></li>
  <li>١٠. <a href="#SECTION10">أسئلة وأجوبة (FAQ)</a></li>
+ <li>١١. <a href="#SECTION11">المعلومات القانونية</a></li>
 </ul></div>
 
 <div dir="rtl"><em>ملاحظة بخصوص ترجمة: في حالة الأخطاء (على سبيل المثال، التناقضات بين الترجمات، الأخطاء المطبعية، إلخ)، النسخة الإنجليزية من هذه الوثيقة هو تعتبر النسخة الأصلية وموثوق. إذا وجدت أي أخطاء، سيكون موضع ترحيب مساعدتكم في تصحيحها.</em></div>
@@ -502,7 +503,7 @@
 
 <div dir="rtl">"disable_webfonts"<br /></div>
 <div dir="rtl"><ul>
- <li>هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].</li>
+ <li>هل تريد تعطيل ويبفونتس؟ True = نعم [افتراضي]؛ False = لا.</li>
 </ul></div>
 
 <div dir="rtl">"maintenance_mode"<br /></div>
@@ -781,6 +782,16 @@
 <div dir="rtl">"cache_time"<br /></div>
 <div dir="rtl"><ul>
  <li>متى (بالثواني) يجب التوصل إلى نتائج عمليات بحث API؟ الافتراضي هو 3600 ثانية (1 ساعة).</li>
+</ul></div>
+
+#### <div dir="rtl">"legal" (التصنيف)<br /></div>
+<div dir="rtl">التكوين المتعلق بالمتطلبات القانونية.<br /><br /></div>
+
+<div dir="rtl">لمزيد من المعلومات حول المتطلبات القانونية وكيف يمكن أن يؤثر ذلك على متطلبات التهيئة الخاصة بك، يرجى الرجوع إلى قسم <a href="#SECTION11">المعلومات القانونية</a> من الوثائق.<br /><br /></div>
+
+<div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
+<div dir="rtl"><ul>
+ <li>إخفاء عناوين IP عند كتابة السجلات؟ True = نعم؛ False = لا [افتراضي].</li>
 </ul></div>
 
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
@@ -1140,4 +1151,11 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 7 مايو 2018 (2018.05.07).</div>
+### <div dir="rtl">١١. <a name="SECTION11"></a>المعلومات القانونية</div>
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+<div dir="rtl">آخر تحديث: 16 مايو 2018 (2018.05.16).</div>

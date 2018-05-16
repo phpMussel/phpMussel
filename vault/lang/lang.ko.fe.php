@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.08).
+ * This file: Korean language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -53,7 +53,7 @@ $phpMussel['lang']['config_general_default_algo'] = '향후 모든 암호와 세
 $phpMussel['lang']['config_general_delete_on_sight'] = '이 지시문을 사용하면 감지 기준 (서명이든 뭐든)에 있던 업로드 파일은 즉시 삭제됩니다. 클린 판단 된 파일은 그대로입니다. 아카이브의 경우, 문제의 파일이 일부라도 아카이브 모든이 삭제 대상이됩니다. 업로드 파일 검사에서는 본 지시어를 활성화 할 필요는 없습니다. 왜냐하면 PHP는 스크립트 실행 후 자동으로 캐시의 내용을 파기하기 때문입니다. 즉, 파일이 이동되거나 복사되거나 삭제되지 않는 한, PHP는 서버에 업로드 한 파일을 남겨 두는 것은 보통 없습니다. 이 지시어는 보안에 공을들이는 목적으로 설치되어 있습니다. PHP는 드물게 예상치 못한 행동을 할 수 있기 때문입니다. <code>false</code> = 스캔 후 파일은 그대로 (기본 설정). <code>true</code> = 스캔 후 깨끗해야 즉시 삭제합니다.';
 $phpMussel['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. <code>false</code> = CLI 모드를 활성화합니다 (Default / 기본 설정); <code>true</code> = CLI 모드를 해제합니다.';
 $phpMussel['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 phpMussel을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).';
-$phpMussel['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
+$phpMussel['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $phpMussel['lang']['config_general_enable_plugins'] = '플러그인 지원을 활성화 하시겠습니까? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_forbid_on_block'] = '업로드 파일이 차단 된 메시지와 함께 phpMussel에서 403 헤더를 보내야하거나 일반 200 좋은지에 대해. <code>false</code> = 아니오 (200) Default / 기본 설정; <code>true</code> = 예 (403).';
 $phpMussel['lang']['config_general_honeypot_mode'] = '허니팟 모드가 활성화되어 있으면 phpMussel 업로드되어 온 모든 파일을 예외없이 검역합니다. 서명에 부합하는지 여부는 문제가되지 않습니다. 스캐닝 및 분석도 이루어지지 않습니다. phpMussel를 바이러스/악성 코드 리서치에 사용할 생각하는 사용자에게 유익 할 것입니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 기본 설정은 무효입니다. <code>false</code> = Disabled/장애인 (Default / 기본 설정); <code>true</code> = Enabled/유효.';
@@ -77,6 +77,7 @@ $phpMussel['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $phpMussel['lang']['config_general_timezone'] = '귀하의 시간대.';
 $phpMussel['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMussel이 파일은 의심 위험성이 높다고 판단하는 서명이 있습니다. 임계 값은 업로드 된 파일의 위험의 최대 값이며이를 초과하면 악성 코드로 판단됩니다. 여기에서 위험의 정의는 의심과 특정되었지만 수입니다. 기본적으로 3으로 설정되어 있습니다. 이보다 낮은 오진의 가능성이 증가하고, 너무 크면 오류 검출은 감소하지만 위험성이있는 파일이 검색되지 않을 수 증가하게됩니다. 특히 문제가 없으면 기본 설정을 유지하는 것이 좋습니다.';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = '로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_Active'] = '쉼표로 구분 된 활성 시그니처 파일의 목록입니다.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel 애드웨어 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel를 위조 및 디훼사 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';

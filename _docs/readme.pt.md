@@ -11,6 +11,7 @@
 - 8. [FORMATOS DE ASSINATURAS](#SECTION8)
 - 9. [PROBLEMAS DE COMPATIBILIDADE CONHECIDOS](#SECTION9)
 - 10. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION10)
+- 11. [INFORMAÇÃO LEGAL](#SECTION11)
 
 *Nota relativa às traduções: Em caso de erros (por exemplo, discrepâncias entre as traduções, erros de digitação, etc), a versão em inglês do README é considerada a versão original e autorizada. Se você encontrar algum erro, a sua ajuda em corrigi-los seria bem-vinda.*
 
@@ -452,7 +453,7 @@ Configuração geral por phpMussel.
 - Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
 "disable_webfonts"
-- Desativar webfonts? True = Sim; False = Não [Padrão].
+- Desativar webfonts? True = Sim [Padrão]; False = Não.
 
 "maintenance_mode"
 - Ativar o modo de manutenção? True = Sim; False = Não [Padrão]. Desativa tudo além do front-end. Às vezes útil para quando atualiza seu CMS, frameworks, etc.
@@ -635,6 +636,14 @@ URL analisador API uso configuração.
 
 "cache_time"
 - Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).
+
+#### "legal" (Categoria)
+Configuração relacionada aos requisitos legais.
+
+*Para obter mais informações sobre requisitos legais e como isso pode afetar seus requisitos de configuração, consulte a seção "[INFORMAÇÃO LEGAL](#SECTION11)" da documentação.*
+
+"pseudonymise_ip_addresses"
+- Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim; False = Não [Padrão].
 
 #### "template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
@@ -980,4 +989,11 @@ A lista de cinza da assinaturas é útil se você precisar resolver problemas ca
 ---
 
 
-Última Atualização: 7 Maio de 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMAÇÃO LEGAL
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Última Atualização: 16 Maio de 2018 (2018.05.16).
