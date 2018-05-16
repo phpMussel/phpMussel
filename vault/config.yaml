@@ -200,7 +200,7 @@ Config Defaults:
    default: ""
   disable_webfonts:
    type: bool
-   default: false
+   default: true
   maintenance_mode:
    type: bool
    default: false
