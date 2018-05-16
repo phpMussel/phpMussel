@@ -2,7 +2,7 @@
 # phpMussel repository can be found here:
 # https://github.com/phpMussel/phpMussel/
 
-# Written based on the .gitattributes guide available from:
+# Refer to:
 # https://help.github.com/articles/dealing-with-line-endings/
 
 * text eol=lf
@@ -25,3 +25,12 @@
 *.tar binary
 *.xdp binary
 *.zip binary
+
+# Refer to:
+# https://github.com/github/linguist
+
+_docs/* linguist-documentation
+components.dat linguist-language=YAML
+plugins.dat linguist-language=YAML
+themes.dat linguist-language=YAML
+config.ini.RenameMe linguist-language=INI
