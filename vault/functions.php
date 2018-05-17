@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.14).
+ * This file: Functions file (last modified: 2018.05.17).
  */
 
 /**
@@ -605,6 +605,9 @@ $phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
         !$key = $phpMussel['HexSafe'](hash('sha512', $key) . hash('whirlpool', $key))
     )) {
         return false;
+    }
+    if ($phpMussel['Config']['legal']['pseudonymise_ip_addresses']) {
+        $ip = $phpMussel['Pseudonymise-IP']($ip);
     }
     $k = strlen($key);
     $FileSize = strlen($In);
@@ -4946,7 +4949,13 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
  * @return bool True on success; False on failure.
  */
 $phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$phpMussel) {
-    $Origin = $phpMussel['Mussel_sapi'] ? 'CLI' : $_SERVER[$phpMussel['Config']['general']['ipaddr']];
+    if ($phpMussel['Mussel_sapi']) {
+        $Origin = 'CLI';
+    } else {
+        $Origin = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
+            $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+        ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']];
+    }
     $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['lang']['data_not_available'] : trim($phpMussel['whyflagged']);
     if ($phpMussel['Config']['general']['scan_log_serialized']) {
         if (!isset($phpMussel['memCache']['objects_scanned'])) {
@@ -5745,4 +5754,23 @@ $phpMussel['LogRotation'] = function ($Pattern) use (&$phpMussel) {
         }
     }
     return $Err ? false : true;
+};
+
+/**
+ * Pseudonymise an IP address (reduce IPv4s to /24s and IPv6s to /32s).
+ */
+$phpMussel['Pseudonymise-IP'] = function($IP) {
+    if (($CPos = strpos($IP, ':')) !== false) {
+        $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos +1) ?: '')];
+        if (($CPos = strpos($Parts[1], ':')) !== false) {
+            $Parts[1] = substr($Parts[1], 0, $CPos) ?: '';
+        }
+        $Parts = $Parts[0] . ':' . $Parts[1] . '::x';
+        return str_replace(':::', '::', $Parts);
+    }
+    return preg_replace(
+        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
+        '\1.\2.\3.x',
+        $IP
+    );
 };

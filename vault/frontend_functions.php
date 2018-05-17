@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.14).
+ * This file: Front-end functions file (last modified: 2018.05.16).
  */
 
 /**
@@ -1567,7 +1567,7 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
         $Pattern_FrontEndLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['FrontEndLog'], true);
     }
     $FileLC = strtolower($File);
-    return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
+    return preg_match('~\.log(?:\.gz)?$~', $FileLC) || (
         $phpMussel['Config']['general']['scan_log'] && preg_match($Pattern_scan_log, $File)
     ) || (
         $phpMussel['Config']['general']['scan_log_serialized'] && preg_match($Pattern_scan_log_serialized, $File)

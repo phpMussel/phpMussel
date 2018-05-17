@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.05.09).
+ * This file: Upload handler (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -83,7 +83,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             "== HONEYPOT EVENT ==\nDATE: " . $phpMussel['TimeFormat'](
                 $phpMussel['memCache']['start_time'],
                 $phpMussel['Config']['general']['timeFormat']
-            ) . "\nIP ADDRESS: " . $_SERVER[$phpMussel['Config']['general']['ipaddr']] . "\n"
+            ) . "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
+                $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+            ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']]) . "\n"
         ];
     }
 
@@ -332,7 +334,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             ) ? '' : $phpMussel['safety'] . "\n\n";
             $phpMussel['memCache']['Handle']['Data'] .=
                 'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
-                "\nIP ADDRESS: " . $_SERVER[$phpMussel['Config']['general']['ipaddr']] .
+                "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
+                    $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+                ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']]) .
                 "\n== SCAN RESULTS / WHY FLAGGED ==\n" .
                 $phpMussel['whyflagged'] .
                 "\n== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==\n" .
@@ -369,6 +373,11 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             header('HTTP/1.1 403 Forbidden');
             header('Status: 403 Forbidden');
         }
+
+        /** Include privacy policy. */
+        $phpMussel['TemplateData']['pp'] = empty(
+            $phpMussel['Config']['legal']['privacy_policy']
+        ) ? '' : '<br /><a href="' . $phpMussel['Config']['legal']['privacy_policy'] . '">' . $phpMussel['lang']['PrivacyPolicy'] . '</a>';
 
         /** Generate HTML output. */
         $phpMussel['HTML'] = $phpMussel['ParseVars'](

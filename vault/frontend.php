@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.09).
+ * This file: Front-end handler (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -326,8 +326,10 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
             $phpMussel['Now'],
             $phpMussel['Config']['general']['FrontEndLog']
         ) : $phpMussel['Config']['general']['FrontEndLog'];
-        $phpMussel['FrontEndLog'] = $_SERVER[$phpMussel['IPAddr']] . ' - ' . $phpMussel['FE']['DateTime'] . ' - ';
-        $phpMussel['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
+        $phpMussel['FrontEndLog'] = (
+            $phpMussel['Config']['legal']['pseudonymise_ip_addresses']
+        ) ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']];
+        $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['FE']['DateTime'] . ' - ' . (empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"');
     }
     if ($phpMussel['FE']['state_msg']) {
         $phpMussel['LoginAttempts']++;
