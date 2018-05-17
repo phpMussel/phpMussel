@@ -645,6 +645,9 @@ Configuración relacionada con los requisitos legales.
 "pseudonymise_ip_addresses"
 - ¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí; False = No [Predefinido].
 
+"privacy_policy"
+- La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar.
+
 #### "template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
 

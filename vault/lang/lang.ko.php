@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.04.03).
+ * This file: Korean language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = '개인 정보 정책';
 $phpMussel['lang']['SafeBrowseLookup_200'] = '잠재적으로 유해한 URL이 감지되었습니다';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API 요청이 부정';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API 인증 오류';

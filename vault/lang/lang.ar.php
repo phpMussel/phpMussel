@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.04.03).
+ * This file: Arabic language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,7 @@ if (!defined('phpMussel')) {
 /** Language text direction (RTL). */
 $phpMussel['lang']['textDir'] = 'rtl';
 
+$phpMussel['lang']['PrivacyPolicy'] = 'سياسة الخصوصية';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'يحتمل أن تكون ضارة URL الكشف';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.04.03).
+ * This file: Turkish language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,7 @@ $phpMussel['Plural-Rule'] = function ($Num) {
     return $Num <= 1 ? 0 : 1;
 };
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Gizlilik Politikası';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'Potansiyel olarak zararlı URL tespit edildi';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API istek hatası';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API yetkilendirme hatası';

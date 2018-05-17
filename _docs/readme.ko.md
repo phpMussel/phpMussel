@@ -645,6 +645,9 @@ URL 스캐너 API 조회 설정.
 "pseudonymise_ip_addresses"
 - 로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).
 
+"privacy_policy"
+- 생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.
+
 #### "template_data" (카테고리)
 템플릿과 테마 지시어 / 변수.
 

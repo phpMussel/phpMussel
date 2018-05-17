@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.04.03).
+ * This file: Russian language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['Plural-Rule'] = function ($Num) {
     return $Num % 10 >= 2 && $Num % 10 <= 4 && ($Num % 100 < 10 || $Num % 100 >= 20) ? 1 : 2;
 };
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Политика Конфиденциальности';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'Потенциально вредное URL обнаружено';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'Ошибка запроса API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Ошибка авторизации API';

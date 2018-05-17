@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2018.04.03).
+ * This file: Chinese (traditional) language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = '隱私政策';
 $phpMussel['lang']['SafeBrowseLookup_200'] = '可能有害的URL檢測';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API請求錯誤';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API授權錯誤';

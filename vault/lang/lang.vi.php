@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2018.04.03).
+ * This file: Vietnamese language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Chính sách bảo mật';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'URL đó là có khả năng có hại đã được phát hiện';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'Lỗi yêu cầu API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Lỗi ủy quyền API';

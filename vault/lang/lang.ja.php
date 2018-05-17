@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.04.03).
+ * This file: Japanese language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'プライバシー・ポリシー';
 $phpMussel['lang']['SafeBrowseLookup_200'] = '潜在的に有害なＵＲＬが検出されました';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'ＡＰＩリクエストが不正である';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'ＡＰＩ認証エラー';

@@ -645,6 +645,9 @@ Konfigurasi yang berkaitan dengan persyaratan hukum.
 "pseudonymise_ip_addresses"
 - Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].
 
+"privacy_policy"
+- Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan.
+
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 

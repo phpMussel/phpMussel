@@ -645,6 +645,9 @@ Konfiguration für gesetzliche Anforderungen.
 "pseudonymise_ip_addresses"
 - Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
 
+"privacy_policy"
+- Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL, oder lassen Sie sie leer, um sie zu deaktivieren.
+
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 

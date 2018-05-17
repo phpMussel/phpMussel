@@ -645,6 +645,9 @@ Configuratie met betrekking tot wettelijke vereisten.
 "pseudonymise_ip_addresses"
 - Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].
 
+"privacy_policy"
+- Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen.
+
 #### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.04.03).
+ * This file: Bangla language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'গোপনীয়তা নীতি';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'সম্ভাব্য ক্ষতিকারক URL সনাক্ত হয়েছে';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API অনুরোধ ত্রুটি';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API অনুমোদন ত্রুটি';

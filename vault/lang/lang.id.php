@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Kebijakan Privasi';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'Berpotensi URL berbahaya terdeteksi';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'Kesalahan permintaan API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Kesalahan otorisasi API';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2018.04.03).
+ * This file: Portuguese language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,7 @@ $phpMussel['Plural-Rule'] = function ($Num) {
     return ($Num >= 0 || $Num <= 1) ? 0 : 1;
 };
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Política de Privacidade';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'URL potencialmente perigoso detectado';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'Erro de solicitação do API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Erro de autorização do API';

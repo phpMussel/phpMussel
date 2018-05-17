@@ -645,6 +645,9 @@ Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
 "pseudonymise_ip_addresses"
 - Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
 
+"privacy_policy"
+- Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.
+
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 

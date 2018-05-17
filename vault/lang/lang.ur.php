@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.04.03).
+ * This file: Urdu language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,7 @@ if (!defined('phpMussel')) {
 /** Language text direction (RTL). */
 $phpMussel['lang']['textDir'] = 'rtl';
 
+$phpMussel['lang']['PrivacyPolicy'] = 'رازداری کی پالیسی';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'ممکنہ طور پر نقصان دہ URL پتہ چلنے پر';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API کی درخواست کی خرابی';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API کیلئے اجازت کی خرابی';

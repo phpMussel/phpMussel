@@ -645,6 +645,9 @@ Configuration relative aux exigences légales.
 « pseudonymise_ip_addresses »
 - Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
+« privacy_policy »
+- L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.
+
 #### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
 

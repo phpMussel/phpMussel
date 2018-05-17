@@ -645,6 +645,9 @@ URL掃描儀API配置。
 『pseudonymise_ip_addresses』
 - 編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。
 
+『privacy_policy』
+- 要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。
+
 #### 『template_data』 （類別）
 指令和變量為模板和主題。
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.04.03).
+ * This file: Hindi language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'गोपनीयता नीति';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'संभावित हानिकारक URL का पता चला';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API अनुरोध त्रुटि';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API प्राधिकरण त्रुटि';

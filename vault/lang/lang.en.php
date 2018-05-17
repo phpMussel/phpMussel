@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2018.04.03).
+ * This file: English language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['PrivacyPolicy'] = 'Privacy Policy';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentially harmful URL detected';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';

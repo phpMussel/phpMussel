@@ -77,6 +77,7 @@ $phpMussel['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）�
 $phpMussel['lang']['config_general_timezone'] = '您的時區。';
 $phpMussel['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。';
 $phpMussel['lang']['config_heuristic_threshold'] = '有某些簽名的phpMussel意味為確定可疑和可能惡意文件零件被上傳有不在他們自己確定那些文件被上傳特別是作為惡意。​這個『threshold』數值告訴phpMussel什麼是最大總重量的可疑和潛在惡意文件零件被上傳允許之前那些文件是被識別作為惡意。​定義的重量在這個上下文是總數值的可疑和可能惡意文件零件確定。​作為默認，​這個數值將會設置作為3。​一個較低的值通常將結果在一個更高的發生的假陽性但一個更高的發生的惡意文件被確定，​而一個更高的數值將通常結果在一個較低的發生的假陽性但一個較低的數值的惡意文件被確定。​它是通常最好忽略這個數值除非您遇到關聯問題。';
+$phpMussel['lang']['config_legal_privacy_policy'] = '要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。';
 $phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = '編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。';
 $phpMussel['lang']['config_signatures_Active'] = '活性簽名文件的列表，​以逗號分隔。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel應該使用簽名為廣告軟件檢測嗎？​False（假）=不檢查，​True（真）=檢查【默認】。';
