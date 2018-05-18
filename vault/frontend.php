@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.17).
+ * This file: Front-end handler (last modified: 2018.05.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1336,10 +1336,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Prepare installed component metadata and options for display. */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
+
+        /** Skip if component is malformed. */
         if (empty($phpMussel['Components']['ThisComponent']['Name']) && empty($phpMussel['lang']['Name: ' . $phpMussel['Components']['Key']])) {
             $phpMussel['Components']['ThisComponent'] = '';
             continue;
         }
+
+        /** Execute any necessary preload instructions. */
+        if (!empty($phpMussel['Components']['ThisComponent']['When Checking'])) {
+            $phpMussel['FE_Executor']($phpMussel['Components']['ThisComponent']['When Checking']);
+        }
+
         $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
@@ -1378,12 +1386,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                     $phpMussel['Components']['ThisComponent']['RemoteData'], "\n\n"
                 )) !== false
             ) {
+
+                /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
                     $phpMussel['YAML'](
                         substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                         $phpMussel['Components']['RemoteMeta']
                     );
                 }
+
                 if (isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'])) {
                     $phpMussel['Components']['ThisComponent']['Latest'] =
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'];
@@ -1704,6 +1715,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             );
         }
     }
+    /** Cleanup. */
     unset($phpMussel['Components']['ThisComponent']);
 
     /** Write annotations for newly found component metadata. */

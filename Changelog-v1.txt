@@ -27,6 +27,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   addresses when logging. Added the ability to include a privacy policy link
   in the footer of the Access Denied page.
 
+- [2018.05.18; Minor code change; Maikuolan]: Refactored most of the procedures
+  for the front-end updates page, splitting some large closures and slightly
+  reducing filesize footprint. Added some new internal executor abilities for
+  components metadata to the front-end updates page, allowing for theoretical
+  smoother transitions when update channels change.
+
 === Version/Release 1.3.1 ===
 PATCH RELEASE.
 

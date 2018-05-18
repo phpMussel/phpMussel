@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.4.0-DEV+18136648
+ Version: 1.4.0-DEV+18137238
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -130,8 +130,8 @@ phpMussel:
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - d21b972e6b04230e306cf42ac7fa6b7c:135824
-   - c6e91ceb95f99a9f3fe05fe76cce851c:78840
+   - 9aeb547fc7e3d80ee40f0b133d39017a:136205
+   - 8131e086899d7fe47cdded06532b71d4:79715
    - c70f898256ca50e152407ae6ee87dc78:268149
    - f68948c5b10f16d8506eb1611fd5d8db:4818
    - 8e03209e7fc6641b45094e584340feff:83
@@ -451,7 +451,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2018.136.648
+ Version: 2018.137.238
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -464,7 +464,7 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - c1b070e7f2ff2e4e4982905f22396326:70918
+   - 2476dc7c538a769609bd085c126fbcb5:70924
    - 556d3569112a176cb667bf48327dd5a7:9587
  Reannotate: components.dat
 l10n/vi:
