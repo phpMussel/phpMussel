@@ -5,9 +5,9 @@
     <td class="right extend">
         <div class="s">{state_msg}</div>
         <table><tr><td class="spanner">
-            <form action="?phpmussel-page=statistics" method="POST">
+            <form id="statForm" action="?phpmussel-page=statistics" method="POST">
                 <input name="ClearStats" type="hidden" value="1" />
-                <input type="submit" value="{field_clear_all}" class="auto" />
+                <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
             </form>
         </td></tr></table>
         <table>

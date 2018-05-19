@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.05.16).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -102,6 +102,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Theo tài liệu VirusT
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Xem mô tả ở trên).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Theo mặc định, phpMussel sẽ hạn chế các tập tin nó quét bằng cách sử dụng Virus Total API đến các tập tin mà nó coi như là "đáng ngờ". Bạn có thể tùy chọn điều chỉnh hạn chế này bằng cách thay đổi các giá trị của tùy chọn <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel nên áp dụng các kết quả quét từ sử dụng Virus Total API như các phát hiện hoặc như các cân nặng phát hiện? Tùy chọn này tồn tại, bởi vì, mặc dù quét một tập tin sử dụng nhiều công cụ (như Virus Total làm) nên dẫn đến một tỷ lệ phát hiện tăng (và do đó ở một số cao hơn các tập tin độc hại bị bắt), nó cũng có thể dẫn đến một số cao hơn của sai tích cực, và vì thế, trong một số trường hợp, các kết quả quét có thể là tốt hơn sử dụng như một điểm tự tin chứ không phải là một kết luận dứt khoát. Nếu giá trị 0 được sử dụng, các kết quả quét từ sử dụng Virus Total API sẽ được áp dụng như phát hiện, và vì thế, nếu bất kỳ công cụ được sử dụng bởi Virus Total đánh dấu các tập tin được quét như độc hại, phpMussel sẽ cân nhắc các tập tin đến được độc hại. Nếu bất kỳ giá trị nào khác được sử dụng, các kết quả quét từ sử dụng Virus Total API sẽ được áp dụng như cân nặng phát hiện, và vì thế, các số lượng động cơ được sử dụng bởi Virus Total mà đánh dấu các tập tin được quét như được độc hại sẽ phục vụ như là một điểm tin (hay cân nặng phát hiện) cho nếu các tập tin được quét nên được xem như độc hại bởi phpMussel (giá trị sử dụng sẽ đại diện cho số điểm tin cậy hay cân nặng tối thiểu mà là cần thiết để có thể được coi độc hại). Giá trị 0 được sử dụng bởi mặc định.';
+$phpMussel['lang']['confirm_action'] = 'Bạn có chắc chắn muốn "%s" không?';
 $phpMussel['lang']['field_activate'] = 'Kích hoạt';
 $phpMussel['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $phpMussel['lang']['field_component'] = 'Thành phần';

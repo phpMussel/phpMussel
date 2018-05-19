@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.18).
+ * This file: Front-end handler (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2209,6 +2209,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
         $phpMussel['FE']['state_msg'] .= '<span class="txtRd">' . $phpMussel['lang']['tip_quarantine_disabled'] . '</span><br />';
     }
 
+    /** Generate confirm button. */
+    $phpMussel['FE']['Confirm-DeleteAll'] = $phpMussel['GenerateConfirm']($phpMussel['lang']['field_delete_all'], 'quarantineForm');
+
     /** Append necessary quarantine JS. */
     $phpMussel['FE']['JS'] .= "function qOpt(e){b=document.getElementById(e+'-S'),'delete-file'==b.value?hideid(e):showid(e)}\n";
 
@@ -2329,6 +2332,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     if (!$phpMussel['Config']['general']['statistics']) {
         $phpMussel['FE']['state_msg'] .= '<span class="txtRd">' . $phpMussel['lang']['tip_statistics_disabled'] . '</span><br />';
     }
+
+    /** Generate confirm button. */
+    $phpMussel['FE']['Confirm-ClearAll'] = $phpMussel['GenerateConfirm']($phpMussel['lang']['field_clear_all'], 'statForm');
 
     /** Fetch statistics cache data. */
     if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: [])) {

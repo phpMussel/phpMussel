@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.18).
+ * This file: Front-end functions file (last modified: 2018.05.19).
  */
 
 /**
@@ -1648,4 +1648,9 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
     ) || (
         $phpMussel['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
     );
+};
+
+$phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
+    $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($phpMussel['lang']['confirm_action'], $Action));
+    return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
 };

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.16).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -102,6 +102,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total APIのド�
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（上記の説明を参照）。';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'デフォルト設定では、​phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。​<code>vt_suspicion_level</code>ディレクティブを編集することのより、​この制限を変更することが可能です。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、​検出の重み付けとして扱うべきか？​複数のエンジン（Virus Totalのように）を使用したスキャニングは、​検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、​このディレクティブが存在します。​したがって、​スキャニング結果は、​決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。​値が０の場合、​Virus Total APIを使ったスキャンは検出として扱われ、​Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、​phpMusselもマルウェアと判断します。​その他の値の場合は結果は検出の重み付けとなり、​スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、​あるいは重み）。​デフォルト値は０です。';
+$phpMussel['lang']['confirm_action'] = 'あなたは「%s」したいですか？';
 $phpMussel['lang']['field_activate'] = 'アクティブにする';
 $phpMussel['lang']['field_clear_all'] = 'すべてキャンセル';
 $phpMussel['lang']['field_component'] = 'コンポーネント';

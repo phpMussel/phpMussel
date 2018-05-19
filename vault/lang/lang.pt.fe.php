@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.05.16).
+ * This file: Portuguese language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -102,6 +102,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'De acordo com o Virus T
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Ver descrição acima).';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Por padrão, phpMussel restringirá os arquivos que são verificado usando o Virus Total API a esses arquivos que considera "suspeito". Opcionalmente, você pode ajustar essa restrição via alterando o valor ao <code>vt_suspicion_level</code> directiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de arquivos maliciosos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão.';
+$phpMussel['lang']['confirm_action'] = 'Você tem certeza que quer "%s"?';
 $phpMussel['lang']['field_activate'] = 'Ativar';
 $phpMussel['lang']['field_clear_all'] = 'Cancelar tudo';
 $phpMussel['lang']['field_component'] = 'Componente';
