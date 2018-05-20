@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.19).
+ * This file: Front-end functions file (last modified: 2018.05.21).
  */
 
 /**
@@ -99,20 +99,24 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($phpMussel['Vault'] . $QueryParts[0]) || !is_readable($phpMussel['Vault'] . $QueryParts[0])) {
         return false;
     }
+
+    /** Fetch file content. */
+    if (!isset($phpMussel['FE_Executor_Files'][$QueryParts[0]])) {
+        $phpMussel['FE_Executor_Files'][$QueryParts[0]] = ['Old' => $phpMussel['ReadFile']($phpMussel['Vault'] . $QueryParts[0])];
+        $phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'] = $phpMussel['FE_Executor_Files'][$QueryParts[0]]['Old'];
+        $Data = &$phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'];
+    }
+
+    /** Normalise main instruction. */
     $QueryParts[1] = strtolower($QueryParts[1]);
 
     /** Replace file content. */
     if ($QueryParts[1] === 'replace' && !empty($QueryParts[3]) && strtolower($QueryParts[3]) === 'with') {
-        $FileData = $phpMussel['ReadFile']($phpMussel['Vault'] . $QueryParts[0]);
-        $NewFileData = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $FileData);
-        if ($NewFileData !== $FileData && is_writable($phpMussel['Vault'] . $QueryParts[0])) {
-            $Handle = fopen($phpMussel['Vault'] . $QueryParts[0], 'w');
-            fwrite($Handle, $NewFileData);
-            fclose($Handle);
-            return true;
-        }
+        $Data = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $Data);
+        return true;
     }
 
+    /** Nothing done. Return false (failure). */
     return false;
 };
 
@@ -697,6 +701,7 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
  */
 $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
     $phpMussel['Arrayify']($Closures);
+    $phpMussel['FE_Executor_Files'] = [];
     foreach ($Closures as $Closure) {
         if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
             $phpMussel[$Closure]();
@@ -708,6 +713,14 @@ $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
             }
         }
     }
+    foreach ($phpMussel['FE_Executor_Files'] as $Name => $Data) {
+        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && file_exists($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
+            $Handle = fopen($phpMussel['Vault'] . $Name, 'w');
+            fwrite($Handle, $Data['New']);
+            fclose($Handle);
+        }
+    }
+    unset($phpMussel['FE_Executor_Files']);
 };
 
 /**
@@ -1077,10 +1090,10 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     $FileData = [];
     $Annotations = [];
     foreach ($ID as $phpMussel['Components']['ThisTarget']) {
-        if (
-            !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']) ||
-            !isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Reannotate'])
-        ) {
+        if (!isset(
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'],
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Reannotate']
+        )) {
             continue;
         }
         $phpMussel['Components']['BytesAdded'] = 0;

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.17).
+ * This file: Functions file (last modified: 2018.05.21).
  */
 
 /**
@@ -30,12 +30,7 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
  * @return bool Execution failed(false)/succeeded(true).
  */
 $phpMussel['Register_Hook'] = function ($what, $where) use (&$phpMussel) {
-    if (
-        !isset($phpMussel['MusselPlugins']['hooks']) ||
-        !isset($phpMussel['MusselPlugins']['closures']) ||
-        !$what ||
-        !$where
-    ) {
+    if (!isset($phpMussel['MusselPlugins']['hooks'], $phpMussel['MusselPlugins']['closures']) || !$what || !$where) {
         return false;
     }
     if (!isset($phpMussel['MusselPlugins']['hooks'][$where])) {
@@ -2734,7 +2729,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                     if (substr($ThisSig, 0, 1) == '>') {
                         $ThisSig = explode('>', $ThisSig, 4);
-                        if (!isset($ThisSig[1]) || !isset($ThisSig[2]) || !isset($ThisSig[3])) {
+                        if (!isset($ThisSig[1], $ThisSig[2], $ThisSig[3])) {
                             break;
                         }
                         $ThisSig[3] = (int)$ThisSig[3];
@@ -3665,7 +3660,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Set final debug values, if this has been enabled. */
-    if (isset($phpMussel['DebugArr']) && isset($phpMussel['DebugArrKey'])) {
+    if (isset($phpMussel['DebugArr'], $phpMussel['DebugArrKey'])) {
         $phpMussel['DebugArr'][$phpMussel['DebugArrKey']]['Results'] = !$out ? 1 : 2;
         $phpMussel['DebugArr'][$phpMussel['DebugArrKey']]['Output'] = $out;
     }
@@ -3968,14 +3963,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     if ($phpMussel['EOF']) {
         $phpMussel['whyflagged'] = $phpMussel['killdata'] = $phpMussel['PEData'] = '';
-        if (
-            $dpt === 0 ||
-            !isset($phpMussel['memCache']['objects_scanned']) ||
-            !isset($phpMussel['memCache']['detections_count']) ||
-            !isset($phpMussel['memCache']['scan_errors'])
-        ) {
-            $phpMussel['memCache']['objects_scanned'] =
-            $phpMussel['memCache']['detections_count'] =
+        if ($dpt === 0 || !isset(
+            $phpMussel['memCache']['objects_scanned'],
+            $phpMussel['memCache']['detections_count'],
+            $phpMussel['memCache']['scan_errors']
+        )) {
+            $phpMussel['memCache']['objects_scanned'] = 0;
+            $phpMussel['memCache']['detections_count'] = 0;
             $phpMussel['memCache']['scan_errors'] = 0;
         }
     } else {
@@ -3988,13 +3982,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         if (!isset($phpMussel['PEData'])) {
             $phpMussel['PEData'] = '';
         }
-        if (
-            !isset($phpMussel['memCache']['objects_scanned']) ||
-            !isset($phpMussel['memCache']['detections_count']) ||
-            !isset($phpMussel['memCache']['scan_errors'])
-        ) {
-            $phpMussel['memCache']['objects_scanned'] =
-            $phpMussel['memCache']['detections_count'] =
+        if (!isset(
+            $phpMussel['memCache']['objects_scanned'],
+            $phpMussel['memCache']['detections_count'],
+            $phpMussel['memCache']['scan_errors']
+        )) {
+            $phpMussel['memCache']['objects_scanned'] = 0;
+            $phpMussel['memCache']['detections_count'] = 0;
             $phpMussel['memCache']['scan_errors'] = 0;
         }
     }
