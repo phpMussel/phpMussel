@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.21).
+ * This file: Front-end functions file (last modified: 2018.05.22).
  */
 
 /**
@@ -96,6 +96,8 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     } else {
         $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
     }
+
+    /** Safety mechanism. */
     if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($phpMussel['Vault'] . $QueryParts[0]) || !is_readable($phpMussel['Vault'] . $QueryParts[0])) {
         return false;
     }
@@ -104,8 +106,10 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     if (!isset($phpMussel['FE_Executor_Files'][$QueryParts[0]])) {
         $phpMussel['FE_Executor_Files'][$QueryParts[0]] = ['Old' => $phpMussel['ReadFile']($phpMussel['Vault'] . $QueryParts[0])];
         $phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'] = $phpMussel['FE_Executor_Files'][$QueryParts[0]]['Old'];
-        $Data = &$phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'];
     }
+
+    /** For clean, easy referencing. */
+    $Data = &$phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'];
 
     /** Normalise main instruction. */
     $QueryParts[1] = strtolower($QueryParts[1]);
