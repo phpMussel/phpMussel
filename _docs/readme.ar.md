@@ -968,7 +968,7 @@ Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</d
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
  <li>قراءة <strong><a href="https://github.com/phpMussel/phpMussel/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
- <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
+ <li>لا يوجد حتى الآن إجابات؟ يرجى طلب المساعدة عبر صفحة القضايا.</li>
 </ul></div>
 
 #### <div dir="rtl"><a name="MINIMUM_PHP_VERSION"></a>أريد استخدام phpMussel مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟<br /><br /></div>
@@ -1163,4 +1163,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 16 مايو 2018 (2018.05.16).</div>
+<div dir="rtl">آخر تحديث: 21 مايو 2018 (2018.05.21).</div>

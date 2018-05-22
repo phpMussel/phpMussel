@@ -805,8 +805,8 @@ Tần suất cập nhật thay đổi tùy thuộc vào các tập tin chữ ký
 
 - Bạn đang sử dụng phiên bản mới nhất của phần mềm? Bạn đang sử dụng phiên bản mới nhất của tập tin chữ ký của bạn? Nếu câu trả lời cho một trong hai những câu hỏi này là không, cố gắng cập nhật mọi thứ đầu tiên, và kiểm tra nếu vấn đề vẫn còn. Nếu nó vẫn còn, tiếp tục đọc.
 - Bạn đã kiểm tra tất cả các tài liệu chưa? Nếu không, xin hãy làm như vậy. Nếu vấn đề không thể giải quyết bằng cách sử dụng tài liệu, hãy tiếp tục đọc.
-- Bạn đã kiểm tra các **[trang vấn đề](https://github.com/phpMussel/phpMussel/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
-- Nếu vấn đề vẫn còn, vui lòng nói cho chúng tôi bằng cách bắt đầu một cuộc thảo luận mới trên các trang vấn đề.
+- Bạn đã kiểm tra các **[trang issues](https://github.com/phpMussel/phpMussel/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
+- Nếu vấn đề vẫn còn, vui lòng hãy tìm sự giúp đỡ về nó bằng cách tạo ra một issue mới trên trang issues.
 
 #### <a name="MINIMUM_PHP_VERSION"></a>Tôi muốn sử dụng phpMussel với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
 
@@ -999,4 +999,4 @@ Danh sách xám chữ ký rất hữu ích nếu bạn cần giải quyết các
 ---
 
 
-Lần cuối cập nhật: 16 Tháng Năm 2018 (2018.05.16).
+Lần cuối cập nhật: 21 Tháng Năm 2018 (2018.05.21).

@@ -806,7 +806,7 @@ Update frequency varies depending on the signature files in question. All mainta
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/phpMussel/phpMussel/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page.
+- If the problem still persists, please seek help about it by creating a new issue on the issues page.
 
 #### <a name="MINIMUM_PHP_VERSION"></a>I want to use phpMussel with a PHP version older than 5.4.0; Can you help?
 
@@ -999,4 +999,4 @@ The signature greylist is useful if you need to resolve problems caused by a par
 ---
 
 
-Last Updated: 16 May 2018 (2018.05.16).
+Last Updated: 21 May 2018 (2018.05.21).
