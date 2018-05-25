@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.4.0 ===
+MINOR RELEASE.
+
 - [2018.05.07-09; NEW FEATURE; Maikuolan]: Added log rotation to phpMussel.
   With log rotation, it's possible to specify a maximum number of logfiles that
   should exist in the vault, and optionally delete or achive them when that
@@ -36,6 +41,20 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.05.19; Sub-minor code change; Maikuolan]: Added some basic confirmation
   prompts to some of the "clear all" and "delete all" buttons on some front-end
   pages (may expand this in the future).
+
+- [2018.05.24; Documentation; Maikuolan]: Added a "legal information" section
+  to the documentation to address the collection and processing of PII, and how
+  it relates to users, third parties, logging, etc, including some basic
+  information about GDPR/DSGVO and some related links for further information.
+  Refer github.com/CIDRAM/CIDRAM/issues/66
+
+- [Supported Versions] Because this release contains changes which may improve
+  the legal compliancy of the package for some users, all previous versions of
+  the package are hereby marked EoL/unsupported on the "compatibility charts".
+  Refer maikuolan.github.io/Compatibility-Charts/
+
+Caleb M (Maikuolan),
+May 25, 2018.
 
 === Version/Release 1.3.1 ===
 PATCH RELEASE.
