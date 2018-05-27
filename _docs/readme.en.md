@@ -1014,7 +1014,7 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 ##### 11.2.0 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the [Google Fonts](https://fonts.google.com/) service.
 
 *Relevant configuration directives:*
 - `general` -> `disable_webfonts`
@@ -1196,4 +1196,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 25 May 2018 (2018.05.25).
+Last Updated: 26 May 2018 (2018.05.26).

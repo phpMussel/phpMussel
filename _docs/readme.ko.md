@@ -994,11 +994,11 @@ CLI 모드 나 phpMussel API를 사용하여 스캔한다고 가정 해보십시
 
 ### 11. <a name="SECTION11"></a>법률 정보
 
-#### 11.0 SECTION PREAMBLE
+#### 11.0 섹션 프리앰블
 
-This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+이 절은 패키지의 사용 및 구현에 관한 가능한 법적 고려 사항을 설명하고 기본 관련 정보를 제공하기위한 것입니다. 이 정보는 자국에서있을 수있는 법적 요구 사항 때문에 일부 사용자에게 중요 할 수 있습니다. 일부 사용자는이 정보에 따라 웹 사이트 정책을 조정해야 할 수도 있습니다.
 
-First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+무엇보다, 나는 (패키지 저자)가 변호사 또는 자격을 갖춘 법률 전문가가 아님을 알아 주시기 바랍니다. 따라서, 나는 법률 자문을 제공 할 자격이 없다. 또한 법률 요건은 국가 및 관할 구역마다 다를 수 있습니다. 이러한 다양한 법적 요구 사항도 때로는 충돌 할 수 있습니다 (예를 들면 : [개인 정보 보호 권리와](https://ko.wikipedia.org/wiki/%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%EB%A7%9D_%EC%9D%B4%EC%9A%A9%EC%B4%89%EC%A7%84_%EB%B0%8F_%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8_%EB%93%B1%EC%97%90_%EA%B4%80%ED%95%9C_%EB%B2%95%EB%A5%A0#%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%9D%98_%EB%B3%B4%ED%98%B8) [잊혀진 권리를](https://namu.wiki/w/%EC%9E%8A%ED%9E%90%20%EA%B6%8C%EB%A6%AC) 선호하는 국가들, 확장 된 데이터 보존을 선호하는 국가들에 비해). 패키지에 대한 액세스가 특정 국가 또는 관할 지역에만 국한되지, 않으므로 패키지 사용자베이스가 지리적으로 다양 할 수 있습니다. 이 점을 고려해 볼 때, 나는 모든 사람에게 "법적으로 준수하는"것이 무엇을 의미 하는지를 말할 입장이 아닙니다. 그러나 여기에있는 정보가 패키지의 맥락에서 법적으로 준수하기 위해해야 할 일을 스스로 결정하는 데 도움이되기를 바랍니다. 의심의 여지가 있거나 법률적인 관점에서 추가 도움과 조언이 필요한 경우 자격을 갖춘 법률 전문가와상의하는 것이 좋습니다.
 
 #### 11.1 LIABILITY AND RESPONSIBILITY
 
@@ -1016,14 +1016,14 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.1 URL SCANNER
 
 URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `urlscanner` -> `lookup_hphosts`
 - `urlscanner` -> `google_api_key`
 
@@ -1035,7 +1035,7 @@ Information (including files and related file metadata) shared with Virus Total,
 
 *See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `virustotal` -> `vt_public_api_key`
 
 #### 11.3 LOGGING
@@ -1067,7 +1067,7 @@ A scan log entry typically includes the following information:
 - CRC32b hashes of the name and contents of the file.
 - What was detected in the file (if anything was detected).
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
@@ -1097,7 +1097,7 @@ A "scan kills" entry typically includes the following information:
 - An MD5 and the size of the file blocked.
 - Whether the file was quarantined, and under what internal name.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `scan_kills`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1110,7 +1110,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1121,7 +1121,7 @@ For example: If I was legally required to delete logs after 30 days, I could spe
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
@@ -1129,7 +1129,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `truncate`
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
@@ -1142,14 +1142,14 @@ In some circumstances, you may be legally required to anonymise or pseudonymise 
 
 phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `legal` -> `pseudonymise_ip_addresses`
 
 ##### 11.3.6 STATISTICS
 
 phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `statistics`
 
 ##### 11.3.7 ENCRYPTION
@@ -1160,7 +1160,7 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 
 When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `general` -> `disable_frontend`
 
 #### 11.5 MARKETING AND ADVERTISING
@@ -1171,7 +1171,7 @@ phpMussel doesn't collect or process any information for marketing or advertisin
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
-*Relevant configuration directives:*
+*관련 설정 지시어 :*
 - `legal` -> `privacy_policy`
 
 #### 11.7 GDPR/DSGVO
@@ -1193,4 +1193,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-최종 업데이트 : 2018년 5월 25일.
+최종 업데이트 : 2018년 5월 26일.

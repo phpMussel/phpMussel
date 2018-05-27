@@ -1014,7 +1014,7 @@ Aus Gründen der Transparenz wird im Folgenden beschrieben, welche Art von Infor
 
 ##### 11.2.0 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das phpMussel-Front-End und die Seite "Upload verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten, das Betriebssystem und andere Details zur Anfrage verfügbar. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
@@ -1196,4 +1196,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 25 Mai 2018 (2018.05.25).
+Zuletzt aktualisiert: 26 Mai 2018 (2018.05.26).

@@ -994,11 +994,11 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ### 11. <a name="SECTION11"></a>ЛЕГАЛЬНАЯ ИНФОРМАЦИЯ
 
-#### 11.0 SECTION PREAMBLE
+#### 11.0 ПРЕАМБУЛА РАЗДЕЛА
 
-This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+Этот раздел документации предназначен для описания возможных юридических соображений, касающихся использования и реализации пакета, и предоставления некоторой базовой связанной информации. Это может быть важно для некоторых пользователей в качестве средства обеспечения соответствия любым юридическим требованиям, которые могут существовать в странах, в которых они работают, и некоторым пользователям, возможно, придется корректировать свои политики веб-сайта в соответствии с этой информацией.
 
-First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+Прежде всего, поймите, что я (автор пакета) не квалифицированный юрист любого рода. Поэтому я не имею юридической силы для предоставления юридических консультаций. Кроме того, в некоторых случаях, точные законодательные требования могут различаться между различными странами и юрисдикциями, и эти различные юридические требования могут иногда противоречить (таких как, например, в случае стран, которые поддерживают права на [неприкосновенность частной жизни](https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%80%D0%B8%D0%BA%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%BE%D0%B9_%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8), и [право быть забытым](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%BE_%D0%BD%D0%B0_%D0%B7%D0%B0%D0%B1%D0%B2%D0%B5%D0%BD%D0%B8%D0%B5), по сравнению с странами, которые предпочитают [расширенное хранение данных](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%AF%D1%80%D0%BE%D0%B2%D0%BE%D0%B9)). Учтите также, что доступ к пакету не ограничивается конкретными странами или юрисдикциями, и, следовательно, пользовательская база пакетов, вероятно, будет географически разнообразной. При рассмотрении этих вопросов, я не в состоянии заявить, что это означает быть «юридически совместимым» для всех пользователей, во всех отношениях. Однако я надеюсь, что приведенная здесь информация поможет вам самим принять решение о том, что вы должны сделать, чтобы оставаться юридически совместимым в контексте пакета. Если у вас есть какие-либо сомнения относительно информации, или если вам нужна дополнительная помощь и рекомендации с юридической точки зрения, Я бы рекомендовал обратиться к квалифицированному юристу.
 
 #### 11.1 LIABILITY AND RESPONSIBILITY
 
@@ -1016,14 +1016,14 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.1 URL SCANNER
 
 URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `urlscanner` -> `lookup_hphosts`
 - `urlscanner` -> `google_api_key`
 
@@ -1035,7 +1035,7 @@ Information (including files and related file metadata) shared with Virus Total,
 
 *See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `virustotal` -> `vt_public_api_key`
 
 #### 11.3 LOGGING
@@ -1067,7 +1067,7 @@ A scan log entry typically includes the following information:
 - CRC32b hashes of the name and contents of the file.
 - What was detected in the file (if anything was detected).
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
@@ -1097,7 +1097,7 @@ A "scan kills" entry typically includes the following information:
 - An MD5 and the size of the file blocked.
 - Whether the file was quarantined, and under what internal name.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `scan_kills`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1110,7 +1110,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1121,7 +1121,7 @@ For example: If I was legally required to delete logs after 30 days, I could spe
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
@@ -1129,7 +1129,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `truncate`
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
@@ -1142,14 +1142,14 @@ In some circumstances, you may be legally required to anonymise or pseudonymise 
 
 phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `legal` -> `pseudonymise_ip_addresses`
 
 ##### 11.3.6 STATISTICS
 
 phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `statistics`
 
 ##### 11.3.7 ENCRYPTION
@@ -1160,7 +1160,7 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 
 When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `general` -> `disable_frontend`
 
 #### 11.5 MARKETING AND ADVERTISING
@@ -1171,7 +1171,7 @@ phpMussel doesn't collect or process any information for marketing or advertisin
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
-*Relevant configuration directives:*
+*Соответствующие директивы конфигурации:*
 - `legal` -> `privacy_policy`
 
 #### 11.7 GDPR/DSGVO
@@ -1193,4 +1193,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Последнее обновление: 25 Май 2018 (2018.05.25).
+Последнее обновление: 26 Май 2018 (2018.05.26).

@@ -1193,4 +1193,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 25 Mai 2018 (2018.05.25).
+Dernière mise à jour : 26 Mai 2018 (2018.05.26).

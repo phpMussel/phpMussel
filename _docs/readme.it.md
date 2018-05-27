@@ -994,11 +994,11 @@ La greylist delle firme è utile se è necessario risolvere i problemi causati d
 
 ### 11. <a name="SECTION11"></a>INFORMAZIONE LEGALE
 
-#### 11.0 SECTION PREAMBLE
+#### 11.0 SEZIONE PREAMBOLO
 
-This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+Questa sezione della documentazione ha lo scopo di descrivere possibili considerazioni legali riguardanti l'uso e l'implementazione del pacchetto, e fornire alcune informazioni di base relative. Questo può essere importante per alcuni utenti come mezzo per garantire la conformità con eventuali requisiti legali che possono esistere nei paesi in cui operano, e alcuni utenti potrebbero aver bisogno di modificare le loro politiche del sito web in conformità con queste informazioni.
 
-First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+Innanzitutto per favore, renditi conto che io (l'autore del pacchetto) non sono un avvocato, né un professionista legale qualificato di alcun tipo. Pertanto, non sono legalmente qualificato per fornire consulenza legale. Inoltre, in alcuni casi, i requisiti legali esatti possono variare a seconda dei paesi e delle giurisdizioni, e questi varie requisiti legali possono a volte entrare in conflitto (come, per esempio, nel caso di paesi che favoriscono i [diritti alla privacy](https://it.wikipedia.org/wiki/Privacy) e il [diritto all'oblio](https://it.wikipedia.org/wiki/Diritto_all%27oblio), contro paesi che favoriscono la [conservazione estesa dei dati](https://it.wikipedia.org/wiki/Direttiva_sulla_conservazione_dei_dati)). Considera inoltre che l'accesso al pacchetto non è limitato a specifici paesi o giurisdizioni, e quindi, la base utente del pacchetto è probabilmente geograficamente diversa. Considerando questi punti, non sono in grado di affermare cosa significa essere "legalmente conformi" per tutti gli utenti, in ogni aspetto. Tuttavia, spero che le informazioni qui contenute ti aiutino a prendere una decisione autonomamente riguardo a ciò che devi fare per rimanere legalmente conforme nel contesto del pacchetto. In caso di dubbi o preoccupazioni in merito alle informazioni qui contenute, o se hai bisogno di aiuto e consigli aggiuntivi da un punto di vista legale, consiglierei di consultare un professionista legale qualificato.
 
 #### 11.1 LIABILITY AND RESPONSIBILITY
 
@@ -1016,14 +1016,14 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.1 URL SCANNER
 
 URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `urlscanner` -> `lookup_hphosts`
 - `urlscanner` -> `google_api_key`
 
@@ -1035,7 +1035,7 @@ Information (including files and related file metadata) shared with Virus Total,
 
 *See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `virustotal` -> `vt_public_api_key`
 
 #### 11.3 LOGGING
@@ -1067,7 +1067,7 @@ A scan log entry typically includes the following information:
 - CRC32b hashes of the name and contents of the file.
 - What was detected in the file (if anything was detected).
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
@@ -1097,7 +1097,7 @@ A "scan kills" entry typically includes the following information:
 - An MD5 and the size of the file blocked.
 - Whether the file was quarantined, and under what internal name.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `scan_kills`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1110,7 +1110,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1121,7 +1121,7 @@ For example: If I was legally required to delete logs after 30 days, I could spe
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
@@ -1129,7 +1129,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `truncate`
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
@@ -1142,14 +1142,14 @@ In some circumstances, you may be legally required to anonymise or pseudonymise 
 
 phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `legal` -> `pseudonymise_ip_addresses`
 
 ##### 11.3.6 STATISTICS
 
 phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `statistics`
 
 ##### 11.3.7 ENCRYPTION
@@ -1160,7 +1160,7 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 
 When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `general` -> `disable_frontend`
 
 #### 11.5 MARKETING AND ADVERTISING
@@ -1171,7 +1171,7 @@ phpMussel doesn't collect or process any information for marketing or advertisin
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
-*Relevant configuration directives:*
+*Direttive di configurazione rilevanti:*
 - `legal` -> `privacy_policy`
 
 #### 11.7 GDPR/DSGVO
@@ -1193,4 +1193,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Ultimo Aggiornamento: 25 Maggio 2018 (2018.05.25).
+Ultimo Aggiornamento: 26 Maggio 2018 (2018.05.26).

@@ -1193,4 +1193,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 25 Mayo de 2018 (2018.05.25).
+Última Actualización: 26 Mayo de 2018 (2018.05.26).

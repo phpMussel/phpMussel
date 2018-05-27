@@ -1158,17 +1158,17 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ### <div dir="rtl">١١. <a name="SECTION11">قانونی معلومات</div>
 
-#### 11.0 SECTION PREAMBLE
+#### <div dir="rtl">١١.٠ سیکشن پریامبل</div>
 
-This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+<div dir="rtl">دستاویزات کا یہ حصہ پیکج کے استعمال اور عمل کے بارے میں ممکنہ قانونی مفکوم بیان کرتا ہے، اور کچھ بنیادی متعلق معلومات فراہم کرتی ہے. بعض صارفین کے لئے شکایت کا یقین کرنے کے لئے یہ ممکن ہو سکتا ہے کہ وہ کسی بھی قانونی تقاضے کے ساتھ موجود ممالک میں موجود ہوسکتے ہیں جس میں وہ کام کرتے ہیں، اور کچھ صارفین اس کی معلومات کے مطابق اپنی ویب سائٹ کی پالیسیوں کو ایڈجسٹ کرنے کی ضرورت ہوسکتی ہے.<br /><br /></div>
 
-First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+<div dir="rtl">سب سے پہلے، سب سے اہم، یاد رکھیں کہ میں (پیکیج کا مصنف) ایک وکیل نہیں ہوں. لہذا، میں قانونی مشورہ فراہم کرنے کے لئے قانونی طور پر قابل نہیں ہوں. اس کے علاوہ، کچھ معاملات میں، قانونی ضروریات مختلف ممالک اور دائرہ کاروں کے درمیان مختلف ہوتی ہیں. یہ مختلف قانونی ضروریات کبھی کبھی متفق ہیں (مثلا، ایسے ممالک جو "رازداری کے حقوق" اور "بھول جانے کا حق"، ایسے ممالک کے مقابلے میں جو "ڈیٹا برقرار رکھنے" کا حق رکھتے ہیں). یہ بھی غور کریں کہ پیکیج تک رسائی مخصوص ممالک یا دائرہ کاروں سے محدود نہیں ہے, اور اس وجہ سے، پیکج کے صارفین جغرافیایی متنوع ہونے کا امکان رکھتے ہیں. ان پوائنٹس پر غور کیا گیا ہے، میں ایسی حیثیت میں نہیں ہوں جو یہ سب کے لئے "قانونی طور پر مطابق" ہونے کا مطلب ہے. تاہم، مجھے امید ہے کہ اس معلومات میں آپ کو یہ فیصلہ کرنے میں مدد ملتی ہے کہ پیکج کے تناظر میں قانونی طور پر مطابق رہنے کے لۓ آپ کو کیا کرنا ہوگا. اگر آپ کو کوئی شبہ ہے، یا اگر آپ کو قانونی نقطہ نظر سے اضافی مدد اور مشورہ کی ضرورت ہو تو، میں ایک قانونی پیشہ ورانہ مشاورت کی سفارش کروں گا.<br /><br /></div>
 
-#### 11.1 LIABILITY AND RESPONSIBILITY
+#### <div dir="rtl">١١.١ ذمہ داری
 
 As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
 
-#### 11.2 THIRD PARTIES
+#### <div dir="rtl">١١.٢ تیسرے فریقوں
 
 Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
 
@@ -1180,16 +1180,20 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
-*Relevant configuration directives:*
-- `general` -> `disable_webfonts`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">disable_webfonts</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.2.1 URL SCANNER
 
 URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
 
-*Relevant configuration directives:*
-- `urlscanner` -> `lookup_hphosts`
-- `urlscanner` -> `google_api_key`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">lookup_hphosts</code> &lt;- <code dir="ltr">urlscanner</code></li>
+ <li><code dir="ltr">google_api_key</code> &lt;- <code dir="ltr">urlscanner</code></li>
+</ul></div>
 
 ##### 11.2.2 VIRUS TOTAL
 
@@ -1199,8 +1203,10 @@ Information (including files and related file metadata) shared with Virus Total,
 
 *See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
-*Relevant configuration directives:*
-- `virustotal` -> `vt_public_api_key`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">vt_public_api_key</code> &lt;- <code dir="ltr">virustotal</code></li>
+</ul></div>
 
 #### 11.3 LOGGING
 
@@ -1231,9 +1237,11 @@ A scan log entry typically includes the following information:
 - CRC32b hashes of the name and contents of the file.
 - What was detected in the file (if anything was detected).
 
-*Relevant configuration directives:*
-- `general` -> `scan_log`
-- `general` -> `scan_log_serialized`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">scan_log</code> &lt;- <code dir="ltr">general</code></li>
+ <li><code dir="ltr">scan_log_serialized</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 When these directives are left empty, this type of logging will remain disabled.
 
@@ -1261,8 +1269,10 @@ A "scan kills" entry typically includes the following information:
 - An MD5 and the size of the file blocked.
 - Whether the file was quarantined, and under what internal name.
 
-*Relevant configuration directives:*
-- `general` -> `scan_kills`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">scan_kills</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.3.2 FRONT-END LOGGING
 
@@ -1274,8 +1284,10 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-*Relevant configuration directives:*
-- `general` -> `FrontEndLog`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.3.3 LOG ROTATION
 
@@ -1285,16 +1297,20 @@ For example: If I was legally required to delete logs after 30 days, I could spe
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
-*Relevant configuration directives:*
-- `general` -> `log_rotation_limit`
-- `general` -> `log_rotation_action`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">log_rotation_limit</code> &lt;- <code dir="ltr">general</code></li>
+ <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.3.4 LOG TRUNCATION
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
-*Relevant configuration directives:*
-- `general` -> `truncate`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">truncate</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
@@ -1306,15 +1322,19 @@ In some circumstances, you may be legally required to anonymise or pseudonymise 
 
 phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
 
-*Relevant configuration directives:*
-- `legal` -> `pseudonymise_ip_addresses`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">pseudonymise_ip_addresses</code> &lt;- <code dir="ltr">legal</code></li>
+</ul></div>
 
 ##### 11.3.6 STATISTICS
 
 phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
 
-*Relevant configuration directives:*
-- `general` -> `statistics`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">statistics</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 ##### 11.3.7 ENCRYPTION
 
@@ -1324,8 +1344,10 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 
 When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
-*Relevant configuration directives:*
-- `general` -> `disable_frontend`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">disable_frontend</code> &lt;- <code dir="ltr">general</code></li>
+</ul></div>
 
 #### 11.5 MARKETING AND ADVERTISING
 
@@ -1335,8 +1357,10 @@ phpMussel doesn't collect or process any information for marketing or advertisin
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
-*Relevant configuration directives:*
-- `legal` -> `privacy_policy`
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
+<div dir="rtl"><ul>
+ <li><code dir="ltr">privacy_policy</code> &lt;- <code dir="ltr">legal</code></li>
+</ul></div>
 
 #### 11.7 GDPR/DSGVO
 
@@ -1357,4 +1381,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 25 مئی 2018 (2018.05.25).</div>
+<div dir="rtl">آخری تازہ کاری: 26 مئی 2018 (2018.05.26).</div>
