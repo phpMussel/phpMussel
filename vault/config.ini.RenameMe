@@ -162,7 +162,7 @@ max_login_attempts=5
 FrontEndLog=''
 
 ; Disable webfonts? True = Yes [Default]; False = No.
-disable_webfonts=false
+disable_webfonts=true
 
 ; Enable maintenance mode? True = Yes; False = No [Default]. Disables
 ; everything other than the front-end. Sometimes useful for when updating your
