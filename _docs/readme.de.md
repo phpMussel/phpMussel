@@ -816,7 +816,7 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 
 #### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Kann ich eine einzige phpMussel-Installation verwenden, um mehrere Domains zu schützen?
 
-Ja. phpMussel-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, und kann daher zum Schutz mehrerer Domains verwendet werden. Allgemein, wir verweisen auf phpMussel-Installationen die nur eine Domain schützen als "Single-Domain-Installationen", und Wir verweisen auf phpMussel-Installationen die mehrere Domains und/oder Subdomains schützen als "Multi-Domain-Installationen". Wenn Sie eine Multi-Domain-Installation betreiben und müssen verschiedene Sätze von Signaturdateien für verschiedene Domains verwenden, oder für verschiedene Domains muss unterschiedliche Konfiguration verwenden, das ist möglich. Nach dem Laden der Konfigurationsdatei (`config.ini`), phpMussel prüft auf die Existenz einer "Konfiguration-Überschreibt Datei", die für die Domain (oder Subdomain) spezifisch angefordert ist (`die-domain-angefordert.tld.config.ini`), und wenn gefunden, alle von der Konfiguration-Überschreibt Datei definierten Konfigurationswerte wird für die Ausführungsinstanz verwendet, anstelle der von der Konfigurationsdatei definierten Konfigurationswerte. Konfiguration-Überschreibt Dateien sind identisch mit der Konfigurationsdatei, und nach eigenem Ermessen, kann entweder die Gesamtheit aller Konfigurationsrichtlinien für phpMussel enthalten, oder was auch immer kleiner Unterabschnitt erforderlich ist die sich normalerweise von der Konfigurationsdatei definierten Konfigurationswerte unterscheidet. Konfiguration-Überschreibt Dateien werden nach der Domain für die sie bestimmt sind benannt (so zum Beispiel, wenn Sie eine Konfiguration-Überschreibt Dateien benötigen für die Domäne, `http://www.some-domain.tld/`, seine Konfiguration-Überschreibt Datei sollte benannt werden als `some-domain.tld.config.ini`, und sollte in der vault neben der Konfigurationsdatei `config.ini` platziert werden). Der Domains-Name für die Ausführungsinstanz wird aus dem `HTTP_HOST`-Header der Anforderung abgeleitet; "www" wird ignoriert.
+Ja. phpMussel-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, und kann daher zum Schutz mehrerer Domains verwendet werden. Allgemein, wir verweisen auf phpMussel-Installationen die nur eine Domain schützen als "Single-Domain-Installationen", und Wir verweisen auf phpMussel-Installationen die mehrere Domains und/oder Subdomains schützen als "Multi-Domain-Installationen". Wenn Sie eine Multi-Domain-Installation betreiben und müssen verschiedene Sätze von Signaturdateien für verschiedene Domains verwenden, oder für verschiedene Domains muss unterschiedliche Konfiguration verwenden, das ist möglich. Nach dem Laden der Konfigurationsdatei (`config.ini`), phpMussel prüft auf die Existenz einer "Konfiguration-Überschreibt Datei", die für die Domain (oder Subdomain) spezifisch angefordert ist (`die-domain-angefordert.tld.config.ini`), und wenn gefunden, alle von der Konfiguration-Überschreibt Datei definierten Konfigurationswerte wird für die Ausführungsinstanz verwendet, anstelle der von der Konfigurationsdatei definierten Konfigurationswerte. Konfiguration-Überschreibt Dateien sind identisch mit der Konfigurationsdatei, und nach eigenem Ermessen, kann entweder die Gesamtheit aller Konfigurationsdirektiven für phpMussel enthalten, oder was auch immer kleiner Unterabschnitt erforderlich ist die sich normalerweise von der Konfigurationsdatei definierten Konfigurationswerte unterscheidet. Konfiguration-Überschreibt Dateien werden nach der Domain für die sie bestimmt sind benannt (so zum Beispiel, wenn Sie eine Konfiguration-Überschreibt Dateien benötigen für die Domäne, `http://www.some-domain.tld/`, seine Konfiguration-Überschreibt Datei sollte benannt werden als `some-domain.tld.config.ini`, und sollte in der vault neben der Konfigurationsdatei `config.ini` platziert werden). Der Domains-Name für die Ausführungsinstanz wird aus dem `HTTP_HOST`-Header der Anforderung abgeleitet; "www" wird ignoriert.
 
 #### <a name="PAY_YOU_TO_DO_IT"></a>Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?
 
@@ -1019,9 +1019,9 @@ Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstel
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.1 URL SCANNER
+##### 11.2.1 URL-SCANNER
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+URLs, die innerhalb von Dateiuploads gefunden werden, können je nach Konfiguration des Pakets mit der hpHosts-API oder der Google Safe Browsing-API geteilt werden. Im Fall der hpHosts-API ist dieses Verhalten standardmäßig aktiviert. Die Google Safe Browsing-API benötigt API-Schlüssel, um ordnungsgemäß zu funktionieren, und ist daher standardmäßig deaktiviert.
 
 *Relevante Konfigurationsdirektiven:*
 - `urlscanner` -> `lookup_hphosts`
@@ -1029,147 +1029,147 @@ URLs found within file uploads may be shared with the hpHosts API or the Google 
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+Wenn phpMussel einen Dateiupload scannt, werden die Hashwerte dieser Dateien möglicherweise mit der Virus Total-API geteilt, je nachdem, wie das Paket konfiguriert ist. Es ist geplant, in der Zukunft auch ganze Dateien gemeinsam nutzen zu können, aber diese Funktion wird derzeit nicht vom Paket unterstützt. Die Virus Total API benötigt einen API-Schlüssel, um korrekt zu funktionieren, und ist daher standardmäßig deaktiviert.
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+Informationen (einschließlich Dateien und zugehörige Dateimetadaten), die mit Virus Total geteilt werden, können auch mit ihren Partnern, verbundenen Unternehmen und verschiedenen anderen zu Forschungszwecken geteilt werden. Dies wird detaillierter durch ihre Datenschutzrichtlinie beschrieben.
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*Sehen: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *Relevante Konfigurationsdirektiven:*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 PROTOKOLLIERUNG
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+Protokollierung ist aus verschiedenen Gründen ein wichtiger Teil von phpMussel. Ohne Protokollierung kann es schwierig sein, falsche Positive zu diagnostizieren, um genau festzustellen, wie gut phpMussel in einem bestimmten Kontext funktioniert, und es kann schwierig sein zu bestimmen, wo seine Defizite liegen und welche Änderungen möglicherweise an seiner Konfiguration oder den Signatures vorgenommen werden müssen, damit es weiterhin wie beabsichtigt funktioniert. Ungeachtet, die Protokollierung ist möglicherweise nicht für alle Benutzer wünschenswert und bleibt vollständig optional. In phpMussel ist die Protokollierung standardmäßig deaktiviert. Um es zu aktivieren, muss phpMussel entsprechend konfiguriert werden.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Zusätzlich, ob Protokollierung rechtlich zulässig ist, und in welchem Umfang es rechtlich zulässig ist (z.B., die Arten von Informationen, die protokolliert werden können, für wie lange und unter welchen Umständen), kann je nach Rechtssprechung und Kontext (z.B., ob Sie als Einzelperson, als juristische Person tätig sind, und ob auf kommerzieller oder nichtkommerzieller Basis), in dem phpMussel implementiert wird, variieren. Es kann daher sinnvoll sein, diesen Abschnitt sorgfältig durchzulesen.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+Es gibt mehrere Arten der Protokollierung, die phpMussel ausführen kann. Verschiedene Arten der Protokollierung beinhalten verschiedene Arten von Informationen, aus verschiedenen Gründen.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 SCAN PROTOKOLLIERUNG
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+Wenn in der Paketkonfiguration aktiviert, speichert phpMussel Protokolle der Dateien, die es gescannt. Diese Art der Protokollierung ist in zwei verschiedenen Formaten verfügbar:
+- Menschen lesbar oder benutzerfreundliche Protokolldateien.
+- Serialisierte Protokolldateien.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Einträge in einer für Menschen lesbaren Protokolldatei sehen in etwa wie folgt aus (als Beispiel):
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Gestartet.
+> Überprüfung 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> Entdeckt phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 Fertig.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Ein Scan-Protokolleintrag enthält normalerweise die folgenden Informationen:
+- Datum und Uhrzeit, zu der die Datei gescannt wurde.
+- Der Name der gescannten Datei.
+- CRC32b Hashes des Namens und des Inhalts der Datei.
+- Was wurde in der Datei gefunden (falls etwas entdeckt wurde).
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Wenn diese Direktiven leer bleiben, bleibt diese Art der Protokollierung deaktiviert.
 
 ##### 11.3.1 SCAN KILLS
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Wenn in der Paketkonfiguration aktiviert, speichert phpMussel Protokolle der Uploads, die blockiert wurden.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Einträge in einem "scan kills" Protokolldatei sehen in etwa wie folgt aus (als Beispiel):
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Entdeckt phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+Als "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu" unter Quarantäne gestellt.
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Ein "scan kills"-Eintrag enthält normalerweise die folgenden Informationen:
+- Das Datum und die Uhrzeit, zu der der Upload gesperrt wurde.
+- Die IP-Adresse, von der der Upload stammt.
+- Der Grund, warum die Datei blockiert wurde (was entdeckt wurde).
+- Der Name der blockierten Datei.
+- Ein MD5 und die Größe der Datei blockiert.
+- Ob die Datei unter Quarantäne gestellt wurde, und unter welchem internen Namen.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 FRONT-END PROTOKOLLIERUNG
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Diese Art der Protokollierung bezieht sich auf Front-End-Anmeldeversuche und tritt nur auf, wenn ein Benutzer versucht, sich am Front-End anzumelden (vorausgesetzt, der Front-End-Zugriff ist aktiviert).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Ein Front-End-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich anzumelden versucht, das Datum und die Uhrzeit des Versuchs, und die Ergebnisse des Versuchs (erfolgreich angemeldet oder konnte sich nicht anmelden). Ein Front-End-Protokolleintrag sieht in etwa wie folgt aus (als Beispiel):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Eingeloggt.
 ```
 
-*Relevante Konfigurationsdirektiven:*
+Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 PROTOKOLLROTATION
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Möglicherweise möchten Sie Protokolle nach einer gewissen Zeit löschen, oder müssen dies gesetzlich tun (d.h., die Zeitspanne, die für die Aufbewahrung von Protokolldateien gesetzlich zulässig ist, kann gesetzlich beschränkt sein). Sie können dies erreichen, indem Sie Datums/Zeitmarkierungen in die Namen Ihrer Protokolldateien einfügen, die in Ihrer Paketkonfiguration festgelegt sind (z.B., `{yyyy}-{mm}-{dd}.log`), und dann Aktivieren der Protokollrotation (Protokollrotation ermöglicht es Ihnen, einige Aktionen in Protokolldateien durchzuführen, wenn bestimmte Limits überschritten werden).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Beispielsweise: Wenn ich gesetzlich dazu verpflichtet wäre, Protokolldateien nach 30 Tagen zu löschen, könnte ich `{dd}.log` in den Namen meiner Protokolldateien angeben (`{dd}` steht für Tage), setze den Wert von `log_rotation_limit` auf 30, und setze den Wert von `log_rotation_action` auf `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Umgekehrt, wenn Sie Protokolldateien für einen längeren Zeitraum aufbewahren müssen, Sie könnten entweder überhaupt keine Protokollrotation verwenden, oder Sie könnten den Wert von `log_rotation_action` auf `Archive` setzen, um Protokolldateien zu komprimieren, wodurch der Gesamtbetrag des belegten Speicherplatzes reduziert wird.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 PROTOKOLL-TRUNKIERUNG
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Es ist auch möglich, um einzelne Protokolldateien zu trunkieren, wenn sie eine bestimmte Größe überschreiten, falls Sie dies benötigen oder tun möchten.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 IP-ADRESSE PSEUDONYMISIERUNG
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Erstens, wenn Sie mit dem Begriff "Pseudonymisierung" nicht vertraut sind, können die folgenden Ressourcen dazu beitragen, sie im Detail zu erklären:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+- [[Wikipedia] Anonymisierung und Pseudonymisierung](https://de.wikipedia.org/wiki/Anonymisierung_und_Pseudonymisierung)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+Unter gewissen Umständen sind Sie gesetzlich dazu verpflichtet, alle PII, die gesammelt, verarbeitet oder gespeichert werden, zu anonymisieren oder zu pseudonymisieren. Obwohl dieses Konzept schon seit einiger Zeit besteht, erwähnt und ermutigt die GDPR/DSGVO ausdrücklich die "Pseudonymisierung" der PII.
 
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel ist in der Lage, IP-Adressen zu pseudonymisieren, wenn Sie sie protokollieren, wenn Sie dies benötigen oder tun möchten. Wenn phpMussel IP-Adressen pseudonymisiert, wird das letzte Oktett von IPv4-Adressen und alles nach dem zweiten Teil von IPv6-Adressen durch ein "x" dargestellt (runden effektiv IPv4-Adressen in Subnetz 24 und IPv6-Adressen in Subnetz 32 ab).
 
 *Relevante Konfigurationsdirektiven:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 STATISTIKEN
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel ist optional in der Lage, Statistiken wie die Gesamtzahl der gescannten und blockierten Dateien seit einem bestimmten Zeitpunkt zu verfolgen. Diese Funktion ist standardmäßig deaktiviert, kann jedoch über die Paketkonfiguration aktiviert werden. Die Art der erfassten Informationen sollte nicht als PII betrachtet werden.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 KRYPTOGRAPHIE
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel verwendet keine [Kryptografie](https://de.wikipedia.org/wiki/Kryptographie) zum den Cache oder Protokollierung. Kryptographie für den Cache oder Protokollierung kann in Zukunft eingeführt werden, aber es gibt derzeit keine konkreten Pläne dafür. Wenn Sie befürchten, dass unbefugte Dritte Zugang zu Teilen von phpMussel erhalten, die PII oder vertrauliche Informationen wie Cache oder Protokolle enthalten, würde ich empfehlen, phpMussel nicht an einem öffentlich zugänglichen Ort zu installieren (z.B., installieren Sie phpMussel außerhalb des Standard-Verzeichnisses `public_html` oder eines entsprechenden Verzeichnisses, das für die meisten Standard-Webserver verfügbar ist) und dass entsprechend restriktive Berechtigungen für das Verzeichnis erzwungen werden, in dem sie sich befinden (insbesondere für das vault verzeichnis). Wenn dies nicht ausreicht, um Ihre Bedenken auszuräumen, konfigurieren Sie phpMussel so, dass die Arten von Informationen, die Ihre Bedenken verursachen, nicht erfasst oder protokolliert werden (z.B. durch Deaktivieren der Protokollierung).
 
 #### 11.4 COOKIES
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Wenn sich ein Benutzer erfolgreich am Front-End anmeldet, phpMussel setzt eine einen [Cookie](https://de.wikipedia.org/wiki/HTTP-Cookie), um sich den Benutzer für nachfolgende Anfragen merken zu können (d.h., Cookies dienen zur Authentifizierung des Benutzers bei einer Anmeldesitzung). Auf der Anmeldeseite wird eine Cookie-Warnung angezeigt, die den Benutzer warnen, dass ein Cookie gesetzt wird, wenn er die relevante Aktion ausführt. An anderen Stellen in der Codebasis werden keine Cookies gesetzt.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 VERMARKTUNG UND WERBUNG
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel sammelt und verarbeitet keine Informationen für der Zweck des Vermarktung oder Werbung, und weder verkauft noch profitiert von gesammelten oder protokolliert Informationen. phpMussel ist kein kommerzielles Unternehmen, noch bezieht es sich auf irgendwelche kommerziellen Interessen, daher macht es keinen Sinn, diese Dinge zu tun. Dies ist seit Beginn des Projekts der Fall und ist auch heute noch der Fall. Außerdem, diese Dinge wären kontraproduktiv für den Geist und den beabsichtigten Zweck des gesamten Projekts, und so lange ich das Projekt weiterführen, wird nie passieren.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 DATENSCHUTZERKLÄRUNG
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+Unter bestimmten Umständen können Sie gesetzlich dazu verpflichtet sein, auf allen Seiten und Abschnitten Ihrer Website einen Link zu Ihrer Datenschutzerklärung deutlich anzuzeigen. Dies kann wichtig sein, um sicherzustellen, dass die Benutzer genau über Ihre genauen Datenschutzpraktiken, die Arten von personenbezogenen Daten, die Sie sammeln, und über Ihre beabsichtigte Verwendung informiert sind. Um einen solchen Link auf der Seite "Zugriff verweigert" von phpMussel einzubinden, wird eine Konfigurationsdirektive bereitgestellt, um die URL zu Ihrer Datenschutzerklärung anzugeben.
 
 *Relevante Konfigurationsdirektiven:*
 - `legal` -> `privacy_policy`

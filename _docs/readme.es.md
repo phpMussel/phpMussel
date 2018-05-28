@@ -1000,28 +1000,28 @@ La intención de esta sección de la documentación es para describir posibles c
 
 Primero y ante todo, tenga en cuenta que yo (el autor del paquete) no soy un abogado, ni un profesional legal calificado de ningún tipo. Por lo tanto, no estoy legalmente calificado para brindar asesoramiento legal. Además, en algunos casos, los requisitos legales exactos pueden variar entre diferentes países y jurisdicciones, y estos diferentes requisitos legales pueden a veces entrar en conflicto (como, por ejemplo, en el caso de países que favorecen los [derechos de privacidad](https://es.wikipedia.org/wiki/Derecho_a_la_intimidad) y el [derecho a ser olvidado](https://es.wikipedia.org/wiki/Derecho_al_olvido), frente a los países que favorecen la [retención de datos extendida](https://es.wikipedia.org/wiki/Retenci%C3%B3n_de_datos_de_telecomunicaci%C3%B3n)). Considere también que el acceso al paquete no está restringido a países o jurisdicciones específicos, y por lo tanto, es probable que la base de usuarios del paquete sea geográficamente diversa. Considerados estos puntos, no estoy en condiciones de decir lo que significa ser "legalmente compatible" para todos los usuarios, en todos los aspectos. Sin embargo, espero que la información en este documento lo ayude a tomar una decisión sobre lo que debe hacer para cumplir con la ley en el contexto del paquete. Si tiene alguna duda o inquietud con respecto a la información aquí incluida, o si necesita ayuda y asesoramiento adicional desde una perspectiva legal, le recomiendo consultar a un profesional legal calificado.
 
-#### 11.1 LIABILITY AND RESPONSIBILITY
+#### 11.1 RESPONSABILIDAD
 
-As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
+Según lo establecido por la licencia del paquete, el paquete se proporciona sin ninguna garantía. Esto incluye (pero no se limita a) todo el alcance de la responsabilidad. El paquete se le proporciona para su conveniencia, con la esperanza de que sea útil y le proporcionará algún beneficio. Pero, si usa o implementa el paquete, es su propia decisión. No está obligado a usar o implementar el paquete, pero cuando lo hace, usted es responsable de esa decisión. Ni yo ni ningún otro contribuyente del paquete somos legalmente responsables de las consecuencias de las decisiones que usted tome, independientemente de si son directas, indirectas, implícitas o de otro tipo.
 
-#### 11.2 THIRD PARTIES
+#### 11.2 TERCEROS
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+Dependiendo de su configuración e implementación exactas, el paquete puede comunicarse y compartir información con terceros en algunos casos. Esta información puede definirse como "[información personal](https://es.wikipedia.org/wiki/Informaci%C3%B3n_personal)" (PII) en algunos contextos, en algunas jurisdicciones.
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+La forma en que esta información puede ser utilizada por estos terceros está sujeta a las diversas políticas establecidas por estos terceros y está fuera del alcance de esta documentación. Pero, en todos estos casos, se puede deshabilitar el intercambio de información con estos terceros. En todos estos casos, si elige habilitarlo, es su responsabilidad investigar cualquier inquietud que pueda tener con respecto a la privacidad, seguridad y uso de PII por parte de estos terceros. Si tiene alguna duda, o si no está satisfecho con la conducta de estos terceros en lo que respecta a PII, puede ser mejor desactivar el intercambio de información con estos terceros.
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+A los efectos de la transparencia, el tipo de información compartida, y con quién, se describe a continuación.
 
 ##### 11.2.0 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Algunos temas personalizados, así como la interfaz de usuario estándar para el front-end de phpMussel, y la página "Subida Denegada", pueden usar webfonts por razones estéticas. Los webfonts están deshabilitados de forma predeterminada, pero cuando están habilitados, se produce una comunicación directa entre el navegador del usuario y el servicio que aloja los webfonts. Esto puede implicar la comunicación de información tal como la dirección IP del usuario, el agente de usuario, el sistema operativo, y otros detalles disponibles para la solicitud. La mayoría de estas webfonts están alojadas en el servicio [Google Fonts](https://fonts.google.com/).
 
 *Directivas de configuración relevantes:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.1 URL SCANNER
+##### 11.2.1 ESCÁNER URL
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+Las URL que se encuentran dentro de las subidas de archivos se pueden compartir con la API de hpHosts o la API de Google Safe Browsing, según cómo esté configurado el paquete. En el caso de la API de hpHosts, este comportamiento está habilitado de forma predeterminada. La API de Google Safe Browsing requiere claves API para funcionar correctamente y, por lo tanto, está desactivada de manera predeterminada.
 
 *Directivas de configuración relevantes:*
 - `urlscanner` -> `lookup_hphosts`
@@ -1029,147 +1029,147 @@ URLs found within file uploads may be shared with the hpHosts API or the Google 
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+Cuando phpMussel escanea una subida de archivo, los valores hash de esos archivos se pueden compartir con la API de Virus Total, según cómo esté configurado el paquete. Hay planes para poder compartir archivos completos en algún momento en el futuro también, pero esta función no es soportado por el paquete en este momento. La API de Virus Total requiere una clave API para funcionar correctamente y, por lo tanto, está desactivada de forma predeterminada.
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+La información (incluidos los archivos y los metadatos de archivos relacionados) compartida con Virus Total, también se puede compartir con sus socios, afiliados, y varios otros con fines de investigación. Esto se describe con más detalle en su política de privacidad.
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*Ver: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *Directivas de configuración relevantes:*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 REGISTRO DE DATOS
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+El registro de datos es una parte importante de phpMussel por varias razones. Sin registro, puede ser difícil diagnosticar falsos positivos, determinar exactamente qué tan eficiente es el phpMussel en un contexto particular, y determinar dónde pueden encontrarse sus deficiencias, y qué cambios pueden requerirse en su configuración o firmas en consecuencia, para que continúe funcionando según lo previsto. En todo caso, el registro de datos puede no ser deseable para todos los usuarios, y sigue siendo totalmente opcional. En phpMussel, el registro de datos está deshabilitado de forma predeterminada. Para habilitarlo, phpMussel debe configurarse en consecuencia.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Además, si el registro de datos es legalmente permisible, y en la medida en que sea legalmente permisible (por ejemplo, los tipos de información que pueden registrarse, por cuánto tiempo, y en qué circunstancias), puede variar, dependiendo de la jurisdicción y del contexto donde se implemente el phpMussel (por ejemplo, ya sea que esté operando como individuo, como una entidad corporativa, y sea comercial o no comercial). Por lo tanto, puede serle útil leer atentamente esta sección.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+Existen varios tipos de registro que phpMussel puede realizar. Los diferentes tipos de registro implican diferentes tipos de información, por diferentes razones.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 REGISTROS DE ESCANEA
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+Cuando está habilitado en la configuración del paquete, phpMussel guarda los registros de los archivos que escanea. Este tipo de registro está disponible en dos formatos diferentes:
+- Archivos de registro legibles por humanos.
+- Archivos de registro serializados.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Las entradas a un archivo de registro legible por humanos, normalmente se ve así (como un ejemplo):
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Iniciado.
+> Comprobando 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> Detectado phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 Terminado.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Una entrada del registros de escanea normalmente incluye la siguiente información:
+- La fecha y hora en que se escaneó el archivo.
+- El nombre del archivo escaneado.
+- Hash CRC32b del nombre y contenido del archivo.
+- Qué se detectó en el archivo (si se detectó algo).
 
 *Directivas de configuración relevantes:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Cuando estas directivas se dejan vacías, este tipo de registro permanecerá desactivado.
 
 ##### 11.3.1 SCAN KILLS
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Cuando está habilitado en la configuración del paquete, phpMussel guarda los registros de las subidas que se han bloqueado.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Las entradas en un archivo de registro de "scan kills" normalmente se ve así (como un ejemplo):
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Detectado phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+En cuarentena como "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Una entrada de "scan kills" generalmente incluye la siguiente información:
+- La fecha y hora en que se bloqueó la subida.
+- La dirección IP desde donde se originó la subida.
+- La razón por la cual el archivo fue bloqueado (lo que se detectó).
+- El nombre del archivo bloqueado.
+- Un MD5 y el tamaño del archivo bloqueado.
+- Si el archivo fue puesto en cuarentena y bajo qué nombre interno.
 
 *Directivas de configuración relevantes:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 REGISTROS DE FRONT-END
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Este tipo de registro relaciona los intentos de inicio de sesión del front-end, y ocurre solo cuando un usuario intenta iniciar sesión en el front-end (suponiendo que el acceso al front-end esté habilitado).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Una entrada de registro en el front-end contiene la dirección IP del usuario que intenta iniciar sesión, la fecha y la hora en que se produjo el intento, y los resultados del intento (inicio de sesión exitoso o fallido). Una entrada de registro del front-end generalmente se ve así (como un ejemplo):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Conectado.
 ```
 
-*Directivas de configuración relevantes:*
+La directiva de configuración responsable del inicio de sesión es:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTACIÓN DE REGISTROS
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Es posible que desee purgar los registros después de un período de tiempo, o posible la ley lo requiera (es decir, la cantidad de tiempo que está legalmente permitido para conservar los registros puede estar limitada por la ley). Puede lograr esto incluyendo marcadores de fecha/hora en los nombres de sus archivos de registro según lo especificado por la configuración de su paquete (por ejemplo, `{yyyy}-{mm}-{dd}.log`), y luego habilitar la rotación de registros (la rotación de registros le permite realizar alguna acción en los archivos de registro cuando se exceden los límites especificados).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Por ejemplo: Si se me exigiera legalmente que borrara los registros después de 30 días, podría especificar `{dd}.log` en los nombres de mis archivos de registro (`{dd}` representa días), establecer el valor de `log_rotation_limit` en 30, y establecer el valor de `log_rotation_action` en `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Por el contrario, si está obligado a conservar registros por un período prolongado de tiempo, puede no utilizar la rotación de registros, o puede establecer el valor de `log_rotation_action` en `Archive`, para comprimir archivos de registro, lo que reduce la cantidad total de espacio en disco que ocupan.
 
 *Directivas de configuración relevantes:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 TRUNCAMIENTO DE REGISTROS
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+También es posible truncar archivos de registro individuales cuando exceden un cierto tamaño, si esto es algo que podría necesitar o querer hacer.
 
 *Directivas de configuración relevantes:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 SEUDONIMIZACIÓN DE DIRECCIONES IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Primeramente, si no está familiarizado con el término "seudonimización", los siguientes recursos pueden ayudar a explicarlo con cierto detalle:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+- [[Wikipedia] Seudonimización](https://es.wikipedia.org/wiki/Seudonimizaci%C3%B3n)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+En algunas circunstancias, se le puede ser legalmente requerido anonimizar o seudonimizar cualquier PII recopilada, procesada, o almacenada. Aunque este concepto ha existe desde hace bastante tiempo, GDPR/DSGVO menciona especialmente, y específicamente alienta "seudonimización".
 
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel es capaz de seudonimizar las direcciones IP cuando las registra, si es algo que podría necesitar o querer hacer. Cuando phpMussel seudonimizar de direcciones IP, cuando se registra, el octeto final de las direcciones IPv4, y todo lo que ocurre después de la segunda parte de las direcciones IPv6 está representado por una "x" (redondeando efectivamente las direcciones IPv4 a la dirección inicial de la 24 subred en la que tienen en cuenta, y las direcciones IPv6 a la dirección inicial de la 32 subred en la que tienen en cuenta).
 
 *Directivas de configuración relevantes:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 ESTADÍSTICA
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel es opcionalmente capaz de rastrear estadísticas como el número total de archivos escaneados y bloqueados desde algún momento en particular. Esta característica está deshabilitada de manera predeterminada, pero se puede habilitar a través de la configuración del paquete. El tipo de información rastreada no debe considerarse como PII.
 
 *Directivas de configuración relevantes:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 ENCRIPTACIÓN
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel no encripta su caché ni ninguna información de registro. [Encriptación](https://es.wikipedia.org/wiki/Cifrado_(criptograf%C3%ADa)) del caché y del registro se puede introducir en el futuro, pero no hay planes actuales para esto. Si le preocupa que terceros no autorizados accedan a partes de phpMussel que puedan contener PII o información confidencial, como su caché o registros, recomendaría que phpMussel no se instale en una ubicación de acceso público (por ejemplo, instale phpMussel fuera del directorio `public_html` o equivalente disponible para la mayoría de los servidores web estándar) y que los permisos apropiadamente restrictivos se apliquen para el directorio donde reside (en particular, para el directorio vault). Si eso no es suficiente para abordar sus inquietudes, configure phpMussel de forma que los tipos de información que causen sus inquietudes no se recopilen o registrado en primer lugar (por ejemplo, a modo de deshabilitar el registro).
 
 #### 11.4 COOKIES
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Cuando un usuario ha iniciado una sesión en el front-end, phpMussel establece una [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)) para poder recordar al usuario para solicitudes posteriores (es decir, las cookies se usan para autenticar al usuario en una sesión). En la página de inicio de sesión, una advertencia de cookie se muestra prominentemente, advirtiendo al usuario que una cookie se establecerán si participan en la acción relevante. Las cookies no se establecen en ningún otro punto en la base de código.
 
 *Directivas de configuración relevantes:*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 MARKETING Y PUBLICIDAD
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel no recopila ni procesa ninguna información con fines comerciales o publicitarios, y tampoco vende ni obtiene ganancias de ninguna información recopilada o registrada. phpMussel no es una empresa comercial, ni está relacionada con ningún interés comercial, por lo que hacer estas cosas no tendría ningún sentido. Este ha sido el caso desde el comienzo del proyecto, y sigue siendo el caso hoy en día. Además, hacer estas cosas sería contraproducente para el espíritu y el propósito del proyecto como un todo, y mientras continúe manteniendo el proyecto, nunca sucederá.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 POLÍTICA DE PRIVACIDAD
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+En algunas circunstancias, se le puede exigir legalmente que muestre claramente un enlace a su política de privacidad en todas las páginas y secciones de su sitio web. Esto puede ser importante como un medio para garantizar que los usuarios estén bien informados sobre sus prácticas de privacidad exactas, los tipos de información personal que recopila y cómo piensa utilizarla. Para poder incluir un enlace en la página "Subida Denegada" de phpMussel, se proporciona una directiva de configuración para especificar la URL de su política de privacidad.
 
 *Directivas de configuración relevantes:*
 - `legal` -> `privacy_policy`

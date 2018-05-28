@@ -1000,28 +1000,28 @@ Cette section de la documentation est destinée à décrire les considérations 
 
 Tout d'abord, s'il vous plaît se rendre compte que je (l'auteur du paquet) ne suis pas un avocat, ni un professionnel juridique qualifié de toute nature. Par conséquent, je ne suis pas légalement qualifié pour fournir des conseils juridiques. Aussi, dans certains cas, les exigences légales peuvent varier selon les pays et les juridictions, et ces différentes exigences juridiques peuvent parfois entrer en conflit (comme, par exemple, dans le cas des pays qui favorisent le droit à la [vie privée](https://fr.wikipedia.org/wiki/Vie_priv%C3%A9e) et le [droit à l'oubli](https://fr.wikipedia.org/wiki/Droit_%C3%A0_l%27oubli), par rapport aux pays qui favorisent la [conversation des données](https://fr.wikipedia.org/wiki/Conservation_des_donn%C3%A9es) étendue). Considérons également que l'accès au paquet n'est pas limité à des pays ou des juridictions spécifiques, et par conséquent, la base d'utilisateurs du paquet est susceptible de la diversité géographique. Ces points pris en compte, je ne suis pas en mesure de dire ce que cela signifie d'être « conforme à la loi » pour tous les utilisateurs, à tous égards. Cependant, j'espère que les informations contenues dans le présent document vous aideront à prendre vous-même une décision concernant ce que vous devez faire pour rester juridiquement conforme dans le cadre du paquet. Si vous avez des doutes ou des préoccupations concernant les informations contenues dans le présent document, ou si vous avez besoin d'aide supplémentaire et de conseils d'un point de vue juridique, je recommande de consulter un professionnel du droit qualifié.
 
-#### 11.1 LIABILITY AND RESPONSIBILITY
+#### 11.1 RESPONSABILITÉ
 
-As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
+Comme déjà indiqué par la licence de paquet, le paquet est fourni sans aucune garantie. Cela inclut (mais n'est pas limité à) toute la portée de la responsabilité. Le paquet est fourni pour votre commodité, dans l'espoir qu'il vous sera utile, et qu'il vous apportera un certain avantage. Cependant, que vous utilisiez ou implémentiez le package, vous avez le choix. Vous n'êtes pas obligé d'utiliser ou de mettre en œuvre le package, mais lorsque vous le faites, vous êtes responsable de cette décision. Ni moi, ni aucun autre contributeur au paquet, ne sommes légalement responsables des conséquences des décisions que vous prenez, qu'elles soient directes, indirectes, implicites ou autres.
 
-#### 11.2 THIRD PARTIES
+#### 11.2 TIERS
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+En fonction de sa configuration et de son implémentation exactes, le paquet peut communiquer et partager des informations avec des tiers dans certains cas. Ces informations peuvent être définies comme des « [données personnelles](https://fr.wikipedia.org/wiki/Donn%C3%A9es_personnelles) » (PII) dans certains contextes, par certaines juridictions.
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+La manière dont ces informations peuvent être utilisées par ces tiers est soumise aux différentes politiques énoncées par ces tiers et ne relève pas de cette documentation. Cependant, dans tous ces cas, le partage d'informations avec ces tiers peut être désactivé. Dans tous ces cas, si vous choisissez de l'activer, vous êtes responsable de rechercher toute préoccupation que vous pourriez avoir concernant la confidentialité, la sécurité, et l'utilisation des informations personnelles par ces tiers. Si des doutes existent, ou si vous n'êtes pas satisfait de la conduite de ces tiers en ce qui concerne les PII, il peut être préférable de désactiver tout partage d'informations avec ces tiers.
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+Dans un souci de transparence, le type d'informations partagées, et avec qui, est décrit ci-dessous.
 
 ##### 11.2.0 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Certains thèmes personnalisés, et aussi l'interface utilisateur standard pour l'accès frontal de phpMussel, et la page « Téléchargement Refusé », peuvent utiliser des webfonts pour des raisons esthétiques. Les webfonts sont désactivées par défaut, mais lorsqu'elles sont activées, la communication directe entre le navigateur de l'utilisateur et le service hébergeant les webfonts produit. Cela peut éventuellement impliquer la communication d'informations telles que l'adresse IP de l'utilisateur, l'agent utilisateur, le système d'exploitation et d'autres informations disponibles à la demande. La plupart de ces webfonts sont hébergées par le service [Google Fonts](https://fonts.google.com/).
 
 *Directives de configuration pertinentes :*
 - `general` -> `disable_webfonts`
 
-##### 11.2.1 URL SCANNER
+##### 11.2.1 SCANNER D'URL
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+Les URL trouvées dans les téléchargements de fichiers peuvent être partagées avec l'API hpHosts ou l'API Google Safe Browsing, en fonction de la configuration du package. Dans le cas de l'API hpHosts, ce comportement est activé par défaut. L'API Google Safe Browsing requiert des clés API pour fonctionner correctement, et est donc désactivée par défaut.
 
 *Directives de configuration pertinentes :*
 - `urlscanner` -> `lookup_hphosts`
@@ -1029,114 +1029,114 @@ URLs found within file uploads may be shared with the hpHosts API or the Google 
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+Lorsque phpMussel analyse un téléchargement de fichier, les hachages de ces fichiers peuvent être partagés avec l'API Virus Total, en fonction de la configuration du package. Il est prévu de pouvoir partager des fichiers entiers à un moment donné dans le futur, mais cette fonctionnalité n'est pas supportée par le paquet pour le moment. L'API Virus Total requiert une clé API pour fonctionner correctement, et est donc désactivée par défaut.
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+Les informations (y compris les fichiers et métadonnées de fichiers associés) partagées avec Virus Total peuvent également être partagées avec leurs partenaires, affiliés, et divers autres à des fins de recherche. Ceci est décrit plus en détail par leur politique de confidentialité.
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*Voir : [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *Directives de configuration pertinentes :*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 JOURNALISATION
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+La journalisation est une partie importante de phpMussel pour un certain nombre de raisons. Sans la journalisation, il peut être difficile de diagnostiquer des faux positifs, de déterminer exactement comment phpMussel est performant dans un contexte particulier, et de déterminer où ses lacunes peuvent être, et quels changements peuvent être nécessaires à sa configuration ou à ses signatures en conséquence, afin de continuer à fonctionner comme prévu. Quoi qu'il en soit, la journalisation peut ne pas être souhaitable pour tous les utilisateurs, et reste entièrement facultative. Dans phpMussel, la journalisation est désactivée par défaut. Pour l'activer, phpMussel doit être configuré en accord.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Aditionellement, si la journalisation est légalement autorisée, et dans la mesure où elle est légalement permise (par exemple, les types d'informations pouvant être journalisées, pendant combien de temps, et dans quelles circonstances), peut varier, selon la juridiction et le contexte dans lequel phpMussel est mis en œuvre (par exemple, si vous opérez en tant qu'individu, en tant qu'entreprise, et si sur une base commerciale ou non-commerciale). Il peut donc être utile pour que vous lisiez attentivement cette section.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+Il existe plusieurs types de journalisation que phpMussel peut effectuer. Différents types de journalisation impliquent différents types d'informations, pour différentes raisons.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 JOURNAUX D'ANALYSE
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+Lorsqu'il est activé dans la configuration du paquet, phpMussel conserve les journaux des fichiers qu'il analyse. Ce type de journalisation est disponible en deux formats différents :
+- Fichiers journaux lisibles par l'homme.
+- Fichiers journaux sérialisés.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Les entrées d'un fichier journal lisible par un humain, ressemblent généralement à ceci (à titre d'exemple) :
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Commencé.
+> Vérification 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5) :
+-> Détecté phpMussel-Testfile.ASCII.Standard !
+Mon, 21 May 2018 00:48:04 +0800 Terminé.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Une entrée de journal d'analyse inclut généralement les informations suivantes :
+- La date et l'heure auxquelles le fichier a été analysé.
+- Le nom du fichier analysé.
+- CRC32b hashes du nom et du contenu du fichier.
+- Ce qui a été détecté dans le fichier (si quelque chose a été détecté).
 
 *Directives de configuration pertinentes :*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Lorsque ces directives sont laissées vides, ce type de journalisation reste désactivé.
 
 ##### 11.3.1 SCAN KILLS
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Lorsqu'il est activé dans la configuration du paquet, phpMussel conserve les journaux des téléchargements qui ont été bloqués.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Les entrées d'un fichier journal pour les « scan kills » ressemblent généralement à ceci (à titre d'exemple) :
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Détecté phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt) !
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+Mis en quarantaine comme « /vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu ».
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Une entrée pour les « scan kills » inclut généralement les informations suivantes :
+- La date et l'heure auxquelles le téléchargement a été bloqué.
+- L'adresse IP d'origine du téléchargement.
+- La raison pour laquelle le fichier a été bloqué (ce qui a été détecté).
+- Le nom du fichier bloqué.
+- Un MD5 et la taille du fichier bloqué.
+- Si le fichier a été mis en quarantaine, et sous quel nom interne.
 
 *Directives de configuration pertinentes :*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 JOURNALISATION FRONTALE
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Ce type de journalisation concerne les tentatives de connexion frontale, et se produit uniquement lorsqu'un utilisateur tente de se connecter à l'accès frontal (en supposant que l'accès frontal est activé).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Une entrée de journal frontal contient l'adresse IP de l'utilisateur qui tente de se connecter, la date et l'heure de la tentative, et les résultats de la tentative (connecté avec succès ou sans succès). Une entrée de journal frontal ressemble généralement à ceci (à titre d'exemple) :
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Connecté.
 ```
 
 *Directives de configuration pertinentes :*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTATION DES JOURNAUX
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Vous voudrez peut-être purger les journaux après un certain temps, ou peut être requis de le faire par la loi (c'est à dire, la durée légale de la conservation des journaux peut être limitée par la loi). Vous pouvez y parvenir en incluant des marqueurs de date/heure dans les noms de vos fichiers journaux (par exemple, `{yyyy}-{mm}-{dd}.log`), conformément à la configuration de votre package, puis en activant la rotation des journaux (la rotation des journaux vous permet d'effectuer des actions sur les fichiers journaux lorsque les limites spécifiées sont dépassées).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Par exemple : Si j'étais légalement tenu de supprimer les journaux après 30 jours, je pourrais spécifier `{dd}.log` dans les noms de mes fichiers journaux (`{dd}` représente les jours), définir la valeur de `log_rotation_limit` à 30, et définir la valeur de `log_rotation_action` à `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+À l'inverse, si vous devez conserver les journaux pendant une période prolongée, vous ne pouvez pas utiliser la rotation des journaux, ou vous pouvez définir la valeur de `log_rotation_action` à `Archive`, pour compresser les fichiers journaux, réduisant ainsi la quantité totale d'espace disque qu'ils occupent.
 
 *Directives de configuration pertinentes :*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 TRONCATION DES JOURNAUX
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Il est également possible de tronquer des fichiers journaux individuels lorsqu'ils dépassent une certaine taille, si c'est quelque chose que vous pourriez avoir besoin ou que vous voulez faire.
 
 *Directives de configuration pertinentes :*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+- [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
 In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
 
