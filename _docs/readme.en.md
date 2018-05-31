@@ -1136,6 +1136,7 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[dataprotection.ie] Anonymisation and pseudonymisation](https://www.dataprotection.ie/docs/Anonymisation-and-pseudonymisation/1594.htm)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 
 In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
@@ -1196,4 +1197,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 26 May 2018 (2018.05.26).
+Last Updated: 1 June 2018 (2018.06.01).

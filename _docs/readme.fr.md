@@ -1135,41 +1135,41 @@ Il est également possible de tronquer des fichiers journaux individuels lorsqu'
 ##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
 Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](http://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
 - [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+Dans certaines circonstances, vous pouvez être légalement requis d'anonymiser ou de pseudonymiser toute PII collectée, traitée, ou stockée. Bien que ce concept existe depuis longtemps, le GDPR/DSGVO mentionne notamment, et encourage spécifiquement la «pseudonymisation».
 
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel est capable de pseudonymiser les adresses IP lors de la connexion, si c'est quelque chose que vous pourriez avoir besoin ou que vous voulez faire. Lorsque phpMussel pseudonymise les adresses IP, lorsqu'il est connecté, l'octet final des adresses IPv4, et tout ce qui suit la deuxième partie des adresses IPv6 est représenté par un « x » (arrondir efficacement les adresses IPv4 à l'adresse initiale du 24ème sous-réseau dans lequel elles sont factorisées, et les adresses IPv6 à l'adresse initiale du 32ème sous-réseau dans lequel elles sont factorisées).
 
 *Directives de configuration pertinentes :*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 STATISTIQUES
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel est facultativement capable de suivre des statistiques telles que le nombre total de fichiers analysés et bloqués depuis un certain moment. Cette fonctionnalité est désactivée par défaut, mais peut être activée via la configuration du package. Le type d'informations suivies ne doit pas être considéré comme les PII.
 
 *Directives de configuration pertinentes :*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 CRYPTAGE
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel ne crypte pas son cache ou aucune information de journal. Le [cryptage](https://fr.wikipedia.org/wiki/Chiffrement) des cache et des journaux peuvent être introduits à l'avenir, mais il n'existe actuellement aucun plan spécifique. Si vous craignez que des tiers non autorisés puissent accéder à des parties de phpMussel pouvant contenir des informations personnelles/sensibles telles que son cache ou ses journaux, je recommanderais que phpMussel ne soit pas installé dans un endroit accessible au public (par exemple, installer phpMussel en dehors du répertoire `public_html` standard ou équivalent disponible pour la plupart des serveurs web standard) et et que des autorisations appropriées restrictives soient appliquées pour le répertoire où il réside (en particulier, pour le répertoire vault). Si ce n'est pas suffisant pour répondre à vos préoccupations, configurez phpMussel de telle sorte que les types d'informations à l'origine de vos préoccupations ne soient pas collectées ou journalisées en premier lieu (tel que en désactivant la journalisation).
 
 #### 11.4 COOKIES
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Lorsqu'un utilisateur se connecte avec succès à l'accès frontal, phpMussel définit un cookie afin de pouvoir se souvenir de l'utilisateur pour les demandes suivantes (c'est à dire, les cookies sont utilisés pour authentifier l'utilisateur à une session de connexion). Sur la page de connexion, un avertissement de cookie est affiché en évidence, avertissant l'utilisateur qu'un cookie sera défini s'il s'engage dans l'action correspondante. Les cookies ne sont définis à aucun autre endroit du code.
 
 *Directives de configuration pertinentes :*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 COMMERCIALISATION ET PUBLICITÉ
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel ni collecte ni traite aucune information à des fins de commercialisation ou de publicité, et ni vend ni profite d'aucune information collectée ou journalisée. phpMussel n'est pas une entreprise commerciale, et n'est pas lié à des intérêts commerciaux, donc faire ces choses n'aurait aucun sens. Cela a été le cas depuis le début du projet, et continue d'être le cas aujourd'hui. Aditionellement, faire ces choses serait contre-productif à l'esprit et à l'objectif du projet dans son ensemble, et aussi longtemps que je continuerai à maintenir le projet, cela n'arrivera jamais.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 POLITIQUE DE CONFIDENTIALITÉ
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+Dans certaines circonstances, vous pouvez être légalement tenu d'afficher clairement un lien vers votre politique de confidentialité sur toutes les pages et sections de votre site Web. Cela peut être important pour s'assurer que les utilisateurs sont bien informés de vos pratiques exactes de confidentialité, les types de PII que vous collectez, et comment vous avez l'intention de l'utiliser. Afin de pouvoir inclure un lien sur la page « Téléchargement Refusé » de phpMussel, une directive de configuration est fournie pour spécifier l'URL de votre politique de confidentialité.
 
 *Directives de configuration pertinentes :*
 - `legal` -> `privacy_policy`
@@ -1193,4 +1193,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 26 Mai 2018 (2018.05.26).
+Dernière mise à jour : 1 Juin 2018 (2018.06.01).

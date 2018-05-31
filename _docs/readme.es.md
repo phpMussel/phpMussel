@@ -1135,7 +1135,8 @@ También es posible truncar archivos de registro individuales cuando exceden un 
 ##### 11.3.5 SEUDONIMIZACIÓN DE DIRECCIONES IP
 
 Primeramente, si no está familiarizado con el término "seudonimización", los siguientes recursos pueden ayudar a explicarlo con cierto detalle:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[confilegal.com] La importancia del seudonimización en el nuevo Reglamento de Protección de Datos](https://confilegal.com/20170129-la-importancia-del-seudonimizacion-en-el-nuevo-reglamento-de-proteccion-de-datos/)
+- [[forlopd.es] ¿Cómo me protege la seudonimización?](https://www.forlopd.es/web/blog/index.php/seudonimizacion-y-proteccion-de-datos/)
 - [[Wikipedia] Seudonimización](https://es.wikipedia.org/wiki/Seudonimizaci%C3%B3n)
 
 En algunas circunstancias, se le puede ser legalmente requerido anonimizar o seudonimizar cualquier PII recopilada, procesada, o almacenada. Aunque este concepto ha existe desde hace bastante tiempo, GDPR/DSGVO menciona especialmente, y específicamente alienta "seudonimización".
@@ -1193,4 +1194,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 26 Mayo de 2018 (2018.05.26).
+Última Actualización: 1 Junio de 2018 (2018.06.01).

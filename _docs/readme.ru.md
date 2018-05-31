@@ -1012,7 +1012,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 В целях прозрачности тип информации, совместно используемой, и с кем, описан ниже.
 
-##### 11.2.0 WEBFONTS
+##### 11.2.0 ВЕБ ФОНТЫ
 
 Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
@@ -1038,7 +1038,7 @@ Information (including files and related file metadata) shared with Virus Total,
 *Соответствующие директивы конфигурации:*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 ЖУРНАЛОВ
 
 Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
 
@@ -1046,7 +1046,7 @@ Additionally, whether logging is legally permissible, and to the extent that it 
 
 There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 СКАНИРОВАНИЕ ЖУРНАЛОВ
 
 When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
 - Human readable logfiles.
@@ -1073,7 +1073,7 @@ A scan log entry typically includes the following information:
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 ЗАБЛОКИРОВАННЫЕ ЗАГРУЗКИ
 
 When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
 
@@ -1100,7 +1100,7 @@ A "scan kills" entry typically includes the following information:
 *Соответствующие директивы конфигурации:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 ФРОНТЕНД ЖУРНАЛОВ
 
 This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
 
@@ -1113,7 +1113,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 *Соответствующие директивы конфигурации:*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ВРАЩЕНИЕ ЖУРНАЛА
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1125,14 +1125,14 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 УСЕЧЕНИЕ ЖУРНАЛА
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 ПСЕВДОНИФИКАЦИЯ IP-АДРЕСА
 
 Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
@@ -1145,29 +1145,29 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 *Соответствующие директивы конфигурации:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 СТАТИСТИКА
 
 phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 ШИФРОВАНИЕ
 
 phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### 11.4 КУКИ
 
 When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 МАРКЕТИНГ И РЕКЛАМА
 
 phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
@@ -1193,4 +1193,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Последнее обновление: 26 Май 2018 (2018.05.26).
+Последнее обновление: 1 Июнь 2018 (2018.06.01).

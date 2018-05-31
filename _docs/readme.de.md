@@ -1135,7 +1135,8 @@ Es ist auch möglich, um einzelne Protokolldateien zu trunkieren, wenn sie eine 
 ##### 11.3.5 IP-ADRESSE PSEUDONYMISIERUNG
 
 Erstens, wenn Sie mit dem Begriff "Pseudonymisierung" nicht vertraut sind, können die folgenden Ressourcen dazu beitragen, sie im Detail zu erklären:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[johner-institut.de] Anonymisierung und Pseudonymisierung](https://www.johner-institut.de/blog/gesundheitswesen/anonymisierung-und-pseudonymisierung/)
+- [[datenschutzbeauftragter-info.de] Pseudonymisierung – was ist das eigentlich?](https://www.datenschutzbeauftragter-info.de/pseudonymisierung-was-ist-das-eigentlich/)
 - [[Wikipedia] Anonymisierung und Pseudonymisierung](https://de.wikipedia.org/wiki/Anonymisierung_und_Pseudonymisierung)
 
 Unter gewissen Umständen sind Sie gesetzlich dazu verpflichtet, alle PII, die gesammelt, verarbeitet oder gespeichert werden, zu anonymisieren oder zu pseudonymisieren. Obwohl dieses Konzept schon seit einiger Zeit besteht, erwähnt und ermutigt die GDPR/DSGVO ausdrücklich die "Pseudonymisierung" der PII.
@@ -1196,4 +1197,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 26 Mai 2018 (2018.05.26).
+Zuletzt aktualisiert: 1 Juni 2018 (2018.06.01).
