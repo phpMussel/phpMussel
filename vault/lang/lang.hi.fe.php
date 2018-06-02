@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.05.19).
+ * This file: Hindi language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'संभव समस�
 $phpMussel['lang']['response_rename_error'] = 'नाम बदलने में विफल!';
 $phpMussel['lang']['response_restore_error_1'] = 'पुनर्स्थापित करने में विफल! दूषित फाइल!';
 $phpMussel['lang']['response_restore_error_2'] = 'पुनर्स्थापित करने में विफल! गलत संगरोध कुंजी!';
+$phpMussel['lang']['response_sanity_1'] = 'फ़ाइल में अप्रत्याशित सामग्री है! फ़ाइल अस्वीकृत!';
 $phpMussel['lang']['response_statistics_cleared'] = 'सांख्यिकी साफ है।';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'पहले से ही आधुनिक।';
 $phpMussel['lang']['response_updates_not_installed'] = 'घटक इंस्टॉल नहीं है!';

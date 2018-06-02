@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.05.19).
+ * This file: Spanish language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Posible problema encont
 $phpMussel['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
 $phpMussel['lang']['response_restore_error_1'] = '¡Error al restaurar! Archivo corrupto!';
 $phpMussel['lang']['response_restore_error_2'] = '¡Error al restaurar! Clave de cuarentena incorrecta!';
+$phpMussel['lang']['response_sanity_1'] = '¡El archivo contiene contenido inesperado! Archivo rechazado!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Estadística anulado.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Ya está actualizado.';
 $phpMussel['lang']['response_updates_not_installed'] = '¡El componente no se instala!';

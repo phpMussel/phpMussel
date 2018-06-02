@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.05.19).
+ * This file: Thai language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'พบปัญหา�
 $phpMussel['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
 $phpMussel['lang']['response_restore_error_1'] = 'ไม่สามารถฟื้นฟู! ไฟล์ที่เสียหาย!';
 $phpMussel['lang']['response_restore_error_2'] = 'ไม่สามารถฟื้นฟู! คีย์กักกันไม่ถูกต้อง!';
+$phpMussel['lang']['response_sanity_1'] = 'ไฟล์มีเนื้อหาที่ไม่คาดคิด! ไฟล์ถูกปฏิเสธ!';
 $phpMussel['lang']['response_statistics_cleared'] = 'สถิติลบแล้ว';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'อัปเดตแล้ว.';
 $phpMussel['lang']['response_updates_not_installed'] = 'คอมโพเนนต์ไม่ได้ติดตั้ง!';

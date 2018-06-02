@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.05.19).
+ * This file: English language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Possible problem found.
 $phpMussel['lang']['response_rename_error'] = 'Failed to rename!';
 $phpMussel['lang']['response_restore_error_1'] = 'Failed to restore! Corrupted file!';
 $phpMussel['lang']['response_restore_error_2'] = 'Failed to restore! Incorrect quarantine key!';
+$phpMussel['lang']['response_sanity_1'] = 'File contains unexpected content! File rejected!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistics cleared.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Component not installed!';

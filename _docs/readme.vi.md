@@ -425,6 +425,27 @@ Cấu hình chung cho phpMussel.
 "numbers"
 - Chỉ định cách hiển thị số.
 
+Giá trị hiện được hỗ trợ:
+
+Giá trị | Nó tạo ra
+---|---
+`NoSep-1` | `1234567.89`
+`NoSep-2` | `1234567,89`
+`Latin-1` | `1,234,567.89` | Giá trị mặc định.
+`Latin-2` | `1 234 567.89`
+`Latin-3` | `1.234.567,89`
+`Latin-4` | `1 234 567,89`
+`Latin-5` | `1,234,567·89`
+`China-1` | `123,4567.89`
+`India-1` | `12,34,567.89`
+`India-2` | `१२,३४,५६७.८९`
+`Bengali-1` | `১২,৩৪,৫৬৭.৮৯`
+`Arabic-1` | `١٢٣٤٥٦٧٫٨٩`
+`Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
+`Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
+
+*Chú thích: Các giá trị này không được chuẩn hóa ở bất kỳ đâu, và có thể sẽ không liên quan ngoài gói. Ngoài ra, các giá trị được hỗ trợ có thể thay đổi trong tương lai.*
+
 "quarantine_key"
 - phpMussel có thể kiểm dịch tải lên tập tin mà đã được đánh dấu trong sự cô lập trong vòng các vault của phpMussel, nếu đây là cái gì bạn muốn nó làm. Các người dùng bình thường của phpMussel mà chỉ đơn giản là muốn bảo vệ các môi trường kho lưu trữ hay trang mạng của họ, mà không có bất cứ quan tâm trong việc phân tích sâu sắc của bất kỳ tải lên tập tin mà đã được đánh dấu, nên để chức năng này bị vô hiệu hóa còn lại, nhưng bất kỳ người dùng quan tâm trong phân tích sâu hơn của tải lên tập tin mà đã được đánh dấu cho nghiên cứu phần mềm độc hại hay cho những thứ tương tự như vậy nên kích hoạt chức năng này. Các kiểm dịch của tải lên tập tin mà đã được đánh dấu đôi khi cũng có thể hỗ trợ trong việc gỡ lỗi sai tích cực, nếu đây là cái gì đó thường xuyên xảy ra đối với bạn. Để vô hiệu hóa chức năng kiểm dịch, chỉ đơn giản để lại tùy chọn `quarantine_key` trống rỗng, hay xóa nội dung của nó nếu nó không phải là đã trống rỗng. Để kích hoạt chức năng kiểm dịch, nhập một số giá trị vào các tùy chọn. `quarantine_key` là một tính năng bảo mật quan trọng của chức năng kiểm dịch yêu cầu như là một phương tiện cho ngăn chặn chức năng kiểm dịch được khai thác bởi kẻ tấn công tiềm năng và như một phương tiện ngăn chặn bất kỳ thực hiện tiềm năng của kho lưu trữ trong kiểm dịch. `quarantine_key` nên được đối xử theo cách tương tự như mật khẩu của bạn: Càng dài thì càng tốt, và cất giữ nó thật chặt. Đối với hiệu quả tốt nhất, sử dụng kết hợp với `delete_on_sight`.
 

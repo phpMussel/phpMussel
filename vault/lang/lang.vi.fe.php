@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.05.19).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Có thể tìm thấy v
 $phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $phpMussel['lang']['response_restore_error_1'] = 'Không thể khôi phục! Tập tin bị hỏng!';
 $phpMussel['lang']['response_restore_error_2'] = 'Không thể khôi phục! Khóa kiểm dịch sai rồi!';
+$phpMussel['lang']['response_sanity_1'] = 'Tập tin chứa nội dung không mong muốn! Tập tin đã bị từ chối!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';

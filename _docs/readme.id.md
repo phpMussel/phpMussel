@@ -425,6 +425,27 @@ Konfigurasi umum dari phpMussel.
 "numbers"
 - Menentukan bagaimana menampilkan nomor-nomor.
 
+Nilai yang didukung saat ini:
+
+Nilai | Menghasilkan
+---|---
+`NoSep-1` | `1234567.89`
+`NoSep-2` | `1234567,89`
+`Latin-1` | `1,234,567.89` | Nilai default.
+`Latin-2` | `1 234 567.89`
+`Latin-3` | `1.234.567,89`
+`Latin-4` | `1 234 567,89`
+`Latin-5` | `1,234,567·89`
+`China-1` | `123,4567.89`
+`India-1` | `12,34,567.89`
+`India-2` | `१२,३४,५६७.८९`
+`Bengali-1` | `১২,৩৪,৫৬৭.৮৯`
+`Arabic-1` | `١٢٣٤٥٦٧٫٨٩`
+`Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
+`Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
+
+*Catat: Nilai-nilai ini tidak terstandardisasi di mana pun, dan mungkin tidak akan relevan di luar paket. Juga, nilai yang didukung dapat berubah di masa depan.*
+
 "quarantine_key"
 - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan `quarantine_key` direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi file yang disimpan dalam karantina. `quarantine_key` harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan `delete_on_sight`.
 

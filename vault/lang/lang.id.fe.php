@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.05.19).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Kemungkinan masalah dit
 $phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $phpMussel['lang']['response_restore_error_1'] = 'Gagal memulihkan! File rusak!';
 $phpMussel['lang']['response_restore_error_2'] = 'Gagal memulihkan! Kunci karantina salah!';
+$phpMussel['lang']['response_sanity_1'] = 'File berisi konten yang tidak diharapkan! File ditolak!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistik dicabut';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';

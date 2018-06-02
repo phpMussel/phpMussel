@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.05.19).
+ * This file: Italian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -218,7 +218,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Questo account non esist
 $phpMussel['lang']['response_accounts_password_updated'] = 'Password aggiornato con successo!';
 $phpMussel['lang']['response_activated'] = 'Attivato con successo.';
 $phpMussel['lang']['response_activation_failed'] = 'Non poteva essere attivato!';
-$phpMussel['lang']['response_checksum_error'] = 'Errore di checksum! File respinto!';
+$phpMussel['lang']['response_checksum_error'] = 'Errore di checksum! File rifiutato!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Componente installato con successo.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Componente disinstallato con successo.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Componente aggiornato con successo.';
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Possibile problema risc
 $phpMussel['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
 $phpMussel['lang']['response_restore_error_1'] = 'Failed to restore! File corrotto!';
 $phpMussel['lang']['response_restore_error_2'] = 'Failed to restore! La chiave di quarantena è errata!';
+$phpMussel['lang']['response_sanity_1'] = 'Il file contiene contenuti inattesi! File rifiutato!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Aggiornato già.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Componente non installato!';

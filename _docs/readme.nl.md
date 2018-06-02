@@ -425,6 +425,27 @@ Algemene configuratie voor phpMussel.
 "numbers"
 - Specificeert hoe u nummers wilt weergeven.
 
+Momenteel ondersteunde waarden:
+
+Waarde | Produceert
+---|---
+`NoSep-1` | `1234567.89`
+`NoSep-2` | `1234567,89`
+`Latin-1` | `1,234,567.89` | Standaardwaarde.
+`Latin-2` | `1 234 567.89`
+`Latin-3` | `1.234.567,89`
+`Latin-4` | `1 234 567,89`
+`Latin-5` | `1,234,567·89`
+`China-1` | `123,4567.89`
+`India-1` | `12,34,567.89`
+`India-2` | `१२,३४,५६७.८९`
+`Bengali-1` | `১২,৩৪,৫৬৭.৮৯`
+`Arabic-1` | `١٢٣٤٥٦٧٫٨٩`
+`Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
+`Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
+
+*Notitie: Deze waarden zijn nergens gestandaardiseerd, en zullen waarschijnlijk niet relevant zijn buiten het pakket. Ook kunnen ondersteunde waarden in de toekomst veranderen.*
+
 "quarantine_key"
 - phpMussel is in staat om gevlagd geprobeerd bestandsuploads te quarantaine in isolatie binnen de phpMussel vault, als dit is iets wat u wilt doen. Regelmatige gebruikers van phpMussel dat gewoon willen om hun websites of hosting-omgeving te beschermen zonder enige interesse in diep analyseren van gevlagd geprobeerd bestandsuploads moet dit functionaliteit hebben uitgeschakeld, maar elke gebruikers geïnteresseerd in de verdere analyse van gevlagd geprobeerd bestandsuploads voor malware onderzoek of voor soortgelijke zaken moeten inschakelen dit functionaliteit. Quarantaine van gevlagd geprobeerd bestandsuploads kunt ook somtijds helpen bij het opsporen van vals-positieven, als dit is iets dat vaak voorkomt voor u. Voor de uitschakelen van quarantaine functionaliteit, gewoon laat de `quarantine_key` richtlijn leeg, of wissen de inhoud van de richtlijn als het niet leeg alreeds. Voor de inschakelen van quarantaine functionaliteit, invoeren soms waarde in de richtlijn. De `quarantine_key` is een belangrijke beveiliging kenmerk van de quarantaine functionaliteit vereist als middel om de functionaliteit quarantaine te verhinderen exploitatie door potentiële aanvallers en als middel om verhinderen van elke mogelijke gegevens uitvoering van gegevens opgeslagen in de quarantaine. De `quarantine_key` moeten op dezelfde manier als uw wachtwoorden worden behandeld: De langer de beter, en bewaken het goed. Voor het beste gevolg, gebruik in combinatie met `delete_on_sight`.
 
@@ -1021,7 +1042,7 @@ Sommige aangepaste thema's, evenals de standaard UI ("gebruikersinterface") voor
 
 ##### 11.2.1 URL SCANNER
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+URL's die worden gevonden in bestandsuploads kunnen worden gedeeld met de hpHosts API of de Google Safe Browsing API, afhankelijk van hoe het pakket is geconfigureerd. In het geval van de hpHosts API is dit gedrag standaard ingeschakeld. De Google Safe Browsing API heeft API-sleutels nodig om correct te werken, en is daarom standaard uitgeschakeld.
 
 *Relevante configuratieopties:*
 - `urlscanner` -> `lookup_hphosts`
@@ -1029,22 +1050,22 @@ URLs found within file uploads may be shared with the hpHosts API or the Google 
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+Wanneer phpMussel een bestandsupload scant, kunnen de hashes van die bestanden worden gedeeld met de Virus Total API, afhankelijk van hoe het pakket is geconfigureerd. Er zijn plannen om op enig moment in de toekomst volledige bestanden te kunnen delen, maar deze functie wordt op dit moment niet door het pakket ondersteund. De Virus Total API heeft een API-sleutel nodig om correct te werken, en is daarom standaard uitgeschakeld.
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+Informatie (inclusief bestanden en gerelateerde bestandsmetadata) die wordt gedeeld met Virus Total, kan ook worden gedeeld met hun partners en diverse anderen voor onderzoeksdoeleinden. Dit wordt in meer detail beschreven in hun privacybeleid.
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*Zien: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *Relevante configuratieopties:*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 LOGGEN
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+Te toggen is om een aantal redenen een belangrijk onderdeel van phpMussel. Zonder loggen kan het moeilijk zijn om valse positieven te diagnosticeren, om precies vast te stellen hoe performant phpMussel zich in een bepaalde context bevindt, en het kan moeilijk zijn om te bepalen waar zijn tekortkomingen kunnen zijn, en welke veranderingen nodig kunnen zijn voor de configuratie of signatures dienovereenkomstig, zodat het blijft functioneren zoals bedoeld. Ongeacht, loggen is misschien niet wenselijk voor alle gebruikers, en blijft volledig optioneel. In phpMussel te loggen is standaard uitgeschakeld. Om dit in te schakelen, moet phpMussel dienovereenkomstig worden geconfigureerd.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Ook, als te loggen wettelijk toegestaan is, en voor zover dat wettelijk toegestaan is (bijvoorbeeld, de soorten informatie die kan worden vastgelegd, voor hoelang, en onder welke omstandigheden), kan variëren, afhankelijk van het rechtsgebied en de context waarin phpMussel wordt geïmplementeerd (bijvoorbeeld, of u als een individu, als een bedrijf, en op commerciële of niet-commerciële basis opereert). Het kan daarom nuttig zijn om dit gedeelte zorgvuldig door te lezen.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+phpMussel kan informatie op verschillende manieren loggen, wat verschillende soorten informatie inhoudt, om verschillende redenen.
 
 ##### 11.3.0 SCAN LOGS
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.05.19).
+ * This file: Russian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Возможная пр
 $phpMussel['lang']['response_rename_error'] = 'Не удалось переименовать!';
 $phpMussel['lang']['response_restore_error_1'] = 'Не удалось восстановить! Поврежденный файл!';
 $phpMussel['lang']['response_restore_error_2'] = 'Не удалось восстановить! Неправильный карантинный ключ!';
+$phpMussel['lang']['response_sanity_1'] = 'Файл содержит неожиданный контент! Файл отклонен!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Статистика очищена.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Уже обновлено.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Компонент не установлен!';

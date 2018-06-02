@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.19).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = '可能的問題發現�
 $phpMussel['lang']['response_rename_error'] = '無法改名！';
 $phpMussel['lang']['response_restore_error_1'] = '無法恢復！損壞的文件！';
 $phpMussel['lang']['response_restore_error_2'] = '無法恢復！不正確的隔離鑰匙！';
+$phpMussel['lang']['response_sanity_1'] = '文件包含意外的內容！​文件拒絕！';
 $phpMussel['lang']['response_statistics_cleared'] = '統計刪除。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $phpMussel['lang']['response_updates_not_installed'] = '組件不安裝！';

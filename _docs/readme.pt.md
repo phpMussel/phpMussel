@@ -425,6 +425,27 @@ Configuração geral por phpMussel.
 "numbers"
 - Especifica como exibir números.
 
+Valores atualmente suportados:
+
+Valor | Produz
+---|---
+`NoSep-1` | `1234567.89`
+`NoSep-2` | `1234567,89`
+`Latin-1` | `1,234,567.89` | Valor padrão.
+`Latin-2` | `1 234 567.89`
+`Latin-3` | `1.234.567,89`
+`Latin-4` | `1 234 567,89`
+`Latin-5` | `1,234,567·89`
+`China-1` | `123,4567.89`
+`India-1` | `12,34,567.89`
+`India-2` | `१२,३४,५६७.८९`
+`Bengali-1` | `১২,৩৪,৫৬৭.৮৯`
+`Arabic-1` | `١٢٣٤٥٦٧٫٨٩`
+`Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
+`Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
+
+*Nota: Esses valores não são padronizados em nenhum lugar, e provavelmente não serão relevantes além do pacote. Adicionalmente, os valores suportados podem mudar no futuro.*
+
 "quarantine_key"
 - phpMussel é capaz de colocar em quarentena marcados tentados arquivos carregamentos em isolamento dentro da phpMussel vault, se isso é algo que você quer que ele faça. Casuais usuários de phpMussel de que simplesmente desejam proteger seus sites ou hospedagem sem ter qualquer interesse em profundamente analisando qualquer marcados tentados arquivos carregamentos deve deixar esta funcionalidade desativada, mas qualquer usuário interessado em mais profundamente analisando marcados tentados arquivos carregamentos para pesquisa de malware ou de similares tais coisas deve ativada essa funcionalidade. Quarentena de marcados tentados arquivos carregamentos às vezes pode também ajudar em depuração de falso-positivos, se isso é algo que ocorre com frequência para você. Por desativar a funcionalidade de quarentena, simplesmente deixar a directiva `quarantine_key` vazio, ou apagar o conteúdo do directivo, se ele não está já vazio. Por ativar a funcionalidade de quarentena, introduzir algum valor no directiva. O `quarantine_key` é um importante segurança característica do quarentena funcionalidade necessária como um meio de prevenir a funcionalidade de quarentena de ser explorada por potenciais atacantes e como meio de evitar qualquer potencial execução de dados armazenados dentro da quarentena. O `quarantine_key` devem ser tratados da mesma maneira como suas senhas: O mais longo o mais melhor, e guardá-lo com força. Por melhor efeito, usar em conjunto com `delete_on_sight`.
 

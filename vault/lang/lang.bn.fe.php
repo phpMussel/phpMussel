@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.05.19).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'সম্ভাব্�
 $phpMussel['lang']['response_rename_error'] = 'নামান্তর করতে ব্যর্থ!';
 $phpMussel['lang']['response_restore_error_1'] = 'পুনরুদ্ধার করতে ব্যর্থ! দূষিত ফাইল!';
 $phpMussel['lang']['response_restore_error_2'] = 'পুনরুদ্ধার করতে ব্যর্থ! ভুল সঙ্গরোধ চাবি!';
+$phpMussel['lang']['response_sanity_1'] = 'ফাইলটিতে অপ্রত্যাশিত সামগ্রী রয়েছে! ফাইল প্রত্যাখ্যাত!';
 $phpMussel['lang']['response_statistics_cleared'] = 'পরিসংখ্যান পরিস্কার।';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'ইতিমধ্যে আপ-টু-ডেট।';
 $phpMussel['lang']['response_updates_not_installed'] = 'কম্পোনেন্ট ইনস্টল করা নেই!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.05.19).
+ * This file: Dutch language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Mogelijk probleem gevon
 $phpMussel['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $phpMussel['lang']['response_restore_error_1'] = 'Kan niet herstellen! Beschadigd bestand!';
 $phpMussel['lang']['response_restore_error_2'] = 'Kan niet herstellen! Onjuiste quarantaine sleutel!';
+$phpMussel['lang']['response_sanity_1'] = 'Bestand bevat onverwachte inhoud! Bestand afgewezen!';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Component niet geïnstalleerd!';

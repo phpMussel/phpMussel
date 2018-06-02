@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.19).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Olası problem bulundu.
 $phpMussel['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
 $phpMussel['lang']['response_restore_error_1'] = 'Canlanamadı! Bozuk dosya!';
 $phpMussel['lang']['response_restore_error_2'] = 'Canlanamadı! Yanlış karantina anahtarı!';
+$phpMussel['lang']['response_sanity_1'] = 'Dosya beklenmedik içerik barındırıyor! Dosya reddedildi!';
 $phpMussel['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Zaten güncel.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Bileşen yüklü değil!';

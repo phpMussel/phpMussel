@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.19).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = '考えられる問題�
 $phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $phpMussel['lang']['response_restore_error_1'] = '復元に失敗しました！​破損したファイル！';
 $phpMussel['lang']['response_restore_error_2'] = '復元に失敗しました！​検疫キーが間違っています！';
+$phpMussel['lang']['response_sanity_1'] = 'ファイルに予期しないコンテンツがあります！​ファイルが拒否されました！';
 $phpMussel['lang']['response_statistics_cleared'] = '統計はクリアされました。';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $phpMussel['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';

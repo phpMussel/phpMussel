@@ -7,7 +7,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2018.06.02; Sub-minor code change; Maikuolan]: Added some additional safety
+  and sanity checks to the updater. Improved the display order of logfiles
+  listed on the logs page.
 
 === Version/Release 1.4.0 ===
 MINOR RELEASE.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.19).
+ * This file: Korean language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = '가능한 문제가 발
 $phpMussel['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
 $phpMussel['lang']['response_restore_error_1'] = '복원하지 못했습니다! 손상된 파일!';
 $phpMussel['lang']['response_restore_error_2'] = '복원하지 못했습니다! 잘못된 격리 키!';
+$phpMussel['lang']['response_sanity_1'] = '파일에 예상치 못한 내용이 포함되어 있습니다! 파일이 거부되었습니다!';
 $phpMussel['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '이미 최신 상태입니다.';
 $phpMussel['lang']['response_updates_not_installed'] = '구성 요소 설치되어 있지 않습니다!';

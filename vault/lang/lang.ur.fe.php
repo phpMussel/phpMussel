@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.05.19).
+ * This file: Urdu language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'ممکنہ مسئلہ �
 $phpMussel['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
 $phpMussel['lang']['response_restore_error_1'] = 'بحال کرنے میں ناکام! خراب فائل!';
 $phpMussel['lang']['response_restore_error_2'] = 'بحال کرنے میں ناکام! غلط قرنطین کلید!';
+$phpMussel['lang']['response_sanity_1'] = 'فائل میں غیر متوقع مواد شامل ہے! فائل کو مسترد کر دیا!';
 $phpMussel['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'پہلے سے اپ ڈیٹ.';
 $phpMussel['lang']['response_updates_not_installed'] = 'اجزاء انسٹال نہیں!';

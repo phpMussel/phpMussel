@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.05.19).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'تم العثور عل�
 $phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $phpMussel['lang']['response_restore_error_1'] = 'أخفق الاستعادة! ملف معطوب!';
 $phpMussel['lang']['response_restore_error_2'] = 'أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!';
+$phpMussel['lang']['response_sanity_1'] = 'يحتوي الملف على محتوى غير متوقع! تم رفض الملف!';
 $phpMussel['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $phpMussel['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';

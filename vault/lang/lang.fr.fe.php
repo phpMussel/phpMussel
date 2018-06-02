@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.05.19).
+ * This file: French language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -246,6 +246,7 @@ $phpMussel['lang']['response_possible_problem_found'] = 'Problème possible trou
 $phpMussel['lang']['response_rename_error'] = 'Échec du renomment !';
 $phpMussel['lang']['response_restore_error_1'] = 'Échec de la restauration ! Fichier corrompu !';
 $phpMussel['lang']['response_restore_error_2'] = 'Échec de la restauration ! Clé de quarantaine incorrecte !';
+$phpMussel['lang']['response_sanity_1'] = 'Le fichier contient des contenus inattendus ! Fichier rejeté !';
 $phpMussel['lang']['response_statistics_cleared'] = 'Statistiques annulées.';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Déjà mise à jour.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Composant pas installé !';
