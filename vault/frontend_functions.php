@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.22).
+ * This file: Front-end functions file (last modified: 2018.06.02).
  */
 
 /**
@@ -515,6 +515,7 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
         $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
         $phpMussel['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
+    ksort($Arr);
     return $Arr;
 };
 
@@ -1247,17 +1248,36 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
+                if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate])) {
+                    $ThisChecksum = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate];
+                    $ThisLen = strlen($ThisFile);
+                    if (
+                        (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (sha1($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
+                    ) {
+                        $phpMussel['FE']['state_msg'] .=
+                            '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
+                            '<code>' . $ThisFileName . '</code> – ' .
+                            $phpMussel['lang']['response_checksum_error'] . '<br />';
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
+                        }
+                        $Iterate = 0;
+                        $Rollback = true;
+                        continue;
+                    }
+                }
                 if (
-                    !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
-                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] !==
-                        md5($ThisFile) . ':' . strlen($ThisFile)
+                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
+                    !$phpMussel['CheckFileUpdate']($ThisFile)
                 ) {
                     $phpMussel['FE']['state_msg'] .=
                         '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
                         '<code>' . $ThisFileName . '</code> – ' .
-                        $phpMussel['lang']['response_checksum_error'] . '<br />';
-                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
-                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
+                        $phpMussel['lang']['response_sanity_1'] . '<br />';
+                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error']);
                     }
                     $Iterate = 0;
                     $Rollback = true;
@@ -1600,9 +1620,16 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
             if (!$ThisFileData = $phpMussel['ReadFile']($phpMussel['Vault'] . $ThisFile)) {
                 $phpMussel['FE']['state_msg'] .= $FileFailMsg;
                 $Passed = false;
-            } elseif ($Checksum) {
-                $Expected = md5($ThisFileData) . ':' . strlen($ThisFileData);
-                if ($Expected !== $Checksum) {
+            } else {
+                $Len = strlen($ThisFileData);
+                if (($Checksum && (
+                    (md5($ThisFileData) . ':' . $Len) !== $Checksum &&
+                    (sha1($ThisFileData) . ':' . $Len) !== $Checksum &&
+                    (hash('sha256', $ThisFileData) . ':' . $Len) !== $Checksum
+                )) || (
+                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
+                    !$phpMussel['CheckFileUpdate']($ThisFileData)
+                )) {
                     $phpMussel['FE']['state_msg'] .= $FileFailMsg;
                     $Passed = false;
                 }
@@ -1670,4 +1697,18 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
 $phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($phpMussel['lang']['confirm_action'], $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+};
+
+/**
+ * Checks file updates for known sanity errors (upstream problems, wrong files served because of server downtime, etc).
+ *
+ * @param string $FileData The data of the file to check.
+ * @param int $Mode What to check for (to be determined by the calling code).
+ * @return bool File passes check (true) or fails check (false).
+ */
+$phpMussel['CheckFileUpdate'] = function ($FileData, $Mode = 1) use (&$phpMussel) {
+    if ($Mode === 1) {
+        return $FileData && !preg_match('~<(?:html|body)~i', $FileData);
+    }
+    return true;
 };
