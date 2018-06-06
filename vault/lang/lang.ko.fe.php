@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.02).
+ * This file: Korean language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = '모두 검증';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$phpMussel['lang']['label_backup_location'] = '저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :';
 $phpMussel['lang']['label_blocked'] = '차단 된 업로드';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
 $phpMussel['lang']['label_clientinfo'] = '사용자 정보 :';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 �
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>

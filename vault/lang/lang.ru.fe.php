@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.06.02).
+ * This file: Russian language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'Проверить все';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $phpMussel['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
+$phpMussel['lang']['label_backup_location'] = 'Расположение резервных хранилищ (в случае чрезвычайной ситуации, или если все остальное не работает):';
 $phpMussel['lang']['label_blocked'] = 'Загружает блокировки';
 $phpMussel['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $phpMussel['lang']['label_clientinfo'] = 'Информация о клиенте:';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'Активные файлы сиг
 
 $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Альтернативное скачать зеркало для phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>

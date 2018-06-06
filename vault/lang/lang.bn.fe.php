@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.02).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'সব যাচাই করুন';
 $phpMussel['lang']['field_your_version'] = 'আপনার সংস্করণ';
 $phpMussel['lang']['header_login'] = 'চালিয়ে যেতে দয়া করে লগ ইন করুন।';
 $phpMussel['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
+$phpMussel['lang']['label_backup_location'] = 'সংগ্রহস্থল ব্যাকআপ অবস্থানগুলি (জরুরী ক্ষেত্রে, বা অন্য সব ব্যর্থ হলে):';
 $phpMussel['lang']['label_blocked'] = 'আপলোডগুলি অবরুদ্ধ';
 $phpMussel['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
 $phpMussel['lang']['label_clientinfo'] = 'ক্লায়েন্ট তথ্য:';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'কোন স্বাক্ষর
 
 $phpMussel['lang']['info_some_useful_links'] = 'কিছু দরকারী লিঙ্ক:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel সমর্থন @ GitHub</a> – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel জন্য বিকল্প ডাউনলোড আয়না।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ওয়েবসাইটগুলি সুরক্ষিত করার জন্য সহজ ওয়েবমাস্টার সরঞ্জামগুলির একটি সংগ্রহ।</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV হোমপেজে (ClamAV® ট্রোজান, ভাইরাস, ম্যালওয়্যার এবং অন্যান্য দূষিত হুমকি সনাক্ত করার জন্য একটি ওপেন সোর্স অ্যান্টিভাইরাস ইঞ্জিন।)।</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – কম্পিউটার নিরাপত্তা কোম্পানি ClamAV জন্য অনুপূরক স্বাক্ষর প্রস্তাব করে।</li>

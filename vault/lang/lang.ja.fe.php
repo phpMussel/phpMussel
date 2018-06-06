@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.02).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'すべてを検証する';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$phpMussel['lang']['label_backup_location'] = 'リポジトリ・バックアップの場所（緊急の場合、または他のすべてが失敗した場合）：';
 $phpMussel['lang']['label_blocked'] = 'ブロックされたアップロード';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
 $phpMussel['lang']['label_clientinfo'] = 'クライアント情報：';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'アクティブ・シグネチャ�
 
 $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMusselの問題 ＠ GitHub</a> – phpMusselの問題ページ（サポート、​援助、​など）。</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMusselの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>

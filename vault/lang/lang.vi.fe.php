@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.02).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'Xác minh tất cả';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$phpMussel['lang']['label_backup_location'] = 'Vị trí sao lưu kho lưu trữ (trong trường hợp khẩn cấp, hay nếu mọi thứ thất bại):';
 $phpMussel['lang']['label_blocked'] = 'Tải lên bị chặn';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $phpMussel['lang']['label_clientinfo'] = 'Thông tin người dùng:';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'Không có tập tin chữ ký nà
 
 $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Tải về gương thay thế cho phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>

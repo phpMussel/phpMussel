@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.02).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'التحقق من الكل';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$phpMussel['lang']['label_backup_location'] = 'مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):';
 $phpMussel['lang']['label_blocked'] = 'تم حظر التحميلات';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $phpMussel['lang']['label_clientinfo'] = 'معلومات المستخدممعلومات المستخدم:';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'لا ملفات التوقيع ن�
 
 $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/" dir="ltr">phpMussel @ SourceForge</a> – بديلة حمل مرآة للphpMussel.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
             <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
             <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>

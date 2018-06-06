@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.02).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'Tümünü doğrula';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$phpMussel['lang']['label_backup_location'] = 'Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):';
 $phpMussel['lang']['label_blocked'] = 'Yüklemeler engellendi';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $phpMussel['lang']['label_clientinfo'] = 'Kullanıcı bilgisi:';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'Hiçbir imza dosyası aktif değil
 
 $phpMussel['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb.).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel için alternatif karşıdan yükleme aynası.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Web sitelerini güvenli hale getirmek için basit web yöneticisi araçlarından oluşan bir koleksiyon.</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>

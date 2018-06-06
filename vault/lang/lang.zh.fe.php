@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.02).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = '验证全部';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
+$phpMussel['lang']['label_backup_location'] = '存储库备份位置（在紧急情况下，或如果一切都失败了）：';
 $phpMussel['lang']['label_blocked'] = '上传已阻止';
 $phpMussel['lang']['label_branch'] = '分支最新稳定：';
 $phpMussel['lang']['label_clientinfo'] = '客户信息：';
@@ -310,7 +311,6 @@ $phpMussel['lang']['warning_signatures_1'] = '没有签名文件是活动的！'
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，​协助，​等等）。​</li>
             <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel页面托管在开源中国社区。​</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMussel替代下载镜像。​</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。​</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主页（ClamAV®是一个开源的防病毒引擎用于检测木马，​病毒，​恶意软件和其他恶意威胁）。​</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家计算机安全公司；为ClamAV提供补充签名。​</li>

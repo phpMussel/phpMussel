@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.02).
+ * This file: French language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,6 +152,7 @@ $phpMussel['lang']['field_verify_all'] = 'Vérifier tous';
 $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
+$phpMussel['lang']['label_backup_location'] = 'Emplacements de sauvegarde du référentiel (en cas d\'urgence, ou si tout le reste échoue) :';
 $phpMussel['lang']['label_blocked'] = 'Téléchargements bloqués';
 $phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
 $phpMussel['lang']['label_clientinfo'] = 'Informations sur le client :';
@@ -309,7 +310,6 @@ $phpMussel['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatur
 
 $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
             <li><a href="https://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compagnie de sécurité informatique qui offre des signatures supplémentaires pour ClamAV.</li>

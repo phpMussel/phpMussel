@@ -11,6 +11,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   and sanity checks to the updater. Improved the display order of logfiles
   listed on the logs page.
 
+- [2018.06.06; Sub-minor code change; Maikuolan]: Updated the front-end
+  homepage to include some links to repository backup locations.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 
