@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.05).
+ * This file: Front-end handler (last modified: 2018.06.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -101,7 +101,9 @@ $phpMussel['FE'] = [
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
 
     /** The IP address of the current request. */
-    'YourIP' => $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+    'YourIP' => empty(
+        $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+    ) ? '' : $_SERVER[$phpMussel['Config']['general']['ipaddr']],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),

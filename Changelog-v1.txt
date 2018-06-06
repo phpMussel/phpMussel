@@ -14,6 +14,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.06; Sub-minor code change; Maikuolan]: Updated the front-end
   homepage to include some links to repository backup locations.
 
+- [2018.06.07; Bug-fix; Maikuolan]: Fixed a possible "undefined index" error
+  that could occur when updating phpMussel via Cronable.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 
