@@ -17,6 +17,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.07; Bug-fix; Maikuolan]: Fixed a possible "undefined index" error
   that could occur when updating phpMussel via Cronable.
 
+- [2018.06.08; Bug-fix; Maikuolan]: Discovered an aesthetic bug whereby the
+  logs page would stretch sometimes because of non-breaking log entries; Fixed.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

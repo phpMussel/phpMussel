@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.07).
+ * This file: Front-end handler (last modified: 2018.06.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2494,6 +2494,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
     /** Prepare log data formatting. */
     if (!$phpMussel['FE']['TextMode']) {
         $phpMussel['FE']['logfileData'] = '<textarea readonly>' . $phpMussel['FE']['logfileData'] . '</textarea>';
+    } else {
+        $phpMussel['FE']['logfileData'] = '<div class="fW">' . $phpMussel['FE']['logfileData'] . '</div>';
     }
 
     /** Define logfile list. */
