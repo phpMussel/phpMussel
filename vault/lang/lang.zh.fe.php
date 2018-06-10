@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = '验证全部';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
+$phpMussel['lang']['label_actual'] = '目前';
 $phpMussel['lang']['label_backup_location'] = '存储库备份位置（在紧急情况下，或如果一切都失败了）：';
 $phpMussel['lang']['label_blocked'] = '上传已阻止';
 $phpMussel['lang']['label_branch'] = '分支最新稳定：';
 $phpMussel['lang']['label_clientinfo'] = '客户信息：';
 $phpMussel['lang']['label_events'] = '扫描事件';
+$phpMussel['lang']['label_expected'] = '预期';
 $phpMussel['lang']['label_expires'] = '过期： ';
 $phpMussel['lang']['label_flagged'] = '对象已标记';
 $phpMussel['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间
 $phpMussel['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '组件更新元数据';
 $phpMussel['lang']['label_hide'] = '隐藏';
+$phpMussel['lang']['label_hide_hash_table'] = '隐藏哈希表';
 $phpMussel['lang']['label_never'] = '决不';
 $phpMussel['lang']['label_os'] = '目前使用操作系统：';
 $phpMussel['lang']['label_other'] = '其他';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
 $phpMussel['lang']['label_scanned_objects'] = '对象已扫描';
 $phpMussel['lang']['label_scanned_uploads'] = '上传已扫描';
 $phpMussel['lang']['label_show'] = '显示';
+$phpMussel['lang']['label_show_hash_table'] = '显示哈希表';
 $phpMussel['lang']['label_size_in_quarantine'] = '大小在检疫：';
 $phpMussel['lang']['label_stable'] = '最新稳定：';
 $phpMussel['lang']['label_sysinfo'] = '系统信息：';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = '组件是非活性。';
 $phpMussel['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $phpMussel['lang']['state_default_password'] = '警告：它使用标准密码！';
 $phpMussel['lang']['state_loading'] = '载入中...';
+$phpMussel['lang']['state_loadtime'] = '页面请求在<span class="txtRd">%s</span>秒内完成。';
 $phpMussel['lang']['state_logged_in'] = '目前在线。';
 $phpMussel['lang']['state_logs_access_only'] = '仅日志访问';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：维护模式是启用！';

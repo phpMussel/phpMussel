@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.06.05).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Memverifikasi semua';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$phpMussel['lang']['label_actual'] = 'Sebenarnya';
 $phpMussel['lang']['label_backup_location'] = 'Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):';
 $phpMussel['lang']['label_blocked'] = 'Upload diblokir';
 $phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $phpMussel['lang']['label_clientinfo'] = 'Informasi klien:';
 $phpMussel['lang']['label_events'] = 'Pindai acara';
+$phpMussel['lang']['label_expected'] = 'Diharapkan';
 $phpMussel['lang']['label_expires'] = 'Kedaluwarsa: ';
 $phpMussel['lang']['label_flagged'] = 'Obyek ditandai';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $phpMussel['lang']['label_hide'] = 'Menyembunyikan';
+$phpMussel['lang']['label_hide_hash_table'] = 'Sembunyikan tabel hash';
 $phpMussel['lang']['label_never'] = 'Tak pernah';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_other'] = 'Lain';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
 $phpMussel['lang']['label_scanned_objects'] = 'Obyek dipindai';
 $phpMussel['lang']['label_scanned_uploads'] = 'Upload dipindai';
 $phpMussel['lang']['label_show'] = 'Menunjukkan';
+$phpMussel['lang']['label_show_hash_table'] = 'Tampilkan tabel hash';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Ukuran dalam karantina: ';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
 $phpMussel['lang']['state_loading'] = 'Pemuatan...';
+$phpMussel['lang']['state_loadtime'] = 'Permintaan halaman selesai dalam <span class="txtRd">%s</span> detik.';
 $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';

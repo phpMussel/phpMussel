@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.05).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'すべてを検証する';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$phpMussel['lang']['label_actual'] = '現在';
 $phpMussel['lang']['label_backup_location'] = 'リポジトリ・バックアップの場所（緊急の場合、または他のすべてが失敗した場合）：';
 $phpMussel['lang']['label_blocked'] = 'ブロックされたアップロード';
 $phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
 $phpMussel['lang']['label_clientinfo'] = 'クライアント情報：';
 $phpMussel['lang']['label_events'] = 'スキャンイベント';
+$phpMussel['lang']['label_expected'] = '予想される';
 $phpMussel['lang']['label_expires'] = '有効期限： ';
 $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $phpMussel['lang']['label_hide'] = '隠す';
+$phpMussel['lang']['label_hide_hash_table'] = 'ハッシュ・テーブルを隠する';
 $phpMussel['lang']['label_never'] = '決して';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_other'] = 'その他';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
 $phpMussel['lang']['label_scanned_objects'] = 'スキャンされたオブジェクト';
 $phpMussel['lang']['label_scanned_uploads'] = 'スキャンしたアップロード';
 $phpMussel['lang']['label_show'] = '表示する';
+$phpMussel['lang']['label_show_hash_table'] = 'ハッシュ・テーブルを表示する';
 $phpMussel['lang']['label_size_in_quarantine'] = '検疫のサイズ：';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非
 $phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
 $phpMussel['lang']['state_loading'] = '読み込んでいます...';
+$phpMussel['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
 $phpMussel['lang']['state_logged_in'] = 'ログインしています。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.06.05).
+ * This file: Thai language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'ตรวจสอบทั้งห�
 $phpMussel['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $phpMussel['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
 $phpMussel['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
+$phpMussel['lang']['label_actual'] = 'ปัจจุบัน';
 $phpMussel['lang']['label_backup_location'] = 'Repository สถานที่สำรอง (ในกรณีฉุกเฉิน หรือถ้าทุกอย่างล้มเหลว):';
 $phpMussel['lang']['label_blocked'] = 'อัปโหลดถูกบล็อก';
 $phpMussel['lang']['label_branch'] = 'สาขาเสถียรล่าสุด:';
 $phpMussel['lang']['label_clientinfo'] = 'ข้อมูลผู้ใช้:';
 $phpMussel['lang']['label_events'] = 'สแกนเหตุการณ์';
+$phpMussel['lang']['label_expected'] = 'ที่คาดหวัง';
 $phpMussel['lang']['label_expires'] = 'หมดอายุ: ';
 $phpMussel['lang']['label_flagged'] = 'วัตถุที่ถูกตั้งค่าสถานะ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'ข้อมูลแคชและไฟล์ชั่วคราว';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ด
 $phpMussel['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'เมตาดาต้าสำหรับอัพเดตคอมโพเนนต์';
 $phpMussel['lang']['label_hide'] = 'ปิดบัง';
+$phpMussel['lang']['label_hide_hash_table'] = 'ซ่อนตารางแฮช';
 $phpMussel['lang']['label_never'] = 'ไม่เคย';
 $phpMussel['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $phpMussel['lang']['label_other'] = 'อื่น ๆ';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $phpMussel['lang']['label_scanned_objects'] = 'วัตถุถูกสแกน';
 $phpMussel['lang']['label_scanned_uploads'] = 'อัปโหลดถูกสแกน';
 $phpMussel['lang']['label_show'] = 'แสดง';
+$phpMussel['lang']['label_show_hash_table'] = 'แสดงตารางแฮช';
 $phpMussel['lang']['label_size_in_quarantine'] = 'ขนาดในกักกัน: ';
 $phpMussel['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $phpMussel['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'คอมโพเนนต
 $phpMussel['lang']['state_component_is_provisional'] = 'คอมโพเนนต์เป็นครั้งคราว.';
 $phpMussel['lang']['state_default_password'] = 'คำเตือน: ใช้ค่าเริ่มต้นรหัสผ่าน!';
 $phpMussel['lang']['state_loading'] = 'กำลังโหลด ...';
+$phpMussel['lang']['state_loadtime'] = 'คำขอหน้าเสร็จสิ้นภายใน <span class="txtRd">%s</span> วินาที.';
 $phpMussel['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $phpMussel['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';
 $phpMussel['lang']['state_maintenance_mode'] = 'คำเตือน: เปิดใช้งานโหมดการบำรุงรักษา!';

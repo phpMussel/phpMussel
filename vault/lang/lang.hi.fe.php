@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.06.05).
+ * This file: Hindi language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'सभी को सत्यापि
 $phpMussel['lang']['field_your_version'] = 'आपका संस्करण';
 $phpMussel['lang']['header_login'] = 'जारी रखने के लिए कृपया लॉग इन करें।';
 $phpMussel['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
+$phpMussel['lang']['label_actual'] = 'वास्तविक';
 $phpMussel['lang']['label_backup_location'] = 'रिपोजिटरी बैकअप स्थानों (आपात स्थिति के मामले में, या यदि सब कुछ विफल रहता है):';
 $phpMussel['lang']['label_blocked'] = 'अपलोड अवरुद्ध';
 $phpMussel['lang']['label_branch'] = 'शाखा नवीनतम स्थिर:';
 $phpMussel['lang']['label_clientinfo'] = 'क्लाइंट की सूचना:';
 $phpMussel['lang']['label_events'] = 'स्कैन घटनाओं';
+$phpMussel['lang']['label_expected'] = 'अपेक्षित होना';
 $phpMussel['lang']['label_expires'] = 'समय समाप्ति: ';
 $phpMussel['lang']['label_flagged'] = 'फ़्लैग किए गए ऑब्जेक्ट';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'कैश डेटा और अस्थायी फाइलें';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'कुल डिस्क �
 $phpMussel['lang']['label_fmgr_total_space'] = 'कुल डिस्क स्पेस: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'घटक अद्यतन मेटाडेटा';
 $phpMussel['lang']['label_hide'] = 'छिपाना';
+$phpMussel['lang']['label_hide_hash_table'] = 'हैश टेबल छुपाएं';
 $phpMussel['lang']['label_never'] = 'कभी नहीँ';
 $phpMussel['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
 $phpMussel['lang']['label_other'] = 'अन्य';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI का इस्तेमाल कि�
 $phpMussel['lang']['label_scanned_objects'] = 'स्कैन किए गए ऑब्जेक्ट';
 $phpMussel['lang']['label_scanned_uploads'] = 'स्कैन किए गए अपलोड';
 $phpMussel['lang']['label_show'] = 'दिखाना';
+$phpMussel['lang']['label_show_hash_table'] = 'हैश टेबल दिखाएं';
 $phpMussel['lang']['label_size_in_quarantine'] = 'संगरोध में आकार: ';
 $phpMussel['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $phpMussel['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'घटक निष्क�
 $phpMussel['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $phpMussel['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
 $phpMussel['lang']['state_loading'] = 'लोड हो रहा है...';
+$phpMussel['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $phpMussel['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $phpMussel['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $phpMussel['lang']['state_maintenance_mode'] = 'चेतावनी: रखरखाव मोड सक्षम है!';

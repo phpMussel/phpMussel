@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Xác minh tất cả';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$phpMussel['lang']['label_actual'] = 'Thực tế';
 $phpMussel['lang']['label_backup_location'] = 'Vị trí sao lưu kho lưu trữ (trong trường hợp khẩn cấp, hay nếu mọi thứ thất bại):';
 $phpMussel['lang']['label_blocked'] = 'Tải lên bị chặn';
 $phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $phpMussel['lang']['label_clientinfo'] = 'Thông tin người dùng:';
 $phpMussel['lang']['label_events'] = 'Sự kiện quét';
+$phpMussel['lang']['label_expected'] = 'Kỳ vọng';
 $phpMussel['lang']['label_expires'] = 'Hết hạn: ';
 $phpMussel['lang']['label_flagged'] = 'Đối tượng bị gắn cờ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng �
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $phpMussel['lang']['label_hide'] = 'Che giấu';
+$phpMussel['lang']['label_hide_hash_table'] = 'Ẩn bảng băm';
 $phpMussel['lang']['label_never'] = 'Không bao giờ';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_other'] = 'Khác';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $phpMussel['lang']['label_scanned_objects'] = 'Đối tượng được quét';
 $phpMussel['lang']['label_scanned_uploads'] = 'Tải lên được quét';
 $phpMussel['lang']['label_show'] = 'Hiển thị';
+$phpMussel['lang']['label_show_hash_table'] = 'Hiển thị bảng băm';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Kích thước trong kiểm dịch: ';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Thành phần này đang v�
 $phpMussel['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $phpMussel['lang']['state_loading'] = 'Trong tiến trình...';
+$phpMussel['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây.';
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_maintenance_mode'] = 'Cảnh báo: Đã bật chế độ bảo trì!';

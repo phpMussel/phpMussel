@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.05).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'সব যাচাই করুন';
 $phpMussel['lang']['field_your_version'] = 'আপনার সংস্করণ';
 $phpMussel['lang']['header_login'] = 'চালিয়ে যেতে দয়া করে লগ ইন করুন।';
 $phpMussel['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
+$phpMussel['lang']['label_actual'] = 'আসল';
 $phpMussel['lang']['label_backup_location'] = 'সংগ্রহস্থল ব্যাকআপ অবস্থানগুলি (জরুরী ক্ষেত্রে, বা অন্য সব ব্যর্থ হলে):';
 $phpMussel['lang']['label_blocked'] = 'আপলোডগুলি অবরুদ্ধ';
 $phpMussel['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
 $phpMussel['lang']['label_clientinfo'] = 'ক্লায়েন্ট তথ্য:';
 $phpMussel['lang']['label_events'] = 'স্ক্যান ঘটনা';
+$phpMussel['lang']['label_expected'] = 'প্রত্যাশিত';
 $phpMussel['lang']['label_expires'] = 'মেয়াদ শেষ: ';
 $phpMussel['lang']['label_flagged'] = 'অবজেক্টস পতাকাঙ্কিত';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'ক্যাশ ডেটা এবং অস্থায়ী ফাইল';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'মোট ডিস্ক �
 $phpMussel['lang']['label_fmgr_total_space'] = 'মোট ডিস্ক স্থান: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'কম্পোনেন্ট আপডেট মেটাডেটা';
 $phpMussel['lang']['label_hide'] = 'লুকান';
+$phpMussel['lang']['label_hide_hash_table'] = 'হ্যাশ টেবিল লুকান';
 $phpMussel['lang']['label_never'] = 'না';
 $phpMussel['lang']['label_os'] = 'অপারেটিং সিস্টেম ব্যবহৃত:';
 $phpMussel['lang']['label_other'] = 'অন্যান্য';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $phpMussel['lang']['label_scanned_objects'] = 'অবজেক্টস স্ক্যান করা';
 $phpMussel['lang']['label_scanned_uploads'] = 'আপলোডগুলি স্ক্যান করা';
 $phpMussel['lang']['label_show'] = 'দেখাও';
+$phpMussel['lang']['label_show_hash_table'] = 'হ্যাশ টেবিল দেখান';
 $phpMussel['lang']['label_size_in_quarantine'] = 'সঙ্গরোধ আকার: ';
 $phpMussel['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $phpMussel['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'কম্পোনেন্
 $phpMussel['lang']['state_component_is_provisional'] = 'কম্পোনেন্ট অস্থায়ী।';
 $phpMussel['lang']['state_default_password'] = 'সতর্কতা: ডিফল্ট পাসওয়ার্ড ব্যবহার করে!';
 $phpMussel['lang']['state_loading'] = 'লোড হচ্ছে ...';
+$phpMussel['lang']['state_loadtime'] = 'পৃষ্ঠা অনুরোধ সম্পন্ন <span class="txtRd">%s</span> সেকেন্ড।';
 $phpMussel['lang']['state_logged_in'] = 'লগ ইন আছে।';
 $phpMussel['lang']['state_logs_access_only'] = 'লগ প্রবেশাধিকার শুধুমাত্র';
 $phpMussel['lang']['state_maintenance_mode'] = 'সতর্কতা: রক্ষণাবেক্ষণ মোড সক্রিয় করা হয়!';

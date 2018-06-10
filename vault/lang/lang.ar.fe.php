@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.05).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'التحقق من الكل';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$phpMussel['lang']['label_actual'] = 'فعلي';
 $phpMussel['lang']['label_backup_location'] = 'مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):';
 $phpMussel['lang']['label_blocked'] = 'تم حظر التحميلات';
 $phpMussel['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $phpMussel['lang']['label_clientinfo'] = 'معلومات المستخدممعلومات المستخدم:';
 $phpMussel['lang']['label_events'] = 'مسح الأحداث';
+$phpMussel['lang']['label_expected'] = 'متوقع';
 $phpMussel['lang']['label_expires'] = 'تنتهي: ';
 $phpMussel['lang']['label_flagged'] = 'تم الإبلاغ عن الكائنات';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $phpMussel['lang']['label_hide'] = 'إخفائه';
+$phpMussel['lang']['label_hide_hash_table'] = 'إخفاء جدول تجزئة';
 $phpMussel['lang']['label_never'] = 'أبدا';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_other'] = 'آخر';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $phpMussel['lang']['label_scanned_objects'] = 'الكائنات التي الممسوحة ضوئيا';
 $phpMussel['lang']['label_scanned_uploads'] = 'التحميلات الممسوحة ضوئيا';
 $phpMussel['lang']['label_show'] = 'اظهره';
+$phpMussel['lang']['label_show_hash_table'] = 'إظهار جدول تجزئة';
 $phpMussel['lang']['label_size_in_quarantine'] = 'الحجر الصحي بحجم: ';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $phpMussel['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
 $phpMussel['lang']['state_loading'] = 'جار التحميل...';
+$phpMussel['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان.';
 $phpMussel['lang']['state_logged_in'] = 'حاليا على.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';

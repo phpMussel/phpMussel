@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.05).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Tümünü doğrula';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$phpMussel['lang']['label_actual'] = 'Şimdiki';
 $phpMussel['lang']['label_backup_location'] = 'Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):';
 $phpMussel['lang']['label_blocked'] = 'Yüklemeler engellendi';
 $phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $phpMussel['lang']['label_clientinfo'] = 'Kullanıcı bilgisi:';
 $phpMussel['lang']['label_events'] = 'Tara olayları';
+$phpMussel['lang']['label_expected'] = 'Beklenen';
 $phpMussel['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
 $phpMussel['lang']['label_flagged'] = 'İşaretlenen nesneler';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $phpMussel['lang']['label_hide'] = 'Saklamak';
+$phpMussel['lang']['label_hide_hash_table'] = 'Karma tabloyu gizle';
 $phpMussel['lang']['label_never'] = 'Asla';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_other'] = 'Diğer';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Nesneler tarandı';
 $phpMussel['lang']['label_scanned_uploads'] = 'Yüklenenler tarandı';
 $phpMussel['lang']['label_show'] = 'Göstermek';
+$phpMussel['lang']['label_show_hash_table'] = 'Karma tablosu göster';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Karantinadaki boyutu: ';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $phpMussel['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
 $phpMussel['lang']['state_loading'] = 'Yükleniyor...';
+$phpMussel['lang']['state_loadtime'] = 'Sayfa isteği <span class="txtRd">%s</span> saniye içinde tamamlandı.';
 $phpMussel['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $phpMussel['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
 $phpMussel['lang']['state_maintenance_mode'] = 'Uyarı: Bakım modu etkin!';

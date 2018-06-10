@@ -20,6 +20,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.08; Bug-fix; Maikuolan]: Discovered an aesthetic bug whereby the
   logs page would stretch sometimes because of non-breaking log entries; Fixed.
 
+- [2018.06.10; Sub-minor code change; Maikuolan]: The logs page now displays
+  the total processing time required for the request. Added the ability to
+  generate hash tables to the front-end updates page (useful mostly for when
+  verifying the integrity of components or for when preparing for future
+  updates).
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.05).
+ * This file: Korean language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = '모두 검증';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $phpMussel['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$phpMussel['lang']['label_actual'] = '현재';
 $phpMussel['lang']['label_backup_location'] = '저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :';
 $phpMussel['lang']['label_blocked'] = '차단 된 업로드';
 $phpMussel['lang']['label_branch'] = '분기 최신 안정 :';
 $phpMussel['lang']['label_clientinfo'] = '사용자 정보 :';
 $phpMussel['lang']['label_events'] = '스캔 이벤트';
+$phpMussel['lang']['label_expected'] = '예상 된';
 $phpMussel['lang']['label_expires'] = '만료일 : ';
 $phpMussel['lang']['label_flagged'] = '신고 된 개체';
 $phpMussel['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $phpMussel['lang']['label_hide'] = '숨기다';
+$phpMussel['lang']['label_hide_hash_table'] = '해시 테이블 숨기기';
 $phpMussel['lang']['label_never'] = '못';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제 :';
 $phpMussel['lang']['label_other'] = '다른';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = '사용 된 SAPI :';
 $phpMussel['lang']['label_scanned_objects'] = '스캔 한 개체';
 $phpMussel['lang']['label_scanned_uploads'] = '스캔 한 업로드';
 $phpMussel['lang']['label_show'] = '보여';
+$phpMussel['lang']['label_show_hash_table'] = '해시 테이블 표시';
 $phpMussel['lang']['label_size_in_quarantine'] = '격리 크기 : ';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = '구성 요소가 비활성 
 $phpMussel['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
 $phpMussel['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
 $phpMussel['lang']['state_loading'] = '로드 중 ...';
+$phpMussel['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다.';
 $phpMussel['lang']['state_logged_in'] = '로그인 있습니다.';
 $phpMussel['lang']['state_logs_access_only'] = '로그에만 액세스';
 $phpMussel['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';

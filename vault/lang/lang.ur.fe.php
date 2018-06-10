@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.06.05).
+ * This file: Urdu language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'سب کی توثیق کریں';
 $phpMussel['lang']['field_your_version'] = 'آپ کے ورژن';
 $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
+$phpMussel['lang']['label_actual'] = 'اس وقت';
 $phpMussel['lang']['label_backup_location'] = 'Repository بیک اپ مقامات (ہنگامی حالت میں، یا اگر سب کچھ ناکام ہوجاتا ہے):';
 $phpMussel['lang']['label_blocked'] = 'بلاک اپ لوڈ';
 $phpMussel['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $phpMussel['lang']['label_clientinfo'] = 'کلائنٹ کی معلومات:';
 $phpMussel['lang']['label_events'] = 'واقعات اسکین کریں';
+$phpMussel['lang']['label_expected'] = 'متوقع';
 $phpMussel['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
 $phpMussel['lang']['label_flagged'] = 'نشان لگا دیا گیا آبجیکٹ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال:
 $phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $phpMussel['lang']['label_hide'] = 'چھپائیں';
+$phpMussel['lang']['label_hide_hash_table'] = 'ہیش ٹیبل چھپائیں';
 $phpMussel['lang']['label_never'] = 'کبھی نہیں';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $phpMussel['lang']['label_other'] = 'دیگر';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $phpMussel['lang']['label_scanned_objects'] = 'سکین کیا آبجیکٹ';
 $phpMussel['lang']['label_scanned_uploads'] = 'سکین کیا اپ لوڈ';
 $phpMussel['lang']['label_show'] = 'دکھائیں';
+$phpMussel['lang']['label_show_hash_table'] = 'ہیش ٹیبل دکھائیں';
 $phpMussel['lang']['label_size_in_quarantine'] = 'قرنطین میں سائز: ';
 $phpMussel['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $phpMussel['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال 
 $phpMussel['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $phpMussel['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
 $phpMussel['lang']['state_loading'] = 'لوڈ کر رہا ہے ...';
+$phpMussel['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست.';
 $phpMussel['lang']['state_logged_in'] = 'لاگ ان.';
 $phpMussel['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $phpMussel['lang']['state_maintenance_mode'] = 'انتباہ: بحالی کا موڈ فعال ہے!';

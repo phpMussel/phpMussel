@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.08).
+ * This file: Front-end handler (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2507,6 +2507,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
             $phpMussel['FE']['TextModeLinks']
         ) . "\n";
     });
+
+    /** Calculate page load time (useful for debugging). */
+    $phpMussel['FE']['ProcessTime'] = '<br />' . sprintf($phpMussel['lang']['state_loadtime'], $phpMussel['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3));
 
     /** Set logfile list or no logfiles available message. */
     $phpMussel['FE']['LogFiles'] = $phpMussel['FE']['LogFiles']['Out'] ?: $phpMussel['lang']['logs_no_logfiles_available'];

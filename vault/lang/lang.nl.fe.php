@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.06.05).
+ * This file: Dutch language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Verifiëren alles';
 $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $phpMussel['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
+$phpMussel['lang']['label_actual'] = 'Actueel';
 $phpMussel['lang']['label_backup_location'] = 'Repository backup locaties (in geval van nood, of als al het andere faalt):';
 $phpMussel['lang']['label_blocked'] = 'Uploads geblokkeerd';
 $phpMussel['lang']['label_branch'] = 'Branch laatste stabiele:';
 $phpMussel['lang']['label_clientinfo'] = 'Gebruikers informatie:';
 $phpMussel['lang']['label_events'] = 'Scan gebeurtenissen';
+$phpMussel['lang']['label_expected'] = 'Verwacht';
 $phpMussel['lang']['label_expires'] = 'Verloopt: ';
 $phpMussel['lang']['label_flagged'] = 'Objecten gemarkeerd';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $phpMussel['lang']['label_hide'] = 'Verbergen';
+$phpMussel['lang']['label_hide_hash_table'] = 'Verberg hash-tabel';
 $phpMussel['lang']['label_never'] = 'Nooit';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_other'] = 'Anders';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI gebruikt:';
 $phpMussel['lang']['label_scanned_objects'] = 'Objecten gescand';
 $phpMussel['lang']['label_scanned_uploads'] = 'Uploads gescand';
 $phpMussel['lang']['label_show'] = 'Zien';
+$phpMussel['lang']['label_show_hash_table'] = 'Toon hash-tabel';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Grootte in quarantaine: ';
 $phpMussel['lang']['label_stable'] = 'Laatste stabiele:';
 $phpMussel['lang']['label_sysinfo'] = 'Systeem informatie:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
 $phpMussel['lang']['state_loading'] = 'Bezig met laden...';
+$phpMussel['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden.';
 $phpMussel['lang']['state_logged_in'] = 'Ingelogd.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_maintenance_mode'] = 'Waarschuwing: De onderhoudsmodus is ingeschakeld!';

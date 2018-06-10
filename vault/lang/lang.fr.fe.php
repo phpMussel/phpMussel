@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.05).
+ * This file: French language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Vérifier tous';
 $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
+$phpMussel['lang']['label_actual'] = 'Actuel';
 $phpMussel['lang']['label_backup_location'] = 'Emplacements de sauvegarde du référentiel (en cas d\'urgence, ou si tout le reste échoue) :';
 $phpMussel['lang']['label_blocked'] = 'Téléchargements bloqués';
 $phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
 $phpMussel['lang']['label_clientinfo'] = 'Informations sur le client :';
 $phpMussel['lang']['label_events'] = 'événements d\'analyse';
+$phpMussel['lang']['label_expected'] = 'Attendu';
 $phpMussel['lang']['label_expires'] = 'Expire : ';
 $phpMussel['lang']['label_flagged'] = 'Objets marqués';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Données cache et fichiers temporaires';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilisation du disque total
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
 $phpMussel['lang']['label_hide'] = 'Cacher';
+$phpMussel['lang']['label_hide_hash_table'] = 'Masquer la table de hachage';
 $phpMussel['lang']['label_never'] = 'Jamais';
 $phpMussel['lang']['label_os'] = 'Système opérateur utilisée :';
 $phpMussel['lang']['label_other'] = 'Autres';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
 $phpMussel['lang']['label_scanned_objects'] = 'Objets analysés';
 $phpMussel['lang']['label_scanned_uploads'] = 'Téléchargements analysés';
 $phpMussel['lang']['label_show'] = 'Montrer';
+$phpMussel['lang']['label_show_hash_table'] = 'Afficher la table de hachage';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Taille en quarantaine : ';
 $phpMussel['lang']['label_stable'] = 'Dernier stable :';
 $phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $phpMussel['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
 $phpMussel['lang']['state_loading'] = 'Chargement...';
+$phpMussel['lang']['state_loadtime'] = 'Requête de page complétée en <span class="txtRd">%s</span> secondes.';
 $phpMussel['lang']['state_logged_in'] = 'Connecté.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $phpMussel['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.06.05).
+ * This file: Russian language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,11 +152,13 @@ $phpMussel['lang']['field_verify_all'] = 'Проверить все';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $phpMussel['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
+$phpMussel['lang']['label_actual'] = 'Текущий';
 $phpMussel['lang']['label_backup_location'] = 'Расположение резервных хранилищ (в случае чрезвычайной ситуации, или если все остальное не работает):';
 $phpMussel['lang']['label_blocked'] = 'Загружает блокировки';
 $phpMussel['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $phpMussel['lang']['label_clientinfo'] = 'Информация о клиенте:';
 $phpMussel['lang']['label_events'] = 'События сканирования';
+$phpMussel['lang']['label_expected'] = 'Ожидаемый';
 $phpMussel['lang']['label_expires'] = 'Истекает: ';
 $phpMussel['lang']['label_flagged'] = 'Помеченные объекты';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
@@ -166,6 +168,7 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использова
 $phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $phpMussel['lang']['label_hide'] = 'Скрывать';
+$phpMussel['lang']['label_hide_hash_table'] = 'Скрыть хэш-таблицы';
 $phpMussel['lang']['label_never'] = 'Никогда';
 $phpMussel['lang']['label_os'] = 'Используемая операционная система:';
 $phpMussel['lang']['label_other'] = 'Другие';
@@ -178,6 +181,7 @@ $phpMussel['lang']['label_sapi'] = 'Используемая SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Объекты сканированные';
 $phpMussel['lang']['label_scanned_uploads'] = 'Загружает сканированные';
 $phpMussel['lang']['label_show'] = 'Показать';
+$phpMussel['lang']['label_show_hash_table'] = 'Показать хэш-таблицы';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Размер в карантине: ';
 $phpMussel['lang']['label_stable'] = 'Последние стабильный:';
 $phpMussel['lang']['label_sysinfo'] = 'Системная информация:';
@@ -267,6 +271,7 @@ $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неак
 $phpMussel['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $phpMussel['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
 $phpMussel['lang']['state_loading'] = 'В ходе выполнения...';
+$phpMussel['lang']['state_loadtime'] = 'Запрос страницы завершен через <span class="txtRd">%s</span> секунд.';
 $phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_maintenance_mode'] = 'Предупреждение: Включен режим обслуживания!';
