@@ -427,8 +427,8 @@ General configuración para phpMussel.
 
 Valores soportados actualmente:
 
-Valor | Produce
----|---
+Valor | Produce | Descripción
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Valor predefinido.
@@ -1215,4 +1215,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 1 Junio de 2018 (2018.06.01).
+Última Actualización: 10 Junio de 2018 (2018.06.10).

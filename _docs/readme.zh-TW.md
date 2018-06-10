@@ -427,8 +427,8 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 
 目前支持的值：
 
-值 | 產生
----|---
+值 | 產生 | 描述
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | 默認值。
@@ -1025,17 +1025,17 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 此軟件包不提供任何擔保（這已由包許可證提及）。​這包括（但不限於）所有責任範圍。​為了您的方便，該軟件包已提供給您。​希望它會有用，它會為你帶來一些好處。​但是，使用或實施該軟件包是您自己的選擇。​您不是被迫使用或實施該軟件包，但是當您這樣做時，您需要對該決定負責。​我，和其他軟件包貢獻者，對於您的決定的後果不承擔法律責任，無論是直接的，間接的，暗示的，還是其他方式。
 
-#### 11.2 THIRD PARTIES
+#### 11.2 第三方
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+取決於其確切的配置和實施，在某些情況下，該軟件包可能與第三方進行通信和共享信息。​在某些情況下，某些轄區可能會將此信息定義為『個人身份信息』（PII）。
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+這些信息如何被這些第三方使用，是受這些第三方制定的各種政策的約束，並且超出了本文檔的範圍。​但是，在所有這些情況下，與這些第三方共享信息可能被禁用。​在所有這些情況下，如果您選擇啟用它，則有責任研究您可能遇到的任何問題（如果您擔心這些第三方的隱私，安全，和PII使用情況）。​如果存在任何疑問，或者您對PII方面的這些第三方的行為不滿意，最好禁用與這些第三方分享的所有信息。
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+為了透明的目的，共享信息的類型，以及與誰共享，如下所述。
 
-##### 11.2.0 WEBFONTS
+##### 11.2.0 網絡字體
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+一些自定義主題，以及phpMussel前端的標準UI（『用戶界面』），和『上傳是否認』頁面可能出於審美原因使用網絡字體。​網絡字體默認是禁用的，但啟用後，用戶的瀏覽器和託管網絡字體的服務之間會發生直接通信。​這可能涉及傳遞信息，例如用戶的IP地址，用戶代理，操作系統，以及請求可用的其他詳細信息。​大部分這些網絡字體都由[Google Fonts](https://fonts.google.com/)服務託管。
 
 *相關配置指令：*
 - `general` -> `disable_webfonts`
@@ -1214,4 +1214,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最後更新：2018年6月1日。
+最後更新：2018年6月10日。

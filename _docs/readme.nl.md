@@ -7,7 +7,7 @@
 - 4. [FRONTEND MANAGEMENT](#SECTION4)
 - 5. [CLI (COMMANDLIJN INTERFACE)](#SECTION5)
 - 6. [BESTANDEN IN DIT PAKKET](#SECTION6)
-- 7. [CONFIGURATIEOPTIES](#SECTION7)
+- 7. [CONFIGURATIE-OPTIES](#SECTION7)
 - 8. [SIGNATURE FORMAAT](#SECTION8)
 - 9. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION9)
 - 10. [VEELGESTELDE VRAGEN (FAQ)](#SECTION10)
@@ -331,7 +331,7 @@ Bestand | Beschrijving
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/cli.php | CLI handler.
 /vault/components.dat | Bevat informatie met betrekking tot de verschillende phpMussel componenten; Gebruikt door de updates functie verzorgd door de frontend.
-/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
+/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie handler.
 /vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de phpMussel configuratie.
 /vault/frontend.php | Frontend-handler.
@@ -363,7 +363,7 @@ Bestand | Beschrijving
 ---
 
 
-### 7. <a name="SECTION7"></a>CONFIGURATIEOPTIES
+### 7. <a name="SECTION7"></a>CONFIGURATIE-OPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
 #### "general" (Categorie)
@@ -427,8 +427,8 @@ Algemene configuratie voor phpMussel.
 
 Momenteel ondersteunde waarden:
 
-Waarde | Produceert
----|---
+Waarde | Produceert | Beschrijving
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Standaardwaarde.
@@ -456,7 +456,7 @@ Waarde | Produceert
 - De maximale geheugengebruik toegestaan voor de quarantaine. Als de totale geheugengebruik van de quarantaine bereikt dit waarde, de oudste bestanden in quarantaine zullen worden verwijderd totdat het totale geheugengebruik niet meer bereikt dit waarde. Dit richtlijn is belangrijk als een middel van maak het moeilijker voor potentiële aanvallers te overspoelen uw quarantaine met ongewenste gegevens potentieel veroorzaakt weggelopen gebruiksgegevens op uw hosting service. Standaard = 64MB.
 
 "honeypot_mode"
-- Wanneer honeypot-modus is ingeschakeld, phpMussel zal proberen om ieder bestandsupload dat het tegenkomt in quarantaine plaatsen, ongeacht of niet het bestand wordt geüpload is gecontroleerd tegen een meegeleverde signatures, en geen daadwerkelijke scannen of analyse van deze gevlagd geprobeerd bestandsuploads zal daadwerkelijk optreedt. Dit functionaliteit moet nuttig zijn voor degenen dat willen gebruik phpMussel voor de toepassing van virus/malware onderzoek, maar het is niet aanbevolen om dit functionaliteit te inschakelen wanneer het beoogde gebruik van phpMussel door de gebruiker is voor werkelijke bestandsupload scannen, noch aanbevolen te gebruik de honeypot functionaliteit voor andere doeleinden andere dan honeypotting. Als standaard, dit optie is uitgeschakeld. False = Uitgeschakeld [Standaard]; True = Ingeschakeld.
+- Wanneer honeypot-modus is ingeschakeld, phpMussel zal proberen om ieder bestandsupload dat het tegenkomt in quarantaine plaatsen, ongeacht of niet het bestand wordt geüpload is gecontroleerd tegen een meegeleverde signatures, en geen daadwerkelijke scannen of analyse van deze gevlagd geprobeerd bestandsuploads zal daadwerkelijk opgebeurt. Dit functionaliteit moet nuttig zijn voor degenen dat willen gebruik phpMussel voor de toepassing van virus/malware onderzoek, maar het is niet aanbevolen om dit functionaliteit te inschakelen wanneer het beoogde gebruik van phpMussel door de gebruiker is voor werkelijke bestandsupload scannen, noch aanbevolen te gebruik de honeypot functionaliteit voor andere doeleinden andere dan honeypotting. Als standaard, dit optie is uitgeschakeld. False = Uitgeschakeld [Standaard]; True = Ingeschakeld.
 
 "scan_cache_expiry"
 - Hoe lang moeten phpMussel cache de resultaten van de scan? Waarde is het aantal seconden dat de resultaten van het scannen moet wordt gecached voor. Standaard is 21600 seconden (6 uur); Een waarde van 0 zal uitschakelen caching de resultaten van de scan.
@@ -600,7 +600,7 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 Compatibiliteit richtlijnen voor phpMussel.
 
 "ignore_upload_errors"
-- Dit richtlijn moet in het algemeen worden uitgeschakeld tenzij het is vereist voor de juiste functionaliteit van phpMussel op uw specifieke systeem. Normaal, wanneer uitgeschakeld, wanneer phpMussel detecteert de aanwezigheid van elementen van de `$_FILES` array(), het zal proberen initiëren een scan van het bestanden deze elementen vertegenwoordigen, en, als deze elementen zijn leeg, phpMussel zal terugkeren een foutmelding. Dit is het juiste gedrag voor phpMussel. Dat gezegd hebbende, voor sommige CMS, lege elementen in `$_FILES` kan optreden als gevolg van het natuurlijke gedrag van deze CMS, of fouten zouden zijn gerapporteerd wanneer er geen, in welk geval, het normale gedrag voor phpMussel zullen bemoeien met het normale gedrag van deze CMS. Als dergelijke een situatie optreedt voor u, inschakelen dit optie zal instrueren phpMussel niet te proberen te initiëren scannen voor dergelijke lege elementen, negeer hem wanneer gevonden en niet terugkeren gerelateerde foutmeldingen, dus toelaten de voortzetting van de pagina-aanvraag. False = UITGESCHAKELD; True = INGESCHAKELD.
+- Dit richtlijn moet in het algemeen worden uitgeschakeld tenzij het is vereist voor de juiste functionaliteit van phpMussel op uw specifieke systeem. Normaal, wanneer uitgeschakeld, wanneer phpMussel detecteert de aanwezigheid van elementen van de `$_FILES` array(), het zal proberen initiëren een scan van het bestanden deze elementen vertegenwoordigen, en, als deze elementen zijn leeg, phpMussel zal terugkeren een foutmelding. Dit is het juiste gedrag voor phpMussel. Dat gezegd hebbende, voor sommige CMS, lege elementen in `$_FILES` kan optreden als gevolg van het natuurlijke gedrag van deze CMS, of fouten zouden zijn gerapporteerd wanneer er geen, in welk geval, het normale gedrag voor phpMussel zullen bemoeien met het normale gedrag van deze CMS. Als dergelijke een situatie opgebeurt voor u, inschakelen dit optie zal instrueren phpMussel niet te proberen te initiëren scannen voor dergelijke lege elementen, negeer hem wanneer gevonden en niet terugkeren gerelateerde foutmeldingen, dus toelaten de voortzetting van de pagina-aanvraag. False = UITGESCHAKELD; True = INGESCHAKELD.
 
 "only_allow_images"
 - Als u alleen verwachten of alleen bedoelen toestaan beelden worden geüpload om uw systeem of CMS, en als u absoluut nodig geen bestanden behalve afbeeldingen te wordt geüpload om uw systeem of CMS, dit richtlijn moet worden ingeschakeld, maar moet anderszins worden uitgeschakeld. Als dit richtlijn is ingeschakeld, het zal instrueren phpMussel zonder onderscheid te blokkeren elke upload geïdentificeerd als niet-beeldbestanden, zonder te scannen. Dit kan verminderen verwerkingstijd en geheugengebruik voor het geprobeerd uploaden van niet-beeldbestanden. False = UITGESCHAKELD; True = INGESCHAKELD.
@@ -820,7 +820,7 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Hoe vaak worden signatures bijgewerkt?
 
-Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor CIDRMA signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
+Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor phpMussel signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
 
 #### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Ik heb een fout tegengekomen tijdens het gebruik van phpMussel en ik weet niet wat te doen! Help alstublieft!
 
@@ -1037,14 +1037,14 @@ Met het oog op transparantie wordt het type informatie dat wordt gedeeld en met 
 
 Sommige aangepaste thema's, evenals de standaard UI ("gebruikersinterface") voor de frontend van phpMussel en de pagina "Upload Geweigerd", kunnen webfonts gebruiken om esthetische redenen. Webfonts zijn standaard uitgeschakeld, maar indien ingeschakeld, vindt directe communicatie plaats tussen de browser van de gebruiker en de service die de webfonts host. Dit kan mogelijk inhouden dat informatie wordt doorgegeven zoals het IP-adres van de gebruiker, user agent, besturingssysteem, en andere details die beschikbaar zijn voor het verzoek. De meeste van deze webfonts worden gehost door de [Google Fonts](https://fonts.google.com/)-service.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.1 URL SCANNER
 
 URL's die worden gevonden in bestandsuploads kunnen worden gedeeld met de hpHosts API of de Google Safe Browsing API, afhankelijk van hoe het pakket is geconfigureerd. In het geval van de hpHosts API is dit gedrag standaard ingeschakeld. De Google Safe Browsing API heeft API-sleutels nodig om correct te werken, en is daarom standaard uitgeschakeld.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `urlscanner` -> `lookup_hphosts`
 - `urlscanner` -> `google_api_key`
 
@@ -1056,7 +1056,7 @@ Informatie (inclusief bestanden en gerelateerde bestandsmetadata) die wordt gede
 
 *Zien: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `virustotal` -> `vt_public_api_key`
 
 #### 11.3 LOGGEN
@@ -1069,149 +1069,151 @@ phpMussel kan informatie op verschillende manieren loggen, wat verschillende soo
 
 ##### 11.3.0 SCAN LOGS
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+Indien ingeschakeld in de pakketconfiguratie houdt phpMussel logs bij van de bestanden die worden gescand. Dit type loggen is beschikbaar in twee verschillende indelingen:
+- Door mensen leesbare logbestanden.
+- Geserialiseerde logbestanden.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Invoer naar een mensen leesbaar logbestand ziet er meestal als volgt uit (bijvoorbeeld):
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Gestart.
+> Verifiëren 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> Gedetecteerd phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 Afgewerkt.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Een scan log bevat meestal de volgende informatie:
+- De datum en tijd waarop het bestand is gescand.
+- De naam van het gescande bestand.
+- CRC32b hashes van de naam en inhoud van het bestand.
+- Wat werd er in het bestand gedetecteerd (als er iets werd gedetecteerd).
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Wanneer deze richtlijnen leeg worden gelaten, blijft dit type logboek uitgeschakeld.
 
 ##### 11.3.1 SCAN KILLS
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Indien ingeschakeld in de pakketconfiguratie houdt phpMussel logs bij van de uploads die zijn geblokkeerd.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Invoer van een "scan kills" logbestand ziet er ongeveer als volgt uit (bijvoorbeeld):
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Gedetecteerd phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+In quarantaine geplaatst als "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Een "scan kills" logsinvoer bevat meestal de volgende informatie:
+- De datum en tijd waarop de upload is geblokkeerd.
+- Het IP-adres waar de upload vandaan komt.
+- De reden waarom het bestand werd geblokkeerd (wat werd gedetecteerd).
+- De naam van het bestand geblokkeerd.
+- Een MD5 en de grootte van het bestand zijn geblokkeerd.
+- Of het bestand in quarantaine is geplaatst en onder welke interne naam.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 FRONTEND LOGGEN
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Dit type loggen is bedoeld voor pogingen om bij de frontend in te loggen, en gebeurt alleen op wanneer een gebruiker zich probeert in te loggen bij de frontend (ervan uitgaande dat de frontend-toegang is ingeschakeld).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Een frontend logsinvoer bevat het IP-adres van de gebruiker die probeert in te loggen, de datum en tijd waarop de poging heeft plaatsgevonden, en de resultaten van de poging (ingelogd succesvol of niet). Een frontend logsinvoer ziet er meestal als volgt uit (bijvoorbeeld):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Ingelogd.
 ```
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 LOGROTATIE
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Mogelijk wilt u logs na een bepaalde periode opschonen, of mogelijk bent u wettelijk verplicht (d.w.z., de hoeveelheid tijd die het wettelijk toelaatbaar is om logs te bewaren, kan bij wet beperkt zijn). U kunt dit bereiken door datum/tijd-markeringen op te nemen in de namen van uw logbestanden, zoals gespecificeerd door uw pakketconfiguratie (b.v., `{yyyy}-{mm}-{dd}.log`), en vervolgens logrotatie in te schakelen (logrotatie stelt u in staat om enige actie in logbestanden uit te voeren wanneer de gespecificeerde limieten worden overschreden).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Bijvoorbeeld: Als ik wettelijk verplicht was om logs na 30 dagen te verwijderen, kon ik `{dd}.log` opgeven in de namen van mijn logbestanden (`{dd}` verwijst naar de dagen), de waarde van `log_rotation_limit` op 30 zetten, en de waarde van `log_rotation_action` op `Delete` zetten.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Omgekeerd, als u verplicht bent om logs gedurende langere tijd te bewaren, kunt u überhaupt geen logrotatie gebruiken, of kunt u de waarde van `log_rotation_action` op `Archive` zetten, om logbestanden te comprimeren, waardoor de totale hoeveelheid schijfruimte die ze innemen, wordt verminderd.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 LOGTRUNCATIE
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Het is ook mogelijk om afzonderlijke logbestanden af te kappen als ze een bepaalde grootte overschrijden, als dit iets is dat u misschien nodig heeft, of zou willen doen.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 IP-ADRES PSEUDONIMISATIE
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Ten eerste, als u niet bekend bent met de term "pseudonimisatie", kunnen de volgende bronnen u helpen om het in detail uit te leggen:
+- [[privacycompany.eu] Wat is het verschil tussen pseudonimiseren en anonimiseren van persoonsgegevens en wat zijn de gevolgen?](https://www.privacycompany.eu/blog-wat-is-het-verschil-tussen-pseudonimiseren-en-anonimiseren-van-persoonsgegevens-en-wat-zijn-de-gevolgen/)
+- [[nen.nl] Pseudonimisatie](https://www.nen.nl/Normontwikkeling/Pseudonimisatie.htm)
+- [[considerati.com] Anonimiseren en pseudonimiseren: wat is het verschil en wat is het belang ervan?](https://www.considerati.com/nl/publicaties/blog/anonimiseren-en-pseudonimiseren-wat-is-het-verschil-en-wat-is-het-belang-ervan/)
+- [[Wikipedia] Pseudonimiseren](https://nl.wikipedia.org/wiki/Pseudonimiseren)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+In sommige omstandigheden kan het wettelijk verplicht zijn om PII die is verzameld, verwerkt, of opgeslagen, te anonimiseren of te pseudonimiseren. Hoewel dit concept al geruime tijd bestaat, GDPR/DSGVO vermeldt, en moedigt specifiek "pseudonimisatie".
 
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel kan IP-adressen pseudonimiseren wanneer ze worden geregistreerd, als dit iets is dat u misschien nodig heeft, of zou willen doen. Wanneer phpMussel IP-adressen pseudonimiseert, wanneer geregistreerd, het laatste octet van IPv4-adressen, en alles na het tweede deel van IPv6-adressen wordt weergegeven door een "x" (effectief afronding van IPv4-adressen naar het initiële adres van het 24e subnet waar ze in factoreren, en IPv6-adressen naar het initiële adres van het 32e subnet waar ze in factoreren).
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 STATISTIEKEN
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel is optioneel in staat om statistieken bij te houden, zoals het totale aantal gescande en geblokkeerde bestanden sinds een bepaald tijdstip. Deze functie is standaard uitgeschakeld, maar kan worden ingeschakeld via de pakketconfiguratie. Het type gevolgde informatie moet niet als PII worden beschouwd.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 ENCRYPTIE
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel codeert de cache of logboekinformatie niet. [Encryptie](https://nl.wikipedia.org/wiki/Encryptie) voor de cache en logs kunnen in de toekomst worden geïntroduceerd, maar er zijn momenteel geen specifieke plannen voor. Als u zich zorgen maakt over ongeautoriseerde derden die toegang krijgen tot delen van phpMussel die mogelijk PII of gevoelige informatie bevatten, zoals de cache of logbestanden, raad ik phpMussel aan niet te installeren op een openbare locatie (b.v., installeer phpMussel buiten de standaard `public_html` directory of gelijkwaardig daarvan beschikbaar voor de meeste standaard webservers) en dat de juiste beperkende machtigingen worden afgedwongen voor de directory waar deze zich bevindt (in het bijzonder, voor de vault directory). Als dat niet voldoende is om uw zorgen weg te nemen, configureer dan phpMussel als zodanig dat de soorten informatie die uw zorgen veroorzaken, niet zullen worden verzameld of ingelogd (zoals door loggen uit te schakelen).
 
 #### 11.4 COOKIES
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Wanneer een gebruiker zich met succes ingelogd bij de frontend, stelt phpMussel een [cookie](https://nl.wikipedia.org/wiki/Cookie_(internet)) in om de gebruiker te kunnen onthouden voor volgende aanvragen (d.w.z., cookies worden gebruikt om de gebruiker te authenticeren voor een login-sessie). Op de inlogpagina wordt een cookiewaarschuwing prominent weergegeven, waardoor de gebruiker wordt gewaarschuwd dat een cookie zal worden ingesteld als deze zich bezighoudt met de relevante actie. Cookies zijn niet ingesteld op andere punten in de codebase.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 MARKETING EN ADVERTEREN
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel verzamelt of verwerkt geen informatie voor marketing of advertentie doeleinden, en verkoopt of profiteert niet van verzamelde of geregistreerde informatie. phpMussel is geen commerciële onderneming, en houdt geen verband met commerciële belangen, dus het zou geen zin hebben om deze dingen te doen. Dit is sinds het begin van het project het geval geweest, en is nog steeds het geval. Bovendien zou het doen van deze dingen contraproductief zijn ten opzichte van de geest en het beoogde doel van het project als geheel, en zolang ik het project blijf onderhouden, zal het nooit gebeuren.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 PRIVACYBELEID
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers en goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Upload Geweigerd" van phpMussel te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `legal` -> `privacy_policy`
 
-#### 11.7 GDPR/DSGVO
+#### 11.7 GDPR/DSGVO/AVG
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+De Algemene Verordening Gegevensbescherming (AVG, of GDPR/DSGVO) is een verordening van de Europese Unie, die met ingang van 25 Mei 2018 in werking treedt. Het primaire doel van de verordening is om burgers en inwoners van de EU controle te geven over hun eigen persoonsgegevens, en om regelgeving binnen de EU te verenigen met betrekking tot privacy en persoonlijke gegevens.
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+De verordening bevat specifieke bepalingen met betrekking tot de verwerking van "[persoonsgegevens](https://nl.wikipedia.org/wiki/Persoonsgegevens)" (PII) van alle "betrokkenen" (elke geïdentificeerde of identificeerbare natuurlijke persoon) vanuit of binnen de EU. Om aan de regelgeving te voldoen, moeten "ondernemingen" (zoals bepaald door de verordening), en alle relevante systemen en processen moeten standaard "[privacy by design](https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/privacycheck/privacy-design)" implementeren, moet de hoogst mogelijke privacy-instellingen gebruiken, moet de nodige waarborgen implementeren voor alle opgeslagen of verwerkte informatie (inclusief, maar niet beperkt tot, de implementatie van pseudonimisering of volledige anonimisering van gegevens), moet duidelijk en ondubbelzinnig verklaren welke soorten gegevens zij verzamelen, hoe zij deze verwerken, om welke redenen, hoe lang zij deze bewaren, en of zij deze gegevens delen met derden, de soorten gegevens die met derden worden gedeeld, hoe, waarom, enzovoort.
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+Gegevens worden mogelijk niet verwerkt tenzij er een wettelijke basis is om dit te doen, zoals bepaald door de verordening. In het algemeen betekent dit dat om de gegevens van een betrokkene op een wettige basis te verwerken, dit moet worden gedaan in overeenstemming met wettelijke verplichtingen, of alleen moet worden gedaan nadat de betrokkene expliciete, goed geïnformeerde, ondubbelzinnige toestemming heeft verkregen.
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+Omdat aspecten van de verordening in de loop van de tijd kunnen evolueren, om de verspreiding van verouderde informatie te voorkomen, is het wellicht beter om de verordening te leren van een gezaghebbende bron, in tegenstelling tot het simpelweg opnemen van de relevante informatie hier in de documentatie van het pakket (die uiteindelijk verouderd kan raken naarmate de regelgeving evolueert).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
-- [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
+[EUR-Lex](https://eur-lex.europa.eu/) (een deel van de officiële website van de Europese Unie dat informatie biedt over EU-wetgeving) biedt uitgebreide informatie over GDPR/DSGVO/AVG, beschikbaar in 24 verschillende talen (op het moment dat dit wordt geschreven), en beschikbaar om te downloaden in PDF-formaat. Ik zou zeker aanraden om de informatie die ze bieden te lezen, om meer te leren over GDPR/DSGVO/AVG:
+- [VERORDENING (EU) 2016/679 VAN HET EUROPEES PARLEMENT EN DE RAAD](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=celex:32016R0679)
 
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG beschikbaar op Wikipedia:
+- [Algemene verordening gegevensbescherming](https://nl.wikipedia.org/wiki/Algemene_verordening_gegevensbescherming)
 
 ---
 
 
-Laatste Bijgewerkt: 1 Juni 2018 (2018.06.01).
+Laatste Bijgewerkt: 10 Juni 2018 (2018.06.10).

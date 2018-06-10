@@ -458,8 +458,8 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">فی الحال تعاون شدہ اقدار:<br /><br /></div>
 
-قدر | پیدا کرتا ہے
----|---
+قدر | پیدا کرتا ہے | تفصیل
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | پہلے سے طے شدہ.
@@ -1402,4 +1402,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 1 جون 2018 (2018.06.01).</div>
+<div dir="rtl">آخری تازہ کاری: 10 جون 2018 (2018.06.10).</div>

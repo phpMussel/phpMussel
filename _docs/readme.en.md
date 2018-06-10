@@ -427,8 +427,8 @@ General phpMussel configuration.
 
 Currently supported values:
 
-Value | Produces
----|---
+Value | Produces | Description
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Default value.
@@ -1218,4 +1218,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 1 June 2018 (2018.06.01).
+Last Updated: 10 June 2018 (2018.06.10).

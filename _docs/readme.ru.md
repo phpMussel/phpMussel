@@ -427,8 +427,8 @@ phpMussel функционирует полностью в автономном 
 
 Поддерживаемые значения:
 
-Значение | Производит
----|---
+Значение | Производит | Описание
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Значение по умолчанию.
@@ -1035,7 +1035,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### 11.2.0 ВЕБ ФОНТЫ
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Некоторые пользовательские темы, а также стандартный «UI» (пользовательский интерфейс) для фронтенд phpMussel и страница «Загрузка Отказана» могут использовать веб фонты по эстетическим соображениям. Веб фонты отключен по умолчанию, но когда он включен, происходит прямая связь между браузером пользователя и сервисом, на котором размещаются веб-сайты. Это может потенциально включать в себя передачу информации, такой как IP-адрес пользователя, пользовательский агент, операционная система и другие данные, доступные для запроса. Большинство этих веб фонтов размещены службой [Google Fonts](https://fonts.google.com/).
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `disable_webfonts`
@@ -1214,4 +1214,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Последнее обновление: 1 Июнь 2018 (2018.06.01).
+Последнее обновление: 10 Июнь 2018 (2018.06.10).

@@ -427,8 +427,8 @@ Cấu hình chung cho phpMussel.
 
 Giá trị hiện được hỗ trợ:
 
-Giá trị | Nó tạo ra
----|---
+Giá trị | Nó tạo ra | Chi tiết
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Giá trị mặc định.
@@ -1214,4 +1214,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Sáu 2018 (2018.06.01).
+Lần cuối cập nhật: 10 Tháng Sáu 2018 (2018.06.10).
