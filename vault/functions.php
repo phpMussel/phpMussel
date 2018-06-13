@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.21).
+ * This file: Functions file (last modified: 2018.06.13).
  */
 
 /**
@@ -233,7 +233,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
         while (true) {
             if (function_exists($phpMussel['Function']('GZ'))) {
                 if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s*\(\s*["\'])(.{1,4096})(,[0-9])?(["\']\s*\))/i',
+                    '/(' . $phpMussel['Function']('GZ') . '\s*\(\s*["\'])(.{1,4096})(,\d)?(["\']\s*\))/i',
                 $str, $matches)) {
                     for ($i = 0; $c > $i; $i++) {
                         $str = str_ireplace(
@@ -247,7 +247,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
             }
             if ($c = preg_match_all(
                 '/(' . $phpMussel['Function']('B64') . '|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*' .
-                '\(\s*["\'\`])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)(["\'\`]' .
+                '\(\s*["\'\`])([\da-z+\/]{4})*([\da-z+\/]{4}|[\da-z+\/]{3}=|[\da-z+\/]{2}==)(["\'\`]' .
                 '\s*\))/i',
             $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
@@ -272,7 +272,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 continue;
             }
             if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('HEX') . '\s*\(\s*["\'])([a-fA-F0-9]{1,4096})(["\']\s*\))/i',
+                '/(' . $phpMussel['Function']('HEX') . '\s*\(\s*["\'])([\da-f]{1,4096})(["\']\s*\))/i',
             $str, $matches )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
@@ -284,7 +284,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 continue;
             }
             if ($c = preg_match_all(
-                '/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*["\']\s*H\*\s*["\']\s*,\s*["\'])([a-fA-F0-9]{1,4096})(["\']\s*\))/',
+                '/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*["\']\s*H\*\s*["\']\s*,\s*["\'])([\da-fA-F]{1,4096})(["\']\s*\))/',
             $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_replace($matches[0][$i], '"' . $phpMussel['HexSafe']($phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"', $str);
@@ -2159,7 +2159,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             'Matches' => []
         ];
         $URLScanner['c'] = preg_match_all(
-            '~(?:data|f(ile|tps?)|https?|sftp)://(?:www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]~i',
+            '~(?:data|f(?:ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([\da-z.-]{1,512})[^\da-z.-]~i',
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
         );
@@ -2187,7 +2187,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $URLScanner['Iterable'] = 0;
         $URLScanner['Matches'] = '';
         $URLScanner['c'] = preg_match_all(
-            '~(?:data|f(ile|tps?)|https?|sftp)://(?:www[0-9]{0,3}\.)?([!#$&-;=?@-\[\]_a-z\~]{1,4096})[^!#$&-;=?@-\[\]_a-z\~]~i',
+            '~(?:data|f(ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([!#$&-;=?@-\[\]_a-z\~]{1,4096})[^!#$&-;=?@-\[\]_a-z\~]~i',
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
         );
@@ -2199,9 +2199,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['Matches'][2][$URLScanner['i']];
             $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
             $URLScanner['Iterable']++;
-            if (preg_match('/[^0-9a-z.-]$/i', $URLScanner['Matches'][2][$URLScanner['i']])) {
+            if (preg_match('/[^\da-z.-]$/i', $URLScanner['Matches'][2][$URLScanner['i']])) {
                 $URLScanner['x'] =
-                    preg_replace('/[^0-9a-z.-]+$/i', '', $URLScanner['Matches'][2][$URLScanner['i']]);
+                    preg_replace('/[^\da-z.-]+$/i', '', $URLScanner['Matches'][2][$URLScanner['i']]);
                 $URLScanner['This'] = md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
                 $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
                 $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['x'];
@@ -2806,7 +2806,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     if (strpos($ThisSig, ':') !== false) {
                         $VN = $phpMussel['SplitSigParts']($ThisSig);
                         if ($ThisConf[3] === 0) {
-                            $ThisSig = preg_split('/[^a-fA-F0-9>]+/i', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                            $ThisSig = preg_split('/[^\da-f>]+/i', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
                             $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
                             $ThisSigLen = strlen($ThisSig);
                             if ($phpMussel['ConfineLength']($ThisSigLen)) {
@@ -4496,7 +4496,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                         }
                         $TarFile['File'] = [
                             'Filename' => preg_replace('/[^\x20-\xff]/', '', substr($ThisPhar['Data'], $TarFile['Offset'], 100)),
-                            'Filesize' => octdec(preg_replace('/[^0-9]/', '', substr($ThisPhar['Data'], $TarFile['Offset'] + 124, 12))),
+                            'Filesize' => octdec(preg_replace('/\D/', '', substr($ThisPhar['Data'], $TarFile['Offset'] + 124, 12))),
                         ];
                         if ($TarFile['File']['Filesize'] < 0) {
                             $r = 2;
@@ -5065,7 +5065,7 @@ $phpMussel['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
         $Value = true;
     } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
         $Value = false;
-    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^a-f0-9]/i', $HexTest) && !($ValueLen % 2)) {
+    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
         $Value = hex2bin($HexTest);
     } else {
         $ValueInt = (int)$Value;
@@ -5406,7 +5406,7 @@ $phpMussel['UnpackSafe'] = function ($Format, $Data) {
 
 /** A simple safety wrapper for hex2bin. */
 $phpMussel['HexSafe'] = function ($Data) use (&$phpMussel) {
-    return ($Data && !preg_match('/[^a-f0-9]/i', $Data) && !(strlen($Data) % 2)) ? $phpMussel['Function']('HEX', $Data) : '';
+    return ($Data && !preg_match('/[^\da-f]/i', $Data) && !(strlen($Data) % 2)) ? $phpMussel['Function']('HEX', $Data) : '';
 };
 
 /** If input isn't an array, make it so. Remove empty elements. */
@@ -5627,7 +5627,12 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
     return true;
 };
 
-/** Build directory path for logfiles. */
+/**
+ * Build directory path for logfiles.
+ *
+ * @param string $File The file we're building for.
+ * @return bool True on success; False on failure.
+ */
 $phpMussel['BuildLogPath'] = function ($File) use (&$phpMussel) {
     $ThisPath = $phpMussel['Vault'];
     $File = str_replace("\\", '/', $File);
@@ -5683,6 +5688,7 @@ $phpMussel['BuildLogPattern'] = function ($Str, $GZ = false) {
  * GZ-compress a file (used by log rotation).
  *
  * @param string $File The file to GZ-compress.
+ * @return bool True if the file exists and is readable; False otherwise.
  */
 $phpMussel['GZCompressFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
@@ -5752,6 +5758,9 @@ $phpMussel['LogRotation'] = function ($Pattern) use (&$phpMussel) {
 
 /**
  * Pseudonymise an IP address (reduce IPv4s to /24s and IPv6s to /32s).
+ *
+ * @param string $IP An IP address.
+ * @return string A pseudonymised IP address.
  */
 $phpMussel['Pseudonymise-IP'] = function($IP) {
     if (($CPos = strpos($IP, ':')) !== false) {

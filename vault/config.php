@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.06.10).
+ * This file: Configuration handler (last modified: 2018.06.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -83,7 +83,7 @@ if ($phpMussel['Config'] === false) {
 if (
     !empty($_SERVER['HTTP_HOST']) &&
     ($phpMussel['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
-    !preg_match('/[^.0-9a-z-]/', $phpMussel['Domain']) &&
+    !preg_match('/[^.\da-z-]/', $phpMussel['Domain']) &&
     is_readable($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini')
 ) {
     /** Attempts to parse the configuration overrides file. */

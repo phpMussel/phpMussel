@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.10).
+ * This file: Front-end functions file (last modified: 2018.06.13).
  */
 
 /**
@@ -227,11 +227,11 @@ $phpMussel['FECacheGet'] = function ($Source, $Entry) {
 $phpMussel['VersionCompare'] = function ($A, $B) {
     $Normalise = function (&$Ver) {
         $Ver =
-            preg_match('~^v?([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[.0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$~i', $Ver, $Matches);
+            preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
+            preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
+            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(RC\d{1,2}|-[.\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^([a-z]+)-([\da-z]+)-([\da-z]+)$~i', $Ver, $Matches);
         $Ver = [
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,
             'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
@@ -482,7 +482,7 @@ $phpMussel['FetchComponentsLists'] = function ($Base, &$Arr) use (&$phpMussel) {
 $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = str_replace("\\", '/', $Path);
     if (
-        preg_match('~(?://|[^!0-9A-Za-z\._-]$)~', $Path) ||
+        preg_match('~(?://|[^!\da-z\._-]$)~i', $Path) ||
         preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Path, -3)))
     ) {
         return false;
@@ -1631,9 +1631,7 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
                 $Actual = '';
             } else {
                 $Len = strlen($ThisFileData);
-                $HashPartLen = (
-                    ($HPos = strpos($Checksum, ':')) !== false
-                ) ? strlen(substr($Checksum, 0, $HPos)) : 64;
+                $HashPartLen = strpos($Checksum, ':') ?: 64;
                 if ($HashPartLen === 32) {
                     $Actual = md5($ThisFileData) . ':' . $Len;
                 } else {
@@ -1700,7 +1698,12 @@ $phpMussel['SendOutput'] = function () use (&$phpMussel) {
     return $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 };
 
-/** Confirm whether a file is a logfile (used by the file manager and logs viewer). */
+/**
+ * Confirm whether a file is a logfile (used by the file manager and logs viewer).
+ *
+ * @param string $File The path/name of the file to be confirmed.
+ * @return bool True if it's a logfile; False if it isn't.
+ */
 $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
     static $Pattern_scan_log = false;
     if (!$Pattern_scan_log && $phpMussel['Config']['general']['scan_log']) {
@@ -1729,6 +1732,13 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
     );
 };
 
+/**
+ * Generates JavaScript snippets for confirmation prompts for front-end actions.
+ *
+ * @param string $Action The action being taken to be confirmed.
+ * @param string $Form The ID of the form to be submitted when the action is confirmed.
+ * @return string The JavaScript snippet.
+ */
 $phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($phpMussel['lang']['confirm_action'], $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';

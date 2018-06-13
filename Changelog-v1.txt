@@ -26,12 +26,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   verifying the integrity of components or for when preparing for future
   updates).
 
+- [2017.06.13; Sub-minor code change; Maikuolan]: Refactoring again.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 
 - [2018.05.07-09; NEW FEATURE; Maikuolan]: Added log rotation to phpMussel.
   With log rotation, it's possible to specify a maximum number of logfiles that
-  should exist in the vault, and optionally delete or achive them when that
+  should exist in the vault, and optionally delete or archive them when that
   limit is exceeded.
 
 - [2018.05.09; Bug-fix; Maikuolan]: Attempting to log into the front-end via
