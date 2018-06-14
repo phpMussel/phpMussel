@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.13).
+ * This file: Front-end handler (last modified: 2018.06.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -918,13 +918,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         $phpMussel['FE']['ConfigFields'] .= sprintf(
             '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
             '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-hidelink" style="display:none" href="#" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-            "</div></td></tr></table>\n<span class=\"%1\$s-row\" style=\"display:none\"><table>\n",
-            $phpMussel['CatKey']
+            '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+            "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+            $phpMussel['CatKey'],
+            'style="display:none"'
         );
         $phpMussel['FE']['Indexes'] .= sprintf(
             '<a id="%1$s-ishowlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-ihidelink" style="display:none" href="#" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+            '<a id="%1$s-ihidelink" style="display:none" href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
             "<br /><br />\n            ",
             $phpMussel['CatKey']
         );
