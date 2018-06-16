@@ -1186,11 +1186,11 @@ When a user successfully logs into the front-end, phpMussel sets a cookie in ord
 
 #### 11.5 МАРКЕТИНГ И РЕКЛАМА
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel не собирает и не обрабатывает какую-либо информацию для маркетинговых или рекламных целей и не продает и не получает прибыль от любой собранной или занесенной в журнал информации. phpMussel не коммерческим предприятием и не имеет отношения к каким-либо коммерческим интересам, поэтому делать это не имеет смысла. Это имело место с самого начала проекта и по-прежнему имеет место сегодня. Кроме того, делать эти вещи было бы контрпродуктивным для духа и намеченной цели проекта в целом, и до тех пор, пока я продолжаю поддерживать проект, никогда не произойдет.
 
 #### 11.6 ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+В некоторых случаях вам может быть юридически необходимо четко отображать ссылку на вашу политику конфиденциальности на всех страницах и разделах вашего сайта. Это может быть важно как средство обеспечения того, чтобы пользователи были хорошо информированы о ваших точных правилах конфиденциальности, типах PII, которые вы собираете, и о том, как вы собираетесь их использовать. Чтобы иметь возможность включить такую ссылку на странице phpMussel «Загрузка Отказана», предоставляется директива конфигурации для указания URL-адреса вашей политики конфиденциальности.
 
 *Соответствующие директивы конфигурации:*
 - `legal` -> `privacy_policy`

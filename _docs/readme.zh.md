@@ -170,7 +170,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 
 请参考“安装手工（CLI）”部分的这个自述文件。
 
-还注意，​phpMussel是“*一经请求*”扫描器；不是“*一经访问*”扫描器（除了文件上传，​在上传时候），​而不像传统的防病毒套件，​它不监控活动内存！​它将会只检测病毒从文件上传，​而从那些具体文件您明确地告诉它需要扫描。
+还注意，​phpMussel是“*一经请求*”扫描程序；不是“*一经访问*”扫描程序（除了文件上传，​在上传时候），​而不像传统的防病毒套件，​它不监控活动内存！​它将会只检测病毒从文件上传，​而从那些具体文件您明确地告诉它需要扫描。
 
 ---
 
@@ -772,7 +772,7 @@ phpMussel签名文件前9个字节（`[x0-x8]`）是`phpMussel`。​它作为�
 
 *此信息仅适用于主包装。​结果可能因安装的签名文件，插件，和其他外围组件而异。*
 
-| 扫描器 | 结果 |
+| 扫描程序 | 扫描结果 |
 |---|---|
 | AVware | 报告 “BPX.Shell.PHP” |
 | Bkav | 报告 “VEXA3F5.Webshell” |
@@ -1040,9 +1040,9 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 *相关配置指令：*
 - `general` -> `disable_webfonts`
 
-##### 11.2.1 URL SCANNER
+##### 11.2.1 URL扫描程序
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+上文件上传中找到的URL可能会与hpHosts API或Google安全浏览API共享，取决于软件包的具体配置方式。​在hpHosts API的情况下，默认情况下此行为是启用的。​Google安全浏览API需要API密钥才能工作，因此默认情况下是禁用的。
 
 *相关配置指令：*
 - `urlscanner` -> `lookup_hphosts`
@@ -1184,13 +1184,13 @@ When a user successfully logs into the front-end, phpMussel sets a cookie in ord
 *相关配置指令：*
 - `general` -> `disable_frontend`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 市场营销和广告
 
-phpMussel doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. phpMussel is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+phpMussel不收集或处理任何信息用于营销或广告目的，既不销售也不从任何收集或记录的信息中获利。​phpMussel不是商业企业，也不涉及任何商业利益，因此做这些事情没有任何意义。​自项目开始以来就一直如此，今天仍然如此。​此外，做这些事情会对整个项目的精神和预期目的产生反作用，并且只要我继续维护项目，永远不会发生。
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 隐私政策
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on phpMussel's "Upload Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+在某些情况下，您可能需要依法在您网站的所有页面和部分上清楚地显示您的隐私政策链接。​这可能为了确保用户充分了解您的隐私惯例，收集的个人身份信息类型以及您打算如何使用它的是很重要。​为了能够在phpMussel的“上传是否认”页面上包含这样的链接，提供了配置指令来指定隐私策略的URL。
 
 *相关配置指令：*
 - `legal` -> `privacy_policy`

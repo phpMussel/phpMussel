@@ -1189,7 +1189,7 @@ A phpMussel não coleta ou processa qualquer informação para fins de marketing
 
 #### 11.6 POLÍTICA DE PRIVACIDADE
 
-Em algumas circunstâncias, você pode ser legalmente obrigado a exibir claramente um link para sua política de privacidade em todas as páginas e seções do seu site. Isso pode ser importante como um meio para garantir que os usuários e bem informados sobre suas práticas de privacidade exatas, os tipos de PII que você coletar, e como você pretende usá-lo. Para poder incluir esse link na página "Carregar Negado" do phpMussel, é fornecida uma diretiva de configuração para especificar o URL da sua política de privacidade.
+Em algumas circunstâncias, você pode ser legalmente obrigado a exibir claramente um link para sua política de privacidade em todas as páginas e seções do seu site. Isso pode ser importante como um meio de garantir que os usuários estejam bem informados sobre suas práticas de privacidade exatas, os tipos de PII que você coletar, e como você pretende usá-lo. Para poder incluir esse link na página "Carregar Negado" do phpMussel, é fornecida uma diretiva de configuração para especificar o URL da sua política de privacidade.
 
 *Diretivas de configuração relevantes:*
 - `legal` -> `privacy_policy`

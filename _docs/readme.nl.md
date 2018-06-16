@@ -1192,7 +1192,7 @@ phpMussel verzamelt of verwerkt geen informatie voor marketing of advertentie do
 
 #### 11.6 PRIVACYBELEID
 
-In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers en goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Upload Geweigerd" van phpMussel te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
+In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Upload Geweigerd" van phpMussel te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
 
 *Relevante configuratie-opties:*
 - `legal` -> `privacy_policy`
