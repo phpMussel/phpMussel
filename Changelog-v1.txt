@@ -26,7 +26,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   verifying the integrity of components or for when preparing for future
   updates).
 
-- [2017.06.13; Sub-minor code change; Maikuolan]: Refactoring again.
+- [2018.06.13; Sub-minor code change; Maikuolan]: Refactoring again.
+
+- [2018.06.17; NEW FEATURE; Maikuolan]: Added a new page to the front-end for
+  viewing some basic information about an installation's currently active
+  signatures such as the number of signatures from specific vendors, what
+  they're targeting, the type of malware they correspond to, etc.
 
 === Version/Release 1.4.0 ===
 MINOR RELEASE.

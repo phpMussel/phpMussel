@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.10).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'ফাইল ম্যানেজা
 $phpMussel['lang']['link_home'] = 'হোম পেজ';
 $phpMussel['lang']['link_logs'] = 'লগ ফাইল';
 $phpMussel['lang']['link_quarantine'] = 'সঙ্গরোধ';
+$phpMussel['lang']['link_siginfo'] = 'স্বাক্ষর তথ্য';
 $phpMussel['lang']['link_statistics'] = 'পরিসংখ্যান';
 $phpMussel['lang']['link_textmode'] = 'পাঠ্য বিন্যাস: <a href="%1$sfalse">সহজ</a> – <a href="%1$strue">অভিনব</a>';
 $phpMussel['lang']['link_updates'] = 'আপডেট';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'নির্ধা
 $phpMussel['lang']['response_upload_error'] = 'আপলোড করতে ব্যর্থ!';
 $phpMussel['lang']['response_verification_failed'] = 'যাচাইয়ের ব্যর্থ! কম্পোনেন্ট ভাঙ্গা হতে পারে।';
 $phpMussel['lang']['response_verification_success'] = 'যাচাইয়ের সাফল্য! কোন সমস্যা খুঁজে পাওয়া যায় নি।';
+$phpMussel['lang']['siginfo_key_CVE'] = 'স্বাক্ষর যে CVEগুলি (প্রচলিত দুর্বলতা এবং এক্সপোজারস) সঙ্গে মোকাবিলা।';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'স্বাক্ষরগুলি "chameleon হামলার" মোকাবেলা করে।';
+$phpMussel['lang']['siginfo_key_FN'] = 'স্বাক্ষর ফাইলের নামগুলির (ফাইলের বিষয়বস্তু বিরোধিতা হিসাবে) সাথে কাজ করে।';
+$phpMussel['lang']['siginfo_key_Fake'] = 'ক্ষতিকারক এবং জাল সফ্টওয়্যার, স্ক্রিপ্ট, ইত্যাদি।';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Heuristic তথ্য থেকে প্রাপ্ত স্বাক্ষর।';
+$phpMussel['lang']['siginfo_key_META'] = 'স্বাক্ষর ফাইল মেটাডাটা (ফাইলের তথ্য বিপরীত হিসাবে) সাথে কাজ করে।';
+$phpMussel['lang']['siginfo_key_Other'] = 'অজ্ঞাত বা অন্য।';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'কোনও মেটাডেটা উপলব্ধ নেই।';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'সন্দেহজনক, কিন্তু নিশ্চিত না (বিভিন্ন শনাক্তকরণের সংমিশ্রণ জড়িত হতে পারে)।';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'পরীক্ষা ফাইলের জন্য স্বাক্ষর (দূষিত নয়)।';
+$phpMussel['lang']['siginfo_key_Total'] = 'মোট সক্রিয় স্বাক্ষর।';
+$phpMussel['lang']['siginfo_key_VT'] = 'সহ বা Virus Total থেকে তথ্য উপর ভিত্তি করে স্বাক্ষর।';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'স্বাক্ষরগুলি "werewolf হামলার" মোকাবেলা করে।';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'স্বাক্ষর ফাইল ক্লাস দ্বারা গণনা';
+$phpMussel['lang']['siginfo_sub_Files'] = 'স্বাক্ষর ফাইল দ্বারা গণনা';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'সংক্রমণ বা ম্যালওয়্যার টাইপ দ্বারা গণনা';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'স্বাক্ষর মেটাডেটা দ্বারা গণনা';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'লক্ষ্য ভেক্টর দ্বারা গণনা';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'স্বাক্ষর বিক্রেতা বা উৎস দ্বারা গণনা';
+$phpMussel['lang']['siginfo_xkey'] = '"%s" হিসাবে চিহ্নিত।';
 $phpMussel['lang']['state_async_deny'] = 'অনুমতিগুলি অ্যাসিঙ্ক্রোনাস অনুরোধগুলি সঞ্চালনের পর্যাপ্ত নয়। আবার চেষ্টা করুন লগ ইন।';
 $phpMussel['lang']['state_cache_is_empty'] = 'ক্যাশ খালি আছে।';
 $phpMussel['lang']['state_complete_access'] = 'সম্পূর্ণ প্রবেশাধিকার';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'হ্যালো, {username}।<br />যে 
 $phpMussel['lang']['tip_quarantine'] = 'হ্যালো, {username}।<br />এই পৃষ্ঠাটি বর্তমানে সঙ্গরোধ মধ্যে সব ফাইল তালিকাভুক্ত এবং যারা ফাইল পরিচালনার সুবিধা।';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'নোট: সঙ্গরোধ বর্তমানে নিষ্ক্রিয়, কিন্তু কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।';
 $phpMussel['lang']['tip_see_the_documentation'] = 'বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION6">ডকুমেন্টেশনটি</a> দেখুন।';
+$phpMussel['lang']['tip_siginfo'] = 'হ্যালো, {username}।<br />স্বাক্ষর তথ্য পৃষ্ঠা বর্তমানে সক্রিয় স্বাক্ষরগুলির সূত্র এবং প্রকারের বিষয়ে কিছু মৌলিক তথ্য সরবরাহ করে।';
 $phpMussel['lang']['tip_statistics'] = 'হ্যালো, {username}।<br />এই পৃষ্ঠাটি আপনার phpMussel ইনস্টলেশনের সম্পর্কিত কিছু মৌলিক ব্যবহারের পরিসংখ্যান দেখায়।';
 $phpMussel['lang']['tip_statistics_disabled'] = 'নোট: পরিসংখ্যান ট্র্যাকিং বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।';
 $phpMussel['lang']['tip_updates'] = 'হ্যালো, {username}।<br />আপডেট পৃষ্ঠাটি আপনাকে phpMussel কম্পোনেন্ট ইনস্টল, আনইনস্টল এবং আপডেট করতে দেয় (কোর প্যাকেজ, স্বাক্ষর, L10N ফাইল, ইত্যাদি)।';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – হোম পেজ';
 $phpMussel['lang']['title_login'] = 'phpMussel – লগ ইন';
 $phpMussel['lang']['title_logs'] = 'phpMussel – লগ ফাইল';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – সঙ্গরোধ';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – স্বাক্ষর তথ্য';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – পরিসংখ্যান';
 $phpMussel['lang']['title_updates'] = 'phpMussel – আপডেট';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – আপলোড টেস্ট';

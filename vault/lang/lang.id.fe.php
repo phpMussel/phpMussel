@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.06.10).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'File Manager';
 $phpMussel['lang']['link_home'] = 'Halaman Utama';
 $phpMussel['lang']['link_logs'] = 'Log';
 $phpMussel['lang']['link_quarantine'] = 'Karantina';
+$phpMussel['lang']['link_siginfo'] = 'Informasi Tanda Tangan';
 $phpMussel['lang']['link_statistics'] = 'Statistik';
 $phpMussel['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhana</a> – <a href="%1$strue">Terformat</a>';
 $phpMussel['lang']['link_updates'] = 'Pembaruan';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menent
 $phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
 $phpMussel['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'Tanda tangan yang berhubungan dengan CVE (Kerentanan dan Eksposur Umum).';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'Tanda tangan yang berhubungan dengan "serangan bunglon".';
+$phpMussel['lang']['siginfo_key_FN'] = 'Tanda tangan yang bekerja dengan nama file (sebagai lawan isi file).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Deteksi adalah palsu, varian berbahaya dari entitas yang tidak berbahaya (perangkat lunak, skrip, dll).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Tanda tangan berasal dari data heuristik.';
+$phpMussel['lang']['siginfo_key_META'] = 'Tanda tangan yang bekerja dengan metadata file (sebagai lawan data file).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Tidak dikenal atau lainnya.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Tidak ada metadata yang tersedia.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Deteksi dicurigai, tetapi tidak dikonfirmasi (mungkin melibatkan kombinasi berbagai pengidentifikasi).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Tanda tangan untuk file test (yaitu, bukan pendeteksian yang berbahaya).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Total tanda tangan aktif.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Tanda tangan termasuk atau berdasarkan data dari Virus Total.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'Tanda tangan yang berhubungan dengan "serangan werewolf".';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'Hitung berdasarkan kelas file tanda tangan';
+$phpMussel['lang']['siginfo_sub_Files'] = 'Hitung berdasarkan file tanda tangan';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Hitung berdasarkan jenis infeksi atau malware';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'Hitung berdasarkan metadata tanda tangan';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Hitung berdasarkan vektor ditargetkan';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'Hitung berdasarkan vendor atau sumber tanda tangan';
+$phpMussel['lang']['siginfo_xkey'] = 'Diidentifikasi sebagai "%s".';
 $phpMussel['lang']['state_async_deny'] = 'Izin tidak memadai untuk melakukan permintaan asinkron. Coba masuk lagi.';
 $phpMussel['lang']['state_cache_is_empty'] = 'Cache kosong.';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar 
 $phpMussel['lang']['tip_quarantine'] = 'Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
+$phpMussel['lang']['tip_siginfo'] = 'Salam, {username}.<br />Halaman informasi tanda tangan memberikan beberapa informasi dasar tentang sumber dan jenis tanda tangan yang saat ini aktif.';
 $phpMussel['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi phpMussel Anda.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';
 $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – Informasi Tanda Tangan';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';

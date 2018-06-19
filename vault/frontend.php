@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.14).
+ * This file: Front-end handler (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -896,7 +896,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['lang']['title_config'], $phpMussel['lang']['tip_config']);
 
-    /** Append number localosation JS. */
+    /** Append number localisation JS. */
     $phpMussel['FE']['JS'] .= $phpMussel['Number_L10N_JS']() . "\n";
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
@@ -2335,6 +2335,42 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_quarantine.html'))
+    );
+
+    /** Send output. */
+    echo $phpMussel['SendOutput']();
+
+}
+
+/** Signature information. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_siginfo'], $phpMussel['lang']['tip_siginfo']);
+
+    /** Append number localisation JS. */
+    $phpMussel['FE']['JS'] .= $phpMussel['Number_L10N_JS']() . "\n";
+
+    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+
+    /** Template for range rows. */
+    $phpMussel['FE']['InfoRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_siginfo_row.html'));
+
+    /** Process signature files and fetch relevant values. */
+    $phpMussel['FE']['InfoRows'] = $phpMussel['SigInfoHandler'](
+        array_unique(explode(',', $phpMussel['Config']['signatures']['Active']))
+    );
+
+    /** Calculate and append page load time, and append totals. */
+    $phpMussel['FE']['ProcTime'] = '<div class="s">' . sprintf(
+        $phpMussel['lang']['state_loadtime'],
+        $phpMussel['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3)
+    ) . '</div>';
+
+    /** Parse output. */
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_siginfo.html'))
     );
 
     /** Send output. */

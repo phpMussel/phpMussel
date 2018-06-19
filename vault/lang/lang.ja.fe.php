@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.10).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'ファイル・マネージャー';
 $phpMussel['lang']['link_home'] = 'ホーム';
 $phpMussel['lang']['link_logs'] = 'ロゴス';
 $phpMussel['lang']['link_quarantine'] = '検疫';
+$phpMussel['lang']['link_siginfo'] = 'シグネチャ情報';
 $phpMussel['lang']['link_statistics'] = '統計';
 $phpMussel['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a>';
 $phpMussel['lang']['link_updates'] = 'アップデート';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '決定すること
 $phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $phpMussel['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $phpMussel['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
+$phpMussel['lang']['siginfo_key_CVE'] = 'ＣＶＥを扱うシグネチャ。';
+$phpMussel['lang']['siginfo_key_Chameleon'] = '「カメレオンの攻撃」を扱うシグネチャ。';
+$phpMussel['lang']['siginfo_key_FN'] = 'ファイル名を扱うシグネチャ（ファイルの内容ではなく）。';
+$phpMussel['lang']['siginfo_key_Fake'] = '検出は、他に良性のエンティティ（ソフトウェア、スクリプトなど）の偽の、悪意のある変異体です。';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'ヒューリスティック・データから派生したシグネチャ。';
+$phpMussel['lang']['siginfo_key_META'] = 'ファイル・メタデータを扱うシグネチャ（ファイル・データではなく）。';
+$phpMussel['lang']['siginfo_key_Other'] = '未確認またはその他。';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'メタデータはありません。';
+$phpMussel['lang']['siginfo_key_Suspect'] = '検出は疑わしいが、確認されていない（様々な識別子の組み合わせを含む）。';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'テスト・ファイルのシグネチャ（これらの検出は悪意のあるものではありません）。';
+$phpMussel['lang']['siginfo_key_Total'] = 'アクティブなシグネチャの合計。';
+$phpMussel['lang']['siginfo_key_VT'] = 'Virus Totalからのデータを含む、またはそのデータに基づくシグネチャ。';
+$phpMussel['lang']['siginfo_key_Werewolf'] = '「ウェアウルフの攻撃」を扱うシグネチャ。';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'シグネチャ・ファイル・クラスによるカウント';
+$phpMussel['lang']['siginfo_sub_Files'] = 'シグネチャ・ファイルによるカウント';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = '感染またはマルウェアの種類によるカウント';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'シグネチャ・メタデータによるカウント';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'ターゲット・ベクターによるカウント';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'シグネチャ・ベンダーまたはソース別によるカウント';
+$phpMussel['lang']['siginfo_xkey'] = '「%s」と識別されます。';
 $phpMussel['lang']['state_async_deny'] = 'あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。';
 $phpMussel['lang']['state_cache_is_empty'] = 'キャッシュは空です。';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そ
 $phpMussel['lang']['tip_quarantine'] = 'こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。';
 $phpMussel['lang']['tip_quarantine_disabled'] = '注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';
+$phpMussel['lang']['tip_siginfo'] = 'こんにちは、​{username}。<br />シグネチャ情報ページには、現在アクティブなシグネチャのソースとタイプに関する基本的な情報が表示されます。';
 $phpMussel['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br />このページには、phpMusselのインストールに関する基本的な使用状況の統計情報が表示されます。';
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_updates'] = 'こんにちは、​{username}。​<br />アップデート・ページは、​phpMusselのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​プラグイン、​L10Nファイル、​等）。';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – ホーム';
 $phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
 $phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – 検疫';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – シグネチャ情報';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
 $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';

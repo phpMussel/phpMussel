@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.06.10).
+ * This file: Dutch language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['Extended Description: phpMussel'] = 'De primaire pakket (zonder de handtekeningen, documentatie en configuratie).';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'De primaire pakket (zonder de signatures, documentatie en configuratie).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.';
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'Bestandsbeheer';
 $phpMussel['lang']['link_home'] = 'Startpagina';
 $phpMussel['lang']['link_logs'] = 'Logbestanden';
 $phpMussel['lang']['link_quarantine'] = 'Quarantaine';
+$phpMussel['lang']['link_siginfo'] = 'Signature Informatie';
 $phpMussel['lang']['link_statistics'] = 'Statistieken';
 $phpMussel['lang']['link_textmode'] = 'Tekstformaat: <a href="%1$sfalse">Eenvoudig</a> – <a href="%1$strue">Geformatteerde</a>';
 $phpMussel['lang']['link_updates'] = 'Updates';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $phpMussel['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $phpMussel['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'Signatures die te maken hebben met CVE\'s (Algemene Kwetsbaarheden en Blootstellingen).';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'Signatures die te maken hebben met "kameleonaanvallen".';
+$phpMussel['lang']['siginfo_key_FN'] = 'Signatures die werken met bestandsnamen (in tegenstelling tot bestandsinhoud).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Detecties zijn namaak, kwaadwillende varianten van anderszins goedaardige entiteiten (software, scripts, enz).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Signatures afgeleid van heuristische gegevens.';
+$phpMussel['lang']['siginfo_key_META'] = 'Signatures die werken met bestandsmetadata (in tegenstelling tot bestandsgegevens).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Niet geïdentificeerd of anders.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Geen metadata beschikbaar.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Detecties worden vermoed, maar niet bevestigd (kunnen combinaties van verschillende identificaties betrekken).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Signatures voor testbestanden (d.w.z., geen kwaadwillende detecties).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Totaal actieve signatures.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Signatures inclusief of gebaseerd op gegevens van Virus Total.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'Signatures die te maken hebben met "weerwolfaanvallen".';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'Tel op signature klasse';
+$phpMussel['lang']['siginfo_sub_Files'] = 'Tel op signature bestand';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Tel op infectie of malwaretype';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'Tel op signature metadata';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Tel op gerichte vector';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'Tel op signature leverancier of bron';
+$phpMussel['lang']['siginfo_xkey'] = 'Geïdentificeerd als "%s".';
 $phpMussel['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
 $phpMussel['lang']['state_cache_is_empty'] = 'De cache is leeg.';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbesta
 $phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Deze pagina bevat een lijst met alle bestanden die momenteel in quarantaine staan en het beheer van die bestanden vergemakkelijkt.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Notitie: Quarantaine is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.nl.md#SECTION7">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
+$phpMussel['lang']['tip_siginfo'] = 'Hallo, {username}.<br />De signature informatie pagina biedt enige basisinformatie over de bronnen en typen van de momenteel actieve signatures.';
 $phpMussel['lang']['tip_statistics'] = 'Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw phpMussel-installatie.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende phpMussel componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, plugins, L10N bestanden, ezv).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Startpagina';
 $phpMussel['lang']['title_login'] = 'phpMussel – Inloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Logbestanden';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantaine';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – Signature Informatie';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistieken';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';

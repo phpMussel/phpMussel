@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.10).
+ * This file: Korean language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = '파일 관리자';
 $phpMussel['lang']['link_home'] = '홈';
 $phpMussel['lang']['link_logs'] = '로고스';
 $phpMussel['lang']['link_quarantine'] = '격리';
+$phpMussel['lang']['link_siginfo'] = '서명 정보';
 $phpMussel['lang']['link_statistics'] = '통계';
 $phpMussel['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
 $phpMussel['lang']['link_updates'] = '업데이트';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '결정 수 없습�
 $phpMussel['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $phpMussel['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $phpMussel['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'CVE를 다루는 서명.';
+$phpMussel['lang']['siginfo_key_Chameleon'] = '"카멜레온 공격"을 다루는 서명.';
+$phpMussel['lang']['siginfo_key_FN'] = '파일 이름을 사용하는 서명 (파일 내용이 아닌).';
+$phpMussel['lang']['siginfo_key_Fake'] = '탐지는 양성 엔티티 (소프트웨어, 스크립트 등)의 가짜 악성 변종입니다.';
+$phpMussel['lang']['siginfo_key_HEUR'] = '휴리스틱 데이터에서 파생 된 서명.';
+$phpMussel['lang']['siginfo_key_META'] = '파일 메타 데이터로 작업하는 서명 (파일 데이터와 반대).';
+$phpMussel['lang']['siginfo_key_Other'] = '미확인 또는 기타.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = '사용할 수있는 메타 데이터가 없습니다.';
+$phpMussel['lang']['siginfo_key_Suspect'] = '탐지는 의심 스럽지만 확인되지 않았습니다 (다양한 식별자의 조합이 포함될 수 있음).';
+$phpMussel['lang']['siginfo_key_Testfile'] = '테스트 파일의 서명 (이러한 탐지는 악의적이지 않습니다).';
+$phpMussel['lang']['siginfo_key_Total'] = '총 활성 서명.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Virus Total의 데이터를 포함한 서명.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = '"늑대 인간의 공격"을 다루는 서명.';
+$phpMussel['lang']['siginfo_sub_Classes'] = '서명 파일 클래스 수';
+$phpMussel['lang']['siginfo_sub_Files'] = '서명 파일 수';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = '감염 또는 악성 코드 유형으로 계산';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = '서명 메타 데이터로 계산';
+$phpMussel['lang']['siginfo_sub_Targets'] = '타겟 벡터로 계산';
+$phpMussel['lang']['siginfo_sub_Vendors'] = '서명 공급 업체 또는 출처 별 계산';
+$phpMussel['lang']['siginfo_xkey'] = '"%s"로 식별됩니다.';
 $phpMussel['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
 $phpMussel['lang']['state_cache_is_empty'] = '캐시가 비어 있습니다.';
 $phpMussel['lang']['state_complete_access'] = '전체 액세스';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 �
 $phpMussel['lang']['tip_quarantine'] = '안녕하세요, {username}.<br />관리를 용이하게하기 위해, 현재 격리 저장소에있는 모든 파일이이 페이지에 나열됩니다.';
 $phpMussel['lang']['tip_quarantine_disabled'] = '노트 : 격리는 현재 비활성화되어 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';
+$phpMussel['lang']['tip_siginfo'] = '안녕하세요, {username}.<br />서명 정보 페이지는 현재 활성화 된 서명의 소스 및 유형에 대한 몇 가지 기본 정보를 제공합니다.';
 $phpMussel['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 phpMussel 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
 $phpMussel['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – 홈';
 $phpMussel['lang']['title_login'] = 'phpMussel – 로그인';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 로고스';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – 격리';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – 서명 정보';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 통계';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';

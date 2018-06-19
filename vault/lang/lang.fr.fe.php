@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.10).
+ * This file: French language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'Gestionnaire de Fichiers';
 $phpMussel['lang']['link_home'] = 'Page d\'Accueil';
 $phpMussel['lang']['link_logs'] = 'Fichiers Journaux';
 $phpMussel['lang']['link_quarantine'] = 'Quarantaine';
+$phpMussel['lang']['link_siginfo'] = 'Informations sur les Signatures';
 $phpMussel['lang']['link_statistics'] = 'Statistiques';
 $phpMussel['lang']['link_textmode'] = 'Formatage du texte : <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Formaté</a>';
 $phpMussel['lang']['link_updates'] = 'Mises à Jour';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapable de déte
 $phpMussel['lang']['response_upload_error'] = 'Échec du téléchargement !';
 $phpMussel['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';
 $phpMussel['lang']['response_verification_success'] = 'Succès de la vérification ! Aucun problème trouvé.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'Les signatures qui traitent des CVE (Vulnérabilités et Expositions Communes).';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'Les signatures qui traitent des « attaques caméléon ».';
+$phpMussel['lang']['siginfo_key_FN'] = 'Les signatures fonctionnant avec des noms de fichiers (par opposition au contenu du fichier).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Les détections sont de variantes malveillantes et contrefaites d\'entités par ailleurs bénignes (logiciels, scripts, etc).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Les signatures dérivées de données heuristiques.';
+$phpMussel['lang']['siginfo_key_META'] = 'Les signatures fonctionnant avec des métadonnées de fichier (par opposition aux données de fichier).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Non identifié ou autre.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Aucune métadonnée disponible.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Les détections sont suspectées, mais pas confirmées (peuvent impliquer des combinaisons de plusieurs identifiants).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Les signatures pour les fichiers de test (les détections ne sont pas malveillantes).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Total des signatures actives.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Les signatures incluant ou basées sur des données de Virus Total.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'Des signatures qui traitent des « attaques de werewolf ».';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'Compter par classe de fichier de signature';
+$phpMussel['lang']['siginfo_sub_Files'] = 'Compter par fichier de signature';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Compter par type d\'infection ou de programme malveillant';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'Compter par métadonnées de signature';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Compter par vecteur ciblé';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'Compter par fournisseur ou source de signature';
+$phpMussel['lang']['siginfo_xkey'] = 'Identifié comme « %s ».';
 $phpMussel['lang']['state_async_deny'] = 'Les autorisations ne sont pas suffisantes pour effectuer des requêtes asynchrones. Essayez de vous reconnecter.';
 $phpMussel['lang']['state_cache_is_empty'] = 'Le cache est vide.';
 $phpMussel['lang']['state_complete_access'] = 'Accès complet';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fic
 $phpMussel['lang']['tip_quarantine'] = 'Bonjour, {username}.<br />Cette page répertorie tous les fichiers actuellement en quarantaine et facilite la gestion de ces fichiers.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Remarque : La quarantaine est actuellement désactivée, mais peut être activée via la page de configuration.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.fr.md#SECTION7">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';
+$phpMussel['lang']['tip_siginfo'] = 'Bonjour, {username}.<br />La page d\'informations sur les signatures fournit des informations de base sur les sources et les types des signatures actuellement actives.';
 $phpMussel['lang']['tip_statistics'] = 'Bonjour, {username}.<br />Cette page présente certaines statistiques d\'utilisation concernant votre installation pour phpMussel.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Remarque : Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration.';
 $phpMussel['lang']['tip_updates'] = 'Bonjour, {username}.<br />La page des mises à jour vous permet d\'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Page d\'Accueil';
 $phpMussel['lang']['title_login'] = 'phpMussel – Connexion';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Fichiers Journaux';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantaine';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – Informations sur les Signatures';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiques';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';

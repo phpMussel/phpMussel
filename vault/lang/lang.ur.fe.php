@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.06.10).
+ * This file: Urdu language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'فائل منیجر';
 $phpMussel['lang']['link_home'] = 'ہوم';
 $phpMussel['lang']['link_logs'] = 'لاگز';
 $phpMussel['lang']['link_quarantine'] = 'قرنطین';
+$phpMussel['lang']['link_siginfo'] = 'دستخط کی معلومات';
 $phpMussel['lang']['link_statistics'] = 'اعداد و شمار';
 $phpMussel['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse">سادہ</a> – <a href="%1$strue">خوبصورت</a>';
 $phpMussel['lang']['link_updates'] = 'تازہ ترین معلومات کے';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'اس بات کا �
 $phpMussel['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
 $phpMussel['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $phpMussel['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'دستخط CVE سے نمٹنے کے.';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'دستخط جو "chameleon حملوں" سے نمٹنے کے لئے ہے.';
+$phpMussel['lang']['siginfo_key_FN'] = 'دستخط جن فائل نام کے ساتھ کام کرتے ہیں (فائل کا مواد کے بجائے).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'خطرناک، جعلی مصنوعات کے ورژن کا پتہ لگاتا ہے (سافٹ ویئر، سکرپٹ، وغیرہ).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'تجزیاتی اعداد و شمار سے کردہ دستخط.';
+$phpMussel['lang']['siginfo_key_META'] = 'دستخط جن فائل میٹا ڈیٹا کے ساتھ کام کرتے ہیں (فائل کا ڈیٹا کے بجائے).';
+$phpMussel['lang']['siginfo_key_Other'] = 'نامعلوم یا دوسرا.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'میٹا ڈیٹا دستیاب نہیں ہے.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'خطرناک ہوسکتا ہے، لیکن اس کی تصدیق نہیں کی گئی (ایک سے زیادہ شناخت شامل ہوسکتا ہے).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'دستخط کی ٹیسٹ فائلیں لئے (یہ خطرناک نہیں ہیں).';
+$phpMussel['lang']['siginfo_key_Total'] = 'کل فعال دستخط.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Virus Total سے اعداد و شمار پر مبنی ہے یا اس پر مشتمل ہے.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'دستخط جو "werewolf حملوں" سے نمٹنے کے لئے ہے.';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'دستخط فائل کی کلاس کی نمبر';
+$phpMussel['lang']['siginfo_sub_Files'] = 'دستخط فائل کی نمبر';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'میلویئر کی قسم کی نمبر';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'میٹا ڈیٹا کی نمبر';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'ویکٹر ہدف کی نمبر';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'ذریعہ کی نمبر';
+$phpMussel['lang']['siginfo_xkey'] = '"%s" کے طور پر شناخت.';
 $phpMussel['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
 $phpMussel['lang']['state_cache_is_empty'] = 'کیش خالی ہے.';
 $phpMussel['lang']['state_complete_access'] = 'مکمل رسائی';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائ
 $phpMussel['lang']['tip_quarantine'] = 'ہیلو، {username}.<br />انتظامیہ کو سہولت دینے کے لئے، اس صفحہ کو فی الحال قرنطین میں موجود تمام فائلوں کی فہرست.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'نوٹ: قرنطین فی الحال غیر فعال ہے، لیکن ترتیب ترتیب کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ur.md#SECTION7">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
+$phpMussel['lang']['tip_siginfo'] = 'ہیلو، {username}.<br />یہ صفحہ فی الحال فعال دستخط کے ذرائع اور اقسام کے بارے میں کچھ معلومات فراہم کرتا ہے.';
 $phpMussel['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ آپ کے phpMussel کی تنصیب کے لئے کچھ استعمال کے اعداد و شمار ظاہر کرتا ہے.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – ہوم';
 $phpMussel['lang']['title_login'] = 'phpMussel – لاگ ان';
 $phpMussel['lang']['title_logs'] = 'phpMussel – لاگز';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – قرنطین';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – دستخط معلومات';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – اعداد و شمار';
 $phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلومات کے';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';

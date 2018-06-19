@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.06.10).
+ * This file: German language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -36,7 +36,7 @@ $phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'Schwelle der
 $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'Diese Direktive sollte generell AUS geschaltet bleiben sofern es nicht für die korrekte Funktion von phpMussel auf Ihrem System benötigt wird. Normalerweise, sobald phpMussel bei AUS geschalteter Direktive ein Element in <code>$_FILES</code> array() erkennt, wird es beginnen, die Dateien, die diese Elemente repräsentieren, zu überprüfen, sollten diese Elemente leer sein, gibt phpMussel eine Fehlermeldung zurück. Dies ist das normale Verhalten von phpMussel. Bei einigen CMS werden allerdings als normales Verhalten leere Elemente in <code>$_FILES</code> zurückgegeben oder Fehlermeldungen ausgelöst, sobald sich dort keine leeren Elemente befinden, in diesem Fall tritt ein Konflikt zwischen dem normalen Verhalten von phpMussel und dem CMS auf. Sollte eine solche Konstellation bei Ihrem CMS zutreffen, so stellen Sie diese Option AN, phpMussel wird somit nicht nach leeren Elementen suchen, Sie bei einem Fund ignorieren und keine zugehörigen Fehlermeldungen ausgeben, der Request zum Seitenaufruf kann somit fortgesetzt werden. False = AUS/OFF; True = AN/ON.';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen. Dies kann die Verarbeitungszeit und Speichernutzung reduzieren, sobald andere Nicht-Bilddateien hochgeladen werden. False = AUS/OFF; True = AN/ON.';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden sind, zu verringern. False = Nein; True = Ja [Standardeinstellung].';
-$phpMussel['lang']['config_files_check_archives'] = 'Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung]. Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z usw. wird zur Zeit NICHT unterstützt). Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird. Die Archivüberprüfung ist derzeit nicht rekursiv für PHAR-Archive oder ZIP-Archive.';
+$phpMussel['lang']['config_files_check_archives'] = 'Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung]. Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z, u.s.w. wird zur Zeit NICHT unterstützt). Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird. Die Archivüberprüfung ist derzeit nicht rekursiv für PHAR-Archive oder ZIP-Archive.';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des Archivs übertragen werden? False = Nein (alles nur in die Greylist aufnehmen); True = Ja [Standardeinstellung].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'Begrenzung der Dateigröße in KB. 65536 = 64MB [Standardeinstellung]; 0 = Keine Begrenzung (wird immer zur Greylist hinzugefügt), jeder (positive) numerische Wert wird akzeptiert. Dies ist nützlich, wenn Ihre PHP-Konfiguration den verfügbaren Speicherverbrauch je Prozess einschränkt oder die Dateigröße von Uploads begrenzt.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Handhabung von Dateien, die die Begrenzung der Dateigröße (sofern angegeben) überschreiten. False = Hinzufügen zur Whitelist; True = Hinzufügen zur Blacklist [Standardeinstellung].';
@@ -61,7 +61,7 @@ $phpMussel['lang']['config_general_ipaddr'] = 'Ort der IP-Adresse der aktuellen 
 $phpMussel['lang']['config_general_lang'] = 'Gibt die Standardsprache für phpMussel an.';
 $phpMussel['lang']['config_general_log_rotation_action'] = 'Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben. Delete = Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird. Archive = Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird.';
 $phpMussel['lang']['config_general_log_rotation_limit'] = 'Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation.';
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maximale Anzahl der Versucht zu einloggen (Front-End). Standardeinstellung = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel ist in der Lage, Versuche von Datei-Uploads in einem Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer, die nur daran interessiert sind, ihre Webauftritte oder ihre Hosting-Umgebung zu schützen ohne das Interesse, die markierten Dateien weitergehend zu untersuchen, sollten diese Funktionalität deaktivieren, Nutzer, die diese Dateien zur Ananlyse auf Malware o.ä. benötigen, sollten diese Funktion aktivieren. Die Isolation von markierten Dateien kann manchmal auch bei der Fehlersuche von Fehlalarmen helfen, wenn dies häufiger bei Ihnen auftritt. Um die Quarantänefunktion zu deaktivieren, lassen Sie die Richtlinie <code>quarantine_key</code> leer oder löschen Sie den Inhalt dieser Richtlinie, wenn sie nicht bereits leer ist. Um die Quarantänefunktion zu aktivieren, geben Sie einen Wert ein. Der <code>quarantine_key</code> ist ein wichtiges Sicherheitsmerkmal der Quarantänfunktionen, um zu verhindern, dass die Quarantänefunktionen einem Exploit ausgesetzt wird und gespeicherte Daten in der Quarantäneumgebung ausgeführt werden können. Der Wert des <code>quarantine_key</code> sollte so behandelt werden, wie Ihre Passwörter: Je länger, desto besser, und halten Sie sie geheim. Optimal in Verbindung mit <code>delete_on_sight</code>.';
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'Dateimanager';
 $phpMussel['lang']['link_home'] = 'Startseite';
 $phpMussel['lang']['link_logs'] = 'Protokolldateien';
 $phpMussel['lang']['link_quarantine'] = 'Quarantäne';
+$phpMussel['lang']['link_siginfo'] = 'Signature Information';
 $phpMussel['lang']['link_statistics'] = 'Statistiken';
 $phpMussel['lang']['link_textmode'] = 'Textformatierung: <a href="%1$sfalse">Einfach</a> – <a href="%1$strue">Schick</a>';
 $phpMussel['lang']['link_updates'] = 'Aktualisierungen';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermitte
 $phpMussel['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein.';
 $phpMussel['lang']['response_verification_success'] = 'Verifizierung war Erfolg! Keine Probleme gefunden.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'Signaturen, die sich mit CVEs (Häufige Schwachstellen und Gefährdungen) befassen.';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'Signaturen, die sich mit "Chamäleon-Attacken" befassen.';
+$phpMussel['lang']['siginfo_key_FN'] = 'Signaturen, die mit Dateinamen arbeiten (im Gegensatz zu Dateiinhalten).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Erkennungen sind gefälschte, bösartige Varianten von ansonsten gutartigen Entitäten (Software, Skripte, u.s.w.).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Von heuristischen Daten abgeleitete Signaturen.';
+$phpMussel['lang']['siginfo_key_META'] = 'Signaturen, die mit Dateimetadaten arbeiten (im Gegensatz zu Dateidaten).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Nicht identifiziert oder anders.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Keine Metadaten verfügbar.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Erkennungen werden vermutet, aber nicht bestätigt (können Kombinationen verschiedener Identifikatoren beinhalten).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Signaturen für Testdateien (d.H., keine bösartigen Erkennungen).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Total aktive Signaturen';
+$phpMussel['lang']['siginfo_key_VT'] = 'Signaturen, die Daten von Virus Total enthalten oder darauf basieren.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'Signaturen, die sich mit "Werwolf-Attacken" befassen.';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'Zählen nach Signaturdateiklasse';
+$phpMussel['lang']['siginfo_sub_Files'] = 'Zählen nach Signaturdatei';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Zählen nach Infektion oder Malware-Typ';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'Zählen nach Signaturmetadaten';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Zählen nach Zielvektor';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'Zählen nach Signaturanbieter oder Signaturanquelle';
+$phpMussel['lang']['siginfo_xkey'] = 'Identifiziert als "%s".';
 $phpMussel['lang']['state_async_deny'] = 'Berechtigungen sind nicht ausreichend, um asynchrone Anforderungen auszuführen. Versuchen Sie sich erneut anzumelden.';
 $phpMussel['lang']['state_cache_is_empty'] = 'Der Cache ist leer.';
 $phpMussel['lang']['state_complete_access'] = 'Vollständiger Zugriff';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Proto
 $phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Diese Seite erleichtert die Verwaltung von, und listet alle Dateien auf, die sich derzeit in der Quarantäne befinden.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Hinweis: Die Quarantäne ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Siehe die <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.de.md#SECTION7">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken.';
+$phpMussel['lang']['tip_siginfo'] = 'Hallo, {username}.<br />Die "Signature Information"-Seite bietet einige grundlegende Informationen zu den Quellen und Typen der derzeit aktiven Signaturen.';
 $phpMussel['lang']['tip_statistics'] = 'Hallo, {username}.<br />Diese Seite zeigt einige grundlegende Nutzungsstatistiken zu Ihrer phpMussel-Installation.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
 $phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von phpMussel (das Kernpaket, Signaturen, Plugins, L10N-Dateien, u.s.w.).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Startseite';
 $phpMussel['lang']['title_login'] = 'phpMussel – Einloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Protokolldateien';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantäne';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – Signature Information';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiken';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Aktualisierungen';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload-Prüfung';
@@ -325,6 +348,6 @@ $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von <a href="http://www.payload-security.com/">Payload Security</a> zur Verfügung gestellt.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer-Anti-Malware-Spezialisten.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Nützliche Malware konzentrierte Diskussionsforen.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, usw).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, usw).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, u.s.w.).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, u.s.w.).</li>
         </ul>';

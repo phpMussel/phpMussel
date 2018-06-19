@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.10).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'Dosya Yöneticisi';
 $phpMussel['lang']['link_home'] = 'Ana Sayfa';
 $phpMussel['lang']['link_logs'] = 'Kayıtlar';
 $phpMussel['lang']['link_quarantine'] = 'Karantina';
+$phpMussel['lang']['link_siginfo'] = 'İmza Bilgisi';
 $phpMussel['lang']['link_statistics'] = 'İstatistik';
 $phpMussel['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a>';
 $phpMussel['lang']['link_updates'] = 'Güncellemeler';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Belirlenemedi.';
 $phpMussel['lang']['response_upload_error'] = 'Yüklenemedi!';
 $phpMussel['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
 $phpMussel['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'CVE\'lerle (Ortak Güvenlik Açıkları ve Etkilenmeler) ilgilenen imzalar.';
+$phpMussel['lang']['siginfo_key_Chameleon'] = '"Bukalemun saldırıları" ile ilgilenen imzalar.';
+$phpMussel['lang']['siginfo_key_FN'] = 'Dosya isimleriyle çalışan imzalar (dosya içeriğinin aksine).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Algılamalar, başka türlü iyi niyetli varlıkların (yazılım, komut dosyaları, vb) sahte, zararlı varyantlarıdır.';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Sezgisel verilerden elde edilen imzalar.';
+$phpMussel['lang']['siginfo_key_META'] = 'Dosya meta verileriyle çalışan imzalar (dosya verilerinin aksine).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Tanımlanamayan veya başka.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Kullanılabilir meta veri yok.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Algılamalar şüpheli, ancak onaylanmadı (çeşitli tanımlayıcıların kombinasyonlarını içerebilir).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Test dosyaları için imzalar (bu algılamalar zararlı değildir).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Toplam aktif imzalar.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Virus Total\'ından gelen verileri içeren veya bunlara dayanan imzalar.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = '"Werewolf saldırıları" ile ilgilenen imzalar.';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'İmza dosya sınıfına göre sayın';
+$phpMussel['lang']['siginfo_sub_Files'] = 'İmza dosyasına göre sayın';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Enfeksiyon veya kötü amaçlı yazılım türüne göre sayın';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'İmza meta verilerine göre sayın';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Hedeflenen vektöre göre sayın';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'İmza satıcısına veya kaynağa göre sayın';
+$phpMussel['lang']['siginfo_xkey'] = '"%s" olarak tanımlandı.';
 $phpMussel['lang']['state_async_deny'] = 'İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin.';
 $phpMussel['lang']['state_cache_is_empty'] = 'Önbellek boş.';
 $phpMussel['lang']['state_complete_access'] = 'Tam erişim';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyası
 $phpMussel['lang']['tip_quarantine'] = 'Merhaba, {username}.<br />Bu sayfada, şu anda karantinadaki tüm dosyaları listeler ve bu dosyaların yönetimini kolaylaştırır.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Not: Karantina şu anda devre dışıdır, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">belgelere</a> bakın.';
+$phpMussel['lang']['tip_siginfo'] = 'Merhaba, {username}.<br />İmza bilgisi sayfası, şu anda aktif imzaların kaynakları ve türleri hakkında bazı temel bilgiler sağlar.';
 $phpMussel['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Ana Sayfa';
 $phpMussel['lang']['title_login'] = 'phpMussel – Giriş';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Kayıtlar';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – İmza Bilgisi';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – İstatistik';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Güncellemeler';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Yükleme Testi';

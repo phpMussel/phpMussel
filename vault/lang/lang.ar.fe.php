@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.10).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = 'مدير الملفات';
 $phpMussel['lang']['link_home'] = 'الرئيسية';
 $phpMussel['lang']['link_logs'] = 'سجلات';
 $phpMussel['lang']['link_quarantine'] = 'الحجر الصحي';
+$phpMussel['lang']['link_siginfo'] = 'معلومات التوقيع';
 $phpMussel['lang']['link_statistics'] = 'الإحصاء';
 $phpMussel['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a>';
 $phpMussel['lang']['link_updates'] = 'التحديثات';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر ع
 $phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
 $phpMussel['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'التوقيعات التي تتعامل مع CVE (نقاط الضعف والتعرض الشائعة).';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'التوقيعات التي تتعامل مع "هجمات الحرباء".';
+$phpMussel['lang']['siginfo_key_FN'] = 'التوقيعات تعمل مع أسماء الملفات (على عكس محتويات الملف).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'عمليات الكشف هي أشكال مزيفة وخبيثة للكيانات الحميدة الأخرى (البرامج ، والنصوص ، وما إلى ذلك).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'التوقيعات مشتقة من بيانات ارشادية.';
+$phpMussel['lang']['siginfo_key_META'] = 'التوقيعات العاملة مع بيانات التعريف للملف (على عكس بيانات الملف).';
+$phpMussel['lang']['siginfo_key_Other'] = 'غير معروف أو غيره.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'لا توجد بيانات وصفية متاحة.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'اكتشافات في الاشتباه ، ولكن لم يتم التأكد (قد تنطوي على مجموعات من مختلف المعرفات).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'التوقيعات لملفات الاختبار (لا خبيثة).';
+$phpMussel['lang']['siginfo_key_Total'] = 'مجموع التوقيعات النشطة.';
+$phpMussel['lang']['siginfo_key_VT'] = 'التوقيعات بما في ذلك أو استناداً إلى البيانات من Virus Total.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'التوقيعات التي تتعامل مع "هجمات بالذئب".';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'العد حسب فئة ملف التوقيع';
+$phpMussel['lang']['siginfo_sub_Files'] = 'العد من خلال ملف التوقيع';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'العد عن طريق العدوى أو نوع البرامج الضارة';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'العد من خلال بيانات التعريف التوقيع';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'العد من قبل ناقلات المستهدفة';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'العد من قبل البائع التوقيع أو المصدر';
+$phpMussel['lang']['siginfo_xkey'] = 'تم تعريفه بـ "%s".';
 $phpMussel['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
 $phpMussel['lang']['state_cache_is_empty'] = 'ذاكرة التخزين المؤقت فارغة.';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سج�
 $phpMussel['lang']['tip_quarantine'] = 'مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
+$phpMussel['lang']['tip_siginfo'] = 'مرحبا، {username}.<br />توفر صفحة معلومات التوقيع بعض المعلومات الأساسية حول مصادر وأنواع التوقيعات النشطة حاليًا.';
 $phpMussel['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت phpMussel.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';
 $phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
 $phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – الحجر الصحي';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – معلومات التوقيع';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – الإحصاء';
 $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';

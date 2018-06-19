@@ -1,0 +1,15 @@
+<table>
+<tr>
+    <td class="nav big">
+{nav}    </td>
+    <td class="right extend">
+        {ProcTime}
+            <table><tr><td class="spanner"><select id="infoCatID" class="auto" onchange="javascript:setInfoCat()">
+{infoCatOptions}
+            </select></td></tr></table>
+        <span class="s placeholder_loading">{state_loading}</span>
+        {InfoRows}
+    </td>
+</tr>
+</table>
+<script type="text/javascript">function setInfoCat(){x=document.getElementById('infoCatID').value,null!==window.yCat&&hide(window.yCat),show(x),window.yCat=x}window.yCat='placeholder_loading',setInfoCat();</script>

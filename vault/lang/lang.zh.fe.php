@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.10).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,7 +49,7 @@ $phpMussel['lang']['config_files_max_uploads'] = '最大允许数值的文件为
 $phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $phpMussel['lang']['config_general_allow_symlinks'] = '有时，phpMussel无法直接访问以特定名称的文件。​通过符号链接间接访问文件有时可以解决此问题。​但是，这并不总是一个可行的解决方案，因为在某些系统上，使用符号链接可能是被禁止的，或者可能需要管理权限。​该指令确定是否phpMussel应尝试间接使用符号链接来访问文件，当直接访问它们是不可能的。​True（真）=启用符号链接；False（假）=禁用符号链接【标准】。';
 $phpMussel['lang']['config_general_cleanup'] = '【反设置/删除/清洁】脚本变量和缓存【Cache】之后执行吗？​如果您不使用脚本外初始上传扫描，​应该设置True【真/正】，​为了最小化内存使用。​如果您使用脚本为目的外初始上传扫描，​应该设置False【假/负】，​为了避免不必要重新加载复制数据在内存。​在一般的做法，​它应该设置True【真/正】，​但，​如果您做这样，​您将不能够使用脚本为任何目的以外文件上传扫描。​无影响在CLI模式。';
-$phpMussel['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
+$phpMussel['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = '激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，​是否通过签名或任何事其他。​文件已确定是清洁将会忽略。​如果是存档，​全存档将会删除，​不管如果违规文件是只有一个的几个文件包含在存档。​为文件上传扫描，​按说，​它不必要为您激活这个指令，​因为按说，​PHP将自动清洗内容的它的缓存当执行是完，​意思它将按说删除任何文件上传从它向服务器如果不已移动，​复制或删除。​这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。​False【假/负】：之后扫描，​忽略文件【标准】，​True【真/正】：之后扫描，​如果不清洁，​马上删除。';
 $phpMussel['lang']['config_general_disable_cli'] = '关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】；True（真）=关闭CLI模式。';
 $phpMussel['lang']['config_general_disable_frontend'] = '关闭前端访问吗？​前端访问可以使phpMussel更易于管理，​但也可能是潜在的安全风险。​建议管理phpMussel通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问；True（真）=关闭前端访问【标准】。';
@@ -201,6 +201,7 @@ $phpMussel['lang']['link_file_manager'] = '文件管理器';
 $phpMussel['lang']['link_home'] = '主页';
 $phpMussel['lang']['link_logs'] = '日志';
 $phpMussel['lang']['link_quarantine'] = '隔离';
+$phpMussel['lang']['link_siginfo'] = '签名信息';
 $phpMussel['lang']['link_statistics'] = '统计';
 $phpMussel['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">简单</a> – <a href="%1$strue">漂亮</a>';
 $phpMussel['lang']['link_updates'] = '更新';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '无法确定。';
 $phpMussel['lang']['response_upload_error'] = '无法上传！';
 $phpMussel['lang']['response_verification_failed'] = '验证失败！组件可能已损坏。';
 $phpMussel['lang']['response_verification_success'] = '验证成功！没有发现问题。';
+$phpMussel['lang']['siginfo_key_CVE'] = '处理CVE（常见漏洞和暴露）的签名。';
+$phpMussel['lang']['siginfo_key_Chameleon'] = '处理“变色龙攻击”的签名。';
+$phpMussel['lang']['siginfo_key_FN'] = '处理文件名的签名（与文件内容相反）。';
+$phpMussel['lang']['siginfo_key_Fake'] = '检测是否则良性实体（软件，脚本，等）的恶意伪造变体。';
+$phpMussel['lang']['siginfo_key_HEUR'] = '从启发式数据派生的签名。';
+$phpMussel['lang']['siginfo_key_META'] = '处理文件元数据的签名（与文件数据相反）。';
+$phpMussel['lang']['siginfo_key_Other'] = '不明或其他。';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = '无可用的元数据。';
+$phpMussel['lang']['siginfo_key_Suspect'] = '检测是可疑的，但未得到证实（可能涉及各种标识符的组合）。';
+$phpMussel['lang']['siginfo_key_Testfile'] = '测试文件的签名（即，不是恶意的检测）。';
+$phpMussel['lang']['siginfo_key_Total'] = '总活动签名。';
+$phpMussel['lang']['siginfo_key_VT'] = '签名包括或基于Virus Total的数据。';
+$phpMussel['lang']['siginfo_key_Werewolf'] = '处理“狼人攻击”的签名。';
+$phpMussel['lang']['siginfo_sub_Classes'] = '签名文件类的数量';
+$phpMussel['lang']['siginfo_sub_Files'] = '签名文件的数量';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = '感染或恶意软件类型的数量';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = '签名元数据的数量';
+$phpMussel['lang']['siginfo_sub_Targets'] = '向量目标的数量';
+$phpMussel['lang']['siginfo_sub_Vendors'] = '签名供应商或来源的数量';
+$phpMussel['lang']['siginfo_xkey'] = '标识符是“%s”。';
 $phpMussel['lang']['state_async_deny'] = '权限不足以执行异步请求。尝试再次登录。';
 $phpMussel['lang']['state_cache_is_empty'] = '缓存是空的。';
 $phpMussel['lang']['state_complete_access'] = '完全访问';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个
 $phpMussel['lang']['tip_quarantine'] = '你好，​{username}。​<br />此页面列出当前在隔离中的所有文件，并可以用来管理这些文件。';
 $phpMussel['lang']['tip_quarantine_disabled'] = '注意：隔离目前禁用，但可以通过配置页面启用。';
 $phpMussel['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh.md#SECTION7">文档</a>以获取有关各种配置指令的信息和他们的目的。';
+$phpMussel['lang']['tip_siginfo'] = '你好，​{username}。<br />签名信息页面提供了有关当前活动签名的来源和类型的一些基本信息。';
 $phpMussel['lang']['tip_statistics'] = '你好，​{username}。​<br />此页面显示了有关phpMussel安装的一些基本使用统计信息。';
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：统计跟踪目前已被禁用，但可以通过配置页面启用。';
 $phpMussel['lang']['tip_updates'] = '你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新phpMussel的各种组件（核心包，​签名，​插件，​L10N文件，​等等）。';
@@ -305,6 +327,7 @@ $phpMussel['lang']['title_home'] = 'phpMussel – 主页';
 $phpMussel['lang']['title_login'] = 'phpMussel – 登录';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日志';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – 隔离';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – 签名信息';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – 统计';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上传测试';
@@ -314,18 +337,18 @@ $phpMussel['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​强烈�
 $phpMussel['lang']['warning_signatures_1'] = '没有签名文件是活动的！';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，​协助，​等等）。​</li>
-            <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel页面托管在开源中国社区。​</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。​</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主页（ClamAV®是一个开源的防病毒引擎用于检测木马，​病毒，​恶意软件和其他恶意威胁）。​</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家计算机安全公司；为ClamAV提供补充签名。​</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – 网络钓鱼数据库；由phpMussel URL扫描器使用。​</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。​</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。​</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一项免费服务，​用于分析可疑文件和URL。​</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免费恶意软件分析服务。​</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 电脑反恶意软件专家。​</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的讨论论坛关于恶意软件。​</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，​协助，​等等）。</li>
+            <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel页面托管在开源中国社区。</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主页（ClamAV®是一个开源的防病毒引擎用于检测木马，​病毒，​恶意软件和其他恶意威胁）。</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家计算机安全公司；为ClamAV提供补充签名。</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – 网络钓鱼数据库；由phpMussel URL扫描器使用。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一项免费服务，​用于分析可疑文件和URL。</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免费恶意软件分析服务。</li>
+            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 电脑反恶意软件专家。</li>
+            <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的讨论论坛关于恶意软件。</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（PHP，HHVM，等等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';

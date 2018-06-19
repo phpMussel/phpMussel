@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.10).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,8 +20,8 @@ if (!defined('phpMussel')) {
 }
 
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
-$phpMussel['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?phpmussel-page=logout">Đăng Xuất</a>';
-$phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Đăng Xuất</a>';
+$phpMussel['lang']['bNav_home_logout'] = '<a href="?">Trang chủ</a> | <a href="?phpmussel-page=logout">Đăng xuất</a>';
+$phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Đăng xuất</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Chặn bất kỳ tập tin có chứa bất kỳ ký tự điều khiển (khác hơn so với dòng mới)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Nếu bạn <em><strong>CHỈ</strong></em> tải lên văn bản thô, thế thì bạn có thể kích hoạt tùy chọn này để cung cấp một số bảo vệ bổ sung để hệ thống của bạn. Tuy nhiên, nếu bạn tải lên bất cứ điều gì khác hơn văn bản thô, cho phép điều này có thể dẫn đến sai tích cực. False = Không chặn [Mặc định]; True = Chặn.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Tìm kiếm cho định danh tập tin thực thi trong các tập tin mà không phải là tập tin thực thi cũng không phải là kho lưu trữ được công nhận, và cho tập tin thực thi tập tin mà có định danh sai. False = Tắt; True = Trên.';
@@ -198,9 +198,10 @@ $phpMussel['lang']['link_cache_data'] = 'Dữ liệu cache';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';
 $phpMussel['lang']['link_documentation'] = 'Tài liệu';
 $phpMussel['lang']['link_file_manager'] = 'Quản lý tập tin';
-$phpMussel['lang']['link_home'] = 'Trang Chủ';
-$phpMussel['lang']['link_logs'] = 'Bản Ghi';
+$phpMussel['lang']['link_home'] = 'Trang chủ';
+$phpMussel['lang']['link_logs'] = 'Bản ghi';
 $phpMussel['lang']['link_quarantine'] = 'Kiểm dịch';
+$phpMussel['lang']['link_siginfo'] = 'Thông tin chữ ký';
 $phpMussel['lang']['link_statistics'] = 'Số liệu thống kê';
 $phpMussel['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse">Đơn giản</a> – <a href="%1$strue">Đẹp</a>';
 $phpMussel['lang']['link_updates'] = 'Cập Nhật';
@@ -263,6 +264,26 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác 
 $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $phpMussel['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
+$phpMussel['lang']['siginfo_key_CVE'] = 'Chữ ký để xử lý CVE (lỗ hổng và tiếp xúc thường gặp).';
+$phpMussel['lang']['siginfo_key_Chameleon'] = 'Chữ ký để xử lý "cuộc tấn công tắc kè hoa".';
+$phpMussel['lang']['siginfo_key_FN'] = 'Chữ ký để làm việc với tên tập tin (trái ngược với nội dung tập tin).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'Phát hiện là các biến thể giả mạo, độc hại của các thực thể lành tính khác (phần mềm, tập lệnh, vv).';
+$phpMussel['lang']['siginfo_key_HEUR'] = 'Chữ ký bắt nguồn từ dữ liệu heuristic.';
+$phpMussel['lang']['siginfo_key_META'] = 'Chữ ký để làm việc với siêu dữ liệu tập tin (trái ngược với dữ liệu tập tin).';
+$phpMussel['lang']['siginfo_key_Other'] = 'Không xác định hoặc khác.';
+$phpMussel['lang']['siginfo_key_Other_Metadata'] = 'Không có siêu dữ liệu.';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'Phát hiện bị nghi ngờ, nhưng không được xác nhận (có thể liên quan đến việc kết hợp các số nhận dạng khác nhau).';
+$phpMussel['lang']['siginfo_key_Testfile'] = 'Chữ ký cho các tập tin thử nghiệm (những phát hiện này không độc hại).';
+$phpMussel['lang']['siginfo_key_Total'] = 'Tổng số chữ ký kích hoạt.';
+$phpMussel['lang']['siginfo_key_VT'] = 'Chữ ký bao gồm hoặc dựa trên dữ liệu từ Virus Total.';
+$phpMussel['lang']['siginfo_key_Werewolf'] = 'Chữ ký để xử lý "cuộc tấn công người sói".';
+$phpMussel['lang']['siginfo_sub_Classes'] = 'Đếm theo phân loại tập tin chữ ký';
+$phpMussel['lang']['siginfo_sub_Files'] = 'Đếm theo tập tin chữ ký';
+$phpMussel['lang']['siginfo_sub_MalwareTypes'] = 'Đếm theo nhiễm trùng hay loại phần mềm độc hại';
+$phpMussel['lang']['siginfo_sub_SigTypes'] = 'Đếm theo siêu dữ liệu chữ ký';
+$phpMussel['lang']['siginfo_sub_Targets'] = 'Đếm theo vec-tơ mục tiêu';
+$phpMussel['lang']['siginfo_sub_Vendors'] = 'Đếm theo nhà cung cấp hay nguồn chữ ký';
+$phpMussel['lang']['siginfo_xkey'] = 'Được xác định là "%s".';
 $phpMussel['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
 $phpMussel['lang']['state_cache_is_empty'] = 'Bộ nhớ cache là trống.';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
@@ -293,6 +314,7 @@ $phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản
 $phpMussel['lang']['tip_quarantine'] = 'Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
+$phpMussel['lang']['tip_siginfo'] = 'Xin chào, {username}.<br />Trang thông tin chữ ký cung cấp một số thông tin cơ bản về các nguồn và loại chữ ký hiện đang kích hoạt.';
 $phpMussel['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt phpMussel của bạn.';
 $phpMussel['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
@@ -301,10 +323,11 @@ $phpMussel['lang']['title_accounts'] = 'phpMussel – Tài khoản';
 $phpMussel['lang']['title_cache_data'] = 'phpMussel – Dữ liệu cache';
 $phpMussel['lang']['title_config'] = 'phpMussel – Cấu hình';
 $phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản lý tập tin';
-$phpMussel['lang']['title_home'] = 'phpMussel – Trang Chủ';
+$phpMussel['lang']['title_home'] = 'phpMussel – Trang chủ';
 $phpMussel['lang']['title_login'] = 'phpMussel – Đăng nhập';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Bản ghi';
 $phpMussel['lang']['title_quarantine'] = 'phpMussel – Kiểm dịch';
+$phpMussel['lang']['title_siginfo'] = 'phpMussel – Thông tin chữ ký';
 $phpMussel['lang']['title_statistics'] = 'phpMussel – Số liệu thống kê';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Cập nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm tra tải lên';
