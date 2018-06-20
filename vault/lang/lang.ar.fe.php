@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.17).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -267,12 +267,12 @@ $phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! ل
 $phpMussel['lang']['siginfo_key_CVE'] = 'التوقيعات التي تتعامل مع CVE (نقاط الضعف والتعرض الشائعة).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'التوقيعات التي تتعامل مع "هجمات الحرباء".';
 $phpMussel['lang']['siginfo_key_FN'] = 'التوقيعات تعمل مع أسماء الملفات (على عكس محتويات الملف).';
-$phpMussel['lang']['siginfo_key_Fake'] = 'عمليات الكشف هي أشكال مزيفة وخبيثة للكيانات الحميدة الأخرى (البرامج ، والنصوص ، وما إلى ذلك).';
+$phpMussel['lang']['siginfo_key_Fake'] = 'عمليات الكشف هي أشكال مزيفة وخبيثة للكيانات الحميدة الأخرى (البرامج، والنصوص، وما إلى ذلك).';
 $phpMussel['lang']['siginfo_key_HEUR'] = 'التوقيعات مشتقة من بيانات ارشادية.';
 $phpMussel['lang']['siginfo_key_META'] = 'التوقيعات العاملة مع بيانات التعريف للملف (على عكس بيانات الملف).';
 $phpMussel['lang']['siginfo_key_Other'] = 'غير معروف أو غيره.';
 $phpMussel['lang']['siginfo_key_Other_Metadata'] = 'لا توجد بيانات وصفية متاحة.';
-$phpMussel['lang']['siginfo_key_Suspect'] = 'اكتشافات في الاشتباه ، ولكن لم يتم التأكد (قد تنطوي على مجموعات من مختلف المعرفات).';
+$phpMussel['lang']['siginfo_key_Suspect'] = 'اكتشافات في الاشتباه، ولكن لم يتم التأكد (قد تنطوي على مجموعات من مختلف المعرفات).';
 $phpMussel['lang']['siginfo_key_Testfile'] = 'التوقيعات لملفات الاختبار (لا خبيثة).';
 $phpMussel['lang']['siginfo_key_Total'] = 'مجموع التوقيعات النشطة.';
 $phpMussel['lang']['siginfo_key_VT'] = 'التوقيعات بما في ذلك أو استناداً إلى البيانات من Virus Total.';
@@ -296,7 +296,7 @@ $phpMussel['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال 
 $phpMussel['lang']['state_logged_in'] = 'حاليا على.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';
-$phpMussel['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة !';
+$phpMussel['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!';
 $phpMussel['lang']['state_quarantine'] = ['هناك ملف %s موجود حاليا في وحدة العزل.', 'هناك ملفات %s موجودة حاليا في وحدة العزل.'];
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';

@@ -1,0 +1,230 @@
+# Warning: When modifying the information in this file, be careful to ensure
+# that any changes made won't conflict with the what phpMussel recognises as
+# its delimiters or as special characters (newlines, semicolons, colons, etc),
+# or else your signature files could break very badly, resulting in an
+# inability to properly detect anything or to numerous severe false positives.
+# Generally (but not exclusively), "\x0?" (?H0), \x3A, \x3B, and null (\x00)
+# should be avoided.
+Vendor Shorthand:
+ 2: ClamAV
+ 3: phpMussel
+ 4: SecuriteInfo
+ 5: ZBB
+ 6: NLNetLabs
+ 7: FoxIT
+ 8:
+  - PhishTank
+  1: Malc0de
+  2: hpHosts
+  3: Spam404
+  4: Cybercrime.Tracker
+ 9: phpMussel
+Vendor Weight Options:
+ 9: Weighted
+ 15: Weighted
+Vendor Search Patterns:
+ ClamAV: "\x1a[\x20-\x2f]|ClamAV"
+ phpMussel: "\x1a[\x30-\x3f\x90-\x9f]|phpMussel"
+ SecuriteInfo: "\x1a[\x40-\x4f]"
+ ZBB: "\x1a[\x50-\x5f]"
+ NLNetLabs: "\x1a[\x60-\x6f]"
+ FoxIT: "\x1a[\x70-\x7f]"
+ PhishTank: "\x1a\x80"
+ Malc0de: "\x1a\x81"
+ hpHosts: "\x1a\x82"
+ Spam404: "\x1a\x83"
+ Cybercrime.Tracker: "\x1a\x84"
+Metadata Shorthand:
+ 1: Testfile
+ 2: FN
+ 3: VT
+ 4: META
+ 5: Chameleon
+ 6: Werewolf
+ 7: Suspect
+ 8: Fake
+ 9: CVE
+ 15: HEUR
+Metadata Search Pattern Partials:
+ Testfile: "1"
+ FN: "2"
+ VT: "3"
+ META: "4"
+ Chameleon: "5"
+ Werewolf: "6"
+ Suspect: "7"
+ Fake: "8"
+ CVE: "9"
+ HEUR: "f"
+Vector Shorthand:
+ 1:
+  1: Win
+  2: W32
+  3: W64
+  4: ELF
+  5: OSX
+  6: Android
+  7: Email
+  8: JS
+  9: Java
+  10: XXE
+  11: Graphics
+  12: OLE
+  13: HTML
+  14: RTF
+  15: Archive
+ 2:
+  - PHP
+  1: XML
+  2: ASP
+  3: VBS
+  4: BAT
+  5: PDF
+  6: SWF
+  7: W97M
+  8: X97M
+  9: O97M
+  10: ASCII
+  11: Unix
+  12: Python
+  13: Perl
+  14: Ruby
+  15: INF/INI
+ 3:
+  - CGI
+Vector Search Patterns:
+ Win: "\x1a.[\x11\x12\x13]|[Ww](?:[Ii][Nn]|32|64)"
+ W32: "\x1a.\x12|[Ww](?:[Ii][Nn])?32"
+ W64: "\x1a.\x13|[Ww](?:[Ii][Nn])?64"
+ ELF: "\x1a.\x14"
+ OSX: "\x1a.\x15"
+ Android: "\x1a.\x16"
+ Email: "\x1a.\x17"
+ JS: "\x1a.\x18"
+ Java: "\x1a.\x19"
+ XXE: "\x1a.\x1a"
+ Graphics: "\x1a.\x1b"
+ OLE: "\x1a.\x1c"
+ HTML: "\x1a.\x1d"
+ RTF: "\x1a.\x1e"
+ Archive: "\x1a.\x1f"
+ PHP: "\x1a.\x20"
+ XML: "\x1a.\x21"
+ ASP: "\x1a.\x22"
+ VBS: "\x1a.\x23"
+ BAT: "\x1a.\x24"
+ PDF: "\x1a.\x25"
+ SWF: "\x1a.\x26"
+ W97M: "\x1a.\x27"
+ X97M: "\x1a.\x28"
+ O97M: "\x1a.\x29"
+ ASCII: "\x1a.\x2a"
+ Unix: "\x1a.\x2b"
+ Python: "\x1a.\x2c"
+ Perl: "\x1a.\x2d"
+ Ruby: "\x1a.\x2e"
+ INF/INI: "\x1a.\x2f"
+ CGI: "\x1a.\x30"
+Malware Type Shorthand:
+ 1:
+  1: Worm
+  2: Trojan
+  3: Adware
+  4: Flooder
+  5: IRCBot
+  6: Exploit
+  7: VirTool
+  8: Dialer
+  9: Joke/Hoax
+  11: Malware
+  12: Riskware
+  13: Rootkit
+  14: Backdoor
+  15: Hacktool
+ 2:
+  - Keylogger
+  1: Ransomware
+  2: Spyware
+  3: Virus
+  4: Dropper
+  5: Dropped
+  6: Downloader
+  7: Obfuscation
+  8: Obfuscator
+  9: Obfuscated
+  10: Packer
+  11: Packed
+  12: PUA/PUP
+  13: Shell
+  14: Defacer
+  15: Defacement
+ 3:
+  - Cryptor
+  1: Phish
+  2: Spam
+  3: Spammer
+  4: Scam
+  5: ZipBomb
+  6: ForkBomb
+  7: LogicBomb
+  8: CyberBomb
+  9: Malvertisement
+  13: Encrypted
+  15: BadURL
+Malware Type Ignore Options:
+ 1:
+  3: detect_adware
+  9: detect_joke_hoax
+ 2:
+  10: detect_packer_packed
+  11: detect_packer_packed
+  12: detect_pua_pup
+  13: detect_shell
+  14: detect_deface
+  15: detect_deface
+ 3:
+  13: detect_encryption
+Malware Type Search Patterns:
+ Worm: "\x1a..\x11"
+ Trojan: "\x1a..\x12"
+ Adware: "\x1a..\x13"
+ Flooder: "\x1a..\x14"
+ IRCBot: "\x1a..\x15"
+ Exploit: "\x1a..\x16"
+ VirTool: "\x1a..\x17"
+ Dialer: "\x1a..\x18"
+ Joke/Hoax: "\x1a..\x19"
+ Malware: "\x1a..\x1b"
+ Riskware: "\x1a..\x1c"
+ Rootkit: "\x1a..\x1d"
+ Backdoor: "\x1a..\x1e"
+ Hacktool: "\x1a..\x1f"
+ Keylogger: "\x1a..\x20"
+ Ransomware: "\x1a..\x21"
+ Spyware: "\x1a..\x22"
+ Virus: "\x1a..\x23"
+ Dropper: "\x1a..\x24"
+ Dropped: "\x1a..\x25"
+ Downloader: "\x1a..\x26"
+ Obfuscation: "\x1a..\x27"
+ Obfuscator: "\x1a..\x28"
+ Obfuscated: "\x1a..\x29"
+ Packer: "\x1a..\x2a"
+ Packed: "\x1a..\x2b"
+ PUA/PUP: "\x1a..\x2c"
+ Shell: "\x1a..\x2d"
+ Defacer: "\x1a..\x2e"
+ Defacement: "\x1a..\x2f"
+ Cryptor: "\x1a..\x30"
+ Phish: "\x1a..\x31"
+ Spam: "\x1a..\x32"
+ Spammer: "\x1a..\x33"
+ Scam: "\x1a..\x34"
+ ZipBomb: "\x1a..\x35"
+ ForkBomb: "\x1a..\x36"
+ LogicBomb: "\x1a..\x37"
+ CyberBomb: "\x1a..\x38"
+ Malvertisement: "\x1a..\x39"
+ Encrypted: "\x1a..\x3d"
+ BadURL: "\x1a..\x3f"
+

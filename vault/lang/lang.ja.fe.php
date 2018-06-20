@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.17).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -163,7 +163,7 @@ $phpMussel['lang']['label_expires'] = '有効期限： ';
 $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量：';
-$phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
+$phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計：';
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';

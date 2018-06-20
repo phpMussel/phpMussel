@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.17).
+ * This file: Korean language data for the front-end (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,8 +191,8 @@ $phpMussel['lang']['label_upload_date'] = '업로드 날짜 : ';
 $phpMussel['lang']['label_upload_hash'] = '업로드 해시 : ';
 $phpMussel['lang']['label_upload_origin'] = '업로드 원점 : ';
 $phpMussel['lang']['label_upload_size'] = '업로드 크기 : ';
-$phpMussel['lang']['label_your_ip'] = '당신의 IP :';
-$phpMussel['lang']['label_your_ua'] = '당신의 UA :';
+$phpMussel['lang']['label_your_ip'] = '당신의 IP :';
+$phpMussel['lang']['label_your_ua'] = '당신의 UA :';
 $phpMussel['lang']['link_accounts'] = '계정';
 $phpMussel['lang']['link_cache_data'] = '데이터 캐쉬';
 $phpMussel['lang']['link_config'] = '구성';

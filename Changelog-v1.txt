@@ -33,6 +33,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   signatures such as the number of signatures from specific vendors, what
   they're targeting, the type of malware they correspond to, etc.
 
+- [2018.06.20; Sub-minor code change; Maikuolan]: Split shorthand data out to
+  its own file to improve logic and reduce duplication.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

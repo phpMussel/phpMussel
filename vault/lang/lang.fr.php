@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.05.16).
+ * This file: French language data (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,7 +30,7 @@ $phpMussel['lang']['SafeBrowseLookup_400'] = 'Erreur de requête de l\'API';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'Erreur d\'autorisation de l\'API';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'Le service de l\'API est indisponible';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'Erreur API inconnue';
-$phpMussel['lang']['_exclamation'] = '%s ! ';
+$phpMussel['lang']['_exclamation'] = '%s ! ';
 $phpMussel['lang']['_exclamation_final'] = '%s !';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
@@ -60,7 +60,7 @@ $phpMussel['lang']['greylist_cleared'] = ' Greylist vidé.';
 $phpMussel['lang']['greylist_not_updated'] = ' Liste grise n\'a pas été mise à jour';
 $phpMussel['lang']['greylist_updated'] = ' Liste grise mise à jour.';
 $phpMussel['lang']['image'] = 'Image';
-$phpMussel['lang']['instance_already_active'] = 'Instance déjà active ! Veuillez vérifier vos crochets.';
+$phpMussel['lang']['instance_already_active'] = 'Instance déjà active ! Veuillez vérifier vos crochets.';
 $phpMussel['lang']['invalid_data'] = 'Données non valides !';
 $phpMussel['lang']['invalid_file'] = 'Fichier non valide';
 $phpMussel['lang']['invalid_url'] = 'URL non valide !';
@@ -73,7 +73,7 @@ $phpMussel['lang']['required_variables_not_defined'] = 'Les variables requises n
 $phpMussel['lang']['scan_aborted'] = 'Analyse abandonnée !';
 $phpMussel['lang']['scan_chameleon'] = 'Attaque %s caméléon détectée';
 $phpMussel['lang']['scan_checking'] = 'Vérification';
-$phpMussel['lang']['scan_checking_contents'] = 'Succès ! La vérification des contenus peut continuer.';
+$phpMussel['lang']['scan_checking_contents'] = 'Succès ! La vérification des contenus peut continuer.';
 $phpMussel['lang']['scan_command_injection'] = 'Tentative d\'injection de commande détectée';
 $phpMussel['lang']['scan_complete'] = 'Terminé';
 $phpMussel['lang']['scan_extensions_missing'] = 'Échec (extensions requises manquantes) !';
@@ -86,15 +86,15 @@ $phpMussel['lang']['scan_signature_file_corrupted'] = 'Fichier des signatures co
 $phpMussel['lang']['scan_signature_file_missing'] = 'Fichiers des signatures manquant';
 $phpMussel['lang']['scan_tampering'] = 'Altération de fichier potentiellement dangereuse détectée';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Non autorisée manipulation de téléchargement de fichiers détecté';
-$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'Manipulation de téléchargement de fichiers non autorisée ou mauvaise configuration détectée ! ';
+$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'Manipulation de téléchargement de fichiers non autorisée ou mauvaise configuration détectée ! ';
 $phpMussel['lang']['started'] = 'Commencé';
 $phpMussel['lang']['too_many_urls'] = 'Trop d\'URLs';
 $phpMussel['lang']['upload_error_1'] = 'La taille du fichier dépasse la directive upload_max_filesize. ';
 $phpMussel['lang']['upload_error_2'] = 'La taille du fichier dépasse la limite spécifiée dans le formulaire taille limite. ';
-$phpMussel['lang']['upload_error_34'] = 'Échec du téléchargement ! S\'il vous plaît contacter le hostmaster pour obtenir de l\'aide ! ';
-$phpMussel['lang']['upload_error_6'] = 'Répertoire de téléchargement manquant ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
-$phpMussel['lang']['upload_error_7'] = 'Erreur d\'écriture disque ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
-$phpMussel['lang']['upload_error_8'] = 'Mauvaise configuration PHP détectée ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
+$phpMussel['lang']['upload_error_34'] = 'Échec du téléchargement ! S\'il vous plaît contacter le hostmaster pour obtenir de l\'aide ! ';
+$phpMussel['lang']['upload_error_6'] = 'Répertoire de téléchargement manquant ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
+$phpMussel['lang']['upload_error_7'] = 'Erreur d\'écriture disque ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
+$phpMussel['lang']['upload_error_8'] = 'Mauvaise configuration PHP détectée ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Limite de téléchargement dépassée';
 $phpMussel['lang']['wrong_password'] = 'Mauvais mot de passe ; Action rejetée.';
 $phpMussel['lang']['x_does_not_exist'] = '%s n\'existe pas';

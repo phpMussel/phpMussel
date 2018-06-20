@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.06.17).
+ * This file: Functions file (last modified: 2018.06.20).
  */
 
 /**
@@ -850,307 +850,109 @@ $phpMussel['implode_bits'] = function ($n) {
 };
 
 /**
- * Expands phpMussel detection shorthand to proper virus names/identifiers and
- * makes some determinations based on the interpretation of that shorthand
- * against the phpMussel configuration (e.g., whether particular
- * classifications, such as hoax/joke viruses, adware, etc, should be entirely
- * ignored by the scanner, or should be identified as malicious, and therefore
- * blocked).
+ * Expands phpMussel detection shorthand to complete identifiers, makes some
+ * determinations based on those identifiers against the package
+ * configuration (e.g., whether specific signatures should be weighted or
+ * ignored based on those identifiers), and returns a complete signature name
+ * containing all relevant identifiers.
  *
  * Originally, this function was created to allow phpMussel to partially
  * compress its signatures without jeopardising speed, performance or
- * efficiency, because, by allowing phpMussel to partially compress its
+ * efficiency, because by allowing phpMussel to partially compress its
  * signatures, the total signature file footprint could be reduced, thus
  * allowing the inclusion of a greater number of signatures without causing
- * excessive footprint bloat.
+ * excessive footprint bloat. Its purpose has expanded since then though.
  *
- * Since then though, its purpose has expanded to determining whether a
- * signature should be considered weighted (for more complex detections
- * involving multiple signatures) or non-weighted (for signatures serving as
- * detections in their own right), and whether a signature should be ignored,
- * based on its classification.
- *
- * The function takes an input string, and if byte 0 of the input string is
- * "\x1A" (the substitute character), the input string is detection shorthand,
- * and processing continues; If it doesn't begin with "\x1A", it isn't
- * detection shorthand, and the input string should be returned to the calling
- * scope verbatim. When processing continues, the function splits the nibbles
- * of bytes 1-2, and uses that information to reconstruct a complete identifier
- * from the detection shorthand; 1H represents the signature vendor name and 1L
- * optionally provides some additional generic indicators (heuristic, CVE,
- * etc), except when 1H == 8 (in which case, 1L represents the signature vendor
- * name, 1H == 8 being used to access that additional set of allocations),
- * 2H+2L represents the virus target (i.e., the file format or system that the
- * detection targets), and 3H+3L represents the nature of what the signature is
- * intended to detect (i.e., whether we should call it a virus, a trojan,
- * adware, ransomware, etc).
- *
- * Warning: When modifying these allocations (such as to include a new vendor
- * or a new type of detection), be very careful to ensure that your choice of
- * allocations won't conflict with the what phpMussel recognises as its
- * delimiters or as special characters (newlines, semicolons, colons, etc), or
- * else your signature files could break very badly, leading either to a
- * failure to properly detect anything or to numerous severe false positives.
- * Generally (but not exclusively), you should avoid: "\x0?" (or any ?H0
- * character/byte), \x3A and \x3B. Also avoid using the null character ("\x00")
- * in particular, because it can severely break things in certain situations.
- *
- * @param string $VN The detection shorthand.
- * @return string The expanded identifier (or input returned verbatim).
+ * @param string $VN The signature name WITH identifiers compressed (i.e.,
+ *      the shorthand version of the signature name).
+ * @return string The signature name WITHOUT identifiers compressed (i.e., the
+ *      identifiers have been decompressed/expanded), or the input verbatim.
  */
 $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
+
+    /** Determine whether the signature is weighted. */
     $phpMussel['memCache']['weighted'] = false;
+
+    /** Determine whether the signature should be ignored due to package configuration. */
     $phpMussel['memCache']['ignoreme'] = false;
+
+    /** Byte 0 confirms whether the signature name uses shorthand. */
     if ($VN[0] !== "\x1a") {
         return $VN;
     }
-    $n = $phpMussel['split_nibble']($VN[1]);
-    $out = '';
-    if ($n[0] === 2) {
-        $out .= 'ClamAV-';
-    } elseif ($n[0] === 3) {
-        $out .= 'phpMussel-';
-    } elseif ($n[0] === 4) {
-        $out .= 'SecuriteInfo-';
-    } elseif ($n[0] === 5) {
-        $out .= 'ZBB-';
-    } elseif ($n[0] === 6) {
-        $out .= 'NLNetLabs-';
-    } elseif ($n[0] === 7) {
-        $out .= 'FoxIT-';
-    } elseif ($n[0] === 8) {
-        if ($n[1] === 0) {
-            $out .= 'PhishTank-';
-        } elseif ($n[1] === 1) {
-            $out .= 'Malc0de-';
-        } elseif ($n[1] === 2) {
-            $out .= 'hpHosts-';
-        } elseif ($n[1] === 3) {
-            $out .= 'Spam404-';
-        } elseif ($n[1] === 4) {
-            $out .= 'Cybercrime.Tracker-';
+
+    /** Check whether shorthand data has been fetched. If it hasn't, fetch it. */
+    if (!isset($phpMussel['shorthand.yaml'])) {
+        if (!file_exists($phpMussel['Vault'] . 'shorthand.yaml') || !is_readable($phpMussel['Vault'] . 'shorthand.yaml')) {
+            return $VN;
         }
-    } elseif ($n[0] === 9) {
+        $phpMussel['shorthand.yaml'] = [];
+        $phpMussel['YAML']($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml'), $phpMussel['shorthand.yaml']);
+    }
+
+    /** Will be populated by the signature name. */
+    $Out = '';
+
+    /** Byte 1 contains vendor name and signature metadata information. */
+    $Nibbles = $phpMussel['split_nibble']($VN[1]);
+
+    /** Populate vendor name. */
+    if (
+        !empty($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]][$Nibbles[1]]) &&
+        is_string($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]][$Nibbles[1]])
+    ) {
+        $SkipMeta = true;
+        $Out .= $phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]][$Nibbles[1]] . '-';
+    } elseif (
+        !empty($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]]) &&
+        is_string($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]])
+    ) {
+        $Out .= $phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]] . '-';
+    }
+
+    /** Populate weight options. */
+    if ((
+        !empty($phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]][$Nibbles[1]]) &&
+        $phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]][$Nibbles[1]] === 'Weighted'
+    ) || (
+        !empty($phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]]) &&
+        $phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]] === 'Weighted'
+    )) {
         $phpMussel['memCache']['weighted'] = true;
-        $out .= 'phpMussel-';
-    } elseif ($n[0] === 15) {
-        $phpMussel['memCache']['weighted'] = true;
     }
-    if ($n[0] !== 8) {
-        if ($n[1] === 1) {
-            $out .= 'Testfile.';
-        } elseif ($n[1] === 2) {
-            $out .= 'FN.';
-        } elseif ($n[1] === 3) {
-            $out .= 'VT.';
-        } elseif ($n[1] === 4) {
-            $out .= 'META.';
-        } elseif ($n[1] === 5) {
-            $out .= 'Chameleon.';
-        } elseif ($n[1] === 6) {
-            $out .= 'Werewolf.';
-        } elseif ($n[1] === 7) {
-            $out .= 'Suspect.';
-        } elseif ($n[1] === 8) {
-            $out .= 'Fake.';
-        } elseif ($n[1] === 9) {
-            $out .= 'CVE.';
-        } elseif ($n[1] === 15) {
-            $out .= 'HEUR.';
-        }
+
+    /** Populate signature metadata information. */
+    if (empty($SkipMeta) && !empty($phpMussel['shorthand.yaml']['Metadata Shorthand'][$Nibbles[1]])) {
+        $Out .= $phpMussel['shorthand.yaml']['Metadata Shorthand'][$Nibbles[1]] . '.';
     }
-    $n = $phpMussel['split_nibble']($VN[2]);
-    if ($n[0] === 1) {
-        if ($n[1] === 1) {
-            $out .= 'Win.';
-        } elseif ($n[1] === 2) {
-            $out .= 'W32.';
-        } elseif ($n[1] === 3) {
-            $out .= 'W64.';
-        } elseif ($n[1] === 4) {
-            $out .= 'ELF.';
-        } elseif ($n[1] === 5) {
-            $out .= 'OSX.';
-        } elseif ($n[1] === 6) {
-            $out .= 'Android.';
-        } elseif ($n[1] === 7) {
-            $out .= 'Email.';
-        } elseif ($n[1] === 8) {
-            $out .= 'JS.';
-        } elseif ($n[1] === 9) {
-            $out .= 'Java.';
-        } elseif ($n[1] === 10) {
-            $out .= 'XXE.';
-        } elseif ($n[1] === 11) {
-            $out .= 'Graphics.';
-        } elseif ($n[1] === 12) {
-            $out .= 'OLE.';
-        } elseif ($n[1] === 13) {
-            $out .= 'HTML.';
-        } elseif ($n[1] === 14) {
-            $out .= 'RTF.';
-        } elseif ($n[1] === 15) {
-            $out .= 'Archive.';
-        }
-    } elseif ($n[0] === 2) {
-        if ($n[1] === 0) {
-            $out .= 'PHP.';
-        } elseif ($n[1] === 1) {
-            $out .= 'XML.';
-        } elseif ($n[1] === 2) {
-            $out .= 'ASP.';
-        } elseif ($n[1] === 3) {
-            $out .= 'VBS.';
-        } elseif ($n[1] === 4) {
-            $out .= 'BAT.';
-        } elseif ($n[1] === 5) {
-            $out .= 'PDF.';
-        } elseif ($n[1] === 6) {
-            $out .= 'SWF.';
-        } elseif ($n[1] === 7) {
-            $out .= 'W97M.';
-        } elseif ($n[1] === 8) {
-            $out .= 'X97M.';
-        } elseif ($n[1] === 9) {
-            $out .= 'O97M.';
-        } elseif ($n[1] === 10) {
-            $out .= 'ASCII.';
-        } elseif ($n[1] === 11) {
-            $out .= 'Unix.';
-        } elseif ($n[1] === 12) {
-            $out .= 'Python.';
-        } elseif ($n[1] === 13) {
-            $out .= 'Perl.';
-        } elseif ($n[1] === 14) {
-            $out .= 'Ruby.';
-        } elseif ($n[1] === 15) {
-            $out .= 'INF/INI.';
-        }
-    } elseif ($n[0] === 3) {
-        if ($n[1] === 0) {
-            $out .= 'CGI.';
+
+    /** Byte 2 contains vector information. */
+    $Nibbles = $phpMussel['split_nibble']($VN[2]);
+
+    /** Populate vector information. */
+    if (!empty($phpMussel['shorthand.yaml']['Vector Shorthand'][$Nibbles[0]][$Nibbles[1]])) {
+        $Out .= $phpMussel['shorthand.yaml']['Vector Shorthand'][$Nibbles[0]][$Nibbles[1]] . '.';
+    }
+
+    /** Byte 3 contains malware type information. */
+    $Nibbles = $phpMussel['split_nibble']($VN[3]);
+
+    /** Populate malware type information. */
+    if (!empty($phpMussel['shorthand.yaml']['Malware Type Shorthand'][$Nibbles[0]][$Nibbles[1]])) {
+        $Out .= $phpMussel['shorthand.yaml']['Malware Type Shorthand'][$Nibbles[0]][$Nibbles[1]] . '.';
+    }
+
+    /** Populate ignore options. */
+    if (!empty($phpMussel['shorthand.yaml']['Malware Type Ignore Options'][$Nibbles[0]][$Nibbles[1]])) {
+        $IgnoreOption = $phpMussel['shorthand.yaml']['Malware Type Ignore Options'][$Nibbles[0]][$Nibbles[1]];
+        if (isset($phpMussel['Config']['signatures'][$IgnoreOption]) && !$phpMussel['Config']['signatures'][$IgnoreOption]) {
+            $phpMussel['memCache']['ignoreme'] = true;
         }
     }
-    $n = $phpMussel['split_nibble']($VN[3]);
-    if ($n[0] === 1) {
-        if ($n[1] === 1) {
-            $out .= 'Worm.';
-        } elseif ($n[1] === 2) {
-            $out .= 'Trojan.';
-        } elseif ($n[1] === 3) {
-            $out .= 'Adware.';
-            if (!$phpMussel['Config']['signatures']['detect_adware']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 4) {
-            $out .= 'Flooder.';
-        } elseif ($n[1] === 5) {
-            $out .= 'IRCBot.';
-        } elseif ($n[1] === 6) {
-            $out .= 'Exploit.';
-        } elseif ($n[1] === 7) {
-            $out .= 'VirTool.';
-        } elseif ($n[1] === 8) {
-            $out .= 'Dialer.';
-        } elseif ($n[1] === 9) {
-            $out .= 'Joke/Hoax.';
-            if (!$phpMussel['Config']['signatures']['detect_joke_hoax']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 11) {
-            $out .= 'Malware.';
-        } elseif ($n[1] === 12) {
-            $out .= 'Riskware.';
-        } elseif ($n[1] === 13) {
-            $out .= 'Rootkit.';
-        } elseif ($n[1] === 14) {
-            $out .= 'Backdoor.';
-        } elseif ($n[1] === 15) {
-            $out .= 'Hacktool.';
-        }
-    } elseif ($n[0] === 2) {
-        if ($n[1] === 0) {
-            $out .= 'Keylogger.';
-        } elseif ($n[1] === 1) {
-            $out .= 'Ransomware.';
-        } elseif ($n[1] === 2) {
-            $out .= 'Spyware.';
-        } elseif ($n[1] === 3) {
-            $out .= 'Virus.';
-        } elseif ($n[1] === 4) {
-            $out .= 'Dropper.';
-        } elseif ($n[1] === 5) {
-            $out .= 'Dropped.';
-        } elseif ($n[1] === 6) {
-            $out .= 'Downloader.';
-        } elseif ($n[1] === 7) {
-            $out .= 'Obfuscation.';
-        } elseif ($n[1] === 8) {
-            $out .= 'Obfuscator.';
-        } elseif ($n[1] === 9) {
-            $out .= 'Obfuscated.';
-        } elseif ($n[1] === 10) {
-            $out .= 'Packer.';
-            if (!$phpMussel['Config']['signatures']['detect_packer_packed']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 11) {
-            $out .= 'Packed.';
-            if (!$phpMussel['Config']['signatures']['detect_packer_packed']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 12) {
-            $out .= 'PUA/PUP.';
-            if (!$phpMussel['Config']['signatures']['detect_pua_pup']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 13) {
-            $out .= 'Shell.';
-            if (!$phpMussel['Config']['signatures']['detect_shell']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 14) {
-            $out .= 'Defacer.';
-            if (!$phpMussel['Config']['signatures']['detect_deface']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 15) {
-            $out .= 'Defacement.';
-            if (!$phpMussel['Config']['signatures']['detect_deface']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        }
-    } elseif ($n[0] === 3) {
-        if ($n[1] === 0) {
-            $out .= 'Cryptor.';
-        } elseif ($n[1] === 1) {
-            $out .= 'Phish.';
-        } elseif ($n[1] === 2) {
-            $out .= 'Spam.';
-        } elseif ($n[1] === 3) {
-            $out .= 'Spammer.';
-        } elseif ($n[1] === 4) {
-            $out .= 'Scam.';
-        } elseif ($n[1] === 5) {
-            $out .= 'ZipBomb.';
-        } elseif ($n[1] === 6) {
-            $out .= 'ForkBomb.';
-        } elseif ($n[1] === 7) {
-            $out .= 'LogicBomb.';
-        } elseif ($n[1] === 8) {
-            $out .= 'CyberBomb.';
-        } elseif ($n[1] === 9) {
-            $out .= 'Malvertisement.';
-        } elseif ($n[1] === 13) {
-            $out .= 'Encrypted.';
-            if (!$phpMussel['Config']['signatures']['detect_encryption']) {
-                $phpMussel['memCache']['ignoreme'] = true;
-            }
-        } elseif ($n[1] === 15) {
-            $out .= 'BadURL.';
-        }
-    }
-    return $out . substr($VN, 4);
+
+    /** Return the signature name and exit the closure. */
+    return $Out . substr($VN, 4);
+
 };
 
 /**
@@ -3068,19 +2870,16 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** PHP chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_php']) {
-        if (
-            !(
-                substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $xt . ',') ||
-                substr_count(',php*,', ',' . $xts . ',') ||
-                substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $gzxt . ',') ||
-                substr_count(',php*,', ',' . $gzxts . ',') ||
-                substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xts . ',') ||
-                substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxts . ',') ||
-                substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xt . ',') ||
-                substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxt . ',')
-            ) &&
-            substr_count($str_hex_norm,'3c3f706870')
-        ) {
+        if (!(
+            substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $xt . ',') ||
+            substr_count(',php*,', ',' . $xts . ',') ||
+            substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $gzxt . ',') ||
+            substr_count(',php*,', ',' . $gzxts . ',') ||
+            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xts . ',') ||
+            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxts . ',') ||
+            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xt . ',') ||
+            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxt . ',')
+        ) && substr_count($str_hex_norm,'3c3f706870')) {
             if (!$flagged) {
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                 $flagged = true;
@@ -5104,13 +4903,11 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
     $Key = $Value = $SendTo = '';
     $TabLen = $SoL = 0;
     while ($SoL !== false) {
-        if (($EoL = strpos($In, "\n", $SoL)) === false) {
-            $ThisLine = substr($In, $SoL);
-        } else {
-            $ThisLine = substr($In, $SoL, $EoL - $SoL);
-        }
+        $ThisLine = (
+            ($EoL = strpos($In, "\n", $SoL)) === false
+        ) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
         $SoL = ($EoL === false) ? false : $EoL + 1;
-        $ThisLine = preg_replace(["/#.*$/", "/\x20+$/"], '', $ThisLine);
+        $ThisLine = preg_replace(['/#.*$/', '/\s+$/'], '', $ThisLine);
         if (empty($ThisLine) || $ThisLine === "\n") {
             continue;
         }

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.17).
+ * This file: Front-end functions file (last modified: 2018.06.20).
  */
 
 /**
@@ -1685,34 +1685,20 @@ $phpMussel['NormaliseLinebreaks'] = function (&$Data) {
 /** Signature information handler. */
 $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
 
-    /** Build list of signature vendors and metadata. */
-    $Arr = [
-        'Vendors' => [
-            'ClamAV' => '\x1a[\x20-\x2f]|ClamAV',
-            'phpMussel' => '\x1a[\x30-\x3f\x90-\x9f]|phpMussel',
-            'SecuriteInfo' => '\x1a[\x40-\x4f]',
-            'ZBB' => '\x1a[\x50-\x5f]',
-            'NLNetLabs' => '\x1a[\x60-\x6f]',
-            'FoxIT' => '\x1a[\x70-\x7f]',
-            'PhishTank' => '\x1a\x80',
-            'Malc0de' => '\x1a\x81',
-            'hpHosts' => '\x1a\x82',
-            'Spam404' => '\x1a\x83',
-            'Cybercrime.Tracker' => '\x1a\x84'
-        ],
-        'SigTypes' => [
-            'Testfile' => '1',
-            'FN' => '2',
-            'VT' => '3',
-            'META' => '4',
-            'Chameleon' => '5',
-            'Werewolf' => '6',
-            'Suspect' => '7',
-            'Fake' => '8',
-            'CVE' => '9',
-            'HEUR' => 'f',
-        ],
-    ];
+    /** Check whether shorthand data has been fetched. If it hasn't, fetch it. */
+    if (!isset($phpMussel['shorthand.yaml'])) {
+        if (!file_exists($phpMussel['Vault'] . 'shorthand.yaml') || !is_readable($phpMussel['Vault'] . 'shorthand.yaml')) {
+            return '<span class="s">' . $phpMussel['lang']['response_error'] . '</span>';
+        }
+        $phpMussel['shorthand.yaml'] = [];
+        $phpMussel['YAML']($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml'), $phpMussel['shorthand.yaml']);
+    }
+
+    /** Get list of vendor search patterns. */
+    $Arr['Vendors'] = $phpMussel['shorthand.yaml']['Vendor Search Patterns'];
+
+    /** Get list of metadata search pattern partials. */
+    $Arr['SigTypes'] = $phpMussel['shorthand.yaml']['Metadata Search Pattern Partials'];
 
     /** Expand patterns for signature metadata. */
     foreach ($Arr['SigTypes'] as &$Type) {
@@ -1722,87 +1708,11 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
         );
     }
 
-    /** Build list of specific infection vectors. */
-    $Arr['Targets'] = [
-        'Win' => '\x1a.[\x11\x12\x13]|[Ww](?:[Ii][Nn]|32|64)',
-        'W32' => '\x1a.\x12|[Ww](?:[Ii][Nn])?32',
-        'W64' => '\x1a.\x13|[Ww](?:[Ii][Nn])?64',
-        'ELF' => '\x1a.\x14',
-        'OSX' => '\x1a.\x15',
-        'Android' => '\x1a.\x16',
-        'Email' => '\x1a.\x17',
-        'JS' => '\x1a.\x18',
-        'Java' => '\x1a.\x19',
-        'XXE' => '\x1a.\x1a',
-        'Graphics' => '\x1a.\x1b',
-        'OLE' => '\x1a.\x1c',
-        'HTML' => '\x1a.\x1d',
-        'RTF' => '\x1a.\x1e',
-        'Archive' => '\x1a.\x1f',
-        'PHP' => '\x1a.\x20',
-        'XML' => '\x1a.\x21',
-        'ASP' => '\x1a.\x22',
-        'VBS' => '\x1a.\x23',
-        'BAT' => '\x1a.\x24',
-        'PDF' => '\x1a.\x25',
-        'SWF' => '\x1a.\x26',
-        'W97M' => '\x1a.\x27',
-        'X97M' => '\x1a.\x28',
-        'O97M' => '\x1a.\x29',
-        'ASCII' => '\x1a.\x2a',
-        'Unix' => '\x1a.\x2b',
-        'Python' => '\x1a.\x2c',
-        'Perl' => '\x1a.\x2d',
-        'Ruby' => '\x1a.\x2e',
-        'INF/INI' => '\x1a.\x2f',
-        'CGI' => '\x1a.\x30'
-    ];
+    /** Get list of vector search patterns. */
+    $Arr['Targets'] = $phpMussel['shorthand.yaml']['Vector Search Patterns'];
 
-    /** Build list of specific malware identifiers. */
-    $Arr['MalwareTypes'] = [
-        'Worm' => '\x1a..\x11',
-        'Trojan' => '\x1a..\x12',
-        'Adware' => '\x1a..\x13',
-        'Flooder' => '\x1a..\x14',
-        'IRCBot' => '\x1a..\x15',
-        'Exploit' => '\x1a..\x16',
-        'VirTool' => '\x1a..\x17',
-        'Dialer' => '\x1a..\x18',
-        'Joke/Hoax' => '\x1a..\x19',
-        'Malware' => '\x1a..\x1b',
-        'Riskware' => '\x1a..\x1c',
-        'Rootkit' => '\x1a..\x1d',
-        'Backdoor' => '\x1a..\x1e',
-        'Hacktool' => '\x1a..\x1f',
-        'Keylogger' => '\x1a..\x20',
-        'Ransomware' => '\x1a..\x21',
-        'Spyware' => '\x1a..\x22',
-        'Virus' => '\x1a..\x23',
-        'Dropper' => '\x1a..\x24',
-        'Dropped' => '\x1a..\x25',
-        'Downloader' => '\x1a..\x26',
-        'Obfuscation' => '\x1a..\x27',
-        'Obfuscator' => '\x1a..\x28',
-        'Obfuscated' => '\x1a..\x29',
-        'Packer' => '\x1a..\x2a',
-        'Packed' => '\x1a..\x2b',
-        'PUA/PUP' => '\x1a..\x2c',
-        'Shell' => '\x1a..\x2d',
-        'Defacer' => '\x1a..\x2e',
-        'Defacement' => '\x1a..\x2f',
-        'Cryptor' => '\x1a..\x30',
-        'Phish' => '\x1a..\x31',
-        'Spam' => '\x1a..\x32',
-        'Spammer' => '\x1a..\x33',
-        'Scam' => '\x1a..\x34',
-        'ZipBomb' => '\x1a..\x35',
-        'ForkBomb' => '\x1a..\x36',
-        'LogicBomb' => '\x1a..\x37',
-        'CyberBomb' => '\x1a..\x38',
-        'Malvertisement' => '\x1a..\x39',
-        'Encrypted' => '\x1a..\x3d',
-        'BadURL' => '\x1a..\x3f',
-    ];
+    /** Get list of malware type search patterns. */
+    $Arr['MalwareTypes'] = $phpMussel['shorthand.yaml']['Malware Type Search Patterns'];
 
     /** To be populated by totals. */
     $Totals = ['Classes' => [], 'Files' => [], 'Vendors' => [], 'SigTypes' => [], 'Targets' => [], 'MalwareTypes' => []];
