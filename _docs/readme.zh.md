@@ -269,6 +269,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/fe_assets/_nav_logs_access_only.html | 前端导航链接的HTML模板，​由那些与仅日志访问使用。
 /vault/fe_assets/_quarantine.html | 前端隔离页面的HTML模板。
 /vault/fe_assets/_quarantine_row.html | 前端隔离页面的HTML模板。
+/vault/fe_assets/_siginfo.html | 前端签名信息页面的HTML模板。
+/vault/fe_assets/_siginfo_row.html | 前端签名信息页面的HTML模板。
 /vault/fe_assets/_statistics.html | 前端统计页面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
@@ -330,7 +332,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/.travis.php | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/.travis.yml | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/cli.php | CLI处理文件。
-/vault/components.dat | 包含的相关信息关于phpMussel的各种组件；它使用通过更新功能从前端。
+/vault/components.dat | 组件元数据文件。由前端更新页面使用。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令为phpMussel，​告诉它什么做和怎么正确地经营（重命名为激活）。
 /vault/config.php | 配置处理文件。
 /vault/config.yaml | 配置默认文件；包含phpMussel的默认配置值。
@@ -340,12 +342,15 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
 /vault/lang.php | 语言数据。
 /vault/php5.4.x.php | Polyfill对于PHP 5.4.X （PHP 5.4.X 向下兼容需要它；​较新的版本可以删除它）。
+/vault/plugins.dat | 插件元数据文件。由前端更新页面使用。
 ※ /vault/scan_kills.txt | 记录的所有上传文件phpMussel受阻/杀。
 ※ /vault/scan_log.txt | 记录的一切phpMussel扫描。
 ※ /vault/scan_log_serialized.txt | 记录的一切phpMussel扫描。
+/vault/shorthand.yaml | 包含各种签名标识符由phpMussel在扫描期间解释签名速记时，以及通过前端访问签名信息时处理。
+/vault/signatures.dat | 签名元数据文件。由前端更新页面使用。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_default.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
-/vault/themes.dat | 主题文件；它使用通过更新功能从前端。
+/vault/themes.dat | 主题元数据文件。由前端更新页面使用。
 /vault/upload.php | 上传处理文件。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /.gitignore | GitHub文件（不需要为正确经营脚本）。
@@ -1035,14 +1040,14 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### 11.2.0 网络字体
 
-一些自定义主题，以及phpMussel前端的标准UI（“用户界面”），和“上传是否认”页面可能出于审美原因使用网络字体。​网络字体默认是禁用的，但启用后，用户的浏览器和托管网络字体的服务之间会发生直接通信。​这可能涉及传递信息，例如用户的IP地址，用户代理，操作系统，以及请求可用的其他详细信息。​大部分这些网络字体都由[Google Fonts](https://fonts.google.com/)服务托管。
+一些自定义主题，以及phpMussel前端的标准UI（“用户界面”），和“上传是否认”页面可能出于审美原因使用网络字体。​网络字体默认是禁用，但启用后，用户的浏览器和托管网络字体的服务之间会发生直接通信。​这可能涉及传递信息，例如用户的IP地址，用户代理，操作系统，以及请求可用的其他详细信息。​大部分这些网络字体都由[Google Fonts](https://fonts.google.com/)服务托管。
 
 *相关配置指令：*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.1 URL扫描程序
 
-上文件上传中找到的URL可能会与hpHosts API或Google安全浏览API共享，取决于软件包的具体配置方式。​在hpHosts API的情况下，默认情况下此行为是启用的。​Google安全浏览API需要API密钥才能工作，因此默认情况下是禁用的。
+上文件上传中找到的URL可能会与hpHosts API或Google安全浏览API共享，取决于软件包的具体配置方式。​在hpHosts API的情况下，默认情况下此行为是启用的。​Google安全浏览API的使用需要API密钥，因此默认情况下是禁用。
 
 *相关配置指令：*
 - `urlscanner` -> `lookup_hphosts`
@@ -1050,11 +1055,11 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+当phpMussel扫描文件上传时，这些文件的哈希值可能会与Virus Total API共享，具体取决于软件包的配置方式。​有计划在未来的某个时候能够共享整个文件，但目前该软件包不支持该功能。​Virus Total API的使用需要API密钥，因此默认情况下是禁用。
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+与Virus Total共享的信息（包括文件和相关文件元数据）也可能与其合作伙伴，关联公司以及其他各方共享用于研究目的。​这在他们的隐私政策中有更详细的描述。
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*看到： [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *相关配置指令：*
 - `virustotal` -> `vt_public_api_key`
@@ -1214,4 +1219,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最后更新：2018年6月10日。
+最后更新：2018年6月21日。

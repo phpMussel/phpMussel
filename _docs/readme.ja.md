@@ -269,6 +269,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​はログのみにアクセスのためのものです。
 /vault/fe_assets/_quarantine.html | フロントエンドの検疫ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_quarantine_row.html | フロントエンドの検疫ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_siginfo.html | フロントエンドのシグネチャ情報ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_siginfo_row.html | フロントエンドのシグネチャ情報ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_statistics.html | フロントエンドの統計ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
@@ -276,8 +278,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/frontend.css | フロントエンドのＣＳＳスタイルシート。
 /vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報が含まれています；​フロントエンドが有効になっているときに作成）。
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
-/vault/fe_assets/icons.php | アイコン・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
-/vault/fe_assets/pips.php | ピップス・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
+/vault/fe_assets/icons.php | アイコン・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
+/vault/fe_assets/pips.php | ピップス・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
 /vault/fe_assets/scripts.js | フロントエンドJavaScriptデータが含まれています。
 /vault/lang/ | phpMusselの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
@@ -330,7 +332,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/.travis.php | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/cli.php | ＣＬＩハンドラ。
-/vault/components.dat | phpMusselのコンポーネント情報が含まれています；​アップデート機能で使用（フロントエンドが提供します）。
+/vault/components.dat | コンポーネントのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 /vault/config.ini.RenameMe | phpMussel設定ファイル；​phpMusselの全オプション設定を記載しています。​それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/config.yaml | 設定・デフォルトス・ファイル；phpMusselのデフォルト設定値が含まれます。
@@ -339,13 +341,16 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/greylist.csv | グレーリスト化されたシグネチャのＣＳＶで、​phpMusselがどのシグネチャを無視すべきかを指示するものです（削除しても自動的に再作成されます）。
 /vault/lang.php | 言語・ハンドラ。
-/vault/php5.4.x.php | PHP 5.4.X ポリフィル （PHP 5.4.X の下位互換性のために必要です；​より新しいＰＨＰバージョンのために、​削除しても安全です）。
+/vault/php5.4.x.php | ＰＨＰ ５.４ポリフィル​（ＰＨＰ ５.４の下位互換性のために必要です。​より新しいＰＨＰバージョンのために、​削除しても安全です）。
+/vault/plugins.dat | プラグインのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 ※ /vault/scan_kills.txt | phpMusselによりブロック/削除されたアップロードファイルの全記録。
 ※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
 ※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
+/vault/shorthand.yaml | スキャン中にシグネチャの短縮形を解釈したり、フロントエンドからシグネチャ情報にアクセスするときにphpMusselによって処理されるさまざまなシグネチャ識別子を含みます。
+/vault/signatures.dat | シグネチャのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 /vault/template_custom.html | phpMusselテンプレートファイル；​phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_default.html | phpMusselテンプレートファイル；​phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
-/vault/themes.dat | テーマ・ファイル。​アップデート機能で使用（フロントエンドが提供します）。
+/vault/themes.dat | テーマのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 /vault/upload.php | アップロード・ハンドラ。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /.gitignore | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
@@ -1214,4 +1219,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最終アップデート：2018年6月10日。
+最終アップデート：2018年6月21日。

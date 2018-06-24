@@ -265,6 +265,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحجر الصحي.</div> | /vault/fe_assets/_quarantine.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحجر الصحي.</div> | /vault/fe_assets/_quarantine_row.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة معلومات التوقيع.</div> | /vault/fe_assets/_siginfo.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة معلومات التوقيع.</div> | /vault/fe_assets/_siginfo_row.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates_row.html
@@ -326,7 +328,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق حدات phpMussel؛ المستخدمة من ميزة التحديثات التي تقدمها لphpMussel.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline;">حدات ملف البيانات الوصفية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/components.dat
 &nbsp; <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة phpMussel، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
 &nbsp; <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لphpMussel.</div> | /vault/config.yaml
@@ -336,12 +338,15 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على phpMussel أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
 &nbsp; <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
 &nbsp; <div dir="rtl" style="display:inline;">Polyfills لPHP 5.4.X (اللازمة لالتوافق PHP 5.4.X؛ لإصدارات أحدث PHP، آمنة للحذف).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية الإضافات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/plugins.dat
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة phpMussel.</div> | ※ /vault/scan_log.txt
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة phpMussel.</div> | ※ /vault/scan_log_serialized.txt
+&nbsp; <div dir="rtl" style="display:inline;">يحتوي على معرفات توقيع مختلفة ليتم معالجتها بواسطة phpMussel عند تفسير توقيع الاختزال أثناء الفحص، وعند الوصول إلى معلومات التوقيع عبر الواجهة الأمامية.</div> | /vault/shorthand.yaml
+&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية التوقيعات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/signatures.dat
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم القضاء عليه بواسطة phpMussel.</div> | ※ /vault/scan_kills.txt
 &nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_default.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف المظاهر؛ المستخدمة من ميزة التحديثات التي تقدمها لphpMussel.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية للسمات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/themes.dat
 &nbsp; <div dir="rtl" style="display:inline;">معالج تحميل.</div> | /vault/upload.php
 &nbsp; <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitignore
@@ -1402,4 +1407,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخر تحديث: 10 يونيو 2018 (2018.06.10).</div>
+<div dir="rtl">آخر تحديث: 21 يونيو 2018 (2018.06.21).</div>

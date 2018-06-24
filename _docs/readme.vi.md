@@ -236,43 +236,45 @@ Tập tin | Chi tiết
 /_docs/readme.vi.md | Tài liệu tiếng Việt.
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
-/_testfiles/ | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các tập tin chứa những tập tin thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hay bất kỳ các tập tin của mình trừ khi làm xét nghiệm như vậy.
-/_testfiles/ascii_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
-/_testfiles/coex_testfile.rtf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
-/_testfiles/exe_standard_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
-/_testfiles/general_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký chung.
-/_testfiles/graphics_standard_testfile.gif | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
-/_testfiles/html_standard_testfile.html | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
-/_testfiles/md5_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
-/_testfiles/ole_testfile.ole | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký OLE.
-/_testfiles/pdf_standard_testfile.pdf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PDF.
-/_testfiles/pe_sectional_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký phần PE.
-/_testfiles/swf_standard_testfile.swf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
+/_testfiles/ | Thư mục cho tập tin thử nghiệm (chứa các tập tin khác nhau). Tất cả các tập tin chứa những tập tin thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hay bất kỳ các tập tin của mình trừ khi làm xét nghiệm như vậy.
+/_testfiles/ascii_standard_testfile.txt | Tập tin thử nghiệm cho chử ký ASCII bình thường của phpMussel.
+/_testfiles/coex_testfile.rtf | Tập tin thử nghiệm cho chử ký kéo dài phức tạp của phpMussel.
+/_testfiles/exe_standard_testfile.exe | Tập tin thử nghiệm cho chử ký PE của phpMussel.
+/_testfiles/general_standard_testfile.txt | Tập tin thử nghiệm cho chử ký chung của phpMussel.
+/_testfiles/graphics_standard_testfile.gif | Tập tin thử nghiệm cho chử ký đồ họa của phpMussel.
+/_testfiles/html_standard_testfile.html | Tập tin thử nghiệm cho chử ký HTML bình thường của phpMussel.
+/_testfiles/md5_testfile.txt | Tập tin thử nghiệm cho chử ký dựa MD5 của phpMussel.
+/_testfiles/ole_testfile.ole | Tập tin thử nghiệm cho chử ký OLE của phpMussel.
+/_testfiles/pdf_standard_testfile.pdf | Tập tin thử nghiệm cho chử ký PDF của phpMussel.
+/_testfiles/pe_sectional_testfile.exe | Tập tin thử nghiệm cho chử ký phần PE của phpMussel.
+/_testfiles/swf_standard_testfile.swf | Tập tin thử nghiệm cho chử ký Shockwave của phpMussel.
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/ | Các tài sản front-end.
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
-/vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
-/vault/fe_assets/_cache.html | Một tập tin mẫu HTML cho các trang dữ liệu cache của front-end.
-/vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
-/vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
-/vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
-/vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
-/vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
-/vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
-/vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
-/vault/fe_assets/_quarantine.html | Một tập tin mẫu HTML cho các trang kiểm dịch của front-end.
-/vault/fe_assets/_quarantine_row.html | Một tập tin mẫu HTML cho các trang kiểm dịch của front-end.
-/vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
-/vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
-/vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
-/vault/fe_assets/_upload_test.html | Một tập tin mẫu HTML cho các trang kiểm tra tải lên.
+/vault/fe_assets/_accounts.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
+/vault/fe_assets/_accounts_row.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
+/vault/fe_assets/_cache.html | Tập tin mẫu HTML cho trang dữ liệu cache của front-end.
+/vault/fe_assets/_config.html | Tập tin mẫu HTML cho trang cấu hình của front-end.
+/vault/fe_assets/_config_row.html | Tập tin mẫu HTML cho trang cấu hình của front-end.
+/vault/fe_assets/_files.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_edit.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_rename.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_row.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_home.html | Tập tin mẫu HTML cho trang chủ của front-end.
+/vault/fe_assets/_login.html | Tập tin mẫu HTML cho đăng nhập front-end.
+/vault/fe_assets/_logs.html | Tập tin mẫu HTML cho trang bản ghi của front-end.
+/vault/fe_assets/_nav_complete_access.html | Tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
+/vault/fe_assets/_nav_logs_access_only.html | Tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_quarantine.html | Tập tin mẫu HTML cho trang kiểm dịch của front-end.
+/vault/fe_assets/_quarantine_row.html | Tập tin mẫu HTML cho trang kiểm dịch của front-end.
+/vault/fe_assets/_siginfo.html | Tập tin mẫu HTML cho trang thông tin chữ ký của front-end.
+/vault/fe_assets/_siginfo_row.html | Tập tin mẫu HTML cho trang thông tin chữ ký của front-end.
+/vault/fe_assets/_statistics.html | Tập tin mẫu HTML cho trang thống kê của front-end.
+/vault/fe_assets/_updates.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
+/vault/fe_assets/_updates_row.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
+/vault/fe_assets/_upload_test.html | Tập tin mẫu HTML cho trang kiểm tra tải lên.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản và phiên; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
@@ -330,7 +332,7 @@ Tập tin | Chi tiết
 /vault/.travis.php | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/cli.php | Tập tin cho xử lý CLI.
-/vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/components.dat | Tập tin siêu dữ liệu thành phần; Được sử dụng bởi trang cập nhật front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho phpMussel.
@@ -340,12 +342,15 @@ Tập tin | Chi tiết
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
 /vault/lang.php | Dữ liệu tiếng.
 /vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
+/vault/plugins.dat | Tập tin siêu dữ liệu plugin; Được sử dụng bởi trang cập nhật front-end.
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
 ※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
 ※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
+/vault/shorthand.yaml | Chứa các mã nhận diện chữ ký khác nhau được xử lý bởi phpMussel khi giải thích viết tắt chữ ký trong khi quét, và khi truy cập thông tin chữ ký thông qua các front-end.
+/vault/signatures.dat | Tập tin siêu dữ liệu chữ ký; Được sử dụng bởi trang cập nhật front-end.
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/template_default.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
-/vault/themes.dat | Tập tin cho các chủ đề; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/themes.dat | Tập tin siêu dữ liệu chủ đề; Được sử dụng bởi trang cập nhật front-end.
 /vault/upload.php | Tập tin cho xử lý tải lên.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /.gitignore | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
@@ -695,7 +700,7 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 
 Loại | Byte | Sự miêu tả
 ---|---|---
-`General_Command_Detections` | `0?` | Cho các tập tin chữ ký CSV (giá trị được phân cách bằng dấu phẩy). Giá trị (chữ ký) là các chuỗi được mã hoá bằng hệ thập lục phân để tìm kiếm trong các tệp. Chữ ký ở đây không có bất kỳ tên hoặc các chi tiết khác (chỉ có các chuỗi để phát hiện).
+`General_Command_Detections` | `0?` | Cho các tập tin chữ ký CSV (giá trị được phân cách bằng dấu phẩy). Giá trị (chữ ký) là các chuỗi được mã hoá bằng hệ thập lục phân để tìm kiếm trong các tập tin. Chữ ký ở đây không có bất kỳ tên hoặc các chi tiết khác (chỉ có các chuỗi để phát hiện).
 `Filename` | `1?` | Cho các chữ ký tên tập tin.
 `Hash` | `2?` | Cho các chữ ký băm.
 `Standard` | `3?` | Cho các tập tin chữ ký mà làm việc trực tiếp với nội dung tập tin.
@@ -1166,20 +1171,20 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 *Chỉ thị cấu hình có liên quan:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 SỐ LIỆU THỐNG KÊ
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel có thể tùy chọn theo dõi số liệu thống kê như tổng số tập tin được quét và bị chặn kể từ một số thời điểm cụ thể. Tính năng này được vô hiệu hóa theo mặc định, nhưng có thể được kích hoạt thông qua cấu hình gói. Tính năng này chỉ theo dõi tổng số sự kiện đã xảy ra và không bao gồm bất kỳ thông tin nào về các sự kiện cụ thể (và do đó, không nên được coi là PII).
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 MÃ HÓA
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel không mã hóa bộ nhớ cache của nó hoặc bất kỳ thông tin log nào. [Mã hóa](https://vi.wikipedia.org/wiki/M%C3%A3_h%C3%B3a) bộ nhớ cache và log có thể được giới thiệu trong tương lai, nhưng hiện tại không có bất kỳ kế hoạch cụ thể nào. Nếu bạn lo lắng về các bên thứ ba không được phép truy cập vào các phần của phpMussel có thể chứa thông tin nhận dạng cá nhân hay thông tin nhạy cảm như bộ nhớ cache hoặc nhật ký của nó, tôi khuyên bạn không nên cài đặt phpMussel tại vị trí có thể truy cập công khai (ví dụ, cài đặt phpMussel bên ngoài thư mục `public_html` tiêu chuẩn hoặc tương đương chúng có sẵn cho hầu hết các máy chủ web tiêu chuẩn) và các quyền hạn chế thích hợp sẽ được thực thi cho thư mục nơi nó cư trú (đặc biệt, cho thư mục vault). Nếu điều đó không đủ để giải quyết mối quan ngại của bạn, hãy định cấu hình phpMussel để các loại thông tin gây ra mối lo ngại của bạn sẽ không được thu thập hoặc nhật ký ở địa điểm đầu tiên (ví dụ, bằng cách tắt ghi nhật ký).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Khi người dùng đăng nhập thành công vào front-end, phpMussel đặt [cookie](https://vi.wikipedia.org/wiki/Cookie_(tin_h%E1%BB%8Dc)) để có thể nhớ người dùng cho các yêu cầu tiếp theo (cookie được sử dụng để xác thực người dùng đến phiên đăng nhập). Trên trang đăng nhập, cảnh báo cookie được hiển thị nổi bật, cảnh báo người dùng rằng cookie sẽ được đặt nếu họ tham gia vào các hành động có liên quan. Cookie không được đặt ở bất kỳ điểm nào khác trong cơ sở mã.
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `disable_frontend`
@@ -1214,4 +1219,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Lần cuối cập nhật: 10 Tháng Sáu 2018 (2018.06.10).
+Lần cuối cập nhật: 21 Tháng Sáu 2018 (2018.06.21).

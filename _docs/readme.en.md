@@ -269,6 +269,8 @@ File | Description
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
 /vault/fe_assets/_quarantine.html | An HTML template for the front-end quarantine page.
 /vault/fe_assets/_quarantine_row.html | An HTML template for the front-end quarantine page.
+/vault/fe_assets/_siginfo.html | An HTML template for the front-end signature information page.
+/vault/fe_assets/_siginfo_row.html | An HTML template for the front-end signature information page.
 /vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
@@ -330,7 +332,7 @@ File | Description
 /vault/.travis.php | Used by Travis CI for testing (not required for proper function of the script).
 /vault/.travis.yml | Used by Travis CI for testing (not required for proper function of the script).
 /vault/cli.php | CLI handler.
-/vault/components.dat | Contains information relating to the various components of phpMussel; Used by the updates feature provided by the front-end.
+/vault/components.dat | Components metadata file; Used by the front-end updates page.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/config.yaml | Configuration defaults file; Contains default configuration values for phpMussel.
@@ -340,12 +342,15 @@ File | Description
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
 /vault/lang.php | Language handler.
 /vault/php5.4.x.php | Polyfills for PHP 5.4.X (required for PHP 5.4.X backwards compatibility; safe to delete for newer PHP versions).
+/vault/plugins.dat | Plugins metadata file; Used by the front-end updates page.
 ※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
 ※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
 ※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
+/vault/shorthand.yaml | Contains various signature identifiers to be processed by phpMussel when interpreting signature shorthand during a scan, and when accessing signature information via the front-end.
+/vault/signatures.dat | Signatures metadata file; Used by the front-end updates page.
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/template_default.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/themes.dat | Themes file; Used by the updates feature provided by the front-end.
+/vault/themes.dat | Themes metadata file; Used by the front-end updates page.
 /vault/upload.php | Upload handler.
 /.gitattributes | A GitHub project file (not required for proper function of script).
 /.gitignore | A GitHub project file (not required for proper function of script).
@@ -1218,4 +1223,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 10 June 2018 (2018.06.10).
+Last Updated: 21 June 2018 (2018.06.21).

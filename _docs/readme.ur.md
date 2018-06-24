@@ -265,6 +265,8 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
@@ -326,7 +328,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر</div> | /vault/cli.php
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel کے مختلف اجزاء سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر کی طرف سے فراہم اپ ڈیٹ کی خصوصیت کی طرف سے استعمال کیا جاتا ہے.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline;">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن فائل؛ phpMussel کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور کس طرح درست طریقے سے کام کرنے کے لئے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ phpMussel لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
@@ -336,12 +338,15 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">phpMussel (فائل خود کار طریقے سے خارج کر دیا ہے تو دوبارہ) اسے نظر انداز کیا جانا چاہئے دستخط جس سے اشارہ greylisted دستخط کی CSV.</div> | /vault/greylist.csv
 &nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
 &nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X کے لئے ضروری پیچھے کی طرف مطابقت؛ جدید تر PHP ورژن کے لئے حذف کرنا محفوظ).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline;">پلگ ان میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/plugins.dat
 &nbsp; <div dir="rtl" style="display:inline;">ہر فائل اپ لوڈ کی ایک ریکارڈ بلاک/phpMussel کر ہلاک کر دیا.</div> | ※ /vault/scan_kills.txt
 &nbsp; <div dir="rtl" style="display:inline;">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log.txt
 &nbsp; <div dir="rtl" style="display:inline;">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log_serialized.txt
+&nbsp; <div dir="rtl" style="display:inline;">دستخط کی شناخت کی وضاحت کرتے وقت اسکین کے دوران اور جب دستخط کے ذریعے دستخط کی معلومات تک رسائی حاصل کرنے پر دستخط کرنے کے لئے دستخط کی شناختی کاروائیوں پر مشتمل ہوتا ہے.</div> | /vault/shorthand.yaml
+&nbsp; <div dir="rtl" style="display:inline;">دستخط میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/signatures.dat
 &nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
 &nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
-&nbsp; <div dir="rtl" style="display:inline;">موضوعات کی فائل؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline;">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
 &nbsp; <div dir="rtl" style="display:inline;">اپ لوڈ کریں ہینڈلر.</div> | /vault/upload.php
 &nbsp; <div dir="rtl" style="display:inline;">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitignore
@@ -1402,4 +1407,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 10 جون 2018 (2018.06.10).</div>
+<div dir="rtl">آخری تازہ کاری: 21 جون 2018 (2018.06.21).</div>

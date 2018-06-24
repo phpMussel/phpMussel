@@ -269,6 +269,8 @@ Fichier | Description
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
 /vault/fe_assets/_quarantine.html | Un modèle HTML pour la page de quarantaine de l'accès frontal.
 /vault/fe_assets/_quarantine_row.html | Un modèle HTML pour la page de quarantaine de l'accès frontal.
+/vault/fe_assets/_siginfo.html | Un modèle HTML pour la page des informations sur les signatures de l'accès frontal.
+/vault/fe_assets/_siginfo_row.html | Un modèle HTML pour la page des informations sur les signatures de l'accès frontal.
 /vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
@@ -330,7 +332,7 @@ Fichier | Description
 /vault/.travis.php | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/.travis.yml | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/cli.php | Module de CLI.
-/vault/components.dat | Contient des informations relatives aux divers composants de phpMussel ; Utilisé par la page des mises à jour fournies par de l'accès frontal.
+/vault/components.dat | Fichier de métadonnées de composants ; Utilisé par la page des mises à jour frontales.
 /vault/config.ini.RenameMe | Fichier de configuration ; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (renommer pour activer).
 /vault/config.php | Module de configuration.
 /vault/config.yaml | Fichier pour les valeurs par défaut de la configuration ; Contient les valeurs par défaut de la configuration pour phpMussel.
@@ -340,12 +342,15 @@ Fichier | Description
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
 /vault/lang.php | Module de linguistiques.
 /vault/php5.4.x.php | Polyfills pour PHP 5.4.X (Requis pour la compatibilité descendante de PHP 5.4.X ; safe à supprimer pour les versions plus récentes de PHP).
+/vault/plugins.dat | Fichier de métadonnées de plugins ; Utilisé par la page des mises à jour frontales.
 ※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
 ※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.
 ※ /vault/scan_log_serialized.txt | Un enregistrement de tout analysé par phpMussel.
+/vault/shorthand.yaml | Contient divers identifiants de signature à traiter par phpMussel lors de l'interprétation des sténographie des signatures lors d'un scan, et lors de l'accès aux informations sur les signatures via l'accès frontal.
+/vault/signatures.dat | Fichier de métadonnées de signatures ; Utilisé par la page des mises à jour frontales.
 /vault/template_custom.html | Modèle fichier ; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_default.html | Modèle fichier ; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
-/vault/themes.dat | Fichier des thèmes ; Utilisé par la page des mises à jour fournies par de l'accès frontal.
+/vault/themes.dat | Fichier de métadonnées de thèmes ; Utilisé par la page des mises à jour frontales.
 /vault/upload.php | Module de téléchargements.
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /.gitignore | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
@@ -1214,4 +1219,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 10 Juin 2018 (2018.06.10).
+Dernière mise à jour : 21 Juin 2018 (2018.06.21).

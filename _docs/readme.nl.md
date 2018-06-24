@@ -269,6 +269,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
 /vault/fe_assets/_quarantine.html | Een HTML sjabloon voor de frontend quarantaine pagina.
 /vault/fe_assets/_quarantine_row.html | Een HTML sjabloon voor de frontend quarantaine pagina.
+/vault/fe_assets/_siginfo.html | Een HTML sjabloon voor de frontend signature informatie pagina.
+/vault/fe_assets/_siginfo_row.html | Een HTML sjabloon voor de frontend signature informatie pagina.
 /vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
@@ -330,7 +332,7 @@ Bestand | Beschrijving
 /vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/cli.php | CLI handler.
-/vault/components.dat | Bevat informatie met betrekking tot de verschillende phpMussel componenten; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/components.dat | Componenten metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie handler.
 /vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de phpMussel configuratie.
@@ -340,12 +342,15 @@ Bestand | Beschrijving
 /vault/greylist.csv | Aangeeft om phpMussel waarop signatures moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
 /vault/lang.php | Taal-handler.
 /vault/php5.4.x.php | Polyfills voor PHP 5.4.X (nodig voor PHP 5.4.X achterwaartse compatibiliteit; veilig te verwijderen voor nieuwere PHP-versies).
+/vault/plugins.dat | Plug-ins metadata bestand; Gebruikt door de frontend updates pagina.
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
 ※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
 ※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
+/vault/shorthand.yaml | Bevat verschillende signatuur-ID's die door phpMussel moeten worden verwerkt bij het interpreteren van een verkorte signature tijdens een scan en bij het openen van signature informatie via de frontend.
+/vault/signatures.dat | Signatures metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
-/vault/themes.dat | Thema bestand; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/themes.dat | Thema's metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/upload.php | Upload handler.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /.gitignore | Een GitHub project bestand (niet vereist voor een goede werking van het script).
@@ -1216,4 +1221,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 10 Juni 2018 (2018.06.10).
+Laatste Bijgewerkt: 21 Juni 2018 (2018.06.21).

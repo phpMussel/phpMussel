@@ -269,6 +269,8 @@ Arquivo | Descrição
 /vault/fe_assets/_nav_logs_access_only.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso aos arquivos de registro somente.
 /vault/fe_assets/_quarantine.html | Um modelo HTML para o front-end página de quarentena.
 /vault/fe_assets/_quarantine_row.html | Um modelo HTML para o front-end página de quarentena.
+/vault/fe_assets/_siginfo.html | Um modelo HTML para o front-end página de informações de assinaturas.
+/vault/fe_assets/_siginfo_row.html | Um modelo HTML para o front-end página de informações de assinaturas.
 /vault/fe_assets/_statistics.html | Um modelo HTML para o front-end página de estatísticas.
 /vault/fe_assets/_updates.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/_updates_row.html | Um modelo HTML para o front-end página de atualizações.
@@ -330,7 +332,7 @@ Arquivo | Descrição
 /vault/.travis.php | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/.travis.yml | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/cli.php | Módulo de CLI.
-/vault/components.dat | Contém informações relativas aos vários componentes de phpMussel; Usado pelo recurso atualizações fornecidas pelo front-end.
+/vault/components.dat | Arquivo de metadados de componentes; Usado pela página de atualizações do front-end.
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para phpMussel, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
 /vault/config.php | Módulo de configuração.
 /vault/config.yaml | Arquivo de valores padrão para a configuração; Contém valores padrão para a configuração de phpMussel.
@@ -340,12 +342,15 @@ Arquivo | Descrição
 /vault/greylist.csv | Um arquivo indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
 /vault/lang.php | Dados lingüísticos.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necessário para compatibilidade reversa com PHP 5.4.X; seguro para deletar por versões de PHP mais recentes).
+/vault/plugins.dat | Arquivo de metadados de plug-ins; Usado pela página de atualizações do front-end.
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.
 ※ /vault/scan_log.txt | Um registro de tudo analisado por phpMussel.
 ※ /vault/scan_log_serialized.txt | Um registro de tudo analisado por phpMussel.
+/vault/shorthand.yaml | Contém vários identificadores de assinatura a serem processados pelo phpMussel ao interpretar a abreviação de assinatura durante uma análise, e ao acessar informações de assinaturas por meio do front-end.
+/vault/signatures.dat | Arquivo de metadados de assinaturas; Usado pela página de atualizações do front-end.
 /vault/template_custom.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/template_default.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
-/vault/themes.dat | Arquivo de temas; Usado pelo recurso atualizações fornecidas pelo front-end.
+/vault/themes.dat | Arquivo de metadados de temas; Usado pela página de atualizações do front-end.
 /vault/upload.php | Módulo de carregamento.
 /.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
 /.gitignore | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
@@ -1213,4 +1218,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 10 Junho de 2018 (2018.06.10).
+Última Atualização: 21 Junho de 2018 (2018.06.21).

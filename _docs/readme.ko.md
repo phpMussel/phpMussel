@@ -269,6 +269,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
 /vault/fe_assets/_quarantine.html | 프론트 엔드 격리 페이지의 HTML 템플릿.
 /vault/fe_assets/_quarantine_row.html | 프론트 엔드 격리 페이지의 HTML 템플릿.
+/vault/fe_assets/_siginfo.html | 프론트 엔드 서명 정보 페이지의 HTML 템플릿.
+/vault/fe_assets/_siginfo_row.html | 프론트 엔드 서명 정보 페이지의 HTML 템플릿.
 /vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates_row.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
@@ -330,7 +332,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/cli.php | CLI 핸들러.
-/vault/components.dat | phpMussel 구성 요소 정보가 포함되어 있습니다; 업데이트 기능 사용 (프론트 엔드를 제공합니다).
+/vault/components.dat | 구성 요소 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/config.ini.RenameMe | phpMussel 설정 파일; phpMussel 모든 옵션 설정을 포함하고 있습니다. 각 옵션의 기능과 작동 방법에 대한 설명입니다 (활성화하기 위해 이름을 변경합니다).
 /vault/config.php | 구성 핸들러.
 /vault/config.yaml | 설정 기본값 스 파일; phpMussel의 기본 설정이 포함되어 있습니다.
@@ -340,12 +342,15 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/greylist.csv | 그레이리스트 된 서명 CSV에서 phpMussel이 어떤 서명을 무시해야하는지 알려줍니다 (삭제해도 자동으로 다시 만들어집니다).
 /vault/lang.php | 언어 처리기.
 /vault/php5.4.x.php | PHP 5.4.X 뽀리휘루 (PHP 5.4.X의 하위 호환성을 위해 필요합니다; 더 새로운 PHP 버전을 위해 삭제하는 것이 안전합니다).
+/vault/plugins.dat | 플러그인 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 ※ /vault/scan_kills.txt | phpMussel 의해 차단/삭제 된 이미지 파일의 전체 기록.
 ※ /vault/scan_log.txt | phpMussel 의해 스캔 된 것의 전 기록.
 ※ /vault/scan_log_serialized.txt | phpMussel 의해 스캔 된 것의 전 기록.
+/vault/shorthand.yaml | 스캔 중에 서명 단축형을 해석 할 때 및 프론트 엔드를 통해 서명 정보에 액세스 할 때 phpMussel에서 처리 할 다양한 서명 식별자가 들어 있습니다.
+/vault/signatures.dat | 서명 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/template_custom.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_default.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
-/vault/themes.dat | 테마 파일. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
+/vault/themes.dat | 테마 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/upload.php | 업로드 핸들러.
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /.gitignore | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
@@ -1214,4 +1219,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-최종 업데이트 : 2018년 6월 10일.
+최종 업데이트 : 2018년 6월 21일.

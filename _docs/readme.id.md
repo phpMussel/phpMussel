@@ -253,25 +253,27 @@ Data | Deskripsi
 /vault/cache/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/fe_assets/ | Data untuk akses bagian depan.
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
-/vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
-/vault/fe_assets/_cache.html | Template HTML untuk akses bagian depan halaman data cache.
-/vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
-/vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_accounts.html | Template HTML untuk halaman akun.
+/vault/fe_assets/_accounts_row.html | Template HTML untuk halaman akun.
+/vault/fe_assets/_cache.html | Template HTML untuk halaman data cache.
+/vault/fe_assets/_config.html | Template HTML untuk halaman konfigurasi.
+/vault/fe_assets/_config_row.html | Template HTML untuk halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
-/vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
-/vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
-/vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
-/vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
-/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
-/vault/fe_assets/_quarantine.html | Template HTML untuk akses bagian depan halaman karantina.
-/vault/fe_assets/_quarantine_row.html | Template HTML untuk akses bagian depan halaman karantina.
-/vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
-/vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
-/vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/_home.html | Template HTML untuk halaman utama.
+/vault/fe_assets/_login.html | Template HTML untuk halaman masuk.
+/vault/fe_assets/_logs.html | Template HTML untuk halaman log.
+/vault/fe_assets/_nav_complete_access.html | Template HTML untuk link navigasi, untuk mereka yang memiliki akses lengkap.
+/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk link navigasi, untuk mereka yang memiliki akses ke halaman log hanya.
+/vault/fe_assets/_quarantine.html | Template HTML untuk halaman karantina.
+/vault/fe_assets/_quarantine_row.html | Template HTML untuk halaman karantina.
+/vault/fe_assets/_siginfo.html | Template HTML untuk halaman informasi tanda tangan.
+/vault/fe_assets/_siginfo_row.html | Template HTML untuk halaman informasi tanda tangan.
+/vault/fe_assets/_statistics.html | Template HTML untuk halaman statistik.
+/vault/fe_assets/_updates.html | Template HTML untuk halaman pembaruan.
+/vault/fe_assets/_updates_row.html | Template HTML untuk halaman pembaruan.
 /vault/fe_assets/_upload_test.html | Template HTML untuk halaman upload test.
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi untuk akun dan sesi; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
@@ -330,7 +332,7 @@ Data | Deskripsi
 /vault/.travis.php | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/cli.php | Modul CLI handler.
-/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
 /vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk phpMussel.
@@ -340,12 +342,15 @@ Data | Deskripsi
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
 /vault/lang.php | File bahasa.
 /vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
+/vault/plugins.dat | File metadata plugin; Digunakan oleh halaman pembaruan untuk bagian depan.
 ※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
 ※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 ※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+/vault/shorthand.yaml | Berisi berbagai pengidentifikasi tanda tangan untuk diproses oleh phpMussel ketika menafsirkan tanda tangan singkat selama pemindaian, dan ketika mengakses informasi tanda tangan melalui bagian depan.
+/vault/signatures.dat | File metadata tanda tangan; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/template_default.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
-/vault/themes.dat | File tema; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/themes.dat | File metadata tema; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/upload.php | Modul upload.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /.gitignore | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
@@ -1166,20 +1171,20 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 *Direktif konfigurasi yang relevan:*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 STATISTIK
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel secara opsional dapat melacak statistik seperti jumlah total file yang dipindai dan diblokir sejak beberapa titik waktu tertentu. Fitur ini dinonaktifkan secara default, tetapi dapat diaktifkan melalui konfigurasi paket. Fitur ini hanya melacak jumlah total kejadian yang terjadi, dan tidak termasuk informasi apapun tentang kejadian tertentu (dan dengan demikian, tidak boleh dianggap sebagai PII).
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 ENKRIPSI
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel tidak mengenkripsi cache atau informasi log apapun. [Enkripsi](https://id.wikipedia.org/wiki/Enkripsi) cache dan log dapat diperkenalkan di masa depan, tetapi tidak ada rencana khusus untuk itu saat ini. Jika Anda khawatir tentang pihak ketiga yang tidak sah mendapatkan akses ke bagian depan dari phpMussel yang mungkin berisi PII atau informasi sensitif seperti cache atau log-nya, saya akan merekomendasikan bahwa phpMussel tidak diinstal di lokasi yang dapat diakses publik (misalnya, instal phpMussel di luar direktori `public_html` standar atau yang setara dengan yang tersedia untuk sebagian besar web server standar) dan bahwa perizinan restriktif yang tepat diberlakukan untuk direktori tempat ia tinggal (khususnya, untuk direktori vault). Jika itu tidak cukup untuk mengatasi masalah Anda, konfigurasikan phpMussel sedemikian rupa sehingga jenis informasi yang menyebabkan kekhawatiran Anda tidak akan dikumpulkan atau dicatat di tempat pertama (seperti, dengan menonaktifkan pencatatan).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Ketika pengguna berhasil masuk ke akses bagian depan, phpMussel menetapkan [cookie](https://id.wikipedia.org/wiki/Kuki_HTTP) agar dapat mengingat pengguna untuk permintaan berikutnya (yaitu, cookie digunakan untuk mengautentikasi pengguna ke sesi masuk). Pada halaman masuk, peringatan cookie ditampilkan dengan jelas, memperingatkan pengguna bahwa cookie akan diatur jika mereka terlibat dalam tindakan yang relevan. Cookie tidak diatur dalam titik lain di basis kode.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `disable_frontend`
@@ -1214,4 +1219,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Terakhir Diperbarui: 10 Juni 2018 (2018.06.10).
+Terakhir Diperbarui: 21 Juni 2018 (2018.06.21).
