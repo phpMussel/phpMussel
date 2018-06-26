@@ -629,10 +629,14 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
     $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
     $UsedMemory['Size'] += strlen($Out);
     $UsedMemory['Count']++;
-    $DeductBytes = $UsedMemory['Size'] - $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage']);
-    $DeductBytes = ($DeductBytes > 0) ? $DeductBytes : 0;
-    $DeductFiles = $UsedMemory['Count'] - $phpMussel['Config']['general']['quarantine_max_files'];
-    $DeductFiles = ($DeductFiles > 0) ? $DeductFiles : 0;
+    if ($DeductBytes = $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])) {
+        $DeductBytes = $UsedMemory['Size'] - $DeductBytes;
+        $DeductBytes = ($DeductBytes > 0) ? $DeductBytes : 0;
+    }
+    if ($DeductFiles = $phpMussel['Config']['general']['quarantine_max_files']) {
+        $DeductFiles = $UsedMemory['Count'] - $DeductFiles;
+        $DeductFiles = ($DeductFiles > 0) ? $DeductFiles : 0;
+    }
     if ($DeductBytes > 0 || $DeductFiles > 0) {
         $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath'], $DeductBytes, $DeductFiles);
     }
@@ -659,7 +663,7 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
  *      memory used by the target directory. `Count`: The total number of files
  *      found in the target directory by the time of closure exit.
  */
-$phpMussel['MemoryUse'] = function ($Path, $Delete = 0, $DeleteFiles = 0) use (&$phpMussel) {
+$phpMussel['MemoryUse'] = function ($Path, $Delete = 0, $DeleteFiles = 0) {
     $Offset = strlen($Path);
     $Files = [];
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Path), RecursiveIteratorIterator::SELF_FIRST);
@@ -687,34 +691,34 @@ $phpMussel['MemoryUse'] = function ($Path, $Delete = 0, $DeleteFiles = 0) use (&
 };
 
 /**
- * Checks if $needle (string) matches (is equal or identical to) $haystack
- * (string), or a specific substring of $haystack, to within a specific
- * threshold of the levenshtein distance between the $needle and the $haystack
- * or the $haystack substring specified.
+ * Checks if $Needle (string) matches (is equal or identical to) $Haystack
+ * (string), or a specific substring of $Haystack, to within a specific
+ * threshold of the levenshtein distance between the $Needle and the $Haystack
+ * or the $Haystack substring specified.
  *
  * This function is useful for expressing the differences between two strings
  * as an integer value and for then determining whether a specific value as per
  * those differences is met.
  *
- * @param string $needle The needle (will be matched against the $haystack, or,
- *      if substring positions are specified, against the $haystack substring
+ * @param string $Needle The needle (will be matched against the $Haystack, or,
+ *      if substring positions are specified, against the $Haystack substring
  *      specified).
- * @param string $haystack The haystack (will be matched against the $needle).
+ * @param string $Haystack The haystack (will be matched against the $Needle).
  *      Note that for the purposes of calculating the levenshtein distance, it
- *      doesn't matter which string is a $needle and which is a $haystack (the
+ *      doesn't matter which string is a $Needle and which is a $Haystack (the
  *      value should be the same if the two were reversed). However, when
  *      specifying substring positions, those substring positions are applied
- *      to the $haystack, and not the $needle. Note, too, that if the $needle
- *      length is greater than the $haystack length (after having applied the
- *      substring positions to the $haystack), $needle and $haystack will be
+ *      to the $Haystack, and not the $Needle. Note, too, that if the $Needle
+ *      length is greater than the $Haystack length (after having applied the
+ *      substring positions to the $Haystack), $Needle and $Haystack will be
  *      switched.
- * @param int $pos_A The initial position of the $haystack to use for the
+ * @param int $pos_A The initial position of the $Haystack to use for the
  *      substring, if using a substring (optional; defaults to `0`; `0` is the
- *      beginning of the $haystack).
- * @param int $pos_Z The final position of the $haystack to use for the
+ *      beginning of the $Haystack).
+ * @param int $pos_Z The final position of the $Haystack to use for the
  *      substring, if using a substring (optional; defaults to `0`; `0` will
- *      instruct the function to continue to the end of the $haystack, and
- *      thus, if both $pos_A and $pos_Z are `0`, the entire $haystack will be
+ *      instruct the function to continue to the end of the $Haystack, and
+ *      thus, if both $pos_A and $pos_Z are `0`, the entire $Haystack will be
  *      used).
  * @param int $min The threshold minimum (the minimum levenshtein distance
  *      required in order for the two strings to be considered a match).
@@ -746,43 +750,42 @@ $phpMussel['MemoryUse'] = function ($Path, $Delete = 0, $DeleteFiles = 0) use (&
  *      depending on the state of $bool (but will also return false whenever an
  *      error occurs).
  */
-$phpMussel['lv_match'] = function ($needle, $haystack, $pos_A = 0, $pos_Z = 0, $min = 0, $max = -1, $bool = true, $case = false, $cost_ins = 1, $cost_rep = 1, $cost_del = 1) {
-    if (!function_exists('levenshtein') || is_array($needle) || is_array($haystack)) {
+$phpMussel['lv_match'] = function ($Needle, $Haystack, $pos_A = 0, $pos_Z = 0, $min = 0, $max = -1, $bool = true, $case = false, $cost_ins = 1, $cost_rep = 1, $cost_del = 1) {
+    if (!function_exists('levenshtein') || is_array($Needle) || is_array($Haystack)) {
         return false;
     }
-    $nlen = strlen($needle);
+    $nlen = strlen($Needle);
     $pos_A = (int)$pos_A;
     $pos_Z = (int)$pos_Z;
     $min = (int)$min;
     $max = (int)$max;
     if ($pos_A !== 0 || $pos_Z !== 0) {
-        $haystack =
-            ($pos_Z === 0) ?
-            substr($haystack, $pos_A) :
-            substr($haystack, $pos_A, $pos_Z);
+        $Haystack = (
+            $pos_Z === 0
+        ) ? substr($Haystack, $pos_A) : substr($Haystack, $pos_A, $pos_Z);
     }
-    $hlen = strlen($haystack);
+    $hlen = strlen($Haystack);
     if ($nlen < 1 || $hlen < 1) {
         return $bool ? false : 0;
     }
     if ($nlen > $hlen) {
-        $x = [$needle, $nlen, $haystack, $hlen];
-        $haystack = $x[0];
+        $x = [$Needle, $nlen, $Haystack, $hlen];
+        $Haystack = $x[0];
         $hlen = $x[1];
-        $needle = $x[2];
+        $Needle = $x[2];
         $nlen = $x[3];
     }
     if ($cost_ins === 1 && $cost_rep === 1 && $cost_del === 1) {
         $lv = $case ? levenshtein(
-            $haystack, $needle
+            $Haystack, $Needle
         ) : levenshtein(
-            strtolower($haystack), strtolower($needle)
+            strtolower($Haystack), strtolower($Needle)
         );
     } else {
         $lv = $case ? levenshtein(
-            $haystack, $needle, $cost_ins, $cost_rep, $cost_del
+            $Haystack, $Needle, $cost_ins, $cost_rep, $cost_del
         ) : levenshtein(
-            strtolower($haystack), strtolower($needle), $cost_ins, $cost_rep, $cost_del
+            strtolower($Haystack), strtolower($Needle), $cost_ins, $cost_rep, $cost_del
         );
     }
     return $bool ? (($min === 0 || $lv >= $min) && ($max === -1 || $lv <= $max)) : $lv;
