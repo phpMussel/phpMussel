@@ -194,7 +194,7 @@ l10n/ar:
 l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
- Version: 2018.176.586
+ Version: 2018.176.596
  Minimum Required: 1.2.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -207,7 +207,7 @@ l10n/bn:
    - lang/lang.bn.fe.php
    - lang/lang.bn.php
   Checksum:
-   - 80c7bd83b9065dd8e290748a5ed673db:91720
+   - 14dde136eab041e0822d80fbe9eeac9b:91719
    - 14eb8f75cb862c30323096ab00179a4b:12773
  Reannotate: components.dat
 l10n/de:
