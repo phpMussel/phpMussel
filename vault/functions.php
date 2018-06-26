@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.06.20).
+ * This file: Functions file (last modified: 2018.06.26).
  */
 
 /**
@@ -589,24 +589,24 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
  * place. Improvements might be made in the future.
  *
  * @param string $In The input string (the file upload / source data).
- * @param string $key Your quarantine key.
- * @param string $ip Data origin (usually, the IP address of the uploader).
- * @param string $id The QFU filename to use (calculated beforehand).
+ * @param string $Key Your quarantine key.
+ * @param string $IP Data origin (usually, the IP address of the uploader).
+ * @param string $ID The QFU filename to use (calculated beforehand).
  * @return bool This should always return true, unless something goes wrong.
  */
-$phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
-    if (!$In || !$key || !$ip || !$id || !function_exists('gzdeflate') || (
-        strlen($key) < 128 &&
-        !$key = $phpMussel['HexSafe'](hash('sha512', $key) . hash('whirlpool', $key))
+$phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
+    if (!$In || !$Key || !$IP || !$ID || !function_exists('gzdeflate') || (
+        strlen($Key) < 128 &&
+        !$Key = $phpMussel['HexSafe'](hash('sha512', $Key) . hash('whirlpool', $Key))
     )) {
         return false;
     }
     if ($phpMussel['Config']['legal']['pseudonymise_ip_addresses']) {
-        $ip = $phpMussel['Pseudonymise-IP']($ip);
+        $IP = $phpMussel['Pseudonymise-IP']($IP);
     }
-    $k = strlen($key);
+    $k = strlen($Key);
     $FileSize = strlen($In);
-    $h = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](md5($In)) . pack('l*', $FileSize) . "\x01";
+    $Head = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](md5($In)) . pack('l*', $FileSize) . "\x01";
     $In = gzdeflate($In, 9);
     $Out = '';
     $i = 0;
@@ -616,25 +616,27 @@ $phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
                 break 2;
             }
             $L = substr($In, $i, 1);
-            $R = substr($key, $j, 1);
+            $R = substr($Key, $j, 1);
             $Out .= ($L === false ? "\x00" : $L) ^ ($R === false ? "\x00" : $R);
         }
     }
     $Out =
         "\x2f\x3d\x3d\x20phpMussel\x20Quarantined\x20File\x20Upload\x20\x3d" .
         "\x3d\x5c\n\x7c\x20Time\x2fDate\x20Uploaded\x3a\x20" .
-        str_pad($phpMussel['Time'], 18, "\x20") .
-        "\x7c\n\x7c\x20Uploaded\x20From\x3a\x20" . str_pad($ip, 22, "\x20") .
-        "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $h . $Out;
-    $u = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
-    $u = $u['s'] + strlen($Out);
-    if ($u > $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])) {
-        $u = $phpMussel['MemoryUse'](
-            $phpMussel['qfuPath'],
-            $u - $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])
-        );
+        str_pad($phpMussel['Time'], 18, ' ') .
+        "\x7c\n\x7c\x20Uploaded\x20From\x3a\x20" . str_pad($IP, 22, ' ') .
+        "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $Head . $Out;
+    $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
+    $UsedMemory['Size'] += strlen($Out);
+    $UsedMemory['Count']++;
+    $DeductBytes = $UsedMemory['Size'] - $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage']);
+    $DeductBytes = ($DeductBytes > 0) ? $DeductBytes : 0;
+    $DeductFiles = $UsedMemory['Count'] - $phpMussel['Config']['general']['quarantine_max_files'];
+    $DeductFiles = ($DeductFiles > 0) ? $DeductFiles : 0;
+    if ($DeductBytes > 0 || $DeductFiles > 0) {
+        $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath'], $DeductBytes, $DeductFiles);
     }
-    $Handle = fopen($phpMussel['qfuPath'] . $id . '.qfu', 'a');
+    $Handle = fopen($phpMussel['qfuPath'] . $ID . '.qfu', 'a');
     fwrite($Handle, $Out);
     fclose($Handle);
     if (!$phpMussel['EOF']) {
@@ -644,56 +646,44 @@ $phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
 };
 
 /**
- * Calculates the memory usage of a directory, and optionally, enforces a
- * limitation upon the memory usage of that directory by way of deleting the
- * contents of that directory until a specified quota of bytes to be deleted
- * has been met.
+ * Calculates the total memory used by a directory, and optionally enforces
+ * memory usage and number of files limits on that directory. Should be
+ * regarded as part of the phpMussel quarantine functionality.
  *
- * This function is recursive, and will check (and/or delete from) the
- * specified directory and all subdirectories that it contains; It should be
- * regarded as a subfunction of the quarantine functionality, used by the
- * quarantine functionality to enforce the quarantine memory usage limit.
- *
- * @param string $p The path and name of the directory to be checked.
- * @param int $d A quota for how many bytes should be deleted from the target
- *      directory when the function is executed (omitting this parameter, or
- *      setting it to zero or less, will prevent the deletion of any files).
- * @return array The function will return an array containing four elements,
- *      all integers: `s` is the actual total memory usage of the target
- *      directory, `c` is a count of the total number of objects (files and
- *      subdirectories) detected within the target directory, `dc` is a count
- *      only of the total number of subdirectories detected within the target
- *      directory, and `d` is how much remaining quota there is to be met by
- *      the time the function has finished executing (usually, should be zero
- *      or less).
+ * @param string $Path The path of the directory to be checked.
+ * @param int $Delete How many bytes to delete from the target directory; Omit
+ *      or set to 0 to avoid deleting files on the basis of total bytes.
+ * @param int $DeleteFiles How many files to delete from the target directory;
+        Omit or set to 0 to avoid deleting files.
+ * @return array Contains two integer elements: `Size`: The actual, total
+ *      memory used by the target directory. `Count`: The total number of files
+ *      found in the target directory by the time of closure exit.
  */
-$phpMussel['MemoryUse'] = function ($p, $d = 0) use (&$phpMussel) {
-    $t = ['s' => 0, 'c' => 0, 'dc' => 0, 'd' => $d];
-    if (is_dir($p) && is_readable($p) && $h = opendir($p)) {
-        while (false !== ($f = readdir($h))) {
-            if ($f !== '.' && $f !== '..' && !is_link($np = $p . '/' . $f)) {
-                if (is_dir($np)) {
-                    $t['dc']++;
-                    $r = $phpMussel['MemoryUse']($np, $t['d']);
-                    $t['s'] += $r['s'];
-                    $t['c'] += $r['c'];
-                    $t['dc'] += $r['dc'];
-                    $t['d'] -= $r['d'];
-                } elseif (is_file($np)) {
-                    $ns = filesize($np);
-                    if ($t['d'] > 0 && substr_count($np . "\x01", ".qfu\x01") > 0 && is_readable($np)) {
-                        unlink($np);
-                        $t['d'] -= $ns;
-                    } else {
-                        $t['s'] += $ns;
-                        $t['c']++;
-                    }
-                }
-            }
+$phpMussel['MemoryUse'] = function ($Path, $Delete = 0, $DeleteFiles = 0) use (&$phpMussel) {
+    $Offset = strlen($Path);
+    $Files = [];
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Path), RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($List as $Item => $List) {
+        $File = str_replace("\\", '/', substr($Item, $Offset));
+        if ($File && preg_match('~\.qfu$~i', $Item) && is_file($Item) && !is_link($Item) && is_readable($Item)) {
+            $Files[$File] = filemtime($Item);
         }
-        closedir($h);
     }
-    return $t;
+    unset($Item, $List, $Offset);
+    $Arr = ['Size' => 0, 'Count' => 0];
+    asort($Files, SORT_NUMERIC);
+    foreach ($Files as $File => $Modified) {
+        $File = $Path . $File;
+        $Size = filesize($File);
+        if (($Delete > 0 || $DeleteFiles > 0) && unlink($File)) {
+            $DeleteFiles--;
+            $Delete -= $Size;
+            continue;
+        }
+        $Arr['Size'] += $Size;
+        $Arr['Count']++;
+    }
+    return $Arr;
 };
 
 /**

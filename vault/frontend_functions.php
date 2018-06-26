@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.20).
+ * This file: Front-end functions file (last modified: 2018.06.22).
  */
 
 /**
@@ -686,7 +686,7 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     ) || (
         $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.17')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.5')
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.7')
     )) {
         $Level += 2;
     }
@@ -1694,11 +1694,11 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
         $phpMussel['YAML']($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml'), $phpMussel['shorthand.yaml']);
     }
 
-    /** Get list of vendor search patterns. */
-    $Arr['Vendors'] = $phpMussel['shorthand.yaml']['Vendor Search Patterns'];
-
-    /** Get list of metadata search pattern partials. */
-    $Arr['SigTypes'] = $phpMussel['shorthand.yaml']['Metadata Search Pattern Partials'];
+    /** Get list of vendor search patterns and metadata search pattern partials. */
+    $Arr = [
+        'Vendors' => $phpMussel['shorthand.yaml']['Vendor Search Patterns'],
+        'SigTypes' => $phpMussel['shorthand.yaml']['Metadata Search Pattern Partials']
+    ];
 
     /** Expand patterns for signature metadata. */
     foreach ($Arr['SigTypes'] as &$Type) {

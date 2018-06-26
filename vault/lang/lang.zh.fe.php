@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.17).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -65,6 +65,7 @@ $phpMussel['lang']['config_general_maintenance_mode'] = '启用维护模式？�
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登录尝试次数（前端）。​标准=5。';
 $phpMussel['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以检疫坏文件上传在隔离在phpMussel的安全/保险库【Vault】，​如果这个是某物您想。​普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，​但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。​检疫的尝试文件上传可以有时还助攻在调试假阳性，​如果这个是某物经常发生为您。​以关闭检疫功能，​简单地离开<code>quarantine_key</code>指令空白，​或抹去内容的这个指令如果它不已空白。​以激活隔离功能，​输入一些值在这个指令。​<code>quarantine_key</code>是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。​<code>quarantine_key</code>应该被处理在同样方法作为您的密码：更长是更好，​和紧紧保护它。​为获得最佳效果，​在结合使用<code>delete_on_sight</code>。';
+$phpMussel['lang']['config_general_quarantine_max_files'] = '隔离中可以存在的最大文件数量。​新文件添加到隔离时，如果超过此数量，则旧文件将被删除，直到剩余的文件不再超过此数量。​标准=100。';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '最大允许文件大小为文件在检疫。​文件大于这个指定数值将不成为检疫。​这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。​标准 = 2MB。';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '最大内存使用允许为检疫。​如果总内存已用通过隔离到达这个数值，​最老检疫文件将会删除直到总内存已用不再到达这个数值。​这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。​标准 = 64MB。';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = '多长时间应该phpMussel维持扫描结果？​数值是秒数为维持扫描结果。​标准是21600秒（6小时）； 一个<code>0</code>数值将停止维持扫描结果。';

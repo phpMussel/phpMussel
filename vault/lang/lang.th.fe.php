@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.06.17).
+ * This file: Thai language data for the front-end (last modified: 2018.06.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_quarantine_max_files'] = 'The maximum number of files that can exist in the quarantine. When new files are added to the quarantine, if this number is exceeded, old files will be deleted until the remainder no longer exceeds this number. Default = 100.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'แพคเกจหลัก (ไม่รวมลายเซ็น เอกสาร และการกำหนดค่า).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">โฮมเพจ</a> | <a href="?phpmussel-page=logout">ออกจากระบบ</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ออกจากระบบ</a>';

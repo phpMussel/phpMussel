@@ -179,6 +179,9 @@ Config Defaults:
    step: any
    default: "64MB"
    preview: kb
+  quarantine_max_files:
+   type: int
+   default: 100
   honeypot_mode:
    type: bool
    default: false

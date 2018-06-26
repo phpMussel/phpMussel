@@ -36,6 +36,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.20; Sub-minor code change; Maikuolan]: Split shorthand data out to
   its own file to improve logic and reduce duplication.
 
+- [2018.06.26; NEW FEATURE; Maikuolan]: Added an optional directive to specify
+  the maximum number of files allowed to exist in the quarantine.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

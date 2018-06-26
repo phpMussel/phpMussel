@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.19).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -65,6 +65,7 @@ $phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・�
 $phpMussel['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。';
 $phpMussel['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMusselは、​必要とあれば、​phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。​一般的なphpMusselのユーザーは、​ウェブサイトやホスティング環境の保護ができれば充分と考えており、​フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、​無効で構いません。​ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。​フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。​検疫機能を無効にするには、​<code>quarantine_key</code>ディレクティブを空にしておくか、​空でない場合はディレクティブ内のコンテンツを消去して下さい。​有効にするには、​デイレクティブに何らかの値を入れて下さい。​<code>quarantine_key</code>は検疫機能における重要なセキュリティー要素であり、​検疫機能内に保存されたデータの執行を各種の攻撃から守っています。​<code>quarantine_key</code>はパスワードと同様に考えて下さい。​長い方がより安全と言えます。​最も効果的な使用法は<code>delete_on_sight</code>との併用です。';
+$phpMussel['lang']['config_general_quarantine_max_files'] = '検疫に存在できるファイルの最大数。​隔離ファイルに新しいファイルが追加されると、この数を超えた場合、残りのファイルがこの数を超えなくなるまで古いファイルが削除されます。​デフォルト設定は１００です。';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '検疫されるファイルサイズの上限。​この値より大きなファイルは検疫されません。​クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、​メモリーが無駄に消費されるのを防ぐ意味で重要です。​デフォルト設定は２ＭＢです。';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '検疫のために利用する最大メモリー量。​全メモリー量が使用されると、​この範囲内に収まるよう古いファイルが削除の対象となります。​クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、​メモリーが無駄に消費されるのを防ぐ意味で重要です。​デフォルト設定は６４ＭＢです。';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMusselはスキャニング結果をどれくらいの期間キャッシュすべきか？​秒単位で、​デフォルトは２１，６００秒（６時間）となっています。​０にするとキャッシュ無効になります。';
@@ -73,7 +74,7 @@ $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を�
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_statistics'] = 'phpMussel使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。';
-$phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
+$phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーン・オフセット（分）。';
 $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
 $phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？​値は、​ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。​注：個々のログファイルに適用されます。​ログファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。';

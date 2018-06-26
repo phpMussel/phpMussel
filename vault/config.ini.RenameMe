@@ -124,6 +124,11 @@ quarantine_max_filesize='2MB'
 ; causing run-away data usage on your hosting service. Default = 64MB.
 quarantine_max_usage='64MB'
 
+; The maximum number of files that can exist in the quarantine. When new files
+; are added to the quarantine, if this number is exceeded, old files will be
+; deleted until the remainder no longer exceeds this number. Default = 100.
+quarantine_max_files=100
+
 ; When honeypot mode is enabled, phpMussel will attempt to quarantine every
 ; single file upload that it encounters, regardless of whether or not the file
 ; being uploaded matches any included signatures, and no actual scanning or
