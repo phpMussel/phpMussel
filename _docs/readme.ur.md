@@ -372,7 +372,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">"cleanup"<br /></div>
 <div dir="rtl"><ul>
- <li>ترتیب ختم متغیر اور کیشے ابتدائی اپ لوڈ سکیننگ کے بعد اسکرپٹ طرف سے استعمال کیا؟ False (جھوٹی) = کوئی؛ True (سچے) = جی ہاں [پہلے سے طے شدہ]. آپ کے اپ لوڈز کے ابتدائی سکیننگ پرے سکرپٹ کا استعمال کرتے ہوئے -aren't- تو، آپ کو اس TRUE" (ہاں) "کرنے کے لئے، میموری استعمال کو کم سے کم کرنے کے لئے مقرر کیا جانا چاہئے. آپ کے اپ لوڈز کے ابتدائی سکیننگ پرے سکرپٹ کا استعمال کرتے ہوئے -are- تو، میموری میں دہرے ڈیٹا دوبارہ لوڈ بیکار میں سے بچنے کے لئے FALSE" (کوئی) "لئے مقرر کیا جانا چاہئے. عام پریکٹس میں، یہ عام طور پر TRUE" "لئے مقرر کیا جائے چاہئے، لیکن آپ ایسا کرتے ہیں تو، آپ کو ابتدائی فائل اپ لوڈ کی سکیننگ کے علاوہ کسی اور چیز کے لئے سکرپٹ کو استعمال کرنے کے لئے نہیں کر سکیں گے.</li>
+ <li>ترتیب ختم متغیر اور کیشے ابتدائی اپ لوڈ سکیننگ کے بعد اسکرپٹ طرف سے استعمال کیا؟ False (جھوٹی) = کوئی؛ True (سچے) = جی ہاں [پہلے سے طے شدہ]. آپ کے اپ لوڈز کے ابتدائی سکیننگ پرے سکرپٹ کا استعمال کرتے ہوئے نہیں ہیں تو، آپ کو اس TRUE" (ہاں) "کرنے کے لئے، میموری استعمال کو کم سے کم کرنے کے لئے مقرر کیا جانا چاہئے. آپ کے اپ لوڈز کے ابتدائی سکیننگ پرے سکرپٹ کا استعمال کرتے ہوئے ہیں تو، میموری میں دہرے ڈیٹا دوبارہ لوڈ بیکار میں سے بچنے کے لئے FALSE" (کوئی) "لئے مقرر کیا جانا چاہئے. عام پریکٹس میں، یہ عام طور پر TRUE" "لئے مقرر کیا جائے چاہئے، لیکن آپ ایسا کرتے ہیں تو، آپ کو ابتدائی فائل اپ لوڈ کی سکیننگ کے علاوہ کسی اور چیز کے لئے سکرپٹ کو استعمال کرنے کے لئے نہیں کر سکیں گے.</li>
  <li>CLI موڈ میں کوئی اثر و رسوخ ہے.</li>
 </ul></div>
 
@@ -495,6 +495,11 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 <div dir="rtl">"quarantine_max_usage"<br /></div>
 <div dir="rtl"><ul>
  <li>زیادہ سے زیادہ میموری کا استعمال سنگرودھ کے لئے کی اجازت دی. سنگرودھ طرف سے استعمال کیا کل میموری اس قیمت تک پہنچ جاتا ہے تو، استعمال کیا کل میموری اب کوئی اس قیمت تک پہنچ جاتا ہے جب تک قدیم ترین قرنطینہ فائلوں کو خارج کر دیا جائے گا. یہ ہدایت کسی بھی ممکنہ حملہ آوروں کے ممکنہ طور پر اپنے ہوسٹنگ سروس پر رن دور ڈیٹا کے استعمال کے باعث ناپسندیدہ اعداد و شمار کے ساتھ آپ کے سنگرودھ سیلاب کے لئے یہ زیادہ مشکل بنانے کا ایک ذریعہ کے طور پر اہم ہے. پہلے سے طے شدہ = 64MB.</li>
+</ul></div>
+
+<div dir="rtl">"quarantine_max_files"<br /></div>
+<div dir="rtl"><ul>
+ <li>قرنطین میں موجود فائلوں کی زیادہ سے زیادہ تعداد. جب قرنطین میں نئی فائلوں کو شامل کیا جاتا ہے تو، اگر یہ نمبر تجاوز کردی جاتی ہے تو، پرانی فائلوں کو حذف کر دیا جائے گا جب باقی باقی اب اس نمبر سے زیادہ نہیں ہیں. پہلے سے طے شدہ = 100.</li>
 </ul></div>
 
 <div dir="rtl">"honeypot_mode"<br /></div>
@@ -1340,7 +1345,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+
+The following resources can help to explain it in more detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 
@@ -1407,4 +1414,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 21 جون 2018 (2018.06.21).</div>
+<div dir="rtl">آخری تازہ کاری: 26 جون 2018 (2018.06.26).</div>

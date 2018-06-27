@@ -125,7 +125,7 @@
 
 #### <div dir="rtl">٣.٠ كيفية الإستخدام (لخدمات الويب)</div>
 
-<div dir="rtl">لقد تم إعداد phpMussel ليكون البرنامج النصي الذي سوف يعمل بشكل مرضي على جهازك مع الحد الأدنى من المتطلبات على جهازك: بمجرد تثبيته -بشكلي أساسي- فإنه ببساطة يجب أن يعمل.<br /><br /></div>
+<div dir="rtl">لقد تم إعداد phpMussel ليكون البرنامج النصي الذي سوف يعمل بشكل مرضي على جهازك مع الحد الأدنى من المتطلبات على جهازك: بمجرد تثبيته بشكلي أساسي فإنه ببساطة يجب أن يعمل.<br /><br /></div>
 
 <div dir="rtl">سيتم فحص الملفات تلقائياً لقد تم إعداده إفتراضياً لذا ليس عليك القيام بشيئ.<br /><br /></div>
 
@@ -495,6 +495,11 @@
 <div dir="rtl">"quarantine_max_usage"<br /></div>
 <div dir="rtl"><ul>
  <li>الحد الأقصى لاستخدام الذاكرة يسمح للحجر الصحي. إذا كان إجمالي الذاكرة المستخدمة من قبل الحجر الصحي تصل هذه القيمة، سيتم حذف أقدم الملفات المعزولة حتى الذاكرة الإجمالية المستخدمة لم تعد تصل هذه القيمة. هذا التوجيه لا يقل أهمية عن وسيلة لجعل الأمر أكثر صعوبة لأي مهاجمين محتملين لإغراق الحجر الصحي الخاص مع البيانات غير المرغوب فيها مما يمكن أن يسبب استخدام البيانات التشغيل بعيدا عن خدمة الاستضافة. الافتراضي = 64MB.</li>
+</ul></div>
+
+<div dir="rtl">"quarantine_max_files"<br /></div>
+<div dir="rtl"><ul>
+ <li>الحد الأقصى لعدد الملفات التي يمكن أن توجد في وحدة العزل. عند إضافة ملفات جديدة إلى وحدة العزل، إذا تم تجاوز هذا الرقم، فسيتم حذف الملفات القديمة حتى لا يتجاوز الجزء المتبقي هذا الرقم. الافتراضي = 100.</li>
 </ul></div>
 
 <div dir="rtl">"honeypot_mode"<br /></div>
@@ -1340,7 +1345,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+
+The following resources can help to explain it in more detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 
@@ -1407,4 +1414,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-<div dir="rtl">آخر تحديث: 21 يونيو 2018 (2018.06.21).</div>
+<div dir="rtl">آخر تحديث: 26 يونيو 2018 (2018.06.26).</div>

@@ -460,6 +460,9 @@ Valeur | Produit | Description
 « quarantine_max_usage »
 - La maximale utilisation autorisée de la mémoire pour la quarantaine. Si la totale d'utilisée mémoire par la quarantaine atteint cette valeur, les anciens fichiers en quarantaine seront supprimés jusqu'à ce que la totale mémoire utilisée n'atteint pas cette valeur. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d'inonder votre quarantaine avec des données non désirées ce qui pourrait causer l'emballement d'utilisation des données sur votre service d'hébergement. Défaut = 64Mo.
 
+« quarantine_max_files »
+- Le nombre maximal de fichiers pouvant exister dans la quarantaine. Lorsque de nouveaux fichiers sont ajoutés à la quarantaine, si ce nombre est dépassé, les anciens fichiers seront supprimés jusqu'à ce que le reste ne dépasse plus ce nombre. Défaut = 100.
+
 « honeypot_mode »
 - Quand le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n'est recommandé d'activer cette fonctionnalité si l'utilisation prévue de phpMussel par l'utilisateur est l'analyse de fichier téléchargements comme la norme, ni est-il recommandé d'utiliser la honeypot fonctionnalité pour fins autres que celles du honeypot. Par défaut, cette option est désactivée. False = Désactivé [Défaut] ; True = Activé.
 
@@ -1160,7 +1163,9 @@ Il est également possible de tronquer des fichiers journaux individuels lorsqu'
 
 ##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
-Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
+Premièrement, si vous n'êtes pas familier avec le terme, « pseudonymisation » se réfère au traitement des données personnelles en tant que tel, il ne peut plus être identifié à une personne concernée sans information supplémentaire, et à condition que ces informations supplémentaires soient conservées séparément, et soumis à des mesures techniques et organisationnelles pour s'assurer que les données personnelles ne peuvent être identifiées à aucune personnes naturelles.
+
+Les ressources suivantes peuvent aider à l'expliquer plus en détail :
 - [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](http://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
 - [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
@@ -1219,4 +1224,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 21 Juin 2018 (2018.06.21).
+Dernière mise à jour : 26 Juin 2018 (2018.06.26).

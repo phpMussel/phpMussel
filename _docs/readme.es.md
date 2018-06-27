@@ -460,6 +460,9 @@ Valor | Produce | Descripción
 "quarantine_max_usage"
 - El uso máximo de memoria permitida para la cuarentena. Si la total memoria utilizada por la cuarentena alcanza este valor, los más antiguos cuarentenado archivos serán eliminado hasta que la total memoria utilizada ya no alcanza este valor. Esta directiva es importante como un medio de hacer que sea más difícil para cualquier potenciales atacantes a inundar su cuarentena con datos no deseados que puede causar el excesivo uso de datos en su servicio de hosting. Predefinido = 64M.
 
+"quarantine_max_files"
+- La cantidad máxima de archivos que pueden existir en la cuarentena. Cuando se agregan nuevos archivos a la cuarentena, si se excede este número, los archivos antiguos se eliminarán hasta que el resto ya no exceda este número. Predefinido = 100.
+
 "honeypot_mode"
 - Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivos subidos que encuentra, independientemente de si o no el archivo que se está subido coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos subidos van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo subido escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. False = Desactivado [Predefinido]; True = Activado.
 
@@ -1160,7 +1163,9 @@ También es posible truncar archivos de registro individuales cuando exceden un 
 
 ##### 11.3.5 SEUDONIMIZACIÓN DE DIRECCIONES IP
 
-Primeramente, si no está familiarizado con el término "seudonimización", los siguientes recursos pueden ayudar a explicarlo con cierto detalle:
+Primeramente, si no está familiarizado con el término, "seudonimización" se refiere al procesamiento de datos personales como tal que ya no se puede identificar a ningún sujeto de datos específico sin información adicional, y siempre que dicha información adicional se mantenga por separado y esté sujeta a medidas técnicas y organizativas para garantizar que los datos personales no puedan identificarse a ninguna persona física.
+
+Los siguientes recursos pueden ayudar a explicarlo con más detalle:
 - [[confilegal.com] La importancia del seudonimización en el nuevo Reglamento de Protección de Datos](https://confilegal.com/20170129-la-importancia-del-seudonimizacion-en-el-nuevo-reglamento-de-proteccion-de-datos/)
 - [[forlopd.es] ¿Cómo me protege la seudonimización?](https://www.forlopd.es/web/blog/index.php/seudonimizacion-y-proteccion-de-datos/)
 - [[Wikipedia] Seudonimización](https://es.wikipedia.org/wiki/Seudonimizaci%C3%B3n)
@@ -1220,4 +1225,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 21 Junio de 2018 (2018.06.21).
+Última Actualización: 26 Junio de 2018 (2018.06.26).

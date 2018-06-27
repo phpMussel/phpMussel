@@ -460,6 +460,9 @@ Wert | Produziert | Beschreibung
 "quarantine_max_usage"
 - Die maximal zulässige Speichernutzung der Quarantäne. Erreicht die Geamtgröße der Dateien in der Quarantäne diesen Wert, werden die ältesten Dateien in der Quarantäne gelöscht, bis der Wert unterschritten wird. Diese Richtlinie ist wichtig, um es einem potentiellen Angreifer zu erschweren, die Quarantäne -und somit Ihren zugesicherten Speicher auf Ihrem Hostservice- mit unerwünschten Daten zu überfluten. Standardwert = 64MB.
 
+"quarantine_max_files"
+- Die maximale Anzahl von Dateien, die in der Quarantäne vorhanden sein können. Wenn neue Dateien zur Quarantäne hinzugefügt werden, werden alte Dateien gelöscht, wenn diese Anzahl überschritten wird, bis der Rest diese Nummer nicht mehr überschreitet. Standardwert = 100.
+
 "honeypot_mode"
 - Ist der Honeypot-Modus aktiviert, wird phpMussel jede Datei aus dem Dateiupload isolieren, ohne Rücksicht darauf zu nehmen, ob diese Dateien Signaturen enthalten, es findet auch keine weitere Überprüfung statt. Diese Funktionalität dient ausschließlich dem Zweck der Viren- und Malwareforschung, es wird ausdrücklich nicht empfohlen, phpMussel mit dieser Funktion zum Zwecke der Dateiüberprüfung von Uploads oder anderen Zwecken außer "Honeypotting" zu verwenden. Standardmäßig ist diese Funktion deaktiviert. False = Deativiert [Standardwert]; True = Aktiviert.
 
@@ -1160,7 +1163,9 @@ Es ist auch möglich, um einzelne Protokolldateien zu trunkieren, wenn sie eine 
 
 ##### 11.3.5 IP-ADRESSE PSEUDONYMISIERUNG
 
-Erstens, wenn Sie mit dem Begriff "Pseudonymisierung" nicht vertraut sind, können die folgenden Ressourcen dazu beitragen, sie im Detail zu erklären:
+Erstens, wenn Sie mit dem Begriff nicht vertraut sind, "Pseudonymisierung" bezieht sich auf die Verarbeitung personenbezogener Daten, so dass sie ohne zusätzliche Informationen nicht mehr für eine bestimmte Person identifiziert werden können, und vorausgesetzt, dass diese zusätzlichen Informationen getrennt aufbewahrt werden, und vorbehaltlich technischer und organisatorischer Maßnahmen, um sicherzustellen, dass personenbezogene Daten für keine natürliche Person identifiziert werden können.
+
+Die folgenden Ressourcen können helfen, es genauer zu erklären:
 - [[johner-institut.de] Anonymisierung und Pseudonymisierung](https://www.johner-institut.de/blog/gesundheitswesen/anonymisierung-und-pseudonymisierung/)
 - [[datenschutzbeauftragter-info.de] Pseudonymisierung – was ist das eigentlich?](https://www.datenschutzbeauftragter-info.de/pseudonymisierung-was-ist-das-eigentlich/)
 - [[Wikipedia] Anonymisierung und Pseudonymisierung](https://de.wikipedia.org/wiki/Anonymisierung_und_Pseudonymisierung)
@@ -1223,4 +1228,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 21 Juni 2018 (2018.06.21).
+Zuletzt aktualisiert: 26 Juni 2018 (2018.06.26).

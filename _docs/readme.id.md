@@ -460,6 +460,9 @@ Nilai | Menghasilkan | Deskripsi
 "quarantine_max_usage"
 - Penggunaan memori maksimal yang diijinkan untuk karantina. Jika total penggunaan memori oleh karantina mencapai nilai ini, file yang dikarantina tertua akan dihapus sampai total penggunaan memori tidak lagi mencapai nilai ini. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan file yang tidak diinginkan berpotensi menyebabkan penggunaan file kelebihan pada layanan hosting Anda. Default = 64MB.
 
+"quarantine_max_files"
+- Jumlah maksimum file yang dapat ada di karantina. Ketika file baru ditambahkan ke karantina, jika nomor ini terlampaui, file lama akan dihapus hingga sisanya tidak lagi melebihi nomor ini. Default = 100.
+
 "honeypot_mode"
 - Bila modus honeypot diaktifkan, phpMussel akan mencoba untuk karantina setiap file upload yang dia menemui, terlepas dari apakah atau tidak file yang di-upload cocok dengan tanda tangan yang disertakan, dan tidak ada pemindaian aktual atau analisis dari upload file akan terjadi. Fungsi ini akan berguna bagi mereka yang ingin menggunakan phpMussel untuk tujuan virus/malware penelitian, tapi tidak direkomendasikan untuk mengaktifkan fungsi ini jika tujuan penggunaan dari phpMussel oleh pengguna adalah bagi aktual upload file pemindaian dan juga tidak direkomendasikan untuk menggunakan fungsi honeypot untuk tujuan selain bagi honeypot. Biasanya, opsi ini dinonaktifkan. False = Dinonaktifkan [Default]; True = Diaktifkan.
 
@@ -1072,97 +1075,95 @@ Juga, apakah pencatatan diizinkan secara hukum, dan sejauh diizinkan secara huku
 
 Ada beberapa jenis pencatatan yang dapat dilakukan oleh phpMussel. Berbagai jenis pencatatan melibatkan berbagai jenis informasi, untuk berbagai alasan.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 LOG PEMINDAIAN
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
+Ketika diaktifkan dalam konfigurasi paket, phpMussel menyimpan log dari file yang dipindainya. Jenis pencatatan ini tersedia dalam dua format berbeda:
 - File log yang dapat dibaca oleh manusia.
 - File log dalam format serial.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Entri ke log yang dapat dibaca oleh manusia biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Dimulai.
+> Memeriksa 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> Terdeteksi phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 Selesai.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Entri log pemindaian biasanya mencakup informasi berikut:
+- Tanggal dan waktu file dipindai.
+- Nama file yang dipindai.
+- CRC32b hash dari nama dan isi file.
+- Apa yang terdeteksi dalam file (jika ada apapun yang terdeteksi).
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Ketika direktif ini dibiarkan kosong, jenis pencatatan ini akan tetap dinonaktifkan.
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 DIBLOKIR OLEH PEMINDAI
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Ketika diaktifkan dalam konfigurasi paket, phpMussel menyimpan log dari upload yang telah diblokir.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Entri ke log untuk file yang diblokir oleh pemindai biasanya terlihat seperti ini (sebagai contoh):
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Terdeteksi phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+Dikarantina sebagai "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Entri ke log untuk file yang diblokir oleh pemindai biasanya mencakup informasi berikut:
+- Tanggal dan waktu saat upload diblokir.
+- Alamat IP tempat upload berasal.
+- Alasan mengapa file diblokir (apa yang terdeteksi).
+- Nama file diblokir.
+- MD5 dan ukuran file diblokir.
+- Apakah file adalah dikarantina, dan di bawah nama internal apa.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 LOG BAGIAN DEPAN
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Jenis pencatatan ini berhubungan dengan upaya masuk bagian depan, dan hanya terjadi ketika pengguna mencoba masuk ke bagian depan (dengan asumsi akses bagian depan diaktifkan).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Entri log untuk bagian depan berisi alamat IP pengguna yang mencoba masuk, tanggal dan waktu ketika itu terjadi, dan hasil dari upaya tersebut (berhasil masuk, atau gagal masuk). Entri log untuk bagian depan biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Pengguna yang online.
 ```
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTASI LOG
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Anda mungkin ingin membersihkan log setelah jangka waktu tertentu, atau mungkin diminta untuk melakukannya oleh hukum (yaitu, jumlah waktu yang diizinkan secara hukum bagi Anda untuk mempertahankan log mungkin dibatasi oleh hukum). Anda dapat mencapai ini dengan menyertakan penanda tanggal/waktu dalam nama-nama file log Anda sesuai yang ditentukan oleh konfigurasi paket Anda (misalnya, `{yyyy}-{mm}-{dd}.log`), dan kemudian mengaktifkan rotasi log (rotasi log memungkinkan Anda untuk melakukan beberapa tindakan pada file log ketika batas yang ditentukan terlampaui).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Sebagai contoh: Jika saya secara hukum diminta untuk menghapus log setelah 30 hari, saya bisa menentukan `{dd}.log` dalam nama file log saya (`{dd}` represents days), atur nilai `log_rotation_limit` ke 30, dan atur nilai `log_rotation_action` ke `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Sebaliknya, jika Anda diminta untuk menyimpan log untuk jangka waktu yang panjang, Anda bisa memilih untuk tidak menggunakan rotasi log sama sekali, atau Anda bisa mengatur nilai `log_rotation_action` ke `Archive`, untuk mengompres file log, sehingga mengurangi jumlah total ruang disk yang mereka tempati.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 PEMOTONGAN LOG
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Ini juga memungkinkan untuk memotong file log individu ketika mereka melebihi ukuran tertentu, jika ini adalah sesuatu yang mungkin Anda butuhkan atau ingin lakukan.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONIMISASI ALAMAT IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Pertama, jika Anda tidak akrab dengan istilah ini, "pseudonimisasi" mengacu pada memproses data pribadi sedemikian rupa sehingga tidak dapat diidentifikasi ke subjek data tertentu lagi tanpa beberapa informasi tambahan, dan dengan ketentuan bahwa informasi tambahan tersebut dipelihara secara terpisah dan tunduk pada tindakan teknis dan organisasi untuk memastikan bahwa data pribadi tidak dapat diidentifikasi kepada orang alami.
 
 In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
 
@@ -1219,4 +1220,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Terakhir Diperbarui: 21 Juni 2018 (2018.06.21).
+Terakhir Diperbarui: 26 Juni 2018 (2018.06.26).

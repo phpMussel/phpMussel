@@ -460,6 +460,9 @@ Valore | Produce | Descrizione
 "quarantine_max_usage"
 - La massima permesso utilizzo della memoria per la quarantena. Se la totale memoria utilizzata dalla quarantena raggiunge questo valore, i più vecchi file in quarantena vengono eliminati fino a quando la totale memoria utilizzata non raggiunge questo valore. Questa direttiva è importante per rendere più difficile per qualsiasi potenziali aggressori di inondare la tua quarantena con indesiderati dati potenzialmente causare un eccessivo utilizzo dei dati sul vostro servizio di hosting. Predefinito = 64MB.
 
+"quarantine_max_files"
+- Il numero massimo di file che possono esistere nella quarantena. Quando vengono aggiunti nuovi file alla quarantena, se questo numero viene superato, i file precedenti verranno eliminati fino a quando il resto non supererà più questo numero. Predefinito = 100.
+
 "honeypot_mode"
 - Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in quarantena ogni file caricamenti che esso incontra, indipendentemente di se il file che essere caricato corrisponde d'alcuna incluso firma, e zero reale scansionare o analisi di quei tentati file caricati sarà avvenire. Questa funzionalità dovrebbe essere utile per coloro che desiderano utilizzare phpMussel a fini di virus/malware ricerca, ma non si raccomandato di abilitare questa funzionalità se l'uso previsto de phpMussel da parte dell'utente è per l'effettivo scansione dei file caricamenti né raccomandato di utilizzare la funzionalità di honeypot per fini diversi da l'uso de honeypot. Da predefinita, questo opzione è disattivato. False = Disattivato [Predefinito]; True = Attivato.
 
@@ -1160,7 +1163,9 @@ Al contrario, se è necessario conservare i log per un lungo periodo di tempo, p
 
 ##### 11.3.5 PSEUDONIMIZZAZIONE DELL'INDIRIZZO IP
 
-Innanzitutto, se non hai familiarità con il termine "pseudonimizzazione", le seguenti risorse possono aiutarti a spiegarlo in dettaglio:
+Innanzitutto, se non hai familiarità con il termine, "pseudonimizzazione" si riferisce al trattamento di dati personali in quanto tali che non può più essere identificato con alcun interessato specifico senza informazioni supplementari, e a condizione che tali informazioni supplementari siano mantenute separatamente e soggette a misure tecniche e organizzative per garantire che i dati personali non possano essere identificati da alcuna persona naturale.
+
+Le seguenti risorse possono aiutare a spiegarlo in modo più dettagliato:
 - [[ipsoa.it] Crittografia e pseudonimizzazione nel GDPR](http://www.ipsoa.it/documents/lavoro-e-previdenza/rapporto-di-lavoro/quotidiano/2018/03/17/crittografia-pseudonimizzazione-gdpr)
 
 In alcune circostanze, potrebbe essere richiesto per legge di anonimizzare o pseudonimizzare qualsiasi informazione personale raccolta, elaborata, o memorizzata. Sebbene questo concetto sia esistito già da un po' di tempo, GDPR/DSGVO menziona in particolare, e in particolare incoraggia la "pseudonimizzazione".
@@ -1218,4 +1223,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 21 Giugno 2018 (2018.06.21).
+Ultimo Aggiornamento: 26 Giugno 2018 (2018.06.26).
