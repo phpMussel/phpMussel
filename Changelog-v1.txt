@@ -39,6 +39,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.26; NEW FEATURE; Maikuolan]: Added an optional directive to specify
   the maximum number of files allowed to exist in the quarantine.
 
+- [2018.06.28; Bug-fix; Maikuolan]: Found a small typo in one of the JavaScript
+  functions on the front-end accounts page; Fixed.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

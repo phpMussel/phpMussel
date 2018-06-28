@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.17).
+ * This file: Front-end handler (last modified: 2018.06.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -810,9 +810,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
             'window[%3$s]=\'accounts\';function acc(e,d,i,t){var o=function(e){%4$se)' .
             '},a=function(){%4$s\'%1$s\')};window.username=%2$s(e).value,window.passw' .
             'ord=%2$s(d).value,window.do=%2$s(t).value,\'delete-account\'==window.do&' .
-            '&\$(\'POST\',\'\',[%3$s,\'username\',\'password\',\'do\'],a,function(e){' .
-            '%4$se),hideid(i)},o),\'update-password\'==window.do&&\$(\'POST\',\'\',[' .
-            '%3$s,\'username\',\'password\',\'do\'],a,o,o)}' . "\n",
+            '&$(\'POST\',\'\',[%3$s,\'username\',\'password\',\'do\'],a,function(e){%' .
+            '4$se),hideid(i)},o),\'update-password\'==window.do&&$(\'POST\',\'\',[%3$' .
+            's,\'username\',\'password\',\'do\'],a,o,o)}' . "\n",
             $phpMussel['lang']['state_loading'],
             'document.getElementById',
             "'phpmussel-form-target'",
