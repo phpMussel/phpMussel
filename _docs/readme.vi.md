@@ -1067,96 +1067,96 @@ Thông tin (bao gồm các tập tin và siêu dữ liệu tập tin có liên q
 *Chỉ thị cấu hình có liên quan:*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 NHẬT KÝ
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+Nhật ký là một phần quan trọng của phpMussel vì một số lý do. Khi không có nhật ký, có thể khó để chẩn đoán sai tích cực, để xác định chính xác phpMussel hoạt động tốt như thế nào trong bất kỳ ngữ cảnh cụ thể nào, và để xác định nơi bất cập của nó, và những thay đổi nào có thể cần thiết đối với cấu hình hay chữ ký của nó, để nó có thể tiếp tục hoạt động như dự định. Bất kể, nhật ký có thể không được mong muốn cho tất cả người dùng, và vẫn hoàn toàn tùy chọn. Trong phpMussel, ghi nhật ký bị vô hiệu hóa theo mặc định. Để kích hoạt nó, phpMussel phải được cấu hình cho phù hợp.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Ngoài ra, việc nhật ký có được cho phép hợp pháp hay không, và trong phạm vi được cho phép hợp pháp (ví dụ, các loại thông tin có thể nhật ký, bao lâu, và trong hoàn cảnh gì), có thể thay đổi, tùy thuộc vào thẩm quyền pháp lý và trong bối cảnh phpMussel được triển khai (ví dụ, nếu bạn đang hoạt động như một cá nhân, như một thực thể công ty, và nếu trên cơ sở thương mại hay phi thương mại). Do đó, nó có thể hữu ích cho bạn để đọc kỹ phần này.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+Có nhiều kiểu ghi nhật ký mà phpMussel có thể thực hiện. Các loại ghi nhật ký khác nhau liên quan đến các loại thông tin khác nhau, vì các lý do khác nhau.
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 NHẬT KÝ QUÉT
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+Khi được kích hoạt trong cấu hình gói, phpMussel lưu nhật ký của các tập tin mà nó quét. Loại ghi nhật ký này có sẵn ở hai định dạng khác nhau:
+- Tập tin nhật ký mà có thể được đọc bởi con người.
+- Tập tin nhật ký được tuần tự hóa.
 
-Entries to a human readable logfile typically look something like this (as an example):
+Các mục nhập vào một tập tin nhật ký mà có thể được đọc bởi con người thường trông giống như sau (ví dụ):
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 Đã bắt đầu.
+> Đang kiểm tra 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> Đã được phát hiện phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 Hoàn thành.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+Mục nhập nhật ký quét thường bao gồm các thông tin sau:
+- Ngày và giờ tập tin được quét.
+- Tên của tập tin được quét.
+- CRC32b băm của tên và nội dung của tập tin.
+- Những gì đã được phát hiện trong tập tin (nếu bất cứ điều gì đã được phát hiện).
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Khi các chỉ thị này được để trống, loại ghi nhật ký này sẽ vẫn bị vô hiệu hóa.
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 TẢI LÊN BỊ CHẶN
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+Khi được kích hoạt trong cấu hình gói, phpMussel lưu nhật ký của các tải lên đã bị chặn.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+Các mục nhập vào tập tin nhật ký tải lên bị chặn thường trông giống như sau (ví dụ):
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+Đã được phát hiện phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+Đã được kiểm dịch là "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+Mục nhập vào tập tin nhật ký tải lên bị chặn thường bao gồm các thông tin sau:
+- Ngày và giờ tải lên bị chặn.
+- Địa chỉ IP nơi tải lên bắt nguồn từ đó.
+- Lý do tại sao tập tin bị chặn (những gì đã được phát hiện).
+- Tên của tập tin bị chặn.
+- MD5 băm và kích thước của tập tin bị chặn.
+- Liệu tập tin có bị đưa vào kiểm dịch hay không và dưới tên nội bộ nào.
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 NHẬT KÝ FRONT-END
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Loại nhật ký này liên quan đến cố gắng đăng nhập, và chỉ xảy ra khi người dùng cố gắng đăng nhập vào front-end (giả sử truy cập front-end được kích hoạt).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Mục nhập nhật ký front-end chứa địa chỉ IP của người dùng đang cố gắng đăng nhập, ngày và giờ xảy ra điều này, và kết quả của cố gắng này (đăng nhập thành công, hoặc thành công không thành công). Mục nhập nhật ký front-end thường trông giống như thế này (làm ví dụ):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Được đăng nhập.
 ```
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 XOAY VÒNG NHẬT KÝ
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Bạn có thể muốn thanh lọc nhật ký sau một khoảng thời gian, hoặc có thể được yêu cầu làm như vậy theo luật pháp (khoảng thời gian được phép giữ nhật ký hợp pháp có thể bị giới hạn bởi luật pháp). Bạn có thể đạt được điều này bằng cách đưa dấu ngày/giờ vào tên tập tin nhật ký của bạn theo quy định của cấu hình gói của bạn (ví dụ, `{yyyy}-{mm}-{dd}.log`), và sau đó kích hoạt xoay vòng nhật ký (xoay vòng nhật ký cho phép bạn thực hiện một số hành động trên tập tin nhật ký khi vượt quá giới hạn được chỉ định).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Ví dụ: Nếu tôi được yêu cầu xóa nhật ký sau 30 ngày theo pháp luật, tôi có thể chỉ định `{dd}.log` trong tên của tập tin nhật ký của tôi (`{dd}` đại diện cho ngày), đặt giá trị của `log_rotation_limit` để 30, và đặt giá trị của `log_rotation_action` để `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Ngược lại, nếu bạn được yêu cầu giữ lại nhật ký trong một khoảng thời gian dài, bạn có thể cân nhắc không sử dụng xoay vòng nhật ký, hoặc bạn có thể đặt giá trị của `log_rotation_action` để `Archive`, để nén tập tin nhật ký, do đó làm giảm tổng dung lượng đĩa mà họ chiếm.
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 CẮT NGẮN NHẬT KÝ
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Cũng có thể cắt ngắn các tập tin nhật ký riêng lẻ khi chúng vượt quá một kích thước nhất định, nếu đây bạn có thể cần hay muốn làm.
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `truncate`
@@ -1165,13 +1165,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 Thứ nhất, nếu bạn không quen thuộc với thuật ngữ này, "pseudonymisation" đề cập đến việc xử lý dữ liệu cá nhân sao cho không thể xác định được dữ liệu cá nhân cho bất kỳ chủ đề dữ liệu cụ thể nào nữa trừ khi có thông tin bổ sung, và miễn là thông tin bổ sung đó được duy trì riêng biệt và phải chịu sự các biện pháp kỹ thuật và tổ chức để đảm bảo rằng dữ liệu cá nhân không thể được xác định cho bất kỳ người tự nhiên nào.
 
-Các tài nguyên sau đây có thể giúp giải thích chi tiết hơn:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Trong một số trường hợp, bạn có thể được yêu cầu về mặt pháp lý để sử dụng "anonymisation" hoặc "pseudonymisation" cho bất kỳ PII nào được thu thập, xử lý hoặc lưu trữ. Mặc dù khái niệm này đã tồn tại trong một thời gian khá lâu, GDPR/DSGVO đề cập đến, và đặc biệt khuyến khích "pseudonymisation".
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
-
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel có thể sử dụng "pseudonymisation" cho các địa chỉ IP khi nhật ký chúng vào bản ghi, nếu đây bạn có thể cần hay muốn làm. Khi phpMussel sử dụng "pseudonymisation" cho các địa chỉ IP, khi nhật ký chúng vào bản ghi, octet cuối cùng của địa chỉ IPv4, và mọi thứ sau phần thứ hai của địa chỉ IPv6 được đại diện bởi một "x" (hiệu quả làm tròn địa chỉ IPv4 đến địa chỉ đầu tiên của mạng con thứ 24 mà chúng đưa vào, và địa chỉ IPv6 đến địa chỉ đầu tiên của mạng con thứ 32 mà chúng đưa vào).
 
 *Chỉ thị cấu hình có liên quan:*
 - `legal` -> `pseudonymise_ip_addresses`
@@ -1207,19 +1203,17 @@ Trong một số trường hợp, bạn có thể được yêu cầu về mặt
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+Quy định bảo vệ dữ liệu chung (GDPR) là một quy định của Liên minh châu Âu, có hiệu lực kể từ 25 Tháng Năm 2018. Mục tiêu chính của quy định là cung cấp quyền kiểm soát cho công dân và cư dân EU về dữ liệu cá nhân của riêng họ, và thống nhất quy định trong EU về quyền riêng tư và dữ liệu cá nhân.
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+Quy định này bao gồm các điều khoản cụ thể liên quan đến việc xử lý "thông tin nhận dạng cá nhân" (PII) của bất kỳ "chủ đề dữ liệu" nào (bất kỳ người tự nhiên được xác định hoặc có thể nhận dạng được) từ hoặc trong EU. Để tuân thủ quy định, "enterprise" hoặc "doanh nghiệp" (theo quy định của quy định), và bất kỳ hệ thống và quy trình có liên quan nào phải ghi nhớ sự riêng tư ngay từ đầu, phải sử dụng cài đặt bảo mật cao nhất có thể, phải thực hiện các biện pháp bảo vệ thích hợp cho bất kỳ thông tin được lưu trữ hay xử lý nào (bao gồm nhưng không giới hạn trong việc thực hiện "pseudonymisation" hoặc "anonymisation" đầy đủ của dữ liệu), phải khai báo rõ ràng các loại dữ liệu mà họ thu thập, cách họ xử lý nó, vì lý do gì, trong bao lâu họ giữ nó, và nếu họ chia sẻ dữ liệu này với bất kỳ bên thứ ba nào, các loại dữ liệu được chia sẻ với bên thứ ba, cách, tại sao, vv.
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+Dữ liệu có thể không được xử lý trừ khi có cơ sở hợp pháp để làm như vậy, theo quy định của quy định. Nói chung, điều này có nghĩa là để xử lý dữ liệu của chủ đề dữ liệu trên cơ sở hợp pháp, nó phải được thực hiện theo nghĩa vụ pháp lý, hoặc chỉ được thực hiện sau khi có sự đồng ý rõ ràng và đầy đủ thông tin đã được lấy từ chủ đề dữ liệu.
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+Bởi vì các khía cạnh của quy định có thể phát triển trong thời gian, để tránh việc truyền bá thông tin lỗi thời, nó có thể là tốt hơn để tìm hiểu về các quy định từ một nguồn có thẩm quyền, trái ngược với việc chỉ bao gồm các thông tin có liên quan ở đây trong tài liệu gói (mà cuối cùng có thể trở nên lỗi thời khi quy định phát triển).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin:
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+- [Quy định bảo vệ dữ liệu chung](https://vi.wikipedia.org/wiki/Quy_%C4%91%E1%BB%8Bnh_b%E1%BA%A3o_v%E1%BB%87_d%E1%BB%AF_li%E1%BB%87u_chung)
 
 ---
 
