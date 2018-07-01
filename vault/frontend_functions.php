@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.22).
+ * This file: Front-end functions file (last modified: 2018.07.01).
  */
 
 /**
@@ -84,11 +84,11 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
         for ($Iter = 0; $Iter < $CountParts; $Iter++) {
             if ($Iter % 2) {
                 $Arr[] = $QueryParts[$Iter];
-            } else {
-                $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
-                foreach ($QueryParts[$Iter] as $ThisPart) {
-                    $Arr[] = $ThisPart;
-                }
+                continue;
+            }
+            $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
+            foreach ($QueryParts[$Iter] as $ThisPart) {
+                $Arr[] = $ThisPart;
             }
         }
         $QueryParts = $Arr;
@@ -523,10 +523,10 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
 $phpMussel['IsInUse'] = function (&$Component) use (&$phpMussel) {
     $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
     foreach ($Files as $File) {
-        if (substr($File, 0, 11) === 'signatures/' && strpos(
-            ',' . $phpMussel['Config']['signatures']['Active'] . ',',
-            ',' . substr($File, 11) . ','
-        ) !== false) {
+        if (substr($File, 0, 11) === 'signatures/' && preg_match(
+            '~,(?:[\w\d]+:)?' . preg_quote(substr($File, 11)) . ',~',
+            ',' . $phpMussel['Config']['signatures']['Active'] . ','
+        )) {
             return true;
         }
     }
@@ -993,11 +993,9 @@ $phpMussel['AppendTests'] = function (&$Component, $ReturnState = false) use (&$
                 }
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
-            if (empty($ThisStatus['target_url'])) {
-                $StatusHead .= $ThisStatus['context'];
-            } else {
-                $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
-            }
+            $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
+                '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>'
+            );
             if (!$ReturnState) {
                 $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
             }
@@ -1486,13 +1484,11 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         'Modified' => false
     ];
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
-    if (
-        empty($InUse) &&
-        !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])
-    ) {
+    if (empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
         $phpMussel['Activation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Activation']['Active']),
             function ($Component) use (&$phpMussel) {
+                $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
                 return ($Component && file_exists($phpMussel['sigPath'] . $Component));
             }
         ));
@@ -1551,6 +1547,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Deactivation']['Active']),
             function ($Component) use (&$phpMussel) {
+                $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
                 return ($Component && file_exists($phpMussel['sigPath'] . $Component));
             }
         ));
@@ -1560,8 +1557,11 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         $phpMussel['Deactivation']['Active'] = ',' . implode(',', $phpMussel['Deactivation']['Active']) . ',';
         foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $phpMussel['Deactivation']['ThisFile']) {
             if (substr($phpMussel['Deactivation']['ThisFile'], 0, 11) === 'signatures/') {
-                $phpMussel['Deactivation']['Active'] =
-                    str_replace(',' . substr($phpMussel['Deactivation']['ThisFile'], 11) . ',', ',', $phpMussel['Deactivation']['Active']);
+                $phpMussel['Deactivation']['Active'] = preg_replace(
+                    '~,(?:[\w\d]+:)?' . preg_quote(substr($phpMussel['Deactivation']['ThisFile'], 11)) . ',~',
+                    ',',
+                    $phpMussel['Deactivation']['Active']
+                );
             }
         }
         $phpMussel['Deactivation']['Active'] = substr($phpMussel['Deactivation']['Active'], 1, -1);
@@ -1739,6 +1739,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
 
     /** Iterate through active signature files and append totals. */
     foreach ($Active as $File) {
+        $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $File && is_readable($phpMussel['sigPath'] . $File) ? $phpMussel['ReadFile']($phpMussel['sigPath'] . $File) : '';
         if (substr($Data, 0, 9) !== 'phpMussel') {
             continue;

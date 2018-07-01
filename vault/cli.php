@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.04.03).
+ * This file: CLI handler (last modified: 2018.07.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -267,8 +267,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             $phpMussel['stdin_clean'] = $phpMussel['prescan_normalise'](substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1));
             $phpMussel['URL'] = ['avoidme' => '', 'forthis' => ''];
             if (
-                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['domain']) ||
-                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['url'])
+                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['domain']) ||
+                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['url'])
             ) {
                 echo $phpMussel['lang']['invalid_url'] . "\n";
             } else {
@@ -276,8 +276,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['url'][3][0]) . ':' . strlen($phpMussel['URL']['url'][3][0]);
                 $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';
                 echo 'URL:' . $phpMussel['URL']['forthis'] . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                if (preg_match('/[^0-9a-z.-]$/i', $phpMussel['URL']['url'][3][0])) {
-                    $phpMussel['URL']['x'] = preg_replace('/[^0-9a-z.-]+$/i', '', $phpMussel['URL']['url'][3][0]);
+                if (preg_match('/[^\da-z.-]$/i', $phpMussel['URL']['url'][3][0])) {
+                    $phpMussel['URL']['x'] = preg_replace('/[^\da-z.-]+$/i', '', $phpMussel['URL']['url'][3][0]);
                     $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
                     if (!substr_count($phpMussel['URL']['avoidme'], $phpMussel['URL']['forthis'])) {
                         $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';

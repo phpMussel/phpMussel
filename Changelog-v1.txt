@@ -42,6 +42,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.28; Bug-fix; Maikuolan]: Found a small typo in one of the JavaScript
   functions on the front-end accounts page; Fixed.
 
+- [2018.07.01; Sub-minor code change; Maikuolan]: It's now possible for users
+  to specify their own sort order for when the updater activates or deactivates
+  signature files.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 
