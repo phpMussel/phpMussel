@@ -415,6 +415,18 @@ General phpMussel configuration.
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
+Recommended values for "ipaddr":
+
+Value | Using
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | No reverse proxy (default value).
+
 "enable_plugins"
 - Enable support for phpMussel plugins? False = No; True = Yes [Default].
 
@@ -801,11 +813,11 @@ This information was last updated 2017.12.01 and is current for all phpMussel re
 - [I need specialist modifications, customisations, etc; Can you help?](#SPECIALIST_MODIFICATIONS)
 - [I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?](#ACCEPT_OR_OFFER_WORK)
 - [I want to contribute to the project; Can I do this?](#WANT_TO_CONTRIBUTE)
-- [Recommended values for "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [How to access specific details about files when they are scanned?](#SCAN_DEBUGGING)
 - [Can I use cron to update automatically?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Can phpMussel scan files with non-ANSI names?](#SCAN_NON_ANSI)
 - [Blacklists – Whitelists – Greylists – What are they, and how do I use them?](#BLACK_WHITE_GREY)
+- [When I activate or deactivate signature files via the updates page, it sorts them alphanumerically in the configuration. Can I change the way that they get sorted?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
@@ -866,18 +878,6 @@ Yes. Our license does not prohibit this.
 #### <a name="WANT_TO_CONTRIBUTE"></a>I want to contribute to the project; Can I do this?
 
 Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Recommended values for "ipaddr".
-
-Value | Using
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | No reverse proxy (default value).
 
 #### <a name="SCAN_DEBUGGING"></a>How to access specific details about files when they are scanned?
 
@@ -1017,6 +1017,24 @@ In these two contexts, being whitelisted means that it shouldn't be scanned or f
 The signature greylist is a list of signatures that should essentially be ignored (this is briefly mentioned earlier in the documentation). When a signature on the signature greylist is triggered, phpMussel continues working through its signatures and takes no particular action in regards to the greylisted signature. There's no signature blacklist, because the implied behaviour is normal behaviour for triggered signatures anyway, and there's no signature whitelist, because the implied behaviour wouldn't really make sense in consideration of how phpMussel normal works and the capabilities it already has.
 
 The signature greylist is useful if you need to resolve problems caused by a particular signature without disabling or uninstalling the entire signature file.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>When I activate or deactivate signature files via the updates page, it sorts them alphanumerically in the configuration. Can I change the way that they get sorted?
+
+Yes. If you need to force some files to execute in a specific order, you can add some arbitrary data before their names in the configuration directive where they're listed, separated by a colon. When the updates page subsequently sorts the files again, this added arbitrary data will affect the sort order, causing them consequently to execute in the order that you want, without needing to rename any of them.
+
+For example, assuming a configuration directive with files listed as follows:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+If you wanted `file3.php` to execute first, you could add something like `aaa:` before the name of the file:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Then, if a new file, `file6.php`, is activated, when the updates page resorts them all, it should end up like this:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Same situation when a file is deactivated. Conversely, if you wanted the file to execute last, you could add something like `zzz:` before the name of the file. In any case, you won't need to rename the file in question.
 
 ---
 
@@ -1228,4 +1246,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 26 June 2018 (2018.06.26).
+Last Updated: 6 July 2018 (2018.07.06).

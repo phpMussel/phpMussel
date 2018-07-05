@@ -415,6 +415,18 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 "ipaddr"
 - 연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
+"ipaddr"의 권장 값입니다 :
+
+값 | 사용
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시.
+`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시.
+`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우).
+`HTTP_X_FORWARDED_FOR` | Cloudbric 리버스 프록시.
+`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
+
 "enable_plugins"
 - 플러그인 지원을 활성화 하시겠습니까? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
@@ -801,11 +813,11 @@ phpMussel은 대개 바이러스 검사 소프트웨어에 호환성이 있습�
 - [나는 전문가의 변경 및 사용자 맞춤형 등이 필요합니다; 도울 수 있니?](#SPECIALIST_MODIFICATIONS)
 - [나는 개발자, 웹 사이트 디자이너, 또는 프로그래머입니다. 이 프로젝트 관련 작업을 할 수 있습니까?](#ACCEPT_OR_OFFER_WORK)
 - [나는 프로젝트에 공헌하고 싶다; 이것은 수 있습니까?](#WANT_TO_CONTRIBUTE)
-- ["ipaddr"의 권장 값입니다.](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [파일 검색시 특정 정보에 액세스하려면 어떻게해야합니까?](#SCAN_DEBUGGING)
 - [Cron을 사용하여 자동으로 업데이트 할 수 있습니까?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [phpMussel은 ANSI가 아닌 이름으로 파일을 스캔 수 있습니까?](#SCAN_NON_ANSI)
 - [블랙리스트 – 화이트리스트 – 그레이리스트 – 그들은 무엇이며 어떻게 사용합니까?](#BLACK_WHITE_GREY)
+- [서명 파일이 업데이트 페이지를 통해 활성화되거나 비활성화되면, 구성에서 문자 또는 숫자로 정렬됩니다. 분류 방식을 변경할 수 있습니까?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"서명"이란 무엇입니까?
 
@@ -866,18 +878,6 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 #### <a name="WANT_TO_CONTRIBUTE"></a>나는 프로젝트에 공헌하고 싶다; 이것은 수 있습니까?
 
 예. 프로젝트에 기여 환영합니다. 자세한 내용은 "CONTRIBUTING.md"를 참조하십시오.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>"ipaddr"의 권장 값입니다.
-
-값 | 사용
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시.
-`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시.
-`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우).
-`HTTP_X_FORWARDED_FOR` | Cloudbric 리버스 프록시.
-`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
 
 #### <a name="SCAN_DEBUGGING"></a>파일 검색시 특정 정보에 액세스하려면 어떻게해야합니까?
 
@@ -1017,6 +1017,24 @@ CLI 모드 나 phpMussel API를 사용하여 스캔한다고 가정 해보십시
 서명 그레이리스트는 본질적으로 무시해서는 시그니처 목록입니다 (이 내용은 위의 문서에서 쉽게 설명하고 있습니다). 서명은 회색 목록에 서명이 트리거되면 phpMussel 내가 일을 계속 회색 목록에 서명 관하여 특별한 조치를 취하지 않습니다. 무언의 동작은 트리거 된 서명의 정상적인 작동이기 때문에 시그니처 블랙리스트가 없습니다. 이러한 맥락에서 필요하지 않기 때문에 서명 화이트리스트가 없습니다.
 
 서명 파일 전체를 비활성화하거나 제거하지 않고 특정 서명에 의해 발생한 문제를 해결해야하는 경우 서명 그레이리스트가 도움이됩니다.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>서명 파일이 업데이트 페이지를 통해 활성화되거나 비활성화되면, 구성에서 문자 또는 숫자로 정렬됩니다. 분류 방식을 변경할 수 있습니까?
+
+예. 특정 순서로 실행할 파일이 필요할 때, 그들의 이름 앞에 설정 지시자가있는 임의의 데이터를 추가 할 수있다 (콜론을 사용하여이 데이터와 이름을 구분하십시오). 이후에 업데이트 페이지가 파일을 다시 정렬하면, 추가 된 임의의 데이터가 정렬 순서에 영향을줍니다. 이렇게하면 파일이 원하는 순서대로 실행됩니다, 그 중 하나의 이름을 바꿀 필요가 없습니다.
+
+예를 들어, 다음과 같이 나열된 파일이있는 구성 지시문을 가정합니다 :
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+`file3.php`를 먼저 실행시키고 싶다면, 파일 이름 앞에 `aaa:`와 같은 것을 추가 할 수 있습니다 :
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+그런 다음 새 파일 `file6.php`가 활성화되면, 업데이트 페이지에서 모두 다시 정렬하면 다음과 같이 끝납니다 :
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+파일이 비활성화 될 때와 동일한 상황입니다. 반대로, 파일을 마지막으로 실행하려면, 파일 이름 앞에 `zzz:`와 같은 것을 추가 할 수 있습니다. 어떤 경우이든 해당 파일의 이름을 바꿀 필요가 없습니다.
 
 ---
 
@@ -1207,7 +1225,7 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+일반 데이터 보호 규정 (GDPR)은 2018 년 5 월 25 일부터 효력을 발생하는 유럽 연합 (EU)의 규정입니다. 이 규정의 주요 목표는 EU 시민과 주민들에게 개인 정보를 통제하고 프라이버시 및 개인 정보와 관련하여 EU 내 규정을 통일하는 것입니다.
 
 The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
 
@@ -1215,13 +1233,12 @@ Data may not be processed unless there's a lawful basis for doing so, as per def
 
 Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+추가 정보를 배우기 위해 권장되는 자료 :
+- [유럽 개인정보 보호법 GDPR 안내](https://www.privacy.go.kr/gdpr)
+- [유럽 개인정보보호법, GDPR을 알아보자 | HACKTAGON](https://hacktagon.github.io/chinnie/law/gdpr/privacy/GDPR_01)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
 
 ---
 
 
-최종 업데이트 : 2018년 6월 26일.
+최종 업데이트 : 2018년 7월 6일.

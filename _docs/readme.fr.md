@@ -415,6 +415,18 @@ Configuration générale pour phpMussel.
 « ipaddr »
 - Où trouver l'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
+Valeurs recommandées pour « ipaddr » :
+
+Valeur | En utilisant
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy inversé Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy inversé Cloudflare.
+`CF-Connecting-IP` | Proxy inversé Cloudflare (alternative ; si ce qui précède ne fonctionne pas).
+`HTTP_X_FORWARDED_FOR` | Proxy inversé Cloudbric.
+`X-Forwarded-For` | [Proxy inversé Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
+
 « enable_plugins »
 - Permettre le support pour les plugins du phpMussel ? False = Non [Défaut] ; True = Oui.
 
@@ -801,11 +813,11 @@ Cette information a été mise à jour 2017.12.01 et est courant pour toutes les
 - [J'ai besoin de modifications spécialisées, de personnalisations, etc ; Êtes-vous en mesure d'aider ?](#SPECIALIST_MODIFICATIONS)
 - [Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet ?](#ACCEPT_OR_OFFER_WORK)
 - [Je veux contribuer au projet ; Puis-je faire cela ?](#WANT_TO_CONTRIBUTE)
-- [Valeurs recommandées pour « ipaddr ».](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?](#SCAN_DEBUGGING)
 - [Puis-je utiliser cron pour mettre à jour automatiquement ?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Est-ce que phpMussel peut analyser des fichiers avec des noms non-ANSI ?](#SCAN_NON_ANSI)
 - [Listes noires – Listes blanches – Listes grises – Quels sont-ils, et comment puis-je les utiliser ?](#BLACK_WHITE_GREY)
+- [Lorsque j'activer ou désactiver des fichiers de signatures via la page des mises à jour, il les trie de manière alphanumérique dans la configuration. Puis-je changer la façon dont ils sont triés ?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Qu'est-ce qu'une « signature » ?
 
@@ -866,18 +878,6 @@ Oui. Notre licence ne l'interdit pas.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Je veux contribuer au projet ; Puis-je faire cela ?
 
 Oui. Les contributions au projet sont les bienvenues. Voir « CONTRIBUTING.md » pour plus d'informations.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valeurs recommandées pour « ipaddr ».
-
-Valeur | En utilisant
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy inversé Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy inversé Cloudflare.
-`CF-Connecting-IP` | Proxy inversé Cloudflare (alternative ; si ce qui précède ne fonctionne pas).
-`HTTP_X_FORWARDED_FOR` | Proxy inversé Cloudbric.
-`X-Forwarded-For` | [Proxy inversé Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
 #### <a name="SCAN_DEBUGGING"></a>Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés ?
 
@@ -1017,6 +1017,24 @@ Dans ces deux contextes, être sur liste blanche signifie qu'il ne doit pas êtr
 La liste grise des signatures est une liste de signatures qui devraient être ignorées (ceci est brièvement mentionné plus haut dans la documentation). Quand une signature sur le liste grise des signatures est déclenchée, phpMussel continue à travailler à travers ses signatures et ne prend aucune action particulière en ce qui concerne la signature sur le liste grise. Il n'y a pas de liste noire des signatures, car le comportement implicite est un comportement normal pour les signatures déclenchées en tous cas, et il n'y a pas de liste blanche des signatures, parce que le comportement implicite n'aurait pas vraiment de sens compte tenu du fonctionnement normal de phpMussel et des capacités qu'il possède déjà.
 
 Le liste grise des signatures est utile si vous avez besoin de résoudre des problèmes causés par une signature particulière sans désactiver ou désinstaller le fichier de signatures entier.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Lorsque j'activer ou désactiver des fichiers de signatures via la page des mises à jour, il les trie de manière alphanumérique dans la configuration. Puis-je changer la façon dont ils sont triés ?
+
+Oui. Si vous devez forcer l'exécution de certains fichiers dans un ordre spécifique, vous pouvez ajouter des données arbitraires avant leurs noms dans la directive de configuration où elles sont listées, séparées par un signe deux-points. Lorsque la page des mises à jour trie à nouveau les fichiers, ces données arbitraires ajoutées affectent l'ordre de tri, en leur faisant par conséquent exécuter dans l'ordre que vous voulez, sans avoir besoin de renommer l'un d'entre eux.
+
+Par exemple, en supposant une directive de configuration avec des fichiers listés comme suit :
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Si vous voulez que `file3.php` s'exécute en premier, vous pouvez ajouter quelque chose comme `aaa:` avant le nom du fichier :
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Ensuite, si un nouveau fichier, `file6.php`, est activé, lorsque la page des mises à jour les trie à nouveau, elle devrait se terminer comme suit :
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Inversement, si vous voulez que le fichier s'exécute en dernier, vous pouvez ajouter quelque chose comme `zzz:` avant le nom du fichier. Dans tous les cas, vous n'aurez pas besoin de renommer le fichier en question.
 
 ---
 
@@ -1224,4 +1242,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 26 Juin 2018 (2018.06.26).
+Dernière mise à jour : 6 Juillet 2018 (2018.07.06).

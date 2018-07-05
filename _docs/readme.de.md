@@ -415,6 +415,18 @@ Generelle Konfiguration von phpMussel.
 "ipaddr"
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur wenn Sie wissen was Sie tun!
 
+Empfohlene Werte für "ipaddr":
+
+Wert | Verwenden
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula Reverse Proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare Reverse Proxy.
+`CF-Connecting-IP` | Cloudflare Reverse Proxy (Alternative; Wenn der andere Wert nicht funktioniert).
+`HTTP_X_FORWARDED_FOR` | Cloudbric Reverse Proxy.
+`X-Forwarded-For` | [Squid Reverse Proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definiert durch Server-Konfiguration.* | [Nginx Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Kein Reverse Proxy (Standardwert).
+
 "enable_plugins"
 - Aktivieren Sie die Unterstützung für phpMussel Plugins? False = Nein; True = Ja [Standardeinstellung].
 
@@ -801,11 +813,11 @@ Diese Informationen wurden zuletzt am 2017.12.01 aktualisiert und gelten für al
 - [Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?](#SPECIALIST_MODIFICATIONS)
 - [Ich bin ein Entwickler, Website-Designer oder Programmierer. Kann ich die Arbeit an diesem Projekt annehmen oder anbieten?](#ACCEPT_OR_OFFER_WORK)
 - [Ich möchte zum Projekt beitragen; Darf ich das machen?](#WANT_TO_CONTRIBUTE)
-- [Empfohlene Werte für "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)
 - [Kann ich cron verwenden, um automatisch zu aktualisieren?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?](#SCAN_NON_ANSI)
 - [Blacklists – Whitelists – Greylists – Was sind sie und wie benutze ich sie?](#BLACK_WHITE_GREY)
+- [Wenn ich Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -866,18 +878,6 @@ Ja. Unsere Lizenz verbietet dies nicht.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Ich möchte zum Projekt beitragen; Darf ich das machen?
 
 Ja. Beiträge zum Projekt sind sehr willkommen. Bitte beachten Sie "CONTRIBUTING.md" für weitere Informationen.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Empfohlene Werte für "ipaddr".
-
-Wert | Verwenden
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula Reverse Proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare Reverse Proxy.
-`CF-Connecting-IP` | Cloudflare Reverse Proxy (Alternative; Wenn der andere Wert nicht funktioniert).
-`HTTP_X_FORWARDED_FOR` | Cloudbric Reverse Proxy.
-`X-Forwarded-For` | [Squid Reverse Proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definiert durch Server-Konfiguration.* | [Nginx Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Kein Reverse Proxy (Standardwert).
 
 #### <a name="SCAN_DEBUGGING"></a>Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?
 
@@ -1017,6 +1017,24 @@ In diesen beiden Kontexten, Whitelist bedeutet, dass es nicht gescannt oder mark
 Die Signatur-Greylist ist eine Liste von Signaturen, die im Wesentlichen ignoriert werden sollten (Dies wird kurz in der Dokumentation erwähnt). Wenn eine Signatur auf der Signatur-Greylist ausgelöst wird, arbeitet phpMussel weiter durch seine Signaturen und unternimmt keine besondere Aktion in Bezug auf die Signatur auf der Greylist. Es gibt keine Signatur-Blacklist, da das implizierte Verhalten ohnehin normal für ausgelöste Signaturen ist, und es gibt keine Signatur-Whitelist, weil das implizierte Verhalten keinen Sinn ergibt, wenn man bedenkt, wie phpMussel normal funktioniert und welche Fähigkeiten es bereits hat.
 
 Die Signatur-Greylist ist nützlich, wenn Sie Probleme beheben müssen, die von einer bestimmten Signatur verursacht werden, ohne die gesamte Signaturdatei zu deaktivieren oder zu deinstallieren.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
+
+Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, Sie können einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Updates-Seite anschließend die Dateien erneut sortiert, diese zusätzlichen Daten wirken sich auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne sie umbenennen zu müssen.
+
+z.B., angenommen dass eine Konfigurationsdirektive mit den folgenden Dateien ist aufgeführt:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Wenn Sie `file3.php` zuerst ausführen möchten, Sie könnten etwas wie `aaa:` vor dem Namen der Datei hinzufügen:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Wenn dann eine neue Datei `file6.php` aktiviert wird, wenn die Updates-Seite sie alle wieder sortiert, sollte es so enden:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Gleiche Situation, wenn eine Datei deaktiviert ist. Umgekehrt, wenn Sie möchten, dass die Datei zuletzt ausgeführt wird, Sie könnten etwas wie `zzz:` vor dem Namen der Datei hinzufügen. In jedem Fall müssen Sie die betreffende Datei nicht umbenennen.
 
 ---
 
@@ -1228,4 +1246,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 26 Juni 2018 (2018.06.26).
+Zuletzt aktualisiert: 6 Juli 2018 (2018.07.06).

@@ -413,7 +413,19 @@ General configuración para phpMussel.
 - El formato de notación de fecha/hora usado por phpMussel. Predefinido = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr"
-- Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+- ¿Dónde puedo encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+
+Valores recomendados para "ipaddr":
+
+Valor | Utilizando
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
+`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; si lo anterior no funciona).
+`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
+`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
 
 "enable_plugins"
 - ¿Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
@@ -801,11 +813,11 @@ Esta información ha sido actualizado 2017.12.01 y es a hoy para todas las phpMu
 - [Necesito modificaciones especiales, personalizaciones, etc; ¿Puede usted ayudar?](#SPECIALIST_MODIFICATIONS)
 - [Soy desarrollador, diseñador de sitios web o programador. ¿Puedo aceptar u ofrecer trabajos relacionados con este proyecto?](#ACCEPT_OR_OFFER_WORK)
 - [Quiero contribuir al proyecto; ¿Puedo hacer esto?](#WANT_TO_CONTRIBUTE)
-- [Valores recomendados para "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?](#SCAN_DEBUGGING)
 - [¿Puedo usar cron para actualizar automáticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [¿Puede phpMussel escanear archivos con nombres que no sean ANSI?](#SCAN_NON_ANSI)
 - [Listas negras – Listas blancas – Listas grises – ¿Qué son y cómo los uso?](#BLACK_WHITE_GREY)
+- [Cuando activar o desactivar archivos de firmas a través de la página de actualizaciones, los ordena de forma alfanumérica en la configuración. ¿Puedo cambiar la forma en que se ordenan?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
@@ -866,18 +878,6 @@ Sí. Nuestra licencia no lo prohíbe.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Quiero contribuir al proyecto; ¿Puedo hacer esto?
 
 Sí. Las contribuciones al proyecto son muy bienvenidas. Consulte "CONTRIBUTING.md" para obtener más información.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valores recomendados para "ipaddr".
-
-Valor | Utilizando
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
-`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; si lo anterior no funciona).
-`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
-`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
 
 #### <a name="SCAN_DEBUGGING"></a>¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?
 
@@ -1017,6 +1017,24 @@ En estos dos contextos, al ser incluido en la lista blanca significa que no debe
 La lista gris de firmas es una lista de firmas que esencialmente deben ignorarse (esto se menciona brevemente anteriormente en la documentación). Cuando se desencadena una firma en la lista gris de la firma, phpMussel continúa trabajando a través de sus firmas y no toma ninguna medida particular con respecto a la firma desencadenada. No hay una lista negra de firmas, porque el comportamiento implícito es un comportamiento normal para las firmas desencadenadas de todos modos, y no hay una lista blanca de firmas, porque el comportamiento implícito no tendría sentido considerando el funcionamiento normal de phpMussel y las capacidades que ya posee.
 
 La lista gris de firmas es útil si necesita resolver problemas causados por una firma particular sin deshabilitar o desinstalar todo el archivo de firmas.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Cuando activar o desactivar archivos de firmas a través de la página de actualizaciones, los ordena de forma alfanumérica en la configuración. ¿Puedo cambiar la forma en que se ordenan?
+
+Sí. Si necesita forzar algunos archivos se ejecuten en un orden específico, puede agregar algunos datos arbitrarios antes de sus nombres en la directiva de configuración donde están listados, separados por dos puntos. Cuando la página de actualizaciones clasifique los archivos nuevamente, esta información adicional arbitraria afectará el orden de clasificación, haciendo que, en consecuencia, se ejecuten en el orden que desee, sin necesidad de cambiar el nombre de ninguno de ellos.
+
+Por ejemplo, suponiendo una directiva de configuración con los archivos enumerados de la siguiente manera:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Si quería ejecutar `file3.php` primero, puede agregar algo como `aaa:` antes del nombre del archivo:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Entonces, si se activa un archivo nuevo, `file6.php`, cuando la página de actualizaciones los clasifique nuevamente, debería terminar así:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+La misma situación cuando un archivo está desactivado. Por el contrario, si quería que el archivo se ejecuta al final, podría agregar algo como `zzz:` antes del nombre del archivo. En cualquier caso, no necesitará cambiar el nombre del archivo en cuestión.
 
 ---
 
@@ -1225,4 +1243,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 26 Junio de 2018 (2018.06.26).
+Última Actualización: 6 Julio de 2018 (2018.07.06).

@@ -415,6 +415,18 @@ Algemene configuratie voor phpMussel.
 "ipaddr"
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
+Aanbevolen waarden voor "ipaddr":
+
+Waarde | Gebruik makend van
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
+
 "enable_plugins"
 - Activeer ondersteuning voor phpMussel plugins? False = Nee; True = Ja [Standaard].
 
@@ -801,11 +813,11 @@ Dit informatie werd laatst bijgewerkt 2017.12.01 en is op de hoogte voor alle ph
 - [Ik heb speciale modificaties en aanpassingen nodig; Kan u helpen?](#SPECIALIST_MODIFICATIONS)
 - [Ik ben een ontwikkelaar, website ontwerper, of programmeur. Kan ik werken aan dit project accepteren of aanbieden?](#ACCEPT_OR_OFFER_WORK)
 - [Ik wil bijdragen aan het project; Kan ik dit doen?](#WANT_TO_CONTRIBUTE)
-- [Aanbevolen waarden voor "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?](#SCAN_DEBUGGING)
 - [Kan ik cron gebruiken om automatisch bij te werken?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kan phpMussel bestanden met niet-ANSI-namen scannen?](#SCAN_NON_ANSI)
 - [Blacklists (zwarte lijsten) – Whitelists (witte lijsten) – Greylists (grijze lijst) – Wat zijn ze en hoe gebruik ik ze?](#BLACK_WHITE_GREY)
+- [Wanneer ik signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -866,18 +878,6 @@ Ja. Onze licentie verbiedt dit niet.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Ik wil bijdragen aan het project; Kan ik dit doen?
 
 Ja. Bijdragen aan het project zijn zeer welkom. Zie voor meer informatie "CONTRIBUTING.md".
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Aanbevolen waarden voor "ipaddr".
-
-Waarde | Gebruik makend van
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
 
 #### <a name="SCAN_DEBUGGING"></a>Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?
 
@@ -1017,6 +1017,24 @@ In deze twee contexten, op de witte lijst staan betekent dat deze niet mag worde
 De signature greylist is een lijst met signatures die in essentie moet worden genegeerd (dit wordt eerder in de documentatie kort genoemd). Wanneer een signature op de signature greylist wordt geactiveerd, blijft phpMussel werken door zijn signatures en onderneemt geen specifieke actie met betrekking tot de signature dat op de greylist staat. Er is geen zwarte lijst, omdat het impliciete gedrag is hetzelfde als het normaal gedrag voor getriggerde signatures, en er is geen signature witte lijst, omdat het impliciete gedrag niet echt zinvol is in overweging van hoe phpMussel normaal werkt en de mogelijkheden die het al heeft.
 
 De signature grijze lijst is handig als u problemen wilt oplossen die door een bepaalde signature worden veroorzaakt zonder het volledige signature bestand uit te schakelen of te deinstalleren.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wanneer ik signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?
+
+Ja. Als u bepaalde bestanden wilt dwingen om in een specifieke volgorde uit te voeren, kunt u enkele willekeurige gegevens vóór hun naam toevoegen in de configuratie richtlijn waar ze worden vermeld, gescheiden door een dubbele punt. Wanneer de updates-pagina vervolgens de bestanden opnieuw sorteert, heeft deze toegevoegde willekeurige gegevens invloed op de sorteervolgorde, waardoor ze vervolgens in de gewenste volgorde worden uitgevoerd, zonder dat ze hoeven te hernoemen.
+
+Stel dat u bijvoorbeeld een configuratie richtlijn aanneemt met de volgende bestanden:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Als u wilt dat `file3.php` het eerst uitvoert, u zou iets als `aaa:` kunnen toevoegen voor de naam van het bestand:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Als dan een nieuw bestand, `file6.php`, is geactiveerd, als de updates-pagina ze allemaal opnieuw sorteert, het zou zo moeten eindigen:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Dezelfde situatie wanneer een bestand is gedeactiveerd. Omgekeerd, als u wilde dat het bestand als laatste werd uitgevoerd, u zou iets als `zzz:` kunnen toevoegen voor de naam van het bestand. In elk geval hoeft u het betreffende bestand niet te hernoemen.
 
 ---
 
@@ -1226,4 +1244,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 26 Juni 2018 (2018.06.26).
+Laatste Bijgewerkt: 6 Juli 2018 (2018.07.06).

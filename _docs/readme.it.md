@@ -415,6 +415,18 @@ Generale configurazione per phpMussel.
 "ipaddr"
 - Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
+Valori consigliati per "ipaddr":
+
+Valore | Utilizzando
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
+`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; se il precedente non funziona).
+`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
+`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definito dalla configurazione del server.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Nessun proxy inverso (valore predefinito).
+
 "enable_plugins"
 - Attiva il supporto per i plugin di phpMussel? False = No; True = Sì [Predefinito].
 
@@ -801,11 +813,11 @@ Questa informazione è stato lo scorso aggiornato 2017.12.01 ed è in corso per 
 - [Ho bisogno di modifiche specialistiche, personalizzazioni, ecc; Puoi aiutare?](#SPECIALIST_MODIFICATIONS)
 - [Sono uno sviluppatore, un designer di siti web o un programmatore. Posso accettare o offrire lavori relativi a questo progetto?](#ACCEPT_OR_OFFER_WORK)
 - [Voglio contribuire al progetto; Posso farlo?](#WANT_TO_CONTRIBUTE)
-- [Valori consigliati per "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Come accedere a dettagli specifici sui file quando vengono scansionati?](#SCAN_DEBUGGING)
 - [Posso utilizzare il cron per aggiornare automaticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [phpMussel può eseguire la scansione di file con nomi non ANSI?](#SCAN_NON_ANSI)
 - [Blacklists (liste nere) – Whitelists (liste bianche) – Greylists (liste grigie) – Cosa sono e come li uso?](#BLACK_WHITE_GREY)
+- [Quando si attivano o disattivano file di firma tramite la pagina degli aggiornamenti, li ordina in ordine alfanumerico nella configurazione. Posso cambiare il modo in cui vengono ordinati?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Che cosa è una "firma"?
 
@@ -866,18 +878,6 @@ Sì. La nostra licenza non vieta questo.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Voglio contribuire al progetto; Posso farlo?
 
 Sì. I contributi al progetto sono molto graditi. Per ulteriori informazioni, vedere "CONTRIBUTING.md".
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valori consigliati per "ipaddr".
-
-Valore | Utilizzando
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
-`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; se il precedente non funziona).
-`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
-`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definito dalla configurazione del server.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Nessun proxy inverso (valore predefinito).
 
 #### <a name="SCAN_DEBUGGING"></a>Come accedere a dettagli specifici sui file quando vengono scansionati?
 
@@ -1017,6 +1017,24 @@ In questi due contesti, essere nella whitelist significa che non dovrebbe essere
 La greylist delle firme è una lista di firme che dovrebbe essere essenzialmente ignorata (questo è brevemente menzionato prima nella documentazione). Quando viene innescata una firma nella greylist delle firme, phpMussel continua a lavorare attraverso le sue firme e non intraprende alcuna azione particolare riguardo alla firma nella greylist. Non esiste una blacklist delle firme, perché il comportamento implicito è comunque un comportamento normale per le firme innescate, e non esiste una whitelist delle firme, perché il comportamento implicito non avrebbe davvero senso in considerazione di come funziona phpMussel normal e delle funzionalità che già possiede.
 
 La greylist delle firme è utile se è necessario risolvere i problemi causati da una particolare firma senza disabilitare o disinstallare l'intero file di firme.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Quando si attivano o disattivano file di firma tramite la pagina degli aggiornamenti, li ordina in ordine alfanumerico nella configurazione. Posso cambiare il modo in cui vengono ordinati?
+
+Sì. Se è necessario forzare alcuni file per l'esecuzione in un ordinamento specifico, è possibile aggiungere alcuni dati arbitrari prima dei loro nomi nella direttiva di configurazione in cui sono elencati, separati da due punti. Quando la pagina degli aggiornamenti ordina di nuovo i file, questi dati arbitrari aggiunti influenzeranno l'ordinamento, causandoli di conseguenza nell'ordinamento che si desidera, senza dover rinominare nessuno di essi.
+
+Ad esempio, assumendo una direttiva di configurazione con file elencati come segue:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Se si desidera che `file3.php` esegua prima, potresti aggiungere qualcosa come `aaa:` prima del nome del file:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Quindi, se un nuovo file, `file6.php`, viene attivato, quando la pagina degli aggiornamenti li ordina di nuovo tutti, dovrebbe finire in questo modo:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Stessa situazione quando un file è disattivato. Al contrario, se si desidera che il file venga eseguito per ultimo, è possibile aggiungere qualcosa come `zzz:` prima del nome del file. In ogni caso, non sarà necessario rinominare il file in questione.
 
 ---
 
@@ -1223,4 +1241,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 26 Giugno 2018 (2018.06.26).
+Ultimo Aggiornamento: 6 Luglio 2018 (2018.07.06).

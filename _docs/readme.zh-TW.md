@@ -415,6 +415,18 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 『ipaddr』
 - 在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。​警告！​不要修改此除非您知道什麼您做著！
 
+『ipaddr』的推薦值：
+
+值 | 運用
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula反向代理。
+`HTTP_CF_CONNECTING_IP` | Cloudflare反向代理。
+`CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一個不工作）。
+`HTTP_X_FORWARDED_FOR` | Cloudbric反向代理。
+`X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)。
+*由服務器配置定義。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`REMOTE_ADDR` | 沒有反向代理（默認值）。
+
 『enable_plugins』
 - 啟用phpMussel插件支持嗎？​False（假）=不要啟用；​True（真）=要啟用【標準】。
 
@@ -801,11 +813,11 @@ phpMussel簽名文件前9個字節（`[x0-x8]`）是`phpMussel`。​它作為�
 - [我需要專家修改，​的定制，​等等；您能幫我嗎？](#SPECIALIST_MODIFICATIONS)
 - [我是開發人員，​網站設計師，​或程序員。​我可以接受還是提供與這個項目有關的工作？](#ACCEPT_OR_OFFER_WORK)
 - [我想為這個項目做出貢獻；我可以這樣做嗎？](#WANT_TO_CONTRIBUTE)
-- [『ipaddr』的推薦值。](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [掃描時如何訪問文件的具體細節？](#SCAN_DEBUGGING)
 - [可以使用cron自動更新嗎？](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [phpMussel可以掃描非ANSI名稱的文件嗎？](#SCAN_NON_ANSI)
 - [黑名單 – 白名單 – 灰名單 – 他們是什麼，我如何使用它們？](#BLACK_WHITE_GREY)
+- [當我通過更新頁面啟用或禁用簽名文件時，它會在配置中它們將按字母數字排序。​我可以改變他們排序的方式嗎？](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>什麼是『簽名』？
 
@@ -866,18 +878,6 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 #### <a name="WANT_TO_CONTRIBUTE"></a>我想為這個項目做出貢獻；我可以這樣做嗎？
 
 您可以。​對項目的貢獻是歡迎。​有關詳細信息，​請參閱『CONTRIBUTING.md』。
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>『ipaddr』的推薦值。
-
-值 | 運用
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula反向代理。
-`HTTP_CF_CONNECTING_IP` | Cloudflare反向代理。
-`CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一個不工作）。
-`HTTP_X_FORWARDED_FOR` | Cloudbric反向代理。
-`X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*由服務器配置定義。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
-`REMOTE_ADDR` | 沒有反向代理（默認值）。
 
 #### <a name="SCAN_DEBUGGING"></a>掃描時如何訪問文件的具體細節？
 
@@ -1017,6 +1017,24 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 簽名灰名單是基本上應該忽略的簽名列表（這在文檔中已經簡要地提到了）。​當灰名單上的簽名被觸發時，phpMussel繼續通過其簽名工作，並且對於在灰名單上的簽名不要採取任何特殊行動。​沒有簽名黑名單，因為隱含的行為無論和触發簽名的正常的行為是一樣的，並且沒有簽名白名單，因為考慮到phpMussel的正常的工作方式以及它的已有的功能，隱含的行為不會有意義。
 
 如果您需要解決由特定簽名造成的問題，並且不想禁用或卸載整個簽名文件，則簽名灰名單很有用。
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>當我通過更新頁面啟用或禁用簽名文件時，它會在配置中它們將按字母數字排序。​我可以改變他們排序的方式嗎？
+
+這個有可能。​如果您需要強制某些文件以特定順序執行，您可以在列出配置指令的位置中的在他們的名字之前添加一些任意數據，並用冒號分隔。​當更新頁面隨後再次對文件進行排序時，這個添加的任意數據會影響排序順序，因此導致它們按照您想要的順序執行，並且不需要重命名它們。
+
+例如，假设配置指令包含如下列出的文件：
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+如果您想首先執行`file3.php`，您可以在文件名前添加`aaa:`或類似：
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+然後，如果啟用了新文件`file6.php`，當更新頁面再次對它們進行排序時，它應該像這樣結束：
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+當文件禁用時的情況是相同的。​相反，如果您希望文件最後執行，您可以在文件名前添加`zzz:`或類似。​在任何情況下，您都不需要重命名相關文件。
 
 ---
 
@@ -1207,21 +1225,23 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+『通用數據保護條例』（GDPR）是歐盟法規，自2018年5月25日起生效。​該法規的主要目標是向歐盟公民和居民提供有關其個人數據的控制權，並統一歐盟內有關隱私和個人數據的法規。
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+該法規包含有關處理任何歐盟『數據主體』（任何已識別或可識別的自然人）的『個人身份信息』（PII）的具體規定。​為了符合條例，『企業』（按照法規的定義），和任何相關的系統和流程必須默認實現『隱私設計』，​必須使用盡可能高的隱私設置，​必須對任何存儲或處理的信息實施必要的保護措施（數據的 pseudonymisation 或完整 anonymisation ），​必須明確無誤地聲明他們收集的數據類型，​他們如何處理數據，​出於何種原因，​他們保留多長時間，​以及他們是否與任何第三方分享這些數據，​與第三方共享的數據類型，​為什麼，​等等。
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+只有按照條例有合法依據才能處理數據。​一般而言，這意味著為了在合法基礎上處理數據主體的數據，必須遵守法律義務，或者僅在從數據主體獲得明確，明智，明確的同意之後才進行處理。
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+因為條例的各個方面可能會及時演變，並為了避免過時信息的傳播，從權威來源中學習可能會更好的，而不是簡單地在包文檔中包含相關信息（這個信息可能最終會過時）。
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+一些推薦的資源用於了解更多信息：
+- [关于欧盟GDPR隐私合规，中国数字营销人不得不知的9大问题](http://www.adexchanger.cn/top_news/28813.html)
+- [史上最严的隐私条例出台，2018年开始执行](https://zhuanlan.zhihu.com/p/20865602)
+- [《欧盟数据保护条例》对中国企业的影响 —- 以阿里巴巴集团为例](http://spiegeler.com/%E3%80%8A%E6%AC%A7%E7%9B%9F%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8A%A4%E6%9D%A1%E4%BE%8B%E3%80%8B%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%9A%84%E5%BD%B1%E5%93%8D-%E4%BB%A5%E9%98%BF%E9%87%8C/)
+- [歐盟個人資料保護法 GDPR 即將上路！與電商賣家息息相關的 Google Analytics 資料保留政策，你瞭解了嗎？](https://shopline.hk/blog/google-analytics-gdpr/)
+- [歐盟一般資料保護規範](https://zh.wikipedia.org/wiki/%E6%AD%90%E7%9B%9F%E4%B8%80%E8%88%AC%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7%E8%A6%8F%E7%AF%84)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
 
 ---
 
 
-最後更新：2018年6月26日。
+最後更新：2018年7月6日。

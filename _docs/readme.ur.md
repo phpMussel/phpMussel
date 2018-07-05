@@ -436,6 +436,18 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  <li>درخواستوں منسلک کرنے کے IP ایڈریس کو کہاں تلاش کرنے کے لئے؟ پہلے سے طے شدہ = REMOTE_ADDR (جیسا Cloudflare کے اور پسند کرتا ہے کے طور پر خدمات کے لئے مفید). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
 </ul></div>
 
+<div dir="rtl">"ipaddr" کے لئے سفارش کی اقدار:<br /><br /></div>
+
+&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
+`CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
+`X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
+&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
+
 <div dir="rtl">"enable_plugins"<br /></div>
 <div dir="rtl"><ul>
  <li>phpMussel پلگ ان کے لئے حمایت فعال کریں؟ False (جھوٹی) = کوئی؛ True (سچے) = جی ہاں [پہلے سے طے شدہ].</li>
@@ -964,11 +976,11 @@ Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXA3F5.Webshell"<
  <li><a href="#SPECIALIST_MODIFICATIONS">مجھے خصوصی ترمیم کی ضرورت؛ کیا آپ مدد کر سکتے ہیں؟</a></li>
  <li><a href="#ACCEPT_OR_OFFER_WORK">میں نے ایک ڈویلپر، ویب سائٹ ڈیزائنر، یا پروگرامر ہوں. میں اس منصوبے سے متعلق کام کر سکتے ہیں؟</a></li>
  <li><a href="#WANT_TO_CONTRIBUTE">میں نے اس منصوبے میں شراکت کے لئے چاہتے ہیں؛ میں یہ کر سکتا ہوں؟</a></li>
- <li><a href="#RECOMMENDED_VALUES_FOR_IPADDR">"ipaddr" کے لئے سفارش کی اقدار.</a></li>
  <li><a href="#SCAN_DEBUGGING">کس طرح وہ سکین کر رہے ہیں جب فائلوں کے بارے میں مزید تفصیلات تک رسائی حاصل کرنے کے لئے؟</a></li>
  <li><a href="#CRON_TO_UPDATE_AUTOMATICALLY">کیا میں خود کار طریقے سے اپ ڈیٹ کرنے کیلئے cron استعمال کرسکتا ہوں؟</a></li>
  <li><a href="#SCAN_NON_ANSI">غیر ANSI ناموں کے ساتھ فائلوں کو phpMussel اسکین کرسکتے ہیں؟</a></li>
  <li><a href="#BLACK_WHITE_GREY">بلیک لسٹ – سفید لسٹ – سرمئی لسٹ – وہ کیا ہیں، اور میں ان کا کیسے استعمال کروں؟</a></li>
+ <li><a href="#CHANGE_COMPONENT_SORT_ORDER">جب میں دستخط شدہ فائلوں کے ذریعہ دستخط شدہ فائلوں کو چالو یا غیر فعال کروں تو، یہ انفرادی طور پر ترتیب میں تبدیل کرتا ہے. کیا میں اس راستہ کو تبدیل کر سکتا ہوں جسے وہ ترتیب دیں گے؟</a></li>
 </ul></div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ایک "دستخط" کیا ہے؟<br /><br /></div>
@@ -1031,18 +1043,6 @@ Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXA3F5.Webshell"<
 #### <div dir="rtl"><a name="WANT_TO_CONTRIBUTE"></a>میں نے اس منصوبے میں شراکت کے لئے چاہتے ہیں؛ میں یہ کر سکتا ہوں؟<br /><br /></div>
 
 <div dir="rtl">جی ہاں. اس کا خیر مقدم کیا جاتا ہے. "CONTRIBUTING.md" ملاحظہ کریں مزید معلومات کے لئے.<br /><br /></div>
-
-#### <div dir="rtl"><a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>"ipaddr" کے لئے سفارش کی اقدار.<br /><br /></div>
-
-&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
-`CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
-`X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
 
 #### <div dir="rtl"><a name="SCAN_DEBUGGING"></a>کس طرح وہ سکین کر رہے ہیں جب فائلوں کے بارے میں مزید تفصیلات تک رسائی حاصل کرنے کے لئے؟<br /><br /></div>
 
@@ -1183,6 +1183,24 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 <div dir="rtl">دستخط سرمئی لسٹ دستخط کی ایک فہرست ہے جو لازمی طور پر نظر انداز کی جانی چاہئے (اس دستاویز میں پہلے ہی مختصر بیان کی گئی ہے). جب سرمئی لسٹ پر دستخط ہوجائے تو، phpMussel اپنے دستخط کے ذریعہ کام جاری رکھتا ہے اور سرمئی لسٹ پر دستخط کے حوالے سے کوئی خاص کارروائی نہیں کرتا ہے. کوئی دستخط بلیک لسٹ نہیں ہے، کیونکہ تخیل شدہ دستخط کے لئے منسلک سلوک رویہ عام رویے ہے. اس میں کوئی دستخط نہیں ہے، کیونکہ یہ اس سلسلے میں ضروری نہیں ہے.<br /><br /></div>
 
 <div dir="rtl">اگر آپ کو دستخط یا مکمل دستخط فائل غیر فعال کرنے کے بغیر کسی خاص دستخط کی وجہ سے مسائل کو حل کرنے کی ضرورت ہوتی ہے تو دستخط سرمئی لسٹ مفید ہے.<br /><br /></div>
+
+#### <div dir="rtl"><a name="CHANGE_COMPONENT_SORT_ORDER"></a>جب میں دستخط شدہ فائلوں کے ذریعہ دستخط شدہ فائلوں کو چالو یا غیر فعال کروں تو، یہ انفرادی طور پر ترتیب میں تبدیل کرتا ہے. کیا میں اس راستہ کو تبدیل کر سکتا ہوں جسے وہ ترتیب دیں گے؟<br /><br /></div>
+
+<div dir="rtl">جی ہاں. اگر آپ کو مخصوص فائلوں میں عمل درآمد کرنے کے لئے کچھ فائلوں پر مجبور کرنے کی ضرورت ہے تو، آپ ان کے نام سے پہلے ان ترتیبات کو ہدایت دیتے ہیں جہاں وہ فہرست میں درج ہوتے ہیں، ان سے پہلے کسی بھی مباحثہ کے اعداد و شمار کو شامل کرسکتے ہیں. جب اپ ڈیٹس کے صفحے کو بعد میں فائلوں کو دوبارہ ترتیب دیتا ہے، تو اس نے مزید کہا کہ خود مختار اعداد و شمار اس طرح کے حکم کو متاثر کرے گی، جس کے نتیجے میں ان کے نتیجے میں عملدرآمد کرنے کے نتیجے میں عملدرآمد کرنے کے لۓ، بغیر کسی کو تبدیل کرنے کی ضرورت ہے.<br /><br /></div>
+
+<div dir="rtl">مثال کے طور پر، مندرجہ ذیل درج ذیل فائلوں کے ساتھ ایک ترتیب ڈائریکٹری کو فرض کرنا:<br /><br /></div>
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+<div dir="rtl">اگر آپ چاہتے تھے کہ <code dir="ltr">file3.php</code> سب سے پہلے عمل کرنے کیلئے، آپ فائل کے نام سے پہلے <code dir="ltr">aaa:</code> کی طرح کچھ شامل کرسکتے ہیں:<br /><br /></div>
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+<div dir="rtl">پھر، اگر ایک نئی فائل، <code dir="ltr">file6.php</code>، چالو کر دیا جاتا ہے، جب اپ ڈیٹس صفحہ ان کو دوبارہ دوبارہ تبدیل کرتا ہے، تو اسے اس طرح ختم کرنا چاہئے:<br /><br /></div>
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+<div dir="rtl">ایک ہی صورت حال حال ہی میں ایک فائل غیر فعال ہے. اس کے برعکس، اگر آپ چاہتے تھے کہ آخری فائل کو عمل کرنے کے لۓ، آپ فائل کے نام سے پہلے <code dir="ltr">zzz:</code> کی طرح کچھ شامل کرسکیں. کسی بھی صورت میں، آپ کو سوال میں فائل کا نام تبدیل کرنے کی ضرورت نہیں ہوگی.<br /><br /></div>
 
 ---
 
@@ -1395,23 +1413,23 @@ When a user successfully logs into the front-end, phpMussel sets a cookie in ord
  <li><code dir="ltr">privacy_policy</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-#### 11.7 GDPR/DSGVO
+#### <div dir="rtl">١١.٧ GDPR/DSGVO<br /><br /></div>
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+<div dir="rtl">GDPR یورپی یونین کا ایک ضابطہ ہے جو 25 مئی، 2018 تک اثر انداز ہوتا ہے. ریگولیشن کا بنیادی مقصد یہ ہے کہ یورپی یونین کے شہریوں اور باشندوں کو ان کے اپنے ذاتی ڈیٹا سے متعلق قابو پانے، اور پرائیویٹ اور ذاتی ڈیٹا کے بارے میں یورپی یونین کے اندر ریگولیشن کو متحد کرنا.<br /><br /></div>
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+<div dir="rtl">ریگولیشن کسی بھی EU کے "اعداد و شمار کے مضامین" (کسی بھی شناخت یا شناختی قدرتی شخص) کے "ذاتی طور پر شناختی معلومات" کی پروسیسنگ سے متعلق مخصوص اجزاء پر مشتمل ہے. تعمیل کرنے کے لئے، کمپنیوں، عمل، اور متعلقہ نظام، "ڈیزائن کی طرف سے رازداری" کو لاگو کرنا لازمی ہے، سب سے زیادہ ممکن راز رازداری کی ترتیبات کا استعمال کرنا ضروری ہے، کسی ذخیرہ یا پروسیسنگ معلومات کے لئے حفاظتی انتظامات کو لاگو کرنا ضروری ہے (بشمول، لیکن تک محدود نہیں، "pseudonymisation" اور "anonymisation")، واضح طور پر ان اعداد و شمار کی اقسام کا اعلان کرنا چاہیے جو وہ جمع کرتے ہیں، وہ کس طرح کے سببوں کے لئے، اس کے عمل کو کس طرح، وہ کتنی عرصے تک اسے برقرار رکھتی ہیں، اور اگر وہ اس ڈیٹا کو کسی بھی تیسری پارٹی کے ساتھ شریک کریں، اعداد و شمار کی اقسام، کیسے، کیوں، اور اسی طرح کی اقسام.<br /><br /></div>
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+<div dir="rtl">اعداد و شمار پر عملدرآمد نہیں کیا جاسکتا جب تک کہ ایسا کرنے کے لئے قانونی بنیاد نہ ہو، قواعد و ضوابط کے مطابق. عام طور پر، اس کا مطلب یہ ہے کہ یہ قانونی ذمہ داریوں کے مطابق ہونا ضروری ہے، اور صرف واضح ہونے کے بعد، اچھی طرح سے مطلع رضامندی کے اعداد و شمار سے حاصل کی گئی ہے.<br /><br /></div>
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+<div dir="rtl">وقت میں، قوانین تبدیل کر سکتے ہیں. لہذا، پرانے معلومات کو پھیلانے سے بچنے کے لۓ، یہ مستند ذریعہ سے سیکھنا بہتر ہوگا. اگر میں براہ راست یہاں معلومات شامل ہوں تو، یہ تاریخ سے باہر ہوسکتا ہے.<br /><br /></div>
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
-- [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+<div dir="rtl">مزید معلومات سیکھنے کے لئے کچھ سفارش کردہ وسائل:<br /></div>
+<div dir="rtl"><ul>
+ <li><a href="https://ur.wikipedia.org/wiki/%D8%AC%D9%86%D8%B1%D9%84_%DA%88%DB%8C%D9%B9%D8%A7_%D9%BE%D8%B1%D9%88%D9%B9%DB%8C%DA%A9%D8%B4%D9%86_%D8%B1%DB%8C%DA%AF%D9%88%D9%84%DB%8C%D8%B4%D9%86">جنرل ڈیٹا پروٹیکشن ریگولیشن</a></li>
+ <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679">REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL</a></li>
+</ul></div>
 
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 26 جون 2018 (2018.06.26).</div>
+<div dir="rtl">آخری تازہ کاری: 6 جولائی 2018 (2018.07.06).</div>

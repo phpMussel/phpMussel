@@ -415,6 +415,18 @@ Configuração geral por phpMussel.
 "ipaddr"
 - Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
+Valores recomendados para "ipaddr":
+
+Valor | Usando
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy reverso Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy reverso Cloudflare.
+`CF-Connecting-IP` | Proxy reverso Cloudflare (alternativa; se o acima não funcionar).
+`HTTP_X_FORWARDED_FOR` | Proxy reverso Cloudbric.
+`X-Forwarded-For` | [Proxy reverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
+
 "enable_plugins"
 - Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão].
 
@@ -801,11 +813,11 @@ Esta informação foi atualizada 2017.12.01 e é corrente para todas phpMussel l
 - [Preciso de modificações especializadas, customizações, etc; Você pode ajudar?](#SPECIALIST_MODIFICATIONS)
 - [Eu sou um desenvolvedor, designer de site, ou programador. Posso aceitar ou oferecer trabalho relacionado a este projeto?](#ACCEPT_OR_OFFER_WORK)
 - [Quero contribuir para o projeto; Posso fazer isso?](#WANT_TO_CONTRIBUTE)
-- [Valores recomendados para "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Como acessar detalhes específicos sobre os arquivos quando eles são analisados?](#SCAN_DEBUGGING)
 - [Posso usar o cron para atualizar automaticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [O phpMussel pode analisar arquivos com nomes não-ANSI?](#SCAN_NON_ANSI)
 - [Blacklists (listas negras) – Whitelists (listas brancas) – Greylists (listas cinzentas) – Quais são eles e como eu os uso?](#BLACK_WHITE_GREY)
+- [Quando eu ativar ou desativar os arquivos de assinatura através da página de atualizações, eles os classificam alfanumericamente na configuração. Posso mudar a maneira como eles são classificados?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
@@ -866,18 +878,6 @@ Sim. Nossa licença não proíbe isso.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Quero contribuir para o projeto; Posso fazer isso?
 
 Sim. As contribuições para o projeto são muito bem-vindas. Consulte "CONTRIBUTING.md" para obter mais informações.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valores recomendados para "ipaddr".
-
-Valor | Usando
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy reverso Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy reverso Cloudflare.
-`CF-Connecting-IP` | Proxy reverso Cloudflare (alternativa; se o acima não funcionar).
-`HTTP_X_FORWARDED_FOR` | Proxy reverso Cloudbric.
-`X-Forwarded-For` | [Proxy reverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
 
 #### <a name="SCAN_DEBUGGING"></a>Como acessar detalhes específicos sobre os arquivos quando eles são analisados?
 
@@ -1017,6 +1017,24 @@ Nestes dois contextos, a lista branca significa que não deve ser analisada ou m
 A lista cinza da assinaturas é uma lista de assinaturas que devem ser essencialmente ignoradas (isso é brevemente mencionado anteriormente na documentação). Quando uma assinatura na lista cinza é desencadeadas, o phpMussel continua a trabalhar através de suas assinaturas e não toma nenhuma ação específica em relação à assinatura na lista cinza. Não há lista negra da assinaturas, porque o comportamento implícito é o comportamento normal para assinaturas desencadeadas de qualquer maneira, e não há lista branca da assinaturas, porque o comportamento implícito não faria realmente sentido em relação ao funcionamento normal do phpMussel e aos recursos que ele já possui.
 
 A lista de cinza da assinaturas é útil se você precisar resolver problemas causados por uma assinatura específica sem desabilitar ou desinstalar todo os arquivo do assinaturas.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Quando eu ativar ou desativar os arquivos de assinatura através da página de atualizações, eles os classificam alfanumericamente na configuração. Posso mudar a maneira como eles são classificados?
+
+Sim. Se você precisar forçar alguns arquivos a serem executados em uma ordem específica, você pode adicionar alguns dados arbitrários antes de seus nomes na diretiva de configuração, onde eles estão listados, separados por dois pontos. Quando a página de atualizações subseqüentemente classifica os arquivos novamente, esses dados arbitrários adicionados afetarão a ordem de classificação, fazendo com que eles sejam executados na ordem que você deseja, sem precisar renomear nenhum deles.
+
+Por exemplo, assumindo uma diretiva de configuração com arquivos listados da seguinte maneira:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Se você queria `file3.php` para executar primeiro, você poderia adicionar algo como `aaa:` antes do nome do arquivo:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Então, se um novo arquivo, `file6.php`, estiver ativado, quando a página de atualizações classifica os novamente, ele deve terminar assim:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Mesma situação quando um arquivo é desativado. Por outro lado, se você quiser que o arquivo seja executado por último, você poderia adicionar algo como `zzz:` antes do nome do arquivo. Em qualquer caso, você não precisará renomear o arquivo em questão.
 
 ---
 
@@ -1220,4 +1238,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 26 Junho de 2018 (2018.06.26).
+Última Atualização: 6 Julho de 2018 (2018.07.06).

@@ -415,6 +415,18 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 "ipaddr" （アイピーアドレス）
 - 接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。
 
+「ipaddr」の推奨値です：
+
+値 | 使用
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ。
+`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ。
+`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）。
+`HTTP_X_FORWARDED_FOR` | Cloudbricリバース・プロキシ。
+`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)。
+*サーバー・コンフィグレーションによって定義されます。​* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`REMOTE_ADDR` | リバース・プロキシはありません（デフォルト値）。
+
 "enable_plugins" （イネーブル・プラグインす）
 - プラグインのサポートを有効にしますか？​`false` = いいえ；​`true` = はい 「Default/デフォルト設定」。
 
@@ -801,11 +813,11 @@ phpMusselは大概のウィルススキャンソフトウェアに対して互�
 - [私は専門家の変更、​カスタム化、​等が必要です；​手伝ってくれますか？](#SPECIALIST_MODIFICATIONS)
 - [私は開発者、​ウェブサイトデザイナー、​またはプログラマーです。​このプロジェクトに関連する作業を行うことはできますか？](#ACCEPT_OR_OFFER_WORK)
 - [私はプロジェクトに貢献したい；​これはできますか？](#WANT_TO_CONTRIBUTE)
-- [「ipaddr」の推奨値です。](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [ファイルのスキャン時に特定の詳細情報にアクセスするにはどうすればよいですか？](#SCAN_DEBUGGING)
 - [Cronを使って自動的にアップデートできますか？](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [phpMusselは、ＡＮＳＩ以外の名前のファイルをスキャンできますか？](#SCAN_NON_ANSI)
 - [ブラックリスト – ホワイトリスト – グレーリスト – 彼らは何ですか？私はどのように使用しますか？](#BLACK_WHITE_GREY)
+- [アップデート・ページでシグネチャ・ファイルを有効または無効にすると、コンフィギュレーションに英数字でソートされます。​彼らのソート方法を変更することはできますか？](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>「シグネチャ」とは何ですか？
 
@@ -866,18 +878,6 @@ phpMusselは、​ファイルをブロックします | __偽陽性__ | 真陽�
 #### <a name="WANT_TO_CONTRIBUTE"></a>私はプロジェクトに貢献したい；​これはできますか？
 
 はい。​プロジェクトへの貢献は大歓迎です。​詳細については、​「CONTRIBUTING.md」を参照してください。
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>「ipaddr」の推奨値です。
-
-値 | 使用
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ。
-`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ。
-`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）。
-`HTTP_X_FORWARDED_FOR` | Cloudbricリバース・プロキシ。
-`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*サーバー・コンフィグレーションによって定義されます。​* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
-`REMOTE_ADDR` | リバース・プロキシはありません（デフォルト値）。
 
 #### <a name="SCAN_DEBUGGING"></a>ファイルのスキャン時に特定の詳細情報にアクセスするにはどうすればよいですか？
 
@@ -1018,6 +1018,24 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 シグネチャ・ファイル全体をディセーブルまたはアンインストールせずに特定のシグネチャによって発生した問題を解決する必要がある場合は、シグネチャ・グレーリストが役立ちます。
 
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>アップデート・ページでシグネチャ・ファイルを有効または無効にすると、コンフィギュレーションに英数字でソートされます。​彼らのソート方法を変更することはできますか？
+
+はい。​特定の順序で実行するファイルが必要な場合は、コンフィギュレーション・ディレクティブの名前の前に任意のデータを追加できます（このデータと名前を区切るためにコロンを使用します）。​その後、アップデート・ページでファイルを再度並べ替えると、この追加された任意のデータがソート順に影響します。​これにより、それらの名前を変更せずに、必要な順序で実行されます。
+
+たとえば、次のようにファイルをコンフィギュレーション・ディレクティブがあるとします：
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+`file3.php`を最初に実行したければ、ファイル名の前に`aaa:`のようなものを追加することができます：
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+次に、新しいファイル`file6.php`が有効になっている場合、アップデート・ページがそれらをすべて並べ替えると、次のようになります：
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+ファイルが非アクティブになったときと同じ状況です。​逆に、ファイルを最後に実行したい場合は、ファイルの名前の前に`zzz:`のようなものを追加することができます。​いずれの場合でも、問題のファイルの名前を変更する必要はありません。
+
 ---
 
 
@@ -1043,12 +1061,12 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### 11.2.0 ウェブフォンツ
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+phpMusselのフロントエンドと「アップロード拒否」ページの標準「ＵＩ」（ユーザー・インターフェイス）と同様に、一部のカスタム・テーマでは、美的な理由から「webfonts」（ウェブフォンツ）が使用されることがあります。​「Webfonts」（ウェブフォンツ）はデフォルトで無効になっていますが、有効にすると、ユーザーのブラウザと「webfont service」（ウェブフォント・サービス）間の直接通信が行われます。​これは、ユーザのＩＰアドレス、ユーザ・エージェント、オペレーティング・システム、および要求に利用可能な他の詳細などの情報を伝達することを潜在的に含むことがある。​これらのウェブフォンツのほとんどは「[Google Fonts](https://fonts.google.com/)」サービスによってホストされています。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `disable_webfonts`
 
-##### 11.2.1 URLスキャナ
+##### 11.2.1 ＵＲＬスキャナ
 
 URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
 
@@ -1207,7 +1225,7 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+一般データ保護規制（ＧＤＰＲ）は、2018年5月25日に発効するＥＵの規制です。​規制の第一の目的は、ＥＵ市民および居住者に個人情報を管理させ、個人情報および個人情報に関するＥＵ内の規制を統一することです。
 
 The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
 
@@ -1215,13 +1233,13 @@ Data may not be processed unless there's a lawful basis for doing so, as per def
 
 Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+より多くの情報を習得するための推奨リソース：
+- [GDPR（EU一般データ保護規制）とは | 語句説明・適用範囲・与える影響を解説](https://boxil.jp/mag/a4605/)
+- [EU一般データ保護規則](https://ja.wikipedia.org/wiki/EU%E4%B8%80%E8%88%AC%E3%83%87%E3%83%BC%E3%82%BF%E4%BF%9D%E8%AD%B7%E8%A6%8F%E5%89%87)
+- [GDPR（EU一般データ保護規制）対策](https://eizone.info/gdpr/)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
 
 ---
 
 
-最終アップデート：2018年6月26日。
+最終アップデート：2018年7月6日。

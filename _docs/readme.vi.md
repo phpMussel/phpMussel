@@ -415,6 +415,18 @@ Cấu hình chung cho phpMussel.
 "ipaddr"
 - Nơi để tìm thấy các địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như thế Cloudflare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này trừ khi bạn biết những gì bạn đang làm!
 
+Giá trị được đề xuất cho "ipaddr":
+
+Giá trị | Sử dụng
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy reverse Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy reverse Cloudflare.
+`CF-Connecting-IP` | Proxy reverse Cloudflare (một sự thay thế; nếu ở trên không hoạt động).
+`HTTP_X_FORWARDED_FOR` | Proxy reverse Cloudbric.
+`X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
+
 "enable_plugins"
 - Cho phép hỗ trợ cho plugins của phpMussel? False = Không; True = Vâng [Mặc định].
 
@@ -801,11 +813,11 @@ Thông tin này được cập nhật lần cứơi vào ngày 2017.12.01 và c�
 - [Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?](#SPECIALIST_MODIFICATIONS)
 - [Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?](#ACCEPT_OR_OFFER_WORK)
 - [Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?](#WANT_TO_CONTRIBUTE)
-- [Giá trị được đề xuất cho "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?](#SCAN_DEBUGGING)
 - [Tôi có thể sử dụng cron để cập nhật tự động không?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Có thể phpMussel quét các tập tin có tên không ANSI?](#SCAN_NON_ANSI)
 - [Danh sách đen – Danh sách trắng – Danh sách xám – Họ là gì, và làm cách nào để sử dụng chúng?](#BLACK_WHITE_GREY)
+- [Khi tôi kích hoạt hoặc hủy kích hoạt các tập tin chữ ký thông qua trang cập nhật, nó sắp xếp chúng theo thứ tự chữ và số trong cấu hình. Tôi có thể thay đổi cách họ được sắp xếp không?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -866,18 +878,6 @@ Vâng. Giấy phép của chúng tôi không cấm điều này.
 #### <a name="WANT_TO_CONTRIBUTE"></a>Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?
 
 Vâng. Đóng góp cho dự án rất được hoan nghênh. Vui lòng xem "CONTRIBUTING.md" để biết thêm thông tin.
-
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Giá trị được đề xuất cho "ipaddr".
-
-Giá trị | Sử dụng
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy reverse Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy reverse Cloudflare.
-`CF-Connecting-IP` | Proxy reverse Cloudflare (một sự thay thế; nếu ở trên không hoạt động).
-`HTTP_X_FORWARDED_FOR` | Proxy reverse Cloudbric.
-`X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
 
 #### <a name="SCAN_DEBUGGING"></a>Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?
 
@@ -1017,6 +1017,24 @@ Trong hai ngữ cảnh này, nằm trong danh sách trắng có nghĩa là khôn
 Danh sách xám cho chữ ký là một danh sách các chữ ký mà về cơ bản sẽ được bỏ qua (điều này đã được đề cập trước đó trong tài liệu). Khi một chữ ký trên danh sách xám được kích hoạt, phpMussel tiếp tục làm việc thông qua các chữ ký của nó và không có hành động cụ thể liên quan đến chữ ký trên danh sách xám. Không có danh sách đen chữ ký, bởi vì hành vi ngụ ý là hành vi bình thường cho chữ ký kích hoạt, và không có danh sách trắng chữ ký, bởi vì hành vi ngụ ý sẽ không thực sự có ý nghĩa trong việc xem xét như thế nào phpMussel hoạt động bình thường và những điều đã có thể đã làm.
 
 Danh sách xám chữ ký rất hữu ích nếu bạn cần giải quyết các vấn đề gây ra bởi một chữ ký cụ thể mà không cần vô hiệu hoặc gỡ cài đặt toàn bộ tập tin chữ ký.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Khi tôi kích hoạt hoặc hủy kích hoạt các tập tin chữ ký thông qua trang cập nhật, nó sắp xếp chúng theo thứ tự chữ và số trong cấu hình. Tôi có thể thay đổi cách họ được sắp xếp không?
+
+Vâng. Nếu bạn cần buộc một số tập tin thực thi theo thứ tự cụ thể, bạn có thể thêm một số dữ liệu tùy ý trước tên của chúng trong chỉ thị cấu hình nơi chúng được liệt kê, được phân tách bằng dấu hai chấm. Khi trang cập nhật sau đó sắp xếp lại các tập tin, dữ liệu tùy ý được thêm này sẽ ảnh hưởng đến thứ tự sắp xếp, gây ra chúng do đó để thực hiện theo thứ tự mà bạn muốn, mà không cần phải đổi tên bất kỳ người nào trong số họ.
+
+Ví dụ, giả sử một chỉ thị cấu hình với các tập tin được liệt kê như sau:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Nếu bạn muốn `file3.php` thực hiện trước, bạn có thể thêm một cái gì đó như `aaa:` trước tên của tập tin:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Sau đó, nếu một tập tin mới, `file6.php`, được kích hoạt, khi trang cập nhật sắp xếp lại tất cả, nó sẽ kết thúc như sau:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Tình huống tương tự khi một tập tin bị hủy kích hoạt. Ngược lại, nếu bạn muốn tập tin thực thi cuối cùng, bạn có thể thêm một cái gì đó như `zzz:` trước tên của tập tin. Trong mọi trường hợp, bạn sẽ không cần đổi tên tập tin đang được đề cập đến.
 
 ---
 
@@ -1218,4 +1236,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 26 Tháng Sáu 2018 (2018.06.26).
+Lần cuối cập nhật: 6 Tháng Bảy 2018 (2018.07.06).
