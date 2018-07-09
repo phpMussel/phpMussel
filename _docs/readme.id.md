@@ -514,6 +514,8 @@ Konfigurasi untuk tanda tangan.
 "Active"
 - Daftar file tanda tangan yang aktif, dipisahkan oleh koma.
 
+*Catat: File tanda tangan harus diinstal pertama-tama, sebelum Anda dapat mengaktifkannya.*
+
 "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
 
@@ -1236,4 +1238,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 6 Juli 2018 (2018.07.06).
+Terakhir Diperbarui: 9 Juli 2018 (2018.07.09).

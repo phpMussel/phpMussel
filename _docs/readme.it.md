@@ -514,6 +514,8 @@ Configurazione per firme.
 "Active"
 - Un elenco dei file di firme attivi, delimitati da virgole.
 
+*Nota: Prima di poter essere attivati, è necessario installare i file delle firme.*
+
 "fail_silently"
 - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
 
@@ -1241,4 +1243,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 6 Luglio 2018 (2018.07.06).
+Ultimo Aggiornamento: 9 Luglio 2018 (2018.07.09).

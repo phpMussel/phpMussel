@@ -514,6 +514,8 @@ Cấu hình cho chữ ký.
 "Active"
 - Một danh sách các kích hoạt tập tin chữ ký, giới hạn bởi dấu phẩy.
 
+*Chú thích: Tập tin chữ ký trước tiên phải được cài đặt, trước khi bạn có thể kích hoạt chúng.*
+
 "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
 
@@ -1236,4 +1238,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Bảy 2018 (2018.07.06).
+Lần cuối cập nhật: 9 Tháng Bảy 2018 (2018.07.09).

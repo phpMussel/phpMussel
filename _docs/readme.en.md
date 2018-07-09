@@ -514,6 +514,8 @@ Signatures configuration.
 "Active"
 - A list of the active signature files, delimited by commas.
 
+*Note: Signature files must firstly be installed, before you can activate them.*
+
 "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
 
@@ -1208,7 +1210,7 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log [encry
 
 #### 11.4 COOKIES
 
-When a user successfully logs into the front-end, phpMussel sets a [cookie](https://en.wikipedia.org/wiki/HTTP_cookie) in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+When a user successfully logs into the front-end, phpMussel sets a [cookie](https://en.wikipedia.org/wiki/HTTP_cookie) in order to be able to remember the user for subsequent requests (i.e., cookies are used to authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
 
 *Relevant configuration directives:*
 - `general` -> `disable_frontend`
@@ -1246,4 +1248,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 6 July 2018 (2018.07.06).
+Last Updated: 9 July 2018 (2018.07.09).

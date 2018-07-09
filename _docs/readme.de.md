@@ -514,6 +514,8 @@ Konfiguration der Signaturen.
 "Active"
 - Eine Liste der aktiven Signaturdateien, die durch Kommas getrennt sind.
 
+*Hinweis: Signaturdateien müssen zuerst installiert werden, bevor Sie sie aktivieren können.*
+
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].
 
@@ -1246,4 +1248,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 6 Juli 2018 (2018.07.06).
+Zuletzt aktualisiert: 9 Juli 2018 (2018.07.09).

@@ -514,6 +514,8 @@ Configuration pour les signatures.
 « Active »
 - Une liste des fichiers de signatures active, délimitée par des virgules.
 
+*Remarque : Les fichiers de signatures doivent d'abord être installés, avant de pouvoir les activer.*
+
 « fail_silently »
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés ? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé ; True = Activé [Défaut].
 
@@ -1242,4 +1244,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 6 Juillet 2018 (2018.07.06).
+Dernière mise à jour : 9 Juillet 2018 (2018.07.09).

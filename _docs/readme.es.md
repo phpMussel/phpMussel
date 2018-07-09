@@ -514,6 +514,8 @@ Configuración de firmas.
 "Active"
 - Una lista de los archivos de firmas activa, delimitados por comas.
 
+*Nota: Los archivos de firma deben estar primero instalados, antes de poder activarlos.*
+
 "fail_silently"
 - ¿Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
 
@@ -1243,4 +1245,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 6 Julio de 2018 (2018.07.06).
+Última Actualización: 9 Julio de 2018 (2018.07.09).

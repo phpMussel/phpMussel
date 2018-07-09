@@ -577,6 +577,8 @@
  <li>قائمة من الملفات توقيع النشطة، محدد بفواصل.</li>
 </ul></div>
 
+<div dir="rtl">ملحوظة: يجب أولاً تثبيت ملفات التوقيع ، قبل أن تتمكن من تنشيطها.<br /><br /></div>
+
 <div dir="rtl">"fail_silently"<br /></div>
 <div dir="rtl"><ul>
  <li>هل يجب على phpMussel الابلاغ عندما يتم توقيع ملفات مفقودة أو تالفة؟ إذا كان "fail_silently" المعوقين، في عداد المفقودين وسيتم الإبلاغ عن ملفات فساد في المسح، وإذا "fail_silently" تمكين، في عداد المفقودين وسيتم تجاهل ملفات فساد، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. وهذا ين بغي عموما أن تترك وحدها إلا إذا كنت تعاني من أعطال أو مشاكل مشابهة. خطأ = معطل. صحيح = ممكن [افتراضي].</li>
@@ -1391,9 +1393,9 @@ phpMussel is optionally able to track statistics such as the total number of fil
 
 phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### <div dir="rtl">١١.٤ ملف تعريف ارتباط<br /><br /></div>
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+<div dir="rtl">عندما يسجل المستخدم بنجاح في الواجهة الأمامية، يعين phpMussel <a href="https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81_%D8%AA%D8%B9%D8%B1%D9%8A%D9%81_%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7">ملف تعريف ارتباط</a> حتى يتمكن من تذكر المستخدم للطلبات اللاحقة (أي، يتم استخدام ملفات تعريف الارتباط لمصادقة المستخدم على جلسة تسجيل الدخول). في صفحة تسجيل الدخول، يتم عرض تحذير ملف تعريف ارتباط بشكل بارز، ويحذر المستخدم من أنه سيتم تعيين ملف تعريف ارتباط إذا شارك في الإجراء ذي الصلة. لا يتم تعيين ملفات تعريف الارتباط في أي نقاط أخرى في مصدر التعليمات البرمجية.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1433,4 +1435,4 @@ When a user successfully logs into the front-end, phpMussel sets a cookie in ord
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 يوليو 2018 (2018.07.06).</div>
+<div dir="rtl">آخر تحديث: 9 يوليو 2018 (2018.07.09).</div>

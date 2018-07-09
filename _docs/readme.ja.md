@@ -514,6 +514,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 "Active" （アクティブ）
 - カンマで区切られたアクティブなシグネチャファイルのリスト。
 
+*注意：シグネチャ・ファイルは、まずアクティブ化する前にインストールする必要があります。*
+
 "fail_silently" （フェイル・サイレントリー）
 - シグネチャファイルがない、​あるいは破損している場合に、​phpMusselがそれをリポートすべきか否か？​`fail_silently`が無効ならば、​問題はリポートされ、​有効であれば、​問題は無視されたスキャニングレポートが作成されます。​クラッシュするというような害がなければ、​デフォルト設定のままにしておくべきです。​`false`（偽） = Disabled/無効; `true`（真） = Enabled/有効 （Default/デフォルト）。
 
@@ -1205,9 +1207,9 @@ phpMussel is optionally able to track statistics such as the total number of fil
 
 phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIES （クッキー）
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+ユーザがフロントエンドに正常にログインすると、phpMusselは後続のリクエストのためにユーザを覚えておくために[Cookie](https://ja.wikipedia.org/wiki/HTTP_cookie)を設定します（すなわち、Cookieはユーザをログインセッションに認証するために使用されます）。​ログイン・ページでは、Cookieの警告が目立つように表示され、関連する操作を行った場合にCookieが設定されることをユーザーに警告します。​Cookieは、コードベースの他のどの場所にも設定されていません。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `disable_frontend`
@@ -1227,7 +1229,7 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 
 一般データ保護規制（ＧＤＰＲ）は、2018年5月25日に発効するＥＵの規制です。​規制の第一の目的は、ＥＵ市民および居住者に個人情報を管理させ、個人情報および個人情報に関するＥＵ内の規制を統一することです。
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+この規制には、ＥＵ（欧州連合）の「データ主体」（識別された、または識別可能な自然人）の「個人識別情報」（ＰＩＩ）の処理に関する特定の規定が含まれています。​規制に準拠するためには、「企業」（規制によって定義されている）、関連するシステムおよびプロセスは、デフォルトで「設計上のプライバシー」を実装する必要があります、最高のプライバシー設定を使用する必要があります、格納された情報または処理された情報のためにセーフガードを実装する必要があります（「スドニマイゼーション」の実装またはデータの完全な「アノニマイゼーション」を含むがこれらに限定されません）、収集するデータの種類、処理方法、理由、保持期間、および第三者とこのデータを共有するかどうかを明確かつ明白に宣言する必要があります、第三者と共有されるデータの種類、方法、理由などが含まれます。
 
 Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
 
@@ -1238,8 +1240,9 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 - [EU一般データ保護規則](https://ja.wikipedia.org/wiki/EU%E4%B8%80%E8%88%AC%E3%83%87%E3%83%BC%E3%82%BF%E4%BF%9D%E8%AD%B7%E8%A6%8F%E5%89%87)
 - [GDPR（EU一般データ保護規制）対策](https://eizone.info/gdpr/)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
+- [GDPRの対象となる個人データとは](https://www.eyjapan.jp/services/advisory/column/2017-06-06.html)
 
 ---
 
 
-最終アップデート：2018年7月6日。
+最終アップデート：2018年7月9日。

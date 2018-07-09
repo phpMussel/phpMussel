@@ -514,6 +514,8 @@ Configuração por assinaturas.
 "Active"
 - Uma lista dos arquivos de assinaturas ativos, delimitados por vírgulas.
 
+*Nota: Arquivos de assinatura devem ser instalados primeiro, antes de você poder ativá-los.*
+
 "fail_silently"
 - Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se `fail_silently` está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se `fail_silently` está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].
 
@@ -1238,4 +1240,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 6 Julho de 2018 (2018.07.06).
+Última Atualização: 9 Julho de 2018 (2018.07.09).

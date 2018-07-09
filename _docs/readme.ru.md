@@ -514,6 +514,8 @@ phpMussel функционирует полностью в автономном 
 «Active»
 - Список активных файлов сигнатур, разделенных запятыми.
 
+*Заметка: Сначала необходимо установить файлы сигнатуры, прежде чем вы сможете их активировать.*
+
 «fail_silently»
 - Реакция phpMussel на отсутсвие сигнатурей или дефект в них. Когда `fail_silently` деактивирована, то в течение сканирования будет сообщаться об отсутствии сигнатуры или изъянах в ней. В случае если `fail_silently` активирована, то отсутствующие или дефектные сигнатуры будут игнорироваться, не сообщая о проблемах. Эта опция должна оставаться такой, если только Вы не ожидаете отказа системы или чего-то подобного. False = Деактивировано; True = Активировано [Стандарт].
 
@@ -1207,7 +1209,7 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 
 #### 11.4 КУКИ
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+Когда пользователь успешно входит в фронтенд, phpMussel устанавливает [куки](https://ru.wikipedia.org/wiki/Cookie), чтобы иметь возможность запоминать пользователя для последующих запросов (то есть, куки используются для аутентификации пользователя в сеансе фронтенд). На странице входа в систему предупреждения куки отображаются на видном месте, предупреждающее пользователя о том, что куки будет установлен, если они участвуют в соответствующем действии. Куки не установлены ни в одном другом месте в кодовой базе.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `disable_frontend`
@@ -1242,4 +1244,4 @@ phpMussel не собирает и не обрабатывает какую-ли
 ---
 
 
-Последнее обновление: 6 Июль 2018 (2018.07.06).
+Последнее обновление: 9 Июль 2018 (2018.07.09).

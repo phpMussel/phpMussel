@@ -514,6 +514,8 @@ Configuratie voor signatures.
 "Active"
 - Een lijst van de actief signature bestanden, gescheiden door komma's.
 
+*Notitie: Signature bestanden moeten eerst worden geïnstalleerd, voordat u ze kunt activeren.*
+
 "fail_silently"
 - Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
@@ -1244,4 +1246,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 6 Juli 2018 (2018.07.06).
+Laatste Bijgewerkt: 9 Juli 2018 (2018.07.09).

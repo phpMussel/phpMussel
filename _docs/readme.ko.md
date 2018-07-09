@@ -514,6 +514,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 "Active"
 - 쉼표로 구분 된 활성 시그니처 파일의 목록입니다.
 
+*노트 : 서명 파일은 설치 될 때까지 활성화 할 수 없습니다.*
+
 "fail_silently"
 - 서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? `fail_silently`이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정).
 
@@ -1205,9 +1207,9 @@ phpMussel is optionally able to track statistics such as the total number of fil
 
 phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE (쿠키)
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+사용자가 프론트 엔드에 성공적으로 로그인하면, phpMussel은 후속 요청에 대해 사용자를 기억할 수 있도록 [쿠키](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4)를 설정합니다 (즉, 쿠키는 로그인 세션에 대해 사용자를 인증하는 데 사용됩니다). 로그인 페이지에서, 사용자는 관련 작업에 참여할 경우 쿠키가 설정된다는 사실을 눈에 띄게 경고합니다. 쿠키는 코드베이스의 다른 지점에서 설정되지 않습니다.
 
 *관련 설정 지시어 :*
 - `general` -> `disable_frontend`
@@ -1241,4 +1243,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-최종 업데이트 : 2018년 7월 6일.
+최종 업데이트 : 2018년 7월 9일.

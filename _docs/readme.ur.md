@@ -577,6 +577,8 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  <li>فعال دستخط کی فائلوں، کوما سے ختم ہونے والی کی ایک فہرست.</li>
 </ul></div>
 
+<div dir="rtl">نوٹ: دستخط فائلوں کو پہلے ہی انسٹال کرنا ضروری ہے، اس سے پہلے کہ آپ ان کو چالو کرسکیں.<br /><br /></div>
+
 <div dir="rtl">"fail_silently"<br /></div>
 <div dir="rtl"><ul>
  <li>چاہئے phpMussel رپورٹ جب دستخط فائلوں غائب یا خراب ہو؟ اگر "fail_silently"، غیر فعال ہے لاپتہ اور خراب فائلوں سکیننگ پر اطلاع دی جائے گی، اور" اگر fail_silently" فعال لاپتہ اور خراب فائلوں کو کسی بھی مسائل موجود نہیں ہیں کہ ان فائلوں کے لئے رپورٹنگ سکیننگ کے ساتھ، نظر انداز کر دیا جائے گا. آپ گر کر تباہ یا اسی طرح کے مسائل کا سامنا کر رہے ہیں جب تک کہ یہ عام تنہا چھوڑ دیا جانا چاہئے. False (جھوٹی) = معذور؛ True (سچے) = چالو کیا [پہلے سے طے شدہ].</li>
@@ -1391,9 +1393,9 @@ phpMussel is optionally able to track statistics such as the total number of fil
 
 phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### <div dir="rtl">١١.٤ کوکی<br /><br /></div>
 
-When a user successfully logs into the front-end, phpMussel sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session). On the login page, a cookie warning is displayed prominently, warning the user that a cookie will be set if they engage in the relevant action. Cookies aren't set at any other points in the codebase.
+<div dir="rtl">صارف کو سامنے کے آخر میں لاگ ان ہونے پر CIDRAM ایک کوکی سیٹ کرتا ہے (تصدیق کے مقاصد کے لئے). لاگ ان کے صفحے پر، صارف کو خبردار کیا جاتا ہے کہ اگر وہ صفحہ مشغول ہوجائے تو ایک کوکی پیدا کی جائے گی. کوکیز کہیں اور نہیں بنائے جاتے ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1432,4 +1434,4 @@ When a user successfully logs into the front-end, phpMussel sets a cookie in ord
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 6 جولائی 2018 (2018.07.06).</div>
+<div dir="rtl">آخری تازہ کاری: 9 جولائی 2018 (2018.07.09).</div>
