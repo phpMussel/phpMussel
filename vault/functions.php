@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.01).
+ * This file: Functions file (last modified: 2018.07.11).
  */
 
 /**
@@ -886,6 +886,8 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
 
     /** Populate vendor name. */
     if (
+        !empty($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]]) &&
+        is_array($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]]) &&
         !empty($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]][$Nibbles[1]]) &&
         is_string($phpMussel['shorthand.yaml']['Vendor Shorthand'][$Nibbles[0]][$Nibbles[1]])
     ) {

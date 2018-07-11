@@ -46,6 +46,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   to specify their own sort order for when the updater activates or deactivates
   signature files.
 
+- [2018.07.11; Bug-fix; Maikuolan]: Wrong vendor name shown for some detections
+  due to a missing check (non-critical); Fixed.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

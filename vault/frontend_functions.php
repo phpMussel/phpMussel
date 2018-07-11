@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.07.01).
+ * This file: Front-end functions file (last modified: 2018.07.10).
  */
 
 /**
@@ -229,15 +229,18 @@ $phpMussel['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
             preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(RC\d{1,2}|-[.\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(alpha\d|RC\d{1,2}|-[.\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^([\w]+)-([\d\w]+)-([\d\w]+)$~i', $Ver, $Matches);
         $Ver = [
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,
             'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
             'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
-            'Build' => isset($Matches[4]) ? substr($Matches[4], 1) : 0
+            'Build' => isset($Matches[4]) ? $Matches[4] : 0
         ];
+        if ($Ver['Build'] && substr($Ver['Build'], 0, 1) === '-') {
+            $Ver['Build'] = substr($Ver['Build'], 1);
+        }
         $Ver = array_map(function ($Var) {
             $VarInt = (int)$Var;
             $VarLen = strlen($Var);
