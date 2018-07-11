@@ -842,7 +842,7 @@ phpMusselは、​ファイルをブロックします | __偽陽性__ | 真陽�
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>シグネチャはどれくらいの頻度でアップデイトされますか？
 
-アップデイト頻度は、​シグネチャファイルによって異なります。​phpMusselのシグネチャファイルのすべてのメンテナーが頻繁にアップデイトを試みる、​しかし、​私たちの皆様には、​他にもさまざまなコミットメントがあり、​私たちはプロジェクトの外で生活しており、​と誰も財政的に補償されていない、​したがって、​正確なアップデイトスケジュールは保証されません。​一般に、​十分な時間があればシグネチャがアップデイトされます。​メンテナーは必要性と範囲間の変化の頻度に基づいて優先順位をつけようとする。​あなたが何かを提供できるのであれば、​援助は常に高く評価されます。
+アップデイト頻度は、​シグネチャファイルによって異なります。​phpMusselのシグネチャファイルのすべてのメンテナーが頻繁にアップデイトを試みる、​しかし、​私たちの皆様には、​他にもさまざまなコミットメントがあり、​私たちはプロジェクトの外で生活しており、​と誰も財政的に補償されていない、​したがって、​正確なアップデイトスケジュールは保証されません。​一般に、​十分な時間があればシグネチャがアップデイトされます。​あなたが何かを提供できるのであれば、​援助は常に高く評価されます。
 
 #### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>phpMusselを使用しているときに問題が発生しましたが、​何をすべきかわかりません！​助けてください！
 
@@ -1231,7 +1231,7 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 
 この規制には、ＥＵ（欧州連合）の「データ主体」（識別された、または識別可能な自然人）の「個人識別情報」（ＰＩＩ）の処理に関する特定の規定が含まれています。​規制に準拠するためには、「企業」（規制によって定義されている）、関連するシステムおよびプロセスは、デフォルトで「設計上のプライバシー」を実装する必要があります、最高のプライバシー設定を使用する必要があります、格納された情報または処理された情報のためにセーフガードを実装する必要があります（「スドニマイゼーション」の実装またはデータの完全な「アノニマイゼーション」を含むがこれらに限定されません）、収集するデータの種類、処理方法、理由、保持期間、および第三者とこのデータを共有するかどうかを明確かつ明白に宣言する必要があります、第三者と共有されるデータの種類、方法、理由などが含まれます。
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+規制によって定義されているように、合法的な根拠がない限り、データを処理することはできません。​一般的に、これは、合法的な基準でデータ対象のデータを処理するためには、法的義務を遵守しなければならないを意味します、または明示され、十分に情報があり、明白な同意がデータ対象から得られた後にのみ行われる。
 
 Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
 

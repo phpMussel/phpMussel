@@ -842,7 +842,7 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>How frequently are signatures updated?
 
-Update frequency varies depending on the signature files in question. All maintainers for phpMussel signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
+Update frequency varies depending on the signature files in question. All maintainers for phpMussel signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them. Assistance is always appreciated if you're willing to offer any.
 
 #### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>I've encountered a problem while using phpMussel and I don't know what to do about it! Please help!
 
