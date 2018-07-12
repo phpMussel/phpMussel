@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.26).
+ * This file: French language data for the front-end (last modified: 2018.07.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,7 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Le paquet principal (moins les signatures, la documentation et la configuration).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?phpmussel-page=logout">Déconnecter</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Déconnecter</a>';
+$phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Autoriser les points de début et de fin dans les noms de fichiers ? Cela peut parfois être utilisé pour cacher des fichiers, ou pour tromper certains systèmes en permettant la traversée de répertoires. False = Ne pas autoriser [Défaut]. True = Autoriser.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Les extensions de fichiers d\'archives reconnus (format est CSV ; devraient ajouter ou supprimer seulement quand problèmes surviennent ; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l\'attaque spécifique détection ; modifier avec prudence ; aussi noter que cela n\'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquer tous les fichiers contenant les caractères de contrôle (autre que les sauts de ligne) ? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Si vous êtes <em><strong>SEULEMENT</strong></em> télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l\'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut] ; True = Bloquer.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Vérifier pour les headers d\'exécutables dans les fichiers qui ne sont pas fichiers exécutable ni reconnue comme archives et pour exécutables dont headers sont incorrects. False = Désactivé ; True = Activé.';

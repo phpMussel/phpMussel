@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.26).
+ * This file: Japanese language data for the front-end (last modified: 2018.07.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,7 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
+$phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ファイル名に先頭と末尾のドットを使用できますか？​これは、ファイルを隠すためや、ディレクトリ・トラバーサルを許可するようにシステムを騙すために使用されることがあります。​<code>false</code>（偽）=許可しない（Default/デフォルト）。<code>true</code>（真）=許可します。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​<code>false</code>（偽） = ブロックしない（Default/デフォルト）；​<code>true</code>（真） = ブロックする。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。​<code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';
@@ -33,13 +34,13 @@ $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'ヘッダーが
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '破損ファイルとエラー解析。​<code>false</code>（偽） = 無視する；​<code>true</code>（真） = ブロックする（Default/デフォルト）。​破損の可能性があるPEファイルをブロックし検出するか否か？​についてです。​PEファイルの一部が破損し、​正しく分析できないことは珍しくなく、​ウィルス感染をみるバロメーターになります。​PEファイル内のウィルスを検出するアンチウィルスプログラムは、​PEファイルの解析を行いますが、​ウィルスを作る側では、​ウィルスが検出されないようそれを避けようとするものだからです。';
 $phpMussel['lang']['config_attack_specific_decode_threshold'] = 'デコード・コマンドが検出されるべき生データの長さの制限（スキャニング中に顕著な問題がある場合に必要に応じて設定）。​デフォルト＝５１２ＫＢ。​ゼロあるいは値なし（null）はしきい値を無効化します（ファイルサイズによる制限を取り除きます）。';
 $phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMusselが読みスキャンしてよい生データの長さの制限（スキャニング中に顕著な問題がある場合に必要に応じて設定）。​デフォルト＝３２ＭＢ。​ゼロあるいは値なし（null）はしきい値を無効化します。​値は、​サーバーやウェブサイトでアップロードされるファイルの平均ファイルサイズより大きく、​filesize_limitディレクティブより小さく設定すべきです。​また"php.ini"設定によってPHPに割り当てられたメモリーのおおよそ5分の１を超えるべきではありません。​このディレクティブはphpMusselがメモリーを使い過ぎないようにするためのものです。​（一定のサイズ以上のファイルはスキャンできなくなることもあります）。';
-$phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'システム上でphpMusselの機能に修正が必要でない限りはこのディレクティブは通常無効です。​無効に設定すると、​<code>$_FILES</code> array()に要素の存在を検知したとき、​その要素が表すファイルのスキャンが開始され、​要素が空白か無であればphpMusselはエラーメッセージを返します。​これは本来phpMusselがあるべき姿です。​しかしＣＭＳにおいては、​$_FILESの空要素は普通に発生するものであり、​正常なphpMusselの挙動が正常なＣＭＳの挙動を阻害する恐れがあります。​このような場合は、​本オプションを有効にして、​phpMusselが空要素をスキャンしてエラーメッセージを返すのを避け、​要求のあったページへスムーズに進むことができるようにします。​<code>false</code>（偽） = OFF （オフ）；​<code>true</code>（真） = ON （オン）です。';
+$phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'システム上でphpMusselの機能に修正が必要でない限りはこのディレクティブは通常無効です。​無効に設定すると、​<code>$_FILES</code> array()に要素の存在を検知したとき、​その要素が表すファイルのスキャンが開始され、​要素が空白か無であればphpMusselはエラーメッセージを返します。​これは本来phpMusselがあるべき姿です。​しかしＣＭＳにおいては、​$_FILESの空要素は普通に発生するものであり、​正常なphpMusselの挙動が正常なＣＭＳの挙動を阻害する恐れがあります。​このような場合は、​本オプションを有効にして、​phpMusselが空要素をスキャンしてエラーメッセージを返すのを避け、​要求のあったページへスムーズに進むことができるようにします。​<code>false</code>（偽）=ＯＦＦ「オフ」です。<code>true</code>（真）=ＯＮ「オン」です。';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'システムあるいはＣＭＳに画像ファイルのアップロードのみを許可するのであれば、​このディレクティブは有効にすべきであり、​そうでなければ無効とします。​有効にすると、​画像と特定できないファイルはスキャンすることなしにブロックしますので、​プロセス時間の短縮とメモリーの節約が期待できます。​<code>false</code>（偽） = OFF （オフ）；​<code>true</code>（真） = ON （オン） です。';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '暗号化されたアーカイブを検出しブロックするか否か？​phpMusselは暗号化されたアーカイブをスキャンすることはできないので、​アーカイブの暗号化によってphpMussel、​アンチウィルススキャナー等をかいくぐろうとする攻撃者がいるかもしれません。​暗号化されたアーカイブをブロックすることにより、​このようなリスクを回避することができます。​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_files_check_archives'] = 'アーカイブのコンテンツに対してチェックを試みるか否かについてです。​<code>false</code>（偽） = チェックしない; <code>true</code>（真） = チェックする（Default/デフォルト）。​現在サポートしているのはBZ、​GZ、​LZF、​ZIP形式です（RAR、​CAB、​7z等は対象外）。​本機能は万能ではありませんので、​有効にしておくことを推奨していますが、​必ず全てを検出することを保証するものではありません。​また現在チェックのアーカイブはZIPに対して再帰的でないことに注意して下さい。';
 $phpMussel['lang']['config_files_filesize_archives'] = 'ファイルサイズのブラックリスト化/ホワイトリスト化をアーカイブのコンテンツに持ち込むか否か？​<code>false</code> = いいえ（ただグレーリストすべて）; <code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_files_filesize_limit'] = 'ファイルサイズ上限の単位はＫＢです。​６５５３６＝６４ＭＢ（Default/デフォルト）；​0 = リミットしません（上限なし、​常にグレイリスト化）、​正の数値であれば何でも構いません。​ＰＨＰの設定でメモリーに制限があったり、​アップロードファイルサイズの上限が設定されている場合に有効的です。';
-$phpMussel['lang']['config_files_filesize_response'] = '上限サイズを超えるファイルをどう処理するかについてです。​<code>false</code>（偽） = Whitelist（ホワイトリスト）; <code>true</code>（真） = Blacklist（ブラックリスト） （Default/デフォルト）。';
+$phpMussel['lang']['config_files_filesize_response'] = '上限サイズを超えるファイルをどう処理するかについてです。​<code>false</code>（偽）=ホワイトリストして「Whitelist」。<code>true</code>（真）=ブラックリストして「Blacklist」（Default/デフォルト）。';
 $phpMussel['lang']['config_files_filetype_archives'] = 'ファイルタイプのブラックリスト化/ホワイトリスト化をアーカイブのコンテンツに持ち込むか否か？​<code>false</code> = いいえ（ただグレーリストすべて） 「Default/デフォルト設定」; <code>true</code> = はい。';
 $phpMussel['lang']['config_files_filetype_blacklist'] = 'ファイルタイプ・ブラックリスト:';
 $phpMussel['lang']['config_files_filetype_greylist'] = 'ファイルタイプ・グレーリスト:';
@@ -79,7 +80,7 @@ $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン�
 $phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？​値は、​ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。​注：個々のログファイルに適用されます。​ログファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_legal_privacy_policy'] = '生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​<code>true</code>（真）=はい；​<code>false</code>（偽）=いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMusselは改ざんやディフェーサー検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';

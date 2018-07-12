@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.26).
+ * This file: Bangla language data for the front-end (last modified: 2018.07.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,6 +22,7 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['Extended Description: phpMussel'] = 'প্রধান প্যাকেজ (স্বাক্ষর, ডকুমেন্টেশন এবং কনফিগারেশন সহ না)।';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">হোম পেজ</a> | <a href="?phpmussel-page=logout">প্রস্থান</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">প্রস্থান</a>';
+$phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ফাইলের নামগুলির মধ্যে শীর্ষস্থানীয় এবং অনুন্নত বিন্দুগুলির অনুমতি দিন? এটি কখনও কখনও ফাইলগুলি লুকাতে, অথবা কিছু সিস্টেমকে ট্রানসালাল ডাইরেক্ট করার অনুমতি দেওয়ার জন্য ব্যবহার করা যেতে পারে। False = অনুমতি দেবেন না [ডিফল্ট]। True = অনুমতি দিন।';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'পরিচিত আর্কাইভ ফাইল এক্সটেনশন (বিন্যাসে CSV হয়; সমস্যাগুলি ঘটলেই কেবল যুক্ত বা অপসারণ করা উচিত; অবাঞ্ছিতভাবে অপসারণ করা মিথ্যা ইতিবাচক প্রদর্শিত হতে পারে, এবং অকৃত্রিমভাবে যোগ করা হবে মূলত আপনি কি নির্দিষ্ট আক্রমণ থেকে যোগ করছেন কি হোয়াইটলিস্ট; সতর্কতা সঙ্গে সংশোধন করুন; এটিও লক্ষ্য করুন যে সামগ্রী-স্তরের আর্কাইভ বিশ্লেষণে এটির কোনো প্রভাব নেই)। মান অনুযায়ী, অধিকাংশ সিস্টেম এবং CMS- এ তালিকাটি সর্বাধিক ব্যবহৃত বিন্যাসে তালিকাভুক্ত করা হয়, কিন্তু এটি অপরিহার্যভাবে বিস্তৃত নয়।';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'কোনও নিয়ন্ত্রণ অক্ষর (নতুন লাইন ব্যতীত) ধারণকারী কোনও ফাইল অবরোধ করুন? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) যদি আপনি কেবলমাত্র প্লেইন-টেক্সট আপলোড করছেন, তাহলে আপনি আপনার সিস্টেমে কিছু অতিরিক্ত সুরক্ষা প্রদান করতে এই সক্ষম করতে পারেন। যাইহোক, যদি আপনি প্লেইন-টেক্সট ছাড়া অন্য কিছু আপলোড, এই সক্রিয় করার ফলে মিথ্যা ইতিবাচক হতে পারে। False = ব্লক করবেন না [ডিফল্ট]; True = ব্লক করুন।';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'এক্সিকিউটেবল করা হয় না বা আর্কাইভ হিসাবে স্বীকৃত নয় যে এক্সিকিউটেবল হেডারগুলিকে অনুসন্ধান করুন, এবং এক্সিকিউটেবলের জন্য অনুসন্ধান করুন যার শিরোনামগুলি ভুল। False = না; True = হাঁ।';

@@ -391,6 +391,11 @@ decode_threshold='512KB'
 ; scan files above a certain filesize).
 scannable_threshold='32MB'
 
+; Allow leading and trailing dots in filenames? This can sometimes be used to
+; hide files, or to trick some systems into allowing directory traversal. False
+; = Don't allow [Default]. True = Allow.
+allow_leading_trailing_dots=false
+
 
 [compatibility]
 

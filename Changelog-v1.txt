@@ -49,6 +49,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.07.11; Bug-fix; Maikuolan]: Wrong vendor name shown for some detections
   due to a missing check (non-critical); Fixed.
 
+- [2018.07.12; Minor code change; Maikuolan]: Removed an unnecessary check that
+  was being performed on the names of files in archives. Added a new
+  configuration directive to optionally enable/disable that same check
+  elsewhere.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

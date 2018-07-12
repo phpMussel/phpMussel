@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.26).
+ * This file: Turkish language data for the front-end (last modified: 2018.07.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,10 +19,10 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_quarantine_max_files'] = 'The maximum number of files that can exist in the quarantine. When new files are added to the quarantine, if this number is exceeded, old files will be deleted until the remainder no longer exceeds this number. Default = 100.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
+$phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Dosya adlarının başında ve sonunda noktalara izin verilsin mi? Bu bazen dosyaları gizlemek veya bazı sistemleri dizin geçişine izin vermek için kandırmak için kullanılabilir. Yanlış/False = İzin verme [Varsayılan]. Doğru/True = İzin ver.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Herhangi bir kontrol karakteri içeren dosyaları engelle (yeni satırlara istisna)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Yalnızca düz metin yüklüyorsanız, sisteminize biraz daha koruma sağlamak için bu seçeneği açabilirsiniz. Bununla birlikte, başka herhangi bir şey için, bunu açtığınızda yanlış pozitif sonuç alabilirsiniz. Yanlış/False = Engelleme [Varsayılan]; Doğru/True = Engelle.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Çalıştırılamaz dosyalarda ve arşiv dışı dosyalarda yürütülebilir üstbilgileri ara ve başlıkları yanlış olan yürütülebilir dosyaları arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
@@ -66,6 +66,7 @@ $phpMussel['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleş
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
 $phpMussel['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel dosyaları karantinaya koyabilir, bunu yapmak istiyorsan. Web sitelerini korumak isteyen, dosyaları derinlemesine analiz etmek istemeyen kullanıcılar bu işlevselliği devre dışı bırakmalıdır. Dosyaları daha derinlemesine analiz etmek isteyen tüm kullanıcılar (ör., kötü amaçlı yazılım araştırmaları) bu işlevselliği etkinleştirmelidir. Dosyaları karantinaya koymak bazen yanlış pozitiflerin hata ayıklanmasına yardımcı olabilir. Bunu devre dışı bırakmak için <code>quarantine_key</code> yönergesini boş bırakın (veya henüz boş değilse içeriğini sil). Etkinleştirmek için bir miktar girin. <code>quarantine_key</code> karantina işlevinin önemli bir güvenlik özelliğidir. Bu yönerge, potansiyel saldırganların karantina içeriğini istismar etmesini önler. <code>quarantine_key</code>, şifrelerinizle aynı şekilde ele alınmalıdır: Dikkatli koruyun, ve uzun olanlar daha iyidir. En iyi efekti elde etmek için <code>delete_on_sight</code> ile birlikte kullanın.';
+$phpMussel['lang']['config_general_quarantine_max_files'] = 'The maximum number of files that can exist in the quarantine. When new files are added to the quarantine, if this number is exceeded, old files will be deleted until the remainder no longer exceeds this number. Default = 100.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'Dosyaların karantinaya alınmasına izin verilen maksimum dosya boyutu. Belirtilen değerden büyük dosyalar karantinaya Alınmayacaktır. Bu yönerge olası herhangi bir saldırganın karantinaya istenmeyen verilerle sel baskını yapmasını zorlaştıran bir araç olarak önemlidir. Varsayılan = 2MB.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'Karantina için izin verilen maksimum bellek kullanımı. Karantina tarafından kullanılan toplam bellek bu değere ulaşırsa, kullanılan en büyük bellek artık bu değere ulaşıncaya kadar en eski karantinaya alınan dosyalar silinir. Bu yönerge olası herhangi bir saldırganın karantinaya istenmeyen verilerle sel baskını yapmasını zorlaştıran bir araç olarak önemlidir. Varsayılan = 64MB.';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMussel tarama sonuçlarını ne kadar süreyle önbelleğe almalı? Değer, tarama sonuçlarının önbellekleneceği saniye sayısıdır. Varsayılan 21600 saniyedir (6 saat); 0 değeri, tarama sonuçlarını önbelleğe almayı devre dışı bırakır.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.11).
+ * This file: Functions file (last modified: 2018.07.12).
  */
 
 /**
@@ -3523,22 +3523,6 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $phpMussel['lang']['_fullstop_final'] . "\n";
         return [$r, $x];
     }
-    if (
-        substr($Filename, 0, 1) === '.' ||
-        substr($Filename, -1) === '.'
-    ) {
-        $r = 2;
-        $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
-        $phpMussel['whyflagged'] .= sprintf(
-            $phpMussel['lang']['_exclamation'],
-            $phpMussel['lang']['scan_filename_manipulation_detected'] . ' (' . $ItemRefSafe . ')'
-        );
-        $x .= $lnap . sprintf(
-            $phpMussel['lang']['_exclamation_final'],
-            $phpMussel['lang']['scan_filename_manipulation_detected']
-        ) . "\n";
-        return [$r, $x];
-    }
     if ($phpMussel['Config']['files']['filetype_archives']) {
         $decPos = strrpos($Filename, '.');
         $ofnLen = strlen($Filename);
@@ -3892,7 +3876,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['lang']['_fullstop_final'] . "\n";
         }
     }
-    if (substr($ofn, 0, 1) === '.' || substr($ofn, -1) === '.') {
+    if (!$phpMussel['Config']['attack_specific']['allow_leading_trailing_dots'] && (
+        substr($ofn, 0, 1) === '.' || substr($ofn, -1) === '.'
+    )) {
         $phpMussel['killdata'] .= '--FILENAME-MANIPULATION-NO-HASH-:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['lang']['_exclamation'],

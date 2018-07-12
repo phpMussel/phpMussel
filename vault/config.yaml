@@ -326,6 +326,9 @@ Config Defaults:
    step: any
    default: "32MB"
    preview: kb
+  allow_leading_trailing_dots:
+   type: bool
+   default: false
  compatibility:
   ignore_upload_errors:
    type: bool
