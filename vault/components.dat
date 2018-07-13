@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.5.0-DEV+18192774
+ Version: 1.5.0-DEV+18193590
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -140,7 +140,7 @@ phpMussel:
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - d89147337a8f363859c90fd1c435f8fe:137872
    - 073240700b56ad1e8b7f1c97c2b82542:91754
-   - 01f2219e751920e2c5a1d0ff1aa961b5:260741
+   - d8cc5a3cec8c9ecc989e78ad6c0b6acc:260121
    - f68948c5b10f16d8506eb1611fd5d8db:4818
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703
@@ -422,7 +422,7 @@ l10n/ru:
 l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
- Version: 2018.192.774
+ Version: 2018.193.590
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -435,13 +435,13 @@ l10n/th:
    - lang/lang.th.fe.php
    - lang/lang.th.php
   Checksum:
-   - 818b498207be74474e90b02b55936de6:92538
+   - 74cea7ad5df979d810bd9a4c15cc7be8:92779
    - 87cad64447b7c8791194b3d70bec19a6:12180
  Reannotate: components.dat
 l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
- Version: 2018.192.774
+ Version: 2018.193.590
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -454,7 +454,7 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - db87eb82acc98f1f00d654c68f63373d:52975
+   - 5207499be1b7f15df9693219a22fe29e:52952
    - e0a42f2dcf85ac10b74840b4b63bf7cf:7986
  Reannotate: components.dat
 l10n/ur:

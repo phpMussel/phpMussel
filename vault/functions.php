@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.12).
+ * This file: Functions file (last modified: 2018.07.13).
  */
 
 /**
@@ -1245,10 +1245,9 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$
  *      entries generated for logging and for the display of scan results in
  *      CLI.
  * @param string $ofn Represents the "original filename" of the file being
- *      scanned (the original filename, in this context, referring to the name
- *      of the file being scanned as per supplied by the upload client or CLI
- *      operator, as opposed to the temporary filename assigned by the server
- *      or any other filename).
+ *      scanned (in this context, referring to the name supplied by the upload
+ *      client or CLI operator, as opposed to the temporary filename assigned
+ *      by the server or anything else).
  * @return array|bool Returns an array containing the results of the scan as
  *      both an integer (the first element) and as human-readable text (the
  *      second element), or returns false if any problems occur preventing the
@@ -3699,13 +3698,13 @@ $phpMussel['SubstrAfterFinalSlash'] = function ($String) {
  * @param int $dpt Represents the current depth of recursion from which the
  *      function has been called. This information is used for determining how
  *      far to indent any entries generated for logging and for the display of
- *      scan results in CLI.
- * @param string $ofn In the context of the initial file upload scanning that
- *      phpMussel performs when operating via a server, this parameter (a
- *      string) represents the "temporary filename" of the file being scanned
- *      (the temporary filename, in this context, referring to the name
- *      temporarily assigned to the file by the server upon the file being
- *      uploaded to the temporary uploads location assigned to the server).
+ *      scan results in CLI (you should never manually set this parameter
+ *      yourself).
+ * @param string $ofn For the file upload scanning that phpMussel normally
+ *      performs by default, this parameter represents the "original filename"
+ *      of the file being scanned (the original filename, in this context,
+ *      referring to the name supplied by the upload client, as opposed to the
+ *      temporary filename assigned by the server or anything else).
  *      When operating in the context of CLI mode, both $f and $ofn represent
  *      the scan target, as per specified by the CLI operator; The only
  *      difference between the two is when the scan target is a directory,
@@ -4593,7 +4592,7 @@ $phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
  * Please refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB
  * SERVERS)", for more information.
  *
- * @param string|array $f Indicates which file, files, directory and/or
+ * @param string|array $f Indicates which file, files, directory, or
  *      directories to scan (can be a string, an array, or a multidimensional
  *      array).
  * @param bool $n A boolean, indicating the format for the scan results to be
@@ -4607,21 +4606,13 @@ $phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
  *      an imploded string. Optional; Defaults to false.
  * @param int $dpt Represents the current depth of recursion from which the
  *      function has been called. This information is used for determining how
- *      far to indent any entries generated for logging and for the display of
- *      scan results in CLI (you should never manually set this parameter
- *      yourself).
- * @param string $ofn In the context of the initial file upload scanning that
- *      phpMussel performs when operating via a server, this parameter (a
- *      string) represents the "original filename" of the file being scanned
- *      (the original filename, in this context, referring to the name of the
- *      file being scanned as per supplied by the upload client, as opposed to
- *      the temporary filename assigned by the server or any other filename).
- *      When operating in the context of CLI mode, both $f and $ofn represent
- *      the scan target, as per specified by the CLI operator; The only
- *      difference between the two is when the scan target is a directory,
- *      rather than a single file; $f will represent the full path to the file
- *      (so, directory plus filename), whereas $ofn will represent only the
- *      filename.
+ *      far to indent any entries generated for logging (you should never
+ *      manually set this parameter yourself).
+ * @param string $ofn For the file upload scanning that phpMussel normally
+ *      performs by default, this parameter represents the "original filename"
+ *      of the file being scanned (the original filename, in this context,
+ *      referring to the name supplied by the upload client, as opposed to the
+ *      temporary filename assigned by the server or anything else).
  * @return bool|int|string|array The scan results, returned as an array when
  *      the $f parameter is an array and when $n and/or $zz is/are false, and
  *      otherwise returned as per described by the README documentation. The
