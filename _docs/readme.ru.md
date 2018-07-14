@@ -618,6 +618,9 @@ phpMussel функционирует полностью в автономном 
 «scannable_threshold»
 - Порог числа исходных данных, которые phpMussel должна прочитать и просканировать (если во время процесса сканирования возникнут ощутимые проблемы производительности). Стандартная установка 32МБ. Ноль или нулевое значение деактивирует ограничения. Основное правило: это значение должно быть меньше среднего объёма загружаемых файлов, которые Вы хотите скачать на свой сервер или веб-страницу, не больше нормы filesize_limit, и не превышать пятой части общей PHP-памяти `php.ini` файлов конфигурации. Эти правила не дают phpMussel использовать слишком большой объём памяти (что препятствовало бы phpMussel успешно сканировать файлы, превышающие определенную величину).
 
+«allow_leading_trailing_dots»
+- Разрешить точки в начале и конце имен файлов? Иногда это может быть использовано для скрытия файлов или для обмана некоторых систем для разрешения обхода каталога. False = Не разрешать [Стандарт]. True = Разрешать.
+
 #### «compatibility» (Категория)
 ДиректиВы совместимости для phpMussel.
 
@@ -1091,9 +1094,9 @@ URL-адреса, найденные в файлах, могут быть пер
 
 Журналов (альтернативно: регистрация, логгинг) – Это важная часть phpMussel по ряду причин. Без регистрируются может быть трудно диагностировать ложные-срабатывания, чтобы точно определить, насколько эффективный phpMussel в любом конкретном контексте, и может быть трудно определить, где его недостатки могут быть, и какие изменения могут потребоваться для его конфигурации или сигнатуры соответственно, чтобы он продолжал функционировать по назначению. Несмотря на это, регистрация может быть нежелательна для всех пользователей и остается полностью необязательной. Несмотря на это, регистрация может быть нежелательна для всех пользователей и остается полностью необязательной. В phpMussel регистрация по умолчанию отключена. Чтобы включить его, phpMussel должен быть настроен соответствующим образом.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Дополнительно, ли ведение журнала разрешено законом, и в какой степени (например, типы информации, которые могут быть зарегистрированы, как долго, и при каких обстоятельствах), может варьироваться в зависимости от юрисдикции и контекста, в котором реализуется phpMussel (например, если вы работаете как индивидуальный лицо, корпоративный лицо, если вы работаете на коммерческой или некоммерческой основе). Поэтому это может быть полезно для вас внимательно прочитать этот раздел.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+phpMussel может выполнять несколько типов ведения журнала. Различные типы ведения журнала включают различные типы информации по разным причинам.
 
 ##### 11.3.0 СКАНИРОВАНИЕ ЖУРНАЛОВ
 
@@ -1198,14 +1201,14 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 
 ##### 11.3.6 СТАТИСТИКА
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel по желанию может отслеживать статистику, такую как общее количество файлов, отсканированных и заблокированных с определенного момента времени. Эта функция отключена по умолчанию, но можно включить с помощью конфигурации пакета. Тип отслеживаемой информации не должен рассматриваться как PII.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `statistics`
 
 ##### 11.3.7 ШИФРОВАНИЕ
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel не шифрует свой кеш или какую-либо информацию журнала. [Шифрование](https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5) кеша и журналов могут быть введены в будущем, но в настоящее время нет конкретных планов. Если вы обеспокоены тем, что несанкционированные сторонние лица получают доступ к частям phpMussel, которые могут содержать PII или конфиденциальную информацию, такую как ее кеш или журналы, я бы рекомендовал, чтобы phpMussel не был установлен в общедоступном месте (например, установить phpMussel за пределами стандартного каталога `public_html` или его эквивалента, доступного большинству стандартных веб-серверов) и я рекомендую применять соответствующие ограничительные разрешения для каталога установки (в частности, для каталога «vault»). Если этого недостаточно для решения ваших проблем, настройте phpMussel таким образом, чтобы типы информации, вызывающие ваши проблемы, не собирались или не регистрировались в первую очередь (например, путем отключения ведения журнала).
 
 #### 11.4 КУКИ
 
@@ -1244,4 +1247,4 @@ phpMussel не собирает и не обрабатывает какую-ли
 ---
 
 
-Последнее обновление: 9 Июль 2018 (2018.07.09).
+Последнее обновление: 14 Июль 2018 (2018.07.14).

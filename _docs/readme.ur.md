@@ -723,7 +723,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">"block_control_characters"<br /></div>
 <div dir="rtl"><ul>
- <li>کسی بھی کنٹرول حروف (نیولائنز علاوہ) استعمال میں کسی بھی فائلوں کو مسدود کریں؟ ("[\x00-\x08\x0b\x0c\x0e\x1f\x7f]") آپ ہو تو <strong><em>صرف</em></strong> اپ لوڈ سادہ ٹیکسٹ، تو آپ اس اختیار کو کچھ اضافی تحفظ فراہم کرنے کے لئے پر تبدیل کر سکتے ہیں آپ کے سسٹم. تاہم، اگر آپ کو سادہ متن کے علاوہ اور کچھ پر اس رخ جھوٹے مثبت نتیجے میں اپ لوڈ کریں. False (جھوٹی) = مسدود نہ کریں [پہلے سے طے شدہ]؛ سچے بلاک =</li>
+ <li>کسی بھی کنٹرول حروف (نیولائنز علاوہ) استعمال میں کسی بھی فائلوں کو مسدود کریں؟ ("[\x00-\x08\x0b\x0c\x0e\x1f\x7f]") آپ ہو تو <strong><em>صرف</em></strong> اپ لوڈ سادہ ٹیکسٹ، تو آپ اس اختیار کو کچھ اضافی تحفظ فراہم کرنے کے لئے پر تبدیل کر سکتے ہیں آپ کے سسٹم. تاہم، اگر آپ کو سادہ متن کے علاوہ اور کچھ پر اس رخ جھوٹے مثبت نتیجے میں اپ لوڈ کریں. False (جھوٹی) = مسدود نہ کریں [پہلے سے طے شدہ]؛ True (سچے) = بلاک.</li>
 </ul></div>
 
 <div dir="rtl">"corrupted_exe"<br /></div>
@@ -739,6 +739,11 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 <div dir="rtl">"scannable_threshold"<br /></div>
 <div dir="rtl"><ul>
  <li>کہ phpMussel پڑھیں اور سکین کرنے کی اجازت ہے خام ڈیٹا کی لمبائی کی حد (کے معاملے میں کوئی نمایاں کارکردگی کے مسائل جبکہ سکیننگ ہیں). پہلے سے طے شدہ = 32MB. زیرو یا خالی قدر حد سے غیر فعال. عام طور پر، اس کی قیمت آپ چاہتے ہیں اور filesize_limit ہدایت کے مقابلے میں زیادہ نہیں ہونا چاہئے، آپ کے سرور یا ویب سائٹ کو حاصل کرنے کی توقع ہے کہ فائل اپ لوڈ کی اوسط فائل سے کم نہیں ہونا چاہئے، اور میں سے ایک تقریبا سے زیادہ پانچویں نہیں ہونا چاہئے کل قابل اجازت میموری مختص "php.ini" ترتیب دینے کی فائل کے ذریعے PHP کے لئے عطا کی. یہ ہدایت بہت زیادہ میموری کا استعمال کرتے ہوئے کی طرف سے phpMussel کو روکنے کے لئے کوشش کرنے کے لئے موجود ہے (کہ کامیابی کی ایک مخصوص فائل کے اوپر فائلوں کو اسکین کرنے کے قابل ہونے سے روکنے کروں گا).</li>
+</ul></div>
+
+<div dir="rtl">"allow_leading_trailing_dots"<br /></div>
+<div dir="rtl"><ul>
+ <li>فائلوں کے آغاز اور اختتام پر نقطہ نظر کی اجازت دیں؟ یہ کبھی کبھی استعمال کرنے کے لئے فائلوں کو چھپانے کے لئے، یا کچھ نظام کو ڈائل کرنے کے لئے استعمال کیا جا سکتا ہے ڈائرکٹری کے تبادلوں کی اجازت دیتا ہے. False (جھوٹی) = اجازت نہ دیں [پہلے سے طے شدہ]؛ True (سچے) = اجازت دیں.</li>
 </ul></div>
 
 #### <div dir="rtl">"compatibility" (قسم)<br /></div>
@@ -1380,9 +1385,9 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
  <li><code dir="ltr">pseudonymise_ip_addresses</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-##### 11.3.6 STATISTICS
+#### <div dir="rtl">١١.٣.٦ اعداد و شمار<br /><br /></div>
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+<div dir="rtl">phpMussel اعداد و شمار کو ٹریک کر سکتے ہیں، جیسے کہ ایک خاص وقت سے کتنے فائلوں کو سکینڈ اور بند کر دیا گیا ہے. یہ خصوصیت ڈیفالٹ کے ذریعہ غیر فعال ہے، لیکن پیکیج کی ترتیب کے ذریعے فعال کیا جا سکتا ہے. ٹریک کردہ معلومات کی قسم PII کے طور پر نہیں جانا چاہئے.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1434,4 +1439,4 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 9 جولائی 2018 (2018.07.09).</div>
+<div dir="rtl">آخری تازہ کاری: 14 جولائی 2018 (2018.07.14).</div>

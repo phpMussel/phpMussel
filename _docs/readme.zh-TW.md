@@ -618,6 +618,9 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 『scannable_threshold』
 - 原始數據讀取和掃描的最大長度（如果有任何引人注目性能問題當掃描）。​默認=32MB。​零或空值將關閉門檻。​按說，​這個數值應不會少於平均文件大小的文件上傳您想和期待收到您的服務器或網站，​應不會多於`filesize_limit`指令，​和應不會多於大致五分之一的總允許內存分配獲授PHP通過`php.ini`配置文件。​這個指令存在為嘗試防止phpMussel從用的太多內存（這個將防止它從能夠順利掃描文件以上的一個特別文件大小）。
 
+『allow_leading_trailing_dots』
+- 允許文件名中的前導和尾隨點？​這有時可用於隱藏文件，或欺騙某些系統允許目錄遍歷。​False（假）=不允許【默認】；True（真）=允許。
+
 #### 『compatibility』 （類別）
 phpMussel兼容性指令。
 
@@ -1087,13 +1090,13 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 *相關配置指令：*
 - `virustotal` -> `vt_public_api_key`
 
-#### 11.3 LOGGING
+#### 11.3 日誌記錄
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+由於多種原因，日誌記錄是phpMussel的重要組成部分。​當沒有日誌記錄時，可能難以診斷和假陽性，可能很難確定phpMussel在某些情況下的表現如何，而且可能很難確定其不足之處，以及可能需要更改哪些配置或簽名，以使其繼續按預期運行。​無論如何，一些用戶可能不想要記錄，並且它仍然是完全可選的。​在phpMussel中，默認情況下日誌記錄是禁用。​要啟用它，必須相應地配置phpMussel。
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+另外，如果日誌記錄在法律上是允許的，並且在法律允許的範圍內（例如，可記錄的信息類型，多長時間，在什麼情況下），可以變化，具體取決於管轄區域和phpMussel的實施上下文（例如，如果您是個人或公司實體經營，如果您在商業或非商業基礎上運營，等等）。​因此，仔細閱讀本節可能對您有用。
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+phpMussel可以執行多種類型的日誌記錄。​不同類型的日誌記錄涉及不同類型的信息，出於各種原因。
 
 ##### 11.3.0 SCAN LOGS
 
@@ -1196,16 +1199,16 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 *相關配置指令：*
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 STATISTICS
+##### 11.3.6 統計
 
-phpMussel is optionally able to track statistics such as the total number of file scanned and blocked since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. The type of information tracked shouldn't be regarded as PII.
+phpMussel可選擇跟踪統計信息，例如自特定時間以來掃描和阻止的文件總數。​默認情況下此功能是禁用，但可以通過程序包配置啟用此功能。​所跟踪的信息類型不應視為PII。
 
 *相關配置指令：*
 - `general` -> `statistics`
 
-##### 11.3.7 ENCRYPTION
+##### 11.3.7 加密
 
-phpMussel doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of phpMussel that may contain PII or sensitive information such as its cache or logs, I would recommend that phpMussel not be installed at a publicly accessible location (e.g., install phpMussel outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure phpMussel as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+phpMussel不[加密](https://zh.wikipedia.org/wiki/%E5%8A%A0%E5%AF%86)其緩存或任何日誌信息。​可能會在將來引入緩存和日誌加密，但目前沒有任何具體的計劃。​如果您擔心未經授權的第三方獲取可能包含PII或敏感信息（如緩存或日誌）的phpMussel部分的訪問權限，我建議不要將phpMussel安裝在可公開訪問的位置（例如，在標準`public_html`或等效目錄之外【可用於大多數標準網絡服務器】安裝phpMussel），​也我建議對安裝目錄強制執行適當的限制權限（特別是對於vault目錄）。​如果這還不足以解決您的疑慮，應該配置phpMussel為不會首先收集或記錄引起您關注的信息類型（例如，通過禁用日誌記錄）。
 
 #### 11.4 COOKIE
 
@@ -1246,4 +1249,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2018年7月9日。
+最後更新：2018年7月14日。
