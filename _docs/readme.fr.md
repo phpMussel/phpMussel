@@ -374,17 +374,17 @@ Ce qui suit est une liste des directives disponibles pour phpMussel dans le `con
 #### « general » (Catégorie)
 Configuration générale pour phpMussel.
 
-« cleanup »
+##### « cleanup »
 - Déensemble variables du script et cache après l'exécution ? False = Non ; True = Oui [Défaut]. Si vous ne utilisez pas le script au-delà l'initiale analyse du téléchargements, devrait ensemble à `true` (oui) à minimiser l'utilisation de la mémoire. Si vous utilisez le script à des fins au-delà l'initiale analyse du téléchargements, devrait ensemble à `false` (non), pour éviter recharger inutilement dupliqué données dans la mémoire. Dans la pratique générale, il devrait probablement être ensemblé à `true`, mais, si vous faites cela, vous ne serez pas être capable d'utiliser le script pour tout chose autre que l'analyse des fichiers téléchargements.
 - N'a pas d'influence en le mode CLI.
 
-« scan_log »
+##### « scan_log »
 - Nom du fichier à enregistrer tous les résultats de l'analyse. Spécifiez un nom de fichier, ou laisser vide à désactiver.
 
-« scan_log_serialized »
+##### « scan_log_serialized »
 - Nom du fichier à enregistrer tous les résultats de l'analyse (le format est sérialisé). Spécifiez un nom de fichier, ou laisser vide à désactiver.
 
-« scan_kills »
+##### « scan_kills »
 - Nom du fichier à enregistrer tous les résultats de bloqué ou tué téléchargements. Spécifiez un nom de fichier, ou laisser vide à désactiver.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
@@ -394,25 +394,25 @@ Configuration générale pour phpMussel.
 - *`scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-« truncate »
+##### « truncate »
 - Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S'applique aux fichiers journaux individuels ! La taille des fichiers journaux n'est pas considérée collectivement.
 
-« log_rotation_limit »
+##### « log_rotation_limit »
 - La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal.
 
-« log_rotation_action »
+##### « log_rotation_action »
 - La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée. Archive = Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée.
 
 *Clarification technique : Dans ce contexte, « plus ancien » signifie moins récemment modifié.*
 
-« timeOffset »
+##### « timeOffset »
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par phpMussel selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
 - Exemple (à ajouter une heure) : `timeOffset=60`
 
-« timeFormat »
+##### « timeFormat »
 - Le format de notation de la date/heure utilisé par phpMussel. Défaut = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
-« ipaddr »
+##### « ipaddr »
 - Où trouver l'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
 Valeurs recommandées pour « ipaddr » :
@@ -427,19 +427,19 @@ Valeur | En utilisant
 *Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
-« enable_plugins »
+##### « enable_plugins »
 - Permettre le support pour les plugins du phpMussel ? False = Non [Défaut] ; True = Oui.
 
-« forbid_on_block »
+##### « forbid_on_block »
 - Devrait phpMussel envoyer 403 headers avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK) ? False = Non (200) ; True = Oui (403) [Défaut].
 
-« delete_on_sight »
+##### « delete_on_sight »
 - Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées propre ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l'analyse, laissez le fichier tel quel [Défaut] ; True = Après l'analyse, si pas propre, supprimer immédiatement.
 
-« lang »
+##### « lang »
 - Spécifiez la langue défaut pour phpMussel.
 
-« numbers »
+##### « numbers »
 - Spécifie comment afficher les nombres.
 
 Valeurs actuellement supportées :
@@ -463,121 +463,121 @@ Valeur | Produit | Description
 
 *Remarque : Ces valeurs ne sont standardisées nulle part, et ne seront probablement pas pertinentes au-delà du package. Aussi, les valeurs supportées peuvent changer à l'avenir.*
 
-« quarantine_key »
+##### « quarantine_key »
 - phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu'il fasse. L'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d'hébergement sans avoir un profondément intérêt dans d'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive `quarantine_key` vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le `quarantine_key` est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le `quarantine_key` devrait être traité de la même manière que vos mots de passe : Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec `delete_on_sight`.
 
-« quarantine_max_filesize »
+##### « quarantine_max_filesize »
 - La maximum taille autorisée de fichiers mis en quarantaine. Fichiers au-dessus de cette valeur ne sera pas placé en quarantaine. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d'inonder votre quarantaine avec des données non désirées ce qui pourrait causer l'emballement d'utilisation des données sur votre service d'hébergement. Défaut = 2Mo.
 
-« quarantine_max_usage »
+##### « quarantine_max_usage »
 - La maximale utilisation autorisée de la mémoire pour la quarantaine. Si la totale d'utilisée mémoire par la quarantaine atteint cette valeur, les anciens fichiers en quarantaine seront supprimés jusqu'à ce que la totale mémoire utilisée n'atteint pas cette valeur. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d'inonder votre quarantaine avec des données non désirées ce qui pourrait causer l'emballement d'utilisation des données sur votre service d'hébergement. Défaut = 64Mo.
 
-« quarantine_max_files »
+##### « quarantine_max_files »
 - Le nombre maximal de fichiers pouvant exister dans la quarantaine. Lorsque de nouveaux fichiers sont ajoutés à la quarantaine, si ce nombre est dépassé, les anciens fichiers seront supprimés jusqu'à ce que le reste ne dépasse plus ce nombre. Défaut = 100.
 
-« honeypot_mode »
+##### « honeypot_mode »
 - Quand le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n'est recommandé d'activer cette fonctionnalité si l'utilisation prévue de phpMussel par l'utilisateur est l'analyse de fichier téléchargements comme la norme, ni est-il recommandé d'utiliser la honeypot fonctionnalité pour fins autres que celles du honeypot. Par défaut, cette option est désactivée. False = Désactivé [Défaut] ; True = Activé.
 
-« scan_cache_expiry »
+##### « scan_cache_expiry »
 - Pour combien de temps devrait phpMussel cache les résultats de l'analyse ? La valeur est le nombre de secondes pour mettre en cache les résultats de l'analyse pour. Par défaut est 21600 secondes (6 heures) ; Une valeur de 0 désactive mettre en cache les résultats de l'analyse.
 
-« disable_cli »
+##### « disable_cli »
 - Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.
 
-« disable_frontend »
+##### « disable_frontend »
 - Désactiver l'accès frontal ? L'accès frontal peut rendre phpMussel plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer phpMussel via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal ; True = Désactiver l'accès frontal [Défaut].
 
-« max_login_attempts »
+##### « max_login_attempts »
 - Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5.
 
-« FrontEndLog »
+##### « FrontEndLog »
 - Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
 
-« disable_webfonts »
+##### « disable_webfonts »
 - Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.
 
-« maintenance_mode »
+##### « maintenance_mode »
 - Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.
 
-« default_algo »
+##### « default_algo »
 - Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).
 
-« statistics »
+##### « statistics »
 - Suivre les statistiques d'utilisation pour phpMussel ? True = Oui ; False = Non [Défaut].
 
-« allow_symlinks »
+##### « allow_symlinks »
 - Parfois, phpMussel n'est pas capable d'accéder directement à un fichier lorsqu'il est nommé d'une certaine manière. L'accès indirect au fichier via des liens symboliques peut parfois résoudre ce problème. Cependant, ce n'est pas toujours une solution viable, car sur certains systèmes, l'utilisation de liens symboliques peut être interdite, ou nécessiter des privilèges administratifs. Cette directive est utilisée pour déterminer si phpMussel doit tenter d'utiliser des liens symboliques pour accéder aux fichiers de manière indirecte, lorsqu'il n'est pas possible de les accéder directement. True = Activer les liens symboliques ; False = Désactiver les liens symboliques [Défaut].
 
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
-« Active »
+##### « Active »
 - Une liste des fichiers de signatures active, délimitée par des virgules.
 
 *Remarque : Les fichiers de signatures doivent d'abord être installés, avant de pouvoir les activer.*
 
-« fail_silently »
+##### « fail_silently »
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés ? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé ; True = Activé [Défaut].
 
-« fail_extensions_silently »
+##### « fail_extensions_silently »
 - Devrait phpMussel signaler quand les extensions sont manquantes ? Si `fail_extensions_silently` est désactivé, extensions manquantes seront signalé sur analyse, et si `fail_extensions_silently` est activé, extensions manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé ; True = Activé [Défaut].
 
-« detect_adware »
+##### « detect_adware »
 - Devrait phpMussel utiliser signatures pour détecter les adwares ? False = Non ; True = Oui [Défaut].
 
-« detect_encryption »
+##### « detect_encryption »
 - Devrait phpMussel détecter et bloquer les fichiers cryptés ? False = Non ; True = Oui [Défaut].
 
-« detect_joke_hoax »
+##### « detect_joke_hoax »
 - Devrait phpMussel utiliser signatures pour détecter les blagues/canulars malware/virus ? False = Non ; True = Oui [Défaut].
 
-« detect_pua_pup »
+##### « detect_pua_pup »
 - Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs ? False = Non ; True = Oui [Défaut].
 
-« detect_packer_packed »
+##### « detect_packer_packed »
 - Devrait phpMussel utiliser signatures pour détecter les emballeurs et des données emballés ? False = Non ; True = Oui [Défaut].
 
-« detect_shell »
+##### « detect_shell »
 - Devrait phpMussel utiliser signatures pour détecter les scripts shell ? False = Non ; True = Oui [Défaut].
 
-« detect_deface »
+##### « detect_deface »
 - Devrait phpMussel utiliser signatures pour détecter les defacements and defacers ? False = Non ; True = Oui [Défaut].
 
 #### « files » (Catégorie)
 Configuration générale pour les gestion des fichiers.
 
-« max_uploads »
+##### « max_uploads »
 - Maximum admissible nombre de fichiers pour analyse lorsque l'analyse de fichier téléchargements avant d'abandonner l'analyse et informer l'utilisateur qu'ils sont téléchargement trop à la fois ! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé : 10. Vous pouvez désirer d'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.
 
-« filesize_limit »
+##### « filesize_limit »
 - Limite de taille des fichiers en Ko. 65536 = 64Mo [Défaut] ; 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements.
 
-« filesize_response »
+##### « filesize_response »
 - Que faire avec des fichiers qui dépassent la limite de taille des fichiers (si existant). False = Énumérer Blanche ; True = Énumérer Noire [Défaut].
 
-« filetype_whitelist », « filetype_blacklist », « filetype_greylist »
+##### « filetype_whitelist », « filetype_blacklist », « filetype_greylist »
 - Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris.
 - L'ordre logique de l'application est :
   - Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise.
   - Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise.
   - Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon.
 
-« check_archives »
+##### « check_archives »
 - Essayer vérifier les contenus des archives ? False = Non (ne pas vérifier) ; True = Oui (vérifier) [Défaut].
 - En ce moment, les seuls formats d'archives et de compression supporté sont BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR et ZIP (les formats d'archives et de compression RAR, CAB, 7z et etc ne sont pas supporté en ce moment).
 - Ce n'est pas à toute épreuve ! Bien que je recommande fortement d'avoir ce reste activée, je ne peux pas garantir il va toujours trouver tout.
 - Aussi être conscient que l'examen d'archives actuellement n'est pas récursif pour PHARs ou ZIPs formats.
 
-« filesize_archives »
+##### « filesize_archives »
 - Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut].
 
-« filetype_archives »
+##### « filetype_archives »
 - Étendre type de fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut].
 
-« max_recursion »
+##### « max_recursion »
 - Maximum récursivité profondeur limite pour archives. Défaut = 10.
 
-« block_encrypted_archives »
+##### « block_encrypted_archives »
 - Détecter et bloquer les archives cryptées ? Parce phpMussel est pas capable d'analyse du contenu des archives cryptées, il est possible que le cryptage des archives peut être utilisé par un attaquant un moyen a tenter de contourner phpMussel, analyseurs anti-virus et d'autres protections. Instruire phpMussel pour bloquer toutes les archives cryptées qu'il découvre pourrait aider à réduire les risques associés à ces possibilités. False = Non ; True = Oui [Défaut].
 
 #### « attack_specific » (Catégorie)
@@ -585,68 +585,71 @@ Configuration pour les détections d'attaque spécifiques.
 
 Détection des attaques de caméléon : False = Désactivé ; True = Activé.
 
-« chameleon_from_php »
+##### « chameleon_from_php »
 - Vérifier pour les header PHP dans les fichiers qui ne sont pas de PHP ni reconnue comme archives.
 
-« chameleon_from_exe »
+##### « can_contain_php_file_extensions »
+- Une liste d'extensions de fichiers autorisés à contenir du code PHP, séparés par des virgules. Si la détection des attaques de caméléon PHP est activée, les fichiers qui contiennent du code PHP, qui ont des extensions qui ne sont pas sur cette liste, seront détectés comme des attaques de caméléon PHP.
+
+##### « chameleon_from_exe »
 - Vérifier pour les headers d'exécutables dans les fichiers qui ne sont pas fichiers exécutable ni reconnue comme archives et pour exécutables dont headers sont incorrects.
 
-« chameleon_to_archive »
+##### « chameleon_to_archive »
 - Vérifier pour les archives dont headers sont incorrects (Supporté : BZ, GZ, RAR, ZIP, GZ).
 
-« chameleon_to_doc »
+##### « chameleon_to_doc »
 - Vérifier pour les documents office dont headers sont incorrects (Supporté : DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
-« chameleon_to_img »
+##### « chameleon_to_img »
 - Vérifier pour les images dont headers sont incorrects (Supporté : BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
-« chameleon_to_pdf »
+##### « chameleon_to_pdf »
 - Vérifier pour les fichiers PDF dont headers sont incorrects.
 
-« archive_file_extensions »
+##### « archive_file_extensions »
 - Les extensions de fichiers d'archives reconnus (format est CSV ; devraient ajouter ou supprimer seulement quand problèmes surviennent ; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection ; modifier avec prudence ; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
 
-« block_control_characters »
+##### « block_control_characters »
 - Bloquer tous les fichiers contenant les caractères de contrôle (autre que les sauts de ligne) ? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut] ; True = Bloquer.
 
-« corrupted_exe »
+##### « corrupted_exe »
 - Fichiers corrompus et erreurs d'analyse. False = Ignorer ; True = Bloquer [Défaut]. Détecter et bloquer les fichiers PE (Portable Executable) potentiellement corrompus ? Souvent (mais pas toujours), lorsque certains aspects d'un fichier PE sont corrompus ou ne peut pas être analysée correctement, il peut être le signe d'une infection virale. Les processus utilisés par la plupart des programmes anti-virus pour détecter les virus dans fichiers PE requérir l'analyse de ces fichiers par méthodes certaines, de ce que, si le programmeur d'un virus est conscient de, seront spécifiquement tenter d'empêcher, en vue de permettre leur virus n'être pas détectée.
 
-« decode_threshold »
+##### « decode_threshold »
 - Seuil à la longueur de brutes données dans laquelle commandes des décodages doivent être détectés (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). Défaut = 512Ko. Zéro ou nulle valeur désactive le seuil (supprimant toute restriction basé sur la taille du fichier).
 
-« scannable_threshold »
+##### « scannable_threshold »
 - Seuil à la longueur de données brutes dans laquelle phpMussel est autorisé à lire et à analyser (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). Défaut = 32Mo. Zéro ou nulle valeur désactive le seuil. En général, cette valeur ne doit pas être moins que la moyenne tailles des fichiers des téléchargements que vous voulez et s'attendent à recevoir de votre serveur ou site web, ne devrait pas être plus que la filesize_limit directive, et ne devrait pas être plus que d'un cinquième de l'allocation de totale mémoire autorisée à PHP via le `php.ini` fichier de configuration. Cette directive existe pour tenter d'empêcher phpMussel d'utiliser trop de mémoire (ce qui l'empêcherait d'être capable d'analyse fichiers dessus d'une certaine taille avec succès).
 
-« allow_leading_trailing_dots »
+##### « allow_leading_trailing_dots »
 - Autoriser les points de début et de fin dans les noms de fichiers ? Cela peut parfois être utilisé pour cacher des fichiers, ou pour tromper certains systèmes en permettant la traversée de répertoires. False = Ne pas autoriser [Défaut]. True = Autoriser.
 
 #### « compatibility » (Catégorie)
 Directives de compatibilité pour phpMussel.
 
-« ignore_upload_errors »
+##### « ignore_upload_errors »
 - Cette directive doit généralement être DÉSACTIVÉ sauf si cela est nécessaire pour la correcte fonctionnalité de phpMussel sur votre spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel détecte la présence d'éléments dans le `$_FILES`() tableau, il va tenter de lancer une analyse du fichiers que ces éléments représentent, et, si ces éléments sont vide, phpMussel retourne un message d'erreur. Ce comportement est normal pour phpMussel. Mais, pour certains CMS, vides éléments dans `$_FILES` peuvent survenir à la suite du naturel comportement de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout, dans ce cas, le normal comportement pour phpMussel seront interférer avec le normal comportement de ces CMS. Si telle une situation se produit pour vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter de lancer d'analyses pour ces vides éléments, ignorer quand il est reconnu et ne pas à retourner tout de connexes messages d'erreur, permettant ainsi la continuation de la requête de page. False = DÉSACTIVÉ ; True = ACTIVÉ.
 
-« only_allow_images »
+##### « only_allow_images »
 - Si vous seulement attendre ou vouloir d'autoriser images à être téléchargé sur votre système ou CMS, et si vous absolument n'avez pas besoin tous les fichiers autres que les images à être téléchargé sur votre système ou CMS, cette directive devrait être ACTIVÉ, mais devrait autrement être DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire phpMussel à bloquer indistinctement tous téléchargements identifié comme non image fichiers, sans analyser. Cela peut réduire le temps de travail et l'utilisation de la mémoire pour les tentativé téléchargements de non image fichiers. False = DÉSACTIVÉ ; True = ACTIVÉ.
 
 #### « heuristic » (Catégorie)
 Directives heuristiques pour phpMussel.
 
-« threshold »
+##### « threshold »
 - Il ya certaines signatures des phpMussel qui sont destinés à identifier des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement sans en eux-mêmes identifier les fichiers en cours de téléchargement spécifiquement comme étant malveillants. Cette « threshold » (seuil) valeur raconte à phpMussel ce que le total maximum poids des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement pour ce qui est admissible avant que ces fichiers doivent être signalées comme malveillant. La définition du poids dans ce contexte est le nombre total de suspectes et potentiellement malveillants qualités identifié. Par défaut, cette valeur sera fixée à 3. Une valeur inférieur va résulter généralement avec une fréquence supérieur de faux positifs mais une nombre supérieur de fichiers signalé comme malveillant, tandis que une valeur inférieur va résulter généralement avec une fréquence inférieur de faux positifs mais un nombre inférieur de fichiers signalé comme malveillant. Il est généralement préférable de laisser cette valeur à sa valeur défaut, sauf si vous rencontrez des problèmes qui sont liés à elle.
 
 #### « virustotal » (Catégorie)
 Configuration pour Virus Total intégration.
 
-« vt_public_api_key »
+##### « vt_public_api_key »
 - Facultativement, phpMussel est capable d'analyser les fichiers en utilisant le Virus Total API comme un moyen de fournir un renforcée niveau de protection contre les virus, trojans, logiciels malveillants et autres menaces. Par défaut, l'analyse des fichiers en utilisant le Virus Total API est désactivé. Pour activer, une Total Virus API clé est nécessaire. En raison de le significative avantage que cela pourrait fournir pour vous, il est quelque chose que je recommande fortement pour l'activer. S'il vous plaît être conscient, cependant, que pour utiliser le Virus Total API, vous _**DEVEZ**_ accepter leurs conditions d'utilisation (Terms of Service) et vous _**DEVEZ**_ respecter toutes les directives selon décrit par la documentation Virus Total ! Vous N'ÊTES PAS autorisé à utiliser cette fonctionnalité SAUF SI :
   - Vous avez lu et accepté les Conditions d'Utilisation (Terms of Service) de Total Virus et son API. Les Conditions d'Utilisation de Total Virus et son API peut être trouvé [Ici](https://www.virustotal.com/en/about/terms-of-service/).
   - Vous avez lu et vous comprendre, au minimum, le préambule du Virus Total Publique API documentation (tout ce qui suit « VirusTotal Public API v2.0 » mais avant « Contents »). Le Virus Total Publique API documentation peut être trouvé [Ici](https://www.virustotal.com/en/documentation/public-api/).
 
 Noter : Si l'analyse des fichiers en utilisant le Virus Total API est désactivé, vous ne serez pas besoin de revoir tout des directives dans cette catégorie (`virustotal`), parce qu'aucun d'eux ne fait rien si cette option est désactivée. Pour acquérir une Virus Total API clé, à partir de quelque part sur leur site web, cliquez sur le lien « Rejoindre notre communauté » situé vers le haut à droite de la page, saisissez les informations demandées, et cliquez sur « S'enregistrer » quand vous avez terminé. Suivez toutes les instructions fournies, et quand vous avez votre publique API clé, copier/coller cette publique API clé à la `vt_public_api_key` directive du `config.ini` fichier de configuration.
 
-« vt_suspicion_level »
+##### « vt_suspicion_level »
 - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant le Virus Total API à ces fichiers qu'il juges comme soupçonneux. Facultativement, vous pouvez régler cette restriction par changeant la valeur de la `vt_suspicion_level` directive.
 - `0` : Fichiers sont seulement considérées comme soupçonneux si, quand étant analysé par phpMussel utilisant ses propres signatures, ils sont réputés pour porter un poids heuristique. Cela signifierait effectivement que l'utilisation du Virus Total API serait être pour une deuxième opinion pour quand phpMussel soupçonne qu'un fichier peut être potentiellement malveillants, mais ne peut pas entièrement exclu que il peut aussi potentiellement être bénigne (non malveillant) et donc serait autrement normalement pas bloquer ou signaler qu'il est malveillant.
 - `1` : Fichiers sont considérés comme soupçonneux si, quand étant analysé par phpMussel utilisant ses propres signatures, ils sont réputés pour porter un poids heuristique, si elles sont connues pour être exécutable (PE fichiers, Mach-O fichiers, ELF/Linux fichiers, etc), ou s'ils sont connus pour être d'une forme qui pourrait contenir exécutable données (tels comme exécutable macros, DOC/DOCX fichiers, archive fichiers tels comme RARs, ZIPS et etc). C'est la valeur par défaut et le niveau de suspicion recommandé d'appliquer, qui signifie effectivement que l'utilisation du Virus Total API serait être pour une deuxième opinion pour quand initialement phpMussel ne peut pas trouver quoi que malveillant ou problématique avec un fichier qu'il considère comme soupçonneux et donc serait autrement normalement pas bloquer ou signaler qu'il est malveillant.
@@ -654,7 +657,7 @@ Noter : Si l'analyse des fichiers en utilisant le Virus Total API est désactiv
 
 Noter : Indépendamment du niveau de suspicion, tous les fichiers qui sont sur la liste noire ou liste blanche soit pour phpMussel ne seront pas analysés en utilisant le Virus API total, parce que ces fichiers seraient ont déjà été déclarés comme soit malveillant ou bénigne par phpMussel avant le moment où ils auraient autrement été analysés par le Virus Total API, et donc, analyser supplémentaire ne serait pas être nécessaire. La capacité de phpMussel pour analyser les fichiers en utilisant le Virus Total API est destiné à renforcer la confiance pour savoir si un fichier est malveillant ou bénigne dans les circonstances où phpMussel lui-même est pas tout à fait certain quant à savoir si un fichier est malveillant ou bénigne.
 
-« vt_weighting »
+##### « vt_weighting »
 - Devrais phpMussel appliquer les résultats de l'analyse en utilisant le Virus Total API comme détections ou comme pondération de détection ? Cette directive existe, parce que, quoique analyse d'un fichier à l'aide de plusieurs moteurs (comme Virus Total fait) devrait résulter en un augmenté taux de détection (et donc en un plus grand nombre de fichiers malveillants être détectés), il peut également résulter en un plus grand nombre de faux positifs, et donc, dans certaines circonstances, les résultats de l'analyse peuvent être mieux utilisées comme un score de confiance plutôt que comme une conclusion définitive. Si la valeur 0 est utilisée, les résultats de l'analyse en utilisant le Virus Total API seront être appliquées comme détections, et donc, si quelconque moteur utilisé par Virus Total marques le fichier analysé comme étant malveillants, phpMussel va considérer le fichier comme malveillant. Si quelconque autre valeur est utilisée, les résultats de l'analyse en utilisant le Virus Total API sera appliquée comme pondération de détection, et donc, le nombre de moteurs utilisés par Total Virus que marque le fichier analysé comme étant malveillant sera servir un score de confiance (ou une pondération de détection) pour savoir si ou non le fichier êtant analysé devrait être considéré comme malveillant par phpMussel (la valeur utilisée représentera le minimum score de confiance ou le poids requis pour être considéré comme malveillant). Une valeur de 0 est utilisée par défaut.
 
 « vt_quota_rate » et « vt_quota_time »
@@ -667,20 +670,20 @@ Noter : Si le scanner d'URLs est désactivé, vous ne serez pas besoin de revoi
 
 Configuration du scanner d'URLs API chercher.
 
-« lookup_hphosts »
+##### « lookup_hphosts »
 - Permet cherches de l'API [hpHosts](http://hosts-file.net/) quand définit comme true. hpHosts ne nécessite pas une clé de l'API pour effectuer des cherches de l'API.
 
-« google_api_key »
+##### « google_api_key »
 - Permet cherches de l'API Google Safe Browsing quand l'API clé nécessaire est définie. API Google Safe Browsing cherches nécessite une clé de l'API, qui peut être obtenu à partir [d'ici](https://console.developers.google.com/).
 - Noter : L'extension cURL est nécessaire pour la utiliser de cette fonctionnalité.
 
-« maximum_api_lookups »
+##### « maximum_api_lookups »
 - Nombre de cherches maximal de l'API pour effectuer par itération d'analyse individuelle. Parce que chaque API cherche supplémentaire va ajouter à la durée totale requise pour compléter chaque itération d'analyse, vous pouvez prévoir une limitation afin d'accélérer le processus d'analyse. Quand défini comme 0, pas de telles nombre maximum admissible sera appliquée. Défini comme 10 par défaut.
 
-« maximum_api_lookups_response »
+##### « maximum_api_lookups_response »
 - Que faire si le nombre de cherches de l'API maximal est dépassée ? False = Ne fais rien (poursuivre le traitement) [Défaut] ; True = Marque/bloquer le fichier.
 
-« cache_time »
+##### « cache_time »
 - Combien de temps (en secondes) devrait les résultats du cherches de l'API être conservé dans le cache ? Défaut est 3600 secondes (1 heure).
 
 #### « legal » (Catégorie)
@@ -688,10 +691,10 @@ Configuration relative aux exigences légales.
 
 *Pour plus d'informations sur les exigences légales et comment cela peut affecter vos exigences de configuration, veuillez vous référer à la section « [INFORMATION LÉGALE](#SECTION11) » de la documentation.*
 
-« pseudonymise_ip_addresses »
+##### « pseudonymise_ip_addresses »
 - Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
-« privacy_policy »
+##### « privacy_policy »
 - L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.
 
 #### « template_data » (Catégorie)
@@ -699,13 +702,13 @@ Directives/Variables pour les modèles et thèmes.
 
 Modèles données est liée à la sortie HTML utilisé pour générer le message « Téléchargement Refusé » affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
 
-« theme »
+##### « theme »
 - Le thème à utiliser par défaut pour phpMussel.
 
-« Magnification »
+##### « Magnification »
 - Grossissement des fontes. Défaut = 1.
 
-« css_url »
+##### « css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.
 
 ---
@@ -1247,4 +1250,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 14 Juillet 2018 (2018.07.14).
+Dernière mise à jour : 17 Juillet 2018 (2018.07.17).
