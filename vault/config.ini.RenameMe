@@ -325,6 +325,12 @@ block_encrypted_archives=true
 ; archives. False = Off; True = On.
 chameleon_from_php=true
 
+; A list of file extensions allowed to contain PHP code, separated by commas.
+; If PHP chameleon attack detection is enabled, files that contain PHP code,
+; which have extensions that aren't on this list, will be detected as PHP
+; chameleon attacks.
+can_contain_php_file_extensions='inc,md,phar,php*,pzp,sig,tpl,txt,tzt'
+
 ; Search for executable headers in files that are neither executables nor
 ; recognised archives and for executables whose headers are incorrect. False =
 ; Off; True = On.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.07.12).
+ * This file: Japanese language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログア�
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ファイル名に先頭と末尾のドットを使用できますか？​これは、ファイルを隠すためや、ディレクトリ・トラバーサルを許可するようにシステムを騙すために使用されることがあります。​<code>false</code>（偽）=許可しない（Default/デフォルト）。<code>true</code>（真）=許可します。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​<code>false</code>（偽） = ブロックしない（Default/デフォルト）；​<code>true</code>（真） = ブロックする。';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'カンマで区切られたＰＨＰコードを含むことができるファイル拡張子のリスト。​ＰＨＰカメレオン攻撃検出が有効になっている場合、このリストにない拡張子を持つＰＨＰコードを含むファイルは、ＰＨＰカメレオン攻撃として検出されます。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。​<code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'ファイルでもなくPHPアーカイブとも認識できないファイル中のPHPヘッダーを探します。​<code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'ヘッダーが正しくないアーカイブを探します（BZ、​GZ、​RAR、​ZIP、​RAR、​GZをサポート）。​<code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';

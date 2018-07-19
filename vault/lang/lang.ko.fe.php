@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.07.12).
+ * This file: Korean language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">로그 아
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '파일 이름에 선행 및 후행 점을 허용 하시겠습니까? 이것은 때때로 파일을 숨기거나 디렉토리 트래버 설을 허용하도록 일부 시스템을 속이는 데 사용될 수 있습니다. <code>false</code> = 허용되지 않습니다 (Default / 기본 설정). <code>true</code> = 허용된다.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '제어 문자를 포함한 파일을 차단 여부 (줄 바꿈을 제외한)? 에 관한 것입니다 (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>). 만약 텍스트를 업로드하는 경우,이 옵션을 사용하여 추가 보호를 강화할 수 있습니다. 텍스트 이외도 업로드 할 경우, 사용하면 오진의 원인이 될 수 있습니다. <code>false</code> = 차단하지 (Default / 기본 설정); <code>true</code> = 차단합니다.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = '쉼표로 구분 된 PHP 코드를 포함 할 수있는 파일 확장명 목록. PHP 카멜레온 공격 탐지가 활성화 된 경우이 목록에없는 확장자를 가진 PHP 코드가 포함 된 파일은 PHP 카멜레온 공격으로 탐지됩니다.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '실행 파일없이 실행 파일의 아카이브도 인식 할 수없는 파일의 실행 헤더 및 악성 헤더의 실행 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '파일도 아니고 PHP 아카이브도 인식 할 수없는 파일에서 PHP 헤더를 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, RAR, GZ 지원). <code>false</code> = 해제; <code>true</code> = 온.';

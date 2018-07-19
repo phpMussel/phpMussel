@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.07.12).
+ * This file: Arabic language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">خروج</
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'السماح النقاط الرائدة والزائدة في أسماء الملفات؟ يمكن استخدام هذا أحيانًا لإخفاء الملفات أو خداع بعض الأنظمة للسماح بدخول الدليل. زائفة/False = لا تسمح [افتراضي]. صحيح/True = السماح.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'ملحقات ملفات الأرشيف المعترف بها (الشكل هو CSV، وينبغي فقط إضافة أو إزالة عندما تحدث المشاكل؛ إزالة دون داع قد يسبب ايجابيات كاذبة لتظهر لملفات الأرشيف، في حين اضاف داع سوف القائمة البيضاء أساسا ما كنت تقوم بإضافة من كشف المحدد الهجوم؛ تعديل مع الحذر، لاحظ أيضا أن هذا ليس له تأثير على ما المحفوظات يمكن ولا يمكن تحليلها على مستوى المحتوى). القائمة، كما هو في التقصير، يسرد تلك الأشكال الأكثر شيوعا في غالبية النظم واتفاقية الأنواع المهاجرة، ولكن عمدا ليست شاملة بالضرورة.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'حظر أي ملفات تحتوي على أي أحرف التحكم (عدا أسطر جديدة)؟ (<code dir="ltr">[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) إذا كنت <strong>فقط</strong> تحميل نص عادي، ثم يمكنك تشغيل هذا الخيار لتوفير بعض الحماية إضافية على النظام الخاص بك. ومع ذلك، إذا قمت بتحميل أي شيء آخر غير نص عادي، وتحول هذا على قد يؤدي إلى ايجابيات كاذبة. = كاذبة لا منع [افتراضي]. صحيح/True = بلوك.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'قائمة ملحقات الملفات المسموح بها تحتوي على شفرة PHP، مفصولة بفواصل. إذا تم تمكين الكشف عن هجوم حرباء PHP، فسيتم الكشف عن الملفات التي تحتوي على كود PHP، والتي تحتوي على ملحقات ليست موجودة في هذه القائمة، على أنها هجمات حرباء على PHP.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'البحث عن العناوين قابلة للتنفيذ في الملفات التي ليست التنفيذية ولا المحفوظات المعترف بها والقابلة للتنفيذ التي هي العناوين غير صحيحة. صحيح/True = على. زائفة/False = إيقاف.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'البحث عن العنوان PHP في الملفات التي ليست ملفات PHP و لا المحفوظات معترفة بها. صحيح/True = على. زائفة/False = إيقاف.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'البحث عن المحفوظات التي عناوينها غير صحيحة (المدعومة: BZ، GZ، RAR، ZIP، RAR، GZ). صحيح/True = على. زائفة/False = إيقاف.';

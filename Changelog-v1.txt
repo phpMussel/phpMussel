@@ -54,6 +54,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   configuration directive to optionally enable/disable that same check
   elsewhere.
 
+- [2018.07.19; Minor code change; Maikuolan]: Added a configuration directive
+  allowing users to specify which file extentions should be accepted as PHP
+  files during a scan. Also performed some subtle refactoring of various parts
+  of the codebase.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

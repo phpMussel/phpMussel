@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.07.12).
+ * This file: Turkish language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış<
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Dosya adlarının başında ve sonunda noktalara izin verilsin mi? Bu bazen dosyaları gizlemek veya bazı sistemleri dizin geçişine izin vermek için kandırmak için kullanılabilir. Yanlış/False = İzin verme [Varsayılan]. Doğru/True = İzin ver.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Herhangi bir kontrol karakteri içeren dosyaları engelle (yeni satırlara istisna)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Yalnızca düz metin yüklüyorsanız, sisteminize biraz daha koruma sağlamak için bu seçeneği açabilirsiniz. Bununla birlikte, başka herhangi bir şey için, bunu açtığınızda yanlış pozitif sonuç alabilirsiniz. Yanlış/False = Engelleme [Varsayılan]; Doğru/True = Engelle.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'PHP kodunun içerilmesine izin verilen dosya uzantıları listesi, virgüllerle ayrılmış. PHP bukalemun saldırı algılama etkinse, bu listede olmayan uzantıları olan PHP kodu içeren dosyalar, PHP bukalemun saldırıları olarak algılanacaktır.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Çalıştırılamaz dosyalarda ve arşiv dışı dosyalarda yürütülebilir üstbilgileri ara ve başlıkları yanlış olan yürütülebilir dosyaları arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'PHP başlıklarını PHP olmayan dosyalarda arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Başlıkları yanlış olan arşivlerde arama yapın (Desteklenen: BZ, GZ, RAR, ZIP, RAR, GZ). Yanlış/False = Kapalı; Doğru/True = Açık.';

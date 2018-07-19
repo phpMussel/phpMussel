@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.07.12).
+ * This file: Dutch language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Uitloggen<
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Sta voorlopende en achterliggende stippen toe in bestandsnamen? Dit kan soms worden gebruikt om bestanden te verbergen, of om sommige systemen te misleiden om doorverwijzing van mappen mogelijk te maken. False = Niet toestaan [Standaard]. True = Toestaan.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe regels)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Als u <em><strong>ALLEEN</strong></em> uploaden platte tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen dit kan leiden tot valse positieven. False = Niet blokkeren [Standaard]; True = Doen blokkeren.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Een lijst met bestandsextensies die PHP-code mogen bevatten, gescheiden door komma\'s. Als PHP chameleon aanval detectie is ingeschakeld, zullen bestanden die PHP-code bevatten, met extensies die niet op deze lijst staan, worden gedetecteerd als PHP chameleon aanvallen.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Zoeken naar PHP header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist. False = Uitgeschakeld; True = Ingeschakeld.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Zoeken naar PHP header in bestanden die niet zijn PHP-bestanden noch herkende archieven. False = Uitgeschakeld; True = Ingeschakeld.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Zoeken naar archieven waarvan headers zijn onjuist (Ondersteunde: BZ, GZ, RAR, ZIP, RAR, GZ). False = Uitgeschakeld; True = Ingeschakeld.';

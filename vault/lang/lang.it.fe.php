@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.07.12).
+ * This file: Italian language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Disconnett
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Consenti punti iniziali e finali nei nomi dei file? Questo a volte può essere usato per nascondere file, o per ingannare alcuni sistemi per consentire l\'attraversamento di directory. False = Non permettere [Predefinito]. True = Permettere.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Riconosciute archivio file estensioni (formato è CSV; deve solo aggiungere o rimuovere quando problemi apparire; rimozione inutilmente può causare falsi positivi per archivio file, mentre aggiungendo inutilmente saranno essenzialmente whitelist quello che si sta aggiungendo dall\'attacco specifico rilevamento; modificare con cautela; anche notare che questo non ha qualsiasi effetto su cui gli archivi possono e non possono essere analizzati dal contenuti livello). La lista, come da predefinito, è i formati utilizzati più comunemente attraverso la maggior parte dei sistemi e CMS, ma apposta non è necessariamente completo.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloccare tutti i file contenenti i controlli caratteri (eccetto per nuove linee)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Se si sta caricando solo normale testo, quindi si puó attivare questa opzione a fornire additionale protezione al vostro sistema. Ma, se si carica qualcosa di diverso da normale testo, abilitando questo opzione può causare falsi positivi. False = Non bloccare [Predefinito]; True = Bloccare.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Un elenco di estensioni di file consentito contenere codice PHP, separato da virgole. Se PHP chameleon attacco rilevamento è abilitato, i file che contengono codice PHP, che hanno estensioni non presenti in questo elenco, saranno rilevati come attacchi chameleon di PHP.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Cercare per eseguibili magici numeri che non sono riconosciuti eseguibili né archivi e per eseguibili cui non sono corrette. False = Disattivato; True = Attivato.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Cercare per PHP magici numeri che non sono riconosciuti PHP file né archivi. False = Disattivato; True = Attivato.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Cercare per archivi di cui non sono corrette (Supportato: BZ, GZ, RAR, ZIP, RAR, GZ). False = Disattivato; True = Attivato.';

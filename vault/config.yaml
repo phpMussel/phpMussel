@@ -292,6 +292,9 @@ Config Defaults:
   chameleon_from_php:
    type: bool
    default: true
+  can_contain_php_file_extensions:
+   type: string
+   default: "inc,md,phar,php*,pzp,sig,tpl,txt,tzt"
   chameleon_from_exe:
    type: bool
    default: true

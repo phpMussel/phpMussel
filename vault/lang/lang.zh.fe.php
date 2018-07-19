@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.07.12).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '允许文件名中的前导和尾随点？​这有时可用于隐藏文件，或欺骗某些系统允许目录遍历。​False（假）=不允许【默认】；True（真）=允许。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，​而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。​这个名单，​作为是作为标准，​名单那些格式使用最常见的横过多数的系统和CMS，​但有意是不全面。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '受阻任何文件包含任何控制字符吗（以外换行符）？​(<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) 如果您只上传纯文本，​您可以激活这个指令以提供某些另外保护在您的系统。​然而，​如果您上传任何事以外纯文本，​激活这个可能结果在假阳性。​False（假）=不受阻【默认】；True（真）=受阻。';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = '允许包含PHP代码的文件扩展名列表，以逗号分隔。​如果启用了PHP变色龙攻击检测，包含PHP代码的文件，其扩展名不在此列表中，将被检测为PHP变色龙攻击。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '寻找可执行头在文件是不可执行文件也不认可存档文件和寻找可执行文件谁的头是不正确。​False（假）=是关闭；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '寻找PHP头在文件是不PHP文件也不认可存档文件。​False（假）=是关闭；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '寻找存档文件谁的头是不正确（已支持：BZ，​GZ，​RAR，​ZIP，​RAR，​GZ）。​False（假）=是关闭；True（真）=是激活。';

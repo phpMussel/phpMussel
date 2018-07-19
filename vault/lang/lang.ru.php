@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.05.16).
+ * This file: Russian language data (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -40,7 +40,7 @@ $phpMussel['lang']['_fullstop_final'] = '.';
 $phpMussel['lang']['bad_command'] = 'Извините, команда непонятна.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'Не удалось завершить процесс сканирования';
 $phpMussel['lang']['cli_is_not_a'] = '%s не файл или каталог.';
-$phpMussel['lang']['cli_ln2'] = " Спасибо за использование phpMussel, PHP сценария предназначенного для\n обнаружения троянов, вирусов, вредоносных программ и других угроз для файлов\n загруженных в вашу систему, на основе подписей ClamAV и других.\n\n PHPMUSSEL АВТОРСКИЕ ПРАВА 2013 и позже GNU/GPLv2 от Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln2'] = " Спасибо за использование phpMussel, PHP сценария предназначенного для\n обнаружения троянов, вирусов, вредоносных программ и других угроз для файлов\n загруженных в вашу систему, на основе сигнатурей ClamAV и других.\n\n PHPMUSSEL АВТОРСКИЕ ПРАВА 2013 и позже GNU/GPLv2 от Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " В настоящее время phpMussel работает в CLI режиме (командной строки интерфейс).\n\n Для сканирования файла или каталога, введите 'scan', а затем имя файла или\n каталога который вы хотите просканировать, и нажмите Enter; Введите 'c' и\n нажмите Enter для списка CLI режима команды; Введите 'q' и нажмите Enter для\n окончания:";
 $phpMussel['lang']['cli_pe1'] = 'Не ПЭ Файл!';
 $phpMussel['lang']['cli_pe2'] = 'ПЭ Разделы:';

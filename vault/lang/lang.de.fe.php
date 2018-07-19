@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.07.12).
+ * This file: German language data for the front-end (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Ausloggen<
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Erlaube führende und nachfolgende Punkte in Dateinamen? Dies kann manchmal verwendet werden, um Dateien auszublenden oder um einige Systeme dazu zu bringen, Directory Traversal zuzulassen. False = Nicht erlauben [Standardeinstellung]. True = Erlauben.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Erkannte Archiv-Dateierweiterungen (Format ist CSV; nur bei Problemen hinzufügen oder entfernen; unnötiges Entfernen könnte Fehlalarme für Archive auslösen, unnötiges Hinzufügen fügt das zur Whitelist hinzu, was vorher als möglicher Angriff definiert wurde; Ändern Sie diese Liste äußerst vorsichtig; Beachten Sie, dass dies keinen Einfluss darauf hat, wozu Archive fähig sind und nicht auf Inhaltsebene analysiert werden können). Diese Liste enthält die Archivformate, die am häufigsten von der Mehrzahl der Systeme und CMS verwendet werden, ist aber absichtlich nicht vollständig.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Sollen Dateien, welche Steuerzeichen (andere als Newline/Zeilenumbruch) enthalten, blockiert werden? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Sofern Sie <em><strong>NUR</strong></em> reinen Text hochladen, können Sie diese Option aktivieren, um Ihrem System zusätzlichen Schutz zu bieten. Sollten Sie anderes als reinen Text hochladen, werden bei aktivierter Option Fehlalarme ausgelöst. False = Nicht blockieren [Standardeinstellung]; True = Blockieren.';
+$phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Eine Liste von Dateierweiterungen, die PHP-Code enthalten dürfen, getrennt durch Kommas. Wenn die PHP-Chameleon-Angriffserkennung aktiviert ist, werden Dateien mit PHP-Code, die Erweiterungen aufweisen, die nicht in dieser Liste enthalten sind, als PHP-Chameleon-Angriffe erkannt.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Suche nach ausführbaren Headern in Dateien, die weder ausführbar noch erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht korrekt sind. False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Suche nach PHP-Headern in Dateien, die weder PHP-Dateien noch erkannte Archive sind. False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Suche nach Archiven, deren Header nicht korrekt sind (Unterstützt: BZ, GZ, RAR, ZIP, RAR, GZ). False = Deaktiviert; True = Aktiviert.';

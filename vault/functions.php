@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.13).
+ * This file: Functions file (last modified: 2018.07.19).
  */
 
 /**
@@ -1168,6 +1168,35 @@ $phpMussel['Detected'] = function (&$heur, &$lnap, &$VN, &$ofn, &$ofnSafe, &$out
         $phpMussel['lang']['_exclamation'],
         sprintf($phpMussel['lang']['detected'], $VN) . ' (' . $ofnSafe . ')'
     );
+};
+
+/**
+ * All needles must assert as the assert state being instances of haystacks.
+ *
+ * @param array $Haystacks The haystacks.
+ * @param array $Needles The needles.
+ * @param string $Padding An optional string to pad haystacks and needles.
+ * @param bool $AssertState MUST (true) or must NOT (false) be an instance of.
+ * @param bool $Mode ALL (false) or ANY (true) must assert.
+ * @return bool True if requirement conforms; False otherwise.
+ */
+$phpMussel['ContainsMustAssert'] = function ($Haystacks, $Needles, $Padding = ',', $AssertState = false, $Mode = false) {
+    foreach ($Haystacks as $Haystack) {
+        $Haystack = $Padding . $Haystack . $Padding;
+        foreach ($Needles as $Needle) {
+            $Needle = $Padding . $Needle . $Padding;
+            if (!$Mode) {
+                if (!is_bool(strpos($Haystack, $Needle)) !== $AssertState) {
+                    return false;
+                }
+                continue;
+            }
+            if (!is_bool(strpos($Haystack, $Needle)) === $AssertState) {
+                return true;
+            }
+        }
+    }
+    return !$Mode;
 };
 
 /**
@@ -2859,16 +2888,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** PHP chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_php']) {
-        if (!(
-            substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $xt . ',') ||
-            substr_count(',php*,', ',' . $xts . ',') ||
-            substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,', ',' . $gzxt . ',') ||
-            substr_count(',php*,', ',' . $gzxts . ',') ||
-            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xts . ',') ||
-            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxts . ',') ||
-            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $xt . ',') ||
-            substr_count(',' . $phpMussel['Config']['attack_specific']['archive_file_extensions'] . ',', ',' . $gzxt . ',')
-        ) && substr_count($str_hex_norm,'3c3f706870')) {
+        if ($phpMussel['ContainsMustAssert']([
+            $phpMussel['Config']['attack_specific']['can_contain_php_file_extensions'],
+            $phpMussel['Config']['attack_specific']['archive_file_extensions']
+        ], [$xts, $gzxts, $xt, $gzxt]) && strpos($str_hex_norm, '3c3f706870') !== false) {
             if (!$flagged) {
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                 $flagged = true;
@@ -3531,17 +3554,15 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $xt = strtolower(substr($Filename, ($decPos + 1)));
             $xts = substr($xt, 0, 3) . '*';
         }
-        if (
-            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
-            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',')
-        ) {
+        if ($phpMussel['ContainsMustAssert']([
+            $phpMussel['Config']['files']['filetype_whitelist']
+        ], [$xt, $xts], ',', true, true)) {
             $x .= $lnap . $phpMussel['lang']['scan_no_problems_found'] . "\n";
             return [$r, $x];
         }
-        if (
-            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
-            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xts . ',')
-        ) {
+        if ($phpMussel['ContainsMustAssert']([
+            $phpMussel['Config']['files']['filetype_blacklist']
+        ], [$xt, $xts], ',', true, true)) {
             $r = 2;
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .= sprintf(
@@ -3553,11 +3574,9 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
                 $phpMussel['lang']['_fullstop_final'] . "\n";
             return [$r, $x];
         }
-        if (
-            $phpMussel['Config']['files']['filetype_greylist'] &&
-            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xt . ',') &&
-            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xts . ',')
-        ) {
+        if (!empty($phpMussel['Config']['files']['filetype_greylist']) && $phpMussel['ContainsMustAssert']([
+            $phpMussel['Config']['files']['filetype_greylist']
+        ], [$xt, $xts])) {
             $r = 2;
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .= sprintf(
@@ -3894,23 +3913,17 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             ) . "\n";
     }
     list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
-    if (
-        substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $gzxt . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $gzxts . ',')
-    ) {
+    if ($phpMussel['ContainsMustAssert']([
+        $phpMussel['Config']['files']['filetype_whitelist']
+    ], [$xt, $xts, $gzxt, $gzxts], ',', true, true)) {
         return (!$n) ? 1 :
             $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
             $phpMussel['lang']['scan_no_problems_found'] . "\n";
     }
-    if (
-        substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xts . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $gzxt . ',') ||
-        substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $gzxts . ',')
-    ) {
+    if ($phpMussel['ContainsMustAssert']([
+        $phpMussel['Config']['files']['filetype_blacklist']
+    ], [$xt, $xts, $gzxt, $gzxts], ',', true, true)) {
         $phpMussel['killdata'] .= '--FILETYPE-BLACKLISTED--NO-HASH-:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['lang']['_exclamation'],
@@ -3925,13 +3938,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['filetype_blacklisted'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
-    if (
-        $phpMussel['Config']['files']['filetype_greylist'] &&
-        !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xt . ',') &&
-        !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xts . ',') &&
-        !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $gzxt . ',') &&
-        !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $gzxts . ',')
-    ) {
+    if (!empty($phpMussel['Config']['files']['filetype_greylist']) && $phpMussel['ContainsMustAssert']([
+        $phpMussel['Config']['files']['filetype_greylist']
+    ], [$xt, $xts, $gzxt, $gzxts])) {
         $phpMussel['killdata'] .= '----FILETYPE--NOT-GREYLISTED----:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['lang']['_exclamation'],
@@ -5313,19 +5322,19 @@ $phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel
 $phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
     $phpMussel['killdata'] .=
         '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
-        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ':' .
-        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . "\n";
+        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']] . ':' .
+        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . "\n";
     $phpMussel['whyflagged'] .= sprintf($phpMussel['lang']['_exclamation'],
         $phpMussel['lang']['upload_limit_exceeded'] .
-        ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ')'
+        ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . ')'
     );
     if (
         $phpMussel['Config']['general']['delete_on_sight'] &&
-        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
-        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
+        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
         !$phpMussel['Config']['general']['honeypot_mode']
     ) {
-        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
     }
 };
 
