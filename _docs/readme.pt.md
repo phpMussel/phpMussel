@@ -1246,4 +1246,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 17 Julho de 2018 (2018.07.17).
+Última Atualização: 20 Julho de 2018 (2018.07.20).

@@ -546,7 +546,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 ##### <div dir="rtl">"disable_webfonts"<br /></div>
 <div dir="rtl"><ul>
- <li>Webfonts کے غیر فعال کریں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = کوئی.</li>
+ <li>ویب فونٹس کے غیر فعال کریں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = کوئی.</li>
 </ul></div>
 
 ##### <div dir="rtl">"maintenance_mode"<br /></div>
@@ -857,14 +857,14 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات/متغیر.<br /><br /></div>
 
-<div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ phpMussel لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار "template_custom.html" فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار "template.html" فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں foo="bar" بار کے کسی بھی مثال &lt;p&gt;{foo}&lt;/p&gt; HTML پیداوار کے اندر اندر پایا بن جائے گا &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
+<div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ phpMussel لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار <code dir="ltr">template_custom.html</code> فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار <code dir="ltr">template.html</code> فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں <code dir="ltr">foo="bar"</code> بار کے کسی بھی مثال <code dir="ltr">&lt;p&gt;{foo}&lt;/p&gt;</code> HTML پیداوار کے اندر اندر پایا بن جائے گا <code dir="ltr">&lt;p&gt;bar&lt;/p&gt;</code>.<br /><br /></div>
 
 ##### <div dir="rtl">"theme"<br /></div>
 <div dir="rtl"><ul>
  <li>phpMussel لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.</li>
 </ul></div>
 
-##### <div dir="rtl">"Magnificatio"<br /></div>
+##### <div dir="rtl">"Magnification"<br /></div>
 <div dir="rtl"><ul>
  <li>فونٹ اضافہ. پہلے سے طے شدہ = 1.</li>
 </ul></div>
@@ -1237,9 +1237,9 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 <div dir="rtl">شفافیت کے مقصد کے لئے، مشترکہ معلومات کی قسم ذیل میں بیان کی گئی ہے.<br /><br /></div>
 
-##### 11.2.0 WEBFONTS
+##### <div dir="rtl">١١.٢.٠ ویب فونٹس<br /><br /></div>
 
-Some custom themes, as well as the the standard UI ("user interface") for the phpMussel front-end and the "Upload Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری phpMussel صارف انٹرفیس، اور "اپ لوڈ کریں تردید" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1444,4 +1444,4 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 17 جولائی 2018 (2018.07.17).</div>
+<div dir="rtl">آخری تازہ کاری: 20 جولائی 2018 (2018.07.20).</div>

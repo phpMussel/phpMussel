@@ -1249,4 +1249,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 17 Luglio 2018 (2018.07.17).
+Ultimo Aggiornamento: 20 Luglio 2018 (2018.07.20).

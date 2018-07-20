@@ -1165,7 +1165,7 @@ Una entrada de registro en el front-end contiene la dirección IP del usuario qu
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Conectado.
 ```
 
-La directiva de configuración responsable del inicio de sesión es:
+*La directiva de configuración responsable del inicio de sesión es:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTACIÓN DE REGISTROS
@@ -1251,4 +1251,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 17 Julio de 2018 (2018.07.17).
+Última Actualización: 20 Julio de 2018 (2018.07.20).

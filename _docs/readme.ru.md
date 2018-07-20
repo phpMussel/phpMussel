@@ -1141,7 +1141,7 @@ IP ADDRESS: 127.0.0.1
 Обнаружено phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Помещен на карантин в "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+Помещен на карантин в «/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu».
 ```
 
 Запись обычно включает следующую информацию:
@@ -1157,12 +1157,12 @@ IP ADDRESS: 127.0.0.1
 
 ##### 11.3.2 ФРОНТЕНД ЖУРНАЛОВ
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Этот тип ведения журнала связан с попытками входа в фронтенд и возникает только тогда, когда пользователь пытается войти в фронтенд (при условии, что фронтенд включен).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Эти записи журнала содержат IP-адрес пользователя, пытающегося войти в систему, дату и время совершения попытки, и результаты попытки (успешно вошел в систему или не смог войти в систему). Обычно они выглядят примерно так (в качестве примера):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - В настоящее время вошли в систему.
 ```
 
 *Соответствующие директивы конфигурации:*
@@ -1170,11 +1170,11 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 
 ##### 11.3.3 ВРАЩЕНИЕ ЖУРНАЛА
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Возможно, вы захотите очистить журналы через определенный промежуток времени или, возможно, потребуется сделать это по закону (то есть, количество времени, которое законно допустимо для вас сохранять журналы, может быть ограничено законом). Вы можете достичь этого, включив маркеры даты/времени в имена ваших файлов журналов в соответствии с настройками вашего пакета (например, `{yyyy}-{mm}-{dd}.log`), и затем разрешить вращение журнала (поворот журнала позволяет выполнять некоторые действия на лог-файлах при превышении указанных пределов).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Например: Если мне было необходимо закончить журналы через 30 дней, я мог бы указать `{dd}.log` в именах моих лог-файлов (`{dd}` представляет дни), установить значение `log_rotation_limit` в 30, и установить значение `log_rotation_action` в `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+И наоборот, если вам необходимо сохранять журналы в течение длительного периода времени, вы можете либо не использовать поворот журнала вообще, либо вы можете установить значение `log_rotation_action` в `Archive`, чтобы сжать лог-файлы, тем самым уменьшив общий объем занимаемого ими дискового пространства.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `log_rotation_limit`
@@ -1182,22 +1182,18 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 ##### 11.3.4 УСЕЧЕНИЕ ЖУРНАЛА
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Также возможно обрезать отдельные лог-файлы, если они превышают определенный размер, если это то, что вы хотите/нуждаетесь сделать.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `truncate`
 
-##### 11.3.5 ПСЕВДОНИФИКАЦИЯ IP-АДРЕСА
+##### 11.3.5 ПСЕВДОНИМИЗАЦИЯ IP-АДРЕСА
 
-Во-первых, если вы не знакомы с термином, «псевдонификация» относится к обработке персональных данных таким образом, что она не может быть идентифицирована ни с каким конкретным объектом данных без дополнительной информации, и при условии, что такая дополнительная информация поддерживается отдельно и подлежит техническим и организационным мерам для обеспечения того, чтобы личные данные не могли быть идентифицированы ни одному физическому лицу.
+Во-первых, если вы не знакомы с термином, «псевдонимизация» относится к обработке персональных данных таким образом, что она не может быть идентифицирована ни с каким конкретным объектом данных без дополнительной информации, и при условии, что такая дополнительная информация поддерживается отдельно и подлежит техническим и организационным мерам для обеспечения того, чтобы личные данные не могли быть идентифицированы ни одному физическому лицу.
 
-Следующие ресурсы могут помочь объяснить это более подробно:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+В некоторых случаях вам может быть юридически требуется анонимизировать или псевдонимизировать любого PII, собранного, обработанного, или сохраненного. Хотя эта концепция существует уже довольно давно, GDPR/DSGVO особенно упоминает и специально поощряет «псевдонимизация».
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
-
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+phpMussel может псевдонимизировать IP-адреса при входе в журналы, если это то, что вы хотите/нуждаетесь сделать. Когда phpMussel псевдонимизирует IP-адреса, при входе в журналы, окончательный октет адресов IPv4, и все после второй части адресов IPv6 представлено символом «x» (эффективно округляя адреса IPv4 до начального адреса 24-й подсети, в которую они входят, и адреса IPv6 на начальный адрес 32-й подсети, в которую они входят).
 
 *Соответствующие директивы конфигурации:*
 - `legal` -> `pseudonymise_ip_addresses`
@@ -1250,4 +1246,4 @@ phpMussel не собирает и не обрабатывает какую-ли
 ---
 
 
-Последнее обновление: 17 Июль 2018 (2018.07.17).
+Последнее обновление: 20 Июль 2018 (2018.07.20).

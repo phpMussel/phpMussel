@@ -1101,56 +1101,56 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 phpMussel可以執行多種類型的日誌記錄。​不同類型的日誌記錄涉及不同類型的信息，出於各種原因。
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 掃描日誌
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+當在程序包配置中啟用時，phpMussel保存文件掃描日誌。​此類日誌記錄有兩種不同的格式：
+- 人類可讀的日誌文件。
+- 序列化日誌文件。
 
-Entries to a human readable logfile typically look something like this (as an example):
+人類可讀日誌文件的條目通常看起來像這樣（作為示例）：
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 開始。
+> 檢查'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> 檢測phpMussel-Testfile.ASCII.Standard！
+Mon, 21 May 2018 00:48:04 +0800 完了。
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+掃描日誌條目通常包括以下信息：
+- 掃描文件的日期和時間。
+- 掃描的文件的名稱。
+- CRC32b哈希的文件名和內容。
+- 文件中檢測到的內容（如果檢測到任何內容）。
 
 *相關配置指令：*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+當這些指令保留為空時，此類日誌記錄將保持禁用狀態。
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 掃描殺死
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+在程序包配置中啟用時，phpMussel會保留已阻止的上傳日誌。
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+『掃描殺死』日誌文件的條目通常看起來像這樣（作為示例）：
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+檢測phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)！
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+隔離為『/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu』。
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+『掃描殺戮』條目通常包括以下信息：
+- 上傳被阻止的日期和時間。
+- 上傳源自的IP地址。
+- 文件被阻止的原因（檢測到的內容）。
+- 被阻止文件的名稱。
+- 被阻止文件的MD5和大小。
+- 是否文件被隔離，以及內部名稱是什麼。
 
 *相關配置指令：*
 - `general` -> `scan_kills`
@@ -1252,4 +1252,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2018年7月17日。
+最後更新：2018年7月20日。

@@ -1165,7 +1165,7 @@ Ein Front-End-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich a
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Eingeloggt.
 ```
 
-Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:
+*Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 PROTOKOLLROTATION
@@ -1254,4 +1254,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 17 Juli 2018 (2018.07.17).
+Zuletzt aktualisiert: 20 Juli 2018 (2018.07.20).

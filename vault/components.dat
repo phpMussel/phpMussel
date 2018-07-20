@@ -403,7 +403,7 @@ l10n/pt:
 l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
- Version: 2018.199.463
+ Version: 2018.200.677
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -417,7 +417,7 @@ l10n/ru:
    - lang/lang.ru.php
   Checksum:
    - b6d010f630881e76a6ff4cd2ea577f36:76980
-   - f8f070db99f567259876b874bcb7747d:10698
+   - d344f6f7e35409c530b8d831259a29f1:10698
  Reannotate: components.dat
 l10n/th:
  Name: L10N: ภาษาไทย
@@ -460,7 +460,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2018.199.463
+ Version: 2018.200.677
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -473,7 +473,7 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - de030731530fb2a1c4605ac021ef57cc:75671
+   - f46232ceabfae373bc842d2a7f03f9ee:75680
    - 556d3569112a176cb667bf48327dd5a7:9587
  Reannotate: components.dat
 l10n/vi:
