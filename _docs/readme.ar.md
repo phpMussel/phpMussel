@@ -1246,9 +1246,9 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
  <li><code dir="ltr">disable_webfonts</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.2.1 URL SCANNER
+##### <div dir="rtl">١١.٢.١ ماسح URL<br /><br /></div>
 
-URLs found within file uploads may be shared with the hpHosts API or the Google Safe Browsing API, depending on how the package is configured. In the case of the hpHosts API, this behaviour is enabled by default. The Google Safe Browsing API requires API keys in order to work correctly, and is therefore disabled by default.
+<div dir="rtl">قد تتم مشاركة عناوين URL الموجودة داخل عمليات تحميل الملفات مع واجهة برمجة التطبيقات لـ hpHosts أو واجهة برمجة تطبيقات التصفح الآمن من Google، بناءً على كيفية تهيئة الحزمة. في حالة API hpHosts، يتم تمكين هذا السلوك بشكل افتراضي. تتطلب واجهة برمجة تطبيقات التصفح الآمن من Google مفاتيح API لكي تعمل بشكل صحيح، وبالتالي يتم تعطيلها افتراضيًا.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1256,7 +1256,7 @@ URLs found within file uploads may be shared with the hpHosts API or the Google 
  <li><code dir="ltr">google_api_key</code> &lt;- <code dir="ltr">urlscanner</code></li>
 </ul></div>
 
-##### 11.2.2 VIRUS TOTAL
+##### <div dir="rtl">١١.٢.٢ VIRUS TOTAL<br /><br /></div>
 
 When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
 
