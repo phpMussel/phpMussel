@@ -1250,4 +1250,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 20 Juillet 2018 (2018.07.20).
+Dernière mise à jour : 27 Juillet 2018 (2018.07.27).

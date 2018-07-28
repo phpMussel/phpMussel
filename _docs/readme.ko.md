@@ -1084,7 +1084,7 @@ phpMussel 프론트 엔드 및 "업로드 거부"페이지의 표준 UI ("사용
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. An API key is required in order to use this feature.
 
 Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
 
@@ -1249,4 +1249,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 7월 20일.
+최종 업데이트 : 2018년 7월 27일.

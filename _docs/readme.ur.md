@@ -1239,7 +1239,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### <div dir="rtl">١١.٢.٠ ویب فونٹس<br /><br /></div>
 
-<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری phpMussel صارف انٹرفیس، اور "اپ لوڈ کریں تردید" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
+<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری phpMussel صارف انٹرفیس، اور "اپ لوڈ کریں تردید" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a dir="ltr" href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1258,11 +1258,11 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### <div dir="rtl">١١.٢.٢ VIRUS TOTAL<br /><br /></div>
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+<div dir="rtl">جب phpMussel فائل فائل اپ لوڈ کرتا ہے، ان فائلوں کے ہیس کو Virus Total API کے ساتھ اشتراک کیا جاسکتا ہے، اس پر منحصر ہے کہ کس طرح پیکج کو تشکیل دیا گیا ہے. مستقبل میں کچھ عرصے سے پوری فائلوں کو بھی اشتراک کرنے کے قابل ہونے کا منصوبہ موجود ہے، لیکن اس خصوصیت اس وقت پیکج کے ذریعہ معاون نہیں ہے. اس خصوصیت کو استعمال کرنے کے لئے API کی کلید کی ضرورت ہے.<br /><br /></div>
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+<div dir="rtl">معلومات Virus Total کے ساتھ اشتراک کیا جا سکتا ہے، تحقیق کے مقاصد کے لۓ ان کے شراکت دار، ملحقہ، اور دیگر دیگر کے ساتھ بھی اشتراک کیا جا سکتا ہے. یہ ان کی رازداری کی پالیسی کی طرف سے مزید تفصیل میں بیان کی گئی ہے.<br /><br /></div>
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+<div dir="rtl">دیکھیں: <a dir="ltr" href="https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy">Privacy Policy &ndash; VirusTotal</a>.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1444,4 +1444,4 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 20 جولائی 2018 (2018.07.20).</div>
+<div dir="rtl">آخری تازہ کاری: 27 جولائی 2018 (2018.07.27).</div>

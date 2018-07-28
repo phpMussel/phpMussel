@@ -1254,4 +1254,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 20 July 2018 (2018.07.20).
+Last Updated: 27 July 2018 (2018.07.27).

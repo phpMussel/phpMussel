@@ -1258,11 +1258,11 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### <div dir="rtl">١١.٢.٢ VIRUS TOTAL<br /><br /></div>
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. The Virus Total API requires an API key in order to work correctly, and is therefore disabled by default.
+<div dir="rtl">عندما يقوم phpMussel بمسح تحميل الملف، قد تتم مشاركة تجزئة تلك الملفات مع Virus Total API ، بناءً على كيفية تكوين الحزمة. هناك خطط لتتمكن من مشاركة ملفات كاملة في وقت ما في المستقبل أيضًا، ولكن هذه الميزة غير مدعومة بواسطة الحزمة في الوقت الحالي. مطلوب مفتاح API من أجل استخدام هذه الميزة.<br /><br /></div>
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+<div dir="rtl">يمكن أيضًا مشاركة المعلومات (بما في ذلك الملفات والبيانات الوصفية ذات الصلة للملف) التي تم مشاركتها مع Virus Total مع شركائها والشركات التابعة لها ومختلف الشركات الأخرى لأغراض البحث. يتم وصف ذلك بمزيد من التفاصيل من خلال سياسة الخصوصية الخاصة بهم.<br /><br /></div>
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+<div dir="rtl">نرى: <a dir="ltr" href="https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy">Privacy Policy &ndash; VirusTotal</a>.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1445,4 +1445,4 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 ---
 
 
-<div dir="rtl">آخر تحديث: 20 يوليو 2018 (2018.07.20).</div>
+<div dir="rtl">آخر تحديث: 27 يوليو 2018 (2018.07.27).</div>

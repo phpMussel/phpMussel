@@ -1254,4 +1254,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 20 Juli 2018 (2018.07.20).
+Zuletzt aktualisiert: 27 Juli 2018 (2018.07.27).

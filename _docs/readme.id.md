@@ -1244,4 +1244,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 20 Juli 2018 (2018.07.20).
+Terakhir Diperbarui: 27 Juli 2018 (2018.07.27).

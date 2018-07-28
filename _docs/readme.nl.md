@@ -1252,4 +1252,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 20 Juli 2018 (2018.07.20).
+Laatste Bijgewerkt: 27 Juli 2018 (2018.07.27).
