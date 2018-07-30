@@ -624,6 +624,9 @@ Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 ##### "allow_leading_trailing_dots"
 - Cho phép các dấu chấm đầu và cuối trong tên tập tin? Điều này đôi khi có thể được sử dụng để ẩn các tập tin hoặc để lừa một số hệ thống cho phép truyền traversal thư mục. False = Không cho phép [Mặc định]. True = Cho phép.
 
+##### "block_macros"
+- Thử chặn bất kỳ tập tin nào chứa macro? Một số loại tài liệu và bảng tính có thể chứa macro thực thi, do đó cung cấp một vectơ phần mềm độc hại tiềm ẩn nguy hiểm. False = Không chặn [Mặc định]; True = Chặn.
+
 #### "compatibility" (Thể loại)
 Cấu hình khả năng tương thích cho phpMussel.
 

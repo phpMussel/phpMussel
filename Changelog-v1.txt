@@ -59,6 +59,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   files during a scan. Also performed some subtle refactoring of various parts
   of the codebase.
 
+- [2018.07.31; NEW FEATURE; Maikuolan]: Added the ability to block files that
+  contain macros and a new corresponding directive. Refactored various parts of
+  the codebase. Removed an old closure that wasn't needed anymore. Updated the
+  OLE testfile.
+
 === Version/Release 1.4.0 ===
 MINOR RELEASE.
 

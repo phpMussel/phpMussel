@@ -624,6 +624,9 @@ Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
 ##### "allow_leading_trailing_dots"
 - Consenti punti iniziali e finali nei nomi dei file? Questo a volte può essere usato per nascondere file, o per ingannare alcuni sistemi per consentire l'attraversamento di directory. False = Non permettere [Predefinito]. True = Permettere.
 
+##### "block_macros"
+- Prova a bloccare qualsiasi file contenente macro? Alcuni tipi di documenti e fogli di calcolo possono contenere macro eseguibili, fornendo così un pericoloso vettore potenziale di malware. False = Ignorarli; True = Bloccarli [Predefinito].
+
 #### "compatibility" (Categoria)
 Compatibilità direttive per phpMussel.
 

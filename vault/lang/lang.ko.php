@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.05.16).
+ * This file: Korean language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = '인스턴스가 이미 활성�
 $phpMussel['lang']['invalid_data'] = '유효하지 않은 데이터!';
 $phpMussel['lang']['invalid_file'] = '유효하지 않은 파일';
 $phpMussel['lang']['invalid_url'] = '유효하지 않은 URL!';
+$phpMussel['lang']['macros_not_permitted'] = '매크로는 허용되지 않습니다';
 $phpMussel['lang']['ok'] = '괜찮아';
 $phpMussel['lang']['only_allow_images'] = '이미지 이외의 파일을 업로드하는 것은 허용되지 않습니다';
 $phpMussel['lang']['plugins_directory_nonexistent'] = '플러그인 디렉토리가 존재하지 않습니다!';

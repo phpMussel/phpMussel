@@ -624,6 +624,9 @@ Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
 ##### "allow_leading_trailing_dots"
 - Erlaube führende und nachfolgende Punkte in Dateinamen? Dies kann manchmal verwendet werden, um Dateien auszublenden oder um einige Systeme dazu zu bringen, Directory Traversal zuzulassen. False = Nicht erlauben [Standardeinstellung]. True = Erlauben.
 
+##### "block_macros"
+- Versuchen Sie, alle Dateien die Makros enthalten zu blockieren? Einige Arten von Dokumenten und Tabellen können ausführbare Makros enthalten und somit einen gefährlichen potenziellen Malware-Vektor darstellen. False = Nicht blockieren [Standardeinstellung]; True = Blockieren.
+
 #### "compatibility" (Kategorie)
 Kompatibilitätsdirektiven für phpMussel.
 

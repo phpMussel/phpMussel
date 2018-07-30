@@ -624,6 +624,9 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 ##### "allow_leading_trailing_dots"
 - Sta voorlopende en achterliggende stippen toe in bestandsnamen? Dit kan soms worden gebruikt om bestanden te verbergen, of om sommige systemen te misleiden om doorverwijzing van mappen mogelijk te maken. False = Niet toestaan [Standaard]. True = Toestaan.
 
+##### "block_macros"
+- Probeer u alle bestanden met macro's te blokkeren? Sommige soorten documenten en spreadsheets kunnen uitvoerbare macro's bevatten, waardoor een gevaarlijke potentiële malwarevector wordt geboden. False = Niet blokkeren [Standaard]; True = Doen blokkeren.
+
 #### "compatibility" (Categorie)
 Compatibiliteit richtlijnen voor phpMussel.
 

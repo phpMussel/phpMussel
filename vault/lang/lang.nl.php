@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.05.16).
+ * This file: Dutch language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'Instantie al actief! Controleer
 $phpMussel['lang']['invalid_data'] = 'Ongeldige data!';
 $phpMussel['lang']['invalid_file'] = 'Ongeldige bestand';
 $phpMussel['lang']['invalid_url'] = 'Ongeldige URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'Macro\'s zijn niet toegestaan';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Uploaden van niet-beeldbestanden is niet toegestaan';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap bestaat niet!';

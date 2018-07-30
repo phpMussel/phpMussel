@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.05.16).
+ * This file: Indonesian language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'Kejadian sudah aktif! Silahkan 
 $phpMussel['lang']['invalid_data'] = 'Data tidak valid!';
 $phpMussel['lang']['invalid_file'] = 'File tidak valid';
 $phpMussel['lang']['invalid_url'] = 'URL tidak valid!';
+$phpMussel['lang']['macros_not_permitted'] = 'Makro tidak diizinkan';
 $phpMussel['lang']['ok'] = 'Oke';
 $phpMussel['lang']['only_allow_images'] = 'Upload file selain gambar tidak diizinkan';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Direktori plugin tidak ada!';

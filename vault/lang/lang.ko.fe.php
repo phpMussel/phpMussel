@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.07.19).
+ * This file: Korean language data for the front-end (last modified: 2018.07.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -25,6 +25,7 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">로그 아
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '파일 이름에 선행 및 후행 점을 허용 하시겠습니까? 이것은 때때로 파일을 숨기거나 디렉토리 트래버 설을 허용하도록 일부 시스템을 속이는 데 사용될 수 있습니다. <code>false</code> = 허용되지 않습니다 (Default / 기본 설정). <code>true</code> = 허용된다.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '제어 문자를 포함한 파일을 차단 여부 (줄 바꿈을 제외한)? 에 관한 것입니다 (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>). 만약 텍스트를 업로드하는 경우,이 옵션을 사용하여 추가 보호를 강화할 수 있습니다. 텍스트 이외도 업로드 할 경우, 사용하면 오진의 원인이 될 수 있습니다. <code>false</code> = 차단하지 (Default / 기본 설정); <code>true</code> = 차단합니다.';
+$phpMussel['lang']['config_attack_specific_block_macros'] = '매크로가 포함 된 파일을 차단하려고합니까? 일부 유형의 문서 및 스프레드 시트에는 실행 매크로가 포함될 수 있으므로 위험 할 수있는 맬웨어 벡터를 제공합니다. <code>false</code> = 차단하지 (Default / 기본 설정); <code>true</code> = 차단합니다.';
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = '쉼표로 구분 된 PHP 코드를 포함 할 수있는 파일 확장명 목록. PHP 카멜레온 공격 탐지가 활성화 된 경우이 목록에없는 확장자를 가진 PHP 코드가 포함 된 파일은 PHP 카멜레온 공격으로 탐지됩니다.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '실행 파일없이 실행 파일의 아카이브도 인식 할 수없는 파일의 실행 헤더 및 악성 헤더의 실행 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '파일도 아니고 PHP 아카이브도 인식 할 수없는 파일에서 PHP 헤더를 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
@@ -37,6 +38,7 @@ $phpMussel['lang']['config_attack_specific_decode_threshold'] = '디코드 명�
 $phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMussel이 읽고 스캔 할 수있는 원시 데이터의 길이에 대한 임계 값 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 기본값 = 32MB. 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다. 값은 서버 나 웹 사이트에 업로드되는 파일의 평균 파일 크기보다 크고 filesize_limit 지시어보다 작게 설정해야합니다. 또한 "php.ini" 설정에 따라 PHP에 할당 된 메모리의 대략 5 분의 1을 초과해서는 없습니다. 이 지시문은 phpMussel가 메모리를 너무 많이 사용하지 않도록하기위한 것입니다. (일정 크기 이상의 파일은 스캔하지 못할 수도 있습니다).';
 $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '시스템에서 phpMussel의 기능에 수정이 필요한 경우가 아니면이 지시문은 일반적으로 사용할 수 없습니다. 비활성화하면 <code>$_FILES</code> array()요소를 감지했을 때, 그 요소가 나타내는 파일의 스캔이 시작됩니다, 요소가 비어 있거나없는 경우 phpMussel는 오류 메시지를 반환합니다. 이것은 본래 phpMussel가 있어야 할 모습입니다. 그러나 CMS에서는 $_FILES 하늘 요소는 일반적으로 발생하는 것이며, 정상적인 phpMussel의 행동이 정상적인 CMS의 거동을 저해 할 우려가 있습니다. 이러한 경우에는 본 옵션을 사용하여 phpMussel 빈 요소를 검사하고 오류 메시지를 반환을 피하고 요청한 페이지로 원활하게 진행할 수 있도록합니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다).';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다).';
+$phpMussel['lang']['config_experimental'] = '불안정/실험적!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '암호화 된 아카이브를 감지하고 차단 여부? phpMussel은 암호화 된 아카이브를 검색 할 수 없기 때문에 아카이브의 암호화를 통해 phpMussel 안티 바이러스 스캐너 등을 かいくぐろ하려는 공격자가 있을지도 모릅니다. 암호화 된 아카이브를 차단함으로써 이러한 위험을 방지 할 수 있습니다. <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_files_check_archives'] = '아카이브의 컨텐츠에 대해 체크를 시도 여부에 대해서입니다. <code>false</code> = 체크하지 않는다; <code>true</code> = 확인 (Default / 기본 설정). 현재 지원하고있는 것은 BZ, GZ, LZF, ZIP 형식입니다 (RAR, CAB, 7z 등은 제외). 본 기능은 만능이 아니므로 활성화하는 것이 좋습니다 있지만 반드시 모두를 검출하는 것을 보증하는 것은 아닙니다. 또한 현재 체크 아카이브는 ZIP 대해 재귀 않는다는 점에 유의하십시오.';
 $phpMussel['lang']['config_files_filesize_archives'] = '파일 크기 블랙리스트/화이트리스트 화를 아카이브의 컨텐츠에 반입 여부? <code>false</code> = 아니오 (단지 그레이리스트 모두); <code>true</code> = 예 (Default / 기본 설정).';

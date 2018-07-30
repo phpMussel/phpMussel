@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2018.05.16).
+ * This file: Vietnamese language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'Trường hợp đã hoạt đ�
 $phpMussel['lang']['invalid_data'] = 'Dữ liệu không hợp lệ!';
 $phpMussel['lang']['invalid_file'] = 'Tập tin không hợp lệ';
 $phpMussel['lang']['invalid_url'] = 'URL không hợp lệ!';
+$phpMussel['lang']['macros_not_permitted'] = 'Macro không được phép';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Ngoài ra hình ảnh, những tập tin khác không được phép tải lên';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Thư mực plugin không tồn tại!';

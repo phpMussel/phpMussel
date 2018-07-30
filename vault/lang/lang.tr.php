@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.05.16).
+ * This file: Turkish language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['instance_already_active'] = 'Örnek zaten etkin! Lütfen kan
 $phpMussel['lang']['invalid_data'] = 'Geçersiz veri!';
 $phpMussel['lang']['invalid_file'] = 'Geçersiz dosya';
 $phpMussel['lang']['invalid_url'] = 'Geçersiz URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'Makrolara izin verilmez';
 $phpMussel['lang']['ok'] = 'Tamam';
 $phpMussel['lang']['only_allow_images'] = 'Resim dışındaki dosyaları yüklemek izin verilmez';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Eklentiler dizini yok!';

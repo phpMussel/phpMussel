@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.05.16).
+ * This file: Urdu language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -62,6 +62,7 @@ $phpMussel['lang']['instance_already_active'] = 'واقعے کی پہلے سے �
 $phpMussel['lang']['invalid_data'] = 'غلط ڈیٹا!';
 $phpMussel['lang']['invalid_file'] = 'غلط فائل';
 $phpMussel['lang']['invalid_url'] = 'غلط URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'میکرو کی اجازت نہیں ہے';
 $phpMussel['lang']['ok'] = 'ٹھیک ہے';
 $phpMussel['lang']['only_allow_images'] = 'تصاویر کے علاوہ دیگر اپ لوڈ کی فائلوں کی اجازت نہیں ہے';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'پلگ انز ڈائرکٹری کا کوئی وجود نہیں!';

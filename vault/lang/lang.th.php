@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.05.19).
+ * This file: Thai language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'ตัวอย่างที�
 $phpMussel['lang']['invalid_data'] = 'ข้อมูลไม่ถูกต้อง!';
 $phpMussel['lang']['invalid_file'] = 'ไฟล์ไม่ถูกต้อง';
 $phpMussel['lang']['invalid_url'] = 'URL ไม่ถูกต้อง!';
+$phpMussel['lang']['macros_not_permitted'] = 'ไม่อนุญาตให้ใช้แมโคร';
 $phpMussel['lang']['ok'] = 'ตกลง';
 $phpMussel['lang']['only_allow_images'] = 'ไฟล์ที่ไม่ใช่ภาพไม่สามารถอัปโหลดได้';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'ไดเรกทอรีปลั๊กอินไม่มีอยู่!';

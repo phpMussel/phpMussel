@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.06.19).
+ * This file: French language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['instance_already_active'] = 'Instance déjà active ! Veuil
 $phpMussel['lang']['invalid_data'] = 'Données non valides !';
 $phpMussel['lang']['invalid_file'] = 'Fichier non valide';
 $phpMussel['lang']['invalid_url'] = 'URL non valide !';
+$phpMussel['lang']['macros_not_permitted'] = 'Les macros ne sont pas autorisées';
 $phpMussel['lang']['ok'] = 'Bien';
 $phpMussel['lang']['only_allow_images'] = 'Le téléchargement de fichiers qui ne sont pas des images n\'est pas autorisé';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Le répertoire de plugins n\'existe pas !';

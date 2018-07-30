@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.05.16).
+ * This file: Hindi language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'उदाहरण पहले
 $phpMussel['lang']['invalid_data'] = 'अमान्य डेटा!';
 $phpMussel['lang']['invalid_file'] = 'अवैध फाइल';
 $phpMussel['lang']['invalid_url'] = 'अवैध URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'मैक्रोज़ की अनुमति नहीं है';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'छवियों के अलावा अन्य फाइल अपलोड करने की अनुमति नहीं है';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'प्लगइन्स निर्देशिका मौजूद नहीं है!';

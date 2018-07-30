@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.05.16).
+ * This file: Bangla language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'ইনস্ট্যান্�
 $phpMussel['lang']['invalid_data'] = 'অবৈধ তথ্য!';
 $phpMussel['lang']['invalid_file'] = 'অবৈধ ফাইল';
 $phpMussel['lang']['invalid_url'] = 'অবৈধ URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'ম্যাক্রো অনুমোদিত নয়';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'চিত্র ছাড়া অন্য ফাইল আপলোড করার অনুমতি নেই';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'প্লাগইন ডিরেক্টরি বিদ্যমান নেই!';

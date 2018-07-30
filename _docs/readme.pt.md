@@ -624,6 +624,9 @@ A detecção de ataques de camaleão: False = Inativo; True = Ativo.
 ##### "allow_leading_trailing_dots"
 - Permitir pontos iniciais e finais em nomes de arquivos? Às vezes, isso pode ser usado para ocultar arquivos, ou enganar alguns sistemas para permitir a passagem de diretórios. False = Não permitir [Padrão]. True = Permitir.
 
+##### "block_macros"
+- Tente bloquear todos os arquivos que contenham macros? Alguns tipos de documentos e planilhas podem conter macros executáveis, fornecendo assim um perigoso vetor potencial de malware. False = Não bloquear [Padrão]; True = Bloquear.
+
 #### "compatibility" (Categoria)
 Compatibilidade directivas por phpMussel.
 

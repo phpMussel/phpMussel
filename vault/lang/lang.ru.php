@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.07.19).
+ * This file: Russian language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['instance_already_active'] = 'Пример уже актив�
 $phpMussel['lang']['invalid_data'] = 'Неверные данные!';
 $phpMussel['lang']['invalid_file'] = 'Неверный файл';
 $phpMussel['lang']['invalid_url'] = 'Неверный URL!';
+$phpMussel['lang']['macros_not_permitted'] = 'Макросы не разрешены';
 $phpMussel['lang']['ok'] = 'Хорошо';
 $phpMussel['lang']['only_allow_images'] = 'Загрузка файлов, которые не являются изображением, не допускается';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Каталог плагины не существует!';

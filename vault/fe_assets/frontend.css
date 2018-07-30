@@ -16,7 +16,7 @@ textarea{height:150px}
 a:link,a:visited{color:#238}
 a:hover{color:#46f}
 a:active,a:focus{color:red}
-.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,select,textarea{font-weight:700}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
 .ci,.co,.gen,.center{margin:auto}
@@ -61,3 +61,4 @@ a[href="?phpmussel-page=logout"]:hover,a[href="?phpmussel-page=logout"]:active,a
   .extend{width:100%}
 }
 .fW{word-break:break-all}
+.exp{color:#ff0;background-color:#f00}

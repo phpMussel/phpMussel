@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.05.16).
+ * This file: Japanese language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = 'インスタンスが既にア�
 $phpMussel['lang']['invalid_data'] = '不正データ！';
 $phpMussel['lang']['invalid_file'] = '不正ファイル';
 $phpMussel['lang']['invalid_url'] = '不正ＵＲＬ！';
+$phpMussel['lang']['macros_not_permitted'] = 'マクロは許可されていません';
 $phpMussel['lang']['ok'] = 'ＯＫです';
 $phpMussel['lang']['only_allow_images'] = '画像以外のファイルをアップロードするのは許可されていません';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'プラグインデイレクトリが存在しません！';

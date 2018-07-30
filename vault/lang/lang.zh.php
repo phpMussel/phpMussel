@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2018.05.16).
+ * This file: Chinese (simplified) language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -59,6 +59,7 @@ $phpMussel['lang']['instance_already_active'] = '脚本已激活！​请仔细�
 $phpMussel['lang']['invalid_data'] = '无效数据！';
 $phpMussel['lang']['invalid_file'] = '无效的文件';
 $phpMussel['lang']['invalid_url'] = '无效的网址！';
+$phpMussel['lang']['macros_not_permitted'] = '不允许使用宏';
 $phpMussel['lang']['ok'] = '好';
 $phpMussel['lang']['only_allow_images'] = '上传文件以外图片不允许';
 $phpMussel['lang']['plugins_directory_nonexistent'] = '插件文件夹不存在！';

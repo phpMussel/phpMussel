@@ -402,6 +402,12 @@ scannable_threshold='32MB'
 ; = Don't allow [Default]. True = Allow.
 allow_leading_trailing_dots=false
 
+; Unstable/Experimental! Try to block any files containing macros? Some types
+; of documents and spreadsheets may contain executable macros, thus providing a
+; dangerous potential malware vector. False = Don't block [Default]; True =
+; Block.
+block_macros=false
+
 
 [compatibility]
 

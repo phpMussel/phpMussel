@@ -624,6 +624,9 @@ Chameleon attack detection: False = Off; True = On.
 ##### "allow_leading_trailing_dots"
 - Allow leading and trailing dots in filenames? This can sometimes be used to hide files, or to trick some systems into allowing directory traversal. False = Don't allow [Default]. True = Allow.
 
+##### "block_macros"
+- Try to block any files containing macros? Some types of documents and spreadsheets may contain executable macros, thus providing a dangerous potential malware vector. False = Don't block [Default]; True = Block.
+
 #### "compatibility" (Category)
 Compatibility directives for phpMussel.
 

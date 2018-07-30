@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.28).
+ * This file: Front-end handler (last modified: 2018.07.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -916,10 +916,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         }
         $phpMussel['RegenerateConfig'] .= '[' . $phpMussel['CatKey'] . "]\r\n\r\n";
         $phpMussel['FE']['ConfigFields'] .= sprintf(
-            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-            '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-            "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+                '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+                '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
+                '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+                "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
             $phpMussel['CatKey'],
             'style="display:none"'
         );
@@ -940,6 +940,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['ThisDir']['DirLang'] = !empty(
                 $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']]
             ) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : $phpMussel['lang']['response_error'];
+            if (!empty($phpMussel['DirValue']['experimental'])) {
+                $phpMussel['ThisDir']['DirLang'] = '<code class="exp">' . $phpMussel['lang']['config_experimental'] . '</code> ' . $phpMussel['ThisDir']['DirLang'];
+            }
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
                 if ($phpMussel['DirValue']['type'] === 'kb' || $phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'timezone' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real' || $phpMussel['DirValue']['type'] === 'bool') {
@@ -1089,9 +1092,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['ThisDir']['FieldOut'] .= '</select>';
             } elseif ($phpMussel['DirValue']['type'] === 'bool') {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
-                    '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
-                    '</select>',
+                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
+                        '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
+                        '</select>',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['ThisDir']['Trigger'],
                     $phpMussel['lang']['field_true'],

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.05.16).
+ * This file: Arabic language data (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -62,6 +62,7 @@ $phpMussel['lang']['instance_already_active'] = 'نشطة بالفعل! يرجى
 $phpMussel['lang']['invalid_data'] = 'بيانات غير صالحة!';
 $phpMussel['lang']['invalid_file'] = 'ملف غير صالح';
 $phpMussel['lang']['invalid_url'] = 'URL غير صالح!';
+$phpMussel['lang']['macros_not_permitted'] = 'وحدات الماكرو غير مسموح بها';
 $phpMussel['lang']['ok'] = 'حسنا';
 $phpMussel['lang']['only_allow_images'] = 'تحميل ملفات غير صورة غير مسموح';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'مجلد الإضافات لا وجود!';

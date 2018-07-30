@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.19).
+ * This file: Functions file (last modified: 2018.07.31).
  */
 
 /**
@@ -130,38 +130,6 @@ $phpMussel['implode_md'] = function ($ar, $j = '', $i = 0, $e = true) use (&$php
         $c--;
     }
     return $out;
-};
-
-/**
- * A function for comparing substrings with hex values.
- *
- * @param string $str The source/raw string to be compared.
- * @param int $st Optional; At what point in the source/raw string should the
- *      comparing begin? The first character of the string starts at "0".
- * @param int $l Optional; For how many bytes of the string, starting from
- *      `$st`, should the comparing occur? Defaults to the total length of the
- *      string.
- * @param string $x The hexadecimal value to compare the string against.
- * @param bool $p Optional; When set to false, the function will return true if
- *      the hexadecimal value can be matched to at least some part of the
- *      substring being compared; When set to true, the function will return
- *      true if the hexadecimal value is an exact match to the entirety of the
- *      substring being compared (optional).
- * @return bool The results of the comparison (true if matched, false if not
- *      matched).
- */
-$phpMussel['substr_compare_hex'] = function ($str = '', $st = 0, $l = 0, $x = 0, $p = false) {
-    if (!$l) {
-        $l = strlen($str);
-    }
-    if (!$x || !$l) {
-        return false;
-    }
-    for ($str = substr($str, $st, $l), $y = '', $i = 0; $i < $l; $i++) {
-        $z = dechex(ord(substr($str, $i, 1)));
-        $y .= (strlen($z) === 1) ? $z = '0' . $z : $z;
-    }
-    return !$p ? (substr_count($y, strtolower($x)) > 0) : ($y === strtolower($x));
 };
 
 /**
@@ -504,7 +472,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
     }
     $Expiry = $phpMussel['substrbf']($phpMussel['substraf']($Item, $Entry . ':'), ':');
     if ($Expiry > 0 && $phpMussel['Time'] > $Expiry) {
-        while (substr_count($FileData, $Entry . ':')) {
+        while (strpos($FileData, $Entry . ':') !== false) {
             $FileData = str_ireplace($Item, '', $FileData);
         }
         $Handle = fopen($File, 'w');
@@ -536,7 +504,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     }
     $File = $phpMussel['cachePath'] . bin2hex($Entry[0]) . '.tmp';
     $Data = $phpMussel['ReadFile']($File) ?: '';
-    while (substr_count($Data, $Entry . ':')) {
+    while (strpos($Data, $Entry . ':') !== false) {
         $Data = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($Data, $Entry . ':'), ';') . ';', '', $Data);
     }
     $Data .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData,9)) . ';';
@@ -545,7 +513,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     fclose($Handle);
     $IndexFile = $phpMussel['cachePath'] . 'index.dat';
     $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
-    while (substr_count($IndexNewData, $Entry . ':')) {
+    while (strpos($IndexNewData, $Entry . ':') !== false) {
         $IndexNewData = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $Entry . ':'), ';') . ';', '', $IndexNewData);
     }
     $IndexNewData .= $Entry . ':' . $Expiry . ';';
@@ -1086,7 +1054,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
     /** Close the cURL session. */
     curl_close($Request);
 
-    if (substr_count($Response, '"matches":')) {
+    if (strpos($Response, '"matches":') !== false) {
         /** Potentially harmful URL detected. */
         $returnVal = 200;
     } else {
@@ -1483,59 +1451,43 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $str_hex_html_len = $str_html_len * 2;
 
     /** Look for potential Linux/ELF indicators. */
-    $is_elf = (
-        $fourcc === '7f454c46' ||
-        $xt === 'elf'
-    );
+    $is_elf = ($fourcc === '7f454c46' || $xt === 'elf');
 
     /** Look for potential graphics/image indicators. */
     $is_graphics = empty($str) ? false : $phpMussel['Indicator-Image']($xt, substr($str_hex, 0, 32));
 
     /** Look for potential HTML indicators. */
-    $is_html = (
-        substr_count(',asp*,dht*,hta,htm*,jsp*,php*,sht*,', ',' . $xts . ',') ||
-        substr_count(',eml,hta,', ',' . $xt . ',') ||
-        preg_match(
-            '/3c(?:21646f6374797065|6120|626f6479|68656164|68746d6c|696672616d65|' .
-            '696d67|6f626a656374|736372697074|7461626c65|7469746c65)/i',
-            $str_hex_norm
-        ) ||
-        preg_match(
-            '/(?:626f6479|68656164|68746d6c|736372697074|7461626c65|7469746c65)3e/i',
-            $str_hex_norm
-        )
-    );
+    $is_html = (strpos(
+        ',asp*,dht*,eml*,hta*,htm*,jsp*,php*,sht*,',
+        ',' . $xts . ','
+    ) !== false || preg_match(
+        '/3c(?:21646f6374797065|6(?:120|26f6479|8656164|8746d6c|96672616d65|96d67|f626a656374)|7(?:36372697074|461626c65|469746c65))/i',
+        $str_hex_norm
+    ) || preg_match(
+        '/(?:6(?:26f6479|8656164|8746d6c)|7(?:36372697074|461626c65|469746c65))3e/i',
+        $str_hex_norm
+    ));
 
     /** Look for potential email indicators. */
-    $is_email = (
-        substr_count(',htm*,ema*,', ',' . $xts . ',') ||
-        $xt === 'eml' ||
-        preg_match(
-            '/0a(?:436f6e74656e742d54797065|44617465|46726f6d|4d6573736167652d4944|4d' .
-            '494d452d56657273696f6e|5265706c792d546f|52657475726e2d50617468|53656e646' .
-            '572|5375626a656374|546f|582d4d61696c6572)3a20/i',
-            $str_hex
-        ) ||
-        preg_match('/0a2d2d.{32}(?:2d2d)?(?:0d)?0a/i', $str_hex)
-    );
+    $is_email = (strpos(
+        ',htm*,ema*,eml*,',
+        ',' . $xts . ','
+    ) !== false || preg_match(
+        '/0a(?:4(?:36f6e74656e742d54797065|4617465|6726f6d|d6573736167652d4944|d4' .
+        '94d452d56657273696f6e)|5(?:265706c792d546f|2657475726e2d50617468|3656e64' .
+        '6572|375626a656374|46f|82d4d61696c6572))3a20/i',
+    $str_hex) || preg_match('/0a2d2d.{32}(?:2d2d)?(?:0d)?0a/i', $str_hex));
 
     /** Look for potential Mach-O indicators. */
-    $is_macho = (
-        $fourcc === 'cafebabe' ||
-        $fourcc === 'cafed00d' ||
-        $fourcc === 'cefaedfe' ||
-        $fourcc === 'cffaedfe' ||
-        $fourcc === 'feedface' ||
-        $fourcc === 'feedfacf'
-    );
+    $is_macho = preg_match('/^(?:cafe(?:babe|d00d)|c[ef]faedfe|feedfac[ef])$/', $fourcc);
 
     /** Look for potential PDF indicators. */
     $is_pdf = ($pdf_magic || $xt === 'pdf');
 
     /** Look for potential Shockwave/SWF indicators. */
     $is_swf = (
-        substr_count(',435753,465753,5a5753,', ',' . substr($str_hex, 0, 6) . ',') ||
-        substr_count(',swf,swt,', ',' . $xt . ',')
+        strpos(',435753,465753,5a5753,', ',' . substr($str_hex, 0, 6) . ',') !== false ||
+        strpos(',swf,swt,', ',' . $xt . ',') !== false
     );
 
     /** "Infectable"? Used by ClamAV General and ClamAV ASCII signatures. */
@@ -1544,15 +1496,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** "Asciiable"? Used by all ASCII signatures. */
     $asciiable = (bool)$str_hex_norm_len;
 
-    /**
-     * Attempt to confirm/guess whether the data being handled is from an OLE
-     * file and whether we'll need to parse it through the OLE signatures.
-     */
-    $is_ole = (
-        !empty($phpMussel['memCache']['file_is_ole']) && (
-            $str_hex_len < 49152 ||
-            substr_count(',ole,xml,rels,', ',' . $xt . ',')
-        )
+    /** Used to identify whether to check against OLE signatures. */
+    $is_ole = !empty($phpMussel['memCache']['file_is_ole']) && (
+        !empty($phpMussel['memCache']['file_is_macro']) ||
+        strpos(',bin,ole,xml,rels,', ',' . $xt . ',') !== false
     );
 
     /** Worked by the switch file. */
@@ -1619,15 +1566,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 if (isset($Fragment[3])) {
                     if ($Fragment[2] === 'A') {
                         if (
-                            !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                            strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false || (
                                 $Fragment[0] === 'FD' &&
-                                !substr_count("\x01" . substr($str_hex, 0, $Fragment[3] * 2), "\x01" . $Fragment[1])
+                                strpos("\x01" . substr($str_hex, 0, $Fragment[3] * 2), "\x01" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex, 0, $Fragment[3] * 2))
                             ) || (
                                 $Fragment[0] === 'FD-NORM' &&
-                                !substr_count("\x01" . substr($str_hex_norm, 0, $Fragment[3] * 2), "\x01" . $Fragment[1])
+                                strpos("\x01" . substr($str_hex_norm, 0, $Fragment[3] * 2), "\x01" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-NORM-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, 0, $Fragment[3] * 2))
@@ -1636,15 +1583,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             continue 2;
                         }
                     } elseif (
-                        !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                        strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false || (
                             $Fragment[0] === 'FD' &&
-                            !substr_count(substr($str_hex, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1])
+                            strpos(substr($str_hex, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1]) === false
                         ) || (
                             $Fragment[0] === 'FD-RX' &&
                             !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex, $Fragment[2] * 2, $Fragment[3]*2))
                         ) || (
                             $Fragment[0] === 'FD-NORM' &&
-                            !substr_count(substr($str_hex_norm, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1])
+                            strpos(substr($str_hex_norm, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1]) === false
                         ) || (
                             $Fragment[0] === 'FD-NORM-RX' &&
                             !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, $Fragment[2] * 2, $Fragment[3]*2))
@@ -1655,18 +1602,18 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 } else {
                     if ($Fragment[2] === 'A') {
                         if (
-                            !substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                            strpos(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false || (
                                 $Fragment[0] === 'FN' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $ofn)
                             ) || (
                                 $Fragment[0] === 'FD' &&
-                                !substr_count("\x01" . $str_hex, "\x01" . $Fragment[1])
+                                strpos("\x01" . $str_hex, "\x01" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex)
                             ) || (
                                 $Fragment[0] === 'FD-NORM' &&
-                                !substr_count("\x01" . $str_hex_norm, "\x01" . $Fragment[1])
+                                strpos("\x01" . $str_hex_norm, "\x01" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-NORM-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex_norm)
@@ -1675,15 +1622,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             continue 2;
                         }
                     } elseif (
-                        !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                        strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false || (
                             $Fragment[0] === 'FD' &&
-                            !substr_count(substr($str_hex, $Fragment[2] * 2), $Fragment[1])
+                            strpos(substr($str_hex, $Fragment[2] * 2), $Fragment[1]) === false
                         ) || (
                             $Fragment[0] === 'FD-RX' &&
                             !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex, $Fragment[2] * 2))
                         ) || (
                             $Fragment[0] === 'FD-NORM' &&
-                            !substr_count(substr($str_hex_norm, $Fragment[2] * 2), $Fragment[1])
+                            strpos(substr($str_hex_norm, $Fragment[2] * 2), $Fragment[1]) === false
                         ) || (
                             $Fragment[0] === 'FD-NORM-RX' &&
                             !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, $Fragment[2] * 2))
@@ -1696,9 +1643,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 ($Fragment[0] === 'FN' && !preg_match('/(?:' . $Fragment[1] . ')/i', $ofn)) ||
                 ($Fragment[0] === 'FS-MIN' && $str_len < $Fragment[1]) ||
                 ($Fragment[0] === 'FS-MAX' && $str_len > $Fragment[1]) ||
-                ($Fragment[0] === 'FD' && !substr_count($str_hex, $Fragment[1])) ||
+                ($Fragment[0] === 'FD' && strpos($str_hex, $Fragment[1]) === false) ||
                 ($Fragment[0] === 'FD-RX' && !preg_match('/(?:' . $Fragment[1] . ')/i', $str_hex)) ||
-                ($Fragment[0] === 'FD-NORM' && !substr_count($str_hex_norm, $Fragment[1])) ||
+                ($Fragment[0] === 'FD-NORM' && strpos($str_hex_norm, $Fragment[1]) === false) ||
                 ($Fragment[0] === 'FD-NORM-RX' && !preg_match('/(?:' . $Fragment[1] . ')/i', $str_hex_norm))
             ) {
                 continue 2;
@@ -1712,7 +1659,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 if (!isset($$vf) || is_array($$vf) || $$vf == $Fragment[1]) {
                     continue 2;
                 }
-            } elseif (!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',')) {
+            } elseif (strpos(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false) {
                 continue 2;
             }
         }
@@ -1903,11 +1850,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Look for potential indicators of not being PHP. */
     $is_not_php = ((
-        !substr_count(',phar,', ',' . $xt . ',') &&
-        !substr_count(',php*,', ',' . $xts . ',') &&
-        !substr_count(',phar,', ',' . $gzxt . ',') &&
-        !substr_count(',php*,', ',' . $gzxts . ',') &&
-        !substr_count($str_hex_norm, '3c3f706870')
+        strpos(',phar,', ',' . $xt . ',') === false &&
+        strpos(',php*,', ',' . $xts . ',') === false &&
+        strpos(',phar,', ',' . $gzxt . ',') === false &&
+        strpos(',php*,', ',' . $gzxts . ',') === false &&
+        strpos($str_hex_norm, '3c3f706870') === false
     ) || $is_pe);
 
     /** Set debug values, if this has been enabled. */
@@ -1978,23 +1925,24 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             'Iterable' => 0,
             'Matches' => []
         ];
-        $URLScanner['c'] = preg_match_all(
+        if (preg_match_all(
             '~(?:data|f(?:ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([\da-z.-]{1,512})[^\da-z.-]~i',
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
-        );
-        for ($URLScanner['i'] = 0; $URLScanner['c'] > $URLScanner['i']; $URLScanner['i']++) {
-            $URLScanner['DomainParts'][$URLScanner['Iterable']] = $URLScanner['Matches'][2][$URLScanner['i']];
-            if (substr_count($URLScanner['DomainParts'][$URLScanner['Iterable']], '.')) {
-                $URLScanner['TLDs'][$URLScanner['Iterable']] =
-                    'TLD:' . $phpMussel['substral']($URLScanner['DomainParts'][$URLScanner['Iterable']], '.') . ':';
+        )) {
+            foreach ($URLScanner['Matches'][2] as $ThisURL) {
+                $URLScanner['DomainParts'][$URLScanner['Iterable']] = $ThisURL;
+                if (strpos($URLScanner['DomainParts'][$URLScanner['Iterable']], '.') !== false) {
+                    $URLScanner['TLDs'][$URLScanner['Iterable']] = 'TLD:' . $phpMussel['substral'](
+                        $URLScanner['DomainParts'][$URLScanner['Iterable']],
+                        '.'
+                    ) . ':';
+                }
+                $ThisURL = md5($ThisURL) . ':' . strlen($ThisURL) . ':';
+                $URLScanner['Domains'][$URLScanner['Iterable']] = 'DOMAIN:' . $ThisURL;
+                $URLScanner['DomainsNoLookup'][$URLScanner['Iterable']] = 'DOMAIN-NOLOOKUP:' . $ThisURL;
+                $URLScanner['Iterable']++;
             }
-            $URLScanner['This'] =
-                md5($URLScanner['Matches'][2][$URLScanner['i']]) . ':' .
-                strlen($URLScanner['Matches'][2][$URLScanner['i']]) . ':';
-            $URLScanner['Domains'][$URLScanner['Iterable']] = 'DOMAIN:' . $URLScanner['This'];
-            $URLScanner['DomainsNoLookup'][$URLScanner['Iterable']] = 'DOMAIN-NOLOOKUP:' . $URLScanner['This'];
-            $URLScanner['Iterable']++;
         }
         $URLScanner['DomainsNoLookup'] = array_unique($URLScanner['DomainsNoLookup']);
         $URLScanner['Domains'] = array_unique($URLScanner['Domains']);
@@ -2006,42 +1954,39 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         sort($URLScanner['TLDs']);
         $URLScanner['Iterable'] = 0;
         $URLScanner['Matches'] = '';
-        $URLScanner['c'] = preg_match_all(
+        if (preg_match_all(
             '~(?:data|f(ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([!#$&-;=?@-\[\]_a-z\~]{1,4096})[^!#$&-;=?@-\[\]_a-z\~]~i',
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
-        );
-        for ($URLScanner['i'] = 0; $URLScanner['c'] > $URLScanner['i']; $URLScanner['i']++) {
-            $URLScanner['This'] =
-                md5($URLScanner['Matches'][2][$URLScanner['i']]) . ':' .
-                strlen($URLScanner['Matches'][2][$URLScanner['i']]) . ':';
-            $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
-            $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['Matches'][2][$URLScanner['i']];
-            $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
-            $URLScanner['Iterable']++;
-            if (preg_match('/[^\da-z.-]$/i', $URLScanner['Matches'][2][$URLScanner['i']])) {
-                $URLScanner['x'] =
-                    preg_replace('/[^\da-z.-]+$/i', '', $URLScanner['Matches'][2][$URLScanner['i']]);
-                $URLScanner['This'] = md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
+        )) {
+            foreach ($URLScanner['Matches'][2] as $ThisURL) {
+                $URLScanner['This'] = md5($ThisURL) . ':' . strlen($ThisURL) . ':';
                 $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
-                $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['x'];
+                $URLScanner['URLParts'][$URLScanner['Iterable']] = $ThisURL;
                 $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
                 $URLScanner['Iterable']++;
+                if (preg_match('/[^\da-z.-]$/i', $ThisURL)) {
+                    $URLScanner['x'] = preg_replace('/[^\da-z.-]+$/i', '', $ThisURL);
+                    $URLScanner['This'] = md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
+                    $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
+                    $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['x'];
+                    $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
+                    $URLScanner['Iterable']++;
+                }
+                if (strpos($ThisURL, '?') !== false) {
+                    $URLScanner['x'] = $phpMussel['substrbf']($ThisURL, '?');
+                    $URLScanner['This'] = md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
+                    $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
+                    $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['x'];
+                    $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
+                    $URLScanner['x'] = $phpMussel['substraf']($ThisURL, '?');
+                    $URLScanner['Queries'][$URLScanner['Iterable']] = 'QUERY:' . md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
+                    $URLScanner['Iterable']++;
+                }
             }
-            if (substr_count($URLScanner['Matches'][2][$URLScanner['i']], '?')) {
-                $URLScanner['x'] = $phpMussel['substrbf']($URLScanner['Matches'][2][$URLScanner['i']], '?');
-                $URLScanner['This'] = md5($URLScanner['x']) . ':' . strlen($URLScanner['x']) . ':';
-                $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
-                $URLScanner['URLParts'][$URLScanner['Iterable']] = $URLScanner['x'];
-                $URLScanner['URLs'][$URLScanner['Iterable']] = 'URL:' . $URLScanner['This'];
-                $URLScanner['x'] = $phpMussel['substraf']($URLScanner['Matches'][2][$URLScanner['i']], '?');
-                $URLScanner['Queries'][$URLScanner['Iterable']] =
-                    'QUERY:' . md5($URLScanner['x']) . ':' .
-                    strlen($URLScanner['x']) . ':';
-                $URLScanner['Iterable']++;
-            }
+            unset($URLScanner['x'], $URLScanner['This']);
         }
-        $URLScanner['Matches'] = '';
+        unset($ThisURL, $URLScanner['Matches']);
         $URLScanner['URLsNoLookup'] = array_unique($URLScanner['URLsNoLookup']);
         $URLScanner['URLs'] = array_unique($URLScanner['URLs']);
         $URLScanner['URLParts'] = array_unique($URLScanner['URLParts']);
@@ -2484,7 +2429,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                             if (!isset($$vf) || is_array($$vf) || $$vf == $xsig[$xi][$sxi][1]) {
                                                 continue 2;
                                             }
-                                        } elseif (!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',')) {
+                                        } elseif (strpos(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') === false) {
                                             continue 2;
                                         }
                                     }
@@ -2492,7 +2437,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             }
                             if (
                                 $SigName &&
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $SigName . ',') &&
+                                strpos($phpMussel['memCache']['greylist'], ',' . $SigName . ',') === false &&
                                 empty($phpMussel['memCache']['ignoreme'])
                             ) {
                                 $phpMussel['Detected']($heur, $lnap, $SigName, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
@@ -2625,8 +2570,23 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                     if (strpos($ThisSig, ':') !== false) {
                         $VN = $phpMussel['SplitSigParts']($ThisSig);
-                        if ($ThisConf[3] === 0) {
-                            $ThisSig = preg_split('/[^\da-f>]+/i', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                        if ($ThisConf[3] === 2) {
+                            $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                            $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
+                            $VN = $phpMussel['vn_shorthand']($VN[0]);
+                            if (
+                                $ThisSig &&
+                                strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
+                                empty($phpMussel['memCache']['ignoreme'])
+                            ) {
+                                if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
+                                    $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
+                                }
+                            }
+                        } elseif ($ThisConf[3] === 0 || $ThisConf[3] === 1) {
+                            $ThisSig = preg_split((
+                                $ThisConf[3] === 0 ? '/[^\da-f>]+/i' : '/[\x00-\x1f]+/'
+                            ), $VN[1], -1, PREG_SPLIT_NO_EMPTY);
                             $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
                             $ThisSigLen = strlen($ThisSig);
                             if ($phpMussel['ConfineLength']($ThisSigLen)) {
@@ -2637,93 +2597,59 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $VN = $phpMussel['vn_shorthand']($VN[0]);
                             $VNLC = strtolower($VN);
                             if (($is_not_php && (
-                                    substr_count($VNLC, '-php') || substr_count($VNLC, '.php')
+                                    strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
                             )) || ($is_not_html && (
-                                    substr_count($VNLC, '-htm') || substr_count($VNLC, '.htm')
+                                    strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
                             )) || $$DataSourceLen < $ThisSigLen) {
                                 continue;
                             }
                             if (
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
+                                strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
                                 empty($phpMussel['memCache']['ignoreme'])
                             ) {
-                                $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : [$ThisSig];
-                                $ThisSigCount = count($ThisSig);
-                                $ThisString = $$DataSource;
-                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
-                                if ($xstrf === 'A') {
-                                    $ThisString = "\x01" . $ThisString;
-                                    $ThisSig[0] = "\x01" . $ThisSig[0];
-                                }
-                                if ($xstrt === 'Z') {
-                                    $ThisString .= "\x01";
-                                    $ThisSig[$ThisSigCount - 1] .= "\x01";
-                                }
-                                for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
-                                    if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
-                                        continue 2;
+                                if ($ThisConf[3] === 0) {
+                                    $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : [$ThisSig];
+                                    $ThisSigCount = count($ThisSig);
+                                    $ThisString = $$DataSource;
+                                    $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
+                                    if ($xstrf === 'A') {
+                                        $ThisString = "\x01" . $ThisString;
+                                        $ThisSig[0] = "\x01" . $ThisSig[0];
                                     }
-                                    if ($ThisSigCount > 1 && strpos($ThisString, $ThisSig[$ThisSigi]) !== false) {
-                                        $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi]);
-                                    }
-                                }
-                                $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
-                            }
-                        } elseif ($ThisConf[3] === 1) {
-                            $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
-                            $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
-                            $ThisSigLen = strlen($ThisSig);
-                            if ($phpMussel['ConfineLength']($ThisSigLen)) {
-                                continue;
-                            }
-                            $xstrf = isset($VN[2]) ? $VN[2] : '*';
-                            $xstrt = isset($VN[3]) ? $VN[3] : '*';
-                            $VN = $phpMussel['vn_shorthand']($VN[0]);
-                            $VNLC = strtolower($VN);
-                            if (($is_not_php && (
-                                substr_count($VNLC, '-php') || substr_count($VNLC, '.php')
-                            )) || ($is_not_html && (
-                                substr_count($VNLC, '-htm') || substr_count($VNLC, '.htm')
-                            ))) {
-                                continue;
-                            }
-                            if (
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                                empty($phpMussel['memCache']['ignoreme'])
-                            ) {
-                                $ThisString = $$DataSource;
-                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
-                                if ($xstrf === 'A') {
                                     if ($xstrt === 'Z') {
-                                        if (!preg_match('/\A(?:' . $ThisSig . ')$/i', $ThisString)) {
-                                            continue;
+                                        $ThisString .= "\x01";
+                                        $ThisSig[$ThisSigCount - 1] .= "\x01";
+                                    }
+                                    for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
+                                        if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
+                                            continue 2;
                                         }
-                                    } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', $ThisString)) {
-                                        continue;
+                                        if ($ThisSigCount > 1 && strpos($ThisString, $ThisSig[$ThisSigi]) !== false) {
+                                            $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi]);
+                                        }
                                     }
                                 } else {
-                                    if ($xstrt === 'Z') {
-                                        if (!preg_match('/(?:' . $ThisSig . ')$/i', $ThisString)) {
+                                    $ThisString = $$DataSource;
+                                    $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
+                                    if ($xstrf === 'A') {
+                                        if ($xstrt === 'Z') {
+                                            if (!preg_match('/\A(?:' . $ThisSig . ')$/i', $ThisString)) {
+                                                continue;
+                                            }
+                                        } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', $ThisString)) {
                                             continue;
                                         }
-                                    } elseif (!preg_match('/(?:' . $ThisSig . ')/i', $ThisString)) {
-                                        continue;
+                                    } else {
+                                        if ($xstrt === 'Z') {
+                                            if (!preg_match('/(?:' . $ThisSig . ')$/i', $ThisString)) {
+                                                continue;
+                                            }
+                                        } elseif (!preg_match('/(?:' . $ThisSig . ')/i', $ThisString)) {
+                                            continue;
+                                        }
                                     }
                                 }
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
-                            }
-                        } elseif ($ThisConf[3] === 2) {
-                            $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
-                            $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
-                            $VN = $phpMussel['vn_shorthand']($VN[0]);
-                            if (
-                                $ThisSig &&
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                                empty($phpMussel['memCache']['ignoreme'])
-                            ) {
-                                if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
-                                    $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
-                                }
                             }
                         }
                     }
@@ -2911,7 +2837,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Executable chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_exe']) {
-        if (substr_count(',acm,ax,com,cpl,dll,drv,exe,ocx,rs,scr,sys,', ',' . $xt . ',')) {
+        if (strpos(',acm,ax,com,cpl,dll,drv,exe,ocx,rs,scr,sys,', ',' . $xt . ',') !== false) {
             if ($twocc !== '4d5a') {
                 if (!$flagged) {
                     $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -3504,18 +3430,17 @@ $phpMussel['SplitSigParts'] = function ($Sig, $Max = -1) {
  * Handles scanning for files contained within archives.
  *
  * @param string $ItemRef A reference to the path and original filename of the
- *      item being scanned in relation to its container and/or its heirarchy
+ *      item being scanned in relation to its container and/or its hierarchy
  *      within the scan process.
  * @param string $Filename The original filename of the item being scanned.
  * @param string $Data The data to be scanned.
  * @param int $Depth The depth of the item being scanned in relation to its
- *      container and/or its heirarchy within the scan process.
+ *      container and/or its hierarchy within the scan process.
  * @param string $lnap Line padding for the scan results.
  * @param int $r Scan results inherited from parent in the form of an integer.
  * @param string $x Scan results inherited from parent in the form of a string.
- * @return array Returns an array containing the results of the scan as both an
- *      integer (the first element) and as human-readable text (the second
- *      element).
+ * @return array Contains the results of the scan as both an integer (the first
+ *      element) and as human-readable text (the second element).
  */
 $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap, $r, $x) use (&$phpMussel) {
     if (!$Filesize = strlen($Data)) {
@@ -3523,6 +3448,8 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     }
     $ItemRefSafe = urlencode($ItemRef);
     $MD5 = md5($Data);
+
+    /** Filesize thresholds. */
     if (
         $phpMussel['Config']['files']['filesize_archives'] &&
         $phpMussel['Config']['files']['filesize_limit'] > 0 &&
@@ -3545,6 +3472,8 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $phpMussel['lang']['_fullstop_final'] . "\n";
         return [$r, $x];
     }
+
+    /** Filetype blacklisting/whitelisting. */
     if ($phpMussel['Config']['files']['filetype_archives']) {
         $decPos = strrpos($Filename, '.');
         $ofnLen = strlen($Filename);
@@ -3589,16 +3518,37 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             return [$r, $x];
         }
     }
+
+    /** Determine whether the file being scanned is a macro. */
+    $phpMussel['memCache']['file_is_macro'] = (
+        preg_match('~vbaProject\.bin$~i', $Filename) ||
+        preg_match("~^\xd0\xcf|\x00Attribut|\x01CompObj|\x05Document~", $Data)
+    );
+
+    /** Handle macro detection and blocking. */
+    if ($phpMussel['Config']['attack_specific']['block_macros'] && $phpMussel['memCache']['file_is_macro']) {
+        $r = 2;
+        $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+        $phpMussel['whyflagged'] .= sprintf(
+            $phpMussel['lang']['_exclamation'],
+            $phpMussel['lang']['macros_not_permitted'] . ' (' . $ItemRefSafe . ')'
+        );
+        $x .= $lnap . $phpMussel['lang']['macros_not_permitted'] . $phpMussel['lang']['_fullstop_final'] . "\n";
+        return [$r, $x];
+    }
+
+    /** Increment objects scanned counter. */
     $phpMussel['memCache']['objects_scanned']++;
+
+    /** Try to scan the file. */
     try {
         $Scan = $phpMussel['DataHandler']($Data, $Depth, $Filename);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
-    if ($Scan[0] !== 1) {
-        return [$Scan[0], $x . $Scan[1]];
-    }
-    return [$r, $x];
+
+    /** Return the results. */
+    return ($Scan[0] !== 1) ? [$Scan[0], $x . $Scan[1]] : [$r, $x];
 };
 
 /**
@@ -3832,13 +3782,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Increment our scanned files/objects tally. */
     $phpMussel['memCache']['objects_scanned']++;
+
     /** Define file phase. */
     $phpMussel['memCache']['phase'] = 'file';
+
     /**
      * Indicates whether the file/object being scanned is a part of a
      * container (e.g., an OLE object, ZIP file, TAR, PHAR, etc).
      */
     $phpMussel['memCache']['container'] = 'none';
+
     /** Indicates whether the file/object being scanned is an OLE object. */
     $phpMussel['memCache']['file_is_ole'] = false;
 
@@ -4057,16 +4010,17 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $PharType = 'XPInstall';
             } elseif ($xts === 'app*') {
                 $PharType = 'App';
-            } elseif (substr_count(
-                ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,x' .
-                'lsx,xltm,xltx,', ',' . $xt . ','
-            )) {
+            } elseif (strpos(
+                ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,xlsx,xltm,xltx,',
+                ',' . $xt . ','
+            ) !== false) {
                 $PharType = 'OpenXML';
-            } elseif (substr_count(
-                ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,', ',' . $xt . ','
-            ) || $xts === 'fod*') {
+            } elseif (strpos(
+                ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,',
+                ',' . $xt . ','
+            ) !== false || $xts === 'fod*') {
                 $PharType = 'OpenDocument';
-            } elseif (substr_count(',opf,epub,', ',' . $xt . ',')) {
+            } elseif (strpos(',opf,epub,', ',' . $xt . ',') !== false) {
                 $PharType = 'EPUB';
             } else {
                 $PharType = 'ZIP';
@@ -4078,14 +4032,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             }
         } elseif (
             substr($in, 257, 6) === "ustar\x00" ||
-            substr_count(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',')
+            strpos(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',') !== false
         ) {
             $PharType = 'TarFile';
             $phpMussel['memCache']['container'] = 'tarfile';
-        } elseif (
-            substr($in, 0, 4) === 'Rar!' ||
-            bin2hex(substr($in, 0, 4)) === '52457e5e'
-        ) {
+        } elseif (substr($in, 0, 4) === 'Rar!' || substr($in, 0, 4) === "\x52\x45\x7e\x5e") {
             $PharType = 'RarFile';
             $phpMussel['memCache']['container'] = 'rarfile';
         } else {
@@ -4239,34 +4190,26 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $GZable = false;
                 $BZable = false;
                 $LZable = false;
-                if ($phpMussel['substr_compare_hex']($ThisPhar['Data'], 0, 2, '1f8b', true)) {
+                if (substr($ThisPhar['Data'], 0, 2) === "\x1f\x8b") {
                     $GZable = true;
-                } elseif ($phpMussel['substr_compare_hex']($ThisPhar['Data'], 0, 3, '425a68', true)) {
+                } elseif (substr($ThisPhar['Data'], 0, 3) === "\x42\x5a\x68") {
                     $BZable = true;
-                } elseif (!empty($xtt) && !$zDo && (
-                    substr_count(',.gz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.tgz,', ',' . $xtt[1] . ',')
-                )) {
+                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.gz' || $xtt[1] === '.tgz')) {
                     $GZable = true;
-                } elseif (!empty($xtt) && !$zDo && (
-                    substr_count(',.bz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.bz2,.tbz,', ',' . $xtt[1] . ',')
-                )) {
+                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.bz' || strpos(
+                    ',.bz2,.tbz,',
+                    ',' . $xtt[1] . ','
+                ) !== false)) {
                     $BZable = true;
-                } elseif (!empty($xtt) && !$zDo && (
-                    substr_count(',.lz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,', ',' . $xtt[1] . ',')
-                )) {
+                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.lz' || strpos(
+                    ',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,',
+                    ',' . $xtt[1] . ','
+                ) !== false)) {
                     $LZable = true;
-                } elseif (!$zDo && (
-                    substr($ThisPhar['Data'], 257, 6) === "ustar\x00" || (
-                        !empty($xtt) && (
-                            substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[1] . ',') ||
-                            substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[2] . ',') ||
-                            substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[3] . ',')
-                        )
-                    )
-                )) {
+                } elseif (!$zDo && (substr($ThisPhar['Data'], 257, 6) === "ustar\x00" || (
+                    !empty($xtt) &&
+                    $phpMussel['ContainsMustAssert'](['.tar,.tgz,.tbz,.tlz'], [$xtt[1], $xtt[2], $xtt[3]], ',', true, true)
+                ))) {
                     /** Allows recursion for TAR files. */
                     $x .=
                         $ThisPhar['Indent'] .

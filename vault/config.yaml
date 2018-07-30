@@ -332,6 +332,10 @@ Config Defaults:
   allow_leading_trailing_dots:
    type: bool
    default: false
+  block_macros:
+   type: bool
+   default: false
+   experimental: true
  compatibility:
   ignore_upload_errors:
    type: bool
