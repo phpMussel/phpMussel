@@ -799,13 +799,12 @@ NAMEはそのシグネチャを指す名前、​HEXは与えられたシグネ�
 
 phpMusselは大概のウィルススキャンソフトウェアに対して互換性があります。​しかし、​過去にはユーザーから非互換性の報告があったのも確かです。​以下の情報はVirusTotal.comによるものであり、​phpMusselに対しアンチウィルスプログラムによって報告された誤検出を記載しています。​phpMusselと使用中のアンチウィルスソフトウェアの互換性問題が記載通りに必ず発生する、​あるいは発生しないことを保証するものではありませんが、​もしアンチウィルスソフトウェアとphpMusselの動作に顕著な矛盾が認められるようなら、​使用にあたってどちらか一方を無効にするなどの対策を検討すべきでしょう。
 
-以下の情報は、​2017年12月1日にアップデートされ、​本稿執筆時におけるphpMussel最新マイナーバージョン（v1.0.0-v1.1.0）の現況です。
+以下の情報は、​2018年7月31日にアップデートされ、​本稿執筆時におけるphpMussel最新マイナーバージョン（v1.4.0-v1.5.0）の現況です。
 
 *この情報は、メインパッケージにのみ適用されます。​結果は、インストールされたシグネチャ・ファイル、プラグイン、およびその他の周辺コンポーネントに基づいて異なる場合があります。*
 
 | スキャナ | 結果 |
 |---|---|
-| AVware | リポート "BPX.Shell.PHP" |
 | Bkav | リポート "VEXA3F5.Webshell" |
 
 ---
@@ -1087,11 +1086,11 @@ phpMusselのフロントエンドと「アップロード拒否」ページの�
 
 ##### 11.2.2 VIRUS TOTAL （ウイルス・トータル）
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. An API key is required in order to use this feature.
+phpMusselがファイルのアップロードをスキャンすると、そのように設定されていると、ファイルハッシュがVirus Total APIと共有される可能性があります。​将来、ある時点でファイル全体を共有できる計画がありますが、これはまだサポートされていません。​この機能を使用するには、ＡＰＩキーが必要です。
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+Virus Totalと共有される情報（ファイルおよび関連するファイルのメタデータを含む）は、研究目的で、パートナー、関連会社、その他さまざまな人々と共有することもできます。​これについては、プライバシー・ポリシーで詳しく説明しています。
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*見る： [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy)。*
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `virustotal` -> `vt_public_api_key`
@@ -1254,4 +1253,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年7月27日。
+最終アップデート：2018年7月31日。

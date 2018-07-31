@@ -799,13 +799,12 @@ Any form of regex understood and correctly processed by PHP should also be corre
 
 For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflicts have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
 
-This information was last updated 2017.12.01 and is current for all phpMussel releases of the two most recent minor versions (v1.0.0-v1.1.0) at the time of writing this.
+This information was last updated 2018.07.31 and is current for all phpMussel releases of the two most recent minor versions (v1.4.0-v1.5.0) at the time of writing this.
 
 *This information only applies to the main package. Results may vary based on installed signature files, plugins, and other peripheral components.*
 
 | Scanner | Results |
 |---|---|
-| AVware | Reports "BPX.Shell.PHP" |
 | Bkav | Reports "VEXA3F5.Webshell" |
 
 ---
@@ -1257,4 +1256,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 27 July 2018 (2018.07.27).
+Last Updated: 31 July 2018 (2018.07.31).

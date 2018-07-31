@@ -799,13 +799,12 @@ PHP는 정규 표현식 판단 처리하는 형식이면 phpMussel과 서명에 
 
 phpMussel은 대개 바이러스 검사 소프트웨어에 호환성이 있습니다. 그러나 과거에는 고객이 비 호환성보고가 있었던 것도 사실입니다. 다음 정보는 VirusTotal.com 의한 것이며, phpMussel 대해 안티 바이러스 프로그램에 의해보고 된 오류 검출을 기재하고 있습니다. phpMussel와 사용중인 안티 바이러스 소프트웨어의 호환성 문제가 명시된 지시 사항을 반드시 발생하거나 발생하지 않도록 보장하는 것은 아니지만, 만약 안티 바이러스 소프트웨어와 phpMussel 동작에 현저한 모순이 인정한다면, 노트 둘 중 하나를 해제하는 등의 대책을 검토해야 할 것이다.
 
-다음의 정보는 2017년 12월 1일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v1.0.0-v1.1.0) 현황입니다.
+다음의 정보는 2018년 7월 31일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v1.4.0-v1.5.0) 현황입니다.
 
 *이 정보는 기본 패키지에만 적용됩니다. 결과는 설치된 서명 파일, 플러그인 및 기타 주변 구성 요소에 따라 다를 수 있습니다.*
 
 | 스캐너 | 결과 |
 |---|---|
-| AVware | 리포트 "BPX.Shell.PHP" |
 | Bkav | 리포트 "VEXA3F5.Webshell" |
 
 ---
@@ -1087,11 +1086,11 @@ phpMussel 프론트 엔드 및 "업로드 거부"페이지의 표준 UI ("사용
 
 ##### 11.2.2 VIRUS TOTAL
 
-When phpMussel scans a file upload, the hashes of those files may be shared with the Virus Total API, depending on how the package is configured. There are plans to be able to share entire files at some point in the future too, but this feature isn't supported by the package at this time. An API key is required in order to use this feature.
+phpMussel은 파일 업로드를 검색 할 때 Virus Total API와 파일 해시를 공유하도록 구성 할 수 있습니다. 앞으로 어떤 시점에서 전체 파일을 공유 할 계획이 있지만 아직 지원되지 않습니다. 이 기능을 사용하려면 API 키가 있어야합니다.
 
-Information (including files and related file metadata) shared with Virus Total, may also be shared with their partners, affiliates, and various others for research purposes. This is described in more detail by their privacy policy.
+Virus Total과 공유되는 정보 (파일 및 관련 파일 메타 데이터 포함)는 연구 목적으로 파트너, 계열사, 및 기타 여러 사람들과 공유 할 수도 있습니다. 이에 대한 자세한 내용은 개인 정보 취급 방침을 참조하십시오.
 
-*See: [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
+*참조하십시오 : [Privacy Policy &ndash; VirusTotal](https://support.virustotal.com/hc/en-us/articles/115002168385-Privacy-Policy).*
 
 *관련 설정 지시어 :*
 - `virustotal` -> `vt_public_api_key`
@@ -1252,4 +1251,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 7월 27일.
+최종 업데이트 : 2018년 7월 31일.

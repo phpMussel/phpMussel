@@ -799,13 +799,12 @@ Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người dùng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 2017.12.01 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v1.0.0-v1.1.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 2018.07.31 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v1.4.0-v1.5.0) vào thời gian cái này được viết.
 
 *Thông tin này chỉ áp dụng cho gói chính. Kết quả có thể khác nhau dựa trên tập tin chữ ký đã cài đặt, plugin, và các thành phần ngoại vi khác.*
 
 | Chương trình quét | Kết quả |
 |---|---|
-| AVware | Báo cáo "BPX.Shell.PHP" |
 | Bkav | Báo cáo "VEXA3F5.Webshell" |
 
 ---
@@ -1247,4 +1246,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Bảy 2018 (2018.07.27).
+Lần cuối cập nhật: 31 Tháng Bảy 2018 (2018.07.31).

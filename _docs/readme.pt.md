@@ -799,13 +799,12 @@ Qualquer forma de regex compreendido e processado corretamente pelo PHP também 
 
 Em geral, phpMussel deve ser bastante compatível com a maioria dos outros vírus detecção softwares. Embora, conflitos foram relatadas por um número de utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e descreve um número de falso-positivos relatados por vários anti-vírus programas contra phpMussel. Embora esta informação não é um absoluta garantia de haver ou não você vai encontrar problemas de compatibilidade entre phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido como sinalização contra phpMussel, você deve considerar desativá-lo antes de trabalhar com phpMussel ou deve considerar alternativas opções para o seu anti-vírus software ou phpMussel.
 
-Esta informação foi atualizada 2017.12.01 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v1.0.0-v1.1.0) no momento de escrever este.
+Esta informação foi atualizada 2018.07.31 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v1.4.0-v1.5.0) no momento de escrever este.
 
 *Esta informação aplica-se apenas ao pacote principal. Os resultados podem variar de acordo com arquivos de assinatura instalados, plugins, e outros componentes periféricos.*
 
 | Analisador | Resultados |
 |---|---|
-| AVware | Reportar "BPX.Shell.PHP" |
 | Bkav | Reportar "VEXA3F5.Webshell" |
 
 ---
@@ -1249,4 +1248,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 27 Julho de 2018 (2018.07.27).
+Última Atualização: 31 Julho de 2018 (2018.07.31).
