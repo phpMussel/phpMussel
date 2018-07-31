@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.07.01).
+ * This file: CLI handler (last modified: 2018.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,35 +155,26 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                         $Returnable .= $PEArr['SizeOfRawData'] . ':' . $PEArr['MD5'] . ':' . $PEArr['SectionName'] . "\n";
                     }
                     $Returnable .= "\n";
-                    if (substr_count($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24")) {
-                        $PEArr['FINFO'] = $phpMussel['substral']($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
-                        if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PEFileDescription:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                        }
-                        if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PEFileVersion:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                        }
-                        if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PEProductName:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                        }
-                        if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PEProductVersion:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+                    if (strpos($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
+                        $PEArr['Parts'] = $phpMussel['substral']($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+                        $PEArr['FINFO'] = [];
+                        foreach ([
+                            ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
+                            ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
+                            ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00", 'PEProductName'],
+                            ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEProductVersion'],
+                            ["L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00", 'PECopyright'],
+                            ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
+                            ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
+                        ] as $PEVars) {
+                            if (strpos($PEArr['Parts'], $PEVars[0]) !== false && (
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf'](
+                                    $phpMussel['substral']($PEArr['Parts'], $PEVars[0]),
+                                    "\x00\x00\x00"
+                                )))
+                            )) {
+                                $Returnable .= '$' . $PEVars[1] . ':' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
                             }
-                        if (substr_count($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PECopyright:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                        }
-                        if (substr_count($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PEOriginalFilename:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-                        }
-                        if (substr_count($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                            $Returnable .= '$PECompanyName:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
                         }
                     }
                     return $Returnable;

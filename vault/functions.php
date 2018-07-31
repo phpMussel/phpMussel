@@ -1787,8 +1787,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'],
                         $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']
                     ];
-                    $PEArr['SectionArr'][$PEArr['k']]['MD5'] =
-                        md5($PEArr['SectionArr'][$PEArr['k']]['SectionData']);
+                    $PEArr['SectionArr'][$PEArr['k']]['MD5'] = md5(
+                        $PEArr['SectionArr'][$PEArr['k']]['SectionData']
+                    );
                     $phpMussel['PEData'] .=
                         $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] . ':' .
                         $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ':' . $ofn . '-' .
@@ -1803,43 +1804,28 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] . ':' .
                         $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ':';
                 }
-                if (substr_count($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24")) {
-                    $PEArr['FINFO'] = $phpMussel['substral']($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
-                    if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00")) {
-                        $PEFileDescription = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                        $PEFileVersion = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                        $PEProductName = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                        $PEProductVersion = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00")) {
-                        $PECopyright = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00")) {
-                        $PEOriginalFilename = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                    }
-                    if (substr_count($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                        $PECompanyName = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
-                    }
+                if (strpos($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
+                    $PEArr['Parts'] = $phpMussel['substral']($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
                     $PEArr['FINFO'] = [];
                     foreach ([
-                        'PEFileDescription',
-                        'PEFileVersion',
-                        'PEProductName',
-                        'PEProductVersion',
-                        'PECopyright',
-                        'PEOriginalFilename',
-                        'PECompanyName'
-                    ] as $PEPart) {
-                        if (!empty($$PEPart)) {
-                            $PEArr['FINFO'][] = '$' . $PEPart . ':' . md5($$PEPart) . ':' . strlen($$PEPart) . ':';
+                        ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
+                        ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
+                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00", 'PEProductName'],
+                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEProductVersion'],
+                        ["L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00", 'PECopyright'],
+                        ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
+                        ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
+                    ] as $PEVars) {
+                        if (strpos($PEArr['Parts'], $PEVars[0]) !== false && (
+                            ${$PEVars[1]} = trim(str_ireplace("\x00", '', $phpMussel['substrbf'](
+                                $phpMussel['substral']($PEArr['Parts'], $PEVars[0]),
+                                "\x00\x00\x00"
+                            )))
+                        )) {
+                            $PEArr['FINFO'][] = '$' . $PEVars[1] . ':' . md5(${$PEVars[1]}) . ':' . strlen(${$PEVars[1]}) . ':';
                         }
                     }
+                    unset($PEVars, $PEArr['Parts']);
                 }
             }
         }
@@ -2035,7 +2021,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
                 $ArrayCSV = explode(',', $phpMussel['memCache'][$SigFile]);
                 foreach ($ArrayCSV as $ItemCSV) {
-                    if (substr_count($str_hex_norm, $ItemCSV)) {
+                    if (strpos($str_hex_norm, $ItemCSV) !== false) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                             $flagged = true;
@@ -2054,14 +2040,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
                 unset($ItemCSV, $ArrayCSV);
             } elseif ($ThisConf[1] === 1) {
-                if (substr_count($phpMussel['memCache'][$SigFile], $md5 . ':' . $str_len . ':')) {
+                if (strpos($phpMussel['memCache'][$SigFile], $md5 . ':' . $str_len . ':') !== false) {
                     $xsig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $md5 . ':' . $str_len . ':');
-                    if (substr_count($xsig, "\n")) {
+                    if (strpos($xsig, "\n") !== false) {
                         $xsig = $phpMussel['substrbf']($xsig, "\n");
                     }
                     $xsig = $phpMussel['vn_shorthand']($xsig);
                     if (
-                        !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                        strpos($phpMussel['memCache']['greylist'], ',' . $xsig . ',') === false &&
                         empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         $phpMussel['Detected']($heur, $lnap, $xsig, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
@@ -2069,14 +2055,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
             } elseif ($ThisConf[1] === 2) {
                 for ($PEArr['k'] = 0; $PEArr['k'] < $NumOfSections; $PEArr['k']++) {
-                    if (substr_count($phpMussel['memCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']])) {
+                    if (strpos($phpMussel['memCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]) !== false) {
                         $xsig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]);
-                        if (substr_count($xsig, "\n")) {
+                        if (strpos($xsig, "\n") !== false) {
                             $xsig = $phpMussel['substrbf']($xsig, "\n");
                         }
                         $xsig = $phpMussel['vn_shorthand']($xsig);
                         if (
-                            !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                            strpos($phpMussel['memCache']['greylist'], ',' . $xsig . ',') === false &&
                             empty($phpMussel['memCache']['ignoreme'])
                         ) {
                             $phpMussel['Detected']($heur, $lnap, $xsig, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
@@ -2088,7 +2074,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     foreach ($PEArr['FINFO'] as $PEArr['ThisPart']) {
                         if (substr_count($phpMussel['memCache'][$SigFile], $PEArr['ThisPart'])) {
                             $xsig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $PEArr['ThisPart']);
-                            if (substr_count($xsig, "\n")) {
+                            if (strpos($xsig, "\n") !== false) {
                                 $xsig = $phpMussel['substrbf']($xsig, "\n");
                             }
                             $xsig = $phpMussel['vn_shorthand']($xsig);
@@ -2104,16 +2090,16 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             } elseif ($ThisConf[1] === 4) {
                 foreach ([$URLScanner['DomainsNoLookup'], $URLScanner['URLsNoLookup']] as $URLScanner['ThisArr']) {
                     foreach ($URLScanner['ThisArr'] as $URLScanner['This']) {
-                        if (substr_count($phpMussel['memCache'][$SigFile], $URLScanner['This'])) {
+                        if (strpos($phpMussel['memCache'][$SigFile], $URLScanner['This']) !== false) {
                             $xsig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $URLScanner['This']);
-                            if (substr_count($xsig, "\n")) {
+                            if (strpos($xsig, "\n") !== false) {
                                 $xsig = $phpMussel['substrbf']($xsig, "\n");
                             }
                             if (substr($URLScanner['This'], 0, 15) === 'DOMAIN-NOLOOKUP') {
                                 $URLScanner['DomainPartsNoLookup'][$xsig] = true;
-                            } else {
-                                $URLScanner['URLPartsNoLookup'][$xsig] = true;
+                                continue;
                             }
+                            $URLScanner['URLPartsNoLookup'][$xsig] = true;
                         }
                     }
                 }
@@ -2126,7 +2112,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     foreach ($URLScanner['ThisArr'] as $URLScanner['This']) {
                         if (substr_count($phpMussel['memCache'][$SigFile], $URLScanner['This'])) {
                             $xsig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $URLScanner['This']);
-                            if (substr_count($xsig, "\n")) {
+                            if (strpos($xsig, "\n") !== false) {
                                 $xsig = $phpMussel['substrbf']($xsig, "\n");
                             }
                             if (
@@ -2258,181 +2244,176 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                     if ($xc > 0) {
                         for ($xi = 1; $xi < $xc; $xi++) {
-                            if (substr_count($xsig[$xi], "\n")) {
+                            if (strpos($xsig[$xi], "\n") !== false) {
                                 $xsig[$xi] = $phpMussel['substrbf']($xsig[$xi], "\n");
                             }
-                            if (substr_count($xsig[$xi], ';')) {
-                                if (!substr_count($xsig[$xi], ':')) {
+                            if (strpos($xsig[$xi], ';') !== false) {
+                                if (strpos($xsig[$xi], ':') === false) {
                                     continue;
                                 }
                                 $SigName = $phpMussel['vn_shorthand']($phpMussel['substral']($xsig[$xi], ';'));
                                 $xsig[$xi] = explode(';', $phpMussel['substrbl']($xsig[$xi], ';'));
-                                $sxc = count($xsig[$xi]);
                             } else {
                                 $SigName = $phpMussel['vn_shorthand']($xsig[$xi]);
-                                $xsig[$xi] = '';
-                                $sxc = 0;
+                                $xsig[$xi] = [];
                             }
-                            if ($sxc > 0) {
-                                for ($sxi = 0; $sxi < $sxc; $sxi++) {
-                                    $xsig[$xi][$sxi] = $phpMussel['SplitSigParts']($xsig[$xi][$sxi], 7);
-                                    if ($xsig[$xi][$sxi][0] === 'LV') {
-                                        if (!isset($xsig[$xi][$sxi][1]) || substr($xsig[$xi][$sxi][1], 0, 1) !== '$') {
-                                            continue 2;
-                                        }
-                                        $lv_haystack = substr($xsig[$xi][$sxi][1], 1);
-                                        if (!isset($$lv_haystack) || is_array($$lv_haystack)) {
-                                            continue 2;
-                                        }
-                                        $lv_haystack = $$lv_haystack;
-                                        if ($climode) {
-                                            $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
-                                        }
-                                        $lv_needle = (isset($xsig[$xi][$sxi][2])) ? $xsig[$xi][$sxi][2] : '';
-                                        $pos_A = (isset($xsig[$xi][$sxi][3])) ? $xsig[$xi][$sxi][3] : 0;
-                                        $pos_Z = (isset($xsig[$xi][$sxi][4])) ? $xsig[$xi][$sxi][4] : 0;
-                                        $lv_min = (isset($xsig[$xi][$sxi][5])) ? $xsig[$xi][$sxi][5] : 0;
-                                        $lv_max = (isset($xsig[$xi][$sxi][6])) ? $xsig[$xi][$sxi][6] : -1;
-                                        if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
-                                            continue 2;
-                                        }
-                                    } elseif (isset($xsig[$xi][$sxi][2])) {
-                                        if (isset($xsig[$xi][$sxi][3])) {
-                                            if ($xsig[$xi][$sxi][2] == 'A') {
-                                                if (
-                                                    !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') || (
-                                                        $xsig[$xi][$sxi][0] == 'FD' &&
-                                                        !substr_count("\x01" . substr($str_hex, 0, $xsig[$xi][$sxi][3] * 2), "\x01" . $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-RX' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex, 0, $xsig[$xi][$sxi][3] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM' &&
-                                                        !substr_count("\x01" . substr($str_hex_norm, 0, $xsig[$xi][$sxi][3] * 2), "\x01" . $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM-RX' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex_norm, 0, $xsig[$xi][$sxi][3] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'META' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($CoExMeta, 0, $xsig[$xi][$sxi][3] * 2))
-                                                    )
-                                                ) {
-                                                    continue 2;
-                                                }
-                                            } else {
-                                                if (
-                                                    !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') || (
-                                                        $xsig[$xi][$sxi][0] == 'FD' &&
-                                                        !substr_count(substr($str_hex, $xsig[$xi][$sxi][2] * 2, $xsig[$xi][$sxi][3] * 2), $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-RX' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex, $xsig[$xi][$sxi][2] * 2, $xsig[$xi][$sxi][3] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM' &&
-                                                        !substr_count(substr($str_hex_norm, $xsig[$xi][$sxi][2] * 2, $xsig[$xi][$sxi][3] * 2), $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM-RX' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex_norm, $xsig[$xi][$sxi][2] * 2, $xsig[$xi][$sxi][3] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'META' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($CoExMeta, $xsig[$xi][$sxi][2] * 2, $xsig[$xi][$sxi][3] * 2))
-                                                    )
-                                                ) {
-                                                    continue 2;
-                                                }
-                                            }
-                                        } else {
-                                            if ($xsig[$xi][$sxi][2] == 'A') {
-                                                if (
-                                                    !substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') || (
-                                                        $xsig[$xi][$sxi][0] == 'FN' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', $ofn)
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD' &&
-                                                        !substr_count("\x01" . $str_hex, "\x01" . $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-RX' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', $str_hex)
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM' &&
-                                                        !substr_count("\x01" . $str_hex_norm, "\x01" . $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM-RX' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', $str_hex_norm)
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'META' &&
-                                                        !preg_match('/\A(?:' . $xsig[$xi][$sxi][1] . ')/i', $CoExMeta)
-                                                    )
-                                                ) {
-                                                    continue 2;
-                                                }
-                                            } else {
-                                                if (
-                                                    !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') || (
-                                                        $xsig[$xi][$sxi][0] == 'FD' &&
-                                                        !substr_count(substr($str_hex, $xsig[$xi][$sxi][2] * 2), $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-RX' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex, $xsig[$xi][$sxi][2] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM' &&
-                                                        !substr_count(substr($str_hex_norm, $xsig[$xi][$sxi][2] * 2), $xsig[$xi][$sxi][1])
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'FD-NORM-RX' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($str_hex_norm, $xsig[$xi][$sxi][2] * 2))
-                                                    ) || (
-                                                        $xsig[$xi][$sxi][0] == 'META' &&
-                                                        !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', substr($CoExMeta, $xsig[$xi][$sxi][2] * 2))
-                                                    )
-                                                ) {
-                                                    continue 2;
-                                                }
-                                            }
-                                        }
-                                    } else {
-                                        if (
-                                            (
-                                                $xsig[$xi][$sxi][0] == 'FN' &&
-                                                !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', $ofn)
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FS-MIN' &&
-                                                $str_len < $xsig[$xi][$sxi][1]
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FS-MAX' &&
-                                                $str_len > $xsig[$xi][$sxi][1]
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FD' &&
-                                                !substr_count($str_hex, $xsig[$xi][$sxi][1])
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FD-RX' &&
-                                                !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', $str_hex)
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FD-NORM' &&
-                                                !substr_count($str_hex_norm, $xsig[$xi][$sxi][1])
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'FD-NORM-RX' &&
-                                                !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', $str_hex_norm)
-                                            ) || (
-                                                $xsig[$xi][$sxi][0] == 'META' &&
-                                                !preg_match('/(?:' . $xsig[$xi][$sxi][1] . ')/i', $CoExMeta)
-                                            )
-                                        ) {
-                                            continue 2;
-                                        }
-                                        if (substr($xsig[$xi][$sxi][0], 0, 1) == '$') {
-                                            $vf = substr($xsig[$xi][$sxi][0], 1);
-                                            if (!isset($$vf) || is_array($$vf) || $$vf != $xsig[$xi][$sxi][1]) {
-                                                continue 2;
-                                            }
-                                        } elseif (substr($xsig[$xi][$sxi][0], 0, 2) == '!$') {
-                                            $vf = substr($xsig[$xi][$sxi][0], 2);
-                                            if (!isset($$vf) || is_array($$vf) || $$vf == $xsig[$xi][$sxi][1]) {
-                                                continue 2;
-                                            }
-                                        } elseif (strpos(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $xsig[$xi][$sxi][0] . ',') === false) {
-                                            continue 2;
-                                        }
+                            foreach ($xsig[$xi] as $ThisSigPart) {
+                                if (empty($ThisSigPart)) {
+                                    continue 2;
+                                }
+                                $ThisSigPart = $phpMussel['SplitSigParts']($ThisSigPart, 7);
+                                if ($ThisSigPart[0] === 'LV') {
+                                    if (!isset($ThisSigPart[1]) || substr($ThisSigPart[1], 0, 1) !== '$') {
+                                        continue 2;
                                     }
+                                    $lv_haystack = substr($ThisSigPart[1], 1);
+                                    if (!isset($$lv_haystack) || is_array($$lv_haystack)) {
+                                        continue 2;
+                                    }
+                                    $lv_haystack = $$lv_haystack;
+                                    if ($climode) {
+                                        $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
+                                    }
+                                    $lv_needle = (isset($ThisSigPart[2])) ? $ThisSigPart[2] : '';
+                                    $pos_A = (isset($ThisSigPart[3])) ? $ThisSigPart[3] : 0;
+                                    $pos_Z = (isset($ThisSigPart[4])) ? $ThisSigPart[4] : 0;
+                                    $lv_min = (isset($ThisSigPart[5])) ? $ThisSigPart[5] : 0;
+                                    $lv_max = (isset($ThisSigPart[6])) ? $ThisSigPart[6] : -1;
+                                    if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
+                                        continue 2;
+                                    }
+                                    continue;
+                                }
+                                if (isset($ThisSigPart[2])) {
+                                    if (isset($ThisSigPart[3])) {
+                                        if ($ThisSigPart[2] == 'A') {
+                                            if (strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false || (
+                                                $ThisSigPart[0] == 'FD' &&
+                                                strpos("\x01" . substr($str_hex, 0, $ThisSigPart[3] * 2), "\x01" . $ThisSigPart[1]) === false
+                                            ) || (
+                                                $ThisSigPart[0] == 'FD-RX' &&
+                                                !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', substr($str_hex, 0, $ThisSigPart[3] * 2))
+                                            ) || (
+                                                $ThisSigPart[0] == 'FD-NORM' &&
+                                                strpos("\x01" . substr($str_hex_norm, 0, $ThisSigPart[3] * 2), "\x01" . $ThisSigPart[1]) === false
+                                            ) || (
+                                                $ThisSigPart[0] == 'FD-NORM-RX' &&
+                                                !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', substr($str_hex_norm, 0, $ThisSigPart[3] * 2))
+                                            ) || (
+                                                $ThisSigPart[0] == 'META' &&
+                                                !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', substr($CoExMeta, 0, $ThisSigPart[3] * 2))
+                                            )) {
+                                                continue 2;
+                                            }
+                                            continue;
+                                        }
+                                        if (strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false || (
+                                            $ThisSigPart[0] == 'FD' &&
+                                            strpos(substr($str_hex, $ThisSigPart[2] * 2, $ThisSigPart[3] * 2), $ThisSigPart[1]) === false
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-RX' &&
+                                            !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($str_hex, $ThisSigPart[2] * 2, $ThisSigPart[3] * 2))
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-NORM' &&
+                                            strpos(substr($str_hex_norm, $ThisSigPart[2] * 2, $ThisSigPart[3] * 2), $ThisSigPart[1]) === false
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-NORM-RX' &&
+                                            !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($str_hex_norm, $ThisSigPart[2] * 2, $ThisSigPart[3] * 2))
+                                        ) || (
+                                            $ThisSigPart[0] == 'META' &&
+                                            !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($CoExMeta, $ThisSigPart[2] * 2, $ThisSigPart[3] * 2))
+                                        )) {
+                                            continue 2;
+                                        }
+                                        continue;
+                                    }
+                                    if ($ThisSigPart[2] == 'A') {
+                                        if (strpos(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false || (
+                                            $ThisSigPart[0] == 'FN' &&
+                                            !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $ofn)
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD' &&
+                                            strpos("\x01" . $str_hex, "\x01" . $ThisSigPart[1]) === false
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-RX' &&
+                                            !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $str_hex)
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-NORM' &&
+                                            strpos("\x01" . $str_hex_norm, "\x01" . $ThisSigPart[1]) === false
+                                        ) || (
+                                            $ThisSigPart[0] == 'FD-NORM-RX' &&
+                                            !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $str_hex_norm)
+                                        ) || (
+                                            $ThisSigPart[0] == 'META' &&
+                                            !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $CoExMeta)
+                                        )) {
+                                            continue 2;
+                                        }
+                                        continue;
+                                    }
+                                    if (strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false || (
+                                        $ThisSigPart[0] == 'FD' &&
+                                        strpos(substr($str_hex, $ThisSigPart[2] * 2), $ThisSigPart[1]) === false
+                                    ) || (
+                                        $ThisSigPart[0] == 'FD-RX' &&
+                                        !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($str_hex, $ThisSigPart[2] * 2))
+                                    ) || (
+                                        $ThisSigPart[0] == 'FD-NORM' &&
+                                        strpos(substr($str_hex_norm, $ThisSigPart[2] * 2), $ThisSigPart[1]) === false
+                                    ) || (
+                                        $ThisSigPart[0] == 'FD-NORM-RX' &&
+                                        !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($str_hex_norm, $ThisSigPart[2] * 2))
+                                    ) || (
+                                        $ThisSigPart[0] == 'META' &&
+                                        !preg_match('/(?:' . $ThisSigPart[1] . ')/i', substr($CoExMeta, $ThisSigPart[2] * 2))
+                                    )) {
+                                        continue 2;
+                                    }
+                                    continue;
+                                }
+                                if ((
+                                    $ThisSigPart[0] == 'FN' &&
+                                    !preg_match('/(?:' . $ThisSigPart[1] . ')/i', $ofn)
+                                ) || (
+                                    $ThisSigPart[0] == 'FS-MIN' &&
+                                    $str_len < $ThisSigPart[1]
+                                ) || (
+                                    $ThisSigPart[0] == 'FS-MAX' &&
+                                    $str_len > $ThisSigPart[1]
+                                ) || (
+                                    $ThisSigPart[0] == 'FD' &&
+                                    strpos($str_hex, $ThisSigPart[1]) === false
+                                ) || (
+                                    $ThisSigPart[0] == 'FD-RX' &&
+                                    !preg_match('/(?:' . $ThisSigPart[1] . ')/i', $str_hex)
+                                ) || (
+                                    $ThisSigPart[0] == 'FD-NORM' &&
+                                    strpos($str_hex_norm, $ThisSigPart[1]) === false
+                                ) || (
+                                    $ThisSigPart[0] == 'FD-NORM-RX' &&
+                                    !preg_match('/(?:' . $ThisSigPart[1] . ')/i', $str_hex_norm)
+                                ) || (
+                                    $ThisSigPart[0] == 'META' &&
+                                    !preg_match('/(?:' . $ThisSigPart[1] . ')/i', $CoExMeta)
+                                )) {
+                                    continue 2;
+                                }
+                                if (substr($ThisSigPart[0], 0, 1) === '$') {
+                                    $vf = substr($ThisSigPart[0], 1);
+                                    if (!isset($$vf) || is_array($$vf) || $$vf != $ThisSigPart[1]) {
+                                        continue 2;
+                                    }
+                                    continue;
+                                }
+                                if (substr($ThisSigPart[0], 0, 2) === '!$') {
+                                    $vf = substr($ThisSigPart[0], 2);
+                                    if (!isset($$vf) || is_array($$vf) || $$vf == $ThisSigPart[1]) {
+                                        continue 2;
+                                    }
+                                    continue;
+                                }
+                                if (strpos(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false) {
+                                    continue 2;
                                 }
                             }
                             if (
@@ -2442,11 +2423,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             ) {
                                 $phpMussel['Detected']($heur, $lnap, $SigName, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                             }
-                            $xsig[$xi] = '';
                         }
                     }
                 }
-                $sxi = $sxc = $SigName = $xi = $xc = $xsig = $coexi = '';
+                $SigName = $xi = $xc = $xsig = $coexi = $ThisSigPart = '';
             }
         }
     }
@@ -2520,7 +2500,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $SigNum = $ThisSig[3] - 1;
                             }
                         } elseif ($ThisSig[1] == 'FD') {
-                            if (!substr_count($$DataSource, $ThisSig[2])) {
+                            if (strpos($$DataSource, $ThisSig[2]) === false) {
                                 if ($ThisSig[3] <= $SigNum) {
                                     break;
                                 }
@@ -3034,7 +3014,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Office document chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_to_doc']) {
-        if (substr_count(',doc,dot,pps,ppt,xla,xls,wiz,', ',' . $xt . ',')) {
+        if (strpos(',doc,dot,pps,ppt,xla,xls,wiz,', ',' . $xt . ',') !== false) {
             if ($fourcc !== 'd0cf11e0') {
                 if (!$flagged) {
                     $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -3332,7 +3312,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             if ($VTValue['detected'] && $VTValue['result']) {
                                 $VN = $VTKey . '(VirusTotal)-' . $VTValue['result'];
                                 if (
-                                    !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
+                                    strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
                                     empty($phpMussel['memCache']['ignoreme'])
                                 ) {
                                     if (!$flagged) {
@@ -4247,11 +4227,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             continue;
                         }
                         if ($TarFile['File']['Filename']) {
-                            if (substr_count($TarFile['File']['Filename'], "\\")) {
+                            if (strpos($TarFile['File']['Filename'], "\\") !== false) {
                                 $TarFile['File']['Filename'] =
                                     $phpMussel['substral']($TarFile['File']['Filename'], "\\") ;
                             }
-                            if (substr_count($TarFile['File']['Filename'], '/')) {
+                            if (strpos($TarFile['File']['Filename'], '/') !== false) {
                                 $TarFile['File']['Filename'] =
                                     $phpMussel['substral']($TarFile['File']['Filename'], '/') ;
                             }
@@ -4408,13 +4388,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 }
                 if ($zDo) {
                     $ScanDepth++;
-                    if (substr_count($ThisPhar['Filename'], '.')) {
+                    if (strpos($ThisPhar['Filename'], '.') !== false) {
                         $ThisPhar['Filename'] = $phpMussel['substrbl']($ThisPhar['Filename'], '.');
                     }
-                    if (substr_count($ThisPhar['Filename'], "\\")) {
+                    if (strpos($ThisPhar['Filename'], "\\") !== false) {
                         $ThisPhar['Filename'] = $phpMussel['substral']($ThisPhar['Filename'], "\\");
                     }
-                    if (substr_count($ThisPhar['Filename'], '/')) {
+                    if (strpos($ThisPhar['Filename'], '/') !== false) {
                         $ThisPhar['Filename'] = $phpMussel['substral']($ThisPhar['Filename'], '/');
                     }
                     $ThisPhar['Filesize'] = strlen($ThisPhar['Data']);
@@ -4815,7 +4795,7 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
         }
         $Arr = [];
     }
-    if (!substr_count($In, "\n")) {
+    if (strpos($In, "\n") === false) {
         return false;
     }
     $In = str_replace("\r", '', $In);
