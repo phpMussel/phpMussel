@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.31).
+ * This file: Functions file (last modified: 2018.08.05).
  */
 
 /**
@@ -4625,7 +4625,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Events' : 'Web-Events', 1);
 
     /** Update statistics. */
-    if ($phpMussel['CacheModified']) {
+    if (!empty($phpMussel['CacheModified'])) {
         $phpMussel['Statistics'] = $phpMussel['SaveCache']('Statistics', -1, serialize($phpMussel['Statistics']));
     }
 
