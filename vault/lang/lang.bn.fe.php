@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.07.30).
+ * This file: Bangla language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> মাধ্যমে উপলব্ধ।';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'ইমেল কার্যকারিতা পাঠানোর জন্য প্রয়োজনীয়।<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> লাইসেন্সের মাধ্যমে উপলব্ধ।';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'প্রধান প্যাকেজ (স্বাক্ষর, ডকুমেন্টেশন এবং কনফিগারেশন সহ না)।';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">হোম পেজ</a> | <a href="?phpmussel-page=logout">প্রস্থান</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">প্রস্থান</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'ইমেল পাঠানোর কার্যকারিতা জন্য এই কনফিগারেশন নির্দেশাবলী প্রয়োজন হতে পারে। আরো তথ্য এবং প্রস্তাবিত মান জন্য ডকুমেন্টেশন পড়ুন।';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ফাইলের নামগুলির মধ্যে শীর্ষস্থানীয় এবং অনুন্নত বিন্দুগুলির অনুমতি দিন? এটি কখনও কখনও ফাইলগুলি লুকাতে, অথবা কিছু সিস্টেমকে ট্রানসালাল ডাইরেক্ট করার অনুমতি দেওয়ার জন্য ব্যবহার করা যেতে পারে। False = অনুমতি দেবেন না [ডিফল্ট]। True = অনুমতি দিন।';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'পরিচিত আর্কাইভ ফাইল এক্সটেনশন (বিন্যাসে CSV হয়; সমস্যাগুলি ঘটলেই কেবল যুক্ত বা অপসারণ করা উচিত; অবাঞ্ছিতভাবে অপসারণ করা মিথ্যা ইতিবাচক প্রদর্শিত হতে পারে, এবং অকৃত্রিমভাবে যোগ করা হবে মূলত আপনি কি নির্দিষ্ট আক্রমণ থেকে যোগ করছেন কি হোয়াইটলিস্ট; সতর্কতা সঙ্গে সংশোধন করুন; এটিও লক্ষ্য করুন যে সামগ্রী-স্তরের আর্কাইভ বিশ্লেষণে এটির কোনো প্রভাব নেই)। মান অনুযায়ী, অধিকাংশ সিস্টেম এবং CMS- এ তালিকাটি সর্বাধিক ব্যবহৃত বিন্যাসে তালিকাভুক্ত করা হয়, কিন্তু এটি অপরিহার্যভাবে বিস্তৃত নয়।';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'কোনও নিয়ন্ত্রণ অক্ষর (নতুন লাইন ব্যতীত) ধারণকারী কোনও ফাইল অবরোধ করুন? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) যদি আপনি কেবলমাত্র প্লেইন-টেক্সট আপলোড করছেন, তাহলে আপনি আপনার সিস্টেমে কিছু অতিরিক্ত সুরক্ষা প্রদান করতে এই সক্ষম করতে পারেন। যাইহোক, যদি আপনি প্লেইন-টেক্সট ছাড়া অন্য কিছু আপলোড, এই সক্রিয় করার ফলে মিথ্যা ইতিবাচক হতে পারে। False = ব্লক করবেন না [ডিফল্ট]; True = ব্লক করুন।';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.07.30).
+ * This file: Arabic language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> متاح عبر الترخيص الرخصه <a dir="ltr" href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?phpmussel-page=logout">خروج</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">خروج</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'قد تكون إرشادات التهيئة هذه مطلوبة للوظيفة التي تتضمن إرسال البريد الإلكتروني. يرجى الرجوع إلى الوثائق لمزيد من المعلومات والقيم الموصى بها.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'السماح النقاط الرائدة والزائدة في أسماء الملفات؟ يمكن استخدام هذا أحيانًا لإخفاء الملفات أو خداع بعض الأنظمة للسماح بدخول الدليل. زائفة/False = لا تسمح [افتراضي]. صحيح/True = السماح.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'ملحقات ملفات الأرشيف المعترف بها (الشكل هو CSV، وينبغي فقط إضافة أو إزالة عندما تحدث المشاكل؛ إزالة دون داع قد يسبب ايجابيات كاذبة لتظهر لملفات الأرشيف، في حين اضاف داع سوف القائمة البيضاء أساسا ما كنت تقوم بإضافة من كشف المحدد الهجوم؛ تعديل مع الحذر، لاحظ أيضا أن هذا ليس له تأثير على ما المحفوظات يمكن ولا يمكن تحليلها على مستوى المحتوى). القائمة، كما هو في التقصير، يسرد تلك الأشكال الأكثر شيوعا في غالبية النظم واتفاقية الأنواع المهاجرة، ولكن عمدا ليست شاملة بالضرورة.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'حظر أي ملفات تحتوي على أي أحرف التحكم (عدا أسطر جديدة)؟ (<code dir="ltr">[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) إذا كنت <strong>فقط</strong> تحميل نص عادي، ثم يمكنك تشغيل هذا الخيار لتوفير بعض الحماية إضافية على النظام الخاص بك. ومع ذلك، إذا قمت بتحميل أي شيء آخر غير نص عادي، وتحول هذا على قد يؤدي إلى ايجابيات كاذبة. = كاذبة لا منع [افتراضي]. صحيح/True = بلوك.';

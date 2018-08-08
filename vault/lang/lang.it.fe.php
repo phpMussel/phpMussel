@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.07.30).
+ * This file: Italian language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'Richiesto per l\'utilizzo di qualsiasi funzionalità che implica l\'invio di e-mail.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> è disponibile tramite la licenza <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Pagina Principale</a> | <a href="?phpmussel-page=logout">Disconnettersi</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Disconnettersi</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'Queste direttive di configurazione possono essere richieste per funzionalità che implica l\'invio di e-mail. Si prega di fare riferimento alla documentazione per ulteriori informazioni e valori raccomandati.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Consenti punti iniziali e finali nei nomi dei file? Questo a volte può essere usato per nascondere file, o per ingannare alcuni sistemi per consentire l\'attraversamento di directory. False = Non permettere [Predefinito]. True = Permettere.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Riconosciute archivio file estensioni (formato è CSV; deve solo aggiungere o rimuovere quando problemi apparire; rimozione inutilmente può causare falsi positivi per archivio file, mentre aggiungendo inutilmente saranno essenzialmente whitelist quello che si sta aggiungendo dall\'attacco specifico rilevamento; modificare con cautela; anche notare che questo non ha qualsiasi effetto su cui gli archivi possono e non possono essere analizzati dal contenuti livello). La lista, come da predefinito, è i formati utilizzati più comunemente attraverso la maggior parte dei sistemi e CMS, ma apposta non è necessariamente completo.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloccare tutti i file contenenti i controlli caratteri (eccetto per nuove linee)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Se si sta caricando solo normale testo, quindi si puó attivare questa opzione a fornire additionale protezione al vostro sistema. Ma, se si carica qualcosa di diverso da normale testo, abilitando questo opzione può causare falsi positivi. False = Non bloccare [Predefinito]; True = Bloccare.';

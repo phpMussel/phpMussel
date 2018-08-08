@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.07.30).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'Bu yapılandırma yönergeleri, e-posta göndermeyi içeren işlevler için gerekli olabilir. Daha fazla bilgi ve tavsiye edilen değerler için lütfen dokümanlara bakınız.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Dosya adlarının başında ve sonunda noktalara izin verilsin mi? Bu bazen dosyaları gizlemek veya bazı sistemleri dizin geçişine izin vermek için kandırmak için kullanılabilir. Yanlış/False = İzin verme [Varsayılan]. Doğru/True = İzin ver.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Herhangi bir kontrol karakteri içeren dosyaları engelle (yeni satırlara istisna)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Yalnızca düz metin yüklüyorsanız, sisteminize biraz daha koruma sağlamak için bu seçeneği açabilirsiniz. Bununla birlikte, başka herhangi bir şey için, bunu açtığınızda yanlış pozitif sonuç alabilirsiniz. Yanlış/False = Engelleme [Varsayılan]; Doğru/True = Engelle.';

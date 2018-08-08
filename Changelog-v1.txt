@@ -7,7 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2018.08.08; Maikuolan]: Performed some early legwork for future email
+  functionality and future two-factor authentication functionality (neither
+  things are prime-time ready yet though). A handful of new configuration
+  directives have been added (currently marked as experimental/unstable) which
+  won't do anything yet, but which are related to this future functionality.
 
 === Version/Release 1.5.0 ===
 MINOR RELEASE.

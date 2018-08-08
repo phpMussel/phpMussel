@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.07.30).
+ * This file: Russian language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Основной пакет (минус сигнатуры, документация, и конфигурация).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?phpmussel-page=logout">Выйдите</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Выйдите</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'Эти директивы конфигурации могут потребоваться для функциональных возможностей, связанных с отправкой электронной почты. Дополнительную информацию и рекомендуемые значения см. в документации.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Разрешить точки в начале и конце имен файлов? Иногда это может быть использовано для скрытия файлов или для обмана некоторых систем для разрешения обхода каталога. False = Не разрешать [Стандарт]. True = Разрешать.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Опознаёт расширение архива или файла (CSV-формат; включать или удалять только при проблемах; удаление без нужны может вызвать для архива сигнал тревоги; включение без нужды может внести в белый список то, что раньше определялось как возможная атака; изменяйте список очень осторожно; помните, что программа не влияет на функцию архива и не может анализировать содержание). Этот список содержит форматы архивов, наиболее часто используемых большинством систем и CMS, однако он не завершён, но сделано это намеренно.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Должны ли файлы, содержащие командные сигналы (отличные от Newline/конец строки), быть блокированными (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>)? При загрузке только «голого» текста Вы можете активировать эту опцию, чтобы усилить защиту своей системы. Но когда она активирована, а Вы хотите загрузить не только текст, то программа подаст вам ложный сигнал тревоги. False = Не блокировать [Стандарт]; True = Блокировать.';

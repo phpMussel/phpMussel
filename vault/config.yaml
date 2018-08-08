@@ -408,4 +408,49 @@ Config Defaults:
   css_url:
    type: string
    default: ""
+ PHPMailer:
+  Host:
+   type: string
+   default: ""
+   experimental: true
+  Port:
+   type: int
+   default: 587
+   experimental: true
+  SMTPSecure:
+   type: string
+   default: "default"
+   choices:
+    default: "-"
+    tls: "TLS"
+    ssl: "SSL"
+   experimental: true
+  SMTPAuth:
+   type: bool
+   default: true
+   experimental: true
+  Username:
+   type: string
+   default: ""
+   experimental: true
+  Password:
+   type: string
+   default: ""
+   experimental: true
+  setFromAddress:
+   type: string
+   default: ""
+   experimental: true
+  setFromName:
+   type: string
+   default: ""
+   experimental: true
+  addReplyToAddress:
+   type: string
+   default: ""
+   experimental: true
+  addReplyToName:
+   type: string
+   default: ""
+   experimental: true
 

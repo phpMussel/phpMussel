@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.07.30).
+ * This file: Front-end handler (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,15 @@ if (!file_exists($phpMussel['Vault'] . 'frontend_functions.php')) {
 }
 /** Load the front-end functions file. */
 require $phpMussel['Vault'] . 'frontend_functions.php';
+
+/** Load PHPMailer classes if they've been installed. */
+if (file_exists($phpMussel['Vault'] . '/phpmailer/PHPMailer.php')) {
+    require $phpMussel['Vault'] . '/phpmailer/PHPMailer.php';
+    require $phpMussel['Vault'] . '/phpmailer/Exception.php';
+    require $phpMussel['Vault'] . '/phpmailer/OAuth.php';
+    require $phpMussel['Vault'] . '/phpmailer/POP3.php';
+    require $phpMussel['Vault'] . '/phpmailer/SMTP.php';
+}
 
 /** Set page selector if not already set. */
 if (empty($phpMussel['QueryVars']['phpmussel-page'])) {
@@ -939,7 +948,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['FE']['Indexes'] .= '<span class="' . $phpMussel['CatKey'] . '-index" style="display:none"><a href="#' . $phpMussel['ThisDir']['DirLangKey'] . '">' . $phpMussel['ThisDir']['DirName'] . "</a><br /><br /></span>\n            ";
             $phpMussel['ThisDir']['DirLang'] = !empty(
                 $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']]
-            ) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : $phpMussel['lang']['response_error'];
+            ) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : (
+                !empty($phpMussel['lang']['config_' . $phpMussel['CatKey']]) ? $phpMussel['lang']['config_' . $phpMussel['CatKey']] : $phpMussel['lang']['response_error']
+            );
             if (!empty($phpMussel['DirValue']['experimental'])) {
                 $phpMussel['ThisDir']['DirLang'] = '<code class="exp">' . $phpMussel['lang']['config_experimental'] . '</code> ' . $phpMussel['ThisDir']['DirLang'];
             }

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.07.30).
+ * This file: Thai language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'จำเป็นสำหรับการใช้ฟังก์ชันใด ๆ ที่เกี่ยวข้องกับการส่งอีเมล.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> สามารถใช้ได้ผ่านทางใบอนุญาต <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'แพคเกจหลัก (ไม่รวมลายเซ็น เอกสาร และการกำหนดค่า).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">โฮมเพจ</a> | <a href="?phpmussel-page=logout">ออกจากระบบ</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ออกจากระบบ</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'คำสั่งกำหนดค่าเหล่านี้อาจจำเป็นสำหรับฟังก์ชันที่เกี่ยวข้องกับการส่งอีเมล. โปรดดูเอกสารประกอบเพื่อดูข้อมูลเพิ่มเติมและค่าแนะนำ.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'อนุญาตจุดที่จุดเริ่มต้นและจุดสิ้นสุดของชื่อไฟล์? บางครั้งอาจใช้เพื่อซ่อนไฟล์หรือเพื่อหลอกล่อระบบบางระบบให้อนุญาตการข้ามเส้นทางไดเรกทอรี. False = ไม่อนุญาต [ค่าเริ่มต้น]. True = อนุญาต.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'รู้จักส่วนขยายไฟล์ที่เก็บถาวร (รูปแบบเป็น CSV; ควรเพิ่มหรือลบเมื่อเกิดปัญหาขึ้นเท่านั้น; การลบโดยปราศจากเหตุผลอาจทำให้ false positive ปรากฏขึ้น. เพิ่มได้โดยไม่มีเหตุผลอาจป้องกันไม่ให้การป้องกันบางอย่างทำงานได้อย่างถูกต้อง; แก้ไขด้วยความระมัดระวัง; การสแกนระดับเนื้อหาไม่ได้รับผลกระทบ). รายการ เป็นค่าเริ่มต้น แสดงรูปแบบที่ใช้บ่อยที่สุดในระบบและ CMS ส่วนใหญ่ แต่ไม่รวมทุกอย่าง.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'บล็อกไฟล์ใด ๆ ที่มีอักขระควบคุมหรือไม่ (นอกเหนือจากบรรทัดใหม่)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) หากคุณกำลังอัปโหลดเฉพาะข้อความล้วน จากนั้นคุณสามารถเปิดใช้งานตัวเลือกนี้ได้เพื่อให้การป้องกันเพิ่มเติมในระบบของคุณ. อย่างไรก็ตาม หากคุณอัปโหลดรายการอื่น ๆ การเปิดใช้งานอาจส่งผลให้เกิด false positive. False = อย่าปิดกั้น [ค่าเริ่มต้น]; True = ปิดกั้น.';

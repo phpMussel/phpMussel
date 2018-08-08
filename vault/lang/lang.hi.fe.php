@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.07.30).
+ * This file: Hindi language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'पाई चार्ट उत्पन्न करने के लिए फ्रंट एंड सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> लाइसेंस के माध्यम से उपलब्ध है।';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'मुख्य पैकेज (हस्ताक्षर, डॉक्यूमेंटेशन, और कॉन्फ़िगरेशन के बिना)।';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">होमपेज</a> | <a href="?phpmussel-page=logout">लोग आउट</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">लोग आउट</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'इन कॉन्फ़िगरेशन निर्देशों को कार्यक्षमता के लिए आवश्यक हो सकता है जिसमें ईमेल भेजना शामिल है। कृपया अधिक जानकारी और अनुशंसित मानों के लिए प्रलेखन देखें।';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'फ़ाइल नामों में अग्रणी और पीछे वाले बिंदुओं की अनुमति दें? इसे कभी-कभी फ़ाइलों को छिपाने के लिए या निर्देशिका को ट्रैवर्सल की अनुमति देने के लिए कुछ सिस्टमों को चालित करने के लिए उपयोग किया जा सकता है। False(झूठी) = अनुमति न दें [डिफ़ॉल्ट]. True(सच्चे) = अनुमति दें.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'अभिलेखागार के लिए ज्ञात फाइल एक्सटेंशन (प्रारूप CSV है; समस्याएं होने पर केवल जोड़ या निकालना चाहिए; हटाने के कारण संग्रह फाइलों के लिए झूठी सकारात्मक दिखाई दे सकते हैं, जबकि जोड़ना अनिवार्य रूप से श्वेतसूची में होगा जो आप हमला विशिष्ट पहचान से जोड़ रहे हैं; सावधानी के साथ संशोधित करें; यह भी ध्यान रखें कि कंटेंट स्तर पर अभिलेखागार क्या कर सकते हैं और इसका विश्लेषण नहीं किया जा सकता है इसका इसका कोई प्रभाव नहीं है)। सूची, जैसा कि डिफ़ॉल्ट रूप से है, उन स्वरूपों को सूचीबद्ध करता है जो अधिकांश प्रणालियों और CMS पर सबसे ज्यादा इस्तेमाल करते हैं, लेकिन जानबूझकर व्यापक रूप से व्यापक नहीं है।';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'किसी भी नियंत्रण पात्रों (नई लाइनों के अलावा) वाले किसी भी फाइल को अवरुद्ध करें? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) यदि आप केवल सादा-पाठ अपलोड कर रहे हैं, तो आप अपने सिस्टम पर कुछ अतिरिक्त सुरक्षा प्रदान करने के लिए इस विकल्प को चालू कर सकते हैं। हालांकि, यदि आप सादा-पाठ के अलावा कुछ भी अपलोड करते हैं, तो इसे बदलकर गलत सकारात्मक परिणाम हो सकते हैं। False(झूठी) = ब्लॉक न करें [डिफ़ॉल्ट]; True(सच्चे) = ब्लॉक करें।';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.07.30).
+ * This file: Spanish language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$phpMussel['lang']['Extended Description: PHPMailer'] = 'Requerido para usar cualquier funcionalidad que implique el envío de correo electrónico.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponible a través de la licencia <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'El paquete principal (menos las firmas, la documentación, y la configuración).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Cerrar Sesión</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Cerrar Sesión</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'Estas directivas de configuración pueden ser necesarias para la funcionalidad que implica el envío de correo electrónico. Consulte la documentación para obtener más información y valores recomendados.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '¿Permitir puntos iniciales y finales en los nombres de archivo? A veces, esto se puede utilizar para ocultar archivos, o para engañar a algunos sistemas para que permitan el atravesar del directorio. False = No permitir [Predefinido]. True = Permitir.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear.';

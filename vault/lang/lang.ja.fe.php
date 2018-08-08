@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.07.30).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,9 +19,12 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['Extended Description: Chart.js'] = 'フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。';
+$phpMussel['lang']['Extended Description: PHPMailer'] = '電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。';
 $phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
+$phpMussel['lang']['config_PHPMailer'] = 'これらのコンフィギュレーション・ディレクティブは、電子Ｅメールを送信する機能に必要な場合があります。​詳細および推奨値については、ドキュメントを参照してください。';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ファイル名に先頭と末尾のドットを使用できますか？​これは、ファイルを隠すためや、ディレクトリ・トラバーサルを許可するようにシステムを騙すために使用されることがあります。​<code>false</code>（偽）=許可しない（Default/デフォルト）。<code>true</code>（真）=許可します。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​<code>false</code>（偽） = ブロックしない（Default/デフォルト）；​<code>true</code>（真） = ブロックする。';
