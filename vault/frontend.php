@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.09).
+ * This file: Front-end handler (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -123,8 +123,8 @@ $phpMussel['FE'] = [
 
     /** The IP address of the current request. */
     'YourIP' => empty(
-        $_SERVER[$phpMussel['Config']['general']['ipaddr']]
-    ) ? '' : $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+        $_SERVER[$phpMussel['IPAddr']]
+    ) ? '' : $_SERVER[$phpMussel['IPAddr']],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),
@@ -281,7 +281,7 @@ $phpMussel['ClearExpired']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'
 
 /** Brute-force security check. */
 if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
-    $phpMussel['FE']['Cache'], 'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+    $phpMussel['FE']['Cache'], 'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']]
 )) && ($phpMussel['LoginAttempts'] >= $phpMussel['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[phpMussel] ' . $phpMussel['lang']['max_login_attempts_exceeded']);
@@ -313,7 +313,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
             $phpMussel['FE']['Password'] = substr($phpMussel['FE']['Password'], 0, -2);
             if (password_verify($_POST['password'], $phpMussel['FE']['Password'])) {
                 $phpMussel['FECacheRemove'](
-                    $phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+                    $phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']]
                 );
                 if (($phpMussel['FE']['Permissions'] === 3 && (
                     !$phpMussel['FE']['CronMode'] || substr($phpMussel['FE']['UA'], 0, 10) !== 'Cronable v'

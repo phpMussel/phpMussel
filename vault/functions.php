@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.08.05).
+ * This file: Functions file (last modified: 2018.08.10).
  */
 
 /**
@@ -3933,7 +3933,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['Quarantine'](
                     $in,
                     $phpMussel['Config']['general']['quarantine_key'],
-                    $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+                    $_SERVER[$phpMussel['IPAddr']],
                     $qfu
                 );
                 $phpMussel['killdata'] .= sprintf($phpMussel['lang']['quarantined_as'], $qfu);
@@ -4453,7 +4453,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Quarantine'](
                 $in,
                 $phpMussel['Config']['general']['quarantine_key'],
-                $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+                $_SERVER[$phpMussel['IPAddr']],
                 $qfu
             );
             $phpMussel['killdata'] .= sprintf($phpMussel['lang']['quarantined_as'], $qfu);
@@ -4645,8 +4645,8 @@ $phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$
         $Origin = 'CLI';
     } else {
         $Origin = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-            $_SERVER[$phpMussel['Config']['general']['ipaddr']]
-        ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']];
+            $_SERVER[$phpMussel['IPAddr']]
+        ) : $_SERVER[$phpMussel['IPAddr']];
     }
     $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['lang']['data_not_available'] : trim($phpMussel['whyflagged']);
     if ($phpMussel['Config']['general']['scan_log_serialized']) {
@@ -5223,7 +5223,7 @@ $phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel
         $phpMussel['Quarantine'](
             $Array['odata'],
             $phpMussel['Config']['general']['quarantine_key'],
-            $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+            $_SERVER[$phpMussel['IPAddr']],
             $Array['qfile']
         );
     }

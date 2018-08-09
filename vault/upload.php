@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.07.17).
+ * This file: Upload handler (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -81,8 +81,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 $phpMussel['memCache']['start_time'],
                 $phpMussel['Config']['general']['timeFormat']
             ) . "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-                $_SERVER[$phpMussel['Config']['general']['ipaddr']]
-            ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']]) . "\n"
+                $_SERVER[$phpMussel['IPAddr']]
+            ) : $_SERVER[$phpMussel['IPAddr']]) . "\n"
         ];
     }
 
@@ -320,8 +320,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             $phpMussel['memCache']['Handle']['Data'] .=
                 'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
                 "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-                    $_SERVER[$phpMussel['Config']['general']['ipaddr']]
-                ) : $_SERVER[$phpMussel['Config']['general']['ipaddr']]) .
+                    $_SERVER[$phpMussel['IPAddr']]
+                ) : $_SERVER[$phpMussel['IPAddr']]) .
                 "\n== SCAN RESULTS / WHY FLAGGED ==\n" .
                 $phpMussel['whyflagged'] .
                 "\n== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==\n" .
