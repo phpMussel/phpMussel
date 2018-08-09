@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.08.08).
+ * This file: English language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(See description above)
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the <code>vt_suspicion_level</code> directive.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.';
 $phpMussel['lang']['confirm_action'] = 'Are you sure you want to "%s"?';
+$phpMussel['lang']['field_2fa'] = '2FA code';
 $phpMussel['lang']['field_activate'] = 'Activate';
 $phpMussel['lang']['field_clear_all'] = 'Clear all';
 $phpMussel['lang']['field_component'] = 'Component';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Component is active.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactive.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Component is provisional.';
 $phpMussel['lang']['state_default_password'] = 'Warning: Using default password!';
+$phpMussel['lang']['state_email_sent'] = 'Email successfully sent to "%s".';
+$phpMussel['lang']['state_failed_missing'] = 'Task failed because a necessary component is unavailable.';
 $phpMussel['lang']['state_loading'] = 'Loading...';
 $phpMussel['lang']['state_loadtime'] = 'Page request completed in <span class="txtRd">%s</span> seconds.';
 $phpMussel['lang']['state_logged_in'] = 'Logged in.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Logged in + 2FA pending.';
+$phpMussel['lang']['state_logged_out'] = 'Logged out.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logs access only';
 $phpMussel['lang']['state_maintenance_mode'] = 'Warning: Maintenance mode is enabled!';
 $phpMussel['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';

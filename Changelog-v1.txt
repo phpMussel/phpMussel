@@ -13,6 +13,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   directives have been added (currently marked as experimental/unstable) which
   won't do anything yet, but which are related to this future functionality.
 
+- [2018.08.09; Sub-minor code change; Maikuolan]: Slightly improved front-end
+  logging.
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.08).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -53,7 +53,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = 'Daftar Abu-Abu:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Jika sistem Anda hanya mengizinkan tipe file spesifik menjadi diupload, atau jika sistem Anda secara eksplisit menolak tipe file-file tertentu, menspesifikasikan tipe file dalam bertanda putih, bertanda hitam dan bertanda abu-abu dapat menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip untuk mengabaikan tipe file tertentu. Format adalah CSV (comma separated values). Jika Anda ingin memindai semuanya, daripada daftar putih, daftar hitam atau daftar abu-abu, tinggalkan variabel kosong; Melakukannya akan menonaktifkan dafter putih/hitam/abu-abu. Urutan logis dari pengolahan: Jika tipe file bertanda putih, tidak memindai dan tidak memblokir file, dan tidak memeriksa file terhadap daftar hitam atau daftar abu-abu. Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu. Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun. Daftar Putih:';
 $phpMussel['lang']['config_files_max_recursion'] = 'Batas kedalaman rekursi maksimum untuk arsip. Default = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = 'Maksimum jumla file-file yang diizinkan untuk dipindai selama pemindaian upload file sebelum menghentikan pemindaian dan menginformasikan pengguna bahwa pengguna mengupload terlalu banyak! Menyediakan perlindungan pada serangan teoritis dimana penyerang mencoba DDoS pada sistem Anda atau CMS ada dengan overloading phpMussel supaya berjalan lambat. Proses PHP ke penghentian keras. Recommendasi: 10. Anda dapat menaikkan atau menurunkan angka ini bergantung dari kecepatan hardware Anda. Catat itu nomor ini tidak mengakuntabilitas atau mengikutkan konten dari file terkompres.';
-$phpMussel['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
+$phpMussel['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $phpMussel['lang']['config_general_allow_symlinks'] = 'Kadang-kadang phpMussel tidak dapat mengakses file secara langsung ketika diberi nama dengan cara tertentu. Mengakses file secara tidak langsung melalui symlink terkadang dapat menyelesaikan masalah ini. Namun, ini tidak selalu merupakan solusi yang layak, karena pada beberapa sistem, menggunakan symlink mungkin dilarang, atau mungkin memerlukan hak administratif. Direktif ini digunakan untuk menentukan apakah phpMussel harus mencoba menggunakan symlink untuk mengakses file secara tidak langsung, ketika mengaksesnya secara langsung tidak mungkin. True = Aktifkan symlink; False = Nonaktifkan symlink [Default].';
 $phpMussel['lang']['config_general_cleanup'] = 'Membersihkan variabel skrip dan cache setelah eksekusi? False = Tidak; True = Ya [Default]. Jika Anda tidak menggukan skrip di bawah pemindaian upload inisial, harus diset ke <code>true</code> (ya) untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk tujuan di bawah pemindaian upload inisial, harus diset ke <code>false</code> (tidak), untuk menghindari reload duplikat file ke memori. Dalam praktek umum, haru diset ke <code>true</code>, tapi jika kamu melakukannya, kamu tidak bisa menggunakan skrip untuk hal lain kecuali pemindaian upload file. Tidak memiliki pengaruh di dalam mode CLI.';
 $phpMussel['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0).';
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Lihat uraian di atas).
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Secara default, phpMussel akan membatasi file dipindai menggunakan Virus Total API untuk file-file yang dianggap "mencurigakan". Anda dapat menyesuaikan pembatasan ini dengan mengubah nilai direktif <code>vt_suspicion_level</code>.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Apakah Anda ingin phpMussel menerapkan hasil pemindaian menggunakan Virus Total API sebagai deteksi atau deteksi pembobotan? Direktif ini ada, karena, meskipun memindai file menggunakan mesin-mesin kelipatan (sebagai Virus Total melakukannya) harus menghasilkan tingkat deteksi meningkat (dan demikian lebih banyak file berbahaya tertangkap), juga dapat menghasilkan jumlah yang lebih banyak dari positif palsu, dan demikian, dalam kondisi beberapa, hasil pemindaian dapat digunakan lebih efektif sebagai nilai keyakinan daripada daripada sebagai kesimpulan definitif. Jika nilai 0 digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai pendeteksian, dan demikian, jika mesin-mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya, phpMussel akan menganggap file yang berbahaya. Jika nilai lain yang digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan sebagai deteksi pembobotan, dan demikian, jumlah mesin digunakan oleh Virus Total menandai file dipindai sebagai berbahaya akan berfungsi sebagai nilai keyakinan (atau deteksi pembobotan) untuk jika file dipindai harus dianggap berbahaya oleh phpMussel (nilai digunakan akan mewakili nilai keyakinan minimum atau pembobotan minimum diperlukan untuk dianggap berbahaya). Nilai 0 digunakan secara default.';
 $phpMussel['lang']['confirm_action'] = 'Anda yakin ingin "%s"?';
+$phpMussel['lang']['field_2fa'] = 'Kode 2FA';
 $phpMussel['lang']['field_activate'] = 'Mengaktifkan';
 $phpMussel['lang']['field_clear_all'] = 'Cabut semua';
 $phpMussel['lang']['field_component'] = 'Komponen';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
+$phpMussel['lang']['state_email_sent'] = 'Email berhasil dikirim ke "%s".';
+$phpMussel['lang']['state_failed_missing'] = 'Tugas gagal karena komponen yang diperlukan tidak tersedia.';
 $phpMussel['lang']['state_loading'] = 'Pemuatan...';
 $phpMussel['lang']['state_loadtime'] = 'Permintaan halaman selesai dalam <span class="txtRd">%s</span> detik.';
-$phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
+$phpMussel['lang']['state_logged_in'] = 'Dimasuk.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Dimasuk + 2FA sedang menunggu.';
+$phpMussel['lang']['state_logged_out'] = 'Dikeluar.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
@@ -314,7 +319,7 @@ $phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memun
 $phpMussel['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
-$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: phpMussel menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';

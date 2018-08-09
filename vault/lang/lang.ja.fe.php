@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.08).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（上記の説明を�
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'デフォルト設定では、​phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。​<code>vt_suspicion_level</code>ディレクティブを編集することのより、​この制限を変更することが可能です。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、​検出の重み付けとして扱うべきか？​複数のエンジン（Virus Totalのように）を使用したスキャニングは、​検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、​このディレクティブが存在します。​したがって、​スキャニング結果は、​決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。​値が０の場合、​Virus Total APIを使ったスキャンは検出として扱われ、​Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、​phpMusselもマルウェアと判断します。​その他の値の場合は結果は検出の重み付けとなり、​スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、​あるいは重み）。​デフォルト値は０です。';
 $phpMussel['lang']['confirm_action'] = 'あなたは「%s」したいですか？';
+$phpMussel['lang']['field_2fa'] = '２ＦＡコード';
 $phpMussel['lang']['field_activate'] = 'アクティブにする';
 $phpMussel['lang']['field_clear_all'] = 'すべてキャンセル';
 $phpMussel['lang']['field_component'] = 'コンポーネント';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがア�
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
+$phpMussel['lang']['state_email_sent'] = 'Ｅメールは「%s」に送信されました。';
+$phpMussel['lang']['state_failed_missing'] = '必要なコンポーネントが使用できないため、タスクが失敗しました。';
 $phpMussel['lang']['state_loading'] = '読み込んでいます...';
 $phpMussel['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
-$phpMussel['lang']['state_logged_in'] = 'ログインしています。';
+$phpMussel['lang']['state_logged_in'] = 'ログインしました。';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'ログインしました＋２ＦＡを待っています。';
+$phpMussel['lang']['state_logged_out'] = 'ログアウトしました。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';

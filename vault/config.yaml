@@ -409,6 +409,18 @@ Config Defaults:
    type: string
    default: ""
  PHPMailer:
+  EventLog:
+   type: string
+   default: ""
+   experimental: true
+  SkipAuthProcess:
+   type: bool
+   default: false
+   experimental: true
+  Enable2FA:
+   type: bool
+   default: false
+   experimental: true
   Host:
    type: string
    default: ""

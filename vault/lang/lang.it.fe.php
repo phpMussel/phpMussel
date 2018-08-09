@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.08.08).
+ * This file: Italian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Vedi descrizione prece
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando il Virus Total API ai quei file che considera "sospettose". Facoltativamente, è possibile modificare questa restrizione per mezzo di modificando il valore del <code>vt_suspicion_level</code> direttiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Dovrebbe phpMussel applica i risultati della scansione utilizzando il Virus Total API come rilevamenti o il ponderazione rilevamenti? Questa direttiva esiste, perché, sebbene scansione di un file utilizzando più motori (come Virus Total fa) dovrebbe risulta in un maggiore tasso di rilevamenti (e quindi in un maggiore numero di maligni file essere catturati), può anche risulta in un maggiore numero di falsi positivi, e quindi, in certe circostanze, i risultati della scansione possono essere meglio utilizzato come un punteggio di confidenza anziché come una conclusione definitiva. Se viene utilizzato un valore di 0, i risultati della scansione utilizzando il Virus Total API saranno applicati come rilevamenti, e quindi, se qualsiasi motori utilizzati da Virus Total che marca il file sottoposto a scansione come maligno, phpMussel considererà il file come maligno. Se qualsiasi altro valore è utilizzato, i risultati della scansione utilizzando il Virus Total API saranno applicati come ponderazione rilevamenti, e quindi, il numero di motori utilizzati da Virus Total marcando il file sottoposto a scansione come maligno servirà come un punteggio di confidenza (o ponderazione rilevamenti) per se il file sottoposto a scansione deve essere considerato maligno per phpMussel (il valore utilizzato rappresenterà il minimo punteggio di confidenza o ponderazione richiesto per essere considerato maligno). Un valore di 0 è utilizzato per predefinita.';
 $phpMussel['lang']['confirm_action'] = 'Sei sicuro di voler "%s"?';
+$phpMussel['lang']['field_2fa'] = 'Codice 2FA';
 $phpMussel['lang']['field_activate'] = 'Attivarlo';
 $phpMussel['lang']['field_clear_all'] = 'Revoca tutto';
 $phpMussel['lang']['field_component'] = 'Componente';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Componente è attivo.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Componente è inattivo.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Componente è provvisorio.';
 $phpMussel['lang']['state_default_password'] = 'Avvertimento: Utilizzando la password predefinita!';
+$phpMussel['lang']['state_email_sent'] = 'Email inviata con successo a "%s".';
+$phpMussel['lang']['state_failed_missing'] = 'Attività non riuscita perché un componente necessario non è disponibile.';
 $phpMussel['lang']['state_loading'] = 'Caricamento in corso...';
 $phpMussel['lang']['state_loadtime'] = 'Richiesta di pagina completata in <span class="txtRd">%s</span> secondi.';
 $phpMussel['lang']['state_logged_in'] = 'Connesso.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Connesso + 2FA in sospeso.';
+$phpMussel['lang']['state_logged_out'] = 'Disconnesso.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accesso solo per i log';
 $phpMussel['lang']['state_maintenance_mode'] = 'Attenzione: La modalità di manutenzione è abilitata!';
 $phpMussel['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non utilizzando una password valida!';

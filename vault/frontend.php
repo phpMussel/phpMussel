@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.08).
+ * This file: Front-end handler (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,13 +85,25 @@ $phpMussel['FE'] = [
     /** Cache data will be populated here. */
     'Cache' => "\n",
 
-    /** The current user state (0 = Not logged in; 1 = Logged in; -1 = Attempted and failed to log in). */
+    /**
+     * The current user state.
+     * -1 = Attempted and failed to log in.
+     * 0 = Not logged in.
+     * 1 = Logged in.
+     * 2 = Logged in, but awaiting two-factor authentication.
+     */
     'UserState' => 0,
 
     /** Taken from either $_POST['username'] or $_COOKIE['PHPMUSSEL-ADMIN'] (the username claimed by the client). */
     'UserRaw' => '',
 
-    /** User permissions (0 = Not logged in; 1 = Complete access; 2 = Logs access only; 3 = Cronable). */
+    /**
+     * User permissions.
+     * 0 = Not logged in, or awaiting two-factor authentication.
+     * 1 = Complete access.
+     * 2 = Logs access only.
+     * 3 = Cronable.
+     */
     'Permissions' => 0,
 
     /** Will be populated by messages reflecting the current request state. */
@@ -309,7 +321,18 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     $phpMussel['FE']['Permissions'] = 0;
                     $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_login_wrong_endpoint'];
                 } else {
-                    $phpMussel['FE']['UserState'] = 1;
+                    if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
+                        $phpMussel['2FA-State'] = (int)$phpMussel['FECacheGet'](
+                            $phpMussel['FE']['Cache'],
+                            '2FA-State:' . $phpMussel['FE']['User']
+                        );
+                        $phpMussel['FE']['UserState'] = ($phpMussel['2FA-State'] === 1) ? 1 : 2;
+                    } else {
+                        $phpMussel['FE']['UserState'] = 1;
+                    }
+                    if ($phpMussel['FE']['UserState'] !== 1) {
+                        $phpMussel['FE']['Permissions'] = 0;
+                    }
                     if (!$phpMussel['FE']['CronMode']) {
                         $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
                         $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
@@ -331,53 +354,32 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
 
     }
 
-    $phpMussel['FrontEndLogFile'] = '';
-    if ($phpMussel['Config']['general']['FrontEndLog']) {
-        $phpMussel['FrontEndLogFile'] = (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) ? $phpMussel['TimeFormat'](
-            $phpMussel['Now'],
-            $phpMussel['Config']['general']['FrontEndLog']
-        ) : $phpMussel['Config']['general']['FrontEndLog'];
-        $phpMussel['FrontEndLog'] = (
-            $phpMussel['Config']['legal']['pseudonymise_ip_addresses']
-        ) ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']];
-        $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['FE']['DateTime'] . ' - ' . (empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"');
-    }
     if ($phpMussel['FE']['state_msg']) {
         $phpMussel['LoginAttempts']++;
         $phpMussel['TimeToAdd'] = ($phpMussel['LoginAttempts'] > 4) ? ($phpMussel['LoginAttempts'] - 4) * 86400 : 86400;
         $phpMussel['FECacheAdd'](
             $phpMussel['FE']['Cache'],
             $phpMussel['FE']['Rebuild'],
-            'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+            'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']],
             $phpMussel['LoginAttempts'],
-            $phpMussel['Time'] + $phpMussel['TimeToAdd']
+            $phpMussel['Now'] + $phpMussel['TimeToAdd']
         );
         if ($phpMussel['Config']['general']['FrontEndLog']) {
-            $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['FE']['state_msg'] . "\n";
+            $phpMussel['LoggerMessage'] = $phpMussel['FE']['state_msg'];
         }
         if (!$phpMussel['FE']['CronMode']) {
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['FE']['state_msg'] . '<br /><br /></div>';
         }
     } elseif ($phpMussel['Config']['general']['FrontEndLog']) {
-        $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['lang']['state_logged_in'] . "\n";
+        $phpMussel['LoggerMessage'] = (
+            $phpMussel['Config']['PHPMailer']['Enable2FA'] &&
+            $phpMussel['FE']['Permissions'] === 0
+        ) ? $phpMussel['lang']['state_logged_in_2fa_pending'] : $phpMussel['lang']['state_logged_in'];
     }
-    if ($phpMussel['Config']['general']['FrontEndLog']) {
-        $phpMussel['WriteMode'] = (
-            !file_exists($phpMussel['Vault'] . $phpMussel['FrontEndLogFile']) || (
-                $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $phpMussel['FrontEndLogFile']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-            )
-        ) ? 'w' : 'a';
-        if ($phpMussel['BuildLogPath']($phpMussel['FrontEndLogFile'])) {
-            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FrontEndLogFile'], $phpMussel['WriteMode']);
-            fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
-            fclose($phpMussel['Handle']);
-            if ($phpMussel['WriteMode'] === 'w') {
-                $phpMussel['LogRotation']($phpMussel['Config']['general']['FrontEndLog']);
-            }
-        }
-        unset($phpMussel['WriteMode'], $phpMussel['FrontEndLog'], $phpMussel['FrontEndLogFile']);
-    }
+    $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], (
+        empty($_POST['username']) ? '' : $_POST['username']
+    ), empty($phpMussel['LoggerMessage']) ? '' : $phpMussel['LoggerMessage']);
+    unset($phpMussel['LoggerMessage']);
 }
 
 /** Determine whether the user has logged in. */
@@ -424,7 +426,18 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                         $phpMussel['FE']['UserOffset'],
                         strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserOffset']) - $phpMussel['FE']['UserOffset']
                     ), -1);
-                    $phpMussel['FE']['UserState'] = 1;
+                    if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
+                        $phpMussel['2FA-State'] = (int)$phpMussel['FECacheGet'](
+                            $phpMussel['FE']['Cache'],
+                            '2FA-State:' . $phpMussel['FE']['User']
+                        );
+                        $phpMussel['FE']['UserState'] = ($phpMussel['2FA-State'] === 1) ? 1 : 2;
+                    } else {
+                        $phpMussel['FE']['UserState'] = 1;
+                    }
+                    if ($phpMussel['FE']['UserState'] !== 1) {
+                        $phpMussel['FE']['Permissions'] = 0;
+                    }
                 }
                 break;
             }
@@ -441,8 +454,8 @@ if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['ASYNC']) {
     die($phpMussel['lang']['state_async_deny']);
 }
 
-/** Only execute this code block for users that are logged in. */
-if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
+/** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
+if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2) && !$phpMussel['FE']['CronMode']) {
 
     if ($phpMussel['QueryVars']['phpmussel-page'] === 'logout') {
 
@@ -450,8 +463,11 @@ if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
         $phpMussel['FE']['SessionList'] = str_ireplace($phpMussel['FE']['ThisSession'], '', $phpMussel['FE']['SessionList']);
         $phpMussel['FE']['ThisSession'] = '';
         $phpMussel['FE']['Rebuild'] = true;
-        $phpMussel['FE']['UserState'] = $phpMussel['FE']['Permissions'] = 0;
+        $phpMussel['FE']['UserState'] = 0;
+        $phpMussel['FE']['Permissions'] = 0;
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HTTP_HOST'], false, true);
+        $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $phpMussel['FE']['User']);
+        $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['lang']['state_logged_out']);
 
     }
 
@@ -477,17 +493,32 @@ if ($phpMussel['FE']['UserState'] === 1 && !$phpMussel['FE']['CronMode']) {
 
 $phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
-/** The user hasn't logged in. Show them the login page. */
+/** The user hasn't logged in, or hasn't authenticated yet. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['lang']['title_login'], $phpMussel['lang']['tip_login'], false);
 
-    /** Parse output. */
-    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_login.html'))
-    );
+    if ($phpMussel['FE']['UserState'] === 2) {
+
+        /** Provide an option for the user to log out instead, if they'd prefer. */
+        $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_logout'];
+
+        /** Show them the two-factor authentication page. */
+        $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_2fa.html'))
+        );
+
+    } else {
+
+        /** Show them the login page. */
+        $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_login.html'))
+        );
+
+    }
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
@@ -2233,7 +2264,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 }
 
 /** Quarantine. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine') {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['lang']['title_quarantine'], $phpMussel['lang']['tip_quarantine']);
@@ -2480,7 +2511,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 }
 
 /** Logs. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']['Permissions'] > 0) {
 
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['lang']['title_logs'], $phpMussel['lang']['tip_logs'], false);

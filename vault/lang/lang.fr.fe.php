@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.08.08).
+ * This file: French language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Voir description ci-de
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Par défaut, phpMussel va restreindre les fichiers de l\'analyse utilisant le Virus Total API à ces fichiers qu\'il juges comme soupçonneux. Facultativement, vous pouvez régler cette restriction par changeant la valeur de la <code>vt_suspicion_level</code> directive.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Devrais phpMussel appliquer les résultats de l\'analyse en utilisant le Virus Total API comme détections ou comme pondération de détection ? Cette directive existe, parce que, quoique analyse d\'un fichier à l\'aide de plusieurs moteurs (comme Virus Total fait) devrait résulter en un augmenté taux de détection (et donc en un plus grand nombre de fichiers malveillants être détectés), il peut également résulter en un plus grand nombre de faux positifs, et donc, dans certaines circonstances, les résultats de l\'analyse peuvent être mieux utilisées comme un score de confiance plutôt que comme une conclusion définitive. Si la valeur 0 est utilisée, les résultats de l\'analyse en utilisant le Virus Total API seront être appliquées comme détections, et donc, si quelconque moteur utilisé par Virus Total marques le fichier analysé comme étant malveillants, phpMussel va considérer le fichier comme malveillant. Si quelconque autre valeur est utilisée, les résultats de l\'analyse en utilisant le Virus Total API sera appliquée comme pondération de détection, et donc, le nombre de moteurs utilisés par Total Virus que marque le fichier analysé comme étant malveillant sera servir un score de confiance (ou une pondération de détection) pour savoir si ou non le fichier êtant analysé devrait être considéré comme malveillant par phpMussel (la valeur utilisée représentera le minimum score de confiance ou le poids requis pour être considéré comme malveillant). Une valeur de 0 est utilisée par défaut.';
 $phpMussel['lang']['confirm_action'] = 'Êtes-vous sûr de vouloir « %s » ?';
+$phpMussel['lang']['field_2fa'] = 'Code 2FA';
 $phpMussel['lang']['field_activate'] = 'Activer';
 $phpMussel['lang']['field_clear_all'] = 'Annuler tout';
 $phpMussel['lang']['field_component'] = 'Composant';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Le composant est actif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $phpMussel['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
+$phpMussel['lang']['state_email_sent'] = 'Email envoyé avec succès à « %s ».';
+$phpMussel['lang']['state_failed_missing'] = 'La tâche a échoué car un composant nécessaire n\'est pas disponible.';
 $phpMussel['lang']['state_loading'] = 'Chargement...';
 $phpMussel['lang']['state_loadtime'] = 'Requête de page complétée en <span class="txtRd">%s</span> secondes.';
 $phpMussel['lang']['state_logged_in'] = 'Connecté.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Connecté + 2FA en attente.';
+$phpMussel['lang']['state_logged_out'] = 'Déconnecté.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $phpMussel['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';
 $phpMussel['lang']['state_password_not_valid'] = 'Attention : Ce compte n\'utilise un mot de passe valide !';

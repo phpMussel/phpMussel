@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.07.10).
+ * This file: Front-end functions file (last modified: 2018.08.09).
  */
 
 /**
@@ -1870,6 +1870,10 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
     if (!$Pattern_FrontEndLog && $phpMussel['Config']['general']['FrontEndLog']) {
         $Pattern_FrontEndLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['general']['FrontEndLog'], true);
     }
+    static $Pattern_PHPMailer_EventLog = false;
+    if (!$Pattern_PHPMailer_EventLog && $phpMussel['Config']['PHPMailer']['EventLog']) {
+        $Pattern_PHPMailer_EventLog = $phpMussel['BuildLogPattern']($phpMussel['Config']['PHPMailer']['EventLog'], true);
+    }
     return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
         $phpMussel['Config']['general']['scan_log'] && preg_match($Pattern_scan_log, $File)
     ) || (
@@ -1878,6 +1882,8 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
         $phpMussel['Config']['general']['scan_kills'] && preg_match($Pattern_scan_kills, $File)
     ) || (
         $phpMussel['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
+    ) || (
+        $phpMussel['Config']['PHPMailer']['EventLog'] && preg_match($Pattern_PHPMailer_EventLog, $File)
     );
 };
 
@@ -1905,4 +1911,202 @@ $phpMussel['CheckFileUpdate'] = function ($FileData, $Mode = 1) use (&$phpMussel
         return $FileData && !preg_match('~<(?:html|body)~i', $FileData);
     }
     return true;
+};
+
+/**
+ * A quicker way to add entries to the front-end logfile.
+ *
+ * @param string $IPAddr The IP address triggering the log event.
+ * @param string $User The user triggering the log event.
+ * @param string $Message The message to be logged.
+ */
+$phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
+    if (!$phpMussel['Config']['general']['FrontEndLog'] || empty($phpMussel['FE']['DateTime'])) {
+        return;
+    }
+    $File = (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) ? $phpMussel['TimeFormat'](
+        $phpMussel['Now'],
+        $phpMussel['Config']['general']['FrontEndLog']
+    ) : $phpMussel['Config']['general']['FrontEndLog'];
+    $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
+    $Data .= ' - ' . $phpMussel['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
+    $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
+        $phpMussel['Config']['general']['truncate'] > 0 &&
+        filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+    )) ? 'w' : 'a';
+    if ($phpMussel['BuildLogPath']($File)) {
+        $Handle = fopen($phpMussel['Vault'] . $File, $WriteMode);
+        fwrite($Handle, $Data);
+        fclose($Handle);
+        if ($WriteMode === 'w') {
+            $phpMussel['LogRotation']($phpMussel['Config']['general']['FrontEndLog']);
+        }
+    }
+};
+
+/**
+ * Wrapper for PHPMailer functionality.
+ *
+ * @param array $Recipients An array of recipients to send to.
+ * @param string $Subject The subject line of the email.
+ * @param string $Body The HTML content of the email.
+ * @param string $AltBody The alternative plain-text content of the email.
+ * @param array $Attachments An optional array of attachments.
+ * @return bool Operation failed (false) or succeeded (true).
+ */
+$phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $AltBody = '', $Attachments = []) use (&$phpMussel) {
+    $EventLog = '';
+    $EventLogData = '';
+
+    /** Prepare event logging. */
+    if ($phpMussel['Config']['PHPMailer']['EventLog']) {
+        $EventLog = (strpos($phpMussel['Config']['PHPMailer']['EventLog'], '{') !== false) ? $phpMussel['TimeFormat'](
+            $phpMussel['Now'],
+            $phpMussel['Config']['PHPMailer']['EventLog']
+        ) : $phpMussel['Config']['PHPMailer']['EventLog'];
+        $EventLogData = ((
+            $phpMussel['Config']['legal']['pseudonymise_ip_addresses']
+        ) ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']]) . ' - ' . (
+            isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
+                $phpMussel['Now'],
+                $phpMussel['Config']['general']['timeFormat']
+            )
+        ) . ' - ';
+        $WriteMode = (!file_exists($EventLog) || (
+            $phpMussel['Config']['general']['truncate'] > 0 &&
+            filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        )) ? 'w' : 'a';
+    }
+
+    /** Operation success state. */
+    $State = false;
+
+    /** Check whether class exists to either load it and continue or fail the operation. */
+    if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) {
+        if ($EventLog) {
+            $EventLogData .= $phpMussel['lang']['state_failed_missing'] . "\n";
+        }
+    } else {
+        try {
+
+            /** Create a new PHPMailer instance. */
+            $Mail = new \PHPMailer\PHPMailer\PHPMailer();
+
+            /** Tell PHPMailer to use SMTP. */
+            $Mail->isSMTP();
+
+            /** Disable debugging. */
+            $Mail->SMTPDebug = 0;
+
+            /** Skip authorisation process for some extreme problematic cases. */
+            if ($phpMussel['Config']['PHPMailer']['SkipAuthProcess']) {
+                $Mail->SMTPOptions = ['ssl' => [
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                ]];
+            }
+
+            /** Set mail server hostname. */
+            $Mail->Host = $phpMussel['Config']['PHPMailer']['Host'];
+
+            /** Set the SMTP port. */
+            $Mail->Port = $phpMussel['Config']['PHPMailer']['Port'];
+
+            /** Set the encryption system to use. */
+            if (
+                !empty($phpMussel['Config']['PHPMailer']['SMTPSecure']) &&
+                $phpMussel['Config']['PHPMailer']['SMTPSecure'] !== '-'
+            ) {
+                $Mail->SMTPSecure = $phpMussel['Config']['PHPMailer']['SMTPSecure'];
+            }
+
+            /** Set whether to use SMTP authentication. */
+            $Mail->SMTPAuth = $phpMussel['Config']['PHPMailer']['SMTPAuth'];
+
+            /** Set the username to use for SMTP authentication. */
+            $Mail->Username = $phpMussel['Config']['PHPMailer']['Username'];
+
+            /** Set the password to use for SMTP authentication. */
+            $Mail->Password = $phpMussel['Config']['PHPMailer']['Password'];
+
+            /** Set the email sender address and name. */
+            $Mail->setFrom(
+                $phpMussel['Config']['PHPMailer']['setFromAddress'],
+                $phpMussel['Config']['PHPMailer']['setFromName']
+            );
+
+            /** Set the optional "reply to" address and name. */
+            if (
+                !empty($phpMussel['Config']['PHPMailer']['addReplyToAddress']) &&
+                !empty($phpMussel['Config']['PHPMailer']['addReplyToName'])
+            ) {
+                $Mail->addReplyTo(
+                    $phpMussel['Config']['PHPMailer']['addReplyToAddress'],
+                    $phpMussel['Config']['PHPMailer']['addReplyToName']
+                );
+            }
+
+            /** Used by logging when send succeeds. */
+            $SuccessDetails = '';
+
+            /** Set the recipient address and name. */
+            foreach ($Recipients as $Recipient) {
+                if (empty($Recipient['Address']) || empty($Recipient['Name'])) {
+                    continue;
+                }
+                $Mail->addAddress($Recipient['Address'], $Recipient['Name']);
+                $SuccessDetails .= (($SuccessDetails) ? ', ' : '') . $Recipient['Name'] . ' <' . $Recipient['Address'] . '>';
+            }
+
+            /** Set the subject line of the email. */
+            $Mail->Subject = $Subject;
+
+            /** Tell PHPMailer that the email is written using HTML. */
+            $Mail->isHTML = true;
+
+            /** Set the HTML body of the email. */
+            $Mail->Body = $Body;
+
+            /** Set the alternative, plain-text body of the email. */
+            $Mail->AltBody = $AltBody;
+
+            /** Process attachments. */
+            foreach ($Attachments as $Attachment) {
+                $Mail->addAttachment($Attachment);
+            }
+
+            /** Send it! */
+            $State = $Mail->send();
+
+            /** Log the results of the send attempt. */
+            if ($EventLog) {
+                $EventLogData .= ($State ? sprintf(
+                    $phpMussel['lang']['state_email_sent'],
+                    $SuccessDetails
+                ) : $phpMussel['lang']['response_error'] . ' - ' . $Mail->ErrorInfo) . "\n";
+            }
+
+        } catch (\Exception $e) {
+
+            /** An exeption occurred. Log the information. */
+            if ($EventLog) {
+                $EventLogData .= $phpMussel['lang']['response_error'] . ' - ' . $e->getMessage() . "\n";
+            }
+
+        }
+    }
+
+    /** Write to the event log. */
+    if ($EventLog) {
+        $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
+        fwrite($Handle, $EventLogData);
+        fclose($Handle);
+        if ($WriteMode === 'w') {
+            $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
+        }
+    }
+
+    /** Exit. */
+    return $State;
 };

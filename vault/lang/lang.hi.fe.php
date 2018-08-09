@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.08.08).
+ * This file: Hindi language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(ऊपर विवर
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'डिफ़ॉल्ट रूप से, phpMussel जो फाइलों यह "संदिग्ध" समझता है कि इन फाइलों को वायरस कुल API का उपयोग स्कैन करता है सीमित करेंगे। आप वैकल्पिक <code>vt_suspicion_level</code> के निर्देश मान बदलकर प्रतिबंध को समायोजित कर सकते हैं।';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel पहचान कर के रूप में या पता लगाने भार के रूप वायरस कुल API का उपयोग स्कैनिंग परिणाम आवेदन देना चाहिए? (और दुर्भावनापूर्ण फाइलें एक बड़ी संख्या पकड़े जाने इसलिए) एकाधिक इंजन का उपयोग (जैसे वायरस कुल करता है) एक फाइल स्कैन एक वृद्धि का पता लगाने दर परिणाम चाहिए, हालांकि, यह भी झूठी अधिक संख्या में जिसके परिणामस्वरूप कर सकते हैं, क्योंकि यह नुस्खा मौजूद है, सकारात्मक है, और इस वजह से, कुछ स्थितियों में, स्कैनिंग परिणाम बेहतर एक अंतिम परिणाम पर विश्वास स्कोर के रूप में बजाय प्रयोग किया जा सकता है । 0 मान उपयोग किया जाता है, तो वायरस कुल API का उपयोग स्कैनिंग परिणाम किसी भी इंजन वायरस कुल झंडा फाइल दुर्भावनापूर्ण के रूप में स्कैन किया जा रहा है द्वारा इस्तेमाल किया जाता है तो, पहचान कर के रूप में लागू किया जाएगा, और इस वजह से, phpMussel दुर्भावनापूर्ण होने के लिए फाइल पर विचार करेंगे। किसी दूसरे का मान प्रयोग किया जाता है, तो वायरस कुल API का उपयोग स्कैनिंग परिणाम का पता लगाने भार के रूप में लागू किया जाएगा, और इस वजह से, फाइल झंडे कि वायरस कल से उपयोग इंजन की संख्या स्कैन किया जा रहा है दुर्भावनापूर्ण होने (एक विश्वास स्कोर के रूप में काम करेगा के रूप में या पता लगाने भार) के लिए है या नहीं फाइल स्कैन किया जा रहा phpMussel द्वारा दुर्भावनापूर्ण माना जाना चाहिए (इस्तेमाल किया कम से कम विश्वास का प्रतिनिधित्व करेंगे मूल्य स्कोर या क्रम में की जरूरत वजन दुर्भावनापूर्ण समझा जाए)। 0 मान डिफ़ॉल्ट द्वारा उपयोग किया जाता है।';
 $phpMussel['lang']['confirm_action'] = 'क्या आप वाकई "%s" चाहते हैं?';
+$phpMussel['lang']['field_2fa'] = '2FA कोड';
 $phpMussel['lang']['field_activate'] = 'सक्रिय करें';
 $phpMussel['lang']['field_clear_all'] = 'सभी साफ करें';
 $phpMussel['lang']['field_component'] = 'घटक';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'घटक सक्रिय 
 $phpMussel['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';
 $phpMussel['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $phpMussel['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
+$phpMussel['lang']['state_email_sent'] = 'ईमेल सफलतापूर्वक "%s" को भेजा गया।';
+$phpMussel['lang']['state_failed_missing'] = 'कार्य विफल रहा क्योंकि एक आवश्यक घटक अनुपलब्ध है।';
 $phpMussel['lang']['state_loading'] = 'लोड हो रहा है...';
 $phpMussel['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $phpMussel['lang']['state_logged_in'] = 'लॉग इन किया है।';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'लॉग इन किया है + 2FA लंबित है।';
+$phpMussel['lang']['state_logged_out'] = 'लॉग आउट किया है।';
 $phpMussel['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $phpMussel['lang']['state_maintenance_mode'] = 'चेतावनी: रखरखाव मोड सक्षम है!';
 $phpMussel['lang']['state_password_not_valid'] = 'चेतावनी: यह खाता किसी मान्य पासवर्ड का उपयोग नहीं कर रहा है!';

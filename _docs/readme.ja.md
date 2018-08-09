@@ -1164,7 +1164,7 @@ This type of logging relates front-end login attempts, and occurs only when a us
 A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - ログインしました。
 ```
 
 *関連するコンフィギュレーション・ディレクティブ：*

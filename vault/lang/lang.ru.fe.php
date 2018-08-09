@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.08.08).
+ * This file: Russian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(См. Описание
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Допуская файлы к сканированию Virus Total API, phpMussel будет ограничиваться только теми файлами, которые рассматриваются «опасными». Опционально Вы можете регулировать эти ограничения, изменив значение <code>vt_suspicion_level</code> директивы.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Должна phpMussel использовать результаты сканирования с Virus Total API в качестве опознания или как определение степени доверия? Существование этой директиВы объясняется тем, что сканирование файла со многими ядрами должно быть более тщательным (как это делает Virus Total) и, следовательно, будет найдено большее количество вредоносных файлов, что может привести к большему количеству ложных тревог. Есть ситуации, когда результаты сканирования бывают выше степени доверия, и тогда применяется однозначный результат. Применение значения 0 означает, что результаты сканирования будут применяться как опознание. В этом случае phpMussel будет рассматривать файл как вредоносный, если какие-то используемые в сканировании ядра файлов Virus Total обозначил опасными. При установке другого значения, результаты сканирования с Virus Total API будут использоваться как определение степени доверия. Количество используемых Virus Total ядер, обозначающих файл как вредоносный, будет служить степенью доверия (или определением степени доверия). Используемое значение будет определять, какую степень доверия (минимальную или требуемую) примет phpMussel во внимание, чтобы признать сканируемый файл вредоносным или безвредным. Стандартное значение = 0.';
 $phpMussel['lang']['confirm_action'] = 'Вы действительно хотите «%s»?';
+$phpMussel['lang']['field_2fa'] = 'Код 2FA';
 $phpMussel['lang']['field_activate'] = 'Активировать';
 $phpMussel['lang']['field_clear_all'] = 'Очистить все';
 $phpMussel['lang']['field_component'] = 'Компонент';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Компонент актив
 $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $phpMussel['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
+$phpMussel['lang']['state_email_sent'] = 'Электронная почта успешно отправлена на «%s».';
+$phpMussel['lang']['state_failed_missing'] = 'Не удалось выполнить задачу, потому что необходимый компонент недоступен.';
 $phpMussel['lang']['state_loading'] = 'В ходе выполнения...';
 $phpMussel['lang']['state_loadtime'] = 'Запрос страницы завершен через <span class="txtRd">%s</span> секунд.';
-$phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
+$phpMussel['lang']['state_logged_in'] = 'Вошли в систему.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Вошли в систему + Ожидается 2FA.';
+$phpMussel['lang']['state_logged_out'] = 'Вышел из системы.';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_maintenance_mode'] = 'Предупреждение: Включен режим обслуживания!';
 $phpMussel['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';

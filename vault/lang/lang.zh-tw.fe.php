@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.08).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '（見上面的說明�
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作為標準，​phpMussel將限制什麼文件它掃描通過使用【Virus Total API】為那些文件它考慮作為『可疑』。​您可以可選調整這個局限性通過修改的<code>vt_suspicion_level</code>指令數值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel應使用掃描結果使用【Virus Total API】作為檢測或作為檢測重量嗎？​這個指令存在，​因為，​雖說掃描一個文件使用多AV引擎（例如怎麼樣VirusTotal做） 應結果有一個增加檢測率（和因此在一個更惡意文件被抓），​它可以還結果有更假陽性，​和因此，​為某些情況，​掃描結果可能被更好使用作為一個置信得分而不是作為一個明確結論。​如果一個數值的<code>0</code>是使用，​掃描結果使用【Virus Total API】將會適用作為檢測，​和因此，​如果任何AV引擎使用通過VirusTotal標致文件被掃描作為惡意，​phpMussel將考慮文件作為惡意。​如果任何其他數值是使用，​掃描結果使用【Virus Total API】將會適用作為檢測重量，​和因此，​數的AV引擎使用通過VirusTotal標致文件被掃描作為惡意將服務作為一個置信得分（或檢測重量） 為如果文件被掃描應會考慮惡意通過phpMussel（數值使用將代表最低限度的置信得分或重量需要以被考慮惡意）。​一個數值的<code>0</code>是使用作為標準。';
 $phpMussel['lang']['confirm_action'] = '你確定要『%s』嗎？';
+$phpMussel['lang']['field_2fa'] = '2FA代碼';
 $phpMussel['lang']['field_activate'] = '啟用';
 $phpMussel['lang']['field_clear_all'] = '撤銷所有';
 $phpMussel['lang']['field_component'] = '組件';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = '組件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '組件是非活性。';
 $phpMussel['lang']['state_component_is_provisional'] = '組件是有時活性。';
 $phpMussel['lang']['state_default_password'] = '警告：它使用標準密碼！';
+$phpMussel['lang']['state_email_sent'] = '電子郵件已成功發送至『%s』。';
+$phpMussel['lang']['state_failed_missing'] = '任務失敗，因為必要的組件不可用。';
 $phpMussel['lang']['state_loading'] = '載入中...';
 $phpMussel['lang']['state_loadtime'] = '頁面請求在<span class="txtRd">%s</span>秒內完成。';
-$phpMussel['lang']['state_logged_in'] = '目前在線。';
+$phpMussel['lang']['state_logged_in'] = '已登錄。';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = '已登錄，2FA待定。';
+$phpMussel['lang']['state_logged_out'] = '已登出。';
 $phpMussel['lang']['state_logs_access_only'] = '僅日誌訪問';
 $phpMussel['lang']['state_maintenance_mode'] = '警告：維護模式是啟用！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此帳戶不​使用有效的密碼！';

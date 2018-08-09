@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.08).
+ * This file: Korean language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(위의 설명 참조).
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '기본 설정은 phpMussel이 Virus Total API를 사용하여 스캔 파일 (疑がわし 주물)에 제한이 있습니다. <code>vt_suspicion_level</code> 지시문을 편집 할 더, 이 제한을 변경할 수 있습니다.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel이 Virus Total API를 사용한 스캐닝 결과를 감지으로 대우하거나, 검색 가중치로 취급 할 것인가? 여러 엔진 (Virus Total처럼)을 사용한 스캐닝은 검색 속도 향상 (더 많은 악성 코드가 감지)을 가져다 한편 오진의 증가도 발생하므로이 지시어가 존재합니다. 따라서 스캐닝 결과는 결정적인 판단이 아니라 신뢰 점수로 사용하는 것이 적절한 경우도 있습니다. 값이 0이면 Virus Total API를 사용한 검색은 검색으로 처리되어 Virus Total 엔진이 악성 코드 및 플래그가 지정된 파일은 phpMussel도 악성 코드로 판단합니다. 다른 값의 경우 결과는 검출 가중되고, 스캔 된 파일이 악성 코드 여부 phpMussel가 결정하는 신뢰 점수 (또는 감지 가중치)입니다 (값은 악성이라고 판단하기위한 최소 신뢰 점수 또는 가중치). 기본값은 0입니다.';
 $phpMussel['lang']['confirm_action'] = '"%s"하시겠습니까?';
+$phpMussel['lang']['field_2fa'] = '2FA 코드';
 $phpMussel['lang']['field_activate'] = '활성화';
 $phpMussel['lang']['field_clear_all'] = '모두 취소';
 $phpMussel['lang']['field_component'] = '구성 요소';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = '구성 요소가 활성화됩
 $phpMussel['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
 $phpMussel['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
 $phpMussel['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
+$phpMussel['lang']['state_email_sent'] = '이메일이 "%s"로 전송되었습니다.';
+$phpMussel['lang']['state_failed_missing'] = '필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다.';
 $phpMussel['lang']['state_loading'] = '로드 중 ...';
 $phpMussel['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다.';
-$phpMussel['lang']['state_logged_in'] = '로그인 있습니다.';
+$phpMussel['lang']['state_logged_in'] = '로그인 했습니다.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = '로그인 했습니다 + 2FA를 기다리는 중.';
+$phpMussel['lang']['state_logged_out'] = '로그 아웃했습니다.';
 $phpMussel['lang']['state_logs_access_only'] = '로그에만 액세스';
 $phpMussel['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';
 $phpMussel['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';

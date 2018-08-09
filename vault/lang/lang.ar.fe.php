@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.08).
+ * This file: Arabic language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(انظر الوصف أ
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'افتراضيا، سوف يقوم phpMussel بتقييد الملفات التي تقوم بمسح باستخدام الفيروسات API الكلي لتلك الملفات التي تعتبرها "المشبوهة". يمكنك ضبط اختياريا هذا التقييد عن طريق تغيير قيمة التوجيه "vt_suspicion_level".';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'هل phpMussel يطبق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة أو الممكن كشفها؟ يوجد هذا التوجيه لأنه على الرغم من أن مسح ملف باستخدام محركات متعددة (كما فايروس توتال لا) ينبغي أن يؤدي في معدل اكتشاف زيادة (وبالتالي في عدد أكبر من الملفات الخبيثة الوقوع)، فإنه يمكن أن يؤدي أيضا إلى ارتفاع عدد كاذبة الإيجابيات، وبالتالي، في بعض الظروف، فإن نتائج المسح يمكن الاستفادة بشكل أفضل كما على درجة الثقة بدلا من أن تكون نتيجة محددة. إذا تم استخدام قيمة 0، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة و بالتالي إذا أي محرك تستخدم من قبل الفيروسات مجموع أعلام الملف تم مسحها ضوئيا بأنها خبيثة، وphpMussel النظر في الملف إلى تكون ضارة. إذا تم استخدام أي قيمة أخرى، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما الترجيح الكشف و بالتالي فإن عدد من المحركات المستخدمة من قبل الفيروسات إجمالي هذا العلم الملف تم مسحها ضوئيا بأنها خبيثة سيكون بمثابة نتيجة الثقة (أو الترجيح الكشف) عن ما إذا كان ملف تم مسحها ضوئيا ينبغي النظر الخبيثة التي كتبها phpMussel (القيمة المستخدمة سيمثل الحد الأدنى من الثقة يسجل أو الوزن المطلوب من أجل أن تعتبر ضارة). يتم استخدام قيمة 0 افتراضيا.';
 $phpMussel['lang']['confirm_action'] = 'هل أنت متأكد من أنك تريد "%s"؟';
+$phpMussel['lang']['field_2fa'] = 'كود 2FA';
 $phpMussel['lang']['field_activate'] = 'جعله نشطة';
 $phpMussel['lang']['field_clear_all'] = 'امسح الكل';
 $phpMussel['lang']['field_component'] = 'وحدة';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $phpMussel['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
+$phpMussel['lang']['state_email_sent'] = 'تم إرسال البريد الإلكتروني بنجاح إلى "%s".';
+$phpMussel['lang']['state_failed_missing'] = 'فشلت المهمة لأن المكون الضروري غير متوفر.';
 $phpMussel['lang']['state_loading'] = 'جار التحميل...';
 $phpMussel['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان.';
 $phpMussel['lang']['state_logged_in'] = 'حاليا على.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'حاليا على + 2FA معلقة.';
+$phpMussel['lang']['state_logged_out'] = 'تسجيل الخروج.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';
 $phpMussel['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!';

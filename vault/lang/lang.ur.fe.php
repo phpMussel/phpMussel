@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.08).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(مندرجہ بالا 
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'بطور ڈیفالٹ، phpMussel جس فائلوں کی یہ "مشکوک" سمجھتی ہے کہ ان فائلوں کو وائرس کل API کا استعمال کرتے ہوئے کو سکین کرتا ہے کو محدود کریں گے. آپ اختیاری <code dir="ltr"> vt_suspicion_level </code> کے ہدایت کی قدر میں تبدیلی کرتے ہوئے اس پابندی کو ایڈجسٹ کر سکتے ہیں.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel detections کر کے طور پر یا پتہ لگانے weighting کے طور وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کو درخواست دینی چاہیے؟ (اور بدنیتی پر مبنی فائلوں کی ایک بڑی تعداد پکڑے جانے لہذا میں) ایک سے زیادہ کے انجن کو استعمال کرتے ہوئے (جیسا وائرس کل کرتا ہے) ایک فائل کو سکین ایک اضافہ کا پتہ لگانے کی شرح کے نتیجے چاہئے، اگرچہ، یہ بھی جھوٹے کی زیادہ تعداد کے نتیجے کر سکتے ہیں، کیونکہ یہ ہدایت موجود ہے، مثبت ہے، اور اس وجہ سے، کچھ حالات میں، سکیننگ کے نتائج بہتر ایک حتمی نتیجے پر اس اعتماد کا سکور کے طور پر کی بجائے استعمال کیا جا سکتا ہے. 0 کی قدر استعمال کیا جاتا ہے تو، وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کسی بھی انجن وائرس کل پرچم فائل کو بدنیتی پر مبنی ہونے کے طور پر سکین کیا جا رہا ہے کی طرف سے استعمال کیا جاتا ہے تو، detections کر کے طور پر لاگو کیا جائے گا، اور اس وجہ سے، phpMussel بدنیتی پر مبنی ہونے کے لئے فائل پر غور کریں گے . کسی دوسرے کی قدر استعمال کیا جاتا ہے تو، وائرس کل API کا استعمال کرتے ہوئے سکیننگ کے نتائج کا پتہ لگانے weighting کے طور پر لاگو کیا جائے گا، اور اس وجہ سے، فائل پرچم کہ وائرس کل کی طرف سے استعمال کے انجن کی تعداد سکین کیا جا رہا ہے درنساوناپورن ہونے (ایک اعتماد سکور کے طور پر کام کرے گا کے طور پر یا پتہ لگانے weighting کے) کے لئے ہے یا نہیں کی فائل کو سکین کیا جا رہا phpMussel طرف بدنیتی پر مبنی سمجھا جانا چاہئے (استعمال کیا کم از کم اعتماد کی نمائندگی کریں گے ویلیو سکور یا ترتیب میں کی ضرورت وزن بدنیتی پر مبنی سمجھا جائے). 0 کی قدر سے طے شدہ کی طرف سے استعمال کیا جاتا ہے.';
 $phpMussel['lang']['confirm_action'] = 'کیا آپ واقعی "%s" کرنا چاہتے ہیں؟';
+$phpMussel['lang']['field_2fa'] = '2FA کوڈ';
 $phpMussel['lang']['field_activate'] = 'فعال کریں';
 $phpMussel['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $phpMussel['lang']['field_component'] = 'اجزاء';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $phpMussel['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
 $phpMussel['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $phpMussel['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
+$phpMussel['lang']['state_email_sent'] = 'ای میل کامیابی سے "%s" پر بھیجا گیا.';
+$phpMussel['lang']['state_failed_missing'] = 'کام ناکام ہوگیا کیونکہ ایک ضروری جزو دستیاب نہیں ہے.';
 $phpMussel['lang']['state_loading'] = 'لوڈ کر رہا ہے ...';
 $phpMussel['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست.';
 $phpMussel['lang']['state_logged_in'] = 'لاگ ان.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'لاگ ان + 2FA زیر التواء.';
+$phpMussel['lang']['state_logged_out'] = 'لاگ آؤٹ.';
 $phpMussel['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $phpMussel['lang']['state_maintenance_mode'] = 'انتباہ: بحالی کا موڈ فعال ہے!';
 $phpMussel['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ ایک درست پاس ورڈ کا استعمال نہیں کر رہا ہے!';

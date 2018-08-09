@@ -491,7 +491,7 @@ Nilai | Menghasilkan | Deskripsi
 - Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.
 
 ##### "FrontEndLog"
-- File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+- File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 ##### "disable_webfonts"
 - Menonaktifkan webfonts? True = Ya [Default]; False = Tidak.
@@ -1164,7 +1164,7 @@ Jenis pencatatan ini berhubungan dengan upaya masuk bagian depan, dan hanya terj
 Entri log untuk bagian depan berisi alamat IP pengguna yang mencoba masuk, tanggal dan waktu ketika itu terjadi, dan hasil dari upaya tersebut (berhasil masuk, atau gagal masuk). Entri log untuk bagian depan biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Pengguna yang online.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Dimasuk.
 ```
 
 *Direktif konfigurasi yang relevan:*

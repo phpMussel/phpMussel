@@ -1164,7 +1164,7 @@ Loại nhật ký này liên quan đến cố gắng đăng nhập, và chỉ x�
 Mục nhập nhật ký front-end chứa địa chỉ IP của người dùng đang cố gắng đăng nhập, ngày và giờ xảy ra điều này, và kết quả của cố gắng này (đăng nhập thành công, hoặc thành công không thành công). Mục nhập nhật ký front-end thường trông giống như thế này (làm ví dụ):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Được đăng nhập.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Đã đăng nhập.
 ```
 
 *Chỉ thị cấu hình có liên quan:*

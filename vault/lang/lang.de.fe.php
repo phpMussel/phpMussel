@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.08.08).
+ * This file: German language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Siehe Beschreibung obe
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'phpMussel wird standardmäßig die mit der Virus Total API zu scannenden Dateien auf Dateien eisnchränken, die es als "verdächtig" betrachtet. Du kannst optional diese Einschränkung durch Änderung des Wertes der <code>vt_suspicion_level</code> Direktive anpassen.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Soll phpMussel die Ergebnisse des Scans mit der Virus Total API als Erkennungen oder Erkennungs-Gewichtung anwenden? Diese Direktive existiert, weil das Scannen einer Datei mit mehreren Engines (wie es Virus Total macht) in einer höheren Erkennungsrate resultieren sollte (und somit eine größere Anzahl schädlicher Dateien erwischt werden), dies kann aber zu in einer höheren Anzahl von Falschmeldungen führen. Unter manchen Umständen würden die Ergebnisse des Scans besser als Vertrauens-Wert als ein eindeutiges Ergebnis verwendet werden. Wenn der Wert 0 verwendet wird, werden die Ergebnisse des Scans als Erkennungen angewendet und somit wird phpMussel, falls irgendeine von Virus Total verwendete Engine die gescannte Datei als schädlich markiert, die Datei als schädlich betrachten. Wird ein anderer Wert verwendet, werden die Ergebnisse des Scans mit der Virus Total API als Erkennungs-Gewichtung angewendet. Die Anzahl der von Virus Total verwendeten Engines, welche die Datei als schädlich markieren, wird als Vertrauens-Wert (oder Erkennungs-Gewichtung) dienen, ob die gescannte Datei von phpMussel als schädlich angesehen werden soll (der verwendete Wert wird den Mindest-Vertrauens-Wert oder erforderliche Gewichtung repräsentieren, um als schädlich angesehen zu werden. Standardmäßig der Wert 0 verwendet.';
 $phpMussel['lang']['confirm_action'] = 'Möchtest du wirklich zu "%s"?';
+$phpMussel['lang']['field_2fa'] = '2FA-Code';
 $phpMussel['lang']['field_activate'] = 'Aktivieren';
 $phpMussel['lang']['field_clear_all'] = 'Alles löschen';
 $phpMussel['lang']['field_component'] = 'Komponente';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
+$phpMussel['lang']['state_email_sent'] = 'E-Mail wurde erfolgreich an "%s" gesendet.';
+$phpMussel['lang']['state_failed_missing'] = 'Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist.';
 $phpMussel['lang']['state_loading'] = 'Wird geladen...';
 $phpMussel['lang']['state_loadtime'] = 'Seite-Anfrage in <span class="txtRd">%s</span> Sekunden abgeschlossen.';
 $phpMussel['lang']['state_logged_in'] = 'Eingeloggt.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Eingeloggt + Warten auf 2FA.';
+$phpMussel['lang']['state_logged_out'] = 'Ausgeloggt.';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';

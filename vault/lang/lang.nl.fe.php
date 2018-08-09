@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.08).
+ * This file: Dutch language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,6 +111,7 @@ $phpMussel['lang']['config_virustotal_vt_quota_time'] = '(Zie bovenstaande besch
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Normaal, phpMussel zal beperken welke bestanden scant met behulp van de Virus Total API om het bestanden die zijn beschouwd "achterdochtig". Optioneel, u kan dit beperking aan te passen door de waarde van het <code>vt_suspicion_level</code> richtlijn.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Moeten phpMussel de resultaten van het scannen met behulp van de Virus Total API toe te passen als detecties of detectie weging? Dit richtlijn bestaat, omdat, hoewel het scannen van een bestand met behulp van meerdere motoren (als Virus Total doet) moet leiden tot een verhoogde aantal van detecties (en dus in een hoger aantal van kwaadaardige bestanden worden gedetecteerd), het kan ook resulteren in een hoger aantal van valse positieven, en daarom, in sommige gevallen, de resultaten van de scan kan beter worden benut als betrouwbaarheidsscore eerder dan als een definitieve conclusie. Als een waarde van 0 wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detecties, en zo, als een motor gebruikt door Virus Total vlaggen het bestand wordt gescand als kwaadaardige, phpMussel zal het bestand overwegen kwaadaardig te zijn. Als een andere waarde wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detectie weging, en zo, het aantal van motoren gebruikt door Virus Total dat vlag het bestand wordt gescand als kwaadaardige zal dienen als een betrouwbaarheidsscore (of detectie weging) voor of het bestand dat wordt gescand moet worden beschouwd als kwaadaardige door phpMussel (de waarde die wordt gebruikt zal vertegenwoordigen de minimale betrouwbaarheidsscore of weging vereist om kwaadaardige te worden beschouwd). Een waarde van 0 wordt standaard gebruikt.';
 $phpMussel['lang']['confirm_action'] = 'Weet u zeker dat u wilt "%s"?';
+$phpMussel['lang']['field_2fa'] = '2FA-code';
 $phpMussel['lang']['field_activate'] = 'Activeren';
 $phpMussel['lang']['field_clear_all'] = 'Annuleer alles';
 $phpMussel['lang']['field_component'] = 'Component';
@@ -299,9 +300,13 @@ $phpMussel['lang']['state_component_is_active'] = 'Component is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
+$phpMussel['lang']['state_email_sent'] = 'E-mail succesvol verzonden naar "%s".';
+$phpMussel['lang']['state_failed_missing'] = 'Taak mislukt omdat een noodzakelijk component niet beschikbaar is.';
 $phpMussel['lang']['state_loading'] = 'Bezig met laden...';
 $phpMussel['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden.';
 $phpMussel['lang']['state_logged_in'] = 'Ingelogd.';
+$phpMussel['lang']['state_logged_in_2fa_pending'] = 'Ingelogd + wachten op 2FA.';
+$phpMussel['lang']['state_logged_out'] = 'Uitgelogd.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_maintenance_mode'] = 'Waarschuwing: De onderhoudsmodus is ingeschakeld!';
 $phpMussel['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';

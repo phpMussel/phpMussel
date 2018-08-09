@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.06.20).
+ * This file: Configuration handler (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '1.5.0';
+$phpMussel['ScriptVersion'] = '1.6.0';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
