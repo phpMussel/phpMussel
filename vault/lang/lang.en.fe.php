@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.08.09).
+ * This file: English language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA code';
 $phpMussel['lang']['field_activate'] = 'Activate';
 $phpMussel['lang']['field_clear_all'] = 'Clear all';
 $phpMussel['lang']['field_component'] = 'Component';
+$phpMussel['lang']['field_confirm'] = 'Confirm';
 $phpMussel['lang']['field_create_new_account'] = 'Create new account';
 $phpMussel['lang']['field_deactivate'] = 'Deactivate';
 $phpMussel['lang']['field_delete_account'] = 'Delete account';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Months';
 $phpMussel['lang']['previewer_seconds'] = 'Seconds';
 $phpMussel['lang']['previewer_weeks'] = 'Weeks';
 $phpMussel['lang']['previewer_years'] = 'Years';
+$phpMussel['lang']['response_2fa_invalid'] = 'Incorrect 2FA code entered. Authentication failed.';
+$phpMussel['lang']['response_2fa_valid'] = 'Successfully authenticated.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
 $phpMussel['lang']['response_accounts_created'] = 'Account successfully created!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Account successfully deleted!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outd
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Hide unused';
+$phpMussel['lang']['tip_2fa_sent'] = 'An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn\'t receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code.';
 $phpMussel['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the phpMussel front-end.';
 $phpMussel['lang']['tip_cache_data'] = 'Hello, {username}.<br />Here you can review the contents of the cache.';
 $phpMussel['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for phpMussel from the front-end.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Hello, %1$s.<br />
+<br />
+Your two-factor authentication code for logging into the phpMussel front-end:</p>
+<h1>%2$s</h1>
+<p>This code expires in 10 minutes.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = 'Two-Factor Authentication';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.09).
+ * This file: Korean language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA 코드';
 $phpMussel['lang']['field_activate'] = '활성화';
 $phpMussel['lang']['field_clear_all'] = '모두 취소';
 $phpMussel['lang']['field_component'] = '구성 요소';
+$phpMussel['lang']['field_confirm'] = '확인';
 $phpMussel['lang']['field_create_new_account'] = '새로운 계정 만들기';
 $phpMussel['lang']['field_deactivate'] = '비활성화';
 $phpMussel['lang']['field_delete_account'] = '계정 삭제';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = '개월';
 $phpMussel['lang']['previewer_seconds'] = '초';
 $phpMussel['lang']['previewer_weeks'] = '주';
 $phpMussel['lang']['previewer_years'] = '연령';
+$phpMussel['lang']['response_2fa_invalid'] = '2FA 코드가 잘못 입력되었습니다. 인증 실패.';
+$phpMussel['lang']['response_2fa_valid'] = '성공적으로 인증되었습니다.';
 $phpMussel['lang']['response_accounts_already_exists'] = '계정이 이미 존재합니다!';
 $phpMussel['lang']['response_accounts_created'] = '계정 만들기에 성공했습니다!';
 $phpMussel['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
 $phpMussel['lang']['switch-hide-unused-set-true'] = '미사용 숨기기';
+$phpMussel['lang']['tip_2fa_sent'] = '2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다.';
 $phpMussel['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 phpMussel 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
 $phpMussel['lang']['tip_cache_data'] = '안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다.';
 $phpMussel['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 phpMussel의 설정을 변경할 수 있습니다.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="http://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="https://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>안녕하세요, %1$s.<br />
+<br />
+phpMussel 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
+<h1>%2$s</h1>
+<p>이 코드는 10 분 후에 만료됩니다.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA (이중 인증)';

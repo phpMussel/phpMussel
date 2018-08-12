@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.09).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = 'Mã 2FA';
 $phpMussel['lang']['field_activate'] = 'Kích hoạt';
 $phpMussel['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $phpMussel['lang']['field_component'] = 'Thành phần';
+$phpMussel['lang']['field_confirm'] = 'Xác nhận';
 $phpMussel['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $phpMussel['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $phpMussel['lang']['field_delete_account'] = 'Xóa tài khoản';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Tháng';
 $phpMussel['lang']['previewer_seconds'] = 'Giây';
 $phpMussel['lang']['previewer_weeks'] = 'Tuần';
 $phpMussel['lang']['previewer_years'] = 'Năm';
+$phpMussel['lang']['response_2fa_invalid'] = 'Đã nhập mã 2FA không chính xác. Quá trình xác thực đã thất bại.';
+$phpMussel['lang']['response_2fa_valid'] = 'Đã xác thực thành công.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $phpMussel['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các kh
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
+$phpMussel['lang']['tip_2fa_sent'] = 'Một email chứa mã 2FA đã được gửi đến địa chỉ email của bạn. Vui lòng xác nhận mã này bên dưới để có quyền truy cập vào front-end. Nếu bạn không nhận được email này, thử đăng xuất, đợi 10 phút, và đăng nhập lại để nhận email mới chứa mã mới.';
 $phpMussel['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end phpMussel.';
 $phpMussel['lang']['tip_cache_data'] = 'Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache.';
 $phpMussel['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình phpMussel từ các front-end.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu íc
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="https://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Xin chào, %1$s.<br />
+<br />
+Mã 2FA của bạn để đăng nhập vào front-end của phpMussel:</p>
+<h1>%2$s</h1>
+<p>Mã này hết hạn sau 10 phút.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA (Xác thực hai yếu tố)';

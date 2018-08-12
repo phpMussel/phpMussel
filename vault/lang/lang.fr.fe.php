@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.08.09).
+ * This file: French language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,7 @@ $phpMussel['lang']['config_files_filetype_blacklist'] = 'Liste Noire :';
 $phpMussel['lang']['config_files_filetype_greylist'] = 'Liste Gris :';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l\'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris. L\'ordre logique de l\'application est : Si le type de fichier est listé blanche, n\'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n\'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n\'est vide pas et le type de fichier est listé grise, analyser le fichier comme d\'habitude et déterminer si de bloquer basés des résultats de l\'analyse, mais si la liste grise n\'est vide pas et le type de fichier n\'est listé grise pas, traiter le fichier comme listé noire, donc n\'analyse pas mais bloque de toute façon. Liste Blanche :';
 $phpMussel['lang']['config_files_max_recursion'] = 'Maximum récursivité profondeur limite pour archives. Défaut = 10.';
-$phpMussel['lang']['config_files_max_uploads'] = 'Maximum admissible nombre de fichiers pour analyse lorsque l\'analyse de fichier téléchargements avant d\'abandonner l\'analyse et informer l\'utilisateur qu\'ils sont téléchargement trop à la fois! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé : 10. Vous pouvez désirer d\'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.';
+$phpMussel['lang']['config_files_max_uploads'] = 'Maximum admissible nombre de fichiers pour analyse lorsque l\'analyse de fichier téléchargements avant d\'abandonner l\'analyse et informer l\'utilisateur qu\'ils sont téléchargement trop à la fois ! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé : 10. Vous pouvez désirer d\'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $phpMussel['lang']['config_general_allow_symlinks'] = 'Parfois, phpMussel n\'est pas capable d\'accéder directement à un fichier lorsqu\'il est nommé d\'une certaine manière. L\'accès indirect au fichier via des liens symboliques peut parfois résoudre ce problème. Cependant, ce n\'est pas toujours une solution viable, car sur certains systèmes, l\'utilisation de liens symboliques peut être interdite, ou nécessiter des privilèges administratifs. Cette directive est utilisée pour déterminer si phpMussel doit tenter d\'utiliser des liens symboliques pour accéder aux fichiers de manière indirecte, lorsqu\'il n\'est pas possible de les accéder directement. True = Activer les liens symboliques ; False = Désactiver les liens symboliques [Défaut].';
 $phpMussel['lang']['config_general_cleanup'] = 'Déensemble variables du script et cache après l\'exécution ? False = Non ; True = Oui [Défaut]. Si vous ne utilisez pas le script au-delà l\'initiale analyse du téléchargements, devrait ensemble à <code>true</code> (oui) à minimiser l\'utilisation de la mémoire. Si vous utilisez le script à des fins au-delà l\'initiale analyse du téléchargements, devrait ensemble à <code>false</code> (non), pour éviter recharger inutilement dupliqué données dans la mémoire. Dans la pratique générale, il devrait probablement être ensemblé à <code>true</code>, mais, si vous faites cela, vous ne serez pas être capable d\'utiliser le script pour tout chose autre que l\'analyse des fichiers téléchargements. N\'a pas d\'influence en le mode CLI.';
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = 'Code 2FA';
 $phpMussel['lang']['field_activate'] = 'Activer';
 $phpMussel['lang']['field_clear_all'] = 'Annuler tout';
 $phpMussel['lang']['field_component'] = 'Composant';
+$phpMussel['lang']['field_confirm'] = 'Confirmer';
 $phpMussel['lang']['field_create_new_account'] = 'Créer un nouveau compte';
 $phpMussel['lang']['field_deactivate'] = 'Désactiver';
 $phpMussel['lang']['field_delete_account'] = 'Supprimer le compte';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Mois';
 $phpMussel['lang']['previewer_seconds'] = 'Secondes';
 $phpMussel['lang']['previewer_weeks'] = 'Semaines';
 $phpMussel['lang']['previewer_years'] = 'Années';
+$phpMussel['lang']['response_2fa_invalid'] = 'Code 2FA incorrect entré. Authentification échouée.';
+$phpMussel['lang']['response_2fa_valid'] = 'Authentifié avec succès.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Un compte avec ce nom d\'utilisateur existe déjà !';
 $phpMussel['lang']['response_accounts_created'] = 'Compte créé avec succès !';
 $phpMussel['lang']['response_accounts_deleted'] = 'Compte supprimé avec succès !';
@@ -245,8 +248,8 @@ $phpMussel['lang']['response_delete_error'] = 'Échec du suppriment !';
 $phpMussel['lang']['response_directory_deleted'] = 'Répertoire supprimé avec succès !';
 $phpMussel['lang']['response_directory_renamed'] = 'Répertoire renommé avec succès !';
 $phpMussel['lang']['response_error'] = 'Erreur';
-$phpMussel['lang']['response_failed_to_install'] = 'Échec de l\'installation!';
-$phpMussel['lang']['response_failed_to_update'] = 'Échec de la mise à jour!';
+$phpMussel['lang']['response_failed_to_install'] = 'Échec de l\'installation !';
+$phpMussel['lang']['response_failed_to_update'] = 'Échec de la mise à jour !';
 $phpMussel['lang']['response_file_deleted'] = 'Fichier supprimé avec succès !';
 $phpMussel['lang']['response_file_edited'] = 'Fichier modifié avec succès !';
 $phpMussel['lang']['response_file_renamed'] = 'Fichier renommé avec succès !';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non d
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Masquer non dépassé';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Ne masquer pas inutilisé';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Masquer inutilisé';
+$phpMussel['lang']['tip_2fa_sent'] = 'Un e-mail contenant un code d\'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n\'avez pas reçu cet e-mail, essayez de vous déconnecter, d\'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code.';
 $phpMussel['lang']['tip_accounts'] = 'Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l\'accès frontal de phpMussel.';
 $phpMussel['lang']['tip_cache_data'] = 'Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache.';
 $phpMussel['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour phpMussel à l\'accès frontal.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal est un service gratuit pour analyser les fichiers et les URL qui sont suspects.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis est un service gratuit pour l\'analyse des logiciels malveillants fourni par <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis est un service gratuit pour l\'analyse des logiciels malveillants fourni par <a href="https://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Spécialistes en logiciels malveillants.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Forum de discussion sur les logiciels malveillants.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Cartes de Vulnérabilité</a> – Liste des versions sûres/dangereuses de divers paquets (PHP, HHVM, etc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Cartes de Compatibilité</a> – Liste des informations de compatibilité pour divers packages (CIDRAM, phpMussel, etc).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Bonjour, %1$s.<br />
+<br />
+Votre code d\'authentification à deux facteurs pour l\'accès frontal de phpMussel :</p>
+<h1>%2$s</h1>
+<p>Ce code expire dans 10 minutes.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = 'Authentification à deux facteurs';

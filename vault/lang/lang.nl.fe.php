@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.09).
+ * This file: Dutch language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA-code';
 $phpMussel['lang']['field_activate'] = 'Activeren';
 $phpMussel['lang']['field_clear_all'] = 'Annuleer alles';
 $phpMussel['lang']['field_component'] = 'Component';
+$phpMussel['lang']['field_confirm'] = 'Bevestigen';
 $phpMussel['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $phpMussel['lang']['field_deactivate'] = 'Deactiveren';
 $phpMussel['lang']['field_delete_account'] = 'Account Verwijderen';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Maanden';
 $phpMussel['lang']['previewer_seconds'] = 'Seconden';
 $phpMussel['lang']['previewer_weeks'] = 'Weken';
 $phpMussel['lang']['previewer_years'] = 'Jaren';
+$phpMussel['lang']['response_2fa_invalid'] = 'Onjuiste 2FA-code ingevoerd. Verificatie mislukt.';
+$phpMussel['lang']['response_2fa_valid'] = 'Succesvol geverifieerd';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $phpMussel['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt nie
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
+$phpMussel['lang']['tip_2fa_sent'] = 'Een e-mail met een tweefactorauthenticatie code is verzonden naar uw e-mailadres. Bevestig deze code hieronder om toegang te krijgen tot de frontend. Als u deze e-mail niet hebt ontvangen, probeert u uit te loggen, wacht 10 minuten, en in te loggen opnieuw aan om een nieuwe e-mail met een nieuwe code te ontvangen.';
 $phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend.';
 $phpMussel['lang']['tip_cache_data'] = 'Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken.';
 $phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor phpMussel te modificeren vanaf de frontend.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL\'s.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="https://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware-specialisten.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, ezv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Hallo, %1$s.<br />
+<br />
+Uw 2FA-code voor in te loggen bij de frontend van phpMussel:</p>
+<h1>%2$s</h1>
+<p>Deze code verloopt over 10 minuten.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA (Twee-Factor Authenticatie)';

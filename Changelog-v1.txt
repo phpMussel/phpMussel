@@ -19,6 +19,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.08.10; Bug-fixes; Maikuolan]: Fixed a weakness in the fallback for
   fetching the IP address of inbound requests. Fixed some wrong variables used.
 
+- [2018.08.11-12; NEW FEATURE; Maikuolan]: Added support for two-factor
+  authentication by email for when logging into the front-end! It is strongly
+  recommended that all users using the front-end should use this new feature
+  for improved front-end security (documentation explaining how to use this
+  properly will be available in the near future).
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 

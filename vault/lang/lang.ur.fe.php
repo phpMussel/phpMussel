@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.09).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA کوڈ';
 $phpMussel['lang']['field_activate'] = 'فعال کریں';
 $phpMussel['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $phpMussel['lang']['field_component'] = 'اجزاء';
+$phpMussel['lang']['field_confirm'] = 'تصدیق کریں';
 $phpMussel['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
 $phpMussel['lang']['field_deactivate'] = 'بے عمل';
 $phpMussel['lang']['field_delete_account'] = 'کھاتہ مٹا دو';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'مہینے';
 $phpMussel['lang']['previewer_seconds'] = 'سیکنڈ';
 $phpMussel['lang']['previewer_weeks'] = 'ہفتے';
 $phpMussel['lang']['previewer_years'] = 'سال';
+$phpMussel['lang']['response_2fa_invalid'] = 'غلط 2FA کوڈ داخل. تصدیق میں ناکام رہے.';
+$phpMussel['lang']['response_2fa_valid'] = 'کامیابی سے تصدیق کی.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'وہ صارف نام کے ساتھ ایک اکاؤنٹ پہلے سے موجود ہے!';
 $phpMussel['lang']['response_accounts_created'] = 'اکاؤنٹ کامیابی سے تشکیل!';
 $phpMussel['lang']['response_accounts_deleted'] = 'اکاؤنٹ کامیابی سے خارج!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ 
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'غیر استعمال شدہ چھپائیں';
+$phpMussel['lang']['tip_2fa_sent'] = 'ایک ای میل دو فیکٹر کے توثیق کوڈ پر مشتمل ہے جو آپ کے ای میل ایڈریس پر بھیج دیا گیا ہے. سامنے کے اختتام تک رسائی حاصل کرنے کے لئے براہ مہربانی ذیل میں اس کوڈ کی تصدیق کریں. اگر آپ نے یہ ای میل موصول نہیں کیا تو، 10 منٹ کے انتظار میں لاگ ان کرنے کی کوشش کریں، اور ایک نیا ای میل کے ساتھ نیا ای میل وصول کرنے کیلئے دوبارہ لاگ ان کریں.';
 $phpMussel['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ phpMussel سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
 $phpMussel['lang']['tip_cache_data'] = 'ہیلو، {username}.<br />یہاں آپ کیش کے مندرجات کا جائزہ لے سکتے ہیں.';
 $phpMussel['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے phpMussel لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
-            <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="http://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="https://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
             <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
             <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>ہیلو، %1$s.<br />
+<br />
+phpMussel سامنے کے آخر میں آپ کے 2FA کوڈ:</p>
+<h1>%2$s</h1>
+<p>یہ کوڈ 10 منٹ میں ختم ہو جاتا ہے.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA';

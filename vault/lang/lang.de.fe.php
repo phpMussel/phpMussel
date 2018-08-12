@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.08.09).
+ * This file: German language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA-Code';
 $phpMussel['lang']['field_activate'] = 'Aktivieren';
 $phpMussel['lang']['field_clear_all'] = 'Alles löschen';
 $phpMussel['lang']['field_component'] = 'Komponente';
+$phpMussel['lang']['field_confirm'] = 'Bestätigen';
 $phpMussel['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
 $phpMussel['lang']['field_deactivate'] = 'Deaktivieren';
 $phpMussel['lang']['field_delete_account'] = 'Konto löschen';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Monate';
 $phpMussel['lang']['previewer_seconds'] = 'Sekunden';
 $phpMussel['lang']['previewer_weeks'] = 'Wochen';
 $phpMussel['lang']['previewer_years'] = 'Jahre';
+$phpMussel['lang']['response_2fa_invalid'] = 'Falscher 2FA-Code eingegeben. Authentifizierung fehlgeschlagen.';
+$phpMussel['lang']['response_2fa_valid'] = 'Erfolgreich authentifiziert.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Ein Konto mit diesem Benutzernamen ist bereits vorhanden!';
 $phpMussel['lang']['response_accounts_created'] = 'Konto erfolgreich erstellt!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Konto erfolgreich gelöscht!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nic
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Verstecken unbenutzt';
+$phpMussel['lang']['tip_2fa_sent'] = 'Eine E-Mail mit einem Zwei-Faktor-Authentifizierungscode wurde an Ihre E-Mail-Adresse gesendet. Bitte bestätigen Sie diesen Code, um Zugang zum Front-End zu erhalten. Wenn Sie diese E-Mail nicht erhalten haben, versuchen Sie sich auszuloggen, warten Sie 10 Minuten, und melden Sie sich einzuloggen, um eine neue E-Mail mit einem neuen Code zu erhalten.';
 $phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der phpMussel Front-End haben.';
 $phpMussel['lang']['tip_cache_data'] = 'Hallo, {username}.<br />Hier können Sie den Inhalt des Cache überprüfen.';
 $phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für phpMussel von der Front-End.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP Lernressourcen und Diskussion.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von <a href="http://www.payload-security.com/">Payload Security</a> zur Verfügung gestellt.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von <a href="https://www.payload-security.com/">Payload Security</a> zur Verfügung gestellt.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer-Anti-Malware-Spezialisten.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Nützliche Malware konzentrierte Diskussionsforen.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, u.s.w.).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, u.s.w.).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Hallo, %1$s.<br />
+<br />
+Ihr Zwei-Faktor-Authentifizierungscode für die Anmeldung am phpMussel Front-End:</p>
+<h1>%2$s</h1>
+<p>Dieser Code läuft in 10 Minuten ab.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = 'Zwei-Faktor-Authentifizierung';

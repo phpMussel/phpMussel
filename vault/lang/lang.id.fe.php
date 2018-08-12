@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.09).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,7 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Diperlukan untuk menggu
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Keluar</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silakan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
+$phpMussel['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silahkan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Izinkan memimpin dan mengikuti titik-titik dalam nama file? Ini kadang-kadang dapat digunakan untuk menyembunyikan file, atau untuk mengelabui beberapa sistem agar memungkinkan direktori traversal. False = Jangan izinkan [Default]. True = Izinkan.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Memblokir file apapun yang berisi karakter pengendali (lain dari baris baru)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokirnya [Default]; True = Memblokirnya.';
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = 'Kode 2FA';
 $phpMussel['lang']['field_activate'] = 'Mengaktifkan';
 $phpMussel['lang']['field_clear_all'] = 'Cabut semua';
 $phpMussel['lang']['field_component'] = 'Komponen';
+$phpMussel['lang']['field_confirm'] = 'Konfirmasikan';
 $phpMussel['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $phpMussel['lang']['field_deactivate'] = 'Menonaktifkan';
 $phpMussel['lang']['field_delete_account'] = 'Hapus Akun';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Bulan';
 $phpMussel['lang']['previewer_seconds'] = 'Detik';
 $phpMussel['lang']['previewer_weeks'] = 'Minggu';
 $phpMussel['lang']['previewer_years'] = 'Tahun';
+$phpMussel['lang']['response_2fa_invalid'] = 'Kode 2FA salah dimasukkan. Otentikasi gagal.';
+$phpMussel['lang']['response_2fa_valid'] = 'Berhasil dikonfirmasi.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $phpMussel['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';
@@ -315,11 +318,12 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
+$phpMussel['lang']['tip_2fa_sent'] = 'Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke front-end. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru.';
 $phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel.';
 $phpMussel['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
-$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$phpMussel['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="https://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Komputer spesialis anti-malware.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Salam, %1$s.<br />
+<br />
+Kode otentikasi dua-faktor Anda untuk masuk ke depan phpMussel:</p>
+<h1>%2$s</h1>
+<p>Kode ini berakhir dalam 10 menit.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = 'Otentikasi Dua-Faktor';

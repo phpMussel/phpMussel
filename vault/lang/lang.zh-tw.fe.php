@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.09).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA代碼';
 $phpMussel['lang']['field_activate'] = '啟用';
 $phpMussel['lang']['field_clear_all'] = '撤銷所有';
 $phpMussel['lang']['field_component'] = '組件';
+$phpMussel['lang']['field_confirm'] = '確認';
 $phpMussel['lang']['field_create_new_account'] = '創建新賬戶';
 $phpMussel['lang']['field_deactivate'] = '停用';
 $phpMussel['lang']['field_delete_account'] = '刪除賬戶';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = '月';
 $phpMussel['lang']['previewer_seconds'] = '秒';
 $phpMussel['lang']['previewer_weeks'] = '週';
 $phpMussel['lang']['previewer_years'] = '年';
+$phpMussel['lang']['response_2fa_invalid'] = '輸入了錯誤的2FA代碼。驗證失敗。';
+$phpMussel['lang']['response_2fa_valid'] = '驗證成功。';
 $phpMussel['lang']['response_accounts_already_exists'] = '一個賬戶與那個用戶名已經存在！';
 $phpMussel['lang']['response_accounts_created'] = '帳戶成功創建！';
 $phpMussel['lang']['response_accounts_deleted'] = '帳戶成功刪除！';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過�
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '隱藏非過時';
 $phpMussel['lang']['switch-hide-unused-set-false'] = '不要隱藏非用過';
 $phpMussel['lang']['switch-hide-unused-set-true'] = '隱藏非用過';
+$phpMussel['lang']['tip_2fa_sent'] = '包含2FA代碼的電子郵件已發送到您的電子郵件地址。​請確認以下代碼以獲取對前端的訪問權限。​如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。';
 $phpMussel['lang']['tip_accounts'] = '你好，​{username}。​<br />賬戶頁面允許您控制誰可以訪問phpMussel前端。';
 $phpMussel['lang']['tip_cache_data'] = '你好，​{username}。<br />在這裡您可以查看緩存的內容。';
 $phpMussel['lang']['tip_config'] = '你好，​{username}。​<br />配置頁面允許您修改phpMussel配置從前端。';
@@ -359,9 +363,16 @@ $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免費惡意軟件分析服務。</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="https://www.payload-security.com/">Payload Security</a>提供的免費惡意軟件分析服務。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 電腦反惡意軟件專家。</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>你好，%1$s。<br />
+<br />
+用於登錄phpMussel前端的2FA代碼：</p>
+<h1>%2$s</h1>
+<p>此代碼將在10分鐘後到期。</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA（雙因素身份驗證）';

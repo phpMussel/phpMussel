@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.09).
+ * This file: Front-end functions file (last modified: 2018.08.11).
  */
 
 /**
@@ -199,7 +199,7 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
  * @param string $Entry Name of the cache entry to get.
  * return string|bool Returned cache entry data (or false on failure).
  */
-$phpMussel['FECacheGet'] = function ($Source, $Entry) {
+$phpMussel['FECacheGet'] = function (&$Source, $Entry) {
     $Entry = base64_encode($Entry);
     $EntryPos = strpos($Source, "\n" . $Entry . ',');
     if ($EntryPos !== false) {
@@ -1829,10 +1829,15 @@ $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) u
     /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $Title;
 
+    /** Fetch and prepare username. */
+    if ($Username = (empty($phpMussel['FE']['UserRaw']) ? '' : $phpMussel['FE']['UserRaw'])) {
+        if (preg_match('~^[^<>]+<[^<>]+>$~', $Username)) {
+            $Username = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username));
+        }
+    }
+
     /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = empty(
-        $phpMussel['FE']['UserRaw']
-    ) ? $Tips : $phpMussel['ParseVars'](['username' => $phpMussel['FE']['UserRaw']], $Tips);
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](['username' => $Username], $Tips);
 
     /** Load main front-end JavaScript data. */
     $phpMussel['FE']['JS'] = $JS ? $phpMussel['ReadFile']($phpMussel['GetAssetPath']('scripts.js')) : '';
@@ -1925,7 +1930,7 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
         return;
     }
     $File = (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) ? $phpMussel['TimeFormat'](
-        $phpMussel['Now'],
+        $phpMussel['Time'],
         $phpMussel['Config']['general']['FrontEndLog']
     ) : $phpMussel['Config']['general']['FrontEndLog'];
     $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
@@ -1961,18 +1966,18 @@ $phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '',
     /** Prepare event logging. */
     if ($phpMussel['Config']['PHPMailer']['EventLog']) {
         $EventLog = (strpos($phpMussel['Config']['PHPMailer']['EventLog'], '{') !== false) ? $phpMussel['TimeFormat'](
-            $phpMussel['Now'],
+            $phpMussel['Time'],
             $phpMussel['Config']['PHPMailer']['EventLog']
         ) : $phpMussel['Config']['PHPMailer']['EventLog'];
         $EventLogData = ((
             $phpMussel['Config']['legal']['pseudonymise_ip_addresses']
         ) ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']]) . ' - ' . (
             isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
-                $phpMussel['Now'],
+                $phpMussel['Time'],
                 $phpMussel['Config']['general']['timeFormat']
             )
         ) . ' - ';
-        $WriteMode = (!file_exists($EventLog) || (
+        $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
             $phpMussel['Config']['general']['truncate'] > 0 &&
             filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
         )) ? 'w' : 'a';
@@ -2109,4 +2114,22 @@ $phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '',
 
     /** Exit. */
     return $State;
+};
+
+/**
+ * Generates very simple 8-digit numbers used for 2FA.
+ *
+ * @return int An 8-digit number.
+ */
+$phpMussel['2FA-Number'] = function () {
+    static $MinInt = 10000000;
+    static $MaxInt = 99999999;
+    if (function_exists('random_int')) {
+        try {
+            $Key = random_int($MinInt, $MaxInt);
+        } catch (\Exception $e) {
+            $Key = rand($MinInt, $MaxInt);
+        }
+    }
+    return isset($Key) ? $Key : rand($MinInt, $MaxInt);
 };

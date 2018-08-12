@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.09).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,7 @@ $phpMussel['lang']['field_2fa'] = '2FA kodu';
 $phpMussel['lang']['field_activate'] = 'Etkinleştir';
 $phpMussel['lang']['field_clear_all'] = 'Hepsini temizle';
 $phpMussel['lang']['field_component'] = 'Bileşen';
+$phpMussel['lang']['field_confirm'] = 'Onaylamak';
 $phpMussel['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
 $phpMussel['lang']['field_deactivate'] = 'Devre dışı bırak';
 $phpMussel['lang']['field_delete_account'] = 'Hesabı sil';
@@ -226,6 +227,8 @@ $phpMussel['lang']['previewer_months'] = 'Aylar';
 $phpMussel['lang']['previewer_seconds'] = 'Saniyeler';
 $phpMussel['lang']['previewer_weeks'] = 'Haftalar';
 $phpMussel['lang']['previewer_years'] = 'Yıllar';
+$phpMussel['lang']['response_2fa_invalid'] = 'Yanlış 2FA kodu girildi. Kimlik doğrulama başarısız oldu.';
+$phpMussel['lang']['response_2fa_valid'] = 'Başarıyla doğrulandı.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $phpMussel['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';
@@ -315,6 +318,7 @@ $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanlar�
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';
 $phpMussel['lang']['switch-hide-unused-set-false'] = 'Kullanılmayanları gizleme';
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'Kullanılmayanları gizle';
+$phpMussel['lang']['tip_2fa_sent'] = 'E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin.';
 $phpMussel['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, phpMussel ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
 $phpMussel['lang']['tip_cache_data'] = 'Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz.';
 $phpMussel['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, phpMussel için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';
@@ -358,9 +362,16 @@ $phpMussel['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantıla
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – Şüpheli dosyaları ve URL\'leri analiz etmek için ücretsiz bir hizmet.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="http://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
+            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="https://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
             <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb.) güvenli/güvensiz sürümlerini listeler.</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
         </ul>';
+
+$phpMussel['lang']['msg_template_2fa'] = '<center><p>Merhaba, %1$s.<br />
+<br />
+phpMussel ön ucuna giriş yapmak için 2FA kodunuz:</p>
+<h1>%2$s</h1>
+<p>Bu kod 10 dakika içinde sona eriyor.</p></center>';
+$phpMussel['lang']['msg_subject_2fa'] = '2FA (İki Faktörlü Kimlik Doğrulama)';

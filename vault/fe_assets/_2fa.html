@@ -1,9 +1,10 @@
 <div class="login">
 <form action="?" method="POST" style="text-align:center">
-    <h1>{header_login}</h1>{state_msg}
+    <h1>{header_login}</h1>
+    <div class="txtRd"><small>{tip_2fa_sent}</small><br /><br /></div>{state_msg}
     <input id="2fa" name="2fa" type="text" placeholder="{field_2fa}" />
-    <input name="cidram-form-target" type="hidden" value="2fa" />
-    <input type="submit" value="{field_log_in}" class="auto" /><br /><br />
+    <input name="cidram-form-target" type="hidden" value="2fa" /><br />
+    <input type="submit" value="{field_confirm}" class="auto" /><br /><br />
     <div class="txtRd"><small>{tip_fe_cookie_warning}</small></div>
 </form>
 </div>
