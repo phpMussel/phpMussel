@@ -49,7 +49,7 @@ This document and its associated package can be downloaded for free from:
 
 3) Upload the contents (phpMussel and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
 
-4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755"). In short: For the package to work properly, PHP needs to be able to read and write files inside the `vault` directory. Many things (updating, logging, etc) won't be possible, if PHP can't write to the `vault` directory, and the package won't work at all if PHP can't read from the `vault` directory. However, for optimal security, the `vault` directory must NOT be publicly accessible (sensitive information, such as informaiton contained by `config.ini` or `frontend.dat`, could be exposed to potential attackers if the `vault` directory is publicly accessible).
 
 5) Install any signatures that you'll need. *See: [INSTALLING SIGNATURES](#INSTALLING_SIGNATURES).*
 
@@ -193,10 +193,23 @@ The front-end is disabled by default in order to prevent unauthorised access (un
 
 Note: After you've logged in for the first time, in order to prevent unauthorised access to the front-end, you should immediately change your username and password! This is very important, because it's possible to upload arbitrary PHP code to your website via the front-end.
 
+Also, for optimal security, enabling "two-factor authentication" for all front-end accounts is strongly recommended (instructions provided below).
+
 #### 4.2 HOW TO USE THE FRONT-END.
 
 Instructions are provided on each page of the front-end, to explain the correct way to use it and its intended purpose. If you need further explanation or any special assistance, please contact support. Alternatively, there are some videos available on YouTube which could help by way of demonstration.
 
+#### 4.3 TWO-FACTOR AUTHENTICATION
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure.
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. phpMussel utilises PHPMailer for sending emails. It should be noted that although phpMussel, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the phpMussel front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the phpMussel configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that phpMussel knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
