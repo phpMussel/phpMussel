@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.11).
+ * This file: Front-end functions file (last modified: 2018.08.13).
  */
 
 /**
@@ -1831,9 +1831,16 @@ $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) u
 
     /** Fetch and prepare username. */
     if ($Username = (empty($phpMussel['FE']['UserRaw']) ? '' : $phpMussel['FE']['UserRaw'])) {
-        if (preg_match('~^[^<>]+<[^<>]+>$~', $Username)) {
-            $Username = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username));
+        $Username = preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username);
+        if (($AtChar = strpos($Username, '@')) !== false) {
+            $Username = substr($Username, 0, $AtChar);
         }
+        $Username = preg_split('~[\s_.+]+~', $Username, -1, PREG_SPLIT_NO_EMPTY);
+        foreach ($Username as &$Part) {
+            $Part = ucfirst(strtolower($Part));
+        }
+        unset($Part);
+        $Username = implode(' ', $Username);
     }
 
     /** Prepare page tooltip/description. */
