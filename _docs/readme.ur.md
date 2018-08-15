@@ -50,9 +50,9 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">٢. <code dir="ltr">"config.ini"</code> (اندر "vault" واقع کرنے <code dir="ltr">"config.ini.RenameMe"</code> نام تبدیل)، اور اختیاری پختہ اعلی درجے کی صارفین کے لئے سفارش کی جاتی ہے، لیکن (اس فائل پر مشتمل ابتدائی کے لئے یا ناتجربہ کار)، اسے کھولنے کے لئے سفارش کی نہیں phpMussel لئے دستیاب تمام ہدایات؛ ہر آپشن کے اوپر ایک مختصر تبصرہ یہ کیا کرتا بیان اور کیا اس کے لئے ہے) ہونا چاہئے. آپ کو فٹ دیکھ کے طور جو بھی اپنے مخصوص سیٹ اپ کے لئے مناسب ہے کے مطابق ان ہدایات کو ایڈجسٹ کریں. فائل محفوظ کریں، قریب ہے.<br /><br /></div>
 
-<div dir="rtl">٣. (اگر آپ پہلے پر فیصلہ کیا تھا ڈائریکٹری میں مندرجات (phpMussel اور اس کی فائلوں) کو اپ لوڈ کریں آپ "*.txt/*.md" فائلوں کو شامل کرنے کی ضرورت نہیں ہے، لیکن زیادہ تر، تم سب کچھ اپ لوڈ کرنا چاہئے) .<br /><br /></div>
+<div dir="rtl">٣. (اگر آپ پہلے پر فیصلہ کیا تھا ڈائریکٹری میں مندرجات (phpMussel اور اس کی فائلوں) کو اپ لوڈ کریں آپ "<code dir="ltr">*.txt/*.md</code>" فائلوں کو شامل کرنے کی ضرورت نہیں ہے، لیکن زیادہ تر، تم سب کچھ اپ لوڈ کرنا چاہئے) .<br /><br /></div>
 
-<div dir="rtl">٤. CHMOD "755" (مسائل ہیں تو، آپ کو کوشش "vault" ڈائریکٹری میں کر سکتے ہیں "777"؛ اس سے کم محفوظ ہے، اگرچہ). مندرجات (آپ اس سے قبل انتخاب کیا ایک) ذخیرہ کرنے کے اہم ڈائریکٹری، عام طور پر، آپ کو آپ کے سسٹم پر ماضی میں اجازتیں مسائل پڑا ہے تو اکیلے چھوڑ دیا جا سکتا ہے، لیکن CHMOD کی حیثیت کی جانچ پڑتال کی جانی چاہئے (ڈیفالٹ کی طرف سے، جیسے "755" کچھ ہونا چاہئے).<br /><br /></div>
+<div dir="rtl">٤. CHMOD "755" (مسائل ہیں تو، آپ کو کوشش "vault" ڈائریکٹری میں کر سکتے ہیں "777"؛ اس سے کم محفوظ ہے، اگرچہ). مندرجات (آپ اس سے قبل انتخاب کیا ایک) ذخیرہ کرنے کے اہم ڈائریکٹری، عام طور پر، آپ کو آپ کے سسٹم پر ماضی میں اجازتیں مسائل پڑا ہے تو اکیلے چھوڑ دیا جا سکتا ہے، لیکن CHMOD کی حیثیت کی جانچ پڑتال کی جانی چاہئے (ڈیفالٹ کی طرف سے، جیسے "755" کچھ ہونا چاہئے). مختصرا: پیکج کے لئے مناسب طریقے سے کام کرنے کے لئے، پی ایچ او کو <code dir="ltr">vault</code> ڈائریکٹری کے اندر فائلوں کو پڑھنے اور لکھنے کے قابل ہونے کی ضرورت ہے. اگر بہت سے چیزیں (اپ ڈیٹنگ، لاگنگ، وغیرہ) ممکن نہیں ہوسکتے، اگر پی ایچ پی <code dir="ltr">vault</code> ڈائریکٹری میں نہیں لکھا جاسکتا ہے، اور پیکج بالکل کام نہیں کرے گا تو پی ایچ پی <code dir="ltr">vault</code> ڈائرکٹری سے پڑھ نہیں سکتا. تاہم، زیادہ سے زیادہ سیکورٹی کے لئے، <code dir="ltr">vault</code> ڈائرکٹری عوامی طور پر قابل رسائی نہیں ہونا ضروری ہے (<code dir="ltr">vault</code> ڈائرکٹری عوامی طور پر قابل رسائی ہے تو حملہ آوروں کے بارے میں سنجیدگی سے متعلق معلومات سامنے آسکتی ہیں).<br /><br /></div>
 
 <div dir="rtl">٥. کسی بھی دستخط کو انسٹال کریں جو آپ کی ضرورت ہو گی. <em>دیکھیں: <a href="#INSTALLING_SIGNATURES">تنصیب کا دستخط</a>).</em><br /><br /></div>
 
@@ -190,9 +190,23 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">نوٹ: اگر آپ کو پہلی بار کے لئے لاگ ان کرنے کے بعد، سامنے کے آخر تک غیر مجاز رسائی کو روکنے کے لئے، آپ کو فوری طور پر آپ کا صارف نام اور پاس ورڈ کو تبدیل کرنا چاہئے! یہ بہت اہم ہے، یہ سامنے کے آخر میں کے ذریعے آپ کی ویب سائٹ پر من مانی PHP کوڈ کو اپ لوڈ کرنا ممکن ہے کیونکہ.<br /><br /></div>
 
+<div dir="rtl">اس کے علاوہ، زیادہ سے زیادہ سیکورٹی کے لئے، تمام فرنٹ اینڈ اکاؤنٹس کے لئے 2FA کو مؤثر طریقے سے سفارش کی جاتی ہے (ذیل میں دی گئی ہدایات).<br /><br /></div>
+
 #### <div dir="rtl">٤.٢ سامنے کے آخر میں کس طرح استعمال.<br /><br /></div>
 
 <div dir="rtl">ہدایات یہ اور اس مقصد کو استعمال کرنے کا صحیح طریقہ کی وضاحت کے لئے سامنے کے آخر میں کے ہر صفحے پر فراہم کی جاتی ہیں. اگر آپ کو مزید وضاحت یا کوئی خاص مدد کی ضرورت ہے، کی مدد سے رابطہ کریں. متبادل طور پر، یو ٹیوب پر دستیاب کچھ ویڈیوز مظاہرے کی راہ کی طرف مدد کر سکتا ہے جس میں موجود ہیں.<br /><br /></div>
+
+#### <div dir="rtl">٤.٣ 2FA<br /><br /></div>
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -249,6 +263,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اثاثوں.</div> | /vault/fe_assets/
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
@@ -761,7 +776,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 ##### <div dir="rtl">"ignore_upload_errors"<br /></div>
 <div dir="rtl"><ul>
- <li>جب تک یہ آپ کی مخصوص نظام پر phpMussel کا صحیح فعالیت کے لئے ضروری ہے یہ ہدایت عام طور پر غیر فعال کر دیا جائے چاہئے. عام طور پر، جب معذور، phpMussel میں عناصر کی موجودگی کا پتہ لگاتا ہے جب <code dir="ltr">$_FILES</code> array(), یہ phpMussel ایک غلطی پیغام واپس آ جائیں گے، ان عناصر کو خالی یا خالی ہو تو، فائلوں ان عناصر کی نمائندگی کرتے ہیں کی ایک اسکین شروع کرنے کی کوشش کرتے ہیں، اور کرے گا. یہ phpMussel لئے مناسب رویہ ہے. تاہم، کچھ CMS کے لئے، میں خالی عناصر <code dir="ltr">$_FILES</code> وہاں نہ کوئی بھی ہوتے ہیں تو اس صورت میں، phpMussel لئے عام رویہ ان لوگوں CMS کے عام رویے کے ساتھ مداخلت کی جائے گی رپورٹ کیا جا سکتا ہے ان لوگوں کے CMS، یا غلطیوں کے قدرتی رویے کے نتیجے میں ہو سکتا ہے. ایک ایسی صورتحال نے اس وقت ہوتی ہے، تو اس اختیار کو چالو کرنے کے، phpMussel طرح خالی عناصر کے لئے علیحدہ اسکین کی ضرورت شروع کرنے کی کوشش نہ کرنے کی ہدایت دیں گے، اس طرح کے صفحے کی درخواست کے تسلسل کی اجازت دی چلا جب ان کو نظر انداز اور کسی بھی متعلقہ خرابی کے پیغامات واپس نہیں کرنا. False (جھوٹی) = بند; True (سچے) = ON.</li>
+ <li>جب تک یہ آپ کی مخصوص نظام پر phpMussel کا صحیح فعالیت کے لئے ضروری ہے یہ ہدایت عام طور پر غیر فعال کر دیا جائے چاہئے. عام طور پر، جب معذور، phpMussel میں عناصر کی موجودگی کا پتہ لگاتا ہے جب <code dir="ltr">$_FILES</code> array(), یہ phpMussel ایک غلطی پیغام واپس آ جائیں گے، ان عناصر کو خالی یا خالی ہو تو، فائلوں ان عناصر کی نمائندگی کرتے ہیں کی ایک اسکین شروع کرنے کی کوشش کرتے ہیں، اور کرے گا. یہ phpMussel لئے مناسب رویہ ہے. تاہم، کچھ CMS کے لئے، میں خالی عناصر <code dir="ltr">$_FILES</code> وہاں نہ کوئی بھی ہوتے ہیں تو اس صورت میں، phpMussel لئے عام رویہ ان لوگوں CMS کے عام رویے کے ساتھ مداخلت کی جائے گی رپورٹ کیا جا سکتا ہے ان لوگوں کے CMS، یا غلطیوں کے قدرتی رویے کے نتیجے میں ہو سکتا ہے. ایک ایسی صورتحال نے اس وقت ہوتی ہے، تو اس اختیار کو چالو کرنے کے، phpMussel طرح خالی عناصر کے لئے علیحدہ اسکین کی ضرورت شروع کرنے کی کوشش نہ کرنے کی ہدایت دیں گے، اس طرح کے صفحے کی درخواست کے تسلسل کی اجازت دی چلا جب ان کو نظر انداز اور کسی بھی متعلقہ خرابی کے پیغامات واپس نہیں کرنا. False (جھوٹی) = بند؛ True (سچے) = ON.</li>
 </ul></div>
 
 ##### <div dir="rtl">"only_allow_images"<br /></div>
@@ -878,6 +893,48 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 <div dir="rtl"><ul>
  <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے phpMussel ہدایت کرنے کے لئے، "css_url" متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، phpMussel ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.</li>
 </ul></div>
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

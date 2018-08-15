@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.08.12).
+ * This file: Russian language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'Активные файлы сиг
 
 $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>

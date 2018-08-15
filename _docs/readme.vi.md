@@ -49,7 +49,7 @@ Tài liệu này và các gói liên quan của nó có thể được tải v�
 
 3) Tải nội dung lên (phpMussel và tập tin của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng tập tin `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
-4) CHMOD thư mục `vault` thành "755" (nếu có vấn đề, bạn có thể thử "777", mặc dù này là kém an toàn). Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
+4) CHMOD thư mục `vault` thành "755" (nếu có vấn đề, bạn có thể thử "777", mặc dù này là kém an toàn). Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755"). Nói ngắn gọn: Đối với các gói để hoạt động đúng, PHP cần để có thể đọc và ghi các tập tin bên trong thư mục `vault`. Nhiều thứ (cập nhật, đăng nhập, vv) sẽ không thể, nếu PHP không thể ghi vào thư mục `vault`, và gói sẽ không hoạt động chút nào nếu PHP không thể đọc từ thư mục `vault`. Tuy nhiên, để bảo mật tối ưu, đảm bảo rằng thư mục `vault` KHÔNG được truy cập công khai (thông tin nhạy cảm, chẳng hạn như thông tin chứa bởi `config.ini` hoặc `frontend.dat`, có thể tiếp xúc với những kẻ tấn công tiềm năng nếu thư mục `vault` có thể truy cập công khai).
 
 5) Cài đặt bất kỳ chữ ký mà bạn sẽ cần. *Xem: [CÀI ĐẶT CHỮ KÝ](#INSTALLING_SIGNATURES).*
 
@@ -193,10 +193,23 @@ Các front-end được tắt theo mặc định để ngăn chặn truy cập t
 
 Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn! Điều này là rất quan trọng, bởi vì nó có thể tải lên các mã PHP tùy ý để trang web của bạn thông qua các front-end.
 
+Ngoài ra, để bảo mật tối ưu, hãy bật "xác thực hai yếu tố" cho tất cả tài khoản front-end (hướng dẫn được cung cấp bên dưới).
+
 #### 4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
 
 Các hướng dẫn được cung cấp trên mỗi trang của front-end, để giải thích một cách chính xác để sử dụng nó và mục đích của nó. Nếu bạn cần giải thích thêm hay bất kỳ sự hỗ trợ đặc biệt, vui lòng liên hệ hỗ trợ. Cũng thế, có một số video trên YouTube có thể giúp bằng cách viện trợ trực quan.
 
+#### 4.3 2FA (XÁC THỰC HAI YẾU TỐ)
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +266,7 @@ Tập tin | Chi tiết
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/ | Các tài sản front-end.
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/fe_assets/_2fa.html | Tập tin mẫu HTML được sử dụng khi yêu cầu người dùng cho mã 2FA.
 /vault/fe_assets/_accounts.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
 /vault/fe_assets/_cache.html | Tập tin mẫu HTML cho trang dữ liệu cache của front-end.
@@ -713,6 +727,48 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 
 ##### "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

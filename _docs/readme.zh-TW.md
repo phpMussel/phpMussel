@@ -49,7 +49,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 3） 上傳（phpMussel和它的文件）到您選定的文件夾（不需要包括`*.txt`/`*.md`文件，​但大多數情況下，​您應上傳所有的文件）。
 
-4） 修改的`vault`文件夾權限為『755』（如果有問題，​您可以試試『777』，​但是這是不太安全）。​注意，​主文件夾也應該是該權限，​如果遇上其他權限問題，​請修改對應文件夾和文件的權限。
+4） 修改的`vault`文件夾權限為『755』（如果有問題，​您可以試試『777』，​但是這是不太安全）。​注意，​主文件夾也應該是該權限，​如果遇上其他權限問題，​請修改對應文件夾和文件的權限。​簡而言之：為了使包正常工作，PHP需要能夠在`vault`目錄中讀寫文件。​如果PHP無法寫入`vault`目錄，那麼很多事情（更新，記錄等）都是不可能的，如果PHP無法從`vault`目錄中讀取，則包將無法正常工作。​但是，為了獲得最佳安全性，`vault`目錄不得公開訪問（如果`vault`目錄可公開訪問，敏感信息，例如`config.ini`或`frontend.dat`包含的信息，可能會暴露給潛在的攻擊者）。
 
 5） 安裝您需要的任何簽名。​看到：[安裝簽名](#INSTALLING_SIGNATURES)。
 
@@ -193,9 +193,23 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 
 注意：第一次登錄後，​以防止未經授權的訪問前端，​您應該立即更改您的用戶名和密碼！​這是非常重要的，​因為它可以任意PHP代碼上傳到您的網站通過前端。
 
+此外，為了獲得最佳安全性，強烈建議為所有前端帳戶啟用『雙因素身份驗證』（下面提供的說明）。
+
 #### 4.2 如何使用前端。
 
 每個前端頁面上都有說明，​用於解釋正確的用法和它的預期目的。​如果您需要進一步的解釋或幫助，​請聯繫支持。​另外，​YouTube上還有一些演示視頻。
+
+#### 4.3 2FA（雙因素身份驗證）
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +267,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/ | 前端資產。
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/fe_assets/_2fa.html | 在向用戶詢問2FA代碼時使用的HTML模板。
 /vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
 /vault/fe_assets/_accounts_row.html | 前端賬戶頁面的HTML模板。
 /vault/fe_assets/_cache.html | 前端緩存數據頁面的HTML模板。
@@ -713,6 +728,48 @@ URL掃描儀API配置。
 
 ##### 『css_url』
 - 模板文件為個性化主題使用外部CSS屬性，​而模板文件為t標準主題使用內部CSS屬性。​以指示phpMussel使用模板文件為個性化主題，​指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。​如果您離開這個變量空白，​phpMussel將使用模板文件為默認主題。
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

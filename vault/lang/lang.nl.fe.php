@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.12).
+ * This file: Dutch language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'Geen signature bestanden zijn acti
 
 $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-database gebruikt door de phpMussel URL scanner.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>

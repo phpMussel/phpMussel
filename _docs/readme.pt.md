@@ -49,7 +49,7 @@ Este documento e seu pacote associado pode ser baixado gratuitamente de:
 
 3) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você tinha decidido anteriormente (você não precisa dos arquivos `*.txt`/`*.md` inclusos, mas principalmente, você deve carregar tudo).
 
-4) CHMOD o diretório `vault` para "755" (se houver problemas, você pode tentar "777"; embora isto é o menos seguro). O diretório principal que armazena o conteúdo (o que você escolheu anteriormente), geralmente, não precisa ser mexido, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
+4) CHMOD o diretório `vault` para "755" (se houver problemas, você pode tentar "777"; embora isto é o menos seguro). O diretório principal que armazena o conteúdo (o que você escolheu anteriormente), geralmente, não precisa ser mexido, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755"). Em resumo: Para o pacote funcionar corretamente, o PHP precisa ser capaz de ler e gravar arquivos dentro do diretório `vault`. Muitas coisas (atualização, registro, etc) não serão possíveis, se o PHP não puder gravar no diretório `vault`, e o pacote não funcionará se o PHP não puder ler o diretório `vault`. No entanto, para uma segurança ideal, o diretório `vault` NÃO deve ser publicamente acessível (informações confidenciais, como as informações contidas em `config.ini` ou `frontend.dat`, podem ser expostas a atacantes em potencial se o diretório `vault` estiver publicamente acessível).
 
 5) Instale todas as assinaturas que você precisará. *Vejo: [INSTALANDO ASSINATURAS](#INSTALLING_SIGNATURES).*
 
@@ -193,10 +193,23 @@ O front-end é desativado por padrão para evitar acesso não autorizado (acesso
 
 Nota: Depois de efetuar login pela primeira vez, a fim de impedir o acesso não autorizado ao front-end, você deve imediatamente alterar seu nome de usuário e senha! Isto é muito importante, porque é possível fazer upload de código PHP arbitrário para o seu site através do front-end.
 
+Além disso, para uma segurança ideal, é recomendável ativar a "autenticação de dois fatores" para todas as contas front-end (instruções fornecidas abaixo).
+
 #### 4.2 COMO USAR O FRONT-END.
 
 As instruções são fornecidas em cada página do front-end, para explicar a maneira correta de usá-lo e sua finalidade pretendida. Se precisar de mais explicações ou qualquer assistência especial, entre em contato com o suporte. Alternativamente, existem alguns vídeos disponíveis no YouTube que podem ajudar por meio de demonstração.
 
+#### 4.3 AUTENTICAÇÃO DE DOIS FATORES
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +266,7 @@ Arquivo | Descrição
 /vault/cache/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/fe_assets/ | Dados front-end.
 /vault/fe_assets/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
+/vault/fe_assets/_2fa.html | Um modelo HTML usado ao solicitar ao usuário para um código 2FA.
 /vault/fe_assets/_accounts.html | Um modelo HTML para o front-end página de contas.
 /vault/fe_assets/_accounts_row.html | Um modelo HTML para o front-end página de contas.
 /vault/fe_assets/_cache.html | Um modelo HTML para o front-end página do dados de cache.
@@ -713,6 +727,48 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 
 ##### "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

@@ -49,7 +49,7 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 3) 콘텐츠 (phpMussel 본체와 파일)을 먼저 정한 디렉토리에 업로드합니다. (`*.txt`또는 `*.md`파일 업로드 필요는 없지만, 대개는 모든 업로드 해달라고해도됩니다).
 
-4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다).
+4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). In short: For the package to work properly, PHP needs to be able to read and write files inside the `vault` directory. Many things (updating, logging, etc) won't be possible, if PHP can't write to the `vault` directory, and the package won't work at all if PHP can't read from the `vault` directory. However, for optimal security, the `vault` directory must NOT be publicly accessible (sensitive information, such as the information contained by `config.ini` or `frontend.dat`, could be exposed to potential attackers if the `vault` directory is publicly accessible). @Translate@
 
 5) 당신이 필요로하는 서명을 설치하십시오. *참조 : [서명 설치](#INSTALLING_SIGNATURES).*
 
@@ -193,10 +193,23 @@ phpMussel에 포함 된 서명을 해제하려면 (일반적으로 제외해서�
 
 주의 : 당신이 처음 로그인 한 후 프론트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프론트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
 
+Also, for optimal security, enabling "two-factor authentication" for all front-end accounts is strongly recommended (instructions provided below). @Translate@
+
 #### 4.2 프론트 엔드 사용.
 
 프론트 엔드의 각 페이지에는 목적에 대한 설명과 사용 방법에 대한 설명이 있습니다. 전체 설명이나 특별한 지원이 필요한 경우 지원에 문의하십시오. 또한 데모를 제공 할 YouTube에서 사용 가능한 동영상도 있습니다.
 
+#### 4.3 TWO-FACTOR AUTHENTICATION @Translate@
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +266,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/cache/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/fe_assets/ | 프론트 엔드 자산.
 /vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/fe_assets/_2fa.html | 사용자에게 2FA 코드를 요청할 때 사용되는 HTML 템플릿입니다.
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_cache.html | 프론트 엔드 데이터 캐쉬 페이지의 HTML 템플릿.
@@ -713,6 +727,48 @@ URL 스캐너 API 조회 설정.
 
 ##### "css_url"
 - 사용자 지정 테마 템플릿 파일은 외부 CSS 속성을 사용하고 있습니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

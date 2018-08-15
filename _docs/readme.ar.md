@@ -50,9 +50,9 @@
 
 <div dir="rtl">٢. إعادة تسمية <code dir="ltr">"config.ini.RenameMe"</code> إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
-<div dir="rtl">٣. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
+<div dir="rtl">٣. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "<code dir="ltr">*.txt/*.md</code>" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-<div dir="rtl">٤. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
+<div dir="rtl">٤. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755"). باختصار: لكي تعمل الحزمة بشكل صحيح، يجب أن تكون PHP قادرة على قراءة وكتابة الملفات داخل دليل <code dir="ltr">vault</code>. العديد من الأشياء (التحديث، التسجيل، الخ) لن تكون ممكنة، إذا تعذر على PHP الكتابة إلى دليل <code dir="ltr">vault</code>، ولن تعمل الحزمة على الإطلاق إذا تعذر على PHP القراءة من دليل <code dir="ltr">vault</code>. ومع ذلك، للحصول على الأمان الأمثل، يجب ألا يكون دليل <code dir="ltr">vault</code> متاحًا للجميع (المعلومات الحساسة، مثل المعلومات التي يحتوي عليها <code dir="ltr">config.ini</code> أو <code dir="ltr">frontend.dat</code>، يمكن أن تتعرض لمهاجمين محتملين إذا كان دليل <code dir="ltr">vault</code> متاحًا للجميع).<br /><br /></div>
 
 <div dir="rtl">٥. تثبيت أي التوقيعات التي ستحتاج إليها. <em>نرى: <a href="#INSTALLING_SIGNATURES">تثبيت التوقيعات</a>).</em><br /><br /></div>
 
@@ -190,9 +190,23 @@
 
 <div dir="rtl">ملحوظة: تغيير اسم المستخدم وكلمة المرور الخاصة بك بعد تسجيل الدخول للمرة الأولى، من أجل منع الوصول غير المصرح به (هذا مهم جدا)!<br /><br /></div>
 
+<div dir="rtl">أيضًا ، للحصول على الأمان الأمثل ، نوصي بشدة بتمكين 2FA لجميع حسابات الواجهة الأمامية (الإرشادات الواردة أدناه).<br /><br /></div>
+
 #### <div dir="rtl">٤.٢ كيفية استخدام FRONT-END.<br /><br /></div>
 
 <div dir="rtl">في كل صفحة، ويفسر ذلك كيفية استخدامها. إذا كنت بحاجة إلى أي مساعدة، يرجى الاتصال بالدعم. وهناك أيضا بعض مقاطع الفيديو المفيدة المتاحة على موقع يوتيوب.<br /><br /></div>
+
+#### <div dir="rtl">٤.٣ 2FA<br /><br /></div>
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -249,6 +263,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">الأصول front-end.</div> | /vault/fe_assets/
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML المستخدم عند طلب المستخدم للحصول على كود 2FA.</div> | /vault/fe_assets/_2fa.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة بيانات ذاكرة التخزين المؤقت.</div> | /vault/fe_assets/_cache.html
@@ -748,7 +763,7 @@
 
 ##### <div dir="rtl">"block_macros"<br /></div>
 <div dir="rtl"><ul>
- <li>حاول حظر أي ملفات تحتوي على وحدات ماكرو؟ قد تحتوي بعض أنواع المستندات وجداول البيانات على وحدات ماكرو قابلة للتنفيذ ، وبالتالي توفير ناقلات برامج ضارة محتملة خطيرة. زائفة/False = لا تمنع [افتراضي]. صحيح/True = تمنع.</li>
+ <li>حاول حظر أي ملفات تحتوي على وحدات ماكرو؟ قد تحتوي بعض أنواع المستندات وجداول البيانات على وحدات ماكرو قابلة للتنفيذ، وبالتالي توفير ناقلات برامج ضارة محتملة خطيرة. زائفة/False = لا تمنع [افتراضي]. صحيح/True = تمنع.</li>
 </ul></div>
 
 ##### <div dir="rtl">"scannable_threshold"<br /></div>
@@ -878,6 +893,48 @@
 <div dir="rtl"><ul>
  <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير.</li>
 </ul></div>
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 
@@ -1262,7 +1319,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 ##### <div dir="rtl">١١.٢.٢ VIRUS TOTAL<br /><br /></div>
 
-<div dir="rtl">عندما يقوم phpMussel بمسح تحميل الملف، قد تتم مشاركة تجزئة تلك الملفات مع Virus Total API ، بناءً على كيفية تكوين الحزمة. هناك خطط لتتمكن من مشاركة ملفات كاملة في وقت ما في المستقبل أيضًا، ولكن هذه الميزة غير مدعومة بواسطة الحزمة في الوقت الحالي. مطلوب مفتاح API من أجل استخدام هذه الميزة.<br /><br /></div>
+<div dir="rtl">عندما يقوم phpMussel بمسح تحميل الملف، قد تتم مشاركة تجزئة تلك الملفات مع Virus Total API، بناءً على كيفية تكوين الحزمة. هناك خطط لتتمكن من مشاركة ملفات كاملة في وقت ما في المستقبل أيضًا، ولكن هذه الميزة غير مدعومة بواسطة الحزمة في الوقت الحالي. مطلوب مفتاح API من أجل استخدام هذه الميزة.<br /><br /></div>
 
 <div dir="rtl">يمكن أيضًا مشاركة المعلومات (بما في ذلك الملفات والبيانات الوصفية ذات الصلة للملف) التي تم مشاركتها مع Virus Total مع شركائها والشركات التابعة لها ومختلف الشركات الأخرى لأغراض البحث. يتم وصف ذلك بمزيد من التفاصيل من خلال سياسة الخصوصية الخاصة بهم.<br /><br /></div>
 

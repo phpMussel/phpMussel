@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.08.12).
+ * This file: German language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'Keine Signaturdateien sind aktiv!'
 
 $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Fragen @ GitHub</a> – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – Eine Sammlung von einfachen Webmaster-Tools, um Websites zu sichern.</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>

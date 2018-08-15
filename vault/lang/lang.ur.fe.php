@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.12).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'کوئی دستخط فائلیں �
 
 $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
-            <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
+             <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
             <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
             <li><a href="http://www.phishtank.com/" dir="ltr">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>

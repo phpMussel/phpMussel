@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.12).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -356,8 +356,7 @@ $phpMussel['lang']['warning_signatures_1'] = '沒有簽名文件是活動的！'
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
             <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – 簡單網站管理員工具集合為保護網站。</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家計算機安全公司；為ClamAV提供補充簽名。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – 網絡釣魚數據庫；由phpMussel URL掃描器使用。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.12).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang a
 
 $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>

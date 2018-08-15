@@ -49,7 +49,7 @@ PHPMUSSEL Авторское право 2013 года, а также GNU/GPLv2 b
 
 3) Скачайте всё содержимое (phpMussel и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
-4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, Вы можете попробовать «777»; это менее безопасно, хотя). Права доступа вышестоящего папка, в котором находится содержание (папка в который Вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ, если случились проблемы с доступом (обычно должно быть «755» в стандарта).
+4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, Вы можете попробовать «777»; это менее безопасно, хотя). Права доступа вышестоящего папка, в котором находится содержание (папка в который Вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ, если случились проблемы с доступом (обычно должно быть «755» в стандарта). Вкратце: Чтобы пакет работал правильно, PHP должен иметь возможность читать и писать файлы в каталоге `vault`. Многие вещи (обновление, ведение журнала, и т.д.) не будут возможны, если PHP не может писать в каталог `vault`, и пакет не будет работать вообще, если PHP не может читать из каталога `vault`. Однако для обеспечения оптимальной безопасности каталог `vault` НЕ должен быть общедоступным (конфиденциальная информация, такая как информация, содержащаяся в файле `config.ini` или `frontend.dat`, может быть обнаружена потенциальными злоумышленниками, если каталог `vault` является общедоступным).
 
 5) Установите любые сигнатуры, которые вам понадобятся. *Видеть: [ИНСТАЛЛЯЦИЯ СИГНАТУРЕЙ](#INSTALLING_SIGNATURES).*
 
@@ -193,10 +193,23 @@ phpMussel функционирует полностью в автономном 
 
 Заметка: После того, как Вы вошли в первый раз, в целях предотвращения несанкционированного доступа к фронтенд, Вы должны немедленно изменить имя пользователя и пароль! Это очень важно, потому что это можно загрузить произвольный PHP код на свой веб-сайт через фронтенд.
 
+Кроме того, для обеспечения оптимальной безопасности настоятельно рекомендуется включить «двухфакторную аутентификацию» для всех учетных записей фронтенд (инструкции приведены ниже).
+
 #### 4.2 КАК ИСПОЛЬЗОВАТЬ ФРОНТЕНД.
 
 Инструкции предоставляются на каждой странице в фронтенд, чтобы объяснить правильный способ использовать его и его целевое назначение. Если Вам нужна дополнительная объяснение или любой специальный помощь, обратитесь в поддержки. Дополнительно, есть некоторые видео доступны на YouTube, которые могли бы помочь путем демонстрации.
 
+#### 4.3 ДВУХФАКТОРНАЯ АУТЕНТИФИКАЦИЯ
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +266,7 @@ phpMussel функционирует полностью в автономном 
 /vault/cache/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
 /vault/fe_assets/ | Данные для фронтенд.
 /vault/fe_assets/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/fe_assets/_2fa.html | Шаблон HTML, используемый при запросе пользователя для кода 2FA.
 /vault/fe_assets/_accounts.html | Шаблон HTML для учетными записями страница в фронтенд.
 /vault/fe_assets/_accounts_row.html | Шаблон HTML для учетными записями страница в фронтенд.
 /vault/fe_assets/_cache.html | Шаблон HTML для данные кэша страница в фронтенд.
@@ -713,6 +727,48 @@ URL сканер API конфигурация.
 
 ##### «css_url»
 - Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить phpMussel использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, phpMussel будет использовать шаблонный файл для стандарт тема.
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 

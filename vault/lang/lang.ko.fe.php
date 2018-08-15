@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.12).
+ * This file: Korean language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -355,8 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 �
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
+             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>

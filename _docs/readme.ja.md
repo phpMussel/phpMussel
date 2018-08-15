@@ -49,7 +49,7 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 ３） コンテンツ（phpMussel本体とファイル）を先に定めたディレクトリにアップロードします。​（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、​大抵は全てをアップロードしてもらって構いません）。
 
-４） `vault`ディレクトリは「７５５」にアクセス権変更します（問題がある場合は、​「７７７」を試すことができます；これは、​しかし、​安全ではありません）。​コンテンツをアップロードしたディレクトリそのものは、​通常特に何もする必要ありませんが、​過去にパーミッションで問題があった場合、​CHMODのステータスは確認しておくと良いでしょう。​（デフォルトでは「７５５」が一般的です）。
+４） `vault`ディレクトリは「７５５」にアクセス権変更します（問題がある場合は、​「７７７」を試すことができます；これは、​しかし、​安全ではありません）。​コンテンツをアップロードしたディレクトリそのものは、​通常特に何もする必要ありませんが、​過去にパーミッションで問題があった場合、​CHMODのステータスは確認しておくと良いでしょう。​（デフォルトでは「７５５」が一般的です）。​要するに：パッケージが正しく動作するためには、ＰＨＰは 「vault」ディレクトリ内でファイルを読み書きできる必要があります。​Many things (updating, logging, etc) won't be possible, if PHP can't write to the `vault` directory, and the package won't work at all if PHP can't read from the `vault` directory.​However, for optimal security, the `vault` directory must NOT be publicly accessible (sensitive information, such as the information contained by `config.ini` or `frontend.dat`, could be exposed to potential attackers if the `vault` directory is publicly accessible). @Translate@
 
 ５） あなたが必要とするシグネチャをインストールしてください。 参照：​[シグネチャ・インストール](#INSTALLING_SIGNATURES)。
 
@@ -193,10 +193,23 @@ phpMusselに含まれるシグネチャを無効にするには（通常除か�
 
 注意：あなたが初めてログインした後、​フロントエンドへの不正アクセスを防ぐために、​あなたはすぐにユーザー名とパスワードを変更する必要があります！​これは非常に重要です、​なぜなら、​フロントエンドから任意のＰＨＰコードをあなたのウェブサイトにアップロードすることができるからです。
 
+Also, for optimal security, enabling "two-factor authentication" for all front-end accounts is strongly recommended (instructions provided below). @Translate@
+
 #### 4.2 フロントエンドの使い方。
 
 フロントエンドの各ページには、​目的の説明とその使用方法の説明があります。​詳しい説明や特別な支援が必要な場合は、​サポートにお問い合わせください。​また、​デモを提供するYouTube上で利用可能な動画もあります。
 
+#### 4.3 TWO-FACTOR AUTHENTICATION @Translate@
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -253,6 +266,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/fe_assets/ | フロントエンド資産。
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/fe_assets/_2fa.html | ユーザーに２ＦＡコードを要求するときに使用されるＨＴＭＬテンプレート。
 /vault/fe_assets/_accounts.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_cache.html | フロントエンドのキャッシュ・データ・ページのＨＴＭＬテンプレート。
@@ -713,6 +727,48 @@ URLスキャナーAPIルックアップ設定。
 
 ##### "css_url" （シーエスエス・ユーアールエル）
 - カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。
+
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
 
 ---
 
