@@ -355,7 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'Keine Signaturdateien sind aktiv!'
 
 $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Fragen @ GitHub</a> – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
-             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>
@@ -370,7 +370,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Hallo, %1$s.<br />
 <br />
-Ihr Zwei-Faktor-Authentifizierungscode für die Anmeldung am phpMussel Front-End:</p>
+Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am phpMussel Front-End:</p>
 <h1>%2$s</h1>
 <p>Dieser Code läuft in 10 Minuten ab.</p></center>';
 $phpMussel['lang']['msg_subject_2fa'] = 'Zwei-Faktor-Authentifizierung';

@@ -326,7 +326,7 @@ $phpMussel['lang']['tip_donate'] = 'phpMusselは無料で提供されていま�
 $phpMussel['lang']['tip_fe_cookie_warning'] = '注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。';
 $phpMussel['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。';
 $phpMussel['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
-$phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
+$phpMussel['lang']['tip_login'] = 'デフォルト・ユーザー名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
 $phpMussel['lang']['tip_quarantine'] = 'こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。';
 $phpMussel['lang']['tip_quarantine_disabled'] = '注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。';
@@ -355,7 +355,7 @@ $phpMussel['lang']['warning_signatures_1'] = 'アクティブ・シグネチャ�
 
 $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMusselの問題 ＠ GitHub</a> – phpMusselの問題ページ（サポート、​援助、​など）。</li>
-             <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学習リソースとディスカッション。</li>
