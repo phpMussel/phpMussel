@@ -296,7 +296,7 @@ filetype_greylist=''
 ; While I highly recommend keeping this turned on, I can't guarantee it'll
 ; always find everything. Also be aware that archive checking currently is not
 ; recursive for PHARs or ZIPs.
-check_archives=true
+check_archives=false
 
 ; Carry over filesize blacklisting/whitelisting to the contents of archives?
 ; False = No (just greylist everything); True = Yes [Default].

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.08.10).
+ * This file: Functions file (last modified: 2018.08.24).
  */
 
 /**
@@ -340,6 +340,11 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Block
     if (!$PreChecked && (!is_file($File) || !is_readable($File))) {
         return false;
     }
+    /** Prevent closure being used to read via phar wrapper (dangerous). */
+    if (strpos($File, 'phar:') === 0) {
+        return false;
+    }
+    /** Blocksize to bytes. */
     $Blocksize = $Blocks * 1024;
     $Filesize = filesize($File);
     if (!$Size) {
@@ -3953,6 +3958,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" . $lnap .
         $phpMussel['lang']['scan_no_problems_found'] . "\n";
     $r = 1;
+
+    /** Temporarily forcibly disable archive checking due to phar vulnerability. */
+    $phpMussel['Config']['files']['check_archives'] = false;
 
     /**
      * Begin archive phase.
