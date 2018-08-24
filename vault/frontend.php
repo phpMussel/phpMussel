@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.11).
+ * This file: Front-end handler (last modified: 2018.08.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -285,6 +285,14 @@ if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
     die('[phpMussel] ' . $phpMussel['lang']['max_login_attempts_exceeded']);
 }
 
+/** Brute-force security check (2FA). */
+if (($phpMussel['Failed2FA'] = (int)$phpMussel['FECacheGet'](
+    $phpMussel['FE']['Cache'], 'Failed2FA' . $_SERVER[$phpMussel['IPAddr']]
+)) && ($phpMussel['Failed2FA'] >= $phpMussel['Config']['general']['max_login_attempts'])) {
+    header('Content-Type: text/plain');
+    die('[phpMussel] ' . $phpMussel['lang']['max_login_attempts_exceeded']);
+}
+
 /** Attempt to log in the user. */
 if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
@@ -319,18 +327,23 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     $phpMussel['FE']['Permissions'] = 0;
                     $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_login_wrong_endpoint'];
                 } else {
-                    if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
-                        $phpMussel['2FA-State'] = $phpMussel['FECacheGet'](
-                            $phpMussel['FE']['Cache'],
-                            '2FA-State:' . $phpMussel['FE']['UserRaw']
-                        );
-                        if ($phpMussel['2FA-State'] === false) {
+                    if (!$phpMussel['FE']['CronMode']) {
+                        $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
+                        $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
+                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HTTP_HOST'], false, true);
+                        $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
+                            $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
+                        ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
+                        $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
+
+                        /** Prepare 2FA email. */
+                        if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
                             $phpMussel['2FA-State'] = ['Number' => $phpMussel['2FA-Number']()];
                             $phpMussel['2FA-State']['Hash'] = password_hash($phpMussel['2FA-State']['Number'], $phpMussel['DefaultAlgo']);
                             $phpMussel['FECacheAdd'](
                                 $phpMussel['FE']['Cache'],
                                 $phpMussel['FE']['Rebuild'],
-                                '2FA-State:' . $phpMussel['FE']['UserRaw'],
+                                '2FA-State:' . $phpMussel['FE']['Cookie'],
                                 '0' . $phpMussel['2FA-State']['Hash'],
                                 $phpMussel['Time'] + 600
                             );
@@ -352,23 +365,15 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                                 $phpMussel['2FA-State']['Template'],
                                 strip_tags($phpMussel['2FA-State']['Template'])
                             );
+                            $phpMussel['FE']['UserState'] = 2;
+                            unset($phpMussel['2FA-State']);
+                        } else {
+                            $phpMussel['FE']['UserState'] = 1;
                         }
-                        $phpMussel['FE']['UserState'] = 2;
-                        unset($phpMussel['2FA-State']);
-                    } else {
-                        $phpMussel['FE']['UserState'] = 1;
+
                     }
                     if ($phpMussel['FE']['UserState'] !== 1) {
                         $phpMussel['FE']['Permissions'] = 0;
-                    }
-                    if (!$phpMussel['FE']['CronMode']) {
-                        $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
-                        $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HTTP_HOST'], false, true);
-                        $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
-                            $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
-                        ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
-                        $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
                     }
                     $phpMussel['FE']['Rebuild'] = true;
                 }
@@ -461,7 +466,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                     if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
                         $phpMussel['2FA-State'] = $phpMussel['FECacheGet'](
                             $phpMussel['FE']['Cache'],
-                            '2FA-State:' . $phpMussel['FE']['UserRaw']
+                            '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']
                         );
                         $phpMussel['FE']['UserState'] = ((int)$phpMussel['2FA-State'] === 1) ? 1 : 2;
                         if ($phpMussel['FE']['UserState'] === 2 && $phpMussel['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
@@ -471,7 +476,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                                 $phpMussel['FECacheAdd'](
                                     $phpMussel['FE']['Cache'],
                                     $phpMussel['FE']['Rebuild'],
-                                    '2FA-State:' . $phpMussel['FE']['UserRaw'],
+                                    '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN'],
                                     '1',
                                     $phpMussel['Time'] + 604800
                                 );
@@ -497,11 +502,23 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
     /** In case of 2FA form submission. */
     if ($phpMussel['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
         if ($phpMussel['FE']['UserState'] === 2) {
+            $phpMussel['Failed2FA']++;
+            $phpMussel['TimeToAdd'] = ($phpMussel['Failed2FA'] > 4) ? ($phpMussel['Failed2FA'] - 4) * 86400 : 86400;
+            $phpMussel['FECacheAdd'](
+                $phpMussel['FE']['Cache'],
+                $phpMussel['FE']['Rebuild'],
+                'Failed2FA' . $_SERVER[$phpMussel['IPAddr']],
+                $phpMussel['Failed2FA'],
+                $phpMussel['Time'] + $phpMussel['TimeToAdd']
+            );
             if ($phpMussel['Config']['general']['FrontEndLog']) {
                 $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['lang']['response_2fa_invalid']);
             }
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['lang']['response_2fa_invalid'] . '<br /><br /></div>';
         } else {
+            $phpMussel['FECacheRemove'](
+                $phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'Failed2FA' . $_SERVER[$phpMussel['IPAddr']]
+            );
             if ($phpMussel['Config']['general']['FrontEndLog']) {
                 $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['lang']['response_2fa_valid']);
             }
@@ -530,7 +547,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         $phpMussel['FE']['UserState'] = 0;
         $phpMussel['FE']['Permissions'] = 0;
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HTTP_HOST'], false, true);
-        $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $phpMussel['FE']['UserRaw']);
+        $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']);
         $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['lang']['state_logged_out']);
 
     }
