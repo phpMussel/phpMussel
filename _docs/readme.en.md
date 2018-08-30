@@ -576,7 +576,7 @@ File handling configuration.
   - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
   - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
-##### "check_archives"
+##### "check_archives" – Temporarily unavailable
 - Attempt to check the contents of archives? False = Don't check; True = Check [Default].
 - Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported).
 - This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
@@ -732,25 +732,25 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 PHPMailer configuration.
 
 ##### "EventLog"
-- @todo@
+- A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server.
 
 ##### "Enable2FA"
-- @todo@
+- This directive determines whether to use 2FA for front-end accounts.
 
 ##### "Host"
-- @todo@
+- The SMTP host to use for outbound email.
 
 ##### "Port"
-- @todo@
+- The port number to use for outbound email. Default = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- The protocol to use when sending email via SMTP (TLS or SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- This directive determines whether to authenticate SMTP sessions (should usually be left alone).
 
 ##### "Username"
 - @todo@

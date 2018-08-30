@@ -187,7 +187,7 @@ De frontend is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen 
 
 1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het `false` (deze is `true` door standaard).
 
-2) Toegang tot `loader.php` vanuit uw browser (bijv., `http://localhost/phpmussel/loader.php`).
+2) Toegang tot `loader.php` vanuit uw browser (b.v., `http://localhost/phpmussel/loader.php`).
 
 3) Inloggen u aan met de standaard gebruikersnaam en wachtwoord (admin/password).
 
@@ -201,15 +201,15 @@ Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te g
 
 #### 4.3 TWEE-FACTOR AUTHENTICATIE
 
-It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+Het is mogelijk om de frontend veiliger te maken door twee-factor authenticatie ("2FA") in te schakelen. Bij inloggen met een account waarvoor 2FA is ingeschakeld, een e-mail wordt verzonden naar het e-mailadres dat aan dat account is gekoppeld. Deze e-mail bevat een "2FA-code", die de gebruiker vervolgens moet invoeren, in aanvulling op de gebruikersnaam en het wachtwoord, om te kunnen inloggen met dat account. Dit betekent dat het verkrijgen van een accountwachtwoord niet genoeg is voor een hacker of potentiële aanvaller om zich bij dat account te kunnen aanmelden, omdat ze ook al toegang moeten hebben tot het e-mailadres dat aan dat account is gekoppeld om de 2FA-code die aan de sessie is gekoppeld te kunnen ontvangen en gebruiken, daarmee het frontend veiliger maken.
 
-Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+Ten eerste, om twee-factor authenticatie in te schakelen, gebruikt u de frontend-updates-pagina om de PHPMailer-component te installeren. phpMussel gebruikt PHPMailer voor het verzenden van e-mails. Notitie: Hoewel phpMussel op zichzelf compatibel met >= 5.4.0 is, PHPMailer heeft nodig PHP >= 5.5.0, daarom is twee-factor authenticatie voor de frontend van phpMussel niet mogelijk voor PHP 5.4-gebruikers.
 
-After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+Nadat u PHPMailer heeft geïnstalleerd, moet u de configuratie-richtlijnen voor PHPMailer invullen via de configuratiepagina of het configuratiebestand van phpMussel. Meer informatie over deze configuratie-richtlijnen is opgenomen in de configuratiesectie van dit document. Nadat u de PHPMailer-configuratie-richtlijnen hebt ingevuld, stelt u `Enable2FA` in op `true`. Twee-factor authenticatie moet nu worden ingeschakeld.
 
-Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+Volgende, u moet een e-mailadres koppelen aan een account, zodat phpMussel weet waar 2FA-codes moeten worden verzonden wanneer hij zich aanmeldt met dat account. Om dit te doen, gebruik het e-mailadres als de gebruikersnaam voor het account (b.v., `foo@bar.tld`), of neem het e-mailadres op als onderdeel van de gebruikersnaam op dezelfde manier als bij het normaal verzenden van een e-mail (b.v., `Foo Bar <foo@bar.tld>`).
 
-Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
+Notitie: Het beschermen van uw vault tegen ongeautoriseerde toegang (b.v., door de beveiliging van uw server en openbare toegangsrechten te verbeteren), is hier bijzonder belangrijk, vanwege deze ongeautoriseerde toegang tot uw configuratiebestand (dat is opgeslagen in uw vault), kan het risico lopen dat uw uitgaande SMTP-instellingen (inclusief SMTP gebruikersnaam en wachtwoord) worden weergegeven. U moet ervoor zorgen dat uw vault correct is beveiligd voordat u twee-factor authenticatie inschakelt. Als u dit niet kunt doen, moet u op z'n minst een nieuw e-mailaccount maken, speciaal voor dit doel, om de risico's van blootgestelde SMTP-instellingen te verminderen.
 
 ---
 
@@ -576,7 +576,7 @@ Bestand hanteren configuratie.
   - Als het bestandstype is op de blacklist, niet scannen het bestand maar blokkeren het niettemin, en niet controleer het bestand tegen de greylist.
   - Als de greylist is leeg of als de greylist is niet leeg en het bestandstype is op de greylist, scannen het bestand als per normaal en bepalen als om het gebaseerd op de resultaten van de scan te blokkeren, maar als de greylist is niet leeg en het bestandstype is niet op de greylist, behandel het bestand alsof op de blacklist, dus om het niet te scannen, maar toch blokkeren het niettemin.
 
-##### "check_archives"
+##### "check_archives" – Tijdelijk niet beschikbaar
 - Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard].
 - Momenteel, het enige archief en compressie-formaten ondersteund zijn BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR en ZIP (archief en compressie-formaten RAR, CAB, 7z en etcetera momenteel niet ondersteund).
 - Dit is niet onfeilbaar! Hoewel ik beveel het houden van dit ingeschakeld, ik kan niet garanderen dat het zal altijd vind alles.
@@ -728,29 +728,29 @@ Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt vo
 ##### "css_url"
 - De sjabloonbestand voor aangepaste thema's maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema's CSS-bestanden via de `css_url` variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categorie)
+PHPMailer-configuratie.
 
 ##### "EventLog"
-- @todo@
+- Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Wanneer `true`, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server.
 
 ##### "Enable2FA"
-- @todo@
+- Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts.
 
 ##### "Host"
-- @todo@
+- De SMTP-host dat moet worden gebruikt voor uitgaande e-mail.
 
 ##### "Port"
-- @todo@
+- Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Het protocol dat moet worden gebruikt bij het verzenden van e-mail via SMTP (TLS of SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten).
 
 ##### "Username"
 - @todo@

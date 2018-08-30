@@ -576,7 +576,7 @@ Configuration générale pour les gestion des fichiers.
   - Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise.
   - Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon.
 
-##### « check_archives »
+##### « check_archives » – Temporairement indisponible
 - Essayer vérifier les contenus des archives ? False = Non (ne pas vérifier) ; True = Oui (vérifier) [Défaut].
 - En ce moment, les seuls formats d'archives et de compression supporté sont BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR et ZIP (les formats d'archives et de compression RAR, CAB, 7z et etc ne sont pas supporté en ce moment).
 - Ce n'est pas à toute épreuve ! Bien que je recommande fortement d'avoir ce reste activée, je ne peux pas garantir il va toujours trouver tout.
@@ -728,46 +728,46 @@ Modèles données est liée à la sortie HTML utilisé pour générer le message
 ##### « css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### « PHPMailer » (Catégorie)
+Configuration de PHPMailer.
 
-##### "EventLog"
+##### « EventLog »
+- Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver.
+
+##### « SkipAuthProcess »
+- Définir cette directive sur `true` instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP.
+
+##### « Enable2FA »
+- Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux.
+
+##### « Host »
+- Hôte SMTP à utiliser pour les e-mails sortants.
+
+##### « Port »
+- Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587.
+
+##### « SMTPSecure »
+- Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL).
+
+##### « SMTPAuth »
+- Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules).
+
+##### « Username »
 - @todo@
 
-##### "SkipAuthProcess"
+##### « Password »
 - @todo@
 
-##### "Enable2FA"
+##### « setFromAddress »
 - @todo@
 
-##### "Host"
+##### « setFromName »
 - @todo@
 
-##### "Port"
+##### « addReplyToAddress »
 - @todo@
 
-##### "SMTPSecure"
-- @todo@
-
-##### "SMTPAuth"
-- @todo@
-
-##### "Username"
-- @todo@
-
-##### "Password"
-- @todo@
-
-##### "setFromAddress"
-- @todo@
-
-##### "setFromName"
-- @todo@
-
-##### "addReplyToAddress"
-- @todo@
-
-##### "addReplyToName"
+##### « addReplyToName »
 - @todo@
 
 ---

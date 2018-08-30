@@ -201,15 +201,15 @@ Le istruzioni sono fornite su ciascuna pagina del front-end, per spiegare il mod
 
 #### 4.3 AUTENTICAZIONE A DUE FATTORI
 
-È possibile rendere il front-end più sicuro attivando l'autenticazione a due fattori ("2FA"). Quando si accede a un account attivato per 2FA, viene inviata una e-mail all'indirizzo e-mail associato a tale account. Questa e-mail contiene un "codice 2FA", che l'utente deve quindi inserire, inoltre al nome utente e alla password, per poter accedere utilizzando tale account. Ciò significa che l'ottenimento di una password dell'account non sarebbe sufficiente per consentire a qualsiasi hacker o potenziale utente malintenzionato di accedere a tale account, in quanto avrebbe anche bisogno di avere accesso all'indirizzo e-mail associato a tale account per poter ricevere e utilizzare il codice 2FA associato alla sessione, rendendo così il front-end più sicuro.
+È possibile rendere il front-end più sicuro attivando l'autenticazione a due fattori ("2FA"). Quando si accede a un account attivato per 2FA, viene inviata una posta elettronica all'indirizzo di posta elettronica associato a tale account. Questo indirizzo di posta elettronica contiene un "codice 2FA", che l'utente deve quindi inserire, inoltre al nome utente e alla password, per poter accedere utilizzando tale account. Ciò significa che l'ottenimento di una password dell'account non sarebbe sufficiente per consentire a qualsiasi hacker o potenziale utente malintenzionato di accedere a tale account, in quanto avrebbe anche bisogno di avere accesso all'indirizzo di posta elettronica associato a tale account per poter ricevere e utilizzare il codice 2FA associato alla sessione, rendendo così il front-end più sicuro.
 
-Innanzitutto, per attivare l'autenticazione a due fattori, utilizzando la pagina degli aggiornamenti front-end, installare il componente PHPMailer. phpMussel utilizza PHPMailer per l'invio di e-mail. Va notato che sebbene phpMussel, di per sé, sia compatibile con PHP >= 5.4.0, PHPMailer richiede PHP >= 5.5.0, e pertanto, l'attivazione dell'autenticazione a due fattori per il front-end phpMussel non sarà possibile per gli utenti di PHP 5.4.
+Innanzitutto, per attivare l'autenticazione a due fattori, utilizzando la pagina degli aggiornamenti front-end, installare il componente PHPMailer. phpMussel utilizza PHPMailer per l'invio di posta elettronica. Va notato che sebbene phpMussel, di per sé, sia compatibile con PHP >= 5.4.0, PHPMailer richiede PHP >= 5.5.0, e pertanto, l'attivazione dell'autenticazione a due fattori per il front-end phpMussel non sarà possibile per gli utenti di PHP 5.4.
 
 Dopo aver installato PHPMailer, dovrai compilare le direttive di configurazione per PHPMailer tramite la pagina di configurazione phpMussel o il file di configurazione. Ulteriori informazioni su queste direttive di configurazione sono incluse nella sezione di configurazione di questo documento. Dopo aver compilato le direttive di configurazione di PHPMailer, imposta da `Enable2FA` x `true`. L'autenticazione a due fattori dovrebbe ora essere attivata.
 
-Successivamente, dovrai associare un indirizzo email a un account, in modo che phpMussel sappia dove inviare i codici 2FA quando accede con quell'account. Per fare ciò, usa l'indirizzo email come nome utente per l'account (come `foo@bar.tld`), o includere l'indirizzo e-mail come parte del nome utente nello stesso modo in cui si farebbe quando si invia un'e-mail normalmente (come `Foo Bar <foo@bar.tld>`).
+Successivamente, dovrai associare un indirizzo di posta elettronica a un account, in modo che phpMussel sappia dove inviare i codici 2FA quando accede con quell'account. Per fare ciò, usa l'indirizzo di posta elettronica come nome utente per l'account (come `foo@bar.tld`), o includere l'indirizzo di posta elettronica come parte del nome utente nello stesso modo in cui si farebbe quando si invia una posta elettronica normalmente (come `Foo Bar <foo@bar.tld>`).
 
-Nota: Proteggere il tuo vault dall'accesso non autorizzato (per esempio, per mezzo di rafforzando le autorizzazioni di sicurezza e di accesso pubblico del tuo server), è particolarmente importante qui, a causa di tale accesso non autorizzato al file di configurazione (che è memorizzato nel vault), potrebbe rischiare di esporre le impostazioni SMTP in uscita (incluso il nome utente e la password per il tuo SMTP). È meglio assicurarsi che il vault sia correttamente protetto prima di attivare l'autenticazione a due fattori. Se non sei in grado di farlo, almeno, dovresti creare un nuovo account di email, dedicato a questo scopo, in quanto tale per ridurre i rischi associati alle impostazioni SMTP esposte.
+Nota: Proteggere il tuo vault dall'accesso non autorizzato (per esempio, per mezzo di rafforzando le autorizzazioni di sicurezza e di accesso pubblico del tuo server), è particolarmente importante qui, a causa di tale accesso non autorizzato al file di configurazione (che è memorizzato nel vault), potrebbe rischiare di esporre le impostazioni SMTP in uscita (incluso il nome utente e la password per il tuo SMTP). È meglio assicurarsi che il vault sia correttamente protetto prima di attivare l'autenticazione a due fattori. Se non sei in grado di farlo, almeno, dovresti creare un nuovo account di posta elettronica, dedicato a questo scopo, in quanto tale per ridurre i rischi associati alle impostazioni SMTP esposte.
 
 ---
 
@@ -576,7 +576,7 @@ Generale configurazione per la gestione dei file.
   - Se il tipo di file è nel blacklist, non scansiona il file ma bloccarlo comunque, e non verificar il file contra la greylist.
   - Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
 
-##### "check_archives"
+##### "check_archives" – Temporaneamente non disponibile
 - Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito].
 - Al momento, gli unici formati di archiviazione e compressione supportati sono BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (formati di archiviazione e compressione RAR, CAB, 7z e eccetera non sono supportate al momento).
 - Questo non è infallibile! Mentre mi assai raccomando che è attivato, non posso garantire che sarà sempre trovare tutto.
@@ -728,29 +728,29 @@ Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricament
 ##### "css_url"
 - Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire phpMussel di utilizzare il modello file per i temi personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile `css_url`. Se si lascia questo variabile come vuoto, phpMussel utilizzerà il modello file per il predefinito tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoria)
+Configurazione PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Un file per registrare tutti gli eventi in relazione a PHPMailer. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Impostando questa direttiva su `true`, PHPMailer salta il normale processo di autenticazione che normalmente si verifica quando si invia una posta elettronica via SMTP. Questo dovrebbe essere evitato, perché saltare questo processo potrebbe esporre la posta elettronica in uscita agli attacchi MITM, ma potrebbe essere necessario nei casi in cui questo processo impedisce a PHPMailer di connettersi a un server SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Questa direttiva determina se utilizzare 2FA per gli account front-end.
 
 ##### "Host"
-- @todo@
+- L'host SMTP da utilizzare per la posta elettronica in uscita.
 
 ##### "Port"
-- @todo@
+- Il numero di porta da utilizzare per la posta elettronica in uscita. Predefinito = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Il protocollo da utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo).
 
 ##### "Username"
 - @todo@

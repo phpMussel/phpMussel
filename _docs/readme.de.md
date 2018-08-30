@@ -576,7 +576,7 @@ Generelle Konfigurationen für die Handhabung von Dateien.
   - Wenn der Dateityp in der Blacklist ist, scanne nicht die Datei aber blockieren sie trotzdem, und überprüfe nicht wenn die Datei in der Greylist ist.
   - Wenn die Greylist leer ist oder wenn die Greylist nicht leer ist und der Dateityp in der Greylist ist, scanne die Datei wie standardmäßig eingestellt ist und stelle fest, ob diese blockiert werden soll, basierend auf dem Scan, aber wenn die Greylist nicht leer ist und der Dateityp nicht in der Greylist ist, behandel die Datei als ob sie in der Blacklist ist, scanne sie nicht aber blockiere sie trotzdem.
 
-##### "check_archives"
+##### "check_archives" – Vorübergehend nicht erreichbar
 - Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung].
 - Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z, u.s.w. wird zur Zeit NICHT unterstützt).
 - Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird.
@@ -728,29 +728,29 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 ##### "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das normale Theme verwenden.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Kategorie)
+PHPMailer Konfiguration.
 
 ##### "EventLog"
-- @todo@
+- Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Wenn Sie diese Direktive auf `true` setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails an MITM-Angriffe aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert.
 
 ##### "Enable2FA"
-- @todo@
+- Diese Direktive bestimmt, ob 2FA für Front-End-Konten verwendet werden soll.
 
 ##### "Host"
-- @todo@
+- Der SMTP-Host zum Senden von ausgehende E-Mails.
 
 ##### "Port"
-- @todo@
+- Die Portnummer zum Senden von ausgehende E-Mails. Standardeinstellung = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Das Protokoll zum Senden von E-Mails über SMTP (TLS oder SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Diese Direktive bestimmt, ob SMTP-Sitzungen authentifiziert werden sollen (sollte normalerweise in Ruhe gelassen werden).
 
 ##### "Username"
 - @todo@

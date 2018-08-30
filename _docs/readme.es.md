@@ -576,7 +576,7 @@ General configuración para el manejo de archivos.
   - Si el tipo de archivo está en la blacklist, no escanear el archivo, pero bloquearlo en todo caso, y no cotejar el archivo con la greylist.
   - Si la greylist está vacía o si la greylist está no vacía y el tipo de archivo está en la greylist, escanearlo como normal y determinar si para bloquearlo basado en los resultados de la escaneo, pero si la greylist está no vacía y el tipo de archivo está no en la greylist, tratar el archivo como si está en la blacklist, por lo tanto no escanearlo pero bloquearlo en todo caso.
 
-##### "check_archives"
+##### "check_archives" – Temporalmente no disponible
 - Intente comprobar el contenido de los compactados archivos? False = No (no comprobar); True = Sí (comprobar) [Predefinido].
 - Corrientemente, los únicos formatos soportados son BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR y ZIP (los formatos RAR, CAB, 7z y etc. corrientemente no es soportados).
 - Esto no es infalible! Mientras yo altamente recomiendo mantener este activado, no puedo garantizar que siempre encontrará todo.
@@ -728,29 +728,29 @@ Plantilla datos es relacionados a la HTML utilizado generar el "Subida Denegada"
 ##### "css_url"
 - El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir phpMussel de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, phpMussel utilizará el plantilla archivo para el predefinida tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoría)
+Configuración de PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Un archivo para registrar todos los eventos en relación con PHPMailer. Especificar el nombre del archivo, o dejar en blanco para desactivar.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Establecer esta directiva en `true` indica a PHPMailer que omita el proceso de autenticación normal que normalmente se produce cuando se envía un correo electrónico a través de SMTP. Esto debe evitarse, ya que omitir este proceso puede exponer el correo electrónico saliente a ataques MITM, pero puede ser necesario en los casos en que este proceso impida que PHPMailer se conecte a un servidor SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Esta directiva determina si se debe usar 2FA para las cuentas del front-end.
 
 ##### "Host"
-- @todo@
+- El host SMTP para usar para el correo electrónico saliente.
 
 ##### "Port"
-- @todo@
+- El número de puerto a usar para el correo electrónico saliente. Predefinido = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- El protocolo a usar cuando se envía un correo electrónico a través de SMTP (TLS o SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Esta directiva determina si autenticar sesiones SMTP (generalmente debería dejarse solo).
 
 ##### "Username"
 - @todo@

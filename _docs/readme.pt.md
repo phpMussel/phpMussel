@@ -576,7 +576,7 @@ Configuração geral por a manipulação de arquivos.
   - Se o tipo de arquivo está na blacklist, não verificar o arquivo, mas bloqueá-lo de qualquer maneira, e não verificar o arquivo contra o greylist.
   - Se o greylist está vazia ou se o greylist não está vazia e o tipo de arquivo é no greylist, verificar o arquivo como por normal e determinar se a bloqueá-lo com base nos resultados do verificando, mas se o greylist não está vazia e o tipo de arquivo não é no greylist, tratar o arquivo da mesma maneira como está na blacklist, portanto não verificá-lo, mas bloqueá-lo de qualquer maneira.
 
-##### "check_archives"
+##### "check_archives" – Temporariamente indisponível
 - Tentativa de verificar os conteúdos dos compactados arquivos? False = Não (Não verificar); True = Sim (Verificar) [Padrão].
 - Neste momento, os únicos formatos suportados são BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (os formatos RAR, CAB, 7z e etc. não suportadas neste momento).
 - Este não é infalível! Embora eu recomendo mantê-lo ativado, eu não posso garantir que sempre vai encontrar tudo.
@@ -728,29 +728,29 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 ##### "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoria)
+Configuração do PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Definir essa diretiva como `true` instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Esta diretiva determina se deve usar 2FA para contas front-end.
 
 ##### "Host"
-- @todo@
+- O host SMTP a ser usado para e-mail de saída.
 
 ##### "Port"
-- @todo@
+- O número da porta a ser usado para o e-mail de saída. Padrão = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz).
 
 ##### "Username"
 - @todo@

@@ -576,7 +576,7 @@ Konfigurasi umum untuk mengambil alih file-file.
   - Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu.
   - Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun.
 
-##### "check_archives"
+##### "check_archives" – Tidak tersedia untuk sementara
 - Berusaha mencek isi file terkompress? False = Tidak (Tidak mencek); True = Ya (Mencek) [Default].
 - Sekarang, hanya BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR dan ZIP format yang didukung (RAR, CAB, 7z, dll tidak didukung).
 - Ini tidak selalu sempurna! Selama saya sangat rekomendasikan menjaga ini aktif, saya tidak dapat menjamin itu hanya menemukan segala sesuatunya.
@@ -728,29 +728,29 @@ File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan 
 ##### "css_url"
 - File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Kategori)
+Konfigurasi PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Pengaturan direktif ini ke `true` menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan.
 
 ##### "Host"
-- @todo@
+- Host SMTP yang digunakan untuk email keluar.
 
 ##### "Port"
-- @todo@
+- Nomor port yang digunakan untuk email keluar. Default = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri).
 
 ##### "Username"
 - @todo@

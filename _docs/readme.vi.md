@@ -576,7 +576,7 @@ Cấu hình cho xử lý tập tin.
   - Nếu loại tập tin là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám.
   - Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tập tin là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tập tin không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao.
 
-##### "check_archives"
+##### "check_archives" – Tạm thời không khả dụng
 - Cố gắng để kiểm tra nội dung của kho lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định].
 - Tại thơi điểm nay, các chỉ định dạng kho lưu trữ và nén được hỗ trợ là BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR và ZIP (định dạng kho lưu trữ và nén RAR, CAB, 7z và vân vân không được hỗ trợ tại thơi điểm nay).
 - Đây không phải là hoàn hảo! Trong khi tôi rất khuyên bạn nên giữ này được kích hoạt, tôi không thể đảm bảo nó sẽ luôn luôn tìm thấy tất cả mọi thứ.
@@ -728,29 +728,29 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 ##### "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Thể loại)
+Cấu hình PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Đặt chỉ thị này thành `true` chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không.
 
 ##### "Host"
-- @todo@
+- Máy chủ SMTP để sử dụng cho email gửi đi.
 
 ##### "Port"
-- @todo@
+- Số cổng để sử dụng cho email gửi đi. Mặc định = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình).
 
 ##### "Username"
 - @todo@
