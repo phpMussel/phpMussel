@@ -17,7 +17,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 - Ideal solution for forum systems in need of file upload protection.
 - Does NOT require shell access.
 - Does NOT require administrative privileges.
-- CLI mode available (for now, just under Windows, very soon with other OS).
+- CLI mode available.
 - Good, strong, stable support base.
 
 ---
@@ -46,4 +46,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*Last modified: 12th June 2017 (2017.06.12).*
+*Last modified: 30 August 2018 (2018.08.30).*
