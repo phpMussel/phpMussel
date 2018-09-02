@@ -1,6 +1,7 @@
 [![Join the chat at https://gitter.im/phpMussel2/Lobby](https://badges.gitter.im/phpMussel2/Lobby.svg)](https://gitter.im/phpMussel2/Lobby)
 [![PHP >= 5.4.0](https://img.shields.io/badge/PHP-%3E%3D%205.4.0-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ## **What is phpMussel?**
 
@@ -46,4 +47,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*Last modified: 30 August 2018 (2018.08.30).*
+*Last modified: 3 September 2018 (2018.09.03).*
