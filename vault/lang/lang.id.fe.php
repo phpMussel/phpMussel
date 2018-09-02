@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.13).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Diperlukan untuk menggu
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Keluar</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silahkan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'Host SMTP yang digunakan untuk email keluar.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'Kata sandi yang digunakan saat mengirim email melalui SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'Nomor port yang digunakan untuk email keluar. Default = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Pengaturan direktif ini ke `true` menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'Nama pengguna yang digunakan saat mengirim email melalui SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'Alamat balasan yang dikutip saat mengirim email melalui SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'Nama balasan yang dikutip saat mengirim email melalui SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'Alamat pengirim yang dikutip saat mengirim email melalui SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'Nama pengirim yang dikutip saat mengirim email melalui SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Izinkan memimpin dan mengikuti titik-titik dalam nama file? Ini kadang-kadang dapat digunakan untuk menyembunyikan file, atau untuk mengelabui beberapa sistem agar memungkinkan direktori traversal. False = Jangan izinkan [Default]. True = Izinkan.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Memblokir file apapun yang berisi karakter pengendali (lain dari baris baru)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokirnya [Default]; True = Memblokirnya.';

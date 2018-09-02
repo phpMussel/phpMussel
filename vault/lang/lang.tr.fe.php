@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.13).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'E-posta göndermeyi iç
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Bu yapılandırma yönergeleri, e-posta göndermeyi içeren işlevler için gerekli olabilir. Daha fazla bilgi ve tavsiye edilen değerler için lütfen dokümanlara bakınız.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'Giden e-posta için kullanılacak SMTP ana bilgisayarı.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'SMTP ile e-posta gönderirken kullanılacak şifre.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = '<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında).';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'SMTP ile e-posta gönderirken kullanılacak kullanıcı adı.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'SMTP ile e-posta gönderirken kullanılacak cevap adresi.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'SMTP ile e-posta gönderirken kullanılacak cevap ismi.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'SMTP ile e-posta gönderirken kullanılacak gönderen adresi.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'SMTP ile e-posta gönderirken kullanılacak gönderenin adı.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Dosya adlarının başında ve sonunda noktalara izin verilsin mi? Bu bazen dosyaları gizlemek veya bazı sistemleri dizin geçişine izin vermek için kandırmak için kullanılabilir. Yanlış/False = İzin verme [Varsayılan]. Doğru/True = İzin ver.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Herhangi bir kontrol karakteri içeren dosyaları engelle (yeni satırlara istisna)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Yalnızca düz metin yüklüyorsanız, sisteminize biraz daha koruma sağlamak için bu seçeneği açabilirsiniz. Bununla birlikte, başka herhangi bir şey için, bunu açtığınızda yanlış pozitif sonuç alabilirsiniz. Yanlış/False = Engelleme [Varsayılan]; Doğru/True = Engelle.';

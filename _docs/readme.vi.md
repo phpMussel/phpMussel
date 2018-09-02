@@ -753,22 +753,22 @@ Cấu hình PHPMailer.
 - Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình).
 
 ##### "Username"
-- @todo@
+- Tên người dùng để sử dụng khi gửi email qua SMTP.
 
 ##### "Password"
-- @todo@
+- Mật khẩu để sử dụng khi gửi email qua SMTP.
 
 ##### "setFromAddress"
-- @todo@
+- Địa chỉ người gửi để trích dẫn khi gửi email qua SMTP.
 
 ##### "setFromName"
-- @todo@
+- Tên người gửi để trích dẫn khi gửi email qua SMTP.
 
 ##### "addReplyToAddress"
-- @todo@
+- Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP.
 
 ##### "addReplyToName"
-- @todo@
+- Tên trả lời để trích dẫn khi gửi email qua SMTP.
 
 ---
 
@@ -1302,4 +1302,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Bảy 2018 (2018.07.31).
+Lần cuối cập nhật: 2 Tháng Chín 2018 (2018.09.02).

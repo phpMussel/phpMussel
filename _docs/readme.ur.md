@@ -668,7 +668,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  </ul>
 </ul></div>
 
-##### <div dir="rtl">"check_archives"<br /></div>
+##### <div dir="rtl">"check_archives" – فی الوقت دستیاب نہیں ہے<br /></div>
 <div dir="rtl"><ul>
  <li>ابلیھاگاروں کے مندرجات کو چیک کرنے کی کوشش؟ False (جھوٹی) = چیک نہ کریں؛ True (سچے) = چیک کریں [پہلے سے طے شدہ].</li>
  <li>فی الحال، کی حمایت صرف محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس BZ/BZIP2، GZ/GZIP، LZF، PHAR، TAR اور ZIP ہیں (محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس RAR، CAB، 7z اور وقت کی سہولت مہیا نہیں وغیرہ).</li>
@@ -894,47 +894,73 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے phpMussel ہدایت کرنے کے لئے، "css_url" متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، phpMussel ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.</li>
 </ul></div>
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### <div dir="rtl">"PHPMailer" (قسم)<br /></div>
+<div dir="rtl">PHPMailer ترتیب.<br /><br /></div>
 
-##### "EventLog"
-- @todo@
+##### <div dir="rtl">"EventLog"<br /></div>
+<div dir="rtl"><ul>
+ <li>PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
+</ul></div>
 
-##### "SkipAuthProcess"
-- @todo@
+##### <div dir="rtl">"SkipAuthProcess"<br /></div>
+<div dir="rtl"><ul>
+ <li>جب <code dir="ltr">true</code>، SMTP کی تصدیق کے عمل کو چھوڑ دیا گیا ہے. اس سے بچنا چاہئے. اگر عمل ختم ہو جاتا ہے تو، آؤٹ باؤنڈ ای میل MITM حملوں سے بے نقاب ہوسکتا ہے. مخصوص معاملات میں ضروری ہوسکتا ہے (مثال کے طور پر، جب SMTP سرور مناسب طریقے سے منسلک نہیں کرے گا).</li>
+</ul></div>
 
-##### "Enable2FA"
-- @todo@
+##### <div dir="rtl">"Enable2FA"<br /></div>
+<div dir="rtl"><ul>
+ <li>یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے.</li>
+</ul></div>
 
-##### "Host"
-- @todo@
+##### <div dir="rtl">"Host"<br /></div>
+<div dir="rtl"><ul>
+ <li>آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے SMTP میزبان.</li>
+</ul></div>
 
-##### "Port"
-- @todo@
+##### <div dir="rtl">"Port"<br /></div>
+<div dir="rtl"><ul>
+ <li>آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے پورٹ نمبر. پہلے سے طے شدہ = 587.</li>
+</ul></div>
 
-##### "SMTPSecure"
-- @todo@
+##### <div dir="rtl">"SMTPSecure"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر پروٹوکول استعمال کرنے کے لئے (TLS یا SSL).</li>
+</ul></div>
 
-##### "SMTPAuth"
-- @todo@
+##### <div dir="rtl">"SMTPAuth"<br /></div>
+<div dir="rtl"><ul>
+ <li>کیا SMTP سیشن کو مستند کیا جاسکتا ہے؟ (عام طور پر اس کو نظر انداز کرنا چاہئے).</li>
+</ul></div>
 
-##### "Username"
-- @todo@
+##### <div dir="rtl">"Username"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے صارف کا نام.</li>
+</ul></div>
 
-##### "Password"
-- @todo@
+##### <div dir="rtl">"Password"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے پاس ورڈ.</li>
+</ul></div>
 
-##### "setFromAddress"
-- @todo@
+##### <div dir="rtl">"setFromAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے بھیجنے والے کا پتہ.</li>
+</ul></div>
 
-##### "setFromName"
-- @todo@
+##### <div dir="rtl">"setFromName"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے بھیجنے کا نام.</li>
+</ul></div>
 
-##### "addReplyToAddress"
-- @todo@
+##### <div dir="rtl">"addReplyToAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر جواب کا پتہ.</li>
+</ul></div>
 
-##### "addReplyToName"
-- @todo@
+##### <div dir="rtl">"addReplyToName"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر جواب کا نام.</li>
+</ul></div>
 
 ---
 

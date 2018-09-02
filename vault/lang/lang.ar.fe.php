@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.13).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'مطلوب لاستخد
 $phpMussel['lang']['Extended Description: phpMussel'] = 'حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?phpmussel-page=logout">خروج</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">خروج</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'قد تكون إرشادات التهيئة هذه مطلوبة للوظيفة التي تتضمن إرسال البريد الإلكتروني. يرجى الرجوع إلى الوثائق لمزيد من المعلومات والقيم الموصى بها.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'مضيف SMTP الذي يستخدم للبريد الإلكتروني الصادر.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'كلمة المرور لاستخدامها عند إرسال البريد الإلكتروني عبر SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'رقم المنفذ المراد استخدامه للبريد الإلكتروني الصادر. افتراضي = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'يحدد هذا التوجيه ما إذا كنت تريد مصادقة جلسات SMTP (يجب ألا يغير هذا عادة).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'البروتوكول المستخدم عند إرسال البريد الإلكتروني عبر SMTP (TLS أو SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'عنوان المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'اسم المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'السماح النقاط الرائدة والزائدة في أسماء الملفات؟ يمكن استخدام هذا أحيانًا لإخفاء الملفات أو خداع بعض الأنظمة للسماح بدخول الدليل. زائفة/False = لا تسمح [افتراضي]. صحيح/True = السماح.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'ملحقات ملفات الأرشيف المعترف بها (الشكل هو CSV، وينبغي فقط إضافة أو إزالة عندما تحدث المشاكل؛ إزالة دون داع قد يسبب ايجابيات كاذبة لتظهر لملفات الأرشيف، في حين اضاف داع سوف القائمة البيضاء أساسا ما كنت تقوم بإضافة من كشف المحدد الهجوم؛ تعديل مع الحذر، لاحظ أيضا أن هذا ليس له تأثير على ما المحفوظات يمكن ولا يمكن تحليلها على مستوى المحتوى). القائمة، كما هو في التقصير، يسرد تلك الأشكال الأكثر شيوعا في غالبية النظم واتفاقية الأنواع المهاجرة، ولكن عمدا ليست شاملة بالضرورة.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'حظر أي ملفات تحتوي على أي أحرف التحكم (عدا أسطر جديدة)؟ (<code dir="ltr">[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) إذا كنت <strong>فقط</strong> تحميل نص عادي، ثم يمكنك تشغيل هذا الخيار لتوفير بعض الحماية إضافية على النظام الخاص بك. ومع ذلك، إذا قمت بتحميل أي شيء آخر غير نص عادي، وتحول هذا على قد يؤدي إلى ايجابيات كاذبة. = كاذبة لا منع [افتراضي]. صحيح/True = بلوك.';

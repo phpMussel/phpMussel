@@ -577,7 +577,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
   - 如果文件類型已黑名單，​不掃描文件但阻止它無論如何，​和不匹配文件對照灰名單。
   - 如果灰名單是空，​或如果灰名單不空和文件類型已灰名單，​掃描文件像正常和確定如果阻止它基於掃描結果，​但如果灰名單不空和文件類型不灰名單，​過程文件彷彿已黑名單，​因此不掃描它但阻止它無論如何。
 
-##### 『check_archives』
+##### 『check_archives』 – 暫時不可用
 - 嘗試匹配存檔內容嗎？​False（假）=不匹配；​True（真）=匹配【默認】。
 - 目前，​只BZ/BZIP2，​GZ/GZIP，​LZF，​PHAR，​TAR和ZIP文件格式是支持（匹配的RAR，​CAB，​7z和等等不還支持）。
 - 這個是不完美！​雖說我很推薦保持這個激活，​我不能保證它將始終發現一切。
@@ -729,47 +729,47 @@ URL掃描儀API配置。
 ##### 『css_url』
 - 模板文件為個性化主題使用外部CSS屬性，​而模板文件為t標準主題使用內部CSS屬性。​以指示phpMussel使用模板文件為個性化主題，​指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。​如果您離開這個變量空白，​phpMussel將使用模板文件為默認主題。
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### 『PHPMailer』 （類別）
+PHPMailer配置。
 
-##### "EventLog"
-- @todo@
+##### 『EventLog』
+- 用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。
 
-##### "SkipAuthProcess"
-- @todo@
+##### 『SkipAuthProcess』
+- 將此指令設置為`true`會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。
 
-##### "Enable2FA"
-- @todo@
+##### 『Enable2FA』
+- 該指令確定是否將2FA用於前端帳戶。
 
-##### "Host"
-- @todo@
+##### 『Host』
+- 用於出站電子郵件的SMTP主機。
 
-##### "Port"
-- @todo@
+##### 『Port』
+- 用於出站電子郵件的端口號。​標準=587。
 
-##### "SMTPSecure"
-- @todo@
+##### 『SMTPSecure』
+- 通過SMTP發送電子郵件時使用的協議（TLS或SSL）。
 
-##### "SMTPAuth"
-- @todo@
+##### 『SMTPAuth』
+- 此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。
 
-##### "Username"
-- @todo@
+##### 『Username』
+- 通過SMTP發送電子郵件時使用的用戶名。
 
-##### "Password"
-- @todo@
+##### 『Password』
+- 通過SMTP發送電子郵件時使用的密碼。
 
-##### "setFromAddress"
-- @todo@
+##### 『setFromAddress』
+- 通過SMTP發送電子郵件時引用的發件人地址。
 
-##### "setFromName"
-- @todo@
+##### 『setFromName』
+- 通過SMTP發送電子郵件時引用的發件人姓名。
 
-##### "addReplyToAddress"
-- @todo@
+##### 『addReplyToAddress』
+- 通過SMTP發送電子郵件時引用的回复地址。
 
-##### "addReplyToName"
-- @todo@
+##### 『addReplyToName』
+- 通過SMTP發送電子郵件時引用的回複姓名。
 
 ---
 
@@ -1311,4 +1311,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2018年7月31日。
+最後更新：2018年9月2日。

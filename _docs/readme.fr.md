@@ -753,22 +753,22 @@ Configuration de PHPMailer.
 - Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules).
 
 ##### « Username »
-- @todo@
+- Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP.
 
 ##### « Password »
-- @todo@
+- Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP.
 
 ##### « setFromAddress »
-- @todo@
+- L'adresse de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP.
 
 ##### « setFromName »
-- @todo@
+- Le nom de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP.
 
 ##### « addReplyToAddress »
-- @todo@
+- L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP.
 
 ##### « addReplyToName »
-- @todo@
+- Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP.
 
 ---
 
@@ -1308,4 +1308,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 31 Juillet 2018 (2018.07.31).
+Dernière mise à jour : 2 Septembre 2018 (2018.09.02).

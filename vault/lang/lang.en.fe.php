@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.08.13).
+ * This file: English language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Required for using any 
 $phpMussel['lang']['Extended Description: phpMussel'] = 'The main package (minus the signatures, documentation, and configuration).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Log Out</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'These configuration directives may be required for functionality that involves sending email. Please refer to the documentation for more information and recommended values.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'This directive determines whether to use 2FA for front-end accounts.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'The SMTP host to use for outbound email.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'The password to use when sending email via SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'The port number to use for outbound email. Default = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'This directive determines whether to authenticate SMTP sessions (should usually be left alone).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'The protocol to use when sending email via SMTP (TLS or SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'The username to use when sending email via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'The reply address to cite when sending email via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'The reply name to cite when sending email via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'The sender address to cite when sending email via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'The sender name to cite when sending email via SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Allow leading and trailing dots in filenames? This can sometimes be used to hide files, or to trick some systems into allowing directory traversal. False = Don\'t allow [Default]. True = Allow.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you\'re adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can\'t be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn\'t necessarily comprehensive.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Block any files containing any control characters (other than newlines)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) If you\'re <em><strong>ONLY</strong></em> uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don\'t block [Default]; True = Block.';

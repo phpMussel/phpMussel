@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.13).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Vereist voor het gebrui
 $phpMussel['lang']['Extended Description: phpMussel'] = 'De primaire pakket (zonder de signatures, documentatie en configuratie).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Uitloggen</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Deze configuratie richtlijnen kunnen vereist zijn voor functionaliteit waarbij e-mail wordt verzonden. Raadpleeg de documentatie voor meer informatie en aanbevolen waarden.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'De SMTP-host dat moet worden gebruikt voor uitgaande e-mail.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'Het wachtwoord voor het verzenden van e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'De gebruikersnaam voor het verzenden van e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'Het antwoordadres voor het verzenden van e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'De antwoordnaam voor het verzenden van e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'Het afzenderadres voor het verzenden van e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'De naam van de afzender voor het verzenden van e-mail via SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Sta voorlopende en achterliggende stippen toe in bestandsnamen? Dit kan soms worden gebruikt om bestanden te verbergen, of om sommige systemen te misleiden om doorverwijzing van mappen mogelijk te maken. False = Niet toestaan [Standaard]. True = Toestaan.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe regels)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Als u <em><strong>ALLEEN</strong></em> uploaden platte tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen dit kan leiden tot valse positieven. False = Niet blokkeren [Standaard]; True = Doen blokkeren.';

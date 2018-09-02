@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.08.13).
+ * This file: Russian language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Требуется дл
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Основной пакет (минус сигнатуры, документация, и конфигурация).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?phpmussel-page=logout">Выйдите</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Выйдите</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Эти директивы конфигурации могут потребоваться для функциональных возможностей, связанных с отправкой электронной почты. Дополнительную информацию и рекомендуемые значения см. в документации.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Эта директива включает/отключает использование 2FA для фронтенд счетов.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'Хост SMTP используется для исходящей электронной почты.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'Пароль для отправки электронной почты через SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'Номер порта для исходящей электронной почты. Стандарт = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Эта директива включает/отключает аутентификацию сессия SMTP (обычно ее следует оставить в покое).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'Протокол для при отправке электронной почты через SMTP (TLS или SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Установка этой директивы на <code>true</code> указывает PHPMailer пропустить обычный процесс проверки подлинности, который обычно возникает при отправке электронной почты через SMTP. Этого следует избегать, поскольку пропуская этот процесс может выдать исходящую электронную почту для атак MITM, но может потребоваться в тех случаях, когда этот процесс препятствует подключению PHPMailer к SMTP-серверу.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'Имя пользователя для отправки электронной почты через SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'Адрес ответа для отправки электронной почты через SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'Имя ответа для отправки электронной почты через SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'Адрес отправителя для отправки электронной почты через SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'Имя отправителя для отправки электронной почты через SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Разрешить точки в начале и конце имен файлов? Иногда это может быть использовано для скрытия файлов или для обмана некоторых систем для разрешения обхода каталога. False = Не разрешать [Стандарт]. True = Разрешать.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Опознаёт расширение архива или файла (CSV-формат; включать или удалять только при проблемах; удаление без нужны может вызвать для архива сигнал тревоги; включение без нужды может внести в белый список то, что раньше определялось как возможная атака; изменяйте список очень осторожно; помните, что программа не влияет на функцию архива и не может анализировать содержание). Этот список содержит форматы архивов, наиболее часто используемых большинством систем и CMS, однако он не завершён, но сделано это намеренно.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Должны ли файлы, содержащие командные сигналы (отличные от Newline/конец строки), быть блокированными (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>)? При загрузке только «голого» текста Вы можете активировать эту опцию, чтобы усилить защиту своей системы. Но когда она активирована, а Вы хотите загрузить не только текст, то программа подаст вам ложный сигнал тревоги. False = Не блокировать [Стандарт]; True = Блокировать.';

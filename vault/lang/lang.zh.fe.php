@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.13).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = '使用涉及发送电�
 $phpMussel['lang']['Extended Description: phpMussel'] = '主包（没有签名文件，文档，和配置）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>';
-$phpMussel['lang']['config_PHPMailer'] = '涉及发送电子邮件的功能可能需要这些配置指令。​有关更多信息和建议值，请参阅文档。';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = '该指令确定是否将2FA用于前端帐户。';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = '用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。';
+$phpMussel['lang']['config_PHPMailer_Host'] = '用于出站电子邮件的SMTP主机。';
+$phpMussel['lang']['config_PHPMailer_Password'] = '通过SMTP发送电子邮件时使用的密码。';
+$phpMussel['lang']['config_PHPMailer_Port'] = '用于出站电子邮件的端口号。​标准=587。';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = '此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = '通过SMTP发送电子邮件时使用的协议（TLS或SSL）。';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = '将此指令设置为<code>true</code>会指示PHPMailer跳过通过SMTP发送电子邮件时通常会发生的正常身份验证过程。​应该避免这种情况，因为跳过此过程可能会将出站电子邮件暴露给MITM攻击，但在此过程阻止PHPMailer连接到SMTP服务器的情况下可能是必要的。';
+$phpMussel['lang']['config_PHPMailer_Username'] = '通过SMTP发送电子邮件时使用的用户名。';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = '通过SMTP发送电子邮件时引用的回复地址。';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = '通过SMTP发送电子邮件时引用的回复姓名。';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = '通过SMTP发送电子邮件时引用的发件人地址。';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = '通过SMTP发送电子邮件时引用的发件人姓名。';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '允许文件名中的前导和尾随点吗？​这有时可用于隐藏文件，或欺骗某些系统允许目录遍历。​False（假）=不允许【默认】；True（真）=允许。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，​而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。​这个名单，​作为是作为标准，​名单那些格式使用最常见的横过多数的系统和CMS，​但有意是不全面。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '受阻任何文件包含任何控制字符吗（以外换行符）？​(<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) 如果您只上传纯文本，​您可以激活这个指令以提供某些另外保护在您的系统。​然而，​如果您上传任何事以外纯文本，​激活这个可能结果在假阳性。​False（假）=不受阻【默认】；True（真）=受阻。';

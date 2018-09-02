@@ -49,7 +49,7 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 3) 콘텐츠 (phpMussel 본체와 파일)을 먼저 정한 디렉토리에 업로드합니다. (`*.txt`또는 `*.md`파일 업로드 필요는 없지만, 대개는 모든 업로드 해달라고해도됩니다).
 
-4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). In short: For the package to work properly, PHP needs to be able to read and write files inside the `vault` directory. Many things (updating, logging, etc) won't be possible, if PHP can't write to the `vault` directory, and the package won't work at all if PHP can't read from the `vault` directory. However, for optimal security, the `vault` directory must NOT be publicly accessible (sensitive information, such as the information contained by `config.ini` or `frontend.dat`, could be exposed to potential attackers if the `vault` directory is publicly accessible). @Translate@
+4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). 간단히 말해서 : 패키지가 제대로 작동하려면 PHP가`vault` 디렉토리에서 파일을 읽고 쓸 수 있어야합니다. PHP가`vault` 디렉토리에 쓸 수 없다면 많은 것들 (업데이트, 로깅 등)은 불가능합니다. PHP가`vault` 디렉토리에서 읽을 수 없다면 패키지는 전혀 작동하지 않을 것입니다. 최적의 보안을 위해, `vault` 디렉토리는 공개적으로 접근 할 수 없어야합니다 (`vault` 디렉토리가 공개적으로 액세스 가능한 경우, `config.ini` 나`frontend.dat '에 포함 된 정보와 같은 민감한 정보는 잠재적 인 공격자에게 노출 될 수 있습니다).
 
 5) 당신이 필요로하는 서명을 설치하십시오. *참조 : [서명 설치](#INSTALLING_SIGNATURES).*
 
@@ -193,23 +193,23 @@ phpMussel에 포함 된 서명을 해제하려면 (일반적으로 제외해서�
 
 주의 : 당신이 처음 로그인 한 후 프론트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프론트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
 
-Also, for optimal security, enabling "two-factor authentication" for all front-end accounts is strongly recommended (instructions provided below). @Translate@
+최적의 보안을 위해 모든 프런트 엔드 계정에 대해 2FA (이중 인증)을 사용하는 것이 좋습니다 (아래 제공된 지침).
 
 #### 4.2 프론트 엔드 사용.
 
 프론트 엔드의 각 페이지에는 목적에 대한 설명과 사용 방법에 대한 설명이 있습니다. 전체 설명이나 특별한 지원이 필요한 경우 지원에 문의하십시오. 또한 데모를 제공 할 YouTube에서 사용 가능한 동영상도 있습니다.
 
-#### 4.3 TWO-FACTOR AUTHENTICATION @Translate@
+#### 4.3 2FA (이중 인증)
 
-It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+2FA를 사용하면 프런트 엔드를 더욱 안전하게 만들 수 있습니다. 2FA를 사용하는 계정에 로그인하면 해당 계정과 연결된 이메일 주소로 이메일이 전송됩니다. 이 이메일에는 "2FA 코드"가 포함되어 있습니다. 사용자는이 계정을 사용하여 로그인 할 수 있도록 사용자 이름과 비밀번호 외에도 사용자가 입력해야합니다. 즉, 해커 또는 잠재적 공격자가 해당 계정에 로그인 할 수 있도록 계정 암호로는 충분하지 않습니다. 세션과 관련된 2FA 코드를 수신하고 활용하려면 해당 계정과 연결된 이메일 주소에 대한 액세스 권한이 있어야합니다.
 
-Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+2FA를 사용하려면 프론트 엔드 업데이트 페이지를 사용하여 PHPMailer 구성 요소를 설치하십시오. phpMussel은 PHPMailer를 사용하여 이메일을 전송합니다. 노트 : phpMussel은 PHP >= 5.4.0와 호환되지만 PHPMailer에는 PHP >= 5.5.0가 필요합니다. 따라서 PHP 5.4 사용자는 phpMussel 프론트 엔드에 2FA를 사용할 수 없습니다.
 
-After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+PHPMailer를 설치 한 후 phpMussel 구성 페이지 또는 구성 파일을 통해 PHPMailer의 구성 지시문을 채워야합니다. 이러한 구성 지시문에 대한 자세한 내용은이 설명서의 구성 섹션에 포함되어 있습니다. PHPMailer 설정 지시어를 채운 후에는 `Enable2FA`를 `true`로 설정하십시오. 이제 2FA가 활성화되어야합니다.
 
-Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+해당 계정으로 로그인 할 때 2FA 코드를 보낼 위치를 phpMussel이 알 수 있도록 이메일 주소를 계정과 연결해야합니다. 전자 메일 주소를 계정의 사용자 이름 (예 : `foo@bar.tld`)으로 사용하거나 정상적으로 전자 메일을 보낼 때와 동일한 방법 (예 : `Foo Bar <foo@bar.tld>`)으로 사용자 이름의 일부로 전자 메일 주소를 포함하십시오.
 
-Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
+노트 : 무단 액세스로부터 vault보호는 특히 중요합니다 (예 : 서버의 보안을 강화하고 공용 액세스 권한을 제한함으로써). 볼트에 저장되어있는 구성 파일에 대한 무단 액세스로 인해 SMTP 사용자 이름과 암호를 비롯한 아웃 바운드 SMTP 설정이 노출 될 수 있습니다. 2FA를 사용하기 전에 vault가 적절하게 보안되어 있는지 확인해야합니다. 이 작업을 수행 할 수 없으면 노출 된 SMTP 설정과 관련된 위험을 줄이기 위해 이러한 용도로 전용 된 새 전자 메일 계정을 만들어야합니다.
 
 ---
 
@@ -393,13 +393,13 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - CLI 모드에서 영향을주지 않습니다.
 
 ##### "scan_log"
-- 전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.
+- 전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
 ##### "scan_log_serialized"
-- 전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름 지정하거나, 해제하려면 비워하십시오.
+- 전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
 ##### "scan_kills"
-- 차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.
+- 차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
 
@@ -505,7 +505,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - 로그인 시도 횟수 (프론트 엔드). Default / 기본 설정 = 5.
 
 ##### "FrontEndLog"
-- 프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나, 해제하려면 비워하십시오.
+- 프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
 ##### "disable_webfonts"
 - 웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.
@@ -576,7 +576,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
  - 파일 형식이 블랙리스트에 있으면 스캔하지 않고 즉시 차단하고 그레이리스트에 체크를하지 않습니다.
  - 회색 목록이 비어 또는 그레이리스트가 하늘이 아닌 한편 그 파일 타입이 있으면 정상적으로 스캔 차단 여부를 판단합니다. 그레이리스트가 하늘이 아닌 한편 그 파일 유형이 포함되어 있지 않으면 블랙리스트와 같은 취급을 할 수 있고 스캔없이 차단합니다.
 
-##### "check_archives"
+##### "check_archives" – 일시적으로 사용할 수 없음
 - 아카이브의 컨텐츠에 대해 체크를 시도 여부에 대해서입니다. `false` = 체크하지 않는다; `true` = 확인 (Default / 기본 설정).
 - 현재 지원하고있는 것은 BZ, GZ, LZF, ZIP 형식입니다 (RAR, CAB, 7z 등은 제외).
 - 본 기능은 만능이 아니므로 활성화하는 것이 좋습니다 있지만 반드시 모두를 검출하는 것을 보증하는 것은 아닙니다.
@@ -728,47 +728,47 @@ URL 스캐너 API 조회 설정.
 ##### "css_url"
 - 사용자 지정 테마 템플릿 파일은 외부 CSS 속성을 사용하고 있습니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (카테고리)
+PHPMailer 구성.
 
 ##### "EventLog"
-- @todo@
+- PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
 ##### "SkipAuthProcess"
-- @todo@
+- `true` 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예 : PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우).
 
 ##### "Enable2FA"
-- @todo@
+- 이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다.
 
 ##### "Host"
-- @todo@
+- 아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다.
 
 ##### "Port"
-- @todo@
+- 아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- 이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다).
 
 ##### "Username"
-- @todo@
+- SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다.
 
 ##### "Password"
-- @todo@
+- SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다.
 
 ##### "setFromAddress"
-- @todo@
+- SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다.
 
 ##### "setFromName"
-- @todo@
+- SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다.
 
 ##### "addReplyToAddress"
-- @todo@
+- SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다.
 
 ##### "addReplyToName"
-- @todo@
+- SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다.
 
 ---
 
@@ -1245,9 +1245,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 *관련 설정 지시어 :*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 IP 주소 PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+첫째, 용어에 익숙하지 않은 경우, "pseudonymisation"는 보충 정보없이 특정 "데이터 주체"로 식별 될 수없는 방식으로 개인 데이터를 처리하는 것을 의미합니다 (개인 정보를 자연인에게 확인할 수 없도록 추가 정보가 별도로 유지되고 기술적 및 조직적 조치를 조건으로 제공되어야합니다).
 
 다음 자료는 추가 정보를 제공합니다.
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
@@ -1307,4 +1307,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 7월 31일.
+최종 업데이트 : 2018년 9월 2일.

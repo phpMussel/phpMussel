@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.08.13).
+ * This file: Portuguese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Necessário para usar q
 $phpMussel['lang']['Extended Description: phpMussel'] = 'O pacote principal (menos as assinaturas, documentação e configuração).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Sair</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Sair</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Essas diretivas de configuração podem ser necessárias para a funcionalidade que envolve o envio de email. Consulte a documentação para mais informações e valores recomendados.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Esta diretiva determina se deve usar 2FA para contas front-end.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'O host SMTP a ser usado para e-mail de saída.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'A senha a ser usada ao enviar e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'O número da porta a ser usado para o e-mail de saída. Padrão = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'O nome de usuário a ser usada ao enviar e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'O endereço de resposta a ser citado ao enviar e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'O nome da resposta a ser citado ao enviar e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'O endereço do remetente a ser citado ao enviar e-mail via SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'O nome do remetente a ser citado ao enviar e-mail via SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Permitir pontos iniciais e finais em nomes de arquivos? Às vezes, isso pode ser usado para ocultar arquivos, ou enganar alguns sistemas para permitir a passagem de diretórios. False = Não permitir [Padrão]. True = Permitir.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquear todos os arquivos que contenham quaisquer caracteres de controle, exceto linha quebras (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>)? Se você está <em><strong>APENAS</strong></em> carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. False = Não bloquear [Padrão]; True = Bloquear.';

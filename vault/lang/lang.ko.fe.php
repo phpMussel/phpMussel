@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.13).
+ * This file: Korean language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = '이메일 전송과 관
 $phpMussel['lang']['Extended Description: phpMussel'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?phpmussel-page=logout">로그 아웃</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">로그 아웃</a>';
-$phpMussel['lang']['config_PHPMailer'] = '이러한 구성 지시문은 전자 이메일 보내기와 관련된 기능에 필요할 수 있습니다. 자세한 정보 및 권장 값은 설명서를 참조하십시오.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = '이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$phpMussel['lang']['config_PHPMailer_Host'] = '아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다.';
+$phpMussel['lang']['config_PHPMailer_Port'] = '아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = '이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = '<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예 : PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우).';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '파일 이름에 선행 및 후행 점을 허용 하시겠습니까? 이것은 때때로 파일을 숨기거나 디렉토리 트래버 설을 허용하도록 일부 시스템을 속이는 데 사용될 수 있습니다. <code>false</code> = 허용되지 않습니다 (Default / 기본 설정). <code>true</code> = 허용된다.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '제어 문자를 포함한 파일을 차단 여부 (줄 바꿈을 제외한)? 에 관한 것입니다 (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>). 만약 텍스트를 업로드하는 경우,이 옵션을 사용하여 추가 보호를 강화할 수 있습니다. 텍스트 이외도 업로드 할 경우, 사용하면 오진의 원인이 될 수 있습니다. <code>false</code> = 차단하지 (Default / 기본 설정); <code>true</code> = 차단합니다.';
@@ -53,7 +65,7 @@ $phpMussel['lang']['config_files_filetype_greylist'] = '파일 유형 그레이�
 $phpMussel['lang']['config_files_filetype_whitelist'] = '시스템이 특정 유형의 파일 만 업로드를 허용하거나 거절하는 경우 파일 유형을 적절히 화이트리스트, 블랙리스트, 그레이리스트로 분류 해두면 파일 유형에 튀겨 진 파일은 스캔을 건너 뛸 수 때문에 속도로 연결됩니다. 형식은 CSV (쉼표로 구분)입니다. 목록에 의하지 않고 모두를 검사 할 경우 변수는 빈 상태로 유지하고 화이트리스트 / 블랙리스트 / 그레이리스트를 해제합니다. 프로세스의 논리적 순서 : 파일 형식이 화이트리스트에 포함되어 있으면, 스캔하지 않고 블록하지 않고 블랙리스트 및 그레이리스트에 체크를하지 않습니다. 파일 형식이 블랙리스트에 있으면 스캔하지 않고 즉시 차단하고 그레이리스트에 체크를하지 않습니다. 회색 목록이 비어 또는 그레이리스트가 하늘이 아닌 한편 그 파일 타입이 있으면 정상적으로 스캔 차단 여부를 판단합니다. 그레이리스트가 하늘이 아닌 한편 그 파일 유형이 포함되어 있지 않으면 블랙리스트와 같은 취급을 할 수 있고 스캔없이 차단합니다. 파일 유형 화이트리스트 :';
 $phpMussel['lang']['config_files_max_recursion'] = '아카이브에 대한 최대 재귀 깊이입니다. 기본 설정 = 10.';
 $phpMussel['lang']['config_files_max_uploads'] = '한 번에 스캔 할 수있는 업로드 파일 수 제한으로이를 초과하면 스캔을 중단하고 사용자에게 그 사실을 알리고 논리적 공격으로부터 보호 역할을합니다. 시스템과 CMS가 DDoS 공격을 만나 phpMussel가 오버로드하여 PHP 프로세스에 지장을 초래하는 일이 없도록하기 위해서입니다. 권장 수는 10이지만, 하드웨어의 속도에 따라 더 이상 / 이하이 좋은 것도있을 것입니다. 이 숫자는 아카이브의 내용을 포함하지 않는 것을 기억하십시오.';
-$phpMussel['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
+$phpMussel['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
 $phpMussel['lang']['config_general_allow_symlinks'] = '때로는 phpMussel이 특정 방식으로 이름을 지정할 때 파일에 직접 액세스 할 수없는 경우가 있습니다. 심볼릭 링크를(symlinks) 통해 간접적으로 파일에 액세스하면이 문제를 해결할 수 있습니다. 그러나, 일부 시스템에서는, 심볼릭 링크를(symlinks) 사용하는 것이 금지되거나 관리 권한이 필요할 수 있으므로 항상 유용한 해결책은 아닙니다. 직접 액세스 할 수없는 경우, 이 지시자는 phpMussel이 심볼릭 링크를(symlinks) 사용하여 파일에 간접적으로 액세스해야하는지 여부를 결정합니다. True = 심볼릭 링크 사용; False = 심볼릭 링크 비활성화 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_cleanup'] = '처음 업로드 후 변수 및 캐시 설정을 클리어 여부에 대한 스크립트입니다. <code>false</code> (가짜) = 아니오;<code>true</code> (진정한) = 예 (Default / 기본 설정). 처음 업로드 스캐닝 이외로 사용할 수 없으면,<code>true</code> (참)로 메모리 사용량을 최소화합니다. 사용하는 경우,<code>false</code> (가짜)으로 메모리에 불필요한 중복 데이터를 다시로드하는 것을 방지합니다. 일반적으로<code>true</code> (진정한). 로 설정하고 있지만, 처음 업로드 스캐닝에 대해서만 사용할 수 없음을 기억하십시오. CLI 모드에서 영향을주지 않습니다.';
 $phpMussel['lang']['config_general_default_algo'] = '향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다).';
@@ -76,9 +88,9 @@ $phpMussel['lang']['config_general_quarantine_max_files'] = '격리에 존재할
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '격리 된 파일 크기 제한. 이 값보다 큰 파일은 격리되지 않습니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 기본값은 2MB입니다.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '검역을 위해 사용할 최대 메모리 량. 전체 메모리 양이 사용되면이 범위에 맞게 오래된 파일이 삭제 대상이됩니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 기본 설정은 64MB입니다.';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMussel는 스캐닝 결과를 얼마 동안 캐시해야합니까? 초이며, 기본값은 21,600 초 (6 시간)로되어 있습니다. 0으로 설정하면 캐시 비활성화됩니다.';
-$phpMussel['lang']['config_general_scan_kills'] = '차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
-$phpMussel['lang']['config_general_scan_log'] = '전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
-$phpMussel['lang']['config_general_scan_log_serialized'] = '전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름 지정하거나, 해제하려면 비워하십시오.';
+$phpMussel['lang']['config_general_scan_kills'] = '차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$phpMussel['lang']['config_general_scan_log'] = '전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$phpMussel['lang']['config_general_scan_log_serialized'] = '전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
 $phpMussel['lang']['config_general_statistics'] = 'phpMussel 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMussel에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
 $phpMussel['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';

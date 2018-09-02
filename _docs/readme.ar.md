@@ -668,7 +668,7 @@
  </ul>
 </ul></div>
 
-##### <div dir="rtl">"check_archives"<br /></div>
+##### <div dir="rtl">"check_archives" – غير متاح مؤقتا<br /></div>
 <div dir="rtl"><ul>
  <li>محاولة للتحقق من محتويات المحفوظات؟ = كاذبة لا تحقق. صحيح/True = افحص [افتراضي].</li>
  <li>في الوقت الراهن، يتم اعتماد فحص فقط من BZ/BZIP2، GZ/GZIP، LZF، PHAR، TAR و ZIP (فحص من RAR، CAB، 7Z وإلى آخره غير معتمدة حاليا).</li>
@@ -894,47 +894,73 @@
  <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير.</li>
 </ul></div>
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### <div dir="rtl">"PHPMailer" (التصنيف)<br /></div>
+<div dir="rtl">تكوين PHPMailer.<br /><br /></div>
 
-##### "EventLog"
-- @todo@
+##### <div dir="rtl">"EventLog"<br /></div>
+<div dir="rtl"><ul>
+ <li>ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
+</ul></div>
 
-##### "SkipAuthProcess"
-- @todo@
+##### <div dir="rtl">"SkipAuthProcess"<br /></div>
+<div dir="rtl"><ul>
+ <li>تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.</li>
+</ul></div>
 
-##### "Enable2FA"
-- @todo@
+##### <div dir="rtl">"Enable2FA"<br /></div>
+<div dir="rtl"><ul>
+ <li>يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا.</li>
+</ul></div>
 
-##### "Host"
-- @todo@
+##### <div dir="rtl">"Host"<br /></div>
+<div dir="rtl"><ul>
+ <li>مضيف SMTP الذي يستخدم للبريد الإلكتروني الصادر.</li>
+</ul></div>
 
-##### "Port"
-- @todo@
+##### <div dir="rtl">"Port"<br /></div>
+<div dir="rtl"><ul>
+ <li>رقم المنفذ المراد استخدامه للبريد الإلكتروني الصادر. افتراضي = 587.</li>
+</ul></div>
 
-##### "SMTPSecure"
-- @todo@
+##### <div dir="rtl">"SMTPSecure"<br /></div>
+<div dir="rtl"><ul>
+ <li>البروتوكول المستخدم عند إرسال البريد الإلكتروني عبر SMTP (TLS أو SSL).</li>
+</ul></div>
 
-##### "SMTPAuth"
-- @todo@
+##### <div dir="rtl">"SMTPAuth"<br /></div>
+<div dir="rtl"><ul>
+ <li>يحدد هذا التوجيه ما إذا كنت تريد مصادقة جلسات SMTP (يجب ألا يغير هذا عادة).</li>
+</ul></div>
 
-##### "Username"
-- @todo@
+##### <div dir="rtl">"Username"<br /></div>
+<div dir="rtl"><ul>
+ <li>اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
-##### "Password"
-- @todo@
+##### <div dir="rtl">"Password"<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور لاستخدامها عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
-##### "setFromAddress"
-- @todo@
+##### <div dir="rtl">"setFromAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>عنوان المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
-##### "setFromName"
-- @todo@
+##### <div dir="rtl">"setFromName"<br /></div>
+<div dir="rtl"><ul>
+ <li>اسم المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
-##### "addReplyToAddress"
-- @todo@
+##### <div dir="rtl">"addReplyToAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
-##### "addReplyToName"
-- @todo@
+##### <div dir="rtl">"addReplyToName"<br /></div>
+<div dir="rtl"><ul>
+ <li>اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
 
 ---
 
@@ -1506,4 +1532,4 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 ---
 
 
-<div dir="rtl">آخر تحديث: 31 يوليو 2018 (2018.07.31).</div>
+<div dir="rtl">آخر تحديث: 2 سبتمبر 2018 (2018.09.02).</div>

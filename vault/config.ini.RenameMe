@@ -570,3 +570,51 @@ Magnification=1
 css_url=''
 
 
+[PHPMailer]
+
+; A file for logging all events in relation to PHPMailer. Specify a filename,
+; or leave blank to disable.
+EventLog=''
+
+; Setting this directive to `true` instructs PHPMailer to skip the normal
+; authentication process that normally occurs when sending email via SMTP. This
+; should be avoided, because skipping this process may expose outbound email to
+; MITM attacks, but may be necessary in cases where this process prevents
+; PHPMailer from connecting to an SMTP server.
+SkipAuthProcess=false
+
+; This directive determines whether to use 2FA for front-end accounts.
+Enable2FA=false
+
+; The SMTP host to use for outbound email.
+Host=''
+
+; The port number to use for outbound email. Default = 587.
+Port=587
+
+; The protocol to use when sending email via SMTP (TLS or SSL).
+SMTPSecure='-'
+
+; This directive determines whether to authenticate SMTP sessions (should
+; usually be left alone).
+SMTPAuth=true
+
+; The username to use when sending email via SMTP.
+Username=''
+
+; The password to use when sending email via SMTP.
+Password=''
+
+; The sender address to cite when sending email via SMTP.
+setFromAddress=''
+
+; The sender name to cite when sending email via SMTP.
+setFromName=''
+
+; The reply address to cite when sending email via SMTP.
+addReplyToAddress=''
+
+; The reply name to cite when sending email via SMTP.
+addReplyToName=''
+
+

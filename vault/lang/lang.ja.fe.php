@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.13).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = '電子Ｅメールの�
 $phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'これらのコンフィギュレーション・ディレクティブは、電子Ｅメールを送信する機能に必要な場合があります。​詳細および推奨値については、ドキュメントを参照してください。';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
+$phpMussel['lang']['config_PHPMailer_Host'] = '送信Ｅメールに使用するＳＭＴＰホスト。';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するパスワード。';
+$phpMussel['lang']['config_PHPMailer_Port'] = '送信Ｅメールに使用するポート番号。​Default/デフォルルト = 587。';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'このディレクティブは、ＳＭＴＰセッションを認証するかどうかを決定します（通常はそれをそのまま残すべきです）。';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するプロトコル（ＴＬＳまたはＳＳＬ）。';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'このディレクティブを<code>true</code>に設定すると、PHPMailerはSMTP経由で電子Ｅメールを送信する際に通常発生する認証プロセスをスキップします。​このプロセスをスキップすると、送信ＥメールがＭＩＴＭ攻撃にさらされる可能性があるため、これは避けるべきです。​しかし、PHPMailerがSMTPサーバに接続できない場合、このプロセスが必要な場合があります。';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するユーザー名。';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者アドレス。';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者名。';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'ファイル名に先頭と末尾のドットを使用できますか？​これは、ファイルを隠すためや、ディレクトリ・トラバーサルを許可するようにシステムを騙すために使用されることがあります。​<code>false</code>（偽）=許可しない（Default/デフォルト）。<code>true</code>（真）=許可します。';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​<code>false</code>（偽） = ブロックしない（Default/デフォルト）；​<code>true</code>（真） = ブロックする。';

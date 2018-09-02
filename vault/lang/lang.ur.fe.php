@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.13).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'یہ کسی بھی فع
 $phpMussel['lang']['Extended Description: phpMussel'] = 'مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?phpmussel-page=logout">لاگ آوٹ</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">لاگ آوٹ</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'ان ترتیبات کے ہدایات کی ضرورت ہوسکتی ہے جو ای میل بھیجنے میں شامل ہیں. مزید معلومات اور سفارش کردہ اقدار کیلئے دستاویزات کا حوالہ دیتے ہیں.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے SMTP میزبان.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'ای میل بھیجنے کے لئے پاس ورڈ.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے پورٹ نمبر. پہلے سے طے شدہ = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'کیا SMTP سیشن کو مستند کیا جاسکتا ہے؟ (عام طور پر اس کو نظر انداز کرنا چاہئے).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'ای میل بھیجنے پر پروٹوکول استعمال کرنے کے لئے (TLS یا SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'جب <code dir="ltr">true</code>، SMTP کی تصدیق کے عمل کو چھوڑ دیا گیا ہے. اس سے بچنا چاہئے. اگر عمل ختم ہو جاتا ہے تو، آؤٹ باؤنڈ ای میل MITM حملوں سے بے نقاب ہوسکتا ہے. مخصوص معاملات میں ضروری ہوسکتا ہے (مثال کے طور پر، جب SMTP سرور مناسب طریقے سے منسلک نہیں کرے گا).';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'ای میل بھیجنے کے لئے صارف کا نام.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'ای میل بھیجنے پر جواب کا پتہ.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'ای میل بھیجنے پر جواب کا نام.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'ای میل بھیجنے کے لئے بھیجنے والے کا پتہ.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'ای میل بھیجنے کے لئے بھیجنے کا نام.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'فائلوں کے آغاز اور اختتام پر نقطہ نظر کی اجازت دیں؟ یہ کبھی کبھی استعمال کرنے کے لئے فائلوں کو چھپانے کے لئے، یا کچھ نظام کو ڈائل کرنے کے لئے استعمال کیا جا سکتا ہے ڈائرکٹری کے تبادلوں کی اجازت دیتا ہے. False (جھوٹی) = اجازت نہ دیں [پہلے سے طے شدہ]؛ True (سچے) = اجازت دیں.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'تسلیم شدہ آرکائیو فائل ایکسٹنشن (شکل CSV ہے، صرف شامل کرنے یا ہٹانے چاہئے مسائل پائے جاتے ہیں جب، غیر ضروری طور پر ہٹانے کے جھوٹے مثبت غیر ضروری طور پر انہوں نے مزید کہا جبکہ آپ کو حملے کی مخصوص پتہ لگانے سے شامل کر رہے ہیں کیا بنیادی طور پر وائٹ لسٹ گے، ذخیرہ فائلوں کے لئے ظاہر کرنے کے لئے کی وجہ سے ہو سکتا ہے، احتیاط کے ساتھ نظر ثانیw یہ بھی نوٹ کریں کہ اس تاریخی دستاویز اور مواد کی سطح پر تجزیہ نہیں کیا جا سکتا کر سکتے ہیں پر کوئی اثر) ہے. فہرست، ڈیفالٹ میں ہے کے طور پر، نظام اور CMS کی اکثریت کے اس پار سب سے زیادہ عام طور پر استعمال والوں فارمیٹس کی فہرست، لیکن جان بوجھ ضروری جامع نہیں ہے.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = '(نیولائنز علاوہ) کسی بھی کنٹرول حروف پر مشتمل کسی بھی فائلوں کو مسدود کریں؟ (<code dir="ltr">[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) اگر تم ہو صرف سادہ ٹیکسٹ اپ لوڈ کرنے، اس کے بعد آپ کے سسٹم کے لئے کچھ اضافی تحفظ فراہم کرنے پر آپ اس اختیار کو تبدیل کر سکتے ہیں. تاہم، اگر آپ کو سادہ متن کے علاوہ اور کچھ پر اس رخ جھوٹے مثبت نتیجے میں اپ لوڈ کریں. False (جھوٹی) = مسدود نہ کریں [پہلے سے طے شدہ]؛ True (سچے) = بلاک.';

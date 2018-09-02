@@ -412,23 +412,18 @@ Config Defaults:
   EventLog:
    type: string
    default: ""
-   experimental: true
   SkipAuthProcess:
    type: bool
    default: false
-   experimental: true
   Enable2FA:
    type: bool
    default: false
-   experimental: true
   Host:
    type: string
    default: ""
-   experimental: true
   Port:
    type: int
    default: 587
-   experimental: true
   SMTPSecure:
    type: string
    default: "default"
@@ -436,33 +431,25 @@ Config Defaults:
     default: "-"
     tls: "TLS"
     ssl: "SSL"
-   experimental: true
   SMTPAuth:
    type: bool
    default: true
-   experimental: true
   Username:
    type: string
    default: ""
-   experimental: true
   Password:
    type: string
    default: ""
-   experimental: true
   setFromAddress:
    type: string
    default: ""
-   experimental: true
   setFromName:
    type: string
    default: ""
-   experimental: true
   addReplyToAddress:
    type: string
    default: ""
-   experimental: true
   addReplyToName:
    type: string
    default: ""
-   experimental: true
 

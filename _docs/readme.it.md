@@ -741,34 +741,34 @@ Configurazione PHPMailer.
 - Questa direttiva determina se utilizzare 2FA per gli account front-end.
 
 ##### "Host"
-- L'host SMTP da utilizzare per la posta elettronica in uscita.
+- L'host SMTP per utilizzare per la posta elettronica in uscita.
 
 ##### "Port"
-- Il numero di porta da utilizzare per la posta elettronica in uscita. Predefinito = 587.
+- Il numero di porta per utilizzare per la posta elettronica in uscita. Predefinito = 587.
 
 ##### "SMTPSecure"
-- Il protocollo da utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL).
+- Il protocollo per utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL).
 
 ##### "SMTPAuth"
 - Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo).
 
 ##### "Username"
-- @todo@
+- Il nome utente per utilizzare per l'invio di posta elettronica tramite SMTP.
 
 ##### "Password"
-- @todo@
+- La password per utilizzare per l'invio di posta elettronica tramite SMTP.
 
 ##### "setFromAddress"
-- @todo@
+- L'indirizzo del mittente per citare quando si invia una posta elettronica tramite SMTP.
 
 ##### "setFromName"
-- @todo@
+- Il nome del mittente per citare quando si invia una posta elettronica tramite SMTP.
 
 ##### "addReplyToAddress"
-- @todo@
+- L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP.
 
 ##### "addReplyToName"
-- @todo@
+- Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP.
 
 ---
 
@@ -1307,4 +1307,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 31 Luglio 2018 (2018.07.31).
+Ultimo Aggiornamento: 2 Settembre 2018 (2018.09.02).

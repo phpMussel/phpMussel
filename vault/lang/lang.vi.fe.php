@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.13).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Cần thiết để s�
 $phpMussel['lang']['Extended Description: phpMussel'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Trang chủ</a> | <a href="?phpmussel-page=logout">Đăng xuất</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Đăng xuất</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Các chỉ thị cấu hình này có thể được yêu cầu cho các chức năng liên quan đến việc gửi email. Vui lòng tham khảo tài liệu để biết thêm thông tin và các giá trị được đề xuất.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'Máy chủ SMTP để sử dụng cho email gửi đi.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'Mật khẩu để sử dụng khi gửi email qua SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'Số cổng để sử dụng cho email gửi đi. Mặc định = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Đặt chỉ thị này thành <code>true</code> chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'Tên người dùng để sử dụng khi gửi email qua SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'Tên trả lời để trích dẫn khi gửi email qua SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'Địa chỉ người gửi để trích dẫn khi gửi email qua SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'Tên người gửi để trích dẫn khi gửi email qua SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = 'Cho phép các dấu chấm đầu và cuối trong tên tập tin? Điều này đôi khi có thể được sử dụng để ẩn các tập tin hoặc để lừa một số hệ thống cho phép truyền traversal thư mục. False = Không cho phép [Mặc định]. True = Cho phép.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Chặn bất kỳ tập tin có chứa bất kỳ ký tự điều khiển (khác hơn so với dòng mới)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Nếu bạn <em><strong>CHỈ</strong></em> tải lên văn bản thô, thế thì bạn có thể kích hoạt tùy chọn này để cung cấp một số bảo vệ bổ sung để hệ thống của bạn. Tuy nhiên, nếu bạn tải lên bất cứ điều gì khác hơn văn bản thô, cho phép điều này có thể dẫn đến sai tích cực. False = Không chặn [Mặc định]; True = Chặn.';

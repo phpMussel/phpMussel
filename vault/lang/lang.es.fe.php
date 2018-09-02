@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.08.13).
+ * This file: Spanish language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,19 @@ $phpMussel['lang']['Extended Description: PHPMailer'] = 'Requerido para usar cua
 $phpMussel['lang']['Extended Description: phpMussel'] = 'El paquete principal (menos las firmas, la documentación, y la configuración).';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Cerrar Sesión</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Cerrar Sesión</a>';
-$phpMussel['lang']['config_PHPMailer'] = 'Estas directivas de configuración pueden ser necesarias para la funcionalidad que implica el envío de correo electrónico. Consulte la documentación para obtener más información y valores recomendados.';
+$phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'Esta directiva determina si se debe usar 2FA para las cuentas del front-end.';
+$phpMussel['lang']['config_PHPMailer_EventLog'] = 'Un archivo para registrar todos los eventos en relación con PHPMailer. Especificar el nombre del archivo, o dejar en blanco para desactivar.';
+$phpMussel['lang']['config_PHPMailer_Host'] = 'El host SMTP para usar para el correo electrónico saliente.';
+$phpMussel['lang']['config_PHPMailer_Password'] = 'La contraseña a usar cuando se envía un correo electrónico a través de SMTP.';
+$phpMussel['lang']['config_PHPMailer_Port'] = 'El número de puerto a usar para el correo electrónico saliente. Predefinido = 587.';
+$phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'Esta directiva determina si autenticar sesiones SMTP (generalmente debería dejarse solo).';
+$phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'El protocolo a usar cuando se envía un correo electrónico a través de SMTP (TLS o SSL).';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'Establecer esta directiva en <code>true</code> indica a PHPMailer que omita el proceso de autenticación normal que normalmente se produce cuando se envía un correo electrónico a través de SMTP. Esto debe evitarse, ya que omitir este proceso puede exponer el correo electrónico saliente a ataques MITM, pero puede ser necesario en los casos en que este proceso impida que PHPMailer se conecte a un servidor SMTP.';
+$phpMussel['lang']['config_PHPMailer_Username'] = 'El nombre de usuario a usar cuando se envía un correo electrónico a través de SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP.';
+$phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'El nombre de la respuesta para citar cuando se envía un correo electrónico a través de SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromAddress'] = 'La dirección del remitente para citar cuando se envía un correo electrónico a través de SMTP.';
+$phpMussel['lang']['config_PHPMailer_setFromName'] = 'El nombre del remitente para citar cuando se envía un correo electrónico a través de SMTP.';
 $phpMussel['lang']['config_attack_specific_allow_leading_trailing_dots'] = '¿Permitir puntos iniciales y finales en los nombres de archivo? A veces, esto se puede utilizar para ocultar archivos, o para engañar a algunos sistemas para que permitan el atravesar del directorio. False = No permitir [Predefinido]. True = Permitir.';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.';
 $phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear.';

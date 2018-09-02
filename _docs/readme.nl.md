@@ -747,28 +747,28 @@ PHPMailer-configuratie.
 - Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587.
 
 ##### "SMTPSecure"
-- Het protocol dat moet worden gebruikt bij het verzenden van e-mail via SMTP (TLS of SSL).
+- Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL).
 
 ##### "SMTPAuth"
 - Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten).
 
 ##### "Username"
-- @todo@
+- De gebruikersnaam voor het verzenden van e-mail via SMTP.
 
 ##### "Password"
-- @todo@
+- Het wachtwoord voor het verzenden van e-mail via SMTP.
 
 ##### "setFromAddress"
-- @todo@
+- Het afzenderadres voor het verzenden van e-mail via SMTP.
 
 ##### "setFromName"
-- @todo@
+- De naam van de afzender voor het verzenden van e-mail via SMTP.
 
 ##### "addReplyToAddress"
-- @todo@
+- Het antwoordadres voor het verzenden van e-mail via SMTP.
 
 ##### "addReplyToName"
-- @todo@
+- De antwoordnaam voor het verzenden van e-mail via SMTP.
 
 ---
 
@@ -1310,4 +1310,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 31 Juli 2018 (2018.07.31).
+Laatste Bijgewerkt: 2 September 2018 (2018.09.02).
