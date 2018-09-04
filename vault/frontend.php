@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.25).
+ * This file: Front-end handler (last modified: 2018.09.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -371,6 +371,8 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                             $phpMussel['FE']['UserState'] = 1;
                         }
 
+                    } else {
+                        $phpMussel['FE']['UserState'] = 1;
                     }
                     if ($phpMussel['FE']['UserState'] !== 1) {
                         $phpMussel['FE']['Permissions'] = 0;
