@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.08.24).
+ * This file: Functions file (last modified: 2018.09.12).
  */
 
 /**
@@ -4916,7 +4916,7 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
     } elseif ($Type === 'int' || $Type === 'integer') {
         $Var = (int)$Var;
     } elseif ($Type === 'real' || $Type === 'double' || $Type === 'float') {
-        $Var = (real)$Var;
+        $Var = (float)$Var;
     } elseif ($Type === 'bool' || $Type === 'boolean') {
         $Var = (strtolower($Var) !== 'false' && $Var);
     } elseif ($Type === 'kb') {
@@ -5137,7 +5137,7 @@ $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
         $Unit = substr($In, -1);
     }
     $Unit = isset($Unit) ? strtoupper($Unit) : 'K';
-    $In = (real)$In;
+    $In = (float)$In;
     if ($Mode === 1) {
         return $Unit === 'B' || $Unit === 'o' ? $In . 'B' : $In . $Unit . 'B';
     }

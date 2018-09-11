@@ -25,6 +25,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   for improved front-end security (documentation explaining how to use this
   properly will be available in the near future).
 
+- [2018.09.12; Sub-minor code change; Maikuolan]: Replaced some real typecasts
+  with float due to the anticipated deprecation of the real type for PHP 7.4.
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 
