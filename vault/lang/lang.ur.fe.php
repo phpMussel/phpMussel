@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.02).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'اس بات کا �
 $phpMussel['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
 $phpMussel['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $phpMussel['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
+$phpMussel['lang']['security_warning'] = 'آپ کی درخواست پر عمل کرتے ہوئے ایک غیر متوقع مسئلہ پیش آیا. دوبارہ کوشش کریں. اگر مسائل جاری رہیں تو، معاون سے رابطہ کریں.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'دستخط CVE سے نمٹنے کے.';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'دستخط جو "chameleon حملوں" سے نمٹنے کے لئے ہے.';
 $phpMussel['lang']['siginfo_key_FN'] = 'دستخط جن فائل نام کے ساتھ کام کرتے ہیں (فائل کا مواد کے بجائے).';

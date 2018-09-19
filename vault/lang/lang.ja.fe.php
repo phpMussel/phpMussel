@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.02).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '決定すること
 $phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $phpMussel['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $phpMussel['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
+$phpMussel['lang']['security_warning'] = '要求の処理中に予期しない問題が発生しました。もう一度お試しください。問題が解決しない場合は、サポートに連絡してください。';
 $phpMussel['lang']['siginfo_key_CVE'] = 'ＣＶＥを扱うシグネチャ。';
 $phpMussel['lang']['siginfo_key_Chameleon'] = '「カメレオンの攻撃」を扱うシグネチャ。';
 $phpMussel['lang']['siginfo_key_FN'] = 'ファイル名を扱うシグネチャ（ファイルの内容ではなく）。';

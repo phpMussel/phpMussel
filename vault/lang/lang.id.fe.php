@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.02).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menent
 $phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
 $phpMussel['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
+$phpMussel['lang']['security_warning'] = 'Masalah yang tidak diharapkan terjadi saat memproses permintaan Anda. Silahkan coba lagi. Jika masalah terus berlanjut, hubungi dukungan.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Tanda tangan yang berhubungan dengan CVE (Kerentanan dan Eksposur Umum).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Tanda tangan yang berhubungan dengan "serangan bunglon".';
 $phpMussel['lang']['siginfo_key_FN'] = 'Tanda tangan yang bekerja dengan nama file (sebagai lawan isi file).';

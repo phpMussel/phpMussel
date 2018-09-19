@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.09.02).
+ * This file: Russian language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Невозможн
 $phpMussel['lang']['response_upload_error'] = 'Не удалось загрузить!';
 $phpMussel['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
 $phpMussel['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
+$phpMussel['lang']['security_warning'] = 'При обработке запроса возникла непредвиденная проблема. Пожалуйста, попробуйте еще раз. Если проблемы сохраняются, обратитесь в службу поддержки.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Сигнатуры, которые касаются CVE (Общие Уязвимости и Риски).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Сигнатуры, которые касаются «хамелеонных атак».';
 $phpMussel['lang']['siginfo_key_FN'] = 'Сигнатуры, работающие с именами файлов (в отличие от содержимого файлов).';

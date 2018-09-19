@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.09.02).
+ * This file: Thai language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'ไม่สาม
 $phpMussel['lang']['response_upload_error'] = 'ล้มเหลวอัปโหลด!';
 $phpMussel['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
 $phpMussel['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
+$phpMussel['lang']['security_warning'] = 'เกิดปัญหาที่ไม่คาดคิดขณะประมวลผลคำขอของคุณ. กรุณาลองอีกครั้ง. หากปัญหายังคงมีอยู่โปรดติดต่อฝ่ายสนับสนุน.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'ลายเซ็นที่จัดการกับ CVE.';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'ลายเซ็นที่จัดการกับ "กิ้งก่าโจมตี".';
 $phpMussel['lang']['siginfo_key_FN'] = 'ลายเซ็นทำงานกับชื่อไฟล์ (ไม่ใช่เนื้อหาในไฟล์).';

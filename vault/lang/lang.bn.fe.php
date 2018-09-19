@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.09.02).
+ * This file: Bangla language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'নির্ধা
 $phpMussel['lang']['response_upload_error'] = 'আপলোড করতে ব্যর্থ!';
 $phpMussel['lang']['response_verification_failed'] = 'যাচাইয়ের ব্যর্থ! কম্পোনেন্ট ভাঙ্গা হতে পারে।';
 $phpMussel['lang']['response_verification_success'] = 'যাচাইয়ের সাফল্য! কোন সমস্যা খুঁজে পাওয়া যায় নি।';
+$phpMussel['lang']['security_warning'] = 'আপনার অনুরোধ প্রক্রিয়াকরণের সময় একটি অপ্রত্যাশিত সমস্যা ঘটেছে। অনুগ্রহপূর্বক আবার চেষ্টা করুন। সমস্যা থাকলেও, সমর্থন যোগাযোগ করুন।';
 $phpMussel['lang']['siginfo_key_CVE'] = 'স্বাক্ষর যে CVEগুলি (প্রচলিত দুর্বলতা এবং এক্সপোজারস) সঙ্গে মোকাবিলা।';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'স্বাক্ষরগুলি "chameleon হামলার" মোকাবেলা করে।';
 $phpMussel['lang']['siginfo_key_FN'] = 'স্বাক্ষর ফাইলের নামগুলির (ফাইলের বিষয়বস্তু বিরোধিতা হিসাবে) সাথে কাজ করে।';

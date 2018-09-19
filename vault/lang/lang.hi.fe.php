@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.09.02).
+ * This file: Hindi language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'निर्धा
 $phpMussel['lang']['response_upload_error'] = 'अपलोड करने में विफल!';
 $phpMussel['lang']['response_verification_failed'] = 'सत्यापन असफल! घटक भ्रष्ट हो सकता है।';
 $phpMussel['lang']['response_verification_success'] = 'सत्यापन सफलता! कोई समस्या नहीं मिली।';
+$phpMussel['lang']['security_warning'] = 'आपके अनुरोध को संसाधित करते समय एक अनपेक्षित समस्या आई। कृपया पुन: प्रयास करें। यदि समस्या बनी रहती है, तो समर्थन से संपर्क करें।';
 $phpMussel['lang']['siginfo_key_CVE'] = 'हस्ताक्षर जो CVE (सामान्य भेद्यता और एक्सपोजर) से निपटते हैं।';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'हस्ताक्षर जो "गिरगिट हमलों" से निपटते हैं।';
 $phpMussel['lang']['siginfo_key_FN'] = 'हस्ताक्षर जो फ़ाइल नामों के साथ काम करते हैं (फ़ाइल सामग्री के विपरीत)।';

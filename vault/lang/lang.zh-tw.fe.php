@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.02).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '無法確定。';
 $phpMussel['lang']['response_upload_error'] = '無法上傳！';
 $phpMussel['lang']['response_verification_failed'] = '驗證失敗！組件可能已損壞。';
 $phpMussel['lang']['response_verification_success'] = '驗證成功！沒有發現問題。';
+$phpMussel['lang']['security_warning'] = '處理您的請求時出現意外問題。請再試一次。如果問題仍然存在，請聯繫技術支持。';
 $phpMussel['lang']['siginfo_key_CVE'] = '處理CVE（常見漏洞和暴露）的簽名。';
 $phpMussel['lang']['siginfo_key_Chameleon'] = '處理『變色龍攻擊』的簽名。';
 $phpMussel['lang']['siginfo_key_FN'] = '處理文件名的簽名（與文件內容相反）。';

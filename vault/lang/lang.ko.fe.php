@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.02).
+ * This file: Korean language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = '결정 수 없습�
 $phpMussel['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $phpMussel['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $phpMussel['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
+$phpMussel['lang']['security_warning'] = '요청을 처리하는 중에 예기치 않은 문제가 발생했습니다. 다시 시도하십시오. 문제가 지속되면 지원 부서에 문의하십시오.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'CVE를 다루는 서명.';
 $phpMussel['lang']['siginfo_key_Chameleon'] = '"카멜레온 공격"을 다루는 서명.';
 $phpMussel['lang']['siginfo_key_FN'] = '파일 이름을 사용하는 서명 (파일 내용이 아닌).';

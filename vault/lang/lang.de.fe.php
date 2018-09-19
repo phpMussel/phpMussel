@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.09.02).
+ * This file: German language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermitte
 $phpMussel['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $phpMussel['lang']['response_verification_failed'] = 'Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein.';
 $phpMussel['lang']['response_verification_success'] = 'Verifizierung war Erfolg! Keine Probleme gefunden.';
+$phpMussel['lang']['security_warning'] = 'Bei der Verarbeitung Ihrer Anfrage ist ein unerwartetes Problem aufgetreten. Bitte versuche es erneut. Wenn dieses Problem weiterhin besteht, kontaktieren Sie Support.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Signaturen, die sich mit CVEs (Häufige Schwachstellen und Gefährdungen) befassen.';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Signaturen, die sich mit "Chamäleon-Attacken" befassen.';
 $phpMussel['lang']['siginfo_key_FN'] = 'Signaturen, die mit Dateinamen arbeiten (im Gegensatz zu Dateiinhalten).';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.05).
+ * This file: Front-end handler (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -239,14 +239,28 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'favicon') {
 /** Set form target if not already set. */
 $phpMussel['FE']['FormTarget'] = empty($_POST['phpmussel-form-target']) ? '' : $_POST['phpmussel-form-target'];
 
-/** Fetch user list, sessions list and the front-end cache. */
-if (file_exists($phpMussel['Vault'] . 'fe_assets/frontend.dat')) {
-    $phpMussel['FE']['FrontEndData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.dat');
+/** Used by a safety mechanism against a potential attack vector. */
+$phpMussel['frontend.dat.safety'] = file_exists($phpMussel['Vault'] . 'fe_assets/frontend.dat.safety');
+
+/** Fetch user list, sessions list, and the front-end cache, or rebuild it if it doesn't exist. */
+if ($phpMussel['FE']['FrontEndData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.dat')) {
     $phpMussel['FE']['Rebuild'] = false;
 } else {
+    if ($phpMussel['frontend.dat.safety']) {
+        header('Content-Type: text/plain');
+        die('[phpMussel] ' . $phpMussel['lang']['security_warning']);
+    }
     $phpMussel['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $phpMussel['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n\nCACHE\n-----\n";
     $phpMussel['FE']['Rebuild'] = true;
 }
+
+/** Engage safety mechanism. */
+if (!$phpMussel['frontend.dat.safety']) {
+    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat.safety', 'w');
+    fwrite($phpMussel['Handle'], '.');
+    fclose($phpMussel['Handle']);
+}
+
 $phpMussel['FE']['UserListPos'] = strpos($phpMussel['FE']['FrontEndData'], "USERS\n-----\n");
 $phpMussel['FE']['SessionListPos'] = strpos($phpMussel['FE']['FrontEndData'], "SESSIONS\n--------\n");
 $phpMussel['FE']['CachePos'] = strpos($phpMussel['FE']['FrontEndData'], "CACHE\n-----\n");

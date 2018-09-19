@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.09.02).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $phpMussel['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $phpMussel['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
+$phpMussel['lang']['security_warning'] = 'Er is een onverwacht probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw. Neem contact op met support als het probleem aanhoudt.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Signatures die te maken hebben met CVE\'s (Algemene Kwetsbaarheden en Blootstellingen).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Signatures die te maken hebben met "kameleonaanvallen".';
 $phpMussel['lang']['siginfo_key_FN'] = 'Signatures die werken met bestandsnamen (in tegenstelling tot bestandsinhoud).';

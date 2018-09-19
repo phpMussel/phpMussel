@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.09.02).
+ * This file: Spanish language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapaz de determi
 $phpMussel['lang']['response_upload_error'] = '¡No se pudo subir!';
 $phpMussel['lang']['response_verification_failed'] = '¡No se pudo verificar! Componente podría estar dañado.';
 $phpMussel['lang']['response_verification_success'] = '¡Verificado con éxito! No se encontraron problemas.';
+$phpMussel['lang']['security_warning'] = 'Se produjo un problema inesperado al procesar su solicitud. Por favor, inténtalo de nuevo. Si este problema persiste, contáctese con soporte.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Firmas que se ocupan de las CVE (Vulnerabilidades y Exposiciones Comunes).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Firmas que se ocupan de "ataques de camaleón".';
 $phpMussel['lang']['siginfo_key_FN'] = 'Firmas que trabajan con nombres de archivos (a diferencia de los contenidos de archivos).';

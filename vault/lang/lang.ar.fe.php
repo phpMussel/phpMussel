@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.02).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر ع
 $phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
 $phpMussel['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $phpMussel['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
+$phpMussel['lang']['security_warning'] = 'حدثت مشكلة غير متوقعة أثناء معالجة طلبك. حاول مرة اخرى. إذا استمرت المشاكل، فاتصل بالدعم.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'التوقيعات التي تتعامل مع CVE (نقاط الضعف والتعرض الشائعة).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'التوقيعات التي تتعامل مع "هجمات الحرباء".';
 $phpMussel['lang']['siginfo_key_FN'] = 'التوقيعات تعمل مع أسماء الملفات (على عكس محتويات الملف).';

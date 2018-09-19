@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.02).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác 
 $phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $phpMussel['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
+$phpMussel['lang']['security_warning'] = 'Đã xảy ra sự cố khi xử lý yêu cầu của bạn. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, hãy liên hệ với hỗ trợ.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'Chữ ký để xử lý CVE (lỗ hổng và tiếp xúc thường gặp).';
 $phpMussel['lang']['siginfo_key_Chameleon'] = 'Chữ ký để xử lý "cuộc tấn công tắc kè hoa".';
 $phpMussel['lang']['siginfo_key_FN'] = 'Chữ ký để làm việc với tên tập tin (trái ngược với nội dung tập tin).';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.02).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,6 +288,7 @@ $phpMussel['lang']['response_updates_unable_to_determine'] = 'Belirlenemedi.';
 $phpMussel['lang']['response_upload_error'] = 'Yüklenemedi!';
 $phpMussel['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
 $phpMussel['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
+$phpMussel['lang']['security_warning'] = 'İsteğiniz işlenirken beklenmeyen bir sorun oluştu. Lütfen tekrar deneyin. Sorun devam ederse, desteğe başvurun.';
 $phpMussel['lang']['siginfo_key_CVE'] = 'CVE\'lerle (Ortak Güvenlik Açıkları ve Etkilenmeler) ilgilenen imzalar.';
 $phpMussel['lang']['siginfo_key_Chameleon'] = '"Bukalemun saldırıları" ile ilgilenen imzalar.';
 $phpMussel['lang']['siginfo_key_FN'] = 'Dosya isimleriyle çalışan imzalar (dosya içeriğinin aksine).';
