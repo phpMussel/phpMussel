@@ -1,21 +1,24 @@
 <table>
 <tr>
-    <td class="nav big">
-{nav}    </td>
-    <td class="right extend">
-        <div class="s">{state_msg}</div>
-        <table>
-            <form action="?{FMgrFormTarget}" method="POST">
-            <input type="hidden" name="filename" value="{filename}" /><input type="hidden" name="do" value="edit-file" />
-            <tr>
-                <td class="ng2"><div class="s">{link_file_manager} – {filename}</div></td>
-            </tr>
-            <tr>
-                <td class="ng1"><textarea name="content">{content}</textarea></td>
-            </tr>
-            <tr><td class="ng1"><div class="bNav"><input type="submit" value="{field_edit_file}" /> <input type="reset" value="{field_reset}" /></div></td></tr>
-            </form>
-        </table>
-    </td>
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    <div class="s">{state_msg}</div>
+    <table>
+      <form action="?{FMgrFormTarget}" method="POST">
+        <input type="hidden" name="filename" value="{filename}" />
+        <input type="hidden" name="do" value="edit-file" />
+        <tr>
+          <td class="ng2"><div class="s">{link_file_manager} – {filename}</div></td>
+        </tr>
+        <tr>
+          <td class="ng1"><textarea name="content">{content}</textarea></td>
+        </tr>
+        <tr>
+          <td class="ng1"><div class="bNav"><input type="submit" value="{field_edit_file}" /> <input type="reset" value="{field_reset}" /></div></td>
+        </tr>
+      </form>
+    </table>
+  </td>
 </tr>
 </table>
