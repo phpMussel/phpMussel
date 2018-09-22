@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.13).
+ * This file: Front-end functions file (last modified: 2018.09.22).
  */
 
 /**
@@ -1793,7 +1793,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
     foreach ($Subs as $Sub) {
         $Label = isset($phpMussel['lang']['siginfo_sub_' . $Sub]) ? $phpMussel['lang']['siginfo_sub_' . $Sub] : $Sub;
         $Class = 'sigtype_' . strtolower($Sub);
-        $phpMussel['FE']['infoCatOptions'] .= "\n            <option value=\"" . $Class . '">' . $Label . '</option>';
+        $phpMussel['FE']['infoCatOptions'] .= "\n      <option value=\"" . $Class . '">' . $Label . '</option>';
         $ThisTable = '<span style="display:none" class="' . $Class . '"><table><tr><td class="center h4f" colspan="2"><span class="s">' . $Label . '</span></td></tr>' . "\n";
         arsort($Totals[$Sub]);
         foreach ($Totals[$Sub] as $Key => &$Total) {

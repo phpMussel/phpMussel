@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.21).
+ * This file: Front-end handler (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2692,7 +2692,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
     /** Define logfile list. */
     array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel) {
         $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
-            '            <a href="?phpmussel-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
+            '      <a href="?phpmussel-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
             $Arr['Filename'],
             $Arr['Filesize'],
             $phpMussel['FE']['TextModeLinks']

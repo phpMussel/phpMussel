@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.08.10).
+ * This file: Upload handler (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -381,8 +381,12 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 'Begin' => strpos($phpMussel['HTML'], '<!-- WebFont Begin -->'),
                 'End' => strpos($phpMussel['HTML'], '<!-- WebFont End -->')
             ];
-            $phpMussel['HTML'] =
-                substr($phpMussel['HTML'], 0, $phpMussel['WebFontPos']['Begin']) . substr($phpMussel['HTML'], $phpMussel['WebFontPos']['End'] + 20);
+            if ($phpMussel['WebFontPos']['Begin'] !== false && $phpMussel['WebFontPos']['End'] !== false) {
+                $phpMussel['HTML'] = (
+                    substr($phpMussel['HTML'], 0, $phpMussel['WebFontPos']['Begin']) .
+                    substr($phpMussel['HTML'], $phpMussel['WebFontPos']['End'] + 20)
+                );
+            }
             unset($phpMussel['WebFontPos']);
         }
 
