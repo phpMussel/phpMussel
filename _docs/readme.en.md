@@ -291,6 +291,7 @@ File | Description
 /vault/fe_assets/_upload_test.html | An HTML template for the upload test page.
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
 /vault/fe_assets/frontend.dat | Database for the front-end (contains account and session information; only generated if the front-end is enabled and used).
+/vault/fe_assets/frontend.dat.safety | Generated as a safety mechanism when needed.
 /vault/fe_assets/frontend.html | The main HTML template file for the front-end.
 /vault/fe_assets/icons.php | Icons handler (used by the front-end file manager).
 /vault/fe_assets/pips.php | Pips handler (used by the front-end file manager).
@@ -1312,4 +1313,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 2 September 2018 (2018.09.02).
+Last Updated: 19 September 2018 (2018.09.19).

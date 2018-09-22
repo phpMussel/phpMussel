@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.09.19).
+ * This file: English language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'Your PHP version is severely vulnerable! 
 $phpMussel['lang']['warning_signatures_1'] = 'No signature files are active!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Some useful links:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Hello, %1$s.<br />

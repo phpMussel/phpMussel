@@ -291,6 +291,7 @@ Fichier | Description
 /vault/fe_assets/_upload_test.html | Un modèle HTML pour les tests de téléchargement.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes et les sessions ; généré seulement si l'accès frontal est activé et utilisé).
+/vault/fe_assets/frontend.dat.safety | Généré comme un mécanisme de sécurité en cas de besoin.
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
 /vault/fe_assets/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/fe_assets/pips.php | Gestionnaire de pips (utilisé par le gestionnaire de fichiers de l'accès frontal).
@@ -1308,4 +1309,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 2 Septembre 2018 (2018.09.02).
+Dernière mise à jour : 19 Septembre 2018 (2018.09.19).

@@ -291,6 +291,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/fe_assets/_upload_test.html | アップロード・テスト・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/frontend.css | フロントエンドのＣＳＳスタイルシート。
 /vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報が含まれています；​フロントエンドが有効になっているときに作成）。
+/vault/fe_assets/frontend.dat.safety | 必要に応じて安全機構として生成されます。
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/fe_assets/icons.php | アイコン・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
 /vault/fe_assets/pips.php | ピップス・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
@@ -1309,4 +1310,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年9月2日。
+最終アップデート：2018年9月19日。

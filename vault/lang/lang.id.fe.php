@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.19).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'Versi PHP Anda sangat rentan! Memperbarui
 $phpMussel['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang aktif!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Komputer spesialis anti-malware.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Komputer spesialis anti-malware.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Salam, %1$s.<br />

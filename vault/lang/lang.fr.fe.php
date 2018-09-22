@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.09.19).
+ * This file: French language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulné
 $phpMussel['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compagnie de sécurité informatique qui offre des signatures supplémentaires pour ClamAV.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de données d\'hameçonnage utilisée par le scanner URL de phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – Ressources d\'apprentissage PHP et discussion.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal est un service gratuit pour analyser les fichiers et les URL qui sont suspects.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis est un service gratuit pour l\'analyse des logiciels malveillants fourni par <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Spécialistes en logiciels malveillants.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – Forum de discussion sur les logiciels malveillants.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Cartes de Vulnérabilité</a> – Liste des versions sûres/dangereuses de divers paquets (PHP, HHVM, etc).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Cartes de Compatibilité</a> – Liste des informations de compatibilité pour divers packages (CIDRAM, phpMussel, etc).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compagnie de sécurité informatique qui offre des signatures supplémentaires pour ClamAV.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – Base de données d\'hameçonnage utilisée par le scanner URL de phpMussel.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – Ressources d\'apprentissage PHP et discussion.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal est un service gratuit pour analyser les fichiers et les URL qui sont suspects.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis est un service gratuit pour l\'analyse des logiciels malveillants fourni par <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Spécialistes en logiciels malveillants.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – Forum de discussion sur les logiciels malveillants.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Cartes de Vulnérabilité</a> – Liste des versions sûres/dangereuses de divers paquets (PHP, HHVM, etc).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Cartes de Compatibilité</a> – Liste des informations de compatibilité pour divers packages (CIDRAM, phpMussel, etc).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Bonjour, %1$s.<br />

@@ -291,6 +291,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/_upload_test.html | 업로드 테스트 페이지의 HTML 템플릿.
 /vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
 /vault/fe_assets/frontend.dat | 프론트 엔드 데이터베이스 (계정 정보와 세션 정보 및 캐시가 포함되어 있습니다; 프론트 엔드가 활성화되어있을 때 생성).
+/vault/fe_assets/frontend.dat.safety | 필요한 경우 안전 메커니즘으로 생성됩니다.
 /vault/fe_assets/frontend.html | 프론트 엔드 메인 템플릿 파일.
 /vault/fe_assets/icons.php | 아이콘 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
@@ -1307,4 +1308,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 9월 2일.
+최종 업데이트 : 2018년 9월 19일.

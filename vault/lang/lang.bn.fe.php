@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.09.19).
+ * This file: Bangla language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'আপনার PHP সংস্করণ
 $phpMussel['lang']['warning_signatures_1'] = 'কোন স্বাক্ষর ফাইল সক্রিয় নেই!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'কিছু দরকারী লিঙ্ক:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel সমর্থন @ GitHub</a> – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV হোমপেজে (ClamAV® ট্রোজান, ভাইরাস, ম্যালওয়্যার এবং অন্যান্য দূষিত হুমকি সনাক্ত করার জন্য একটি ওপেন সোর্স অ্যান্টিভাইরাস ইঞ্জিন।)।</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – কম্পিউটার নিরাপত্তা কোম্পানি ClamAV জন্য অনুপূরক স্বাক্ষর প্রস্তাব করে।</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URL স্ক্যানার দ্বারা ব্যবহৃত ফিশিং ডেটাবেস।</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal সন্দেহজনক ফাইল এবং URLগুলি বিশ্লেষণ করার জন্য একটি বিনামূল্যে পরিষেবা।</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis (হাইব্রীড এনালাইসিস) একটি ফ্রি ম্যালওয়্যার বিশ্লেষণ পরিষেবা <a href="https://www.payload-security.com/">Payload Security (পেলোড সিকিউরিটি)</a> দ্বারা সরবরাহ করা হয়।</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – কম্পিউটার অ্যান্টি-ম্যালওয়্যার বিশেষজ্ঞরা।</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – ম্যালওয়ার উপর দৃষ্টি নিবদ্ধ করা দরকারী আলোচনা ফোরাম।</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি)।</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel সমর্থন @ GitHub</a> – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV হোমপেজে (ClamAV® ট্রোজান, ভাইরাস, ম্যালওয়্যার এবং অন্যান্য দূষিত হুমকি সনাক্ত করার জন্য একটি ওপেন সোর্স অ্যান্টিভাইরাস ইঞ্জিন।)।</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – কম্পিউটার নিরাপত্তা কোম্পানি ClamAV জন্য অনুপূরক স্বাক্ষর প্রস্তাব করে।</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – phpMussel URL স্ক্যানার দ্বারা ব্যবহৃত ফিশিং ডেটাবেস।</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal সন্দেহজনক ফাইল এবং URLগুলি বিশ্লেষণ করার জন্য একটি বিনামূল্যে পরিষেবা।</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis (হাইব্রীড এনালাইসিস) একটি ফ্রি ম্যালওয়্যার বিশ্লেষণ পরিষেবা <a href="https://www.payload-security.com/">Payload Security (পেলোড সিকিউরিটি)</a> দ্বারা সরবরাহ করা হয়।</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – কম্পিউটার অ্যান্টি-ম্যালওয়্যার বিশেষজ্ঞরা।</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – ম্যালওয়ার উপর দৃষ্টি নিবদ্ধ করা দরকারী আলোচনা ফোরাম।</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি)।</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>হ্যালো, %1$s।<br />

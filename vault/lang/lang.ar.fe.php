@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.19).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'إصدار PHP الخاص بك معرض �
 $phpMussel['lang']['warning_signatures_1'] = 'لا ملفات التوقيع نشطة!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
-            <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
-            <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
-            <li><a href="http://www.phishtank.com/" dir="ltr">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
-            <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
-            <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
-            <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
-            <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
+      <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
+      <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
+      <li><a href="https://www.phishtank.com/" dir="ltr">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
+      <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
+      <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
+      <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
+      <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>مرحبا، %1$s.<br />

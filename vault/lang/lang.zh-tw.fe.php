@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.19).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,19 +367,19 @@ $phpMussel['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​強烈�
 $phpMussel['lang']['warning_signatures_1'] = '沒有簽名文件是活動的！';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
-            <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家計算機安全公司；為ClamAV提供補充簽名。</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – 網絡釣魚數據庫；由phpMussel URL掃描器使用。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="https://www.payload-security.com/">Payload Security</a>提供的免費惡意軟件分析服務。</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 電腦反惡意軟件專家。</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
+      <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家計算機安全公司；為ClamAV提供補充簽名。</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – 網絡釣魚數據庫；由phpMussel URL掃描器使用。</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="https://www.payload-security.com/">Payload Security</a>提供的免費惡意軟件分析服務。</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 電腦反惡意軟件專家。</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>你好，%1$s。<br />

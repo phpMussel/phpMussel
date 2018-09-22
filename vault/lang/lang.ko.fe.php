@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.19).
+ * This file: Korean language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취�
 $phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="https://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="https://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>안녕하세요, %1$s.<br />

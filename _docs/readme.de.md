@@ -291,6 +291,7 @@ Datei | Beschreibung
 /vault/fe_assets/_upload_test.html | Ein HTML-Template für die Upload-Testseite.
 /vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
 /vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen und Sitzungsinformationen; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
+/vault/fe_assets/frontend.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
 /vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
@@ -1312,4 +1313,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 2 September 2018 (2018.09.02).
+Zuletzt aktualisiert: 19 September 2018 (2018.09.19).

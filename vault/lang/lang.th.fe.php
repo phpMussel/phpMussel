@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.09.19).
+ * This file: Thai language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'เวอร์ชัน PHP ของค
 $phpMussel['lang']['warning_signatures_1'] = 'ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal เป็นบริการฟรีสำหรับการวิเคราะห์ไฟล์และ URL ที่น่าสงสัย.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (PHP, HHVM, ฯลฯ).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (ชาร์ตความเข้ากันได้)</a> – แสดงข้อมูลความเข้ากันได้ของแพคเกจต่างๆ (CIDRAM, phpMussel, ฯลฯ).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal เป็นบริการฟรีสำหรับการวิเคราะห์ไฟล์และ URL ที่น่าสงสัย.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (PHP, HHVM, ฯลฯ).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (ชาร์ตความเข้ากันได้)</a> – แสดงข้อมูลความเข้ากันได้ของแพคเกจต่างๆ (CIDRAM, phpMussel, ฯลฯ).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>สวัสดี %1$s.<br />

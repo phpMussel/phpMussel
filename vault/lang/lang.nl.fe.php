@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.09.19).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -367,18 +367,18 @@ $phpMussel['lang']['warning_php_2'] = 'Uw PHP versie is ernstig kwetsbaar! Het b
 $phpMussel['lang']['warning_signatures_1'] = 'Geen signature bestanden zijn actief!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
-            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>
-            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-database gebruikt door de phpMussel URL scanner.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL\'s.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware-specialisten.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, ezv).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
+      <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>
+      <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
+      <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
+      <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing-database gebruikt door de phpMussel URL scanner.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
+      <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL\'s.</li>
+      <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+      <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware-specialisten.</li>
+      <li><a href="https://malwaretips.com/">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, ezv).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
         </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Hallo, %1$s.<br />

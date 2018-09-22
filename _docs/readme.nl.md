@@ -291,6 +291,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_upload_test.html | Een HTML sjabloon voor de upload test pagina.
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
 /vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts en sessies informatie; alleen gegenereerd als de frontend geactiveerd en gebruikt).
+/vault/fe_assets/frontend.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
@@ -1310,4 +1311,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 2 September 2018 (2018.09.02).
+Laatste Bijgewerkt: 19 September 2018 (2018.09.19).

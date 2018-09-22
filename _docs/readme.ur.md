@@ -288,6 +288,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline;">اپ لوڈ کریں ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_upload_test.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline;">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/fe_assets/frontend.dat.safety
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
 &nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
 &nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
@@ -1531,4 +1532,4 @@ phpMussel doesn't encrypt its cache or any log information. Cache and log encryp
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 31 جولائی 2018 (2018.07.31).</div>
+<div dir="rtl">آخری تازہ کاری: 19 اگست 2018 (2018.09.19).</div>

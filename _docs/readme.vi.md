@@ -291,6 +291,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_upload_test.html | Tập tin mẫu HTML cho trang kiểm tra tải lên.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản và phiên; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
+/vault/fe_assets/frontend.dat.safety | Được tạo ra như một cơ chế an toàn khi cần thiết.
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
 /vault/fe_assets/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
 /vault/fe_assets/pips.php | Tập tin cho các pip (được sử dụng bởi các quản lý tập tin front-end).
@@ -1302,4 +1303,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 2 Tháng Chín 2018 (2018.09.02).
+Lần cuối cập nhật: 19 Tháng Chín 2018 (2018.09.19).

@@ -288,6 +288,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">قالب HTML لصفحة التحميل الاختبار.</div> | /vault/fe_assets/_upload_test.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف CSS (صفحات الطرز المتراصة) لfront-end.</div> | /vault/fe_assets/frontend.css
 &nbsp; <div dir="rtl" style="display:inline;">قاعدة البيانات لfront-end (يحتوي على معلومات الحسابات و الجلسات؛ خلق فقط اذا front-end يتم تمكين واستخدامها).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline;">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/fe_assets/frontend.dat.safety
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML الرئيسي لfront-end.</div> | /vault/fe_assets/frontend.html
 &nbsp; <div dir="rtl" style="display:inline;">الرموز معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/icons.php
 &nbsp; <div dir="rtl" style="display:inline;">بالنقاط معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/pips.php
@@ -1532,4 +1533,4 @@ phpMussel is able to pseudonymise IP addresses when logging them, if this is som
 ---
 
 
-<div dir="rtl">آخر تحديث: 2 سبتمبر 2018 (2018.09.02).</div>
+<div dir="rtl">آخر تحديث: 19 سبتمبر 2018 (2018.09.19).</div>
