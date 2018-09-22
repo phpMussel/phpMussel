@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.19).
+ * This file: Front-end handler (last modified: 2018.09.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,11 +149,12 @@ if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
         'Begin' => strpos($phpMussel['FE']['Template'], '<!-- WebFont Begin -->'),
         'End' => strpos($phpMussel['FE']['Template'], '<!-- WebFont End -->')
     ];
-    $phpMussel['FE']['Template'] = substr(
-        $phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']
-    ) . substr(
-        $phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20
-    );
+    if ($phpMussel['WebFontPos']['Begin'] !== false && $phpMussel['WebFontPos']['End'] !== false) {
+        $phpMussel['FE']['Template'] = (
+            substr($phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']) .
+            substr($phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20)
+        );
+    }
     unset($phpMussel['WebFontPos']);
 }
 

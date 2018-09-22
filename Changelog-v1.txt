@@ -31,6 +31,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.09.19; Sub-minor code change; Maikuolan]: Added a new safety mechanism
   for when dealing with the front-end database.
 
+- [2018.09.21; Bug-fix; Maikuolan]: Webfont cleanup procedure removed wrong
+  part from template files when webfonts not clearly marked; Fixed.
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 
