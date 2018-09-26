@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.22).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض �
 $phpMussel['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
 $phpMussel['lang']['tip_upload_test'] = 'مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – حسابات';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – بيانات ذاكرة التخزين المؤقت';
-$phpMussel['lang']['title_config'] = 'phpMussel – التكوين';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – مدير الملفات';
-$phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';
-$phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
-$phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – الحجر الصحي';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – معلومات التوقيع';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – الإحصاء';
-$phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';
+$phpMussel['lang']['title_login'] = 'تسجيل الدخول';
 $phpMussel['lang']['warning'] = 'تحذيرات:';
 $phpMussel['lang']['warning_php_1'] = 'لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!';
 $phpMussel['lang']['warning_php_2'] = 'إصدار PHP الخاص بك معرض للخطر بشدة! ينصح بشدة تحديث!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفي
       <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>مرحبا، %1$s.<br />
 <br />

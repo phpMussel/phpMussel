@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.22).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menu
 $phpMussel['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
 $phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – Data Cache';
-$phpMussel['lang']['title_config'] = 'phpMussel – Konfigurasi';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – File Manager';
-$phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';
-$phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Log';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – Informasi Tanda Tangan';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – Statistik';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
+$phpMussel['lang']['title_login'] = 'Masuk';
 $phpMussel['lang']['warning'] = 'Peringatan:';
 $phpMussel['lang']['warning_php_1'] = 'Versi PHP Anda tidak aktif didukung lagi! Memperbarui dianjurkan!';
 $phpMussel['lang']['warning_php_2'] = 'Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
       <li><a href="https://malwaretips.com/">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Salam, %1$s.<br />
 <br />

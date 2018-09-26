@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.22).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = '你好，​{username}。​<br />此页
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：统计跟踪目前已被禁用，但可以通过配置页面启用。';
 $phpMussel['lang']['tip_updates'] = '你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新phpMussel的各种组件（核心包，​签名，​插件，​L10N文件，​等等）。';
 $phpMussel['lang']['tip_upload_test'] = '你好，​{username}。​<br />上传测试页面包含标准文件上传表单，​允许您测试是否文件通常会被阻止通过phpMussel当尝试上传他们。';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – 帐户';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – 缓存数据';
-$phpMussel['lang']['title_config'] = 'phpMussel – 配置';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – 文件管理器';
-$phpMussel['lang']['title_home'] = 'phpMussel – 主页';
-$phpMussel['lang']['title_login'] = 'phpMussel – 登录';
-$phpMussel['lang']['title_logs'] = 'phpMussel – 日志';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – 隔离';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – 签名信息';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – 统计';
-$phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – 上传测试';
+$phpMussel['lang']['title_login'] = '登录';
 $phpMussel['lang']['warning'] = '警告：';
 $phpMussel['lang']['warning_php_1'] = '您的PHP版本不再被积极支持！​推荐更新！';
 $phpMussel['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​强烈推荐更新！';
@@ -380,7 +369,7 @@ $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
       <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的讨论论坛关于恶意软件。</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（PHP，HHVM，等等）。</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>你好，%1$s。<br />
 <br />

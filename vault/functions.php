@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.12).
+ * This file: Functions file (last modified: 2018.09.25).
  */
 
 /**
@@ -4237,11 +4237,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                         if ($TarFile['File']['Filename']) {
                             if (strpos($TarFile['File']['Filename'], "\\") !== false) {
                                 $TarFile['File']['Filename'] =
-                                    $phpMussel['substral']($TarFile['File']['Filename'], "\\") ;
+                                    $phpMussel['substral']($TarFile['File']['Filename'], "\\");
                             }
                             if (strpos($TarFile['File']['Filename'], '/') !== false) {
                                 $TarFile['File']['Filename'] =
-                                    $phpMussel['substral']($TarFile['File']['Filename'], '/') ;
+                                    $phpMussel['substral']($TarFile['File']['Filename'], '/');
                             }
                         }
                         $TarFile['File']['Data'] =
@@ -5467,7 +5467,7 @@ $phpMussel['LogRotation'] = function ($Pattern) use (&$phpMussel) {
  * @param string $IP An IP address.
  * @return string A pseudonymised IP address.
  */
-$phpMussel['Pseudonymise-IP'] = function($IP) {
+$phpMussel['Pseudonymise-IP'] = function ($IP) {
     if (($CPos = strpos($IP, ':')) !== false) {
         $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos +1) ?: '')];
         if (($CPos = strpos($Parts[1], ':')) !== false) {

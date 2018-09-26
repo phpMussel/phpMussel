@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.22).
+ * This file: Front-end functions file (last modified: 2018.09.26).
  */
 
 /**
@@ -1827,7 +1827,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
 $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$phpMussel) {
 
     /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $Title;
+    $phpMussel['FE']['FE_Title'] = 'phpMussel – ' . $Title;
 
     /** Fetch and prepare username. */
     if ($Username = (empty($phpMussel['FE']['UserRaw']) ? '' : $phpMussel['FE']['UserRaw'])) {
@@ -1835,12 +1835,6 @@ $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) u
         if (($AtChar = strpos($Username, '@')) !== false) {
             $Username = substr($Username, 0, $AtChar);
         }
-        $Username = preg_split('~[\s_.+]+~', $Username, -1, PREG_SPLIT_NO_EMPTY);
-        foreach ($Username as &$Part) {
-            $Part = ucfirst(strtolower($Part));
-        }
-        unset($Part);
-        $Username = implode(' ', $Username);
     }
 
     /** Prepare page tooltip/description. */

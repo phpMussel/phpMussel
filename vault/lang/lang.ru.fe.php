@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.09.22).
+ * This file: Russian language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'Привет, {username}.<br />На эт
 $phpMussel['lang']['tip_statistics_disabled'] = 'Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации.';
 $phpMussel['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов phpMussel (пакет ядра, сигнатуры, плагины, L10N файлы, итд).';
 $phpMussel['lang']['tip_upload_test'] = 'Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Учетными Записями';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – Данные Кэша';
-$phpMussel['lang']['title_config'] = 'phpMussel – Конфигурация';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – Файловый Менеджер';
-$phpMussel['lang']['title_home'] = 'phpMussel – Домашняя Страница';
-$phpMussel['lang']['title_login'] = 'phpMussel – Войти';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Лог-Файлы';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – Карантинный';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – Информация о Сигнатур';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – Статистика';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Обновления';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Тестовая Загрузка';
+$phpMussel['lang']['title_login'] = 'Войти';
 $phpMussel['lang']['warning'] = 'Предупреждения:';
 $phpMussel['lang']['warning_php_1'] = 'Ваша версия PHP больше не поддерживается! Рекомендуется обновление!';
 $phpMussel['lang']['warning_php_2'] = 'Ваша версия PHP сильно уязвима! Настоятельно рекомендуется обновление!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезн�
       <li><a href="https://malwaretips.com/">MalwareTips</a> – Полезные вредоносные программы сфокусированные дискуссионных форумов.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (PHP, HHVM, и т.д.).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Привет, %1$s.<br />
 <br />

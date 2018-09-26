@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.22).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này c
 $phpMussel['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Tài khoản';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – Dữ liệu cache';
-$phpMussel['lang']['title_config'] = 'phpMussel – Cấu hình';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – Quản lý tập tin';
-$phpMussel['lang']['title_home'] = 'phpMussel – Trang chủ';
-$phpMussel['lang']['title_login'] = 'phpMussel – Đăng nhập';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Bản ghi';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – Kiểm dịch';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – Thông tin chữ ký';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – Số liệu thống kê';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Cập nhật';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm tra tải lên';
+$phpMussel['lang']['title_login'] = 'Đăng nhập';
 $phpMussel['lang']['warning'] = 'Cảnh báo:';
 $phpMussel['lang']['warning_php_1'] = 'Phiên bản PHP của bạn không được hỗ trợ tích cực nữa! Đang cập nhật được khuyến khích!';
 $phpMussel['lang']['warning_php_2'] = 'Phiên bản PHP của bạn rất dễ bị tổn thương! Đang cập nhật được khuyến khích mạnh mẽ!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu íc
       <li><a href="https://malwaretips.com/">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Xin chào, %1$s.<br />
 <br />

@@ -34,6 +34,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.09.21; Bug-fix; Maikuolan]: Webfont cleanup procedure removed wrong
   part from template files when webfonts not clearly marked; Fixed.
 
+- [2018.09.22; Sub-minor code change; Maikuolan]: Slightly refactored all the
+  HTML template files, slightly reducing indenting and improving readability.
+
+- [2018.09.23; Sub-minor code change; Maikuolan]: Removed capitalisation from
+  front-end username display (doesn't always play nice with non-ANSI data).
+
+- [2018.09.26; Sub-minor code change; Maikuolan]: Front-end L10N slightly
+  refactored (1.6.0-DEV+18268592).
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 

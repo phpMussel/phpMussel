@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.22).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, ph
 $phpMussel['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $phpMussel['lang']['tip_upload_test'] = 'Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Hesaplar';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – Önbellek Verileri';
-$phpMussel['lang']['title_config'] = 'phpMussel – Yapılandırma';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – Dosya Yöneticisi';
-$phpMussel['lang']['title_home'] = 'phpMussel – Ana Sayfa';
-$phpMussel['lang']['title_login'] = 'phpMussel – Giriş';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Kayıtlar';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – Karantina';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – İmza Bilgisi';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – İstatistik';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Güncellemeler';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Yükleme Testi';
+$phpMussel['lang']['title_login'] = 'Giriş';
 $phpMussel['lang']['warning'] = 'Uyarılar:';
 $phpMussel['lang']['warning_php_1'] = 'PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!';
 $phpMussel['lang']['warning_php_2'] = 'PHP sürümünüz ağır savunmasız! Güncelleme önerilir!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantıla
       <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb.) güvenli/güvensiz sürümlerini listeler.</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Merhaba, %1$s.<br />
 <br />

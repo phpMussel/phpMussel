@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.09.22).
+ * This file: Hindi language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'हैलो, {username}।<br />यह 
 $phpMussel['lang']['tip_statistics_disabled'] = 'नोट: सांख्यिकी ट्रैकिंग वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।';
 $phpMussel['lang']['tip_updates'] = 'हैलो, {username}।<br />अपडेट पेज आपको phpMussel के विभिन्न घटकों को इंस्टॉल, अनइंस्टॉल और अद्यतन करने की अनुमति देता है (मुख्य पैकेज, हस्ताक्षर, स्थानीयकरण फाइलें, आदि)।';
 $phpMussel['lang']['tip_upload_test'] = 'हैलो, {username}।<br />अपलोड टेस्ट पृष्ठ में एक मानक फाइल अपलोड फॉर्म है। यह आपको यह जांचने में सक्षम बनाता है कि फाइल को सामान्य रूप से इसे अपलोड करने का प्रयास करते समय phpMussel द्वारा अवरुद्ध किया जाएगा या नहीं।';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – खातों';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – कैश डेटा';
-$phpMussel['lang']['title_config'] = 'phpMussel – कॉन्फ़िगरेशन';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – फाइल प्रबंधक';
-$phpMussel['lang']['title_home'] = 'phpMussel – होमपेज';
-$phpMussel['lang']['title_login'] = 'phpMussel – लॉग इन करें';
-$phpMussel['lang']['title_logs'] = 'phpMussel – लॉग फाइलें';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – संगरोध';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – हस्ताक्षर जानकारी';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – सांख्यिकी';
-$phpMussel['lang']['title_updates'] = 'phpMussel – अपडेट';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – अपलोड टेस्ट';
+$phpMussel['lang']['title_login'] = 'लॉग इन करें';
 $phpMussel['lang']['warning'] = 'चेतावनी:';
 $phpMussel['lang']['warning_php_1'] = 'आपका PHP संस्करण सक्रिय रूप से अब समर्थित नहीं है! अद्यतन की सिफारिश की है!';
 $phpMussel['lang']['warning_php_2'] = 'आपका PHP संस्करण गंभीर रूप से कमजोर है! अद्यतन की जोरदार सिफारिश की है!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'कुछ उपयोगी ल
       <li><a href="https://malwaretips.com/">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>हैलो, %1$s।<br />
 <br />

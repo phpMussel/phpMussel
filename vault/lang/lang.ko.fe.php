@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.22).
+ * This file: Korean language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 �
 $phpMussel['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $phpMussel['lang']['tip_upload_test'] = '안녕하세요, {username}.<br />업로드 테스트 페이지 표준 파일 업로드 양식을 포함합니다 파일이 일반적 차단 여부를 테스트 할 수 있습니다.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – 계정';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – 데이터 캐쉬';
-$phpMussel['lang']['title_config'] = 'phpMussel – 구성';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – 파일 관리자';
-$phpMussel['lang']['title_home'] = 'phpMussel – 홈';
-$phpMussel['lang']['title_login'] = 'phpMussel – 로그인';
-$phpMussel['lang']['title_logs'] = 'phpMussel – 로고스';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – 격리';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – 서명 정보';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – 통계';
-$phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
+$phpMussel['lang']['title_login'] = '로그인';
 $phpMussel['lang']['warning'] = '경고 :';
 $phpMussel['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적으로 지원되지 않습니다! 업데이트하는 것이 좋습니다!';
 $phpMussel['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
       <li><a href="https://malwaretips.com/">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>안녕하세요, %1$s.<br />
 <br />

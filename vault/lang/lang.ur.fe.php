@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.22).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفح�
 $phpMussel['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $phpMussel['lang']['tip_upload_test'] = 'ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – اکاؤنٹس';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – کیش ڈیٹا';
-$phpMussel['lang']['title_config'] = 'phpMussel – کنفگریشن';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – فائل مینیجر';
-$phpMussel['lang']['title_home'] = 'phpMussel – ہوم';
-$phpMussel['lang']['title_login'] = 'phpMussel – لاگ ان';
-$phpMussel['lang']['title_logs'] = 'phpMussel – لاگز';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – قرنطین';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – دستخط معلومات';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – اعداد و شمار';
-$phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلومات کے';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';
+$phpMussel['lang']['title_login'] = 'لاگ ان';
 $phpMussel['lang']['warning'] = 'انتباہ:';
 $phpMussel['lang']['warning_php_1'] = 'آپ کے PHP ورژن اب فعال طور پر معاون نہیں ہے! اپ ڈیٹ کرنے کی سفارش کی گئی ہے!';
 $phpMussel['lang']['warning_php_2'] = 'آپ کے PHP ورژن شدید خطرناک ہے! اپ ڈیٹ کرنا سختی کی سفارش کی جاتی ہے!';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
       <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>ہیلو، %1$s.<br />
 <br />

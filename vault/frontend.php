@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.22).
+ * This file: Front-end handler (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -630,7 +630,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['CronMode']) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_home'], $phpMussel['lang']['tip_home'], false);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_home'], $phpMussel['lang']['tip_home'], false);
 
     /** phpMussel version used. */
     $phpMussel['FE']['ScriptVersion'] = $phpMussel['ScriptVersion'];
@@ -941,7 +941,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
     if (!$phpMussel['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
-        $phpMussel['InitialPrepwork']($phpMussel['lang']['title_accounts'], $phpMussel['lang']['tip_accounts']);
+        $phpMussel['InitialPrepwork']($phpMussel['lang']['link_accounts'], $phpMussel['lang']['tip_accounts']);
 
         /** Append async globals. */
         $phpMussel['FE']['JS'] .= sprintf(
@@ -1032,7 +1032,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_config'], $phpMussel['lang']['tip_config']);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_config'], $phpMussel['lang']['tip_config']);
 
     /** Append number localisation JS. */
     $phpMussel['FE']['JS'] .= $phpMussel['Number_L10N_JS']() . "\n";
@@ -1291,7 +1291,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_cache_data'], $phpMussel['lang']['tip_cache_data']);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_cache_data'], $phpMussel['lang']['tip_cache_data']);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1481,7 +1481,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     }
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_updates'], $phpMussel['lang']['tip_updates']);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_updates'], $phpMussel['lang']['tip_updates']);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1971,7 +1971,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_file_manager'], $phpMussel['lang']['tip_file_manager'], false);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_file_manager'], $phpMussel['lang']['tip_file_manager'], false);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -2344,7 +2344,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_upload_test'], $phpMussel['lang']['tip_upload_test'], false);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_upload_test'], $phpMussel['lang']['tip_upload_test'], false);
 
     $phpMussel['FE']['MaxFilesize'] = $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit']);
 
@@ -2365,7 +2365,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_quarantine'], $phpMussel['lang']['tip_quarantine']);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_quarantine'], $phpMussel['lang']['tip_quarantine']);
 
     /** Display how to enable quarantine if currently disabled. */
     if (!$phpMussel['Config']['general']['quarantine_key']) {
@@ -2489,7 +2489,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_siginfo'], $phpMussel['lang']['tip_siginfo']);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_siginfo'], $phpMussel['lang']['tip_siginfo']);
 
     /** Append number localisation JS. */
     $phpMussel['FE']['JS'] .= $phpMussel['Number_L10N_JS']() . "\n";
@@ -2525,7 +2525,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_statistics'], $phpMussel['lang']['tip_statistics'], false);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_statistics'], $phpMussel['lang']['tip_statistics'], false);
 
     /** Display how to enable statistics if currently disabled. */
     if (!$phpMussel['Config']['general']['statistics']) {
@@ -2612,7 +2612,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']['Permissions'] > 0) {
 
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['lang']['title_logs'], $phpMussel['lang']['tip_logs'], false);
+    $phpMussel['InitialPrepwork']($phpMussel['lang']['link_logs'], $phpMussel['lang']['tip_logs'], false);
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 

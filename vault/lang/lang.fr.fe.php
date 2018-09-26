@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.09.22).
+ * This file: French language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'Bonjour, {username}.<br />Cette page pr�
 $phpMussel['lang']['tip_statistics_disabled'] = 'Remarque : Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration.';
 $phpMussel['lang']['tip_updates'] = 'Bonjour, {username}.<br />La page des mises à jour vous permet d\'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Bonjour, {username}.<br />La page pour tester les téléchargements contient un formulaire pour le téléchargement de fichiers standard, vous permettant de tester si un fichier serait normalement être bloqué par phpMussel quand vous essayez de le télécharger.';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – Comptes';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – Données de Cache';
-$phpMussel['lang']['title_config'] = 'phpMussel – Configuration';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – Gestionnaire de Fichiers';
-$phpMussel['lang']['title_home'] = 'phpMussel – Page d\'Accueil';
-$phpMussel['lang']['title_login'] = 'phpMussel – Connexion';
-$phpMussel['lang']['title_logs'] = 'phpMussel – Fichiers Journaux';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – Quarantaine';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – Informations sur les Signatures';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – Statistiques';
-$phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';
+$phpMussel['lang']['title_login'] = 'Connexion';
 $phpMussel['lang']['warning'] = 'Avertissements :';
 $phpMussel['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
 $phpMussel['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
       <li><a href="https://malwaretips.com/">MalwareTips</a> – Forum de discussion sur les logiciels malveillants.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Cartes de Vulnérabilité</a> – Liste des versions sûres/dangereuses de divers paquets (PHP, HHVM, etc).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Cartes de Compatibilité</a> – Liste des informations de compatibilité pour divers packages (CIDRAM, phpMussel, etc).</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>Bonjour, %1$s.<br />
 <br />

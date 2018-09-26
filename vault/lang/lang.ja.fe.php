@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.22).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -349,18 +349,7 @@ $phpMussel['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br
 $phpMussel['lang']['tip_statistics_disabled'] = '注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_updates'] = 'こんにちは、​{username}。​<br />アップデート・ページは、​phpMusselのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​プラグイン、​L10Nファイル、​等）。';
 $phpMussel['lang']['tip_upload_test'] = 'こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。';
-$phpMussel['lang']['title_accounts'] = 'phpMussel – アカウント';
-$phpMussel['lang']['title_cache_data'] = 'phpMussel – キャッシュ・データ';
-$phpMussel['lang']['title_config'] = 'phpMussel – コンフィギュレーション';
-$phpMussel['lang']['title_file_manager'] = 'phpMussel – ファイル・マネージャー';
-$phpMussel['lang']['title_home'] = 'phpMussel – ホーム';
-$phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
-$phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
-$phpMussel['lang']['title_quarantine'] = 'phpMussel – 検疫';
-$phpMussel['lang']['title_siginfo'] = 'phpMussel – シグネチャ情報';
-$phpMussel['lang']['title_statistics'] = 'phpMussel – 統計';
-$phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
-$phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';
+$phpMussel['lang']['title_login'] = 'ログイン';
 $phpMussel['lang']['warning'] = '警告：';
 $phpMussel['lang']['warning_php_1'] = 'あなたのＰＨＰバージョンはもはや積極的にサポートされていません！​​アップデートおすすめします！';
 $phpMussel['lang']['warning_php_2'] = 'あなたのＰＨＰバージョンは深刻な脆弱性を持っています！​​アップデートを強くおすすめします！';
@@ -379,7 +368,7 @@ $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
       <li><a href="https://malwaretips.com/">MalwareTips</a> – 便利なマルウェア対策ディスカッションフォーラム。</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
-        </ul>';
+    </ul>';
 
 $phpMussel['lang']['msg_template_2fa'] = '<center><p>こんにちは、​%1$s。<br />
 <br />
