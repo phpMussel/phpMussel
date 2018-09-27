@@ -368,7 +368,7 @@ l10n/ko:
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
- Version: 2018.268.592
+ Version: 2018.269.995
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -381,7 +381,7 @@ l10n/nl:
    - lang/lang.nl.fe.php
    - lang/lang.nl.php
   Checksum:
-   - 8f1052138d7d62fa55678f929365c24a:58454
+   - c6d98dbe7a80f6d49aa5e06ea2f2c098:58453
    - 5f1566a042c0b54b44067b4dcbed3592:7799
  Reannotate: components.dat
 l10n/pt:

@@ -386,7 +386,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 ### ７.<a name="SECTION7"></a>コンフィギュレーション（設定オプション）
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
-#### "general" （全般、​カテゴリー）
+#### "general" （全般、カテゴリー）
 全般的な設定。
 
 ##### "cleanup" （クリーンアップ）
@@ -1154,7 +1154,7 @@ Virus Totalと共有される情報（ファイルおよび関連するファイ
 
 #### 11.3 ロギング
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+ロギングは、多くの理由からphpMusselの重要な部分です。​ロギングせずに、偽陽性が発生した場合、それを診断して解決することは困難です。​ロギングせずに、phpMusselがいかに効果的に実行されているかを確かめること、その潜在的な問題を確認すること機能させるために必要なコンフィギュレーションやシグネチャの変更を決定するのが難しいことがあります。​いずれにせよ、ロギングは一部のユーザーには望ましくなく、完全にオプションです。​phpMusselでは、デフォルトでロギングは無効になっています。​これを有効にするには、それに応じてphpMusselを設定する必要があります。
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
