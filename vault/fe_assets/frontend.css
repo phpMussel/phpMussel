@@ -49,6 +49,7 @@ a:active,a:focus{color:red}
 .ufts{width:220px}
 .vr{float:{FE_Align};width:1px;height:inherit;background-color:#900}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
+@keyframes UplT{0%{opacity:0.0}100%{opacity:1.0}}
 .mob{display:none}
 a[href="?phpmussel-page=logout"]{padding-left:10px;background-image:url(data:image/gif;base64,{PIP_Key});background-repeat:no-repeat;background-position:0% 50%}
 a[href="?phpmussel-page=logout"]:hover,a[href="?phpmussel-page=logout"]:active,a[href="?phpmussel-page=logout"]:focus{background-image:url(data:image/gif;base64,{PIP_Key2})}

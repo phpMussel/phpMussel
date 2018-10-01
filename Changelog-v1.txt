@@ -43,6 +43,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.09.26; Sub-minor code change; Maikuolan]: Front-end L10N slightly
   refactored (1.6.0-DEV+18268592).
 
+- [2018.10.01; Sub-minor code change; Maikuolan]: Slightly improved the
+  interface for the front-end upload test page (1.6.0-DEV+18273100).
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 

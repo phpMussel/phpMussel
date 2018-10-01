@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.26).
+ * This file: Front-end handler (last modified: 2018.10.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2345,6 +2345,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['lang']['link_upload_test'], $phpMussel['lang']['tip_upload_test'], false);
+
+    /** Append upload test JS. */
+    $phpMussel['FE']['JS'] .=
+        'var x=1,a=\'<input type="file" name="upload_test[]" value="" />\',more=f' .
+        "unction(){var e='field'+x,t=document.createElement('div');t.setAttribute" .
+        "('class','spanner'),t.setAttribute('id',e),t.setAttribute('style','opaci" .
+        "ty:0.0;animation:UplT 2.0s ease 0s 1 normal'),document.getElementById('u" .
+        "pload_fields').appendChild(t),document.getElementById(e).innerHTML=a,set" .
+        "Timeout(function(){document.getElementById(e).style.opacity='1.0'},1999)" .
+        ',x++};';
 
     $phpMussel['FE']['MaxFilesize'] = $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit']);
 
