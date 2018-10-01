@@ -46,6 +46,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.10.01; Sub-minor code change; Maikuolan]: Slightly improved the
   interface for the front-end upload test page (1.6.0-DEV+18273100).
 
+- [2018.10.02; Bug-fix; Maikuolan]: Wrong variable used in a foreach loop
+  belonging to the URL scanner, preventing it from correcting catching URLs;
+  Fixed (1.6.0-DEV+18273842). Thanks to nemiq for identifying this bug. :-)
+  Refer github.com/phpMussel/phpMussel/issues/171
+
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
 

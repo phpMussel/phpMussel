@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.25).
+ * This file: Functions file (last modified: 2018.10.02).
  */
 
 /**
@@ -1921,7 +1921,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
         )) {
-            foreach ($URLScanner['Matches'][2] as $ThisURL) {
+            foreach ($URLScanner['Matches'][1] as $ThisURL) {
                 $URLScanner['DomainParts'][$URLScanner['Iterable']] = $ThisURL;
                 if (strpos($URLScanner['DomainParts'][$URLScanner['Iterable']], '.') !== false) {
                     $URLScanner['TLDs'][$URLScanner['Iterable']] = 'TLD:' . $phpMussel['substral'](
@@ -1946,11 +1946,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $URLScanner['Iterable'] = 0;
         $URLScanner['Matches'] = '';
         if (preg_match_all(
-            '~(?:data|f(ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([!#$&-;=?@-\[\]_a-z\~]{1,4096})[^!#$&-;=?@-\[\]_a-z\~]~i',
+            '~(?:data|f(?:ile|tps?)|https?|sftp)://(?:www\d{0,3}\.)?([!#$&-;=?@-\[\]_a-z\~]+)[^!#$&-;=?@-\[\]_a-z\~]~i',
             $URLScanner['FixedSource'],
             $URLScanner['Matches']
         )) {
-            foreach ($URLScanner['Matches'][2] as $ThisURL) {
+            foreach ($URLScanner['Matches'][1] as $ThisURL) {
+                if (strlen($ThisURL) > 4096) {
+                    $ThisURL = substr($ThisURL, 0, 4096);
+                }
                 $URLScanner['This'] = md5($ThisURL) . ':' . strlen($ThisURL) . ':';
                 $URLScanner['URLsNoLookup'][$URLScanner['Iterable']] = 'URL-NOLOOKUP:' . $URLScanner['This'];
                 $URLScanner['URLParts'][$URLScanner['Iterable']] = $ThisURL;
