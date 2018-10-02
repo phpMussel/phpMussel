@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.02).
+ * This file: Functions file (last modified: 2018.10.03).
  */
 
 /**
@@ -3510,7 +3510,7 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     /** Determine whether the file being scanned is a macro. */
     $phpMussel['memCache']['file_is_macro'] = (
         preg_match('~vbaProject\.bin$~i', $Filename) ||
-        preg_match("~^\xd0\xcf|\x00Attribut|\x01CompObj|\x05Document~", $Data)
+        preg_match('~^\xd0\xcf|\x00Attribut|\x01CompObj|\x05Document~', $Data)
     );
 
     /** Handle macro detection and blocking. */
