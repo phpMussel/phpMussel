@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.08.08).
+ * This file: Configuration handler (last modified: 2018.08.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -144,13 +144,13 @@ foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']
 unset($phpMussel['Config']['Temp']);
 
 /** Failsafe for weird ipaddr configuration. */
-if ($phpMussel['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$phpMussel['Config']['general']['ipaddr']])) {
-    $phpMussel['Config']['general']['ipaddr'] = 'REMOTE_ADDR';
-}
+$phpMussel['IPAddr'] = (
+    $phpMussel['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$phpMussel['Config']['general']['ipaddr']])
+) ? 'REMOTE_ADDR' : $phpMussel['Config']['general']['ipaddr'];
 
 /** Ensure we have an IP address variable to work with. */
-if (!isset($_SERVER[$phpMussel['Config']['general']['ipaddr']])) {
-    $_SERVER[$phpMussel['Config']['general']['ipaddr']] = '';
+if (!isset($_SERVER[$phpMussel['IPAddr']])) {
+    $_SERVER[$phpMussel['IPAddr']] = '';
 }
 
 /** Adjusted present time. */
@@ -165,7 +165,7 @@ if (!empty($phpMussel['Config']['general']['timezone']) && $phpMussel['Config'][
 $phpMussel['Mussel_sapi'] = !defined('Via-Travis') && (
     empty($_SERVER['REQUEST_METHOD']) ||
     substr(php_sapi_name(), 0, 3) === 'cli' || (
-        empty($_SERVER[$phpMussel['Config']['general']['ipaddr']]) &&
+        empty($_SERVER[$phpMussel['IPAddr']]) &&
         empty($_SERVER['HTTP_USER_AGENT']) &&
         !empty($_SERVER['argc']) &&
         is_numeric($_SERVER['argc']) &&
