@@ -1239,9 +1239,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 로그 자르기
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+원하는 경우 특정 크기를 초과하면 개별 로그 파일을자를 수 있습니다.
 
 *관련 설정 지시어 :*
 - `general` -> `truncate`
@@ -1254,9 +1254,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+어떤 경우에는, 수집, 처리 또는 저장되는 "PII"에 대해 "anonymisation"또는 "pseudonymisation"을 구현할 법적 구속을받을 수 있습니다. 이 개념은 현재 상당 기간 존재 해 왔지만 GDPR/DSGVO는 "pseudonymisation"을 언급하고 장려합니다.
 
-phpMussel is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When phpMussel pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+원하는 경우 phpMussel은 IP 주소를 기록 할 때이 작업을 수행 할 수 있습니다. 기록 될 때 IPv4 주소의 마지막 옥텟과 IPv6 주소의 두 번째 부분 이후의 모든 항목은 "x"로 표시됩니다. 이것은 본질적으로 IPv4 주소를 24 번째 서브넷 요소의 초기 주소로 반올림하고 IPv6 주소를 32 번째 서브넷 요소의 초기 주소로 반올림합니다.
 
 *관련 설정 지시어 :*
 - `legal` -> `pseudonymise_ip_addresses`
