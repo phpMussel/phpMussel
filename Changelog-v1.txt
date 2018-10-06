@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.6.0 ===
+MINOR RELEASE.
+
 - [2018.08.08; Maikuolan]: Performed some early legwork for future email
   functionality and future two-factor authentication functionality (neither
   things are prime-time ready yet though). A handful of new configuration
@@ -50,6 +55,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   belonging to the URL scanner, preventing it from correcting catching URLs;
   Fixed (1.6.0-DEV+18273842). Thanks to nemiq for identifying this bug. :-)
   Refer github.com/phpMussel/phpMussel/issues/171
+
+IMPORTANT: Archive checking has been temporarily forcibly disabled for this
+release in response to a security vulnerability. However, archive checking will
+be completely overhauled in the near future as a more permanent solution to
+this problem, at which point it should be safe to reenable archive checking.
+
+Caleb M (Maikuolan),
+October 6, 2018.
 
 === Version/Release 1.5.0 ===
 MINOR RELEASE.
