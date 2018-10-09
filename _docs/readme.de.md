@@ -856,13 +856,13 @@ Jede Form von regulären Ausdrücken, die von PHP verstanden und korrekt ausgef�
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 2018.07.31 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v1.4.0-v1.5.0) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 2018.10.09 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v1.5.0-v1.6.0) zu diesem Zeitpunkt.
 
 *Diese Information gilt nur für das Hauptpaket. Die Ergebnisse können je nach installierten Signaturdateien, Plugins und anderen Peripheriekomponenten variieren.*
 
 | Scanner | Ergebnisse |
 |---|---|
-| Bkav | Meldet "VEXA3F5.Webshell" |
+| Bkav | Meldet "VEX.Webshell" |
 
 ---
 
@@ -1313,4 +1313,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 19 September 2018 (2018.09.19).
+Zuletzt aktualisiert: 9 Oktober 2018 (2018.10.09).

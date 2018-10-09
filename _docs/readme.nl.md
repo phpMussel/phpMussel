@@ -856,13 +856,13 @@ Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook cor
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 2018.07.31 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v1.4.0-v1.5.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 2018.10.09 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v1.5.0-v1.6.0) op het moment van schrijven dit.
 
 *Dit informatie is alleen van toepassing op het hoofdpakket. Resultaten kunnen variëren op basis van geïnstalleerde signature bestanden, plug-ins, en andere randapparatuur.*
 
 | Scanner | Resultaten |
 |---|---|
-| Bkav | Berichten "VEXA3F5.Webshell" |
+| Bkav | Berichten "VEX.Webshell" |
 
 ---
 
@@ -1311,4 +1311,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 19 September 2018 (2018.09.19).
+Laatste Bijgewerkt: 9 Oktober 2018 (2018.10.09).

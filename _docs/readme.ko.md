@@ -856,13 +856,13 @@ PHP는 정규 표현식 판단 처리하는 형식이면 phpMussel과 서명에 
 
 phpMussel은 대개 바이러스 검사 소프트웨어에 호환성이 있습니다. 그러나 과거에는 고객이 비 호환성보고가 있었던 것도 사실입니다. 다음 정보는 VirusTotal.com 의한 것이며, phpMussel 대해 안티 바이러스 프로그램에 의해보고 된 오류 검출을 기재하고 있습니다. phpMussel와 사용중인 안티 바이러스 소프트웨어의 호환성 문제가 명시된 지시 사항을 반드시 발생하거나 발생하지 않도록 보장하는 것은 아니지만, 만약 안티 바이러스 소프트웨어와 phpMussel 동작에 현저한 모순이 인정한다면, 노트 둘 중 하나를 해제하는 등의 대책을 검토해야 할 것이다.
 
-다음의 정보는 2018년 7월 31일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v1.4.0-v1.5.0) 현황입니다.
+다음의 정보는 2018년 10월 9일에 업데이트 된 글을 작성시 phpMussel 최근 마이너 버전 (v1.5.0-v1.6.0) 현황입니다.
 
 *이 정보는 기본 패키지에만 적용됩니다. 결과는 설치된 서명 파일, 플러그인 및 기타 주변 구성 요소에 따라 다를 수 있습니다.*
 
 | 스캐너 | 결과 |
 |---|---|
-| Bkav | 리포트 "VEXA3F5.Webshell" |
+| Bkav | 리포트 "VEX.Webshell" |
 
 ---
 
@@ -1227,13 +1227,13 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - 로그인 했습니다.
 *관련 설정 지시어 :*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 로그 회전
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+일정 기간 후에 로그를 제거하려고 할 수 있습니다, 또는 법에 따라 그렇게해야 할 수도 있습니다 (즉, 로그를 보관하는 것이 법적으로 허용되는 시간은 법률에 의해 제한 될 수 있습니다). 로그 파일의 이름에 날짜/시간 표시자를 (예를 들어, `{yyyy}-{mm}-{dd}.log`) 포함하고 (패키지 구성에 지정된대로) 로그 회전을 활성화하여이 작업을 수행 할 수 있습니다 (로그 회전을 사용하면 지정된 제한을 초과하면 로그 파일에 대해 몇 가지 작업을 수행 할 수 있습니다).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+예 : 법적으로 30 일 후에 로그를 삭제해야한다면, 로그 파일 이름에 `{dd}.log`를 지정하고 (`{dd}`는 일 수를 나타냅니다), `log_rotation_limit` 값을 30으로 설정하고, `log_rotation_action` 값을 `Delete`로 설정할 수 있습니다.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+또는, 오랜 시간 동안 로그를 유지해야하는 경우, 로그 회전을 비활성화하거나, 로그 파일을 압축하기 위해 `log_rotation_action` 값을 `Archive`로 설정하십시오 (이렇게하면 점유하는 디스크 공간의 총량이 줄어 듭니다).
 
 *관련 설정 지시어 :*
 - `general` -> `log_rotation_limit`
@@ -1308,4 +1308,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 9월 19일.
+최종 업데이트 : 2018년 10월 9일.

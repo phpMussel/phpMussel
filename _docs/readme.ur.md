@@ -1051,13 +1051,13 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">زیادہ تر حصے کے لیے، phpMussel سب سے زیادہ دیگر وائرس سکیننگ سافٹ ویئر کے ساتھ کافی ہم آہنگ ہونا چاہئے. تاہم، تنازعات ماضی میں صارفین کی ایک بڑی تعداد کی طرف سے رپورٹ کیا گیا ہے. یہ معلومات ذیل میں VirusTotal.com سے ہے، اور یہ جھوٹے مثبت phpMussel خلاف مختلف اینٹی وائرس پروگرام کی طرف سے رپورٹ کی ایک بڑی تعداد کی وضاحت. یہ معلومات آپ phpMussel اور آپ کے اینٹی وائرس سافٹ ویئر کے درمیان مطابقت کے مسائل کا سامنا کریں گے یا نہیں کا ایک مکمل ضمانت نہیں ہے، اگرچہ، آپ کے اینٹی وائرس سافٹ ویئر phpMussel خلاف پرچم لگانے کے طور پر بیان کیا گیا ہے تو، آپ کے ساتھ کام کرنے سے پہلے اس کو غیر فعال کرنے کے بارے میں غور کرنا چاہئے یا تو phpMussel یا آپ کے اینٹی وائرس سافٹ ویئر یا phpMussel یا تو کرنے کے لئے متبادل آپشنز پر غور کرنا چاہئے.<br /><br /></div>
 
-<div dir="rtl">یہ معلومات کی آخری تازہ کاری کے 2018.07.31 اور دو سب سے حالیہ معمولی ورژن (v1.4.0-v1.5.0) اس تحریر کے وقت کے تمام phpMussel ریلیز کے لئے موجودہ ہے.<br /><br /></div>
+<div dir="rtl">یہ معلومات کی آخری تازہ کاری کے 2018.10.09 اور دو سب سے حالیہ معمولی ورژن (v1.5.0-v1.6.0) اس تحریر کے وقت کے تمام phpMussel ریلیز کے لئے موجودہ ہے.<br /><br /></div>
 
 <div dir="rtl"><em>یہ معلومات صرف اہم پیکج پر لاگو ہوتا ہے. نصب شدہ دستخط فائلوں، پلگ ان اور دوسرے پردیوی اجزاء کے مطابق نتائج مختلف ہوں گے.</em><br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">سکینر</div> | <div dir="rtl" style="display:inline;">نتائج</div>
 ----|----
-Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEXA3F5.Webshell"</div>
+Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEX.Webshell"</div>
 
 ---
 
@@ -1438,7 +1438,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.3 LOG ROTATION
+##### <div dir="rtl">١١.٣.٣ لاگ گرد گھومنے<br /><br /></div>
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1452,9 +1452,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.4 LOG TRUNCATION
+##### <div dir="rtl">١١.٣.٤ ٹرنک ریکارڈ<br /><br /></div>
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+<div dir="rtl">اگر آپ چاہتے ہیں تو، آپ انفرادی ریکارڈز کو چھوٹ سکتے ہیں جب وہ مخصوص سائز سے کہیں زیادہ ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1534,4 +1534,4 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 19 اگست 2018 (2018.09.19).</div>
+<div dir="rtl">آخری تازہ کاری: 9 اکتوبر 2018 (2018.10.09).</div>

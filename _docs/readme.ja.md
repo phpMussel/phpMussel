@@ -856,13 +856,13 @@ NAMEはそのシグネチャを指す名前、​HEXは与えられたシグネ�
 
 phpMusselは大概のウィルススキャンソフトウェアに対して互換性があります。​しかし、​過去にはユーザーから非互換性の報告があったのも確かです。​以下の情報はVirusTotal.comによるものであり、​phpMusselに対しアンチウィルスプログラムによって報告された誤検出を記載しています。​phpMusselと使用中のアンチウィルスソフトウェアの互換性問題が記載通りに必ず発生する、​あるいは発生しないことを保証するものではありませんが、​もしアンチウィルスソフトウェアとphpMusselの動作に顕著な矛盾が認められるようなら、​使用にあたってどちらか一方を無効にするなどの対策を検討すべきでしょう。
 
-以下の情報は、​2018年7月31日にアップデートされ、​本稿執筆時におけるphpMussel最新マイナーバージョン（v1.4.0-v1.5.0）の現況です。
+以下の情報は、​2018年10月9日にアップデートされ、​本稿執筆時におけるphpMussel最新マイナーバージョン（v1.5.0-v1.6.0）の現況です。
 
 *この情報は、メインパッケージにのみ適用されます。​結果は、インストールされたシグネチャ・ファイル、プラグイン、およびその他の周辺コンポーネントに基づいて異なる場合があります。*
 
 | スキャナ | 結果 |
 |---|---|
-| Bkav | リポート "VEXA3F5.Webshell" |
+| Bkav | リポート "VEX.Webshell" |
 
 ---
 
@@ -1233,7 +1233,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - ログインしました�
 
 例えば：法的に３０日後にログを削除する必要がある場合は、ログ・ファイルの名前に`{dd}.log`を（`{dd}`は日を表す）指定し、`log_rotation_limit`の値を`30`に設定し、`log_rotation_action`の値を`Delete`に設定することができます。
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+逆に、長期間ログを保持する必要がある場合は、ログ・ローテーションを無効にするか、ログ・ファイルを圧縮するために`log_rotation_action`の値を`Archive`に設定することができます（占有するディスク・スペースの総量が削減されます）。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `log_rotation_limit`
@@ -1310,4 +1310,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年9月19日。
+最終アップデート：2018年10月9日。

@@ -856,13 +856,13 @@ Setiap bentuk dari regex mengerti dan dengan benar diproses oleh PHP seharusnya 
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 2018.07.31 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v1.4.0-v1.5.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 2018.10.09 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v1.5.0-v1.6.0) pada waktu saya menuliskan ini.
 
 *Informasi ini hanya berlaku untuk paket utama. Hasil dapat bervariasi berdasarkan file tanda tangan yang diinstal, plugin, dan komponen periferal lainnya.*
 
 | Scanner | Hasil |
 |---|---|
-| Bkav | Melaporkan "VEXA3F5.Webshell" |
+| Bkav | Melaporkan "VEX.Webshell" |
 
 ---
 
@@ -1303,4 +1303,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 19 September 2018 (2018.09.19).
+Terakhir Diperbarui: 9 Oktober 2018 (2018.10.09).

@@ -32,7 +32,7 @@
 
 <div dir="rtl">شكر خاص ل<a href="http://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً.<br /><br /></div>
 
-<div dir="rtl">شكر خاص أيضاً ل SourceForge و GitHub لإستضافتهم ملفات المشروع، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل : <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a> و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت.<br /><br /></div>
+<div dir="rtl">شكر خاص أيضاً ل SourceForge و GitHub لإستضافتهم ملفات المشروع، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a> و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت.<br /><br /></div>
 
 <div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من:</div>
 
@@ -1051,13 +1051,13 @@
 
 <div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون phpMussel متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد phpMussel. على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين phpMussel وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه phpMussel، يجب عليك إما النظر في تعطيله قبل العمل مع phpMussel أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو phpMussel.<br /><br /></div>
 
-<div dir="rtl">آخر تحديث لهذه المعلومات كان في 2018.07.31 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v1.4.0-v1.5.0) من phpMussel.<br /><br /></div>
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 2018.10.09 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v1.5.0-v1.6.0) من phpMussel.<br /><br /></div>
 
 <div dir="rtl"><em>تنطبق هذه المعلومات فقط على الحزمة الرئيسية. قد تختلف النتائج استنادا إلى ملفات التوقيع المثبتة، والمكونات الإضافية، والمكونات الطرفية الأخرى.</em><br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">برنامج فحص الفيروسات</div> | <div dir="rtl" style="display:inline;">النتيجة</div>
 ----|----
-Bkav | <div dir="rtl" style="display:inline;">"VEXA3F5.Webshell" تقارير</div>
+Bkav | <div dir="rtl" style="display:inline;">"VEX.Webshell" تقارير</div>
 
 ---
 
@@ -1438,13 +1438,13 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.3 LOG ROTATION
+##### <div dir="rtl">١١.٣.٣ دوران السجل<br /><br /></div>
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+<div dir="rtl">قد ترغب في تطهير السجلات بعد فترة من الوقت، أو قد تكون مطلوبة للقيام بذلك بموجب القانون (أي أن مقدار الوقت المسموح به قانونًا لك للاحتفاظ بالسجلات قد يكون محدودًا بموجب القانون). يمكنك تحقيق ذلك عن طريق تضمين علامات التاريخ/الوقت في أسماء ملفات السجل الخاصة بك كما هو محدد بواسطة تكوين الحزمة الخاصة بك (على سبيل المثال، <code dir="ltr">{yyyy}-{mm}-{dd}.log</code>)، ثم تمكين دوران السجل (يسمح لك تدوير السجل بتنفيذ بعض الإجراءات على ملفات السجل عندما يتم تجاوز الحدود المحددة).<br /><br /></div>
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+<div dir="rtl">فمثلا: إذا كان من الضروري قانونًا حذف السجلات بعد 30 يومًا، يمكنني تحديد <code dir="ltr">{dd}.log</code> في أسماء ملفات السجل الخاصة بي (<code dir="ltr">{dd}</code> يمثل عدد الأيام)، قم بتعيين قيمة <code dir="ltr">log_rotation_limit</code> إلى 30، وقم بتعيين قيمة <code dir="ltr">log_rotation_action</code> إلى <code dir="ltr">Delete</code>.<br /><br /></div>
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+<div dir="rtl">على العكس من ذلك، إذا كنت مطالبًا بالاحتفاظ بالسجلات لفترة زمنية طويلة، فيمكنك تعطيل تدوير السجل، أو يمكنك تعيين قيمة <code dir="ltr">log_rotation_action</code> إلى <code dir="ltr">Archive</code>، لضغط ملفات السجل، وبالتالي تقليل إجمالي مساحة القرص التي يشغلونها.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1452,9 +1452,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.4 LOG TRUNCATION
+##### <div dir="rtl">١١.٣.٤ سجل اقتطاع<br /><br /></div>
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+<div dir="rtl">إذا أردت، يمكنك اقتطاع ملفات السجل الفردية عندما تتجاوز حجمًا معينًا.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1535,4 +1535,4 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 ---
 
 
-<div dir="rtl">آخر تحديث: 19 سبتمبر 2018 (2018.09.19).</div>
+<div dir="rtl">آخر تحديث: 9 اكتوبر 2018 (2018.10.09).</div>
