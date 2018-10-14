@@ -64,7 +64,7 @@ abstract class ArchiveHandler implements ArchiveHandlerInterface
      * something goes wrong).
      *
      * -1: Object not constructed (default state; shouldn't normally be seen).
-     * 0: Object constructed successfully. No problems, as far we as know.
+     * 0: Object constructed successfully. No problems, as far as we know.
      * 1: Necessary prerequisites/extensions aren't installed/available.
      * 2: Pointer isn't valid, isn't accessible, or failed to open/stream.
      */

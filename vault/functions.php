@@ -3901,7 +3901,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if ($z[0] === 1) {
 
         /** Call the compression handler. */
-        if (!class_exists('\phpMussel\CompressionHandler')) {
+        if (!class_exists('\phpMussel\CompressionHandler\CompressionHandler')) {
             require $phpMussel['Vault'] . 'classes/CompressionHandler.php';
         }
 
@@ -3913,10 +3913,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
             /** Success! Now we'll send it to the data handler. */
             try {
-                $z = $phpMussel['DataHandler']($CompressionObject->Data, $dpt, $ofn);
+                $z = $phpMussel['DataHandler']($CompressionObject->Data, $dpt, $phpMussel['DropTrailingCompressionExtension']($ofn));
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
+            
+            /**
+             * Replace originally scanned data with decompressed data in case
+             * needed by the archive handler.
+             */
+            $in = $CompressionObject->Data;
 
         }
 
@@ -3992,11 +3998,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         !empty($in) &&
         $phpMussel['Config']['files']['max_recursion'] > 1
     ) {
+
         /** Define archive phase. */
         $phpMussel['memCache']['phase'] = 'archive';
 
         /** Begin processing archives. */
-        // $phpMussel['ArchiveRecursor']();
+        $phpMussel['ArchiveRecursor']($x, $r, $in, $f, 0, urlencode($f));
+
     }
 
     /** Quarantine if necessary. */
@@ -4026,6 +4034,268 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Exit. */
     return !$n ? $r : $x;
+};
+
+/**
+ * Archive recursor.
+ *
+ * This is where we recurse through archives during the scan.
+ *
+ * @param string $x Scan results inherited from parent in the form of a string.
+ * @param int $r Scan results inherited from parent in the form of an integer.
+ * @param string $Data The data to be scanned (preferably an archive).
+ * @param string $File A path to the file, to be able to access it directly if
+ *      needed (because the tar and rar classes require a file pointer).
+ * @param int $ScanDepth The current scan depth (supplied during recursion).
+ * @param string $ItemRef A reference to the parent container (for logging).
+ */
+$phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDepth = 0, $ItemRef = '') use (&$phpMussel) {
+
+    /** Count recursion depth. */
+    $ScanDepth++;
+    
+    /** Used for CLI and logging. */
+    $Indent = str_pad('> ', $ScanDepth + 1, '-', STR_PAD_LEFT);
+
+    /** Reset container definition. */
+    $phpMussel['memCache']['container'] = 'none';
+
+    /** The class to use to handle the data to be scanned. */
+    $Handler = '';
+
+    /** The type of container to be scanned (mostly just for logging). */
+    $ConType = '';
+
+    /** Set appropriate container definitions and specify handler class. */
+    if (substr($Data, 0, 2) === 'PK') {
+        $Handler = 'ZipHandler';
+        if ($xt === 'ole') {
+            $ConType = 'OLE';
+        } elseif ($xt === 'smpk') {
+            $ConType = 'SMPTE';
+        } elseif ($xt === 'xpi') {
+            $ConType = 'XPInstall';
+        } elseif ($xts === 'app*') {
+            $ConType = 'App';
+        } elseif (strpos(
+            ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,xlsx,xltm,xltx,',
+            ',' . $xt . ','
+        ) !== false) {
+            $ConType = 'OpenXML';
+        } elseif (strpos(
+            ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,',
+            ',' . $xt . ','
+        ) !== false || $xts === 'fod*') {
+            $ConType = 'OpenDocument';
+        } elseif (strpos(',opf,epub,', ',' . $xt . ',') !== false) {
+            $ConType = 'EPUB';
+        } else {
+            $ConType = 'ZIP';
+            $phpMussel['memCache']['container'] = 'zipfile';
+        }
+        if ($ConType !== 'ZIP') {
+            $phpMussel['memCache']['file_is_ole'] = true;
+            $phpMussel['memCache']['container'] = 'pkfile';
+        }
+    } elseif (
+        substr($Data, 257, 6) === "ustar\x00" ||
+        strpos(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',') !== false
+    ) {
+        $Handler = 'TarHandler';
+        $ConType = 'TarFile';
+        $phpMussel['memCache']['container'] = 'tarfile';
+    } elseif (substr($Data, 0, 4) === 'Rar!' || substr($Data, 0, 4) === "\x52\x45\x7e\x5e") {
+        $Handler = 'RarHandler';
+        $ConType = 'RarFile';
+        $phpMussel['memCache']['container'] = 'rarfile';
+    }
+
+    /** Not an archive. Exit early. */
+    if (!$Handler) {
+        return $r;
+    }
+
+    /** Call the archive handler. */
+    if (!class_exists('\phpMussel\ArchiveHandler\ArchiveHandler')) {
+        require $phpMussel['Vault'] . 'classes/ArchiveHandler.php';
+    }
+
+    /** Handle zip files. */
+    if ($Handler === 'ZipHandler') {
+        /**
+         * Encryption guard.
+         * See: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
+         */
+        if ($phpMussel['Config']['files']['block_encrypted_archives']) {
+            $Bits = $phpMussel['explode_bits'](substr($Data, 6, 2));
+            if ($Bits && $Bits[7]) {
+                $r = 2;
+                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['whyflagged'] .= sprintf(
+                    $phpMussel['lang']['_exclamation'],
+                    $phpMussel['lang']['encrypted_archive'] . ' (' . $ItemRef . ')'
+                );
+                $x .= sprintf(
+                    '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                    $Indent,
+                    $phpMussel['lang']['scan_checking'],
+                    $ItemRef,
+                    hash('crc32b', $File),
+                    hash('crc32b', $Data),
+                    "\n",
+                    $phpMussel['lang']['encrypted_archive'],
+                    $phpMussel['lang']['_fullstop_final']
+                );
+                return;
+            }
+        }
+
+        /** Guard. */
+        if (!function_exists('zip_open')) {
+            // todo
+            return;
+        }
+
+        /** ZipHandler needs a file pointer. */
+        if (!$File || !is_readable($phpMussel['Vault'] . $File)) {
+            /**
+             * File pointer not available. Probably already inside an
+             * archive. Let's create a temporary file for this.
+             */
+            $Pointer = $phpMussel['CreateTemporaryFile']($Data);
+        } else {
+            /** File pointer available. Let's reference it. */
+            $Pointer = &$File;
+        }
+
+        /** We have a valid a pointer. Let's instantiate the object. */
+        if ($Pointer) {
+            $ArchiveObject = new \phpMussel\ArchiveHandler\ZipHandler($Pointer);
+        }
+    }
+
+    /** Handle tar files. */
+    if ($Handler === 'TarHandler') {
+        /** TarHandler can work with data directly. */
+        $ArchiveObject = new \phpMussel\ArchiveHandler\TarHandler($Data);
+    }
+
+    /** Handle rar files. */
+    if ($Handler === 'RarHandler') {
+        /**
+         * Encryption guard.
+         * See: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
+         */
+        if ($phpMussel['Config']['files']['block_encrypted_archives']) {
+            // todo
+            return;
+        }
+
+        /** Guard. */
+        if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
+            // todo
+            return;
+        }
+
+        /** RarHandler needs a file pointer. */
+        if (!$File || !is_readable($phpMussel['Vault'] . $File)) {
+            /**
+             * File pointer not available. Probably already inside an
+             * archive. Let's create a temporary file for this.
+             */
+            $Pointer = $phpMussel['CreateTemporaryFile']($Data);
+        } else {
+            /** File pointer available. Let's reference it. */
+            $Pointer = &$File;
+        }
+
+        /** We have a valid a pointer. Let's instantiate the object. */
+        if ($Pointer) {
+            $ArchiveObject = new \phpMussel\ArchiveHandler\RarHandler($Pointer);
+        }
+    }
+
+    /** Archive object has been instantiated. Let's proceed. */
+    if (isset($ArchiveObject) && is_object($ArchiveObject)) {
+
+        /** No errors reported. Let's try checking its contents. */
+        if ($ArchiveObject->ErrorState === 0) {
+            while ($ArchiveObject->EntryNext()) {
+
+                /** Fetch filesize. */
+                $Filesize = $ArchiveObject->EntryActualSize();
+
+                /** Fetch and prepare filename. */
+                if ($Filename = $ArchiveObject->EntryName()) {
+                    /** This entry is probably a directory. No point scanning. Let's skip it. */
+                    if ((substr($Filename, -1, 1) === "\\" || substr($Filename, -1, 1) === '/') && $Filesize === 0) {
+                        continue;
+                    }
+
+                    if (strpos($Filename, "\\") !== false) {
+                        $Filename = $phpMussel['substral']($Filename, "\\");
+                    }
+                    if (strpos($Filename, '/') !== false) {
+                        $Filename = $phpMussel['substral']($Filename, '/');
+                    }
+                }
+
+                /** Fetch content and build hashes. */
+                $Content = $ArchiveObject->EntryRead($Filesize);
+                $MD5 = md5($Content);
+                $NameCRC32 = hash('crc32b', $Filename);
+                $DataCRC32 = hash('crc32b', $Content);
+                $ThisItemRef = $ItemRef . '>' . urlencode($Filename);
+
+                /** Executed if the recursion depth limit has been exceeded. */
+                if ($ScanDepth > $phpMussel['Config']['files']['max_recursion']) {
+                    $r = 2;
+                    $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
+                    $phpMussel['whyflagged'] .= sprintf(
+                        $phpMussel['lang']['_exclamation'],
+                        $phpMussel['lang']['recursive'] . ' (' . $ThisItemRef . ')'
+                    );
+                    $x .= sprintf(
+                        '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                        $Indent,
+                        $phpMussel['lang']['scan_checking'],
+                        $ThisItemRef,
+                        $NameCRC32,
+                        $DataCRC32,
+                        "\n",
+                        $phpMussel['lang']['recursive'],
+                        $phpMussel['lang']['_fullstop_final']
+                    );
+                    return;
+                }
+
+                /** Ready to check the entry. */
+                $x .= sprintf(
+                    '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s',
+                    $Indent,
+                    $phpMussel['lang']['scan_checking'],
+                    $ThisItemRef,
+                    $NameCRC32,
+                    $DataCRC32,
+                    "\n"
+                );
+
+            }
+        }
+
+    }
+
+};
+
+/**
+ * Drops trailing extensions from filenames if the extension matches that of a
+ * compression format supported by the compression handler.
+ *
+ * @param string $Filename The filename.
+ * @return string The filename sans compression extension.
+ */
+$phpMussel['DropTrailingCompressionExtension'] = function ($Filename) {
+    return preg_replace(['~\.t[gbl]?z[\da-z]?$~i', '~\.(?:bz2?|gz|lha|lz[fhowx])$~i'], ['.tar', ''], $Filename);
 };
 
 /**
