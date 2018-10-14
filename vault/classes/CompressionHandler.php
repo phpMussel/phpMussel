@@ -98,9 +98,10 @@ class CompressionHandler
         $Errors = &$this->Errors;
 
         /**
-         * Seeing as we're effectively guessing which compression format could
-         * be, and possibly it mightn't be compressed at all, there'll probably
-         * be warnings and notices generated. So, let's handle that cleanly.
+         * Seeing as we're effectively guessing which compression format has
+         * been used, and possibly it mightn't be compressed at all, there'll
+         * probably be warnings and notices generated. So, let's handle that
+         * cleanly.
          */
         set_error_handler(function ($errno, $errstr, $errfile, $errline) use (&$Errors) {
             $Errors[] = [$errno, $errstr, $errfile, $errline];

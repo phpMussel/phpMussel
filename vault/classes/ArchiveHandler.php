@@ -24,18 +24,6 @@ namespace phpMussel\ArchiveHandler;
 interface ArchiveHandlerInterface
 {
     /**
-     * Construct the archive object.
-     *
-     * @param mixed $Pointer
-     */
-    public function __construct($Pointer);
-
-    /**
-     * Destruct the archive object (useful for cleanup, closing files, etc).
-     */
-    public function __destruct();
-
-    /**
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
@@ -76,7 +64,7 @@ abstract class ArchiveHandler implements ArchiveHandlerInterface
      * something goes wrong).
      *
      * -1: Object not constructed (default state; shouldn't normally be seen).
-     * 0: Object constructed successfully. No problems, as far we know.
+     * 0: Object constructed successfully. No problems, as far we as know.
      * 1: Necessary prerequisites/extensions aren't installed/available.
      * 2: Pointer isn't valid, isn't accessible, or failed to open/stream.
      */
@@ -207,11 +195,6 @@ class TarHandler extends ArchiveHandler
 
         /** All is good. */
         $this->ErrorState = 0;
-    }
-
-    /** Not needed for Tar. */
-    public function __destruct()
-    {
     }
 
     /**

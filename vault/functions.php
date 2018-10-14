@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.03).
+ * This file: Functions file (last modified: 2018.10.14).
  */
 
 /**
@@ -338,10 +338,6 @@ $phpMussel['substral'] = function ($h, $n) {
  */
 $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Blocks = 128) {
     if (!$PreChecked && (!is_file($File) || !is_readable($File))) {
-        return false;
-    }
-    /** Prevent closure being used to read via phar wrapper (dangerous). */
-    if (strpos($File, 'phar:') === 0) {
         return false;
     }
     /** Blocksize to bytes. */
@@ -1075,32 +1071,6 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
 };
 
 /**
- * Constructs a list of files contained within a pharable file (in this
- * context, a pharable file is defined as a file of any the following formats:
- * TAR, ZIP, PHAR) and returns that list as a string, entries delimited by a
- * linefeed (\x0A) and preceeded by an integer representing the depth of the
- * entry (in relation to where it exists within the tree of the pharable file).
- *
- * @param string $PharFile The pharable file to analyse.
- * @param int $PharDepth An offset for the depth of entries.
- * @return string The constructed list (as per described above).
- */
-$phpMussel['BuildPharList'] = function ($PharFile, $PharDepth = 0) use (&$phpMussel) {
-    $PharDepth++;
-    $Out = '';
-    $PharDir = scandir('phar://' . $PharFile);
-    foreach ($PharDir as $ThisPhar) {
-        if (is_dir('phar://' . $PharFile . '/' . $ThisPhar)) {
-            $ThisPhar = $phpMussel['BuildPharList']($PharFile . '/' . $ThisPhar, $PharDepth);
-        } else {
-            $ThisPhar = $PharDepth . ' ' . $PharFile . '/' . $ThisPhar;
-        }
-        $Out .= $ThisPhar . "\n";
-    }
-    return $Out;
-};
-
-/**
  * Checks whether signature length is confined within an acceptable limit.
  *
  * @param int $Length
@@ -1241,7 +1211,7 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$
  * recursor.
  *
  * @param string $str Raw binary data to be checked, supplied by the parent
- *      closure (generally, the contents of files to being scanned).
+ *      closure (generally, the contents of the files to be scanned).
  * @param int $dpt Represents the current depth of recursion from which the
  *      closure has been called, used for determining how far to indent any
  *      entries generated for logging and for the display of scan results in
@@ -3774,13 +3744,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     /** Define file phase. */
     $phpMussel['memCache']['phase'] = 'file';
 
-    /**
-     * Indicates whether the file/object being scanned is a part of a
-     * container (e.g., an OLE object, ZIP file, TAR, PHAR, etc).
-     */
+    /** Indicates whether the scan target is a part of a container. */
     $phpMussel['memCache']['container'] = 'none';
 
-    /** Indicates whether the file/object being scanned is an OLE object. */
+    /** Indicates whether the scan target is an OLE object. */
     $phpMussel['memCache']['file_is_ole'] = false;
 
     /** Fetch the greylist if it hasn't already been fetched. */
@@ -3919,15 +3886,49 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
 
-    /** Send the file/object being scanned to the data handler. */
+    /** Send the scan target to the data handler. */
     try {
         $z = $phpMussel['DataHandler']($in, $dpt, $ofn);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
 
-    /** Executed if there were any problems or anything detected: */
+    /**
+     * Check whether the file is compressed. If it's compressed, attempt to
+     * decompress it, and then scan the decompressed version of the file. We'll
+     * only bother doing this if the file hasn't already been flagged though.
+     */
+    if ($z[0] === 1) {
+
+        /** Call the compression handler. */
+        if (!class_exists('\phpMussel\CompressionHandler')) {
+            require $phpMussel['Vault'] . 'classes/CompressionHandler.php';
+        }
+
+        /** Create a new compression object. */
+        $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($in);
+
+        /** Now we'll try to decompress the file. */
+        if (!$CompressionResults = $CompressionObject->TryEverything()) {
+
+            /** Success! Now we'll send it to the data handler. */
+            try {
+                $z = $phpMussel['DataHandler']($CompressionObject->Data, $dpt, $ofn);
+            } catch (\Exception $e) {
+                throw new \Exception($e->getMessage());
+            }
+
+        }
+
+        /** Cleanup. */
+        unset($CompressionResults, $CompressionObject);
+
+    }
+
+    /** Executed if there were any problems or if anything was detected. */
     if ($z[0] !== 1) {
+
+        /** Quarantine if necessary. */
         if ($z[0] === 2) {
             if (
                 $phpMussel['Config']['general']['quarantine_key'] &&
@@ -3947,29 +3948,44 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['killdata'] .= sprintf($phpMussel['lang']['quarantined_as'], $qfu);
             }
         }
+
+        /** Delete if necessary. */
         if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
-        return (!$n) ? $z[0] :
-            $lnap . $phpMussel['lang']['scan_checking'] .
-            ' \'' . $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n" .
-            $z[1];
+
+        /** Exit. */
+        return !$n ? $z[0] : sprintf(
+            '%s%s \'%s\' (FN: %s; FD: %s):%s%s',
+            $lnap,
+            $phpMussel['lang']['scan_checking'],
+            $ofn,
+            $fnCRC,
+            $fdCRC,
+            "\n",
+            $z[1]
+        );
+
     }
 
-    $x =
-        $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
-        $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" . $lnap .
-        $phpMussel['lang']['scan_no_problems_found'] . "\n";
-    $r = 1;
+    $x = sprintf(
+        '%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s-%1$s%7$s%6$s',
+        $lnap,
+        $phpMussel['lang']['scan_checking'],
+        $ofn,
+        $fnCRC,
+        $fdCRC,
+        "\n",
+        $phpMussel['lang']['scan_no_problems_found']
+    );
 
-    /** Temporarily forcibly disable archive checking due to phar vulnerability. */
-    $phpMussel['Config']['files']['check_archives'] = false;
+    /** Results. */
+    $r = 1;
 
     /**
      * Begin archive phase.
      * Note: Archive phase will only occur when "check_archives" is enabled and
-     * when no problems were detected with the file/object being scanned by
-     * this stage of the scan.
+     * when no problems were detected with the scan target by this point.
      */
     if (
         $phpMussel['Config']['files']['check_archives'] &&
@@ -3979,479 +3995,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         /** Define archive phase. */
         $phpMussel['memCache']['phase'] = 'archive';
 
-        /** Reset container definition. */
-        $phpMussel['memCache']['container'] = 'none';
-
-        /** Try to generate symlinks if enabled and useful for the instance. */
-        if ($phpMussel['Config']['general']['allow_symlinks'] && strpos($f, '.') === false) {
-            $Try = $phpMussel['cachePath'] . bin2hex($f) . '.tmp';
-            $ReadFrom = symlink($f, $Try) ? $Try : $f;
-            unset($Try);
-        } else {
-            $ReadFrom = $f;
-        }
-
-        /** Set appropriate container definitions. */
-        if (substr($in, 0, 2) === 'PK') {
-            if ($xt === 'ole') {
-                $PharType = 'OLE';
-            } elseif ($xt === 'smpk') {
-                $PharType = 'SMPTE';
-            } elseif ($xt === 'xpi') {
-                $PharType = 'XPInstall';
-            } elseif ($xts === 'app*') {
-                $PharType = 'App';
-            } elseif (strpos(
-                ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,xlsx,xltm,xltx,',
-                ',' . $xt . ','
-            ) !== false) {
-                $PharType = 'OpenXML';
-            } elseif (strpos(
-                ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,',
-                ',' . $xt . ','
-            ) !== false || $xts === 'fod*') {
-                $PharType = 'OpenDocument';
-            } elseif (strpos(',opf,epub,', ',' . $xt . ',') !== false) {
-                $PharType = 'EPUB';
-            } else {
-                $PharType = 'ZIP';
-                $phpMussel['memCache']['container'] = 'zipfile';
-            }
-            if ($PharType !== 'ZIP') {
-                $phpMussel['memCache']['file_is_ole'] = true;
-                $phpMussel['memCache']['container'] = 'pkfile';
-            }
-        } elseif (
-            substr($in, 257, 6) === "ustar\x00" ||
-            strpos(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',') !== false
-        ) {
-            $PharType = 'TarFile';
-            $phpMussel['memCache']['container'] = 'tarfile';
-        } elseif (substr($in, 0, 4) === 'Rar!' || substr($in, 0, 4) === "\x52\x45\x7e\x5e") {
-            $PharType = 'RarFile';
-            $phpMussel['memCache']['container'] = 'rarfile';
-        } else {
-            $PharType = '';
-        }
-
-        /** Set default state for our array of phar'd files. */
-        $PharData = [];
-
-        /**
-         * Alternative archive analysis method to account for the extensionless phar file bug.
-         * - https://bugs.php.net/bug.php?id=76061
-         * - https://github.com/phpMussel/phpMussel/issues/155
-         */
-        if (substr($in, 0, 2) === 'PK' && strpos($ReadFrom, '.') === false) {
-            $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
-            $PharIter = 0;
-            $Handle = zip_open($ReadFrom);
-            if (is_resource($Handle)) {
-                while (($EntryID = zip_read($Handle)) && is_resource($EntryID) && zip_entry_open($Handle, $EntryID, 'rb')) {
-                    $PharData[$PharIter] = ['DoScan' => true, 'Depth' => 1, 'Path' => zip_entry_name($EntryID)];
-                    $PharData[$PharIter]['Data'] = zip_entry_read($EntryID, zip_entry_filesize($EntryID));
-                    $PharData[$PharIter]['Filename'] = $phpMussel['SubstrAfterFinalSlash']($PharData[$PharIter]['Path']);
-                    $PharData[$PharIter]['Path'] = ltrim($phpMussel['RemoveLeadMatch']($ofn, $PharData[$PharIter]['Path']), "\\/");
-                    $PharData[$PharIter]['ItemRef'] = $ofn . '>' . $PharData[$PharIter]['Path'];
-                    zip_entry_close($EntryID);
-                    $PharIter++;
-                }
-                unset($EntryID);
-                zip_close($Handle);
-            }
-            unset($Handle, $PharIter);
-        }
-
-        /** Check if pharable, and if so, generate an array of the contents. */
-        elseif (is_dir('phar://' . $ReadFrom) && is_readable('phar://' . $ReadFrom)) {
-            $x .= '-' . $lnap . $phpMussel['lang']['scan_reading'] . ' \'' . $ofn . "' (PHAR):\n";
-            $PharData = explode("\n", $phpMussel['BuildPharList']($ReadFrom, $dpt)) ?: [];
-
-            /** Iterate through each item in the pharable file/object. */
-            foreach ($PharData as &$ThisPhar) {
-                if (empty($ThisPhar)) {
-                    continue;
-                }
-                $ThisPhar = [
-                    'DoScan' => true,
-                    'Depth' => $phpMussel['substrbf']($ThisPhar, ' '),
-                    'Path' => $phpMussel['substraf']($ThisPhar, ' ')
-                ];
-                $ThisPhar['Data'] = $phpMussel['ReadFile']('phar://' . $ThisPhar['Path']);
-                $ThisPhar['Filename'] = $phpMussel['SubstrAfterFinalSlash']($ThisPhar['Path']);
-                $ThisPhar['Path'] = ltrim($phpMussel['RemoveLeadMatch']($ofn, $ThisPhar['Path']), "\\/");
-                $ThisPhar['ItemRef'] = $ofn . '>' . $ThisPhar['Path'];
-            }
-        }
-
-        /** Default to the parent if PharData is empty. */
-        if (empty($PharData)) {
-            $PharData = [0 => ['DoScan' => false, 'Depth' => 1, 'Data' => $in]];
-            $PharData[0]['Filename'] = $phpMussel['SubstrAfterFinalSlash']($ReadFrom);
-            $PharData[0]['Path'] = ltrim($phpMussel['RemoveLeadMatch']($ofn, $f), "\\/");
-            $PharData[0]['ItemRef'] = $ofn . '>' . $PharData[0]['Path'];
-        }
-
-        /** And now we begin processing our pharable contents array. */
-        foreach ($PharData as &$ThisPhar) {
-            if (empty($ThisPhar)) {
-                continue;
-            }
-            $ThisPhar['Filesize'] = strlen($ThisPhar['Data']);
-            $ThisPhar['MD5'] = md5($ThisPhar['Data']);
-            $ThisPhar['NameCRC32'] = hash('crc32b', $ThisPhar['Filename']);
-            $ThisPhar['DataCRC32'] = hash('crc32b', $ThisPhar['Data']);
-            if (
-                $phpMussel['Config']['files']['block_encrypted_archives'] &&
-                substr($ThisPhar['Data'], 0, 2) === 'PK'
-            ) {
-                /**
-                 * ZIP File Format Specification:
-                 * - https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
-                 */
-                $ThisPhar['ZipBits'] = $phpMussel['explode_bits'](substr($ThisPhar['Data'], 6, 2));
-                if ($ThisPhar['ZipBits'] && $ThisPhar['ZipBits'][7]) {
-                    /** Encryption detected. */
-                    $r = 2;
-                    $phpMussel['killdata'] .= $ThisPhar['MD5'] . ':' . $ThisPhar['Filesize'] . ':' . $ThisPhar['ItemRef'] . "\n";
-                    $phpMussel['whyflagged'] .= sprintf(
-                        $phpMussel['lang']['_exclamation'],
-                        $phpMussel['lang']['encrypted_archive'] . ' (' . urlencode($ThisPhar['ItemRef']) . ')'
-                    );
-                    $x .=
-                        '-' . $lnap . $phpMussel['lang']['scan_checking'] .
-                        ' \'' . $ThisPhar['ItemRef'] . '\' (FN: ' .
-                        $ThisPhar['NameCRC32'] . '; FD: ' .
-                        $ThisPhar['DataCRC32'] . "):\n--" . $lnap .
-                        $phpMussel['lang']['encrypted_archive'] .
-                        $phpMussel['lang']['_fullstop_final'] . "\n";
-                    break;
-                }
-            }
-            if ($ThisPhar['DoScan']) {
-                $x .=
-                    '-' . $lnap . $phpMussel['lang']['scan_checking'] .
-                    ' \'' . $ThisPhar['ItemRef'] .
-                    '\' (FN: ' . $ThisPhar['NameCRC32'] .
-                    '; FD: ' . $ThisPhar['DataCRC32'] . "):\n";
-                try {
-                    list($r, $x) = $phpMussel['MetaDataScan'](
-                        $ThisPhar['ItemRef'],
-                        $ThisPhar['Filename'],
-                        $ThisPhar['Data'],
-                        $ThisPhar['Depth'],
-                        '-' . $lnap,
-                        $r,
-                        $x
-                    );
-                } catch (\Exception $e) {
-                    throw new \Exception($e->getMessage());
-                }
-                if ($r !== 1) {
-                    break;
-                }
-                $x .= '--' . $lnap . $phpMussel['lang']['scan_no_problems_found'] . "\n";
-            }
-            $ScanDepth = 0;
-            while (true) {
-                if ($ScanDepth > $phpMussel['Config']['files']['max_recursion']) {
-                    $r = 2;
-                    $phpMussel['killdata'] .= $ThisPhar['MD5'] . ':' . $ThisPhar['Filesize'] . ':' . $ThisPhar['ItemRef'] . "\n";
-                    $phpMussel['whyflagged'] .= sprintf(
-                        $phpMussel['lang']['_exclamation'],
-                        $phpMussel['lang']['recursive'] . ' (' . $ofnSafe . ')'
-                    );
-                    $x .=
-                        '-' . $lnap . $phpMussel['lang']['scan_checking'] .
-                        ' \'' . $ThisPhar['ItemRef'] . '\' (FN: ' .
-                        $ThisPhar['NameCRC32'] . '; FD: ' .
-                        $ThisPhar['DataCRC32'] . "):\n--" .
-                        $lnap . $phpMussel['lang']['recursive'] .
-                        $phpMussel['lang']['_fullstop_final'] . "\n";
-                    break 2;
-                }
-                $zDo = false;
-                $ThisPhar['Indent'] = str_repeat('-', $ScanDepth + $dpt) . $lnap;
-                $xtt = (strpos($ThisPhar['Filename'], '.') !== false) ? [
-                    substr($ThisPhar['Filename'], -3),
-                    substr($ThisPhar['Filename'], -4),
-                    substr($ThisPhar['Filename'], -7, 4),
-                    substr($ThisPhar['Filename'], -8, 4)
-                ] : false;
-                $GZable = false;
-                $BZable = false;
-                $LZable = false;
-                if (substr($ThisPhar['Data'], 0, 2) === "\x1f\x8b") {
-                    $GZable = true;
-                } elseif (substr($ThisPhar['Data'], 0, 3) === "\x42\x5a\x68") {
-                    $BZable = true;
-                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.gz' || $xtt[1] === '.tgz')) {
-                    $GZable = true;
-                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.bz' || strpos(
-                    ',.bz2,.tbz,',
-                    ',' . $xtt[1] . ','
-                ) !== false)) {
-                    $BZable = true;
-                } elseif (!empty($xtt) && !$zDo && ($xtt[0] === '.lz' || strpos(
-                    ',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,',
-                    ',' . $xtt[1] . ','
-                ) !== false)) {
-                    $LZable = true;
-                } elseif (!$zDo && (substr($ThisPhar['Data'], 257, 6) === "ustar\x00" || (
-                    !empty($xtt) &&
-                    $phpMussel['ContainsMustAssert'](['.tar,.tgz,.tbz,.tlz'], [$xtt[1], $xtt[2], $xtt[3]], ',', true, true)
-                ))) {
-                    /** Allows recursion for TAR files. */
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_reading'] . ' \'' .
-                        $ThisPhar['ItemRef'] . "' (TAR):\n";
-                    $TarFile = ['Offset' => 0];
-                    while (true) {
-                        if (($TarFile['Offset'] + 1024) > $ThisPhar['Filesize']) {
-                            break;
-                        }
-                        $TarFile['File'] = [
-                            'Filename' => preg_replace('/[^\x20-\xff]/', '', substr($ThisPhar['Data'], $TarFile['Offset'], 100)),
-                            'Filesize' => octdec(preg_replace('/\D/', '', substr($ThisPhar['Data'], $TarFile['Offset'] + 124, 12))),
-                        ];
-                        if ($TarFile['File']['Filesize'] < 0) {
-                            $r = 2;
-                            $phpMussel['killdata'] .= $TarFile['File']['MD5'] . ':' . $TarFile['File']['Filesize'] . ':' . $ThisPhar['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .= sprintf(
-                                $phpMussel['lang']['_exclamation'],
-                                $phpMussel['lang']['scan_tampering'] . ' (' . urlencode($ThisPhar['ItemRef']) . ')'
-                            );
-                            $x .= '-' . $ThisPhar['Indent'] . sprintf(
-                                $phpMussel['lang']['_exclamation_final'],
-                                $phpMussel['lang']['scan_tampering']
-                            ) . "\n";
-                            break;
-                        }
-                        $TarFile['File']['Directory'] = (
-                            substr($TarFile['File']['Filename'], -1, 1) === '/' &&
-                            $TarFile['File']['Filesize'] === 0
-                        );
-                        $TarFile['File']['Blocks'] = ceil($TarFile['File']['Filesize'] / 512) + 1;
-                        if ($TarFile['File']['Directory']) {
-                            $TarFile['Offset'] += $TarFile['File']['Blocks'] * 512;
-                            continue;
-                        }
-                        if ($TarFile['File']['Filename']) {
-                            if (strpos($TarFile['File']['Filename'], "\\") !== false) {
-                                $TarFile['File']['Filename'] =
-                                    $phpMussel['substral']($TarFile['File']['Filename'], "\\");
-                            }
-                            if (strpos($TarFile['File']['Filename'], '/') !== false) {
-                                $TarFile['File']['Filename'] =
-                                    $phpMussel['substral']($TarFile['File']['Filename'], '/');
-                            }
-                        }
-                        $TarFile['File']['Data'] =
-                            substr($ThisPhar['Data'], $TarFile['Offset'] + 512, $TarFile['File']['Filesize']);
-                        if (empty($TarFile['File']['Data'])) {
-                            break;
-                        }
-                        $TarFile['File']['MD5'] = md5($TarFile['File']['Data']);
-                        if (!$TarFile['File']['Filename']) {
-                            $r = 2;
-                            $phpMussel['killdata'] .= $TarFile['File']['MD5'] . ':' . $TarFile['File']['Filesize'] . ":MISSING-FILENAME\n";
-                            $phpMussel['whyflagged'] .= sprintf(
-                                $phpMussel['lang']['_exclamation'],
-                                $phpMussel['lang']['scan_missing_filename']
-                            );
-                            $x .= '-' . $ThisPhar['Indent'] . sprintf(
-                                $phpMussel['lang']['_exclamation_final'],
-                                $phpMussel['lang']['scan_missing_filename']
-                            ) . "\n";
-                            break;
-                        }
-                        $phpMussel['memCache']['objects_scanned']++;
-                        try {
-                            list($r, $x) = $phpMussel['MetaDataScan'](
-                                $ThisPhar['ItemRef'] . '>' . $TarFile['File']['Filename'],
-                                $TarFile['File']['Filename'],
-                                $TarFile['File']['Data'],
-                                $dpt,
-                                $ThisPhar['Indent'],
-                                $r,
-                                $x
-                            );
-                        } catch (\Exception $e) {
-                            throw new \Exception($e->getMessage());
-                        }
-                        $TarFile['File']['DataCRC32'] = hash('crc32b', $TarFile['File']['Data']);
-                        $TarFile['File']['NameCRC32'] = hash('crc32b', $TarFile['File']['Filename']);
-                        $TarFile['Offset'] += $TarFile['File']['Blocks'] * 512;
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_checking'] . ' \'' .
-                            $ThisPhar['ItemRef'] . '>' . $TarFile['File']['Filename'] .
-                            '\' (FN: ' . $TarFile['File']['NameCRC32'] . '; FD: ' .
-                            $TarFile['File']['DataCRC32'] . "):\n";
-                        if ($r === 1) {
-                            $x .=
-                                '-' . $ThisPhar['Indent'] .
-                                $phpMussel['lang']['scan_no_problems_found'] . "\n";
-                        }
-                    }
-                    $TarFile = '';
-                }
-                if ($GZable) {
-                    if (!function_exists('gzdecode')) {
-                        $phpMussel['memCache']['scan_errors']++;
-                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                            $r = -1;
-                            $phpMussel['killdata'] .=
-                                $ThisPhar['MD5'] . ':' .
-                                $ThisPhar['Filesize'] . ':' .
-                                $ThisPhar['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
-                        }
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (GZIP):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
-                        break;
-                    }
-                    if (!$ThisPhar['Data'] = gzdecode($ThisPhar['Data'])) {
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (GZIP):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_not_archive'] . "\n";
-                        break;
-                    }
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_reading'] . ' \'' .
-                        $ThisPhar['ItemRef'] . "' (GZIP):\n";
-                    $zDo = true;
-                } elseif ($BZable) {
-                    if (!function_exists('bzdecompress')) {
-                        $phpMussel['memCache']['scan_errors']++;
-                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                            $r = -1;
-                            $phpMussel['killdata'] .=
-                                $ThisPhar['MD5'] . ':' .
-                                $ThisPhar['Filesize'] . ':' .
-                                $ThisPhar['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
-                        }
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (BZIP2):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
-                        break;
-                    }
-                    if (!$ThisPhar['Data'] = bzdecompress($ThisPhar['Data'])) {
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (BZIP2):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_not_archive'] . "\n";
-                        break;
-                    }
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_reading'] . ' \'' .
-                        $ThisPhar['ItemRef'] . "' (BZIP2):\n";
-                    $zDo = true;
-                } elseif ($LZable) {
-                    if (!function_exists('lzf_decompress')) {
-                        $phpMussel['memCache']['scan_errors']++;
-                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                            $r = -1;
-                            $phpMussel['killdata'] .=
-                                $ThisPhar['MD5'] . ':' .
-                                $ThisPhar['Filesize'] . ':' .
-                                $ThisPhar['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
-                        }
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (LZF):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
-                        break;
-                    }
-                    if (!$ThisPhar['Data'] = lzf_decompress($ThisPhar['Data'])) {
-                        $x .=
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_reading'] . ' \'' .
-                            $ThisPhar['ItemRef'] . "' (LZF):\n-" .
-                            $ThisPhar['Indent'] .
-                            $phpMussel['lang']['scan_not_archive'] . "\n";
-                        break;
-                    }
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_reading'] . ' \'' .
-                        $ThisPhar['ItemRef'] . "' (LZF):\n";
-                    $zDo = true;
-                }
-                if ($zDo) {
-                    $ScanDepth++;
-                    if (strpos($ThisPhar['Filename'], '.') !== false) {
-                        $ThisPhar['Filename'] = $phpMussel['substrbl']($ThisPhar['Filename'], '.');
-                    }
-                    if (strpos($ThisPhar['Filename'], "\\") !== false) {
-                        $ThisPhar['Filename'] = $phpMussel['substral']($ThisPhar['Filename'], "\\");
-                    }
-                    if (strpos($ThisPhar['Filename'], '/') !== false) {
-                        $ThisPhar['Filename'] = $phpMussel['substral']($ThisPhar['Filename'], '/');
-                    }
-                    $ThisPhar['Filesize'] = strlen($ThisPhar['Data']);
-                    $ThisPhar['ItemRef'] .= '>' . $ThisPhar['Filename'];
-                    $ThisPhar['NameCRC32'] = hash('crc32b', $ThisPhar['Filename']);
-                    $ThisPhar['DataCRC32'] = hash('crc32b', $ThisPhar['Data']);
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_checking'] .
-                        ' \'' . $ThisPhar['ItemRef'] .
-                        '\' (FN: ' . $ThisPhar['NameCRC32'] .
-                        '; FD: ' . $ThisPhar['DataCRC32'] . "):\n";
-                    try {
-                        list($r, $x) = $phpMussel['MetaDataScan'](
-                            $ThisPhar['ItemRef'],
-                            $ThisPhar['Filename'],
-                            $ThisPhar['Data'],
-                            $ThisPhar['Depth'] + $ScanDepth + $dpt,
-                            $ThisPhar['Indent'],
-                            $r,
-                            $x
-                        );
-                    } catch (\Exception $e) {
-                        throw new \Exception($e->getMessage());
-                    }
-                    if ($r !== 1) {
-                        break 2;
-                    }
-                    $x .=
-                        $ThisPhar['Indent'] .
-                        $phpMussel['lang']['scan_no_problems_found'] .
-                        "\n";
-                    continue;
-                }
-                break;
-            }
-        }
-
-        /** Remove old symlinks. */
-        if ($phpMussel['Config']['general']['allow_symlinks'] && $ReadFrom !== $f && is_link($ReadFrom)) {
-            unlink($ReadFrom);
-        }
-
-        /** Cleanup. */
-        unset($ThisPhar, $PharData, $PharType, $ReadFrom);
+        /** Begin processing archives. */
+        // $phpMussel['ArchiveRecursor']();
     }
+
+    /** Quarantine if necessary. */
     if ($r === 2) {
         if (
             $phpMussel['Config']['general']['quarantine_key'] &&
@@ -4470,9 +4018,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['killdata'] .= sprintf($phpMussel['lang']['quarantined_as'], $qfu);
         }
     }
+
+    /** Delete if necessary. */
     if ($r !== 1 && $phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
         unlink($f);
     }
+
+    /** Exit. */
     return !$n ? $r : $x;
 };
 
