@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2018.07.31).
+ * This file: Italian language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Tipo di file nella lista nera';
 $phpMussel['lang']['finished'] = 'Finito';
 $phpMussel['lang']['generated_by'] = 'Generato da';
 $phpMussel['lang']['greylist_cleared'] = ' Lista grigia svuotata.';
-$phpMussel['lang']['greylist_not_updated'] = ' Lista grigia non aggiornata.';
 $phpMussel['lang']['greylist_updated'] = ' Lista grigia aggiornata.';
 $phpMussel['lang']['image'] = 'Immagine';
 $phpMussel['lang']['instance_already_active'] = 'Istanza già attivo! Si prega di ricontrolla i vostri ganci.';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Direttorio dei plugin non
 $phpMussel['lang']['quarantined_as'] = "In quarantena come \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Limite di profondità di controllo superato';
 $phpMussel['lang']['required_variables_not_defined'] = 'Variabili obbligatori non sono definite: Impossibile di continuare.';
-$phpMussel['lang']['scan_aborted'] = 'Controllo interrotto!';
 $phpMussel['lang']['scan_chameleon'] = 'Rilevato attacco camaleonte %s';
 $phpMussel['lang']['scan_checking'] = 'Verifica';
-$phpMussel['lang']['scan_checking_contents'] = 'Successo! Procedo a verificare i contenuti.';
 $phpMussel['lang']['scan_command_injection'] = 'Rilevato tentativo di iniezione dei comandi';
 $phpMussel['lang']['scan_complete'] = 'Completato';
 $phpMussel['lang']['scan_extensions_missing'] = 'Fallito (mancano le estensioni richieste)!';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Nome del file mancante';
 $phpMussel['lang']['scan_no_problems_found'] = 'Nessun problema rilevato.';
 $phpMussel['lang']['scan_not_archive'] = 'Fallito (vuoto o non è un archivio)!';
 $phpMussel['lang']['scan_reading'] = 'Lettura in corso';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'File delle firme corrotto';
 $phpMussel['lang']['scan_signature_file_missing'] = 'File delle firme mancante';
 $phpMussel['lang']['scan_tampering'] = 'Rilevato potenzialmente pericolosi alterazione del file';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Rilevata manipolazione non autorizzata del caricamento del file';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = 'Cartella per il caricamento mancante! Co
 $phpMussel['lang']['upload_error_7'] = 'Errore nella scrittura del disco! Contatta l\'hostmaster per assistenza! ';
 $phpMussel['lang']['upload_error_8'] = 'Rilevata una malconfigurazione di PHP! Contatta l\'hostmaster per assistenza! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Limite di caricamento superato';
-$phpMussel['lang']['wrong_password'] = 'Password sbagliata; azione negata.';
 $phpMussel['lang']['x_does_not_exist'] = '%s non esiste';
 
 $phpMussel['lang']['cli_commands'] = " q

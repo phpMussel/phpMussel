@@ -588,7 +588,7 @@ Konfigurasi umum untuk mengambil alih file-file.
 - Memperlalaikan jenis file daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua) [Default]; True = Ya.
 
 ##### "max_recursion"
-- Batas kedalaman rekursi maksimum untuk arsip. Default = 10.
+- Batas kedalaman rekursi maksimum untuk arsip. Default = 3.
 
 ##### "block_encrypted_archives"
 - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel, anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut. False = Tidak; True = Ya [Default].

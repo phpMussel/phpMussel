@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.07.31).
+ * This file: French language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,7 +57,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Type de fichier sur liste noire';
 $phpMussel['lang']['finished'] = 'Terminé';
 $phpMussel['lang']['generated_by'] = 'Généré par';
 $phpMussel['lang']['greylist_cleared'] = ' Greylist vidé.';
-$phpMussel['lang']['greylist_not_updated'] = ' Liste grise n\'a pas été mise à jour';
 $phpMussel['lang']['greylist_updated'] = ' Liste grise mise à jour.';
 $phpMussel['lang']['image'] = 'Image';
 $phpMussel['lang']['instance_already_active'] = 'Instance déjà active ! Veuillez vérifier vos crochets.';
@@ -71,10 +70,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Le répertoire de plugins
 $phpMussel['lang']['quarantined_as'] = "Mis en quarantaine comme « /vault/quarantine/%s.qfu ».\n";
 $phpMussel['lang']['recursive'] = 'Profondeur limite de récursion dépassée';
 $phpMussel['lang']['required_variables_not_defined'] = 'Les variables requises ne sont pas définies : Vous ne pouvez pas continuer.';
-$phpMussel['lang']['scan_aborted'] = 'Analyse abandonnée !';
 $phpMussel['lang']['scan_chameleon'] = 'Attaque %s caméléon détectée';
 $phpMussel['lang']['scan_checking'] = 'Vérification';
-$phpMussel['lang']['scan_checking_contents'] = 'Succès ! La vérification des contenus peut continuer.';
 $phpMussel['lang']['scan_command_injection'] = 'Tentative d\'injection de commande détectée';
 $phpMussel['lang']['scan_complete'] = 'Terminé';
 $phpMussel['lang']['scan_extensions_missing'] = 'Échec (extensions requises manquantes) !';
@@ -83,7 +80,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Nom de fichier manquant';
 $phpMussel['lang']['scan_no_problems_found'] = 'Pas de problème trouvé.';
 $phpMussel['lang']['scan_not_archive'] = 'Échec (vide ou pas une archive) !';
 $phpMussel['lang']['scan_reading'] = 'Lecture en cours';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Fichier des signatures corrompu';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Fichiers des signatures manquant';
 $phpMussel['lang']['scan_tampering'] = 'Altération de fichier potentiellement dangereuse détectée';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Non autorisée manipulation de téléchargement de fichiers détecté';
@@ -97,7 +93,6 @@ $phpMussel['lang']['upload_error_6'] = 'Répertoire de téléchargement manquant
 $phpMussel['lang']['upload_error_7'] = 'Erreur d\'écriture disque ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
 $phpMussel['lang']['upload_error_8'] = 'Mauvaise configuration PHP détectée ! Veuillez contacter le hostmaster pour obtenir de l\'aide ! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Limite de téléchargement dépassée';
-$phpMussel['lang']['wrong_password'] = 'Mauvais mot de passe ; Action rejetée.';
 $phpMussel['lang']['x_does_not_exist'] = '%s n\'existe pas';
 
 $phpMussel['lang']['cli_commands'] = " q

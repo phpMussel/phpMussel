@@ -588,7 +588,7 @@ File handling configuration.
 - Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) [Default]; True = Yes.
 
 ##### "max_recursion"
-- Maximum recursion depth limit for archives. Default = 10.
+- Maximum recursion depth limit for archives. Default = 3.
 
 ##### "block_encrypted_archives"
 - Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].

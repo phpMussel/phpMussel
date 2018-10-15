@@ -684,7 +684,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 ##### <div dir="rtl">"max_recursion"<br /></div>
 <div dir="rtl"><ul>
- <li>ابلیھاگاروں کے لئے زیادہ سے زیادہ تکرار کی گہرائی کی حد. پہلے سے طے شدہ = 10.</li>
+ <li>ابلیھاگاروں کے لئے زیادہ سے زیادہ تکرار کی گہرائی کی حد. پہلے سے طے شدہ = 3.</li>
 </ul></div>
 
 ##### <div dir="rtl">"block_encrypted_archives"<br /></div>

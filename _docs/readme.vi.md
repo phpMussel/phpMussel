@@ -588,7 +588,7 @@ Cấu hình cho xử lý tập tin.
 - Thừa kế danh sách đen/trắng cho loại tập tin của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều) [Mặc định]; True = Vâng.
 
 ##### "max_recursion"
-- Tối đa đệ quy chiều sâu giới hạn cho kho lưu trữ. Mặc định = 10.
+- Tối đa đệ quy chiều sâu giới hạn cho kho lưu trữ. Mặc định = 3.
 
 ##### "block_encrypted_archives"
 - Phát hiện và chặn kho lưu trữ được mã hóa? Bởi vì phpMussel không thể quét các nội dung của kho lưu trữ được mã hóa, nó có thể mã hóa kho lưu trữ có thể được sử dụng bởi một kẻ tấn công như một phương tiện cố gắng để vượt qua phpMussel, máy quét chống vi rút và bảo vệ khác như. Hướng dẫn phpMussel để ngăn chặn bất kỳ kho lưu trữ mà nó phát hiện được mã hóa có thể giúp giảm nguy cơ nào liên kết với những khả năng này. False = Không; True = Vâng [Mặc định].

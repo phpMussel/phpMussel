@@ -588,7 +588,7 @@ General configuración para el manejo de archivos.
 - Heredar tipos de archivos blacklist/whitelist para los contenidos de compactados archivos? False = No (todo en la greylist); True = Sí [Predefinido].
 
 ##### "max_recursion"
-- Máximo recursividad nivel límite para compactados archivos. Predefinido = 10.
+- Máximo recursividad nivel límite para compactados archivos. Predefinido = 3.
 
 ##### "block_encrypted_archives"
 - Detectar y bloquear compactados archivos encriptados? Debido phpMussel no es capaz de escanear el contenido de los compactados archivos encriptados, es posible que este puede ser empleado por un atacante como un medio de evitando phpMussel, antivirus escáneres y otras protecciones. Instruir phpMussel para bloquear cualquier compactado archivo que se descubre es encriptado potencialmente podría ayudar a reducir el riesgo asociado a estos tales posibilidades. False = No; True = Sí [Predefinido].

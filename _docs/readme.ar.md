@@ -684,7 +684,7 @@
 
 ##### <div dir="rtl">"max_recursion"<br /></div>
 <div dir="rtl"><ul>
- <li>الحد الأقصى لإعادة الحد الأقصى لعمق المحفوظات. افتراضي = 10.</li>
+ <li>الحد الأقصى لإعادة الحد الأقصى لعمق المحفوظات. افتراضي = 3.</li>
 </ul></div>
 
 ##### <div dir="rtl">"block_encrypted_archives"<br /></div>

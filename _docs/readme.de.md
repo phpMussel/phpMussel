@@ -588,7 +588,7 @@ Generelle Konfigurationen für die Handhabung von Dateien.
 - Soll das Blacklisting/Whitelisting des Dateityps auf den Inhalt des Archivs übertragen werden? False = Nein (alles nur in die Greylist aufnehmen) [Standardeinstellung]; True = Ja.
 
 ##### "max_recursion"
-- Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 10.
+- Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 3.
 
 ##### "block_encrypted_archives"
 - Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden sind, zu verringern. False = Nein; True = Ja [Standardeinstellung].

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.07.31).
+ * This file: Korean language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = '파일 형식이 블랙리스트�
 $phpMussel['lang']['finished'] = '완료';
 $phpMussel['lang']['generated_by'] = '작성자';
 $phpMussel['lang']['greylist_cleared'] = ' 회색 목록이 해제되었습니다.';
-$phpMussel['lang']['greylist_not_updated'] = ' 회색 목록이 업데이트되어 있지 않습니다.';
 $phpMussel['lang']['greylist_updated'] = ' 회색 목록이 업데이트되었습니다.';
 $phpMussel['lang']['image'] = '이미지';
 $phpMussel['lang']['instance_already_active'] = '인스턴스가 이미 활성화되어 있습니다! 후크를 다시 확인하십시오.';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = '플러그인 디렉토리
 $phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/%s.qfu\"로 격리.\n";
 $phpMussel['lang']['recursive'] = '재귀 정의 호출의 반복 횟수를 초과했습니다';
 $phpMussel['lang']['required_variables_not_defined'] = '요청이 있었던 변수가 정의되어 있지 않기 때문에 계속할 수 없습니다.';
-$phpMussel['lang']['scan_aborted'] = '스캐닝 중단!';
 $phpMussel['lang']['scan_chameleon'] = '%s 카멜레온 공격이 감지되었습니다';
 $phpMussel['lang']['scan_checking'] = '현재 분석 중 :';
-$phpMussel['lang']['scan_checking_contents'] = '성공! 내용을 확인하고 있습니다.';
 $phpMussel['lang']['scan_command_injection'] = '명령 주입 공격이 감지되었습니다';
 $phpMussel['lang']['scan_complete'] = '완료';
 $phpMussel['lang']['scan_extensions_missing'] = '실패 (요청한 확장자가 없습니다)!';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = '파일 이름이 존재하지 않
 $phpMussel['lang']['scan_no_problems_found'] = '문제는 발견되지 않았습니다.';
 $phpMussel['lang']['scan_not_archive'] = '실패 (내용이 없거나 보관하지 않습니다)!';
 $phpMussel['lang']['scan_reading'] = '로드 중입니다';
-$phpMussel['lang']['scan_signature_file_corrupted'] = '서명 파일이 오염되어 있습니다';
 $phpMussel['lang']['scan_signature_file_missing'] = '서명 파일이 없습니다';
 $phpMussel['lang']['scan_tampering'] = '검색된 잠재적으로 위험한 파일 변조';
 $phpMussel['lang']['scan_unauthorised_upload'] = '불법 파일 업로드 변조가 감지되었습니다';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = '업로드 디렉토리가 없습니다! 
 $phpMussel['lang']['upload_error_7'] = '디스크에 쓸 수 없습니다! 호스트 책임자와 상담하십시오! ';
 $phpMussel['lang']['upload_error_8'] = '잘못된 PHP 설정이 감지되었습니다! 호스트 책임자와 상담하십시오! ';
 $phpMussel['lang']['upload_limit_exceeded'] = '업로드 제한을 초과합니다.';
-$phpMussel['lang']['wrong_password'] = '잘못된 암호; 액션은 부정되었다.';
 $phpMussel['lang']['x_does_not_exist'] = '%s는 존재하지 않습니다';
 
 $phpMussel['lang']['cli_commands'] = " q

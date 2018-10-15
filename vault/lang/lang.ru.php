@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.07.31).
+ * This file: Russian language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -60,7 +60,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Тип файла находитс
 $phpMussel['lang']['finished'] = 'Готово';
 $phpMussel['lang']['generated_by'] = 'Генерируется от';
 $phpMussel['lang']['greylist_cleared'] = ' Серый список очищен.';
-$phpMussel['lang']['greylist_not_updated'] = ' Серый список не обновлён.';
 $phpMussel['lang']['greylist_updated'] = ' Серый список обновлён.';
 $phpMussel['lang']['image'] = 'Изображение';
 $phpMussel['lang']['instance_already_active'] = 'Пример уже активен! Пожалуйста перепроверьте свои крючки.';
@@ -74,10 +73,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Каталог плаги
 $phpMussel['lang']['quarantined_as'] = "Помещен на карантин в «/vault/quarantine/%s.qfu».\n";
 $phpMussel['lang']['recursive'] = 'Лимит глубины рекурсии превышена';
 $phpMussel['lang']['required_variables_not_defined'] = 'Обязательные переменные не установлены: Продолжение невозможно.';
-$phpMussel['lang']['scan_aborted'] = 'Сканирование прерывается!';
 $phpMussel['lang']['scan_chameleon'] = 'Обнаружена %s хамелеон-атака';
 $phpMussel['lang']['scan_checking'] = 'Проверить';
-$phpMussel['lang']['scan_checking_contents'] = 'Сделано! Исходная проверка содержимого.';
 $phpMussel['lang']['scan_command_injection'] = 'Обнаружена попытка командной инъекции';
 $phpMussel['lang']['scan_complete'] = 'Завершено';
 $phpMussel['lang']['scan_extensions_missing'] = 'Не удалось (отсутствуют необходимые расширения)!';
@@ -86,7 +83,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Отсутствует имя ф�
 $phpMussel['lang']['scan_no_problems_found'] = 'Проблемы не найдены.';
 $phpMussel['lang']['scan_not_archive'] = 'Не удалось (пуст или не архив)!';
 $phpMussel['lang']['scan_reading'] = 'Чтение';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Повреждена подпись файла';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Отсутствует подпись файла';
 $phpMussel['lang']['scan_tampering'] = 'Обнаружена потенциально опасная модификация файла';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Обнаружены несанкционированные загрузки манипуляции файла';
@@ -100,7 +96,6 @@ $phpMussel['lang']['upload_error_6'] = 'Загрузка директорий о
 $phpMussel['lang']['upload_error_7'] = 'Ошибка диск-записи! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $phpMussel['lang']['upload_error_8'] = 'PHP реконфигурация обнаружена! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Лимит загрузки превышен';
-$phpMussel['lang']['wrong_password'] = 'Неправильный пароль; Действие отказано.';
 $phpMussel['lang']['x_does_not_exist'] = '%s не существует';
 
 $phpMussel['lang']['cli_commands'] = " q

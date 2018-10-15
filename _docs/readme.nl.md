@@ -588,7 +588,7 @@ Bestand hanteren configuratie.
 - Erven het bestandstype blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
 
 ##### "max_recursion"
-- Maximale recursiediepte limiet voor archieven. Standaard = 10.
+- Maximale recursiediepte limiet voor archieven. Standaard = 3.
 
 ##### "block_encrypted_archives"
 - Detecteren en blokkeren gecodeerde archieven? Omdat phpMussel is niet in staat te scannen de inhoud van gecodeerde archieven, het is mogelijk dat archief encryptie kan worden toegepast door een aanvaller als middel van probeert te omzeilen phpMussel, anti-virus scanners en andere dergelijke beveiligingen. Instrueren phpMussel te blokkeren elke archieven dat het ontdekt worden gecodeerde zou kunnen helpen het risico in verband met deze dergelijke mogelijkheden te verminderen. False = Nee; True = Ja [Standaard].

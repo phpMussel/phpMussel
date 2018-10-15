@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.07.31).
+ * This file: Dutch language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Bestandstype in zwarte lijst';
 $phpMussel['lang']['finished'] = 'Afgewerkt';
 $phpMussel['lang']['generated_by'] = 'Gegenereerde door';
 $phpMussel['lang']['greylist_cleared'] = ' Greylist geleegd.';
-$phpMussel['lang']['greylist_not_updated'] = ' Greylist niet bijgewerkt.';
 $phpMussel['lang']['greylist_updated'] = ' Greylist bijgewerkt.';
 $phpMussel['lang']['image'] = 'Image';
 $phpMussel['lang']['instance_already_active'] = 'Instantie al actief! Controleer uw haken.';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap besta
 $phpMussel['lang']['quarantined_as'] = "In quarantaine geplaatst als \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursie dieptelimiet overschreden';
 $phpMussel['lang']['required_variables_not_defined'] = 'Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
-$phpMussel['lang']['scan_aborted'] = 'Scannen afgebroken!';
 $phpMussel['lang']['scan_chameleon'] = '%s kameleon aanval gedetecteerd';
 $phpMussel['lang']['scan_checking'] = 'Verifiëren';
-$phpMussel['lang']['scan_checking_contents'] = 'Succes! Gaan tot verifiëren de inhoud.';
 $phpMussel['lang']['scan_command_injection'] = 'Command injectie poging gedetecteerd';
 $phpMussel['lang']['scan_complete'] = 'Voltooid';
 $phpMussel['lang']['scan_extensions_missing'] = 'Mislukt (ontbrekende vereiste extensies)!';
@@ -78,8 +75,7 @@ $phpMussel['lang']['scan_missing_filename'] = 'Ontbrekende bestandsnaam';
 $phpMussel['lang']['scan_no_problems_found'] = 'Geen problemen gevonden.';
 $phpMussel['lang']['scan_not_archive'] = 'Mislukt (leeg of is geen archief)!';
 $phpMussel['lang']['scan_reading'] = 'Lezen van';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature bestand beschadigd';
-$phpMussel['lang']['scan_signature_file_missing'] = 'Signature bestand ontbreekt';
+$phpMussel['lang']['scan_signature_file_missing'] = 'Signatuurbestand ontbreekt';
 $phpMussel['lang']['scan_tampering'] = 'Gedetecteerd potentieel gevaarlijke bestandswijziging';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Ongeautoriseerde bestand uploaden manipulatie gedetecteerd';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = 'Uploadmap ontbreekt! Contact op met de h
 $phpMussel['lang']['upload_error_7'] = 'Disc-schrijffout! Contact op met de hostmaster voor hulp! ';
 $phpMussel['lang']['upload_error_8'] = 'PHP misconfiguratie gedetecteerd! Contact op met de hostmaster voor hulp! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Uploadlimiet overschreden';
-$phpMussel['lang']['wrong_password'] = 'Verkeerd wachtwoord; Actie geweigerd.';
 $phpMussel['lang']['x_does_not_exist'] = '%s bestaat niet';
 
 $phpMussel['lang']['cli_commands'] = " q

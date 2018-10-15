@@ -588,7 +588,7 @@ Generale configurazione per la gestione dei file.
 - Eredita file tipi blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
 
 ##### "max_recursion"
-- Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
+- Massimo ricorsione profondità limite per gli archivi. Predefinito = 3.
 
 ##### "block_encrypted_archives"
 - Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. False = No; True = Sì [Predefinito].

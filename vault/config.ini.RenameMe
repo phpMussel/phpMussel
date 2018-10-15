@@ -296,8 +296,8 @@ filesize_archives=true
 ; False = No (just greylist everything) [Default]; True = Yes.
 filetype_archives=false
 
-; Maximum recursion depth limit for archives. Default = 10.
-max_recursion=10
+; Maximum recursion depth limit for archives. Default = 3.
+max_recursion=3
 
 ; Detect and block encrypted archives? Because phpMussel isn't able to scan the
 ; contents of encrypted archives, it's possible that archive encryption may be

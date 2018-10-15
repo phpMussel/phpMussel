@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2018.07.31).
+ * This file: Chinese (traditional) language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = '文件類型列入黑名單';
 $phpMussel['lang']['finished'] = '完了';
 $phpMussel['lang']['generated_by'] = '所產生通過';
 $phpMussel['lang']['greylist_cleared'] = ' 灰名單清空。';
-$phpMussel['lang']['greylist_not_updated'] = ' 灰名單不更新。';
 $phpMussel['lang']['greylist_updated'] = ' 灰名單更新。';
 $phpMussel['lang']['image'] = '圖像';
 $phpMussel['lang']['instance_already_active'] = '腳本已激活！​請仔細檢查您的鉤子。';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = '插件文件夾不存在�
 $phpMussel['lang']['quarantined_as'] = "隔離為『/vault/quarantine/%s.qfu』。\n";
 $phpMussel['lang']['recursive'] = '遞歸深度超過是限制';
 $phpMussel['lang']['required_variables_not_defined'] = '需要的變量是未定義：無法繼續。';
-$phpMussel['lang']['scan_aborted'] = '掃描中止！';
 $phpMussel['lang']['scan_chameleon'] = '%s变色龙攻击检测';
 $phpMussel['lang']['scan_checking'] = '檢查';
-$phpMussel['lang']['scan_checking_contents'] = '成功了！​在進行檢查的內容。';
 $phpMussel['lang']['scan_command_injection'] = '命令注入嘗試檢測';
 $phpMussel['lang']['scan_complete'] = '完成';
 $phpMussel['lang']['scan_extensions_missing'] = '失败（失踪必需的扩展）！';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = '文件名是失踪';
 $phpMussel['lang']['scan_no_problems_found'] = '沒有任何問題發現。';
 $phpMussel['lang']['scan_not_archive'] = '失敗（空或不是存檔）！';
 $phpMussel['lang']['scan_reading'] = '閱讀';
-$phpMussel['lang']['scan_signature_file_corrupted'] = '簽名文件是損壞';
 $phpMussel['lang']['scan_signature_file_missing'] = '簽名文件是失踪';
 $phpMussel['lang']['scan_tampering'] = '檢測潛在的危險文件篡改';
 $phpMussel['lang']['scan_unauthorised_upload'] = '未經授權的文件上傳操控是檢測';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = '上傳文件夾是失踪！​請聯繫�
 $phpMussel['lang']['upload_error_7'] = '硬盤寫入錯誤！​請聯繫網站管理員或網站託管服務！';
 $phpMussel['lang']['upload_error_8'] = 'PHP配置錯誤是檢測！​請聯繫網站管理員或網站託管服務！';
 $phpMussel['lang']['upload_limit_exceeded'] = '超過上傳限制';
-$phpMussel['lang']['wrong_password'] = '密碼錯誤；行動拒絕。';
 $phpMussel['lang']['x_does_not_exist'] = '%s不存在';
 
 $phpMussel['lang']['cli_commands'] = " q

@@ -588,7 +588,7 @@ Configuration générale pour les gestion des fichiers.
 - Étendre type de fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut].
 
 ##### « max_recursion »
-- Maximum récursivité profondeur limite pour archives. Défaut = 10.
+- Maximum récursivité profondeur limite pour archives. Défaut = 3.
 
 ##### « block_encrypted_archives »
 - Détecter et bloquer les archives cryptées ? Parce phpMussel est pas capable d'analyse du contenu des archives cryptées, il est possible que le cryptage des archives peut être utilisé par un attaquant un moyen a tenter de contourner phpMussel, analyseurs anti-virus et d'autres protections. Instruire phpMussel pour bloquer toutes les archives cryptées qu'il découvre pourrait aider à réduire les risques associés à ces possibilités. False = Non ; True = Oui [Défaut].

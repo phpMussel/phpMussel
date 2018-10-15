@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.26).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -63,10 +63,9 @@ $phpMussel['lang']['config_files_filetype_archives'] = '繼承文件類型黑名
 $phpMussel['lang']['config_files_filetype_blacklist'] = '黑名單：';
 $phpMussel['lang']['config_files_filetype_greylist'] = '灰名單：';
 $phpMussel['lang']['config_files_filetype_whitelist'] = '如果您的系統只允許具體文件類型被上傳，​或如果您的系統明確地否認某些文件類型，​指定那些文件類型在白名單，​黑名單和灰名單可以增加掃描執行速度通過允許腳本跳過某些文件類型。​格式是CSV（逗號分隔變量）。​如果您想掃描一切，​而不是白名單，​黑名單或灰名單，​留變量空；這樣做將關閉白名單/黑名單/灰名單。​進程邏輯順序是：如果文件類型已白名單，​不掃描和不受阻文件，​和不匹配文件對照黑名單或灰名單。​如果文件類型已黑名單，​不掃描文件但阻止它無論如何，​和不匹配文件對照灰名單。​如果灰名單是空，​或如果灰名單不空和文件類型已灰名單，​掃描文件像正常和確定如果阻止它基於掃描結果，​但如果灰名單不空和文件類型不灰名單，​過程文件彷彿已黑名單，​因此不掃描它但阻止它無論如何。​白名單：';
-$phpMussel['lang']['config_files_max_recursion'] = '最大存檔遞歸深度限。​默認=10。';
+$phpMussel['lang']['config_files_max_recursion'] = '最大存檔遞歸深度限。​默認=3。';
 $phpMussel['lang']['config_files_max_uploads'] = '最大允許數值的文件為掃描當文件上傳掃描之前中止掃描和告訴用戶他們是上傳太多在同一時間！​提供保護針對一個理論攻擊哪裡一個攻擊者嘗試DDoS您的系統或CMS通過超載phpMussel以減速PHP進程到一個停止。​推薦：10。​您可能想增加或減少這個數值，​根據速度的您的硬件。​注意這個數值不交待為或包括存檔內容。';
 $phpMussel['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。';
-$phpMussel['lang']['config_general_allow_symlinks'] = '有時，phpMussel無法直接訪問以特定名稱的文件。​通過符號鏈接間接訪問文件有時可以解決此問題。​但是，這並不總是一個可行的解決方案，因為在某些系統上，使用符號鏈接可能是被禁止的，或者可能需要管理權限。​該指令確定是否phpMussel應嘗試間接使用符號鏈接來訪問文件，當直接訪問它們是不可能的。​True（真）=啟用符號鏈接；False（假）=禁用符號鏈接【標準】。';
 $phpMussel['lang']['config_general_cleanup'] = '【反設置/刪除/清潔】腳本變量和緩存【Cache】之後執行嗎？​如果您不使用腳本外初始上傳掃描，​應該設置True【真/正】，​為了最小化內存使用。​如果您使用腳本為目的外初始上傳掃描，​應該設置False【假/負】，​為了避免不必要重新加載複製數據在內存。​在一般的做法，​它應該設置True【真/正】，​但，​如果您做這樣，​您將不能夠使用腳本為任何目的以外文件上傳掃描。​無影響在CLI模式。';
 $phpMussel['lang']['config_general_default_algo'] = '定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = '激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。';

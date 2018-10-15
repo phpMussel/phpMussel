@@ -4336,7 +4336,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                     $r = 2;
                     $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
                     $phpMussel['whyflagged'] .= sprintf(
-                        $phpMussel['lang']['_fullstop'],
+                        $phpMussel['lang']['_exclamation'],
                         $phpMussel['lang']['scan_tampering'] . ' (' . $ThisItemRef . ')'
                     );
                     $x .= sprintf(
@@ -4370,7 +4370,29 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         $DataCRC32,
                         "\n",
                         $phpMussel['lang']['recursive'],
-                        $phpMussel['lang']['_exclamation_final']
+                        $phpMussel['lang']['_fullstop_final']
+                    );
+                    return;
+                }
+
+                /** Quine detection. */
+                if ($Data === $Content) {
+                    $r = 2;
+                    $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
+                    $phpMussel['whyflagged'] .= sprintf(
+                        $phpMussel['lang']['_exclamation'],
+                        sprintf($phpMussel['lang']['detected'], 'Quine') . ' (' . $ThisItemRef . ')'
+                    );
+                    $x .= sprintf(
+                        '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                        $Indent,
+                        $phpMussel['lang']['scan_checking'],
+                        $ThisItemRef,
+                        $NameCRC32,
+                        $DataCRC32,
+                        "\n",
+                        sprintf($phpMussel['lang']['detected'], 'Quine'),
+                        $phpMussel['lang']['_fullstop_final']
                     );
                     return;
                 }
