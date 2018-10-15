@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.6.0
+ Version: 1.7.0-DEV+18287466
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -11,6 +11,10 @@ phpMussel:
   From:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/.htaccess
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/cache/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/ArchiveHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/CompressionHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/TemporaryFileHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/cli.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/config.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/config.yaml
@@ -60,6 +64,10 @@ phpMussel:
   To:
    - .htaccess
    - cache/.htaccess
+   - classes/.htaccess
+   - classes/ArchiveHandler.php
+   - classes/CompressionHandler.php
+   - classes/TemporaryFileHandler.php
    - cli.php
    - config.php
    - config.yaml
@@ -109,9 +117,13 @@ phpMussel:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - 8e03209e7fc6641b45094e584340feff:83
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 04c69d21f4bf30bb258aa3edb130740e:10003
+   - 52eff537b11ded595d2e81fbfc598087:3306
+   - 8eef95d1a1ca9013410dff1fb80b70ec:1694
    - fb0f84483a5601ef72e3f67aba2eb305:24675
    - a6e17716fda8211d678a092803e7a172:8429
-   - 06b4a1148af5cd82a713f8a2a0882fdd:12229
+   - 41440c16a8a21288d6eb14b043f462eb:12179
    - 8e03209e7fc6641b45094e584340feff:83
    - 4244aa2fa8e7ecb7e4f43295963f81dc:483
    - 5127e6571ad646b2dbd612340c2b35f3:1963
@@ -143,7 +155,7 @@ phpMussel:
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - 3dc4f5061f46bfb3582553e7daee87ed:145804
    - ae23d4a072775512568658c74b1e2322:100890
-   - 228fed7b3241ea5e127517d106fec581:253301
+   - dac8046c8c21b5c3255e3401509bd582:242177
    - 4538f959176875744009f4554e0425c8:4819
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703

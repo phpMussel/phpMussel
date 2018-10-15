@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.14).
+ * This file: Functions file (last modified: 2018.10.15).
  */
 
 /**
@@ -3387,6 +3387,9 @@ $phpMussel['SplitSigParts'] = function ($Sig, $Max = -1) {
 /**
  * Handles scanning for files contained within archives.
  *
+ * @param string $x Scan results inherited from parent in the form of a string.
+ * @param int $r Scan results inherited from parent in the form of an integer.
+ * @param string $Indent Line padding for the scan results.
  * @param string $ItemRef A reference to the path and original filename of the
  *      item being scanned in relation to its container and/or its hierarchy
  *      within the scan process.
@@ -3394,18 +3397,14 @@ $phpMussel['SplitSigParts'] = function ($Sig, $Max = -1) {
  * @param string $Data The data to be scanned.
  * @param int $Depth The depth of the item being scanned in relation to its
  *      container and/or its hierarchy within the scan process.
- * @param string $lnap Line padding for the scan results.
- * @param int $r Scan results inherited from parent in the form of an integer.
- * @param string $x Scan results inherited from parent in the form of a string.
- * @return array Contains the results of the scan as both an integer (the first
- *      element) and as human-readable text (the second element).
+ * @param string $MD5 A hash for the content, inherited from the parent.
  */
-$phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap, $r, $x) use (&$phpMussel) {
+$phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &$Data, $Depth, $MD5) use (&$phpMussel) {
+
+    /** Data is empty. Nothing to scan. Exit early. */
     if (!$Filesize = strlen($Data)) {
-        return [$r, $x];
+        return;
     }
-    $ItemRefSafe = urlencode($ItemRef);
-    $MD5 = md5($Data);
 
     /** Filesize thresholds. */
     if (
@@ -3415,37 +3414,30 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     ) {
         if (!$phpMussel['Config']['files']['filesize_response']) {
             $x .=
-                $lnap . $phpMussel['lang']['ok'] . ' (' .
+                $Indent . $phpMussel['lang']['ok'] . ' (' .
                 $phpMussel['lang']['filesize_limit_exceeded'] . ").\n";
-            return [$r, $x];
+            return;
         }
         $r = 2;
         $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['lang']['_exclamation'],
-            $phpMussel['lang']['filesize_limit_exceeded'] . ' (' . $ItemRefSafe . ')'
+            $phpMussel['lang']['filesize_limit_exceeded'] . ' (' . $ItemRef . ')'
         );
         $x .=
-            $lnap . $phpMussel['lang']['filesize_limit_exceeded'] .
+            $Indent . $phpMussel['lang']['filesize_limit_exceeded'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
-        return [$r, $x];
+        return;
     }
 
     /** Filetype blacklisting/whitelisting. */
     if ($phpMussel['Config']['files']['filetype_archives']) {
-        $decPos = strrpos($Filename, '.');
-        $ofnLen = strlen($Filename);
-        if ($decPos === false || $decPos === ($ofnLen - 1)) {
-            $xts = $xt = '-';
-        } else {
-            $xt = strtolower(substr($Filename, ($decPos + 1)));
-            $xts = substr($xt, 0, 3) . '*';
-        }
+        list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($Filename);
         if ($phpMussel['ContainsMustAssert']([
             $phpMussel['Config']['files']['filetype_whitelist']
         ], [$xt, $xts], ',', true, true)) {
-            $x .= $lnap . $phpMussel['lang']['scan_no_problems_found'] . "\n";
-            return [$r, $x];
+            $x .= $Indent . $phpMussel['lang']['scan_no_problems_found'] . "\n";
+            return;
         }
         if ($phpMussel['ContainsMustAssert']([
             $phpMussel['Config']['files']['filetype_blacklist']
@@ -3454,12 +3446,12 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .= sprintf(
                 $phpMussel['lang']['_exclamation'],
-                $phpMussel['lang']['filetype_blacklisted'] . ' (' . $ItemRefSafe . ')'
+                $phpMussel['lang']['filetype_blacklisted'] . ' (' . $ItemRef . ')'
             );
             $x .=
-                $lnap . $phpMussel['lang']['filetype_blacklisted'] .
+                $Indent . $phpMussel['lang']['filetype_blacklisted'] .
                 $phpMussel['lang']['_fullstop_final'] . "\n";
-            return [$r, $x];
+            return;
         }
         if (!empty($phpMussel['Config']['files']['filetype_greylist']) && $phpMussel['ContainsMustAssert']([
             $phpMussel['Config']['files']['filetype_greylist']
@@ -3468,12 +3460,12 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .= sprintf(
                 $phpMussel['lang']['_exclamation'],
-                $phpMussel['lang']['filetype_blacklisted'] . ' (' . $ItemRefSafe . ')'
+                $phpMussel['lang']['filetype_blacklisted'] . ' (' . $ItemRef . ')'
             );
             $x .=
-                $lnap . $phpMussel['lang']['filetype_blacklisted'] .
+                $Indent . $phpMussel['lang']['filetype_blacklisted'] .
                 $phpMussel['lang']['_fullstop_final'] . "\n";
-            return [$r, $x];
+            return;
         }
     }
 
@@ -3489,24 +3481,70 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
         $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['lang']['_exclamation'],
-            $phpMussel['lang']['macros_not_permitted'] . ' (' . $ItemRefSafe . ')'
+            $phpMussel['lang']['macros_not_permitted'] . ' (' . $ItemRef . ')'
         );
-        $x .= $lnap . $phpMussel['lang']['macros_not_permitted'] . $phpMussel['lang']['_fullstop_final'] . "\n";
-        return [$r, $x];
+        $x .= $Indent . $phpMussel['lang']['macros_not_permitted'] . $phpMussel['lang']['_fullstop_final'] . "\n";
+        return;
     }
 
-    /** Increment objects scanned counter. */
+    /** Increment objects scanned count. */
     $phpMussel['memCache']['objects_scanned']++;
 
-    /** Try to scan the file. */
+    /** Send the scan target to the data handler. */
     try {
         $Scan = $phpMussel['DataHandler']($Data, $Depth, $Filename);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
 
-    /** Return the results. */
-    return ($Scan[0] !== 1) ? [$Scan[0], $x . $Scan[1]] : [$r, $x];
+    /**
+     * Check whether the file is compressed. If it's compressed, attempt to
+     * decompress it, and then scan the decompressed version of the file. We'll
+     * only bother doing this if the file hasn't already been flagged though.
+     */
+    if ($Scan[0] === 1) {
+
+        /** Call the compression handler. */
+        if (!class_exists('\phpMussel\CompressionHandler\CompressionHandler')) {
+            require $phpMussel['Vault'] . 'classes/CompressionHandler.php';
+        }
+
+        /** Create a new compression object. */
+        $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($Data);
+
+        /** Now we'll try to decompress the file. */
+        if (!$CompressionResults = $CompressionObject->TryEverything()) {
+
+            /** Success! Now we'll send it to the data handler. */
+            try {
+                $Scan = $phpMussel['DataHandler']($CompressionObject->Data, $Depth, $phpMussel['DropTrailingCompressionExtension']($Filename));
+            } catch (\Exception $e) {
+                throw new \Exception($e->getMessage());
+            }
+
+            /**
+             * Replace originally scanned data with decompressed data in case
+             * needed by the archive handler.
+             */
+            $Data = $CompressionObject->Data;
+
+        }
+
+        /** Cleanup. */
+        unset($CompressionResults, $CompressionObject);
+
+    }
+
+    /** Update the results if anything bad was found and then exit. */
+    if ($Scan[0] !== 1) {
+        $r = $Scan[0];
+        $x .= '-' . $Scan[1];
+        return;
+    }
+
+    /** Or, if nothing bad was found for this entry, make a note of it. */
+    $x .= $Indent . $phpMussel['lang']['scan_no_problems_found'] . "\n";
+
 };
 
 /**
@@ -3738,9 +3776,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         return ($n && $zz) ? $phpMussel['implode_md']($Dir) : $Dir;
     }
 
-    /** Increment our scanned files/objects tally. */
-    $phpMussel['memCache']['objects_scanned']++;
-
     /** Define file phase. */
     $phpMussel['memCache']['phase'] = 'file';
 
@@ -3886,6 +3921,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
 
+    /** Increment objects scanned count. */
+    $phpMussel['memCache']['objects_scanned']++;
+
     /** Send the scan target to the data handler. */
     try {
         $z = $phpMussel['DataHandler']($in, $dpt, $ofn);
@@ -3917,7 +3955,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
-            
+
             /**
              * Replace originally scanned data with decompressed data in case
              * needed by the archive handler.
@@ -4002,8 +4040,18 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         /** Define archive phase. */
         $phpMussel['memCache']['phase'] = 'archive';
 
+        /** In case there's any temporary files we need to delete afterwards. */
+        $phpMussel['memCache']['tempfilesToDelete'] = [];
+
         /** Begin processing archives. */
         $phpMussel['ArchiveRecursor']($x, $r, $in, $f, 0, urlencode($f));
+
+        /** Begin deleting any temporary files that snuck through. */
+        foreach ($phpMussel['memCache']['tempfilesToDelete'] as $DeleteThis) {
+            if (file_exists($DeleteThis)) {
+                unlink($DeleteThis);
+            }
+        }
 
     }
 
@@ -4045,7 +4093,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
  * @param int $r Scan results inherited from parent in the form of an integer.
  * @param string $Data The data to be scanned (preferably an archive).
  * @param string $File A path to the file, to be able to access it directly if
- *      needed (because the tar and rar classes require a file pointer).
+ *      needed (because the zip and rar classes require a file pointer).
  * @param int $ScanDepth The current scan depth (supplied during recursion).
  * @param string $ItemRef A reference to the parent container (for logging).
  */
@@ -4053,7 +4101,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Count recursion depth. */
     $ScanDepth++;
-    
+
     /** Used for CLI and logging. */
     $Indent = str_pad('> ', $ScanDepth + 1, '-', STR_PAD_LEFT);
 
@@ -4112,12 +4160,17 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Not an archive. Exit early. */
     if (!$Handler) {
-        return $r;
+        return;
     }
 
     /** Call the archive handler. */
     if (!class_exists('\phpMussel\ArchiveHandler\ArchiveHandler')) {
         require $phpMussel['Vault'] . 'classes/ArchiveHandler.php';
+    }
+
+    /** Call the temporary file handler. */
+    if (!class_exists('\phpMussel\TemporaryFileHandler\TemporaryFileHandler')) {
+        require $phpMussel['Vault'] . 'classes/TemporaryFileHandler.php';
     }
 
     /** Handle zip files. */
@@ -4157,12 +4210,14 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         }
 
         /** ZipHandler needs a file pointer. */
-        if (!$File || !is_readable($phpMussel['Vault'] . $File)) {
+        if (!$File || !is_readable($File)) {
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
              */
-            $Pointer = $phpMussel['CreateTemporaryFile']($Data);
+            $PointerObject = new \phpMussel\TemporaryFileHandler\TemporaryFileHandler($Data, $phpMussel['cachePath']);
+            $Pointer = &$PointerObject->Filename;
+            $phpMussel['memCache']['tempfilesToDelete'][] = $Pointer;
         } else {
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
@@ -4184,11 +4239,10 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     if ($Handler === 'RarHandler') {
         /**
          * Encryption guard.
-         * See: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
+         * See: http://rescene.wikidot.com/rar-420-technote or http://rescene.wikidot.com/rar-420-technote ??
          */
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
             // todo
-            return;
         }
 
         /** Guard. */
@@ -4198,12 +4252,14 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         }
 
         /** RarHandler needs a file pointer. */
-        if (!$File || !is_readable($phpMussel['Vault'] . $File)) {
+        if (!$File || !is_readable($File)) {
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
              */
-            $Pointer = $phpMussel['CreateTemporaryFile']($Data);
+            $PointerObject = new \phpMussel\TemporaryFileHandler\TemporaryFileHandler($Data, $phpMussel['cachePath']);
+            $Pointer = &$PointerObject->Filename;
+            $phpMussel['memCache']['tempfilesToDelete'][] = $Pointer;
         } else {
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
@@ -4280,10 +4336,37 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                     "\n"
                 );
 
+                /** Scan the entry. */
+                try {
+                    $phpMussel['MetaDataScan'](
+                        $x,
+                        $r,
+                        '--' . $Indent,
+                        $ThisItemRef,
+                        $Filename,
+                        $Content,
+                        $ScanDepth,
+                        $MD5
+                    );
+                } catch (\Exception $e) {
+                    throw new \Exception($e->getMessage());
+                }
+
+                /** If we've already found something bad, we can exit early to save time. */
+                if ($r !== 1) {
+                    return;
+                }
+
+                /** Finally, check whether the archive entry is an archive. */
+                $phpMussel['ArchiveRecursor']($x, $r, $Content, '', $ScanDepth, $ThisItemRef);
+
             }
         }
 
     }
+
+    /** Unset order is important for temporary files to be able to be deleted properly. */
+    unset($ArchiveObject, $Pointer, $PointerObject);
 
 };
 
