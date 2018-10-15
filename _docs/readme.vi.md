@@ -133,7 +133,8 @@ Tuy nhiên, bạn cũng có thể nói với phpMussel để quét tập tin c�
 
 | Các kết quả | Sự miêu tả |
 |---|---|
-| -3 | Chỉ ra rằng vấn đề gặp phải với các tập tin chữ ký hay tập tin chữ ký bản đồ và rằng họ có thể bị mất hay bị hỏng. |
+| -4 | Chỉ ra rằng không thể quét dữ liệu vì mã hóa. |
+| -3 | Chỉ ra rằng vấn đề gặp phải với các tập tin chữ ký. |
 | -2 | Chỉ ra rằng dữ liệu bị hỏng đã được phát hiện trong quá trình quét và như vậy quét không hoàn thành. |
 | -1 | Chỉ ra rằng mở rộng hay bổ sung theo yêu cầu của PHP để thực hiện quá trình quét bị mất tích và như vậy quét không hoàn thành. |
 | 0 | Chỉ ra rằng mục tiêu quét không tồn tại và như vậy không có gì để quét. |
@@ -519,9 +520,6 @@ Giá trị | Nó tạo ra | Chi tiết
 
 ##### "statistics"
 - Giám sát thống kê sử dụng phpMussel? True = Vâng; False = Không [Mặc định].
-
-##### "allow_symlinks"
-- Đôi khi phpMussel không thể truy cập tập tin trực tiếp khi nó được đặt tên theo một cách nhất định. Việc truy cập tập tin gián tiếp thông qua các symlink (liên kết tượng trưng) đôi khi có thể giải quyết vấn đề này. Tuy nhiên, đây không phải lúc nào cũng là một giải pháp khả thi, bởi vì trên một số hệ thống, sử dụng các symlink (liên kết tượng trưng) có thể bị cấm, hoặc có thể cần đặc quyền hành chính. Chỉ thị này được sử dụng để xác định liệu phpMussel nên cố gắng sử dụng các symlink (liên kết tượng trưng) để truy cập các tập tin gián tiếp, khi truy cập trực tiếp vào chúng thì không thể. True = Cho phép các symlink; False = Không cho phép các symlink [Mặc định].
 
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -1303,4 +1301,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Mười 2018 (2018.10.09).
+Lần cuối cập nhật: 15 Tháng Mười 2018 (2018.10.15).

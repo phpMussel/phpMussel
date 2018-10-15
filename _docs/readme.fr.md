@@ -133,7 +133,8 @@ Cependant, vous êtes également capable d'instruire phpMussel à analyser spéc
 
 | Résultats | Description |
 |---|---|
-| -3 | Indique des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible manquants ou corrompus. |
+| -4 | Indique que les données n'ont pas pu être analysées à cause du cryptage. |
+| -3 | Indique que des problèmes ont été rencontrés avec les fichiers de signature phpMussel. |
 | -2 | Indique que données corrompues était détecté lors de l'analyse et donc l'analyse n'ont pas réussi à compléter. |
 | -1 | Indique que les extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient et donc l'analyse n'ont pas réussi à compléter. |
 | 0 | Indique qu'il n'existe pas cible à analyser et donc il n'y avait rien à analyser. |
@@ -519,9 +520,6 @@ Valeur | Produit | Description
 
 ##### « statistics »
 - Suivre les statistiques d'utilisation pour phpMussel ? True = Oui ; False = Non [Défaut].
-
-##### « allow_symlinks »
-- Parfois, phpMussel n'est pas capable d'accéder directement à un fichier lorsqu'il est nommé d'une certaine manière. L'accès indirect au fichier via des liens symboliques peut parfois résoudre ce problème. Cependant, ce n'est pas toujours une solution viable, car sur certains systèmes, l'utilisation de liens symboliques peut être interdite, ou nécessiter des privilèges administratifs. Cette directive est utilisée pour déterminer si phpMussel doit tenter d'utiliser des liens symboliques pour accéder aux fichiers de manière indirecte, lorsqu'il n'est pas possible de les accéder directement. True = Activer les liens symboliques ; False = Désactiver les liens symboliques [Défaut].
 
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
@@ -1309,4 +1307,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 9 Octobre 2018 (2018.10.09).
+Dernière mise à jour : 15 Octobre 2018 (2018.10.15).

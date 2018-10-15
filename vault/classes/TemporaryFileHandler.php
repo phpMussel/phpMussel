@@ -23,7 +23,7 @@ class TemporaryFileHandler
 
     /**
      * @param string $Content The temporary file content.
-     * @param string $Path The temporary file location.
+     * @param string $Location The temporary file location.
      */
     public function __construct($Content, $Location)
     {

@@ -133,9 +133,10 @@ Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, dir
 
 | Hasil | Deskripsi |
 |---|---|
-| -3 | Mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak. |
+| -4 | Mengindikasikan bahwa data tidak dapat dipindai karena enkripsi. |
+| -3 | Mengindikasikan bahwa masalah adalah ditemui dengan file tanda tangan phpMussel. |
 | -2 | Mengindikasikan bahwa file dikorup terdeteksi selama proses memindai dan proses memindai gagal selesai. |
-| -1 | Mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian gagal selesai. |
+| -1 | Mengindikasikan bahwa ekstensi atau addon yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian gagal selesai. |
 | 0 | Mengindikasikan bahwa target pemindaian tidak ada dan tidak ada yang dipindai. |
 | 1 | Mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi. |
 | 2 | Mengindikasikan target sukses di scan namun ada masalah terdeteksi. |
@@ -519,9 +520,6 @@ Nilai | Menghasilkan | Deskripsi
 
 ##### "statistics"
 - Lacak statistik penggunaan phpMussel? True = Ya; False = Tidak [Default].
-
-##### "allow_symlinks"
-- Kadang-kadang phpMussel tidak dapat mengakses file secara langsung ketika diberi nama dengan cara tertentu. Mengakses file secara tidak langsung melalui symlink terkadang dapat menyelesaikan masalah ini. Namun, ini tidak selalu merupakan solusi yang layak, karena pada beberapa sistem, menggunakan symlink mungkin dilarang, atau mungkin memerlukan hak administratif. Direktif ini digunakan untuk menentukan apakah phpMussel harus mencoba menggunakan symlink untuk mengakses file secara tidak langsung, ketika mengaksesnya secara langsung tidak mungkin. True = Aktifkan symlink; False = Nonaktifkan symlink [Default].
 
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
@@ -1303,4 +1301,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 9 Oktober 2018 (2018.10.09).
+Terakhir Diperbarui: 15 Oktober 2018 (2018.10.15).

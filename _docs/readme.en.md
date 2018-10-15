@@ -133,7 +133,8 @@ However, you're also able to instruct phpMussel to scan specific files, director
 
 | Results | Description |
 |---|---|
-| -3 | Indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted. |
+| -4 | Indicates that data couldn't be scanned due to encryption. |
+| -3 | Indicates that problems were encountered with the phpMussel signatures files. |
 | -2 | Indicates that corrupt data was detected during the scan and thus the scan failed to complete. |
 | -1 | Indicates that extensions or addons required by PHP to execute the scan were missing and thus the scan failed to complete. |
 | 0 | Indicates that the scan target doesn't exist and thus there was nothing to scan. |
@@ -519,9 +520,6 @@ Value | Produces | Description
 
 ##### "statistics"
 - Track phpMussel usage statistics? True = Yes; False = No [Default].
-
-##### "allow_symlinks"
-- Sometimes phpMussel isn't able to access a file directly when it's named in a certain way. Accessing the file indirectly via symlinks can sometimes resolve this problem. However, this isn't always a viable solution, because on some systems, using symlinks may be forbidden, or may require administrative privileges. This directive is used to determine whether phpMussel should attempt to use symlinks to access files indirectly, when accessing them directly isn't possible. True = Enable symlinks; False = Disable symlinks [Default].
 
 #### "signatures" (Category)
 Signatures configuration.
@@ -1313,4 +1311,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 9 October 2018 (2018.10.09).
+Last Updated: 15 October 2018 (2018.10.15).

@@ -133,7 +133,8 @@ Pero, también es capaz instruirá phpMussel para escanear específicos archivos
 
 | Resultados | Descripción |
 |---|---|
-| -3 | Indica se encontraron problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea posible pueden faltar o dañado. |
+| -4 | Indica que los datos no se pudieron escanear debido al cifrado. |
+| -3 | Indica que se encontraron problemas con los archivos de firmas phpMussel. |
 | -2 | Indica que se ha corruptos datos detectados durante el escanear y por lo tanto el escanear no pudo completar. |
 | -1 | Indica que las extensiones o complementos requeridos por PHP para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo completar, 0 indica que la escanear objetivo no existe y por lo tanto no había nada para escanear. |
 | 0 | Indica que la escanear objetivo no existe y por lo tanto no había nada para escanear. |
@@ -519,9 +520,6 @@ Valor | Produce | Descripción
 
 ##### "statistics"
 - ¿Seguir las estadísticas de uso de phpMussel? True = Sí; False = No [Predefinido].
-
-##### "allow_symlinks"
-- A veces, phpMussel no puede acceder a un archivo directamente cuando se nombra de cierta manera. Acceder al archivo indirectamente a través de symlinks a veces puede resolver este problema. Pero, esta no siempre es una solución viable, porque en algunos sistemas, el uso de symlinks puede estar prohibido, o puede requerir privilegios administrativos. Esta directiva se utiliza para determinar si phpMussel debe intentar usar symlinks para acceder a los archivos de forma indirecta, cuando acceder a ellos directamente no es posible. True = Habilitar symlinks; False = Deshabilitar symlinks [Predefinido].
 
 #### "signatures" (Categoría)
 Configuración de firmas.
@@ -1310,4 +1308,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 9 Octubre de 2018 (2018.10.09).
+Última Actualización: 15 Octubre de 2018 (2018.10.15).

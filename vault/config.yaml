@@ -281,7 +281,7 @@ Config Defaults:
    default: false
   max_recursion:
    type: int
-   default: 10
+   default: 3
   block_encrypted_archives:
    type: bool
    default: true

@@ -133,7 +133,8 @@ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ord
 
 | Ergebnisse | Beschreibung |
 |---|---|
-| -3 | Zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind. |
+| -4 | Zeigt an, dass Daten aufgrund der Verschlüsselung nicht gescannt werden konnten. |
+| -3 | Zeigt an, dass es Probleme mit den phpMussel Signaturdateien gibt. |
 | -2 | Zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht abgeschlossen wurde. |
 | -1 | Zeigt an, dass fehlende Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht abgeschlossen wurde. |
 | 0 | Zeigt an, dass das Ziel nicht existiert und somit nichts überprüft werden konnte. |
@@ -519,9 +520,6 @@ Wert | Produziert | Beschreibung
 
 ##### "statistics"
 - phpMussel-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].
-
-##### "allow_symlinks"
-- Manchmal kann phpMussel nicht direkt auf eine Datei zugreifen, wenn sie auf eine bestimmte Art benannt ist. Der indirekte Zugriff auf die Datei über Symlinks kann dieses Problem manchmal beheben. Dies ist jedoch nicht immer eine praktikable Lösung, da auf einigen Systemen die Verwendung von Symlinks verboten sein kann oder Administratorrechte erfordern. Diese Anweisung wird verwendet, um zu bestimmen, ob phpMussel versuchen sollte, Symlinks zu verwenden, um indirekt auf Dateien zuzugreifen, wenn ein direkter Zugriff auf sie nicht möglich ist. True = Aktivieren Symlinks; False = Deaktivieren Symlinks [Standardeinstellung].
 
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
@@ -1313,4 +1311,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 9 Oktober 2018 (2018.10.09).
+Zuletzt aktualisiert: 15 Oktober 2018 (2018.10.15).

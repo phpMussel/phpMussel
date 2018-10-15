@@ -4182,7 +4182,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
             $Bits = $phpMussel['explode_bits'](substr($Data, 6, 2));
             if ($Bits && $Bits[7]) {
-                $r = 2;
+                $r = -4;
                 $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= sprintf(
                     $phpMussel['lang']['_exclamation'],
@@ -4205,8 +4205,22 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** Guard. */
         if (!function_exists('zip_open')) {
-            // todo
-            return;
+            if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                $r = -1;
+                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' (Zip)';
+                $x .= sprintf(
+                    '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%6$s',
+                    $Indent,
+                    $phpMussel['lang']['scan_checking'],
+                    $ItemRef,
+                    hash('crc32b', $File),
+                    hash('crc32b', $Data),
+                    "\n",
+                    $phpMussel['lang']['scan_extensions_missing'] . ' (Zip)'
+                );
+                return;
+            }
         }
 
         /** ZipHandler needs a file pointer. */
@@ -4247,8 +4261,22 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** Guard. */
         if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
-            // todo
-            return;
+            if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                $r = -1;
+                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' (Rar)';
+                $x .= sprintf(
+                    '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%6$s',
+                    $Indent,
+                    $phpMussel['lang']['scan_checking'],
+                    $ItemRef,
+                    hash('crc32b', $File),
+                    hash('crc32b', $Data),
+                    "\n",
+                    $phpMussel['lang']['scan_extensions_missing'] . ' (Rar)'
+                );
+                return;
+            }
         }
 
         /** RarHandler needs a file pointer. */
@@ -4303,6 +4331,28 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                 $DataCRC32 = hash('crc32b', $Content);
                 $ThisItemRef = $ItemRef . '>' . urlencode($Filename);
 
+                /** Verify filesize. Exit early in case of possible inconsistencies. */
+                if ($Filesize !== strlen($Content)) {
+                    $r = 2;
+                    $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
+                    $phpMussel['whyflagged'] .= sprintf(
+                        $phpMussel['lang']['_fullstop'],
+                        $phpMussel['lang']['scan_tampering'] . ' (' . $ThisItemRef . ')'
+                    );
+                    $x .= sprintf(
+                        '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                        $Indent,
+                        $phpMussel['lang']['scan_checking'],
+                        $ThisItemRef,
+                        $NameCRC32,
+                        $DataCRC32,
+                        "\n",
+                        $phpMussel['lang']['recursive'],
+                        $phpMussel['lang']['_fullstop_final']
+                    );
+                    return;
+                }
+
                 /** Executed if the recursion depth limit has been exceeded. */
                 if ($ScanDepth > $phpMussel['Config']['files']['max_recursion']) {
                     $r = 2;
@@ -4320,7 +4370,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         $DataCRC32,
                         "\n",
                         $phpMussel['lang']['recursive'],
-                        $phpMussel['lang']['_fullstop_final']
+                        $phpMussel['lang']['_exclamation_final']
                     );
                     return;
                 }

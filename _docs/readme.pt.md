@@ -133,7 +133,8 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/o
 
 | Resultados | Descrição |
 |---|---|
-| -3 | Indica problemas foram encontrados com o phpMussel arquivos de assinaturas ou arquivos de mapas de assinaturas e que eles podem possívelmente estar ausente ou corrompido. |
+| -4 | Indica que os dados não puderam ser analisados devido a encriptação. |
+| -3 | Indica que problemas foram encontrados com os arquivos de assinatura do phpMussel. |
 | -2 | Indica que dados corrompidos foram detectados durante a análise, e portanto, a análise não foi concluída. |
 | -1 | Indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída. |
 | 0 | Indica que o alvo de análise não existe, e portanto, havia nada para verificar. |
@@ -520,9 +521,6 @@ Valor | Produz | Descrição
 ##### "statistics"
 - Monitorar as estatísticas de uso do phpMussel? True = Sim; False = Não [Padrão].
 
-##### "allow_symlinks"
-- Às vezes, o phpMussel não pode acessar um arquivo diretamente quando é nomeado de uma determinada maneira. Acessar o arquivo indiretamente via symlinks às vezes pode resolver esse problema. No entanto, isso nem sempre é uma solução viável, porque em alguns sistemas, o uso de symlinks pode ser proibido, ou pode exigir privilégios administrativos. Esta diretiva é usada para determinar se o phpMussel deve tentar usar symlinks para acessar arquivos indiretamente, quando acessá-los diretamente não é possível. True = Ativar symlinks; False = Desativar symlinks [Padrão].
-
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -593,7 +591,7 @@ Configuração geral por a manipulação de arquivos.
 - Máxima recursão profundidade limite por compactados arquivos. Padrão = 10.
 
 ##### "block_encrypted_archives"
-- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas proteções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
+- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a encriptação de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas proteções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
 
 #### "attack_specific" (Categoria)
 Configuração por específicas ataque detecções.
@@ -1305,4 +1303,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 9 Outubro de 2018 (2018.10.09).
+Última Atualização: 15 Outubro de 2018 (2018.10.15).

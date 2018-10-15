@@ -133,7 +133,8 @@ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici 
 
 | Risultati | Descrizioni |
 |---|---|
-| -3 | Indica problemi sono stati incontrati con il phpMussel firme file o file di firme mappe e che possono essere possibile mancanti o corrotto. |
+| -4 | Indica che i dati non possono essere scansionati a causa della crittografia. |
+| -3 | Indica che sono stati incontrati problemi con i file di firme phpMussel. |
 | -2 | Indica che i corrotto dato è stato rilevato durante la scansione e quindi la scansione non abbia completato. |
 | -1 | Indica che estensioni o addon richiesti per PHP a eseguire la scansione erano assente e quindi la scansione non abbia completato. |
 | 0 | Indica che l'obiettivo di scansione non esiste e quindi non c'era nulla a scansione. |
@@ -519,9 +520,6 @@ Valore | Produce | Descrizione
 
 ##### "statistics"
 - Monitorare le statistiche di utilizzo di phpMussel? True = Sì; False = No [Predefinito].
-
-##### "allow_symlinks"
-- A volte phpMussel non è in grado di accedere direttamente a un file quando viene chiamato in un certo modo. L'accesso al file indirettamente tramite symlink a volte può risolvere questo problema. Tuttavia, questa non è sempre una soluzione praticabile, perché su alcuni sistemi, l'utilizzo di symlink potrebbe essere vietato, o potrebbe richiedere privilegi amministrativi. Questa direttiva viene utilizzata per determinare se phpMussel dovrebbe tentare di utilizzare i symlink per accedere ai file indirettamente, quando non è possibile accedervi direttamente. True = Abilita i symlink; False = Disabilita i symlink [Predefinito].
 
 #### "signatures" (Categoria)
 Configurazione per firme.
@@ -1308,4 +1306,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 9 Ottobre 2018 (2018.10.09).
+Ultimo Aggiornamento: 15 Ottobre 2018 (2018.10.15).
