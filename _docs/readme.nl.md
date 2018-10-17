@@ -103,7 +103,7 @@ Sinds v1.0.0, signatures zijn niet opgenomen in het phpMussel-pakket. Signatures
 
 Allereerst, moet u ervoor zorgen dat het frontend is ingeschakeld. *Zien: [frontend MANAGEMENT](#SECTION4).*
 
-Dan, alles wat u moet doen is ga naar de frontend updates pagina, vind de nodige signature bestanden, en gebruik de opties die op de pagina zijn aangebracht, installeer ze en activeer ze.
+Dan, alles wat u moet doen is ga naar de frontend updates pagina, vind de nodige signatuurbestanden, en gebruik de opties die op de pagina zijn aangebracht, installeer ze en activeer ze.
 
 ##### 2.3.2 Genereer signatures met behulp van "SigTool" en installeer handmatig.
 
@@ -111,7 +111,7 @@ Dan, alles wat u moet doen is ga naar de frontend updates pagina, vind de nodige
 
 ##### 2.3.3 Download signatures van "phpMussel/Signatures" en installeer handmatig.
 
-Allereerst, ga naar [phpMussel/Signatures](https://github.com/phpMussel/Signatures). De repository bevat verschillende GZ-gecomprimeerde signature bestanden. Download de bestanden die u nodig hebt, decomprimeer ze en kopieer de gedecomprimeerde bestanden naar de `/vault/signatures` map om ze te installeren. Geef de namen van de gekopieerde bestanden op in de `Active` richtlijn in uw phpMussel-configuratie om ze te activeren.
+Allereerst, ga naar [phpMussel/Signatures](https://github.com/phpMussel/Signatures). De repository bevat verschillende GZ-gecomprimeerde signatuurbestanden. Download de bestanden die u nodig hebt, decomprimeer ze en kopieer de gedecomprimeerde bestanden naar de `/vault/signatures` map om ze te installeren. Geef de namen van de gekopieerde bestanden op in de `Active` richtlijn in uw phpMussel-configuratie om ze te activeren.
 
 ---
 
@@ -133,7 +133,8 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 
 | Resultaten | Beschrijving |
 |---|---|
-| -3 | Betekent problemen werden aangetroffen met de phpMussel signatures bestanden of signature kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt. |
+| -4 | Betekent dat de data niet konden worden gescand vanwege encryptie. |
+| -3 | Betekent problemen werden aangetroffen met de phpMussel signatuurbestanden. |
 | -2 | Betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid. |
 | -1 | Betekent dat uitbreidingen of addons vereist door PHP om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid. |
 | 0 | Betekent dat het scandoel bestaat niet en dus was er niets te scannen. |
@@ -340,7 +341,7 @@ Bestand | Beschrijving
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) lokalisatie.
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/signatures/ | Signatures bestandsmap (signature bestanden bevat).
+/vault/signatures/ | Signatuures bestandsmap (het bevat signatuurbestanden).
 /vault/signatures/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/signatures/switch.dat | Controles en sets bepaalde variabelen.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -520,19 +521,16 @@ Waarde | Produceert | Beschrijving
 ##### "statistics"
 - Track phpMussel gebruiksstatistieken? True = Ja; False = Nee [Standaard].
 
-##### "allow_symlinks"
-- Soms heeft phpMussel geen toegang tot een bestand als het op een bepaalde manier wordt genoemd. Indirect toegang tot het bestand via symlinks kan dit probleem soms oplossen. Dit is echter niet altijd een haalbare oplossing, omdat op sommige systemen het gebruik van symlinks kan worden verboden of beheerdersbevoegdheden kunnen vereisen. Deze richtlijn wordt gebruikt om te bepalen of phpMussel moet proberen om symlinks te gebruiken om indirect toegang te krijgen tot bestanden, wanneer directe toegang tot deze bestanden niet mogelijk is. True = Schakel symlinks in; False = Schakel symlinks uit [Standaard].
-
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
 ##### "Active"
-- Een lijst van de actief signature bestanden, gescheiden door komma's.
+- Een lijst van de actief signatuurbestanden, gescheiden door komma's.
 
-*Notitie: Signature bestanden moeten eerst worden geïnstalleerd, voordat u ze kunt activeren.*
+*Notitie: Signatuurbestanden moeten eerst worden geïnstalleerd, voordat u ze kunt activeren.*
 
 ##### "fail_silently"
-- Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
+- Moet phpMussel rapporteren wanneer signatuurbestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
 ##### "fail_extensions_silently"
 - Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als `fail_extensions_silently` is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als `fail_extensions_silently` is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -577,11 +575,18 @@ Bestand hanteren configuratie.
   - Als het bestandstype is op de blacklist, niet scannen het bestand maar blokkeren het niettemin, en niet controleer het bestand tegen de greylist.
   - Als de greylist is leeg of als de greylist is niet leeg en het bestandstype is op de greylist, scannen het bestand als per normaal en bepalen als om het gebaseerd op de resultaten van de scan te blokkeren, maar als de greylist is niet leeg en het bestandstype is niet op de greylist, behandel het bestand alsof op de blacklist, dus om het niet te scannen, maar toch blokkeren het niettemin.
 
-##### "check_archives" – Tijdelijk niet beschikbaar
+##### "check_archives"
 - Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard].
-- Momenteel, het enige archief en compressie-formaten ondersteund zijn BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR en ZIP (archief en compressie-formaten RAR, CAB, 7z en etcetera momenteel niet ondersteund).
-- Dit is niet onfeilbaar! Hoewel ik beveel het houden van dit ingeschakeld, ik kan niet garanderen dat het zal altijd vind alles.
-- Ook noteren dat archief controleren momenteel is niet recursief voor PHAR of ZIP formaten.
+
+Formaat | Kan lezen | Kan recursief lezen | Kan encryptie detecteren | Notities
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Vereist [libzip](http://php.net/manual/en/zip.requirements.php) (normaal is het gebundeld met PHP). Wordt ook ondersteund (gebruikt het zip-formaat): ✔️ OLE-object detectie. ✔️ Office macro detectie.
+Tar | ✔️ | ✔️ | ➖ | Geen speciale vereisten. Formaat ondersteunt geen encryptie.
+Rar | ✔️ | ✔️ | ✔️ | Vereist de [rar](https://pecl.php.net/package/rar)-extensie (wanneer deze extensie niet is geïnstalleerd, kan phpMussel geen rar-bestanden lezen).
+7zip | ❌ | ❌ | ❌ | Momenteel nog steeds bezig met onderzoek naar hoe 7zip-bestanden te lezen in phpMussel.
+Phar | ❌ | ❌ | ❌ | Ondersteuning voor het lezen van phar-bestanden is verwijderd in v1.6.0, en zal vanwege bezorgdheid over de veiligheid niet opnieuw worden toegevoegd.
+
+*Als iemand in staat en bereid is te helpen bij het implementeren van ondersteuning voor het lezen van andere archiefformaten, zou dergelijke hulp welkom zijn.*
 
 ##### "filesize_archives"
 - Erven het bestandsgrootte blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
@@ -590,7 +595,7 @@ Bestand hanteren configuratie.
 - Erven het bestandstype blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
 
 ##### "max_recursion"
-- Maximale recursiediepte limiet voor archieven. Standaard = 10.
+- Maximale recursiediepte limiet voor archieven. Standaard = 3.
 
 ##### "block_encrypted_archives"
 - Detecteren en blokkeren gecodeerde archieven? Omdat phpMussel is niet in staat te scannen de inhoud van gecodeerde archieven, het is mogelijk dat archief encryptie kan worden toegepast door een aanvaller als middel van probeert te omzeilen phpMussel, anti-virus scanners en andere dergelijke beveiligingen. Instrueren phpMussel te blokkeren elke archieven dat het ontdekt worden gecodeerde zou kunnen helpen het risico in verband met deze dergelijke mogelijkheden te verminderen. False = Nee; True = Ja [Standaard].
@@ -610,7 +615,7 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 - Zoeken naar PHP header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist.
 
 ##### "chameleon_to_archive"
-- Zoeken naar archieven waarvan headers zijn onjuist (Ondersteunde: BZ, GZ, RAR, ZIP, GZ).
+- Detecteer onjuiste headers in archieven en gecomprimeerde bestanden. Ondersteunde: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Zoeken naar office documenten waarvan headers zijn onjuist (Ondersteunde: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -779,25 +784,25 @@ PHPMailer-configuratie.
 *Zie ook:*
 - *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE)*
 
-De eerste 9 bytes `[x0-x8]` van een phpMussel signature bestand zijn `phpMussel`, en fungeren als een "magisch nummer" (magic number), om ze te identificeren als signature bestanden (dit helpt om te voorkomen dat phpMussel per ongeluk probeert bestanden te gebruiken die geen signature bestanden zijn). De volgende byte `[x9]` identificeert het type signature bestand, dat phpMussel moet weten om het signature bestand correct te kunnen interpreteren. De volgende typen signature bestanden worden herkend:
+De eerste 9 bytes `[x0-x8]` van een phpMussel signatuurbestand zijn `phpMussel`, en fungeren als een "magisch nummer" (magic number), om ze te identificeren als signatuurbestanden (dit helpt om te voorkomen dat phpMussel per ongeluk probeert bestanden te gebruiken die geen signatuurbestanden zijn). De volgende byte `[x9]` identificeert het type signatuurbestand, dat phpMussel moet weten om het signatuurbestand correct te kunnen interpreteren. De volgende typen signatuurbestanden worden herkend:
 
 Type | Byte | Beschrijving
 ---|---|---
-`General_Command_Detections` | `0?` | Voor CSV (komma gescheiden waarden) signature bestanden. Waarden (signatures) zijn hexadecimale gecodeerde strings om te zoeken naar bestanden. Signatures hier hebben geen namen of andere details (alleen de string die wordt gedetecteerd).
+`General_Command_Detections` | `0?` | Voor CSV (komma gescheiden waarden) signatuurbestanden. Waarden (signatures) zijn hexadecimale gecodeerde strings om te zoeken naar bestanden. Signatures hier hebben geen namen of andere details (alleen de string die wordt gedetecteerd).
 `Filename` | `1?` | Voor bestandsnaam signatures.
 `Hash` | `2?` | Voor hash signatures.
-`Standard` | `3?` | Voor signature bestanden die direct met de inhoud van het bestand werken.
-`Standard_RegEx` | `4?` | Voor signature bestanden die direct met de inhoud van het bestand werken. Signatures kunnen reguliere expressies bevatten.
-`Normalised` | `5?` | Voor signature bestanden die werken met ANSI-genormaliseerde bestandsinhoud.
-`Normalised_RegEx` | `6?` | Voor signature bestanden die werken met ANSI-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
-`HTML` | `7?` | Voor signature bestanden die werken met HTML-genormaliseerde bestandsinhoud.
-`HTML_RegEx` | `8?` | Voor signature bestanden die werken met HTML-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
-`PE_Extended` | `9?` | Voor signature bestanden die werken met PE metadata (andere dan PE sectionele metadata).
-`PE_Sectional` | `A?` | Voor signature bestanden die werken met PE sectionele metadata.
-`Complex_Extended` | `B?` | Voor signature bestanden die werken met verschillende regels op basis van uitgebreide metadata die gegenereerd worden door phpMussel.
-`URL_Scanner` | `C?` | Voor signature bestanden die werken met URL's.
+`Standard` | `3?` | Voor signatuurbestanden die direct met de inhoud van het bestand werken.
+`Standard_RegEx` | `4?` | Voor signatuurbestanden die direct met de inhoud van het bestand werken. Signatures kunnen reguliere expressies bevatten.
+`Normalised` | `5?` | Voor signatuurbestanden die werken met ANSI-genormaliseerde bestandsinhoud.
+`Normalised_RegEx` | `6?` | Voor signatuurbestanden die werken met ANSI-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
+`HTML` | `7?` | Voor signatuurbestanden die werken met HTML-genormaliseerde bestandsinhoud.
+`HTML_RegEx` | `8?` | Voor signatuurbestanden die werken met HTML-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
+`PE_Extended` | `9?` | Voor signatuurbestanden die werken met PE metadata (andere dan PE sectionele metadata).
+`PE_Sectional` | `A?` | Voor signatuurbestanden die werken met PE sectionele metadata.
+`Complex_Extended` | `B?` | Voor signatuurbestanden die werken met verschillende regels op basis van uitgebreide metadata die gegenereerd worden door phpMussel.
+`URL_Scanner` | `C?` | Voor signatuurbestanden die werken met URL's.
 
-De volgende byte `[x10]` is een nieuwe lijn `[0A]`, en concludeert de phpMussel signature bestand header.
+De volgende byte `[x10]` is een nieuwe lijn `[0A]`, en concludeert de phpMussel signatuurbestand header.
 
 Elke lijn daarna die niet lege is een signature of regel. Elke signature of regel bevat één lijn. De ondersteunde signature formaten worden hieronder beschreven.
 
@@ -858,7 +863,7 @@ Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere an
 
 Dit informatie werd laatst bijgewerkt 2018.10.09 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v1.5.0-v1.6.0) op het moment van schrijven dit.
 
-*Dit informatie is alleen van toepassing op het hoofdpakket. Resultaten kunnen variëren op basis van geïnstalleerde signature bestanden, plug-ins, en andere randapparatuur.*
+*Dit informatie is alleen van toepassing op het hoofdpakket. Resultaten kunnen variëren op basis van geïnstalleerde signatuurbestanden, plug-ins, en andere randapparatuur.*
 
 | Scanner | Resultaten |
 |---|---|
@@ -884,7 +889,7 @@ Dit informatie werd laatst bijgewerkt 2018.10.09 en is op de hoogte voor alle ph
 - [Kan ik cron gebruiken om automatisch bij te werken?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kan phpMussel bestanden met niet-ANSI-namen scannen?](#SCAN_NON_ANSI)
 - [Blacklists (zwarte lijsten) – Whitelists (witte lijsten) – Greylists (grijze lijst) – Wat zijn ze en hoe gebruik ik ze?](#BLACK_WHITE_GREY)
-- [Wanneer ik signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?](#CHANGE_COMPONENT_SORT_ORDER)
+- [Wanneer ik signatuurbestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -907,11 +912,11 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Hoe vaak worden signatures bijgewerkt?
 
-Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor phpMussel signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
+Bijwerkfrequentie varieert afhankelijk van de signatuurbestanden betrokken. Alle de onderhouders voor phpMussel signatuurbestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
 
 #### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Ik heb een fout tegengekomen tijdens het gebruik van phpMussel en ik weet niet wat te doen! Help alstublieft!
 
-- Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signature bestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
+- Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signatuurbestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
 - Hebt u door alle documentatie gecontroleerd? Zo niet, doe dat dan. Als het probleem niet kan worden opgelost met behulp van de documentatie, lees verder.
 - Hebt u de **[issues pagina](https://github.com/phpMussel/phpMussel/issues)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
 - Als het probleem blijft bestaan, zoek hulp door een nieuw issue op de issues pagina te maken.
@@ -924,7 +929,7 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 
 #### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Kan ik een enkele phpMussel-installatie gebruiken om meerdere domeinen te beschermen?
 
-Ja. phpMussel-installaties zijn niet van nature gebonden naar specifieke domeinen, en kan daarom worden gebruikt om meerdere domeinen te beschermen. Algemeen, wij verwijzen naar phpMussel installaties die slechts één domein beschermen als "single-domain installaties", en wij verwijzen naar phpMussel installaties die meerdere domeinen en/of subdomeinen beschermen als "multi-domain installaties". Als u een multi-domain installaties werken en nodig om verschillende signature bestanden voor verschillende domeinen te gebruiken, of nodig om phpMussel anders geconfigureerd voor verschillende domeinen te zijn, het is mogelijk om dit te doen. Nadat het configuratiebestand hebt geladen (`config.ini`), phpMussel controleert het bestaan van een "configuratie overschrijdend bestand" specifiek voor het domein (of sub-domein) dat wordt aangevraagd (`het-domein-dat-wordt-aangevraagd.tld.config.ini`), en als gevonden, elke configuratie waarden gedefinieerd door het configuratie overschrijdend bestand zal worden gebruikt in plaats van de configuratie waarden die zijn gedefinieerd door het configuratiebestand. Het configuratie overschrijdende bestanden zijn identiek aan het configuratiebestand, en naar eigen goeddunken, kan de volledige van alle configuratie richtlijnen beschikbaar voor phpMussel bevatten, of wat dan ook kleine subsectie dat nodig is die afwijkt van de waarden die normaal door het configuratiebestand worden gedefinieerd. Het configuratie overschrijdende bestanden worden genoemd volgens het domein waaraan ze bestemd zijn (dus, bijvoorbeeld, als u een configuratie overschrijdend bestand voor het domein `http://www.some-domain.tld/` nodig hebt, het configuratie overschrijdende bestanden moeten worden genoemd als `some-domain.tld.config.ini`, en moeten naast het configuratiebestand, `config.ini`, in de vault geplaatst worden). De domeinnaam is afgeleid van de koptekst `HTTP_HOST` van het verzoek; "www" wordt genegeerd.
+Ja. phpMussel-installaties zijn niet van nature gebonden naar specifieke domeinen, en kan daarom worden gebruikt om meerdere domeinen te beschermen. Algemeen, wij verwijzen naar phpMussel installaties die slechts één domein beschermen als "single-domain installaties", en wij verwijzen naar phpMussel installaties die meerdere domeinen en/of subdomeinen beschermen als "multi-domain installaties". Als u een multi-domain installaties werken en nodig om verschillende signatuurbestanden voor verschillende domeinen te gebruiken, of nodig om phpMussel anders geconfigureerd voor verschillende domeinen te zijn, het is mogelijk om dit te doen. Nadat het configuratiebestand hebt geladen (`config.ini`), phpMussel controleert het bestaan van een "configuratie overschrijdend bestand" specifiek voor het domein (of sub-domein) dat wordt aangevraagd (`het-domein-dat-wordt-aangevraagd.tld.config.ini`), en als gevonden, elke configuratie waarden gedefinieerd door het configuratie overschrijdend bestand zal worden gebruikt in plaats van de configuratie waarden die zijn gedefinieerd door het configuratiebestand. Het configuratie overschrijdende bestanden zijn identiek aan het configuratiebestand, en naar eigen goeddunken, kan de volledige van alle configuratie richtlijnen beschikbaar voor phpMussel bevatten, of wat dan ook kleine subsectie dat nodig is die afwijkt van de waarden die normaal door het configuratiebestand worden gedefinieerd. Het configuratie overschrijdende bestanden worden genoemd volgens het domein waaraan ze bestemd zijn (dus, bijvoorbeeld, als u een configuratie overschrijdend bestand voor het domein `http://www.some-domain.tld/` nodig hebt, het configuratie overschrijdende bestanden moeten worden genoemd als `some-domain.tld.config.ini`, en moeten naast het configuratiebestand, `config.ini`, in de vault geplaatst worden). De domeinnaam is afgeleid van de koptekst `HTTP_HOST` van het verzoek; "www" wordt genegeerd.
 
 #### <a name="PAY_YOU_TO_DO_IT"></a>Ik wil niet tijd verspillen met het installeren van dit en om het te laten werken met mijn website; Kan ik u betalen om het te doen?
 
@@ -1083,9 +1088,9 @@ In deze twee contexten, op de witte lijst staan betekent dat deze niet mag worde
 
 De signature greylist is een lijst met signatures die in essentie moet worden genegeerd (dit wordt eerder in de documentatie kort genoemd). Wanneer een signature op de signature greylist wordt geactiveerd, blijft phpMussel werken door zijn signatures en onderneemt geen specifieke actie met betrekking tot de signature dat op de greylist staat. Er is geen zwarte lijst, omdat het impliciete gedrag is hetzelfde als het normaal gedrag voor getriggerde signatures, en er is geen signature witte lijst, omdat het impliciete gedrag niet echt zinvol is in overweging van hoe phpMussel normaal werkt en de mogelijkheden die het al heeft.
 
-De signature grijze lijst is handig als u problemen wilt oplossen die door een bepaalde signature worden veroorzaakt zonder het volledige signature bestand uit te schakelen of te deinstalleren.
+De signature grijze lijst is handig als u problemen wilt oplossen die door een bepaalde signature worden veroorzaakt zonder het volledige signatuurbestand uit te schakelen of te deinstalleren.
 
-#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wanneer ik signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wanneer ik signatuurbestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?
 
 Ja. Als u bepaalde bestanden wilt dwingen om in een specifieke volgorde uit te voeren, kunt u enkele willekeurige gegevens vóór hun naam toevoegen in de configuratie richtlijn waar ze worden vermeld, gescheiden door een dubbele punt. Wanneer de updates-pagina vervolgens de bestanden opnieuw sorteert, heeft deze toegevoegde willekeurige gegevens invloed op de sorteervolgorde, waardoor ze vervolgens in de gewenste volgorde worden uitgevoerd, zonder dat ze hoeven te hernoemen.
 
@@ -1311,4 +1316,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 9 Oktober 2018 (2018.10.09).
+Laatste Bijgewerkt: 16 Oktober 2018 (2018.10.16).

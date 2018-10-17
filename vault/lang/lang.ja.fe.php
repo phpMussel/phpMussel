@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.26).
+ * This file: Japanese language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'マクロを含む�
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'カンマで区切られたＰＨＰコードを含むことができるファイル拡張子のリスト。​ＰＨＰカメレオン攻撃検出が有効になっている場合、このリストにない拡張子を持つＰＨＰコードを含むファイルは、ＰＨＰカメレオン攻撃として検出されます。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'ファイルでもなくPHPアーカイブとも認識できないファイル中のPHPヘッダーを探します。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'ヘッダーが正しくないアーカイブを探します（BZ、​GZ、​RAR、​ZIP、​RAR、​GZをサポート）。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'ヘッダーが正しくないアーカイブを探します（ＢＺ/ＢＺＩＰ２、ＧＺ/ＧＺＩＰ、ＬＺＦ、ＲＡＲ、ＺＩＰをサポート）。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'ヘッダーが正しくないオフィスドキュメントを探します（DOC、​DOT、​PPS、​PPT、​XLA、​XLS、​WIZをサポート）。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'ヘッダーが正しくない画像ファイルを探します（BMP、​DIB、​PNG、​GIF、​JPEG、​JPG、​XCF、​PSD、​PDD、​WEBPをサポート）。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'ヘッダーが正しくないPDFファイルを探します。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'システム�
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'システムあるいはＣＭＳに画像ファイルのアップロードのみを許可するのであれば、​このディレクティブは有効にすべきであり、​そうでなければ無効とします。​有効にすると、​画像と特定できないファイルはスキャンすることなしにブロックしますので、​プロセス時間の短縮とメモリーの節約が期待できます。​<code>false</code>（偽） = OFF （オフ）；​<code>true</code>（真） = ON （オン） です。';
 $phpMussel['lang']['config_experimental'] = '不安定/実験的！';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '暗号化されたアーカイブを検出しブロックするか否か？​phpMusselは暗号化されたアーカイブをスキャンすることはできないので、​アーカイブの暗号化によってphpMussel、​アンチウィルススキャナー等をかいくぐろうとする攻撃者がいるかもしれません。​暗号化されたアーカイブをブロックすることにより、​このようなリスクを回避することができます。​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
-$phpMussel['lang']['config_files_check_archives'] = 'アーカイブのコンテンツに対してチェックを試みるか否かについてです。​<code>false</code>（偽） = チェックしない; <code>true</code>（真） = チェックする（Default/デフォルト）。​現在サポートしているのはBZ、​GZ、​LZF、​ZIP形式です（RAR、​CAB、​7z等は対象外）。​本機能は万能ではありませんので、​有効にしておくことを推奨していますが、​必ず全てを検出することを保証するものではありません。​また現在チェックのアーカイブはZIPに対して再帰的でないことに注意して下さい。';
+$phpMussel['lang']['config_files_check_archives'] = 'アーカイブのコンテンツに対してチェックを試みるか否かについてです。 <code>false</code>（偽） = チェックしない; <code>true</code>（真） = チェックする（Default/デフォルト）。';
 $phpMussel['lang']['config_files_filesize_archives'] = 'ファイルサイズのブラックリスト化/ホワイトリスト化をアーカイブのコンテンツに持ち込むか否か？​<code>false</code> = いいえ（ただグレーリストすべて）; <code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_files_filesize_limit'] = 'ファイルサイズ上限の単位はＫＢです。​６５５３６＝６４ＭＢ（Default/デフォルト）；​0 = リミットしません（上限なし、​常にグレイリスト化）、​正の数値であれば何でも構いません。​ＰＨＰの設定でメモリーに制限があったり、​アップロードファイルサイズの上限が設定されている場合に有効的です。';
 $phpMussel['lang']['config_files_filesize_response'] = '上限サイズを超えるファイルをどう処理するかについてです。​<code>false</code>（偽）=ホワイトリストして「Whitelist」。<code>true</code>（真）=ブラックリストして「Blacklist」（Default/デフォルト）。';
@@ -63,10 +63,9 @@ $phpMussel['lang']['config_files_filetype_archives'] = 'ファイルタイプの
 $phpMussel['lang']['config_files_filetype_blacklist'] = 'ファイルタイプ・ブラックリスト:';
 $phpMussel['lang']['config_files_filetype_greylist'] = 'ファイルタイプ・グレーリスト:';
 $phpMussel['lang']['config_files_filetype_whitelist'] = 'システムが特定タイプのファイルのみアップロードを許可する、​あるいは拒絶する場合は、​ファイルタイプを適切にホワイトリスト、​ブラックリスト、​グレーリストにて分類しておくと、​ファイルタイプによって弾かれるファイルはスキャンをスキップできるため、​スピードアップに繋がります。​フォーマットはＣＳＶ（カンマ区切り）です。​リストによらず全てをスキャンしたい場合は、​変数は空白のままとし、​ホワイトリスト/ブラックリスト/グレーリストを無効にします。​プロセスの論理的順序: ファイルタイプがホワイトリストに記載されていれば、​スキャンせず、​ブロックせず、​ブラックリストおよびグレイリストに対してチェックを行いません。​ファイルタイプがブラックリストに記載されていれば、​スキャンすることなく、​直ちににブロックし、​グレーリストに対してチェックを行いません。​グレーリストが空、​あるいはグレーリストが空でなくかつそのファイルタイプがあれば、​通常通りスキャンしブロックするか否かを判断します。​グレーリストが空でなくかつそのファイルタイプが含まれていなければ、​ブラックリストと同様の扱いをすることになり、​スキャンなしにブロックします。​ファイルタイプ・ホワイトリスト:';
-$phpMussel['lang']['config_files_max_recursion'] = 'アーカイブに対する最大再帰深さです。​デフォルト＝１０。';
+$phpMussel['lang']['config_files_max_recursion'] = 'アーカイブに対する最大再帰深さです。​デフォルト＝３。';
 $phpMussel['lang']['config_files_max_uploads'] = '一度にスキャンできるアップロードファイル数の上限で、​これを超えるとスキャンを中断し、​ユーザーにその旨を知らせ、​論理攻撃からの保護として機能します。​システムやＣＭＳがDDoS攻撃にあい、​phpMusselがオーバーロードしてＰＨＰプロセスに支障をきたすことがないようにするためです。​推奨数は１０ですが、​ハードウェアのスピードによっては、​これ以上/以下がよいということもあるでしょう。​この数は、​アーカイブのコンテンツは含まないことを覚えておいて下さい。';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
-$phpMussel['lang']['config_general_allow_symlinks'] = '場合によっては、phpMusselが特定の方法で名前を付けられたときにファイルに直接アクセスすることができません。​シンボリックリンク（symlink）を介して間接的にファイルにアクセスすると、この問題を解決することがあります。​ただし、シンボリックリンク（symlink）の使用が禁止されたり、管理者権限が必要なシステムもありますので、これは必ずしも実行可能な解決策ではありません。​直接アクセスが不可能な場合、このディレクティブは、phpMusselがシンボリックリンク（symlink）を使って間接的にファイルにアクセスしようとするかどうかを決定します。​True = シンボリックリンクを有効にする；​False = シンボリックリンクを無効にする（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_cleanup'] = '初回アップロード後に変数とキャッシュの設定をクリアするか否かについてのスクリプトです。​<code>false</code>(偽） = いいえ；​<code>true</code>（真） = はい 「Default/デフォルト設定」。​初回アップロードスキャニング以外で使用することがなければ、​<code>true</code>（真）としメモリーの使用量を最小にします。​使用するのであれば、​<code>false</code>（偽）とし、​メモリーに不要な重複データを再ロードするのを防ぎます。​通常は<code>true</code>（真）。​に設定しますが、​初回アップロードスキャニングに対してしか使用できないことを覚えておいて下さい。​ＣＬＩモードでは影響しません。';
 $phpMussel['lang']['config_general_default_algo'] = '将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。';
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​<code>false</code>（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​<code>true</code>（真） = スキャニング後、​クリーンでなければ直ちに削除。';
@@ -95,7 +94,7 @@ $phpMussel['lang']['config_general_statistics'] = 'phpMussel使用統計を追�
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。';
 $phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーン・オフセット（分）。';
 $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
-$phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？​値は、​ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。​注：個々のログファイルに適用されます。​ログファイルのサイズは一括して考慮されません。';
+$phpMussel['lang']['config_general_truncate'] = 'ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_legal_privacy_policy'] = '生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​<code>true</code>（真）=はい；​<code>false</code>（偽）=いいえ（Default/デフォルルト）。';

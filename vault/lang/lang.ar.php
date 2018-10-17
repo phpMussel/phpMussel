@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.07.31).
+ * This file: Arabic language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -55,7 +55,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'نوع الملف في القائ�
 $phpMussel['lang']['finished'] = 'انتهى';
 $phpMussel['lang']['generated_by'] = 'الناتج';
 $phpMussel['lang']['greylist_cleared'] = ' قائمة رمادية أفرغت.';
-$phpMussel['lang']['greylist_not_updated'] = ' قائمة رمادية لم تحديثها.';
 $phpMussel['lang']['greylist_updated'] = ' قائمة رمادية تحديثها.';
 $phpMussel['lang']['image'] = 'صورة';
 $phpMussel['lang']['instance_already_active'] = 'نشطة بالفعل! يرجى إعادة الفحص اليشمل.';
@@ -69,10 +68,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'مجلد الإضافات
 $phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تجاوزت الحد عمق العودية';
 $phpMussel['lang']['required_variables_not_defined'] = 'المتغيرات المطلوبة لم يتم تعريف: لا يمكن أن يستمر.';
-$phpMussel['lang']['scan_aborted'] = 'مسح تم الالغاء!';
 $phpMussel['lang']['scan_chameleon'] = 'الكشف هجوم الحرباء %s';
 $phpMussel['lang']['scan_checking'] = 'فحص';
-$phpMussel['lang']['scan_checking_contents'] = 'نجاح! فحص محتويات الآن.';
 $phpMussel['lang']['scan_command_injection'] = 'الكشف محاولة حقن القيادة';
 $phpMussel['lang']['scan_complete'] = 'تم الانتهاء من';
 $phpMussel['lang']['scan_extensions_missing'] = 'فشل (مفقود ملحقات المطلوبة)!';
@@ -81,7 +78,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'مفقود اسم الملف';
 $phpMussel['lang']['scan_no_problems_found'] = 'الكشف لا مشاكل.';
 $phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
 $phpMussel['lang']['scan_reading'] = 'قراءة';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'تلف ملف التوقيع';
 $phpMussel['lang']['scan_signature_file_missing'] = 'مفقود ملف التوقيع';
 $phpMussel['lang']['scan_tampering'] = 'الكشف العبث ملف يحتمل أن تكون خطرة';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'الكشف تلاعب تحميل الملف غير مصرح';
@@ -95,7 +91,6 @@ $phpMussel['lang']['upload_error_6'] = 'مفقود مجلد تحميل! يرجى
 $phpMussel['lang']['upload_error_7'] = 'خطأ القرص الكتابة! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
 $phpMussel['lang']['upload_error_8'] = 'الكشف تكوين الخطأ PHP! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'تجاوزت الحد تحميل';
-$phpMussel['lang']['wrong_password'] = 'كلمة مرور خاطئة؛ رفض العمل.';
 $phpMussel['lang']['x_does_not_exist'] = 'لا يوجد %s';
 
 $phpMussel['lang']['cli_commands'] = " q

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.07.31).
+ * This file: Indonesian language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'File jenis pada hitam daftar';
 $phpMussel['lang']['finished'] = 'Selesai';
 $phpMussel['lang']['generated_by'] = 'Dihasilkan oleh';
 $phpMussel['lang']['greylist_cleared'] = ' Greylist dikosongkan.';
-$phpMussel['lang']['greylist_not_updated'] = ' Greylist tidak diperbarui.';
 $phpMussel['lang']['greylist_updated'] = ' Greylist diperbarui.';
 $phpMussel['lang']['image'] = 'Gambar';
 $phpMussel['lang']['instance_already_active'] = 'Kejadian sudah aktif! Silahkan periksa kait Anda.';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Direktori plugin tidak ad
 $phpMussel['lang']['quarantined_as'] = "Dikarantina sebagai \"/vault/quarantine/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Batas kedalaman rekursi melebihi';
 $phpMussel['lang']['required_variables_not_defined'] = 'Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
-$phpMussel['lang']['scan_aborted'] = 'Memindai dibatalkan!';
 $phpMussel['lang']['scan_chameleon'] = 'Bunglon %s serangan terdeteksi';
 $phpMussel['lang']['scan_checking'] = 'Memeriksa';
-$phpMussel['lang']['scan_checking_contents'] = 'Sukses! Melanjutkan untuk memeriksa isi.';
 $phpMussel['lang']['scan_command_injection'] = 'Perintah injeksi terdeteksi';
 $phpMussel['lang']['scan_complete'] = 'Selesai';
 $phpMussel['lang']['scan_extensions_missing'] = 'Gagal (hilang ekstensi yang dibutuhkan)!';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Hilang nama file';
 $phpMussel['lang']['scan_no_problems_found'] = 'Tidak ada masalah yang diketahui.';
 $phpMussel['lang']['scan_not_archive'] = 'Gagal (kosong atau tidak sebuah arsip)!';
 $phpMussel['lang']['scan_reading'] = 'Bacaan';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Tanda tangan file rusak';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Tanda tangan file hilang';
 $phpMussel['lang']['scan_tampering'] = 'Terdeteksi perubahan berpotensi berbahaya dalam file';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Tidak sah file nama manipulasi terdeteksi';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = 'Upload direktori hilang! Silahkan hubung
 $phpMussel['lang']['upload_error_7'] = 'Disk-menulis kesalahan! Silahkan hubungi hostmaster untuk bantuan! ';
 $phpMussel['lang']['upload_error_8'] = 'PHP salah-konfigurasi terdeteksi! Silahkan hubungi hostmaster untuk bantuan! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Upload batas melebihi';
-$phpMussel['lang']['wrong_password'] = 'Password yang salah; Aksi ditolak.';
 $phpMussel['lang']['x_does_not_exist'] = '%s tidak ada';
 
 $phpMussel['lang']['cli_commands'] = " q

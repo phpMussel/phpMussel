@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.07.31).
+ * This file: Japanese language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'ファイルタイプがブラッ�
 $phpMussel['lang']['finished'] = '完了';
 $phpMussel['lang']['generated_by'] = '作成者';
 $phpMussel['lang']['greylist_cleared'] = ' グレーリストが解除されました。';
-$phpMussel['lang']['greylist_not_updated'] = ' グレーリストがアップデートされていません。';
 $phpMussel['lang']['greylist_updated'] = ' グレーリストがアップデートされました。';
 $phpMussel['lang']['image'] = '画像';
 $phpMussel['lang']['instance_already_active'] = 'インスタンスが既にアクティブです！​フックを再確認して下さい。';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'プラグインデイレ�
 $phpMussel['lang']['quarantined_as'] = "「/vault/quarantine/%s.qfu」として隔離。\n";
 $phpMussel['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
 $phpMussel['lang']['required_variables_not_defined'] = 'リクエストのあった変数は定義されていないため、​続行できません。';
-$phpMussel['lang']['scan_aborted'] = 'スキャニング中断！';
 $phpMussel['lang']['scan_chameleon'] = '%s Chameleon（カメレオン）攻撃が検出されました';
 $phpMussel['lang']['scan_checking'] = 'チェック中';
-$phpMussel['lang']['scan_checking_contents'] = '成功！​コンテンツをチェックしています。';
 $phpMussel['lang']['scan_command_injection'] = 'コマンドインジェクション攻撃が検出されました';
 $phpMussel['lang']['scan_complete'] = '完了';
 $phpMussel['lang']['scan_extensions_missing'] = '失敗（要求のあった拡張子がありません）！';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'ファイル名が存在しませ
 $phpMussel['lang']['scan_no_problems_found'] = '問題は検出されませんでした。';
 $phpMussel['lang']['scan_not_archive'] = '失敗（中身が存在しないかアーカイブではありません）！';
 $phpMussel['lang']['scan_reading'] = '読み込んでいます';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'シグネチャファイルが汚染されています';
 $phpMussel['lang']['scan_signature_file_missing'] = 'シグネチャファイルがありません';
 $phpMussel['lang']['scan_tampering'] = '検出された潜在的に危険なファイル改ざん';
 $phpMussel['lang']['scan_unauthorised_upload'] = '不正ファイルアップロード改ざんが検出されました';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = 'アップロードディレクトリが�
 $phpMussel['lang']['upload_error_7'] = 'ディスクに書き込めません！​ホスト責任者に相談して下さい！';
 $phpMussel['lang']['upload_error_8'] = '不適切なPHP設定が検出されました！​ホスト責任者に相談して下さい！';
 $phpMussel['lang']['upload_limit_exceeded'] = 'アップロードの制限を超えています。';
-$phpMussel['lang']['wrong_password'] = '不正パスワード；アクションは否定されました。';
 $phpMussel['lang']['x_does_not_exist'] = '「%s」は存在しません';
 
 $phpMussel['lang']['cli_commands'] = " q

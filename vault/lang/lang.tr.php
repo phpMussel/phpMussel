@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.07.31).
+ * This file: Turkish language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,7 +57,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Filetype kara listeye alındı';
 $phpMussel['lang']['finished'] = 'Bitirdi';
 $phpMussel['lang']['generated_by'] = 'Üreten';
 $phpMussel['lang']['greylist_cleared'] = ' Gri liste temizlendi.';
-$phpMussel['lang']['greylist_not_updated'] = ' Gri liste güncellenmedi.';
 $phpMussel['lang']['greylist_updated'] = ' Gri liste güncellendi.';
 $phpMussel['lang']['image'] = 'Imaj';
 $phpMussel['lang']['instance_already_active'] = 'Örnek zaten etkin! Lütfen kancalarınızı tekrar kontrol edin.';
@@ -71,10 +70,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Eklentiler dizini yok!';
 $phpMussel['lang']['quarantined_as'] = "\"/vault/quarantine/%s.qfu\" olarak karantinaya alındı.\n";
 $phpMussel['lang']['recursive'] = 'Yineleme derinliği sınırı aşıldı';
 $phpMussel['lang']['required_variables_not_defined'] = 'Gerekli değişkenler tanımlanmamış: Devam edemiyorum.';
-$phpMussel['lang']['scan_aborted'] = 'Tarama iptal edildi!';
 $phpMussel['lang']['scan_chameleon'] = '%s bukalemun saldırısı tespit edildi';
 $phpMussel['lang']['scan_checking'] = 'Kontrol etme';
-$phpMussel['lang']['scan_checking_contents'] = 'Başarı! İçeriği kontrol etmeye devam etmek.';
 $phpMussel['lang']['scan_command_injection'] = 'Komuta enjeksiyon girişimi tespit edildi';
 $phpMussel['lang']['scan_complete'] = 'Tamamlayınız';
 $phpMussel['lang']['scan_extensions_missing'] = 'Başarısız oldu (gerekli uzantıları eksik)!';
@@ -83,7 +80,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Dosya adı eksik';
 $phpMussel['lang']['scan_no_problems_found'] = 'Hiçbir sorun bulunamadı.';
 $phpMussel['lang']['scan_not_archive'] = 'Başarısız oldu (boş veya bir arşiv değil)!';
 $phpMussel['lang']['scan_reading'] = 'Okuma';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'İmza dosyası bozulmuş';
 $phpMussel['lang']['scan_signature_file_missing'] = 'İmza dosyası eksik';
 $phpMussel['lang']['scan_tampering'] = 'Potansiyel olarak tehlikeli dosyaların değiştirilmesi algılandı';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Yetkisiz dosya yükleme işi algılandı';
@@ -97,7 +93,6 @@ $phpMussel['lang']['upload_error_6'] = 'Yükleme dizini eksik! Lütfen yardım i
 $phpMussel['lang']['upload_error_7'] = 'Disk yazma hatası! Lütfen yardım için hostmaster ile iletişime geçin! ';
 $phpMussel['lang']['upload_error_8'] = 'PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Yükleme sınırı aşıldı';
-$phpMussel['lang']['wrong_password'] = 'Yanlış şifre; Eylem reddedildi.';
 $phpMussel['lang']['x_does_not_exist'] = '%s mevcut değil';
 
 $phpMussel['lang']['cli_commands'] = " q

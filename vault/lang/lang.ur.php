@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.07.31).
+ * This file: Urdu language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -55,7 +55,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'قسم کی فائل کو بلیک
 $phpMussel['lang']['finished'] = 'ختم';
 $phpMussel['lang']['generated_by'] = 'کی طرف سے پیدا';
 $phpMussel['lang']['greylist_cleared'] = ' صاف کر دیا گرے فہرست.';
-$phpMussel['lang']['greylist_not_updated'] = ' گرے فہرست کو اپ ڈیٹ نہیں.';
 $phpMussel['lang']['greylist_updated'] = ' گرے فہرست کو اپ ڈیٹ.';
 $phpMussel['lang']['image'] = 'تصویر';
 $phpMussel['lang']['instance_already_active'] = 'واقعے کی پہلے سے ہی چالو! براہ مہربانی اپنے ہکس دوبارہ چیک.';
@@ -69,10 +68,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'پلگ انز ڈائرک�
 $phpMussel['lang']['quarantined_as'] = "طور قرنطینہ \"/والٹ / سنگرودھ/%s.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'تکرار کی گہرائی کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['required_variables_not_defined'] = 'مطلوبہ متغیر کی وضاحت نہیں کر رہے ہیں: جاری نہیں رکھ سکتے.';
-$phpMussel['lang']['scan_aborted'] = 'سکیننگ کے اسقاط حمل!';
 $phpMussel['lang']['scan_chameleon'] = '%s گرگٹ حملے کا پتہ چلا';
 $phpMussel['lang']['scan_checking'] = 'پڑتال کر رہا ہے';
-$phpMussel['lang']['scan_checking_contents'] = 'کامیابی! مندرجات کی جانچ کرنا نکلتا ہے.';
 $phpMussel['lang']['scan_command_injection'] = 'کمان انجکشن کی کوشش کا پتہ چلا';
 $phpMussel['lang']['scan_complete'] = 'مکمل';
 $phpMussel['lang']['scan_extensions_missing'] = 'ناکام ہوگیا (ضروری ملانے کے لاپتہ)!';
@@ -81,7 +78,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'لاپتہ فائل کا نام';
 $phpMussel['lang']['scan_no_problems_found'] = 'کوئی مسئلہ نہیں پایا.';
 $phpMussel['lang']['scan_not_archive'] = 'ناکام ہوگیا (خالی یا ایک آرکائیو نہیں)!';
 $phpMussel['lang']['scan_reading'] = 'پڑھنا';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'دستخط فائل خراب';
 $phpMussel['lang']['scan_signature_file_missing'] = 'دستخط کی فائل لاپتہ';
 $phpMussel['lang']['scan_tampering'] = 'پتہ چلنے پر ممکنہ طور پر خطرناک فائل چھیڑچھاڑ';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'غیر مجاز فائل اپ ہیرا پھیری کے پتہ';
@@ -95,7 +91,6 @@ $phpMussel['lang']['upload_error_6'] = 'ڈائریکٹری لاپتہ اپ لو�
 $phpMussel['lang']['upload_error_7'] = 'غلطی کو ڈسک لکھنے! امداد کے لیے میزبان ماسٹر سے رابطہ کریں! ';
 $phpMussel['lang']['upload_error_8'] = 'پی ایچ پی کی غلط کنفیگریشن کے پتہ! امداد کے لیے میزبان ماسٹر سے رابطہ کریں! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'اپ لوڈ کی حد سے تجاوز کر گئی';
-$phpMussel['lang']['wrong_password'] = 'غلط پاس ورڈ؛ ایکشن تردید.';
 $phpMussel['lang']['x_does_not_exist'] = '%s موجود نہیں ہے';
 
 $phpMussel['lang']['cli_commands'] = " q

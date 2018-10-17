@@ -218,9 +218,6 @@ Config Defaults:
   statistics:
    type: bool
    default: false
-  allow_symlinks:
-   type: bool
-   default: false
  signatures:
   Active:
    type: string
@@ -275,7 +272,7 @@ Config Defaults:
    default: ""
   check_archives:
    type: bool
-   default: false
+   default: true
   filesize_archives:
    type: bool
    default: true
@@ -284,7 +281,7 @@ Config Defaults:
    default: false
   max_recursion:
    type: int
-   default: 10
+   default: 3
   block_encrypted_archives:
    type: bool
    default: true

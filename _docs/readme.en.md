@@ -133,7 +133,8 @@ However, you're also able to instruct phpMussel to scan specific files, director
 
 | Results | Description |
 |---|---|
-| -3 | Indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted. |
+| -4 | Indicates that data couldn't be scanned due to encryption. |
+| -3 | Indicates that problems were encountered with the phpMussel signatures files. |
 | -2 | Indicates that corrupt data was detected during the scan and thus the scan failed to complete. |
 | -1 | Indicates that extensions or addons required by PHP to execute the scan were missing and thus the scan failed to complete. |
 | 0 | Indicates that the scan target doesn't exist and thus there was nothing to scan. |
@@ -520,9 +521,6 @@ Value | Produces | Description
 ##### "statistics"
 - Track phpMussel usage statistics? True = Yes; False = No [Default].
 
-##### "allow_symlinks"
-- Sometimes phpMussel isn't able to access a file directly when it's named in a certain way. Accessing the file indirectly via symlinks can sometimes resolve this problem. However, this isn't always a viable solution, because on some systems, using symlinks may be forbidden, or may require administrative privileges. This directive is used to determine whether phpMussel should attempt to use symlinks to access files indirectly, when accessing them directly isn't possible. True = Enable symlinks; False = Disable symlinks [Default].
-
 #### "signatures" (Category)
 Signatures configuration.
 
@@ -577,11 +575,18 @@ File handling configuration.
   - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
   - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
-##### "check_archives" – Temporarily unavailable
+##### "check_archives"
 - Attempt to check the contents of archives? False = Don't check; True = Check [Default].
-- Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported).
-- This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that archive checking currently is not recursive for PHARs or ZIPs.
+
+Format | Can read | Can read recursively | Can detect encryption | Notes
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Requires [libzip](http://php.net/manual/en/zip.requirements.php) (normally bundled with PHP anyway). Also supported (uses the zip format): ✔️ OLE object detection. ✔️ Office macro detection.
+Tar | ✔️ | ✔️ | ➖ | No special requirements. Format doesn't support encryption.
+Rar | ✔️ | ✔️ | ✔️ | Requires the [rar](https://pecl.php.net/package/rar) extension (when this extension isn't installed, phpMussel can't read rar files).
+7zip | ❌ | ❌ | ❌ | Still currently investigating how to read 7zip files in phpMussel.
+Phar | ❌ | ❌ | ❌ | Support for reading phar files was removed in v1.6.0, and won't be added again, due to security concerns.
+
+*If anyone is able and willing to help implement support for reading other archive formats, such help would be welcomed.*
 
 ##### "filesize_archives"
 - Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
@@ -590,7 +595,7 @@ File handling configuration.
 - Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) [Default]; True = Yes.
 
 ##### "max_recursion"
-- Maximum recursion depth limit for archives. Default = 10.
+- Maximum recursion depth limit for archives. Default = 3.
 
 ##### "block_encrypted_archives"
 - Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].
@@ -610,7 +615,7 @@ Chameleon attack detection: False = Off; True = On.
 - Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
 
 ##### "chameleon_to_archive"
-- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, GZ).
+- Detect incorrect headers in archives and compressed files. Supported: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1313,4 +1318,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 9 October 2018 (2018.10.09).
+Last Updated: 16 October 2018 (2018.10.16).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.07.31).
+ * This file: German language data (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,7 +52,6 @@ $phpMussel['lang']['filetype_blacklisted'] = 'Dateityp auf Blacklist';
 $phpMussel['lang']['finished'] = 'Fertig';
 $phpMussel['lang']['generated_by'] = 'Generiert von';
 $phpMussel['lang']['greylist_cleared'] = ' Greylist gelöscht.';
-$phpMussel['lang']['greylist_not_updated'] = ' Greylist nicht aktualisiert.';
 $phpMussel['lang']['greylist_updated'] = ' Greylist aktualisiert.';
 $phpMussel['lang']['image'] = 'Bild';
 $phpMussel['lang']['instance_already_active'] = 'Instanz bereits aktiv! Bitte prüfe deine Hooks.';
@@ -66,10 +65,8 @@ $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugin-Verzeichnis nicht 
 $phpMussel['lang']['quarantined_as'] = "Als \"/vault/quarantine/%s.qfu\" unter Quarantäne gestellt.\n";
 $phpMussel['lang']['recursive'] = 'Rekursionstiefe-Limit überschritten';
 $phpMussel['lang']['required_variables_not_defined'] = 'Benötigte Variablen sind nicht definiert: Kann nicht fortfahren.';
-$phpMussel['lang']['scan_aborted'] = 'Scan abgebrochen!';
 $phpMussel['lang']['scan_chameleon'] = '%s-Chamäleon-Angriff erkannt';
 $phpMussel['lang']['scan_checking'] = 'Überprüfung';
-$phpMussel['lang']['scan_checking_contents'] = 'Erfolg! Überprüfe Inhalte.';
 $phpMussel['lang']['scan_command_injection'] = 'CMD-Injektion erkannt';
 $phpMussel['lang']['scan_complete'] = 'Komplett';
 $phpMussel['lang']['scan_extensions_missing'] = 'Gescheitert (fehlende benötigte Erweiterungen)!';
@@ -78,7 +75,6 @@ $phpMussel['lang']['scan_missing_filename'] = 'Fehlender Dateiname';
 $phpMussel['lang']['scan_no_problems_found'] = 'Keine Probleme gefunden.';
 $phpMussel['lang']['scan_not_archive'] = 'Gescheitert (leer oder kein Archiv)!';
 $phpMussel['lang']['scan_reading'] = 'Lesen';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Signaturdatei beschädigt';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Signaturdatei fehlt';
 $phpMussel['lang']['scan_tampering'] = 'Potentiell gefährliche Datei-Manipulation erkannt';
 $phpMussel['lang']['scan_unauthorised_upload'] = 'Unerlaubte Upload-Manipulation erkannt';
@@ -92,7 +88,6 @@ $phpMussel['lang']['upload_error_6'] = 'Fehlendes Uploadverzeichnis! Bitte konta
 $phpMussel['lang']['upload_error_7'] = 'Festplatten-Schreibfehler! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ';
 $phpMussel['lang']['upload_error_8'] = 'PHP-Fehlkonfiguration erkannt! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ';
 $phpMussel['lang']['upload_limit_exceeded'] = 'Uploadlimit überschritten';
-$phpMussel['lang']['wrong_password'] = 'Falsches Passwort; Ausführung des Befehls verweigert.';
 $phpMussel['lang']['x_does_not_exist'] = '%s existiert nicht';
 
 $phpMussel['lang']['cli_commands'] = " q

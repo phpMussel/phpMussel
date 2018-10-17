@@ -133,7 +133,8 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/o
 
 | Resultados | Descrição |
 |---|---|
-| -3 | Indica problemas foram encontrados com o phpMussel arquivos de assinaturas ou arquivos de mapas de assinaturas e que eles podem possívelmente estar ausente ou corrompido. |
+| -4 | Indica que os dados não puderam ser analisados devido a encriptação. |
+| -3 | Indica que problemas foram encontrados com os arquivos de assinatura do phpMussel. |
 | -2 | Indica que dados corrompidos foram detectados durante a análise, e portanto, a análise não foi concluída. |
 | -1 | Indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída. |
 | 0 | Indica que o alvo de análise não existe, e portanto, havia nada para verificar. |
@@ -520,9 +521,6 @@ Valor | Produz | Descrição
 ##### "statistics"
 - Monitorar as estatísticas de uso do phpMussel? True = Sim; False = Não [Padrão].
 
-##### "allow_symlinks"
-- Às vezes, o phpMussel não pode acessar um arquivo diretamente quando é nomeado de uma determinada maneira. Acessar o arquivo indiretamente via symlinks às vezes pode resolver esse problema. No entanto, isso nem sempre é uma solução viável, porque em alguns sistemas, o uso de symlinks pode ser proibido, ou pode exigir privilégios administrativos. Esta diretiva é usada para determinar se o phpMussel deve tentar usar symlinks para acessar arquivos indiretamente, quando acessá-los diretamente não é possível. True = Ativar symlinks; False = Desativar symlinks [Padrão].
-
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -577,11 +575,18 @@ Configuração geral por a manipulação de arquivos.
   - Se o tipo de arquivo está na blacklist, não verificar o arquivo, mas bloqueá-lo de qualquer maneira, e não verificar o arquivo contra o greylist.
   - Se o greylist está vazia ou se o greylist não está vazia e o tipo de arquivo é no greylist, verificar o arquivo como por normal e determinar se a bloqueá-lo com base nos resultados do verificando, mas se o greylist não está vazia e o tipo de arquivo não é no greylist, tratar o arquivo da mesma maneira como está na blacklist, portanto não verificá-lo, mas bloqueá-lo de qualquer maneira.
 
-##### "check_archives" – Temporariamente indisponível
+##### "check_archives"
 - Tentativa de verificar os conteúdos dos compactados arquivos? False = Não (Não verificar); True = Sim (Verificar) [Padrão].
-- Neste momento, os únicos formatos suportados são BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (os formatos RAR, CAB, 7z e etc. não suportadas neste momento).
-- Este não é infalível! Embora eu recomendo mantê-lo ativado, eu não posso garantir que sempre vai encontrar tudo.
-- Também estar ciente de que a verificação do compactados arquivos, neste momento, não é recursiva por PHAR ou ZIP arquivos.
+
+Formato | Pode ler | Pode ler recursivamente | Pode detectar criptografia | Notas
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Requer [libzip](http://php.net/manual/en/zip.requirements.php) (normalmente empacotado com PHP de qualquer maneira). Também suportado (usa o formato zip): ✔️ Detecção de objeto OLE. ✔️ Detecção de macro do Office.
+Tar | ✔️ | ✔️ | ➖ | Nenhum requesito especial. O formato não suporta criptografia.
+Rar | ✔️ | ✔️ | ✔️ | Requer a extensão [rar](https://pecl.php.net/package/rar) (quando esta extensão não está instalada, o phpMussel não pode ler arquivos rar).
+7zip | ❌ | ❌ | ❌ | Ainda atualmente investigando como ler arquivos 7zip no phpMussel.
+Phar | ❌ | ❌ | ❌ | O suporte para leitura de arquivos phar foi removido na v1.6.0, e não será adicionado novamente, devido a preocupações de segurança.
+
+*Se alguém puder e estiver disposto a ajudar a implementar o suporte para ler outros formatos de arquivo, essa ajuda será bem-vinda.*
 
 ##### "filesize_archives"
 - Herdar o arquivo tamanho blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão].
@@ -590,10 +595,10 @@ Configuração geral por a manipulação de arquivos.
 - Herdar o arquivo tipo blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão].
 
 ##### "max_recursion"
-- Máxima recursão profundidade limite por compactados arquivos. Padrão = 10.
+- Máxima recursão profundidade limite por compactados arquivos. Padrão = 3.
 
 ##### "block_encrypted_archives"
-- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas proteções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
+- Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a encriptação de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas proteções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
 
 #### "attack_specific" (Categoria)
 Configuração por específicas ataque detecções.
@@ -610,7 +615,7 @@ A detecção de ataques de camaleão: False = Inativo; True = Ativo.
 - Olha por executável headers em arquivos que são não executáveis nem reconhecidos compactados arquivos e por executáveis cujos headers estão incorretas.
 
 ##### "chameleon_to_archive"
-- Olha por compactados arquivos cujos headers estão incorretas (Suportados: BZ, GZ, RAR, ZIP, GZ).
+- Detectar headers incorretas em arquivos compactados. Suportados: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Olha por office documentos cujos headers estão incorretas (Suportados: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1305,4 +1310,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 9 Outubro de 2018 (2018.10.09).
+Última Atualização: 16 Outubro de 2018 (2018.10.16).

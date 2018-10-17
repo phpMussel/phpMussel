@@ -133,7 +133,8 @@ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici 
 
 | Risultati | Descrizioni |
 |---|---|
-| -3 | Indica problemi sono stati incontrati con il phpMussel firme file o file di firme mappe e che possono essere possibile mancanti o corrotto. |
+| -4 | Indica che i dati non possono essere scansionati a causa della crittografia. |
+| -3 | Indica che sono stati incontrati problemi con i file di firme phpMussel. |
 | -2 | Indica che i corrotto dato è stato rilevato durante la scansione e quindi la scansione non abbia completato. |
 | -1 | Indica che estensioni o addon richiesti per PHP a eseguire la scansione erano assente e quindi la scansione non abbia completato. |
 | 0 | Indica che l'obiettivo di scansione non esiste e quindi non c'era nulla a scansione. |
@@ -520,9 +521,6 @@ Valore | Produce | Descrizione
 ##### "statistics"
 - Monitorare le statistiche di utilizzo di phpMussel? True = Sì; False = No [Predefinito].
 
-##### "allow_symlinks"
-- A volte phpMussel non è in grado di accedere direttamente a un file quando viene chiamato in un certo modo. L'accesso al file indirettamente tramite symlink a volte può risolvere questo problema. Tuttavia, questa non è sempre una soluzione praticabile, perché su alcuni sistemi, l'utilizzo di symlink potrebbe essere vietato, o potrebbe richiedere privilegi amministrativi. Questa direttiva viene utilizzata per determinare se phpMussel dovrebbe tentare di utilizzare i symlink per accedere ai file indirettamente, quando non è possibile accedervi direttamente. True = Abilita i symlink; False = Disabilita i symlink [Predefinito].
-
 #### "signatures" (Categoria)
 Configurazione per firme.
 
@@ -577,11 +575,18 @@ Generale configurazione per la gestione dei file.
   - Se il tipo di file è nel blacklist, non scansiona il file ma bloccarlo comunque, e non verificar il file contra la greylist.
   - Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
 
-##### "check_archives" – Temporaneamente non disponibile
+##### "check_archives"
 - Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito].
-- Al momento, gli unici formati di archiviazione e compressione supportati sono BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (formati di archiviazione e compressione RAR, CAB, 7z e eccetera non sono supportate al momento).
-- Questo non è infallibile! Mentre mi assai raccomando che è attivato, non posso garantire che sarà sempre trovare tutto.
-- Anche essere consapevoli che verifica per archivio al momento è non ricorsiva per PHAR o ZIP formati.
+
+Formato | Può leggere | Può leggere in modo ricorsivo | Può rilevare la crittografia | Note
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Richiede [libzip](http://php.net/manual/en/zip.requirements.php) (normalmente in bundle con PHP comunque). Supporta anche (usa il formato zip): ✔️ Rilevazione oggetti OLE. ✔️ Rilevamento di macro di Office.
+Tar | ✔️ | ✔️ | ➖ | Nessun requisito speciale. Il formato non supporta la crittografia.
+Rar | ✔️ | ✔️ | ✔️ | Richiede l'estensione [rar](https://pecl.php.net/package/rar) (quando questa estensione non è installata, phpMussel non può leggere i file rar).
+7zip | ❌ | ❌ | ❌ | Al momento ancora studiando come leggere i file 7zip in phpMussel.
+Phar | ❌ | ❌ | ❌ | Il supporto per la lettura dei file phar è stato rimosso nella v1.6.0, e non verrà aggiunto di nuovo, a causa di problemi di sicurezza.
+
+*Se qualcuno è in grado e disposto ad aiutare a implementare il supporto per la lettura di altri formati di archivio, tale aiuto sarebbe gradito.*
 
 ##### "filesize_archives"
 - Eredita file dimensione limite blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
@@ -590,7 +595,7 @@ Generale configurazione per la gestione dei file.
 - Eredita file tipi blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
 
 ##### "max_recursion"
-- Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
+- Massimo ricorsione profondità limite per gli archivi. Predefinito = 3.
 
 ##### "block_encrypted_archives"
 - Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. False = No; True = Sì [Predefinito].
@@ -610,7 +615,7 @@ Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
 - Cercare per eseguibili magici numeri che non sono riconosciuti eseguibili né archivi e per eseguibili cui non sono corrette.
 
 ##### "chameleon_to_archive"
-- Cercare per archivi di cui non sono corrette (Supportato: BZ, GZ, RAR, ZIP, GZ).
+- Rileva le header errate negli archivi e nei file compressi. Supportato: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Cercare per office documenti di cui non sono corrette (Supportato: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1308,4 +1313,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 9 Ottobre 2018 (2018.10.09).
+Ultimo Aggiornamento: 16 Ottobre 2018 (2018.10.16).

@@ -133,9 +133,10 @@ Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, dir
 
 | Hasil | Deskripsi |
 |---|---|
-| -3 | Mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak. |
+| -4 | Mengindikasikan bahwa data tidak dapat dipindai karena enkripsi. |
+| -3 | Mengindikasikan bahwa masalah adalah ditemui dengan file tanda tangan phpMussel. |
 | -2 | Mengindikasikan bahwa file dikorup terdeteksi selama proses memindai dan proses memindai gagal selesai. |
-| -1 | Mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian gagal selesai. |
+| -1 | Mengindikasikan bahwa ekstensi atau addon yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian gagal selesai. |
 | 0 | Mengindikasikan bahwa target pemindaian tidak ada dan tidak ada yang dipindai. |
 | 1 | Mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi. |
 | 2 | Mengindikasikan target sukses di scan namun ada masalah terdeteksi. |
@@ -520,9 +521,6 @@ Nilai | Menghasilkan | Deskripsi
 ##### "statistics"
 - Lacak statistik penggunaan phpMussel? True = Ya; False = Tidak [Default].
 
-##### "allow_symlinks"
-- Kadang-kadang phpMussel tidak dapat mengakses file secara langsung ketika diberi nama dengan cara tertentu. Mengakses file secara tidak langsung melalui symlink terkadang dapat menyelesaikan masalah ini. Namun, ini tidak selalu merupakan solusi yang layak, karena pada beberapa sistem, menggunakan symlink mungkin dilarang, atau mungkin memerlukan hak administratif. Direktif ini digunakan untuk menentukan apakah phpMussel harus mencoba menggunakan symlink untuk mengakses file secara tidak langsung, ketika mengaksesnya secara langsung tidak mungkin. True = Aktifkan symlink; False = Nonaktifkan symlink [Default].
-
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -577,11 +575,18 @@ Konfigurasi umum untuk mengambil alih file-file.
   - Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu.
   - Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun.
 
-##### "check_archives" – Tidak tersedia untuk sementara
+##### "check_archives"
 - Berusaha mencek isi file terkompress? False = Tidak (Tidak mencek); True = Ya (Mencek) [Default].
-- Sekarang, hanya BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR dan ZIP format yang didukung (RAR, CAB, 7z, dll tidak didukung).
-- Ini tidak selalu sempurna! Selama saya sangat rekomendasikan menjaga ini aktif, saya tidak dapat menjamin itu hanya menemukan segala sesuatunya.
-- Juga diingatkan bahwa mencek file terkompres tidak rekursif untuk format PHAR atau ZIP.
+
+Format | Dapat membaca | Dapat membaca secara rekursif | Dapat mendeteksi enkripsi | Catatan
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Membutuhkan [libzip](http://php.net/manual/en/zip.requirements.php) (biasanya dibundel dengan PHP pula). Juga didukung (menggunakan format zip): ✔️ Deteksi objek OLE. ✔️ Deteksi makro Office.
+Tar | ✔️ | ✔️ | ➖ | Tidak ada persyaratan khusus. Format tidak mendukung enkripsi.
+Rar | ✔️ | ✔️ | ✔️ | Membutuhkan ekstensi [rar](https://pecl.php.net/package/rar) (ketika ekstensi ini tidak diinstal, phpMussel tidak dapat membaca file rar).
+7zip | ❌ | ❌ | ❌ | Saat ini masih menyelidiki cara membaca file 7zip di phpMussel.
+Phar | ❌ | ❌ | ❌ | Dukungan untuk membaca file phar telah dihapus di v1.6.0, dan tidak akan ditambahkan lagi, karena masalah keamanan.
+
+*Jika ada seseorang yang mampu dan bersedia membantu mengimplementasikan dukungan untuk membaca format arsip lain, bantuan ini akan disambut baik.*
 
 ##### "filesize_archives"
 - Memperlalaikan ukuran daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua); True = Ya [Default].
@@ -590,7 +595,7 @@ Konfigurasi umum untuk mengambil alih file-file.
 - Memperlalaikan jenis file daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua) [Default]; True = Ya.
 
 ##### "max_recursion"
-- Batas kedalaman rekursi maksimum untuk arsip. Default = 10.
+- Batas kedalaman rekursi maksimum untuk arsip. Default = 3.
 
 ##### "block_encrypted_archives"
 - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel, anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut. False = Tidak; True = Ya [Default].
@@ -610,13 +615,13 @@ Deteksi chameleon serangan: False = Dinonaktifkan; True = Diaktifkan.
 - Cari header yang dapat dieksekusi di dalam file-file yang dapat dieksekusi atau file terkompress yang dikenali dan untuk file dapat dieksekusi yang headernya tidak benar.
 
 ##### "chameleon_to_archive"
-- Cari file terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR, ZIP, GZ).
+- Mendeteksi header yang salah dalam arsip dan file terkompresi. Didukung: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
-- Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+- Cari dokumen office yang header nya tidak benar (Didukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 ##### "chameleon_to_img"
-- Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
+- Cari gambar yang header nya tidak benar (Didukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 ##### "chameleon_to_pdf"
 - Cari file PDF yang headernya tidak benar.
@@ -1303,4 +1308,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 9 Oktober 2018 (2018.10.09).
+Terakhir Diperbarui: 16 Oktober 2018 (2018.10.16).
