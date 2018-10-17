@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.16).
+ * This file: Functions file (last modified: 2018.10.17).
  */
 
 /**
@@ -2795,90 +2795,32 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Executable chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_exe']) {
+        $Chameleon = '';
         if (strpos(',acm,ax,com,cpl,dll,drv,exe,ocx,rs,scr,sys,', ',' . $xt . ',') !== false) {
             if ($twocc !== '4d5a') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'EXE')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'EXE') . ' (' . $ofnSafe . ')'
-                );
+                $Chameleon = 'EXE';
             }
         } elseif ($twocc === '4d5a') {
-            if (!$flagged) {
-                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                $flagged = true;
-            }
-            $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
-            $out .= $lnap . sprintf(
-                $phpMussel['lang']['_exclamation_final'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'EXE')
-            ) . "\n";
-            $phpMussel['whyflagged'] .= sprintf(
-                $phpMussel['lang']['_exclamation'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'EXE') . ' (' . $ofnSafe . ')'
-            );
+            $Chameleon = 'EXE';
         }
         if ($xt === 'elf') {
             if ($fourcc !== '7f454c46') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'ELF')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'ELF') . ' (' . $ofnSafe . ')'
-                );
+                $Chameleon = 'ELF';
             }
         } elseif ($fourcc === '7f454c46') {
-            if (!$flagged) {
-                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                $flagged = true;
-            }
-            $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
-            $out .= $lnap . sprintf(
-                $phpMussel['lang']['_exclamation_final'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'ELF')
-            ) . "\n";
-            $phpMussel['whyflagged'] .= sprintf(
-                $phpMussel['lang']['_exclamation'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'ELF') . ' (' . $ofnSafe . ')'
-            );
+            $Chameleon = 'ELF';
         }
         if ($xt === 'lnk') {
             if (substr($str_hex, 0, 16) !== '4c00000001140200') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'LNK')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'LNK') . ' (' . $ofnSafe . ')'
-                );
+                $Chameleon = 'LNK';
             }
         } elseif (substr($str_hex, 0, 16) === '4c00000001140200') {
+            $Chameleon = 'LNK';
+        }
+        if ($xt === 'msi' && substr($str_hex, 0, 16) !== 'd0cf11e0a1b11ae1') {
+            $Chameleon = 'MSI';
+        }
+        if ($Chameleon) {
             if (!$flagged) {
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                 $flagged = true;
@@ -2887,106 +2829,42 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . sprintf(
                 $phpMussel['lang']['_exclamation_final'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'LNK')
+                sprintf($phpMussel['lang']['scan_chameleon'], $Chameleon)
             ) . "\n";
             $phpMussel['whyflagged'] .= sprintf(
                 $phpMussel['lang']['_exclamation'],
-                sprintf($phpMussel['lang']['scan_chameleon'], 'LNK') . ' (' . $ofnSafe . ')'
+                sprintf($phpMussel['lang']['scan_chameleon'], $Chameleon) . ' (' . $ofnSafe . ')'
             );
-        }
-        if ($xt === 'msi') {
-            if (substr($str_hex, 0, 16) !== 'd0cf11e0a1b11ae1') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'MSI')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'MSI') . ' (' . $ofnSafe . ')'
-                );
-            }
         }
     }
 
     /** Archive chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_to_archive']) {
-        if ($xts === 'zip*') {
-            if ($twocc !== '504b') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'ZIP')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'ZIP') . ' (' . $ofnSafe . ')'
-                );
-            }
+        $Chameleon = '';
+        if ($xts === 'zip*' && $twocc !== '504b') {
+            $Chameleon = 'Zip';
+        } elseif ($xt === 'rar' && ($fourcc !== '52617221' && $fourcc !== '52457e5e')) {
+            $Chameleon = 'Rar';
+        } elseif ($xt === 'gz' && $twocc !== '1f8b') {
+            $Chameleon = 'Gzip';
+        } elseif ($xt === 'bz2' && substr($str_hex, 0, 6) !== '425a68') {
+            $Chameleon = 'Bzip2';
         }
-        if ($xt === 'rar') {
-            if ($fourcc !== '52617221' && $fourcc !== '52457e5e') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'RAR')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'RAR') . ' (' . $ofnSafe . ')'
-                );
+        if ($Chameleon) {
+            if (!$flagged) {
+                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                $flagged = true;
             }
-        }
-        if ($xt === 'gz') {
-            if ($twocc !== '1f8b') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'GZIP')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'GZIP') . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'bz2') {
-            if (substr($str_hex, 0, 6) !== '425a68') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'BZIP2')
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], 'BZIP2') . ' (' . $ofnSafe . ')'
-                );
-            }
+            $heur['detections']++;
+            $phpMussel['memCache']['detections_count']++;
+            $out .= $lnap . sprintf(
+                $phpMussel['lang']['_exclamation_final'],
+                sprintf($phpMussel['lang']['scan_chameleon'], $Chameleon)
+            ) . "\n";
+            $phpMussel['whyflagged'] .= sprintf(
+                $phpMussel['lang']['_exclamation'],
+                sprintf($phpMussel['lang']['scan_chameleon'], $Chameleon) . ' (' . $ofnSafe . ')'
+            );
         }
     }
 
@@ -3014,156 +2892,31 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Image chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_to_img']) {
-        if ($xt === 'bmp' || $xt === 'dib') {
-            if ($twocc !== '424d') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'gif') {
-            if (substr($str_hex, 0, 12) !== '474946383761' && substr($str_hex, 0, 12) !== '474946383961') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
+        $Chameleon = '';
         if (
-            $xt === 'jfi' ||
-            $xt === 'jfif' ||
-            $xt === 'jif' ||
-            $xt === 'jpe' ||
-            $xt === 'jpeg' ||
-            $xt === 'jpg'
+            (($xt === 'bmp' || $xt === 'dib') && $twocc !== '424d') ||
+            ($xt === 'gif' && (substr($str_hex, 0, 12) !== '474946383761' && substr($str_hex, 0, 12) !== '474946383961')) ||
+            (preg_match('~j(?:fif?|if|peg?|pg)~', $xt) && substr($str_hex, 0, 6) !== 'ffd8ff') ||
+            ($xt === 'jp2' && substr($str_hex, 0, 16) !== '0000000c6a502020') ||
+            (($xt === 'pdd' || $xt === 'psd') && $fourcc !== '38425053') ||
+            ($xt === 'png' && $fourcc !== '89504e47') ||
+            ($xt === 'webp' && ($fourcc !== '52494646' || substr($str, 8, 4) !== 'WEBP')) ||
+            ($xt === 'xcf' && substr($str, 0, 8) !== 'gimp xcf')
         ) {
-            if (substr($str_hex, 0, 6) !== 'ffd8ff') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
+            if (!$flagged) {
+                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                $flagged = true;
             }
-        }
-        if ($xt === 'jp2') {
-            if (substr($str_hex, 0, 16) !== '0000000c6a502020') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'pdd' || $xt === 'psd') {
-            if ($fourcc !== '38425053') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'png') {
-            if ($fourcc !== '89504e47') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'webp') {
-            if ($fourcc !== '52494646' || substr($str, 8, 4) !== 'WEBP') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
-        }
-        if ($xt === 'xcf') {
-            if (substr($str,0,8) !== 'gimp xcf') {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                    $flagged = true;
-                }
-                $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
-                $out .= $lnap . sprintf(
-                    $phpMussel['lang']['_exclamation_final'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
-                ) . "\n";
-                $phpMussel['whyflagged'] .= sprintf(
-                    $phpMussel['lang']['_exclamation'],
-                    sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
-                );
-            }
+            $heur['detections']++;
+            $phpMussel['memCache']['detections_count']++;
+            $out .= $lnap . sprintf(
+                $phpMussel['lang']['_exclamation_final'],
+                sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image'])
+            ) . "\n";
+            $phpMussel['whyflagged'] .= sprintf(
+                $phpMussel['lang']['_exclamation'],
+                sprintf($phpMussel['lang']['scan_chameleon'], $phpMussel['lang']['image']) . ' (' . $ofnSafe . ')'
+            );
         }
     }
 
@@ -4044,7 +3797,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['memCache']['tempfilesToDelete'] = [];
 
         /** Begin processing archives. */
-        $phpMussel['ArchiveRecursor']($x, $r, $in, $f, 0, urlencode($ofn));
+        $phpMussel['ArchiveRecursor']($x, $r, $in, (isset($CompressionResults) && !$CompressionResults) ? '' : $f, 0, urlencode($ofn));
 
         /** Begin deleting any temporary files that snuck through. */
         foreach ($phpMussel['memCache']['tempfilesToDelete'] as $DeleteThis) {
