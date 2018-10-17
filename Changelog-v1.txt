@@ -7,7 +7,32 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2018.10.12-17; Maikuolan]: Completely dropped all support for scanning phar
+  files with phpMussel, due to vulnerabilities discovered in the way that the
+  phar wrapper was implemented in phpMussel (with no safer, more secure
+  alternative known at this time for handling phar files, I neither plan nor
+  anticipate ever reintroducing phar support in the future). Deprecated and
+  completely removed the allow_symlinks configuration directive (we don't need
+  this anymore, because it was intended to address a problem in phar, which we
+  won't be using anymore anyway). Dropped the max_recursion default value from
+  10 down to 3 as a means to tighten security and improve safety for when
+  handling archives. Completely overhauled the way that phpMussel deals with
+  archives during a scan event, ditching almost all code associated with the
+  archive phase of scanning, and implementing a separate, newly created archive
+  handler, compression handler, and temporarily file handler. phpMussel now
+  partially utilises OOP for handling archives, and includes a small number of
+  classes in its codebase (a possible stepping stone towards a future v2.0.0).
+  File decompression is now implicit, rather than explicit. Slightly improved
+  the aesthetic for displayed scan results in CLI where archives are concerned.
+  The recursor closure isn't responsible for the code associated with the
+  archive phase of scanning anymore. Instead, a new, separate archive recursor
+  closure has been created to deal with the code associated with the archive
+  phase of scanning. Zip archive scanning is now fully recursive. Rar archive
+  scanning is now fully supported (can scan recursively, can detect encryption,
+  etc). Added quine detection. Added a table to the documentation to clarify
+  which compression and archive formats are and aren't supported, and removed
+  some otherwise ambiguous wording about it from the documentation and L10N
+  data. Refactored all chameleon attack detection code.
 
 === Version/Release 1.6.0 ===
 MINOR RELEASE.
