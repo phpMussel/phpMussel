@@ -227,153 +227,153 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">فائل</div>
+&nbsp; <div dir="rtl" style="display:inline">تفصیل</div> | <div dir="rtl" style="display:inline">فائل</div>
 ----|----
-&nbsp; <div dir="rtl" style="display:inline;">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
-&nbsp; <div dir="rtl" style="display:inline;">عربی دستاویزات.</div> | /_docs/readme.ar.md
-&nbsp; <div dir="rtl" style="display:inline;">جرمن دستاویزات.</div> | /_docs/readme.de.md
-&nbsp; <div dir="rtl" style="display:inline;">انگریزی دستاویزات.</div> | /_docs/readme.en.md
-&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
-&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
-&nbsp; <div dir="rtl" style="display:inline;">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
-&nbsp; <div dir="rtl" style="display:inline;">اطالوی دستاویزات.</div> | /_docs/readme.it.md
-&nbsp; <div dir="rtl" style="display:inline;">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
-&nbsp; <div dir="rtl" style="display:inline;">کوریا دستاویزات.</div> | /_docs/readme.ko.md
-&nbsp; <div dir="rtl" style="display:inline;">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
-&nbsp; <div dir="rtl" style="display:inline;">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
-&nbsp; <div dir="rtl" style="display:inline;">روسی دستاویزات.</div> | /_docs/readme.ru.md
-&nbsp; <div dir="rtl" style="display:inline;">اردو دستاویزات.</div> | /_docs/readme.ur.md
-&nbsp; <div dir="rtl" style="display:inline;">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
-&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
-&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹ فائلوں ڈائریکٹری (مختلف فائلوں پر مشتمل ہے). phpMussel درست طریقے سے آپ کے سسٹم پر نصب کیا گیا تھا کہ اگر تمام موجود فائلوں کی جانچ کے لئے ٹیسٹ فائلوں ہیں، اور آپ کو اس ڈائریکٹری یا اس کے فائلوں کے کسی بھی طرح کی ٹیسٹنگ کر رہے ہیں جب سوائے اپ لوڈ کرنے کی ضرورت نہیں.</div> | /_testfiles/
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel معمول ASCII دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/ascii_standard_testfile.txt
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel کمپلیکس توسیعی دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/coex_testfile.rtf
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel PE دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/exe_standard_testfile.exe
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel جنرل دستخط کے ٹیسٹ کے لئے ٹیسٹ فائل.</div> | /_testfiles/general_standard_testfile.txt
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel گرافکس دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/graphics_standard_testfile.gif
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel معمول HTML دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/html_standard_testfile.html
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel MD5 دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/md5_testfile.txt
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel OLE دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/ole_testfile.ole
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel PDF دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/pdf_standard_testfile.pdf
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel PE تخباگیی دستخط کے ٹیسٹ کے لئے ٹیسٹ فائل.</div> | /_testfiles/pe_sectional_testfile.exe
-&nbsp; <div dir="rtl" style="display:inline;">ٹیسٹنگ phpMussel SWF دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/swf_standard_testfile.swf
-&nbsp; <div dir="rtl" style="display:inline;">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
-&nbsp; <div dir="rtl" style="display:inline;">کیشے ڈائریکٹری (عارضی اعداد و شمار کے لئے).</div> | /vault/cache/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اثاثوں.</div> | /vault/fe_assets/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
-&nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
-&nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
-&nbsp; <div dir="rtl" style="display:inline;">اپ لوڈ کریں ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_upload_test.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
-&nbsp; <div dir="rtl" style="display:inline;">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/fe_assets/frontend.dat.safety
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
-&nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
-&nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر جاوا اسکرپٹ ڈیٹا پر مشتمل ہے.</div> | /vault/fe_assets/scripts.js
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
-&nbsp; <div dir="rtl" style="display:inline;">سنگرودھ ڈائریکٹری (قرنطینہ فائلوں پر مشتمل ہے).</div> | /vault/quarantine/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/quarantine/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">دستخط ڈائریکٹری (دستخط فائلوں پر مشتمل ہے).</div> | /vault/signatures/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/signatures/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">کنٹرولز اور سیٹ خاص متغیر.</div> | /vault/signatures/switch.dat
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
-&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
-&nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر</div> | /vault/cli.php
-&nbsp; <div dir="rtl" style="display:inline;">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن فائل؛ phpMussel کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور کس طرح درست طریقے سے کام کرنے کے لئے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ phpMussel لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
-&nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel (فائل خود کار طریقے سے خارج کر دیا ہے تو دوبارہ) اسے نظر انداز کیا جانا چاہئے دستخط جس سے اشارہ greylisted دستخط کی CSV.</div> | /vault/greylist.csv
-&nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
-&nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X کے لئے ضروری پیچھے کی طرف مطابقت؛ جدید تر PHP ورژن کے لئے حذف کرنا محفوظ).</div> | /vault/php5.4.x.php
-&nbsp; <div dir="rtl" style="display:inline;">پلگ ان میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/plugins.dat
-&nbsp; <div dir="rtl" style="display:inline;">ہر فائل اپ لوڈ کی ایک ریکارڈ بلاک/phpMussel کر ہلاک کر دیا.</div> | ※ /vault/scan_kills.txt
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log.txt
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log_serialized.txt
-&nbsp; <div dir="rtl" style="display:inline;">دستخط کی شناخت کی وضاحت کرتے وقت اسکین کے دوران اور جب دستخط کے ذریعے دستخط کی معلومات تک رسائی حاصل کرنے پر دستخط کرنے کے لئے دستخط کی شناختی کاروائیوں پر مشتمل ہوتا ہے.</div> | /vault/shorthand.yaml
-&nbsp; <div dir="rtl" style="display:inline;">دستخط میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/signatures.dat
-&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
-&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
-&nbsp; <div dir="rtl" style="display:inline;">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
-&nbsp; <div dir="rtl" style="display:inline;">اپ لوڈ کریں ہینڈلر.</div> | /vault/upload.php
-&nbsp; <div dir="rtl" style="display:inline;">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
-&nbsp; <div dir="rtl" style="display:inline;">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitignore
-&nbsp; <div dir="rtl" style="display:inline;">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog-v1.txt
-&nbsp; <div dir="rtl" style="display:inline;">Composer/Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
-&nbsp; <div dir="rtl" style="display:inline;">اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.</div> | /CONTRIBUTING.md
-&nbsp; <div dir="rtl" style="display:inline;">GNU/GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /LICENSE.txt
-&nbsp; <div dir="rtl" style="display:inline;">لوڈر. اس سے آپ (ضروری) میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے!</div> | /loader.php
-&nbsp; <div dir="rtl" style="display:inline;">اس منصوبے میں ملوث افراد کے بارے میں معلومات.</div> | /PEOPLE.md
-&nbsp; <div dir="rtl" style="display:inline;">پروجیکٹ کا خلاصہ معلومات.</div> | /README.md
-&nbsp; <div dir="rtl" style="display:inline;">ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے "/vault" ڈائریکٹری کی حفاظت کے لئے).</div> | /web.config
+&nbsp; <div dir="rtl" style="display:inline">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
+&nbsp; <div dir="rtl" style="display:inline">عربی دستاویزات.</div> | /_docs/readme.ar.md
+&nbsp; <div dir="rtl" style="display:inline">جرمن دستاویزات.</div> | /_docs/readme.de.md
+&nbsp; <div dir="rtl" style="display:inline">انگریزی دستاویزات.</div> | /_docs/readme.en.md
+&nbsp; <div dir="rtl" style="display:inline">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
+&nbsp; <div dir="rtl" style="display:inline">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
+&nbsp; <div dir="rtl" style="display:inline">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
+&nbsp; <div dir="rtl" style="display:inline">اطالوی دستاویزات.</div> | /_docs/readme.it.md
+&nbsp; <div dir="rtl" style="display:inline">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
+&nbsp; <div dir="rtl" style="display:inline">کوریا دستاویزات.</div> | /_docs/readme.ko.md
+&nbsp; <div dir="rtl" style="display:inline">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
+&nbsp; <div dir="rtl" style="display:inline">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
+&nbsp; <div dir="rtl" style="display:inline">روسی دستاویزات.</div> | /_docs/readme.ru.md
+&nbsp; <div dir="rtl" style="display:inline">اردو دستاویزات.</div> | /_docs/readme.ur.md
+&nbsp; <div dir="rtl" style="display:inline">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
+&nbsp; <div dir="rtl" style="display:inline">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
+&nbsp; <div dir="rtl" style="display:inline">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹ فائلوں ڈائریکٹری (مختلف فائلوں پر مشتمل ہے). phpMussel درست طریقے سے آپ کے سسٹم پر نصب کیا گیا تھا کہ اگر تمام موجود فائلوں کی جانچ کے لئے ٹیسٹ فائلوں ہیں، اور آپ کو اس ڈائریکٹری یا اس کے فائلوں کے کسی بھی طرح کی ٹیسٹنگ کر رہے ہیں جب سوائے اپ لوڈ کرنے کی ضرورت نہیں.</div> | /_testfiles/
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel معمول ASCII دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/ascii_standard_testfile.txt
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel کمپلیکس توسیعی دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/coex_testfile.rtf
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel PE دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/exe_standard_testfile.exe
+&nbsp; <div dir="rtl" style="display:inline">phpMussel جنرل دستخط کے ٹیسٹ کے لئے ٹیسٹ فائل.</div> | /_testfiles/general_standard_testfile.txt
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel گرافکس دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/graphics_standard_testfile.gif
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel معمول HTML دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/html_standard_testfile.html
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel MD5 دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/md5_testfile.txt
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel OLE دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/ole_testfile.ole
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel PDF دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/pdf_standard_testfile.pdf
+&nbsp; <div dir="rtl" style="display:inline">phpMussel PE تخباگیی دستخط کے ٹیسٹ کے لئے ٹیسٹ فائل.</div> | /_testfiles/pe_sectional_testfile.exe
+&nbsp; <div dir="rtl" style="display:inline">ٹیسٹنگ phpMussel SWF دستخط کے لئے ٹیسٹ فائل.</div> | /_testfiles/swf_standard_testfile.swf
+&nbsp; <div dir="rtl" style="display:inline">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
+&nbsp; <div dir="rtl" style="display:inline">کیشے ڈائریکٹری (عارضی اعداد و شمار کے لئے).</div> | /vault/cache/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اثاثوں.</div> | /vault/fe_assets/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
+&nbsp; <div dir="rtl" style="display:inline">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
+&nbsp; <div dir="rtl" style="display:inline">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں قرنطین صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_quarantine_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں دستخط کی معلومات صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_siginfo_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
+&nbsp; <div dir="rtl" style="display:inline">اپ لوڈ کریں ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_upload_test.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/fe_assets/frontend.dat.safety
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر جاوا اسکرپٹ ڈیٹا پر مشتمل ہے.</div> | /vault/fe_assets/scripts.js
+&nbsp; <div dir="rtl" style="display:inline">phpMussel زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
+&nbsp; <div dir="rtl" style="display:inline">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.fe.php
+&nbsp; <div dir="rtl" style="display:inline">بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
+&nbsp; <div dir="rtl" style="display:inline">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
+&nbsp; <div dir="rtl" style="display:inline">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
+&nbsp; <div dir="rtl" style="display:inline">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
+&nbsp; <div dir="rtl" style="display:inline">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
+&nbsp; <div dir="rtl" style="display:inline">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
+&nbsp; <div dir="rtl" style="display:inline">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
+&nbsp; <div dir="rtl" style="display:inline">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
+&nbsp; <div dir="rtl" style="display:inline">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
+&nbsp; <div dir="rtl" style="display:inline">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
+&nbsp; <div dir="rtl" style="display:inline">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
+&nbsp; <div dir="rtl" style="display:inline">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
+&nbsp; <div dir="rtl" style="display:inline">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
+&nbsp; <div dir="rtl" style="display:inline">سنگرودھ ڈائریکٹری (قرنطینہ فائلوں پر مشتمل ہے).</div> | /vault/quarantine/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/quarantine/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">دستخط ڈائریکٹری (دستخط فائلوں پر مشتمل ہے).</div> | /vault/signatures/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/signatures/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">کنٹرولز اور سیٹ خاص متغیر.</div> | /vault/signatures/switch.dat
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
+&nbsp; <div dir="rtl" style="display:inline">CLI ہینڈلر</div> | /vault/cli.php
+&nbsp; <div dir="rtl" style="display:inline">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن فائل؛ phpMussel کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور کس طرح درست طریقے سے کام کرنے کے لئے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن ہینڈلر.</div> | /vault/config.php
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن ڈیفالٹس فائل؛ phpMussel لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
+&nbsp; <div dir="rtl" style="display:inline">افعال فائل (ضروری).</div> | /vault/functions.php
+&nbsp; <div dir="rtl" style="display:inline">phpMussel (فائل خود کار طریقے سے خارج کر دیا ہے تو دوبارہ) اسے نظر انداز کیا جانا چاہئے دستخط جس سے اشارہ greylisted دستخط کی CSV.</div> | /vault/greylist.csv
+&nbsp; <div dir="rtl" style="display:inline">زبان ہینڈلر.</div> | /vault/lang.php
+&nbsp; <div dir="rtl" style="display:inline">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X کے لئے ضروری پیچھے کی طرف مطابقت؛ جدید تر PHP ورژن کے لئے حذف کرنا محفوظ).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline">پلگ ان میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/plugins.dat
+&nbsp; <div dir="rtl" style="display:inline">ہر فائل اپ لوڈ کی ایک ریکارڈ بلاک/phpMussel کر ہلاک کر دیا.</div> | ※ /vault/scan_kills.txt
+&nbsp; <div dir="rtl" style="display:inline">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log.txt
+&nbsp; <div dir="rtl" style="display:inline">phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.</div> | ※ /vault/scan_log_serialized.txt
+&nbsp; <div dir="rtl" style="display:inline">دستخط کی شناخت کی وضاحت کرتے وقت اسکین کے دوران اور جب دستخط کے ذریعے دستخط کی معلومات تک رسائی حاصل کرنے پر دستخط کرنے کے لئے دستخط کی شناختی کاروائیوں پر مشتمل ہوتا ہے.</div> | /vault/shorthand.yaml
+&nbsp; <div dir="rtl" style="display:inline">دستخط میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/signatures.dat
+&nbsp; <div dir="rtl" style="display:inline">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline">سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
+&nbsp; <div dir="rtl" style="display:inline">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline">اپ لوڈ کریں ہینڈلر.</div> | /vault/upload.php
+&nbsp; <div dir="rtl" style="display:inline">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
+&nbsp; <div dir="rtl" style="display:inline">ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitignore
+&nbsp; <div dir="rtl" style="display:inline">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog-v1.txt
+&nbsp; <div dir="rtl" style="display:inline">Composer/Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
+&nbsp; <div dir="rtl" style="display:inline">اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.</div> | /CONTRIBUTING.md
+&nbsp; <div dir="rtl" style="display:inline">GNU/GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /LICENSE.txt
+&nbsp; <div dir="rtl" style="display:inline">لوڈر. اس سے آپ (ضروری) میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے!</div> | /loader.php
+&nbsp; <div dir="rtl" style="display:inline">اس منصوبے میں ملوث افراد کے بارے میں معلومات.</div> | /PEOPLE.md
+&nbsp; <div dir="rtl" style="display:inline">پروجیکٹ کا خلاصہ معلومات.</div> | /README.md
+&nbsp; <div dir="rtl" style="display:inline">ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے "/vault" ڈائریکٹری کی حفاظت کے لئے).</div> | /web.config
 
 <div dir="rtl">※ فائل کا نام ترتیب کے شرائط (<code dir="ltr">config.ini</code> میں) کی بنیاد پر مختلف ہو سکتے ہیں.<br /><br /></div>
 
@@ -454,15 +454,15 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">"ipaddr" کے لئے سفارش کی اقدار:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+&nbsp; <div dir="rtl" style="display:inline">قدر</div> | &nbsp; <div dir="rtl" style="display:inline">استعمال</div>
 ---|---
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
 `CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
 `HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
 `X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
+&nbsp; <div dir="rtl" style="display:inline"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
 
 ##### <div dir="rtl">"enable_plugins"<br /></div>
 <div dir="rtl"><ul>
@@ -664,13 +664,20 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  </ul>
 </ul></div>
 
-##### <div dir="rtl">"check_archives" – فی الوقت دستیاب نہیں ہے<br /></div>
+##### <div dir="rtl">"check_archives"<br /></div>
 <div dir="rtl"><ul>
  <li>ابلیھاگاروں کے مندرجات کو چیک کرنے کی کوشش؟ False (جھوٹی) = چیک نہ کریں؛ True (سچے) = چیک کریں [پہلے سے طے شدہ].</li>
- <li>فی الحال، کی حمایت صرف محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس BZ/BZIP2، GZ/GZIP، LZF، PHAR، TAR اور ZIP ہیں (محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس RAR، CAB، 7z اور وقت کی سہولت مہیا نہیں وغیرہ).</li>
- <li>یہ نقائص سے پاک نہیں ہے! میں انتہائی رکھتے ہوئے اس کو آن کیا تجویز کرتے ہوئے، میں یہ ہمیشہ سب کچھ تلاش کر لیں گے اس بات کی ضمانت نہیں دے سکتے.</li>
- <li>اس کے علاوہ اس بات سے آگاہ آرکائیو فی الحال چیکنگ کہ PHARs یا زپ کے لئے پنراورتی نہیں ہے.</li>
 </ul></div>
+
+&nbsp; <div dir="rtl" style="display:inline">شکل</div> | &nbsp; <div dir="rtl" style="display:inline">پڑھ سکتے ہیں</div> | &nbsp; <div dir="rtl" style="display:inline">دوبارہ پڑھ سکتے ہیں</div> | &nbsp; <div dir="rtl" style="display:inline">خفیہ کاری کا پتہ لگانا</div> | &nbsp; <div dir="rtl" style="display:inline">نوٹس</div>
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | &nbsp; <div dir="rtl" style="display:inline"><a href="http://php.net/manual/en/zip.requirements.php">libzip</a> کی ضرورت ہوتی ہے (عام طور پر PHP کے ساتھ شامل). بھی حمایت کی (zip فارمیٹ استعمال کرتا ہے): ✔️ OLE اعتراض کا سراغ لگانا. ✔️ آفس میکرو کا پتہ لگانا.</div>
+Tar | ✔️ | ✔️ | ➖ | &nbsp; <div dir="rtl" style="display:inline">کوئی خاص ضروریات نہیں. فارمیٹ خفیہ کاری کی حمایت نہیں کرتا.</div>
+Rar | ✔️ | ✔️ | ✔️ | &nbsp; <div dir="rtl" style="display:inline"><a href="https://pecl.php.net/package/rar">rar</a> توسیع کی ضرورت ہوتی ہے (جب یہ توسیع انسٹال نہیں ہے تو، phpMussel rar فائلوں کو پڑھ نہیں سکتے).</div>
+7zip | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">یہ ابھی تک نہیں سیکھا ہے.</div>
+Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">سپورٹ v1.6.0 میں ہٹا دیا گیا ہے. محفوظ نہیں. دوبارہ شامل نہیں کیا جائے گا.</div>
+
+<div dir="rtl">معاونت کا خیر مقدم ہے، اگر کوئی اسے بہتر بنانا چاہتا ہے.<br /><br /></div>
 
 ##### <div dir="rtl">"filesize_archives"<br /></div>
 <div dir="rtl"><ul>
@@ -714,7 +721,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 ##### <div dir="rtl">"chameleon_to_archive"<br /></div>
 <div dir="rtl"><ul>
- <li>ابلیھاگاروں جن ہیڈرز غلط ہیں کے لئے تلاش کریں (تائید: BZ، GZ، RAR، ZIP، GZ).</li>
+ <li>آرکائیو اور کمپریسڈ فائلوں میں غلط ہیڈر کا پتہ لگائیں. تائید: BZ/BZIP2، GZ/GZIP، LZF، RAR، ZIP</li>
 </ul></div>
 
 ##### <div dir="rtl">"chameleon_to_doc"<br /></div>
@@ -970,21 +977,21 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">پہلا 9 بائٹس <code dir="ltr">[x0-x8]</code> phpMussel دستخط فائل کی <code dir="ltr">phpMussel</code> ہے، اور "جادو نمبر"(magic number) کے طور پر کام کرتے ہیں، انہیں دستخط شدہ فائلوں کے طور پر شناخت کرنے کے لئے (اس فائلوں کا استعمال کرتے ہوئے حادثے سے بچنے میں مدد ملتی ہے جو دستخط شدہ فائلوں میں نہیں ہیں). اگلے بائٹ <code dir="ltr">[x9]</code> دستخط فائل کی قسم کی شناخت کرتا ہے، دستخط فائل کو سمجھنے کے قابل ہونے کے لئے ضروری ہے. مندرجہ ذیل قسم کے دستخط فائلوں کو تسلیم کیا جاتا ہے:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">قسم</div> | <div dir="rtl" style="display:inline;">بائٹ</div> | <div dir="rtl" style="display:inline;">تفصیل</div>
+&nbsp; <div dir="rtl" style="display:inline">قسم</div> | <div dir="rtl" style="display:inline">بائٹ</div> | <div dir="rtl" style="display:inline">تفصیل</div>
 ---|---|---
-`General_Command_Detections` | `0?` | <div dir="rtl" style="display:inline;">"کوما علیحدہ اقدار" دستخط فائلوں کے لئے. دستخط فائلوں کے اندر اندر تلاش کرنے کے لئے ہییکسڈیکیلٹ - انکوڈ کرنگ ہیں. یہاں دستخط کسی نام یا دیگر تفصیلات نہیں ہیں (پتہ لگانے کے لئے صرف تار).</div>
-`Filename` | `1?` | <div dir="rtl" style="display:inline;">فائل نام کے دستخط کے لئے.</div>
-`Hash` | `2?` | <div dir="rtl" style="display:inline;">ہش دستخط کے لئے.</div>
-`Standard` | `3?` | <div dir="rtl" style="display:inline;">دستخط کی فائلوں کے لئے جو براہ راست فائل فائل کے ساتھ کام کرتی ہے.</div>
-`Standard_RegEx` | `4?` | <div dir="rtl" style="display:inline;">دستخط کی فائلوں کے لئے جو براہ راست فائل فائل کے ساتھ کام کرتی ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
-`Normalised` | `5?` | <div dir="rtl" style="display:inline;">دستخط کردہ فائلوں کے لئے جو معمولی فائل کے مواد کے ساتھ کام کرتی ہے.</div>
-`Normalised_RegEx` | `6?` | <div dir="rtl" style="display:inline;">دستخط کردہ فائلوں کے لئے جو معمولی فائل کے مواد کے ساتھ کام کرتی ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
-`HTML` | `7?` | <div dir="rtl" style="display:inline;">دستخط فائلوں کے لئے جو HTML مواد کے ساتھ کام کرتا ہے.</div>
-`HTML_RegEx` | `8?` | <div dir="rtl" style="display:inline;">دستخط فائلوں کے لئے جو HTML مواد کے ساتھ کام کرتا ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
-`PE_Extended` | `9?` | <div dir="rtl" style="display:inline;">پی ایچ میٹ میٹاٹا کے ساتھ کام کرنے والی دستخط کی فائلوں کے لئے.</div>
-`PE_Sectional` | `A?` | <div dir="rtl" style="display:inline;">پی ایچ سیکشنل میٹا ڈیٹا کے ساتھ کام کرنے والی دستخط کی فائلوں کے لئے.</div>
-`Complex_Extended` | `B?` | <div dir="rtl" style="display:inline;">دستخط فائلوں کے لئے جو وسیع قوانین کے ساتھ وسیع پیمانے پر میٹا ڈیٹا ڈیٹا پر مبنی کام کرتی ہیں.</div>
-`URL_Scanner` | `C?` | <div dir="rtl" style="display:inline;">سائن ان فائلوں کے لئے جو URL کے ساتھ کام کرتی ہیں.</div>
+`General_Command_Detections` | `0?` | <div dir="rtl" style="display:inline">"کوما علیحدہ اقدار" دستخط فائلوں کے لئے. دستخط فائلوں کے اندر اندر تلاش کرنے کے لئے ہییکسڈیکیلٹ - انکوڈ کرنگ ہیں. یہاں دستخط کسی نام یا دیگر تفصیلات نہیں ہیں (پتہ لگانے کے لئے صرف تار).</div>
+`Filename` | `1?` | <div dir="rtl" style="display:inline">فائل نام کے دستخط کے لئے.</div>
+`Hash` | `2?` | <div dir="rtl" style="display:inline">ہش دستخط کے لئے.</div>
+`Standard` | `3?` | <div dir="rtl" style="display:inline">دستخط کی فائلوں کے لئے جو براہ راست فائل فائل کے ساتھ کام کرتی ہے.</div>
+`Standard_RegEx` | `4?` | <div dir="rtl" style="display:inline">دستخط کی فائلوں کے لئے جو براہ راست فائل فائل کے ساتھ کام کرتی ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
+`Normalised` | `5?` | <div dir="rtl" style="display:inline">دستخط کردہ فائلوں کے لئے جو معمولی فائل کے مواد کے ساتھ کام کرتی ہے.</div>
+`Normalised_RegEx` | `6?` | <div dir="rtl" style="display:inline">دستخط کردہ فائلوں کے لئے جو معمولی فائل کے مواد کے ساتھ کام کرتی ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
+`HTML` | `7?` | <div dir="rtl" style="display:inline">دستخط فائلوں کے لئے جو HTML مواد کے ساتھ کام کرتا ہے.</div>
+`HTML_RegEx` | `8?` | <div dir="rtl" style="display:inline">دستخط فائلوں کے لئے جو HTML مواد کے ساتھ کام کرتا ہے. دستخط باقاعدگی سے اظہار میں شامل ہوسکتے ہیں.</div>
+`PE_Extended` | `9?` | <div dir="rtl" style="display:inline">پی ایچ میٹ میٹاٹا کے ساتھ کام کرنے والی دستخط کی فائلوں کے لئے.</div>
+`PE_Sectional` | `A?` | <div dir="rtl" style="display:inline">پی ایچ سیکشنل میٹا ڈیٹا کے ساتھ کام کرنے والی دستخط کی فائلوں کے لئے.</div>
+`Complex_Extended` | `B?` | <div dir="rtl" style="display:inline">دستخط فائلوں کے لئے جو وسیع قوانین کے ساتھ وسیع پیمانے پر میٹا ڈیٹا ڈیٹا پر مبنی کام کرتی ہیں.</div>
+`URL_Scanner` | `C?` | <div dir="rtl" style="display:inline">سائن ان فائلوں کے لئے جو URL کے ساتھ کام کرتی ہیں.</div>
 
 <div dir="rtl">اگلے بائٹ <code dir="ltr">[x10]</code> ایک نیا لائن ہے <code dir="ltr">[0A]</code>.<br /><br /></div>
 
@@ -1050,9 +1057,9 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl"><em>یہ معلومات صرف اہم پیکج پر لاگو ہوتا ہے. نصب شدہ دستخط فائلوں، پلگ ان اور دوسرے پردیوی اجزاء کے مطابق نتائج مختلف ہوں گے.</em><br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">سکینر</div> | <div dir="rtl" style="display:inline;">نتائج</div>
+&nbsp; <div dir="rtl" style="display:inline">سکینر</div> | <div dir="rtl" style="display:inline">نتائج</div>
 ----|----
-Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEX.Webshell"</div>
+Bkav | <div dir="rtl" style="display:inline">رپورٹیں "VEX.Webshell"</div>
 
 ---
 
@@ -1092,10 +1099,10 @@ Bkav | <div dir="rtl" style="display:inline;">رپورٹیں "VEX.Webshell"</div
 
 <div dir="rtl">یہ مندرجہ ذیل ٹیبل کی طرف سے بیان کیا جا سکتا ہے:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">phpMussel چاہئے <strong>نہیں</strong> ایک فائل بلاک</div> | &nbsp; <div dir="rtl" style="display:inline;">phpMussel ایک فائل کو بلاک کرنا چاہئے</div> | &nbsp;
+&nbsp; <div dir="rtl" style="display:inline">phpMussel چاہئے <strong>نہیں</strong> ایک فائل بلاک</div> | &nbsp; <div dir="rtl" style="display:inline">phpMussel ایک فائل کو بلاک کرنا چاہئے</div> | &nbsp;
 ---|---|---
-&nbsp; <div dir="rtl" style="display:inline;">یہ سچ ہے کہ منفی (صحیح اندازہ)</div> | <div dir="rtl" style="display:inline;">فوت شدہ کا پتہ لگانے (جھوٹے منفی کے مطابق)</div> | <div dir="rtl" style="display:inline;">phpMussel <strong>نہیں</strong> ایک فائل کو بلاک</div>
-&nbsp; <div dir="rtl" style="display:inline;"><strong>جھوٹی مثبت</strong></div> | <div dir="rtl" style="display:inline;">یہ سچ ہے کہ مثبت (صحیح اندازہ)</div> | <div dir="rtl" style="display:inline;"><strong>phpMussel کرتا فائل کو بلاک</strong></div>
+&nbsp; <div dir="rtl" style="display:inline">یہ سچ ہے کہ منفی (صحیح اندازہ)</div> | <div dir="rtl" style="display:inline">فوت شدہ کا پتہ لگانے (جھوٹے منفی کے مطابق)</div> | <div dir="rtl" style="display:inline">phpMussel <strong>نہیں</strong> ایک فائل کو بلاک</div>
+&nbsp; <div dir="rtl" style="display:inline"><strong>جھوٹی مثبت</strong></div> | <div dir="rtl" style="display:inline">یہ سچ ہے کہ مثبت (صحیح اندازہ)</div> | <div dir="rtl" style="display:inline"><strong>phpMussel کرتا فائل کو بلاک</strong></div>
 
 #### <div dir="rtl"><a name="SIGNATURE_UPDATE_FREQUENCY"></a>دستخط کیسے بیشتر اپ ڈیٹ کر رہے ہیں؟<br /><br /></div>
 
@@ -1529,4 +1536,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 15 اکتوبر 2018 (2018.10.15).</div>
+<div dir="rtl">آخری تازہ کاری: 16 اکتوبر 2018 (2018.10.16).</div>

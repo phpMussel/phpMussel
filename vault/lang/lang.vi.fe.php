@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.10.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'Thử chặn bất 
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Danh sách các phần mở rộng tập tin được phép chứa mã PHP, được phân tách bằng dấu phẩy. Nếu phát hiện tấn công tắc kè hoa PHP được kích hoạt, các tập tin có chứa mã PHP, mà có các phần mở rộng không có trong danh sách này, sẽ được phát hiện là các tấn công tắc kè hoa PHP.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Tìm kiếm cho định danh tập tin thực thi trong các tập tin mà không phải là tập tin thực thi cũng không phải là kho lưu trữ được công nhận, và cho tập tin thực thi tập tin mà có định danh sai. False = Tắt; True = Trên.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Tìm kiếm cho định danh PHP trong các tập tin mà không phải là PHP cũng không phải là kho lưu trữ được công nhận. False = Tắt; True = Trên.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Tìm kiếm cho kho lưu trữ mà có định danh sai (Được hỗ trợ: BZ, GZ, RAR, ZIP, RAR, GZ). False = Tắt; True = Trên.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Phát hiện tiêu đề không chính xác trong lưu trữ và tập tin nén. Được hỗ trợ: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. False = Tắt; True = Trên.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'Tìm kiếm cho tài liệu văn phòng mà có định danh sai (Được hỗ trợ: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). False = Tắt; True = Trên.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'Tìm kiếm cho hình ảnh mà có định danh sai (Được hỗ trợ: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). False = Tắt; True = Trên.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'Tìm kiếm cho tập tin PDF mà có định danh sai. False = Tắt; True = Trên.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'Nói chung, t
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'Nếu bạn chỉ mong đợi hay chỉ có ý định để cho phép hình ảnh để được tải lên hệ thống hay CMS của bạn, và nếu bạn hoàn toàn không yêu cầu bất kỳ tập tin khác so với hình ảnh để được tải lên hệ thống hay CMS của bạn, tùy chọn này nên được kích hoạt, nhưng nếu không nên bị vô hiệu hóa. Nếu tùy chọn này được kích hoạt, nó sẽ hướng dẫn phpMussel để ngăn chặn bất kỳ tải lên bừa bãi xác định là các tập tin không phải hình ảnh, mà không cần quét chúng. Điều này có thể làm giảm thời gian xử lý và sử dụng bộ nhớ cho tải lên cố gắng của các tập tin không phải hình ảnh. False = TẮT; True = TRÊN.';
 $phpMussel['lang']['config_experimental'] = 'Không ổn định / Thử nghiệm!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Phát hiện và chặn kho lưu trữ được mã hóa? Bởi vì phpMussel không thể quét các nội dung của kho lưu trữ được mã hóa, nó có thể mã hóa kho lưu trữ có thể được sử dụng bởi một kẻ tấn công như một phương tiện cố gắng để vượt qua phpMussel, máy quét chống vi rút và bảo vệ khác như. Hướng dẫn phpMussel để ngăn chặn bất kỳ kho lưu trữ mà nó phát hiện được mã hóa có thể giúp giảm nguy cơ nào liên kết với những khả năng này. False = Không; True = Vâng [Mặc định].';
-$phpMussel['lang']['config_files_check_archives'] = 'Cố gắng để kiểm tra nội dung của kho lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định]. Tại thơi điểm nay, các chỉ định dạng kho lưu trữ và nén được hỗ trợ là BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR và ZIP (định dạng kho lưu trữ và nén RAR, CAB, 7z và vân vân không được hỗ trợ tại thơi điểm nay). Đây không phải là hoàn hảo! Trong khi tôi rất khuyên bạn nên giữ này được kích hoạt, tôi không thể đảm bảo nó sẽ luôn luôn tìm thấy tất cả mọi thứ. Cũng lưu ý kho lưu trữ kiểm tra là không đệ quy cho PHAR hay ZIP.';
+$phpMussel['lang']['config_files_check_archives'] = 'Cố gắng để kiểm tra nội dung của kho lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Thừa kế danh sách đen/trắng cho kích thước của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều); True = Vâng [Mặc định].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'Giới hạn của kích thước tập tin trong KB. 65536 = 64MB [Mặc định]; 0 = Không giới hạn (luôn có trên danh sách xám), bất kỳ giá trị số dương chấp nhận. Điều này có thể hữu ích khi cấu hình PHP của bạn hạn chế số lượng bộ nhớ một quá trình có thể giữ hay nếu hình PHP của bạn giới hạn kích thước của tải lên tập tin.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Làm gì với tập tin mà vượt quá các giới hạn kích thước của tải lên (nếu tồn tại). False = Danh sách trắng; True = Danh sách đen [Mặc định].';

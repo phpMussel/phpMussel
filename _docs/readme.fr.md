@@ -447,7 +447,7 @@ Valeur | En utilisant
 - Permettre le support pour les plugins du phpMussel ? False = Non [Défaut] ; True = Oui.
 
 ##### « forbid_on_block »
-- Devrait phpMussel envoyer 403 headers avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK) ? False = Non (200) ; True = Oui (403) [Défaut].
+- Devrait phpMussel envoyer les en-têtes 403 avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK) ? False = Non (200) ; True = Oui (403) [Défaut].
 
 ##### « delete_on_sight »
 - Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées propre ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l'analyse, laissez le fichier tel quel [Défaut] ; True = Après l'analyse, si pas propre, supprimer immédiatement.
@@ -575,11 +575,18 @@ Configuration générale pour les gestion des fichiers.
   - Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise.
   - Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon.
 
-##### « check_archives » – Temporairement indisponible
+##### « check_archives »
 - Essayer vérifier les contenus des archives ? False = Non (ne pas vérifier) ; True = Oui (vérifier) [Défaut].
-- En ce moment, les seuls formats d'archives et de compression supporté sont BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR et ZIP (les formats d'archives et de compression RAR, CAB, 7z et etc ne sont pas supporté en ce moment).
-- Ce n'est pas à toute épreuve ! Bien que je recommande fortement d'avoir ce reste activée, je ne peux pas garantir il va toujours trouver tout.
-- Aussi être conscient que l'examen d'archives actuellement n'est pas récursif pour PHARs ou ZIPs formats.
+
+Format | Peut lire | Peut lire récursivement | Peut détecter le cryptage | Remarques
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Nécessite [libzip](http://php.net/manual/en/zip.requirements.php) (normalement livré avec PHP de toute façon). Aussi supporté (utilise le format zip) : ✔️ Détection d'objet OLE. ✔️ Détection de macro Office.
+Tar | ✔️ | ✔️ | ➖ | Aucune exigence particulière. Le format ne supporte pas le cryptage.
+Rar | ✔️ | ✔️ | ✔️ | Nécessite l'extension [rar](https://pecl.php.net/package/rar) (quand cette extension n'est pas installée, phpMussel ne peut pas lire les fichiers rar).
+7zip | ❌ | ❌ | ❌ | Étudie actuellement comment lire les fichiers 7zip dans phpMussel.
+Phar | ❌ | ❌ | ❌ | La capacité de lire des fichiers phar a été supprimée dans la version 1.6.0, et ne sera réajoutée pour des raisons de sécurité.
+
+*Si quelqu'un est capable et disposé à aider à implémenter le support pour la lecture d'autres formats d'archive, une telle aide serait la bienvenue.*
 
 ##### « filesize_archives »
 - Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut].
@@ -599,25 +606,25 @@ Configuration pour les détections d'attaque spécifiques.
 Détection des attaques de caméléon : False = Désactivé ; True = Activé.
 
 ##### « chameleon_from_php »
-- Vérifier pour les header PHP dans les fichiers qui ne sont pas de PHP ni reconnue comme archives.
+- Vérifier pour les en-têtes PHP dans les fichiers qui ne sont pas de PHP ni reconnue comme archives.
 
 ##### « can_contain_php_file_extensions »
 - Une liste d'extensions de fichiers autorisés à contenir du code PHP, séparés par des virgules. Si la détection des attaques de caméléon PHP est activée, les fichiers qui contiennent du code PHP, qui ont des extensions qui ne sont pas sur cette liste, seront détectés comme des attaques de caméléon PHP.
 
 ##### « chameleon_from_exe »
-- Vérifier pour les headers d'exécutables dans les fichiers qui ne sont pas fichiers exécutable ni reconnue comme archives et pour exécutables dont headers sont incorrects.
+- Vérifier pour les en-têtes d'exécutables dans les fichiers qui ne sont pas fichiers exécutable ni reconnue comme archives et pour exécutables dont les en-têtes sont incorrects.
 
 ##### « chameleon_to_archive »
-- Vérifier pour les archives dont headers sont incorrects (Supporté : BZ, GZ, RAR, ZIP, GZ).
+- Détecter les en-têtes incorrects dans les archives et les fichiers compressés. Supporté : BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### « chameleon_to_doc »
-- Vérifier pour les documents office dont headers sont incorrects (Supporté : DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+- Vérifier pour les documents office dont les en-têtes sont incorrects (Supporté : DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 ##### « chameleon_to_img »
-- Vérifier pour les images dont headers sont incorrects (Supporté : BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
+- Vérifier pour les images dont les en-têtes sont incorrects (Supporté : BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 ##### « chameleon_to_pdf »
-- Vérifier pour les fichiers PDF dont headers sont incorrects.
+- Vérifier pour les fichiers PDF dont les en-têtes sont incorrects.
 
 ##### « archive_file_extensions »
 - Les extensions de fichiers d'archives reconnus (format est CSV ; devraient ajouter ou supprimer seulement quand problèmes surviennent ; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection ; modifier avec prudence ; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
@@ -1307,4 +1314,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 15 Octobre 2018 (2018.10.15).
+Dernière mise à jour : 16 Octobre 2018 (2018.10.16).

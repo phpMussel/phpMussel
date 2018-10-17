@@ -575,11 +575,18 @@ Bestand hanteren configuratie.
   - Als het bestandstype is op de blacklist, niet scannen het bestand maar blokkeren het niettemin, en niet controleer het bestand tegen de greylist.
   - Als de greylist is leeg of als de greylist is niet leeg en het bestandstype is op de greylist, scannen het bestand als per normaal en bepalen als om het gebaseerd op de resultaten van de scan te blokkeren, maar als de greylist is niet leeg en het bestandstype is niet op de greylist, behandel het bestand alsof op de blacklist, dus om het niet te scannen, maar toch blokkeren het niettemin.
 
-##### "check_archives" – Tijdelijk niet beschikbaar
+##### "check_archives"
 - Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard].
-- Momenteel, het enige archief en compressie-formaten ondersteund zijn BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR en ZIP (archief en compressie-formaten RAR, CAB, 7z en etcetera momenteel niet ondersteund).
-- Dit is niet onfeilbaar! Hoewel ik beveel het houden van dit ingeschakeld, ik kan niet garanderen dat het zal altijd vind alles.
-- Ook noteren dat archief controleren momenteel is niet recursief voor PHAR of ZIP formaten.
+
+Formaat | Kan lezen | Kan recursief lezen | Kan encryptie detecteren | Notities
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Vereist [libzip](http://php.net/manual/en/zip.requirements.php) (normaal is het gebundeld met PHP). Wordt ook ondersteund (gebruikt het zip-formaat): ✔️ OLE-object detectie. ✔️ Office macro detectie.
+Tar | ✔️ | ✔️ | ➖ | Geen speciale vereisten. Formaat ondersteunt geen encryptie.
+Rar | ✔️ | ✔️ | ✔️ | Vereist de [rar](https://pecl.php.net/package/rar)-extensie (wanneer deze extensie niet is geïnstalleerd, kan phpMussel geen rar-bestanden lezen).
+7zip | ❌ | ❌ | ❌ | Momenteel nog steeds bezig met onderzoek naar hoe 7zip-bestanden te lezen in phpMussel.
+Phar | ❌ | ❌ | ❌ | Ondersteuning voor het lezen van phar-bestanden is verwijderd in v1.6.0, en zal vanwege bezorgdheid over de veiligheid niet opnieuw worden toegevoegd.
+
+*Als iemand in staat en bereid is te helpen bij het implementeren van ondersteuning voor het lezen van andere archiefformaten, zou dergelijke hulp welkom zijn.*
 
 ##### "filesize_archives"
 - Erven het bestandsgrootte blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
@@ -608,7 +615,7 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 - Zoeken naar PHP header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist.
 
 ##### "chameleon_to_archive"
-- Zoeken naar archieven waarvan headers zijn onjuist (Ondersteunde: BZ, GZ, RAR, ZIP, GZ).
+- Detecteer onjuiste headers in archieven en gecomprimeerde bestanden. Ondersteunde: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Zoeken naar office documenten waarvan headers zijn onjuist (Ondersteunde: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1309,4 +1316,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 15 Oktober 2018 (2018.10.15).
+Laatste Bijgewerkt: 16 Oktober 2018 (2018.10.16).

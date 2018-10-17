@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2018.10.13).
+ * This file: Archive handler (last modified: 2018.10.16).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -39,6 +39,21 @@ interface ArchiveHandlerInterface
      * Return the actual size of the entry at the current entry pointer.
      */
     public function EntryActualSize();
+
+    /**
+     * Return whether the entry at the current entry pointer is a directory.
+     */
+    public function EntryIsDirectory();
+
+    /**
+     * Return whether the entry at the current entry pointer is encrypted.
+     */
+    public function EntryIsEncrypted();
+
+    /**
+     * Return the reported internal CRC hash for the entry, if it exists.
+     */
+    public function EntryCRC();
 
     /**
      * Return the name of the entry at the current entry pointer.
@@ -73,17 +88,23 @@ abstract class ArchiveHandler implements ArchiveHandlerInterface
 
 class ZipHandler extends ArchiveHandler
 {
-    /** Archive resource ID. */
-    private $ArchiveResID = '';
+    /** The Zip object. */
+    private $ZipObject;
 
-    /** Archive entry resource ID. */
-    private $EntryResID = '';
+    /** Number of files in the archive. */
+    private $NumFiles = 0;
+
+    /** Current entry index. */
+    private $Index = -1;
+
+    /** Current entry attributes. */
+    private $StatIndex = [];
 
     /** Construct the Zip archive object. */
     public function __construct($Pointer)
     {
         /** Zip class requirements guard. */
-        if (!function_exists('zip_open')) {
+        if (!class_exists('ZipArchive')) {
             $this->ErrorState = 1;
             return;
         }
@@ -94,15 +115,20 @@ class ZipHandler extends ArchiveHandler
             return;
         }
 
-        $this->ArchiveResID = zip_open($Pointer);
-        $this->ErrorState = is_resource($this->ArchiveResID) ? 0 : 2;
+        $this->ZipObject = new \ZipArchive;
+        if (!$this->ZipObject->open($Pointer)) {
+            $this->ErrorState = 2;
+            return;
+        }
+        $this->ErrorState = is_object($this->ZipObject) ? 0 : 2;
+        $this->NumFiles = $this->ZipObject->numFiles;
     }
 
     /** Destruct the Zip archive object. */
     public function __destruct()
     {
-        if (is_resource($this->ArchiveResID)) {
-            zip_close($this->ArchiveResID);
+        if (is_object($this->ZipObject) && $this->ErrorState === 0) {
+            $this->ZipObject->close();
         }
     }
 
@@ -117,12 +143,7 @@ class ZipHandler extends ArchiveHandler
         if ($Bytes < 0 || $Bytes > $Actual) {
             $Bytes = $Actual;
         }
-        $Output = '';
-        if ($Bytes > 0 && zip_entry_open($this->ArchiveResID, $this->EntryResID, 'rb')) {
-            $Output = zip_entry_read($this->EntryResID, $Bytes);
-            zip_entry_close($this->EntryResID);
-        }
-        return $Output;
+        return $Bytes > 0 ? $this->ZipObject->getFromIndex($this->Index, $Bytes) : '';
     }
 
     /**
@@ -130,7 +151,7 @@ class ZipHandler extends ArchiveHandler
      */
     public function EntryCompressedSize()
     {
-        return is_resource($this->EntryResID) ? zip_entry_compressedsize($this->EntryResID) : false;
+        return isset($this->StatIndex['comp_size']) ? $this->StatIndex['comp_size'] : 0;
     }
 
     /**
@@ -138,7 +159,31 @@ class ZipHandler extends ArchiveHandler
      */
     public function EntryActualSize()
     {
-        return is_resource($this->EntryResID) ? zip_entry_filesize($this->EntryResID) : false;
+        return isset($this->StatIndex['size']) ? $this->StatIndex['size'] : 0;
+    }
+
+    /**
+     * Return whether the entry at the current entry pointer is a directory.
+     */
+    public function EntryIsDirectory()
+    {
+        return (!$this->EntryActualSize() && !$this->EntryCompressedSize() && substr($this->EntryName, -1) === '/');
+    }
+
+    /**
+     * Return whether the entry at the current entry pointer is encrypted.
+     */
+    public function EntryIsEncrypted()
+    {
+        return !empty($this->StatIndex['encryption_method']);
+    }
+
+    /**
+     * Return the reported internal CRC hash for the entry, if it exists.
+     */
+    public function EntryCRC()
+    {
+        return (isset($this->StatIndex['crc']) && is_int($this->StatIndex['crc'])) ? dechex($this->StatIndex['crc']) : false;
     }
 
     /**
@@ -146,7 +191,7 @@ class ZipHandler extends ArchiveHandler
      */
     public function EntryName()
     {
-        return is_resource($this->EntryResID) ? zip_entry_name($this->EntryResID) : false;
+        return isset($this->StatIndex['name']) ? $this->StatIndex['name'] : '';
     }
 
     /**
@@ -156,8 +201,12 @@ class ZipHandler extends ArchiveHandler
      */
     public function EntryNext()
     {
-        $this->EntryResID = zip_read($this->ArchiveResID);
-        return is_resource($this->EntryResID);
+        $this->Index++;
+        if ($this->Index < $this->NumFiles) {
+            $this->StatIndex = $this->ZipObject->statIndex($this->Index);
+            return true;
+        }
+        return false;
     }
 }
 
@@ -179,10 +228,7 @@ class TarHandler extends ArchiveHandler
     public function __construct($Pointer)
     {
         /** Guard against wrong type of file used as pointer. */
-        if (
-            empty($Pointer) ||
-            substr($Pointer, 257, 6) !== "ustar\x00"
-        ) {
+        if (empty($Pointer) || substr($Pointer, 257, 6) !== "ustar\x00") {
             $this->ErrorState = 2;
             return;
         }
@@ -229,6 +275,32 @@ class TarHandler extends ArchiveHandler
     }
 
     /**
+     * Return whether the entry at the current entry pointer is a directory.
+     */
+    public function EntryIsDirectory()
+    {
+        $Name = $this->EntryName();
+        return ((substr($Name, -1, 1) === "\\" || substr($Name, -1, 1) === '/') && $this->EntryActualSize === 0);
+    }
+
+    /**
+     * Return whether the entry at the current entry pointer is encrypted.
+     */
+    public function EntryIsEncrypted()
+    {
+        /** Tar doesn't use encryption, therefore always false. */
+        return false;
+    }
+
+    /**
+     * Return the reported internal CRC hash for the entry, if it exists.
+     */
+    public function EntryCRC()
+    {
+        return false;
+    }
+
+    /**
      * Return the name of the entry at the current entry pointer.
      */
     public function EntryName()
@@ -247,13 +319,11 @@ class TarHandler extends ArchiveHandler
             return false;
         }
         if (!$this->Initialised) {
-            $this->Initialised = true;
-            return true;
+            return ($this->Initialised = true);
         }
         $Actual = $this->EntryActualSize();
         $Blocks = $Actual > 0 ? ceil($Actual / 512) + 1 : 1;
         $this->Offset += $Blocks * 512;
-        echo $this->Offset."\n";
         return true;
     }
 }
@@ -275,7 +345,7 @@ class RarHandler extends ArchiveHandler
     /** Construct the Rar archive object. */
     public function __construct($Pointer)
     {
-        /** Rar extension requirements guard. */
+        /** Rar class requirements guard. */
         if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
             $this->ErrorState = 1;
             return;
@@ -295,7 +365,7 @@ class RarHandler extends ArchiveHandler
     /** Destruct the Rar archive object. */
     public function __destruct()
     {
-        if (is_object($this->RarObject)) {
+        if (is_object($this->RarObject) && $this->ErrorState === 0) {
             $this->RarObject->close();
         }
     }
@@ -333,6 +403,30 @@ class RarHandler extends ArchiveHandler
     public function EntryActualSize()
     {
         return is_object($this->RarEntry) ? $this->RarEntry->getUnpackedSize() : false;
+    }
+
+    /**
+     * Return whether the entry at the current entry pointer is a directory.
+     */
+    public function EntryIsDirectory()
+    {
+        return is_object($this->RarEntry) ? $this->RarEntry->isDirectory() : false;
+    }
+
+    /**
+     * Return whether the entry at the current entry pointer is encrypted.
+     */
+    public function EntryIsEncrypted()
+    {
+        return is_object($this->RarEntry) ? $this->RarEntry->isEncrypted() : false;
+    }
+
+    /**
+     * Return the reported internal CRC hash for the entry, if it exists.
+     */
+    public function EntryCRC()
+    {
+        return is_object($this->RarEntry) ? $this->RarEntry->getCrc() : false;
     }
 
     /**

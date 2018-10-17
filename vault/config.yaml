@@ -272,7 +272,7 @@ Config Defaults:
    default: ""
   check_archives:
    type: bool
-   default: false
+   default: true
   filesize_archives:
    type: bool
    default: true

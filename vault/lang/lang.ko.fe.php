@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.10.15).
+ * This file: Korean language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = '매크로가 포함
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = '쉼표로 구분 된 PHP 코드를 포함 할 수있는 파일 확장명 목록. PHP 카멜레온 공격 탐지가 활성화 된 경우이 목록에없는 확장자를 가진 PHP 코드가 포함 된 파일은 PHP 카멜레온 공격으로 탐지됩니다.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '실행 파일없이 실행 파일의 아카이브도 인식 할 수없는 파일의 실행 헤더 및 악성 헤더의 실행 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '파일도 아니고 PHP 아카이브도 인식 할 수없는 파일에서 PHP 헤더를 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, RAR, GZ 지원). <code>false</code> = 해제; <code>true</code> = 온.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '아카이브 및 압축 파일에서 잘못된 헤더를 탐지합니다 (BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = '헤더가 잘못 오피스 문서를 찾습니다 (DOC, DOT, PPS, PPT, XLA XLS, WIZ 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '헤더가 잘못 PDF 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '시스템에�
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다).';
 $phpMussel['lang']['config_experimental'] = '불안정/실험적!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '암호화 된 아카이브를 감지하고 차단 여부? phpMussel은 암호화 된 아카이브를 검색 할 수 없기 때문에 아카이브의 암호화를 통해 phpMussel 안티 바이러스 스캐너 등을 かいくぐろ하려는 공격자가 있을지도 모릅니다. 암호화 된 아카이브를 차단함으로써 이러한 위험을 방지 할 수 있습니다. <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
-$phpMussel['lang']['config_files_check_archives'] = '아카이브의 컨텐츠에 대해 체크를 시도 여부에 대해서입니다. <code>false</code> = 체크하지 않는다; <code>true</code> = 확인 (Default / 기본 설정). 현재 지원하고있는 것은 BZ, GZ, LZF, ZIP 형식입니다 (RAR, CAB, 7z 등은 제외). 본 기능은 만능이 아니므로 활성화하는 것이 좋습니다 있지만 반드시 모두를 검출하는 것을 보증하는 것은 아닙니다. 또한 현재 체크 아카이브는 ZIP 대해 재귀 않는다는 점에 유의하십시오.';
+$phpMussel['lang']['config_files_check_archives'] = '아카이브의 컨텐츠에 대해 체크를 시도 여부에 대해서입니다. <code>false</code> = 체크하지 않는다; <code>true</code> = 확인 (Default / 기본 설정).';
 $phpMussel['lang']['config_files_filesize_archives'] = '파일 크기 블랙리스트/화이트리스트 화를 아카이브의 컨텐츠에 반입 여부? <code>false</code> = 아니오 (단지 그레이리스트 모두); <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_files_filesize_limit'] = '파일 크기 제한의 단위는 KB입니다. 65536 = 64MB (Default / 기본 설정); 0 = 제한하지 않습니다 (제한없이 항상 그레이리스트 화) 양수이면 무엇이든 상관 없습니다. PHP 설정에서 메모리에 제한이 있고, 업로드 파일 크기 제한이 설정되어있는 경우에 효과적입니다.';
 $phpMussel['lang']['config_files_filesize_response'] = '최대 크기보다 큰 파일을 처리하는 방법에 관한 것입니다. <code>false</code> = Whitelist/화이트리스트; <code>true</code> = Blacklist/블랙리스트 (Default / 기본 설정).';

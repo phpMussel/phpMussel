@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.10.15).
+ * This file: English language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'Try to block any fi
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'A list of file extensions allowed to contain PHP code, separated by commas. If PHP chameleon attack detection is enabled, files that contain PHP code, which have extensions that aren\'t on this list, will be detected as PHP chameleon attacks.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect. False = Off; True = On.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Search for PHP header in files that are neither PHP files nor recognised archives. False = Off; True = On.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, RAR, GZ). False = Off; True = On.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Detect incorrect headers in archives and compressed files. Supported: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. False = Off; True = On.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). False = Off; True = On.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'Search for images whose headers are incorrect (Supported: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). False = Off; True = On.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'Search for PDF files whose headers are incorrect. False = Off; True = On.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'This directiv
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don\'t require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it\'ll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. False = OFF; True = ON.';
 $phpMussel['lang']['config_experimental'] = 'Unstable/Experimental!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Detect and block encrypted archives? Because phpMussel isn\'t able to scan the contents of encrypted archives, it\'s possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].';
-$phpMussel['lang']['config_files_check_archives'] = 'Attempt to check the contents of archives? False = Don\'t check; True = Check [Default]. Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported). This is not foolproof! While I highly recommend keeping this turned on, I can\'t guarantee it\'ll always find everything. Also be aware that archive checking currently is not recursive for PHARs or ZIPs.';
+$phpMussel['lang']['config_files_check_archives'] = 'Attempt to check the contents of archives? False = Don\'t check; True = Check [Default].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always greylisted). Any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads.';
 $phpMussel['lang']['config_files_filesize_response'] = 'What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Default].';

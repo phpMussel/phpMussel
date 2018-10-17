@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.10.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = '嘗試阻止任何�
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = '允許包含PHP代碼的文件擴展名列表，以逗號分隔。​如果啟用了PHP變色龍攻擊檢測，包含PHP代碼的文件，其擴展名不在此列表中，將被檢測為PHP變色龍攻擊。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = '尋找可執行頭在文件是不可執行文件也不認可存檔文件和尋找可執行文件誰的頭是不正確。​False（假）=是關閉；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = '尋找PHP頭在文件是不PHP文件也不認可存檔文件。​False（假）=是關閉；True（真）=是激活。';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '尋找存檔文件誰的頭是不正確（已支持：BZ，​GZ，​RAR，​ZIP，​RAR，​GZ）。​False（假）=是關閉；True（真）=是激活。';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = '檢測在存檔和壓縮文件中的錯誤標頭。已支持：BZ/BZIP2，GZ/GZIP，LZF，RAR，ZIP。​False（假）=是關閉；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = '尋找辦公文檔誰的頭是不正確（已支持：DOC，​DOT，​PPS，​PPT，​XLA，​XLS，​WIZ）。​False（假）=是關閉；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '尋找圖像誰的頭是不正確（已支持：BMP，​DIB，​PNG，​GIF，​JPEG，​JPG，​XCF，​PSD，​PDD，​WEBP）。​False（假）=是關閉；True（真）=是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '尋找PDF文件誰的頭是不正確。​False（假）=是關閉；True（真）=是激活。';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '這個指令�
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '如果您只期待或只意味到允許圖像被上傳在您的系統或CMS，​和如果您絕對不需要任何文件以外圖像被上傳在您的系統或CMS，​這個指令應會激活，​但其他應會關閉。​如果這個指令是激活，​它將指示phpMussel受阻而不例外任何上傳確定為非圖像文件，​而不掃描他們。​這個可能減少處理時間和內存使用為非圖像文件上傳嘗試。​False（假）=還允許其他文件；True（真）=只允許圖像文件。';
 $phpMussel['lang']['config_experimental'] = '不穩定/實驗！';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '檢測和受阻加密的存檔嗎？​因為phpMussel是不能夠掃描加密的存檔內容，​它是可能存檔加密可能的可以使用通過一個攻擊者作為一種手段嘗試繞過phpMussel，​殺毒掃描儀和其他這樣的保護。​指示phpMussel受阻任何存檔它發現被加密可能的可以幫助減少任何風險有關聯這些可能性。​False（假）=不受阻；True（真）=受阻【默認】。';
-$phpMussel['lang']['config_files_check_archives'] = '嘗試匹配存檔內容嗎？​False（假）=不匹配；True（真）=匹配【默認】。​目前，​只BZ/BZIP2，​GZ/GZIP，​LZF，​PHAR，​TAR和ZIP文件格式是支持（匹配的RAR，​CAB，​7z和等等不還支持）。​這個是不完美！​雖說我很推薦保持這個激活，​我不能保證它將始終發現一切。​還，​請注意存檔匹配目前是不遞歸為PHAR或ZIP格式。';
+$phpMussel['lang']['config_files_check_archives'] = '嘗試匹配存檔內容嗎？​False（假）=不匹配；True（真）=匹配【默認】。';
 $phpMussel['lang']['config_files_filesize_archives'] = '繼承文件大小黑名單/白名單在存檔內容嗎？​False（假）=不繼承（剛灰名單一切）；True（真）=繼承【默認】。';
 $phpMussel['lang']['config_files_filesize_limit'] = '文件大小限在KB。​65536 = 64MB【默認】，​0 = 沒有限（始終灰名單），​任何正數值接受。​這個可以有用當您的PHP配置限內存量一個進程可以佔據或如果您的PHP配置限文件大小的上傳。';
 $phpMussel['lang']['config_files_filesize_response'] = '如何處理文件超過文件大小限（如果存在）。​False（假）=白名單；True（真）=黑名單【默認】。';

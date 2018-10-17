@@ -575,11 +575,18 @@ Konfigurasi umum untuk mengambil alih file-file.
   - Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu.
   - Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun.
 
-##### "check_archives" – Tidak tersedia untuk sementara
+##### "check_archives"
 - Berusaha mencek isi file terkompress? False = Tidak (Tidak mencek); True = Ya (Mencek) [Default].
-- Sekarang, hanya BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR dan ZIP format yang didukung (RAR, CAB, 7z, dll tidak didukung).
-- Ini tidak selalu sempurna! Selama saya sangat rekomendasikan menjaga ini aktif, saya tidak dapat menjamin itu hanya menemukan segala sesuatunya.
-- Juga diingatkan bahwa mencek file terkompres tidak rekursif untuk format PHAR atau ZIP.
+
+Format | Dapat membaca | Dapat membaca secara rekursif | Dapat mendeteksi enkripsi | Catatan
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Membutuhkan [libzip](http://php.net/manual/en/zip.requirements.php) (biasanya dibundel dengan PHP pula). Juga didukung (menggunakan format zip): ✔️ Deteksi objek OLE. ✔️ Deteksi makro Office.
+Tar | ✔️ | ✔️ | ➖ | Tidak ada persyaratan khusus. Format tidak mendukung enkripsi.
+Rar | ✔️ | ✔️ | ✔️ | Membutuhkan ekstensi [rar](https://pecl.php.net/package/rar) (ketika ekstensi ini tidak diinstal, phpMussel tidak dapat membaca file rar).
+7zip | ❌ | ❌ | ❌ | Saat ini masih menyelidiki cara membaca file 7zip di phpMussel.
+Phar | ❌ | ❌ | ❌ | Dukungan untuk membaca file phar telah dihapus di v1.6.0, dan tidak akan ditambahkan lagi, karena masalah keamanan.
+
+*Jika ada seseorang yang mampu dan bersedia membantu mengimplementasikan dukungan untuk membaca format arsip lain, bantuan ini akan disambut baik.*
 
 ##### "filesize_archives"
 - Memperlalaikan ukuran daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua); True = Ya [Default].
@@ -608,13 +615,13 @@ Deteksi chameleon serangan: False = Dinonaktifkan; True = Diaktifkan.
 - Cari header yang dapat dieksekusi di dalam file-file yang dapat dieksekusi atau file terkompress yang dikenali dan untuk file dapat dieksekusi yang headernya tidak benar.
 
 ##### "chameleon_to_archive"
-- Cari file terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR, ZIP, GZ).
+- Mendeteksi header yang salah dalam arsip dan file terkompresi. Didukung: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
-- Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+- Cari dokumen office yang header nya tidak benar (Didukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 ##### "chameleon_to_img"
-- Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
+- Cari gambar yang header nya tidak benar (Didukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 ##### "chameleon_to_pdf"
 - Cari file PDF yang headernya tidak benar.
@@ -1301,4 +1308,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 15 Oktober 2018 (2018.10.15).
+Terakhir Diperbarui: 16 Oktober 2018 (2018.10.16).

@@ -575,11 +575,18 @@ Generelle Konfigurationen für die Handhabung von Dateien.
   - Wenn der Dateityp in der Blacklist ist, scanne nicht die Datei aber blockieren sie trotzdem, und überprüfe nicht wenn die Datei in der Greylist ist.
   - Wenn die Greylist leer ist oder wenn die Greylist nicht leer ist und der Dateityp in der Greylist ist, scanne die Datei wie standardmäßig eingestellt ist und stelle fest, ob diese blockiert werden soll, basierend auf dem Scan, aber wenn die Greylist nicht leer ist und der Dateityp nicht in der Greylist ist, behandel die Datei als ob sie in der Blacklist ist, scanne sie nicht aber blockiere sie trotzdem.
 
-##### "check_archives" – Vorübergehend nicht erreichbar
+##### "check_archives"
 - Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung].
-- Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z, u.s.w. wird zur Zeit NICHT unterstützt).
-- Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird.
-- Die Archivüberprüfung ist derzeit nicht rekursiv für PHAR-Archive oder ZIP-Archive.
+
+Format | Kann lesen | Kann rekursiv lesen | Kann die Verschlüsselung erkennen | Notizen
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Benötigt [libzip](http://php.net/manual/en/zip.requirements.php) (normalerweise sowieso mit PHP gebündelt). Auch unterstützt (verwendet das Zip-Format): ✔️ OLE-Objekt-Erkennung. ✔️ Office-Makro-Erkennung.
+Tar | ✔️ | ✔️ | ➖ | Keine besonderen Anforderungen. Format unterstützt keine Verschlüsselung.
+Rar | ✔️ | ✔️ | ✔️ | Benötigt die [rar](https://pecl.php.net/package/rar)-Erweiterung (Wenn diese Erweiterung nicht installiert ist, kann phpMussel keine rar-Dateien lesen).
+7zip | ❌ | ❌ | ❌ | Derzeit wird noch untersucht, wie 7zip-Dateien in phpMussel gelesen werden können.
+Phar | ❌ | ❌ | ❌ | Die Unterstützung für das Lesen von phar-Dateien wurde in v1.6.0 entfernt, und wird aufgrund von Sicherheitsbedenken nicht erneut hinzugefügt.
+
+*Wenn jemand in der Lage und bereit ist, Unterstützung beim Lesen anderer Archivformate zu implementieren, wäre eine solche Hilfe willkommen.*
 
 ##### "filesize_archives"
 - Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des Archivs übertragen werden? False = Nein (alles nur in die Greylist aufnehmen); True = Ja [Standardeinstellung].
@@ -608,7 +615,7 @@ Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
 - Suche nach ausführbaren Headern in Dateien, die weder ausführbar noch erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht korrekt sind.
 
 ##### "chameleon_to_archive"
-- Suche nach Archiven, deren Header nicht korrekt sind (Unterstützt: BZ, GZ, RAR, ZIP, GZ).
+- Identifizieren Sie falsche Header in Archiven und komprimierten Dateien. Unterstützt: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Suche nach Office-Dokumenten, deren Header nicht korrekt sind (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1311,4 +1318,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 15 Oktober 2018 (2018.10.15).
+Zuletzt aktualisiert: 16 Oktober 2018 (2018.10.16).

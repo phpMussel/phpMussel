@@ -575,11 +575,18 @@ General configuración para el manejo de archivos.
   - Si el tipo de archivo está en la blacklist, no escanear el archivo, pero bloquearlo en todo caso, y no cotejar el archivo con la greylist.
   - Si la greylist está vacía o si la greylist está no vacía y el tipo de archivo está en la greylist, escanearlo como normal y determinar si para bloquearlo basado en los resultados de la escaneo, pero si la greylist está no vacía y el tipo de archivo está no en la greylist, tratar el archivo como si está en la blacklist, por lo tanto no escanearlo pero bloquearlo en todo caso.
 
-##### "check_archives" – Temporalmente no disponible
+##### "check_archives"
 - Intente comprobar el contenido de los compactados archivos? False = No (no comprobar); True = Sí (comprobar) [Predefinido].
-- Corrientemente, los únicos formatos soportados son BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR y ZIP (los formatos RAR, CAB, 7z y etc. corrientemente no es soportados).
-- Esto no es infalible! Mientras yo altamente recomiendo mantener este activado, no puedo garantizar que siempre encontrará todo.
-- También ser conscientes que la comprobación de compactados archivos corrientemente no es recursivo para PHAR o ZIP formatos.
+
+Formato | Puede leer | Puede leer recursivamente | Puede detectar el cifrado | Notas
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Requiere [libzip](http://php.net/manual/en/zip.requirements.php) (normalmente empaquetado con PHP de todos modos). También soportado (usa el formato zip): ✔️ Detección de objetos OLE. ✔️ Detección de macros Office.
+Tar | ✔️ | ✔️ | ➖ | Ningún requerimiento especial. El formato no soporte el cifrado.
+Rar | ✔️ | ✔️ | ✔️ | Requiere la extensión [rar](https://pecl.php.net/package/rar) (cuando esta extensión no está instalada, phpMussel no puede leer archivos rar).
+7zip | ❌ | ❌ | ❌ | Todavía estoy investigando cómo leer archivos 7zip en phpMussel.
+Phar | ❌ | ❌ | ❌ | Soporte para leer de archivos phar fue removido en v1.6.0 y no se agregará nuevamente, debido a preocupaciones de seguridad.
+
+*Si alguien puede y está dispuesto a ayudar a implementar el soporte para leer otros formatos de archivo, dicha ayuda sería bienvenida.*
 
 ##### "filesize_archives"
 - Heredar tamaño de archivos blacklist/whitelist para los contenidos de compactados archivos? False = No (todo en la greylist); True = Sí [Predefinido].
@@ -608,7 +615,7 @@ Detección de ataques de camaleón: False = Desactivado; True = Activado.
 - Buscar para PE mágico número en archivos que no están ejecutables ni reconocidos compactados archivos y para ejecutables cuyo mágicos números son incorrectas.
 
 ##### "chameleon_to_archive"
-- Buscar para compactados archivos cuyo mágicos números son incorrectas (Soportado: BZ, GZ, RAR, ZIP, GZ).
+- Detectar mágicos números incorrectos en archivos y archivos comprimidos. Soportado: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Buscar para office documentos cuyo mágicos números son incorrectas (Soportado: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1308,4 +1315,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 15 Octubre de 2018 (2018.10.15).
+Última Actualización: 16 Octubre de 2018 (2018.10.16).

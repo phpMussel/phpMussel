@@ -575,11 +575,18 @@ File handling configuration.
   - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
   - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
-##### "check_archives" – Temporarily unavailable
+##### "check_archives"
 - Attempt to check the contents of archives? False = Don't check; True = Check [Default].
-- Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported).
-- This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that archive checking currently is not recursive for PHARs or ZIPs.
+
+Format | Can read | Can read recursively | Can detect encryption | Notes
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Requires [libzip](http://php.net/manual/en/zip.requirements.php) (normally bundled with PHP anyway). Also supported (uses the zip format): ✔️ OLE object detection. ✔️ Office macro detection.
+Tar | ✔️ | ✔️ | ➖ | No special requirements. Format doesn't support encryption.
+Rar | ✔️ | ✔️ | ✔️ | Requires the [rar](https://pecl.php.net/package/rar) extension (when this extension isn't installed, phpMussel can't read rar files).
+7zip | ❌ | ❌ | ❌ | Still currently investigating how to read 7zip files in phpMussel.
+Phar | ❌ | ❌ | ❌ | Support for reading phar files was removed in v1.6.0, and won't be added again, due to security concerns.
+
+*If anyone is able and willing to help implement support for reading other archive formats, such help would be welcomed.*
 
 ##### "filesize_archives"
 - Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
@@ -608,7 +615,7 @@ Chameleon attack detection: False = Off; True = On.
 - Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
 
 ##### "chameleon_to_archive"
-- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, GZ).
+- Detect incorrect headers in archives and compressed files. Supported: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1311,4 +1318,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 15 October 2018 (2018.10.15).
+Last Updated: 16 October 2018 (2018.10.16).

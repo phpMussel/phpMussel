@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.15).
+ * This file: Functions file (last modified: 2018.10.16).
  */
 
 /**
@@ -4044,7 +4044,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['memCache']['tempfilesToDelete'] = [];
 
         /** Begin processing archives. */
-        $phpMussel['ArchiveRecursor']($x, $r, $in, $f, 0, urlencode($f));
+        $phpMussel['ArchiveRecursor']($x, $r, $in, $f, 0, urlencode($ofn));
 
         /** Begin deleting any temporary files that snuck through. */
         foreach ($phpMussel['memCache']['tempfilesToDelete'] as $DeleteThis) {
@@ -4204,7 +4204,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         }
 
         /** Guard. */
-        if (!function_exists('zip_open')) {
+        if (!class_exists('ZipArchive')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
                 $r = -1;
                 $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
@@ -4251,13 +4251,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle rar files. */
     if ($Handler === 'RarHandler') {
-        /**
-         * Encryption guard.
-         * See: http://rescene.wikidot.com/rar-420-technote or http://rescene.wikidot.com/rar-420-technote ??
-         */
-        if ($phpMussel['Config']['files']['block_encrypted_archives']) {
-            // todo
-        }
 
         /** Guard. */
         if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
@@ -4306,16 +4299,31 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         if ($ArchiveObject->ErrorState === 0) {
             while ($ArchiveObject->EntryNext()) {
 
-                /** Fetch filesize. */
-                $Filesize = $ArchiveObject->EntryActualSize();
+                /** Encryption guard. */
+                if ($phpMussel['Config']['files']['block_encrypted_archives'] && $ArchiveObject->EntryIsEncrypted()) {
+                    $r = -4;
+                    $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                    $phpMussel['whyflagged'] .= sprintf(
+                        $phpMussel['lang']['_exclamation'],
+                        $phpMussel['lang']['encrypted_archive'] . ' (' . $ItemRef . ')'
+                    );
+                    $x .= sprintf(
+                        '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                        $Indent,
+                        $phpMussel['lang']['scan_checking'],
+                        $ItemRef,
+                        hash('crc32b', $File),
+                        hash('crc32b', $Data),
+                        "\n",
+                        $phpMussel['lang']['encrypted_archive'],
+                        $phpMussel['lang']['_fullstop_final']
+                    );
+                    unset($ArchiveObject, $Pointer, $PointerObject);
+                    return;
+                }
 
                 /** Fetch and prepare filename. */
                 if ($Filename = $ArchiveObject->EntryName()) {
-                    /** This entry is probably a directory. No point scanning. Let's skip it. */
-                    if ((substr($Filename, -1, 1) === "\\" || substr($Filename, -1, 1) === '/') && $Filesize === 0) {
-                        continue;
-                    }
-
                     if (strpos($Filename, "\\") !== false) {
                         $Filename = $phpMussel['substral']($Filename, "\\");
                     }
@@ -4324,15 +4332,21 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                     }
                 }
 
+                /** Fetch filesize. */
+                $Filesize = $ArchiveObject->EntryActualSize();
+
                 /** Fetch content and build hashes. */
                 $Content = $ArchiveObject->EntryRead($Filesize);
                 $MD5 = md5($Content);
                 $NameCRC32 = hash('crc32b', $Filename);
                 $DataCRC32 = hash('crc32b', $Content);
+                $InternalCRC = $ArchiveObject->EntryCRC();
                 $ThisItemRef = $ItemRef . '>' . urlencode($Filename);
 
-                /** Verify filesize. Exit early in case of possible inconsistencies. */
-                if ($Filesize !== strlen($Content)) {
+                /** Verify filesize, integrity, etc. Exit early in case of problems. */
+                if ($Filesize !== strlen($Content) || ($InternalCRC &&
+                    preg_replace('~^0+~', '', $DataCRC32) !== preg_replace('~^0+~', '', $InternalCRC)
+                )) {
                     $r = 2;
                     $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
                     $phpMussel['whyflagged'] .= sprintf(
@@ -4350,6 +4364,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         $phpMussel['lang']['recursive'],
                         $phpMussel['lang']['_fullstop_final']
                     );
+                    unset($ArchiveObject, $Pointer, $PointerObject);
                     return;
                 }
 
@@ -4372,6 +4387,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         $phpMussel['lang']['recursive'],
                         $phpMussel['lang']['_fullstop_final']
                     );
+                    unset($ArchiveObject, $Pointer, $PointerObject);
                     return;
                 }
 
@@ -4394,6 +4410,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         sprintf($phpMussel['lang']['detected'], 'Quine'),
                         $phpMussel['lang']['_fullstop_final']
                     );
+                    unset($ArchiveObject, $Pointer, $PointerObject);
                     return;
                 }
 
@@ -4421,11 +4438,13 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                         $MD5
                     );
                 } catch (\Exception $e) {
+                    unset($ArchiveObject, $Pointer, $PointerObject);
                     throw new \Exception($e->getMessage());
                 }
 
                 /** If we've already found something bad, we can exit early to save time. */
                 if ($r !== 1) {
+                    unset($ArchiveObject, $Pointer, $PointerObject);
                     return;
                 }
 

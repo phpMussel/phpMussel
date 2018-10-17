@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.10.15).
+ * This file: German language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'Versuchen Sie, alle
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Eine Liste von Dateierweiterungen, die PHP-Code enthalten dürfen, getrennt durch Kommas. Wenn die PHP-Chameleon-Angriffserkennung aktiviert ist, werden Dateien mit PHP-Code, die Erweiterungen aufweisen, die nicht in dieser Liste enthalten sind, als PHP-Chameleon-Angriffe erkannt.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Suche nach ausführbaren Headern in Dateien, die weder ausführbar noch erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht korrekt sind. False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Suche nach PHP-Headern in Dateien, die weder PHP-Dateien noch erkannte Archive sind. False = Deaktiviert; True = Aktiviert.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Suche nach Archiven, deren Header nicht korrekt sind (Unterstützt: BZ, GZ, RAR, ZIP, RAR, GZ). False = Deaktiviert; True = Aktiviert.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Identifizieren Sie falsche Header in Archiven und komprimierten Dateien. Unterstützt: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'Suche nach Office-Dokumenten, deren Header nicht korrekt sind (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'Suche nach Bildern, deren Header nicht korrekt sind (Unterstützt: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). False = Deaktiviert; True = Aktiviert.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'Suche nach PDF-Dateien, deren Header nicht korrekt sind. False = Deaktiviert; True = Aktiviert.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'Diese Direkti
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen. Dies kann die Verarbeitungszeit und Speichernutzung reduzieren, sobald andere Nicht-Bilddateien hochgeladen werden. False = AUS/OFF; True = AN/ON.';
 $phpMussel['lang']['config_experimental'] = 'Instabil/Experimentell!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden sind, zu verringern. False = Nein; True = Ja [Standardeinstellung].';
-$phpMussel['lang']['config_files_check_archives'] = 'Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung]. Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z, u.s.w. wird zur Zeit NICHT unterstützt). Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird. Die Archivüberprüfung ist derzeit nicht rekursiv für PHAR-Archive oder ZIP-Archive.';
+$phpMussel['lang']['config_files_check_archives'] = 'Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des Archivs übertragen werden? False = Nein (alles nur in die Greylist aufnehmen); True = Ja [Standardeinstellung].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'Begrenzung der Dateigröße in KB. 65536 = 64MB [Standardeinstellung]; 0 = Keine Begrenzung (wird immer zur Greylist hinzugefügt), jeder (positive) numerische Wert wird akzeptiert. Dies ist nützlich, wenn Ihre PHP-Konfiguration den verfügbaren Speicherverbrauch je Prozess einschränkt oder die Dateigröße von Uploads begrenzt.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Handhabung von Dateien, die die Begrenzung der Dateigröße (sofern angegeben) überschreiten. False = Hinzufügen zur Whitelist; True = Hinzufügen zur Blacklist [Standardeinstellung].';

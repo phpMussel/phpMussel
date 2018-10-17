@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.10.15).
+ * This file: Portuguese language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'Tente bloquear todo
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'Uma lista de extensões de arquivos com permissão para conter código PHP, separadas por vírgulas. Se a detecção de ataques de camaleão PHP estiver ativada, os arquivos que contêm código PHP, que possuem extensões que não estão nesta lista, serão detectados como ataques de camaleão PHP.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Olha por executável headers em arquivos que são não executáveis nem reconhecidos compactados arquivos e por executáveis cujos headers estão incorretas. False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Olha por PHP header em arquivos que são não PHP arquivos nem reconhecidos compactados arquivos. False = Inativo; True = Ativo.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Olha por compactados arquivos cujos headers estão incorretas (Suportados: BZ, GZ, RAR, ZIP, RAR, GZ). False = Inativo; True = Ativo.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Detectar headers incorretas em arquivos compactados. Suportados: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'Olha por office documentos cujos headers estão incorretas (Suportados: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'Olha por imagens cujos headers estão incorretas (Suportados: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'Olha por PDF arquivos cujos headers estão incorretas. False = Inativo; True = Ativo.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'Essa directiv
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'Se você apenas esperar ou apenas tencionar de permitir imagens a ser enviado para seu sistema ou CMS, e se você absolutamente não necessita quaisquer arquivos exceto imagens a ser enviado para seu sistema ou CMS, esta directiva devia ser ATIVADO, mas em outros casos devia ser DESATIVADO. Se esta directiva é ATIVADO, ele irá instruir phpMussel indiscriminadamente bloquear qualquer arquivo carregamento identificado como não imagem, sem os analisar. Isto pode reduzir o tempo de processamento e uso de memória por tentados carregamentos de não imagem arquivos. False = DESATIVADO; True = ATIVADO.';
 $phpMussel['lang']['config_experimental'] = 'Instável/Experimental!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas protecções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].';
-$phpMussel['lang']['config_files_check_archives'] = 'Tentativa de verificar os conteúdos dos compactados arquivos? False = Não (Não verificar); True = Sim (Verificar) [Padrão]. Neste momento, os únicos formatos suportados são BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (os formatos RAR, CAB, 7z e etc. não suportadas neste momento). Este não é infalível! Embora eu recomendo mantê-lo ativado, eu não posso garantir que sempre vai encontrar tudo. Também estar ciente de que a verificação do compactados arquivos, neste momento, não é recursiva por PHAR ou ZIP arquivos.';
+$phpMussel['lang']['config_files_check_archives'] = 'Tentativa de verificar os conteúdos dos compactados arquivos? False = Não (Não verificar); True = Sim (Verificar) [Padrão].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Herdar o arquivo tamanho blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'Arquivo tamanho limit. Em KB. 65536 = 64MB [Padrão] 0 = Não limite (sempre greylisted), qualquer (positivo) numérico valor aceite. Isso pode ser útil quando sua PHP configuração limita a quantidade de memória que um processo pode ocupar ou se sua PHP configuração limita o arquivo tamanho de carregamentos.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Que fazer com arquivos que excedam o limite de arquivo tamanho (se existir). False = Whitelist; True = Blacklist [Padrão].';

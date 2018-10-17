@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.10.15).
+ * This file: Turkish language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'Makro içeren dosya
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'PHP kodunun içerilmesine izin verilen dosya uzantıları listesi, virgüllerle ayrılmış. PHP bukalemun saldırı algılama etkinse, bu listede olmayan uzantıları olan PHP kodu içeren dosyalar, PHP bukalemun saldırıları olarak algılanacaktır.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Çalıştırılamaz dosyalarda ve arşiv dışı dosyalarda yürütülebilir üstbilgileri ara ve başlıkları yanlış olan yürütülebilir dosyaları arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'PHP başlıklarını PHP olmayan dosyalarda arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Başlıkları yanlış olan arşivlerde arama yapın (Desteklenen: BZ, GZ, RAR, ZIP, RAR, GZ). Yanlış/False = Kapalı; Doğru/True = Açık.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Arşivlerde ve sıkıştırılmış dosyalarda yanlış üstbilgileri algıla. Desteklenen: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'Başlıkları yanlış olan ofis belgelerini arama (Desteklenen: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'Başlıkları yanlış olan resimleri arama (Desteklenen: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'Başlıkları yanlış olan PDF dosyalarını arayın. Yanlış/False = Kapalı; Doğru/True = Açık.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'Bu yönerge g
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'Yalnızca resimlerin sisteminize veya CMS\'e yüklenmesine izin vermeyi düşünüyorsanız, ve kesinlikle sistemden veya CMS\'e yüklenmek üzere görüntülerden başka herhangi bir dosyaya ihtiyaç duymuyorsanız, bu yönergenin etkinleştirilmesi gerekir, ancak aksi takdirde devre dışı bırakılmalıdır. Bu yönerge etkinleştirilirse, phpMussel\'a resim olmayan dosyalar olarak tanımlanan yüklemeleri ayrımsız olarak engellemesini söyleyecektir. Bu, resim olmayan dosyaların yüklenmesine teşebbüs edilmesi için işlem süresi ve bellek kullanımını azaltabilir. Yanlış/False = Kapalı; Doğru/True = Açık.';
 $phpMussel['lang']['config_experimental'] = 'Kararsız/Deneysel!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'Şifreli arşivlerin algılanan ve engellemek? phpMussel, şifreli arşivlerin içeriğini tarayamıyor, ve bu yüzden, arşiv şifrelemesinin bir saldırgan tarafından phpMussel\'ı, anti-virüs tarayıcıları ve benzeri diğer korumalar, atlamak için bir araç olarak kullanılabileceği mümkündür. phpMussel tarafından keşfedilen şifreli arşivlerin engellenmesi bu riskleri potansiyel olarak azaltabilir. Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
-$phpMussel['lang']['config_files_check_archives'] = 'Arşiv içeriğini kontrol etmeye çalıştınız mı? Yanlış/False = Kontrol etmeyin; Doğru/True = Kontrol et [Varsayılan]. Şu anda desteklenen tek arşiv ve sıkıştırma biçimi BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR ve ZIP (arşiv ve sıkıştırma formatları RAR, CAB, 7z ve v.b. şu anda desteklenmiyor). Bu kusursuz değil! Bu özelliğin etkinleştirilmesini tavsiye ederim, ancak her zaman her şeyi bulacağını garanti edemem. Ayrıca arşiv denetiminin halihazırda PHAR\'lar veya ZIP\'ler için özyinelemeli olmadığını da unutmayın.';
+$phpMussel['lang']['config_files_check_archives'] = 'Arşiv içeriğini kontrol etmeye çalıştınız mı? Yanlış/False = Kontrol etmeyin; Doğru/True = Kontrol et [Varsayılan].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'Dosya boyutu kara/beyaz listeyi arşiv içeriğine mi aktarıyorsun? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'KB cinsinden dosya boyutu sınırı. 65536 = 64MB [Varsayılan]; 0 = Sınır yok. Kabul edilen herhangi bir pozitif sayısal değer. Bu, PHP yapılandırmanızın bir işlemin tutabileceği bellek miktarını sınırladığında veya PHP yapılandırmanızın yüklemelerin dosya boyutunu sınırlaması durumunda yararlı olabilir.';
 $phpMussel['lang']['config_files_filesize_response'] = 'Dosya boyutu sınırını aşan dosyalarla ne yapılması gerekiyor (bir sınır varsa). Yanlış/False = Beyaz listeye; Doğru/True = Kara listeye [Varsayılan].';

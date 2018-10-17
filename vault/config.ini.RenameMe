@@ -179,7 +179,7 @@ maintenance_mode=false
 ; (requires PHP >= 7.2.0).
 default_algo='PASSWORD_DEFAULT'
 
-; Track phpMussel usage statistics?
+; Track phpMussel usage statistics? True = Yes; False = No [Default].
 statistics=false
 
 
@@ -280,13 +280,8 @@ filetype_blacklist='386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,
 filetype_greylist=''
 
 ; Attempt to check the contents of archives? False = Don't check; True = Check
-; [Default]. Currently, the only archive and compression formats supported are
-; BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats
-; RAR, CAB, 7z and etcetera not currently supported). This is not foolproof!
-; While I highly recommend keeping this turned on, I can't guarantee it'll
-; always find everything. Also be aware that archive checking currently is not
-; recursive for PHARs or ZIPs.
-check_archives=false
+; [Default].
+check_archives=true
 
 ; Carry over filesize blacklisting/whitelisting to the contents of archives?
 ; False = No (just greylist everything); True = Yes [Default].
@@ -326,8 +321,8 @@ can_contain_php_file_extensions='inc,md,phar,php*,pzp,sig,tpl,txt,tzt'
 ; Off; True = On.
 chameleon_from_exe=true
 
-; Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP,
-; RAR, GZ). False = Off; True = On.
+; Detect incorrect headers in archives and compressed files. Supported:
+; BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP. False = Off; True = On.
 chameleon_to_archive=true
 
 ; Search for office documents whose headers are incorrect (Supported: DOC, DOT,

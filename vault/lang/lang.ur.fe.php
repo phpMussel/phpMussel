@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.10.15).
+ * This file: Urdu language data for the front-end (last modified: 2018.10.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -44,7 +44,7 @@ $phpMussel['lang']['config_attack_specific_block_macros'] = 'میکروس پر �
 $phpMussel['lang']['config_attack_specific_can_contain_php_file_extensions'] = 'فائل کی توسیع کی ایک فہرست PHP کوڈ پر مشتمل ہونے کی اجازت دیتا ہے، جو کمم کے ذریعہ الگ ہوتی ہے. اگر PHP کی چیلنج حملے کا پتہ چلتا ہے تو، PHP کوڈ پر مشتمل فائلوں، جو اس فہرست پر مشتمل نہیں ہیں، اس PHP کی چیلنج حملوں کے طور پر پتہ چلا جائے گا.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'نہ تو چلنے نہ ہی تسلیم کیا آرکائیوز ہیں کہ فائلوں میں اور چلنے جن ہیڈرز غلط ہیں کے لئے کارکردگی قابل ہیڈرز کے لئے تلاش کریں. False (جھوٹی) = بند; True (سچے) = پر.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'نہ تو PHP فائلوں کو نہ پہچان لیا آرکائیوز ہیں کہ فائلوں میں PHP ہیڈر لئے تلاش. False (جھوٹی) = بند; True (سچے) = پر.';
-$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Sآرکائیوز جن ہیڈرز غلط ہیں کے لئے earch (تائید: BZ، GZ، RAR، زپ، RAR، GZ). False (جھوٹی) = بند; True (سچے) = پر.';
+$phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'آرکائیو اور کمپریسڈ فائلوں میں غلط ہیڈر کا پتہ لگائیں. تائید: BZ/BZIP2، GZ/GZIP، LZF، RAR، ZIP False (جھوٹی) = بند; True (سچے) = پر.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'جن ہیڈرز غلط ہیں دفتر کی دستاویزات کے لئے تلاش کریں (تائید: DOC، ڈاٹ، پی پی ایس، PPT، XLA، XLS، جانکار). False (جھوٹی) = بند; True (سچے) = پر.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'جن ہیڈرز ہیں تصاویر کے لئے تلاش غلط (تائید: BMP، DIB، PNG، GIF، JPEG، JPG، XCF، PSD، PDD، WEBP). False (جھوٹی) = بند; True (سچے) = پر.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'پی ڈی ایف فائلوں جن ہیڈرز غلط ہیں کے لئے تلاش کریں. False (جھوٹی) = بند; True (سچے) = پر.';
@@ -55,7 +55,7 @@ $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'جب تک ی�
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'آپ کو صرف امید رکھتے ہیں یا صرف تصاویر آپ کے سسٹم یا CMS پر اپ لوڈ کرنے کی اجازت دینے کا ارادہ رکھتے ہیں، اور آپ بالکل دوسرے کسی بھی فائلوں کی ضرورت نہیں ہے اگر تصاویر آپ کے سسٹم یا CMS پر اپ لوڈ کیا جا کرنے کی بجائے، اس حکم فعال کیا جانا چاہئے، لیکن دوسری صورت میں ہونا چاہئے تو غیر فعال کر دیا. اس ہدایت، یہ\ چالو حالت میں ہے تو اندھا دھند ان کی سکیننگ کے بغیر، غیر تصویری فائلوں کے طور پر شناخت کی کوئی بھی اپ لوڈز کو بلاک کرنے phpMussel ہدایت کریں گے. یہ غیر تصویری فائلوں کی کوشش کی اپ لوڈ کے لئے پروسیسنگ کے وقت اور میموری استعمال کو کم کر سکتا. False (جھوٹی) = بند; True (سچے) = ON.';
 $phpMussel['lang']['config_experimental'] = 'غیر مستحکم / تجرباتی!';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = 'پتہ لگانے اور بلاک مرموز آرکائیوز؟ کیونکہ phpMussel مرموز ابلیھاگاروں کے مندرجات کو اسکین کرنے کے قابل نہیں ہے، یہ ممکن ہے کہ محفوظ شدہ دستاویزات خفیہ کاری phpMussel، اینٹی وائرس سکینر اور ایسی دیگر تحفظات کو نظرانداز کرنے کی کوشش کرنے کا ایک ذریعہ کے طور پر ایک حملہ آور کی طرف سے ملازم ہو جائے. یہ مرموز جائے کرنے کو پتہ چلتا ہے کہ کسی بھی تاریخی دستاویز کو بلاک کرنے phpMussel تربیت؛ ممکنہ طور پر یہ اس طرح کے امکانات کے ساتھ منسلک کسی بھی خطرے کو کم کرنے میں مدد کر سکتا ہے. False (جھوٹی) = نہیں; True (سچے) = ہاں [پہلے سے طے شدہ].';
-$phpMussel['lang']['config_files_check_archives'] = 'ابلیھاگاروں کے مندرجات کو چیک کرنے کی کوشش؟ False (جھوٹی) = چیک نہ کریں؛ True (سچے) = چیک کریں [پہلے سے طے شدہ]. فی الحال، کی حمایت صرف محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس BZ/BZIP2، GZ/GZIP، LZF، PHAR، TAR اور ZIP ہیں (محفوظ شدہ دستاویزات اور سمپیڑن فارمیٹس RAR، CAB، 7z اور وقت کی سہولت مہیا نہیں وغیرہ). یہ نقائص سے پاک نہیں ہے! میں انتہائی رکھتے ہوئے اس کو آن کیا تجویز کرتے ہوئے، میں یہ ہمیشہ سب کچھ تلاش کر لیں گے اس بات کی ضمانت نہیں دے سکتے. اس کے علاوہ اس بات سے آگاہ آرکائیو فی الحال چیکنگ کہ PHARs یا زپ کے لئے پنراورتی نہیں ہے.';
+$phpMussel['lang']['config_files_check_archives'] = 'ابلیھاگاروں کے مندرجات کو چیک کرنے کی کوشش؟ False (جھوٹی) = چیک نہ کریں؛ True (سچے) = چیک کریں [پہلے سے طے شدہ].';
 $phpMussel['lang']['config_files_filesize_archives'] = 'ابلیھاگاروں کے مندرجات کو فائل بلیک لسٹ / وہسلنگ لے؟ False (جھوٹی) = نہیں (صرف بھوری رنگ کی فہرست میں سب کچھ); True (سچے) = ہاں [پہلے سے طے شدہ].';
 $phpMussel['lang']['config_files_filesize_limit'] = 'میں KB فائل کی حد. 65536 = 64MB [پہلے سے طے شدہ]؛ 0 = کوئی حد نہیں (ہمیشہ سرمئی درج)، کسی بھی (مثبت) عددی قیمت قبول کر لیا. آپ PHP کی ترتیب میموری ایک عمل کو پکڑ کر سکتے کے یا اگر رقم کو محدود کر دیتی ہے جب یہ مفید ہو سکتا اپ لوڈز آپ PHP کی ترتیب حدود فائل.';
 $phpMussel['lang']['config_files_filesize_response'] = 'فائل کی حد سے تجاوز ہے کہ (اگر موجود ہو) فائلوں کے ساتھ کیا کیا جائے. False (جھوٹی) = وائٹ فہرست; True (سچے) = بلیک لسٹ [پہلے سے طے شدہ].';

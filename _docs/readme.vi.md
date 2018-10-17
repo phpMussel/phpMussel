@@ -575,11 +575,18 @@ Cấu hình cho xử lý tập tin.
   - Nếu loại tập tin là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám.
   - Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tập tin là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tập tin không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao.
 
-##### "check_archives" – Tạm thời không khả dụng
+##### "check_archives"
 - Cố gắng để kiểm tra nội dung của kho lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định].
-- Tại thơi điểm nay, các chỉ định dạng kho lưu trữ và nén được hỗ trợ là BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR và ZIP (định dạng kho lưu trữ và nén RAR, CAB, 7z và vân vân không được hỗ trợ tại thơi điểm nay).
-- Đây không phải là hoàn hảo! Trong khi tôi rất khuyên bạn nên giữ này được kích hoạt, tôi không thể đảm bảo nó sẽ luôn luôn tìm thấy tất cả mọi thứ.
-- Cũng lưu ý kho lưu trữ kiểm tra là không đệ quy cho PHAR hay ZIP.
+
+Định dạng | Có thể đọc | Có thể đọc đệ quy | Có thể phát hiện mã hóa | Lưu ý
+---|---|---|---|---
+Zip | ✔️ | ✔️ | ✔️ | Cần [libzip](http://php.net/manual/en/zip.requirements.php) (thường đi kèm với PHP). Cũng được hỗ trợ (sử dụng định dạng zip): ✔️ Phát hiện đối tượng OLE. ✔️ Phát hiện macro Office.
+Tar | ✔️ | ✔️ | ➖ | Không cần bất cứ điều gì đặc biệt. Định dạng không hỗ trợ mã hóa.
+Rar | ✔️ | ✔️ | ✔️ | Cần phần mở rộng [rar](https://pecl.php.net/package/rar) (khi phần mở rộng này không được cài đặt, phpMussel không thể đọc tập tin rar).
+7zip | ❌ | ❌ | ❌ | Vẫn đang điều tra cách đọc các tập tin 7zip trong phpMussel.
+Phar | ❌ | ❌ | ❌ | Hỗ trợ đọc tập tin phar đã bị xóa trong v1.6.0, và sẽ không được thêm lại vì lý do bảo mật.
+
+*Nếu bất kỳ ai có thể và sẵn sàng trợ giúp thực hiện hỗ trợ đọc các định dạng lưu trữ khác, sự trợ giúp đó sẽ được hoan nghênh.*
 
 ##### "filesize_archives"
 - Thừa kế danh sách đen/trắng cho kích thước của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều); True = Vâng [Mặc định].
@@ -608,7 +615,7 @@ Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 - Tìm kiếm cho định danh tập tin thực thi trong các tập tin mà không phải là tập tin thực thi cũng không phải là kho lưu trữ được công nhận, và cho tập tin thực thi tập tin mà có định danh sai.
 
 ##### "chameleon_to_archive"
-- Tìm kiếm cho kho lưu trữ mà có định danh sai (Được hỗ trợ: BZ, GZ, RAR, ZIP, GZ).
+- Phát hiện tiêu đề không chính xác trong lưu trữ và tập tin nén. Được hỗ trợ: BZ/BZIP2, GZ/GZIP, LZF, RAR, ZIP.
 
 ##### "chameleon_to_doc"
 - Tìm kiếm cho tài liệu văn phòng mà có định danh sai (Được hỗ trợ: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1301,4 +1308,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 15 Tháng Mười 2018 (2018.10.15).
+Lần cuối cập nhật: 16 Tháng Mười 2018 (2018.10.16).
