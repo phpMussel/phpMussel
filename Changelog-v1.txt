@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.7.0 ===
+MINOR RELEASE.
+
 - [2018.10.12-17; Maikuolan]: Completely dropped all support for scanning phar
   files with phpMussel, due to vulnerabilities discovered in the way that the
   phar wrapper was implemented in phpMussel (with no safer, more secure
@@ -33,6 +38,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   which compression and archive formats are and aren't supported, and removed
   some otherwise ambiguous wording about it from the documentation and L10N
   data. Refactored all chameleon attack detection code.
+
+- [2018.10.20; Bug-fix; Maikuolan]: Missing filename extension information in
+  archive recursor prevented detection of OLE objects; Fixed.
+
+Caleb M (Maikuolan),
+October 20, 2018.
 
 === Version/Release 1.6.0 ===
 MINOR RELEASE.
