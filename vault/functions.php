@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.17).
+ * This file: Functions file (last modified: 2018.10.20).
  */
 
 /**
@@ -1402,7 +1402,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Corresponds to the "detect_deface" configuration directive. */
     $detect_deface = $phpMussel['Config']['signatures']['detect_deface'] ? 1 : 0;
 
+    /** Get file extensions. */
     list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
+
     $CoExMeta .= '$xt:' . $xt . ';$xts:' . $xts . ';';
 
     /** Input ($str) as hexadecimal data. */
@@ -3183,7 +3185,7 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
         return;
     }
 
-    /** Filetype blacklisting/whitelisting. */
+    /** Process filetype blacklisting, whitelisting, and greylisting. */
     if ($phpMussel['Config']['files']['filetype_archives']) {
         list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($Filename);
         if ($phpMussel['ContainsMustAssert']([
@@ -3608,7 +3610,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['lang']['scan_filename_manipulation_detected']
             ) . "\n";
     }
+
+    /** Get file extensions. */
     list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
+
+    /** Process filetype whitelisting. */
     if ($phpMussel['ContainsMustAssert']([
         $phpMussel['Config']['files']['filetype_whitelist']
     ], [$xt, $xts, $gzxt, $gzxts], ',', true, true)) {
@@ -3617,6 +3623,8 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
             $phpMussel['lang']['scan_no_problems_found'] . "\n";
     }
+
+    /** Process filetype blacklisting. */
     if ($phpMussel['ContainsMustAssert']([
         $phpMussel['Config']['files']['filetype_blacklist']
     ], [$xt, $xts, $gzxt, $gzxts], ',', true, true)) {
@@ -3634,6 +3642,8 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['filetype_blacklisted'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
+
+    /** Process filetype greylisting (when relevant). */
     if (!empty($phpMussel['Config']['files']['filetype_greylist']) && $phpMussel['ContainsMustAssert']([
         $phpMussel['Config']['files']['filetype_greylist']
     ], [$xt, $xts, $gzxt, $gzxts])) {
@@ -3651,10 +3661,14 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['filetype_blacklisted'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
+
+    /** Read in the file to be scanned. */
     $in = $phpMussel['ReadFile']($f, (
         $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
         $fS > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
     ) ? $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']) : $fS, true);
+
+    /** Generate CRC for the file to be scanned. */
     $fdCRC = hash('crc32b', $in);
 
     /** Check for non-image items. */
@@ -3866,6 +3880,15 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** The type of container to be scanned (mostly just for logging). */
     $ConType = '';
+
+    /** Get file extensions. */
+    if ($File) {
+        list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($File);
+    } elseif($Exts = $phpMussel['substral']($ItemRef, '.')) {
+        list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($Exts);
+    } else {
+        $xt = $xts = $gzxt = $gzxts = '';
+    }
 
     /** Set appropriate container definitions and specify handler class. */
     if (substr($Data, 0, 2) === 'PK') {
