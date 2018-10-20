@@ -1363,7 +1363,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
 
@@ -1427,12 +1427,12 @@ A "scan kills" entry typically includes the following information:
 
 ##### 11.3.2 FRONT-END LOGGING
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
 
 A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ```
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
@@ -1537,4 +1537,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ---
 
 
-<div dir="rtl">آخر تحديث: 16 اكتوبر 2018 (2018.10.16).</div>
+<div dir="rtl">آخر تحديث: 20 اكتوبر 2018 (2018.10.20).</div>

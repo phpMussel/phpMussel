@@ -1161,9 +1161,9 @@ Virus Total과 공유되는 정보 (파일 및 관련 파일 메타 데이터 �
 
 로깅은 여러 가지 이유로 phpMussel의 중요한 부분입니다. 로깅없이 phpMussel이 얼마나 효과적으로 수행하는지 확인하기 위해 가양 성을 진단하는 것이 어려울 수 있습니다. 그것의 부족을 확인하는 것은 어려울 수 있으며 의도 한대로 기능을 계속 수행하려면 구성이나 서명에 어떤 변경이 필요할 수 있습니다. 어쨌든 로깅은 일부 사용자가 원하지 않는 경우도 있으며 전체적으로 선택 사항입니다. phpMussel에서 로깅은 기본적으로 사용되지 않습니다. 이를 사용하려면 phpMussel을 적절히 구성해야합니다.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+또한, 관할권 및 구현 컨텍스트에 따라 (예 : 당신이 개인으로서 또는 기업체로서 및 상업적 또는 비상업적 기반 여부 운영되고 있는지 여부), 로깅의 법적인 허용이 달라질 수 있습니다 (예 : 로깅의 할 수있는 정보의 유형, 기간 및 상황). 따라서, 이 섹션을주의 깊게 읽는 것이 유용 할 수 있습니다.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+phpMussel이 수행 할 수있는 로깅에는 여러 유형이 있습니다. 서로 다른 유형의 로깅에는 여러 가지 다른 유형의 정보가 포함됩니다.
 
 ##### 11.3.0 SCAN LOGS
 
@@ -1219,11 +1219,11 @@ A "scan kills" entry typically includes the following information:
 *관련 설정 지시어 :*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 프론트 엔드 로깅
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+이 로깅은 프런트 엔드 로그인 시도와 관련이 있습니다. 사용자가 프런트 엔드에 로그인을 시도 할 때 및 프런트 엔드 액세스가 활성화 된 경우에만 발생합니다.
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+프런트 엔드 로그 항목에는 로그인을 시도하는 사용자의 IP 주소, 시도가 발생한 날짜와 시간 및 시도의 결과가 포함됩니다 (로그인 성공 또는 로그인 실패). 프론트 엔드 로그 항목은 일반적으로 다음과 같이 표시됩니다 (예로서) :
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - 로그인 했습니다.
@@ -1313,4 +1313,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 10월 16일.
+최종 업데이트 : 2018년 10월 20일.

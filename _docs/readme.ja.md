@@ -1161,69 +1161,69 @@ Virus Totalと共有される情報（ファイルおよび関連するファイ
 
 ロギングは、多くの理由からphpMusselの重要な部分です。​ロギングせずに、偽陽性が発生した場合、それを診断して解決することは困難です。​ロギングせずに、phpMusselがいかに効果的に実行されているかを確かめること、その潜在的な問題を確認すること機能させるために必要なコンフィギュレーションやシグネチャの変更を決定するのが難しいことがあります。​いずれにせよ、ロギングは一部のユーザーには望ましくなく、完全にオプションです。​phpMusselでは、デフォルトでロギングは無効になっています。​これを有効にするには、それに応じてphpMusselを設定する必要があります。
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+ロギングが法的に許可されているかどうか、および法的に許容される範囲で​（例えば、ログに記録される可能性があるタイプの情報、期間、および状況）、​管轄区域およびphpMusselが実施されている状況に応じて変わる可能性がある​（例えば、あなたが個人として、企業として、商業的または非商業的に動作しているかどうか）。​したがって、このセクションを注意深く読んで役に立つかもしれない。
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+phpMusselが実行できる複数のタイプのロギングがあります。​異なるタイプのロギングには、さまざまな理由で異なるタイプの情報が含まれます。
 
-##### 11.3.0 SCAN LOGS
+##### 11.3.0 スキャン・ログ
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+パッケージ・コンフィギュレーションで有効にすると、phpMusselはスキャンするファイルのログを保持します。​このタイプのロギングは、２つの異なる形式で使用できます：
+- 人間が読めるログ・ファイル。
+- シリアライズされたログ・ファイル。
 
-Entries to a human readable logfile typically look something like this (as an example):
+人間が読めるログ・ファイルに記録されたブロック・イベントは、通常次のようになります（例として）：
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 開始しています。
+> チェック中 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> phpMussel-Testfile.ASCII.Standardを検出しました！
+Mon, 21 May 2018 00:48:04 +0800 完了。
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+スキャン・ログ・エントリには、通常、次の情報が含まれます：
+- ファイルがスキャンされた日時。
+- スキャンしたファイルの名前。
+- ファイル名と内容の「CRC32b」ハッシュ。
+- ファイル内で何が検出されたか（何かが検出された場合）。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+これらのディレクティブを空のままにすると、このタイプのロギングは無効のままです。
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 スキャン・キル
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+パッケージ・コンフィギュレーションで有効にすると、phpMusselはブロックされたアップロードのログを保持します。
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+「スキャン・キル」ログ・ファイルへのエントリは、通常、次のようになります（例として）：
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)を検出しました！
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+「/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu」として隔離。
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+「スキャン・キル」エントリには、通常、以下の情報が含まれます。
+- アップロードがブロックされた日時。
+- アップロード元のＩＰアドレス。
+- ファイルがブロックされた理由（検出されたもの）。
+- ブロックされたファイルの名前。
+- ブロックされたファイルのＭＤ５とサイズ。
+- ファイルが隔離されているかどうか、どのような名前が内部の使用されます。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 フロントエンド・ロギング
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+このロギングは、フロントエンドのログイン試行に関係します。​これは、ユーザーがフロントエンドにログインしようとするとき、およびフロントエンド・アクセスが有効な場合にのみ発生します。
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+フロントエンドのログ・エントリには、ログインしようとしているユーザーのＩＰアドレス、試行が行われた日時、試行の結果が含まれます（正常にログインしたか、ログインに失敗しました）。​フロントエンドのログ・エントリは通常、次のようになります（例として）。
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - ログインしました。
@@ -1315,4 +1315,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年10月16日。
+最終アップデート：2018年10月20日。
