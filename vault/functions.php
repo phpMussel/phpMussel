@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.20).
+ * This file: Functions file (last modified: 2018.10.22).
  */
 
 /**
@@ -2446,171 +2446,174 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['lang']['scan_signature_file_missing'] . ' (' . $SigFile . ')'
                     ) . "\n"];
                 }
-            } else {
-                $NumSigs = count($phpMussel['memCache'][$SigFile]);
-                for ($SigNum = 0; $SigNum < $NumSigs; $SigNum++) {
-                    if (!$ThisSig = $phpMussel['memCache'][$SigFile][$SigNum]) {
-                        continue;
+                continue;
+            }
+            $NumSigs = count($phpMussel['memCache'][$SigFile]);
+            for ($SigNum = 0; $SigNum < $NumSigs; $SigNum++) {
+                if (!$ThisSig = $phpMussel['memCache'][$SigFile][$SigNum]) {
+                    continue;
+                }
+                if (substr($ThisSig, 0, 1) == '>') {
+                    $ThisSig = explode('>', $ThisSig, 4);
+                    if (!isset($ThisSig[1], $ThisSig[2], $ThisSig[3])) {
+                        break;
                     }
-                    if (substr($ThisSig, 0, 1) == '>') {
-                        $ThisSig = explode('>', $ThisSig, 4);
-                        if (!isset($ThisSig[1], $ThisSig[2], $ThisSig[3])) {
-                            break;
-                        }
-                        $ThisSig[3] = (int)$ThisSig[3];
-                        if ($ThisSig[1] == 'FN') {
-                            if (!preg_match('/(?:' . $ThisSig[2] . ')/i', $ofn)) {
-                                if ($ThisSig[3] <= $SigNum) {
-                                    break;
-                                }
-                                $SigNum = $ThisSig[3] - 1;
-                            }
-                        } elseif ($ThisSig[1] == 'FS-MIN') {
-                            if ($str_len < $ThisSig[2]) {
-                                if ($ThisSig[3] <= $SigNum) {
-                                    break;
-                                }
-                                $SigNum = $ThisSig[3] - 1;
-                            }
-                        } elseif ($ThisSig[1] == 'FS-MAX') {
-                            if ($str_len > $ThisSig[2]) {
-                                if ($ThisSig[3] <= $SigNum) {
-                                    break;
-                                }
-                                $SigNum = $ThisSig[3] - 1;
-                            }
-                        } elseif ($ThisSig[1] == 'FD') {
-                            if (strpos($$DataSource, $ThisSig[2]) === false) {
-                                if ($ThisSig[3] <= $SigNum) {
-                                    break;
-                                }
-                                $SigNum = $ThisSig[3] - 1;
-                            }
-                        } elseif ($ThisSig[1] == 'FD-RX') {
-                            if (!preg_match('/(?:' . $ThisSig[2] . ')/i', $$DataSource)) {
-                                if ($ThisSig[3] <= $SigNum) {
-                                    break;
-                                }
-                                $SigNum = $ThisSig[3] - 1;
-                            }
-                        } elseif (substr($ThisSig[1], 0, 1) == '$') {
-                            $vf = substr($ThisSig[1], 1);
-                            if (isset($$vf) && !is_array($$vf)) {
-                                if ($$vf != $ThisSig[2]) {
-                                    if ($ThisSig[3] <= $SigNum) {
-                                        break;
-                                    }
-                                    $SigNum = $ThisSig[3] - 1;
-                                }
-                                continue;
-                            }
+                    $ThisSig[3] = (int)$ThisSig[3];
+                    if ($ThisSig[1] == 'FN') {
+                        if (!preg_match('/(?:' . $ThisSig[2] . ')/i', $ofn)) {
                             if ($ThisSig[3] <= $SigNum) {
                                 break;
                             }
                             $SigNum = $ThisSig[3] - 1;
-                        } elseif (substr($ThisSig[1], 0, 2) == '!$') {
-                            $vf = substr($ThisSig[1], 2);
-                            if (isset($$vf) && !is_array($$vf)) {
-                                if ($$vf == $ThisSig[2]) {
-                                    if ($ThisSig[3] <= $SigNum) {
-                                        break;
-                                    }
-                                    $SigNum = $ThisSig[3] - 1;
-                                }
-                                continue;
-                            }
+                        }
+                    } elseif ($ThisSig[1] == 'FS-MIN') {
+                        if ($str_len < $ThisSig[2]) {
                             if ($ThisSig[3] <= $SigNum) {
                                 break;
                             }
                             $SigNum = $ThisSig[3] - 1;
-                        } else {
+                        }
+                    } elseif ($ThisSig[1] == 'FS-MAX') {
+                        if ($str_len > $ThisSig[2]) {
+                            if ($ThisSig[3] <= $SigNum) {
+                                break;
+                            }
+                            $SigNum = $ThisSig[3] - 1;
+                        }
+                    } elseif ($ThisSig[1] == 'FD') {
+                        if (strpos($$DataSource, $ThisSig[2]) === false) {
+                            if ($ThisSig[3] <= $SigNum) {
+                                break;
+                            }
+                            $SigNum = $ThisSig[3] - 1;
+                        }
+                    } elseif ($ThisSig[1] == 'FD-RX') {
+                        if (!preg_match('/(?:' . $ThisSig[2] . ')/i', $$DataSource)) {
+                            if ($ThisSig[3] <= $SigNum) {
+                                break;
+                            }
+                            $SigNum = $ThisSig[3] - 1;
+                        }
+                    } elseif (substr($ThisSig[1], 0, 1) == '$') {
+                        $vf = substr($ThisSig[1], 1);
+                        if (isset($$vf) && !is_array($$vf)) {
+                            if ($$vf != $ThisSig[2]) {
+                                if ($ThisSig[3] <= $SigNum) {
+                                    break;
+                                }
+                                $SigNum = $ThisSig[3] - 1;
+                            }
+                            continue;
+                        }
+                        if ($ThisSig[3] <= $SigNum) {
                             break;
                         }
+                        $SigNum = $ThisSig[3] - 1;
+                    } elseif (substr($ThisSig[1], 0, 2) == '!$') {
+                        $vf = substr($ThisSig[1], 2);
+                        if (isset($$vf) && !is_array($$vf)) {
+                            if ($$vf == $ThisSig[2]) {
+                                if ($ThisSig[3] <= $SigNum) {
+                                    break;
+                                }
+                                $SigNum = $ThisSig[3] - 1;
+                            }
+                            continue;
+                        }
+                        if ($ThisSig[3] <= $SigNum) {
+                            break;
+                        }
+                        $SigNum = $ThisSig[3] - 1;
+                    } else {
+                        break;
+                    }
+                    continue;
+                }
+                if (strpos($ThisSig, ':') !== false) {
+                    $VN = $phpMussel['SplitSigParts']($ThisSig);
+                    if (!isset($VN[1])) {
                         continue;
                     }
-                    if (strpos($ThisSig, ':') !== false) {
-                        $VN = $phpMussel['SplitSigParts']($ThisSig);
-                        if ($ThisConf[3] === 2) {
-                            $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
-                            $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
-                            $VN = $phpMussel['vn_shorthand']($VN[0]);
-                            if (
-                                $ThisSig &&
-                                strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
-                                empty($phpMussel['memCache']['ignoreme'])
-                            ) {
-                                if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
-                                    $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
-                                }
-                            }
-                        } elseif ($ThisConf[3] === 0 || $ThisConf[3] === 1) {
-                            $ThisSig = preg_split((
-                                $ThisConf[3] === 0 ? '/[^\da-f>]+/i' : '/[\x00-\x1f]+/'
-                            ), $VN[1], -1, PREG_SPLIT_NO_EMPTY);
-                            $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
-                            $ThisSigLen = strlen($ThisSig);
-                            if ($phpMussel['ConfineLength']($ThisSigLen)) {
-                                continue;
-                            }
-                            $xstrf = isset($VN[2]) ? $VN[2] : '*';
-                            $xstrt = isset($VN[3]) ? $VN[3] : '*';
-                            $VN = $phpMussel['vn_shorthand']($VN[0]);
-                            $VNLC = strtolower($VN);
-                            if (($is_not_php && (
-                                    strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
-                            )) || ($is_not_html && (
-                                    strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
-                            )) || $$DataSourceLen < $ThisSigLen) {
-                                continue;
-                            }
-                            if (
-                                strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
-                                empty($phpMussel['memCache']['ignoreme'])
-                            ) {
-                                if ($ThisConf[3] === 0) {
-                                    $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : [$ThisSig];
-                                    $ThisSigCount = count($ThisSig);
-                                    $ThisString = $$DataSource;
-                                    $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
-                                    if ($xstrf === 'A') {
-                                        $ThisString = "\x01" . $ThisString;
-                                        $ThisSig[0] = "\x01" . $ThisSig[0];
-                                    }
-                                    if ($xstrt === 'Z') {
-                                        $ThisString .= "\x01";
-                                        $ThisSig[$ThisSigCount - 1] .= "\x01";
-                                    }
-                                    for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
-                                        if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
-                                            continue 2;
-                                        }
-                                        if ($ThisSigCount > 1 && strpos($ThisString, $ThisSig[$ThisSigi]) !== false) {
-                                            $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi]);
-                                        }
-                                    }
-                                } else {
-                                    $ThisString = $$DataSource;
-                                    $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
-                                    if ($xstrf === 'A') {
-                                        if ($xstrt === 'Z') {
-                                            if (!preg_match('/\A(?:' . $ThisSig . ')$/i', $ThisString)) {
-                                                continue;
-                                            }
-                                        } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', $ThisString)) {
-                                            continue;
-                                        }
-                                    } else {
-                                        if ($xstrt === 'Z') {
-                                            if (!preg_match('/(?:' . $ThisSig . ')$/i', $ThisString)) {
-                                                continue;
-                                            }
-                                        } elseif (!preg_match('/(?:' . $ThisSig . ')/i', $ThisString)) {
-                                            continue;
-                                        }
-                                    }
-                                }
+                    if ($ThisConf[3] === 2) {
+                        $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                        $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
+                        $VN = $phpMussel['vn_shorthand']($VN[0]);
+                        if (
+                            $ThisSig &&
+                            strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
+                            empty($phpMussel['memCache']['ignoreme'])
+                        ) {
+                            if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                             }
+                        }
+                    } elseif ($ThisConf[3] === 0 || $ThisConf[3] === 1) {
+                        $ThisSig = preg_split((
+                            $ThisConf[3] === 0 ? '/[^\da-f>]+/i' : '/[\x00-\x1f]+/'
+                        ), $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                        $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
+                        $ThisSigLen = strlen($ThisSig);
+                        if ($phpMussel['ConfineLength']($ThisSigLen)) {
+                            continue;
+                        }
+                        $xstrf = isset($VN[2]) ? $VN[2] : '*';
+                        $xstrt = isset($VN[3]) ? $VN[3] : '*';
+                        $VN = $phpMussel['vn_shorthand']($VN[0]);
+                        $VNLC = strtolower($VN);
+                        if (($is_not_php && (
+                                strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
+                        )) || ($is_not_html && (
+                                strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
+                        )) || $$DataSourceLen < $ThisSigLen) {
+                            continue;
+                        }
+                        if (
+                            strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
+                            empty($phpMussel['memCache']['ignoreme'])
+                        ) {
+                            if ($ThisConf[3] === 0) {
+                                $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : [$ThisSig];
+                                $ThisSigCount = count($ThisSig);
+                                $ThisString = $$DataSource;
+                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
+                                if ($xstrf === 'A') {
+                                    $ThisString = "\x01" . $ThisString;
+                                    $ThisSig[0] = "\x01" . $ThisSig[0];
+                                }
+                                if ($xstrt === 'Z') {
+                                    $ThisString .= "\x01";
+                                    $ThisSig[$ThisSigCount - 1] .= "\x01";
+                                }
+                                for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
+                                    if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
+                                        continue 2;
+                                    }
+                                    if ($ThisSigCount > 1 && strpos($ThisString, $ThisSig[$ThisSigi]) !== false) {
+                                        $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi]);
+                                    }
+                                }
+                            } else {
+                                $ThisString = $$DataSource;
+                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
+                                if ($xstrf === 'A') {
+                                    if ($xstrt === 'Z') {
+                                        if (!preg_match('/\A(?:' . $ThisSig . ')$/i', $ThisString)) {
+                                            continue;
+                                        }
+                                    } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', $ThisString)) {
+                                        continue;
+                                    }
+                                } else {
+                                    if ($xstrt === 'Z') {
+                                        if (!preg_match('/(?:' . $ThisSig . ')$/i', $ThisString)) {
+                                            continue;
+                                        }
+                                    } elseif (!preg_match('/(?:' . $ThisSig . ')/i', $ThisString)) {
+                                        continue;
+                                    }
+                                }
+                            }
+                            $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                         }
                     }
                 }

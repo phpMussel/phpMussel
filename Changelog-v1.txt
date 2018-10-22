@@ -7,7 +7,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2018.10.22; Maikuolan]: Slightly refactored and a new safety check added.
 
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
