@@ -87,7 +87,7 @@ Atau ini di file `.htaccess`:
 
 #### 2.2 MENGINSTAL DENGAN COMPOSER
 
-[phpMussel terdaftar dengan Packagist](https://packagist.org/packages/phpmussel/phpmussel). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal phpMussel (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual (untuk server web)" langkah 2 dan 6).
+[phpMussel terdaftar dengan Packagist](https://packagist.org/packages/phpmussel/phpmussel). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal phpMussel (Anda masih perlu mempersiapkan konfigurasi, izin, tanda tangan dan kait meskipun; melihat "menginstal secara manual (untuk server web)" langkah 2, 4, 5, dan 6).
 
 `composer require phpmussel/phpmussel`
 
@@ -1308,4 +1308,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 16 Oktober 2018 (2018.10.16).
+Terakhir Diperbarui: 4 November 2018 (2018.11.04).

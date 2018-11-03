@@ -87,7 +87,7 @@ Apacheウェブサーバーを利用していて、​かつ`php.ini`を編集�
 
 #### 2.2 COMPOSERを使用してインストールする
 
-[phpMusselはPackagistに登録されています](https://packagist.org/packages/phpmussel/phpmussel)。​Composerを使い慣れている場合は、​Composerを使用してphpMusselをインストールできます （あなたはまだ設定とフックを準備する必要があります；​「手動インストール（ウェブサーバー編）」の手順２と６を参照してください）。
+[phpMusselはPackagistに登録されています](https://packagist.org/packages/phpmussel/phpmussel)。​Composerを使い慣れている場合は、​Composerを使用してphpMusselをインストールできます （但し、あなたはコンフィギュレーション、CHMODパーミッション、シグネチャとフックを準備する必要があります。​「手動インストール（ウェブサーバー編）」の手順２、４、５と６を参照してください）。
 
 `composer require phpmussel/phpmussel`
 
@@ -1315,4 +1315,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年10月20日。
+最終アップデート：2018年11月4日。

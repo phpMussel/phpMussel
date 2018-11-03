@@ -87,7 +87,7 @@ Ou cette dans le `.htaccess` fichier :
 
 #### 2.2 INSTALLATION AVEC COMPOSER
 
-[phpMussel est enregistré avec Packagist](https://packagist.org/packages/phpmussel/phpmussel), et donc, si vous êtes familier avec Composer, vous pouvez utiliser Composer pour installer phpMussel (vous devrez néanmoins préparer la configuration et les attaches ; voir « installation manuelle (pour serveurs web) » les étapes 2 et 6).
+[phpMussel est enregistré avec Packagist](https://packagist.org/packages/phpmussel/phpmussel), et donc, si vous êtes familier avec Composer, vous pouvez utiliser Composer pour installer phpMussel (vous devrez néanmoins préparer la configuration, les permissions, les signatures et les attaches ; voir « installation manuelle (pour serveurs web) » les étapes 2, 4, 5, et 6).
 
 `composer require phpmussel/phpmussel`
 
@@ -1314,4 +1314,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 16 Octobre 2018 (2018.10.16).
+Dernière mise à jour : 4 Novembre 2018 (2018.11.04).

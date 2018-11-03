@@ -87,7 +87,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 #### 2.2 CÀI ĐẶT VỚI COMPOSER
 
-[phpMussel được đăng ký với Packagist](https://packagist.org/packages/phpmussel/phpmussel), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt phpMussel (bạn vẫn cần phải chuẩn bị cấu hình và kết nối; xem "cài đặt thủ công (cho các trang mạng)" bước 2 và 6).
+[phpMussel được đăng ký với Packagist](https://packagist.org/packages/phpmussel/phpmussel), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt phpMussel (bạn vẫn cần phải chuẩn bị cấu hình, quyền CHMOD, chữ ký và kết nối; xem "cài đặt thủ công (cho các trang mạng)" bước 2, 4, 5, và 6).
 
 `composer require phpmussel/phpmussel`
 
@@ -1308,4 +1308,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 16 Tháng Mười 2018 (2018.10.16).
+Lần cuối cập nhật: 4 Tháng Mười Một 2018 (2018.11.04).

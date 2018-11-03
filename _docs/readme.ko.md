@@ -87,7 +87,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 #### 2.2 COMPOSER를 사용하여 설치한다
 
-[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/phpmussel/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치 (웹서버 편)"의 2 단계와 6 단계를 참조하십시오).
+[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/phpmussel/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (그러나, 당신은 설정 옵션, 권한, 서명 및 후크를 준비해야합니다. "수동 설치 (웹서버 편)"의 2, 4, 5 단계와 6 단계를 참조하십시오).
 
 `composer require phpmussel/phpmussel`
 
@@ -1313,4 +1313,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 10월 20일.
+최종 업데이트 : 2018년 11월 4일.

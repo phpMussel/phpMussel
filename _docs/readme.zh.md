@@ -87,7 +87,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 #### 2.2 与COMPOSER安装
 
-[phpMussel是在Packagist上](https://packagist.org/packages/phpmussel/phpmussel)，​所以，​如果您熟悉Composer，​您可以使用Composer安装phpMussel（您仍然需要准备配置和钩子；参考“安装手工（WEB服务器）”步骤2和6）。
+[phpMussel是在Packagist上](https://packagist.org/packages/phpmussel/phpmussel)，​所以，​如果您熟悉Composer，​您可以使用Composer安装phpMussel（您仍然需要准备配置，权限，签名，和钩子。参考“安装手工（WEB服务器）”步骤2，4，5，和6）。
 
 `composer require phpmussel/phpmussel`
 
@@ -1317,4 +1317,4 @@ phpMussel不收集或处理任何信息用于营销或广告目的，既不销�
 ---
 
 
-最后更新：2018年10月16日。
+最后更新：2018年11月4日。

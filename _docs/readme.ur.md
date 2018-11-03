@@ -90,7 +90,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 #### <div dir="rtl">٢.٢ COMPOSER کے ساتھ نصب</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/phpmussel/phpmussel">phpMussel Packagist ساتھ رجسٹرڈ ہے</a>، اور اسی طرح، آپ کمپوزر سے واقف ہیں تو، آپ (phpMussel انسٹال کرنے کے کمپوزر استعمال کر سکتے ہیں اگر آپ اب بھی تیار کرنے کے لئے کی ضرورت ہو گی ترتیب اور ہکس اگرچہ؛ "دستی طور پر نصب کرنے" دیکھیں اقدامات ٢ اور ٦).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/phpmussel/phpmussel">phpMussel Packagist ساتھ رجسٹرڈ ہے</a>، اور اسی طرح، آپ کمپوزر سے واقف ہیں تو، آپ (تاہم، آپ اب بھی پیکیج تیار کرنے کی ضرورت ہوگی؛ "دستی طور پر نصب کرنے" دیکھیں اقدامات ٢، ٤، ٥ اور ٦).<br /><br /></div>
 
 `composer require phpmussel/phpmussel`
 
@@ -1536,4 +1536,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 20 اکتوبر 2018 (2018.10.20).</div>
+<div dir="rtl">آخری تازہ کاری: 4 نومبر 2018 (2018.11.04).</div>

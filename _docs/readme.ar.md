@@ -90,7 +90,7 @@
 
 #### <div dir="rtl">٢.٢ تثبيت مع COMPOSER</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/phpmussel/phpmussel">يتم تسجيل phpMussel مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت phpMussel (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا (لخدمات الويب)" الخطوتين ٢ و ٦).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/phpmussel/phpmussel">يتم تسجيل phpMussel مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت phpMussel (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا (لخدمات الويب)" الخطوتين ٢، ٤، ٥ و ٦).<br /><br /></div>
 
 `composer require phpmussel/phpmussel`
 
@@ -1537,4 +1537,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 20 اكتوبر 2018 (2018.10.20).</div>
+<div dir="rtl">آخر تحديث: 4 نوفمبر 2018 (2018.11.04).</div>
