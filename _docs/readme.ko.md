@@ -1167,54 +1167,54 @@ phpMussel이 수행 할 수있는 로깅에는 여러 유형이 있습니다. �
 
 ##### 11.3.0 SCAN LOGS
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+패키지 구성에서 활성화하면, phpMussel은 검사하는 파일의 로그를 보존합니다. 이 유형의 로깅은 다음과 같은 두 가지 형식으로 사용할 수 있습니다 :
+- 사람이 읽을 수있는 로그 파일.
+- 직렬화 된 로그 파일.
 
-Entries to a human readable logfile typically look something like this (as an example):
+사람이 읽을 수있는 로그 파일 항목은 일반적으로 다음과 같습니다 (예로서) :
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 시작합니다.
+> 현재 분석 중 : 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> phpMussel-Testfile.ASCII.Standard 발견했습니다!
+Mon, 21 May 2018 00:48:04 +0800 완료.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+검사 로그 항목에는 일반적으로 다음 정보가 포함됩니다 :
+- 파일이 분석 된 날짜와 시간.
+- 분석 된 파일의 이름.
+- 파일의 이름과 내용을 CRC32b 해시합니다.
+- 파일에서 발견 된 내용 (무엇인가가 발견되면).
 
 *관련 설정 지시어 :*
 - `general` -> `scan_log`
 - `general` -> `scan_log_serialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+이러한 지시문을 비워두면이, 유형의 로깅은 비활성화 된 상태로 유지됩니다.
 
-##### 11.3.1 SCAN KILLS
+##### 11.3.1 차단 된 업로드
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+패키지 구성에서 활성화하면, phpMussel은 차단 된 업로드 로그를 보존합니다.
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+이러한 로그는 일반적으로 다음과 같습니다 (예로서) :
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
 IP ADDRESS: 127.0.0.1
 == SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
+phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)을 발견했습니다!
 == MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
+"/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu"로 격리.
 ```
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+일반적으로 다음 정보가 포함됩니다 :
+- 업로드가 차단 된 날짜와 시간.
+- 업로드가 시작된 IP 주소입니다.
+- 파일이 차단 된 이유 (발견 된 것).
+- 차단 된 파일의 이름입니다.
+- MD5 및 파일 크기가 차단되었습니다.
+- 파일이 격리되었는지 여부 및 내부 이름 사용 여부.
 
 *관련 설정 지시어 :*
 - `general` -> `scan_kills`

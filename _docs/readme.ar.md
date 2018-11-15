@@ -1361,17 +1361,19 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 #### <div dir="rtl">١١.٣ تسجيل<br /><br /></div>
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+<div dir="rtl">التسجيل هو جزء مهم من phpMussel لعدد من الأسباب. قد يكون من الصعب تشخيص وحل إيجابيات خاطئة عندما لا يتم تسجيل أحداث الحظر التي تسبب لهم. بدون تسجيل، قد يكون من الصعب تشخيص الإيجابيات الكاذبة، للتأكد من أداء phpMussel بشكل جيد، وقد يكون من الصعب تحديد مواطن ضعفها، وما هي التغييرات التي قد تكون مطلوبة لتكوينها أو توقيعاتها، لكي تستمر في العمل على النحو المنشود. بغض النظر، ربما لا يريد الجميع التسجيل، لذلك يبقى اختياريًا تمامًا. في phpMussel، يتم تعطيل التسجيل افتراضيًا. لتمكينه، يجب تكوين phpMussel وفقًا لذلك.<br /><br /></div>
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 SCAN LOGS
+##### <div dir="rtl">١١.٣.٠ سجلات الفحص<br /><br /></div>
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+<div dir="rtl">عند تمكينه في تكوين الحزمة، يحتفظ phpMussel بسجلات الملفات التي يقوم بمسحها. يتوفر هذا النوع من التسجيل بتنسيقين مختلفين:<br /></div>
+<div dir="rtl"><ul>
+ <li>السجلات التي يمكن قراءتها من قبل البشر.</li>
+ <li>سجلات مسلسلة.</li>
+</ul></div>
 
 Entries to a human readable logfile typically look something like this (as an example):
 
@@ -1425,11 +1427,11 @@ A "scan kills" entry typically includes the following information:
  <li><code dir="ltr">scan_kills</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.2 FRONT-END LOGGING
+##### <div dir="rtl">١١.٣.٢ سجلات الواجهة الأمامية<br /><br /></div>
 
-This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
+<div dir="rtl">هذا التسجيل يتصل محاولات تسجيل الدخول الأمامية. يحدث فقط عندما يحاول مستخدم تسجيل الدخول إلى الواجهة الأمامية، وفقط عندما يتم تمكين الوصول للجهة الأمامية.<br /><br /></div>
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+<div dir="rtl">يحتوي إدخال سجل الواجهة الأمامية على عنوان IP الخاص بالمستخدم الذي يحاول تسجيل الدخول وتاريخ ووقت حدوث المحاولة ونتائج المحاولة (تم تسجيل الدخول بنجاح، أو فشل في تسجيل الدخول). يبدو عادة مثل هذا (كمثال):<br /><br /></div>
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.

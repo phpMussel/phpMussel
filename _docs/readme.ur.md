@@ -1361,17 +1361,19 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 #### <div dir="rtl">١١.٣ لاگ<br /><br /></div>
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain exactly how performant phpMussel is in any particular context, and to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain how well phpMussel performs, and to determine where its shortcomings, and what changes may be required to its configuration or signatures, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 SCAN LOGS
+##### <div dir="rtl">١١.٣.٠ اسکین لاگ<br /><br /></div>
 
-When enabled in the package configuration, phpMussel keeps logs of the files it scans. This type of logging is available in two different formats:
-- Human readable logfiles.
-- Serialised logfiles.
+<div dir="rtl">پیکیج ترتیب میں فعال ہونے پر، phpMussel فائلوں کے لاگ رکھتا ہے اسے اسکین کرتا ہے. یہ دو مختلف فارمیٹس میں دستیاب ہے:<br /></div>
+<div dir="rtl"><ul>
+ <li>لاگ جو انسان کی طرف سے پڑھ سکتے ہیں.</li>
+ <li>سیریلائزڈ لاگ.</li>
+</ul></div>
 
 Entries to a human readable logfile typically look something like this (as an example):
 
@@ -1396,7 +1398,7 @@ A scan log entry typically includes the following information:
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 SCAN KILLS
+##### <div dir="rtl">١١.٣.١ بلاک اپ لوڈز لاگ<br /><br /></div>
 
 When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
 
@@ -1425,7 +1427,7 @@ A "scan kills" entry typically includes the following information:
  <li><code dir="ltr">scan_kills</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.2 FRONT-END LOGGING
+##### <div dir="rtl">١١.٣.٢ سامنے کے آخر لاگ<br /><br /></div>
 
 This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
 
@@ -1440,7 +1442,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### <div dir="rtl">١١.٣.٣ لاگ گرد گھومنے<br /><br /></div>
+##### <div dir="rtl">١١.٣.٣ لاگ گھومنے<br /><br /></div>
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1454,7 +1456,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### <div dir="rtl">١١.٣.٤ ٹرنک ریکارڈ<br /><br /></div>
+##### <div dir="rtl">١١.٣.٤ ٹرنک لاگ<br /><br /></div>
 
 <div dir="rtl">اگر آپ چاہتے ہیں تو، آپ انفرادی ریکارڈز کو چھوٹ سکتے ہیں جب وہ مخصوص سائز سے کہیں زیادہ ہیں.<br /><br /></div>
 
