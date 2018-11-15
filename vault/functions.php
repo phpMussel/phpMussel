@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.10.22).
+ * This file: Functions file (last modified: 2018.11.15).
  */
 
 /**
@@ -3855,6 +3855,25 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 };
 
 /**
+ * Quine detection for the archive handler.
+ *
+ * @param int $ScanDepth The current scan depth.
+ * @param string $ParentHash Parent data hash.
+ * @param int $ParentLen Parent data length.
+ * @param string $ChildHash Child data hash.
+ * @param int $ChildLen Child data length.
+ */
+$phpMussel['QuineDetector'] = function ($ScanDepth, $ParentHash, $ParentLen, $ChildHash, $ChildLen) use (&$phpMussel) {
+    $phpMussel['Quine'][$ScanDepth - 1] = [$ParentHash, $ParentLen];
+    for ($Iterate = 0; $Iterate < $ScanDepth; $Iterate++) {
+        if ($phpMussel['Quine'][$Iterate][0] === $ChildHash || $phpMussel['Quine'][$Iterate][1] === $ChildLen) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/**
  * Archive recursor.
  *
  * This is where we recurse through archives during the scan.
@@ -3868,6 +3887,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
  * @param string $ItemRef A reference to the parent container (for logging).
  */
 $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDepth = 0, $ItemRef = '') use (&$phpMussel) {
+
+    /** Create quine detection array. */
+    if (!$ScanDepth || !isset($phpMussel['Quine'])) {
+        $phpMussel['Quine'] = [];
+    }
 
     /** Count recursion depth. */
     $ScanDepth++;
@@ -3952,6 +3976,12 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         require $phpMussel['Vault'] . 'classes/TemporaryFileHandler.php';
     }
 
+    /** Hash the current input data. */
+    $DataHash = md5($Data);
+
+    /** Fetch length of current input data. */
+    $DataLen = strlen($Data);
+
     /** Handle zip files. */
     if ($Handler === 'ZipHandler') {
         /**
@@ -3962,7 +3992,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
             $Bits = $phpMussel['explode_bits'](substr($Data, 6, 2));
             if ($Bits && $Bits[7]) {
                 $r = -4;
-                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= sprintf(
                     $phpMussel['lang']['_exclamation'],
                     $phpMussel['lang']['encrypted_archive'] . ' (' . $ItemRef . ')'
@@ -3986,7 +4016,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         if (!class_exists('ZipArchive')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
                 $r = -1;
-                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' (Zip)';
                 $x .= sprintf(
                     '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%6$s',
@@ -4035,7 +4065,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
                 $r = -1;
-                $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' (Rar)';
                 $x .= sprintf(
                     '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%6$s',
@@ -4081,7 +4111,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                 /** Encryption guard. */
                 if ($phpMussel['Config']['files']['block_encrypted_archives'] && $ArchiveObject->EntryIsEncrypted()) {
                     $r = -4;
-                    $phpMussel['killdata'] .= md5($Data) . ':' . strlen($Data) . ':' . $ItemRef . "\n";
+                    $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                     $phpMussel['whyflagged'] .= sprintf(
                         $phpMussel['lang']['_exclamation'],
                         $phpMussel['lang']['encrypted_archive'] . ' (' . $ItemRef . ')'
@@ -4171,7 +4201,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                 }
 
                 /** Quine detection. */
-                if ($Data === $Content) {
+                if ($phpMussel['QuineDetector']($ScanDepth, $DataHash, $DataLen, $MD5, $Filesize)) {
                     $r = 2;
                     $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ThisItemRef . "\n";
                     $phpMussel['whyflagged'] .= sprintf(

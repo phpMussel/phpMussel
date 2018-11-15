@@ -12,6 +12,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.11.04; Documentation; Maikuolan]: Added some missing information to the
   Composer installation instructions.
 
+- [2018.11.15; Sub-minor code change; Maikuolan]: Slightly improved quine
+  detection.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 
