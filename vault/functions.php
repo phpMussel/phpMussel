@@ -3866,7 +3866,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 $phpMussel['QuineDetector'] = function ($ScanDepth, $ParentHash, $ParentLen, $ChildHash, $ChildLen) use (&$phpMussel) {
     $phpMussel['Quine'][$ScanDepth - 1] = [$ParentHash, $ParentLen];
     for ($Iterate = 0; $Iterate < $ScanDepth; $Iterate++) {
-        if ($phpMussel['Quine'][$Iterate][0] === $ChildHash || $phpMussel['Quine'][$Iterate][1] === $ChildLen) {
+        if ($phpMussel['Quine'][$Iterate][0] === $ChildHash && $phpMussel['Quine'][$Iterate][1] === $ChildLen) {
             return true;
         }
     }
