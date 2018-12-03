@@ -387,6 +387,14 @@ phpMussel функционирует полностью в автономном 
 ### 7. <a name="SECTION7"></a>НАСТРОЙКИ
 Ниже представлен список переменных данных в файле конфигурации `config.ini`, а также краткое описание их функций.
 
+[general](#general-категория) | [signatures](#signatures-категория) | [files](#files-категория) | [attack_specific](#attack_specific-категория)
+:--|:--|:--|:--
+[cleanup](#cleanup)<br />[scan_log](#scan_log)<br />[scan_log_serialized](#scan_log_serialized)<br />[scan_kills](#scan_kills)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[enable_plugins](#enable_plugins)<br />[forbid_on_block](#forbid_on_block)<br />[delete_on_sight](#delete_on_sight)<br />[lang](#lang)<br />[numbers](#numbers)<br />[quarantine_key](#quarantine_key)<br />[quarantine_max_filesize](#quarantine_max_filesize)<br />[quarantine_max_usage](#quarantine_max_usage)<br />[quarantine_max_files](#quarantine_max_files)<br />[honeypot_mode](#honeypot_mode)<br />[scan_cache_expiry](#scan_cache_expiry)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br /> | [Active](#Active)<br />[fail_silently](#fail_silently)<br />[fail_extensions_silently](#fail_extensions_silently)<br />[detect_adware](#detect_adware)<br />[detect_joke_hoax](#detect_joke_hoax)<br />[detect_pua_pup](#detect_pua_pup)<br />[detect_packer_packed](#detect_packer_packed)<br />[detect_shell](#detect_shell)<br />[detect_deface](#detect_deface)<br />[detect_encryption](#detect_encryption)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [max_uploads](#max_uploads)<br />[filesize_limit](#filesize_limit)<br />[filesize_response](#filesize_response)<br />[filetype_whitelist<br />filetype_blacklist<br />filetype_greylist](#filetype_whitelist-filetype_blacklist-filetype_greylist)<br />[check_archives](#check_archives)<br />[filesize_archives](#filesize_archives)<br />[filetype_archives](#filetype_archives)<br />[max_recursion](#max_recursion)<br />[block_encrypted_archives](#block_encrypted_archives)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [chameleon_from_php](#chameleon_from_php)<br />[can_contain_php_file_extensions](#can_contain_php_file_extensions)<br />[chameleon_from_exe](#chameleon_from_exe)<br />[chameleon_to_archive](#chameleon_to_archive)<br />[chameleon_to_doc](#chameleon_to_doc)<br />[chameleon_to_img](#chameleon_to_img)<br />[chameleon_to_pdf](#chameleon_to_pdf)<br />[archive_file_extensions](#archive_file_extensions)<br />[block_control_characters](#block_control_characters)<br />[corrupted_exe](#corrupted_exe)<br />[decode_threshold](#decode_threshold)<br />[scannable_threshold](#scannable_threshold)<br />[allow_leading_trailing_dots](#allow_leading_trailing_dots)<br />[block_macros](#block_macros)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[compatibility](#compatibility-категория) | [heuristic](#heuristic-категория) | [virustotal](#virustotal-категория) | [urlscanner](#urlscanner-категория)
+[ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-и-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
+[legal](#legal-категория) | [template_data](#template_data-категория) | [PHPMailer](#phpmailer-категория)
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br />
+
 #### «general» (Категория)
 Генеральная конфигурация от phpMussel.
 
@@ -420,6 +428,9 @@ phpMussel функционирует полностью в автономном 
 - Лог вращения ограничивает количество журнальных лог-файлов, которые должны существовать в любой момент времени. Когда создаются новые лог-файлы, если общее количество лог-файлов превышает указанный предел, указанное действие будет выполнено. Здесь Вы можете указать желаемое действие. Delete = Удалите самые старые лог-файлы, пока лимит больше не будет превышен. Archive = Сначала архивируйте, а затем удалите самые старые лог-файлы, пока лимит больше не будет превышен.
 
 *Техническое разъяснение: В этом контексте, «самые старые» означает наименее недавно измененный.*
+
+##### «timezone»
+- Это используется, чтобы указать, какой часового пояса phpMussel должен использовать для операций даты/времени. Если вам это не нужно, игнорируйте его. Возможные значения определяются PHP. Обычно рекомендуется вместо того, чтобы настроить директиву о зоне времени в файле `php.ini`, но иногда (например, при работе с общими хостинг-провайдеров, которые ограничены) это не всегда возможно, и так, эта опция представлена здесь.
 
 ##### «timeOffset»
 - Если ваш сервер времени не соответствует вашему местному времени, Вы можете указать смещение здесь для корректировки информации о дате/времени генерируется от phpMussel в соответствии с вашими потребностями. Обычно рекомендуется вместо того, чтобы настроить директиву о зоне времени в файле `php.ini`, но иногда (например, при работе с общими хостинг-провайдеров, которые ограничены) это не всегда возможно, и так, эта опция представлена здесь. Смещение описывается как минут.
@@ -538,9 +549,6 @@ phpMussel функционирует полностью в автономном 
 ##### «detect_adware»
 - Интерпретировать сигнатурей для обнаружить рекламное программное? False = Нет; True = Да [Стандарт].
 
-##### «detect_encryption»
-- Должен ли phpMussel обнаруживать и блокировать зашифрованные файлы? False = Нет; True = Да [Стандарт].
-
 ##### «detect_joke_hoax»
 - Интерпретировать сигнатурей для обнаружить шутка вредоносные/вирусы программы? False = Нет; True = Да [Стандарт].
 
@@ -555,6 +563,9 @@ phpMussel функционирует полностью в автономном 
 
 ##### «detect_deface»
 - Интерпретировать сигнатурей для обнаружить дифейсмент/обезображивание программы? False = Нет; True = Да [Стандарт].
+
+##### «detect_encryption»
+- Должен ли phpMussel обнаруживать и блокировать зашифрованные файлы? False = Нет; True = Да [Стандарт].
 
 #### «files» (Категория)
 Файл обработки конфигурации.
@@ -683,7 +694,7 @@ VirusTotal.com директивы.
 ##### «vt_weighting»
 - Должна phpMussel использовать результаты сканирования с Virus Total API в качестве опознания или как определение степени доверия? Существование этой директиВы объясняется тем, что сканирование файла со многими ядрами должно быть более тщательным (как это делает Virus Total) и, следовательно, будет найдено большее количество вредоносных файлов, что может привести к большему количеству ложных тревог. Есть ситуации, когда результаты сканирования бывают выше степени доверия, и тогда применяется однозначный результат. Применение значения 0 означает, что результаты сканирования будут применяться как опознание. В этом случае phpMussel будет рассматривать файл как вредоносный, если какие-то используемые в сканировании ядра файлов Virus Total обозначил опасными. При установке другого значения, результаты сканирования с Virus Total API будут использоваться как определение степени доверия. Количество используемых Virus Total ядер, обозначающих файл как вредоносный, будет служить степенью доверия (или определением степени доверия). Используемое значение будет определять, какую степень доверия (минимальную или требуемую) примет phpMussel во внимание, чтобы признать сканируемый файл вредоносным или безвредным. Стандартное значение = 0.
 
-«vt_quota_rate» и «vt_quota_time»
+##### «vt_quota_rate» и «vt_quota_time»
 - Согласно Virus Total API-документации «Лимит времени, за которое должны обрабатываться 4 любых запроса, составляет 1 минуту. Используя Honeyclient, Honeypot или какую-либо другую активную систему, которая содействует VirusTotal, и не только вызывает сообщения, то Вы имеете право на более высокий лимит времени». phpMussel будет строго придерживаться этого лимита. Для его повышения даны эти две директивы, указывающие phpMussel на какой лимит она должна ориентироваться. Рекомендуется без необходимости это значение не повышать. С возникновением проблем по достижению лимита, уменьшение этого значения должно немного помочь. Твой лимит будет установлен как `vt_quota_rate` запросы любого типа в каждом `vt_quota_time` минутном промежутке времени.
 
 #### «urlscanner» (Категория)
@@ -736,6 +747,8 @@ URL сканер API конфигурация.
 
 #### «PHPMailer» (Категория)
 Конфигурация PHPMailer.
+
+В настоящее время phpMussel использует PHPMailer только для двухфакторной аутентификации на фронтенд. Если вы не используете фронтенд, или если вы не используете двухфакторную аутентификацию для фронтенд, вы можете игнорировать эти директивы.
 
 ##### «EventLog»
 - Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.
@@ -1310,4 +1323,4 @@ phpMussel не собирает и не обрабатывает какую-ли
 ---
 
 
-Последнее обновление: 4 Ноябрь 2018 (2018.11.04).
+Последнее обновление: 1 Декабрь 2018 (2018.12.01).

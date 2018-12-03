@@ -387,6 +387,14 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 ### ７.<a name="SECTION7"></a>コンフィギュレーション（設定オプション）
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
+[general](#general-全般カテゴリー) | [signatures](#signatures-シグネチャーズカテゴリ) | [files](#files-ファイルズカテゴリー) | [attack_specific](#attack_specific-アタックスペシフィックカテゴリー)
+:--|:--|:--|:--
+[cleanup](#cleanup-クリーンアップ)<br />[scan_log](#scan_log-スキャンログ)<br />[scan_log_serialized](#scan_log_serialized-スキャンログシリアライズド)<br />[scan_kills](#scan_kills-スキャンキルズ)<br />[truncate](#truncate-トランケート)<br />[log_rotation_limit](#log_rotation_limit-ログローテーションリミット)<br />[log_rotation_action](#log_rotation_action-ログローテーションアクション)<br />[timezone](#timezone-タイムゾーン)<br />[timeOffset](#timeoffset-タイムオフセット)<br />[timeFormat](#timeformat-タイムフォーマット)<br />[ipaddr](#ipaddr-アイピーアドレス)<br />[enable_plugins](#enable_plugins-イネーブルプラグインす)<br />[forbid_on_block](#forbid_on_block-フォービッドオンブロック)<br />[delete_on_sight](#delete_on_sight-デリートオンサイト)<br />[lang](#lang-ラング)<br />[numbers](#numbers-ナンバーズ)<br />[quarantine_key](#quarantine_key-クオランティンキ)<br />[quarantine_max_filesize](#quarantine_max_filesize-クオランティンマックスファイルサイズ)<br />[quarantine_max_usage](#quarantine_max_usage-クオランティンマックスユーセッジ)<br />[quarantine_max_files](#quarantine_max_files-クオランティンマックスファイル数)<br />[honeypot_mode](#honeypot_mode-ハニーポットモード)<br />[scan_cache_expiry](#scan_cache_expiry-スキャンキャッシュエクスパイヤリー)<br />[disable_cli](#disable_cli-ディスエイブルシーエルアイ)<br />[disable_frontend](#disable_frontend-ディスエイブルフロントエンド)<br />[max_login_attempts](#max_login_attempts-マクスログインアテンプト)<br />[FrontEndLog](#frontendlog-フロントエンドログ)<br />[disable_webfonts](#disable_webfonts-ディスエイブルウェブフォンツ)<br />[maintenance_mode](#maintenance_mode-メンテナンスモード)<br />[default_algo](#default_algo-ディフォールトアルゴ)<br />[statistics](#statistics-スタティスティックス統計)<br /> | [Active](#active-アクティブ)<br />[fail_silently](#fail_silently-フェイルサイレントリー)<br />[fail_extensions_silently](#fail_extensions_silently-フェイルエクステンションズサイレントリー)<br />[detect_adware](#detect_adware-ディテクトアドウェア)<br />[detect_joke_hoax](#detect_joke_hoax-ディテクトジョークホークス)<br />[detect_pua_pup](#detect_pua_pup-ディテクトpuapup)<br />[detect_packer_packed](#detect_packer_packed-ディテクトパッカーパックト)<br />[detect_shell](#detect_shell-ディテクトシェル)<br />[detect_deface](#detect_deface-ディテクトディフェーサ)<br />[detect_encryption](#detect_encryption-ディテクトエンクリプション)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [max_uploads](#max_uploads-マックスアップローズ)<br />[filesize_limit](#filesize_limit-ファイルサイズリミット)<br />[filesize_response](#filesize_response-ファイルサイズレスポンス)<br />[filetype_whitelist<br />filetype_blacklist<br />filetype_greylist](#filetype_whitelist-ファイルタイプホワイトリストfiletype_blacklist-ファイルタイプブラックリストfiletype_greylist-ファイルタイプグレーリスト)<br />[check_archives](#check_archives-チェックアーカイブズ)<br />[filesize_archives](#filesize_archives-ファイルサイズアーカイブズ)<br />[filetype_archives](#filetype_archives-ファイルタイプアーカイブズ)<br />[max_recursion](#max_recursion-マックスリカーション)<br />[block_encrypted_archives](#block_encrypted_archives-ブロックエンクリプティッドアーカイブズ)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [chameleon_from_php](#chameleon_from_php-カメレオンフロムピーエイチピー)<br />[can_contain_php_file_extensions](#can_contain_php_file_extensions-キャンコンテインｐｈｐファイルエクステンションズ)<br />[chameleon_from_exe](#chameleon_from_exe-カメレオンフロムｅｘｅ)<br />[chameleon_to_archive](#chameleon_to_archive-カメレオントゥアーカイブ)<br />[chameleon_to_doc](#chameleon_to_doc-カメレオントゥドク)<br />[chameleon_to_img](#chameleon_to_img-カメレオントゥアイエムジー)<br />[chameleon_to_pdf](#chameleon_to_pdf-カメレオントゥピーディーエフ)<br />[archive_file_extensions](#archive_file_extensions-アーカイブファイルエクステンション)<br />[block_control_characters](#block_control_characters-ブロックコントロールキャラクターズ)<br />[corrupted_exe](#corrupted_exe-コラプティッドｅｘｅ)<br />[decode_threshold](#decode_threshold-デコードスレッシュホールド)<br />[scannable_threshold](#scannable_threshold-スキャナブルスレッシュホールド)<br />[allow_leading_trailing_dots](#allow_leading_trailing_dots-アラウリーディングトレーリングドッツ)<br />[block_macros](#block_macros-ブロックマクローズ)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[compatibility](#compatibility-コンパーティブリティカテゴリ) | [heuristic](#heuristic-ヒューリスティックカテゴリ) | [virustotal](#virustotal-ウィルストータルカテゴリ) | [urlscanner](#urlscanner-ユーアールエルスキャナーカテゴリ)
+[ignore_upload_errors](#ignore_upload_errors-イグノアアップロードエラーズ)<br />[only_allow_images](#only_allow_images-オンリーアロウイメージ)<br /><br /><br /><br /> | [threshold](#threshold-スレッシュホールド)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key-ヴィティパブリックエイピーアイキー)<br />[vt_suspicion_level](#vt_suspicion_level-ヴィティサスピションレベル)<br />[vt_weighting](#vt_weighting-ヴィティウェイティング)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-ヴィティクォータレート-と-vt_quota_time-ヴィティクォータタイム)<br /> | [lookup_hphosts](#lookup_hphosts-ルックアップエイチピーホスツ)<br />[google_api_key](#google_api_key-グーグルエーピーアイキー)<br />[maximum_api_lookups](#maximum_api_lookups-マクシマムエーピーアイルックアップス)<br />[maximum_api_lookups_response](#maximum_api_lookups_response-マクシマムエーピーアイルックアップスレスポンス)<br />[cache_time](#cache_time-キャッシュタイム)<br />
+[legal](#legal-リーガルカテゴリ) | [template_data](#template_data-テンプレートデータカテゴリ) | [PHPMailer](#phpmailer-ピーエイチピーメーラーカテゴリ)
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses-プセユードニマイズアイピーアドレセズ)<br />[privacy_policy](#privacy_policy-プライバシーポリシー)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme-シームテーマ)<br />[Magnification](#magnification-マグニフィケーション)<br />[css_url](#css_url-シーエスエスユーアールエル)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog-イベントログ)<br />[SkipAuthProcess](#skipauthprocess-スキップオスプロセス)<br />[Enable2FA](#enable2fa-イネーブル２ｆａ)<br />[Host](#host-ホスト)<br />[Port](#port-ポート)<br />[SMTPSecure](#smtpsecure-ｓｍｔｐセキュア)<br />[SMTPAuth](#smtpauth-ｓｍｔｐオス)<br />[Username](#username-ユーザーネーム)<br />[Password](#password-パスワード)<br />[setFromAddress](#setfromaddress-セットフロムアドレス)<br />[setFromName](#setfromname-セットフロムネーム)<br />[addReplyToAddress](#addreplytoaddress-アッドリプライアドレス)<br />[addReplyToName](#addreplytoname-アッドリプライネーム)<br />
+
 #### "general" （全般、カテゴリー）
 全般的な設定。
 
@@ -420,6 +428,9 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 - ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。
 
 *技術的な説明：この文脈では、「最も古い」とは「最近変更されていない」という意味です。*
+
+##### "timezone" （タイムゾーン）
+- これは、phpMusselが日付/時刻操作に使用するタイムゾーンを指定するために使用されます。​あなたがそれを必要としないなら、それを無視してください。​可能な値はＰＨＰによって決定されます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。
 
 ##### "timeOffset" （タイム・オフセット）
 - お使いのサーバーの時刻は、​ローカル時刻と一致しない場合、​あなたのニーズに応じて、​時間を調整するために、​あなたはここにオフセットを指定することができます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。​オフセット分であります。
@@ -538,9 +549,6 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 ##### "detect_adware" （ディテクト・アドウェア）
 - phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
 
-##### "detect_encryption" （ディテクト・エンクリプション）
-- phpMusselは暗号化ファイルを検出してブロックする必要がありますか？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
-
 ##### "detect_joke_hoax" （ディテクト・ジョーク・ホークス）
 - phpMusselは悪戯/偽造やマルウェア/ウィルス検出のためにシグネチャを分析すべきか否か？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
 
@@ -555,6 +563,9 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 
 ##### "detect_deface" （ディテクト・ディフェーサ）
 - phpMusselは改ざんやディフェーサー検出のためにシグネチャを分析すべきか否か？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
+
+##### "detect_encryption" （ディテクト・エンクリプション）
+- phpMusselは暗号化ファイルを検出してブロックする必要がありますか？​`false`（偽） = いいえ；​`true`（真） = はい（Default/デフォルト）。
 
 #### "files" （ファイルズ、​カテゴリー）
 ファイル取扱い設定。
@@ -611,7 +622,7 @@ Phar | ❌ | ❌ | ❌ | ｐｈａｒファイルの読み込みサポートはv
 ##### "can_contain_php_file_extensions" （キャン・コンテイン・ＰＨＰ・ファイル・エクステンションズ）
 - カンマで区切られたＰＨＰコードを含むことができるファイル拡張子のリスト。​ＰＨＰカメレオン攻撃検出が有効になっている場合、このリストにない拡張子を持つＰＨＰコードを含むファイルは、ＰＨＰカメレオン攻撃として検出されます。
 
-##### "chameleon_from_exe" （カメレオン・フロム・エグゼ）
+##### "chameleon_from_exe" （カメレオン・フロム・ＥＸＥ）
 - 実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。
 
 ##### "chameleon_to_archive" （カメレオン・トゥ・アーカイブ）
@@ -632,7 +643,7 @@ Phar | ❌ | ❌ | ❌ | ｐｈａｒファイルの読み込みサポートはv
 ##### "block_control_characters" （ブロック・コントロール・キャラクターズ）
 - 制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（[\x00-\x08\x0b\x0c\x0e\x1f\x7f]）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​`false`（偽） = ブロックしない（Default/デフォルト）；​`true`（真） = ブロックする。
 
-##### "corrupted_exe" （コラプティッド・エグゼ）
+##### "corrupted_exe" （コラプティッド・ＥＸＥ）
 - 破損ファイルとエラー解析。​`false`（偽） = 無視する；​`true`（真） = ブロックする（Default/デフォルト）。​破損の可能性があるPEファイルをブロックし検出するか否か？​についてです。​ＰＥファイルの一部が破損し、​正しく分析できないことは珍しくなく、​ウィルス感染をみるバロメーターになります。​ＰＥファイル内のウィルスを検出するアンチウィルスプログラムは、​ＰＥファイルの解析を行いますが、​ウィルスを作る側では、​ウィルスが検出されないようそれを避けようとするものだからです。
 
 ##### "decode_threshold" （デコード・スレッシュホールド）
@@ -683,7 +694,7 @@ VirusTotal.comディレクティブズ。
 ##### "vt_weighting" （ヴィティ・ウェイティング）
 - phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、​検出の重み付けとして扱うべきか？​複数のエンジン（Virus Totalのように）を使用したスキャニングは、​検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、​このディレクティブが存在します。​したがって、​スキャニング結果は、​決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。​値が０の場合、​Virus Total APIを使ったスキャンは検出として扱われ、​Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、​phpMusselもマルウェアと判断します。​その他の値の場合は結果は検出の重み付けとなり、​スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、​あるいは重み）。​デフォルト値は０です。
 
-"vt_quota_rate" （ヴィティ・クォータ・レート） と "vt_quota_time" （ヴィティ・クォータ・タイム）
+##### "vt_quota_rate" （ヴィティ・クォータ・レート） と "vt_quota_time" （ヴィティ・クォータ・タイム）
 - Virus Total APIのドキュメンテーションによると「１分間のタイムフレームの間にリクエストは最大４回」の上限があります。​ハニークライアントやハニーポット等のオートメーションを使用し、​リポートを受け取るだけでなく、​VirusTotal にリソースを提供していれば、​上限は引き上げられます。​phpMussel のデフォルトでは最大４回を遵守していますが、​前述の事情から、​この２つのディレクトリを準備し、​状況に合わせて変更できるようになっています。​制限に達してしまうといった不都合や問題がない限りデフォルト値を変更することは勧められませんが、​値を小さくすることが適当なケースもあります。​上限はタイムフレーム`vt_quota_time`（ヴィティ・クォータ・タイム）「分内に」`vt_quota_rate`（ヴィティ・クォータ・レート）で設定します。
 
 #### "urlscanner" （ユーアールエルスキャナー、カテゴリ）
@@ -736,6 +747,8 @@ URLスキャナーAPIルックアップ設定。
 
 #### "PHPMailer" （ピー・エイチ・ピー・メーラー、カテゴリ）
 PHPMailerコンフィギュレーション。
+
+現在、phpMusselはフロントエンドの２ＦＡ（二要素認証）にのみPHPMailerを使用しています。​フロントエンドを使用しない場合、またはフロントエンドに２ＦＡ（二要素認証）を使用しない場合は、これらのディレクティブを無視できます。
 
 ##### "EventLog" （イベント・ログ）
 - PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
@@ -1315,4 +1328,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：2018年11月4日。
+最終アップデート：２０１８年１２月１日。

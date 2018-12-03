@@ -383,6 +383,14 @@
 ### <div dir="rtl">٧. <a name="SECTION7"></a>خيارات التكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
+[general](#general-التصنيف) | [signatures](#signatures-التصنيف) | [files](#files-التصنيف) | [attack_specific](#attack_specific-التصنيف)
+--:|--:|--:|--:
+[cleanup](#cleanup)<br />[scan_log](#scan_log)<br />[scan_log_serialized](#scan_log_serialized)<br />[scan_kills](#scan_kills)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[enable_plugins](#enable_plugins)<br />[forbid_on_block](#forbid_on_block)<br />[delete_on_sight](#delete_on_sight)<br />[lang](#lang)<br />[numbers](#numbers)<br />[quarantine_key](#quarantine_key)<br />[quarantine_max_filesize](#quarantine_max_filesize)<br />[quarantine_max_usage](#quarantine_max_usage)<br />[quarantine_max_files](#quarantine_max_files)<br />[honeypot_mode](#honeypot_mode)<br />[scan_cache_expiry](#scan_cache_expiry)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br /> | [Active](#Active)<br />[fail_silently](#fail_silently)<br />[fail_extensions_silently](#fail_extensions_silently)<br />[detect_adware](#detect_adware)<br />[detect_joke_hoax](#detect_joke_hoax)<br />[detect_pua_pup](#detect_pua_pup)<br />[detect_packer_packed](#detect_packer_packed)<br />[detect_shell](#detect_shell)<br />[detect_deface](#detect_deface)<br />[detect_encryption](#detect_encryption)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [max_uploads](#max_uploads)<br />[filesize_limit](#filesize_limit)<br />[filesize_response](#filesize_response)<br />[filetype_whitelist<br />filetype_blacklist<br />filetype_greylist](#filetype_whitelist-filetype_blacklist-filetype_greylist)<br />[check_archives](#check_archives)<br />[filesize_archives](#filesize_archives)<br />[filetype_archives](#filetype_archives)<br />[max_recursion](#max_recursion)<br />[block_encrypted_archives](#block_encrypted_archives)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [chameleon_from_php](#chameleon_from_php)<br />[can_contain_php_file_extensions](#can_contain_php_file_extensions)<br />[chameleon_from_exe](#chameleon_from_exe)<br />[chameleon_to_archive](#chameleon_to_archive)<br />[chameleon_to_doc](#chameleon_to_doc)<br />[chameleon_to_img](#chameleon_to_img)<br />[chameleon_to_pdf](#chameleon_to_pdf)<br />[archive_file_extensions](#archive_file_extensions)<br />[block_control_characters](#block_control_characters)<br />[corrupted_exe](#corrupted_exe)<br />[decode_threshold](#decode_threshold)<br />[scannable_threshold](#scannable_threshold)<br />[allow_leading_trailing_dots](#allow_leading_trailing_dots)<br />[block_macros](#block_macros)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[compatibility](#compatibility-التصنيف) | [heuristic](#heuristic-التصنيف) | [virustotal](#virustotal-التصنيف) | [urlscanner](#urlscanner-التصنيف)
+[ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-و-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
+[legal](#legal-التصنيف) | [template_data](#template_data-التصنيف) | [PHPMailer](#phpmailer-التصنيف)
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br />
+
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ phpMussel.<br /><br /></div>
 
@@ -431,6 +439,11 @@
 </ul></div>
 
 <div dir="rtl">التوضيح الفني: في هذا السياق، تعني كلمة "أقدم"، هذا يعني "الأقل معدلة مؤخرا".<br /><br /></div>
+
+##### <div dir="rtl">"timezone"<br /></div>
+<div dir="rtl"><ul>
+ <li>يتم استخدام هذا لتحديد المنطقة الزمنية التي يجب أن يستخدمها phpMussel لعمليات التاريخ / الوقت. إذا لم تكن بحاجة إليه، فتجاهله. يتم تحديد القيم المحتملة بواسطة PHP. يُوصى بشكل عام بدلاً من ضبط توجيه المنطقة الزمنية في ملف <code dir="ltr">php.ini</code>. على الرغم من أنه في بعض الأحيان (على سبيل المثال عند العمل مع موفري استضافة مشتركة محدودة)، لا يكون ذلك ممكنًا دائمًا، وهكذا، يتم توفير هذا الخيار هنا.</li>
+</ul></div>
 
 ##### <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
@@ -605,11 +618,6 @@
  <li>هل يجب على توقيعات phpMussel الكشف عن تجسس؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي].</li>
 </ul></div>
 
-##### <div dir="rtl">"detect_encryption"<br /></div>
-<div dir="rtl"><ul>
- <li>يجب phpMussel كشف ومنع الملفات المشفرة؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي].</li>
-</ul></div>
-
 ##### <div dir="rtl">"detect_joke_hoax"<br /></div>
 <div dir="rtl"><ul>
  <li>هل يجب على توقيعات phpMussel الكشف عن خدعة البرمجيات الخبيثة / الفيروسات؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي].</li>
@@ -633,6 +641,11 @@
 ##### <div dir="rtl">"detect_deface"<br /></div>
 <div dir="rtl"><ul>
  <li>هل يجب على توقيعات phpMussel الكشف عن مهاجمات وdefacers؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي].</li>
+</ul></div>
+
+##### <div dir="rtl">"detect_encryption"<br /></div>
+<div dir="rtl"><ul>
+ <li>يجب phpMussel كشف ومنع الملفات المشفرة؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي].</li>
 </ul></div>
 
 #### <div dir="rtl">"files" (التصنيف)<br /></div>
@@ -824,7 +837,7 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">تمت إ�
  <li>هل phpMussel يطبق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة أو الممكن كشفها؟ يوجد هذا التوجيه لأنه على الرغم من أن مسح ملف باستخدام محركات متعددة (كما فايروس توتال لا) ينبغي أن يؤدي في معدل اكتشاف زيادة (وبالتالي في عدد أكبر من الملفات الخبيثة الوقوع)، فإنه يمكن أن يؤدي أيضا إلى ارتفاع عدد كاذبة الإيجابيات، وبالتالي، في بعض الظروف، فإن نتائج المسح يمكن الاستفادة بشكل أفضل كما على درجة الثقة بدلا من أن تكون نتيجة محددة. إذا تم استخدام قيمة 0، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة و بالتالي إذا أي محرك تستخدم من قبل الفيروسات مجموع أعلام الملف تم مسحها ضوئيا بأنها خبيثة، وphpMussel النظر في الملف إلى تكون ضارة. إذا تم استخدام أي قيمة أخرى، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما الترجيح الكشف و بالتالي فإن عدد من المحركات المستخدمة من قبل الفيروسات إجمالي هذا العلم الملف تم مسحها ضوئيا بأنها خبيثة سيكون بمثابة نتيجة الثقة (أو الترجيح الكشف) عن ما إذا كان ملف تم مسحها ضوئيا ينبغي النظر الخبيثة التي كتبها phpMussel (القيمة المستخدمة سيمثل الحد الأدنى من الثقة يسجل أو الوزن المطلوب من أجل أن تعتبر ضارة). يتم استخدام قيمة 0 افتراضيا.</li>
 </ul></div>
 
-<div dir="rtl">"vt_quota_rate" و "vt_quota_time"<br /><br /></div>
+##### <div dir="rtl">"vt_quota_rate" و "vt_quota_time"<br /><br /></div>
 <div dir="rtl"><ul>
  <li>استنادا إلى وثائق الفيروسات الكلي API، "فإنه يقتصر على الأكثر 4 طلبات من أي نوع في أي إطار زمني معين 1 دقيقة. إذا قمت بتشغيل honeyclient، مصيدة أو أي أتمتة الآخر الذي يجري لتوفير الموارد اللازمة لفايروس توتال ولا استرداد فقط تقارير يحق لك الحصول على أعلى حصص معدلات الطلب". افتراضيا، سوف phpMussel الالتزام الصارم لهذه القيود، ولكن نظرا لإمكانية هذه الحصص نسبة تجري زيادة، وتقدم هذه التوجيهات اثنين كوسيلة لتتمكن من إرشاد phpMussel على ما الحد الأقصى ينبغي أن تلتزم بها. إلا إذا كنت قد أعطيت تعليمات للقيام بذلك، فإنه من غير المستحسن بالنسبة لك لزيادة هذه القيم و لكن إذا كنت قد واجهت مشاكل تتعلق الوصول الحصص الخاصة بك، وخفض هذه القيم قد يساعد في بعض الأحيان كنت في التعامل مع هذه المشاكل. يتم تحديد الحد الأقصى معدل حسابك عن طلبات "vt_quota_rate" من أي نوع في أي إطار "vt_quota_time" الوقت دقيقة معين.</li>
 </ul></div>
@@ -899,6 +912,8 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">تمت إ�
 
 #### <div dir="rtl">"PHPMailer" (التصنيف)<br /></div>
 <div dir="rtl">تكوين PHPMailer.<br /><br /></div>
+
+<div dir="rtl">حاليا، يستخدم phpMussel PHPMailer فقط من أجل 2FA. إذا لم تستخدم الواجهة الأمامية، أو إذا لم تستخدم 2FA، فيمكنك تجاهل هذه التوجيهات.<br /><br /></div>
 
 ##### <div dir="rtl">"EventLog"<br /></div>
 <div dir="rtl"><ul>
@@ -1398,11 +1413,11 @@ A scan log entry typically includes the following information:
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 SCAN KILLS
+##### <div dir="rtl">١١.٣.١ التحميلات المحظورة<br /><br /></div>
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+<div dir="rtl">عند تمكينه في تكوين الحزمة، phpMussel يحتفظ بسجلات التحميلات التي تم حظرها.<br /><br /></div>
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+<div dir="rtl">عادةً ما تبدو إدخالات السجل هذه شيئًا مثل هذا (كمثال):<br /><br /></div>
 
 ```
 DATE: Mon, 21 May 2018 00:47:56 +0800
@@ -1539,4 +1554,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 4 نوفمبر 2018 (2018.11.04).</div>
+<div dir="rtl">آخر تحديث: 1 ديسمبر 2018 (2018.12.01).</div>
