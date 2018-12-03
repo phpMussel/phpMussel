@@ -6,10 +6,10 @@
     "license": "GPL-2.0-or-later",
     "support": {
         "chat": "https://gitter.im/phpMussel2/Lobby",
-        "issues": "https://github.com/phpmussel/phpmussel/issues",
-        "wiki": "https://github.com/phpmussel/phpmussel/wiki",
-        "source": "https://github.com/phpmussel/phpmussel",
-        "docs": "https://github.com/phpmussel/phpmussel/tree/master/_docs"
+        "issues": "https://github.com/phpMussel/phpmussel/issues",
+        "wiki": "https://github.com/phpMussel/phpmussel/wiki",
+        "source": "https://github.com/phpMussel/phpmussel",
+        "docs": "https://github.com/phpMussel/phpmussel/tree/master/_docs"
     },
     "require": {
         "php": ">=5.4.0"
