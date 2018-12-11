@@ -11,7 +11,7 @@ php:
 
 before_script:
   - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
-  - phpenv config-rm xdebug.ini
+  - phpenv config-rm xdebug.ini || true
 
 script: phpunit .travis.php
 
