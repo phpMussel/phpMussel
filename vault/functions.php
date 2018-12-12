@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.11.15).
+ * This file: Functions file (last modified: 2018.12.12).
  */
 
 /**
@@ -1365,42 +1365,39 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Indicates whether we need to decode the contents of the scan target. */
-    $decode_or_not = (
-        (
-            $phpMussel['Config']['attack_specific']['decode_threshold'] > 0 &&
-            $str_len > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['decode_threshold'])
-        ) ||
-        $str_len < 16
-    ) ? 0 : 1;
-    /** Indicates whether the scan target is greater than 1KB (can sometimes save time for coex). */
+    $decode_or_not = ((
+        $phpMussel['Config']['attack_specific']['decode_threshold'] > 0 &&
+        $str_len > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['decode_threshold'])
+    ) || $str_len < 16) ? 0 : 1;
+
+    /** These are sometimes used by the "CoEx" ("complex extended") signatures. */
     $len_kb = ($str_len > 1024) ? 1 : 0;
-    /** Indicates whether the scan target is greater than half of 1MB (can sometimes save time for coex). */
     $len_hmb = ($str_len > 524288) ? 1 : 0;
-    /** Indicates whether the scan target is greater than 1MB (can sometimes save time for coex). */
     $len_mb = ($str_len > 1048576) ? 1 : 0;
-    /** Indicates whether the scan target is greater than half of 1GB (can sometimes save time for coex). */
     $len_hgb = ($str_len > 536870912) ? 1 : 0;
-    /** Indicates which phase of the scan process we're currently at. */
     $phase = $phpMussel['memCache']['phase'];
-    /** Indicates whether the scan target is a part of a container (and if so, which type of container). */
     $container = $phpMussel['memCache']['container'];
-    /** Indicates whether the scan target possesses the PDF magic number. */
     $pdf_magic = ($fourcc == '25504446');
 
-    /** Corresponds to the "detect_adware" configuration directive. */
-    $detect_adware = $phpMussel['Config']['signatures']['detect_adware'] ? 1 : 0;
-    /** Corresponds to the "detect_encryption" configuration directive. */
-    $detect_encryption = $phpMussel['Config']['signatures']['detect_encryption'] ? 1 : 0;
-    /** Corresponds to the "detect_joke_hoax" configuration directive. */
-    $detect_joke_hoax = $phpMussel['Config']['signatures']['detect_joke_hoax'] ? 1 : 0;
-    /** Corresponds to the "detect_pua_pup" configuration directive. */
-    $detect_pua_pup = $phpMussel['Config']['signatures']['detect_pua_pup'] ? 1 : 0;
-    /** Corresponds to the "detect_packer_packed" configuration directive. */
-    $detect_packer_packed = $phpMussel['Config']['signatures']['detect_packer_packed'] ? 1 : 0;
-    /** Corresponds to the "detect_shell" configuration directive. */
-    $detect_shell = $phpMussel['Config']['signatures']['detect_shell'] ? 1 : 0;
-    /** Corresponds to the "detect_deface" configuration directive. */
-    $detect_deface = $phpMussel['Config']['signatures']['detect_deface'] ? 1 : 0;
+    /** CoEx flags for configuration directives related to signatures. */
+    foreach ([
+        'detect_adware',
+        'detect_joke_hoax',
+        'detect_pua_pup',
+        'detect_packer_packed',
+        'detect_shell',
+        'detect_deface',
+        'detect_encryption'
+    ] as $Flag) {
+        $$Flag = $phpMussel['Config']['signatures'][$Flag] ? 1 : 0;
+    }
+
+    /** Cleanup. */
+    unset($Flag);
+
+    /** Available if the file is a Chrome extension. */
+    $CrxPubKey = empty($phpMussel['CrxPubKey']) ? '' : $phpMussel['CrxPubKey'];
+    $CrxSig = empty($phpMussel['CrxSig']) ? '' : $phpMussel['CrxSig'];
 
     /** Get file extensions. */
     list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
@@ -3293,6 +3290,9 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
 
     }
 
+    /** Destroy item-specific metadata set by the archive handler instance. */
+    unset($phpMussel['CrxPubKey'], $phpMussel['CrxSig']);
+
     /** Update the results if anything bad was found and then exit. */
     if ($Scan[0] !== 1) {
         $r = $Scan[0];
@@ -3862,11 +3862,37 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
  * @param int $ParentLen Parent data length.
  * @param string $ChildHash Child data hash.
  * @param int $ChildLen Child data length.
+ * @return bool True when a quine is detected; False otherwise.
  */
 $phpMussel['QuineDetector'] = function ($ScanDepth, $ParentHash, $ParentLen, $ChildHash, $ChildLen) use (&$phpMussel) {
     $phpMussel['Quine'][$ScanDepth - 1] = [$ParentHash, $ParentLen];
     for ($Iterate = 0; $Iterate < $ScanDepth; $Iterate++) {
         if ($phpMussel['Quine'][$Iterate][0] === $ChildHash && $phpMussel['Quine'][$Iterate][1] === $ChildLen) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/**
+ * Convert Chrome Extension data to standard Zip data.
+ *
+ * @param string $Data Referenced via the archive recursor.
+ * @return bool True when conversion succeeds; False otherwise (e.g., not Crx).
+ */
+$phpMussel['ConvertCRX'] = function (&$Data) use (&$phpMussel) {
+    if (substr($Data, 0, 4) !== 'Cr24' || strlen($Data) <= 16) {
+        return false;
+    }
+    $CRX = ['Version' => unpack('i*', substr($Data, 4, 4))];
+    if ($CRX['Version'][1] === 2) {
+        $CRX['PubKeyLen'] = unpack('i*', substr($Data, 8, 4));
+        $CRX['SigLen'] = unpack('i*', substr($Data, 12, 4));
+        $ZipBegin = 16 + $CRX['PubKeyLen'][1] + $CRX['SigLen'][1];
+        if (substr($Data, $ZipBegin, 2) === 'PK') {
+            $phpMussel['CrxPubKey'] = bin2hex(substr($Data, 16, $CRX['PubKeyLen'][1]));
+            $phpMussel['CrxSig'] = bin2hex(substr($Data, 16 + $CRX['PubKeyLen'][1], $CRX['SigLen'][1]));
+            $Data = substr($Data, $ZipBegin);
             return true;
         }
     }
@@ -3908,10 +3934,16 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     /** The type of container to be scanned (mostly just for logging). */
     $ConType = '';
 
+    /** Check whether Crx, and convert if necessary. */
+    if ($phpMussel['ConvertCRX']($Data)) {
+        /** Reset the file pointer (because the content has been modified anyway). */
+        $File = '';
+    }
+
     /** Get file extensions. */
     if ($File) {
         list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($File);
-    } elseif($Exts = $phpMussel['substral']($ItemRef, '.')) {
+    } elseif ($Exts = $phpMussel['substral']($ItemRef, '.')) {
         list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($Exts);
     } else {
         $xt = $xts = $gzxt = $gzxts = '';
@@ -3922,6 +3954,8 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
         $Handler = 'ZipHandler';
         if ($xt === 'ole') {
             $ConType = 'OLE';
+        } elseif ($xt === 'crx') {
+            $ConType = 'Crx';
         } elseif ($xt === 'smpk') {
             $ConType = 'SMPTE';
         } elseif ($xt === 'xpi') {

@@ -15,6 +15,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.11.15; Sub-minor code change; Maikuolan]: Slightly improved quine
   detection.
 
+- [2018.12.12; Maikuolan]: Added Crx (Chrome Extension Package) support and
+  slightly refactored again.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 
