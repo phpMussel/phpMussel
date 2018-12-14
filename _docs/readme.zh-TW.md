@@ -892,7 +892,8 @@ phpMussel簽名文件前9個字節（`[x0-x8]`）是`phpMussel`。​它作為�
 - [什麼是『假陽性』？](#WHAT_IS_A_FALSE_POSITIVE)
 - [什麼是簽名更新頻率？](#SIGNATURE_UPDATE_FREQUENCY)
 - [我在使用phpMussel時遇到問題和我不知道該怎麼辦！​請幫忙！](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
-- [我想使用phpMussel與早於5.4.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION)
+- [我想使用phpMussel（在v2之前）與早於5.4.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION)
+- [我想使用phpMussel（在v2期间）與早於7.2.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION_V2)
 - [我可以使用單個phpMussel安裝來保護多個域嗎？](#PROTECT_MULTIPLE_DOMAINS)
 - [我不想浪費時間安裝這個和確保它在我的網站上功能正常；我可以僱用您這樣做嗎？](#PAY_YOU_TO_DO_IT)
 - [我可以聘請您或這個項目的任何開發者私人工作嗎？](#HIRE_FOR_PRIVATE_WORK)
@@ -935,9 +936,13 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 - 您檢查過[issues頁面](https://github.com/phpMussel/phpMussel/issues)嗎？​檢查是否已經提到了問題。​如果已經提到了，​請檢查是否提供了任何建議，​想法或解決方案。​按照需要嘗試解決問題。
 - 如果問題仍然存在，請通過在issues頁面上創建新issue尋求幫助。
 
-#### <a name="MINIMUM_PHP_VERSION"></a>我想使用phpMussel與早於5.4.0的PHP版本；​您能幫我嗎？
+#### <a name="MINIMUM_PHP_VERSION"></a>我想使用phpMussel（在v2之前）與早於5.4.0的PHP版本；​您能幫我嗎？
 
-不能。​PHP 5.4.0於2014年達到官方EoL（『生命終止』）。​延長的安全支持在2015年終止。​這時候目前，​它是2017年，​和PHP 7.1.0已經可用。​目前，​有支持使用phpMussel與PHP 5.4.0和所有可用的較新的PHP版本，​但不有支持使用phpMussel與任何以前的PHP版本。
+不能。PHP >= 5.4.0是phpMussel < v2的最低要求。
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>我想使用phpMussel（在v2期间）與早於7.2.0的PHP版本；​您能幫我嗎？
+
+不能。PHP >= 7.2.0是phpMussel v2的最低要求。
 
 *也可以看看：​[兼容性圖表](https://maikuolan.github.io/Compatibility-Charts/)。*
 
@@ -1330,4 +1335,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2018年12月1日。
+最後更新：2018年12月14日。

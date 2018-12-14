@@ -1086,7 +1086,8 @@ Bkav | <div dir="rtl" style="display:inline">رپورٹیں "VEX.Webshell"</div>
  <li><a href="#WHAT_IS_A_FALSE_POSITIVE">ایک "جھوٹی مثبت" سے کیا مراد ہے؟</a></li>
  <li><a href="#SIGNATURE_UPDATE_FREQUENCY">دستخط کیسے بیشتر اپ ڈیٹ کر رہے ہیں؟</a></li>
  <li><a href="#ENCOUNTERED_PROBLEM_WHAT_TO_DO">phpMussel استعمال کرتے ہوئے میں ایک مسئلہ کا سامنا کرنا پڑا ہے اور میں اس کے بارے میں کیا پتہ نہیں ہے! مدد کریں!</a></li>
- <li><a href="#MINIMUM_PHP_VERSION">میں 5.4.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟</a></li>
+ <li><a href="#MINIMUM_PHP_VERSION">میں 5.4.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel (v2 سے پہلے) استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟</a></li>
+ <li><a href="#MINIMUM_PHP_VERSION_V2">میں 7.2.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel (v2) استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟</a></li>
  <li><a href="#PROTECT_MULTIPLE_DOMAINS">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد phpMussel تنصیب کا استعمال کر سکتا ہوں؟</a></li>
  <li><a href="#PAY_YOU_TO_DO_IT">میں نے اس پر وقت خرچ نہیں کرنا چاہتا (اسے انسٹال، اس کے قیام، وغیرہ)؛ میں نے آپ کو ایسا کرنے کے لئے ادا کر سکتے ہیں؟</a></li>
  <li><a href="#HIRE_FOR_PRIVATE_WORK">میں ذاتی کام کے لئے آپ کی خدمات حاصل کر سکتے ہیں؟</a></li>
@@ -1131,9 +1132,13 @@ Bkav | <div dir="rtl" style="display:inline">رپورٹیں "VEX.Webshell"</div>
  <li>اگر مسئلہ اب بھی جاری رہتا ہے، تو issues کے صفحے پر ایک نیا issue تشکیل دے کر اس کے بارے میں مدد طلب کریں.</li>
 </ul></div>
 
-#### <div dir="rtl"><a name="MINIMUM_PHP_VERSION"></a>میں 5.4.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
+#### <div dir="rtl"><a name="MINIMUM_PHP_VERSION"></a>میں 5.4.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel (v2 سے پہلے) استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
 
-<div dir="rtl">نہیں. PHP 5.4.0 کی حمایت کے 2014 میں ختم ہونے والے، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر PHP ورژن کے ساتھ phpMussel استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے PHP ورژن کے ساتھ phpMussel استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
+<div dir="rtl">نہیں. phpMussel < v2 کم از کم PHP >= 5.4.0 کی ضرورت ہے.<br /><br /></div>
+
+#### <div dir="rtl"><a name="MINIMUM_PHP_VERSION_V2"></a>میں 7.2.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ phpMussel (v2) استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
+
+<div dir="rtl">نہیں. phpMussel v2 کم از کم PHP >= 7.2.0 کی ضرورت ہے.<br /><br /></div>
 
 <div dir="rtl"><em>بھی دیکھو: <a href="https://maikuolan.github.io/Compatibility-Charts/">مطابقت چارٹ</a>.</em><br /><br /></div>
 
@@ -1553,4 +1558,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 1 دسمبر 2018 (2018.12.01).</div>
+<div dir="rtl">آخری تازہ کاری: 14 دسمبر 2018 (2018.12.14).</div>

@@ -891,7 +891,8 @@ Cette information a été mise à jour 2018.10.09 et est courant pour toutes les
 - [Qu'est-ce qu'un « faux positif » ?](#WHAT_IS_A_FALSE_POSITIVE)
 - [À quelle fréquence les signatures sont-elles mises à jour ?](#SIGNATURE_UPDATE_FREQUENCY)
 - [J'ai rencontré un problème lors de l'utilisation de phpMussel et je ne sais pas quoi faire à ce sujet ! Aidez-moi !](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
-- [Je veux utiliser phpMussel avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?](#MINIMUM_PHP_VERSION)
+- [Je veux utiliser phpMussel (avant la v2) avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?](#MINIMUM_PHP_VERSION)
+- [Je veux utiliser phpMussel (v2) avec une version PHP plus ancienne que 7.2.0 ; Pouvez-vous m'aider ?](#MINIMUM_PHP_VERSION_V2)
 - [Puis-je utiliser une seule installation de phpMussel pour protéger plusieurs domaines ?](#PROTECT_MULTIPLE_DOMAINS)
 - [Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?](#PAY_YOU_TO_DO_IT)
 - [Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé ?](#HIRE_FOR_PRIVATE_WORK)
@@ -934,9 +935,13 @@ La fréquence de mise à jour varie selon les fichiers de signature en question.
 - Avez-vous vérifié la **[page des issues](https://github.com/phpMussel/phpMussel/issues)**, pour voir si le problème a été mentionné avant ? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
 - Si le problème persiste, s'il vous plaît demander de l'aide à ce sujet en créant un nouveau issue sur la page des issues.
 
-#### <a name="MINIMUM_PHP_VERSION"></a>Je veux utiliser phpMussel avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
+#### <a name="MINIMUM_PHP_VERSION"></a>Je veux utiliser phpMussel (avant la v2) avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
 
-Non. PHP 5.4.0 a atteint officiellement l'EoL (« End of Life », ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de phpMussel avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser phpMussel avec les anciennes versions PHP, le support ne sera pas fourni.
+Non. PHP >= 5.4.0 est une exigence minimale pour phpMussel < v2.
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>Je veux utiliser phpMussel (v2) avec une version PHP plus ancienne que 7.2.0 ; Pouvez-vous m'aider ?
+
+Non. PHP >= 7.2.0 est une exigence minimale pour phpMussel v2.
 
 *Voir également : [Tableaux de Compatibilité](https://maikuolan.github.io/Compatibility-Charts/).*
 
@@ -1327,4 +1332,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 1 Décembre 2018 (2018.12.01).
+Dernière mise à jour : 14 Décembre 2018 (2018.12.14).

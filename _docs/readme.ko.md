@@ -891,7 +891,8 @@ phpMussel은 대개 바이러스 검사 소프트웨어에 호환성이 있습�
 - ["거짓 양성"는 무엇입니까?](#WHAT_IS_A_FALSE_POSITIVE)
 - [서명은 얼마나 자주 업데이트됩니까?](#SIGNATURE_UPDATE_FREQUENCY)
 - [phpMussel을 사용하는 데 문제가 발생했지만 무엇을 해야할지 모르겠어요! 도와주세요!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
-- [5.4.0보다 오래된 PHP 버전에서 phpMussel을 사용하고 싶습니다; 도울 수 있니?](#MINIMUM_PHP_VERSION)
+- [5.4.0보다 오래된 PHP 버전에서 phpMussel (v2 이전)을 사용하고 싶습니다; 도울 수 있니?](#MINIMUM_PHP_VERSION)
+- [7.2.0보다 오래된 PHP 버전에서 phpMussel (v2)을 사용하고 싶습니다; 도울 수 있니?](#MINIMUM_PHP_VERSION_V2)
 - [단일 phpMussel 설치를 사용하여 여러 도메인을 보호 할 수 있습니까?](#PROTECT_MULTIPLE_DOMAINS)
 - [나는 이것을 설치하거나 그것이 내 웹 사이트상에서 동작하는 것을 보장하는 시간을 보내고, 하고 싶지 않아; 그것을 할 수 있습니까? 나는 당신을 고용 할 수 있습니까?](#PAY_YOU_TO_DO_IT)
 - [당신 또는 이 프로젝트의 모든 개발자는 고용 가능합니까?](#HIRE_FOR_PRIVATE_WORK)
@@ -934,9 +935,13 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 - **[이슈 페이지를](https://github.com/phpMussel/phpMussel/issues)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
 - 문제가 해결되지 않으면 알려 주시기 바랍니다. 이슈 페이지에서 토론을 창조한다.
 
-#### <a name="MINIMUM_PHP_VERSION"></a>5.4.0보다 오래된 PHP 버전에서 phpMussel을 사용하고 싶습니다; 도울 수 있니?
+#### <a name="MINIMUM_PHP_VERSION"></a>5.4.0보다 오래된 PHP 버전에서 phpMussel (v2 이전)을 사용하고 싶습니다; 도울 수 있니?
 
-아니오. PHP 5.4.0은 2014 년 공식 EoL에 ("End of Life" / 삶의 끝) 도달했습니다. 2015 년에 연장 된 보안 지원이 종료되었습니다. 현재는 2017이며 PHP 7.1.0을 이미 사용할 수 있습니다. 현재, PHP 5.4.0 및 모든 더 최신 PHP 버전 phpMussel를 사용하기위한 지원이 제공되고 있습니다. 더 오래된 PHP 버전에 대한 지원은 제공하지 않습니다.
+아니오. PHP >= 5.4.0은 phpMussel < v2의 최소 요구 사항입니다.
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>7.2.0보다 오래된 PHP 버전에서 phpMussel (v2)을 사용하고 싶습니다; 도울 수 있니?
+
+아니오. PHP >= 7.2.0은 phpMussel v2의 최소 요구 사항입니다.
 
 *참조 : [호환성 차트](https://maikuolan.github.io/Compatibility-Charts/).*
 
@@ -1326,4 +1331,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 12월 1일.
+최종 업데이트 : 2018년 12월 14일.
