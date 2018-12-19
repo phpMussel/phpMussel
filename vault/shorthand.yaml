@@ -13,7 +13,7 @@ Vendor Shorthand:
  6: NLNetLabs
  7: FoxIT
  8:
-  - PhishTank
+  0: PhishTank
   1: Malc0de
   2: hpHosts
   3: Spam404
@@ -74,7 +74,7 @@ Vector Shorthand:
   14: RTF
   15: Archive
  2:
-  - PHP
+  0: PHP
   1: XML
   2: ASP
   3: VBS
@@ -91,7 +91,7 @@ Vector Shorthand:
   14: Ruby
   15: INF/INI
  3:
-  - CGI
+  0: CGI
 Vector Search Patterns:
  Win: "\x1a.[\x11\x12\x13]|[Ww](?:[Ii][Nn]|32|64)"
  W32: "\x1a.\x12|[Ww](?:[Ii][Nn])?32"
@@ -142,7 +142,7 @@ Malware Type Shorthand:
   14: Backdoor
   15: Hacktool
  2:
-  - Keylogger
+  0: Keylogger
   1: Ransomware
   2: Spyware
   3: Virus
@@ -159,7 +159,7 @@ Malware Type Shorthand:
   14: Defacer
   15: Defacement
  3:
-  - Cryptor
+  0: Cryptor
   1: Phish
   2: Spam
   3: Spammer

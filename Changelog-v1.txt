@@ -18,6 +18,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.12.12; Maikuolan]: Added Crx (Chrome Extension Package) support and
   slightly refactored again.
 
+- [2018.12.19; Sub-minor code change; Maikuolan]: Split apart the YAML handler
+  a little more (doesn't change anything functionally, but should help to
+  slightly reduce complaints sometimes made by certain code quality checkers
+  and such). It's also less messy now to use an integer value of zero as a key.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 

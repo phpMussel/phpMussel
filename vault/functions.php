@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.12.12).
+ * This file: Functions file (last modified: 2018.12.19).
  */
 
 /**
@@ -4687,51 +4687,8 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
             }
             $SendTo = '';
         }
-        if (substr($ThisLine, -1) === ':') {
-            $Key = substr($ThisLine, $ThisTab, -1);
-            $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-            if (!isset($Arr[$Key])) {
-                if ($VM) {
-                    return false;
-                }
-                $Arr[$Key] = false;
-            }
-        } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
-            $Value = substr($ThisLine, $ThisTab + 2);
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
-            $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
-            if (!$VM && $ValueLen > 0) {
-                $Arr[] = $Value;
-            }
-        } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
-            $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
-            $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-            if (!$Key) {
-                return false;
-            }
-            $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
-            $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
-            if (!$VM && $ValueLen > 0) {
-                $Arr[$Key] = $Value;
-            }
-        } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
-            $Key = $ThisLine;
-            $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-            if (!isset($Arr[$Key])) {
-                if ($VM) {
-                    return false;
-                }
-                $Arr[$Key] = false;
-            }
+        if (!$phpMussel['YAML-ProcessLine']($ThisLine, $ThisTab, $Key, $Value, $Arr, $VM)) {
+            return false;
         }
     }
     if (!empty($SendTo) && !empty($Key)) {
@@ -4743,6 +4700,70 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
         }
         if (!$phpMussel['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
             return false;
+        }
+    }
+    return true;
+};
+
+/**
+ * Process one line of YAML. Parameters reference variables set by calling closure.
+ *
+ * @param string $ThisLine
+ * @param string $ThisTab
+ * @param string|int $Key
+ * @param string|int|bool $Value
+ * @param array $Arr
+ * @param bool $VM
+ * @return bool Usable by validator mode.
+ */
+$phpMussel['YAML-ProcessLine'] = function (&$ThisLine, &$ThisTab, &$Key, &$Value, &$Arr, &$VM) use (&$phpMussel) {
+    if (substr($ThisLine, -1) === ':') {
+        $Key = substr($ThisLine, $ThisTab, -1);
+        $KeyLen = strlen($Key);
+        $KeyLow = strtolower($Key);
+        $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+        if (!isset($Arr[$Key])) {
+            if ($VM) {
+                return false;
+            }
+            $Arr[$Key] = false;
+        }
+    } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
+        $Value = substr($ThisLine, $ThisTab + 2);
+        $ValueLen = strlen($Value);
+        $ValueLow = strtolower($Value);
+        $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+        if (!$VM && $ValueLen > 0) {
+            $Arr[] = $Value;
+        }
+    } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
+        $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+        $KeyLen = strlen($Key);
+        $KeyLow = strtolower($Key);
+        $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+        if (!$Key) {
+            if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
+                return false;
+            }
+            $Key = 0;
+        }
+        $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
+        $ValueLen = strlen($Value);
+        $ValueLow = strtolower($Value);
+        $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+        if (!$VM && $ValueLen > 0) {
+            $Arr[$Key] = $Value;
+        }
+    } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
+        $Key = $ThisLine;
+        $KeyLen = strlen($Key);
+        $KeyLow = strtolower($Key);
+        $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+        if (!isset($Arr[$Key])) {
+            if ($VM) {
+                return false;
+            }
+            $Arr[$Key] = false;
         }
     }
     return true;

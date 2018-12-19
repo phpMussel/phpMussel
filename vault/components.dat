@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.8.0-DEV+18345240
+ Version: 1.8.0-DEV+18352564
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -155,13 +155,13 @@ phpMussel:
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - 3dc4f5061f46bfb3582553e7daee87ed:145804
    - ae23d4a072775512568658c74b1e2322:100890
-   - 40f2d2ab327d76f6ee9236d4a3f00be8:236808
+   - 4070f7d804f2a8ef9fc9b6734741eb53:237299
    - 4538f959176875744009f4554e0425c8:4819
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703
    - 8e03209e7fc6641b45094e584340feff:83
    - 8e03209e7fc6641b45094e584340feff:83
-   - ccbb8ff8eedbc2ba6d0b1f137abe28f1:4262
+   - 523bd968d0bed1c8ad0200325d056716:4267
    - 8e03209e7fc6641b45094e584340feff:83
    - 2c5e1906295c889436749adc4441ffa4:3233
    - bd8bdbc63bb268910e04e5261867deef:1020
