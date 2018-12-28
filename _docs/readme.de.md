@@ -69,7 +69,7 @@ Oder das in der `.htaccess` Datei:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket enthaltenen Testdateien `_testfiles` auf Ihre Webseite über die gewöhnlichen browserbasierten Methoden hochladen. Funktioniert das Programm ordnungsgemäß, erscheint eine Meldung von phpMussel, dass der Upload erfolgreich blockiert wurde. Erscheint keine Meldung, funktioniert das Programm nicht korrekt. Nutzen Sie andere erweiterte Funktionen oder weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
+7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket enthaltenen Testdateien `_testfiles` auf Ihre Webseite über die gewöhnlichen browserbasierten Methoden hochladen. (Damit die Testdateien erkann werden, sollten auch die phpmussel*.db-Signaturdateien installiert und als `Active` konfiguriert sein.) Funktioniert das Programm ordnungsgemäß, erscheint eine Meldung von phpMussel, dass der Upload erfolgreich blockiert wurde. Erscheint keine Meldung, funktioniert das Programm nicht korrekt. Nutzen Sie andere erweiterte Funktionen oder weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
 
 #### 2.1 MANUELL INSTALLIEREN (CLI - BEFEHLSZEILENMODUS)
 
@@ -538,7 +538,7 @@ Konfiguration der Signaturen.
 ##### "Active"
 - Eine Liste der aktiven Signaturdateien, die durch Kommas getrennt sind.
 
-*Hinweis: Signaturdateien müssen zuerst installiert werden, bevor Sie sie aktivieren können.*
+*Hinweis: Signaturdateien müssen zuerst installiert werden, bevor Sie sie aktivieren können. Damit die Testdateien erkannt werden, müssen die phpMussel-Signaturdateien installiert sein. Nach einer Änderung der Konfiguration, muss ggfs. der Cache geleert werden.*
 
 ##### "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].

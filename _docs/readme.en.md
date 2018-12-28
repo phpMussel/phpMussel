@@ -538,7 +538,7 @@ Signatures configuration.
 ##### "Active"
 - A list of the active signature files, delimited by commas.
 
-*Note: Signature files must firstly be installed, before you can activate them. For the test files to trigger, you also need to include the phpmussel signature files. After changing the configuration you may want to delete the cache.*
+*Note: Signature files must firstly be installed, before you can activate them. For the test files to trigger, you also need to include the phpMussel signature files. After changing the configuration you may want to delete the cache.*
 
 ##### "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
