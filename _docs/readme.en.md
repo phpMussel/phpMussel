@@ -69,7 +69,7 @@ Or this in the `.htaccess` file:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
+7) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. (Make sure to include the phpmussel*.db signature files in your `Active` setting for the test files to trigger.) If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
 
 #### 2.1 INSTALLING MANUALLY (FOR CLI)
 
@@ -538,7 +538,7 @@ Signatures configuration.
 ##### "Active"
 - A list of the active signature files, delimited by commas.
 
-*Note: Signature files must firstly be installed, before you can activate them.*
+*Note: Signature files must firstly be installed, before you can activate them. For the test files to trigger, you also need to include the phpmussel signature files. After changing the configuration you may want to delete the cache.*
 
 ##### "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
