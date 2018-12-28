@@ -154,7 +154,11 @@ if (!defined('phpMussel')) {
             /**
              * Check whether the upload handler exists and attempt to load it.
              */
-            if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
+            if (
+                !$phpMussel['Config']['general']['disable_autoscan'] &&
+                file_exists($phpMussel['Vault'] . 'upload.php') &&
+                !$phpMussel['Alternate']
+            ) {
                 require $phpMussel['Vault'] . 'upload.php';
             }
 

@@ -146,6 +146,12 @@ honeypot_mode=false
 ; seconds (6 hours); A value of 0 will disable caching the results of scanning.
 scan_cache_expiry=21600
 
+; Disable automatic scanning of uploads and the automatic response pages when
+; issues were identified. When this is set to true, you will need to use the
+; Scan-function manually in a php file. False = Always scan uploaded files
+; [Default]; True = Manual scanning only.
+disable_autoscan=false
+
 ; Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere
 ; with certain testing tools (such as PHPUnit, for example) and other CLI-based
 ; applications. If you don't need to disable CLI mode, you should ignore this
