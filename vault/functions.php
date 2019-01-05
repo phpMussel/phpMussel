@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.12.19).
+ * This file: Functions file (last modified: 2019.01.05).
  */
 
 /**
@@ -22,23 +22,35 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
     require $phpMussel['Vault'] . 'php5.4.x.php';
 }
 
+/** Autoloader for phpMussel classes. */
+spl_autoload_register(function ($Class) {
+    static $ClassDir = __DIR__ . '/classes/';
+    $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
+    $File = $ClassDir . ($Vendor === 'phpMussel' ? '' : $Vendor . '/') . (
+        (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
+    ) . '.php';
+    if (is_readable($File)) {
+        require $File;
+    }
+});
+
 /**
  * Registers plugin closures/functions to their intended hooks.
  *
- * @param string $what The name of the closure/function to execute.
- * @param string $where Where to execute it (the designated "plugin hook").
+ * @param string $What The name of the closure/function to execute.
+ * @param string $Where Where to execute it (the designated "plugin hook").
  * @return bool Execution failed(false)/succeeded(true).
  */
-$phpMussel['Register_Hook'] = function ($what, $where) use (&$phpMussel) {
-    if (!isset($phpMussel['MusselPlugins']['hooks'], $phpMussel['MusselPlugins']['closures']) || !$what || !$where) {
+$phpMussel['Register_Hook'] = function ($What, $Where) use (&$phpMussel) {
+    if (!isset($phpMussel['MusselPlugins']['hooks'], $phpMussel['MusselPlugins']['closures']) || !$What || !$Where) {
         return false;
     }
-    if (!isset($phpMussel['MusselPlugins']['hooks'][$where])) {
-        $phpMussel['MusselPlugins']['hooks'][$where] = [];
+    if (!isset($phpMussel['MusselPlugins']['hooks'][$Where])) {
+        $phpMussel['MusselPlugins']['hooks'][$Where] = [];
     }
-    $phpMussel['MusselPlugins']['hooks'][$where][] = $what;
-    if (!function_exists($what) && isset($GLOBALS[$what]) && is_object($GLOBALS[$what])) {
-        $phpMussel['MusselPlugins']['closures'][] = $what;
+    $phpMussel['MusselPlugins']['hooks'][$Where][] = $What;
+    if (!function_exists($What) && isset($GLOBALS[$What]) && is_object($GLOBALS[$What])) {
+        $phpMussel['MusselPlugins']['closures'][] = $What;
     }
     return true;
 };
@@ -2528,7 +2540,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
                 if (strpos($ThisSig, ':') !== false) {
                     $VN = $phpMussel['SplitSigParts']($ThisSig);
-                    if (!isset($VN[1])) {
+                    if (!isset($VN[1]) || !strlen($VN[1])) {
                         continue;
                     }
                     if ($ThisConf[3] === 2) {
@@ -3259,11 +3271,6 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
      */
     if ($Scan[0] === 1) {
 
-        /** Call the compression handler. */
-        if (!class_exists('\phpMussel\CompressionHandler\CompressionHandler')) {
-            require $phpMussel['Vault'] . 'classes/CompressionHandler.php';
-        }
-
         /** Create a new compression object. */
         $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($Data);
 
@@ -3708,11 +3715,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      */
     if ($z[0] === 1) {
 
-        /** Call the compression handler. */
-        if (!class_exists('\phpMussel\CompressionHandler\CompressionHandler')) {
-            require $phpMussel['Vault'] . 'classes/CompressionHandler.php';
-        }
-
         /** Create a new compression object. */
         $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($in);
 
@@ -4003,11 +4005,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     /** Call the archive handler. */
     if (!class_exists('\phpMussel\ArchiveHandler\ArchiveHandler')) {
         require $phpMussel['Vault'] . 'classes/ArchiveHandler.php';
-    }
-
-    /** Call the temporary file handler. */
-    if (!class_exists('\phpMussel\TemporaryFileHandler\TemporaryFileHandler')) {
-        require $phpMussel['Vault'] . 'classes/TemporaryFileHandler.php';
     }
 
     /** Hash the current input data. */
