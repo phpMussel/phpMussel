@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.10.16).
+ * This file: French language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = 'Votre fuseau horaire.';
 $phpMussel['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S\'applique aux fichiers journaux individuels ! La taille des fichiers journaux n\'est pas considérée collectivement.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Il ya certaines signatures des phpMussel qui sont destinés à identifier des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement sans en eux-mêmes identifier les fichiers en cours de téléchargement spécifiquement comme étant malveillants. Cette « threshold » (seuil) valeur raconte à phpMussel ce que le total maximum poids des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement pour ce qui est admissible avant que ces fichiers doivent être signalées comme malveillant. La définition du poids dans ce contexte est le nombre total de suspectes et potentiellement malveillants qualités identifié. Par défaut, cette valeur sera fixée à 3. Une valeur inférieur va résulter généralement avec une fréquence supérieur de faux positifs mais une nombre supérieur de fichiers signalé comme malveillant, tandis que une valeur inférieur va résulter généralement avec une fréquence inférieur de faux positifs mais un nombre inférieur de fichiers signalé comme malveillant. Il est généralement préférable de laisser cette valeur à sa valeur défaut, sauf si vous rencontrez des problèmes qui sont liés à elle.';
 $phpMussel['lang']['config_legal_privacy_policy'] = 'L\'adresse d\'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui [Défaut] ; False = Non.';
 $phpMussel['lang']['config_signatures_Active'] = 'Une liste des fichiers de signatures active, délimitée par des virgules.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Devrait phpMussel utiliser signatures pour détecter les adwares ? False = Non ; True = Oui [Défaut].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Devrait phpMussel utiliser signatures pour détecter les defacements and defacers ? False = Non ; True = Oui [Défaut].';

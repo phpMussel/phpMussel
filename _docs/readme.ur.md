@@ -27,16 +27,16 @@
 <div dir="rtl">PHPMUSSEL کاپی رائٹ 2013 اور Caleb M (Maikuolan) کی طرف GNU/GPLv2 اجازت سے آگے.<br /><br /></div>
 
 <div dir="rtl">یہ سکرپٹ مفت سافٹ ویئر ہے. آپ اسے دوبارہ تقسیم اور/یا ترمیم کے طور پر مفت سافٹ ویئر فاؤنڈیشن کی جانب سے شائع GNU جنرل پبلک لائسنس کی شرائط کے تحت اس پر نظر ثانی کر سکتے ہیں؛ یا تو لائسنس کے ورژن 2، یا (آپ کے اختیارات پر) کسی بھی جدید ورژن. یہ سکرپٹ یہ مفید ہو جائے گا، لیکن کسی بھی وارنٹی کے بغیر امید میں تقسیم کیا جاتا ہے؛ کسی خاص مقصد کے لئے قابل فروختگی یا فٹنس کی بھی تقاضا وارنٹی کے بغیر. مزید تفصیلات کے لئے GNU جنرل پبلک لائسنس، "LICENSE.txt" فائل اور سے بھی دستیاب میں واقع دیکھیں:</div>
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-<div dir="rtl">کرنے کے لئے خصوصی شکریہ ادا کیا. <a href="http://www.clamav.net/">ClamAV</a> دونوں منصوبے پریرتا کے لئے اور اس سکرپٹ کا استعمال ہے کہ دستخط، اسکرپٹ کا امکان موجود نہیں کریں گے، جس کے بغیر، یا سب کے لئے، بہت محدود قدر ہو گی.<br /><br /></div>
+<div dir="rtl">کرنے کے لئے خصوصی شکریہ ادا کیا. <a href="https://www.clamav.net/">ClamAV</a> دونوں منصوبے پریرتا کے لئے اور اس سکرپٹ کا استعمال ہے کہ دستخط، اسکرپٹ کا امکان موجود نہیں کریں گے، جس کے بغیر، یا سب کے لئے، بہت محدود قدر ہو گی.<br /><br /></div>
 
-SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی ذرائع کے phpMussel طرف سے استعمال کیا دستخطوں کی ایک بڑی تعداد کی: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="http://www.phishtank.com/">PhishTank</a>، <a href="http://nlnetlabs.nl/">NLNetLabs</a> اور دوسروں کو، اور یہ کہ میں نے ذکر کرنا وگرنہ بھول گئے ہیں، اور اسکرپٹ استعمال کرنے کے لئے، کسی اور کو اس منصوبے کی حمایت تمام والوں کے لئے خصوصی شکریہ.<br /><br /></div>
+SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی ذرائع کے phpMussel طرف سے استعمال کیا دستخطوں کی ایک بڑی تعداد کی: <a href="https://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="https://www.phishtank.com/">PhishTank</a>، <a href="https://nlnetlabs.nl/">NLNetLabs</a> اور دوسروں کو، اور یہ کہ میں نے ذکر کرنا وگرنہ بھول گئے ہیں، اور اسکرپٹ استعمال کرنے کے لئے، کسی اور کو اس منصوبے کی حمایت تمام والوں کے لئے خصوصی شکریہ.<br /><br /></div>
 
 <div dir="rtl">یہ دستاویز اور اس کے متعلقہ پیکجوں کے لئے مفت سے ڈاؤن لوڈ کیا جا سکتا ہے:</div>
 
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -72,7 +72,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-<div dir="rtl">٧. اس وقت تم نے کیا کر رہے ہیں! تاہم، آپ کو شاید اسے باہر یہ مناسب طریقے سے کام کر رہا ہے بات کو یقینی بنانے کے لئے جانچ کرنا چاہئے. فائل اپ لوڈ کی حفاظت کے باہر کی جانچ کرنے کے لئے، ٹیسٹنگ کی فائلوں کو اپ لوڈ کرنا شامل پیکیج میں آپ کی ویب سائٹ کو "_testfiles" کے تحت اپنے معمول کے براؤزر کی بنیاد پر اپ لوڈ طریقوں کے ذریعے کوشش. سب کچھ کام کر رہی ہے تو، ایک پیغام کی تصدیق ہے کہ اپ لوڈ کریں کامیابی سے بلاک کیا گیا تھا phpMussel سے ظاہر ہونا چاہیے. کچھ بھی ظاہر ہوتا ہے، کسی چیز کے صحیح طریقے سے کام نہیں کر رہا ہے. آپ کو کسی بھی جدید ترین خصوصیات کا استعمال کر رہے ہیں یا آپ کے آلے کے ساتھ ممکن سکیننگ کے دیگر اقسام کا استعمال کرتے ہوئے کر رہے ہیں تو، تو میں نے اسے باہر والوں کے ساتھ جو بھی کام کرتا ہے کے طور پر توقع اس بات کو یقینی بنانے کی کوشش کر مشورہ تھا.<br /><br /></div>
+<div dir="rtl">٧. اب، یہ ختم ہو گیا ہے! تاہم، آپ کو شاید اسے باہر یہ مناسب طریقے سے کام کر رہا ہے بات کو یقینی بنانے کے لئے جانچ کرنا چاہئے. فائل اپ لوڈ کی حفاظت کے باہر کی جانچ کرنے کے لئے، ٹیسٹنگ کی فائلوں کو اپ لوڈ کرنا شامل پیکیج میں آپ کی ویب سائٹ کو <code dir="ltr">_testfiles</code> کے تحت اپنے معمول کے براؤزر کی بنیاد پر اپ لوڈ طریقوں کے ذریعے کوشش. (Make sure you've included the `phpmussel*.*db` signature files in the `Active` configuration directive for the test files to trigger). سب کچھ کام کر رہی ہے تو، ایک پیغام کی تصدیق ہے کہ اپ لوڈ کریں کامیابی سے بلاک کیا گیا تھا phpMussel سے ظاہر ہونا چاہیے. کچھ بھی ظاہر ہوتا ہے، کسی چیز کے صحیح طریقے سے کام نہیں کر رہا ہے. آپ کو کسی بھی جدید ترین خصوصیات کا استعمال کر رہے ہیں یا آپ کے آلے کے ساتھ ممکن سکیننگ کے دیگر اقسام کا استعمال کرتے ہوئے کر رہے ہیں تو، تو میں نے اسے باہر والوں کے ساتھ جو بھی کام کرتا ہے کے طور پر توقع اس بات کو یقینی بنانے کی کوشش کر مشورہ تھا.<br /><br /></div>
 
 #### <div dir="rtl">٢.١ دستی طور پر نصب (CLI کے لئے)</div>
 
@@ -86,7 +86,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">٥. کسی بھی دستخط کو انسٹال کریں جو آپ کی ضرورت ہو گی. <em>دیکھیں: <a href="#INSTALLING_SIGNATURES">تنصیب کا دستخط</a>).</em><br /><br /></div>
 
-<div dir="rtl">٦. اس وقت تم نے کیا کر رہے ہیں! تاہم، آپ کو شاید اسے باہر یہ مناسب طریقے سے کام کر رہا ہے بات کو یقینی بنانے کے لئے جانچ کرنا چاہئے. phpMussel کو ٹیسٹ کرنے کے لئے، phpMussel چلانے اور سکیننگ پیکج کے ساتھ فراہم کی "_testfiles" ڈائریکٹری کوشش کریں.<br /><br /></div>
+<div dir="rtl">٦. اب، یہ ختم ہو گیا ہے! تاہم، آپ کو شاید اسے باہر یہ مناسب طریقے سے کام کر رہا ہے بات کو یقینی بنانے کے لئے جانچ کرنا چاہئے. phpMussel کو ٹیسٹ کرنے کے لئے، phpMussel چلانے اور سکیننگ پیکج کے ساتھ فراہم کی <code dir="ltr">_testfiles</code> ڈائریکٹری کوشش کریں.<br /><br /></div>
 
 #### <div dir="rtl">٢.٢ COMPOSER کے ساتھ نصب</div>
 
@@ -601,7 +601,11 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
  <li>فعال دستخط کی فائلوں، کوما سے ختم ہونے والی کی ایک فہرست.</li>
 </ul></div>
 
-<div dir="rtl">نوٹ: دستخط فائلوں کو پہلے ہی انسٹال کرنا ضروری ہے، اس سے پہلے کہ آپ ان کو چالو کرسکیں.<br /><br /></div>
+<div dir="rtl">نوٹ:<ul>
+ <li>دستخط فائلوں کو پہلے ہی انسٹال کرنا ضروری ہے، اس سے پہلے کہ آپ ان کو چالو کرسکیں.</li>
+ <li>ٹیسٹ کی فائلوں کو صحیح طریقے سے کام کرنے کے لئے، دستخط فائلوں کو انسٹال کرنا اور چالو کرنا ضروری ہے.</li>
+ <li>اس ترتیب کی قیمت کیش میں ذخیرہ کیا جاتا ہے. تبدیل کرنے کے بعد، آپ کو مناسب طریقے سے کام کرنے کے لۓ کیش کو خارج کرنے کی ضرورت ہوسکتی ہے.</li>
+</ul></div>
 
 ##### <div dir="rtl">"fail_silently"<br /></div>
 <div dir="rtl"><ul>
@@ -684,7 +688,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 &nbsp; <div dir="rtl" style="display:inline">شکل</div> | &nbsp; <div dir="rtl" style="display:inline">پڑھ سکتے ہیں</div> | &nbsp; <div dir="rtl" style="display:inline">دوبارہ پڑھ سکتے ہیں</div> | &nbsp; <div dir="rtl" style="display:inline">خفیہ کاری کا پتہ لگانا</div> | &nbsp; <div dir="rtl" style="display:inline">نوٹس</div>
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | &nbsp; <div dir="rtl" style="display:inline"><a href="http://php.net/manual/en/zip.requirements.php">libzip</a> کی ضرورت ہوتی ہے (عام طور پر PHP کے ساتھ شامل). بھی حمایت کی (zip فارمیٹ استعمال کرتا ہے): ✔️ OLE اعتراض کا سراغ لگانا. ✔️ آفس میکرو کا پتہ لگانا.</div>
+Zip | ✔️ | ✔️ | ✔️ | &nbsp; <div dir="rtl" style="display:inline"><a href="https://secure.php.net/manual/en/zip.requirements.php">libzip</a> کی ضرورت ہوتی ہے (عام طور پر PHP کے ساتھ شامل). بھی حمایت کی (zip فارمیٹ استعمال کرتا ہے): ✔️ OLE اعتراض کا سراغ لگانا. ✔️ آفس میکرو کا پتہ لگانا.</div>
 Tar | ✔️ | ✔️ | ➖ | &nbsp; <div dir="rtl" style="display:inline">کوئی خاص ضروریات نہیں. فارمیٹ خفیہ کاری کی حمایت نہیں کرتا.</div>
 Rar | ✔️ | ✔️ | ✔️ | &nbsp; <div dir="rtl" style="display:inline"><a href="https://pecl.php.net/package/rar">rar</a> توسیع کی ضرورت ہوتی ہے (جب یہ توسیع انسٹال نہیں ہے تو، phpMussel rar فائلوں کو پڑھ نہیں سکتے).</div>
 7zip | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">یہ ابھی تک نہیں سیکھا ہے.</div>
@@ -851,7 +855,7 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">سپورٹ
 
 ##### <div dir="rtl">"lookup_hphosts"<br /></div>
 <div dir="rtl"><ul>
- <li>صحیح پر مقرر کرتے وقت <a href="http://hosts-file.net/">hpHosts</a> API کے لئے API لک اپ فعال کرتا ہے. hpHosts API لک اپ کو انجام کے لئے ایک API کلید کی ضرورت نہیں ہے.</li>
+ <li>صحیح پر مقرر کرتے وقت <a href="https://hosts-file.net/">hpHosts</a> API کے لئے API لک اپ فعال کرتا ہے. hpHosts API لک اپ کو انجام کے لئے ایک API کلید کی ضرورت نہیں ہے.</li>
 </ul></div>
 
 ##### <div dir="rtl">"google_api_key"<br /></div>
@@ -882,7 +886,7 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">سپورٹ
 
 ##### <div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
 <div dir="rtl"><ul>
- <li>لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
+ <li>لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں.</li>
 </ul></div>
 
 ##### <div dir="rtl">"privacy_policy"<br /></div>
@@ -1558,4 +1562,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 14 دسمبر 2018 (2018.12.14).</div>
+<div dir="rtl">آخری تازہ کاری: 5 جنوری 2019 (2019.01.05).</div>

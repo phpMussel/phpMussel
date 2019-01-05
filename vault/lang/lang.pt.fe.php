@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.10.16).
+ * This file: Portuguese language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = 'O seu fuso horário.';
 $phpMussel['lang']['config_general_truncate'] = 'Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Existem assinaturas específicas de phpMussel para identificando suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados sem por si só identificando aqueles arquivos que estão sendo carregados especificamente como sendo maliciosos. Este "threshold" (limiar) valor instrui phpMussel o que o total máximo peso de suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados que é permitida é antes que esses arquivos devem ser sinalizada como maliciosos. A definição de peso neste contexto é o número total de suspeitas e qualidades potencialmente maliciosos identificado. Por padrão, este valor será definido como 3. Um menor valor geralmente resultará em uma maior ocorrência de falsos positivos mas um maior número de arquivos maliciosos sendo sinalizado, enquanto um maior valor geralmente resultará em uma menor ocorrência de falsos positivos mas um menor número de arquivos maliciosos sendo sinalizado. É geralmente melhor a deixar esse valor em seu padrão a menos que você está enfrentando problemas relacionados a ela.';
 $phpMussel['lang']['config_legal_privacy_policy'] = 'O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar.';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim; False = Não [Padrão].';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não.';
 $phpMussel['lang']['config_signatures_Active'] = 'Uma lista dos arquivos de assinaturas ativos, delimitados por vírgulas.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Deve phpMussel usam assinaturas para detectar adware? False = Não; True = Sim [Padrão].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? False = Não; True = Sim [Padrão].';

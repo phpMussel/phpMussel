@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.10.16).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = 'Uw tijdzone.';
 $phpMussel['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Er zijn bepaalde signatures van phpMussel dat zijn bedoeld om verdachte en potentieel kwaadaardige kwaliteiten te identificeren van bestanden wordt geüpload zonder zichzelf om bestanden wordt geüpload te identificeren specifiek als kwaadaardige. Dit "threshold" waarde vertelt phpMussel het maximaal totaalgewicht van verdachte en potentieel kwaadaardige kwaliteiten van bestanden wordt geüpload dat is toelaatbaar voordat deze bestanden worden gemarkeerd als kwaadaardig. De definitie van gewicht in dit verband is het aantal van verdachte en potentieel kwaadaardige kwaliteiten dat zijn geïdentificeerd. Standaard, dit waarde wordt ingesteld op 3. Algemeen, een lagere waarde zal resulteren in meer valse positieven maar meer kwaadaardige bestanden wordt gemarkeerd, terwijl een hogere waarde zal resulteren in minder valse positieven maar minder kwaadaardige bestanden wordt gemarkeerd. Algemeen, het is beste om dit waarde te laten op zijn standaard, tenzij u problemen ondervindt met betrekking tot het.';
 $phpMussel['lang']['config_legal_privacy_policy'] = 'Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina\'s. Geef een URL, of laat leeg om uit te schakelen.';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee.';
 $phpMussel['lang']['config_signatures_Active'] = 'Een lijst van de actief signatuurbestanden, gescheiden door komma\'s.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Moet phpMussel verwerken signatures voor het detecteren van adware? False = Nee; True = Ja [Standaard].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Moet phpMussel verwerken signatures voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard].';

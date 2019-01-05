@@ -25,15 +25,15 @@ Thank you for using phpMussel, a PHP script designed to detect trojans, viruses,
 PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
 
 This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE.txt` file and available also from:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-Special thanks to [ClamAV](http://www.clamav.net/) for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value.
+Special thanks to [ClamAV](https://www.clamav.net/) for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value.
 
-Special thanks to SourceForge and GitHub for hosting the project files, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
+Special thanks to SourceForge and GitHub for hosting the project files, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
 
 This document and its associated package can be downloaded for free from:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Or this in the `.htaccess` file:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. (Make sure to include the phpmussel*.db signature files in your `Active` setting for the test files to trigger.) If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
+7) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. (Make sure you've included the `phpmussel*.*db` signature files in your `Active` setting for the test files to trigger). If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
 
 #### 2.1 INSTALLING MANUALLY (FOR CLI)
 
@@ -250,18 +250,18 @@ File | Description
 /_docs/readme.vi.md | Vietnamese documentation.
 /_docs/readme.zh-TW.md | Chinese (traditional) documentation.
 /_docs/readme.zh.md | Chinese (simplified) documentation.
-/_testfiles/ | Testfiles directory (contains various files). All contained files are testfiles for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
-/_testfiles/ascii_standard_testfile.txt | Testfile for testing phpMussel normalised ASCII signatures.
-/_testfiles/coex_testfile.rtf | Testfile for testing phpMussel Complex Extended signatures.
-/_testfiles/exe_standard_testfile.exe | Testfile for testing phpMussel PE signatures.
-/_testfiles/general_standard_testfile.txt | Testfile for testing phpMussel general signatures.
-/_testfiles/graphics_standard_testfile.gif | Testfile for testing phpMussel graphics signatures.
-/_testfiles/html_standard_testfile.html | Testfile for testing phpMussel normalised HTML signatures.
-/_testfiles/md5_testfile.txt | Testfile for testing phpMussel MD5 signatures.
-/_testfiles/ole_testfile.ole | Testfile for testing phpMussel OLE signatures.
-/_testfiles/pdf_standard_testfile.pdf | Testfile for testing phpMussel PDF signatures.
-/_testfiles/pe_sectional_testfile.exe | Testfile for testing phpMussel PE Sectional signatures.
-/_testfiles/swf_standard_testfile.swf | Testfile for testing phpMussel SWF signatures.
+/_testfiles/ | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
+/_testfiles/ascii_standard_testfile.txt | Test file for testing phpMussel normalised ASCII signatures.
+/_testfiles/coex_testfile.rtf | Test file for testing phpMussel Complex Extended signatures.
+/_testfiles/exe_standard_testfile.exe | Test file for testing phpMussel PE signatures.
+/_testfiles/general_standard_testfile.txt | Test file for testing phpMussel general signatures.
+/_testfiles/graphics_standard_testfile.gif | Test file for testing phpMussel graphics signatures.
+/_testfiles/html_standard_testfile.html | Test file for testing phpMussel normalised HTML signatures.
+/_testfiles/md5_testfile.txt | Test file for testing phpMussel MD5 signatures.
+/_testfiles/ole_testfile.ole | Test file for testing phpMussel OLE signatures.
+/_testfiles/pdf_standard_testfile.pdf | Test file for testing phpMussel PDF signatures.
+/_testfiles/pe_sectional_testfile.exe | Test file for testing phpMussel PE Sectional signatures.
+/_testfiles/swf_standard_testfile.swf | Test file for testing phpMussel SWF signatures.
 /vault/ | Vault directory (contains various files).
 /vault/cache/ | Cache directory (for temporary data).
 /vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
@@ -538,7 +538,10 @@ Signatures configuration.
 ##### "Active"
 - A list of the active signature files, delimited by commas.
 
-*Note: Signature files must firstly be installed, before you can activate them. For the test files to trigger, you also need to include the phpMussel signature files. After changing the configuration you may want to delete the cache.*
+*Note:*
+- *Signature files must firstly be installed, before you can activate them.*
+- *For the test files to work correctly, the signature files must be installed and activated.*
+- *The value of this directive is cached. After changing it, for changes to take effect, you may need to delete the cache.*
 
 ##### "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
@@ -591,7 +594,7 @@ File handling configuration.
 
 Format | Can read | Can read recursively | Can detect encryption | Notes
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Requires [libzip](http://php.net/manual/en/zip.requirements.php) (normally bundled with PHP anyway). Also supported (uses the zip format): ✔️ OLE object detection. ✔️ Office macro detection.
+Zip | ✔️ | ✔️ | ✔️ | Requires [libzip](https://secure.php.net/manual/en/zip.requirements.php) (normally bundled with PHP anyway). Also supported (uses the zip format): ✔️ OLE object detection. ✔️ Office macro detection.
 Tar | ✔️ | ✔️ | ➖ | No special requirements. Format doesn't support encryption.
 Rar | ✔️ | ✔️ | ✔️ | Requires the [rar](https://pecl.php.net/package/rar) extension (when this extension isn't installed, phpMussel can't read rar files).
 7zip | ❌ | ❌ | ❌ | Still currently investigating how to read 7zip files in phpMussel.
@@ -705,7 +708,7 @@ Note: If the URL scanner is disabled, you won't need to review any of the direct
 URL scanner API lookup configuration.
 
 ##### "lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+- Enables API lookups to the [hpHosts](https://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
 
 ##### "google_api_key"
 - Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Configuration relating to legal requirements.
 *For more information about legal requirements and how this could affect your configuration requirements, please refer to the "[LEGAL INFORMATION](#SECTION11)" section of the documentation.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymise IP addresses when logging? True = Yes; False = No [Default].
+- Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.
 
 ##### "privacy_policy"
 - The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.
@@ -1336,4 +1339,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 14 December 2018 (2018.12.14).
+Last Updated: 5 January 2019 (2019.01.05).

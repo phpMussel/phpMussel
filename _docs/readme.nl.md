@@ -25,15 +25,15 @@ Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans, v
 PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPLv2 van Caleb M (Maikuolan).
 
 Dit script is gratis software; u kunt, onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation, herdistribueren en/of wijzigen dit; ofwel versie 2 van de Licentie, of (naar uw keuze) enige latere versie. Dit script wordt gedistribueerd in de hoop dat het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General Public License voor meer informatie, gelegen in het `LICENSE.txt` bestand en ook beschikbaar uit:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-Speciale dank aan [ClamAV](http://www.clamav.net/) voor zowel project inspiratie en voor de signatures dat dit script maakt gebruik daarvan, zonder welke, het script zou waarschijnlijk niet bestaan, of op zijn best, zou heeft zeer beperkte waarde.
+Speciale dank aan [ClamAV](https://www.clamav.net/) voor zowel project inspiratie en voor de signatures dat dit script maakt gebruik daarvan, zonder welke, het script zou waarschijnlijk niet bestaan, of op zijn best, zou heeft zeer beperkte waarde.
 
-Speciale dank aan SourceForge en GitHub voor het hosten van de project-bestanden, en de extra bronnen van een aantal signatures gebruikt door phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) en anderen, en speciale dank aan allen die het project steunen, aan iemand anders die ik anders misschien vergeten te vermelden, en voor u, voor het gebruik van het script.
+Speciale dank aan SourceForge en GitHub voor het hosten van de project-bestanden, en de extra bronnen van een aantal signatures gebruikt door phpMussel: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) en anderen, en speciale dank aan allen die het project steunen, aan iemand anders die ik anders misschien vergeten te vermelden, en voor u, voor het gebruik van het script.
 
 Dit document en de bijbehorende pakket kunt gedownload gratis zijn van:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Of dit in het `.htaccess` bestand:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Voor het testen van het bestand upload protecties, proberen om de testen bestanden te uploaden opgenomen in het pakket als `_testfiles` naar uw website via uw gebruikelijke browser-gebaseerde uploaden methoden. Wanneer alles werkt, verschijnt er een bericht uit phpMussel bevestigen dat de upload met succes werd geblokkeerd. Wanneer er niets, is er iets niet correct werkt. Als u met behulp van een geavanceerde functies of als u met behulp van de andere types van het scannen mogelijk met het gereedschap, ik stel het uit te proberen met die ervoor zorgen dat het werkt zoals verwacht, ook.
+7) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Voor het testen van het bestand upload protecties, proberen om de testen bestanden te uploaden opgenomen in het pakket als `_testfiles` naar uw website via uw gebruikelijke browser-gebaseerde uploaden methoden. (Zorg ervoor dat u de `phpmussel*.*db` signatuurbestanden hebt opgenomen in de `Active`-configuratierichtlijn om de testbestanden te activeren). Wanneer alles werkt, verschijnt er een bericht uit phpMussel bevestigen dat de upload met succes werd geblokkeerd. Wanneer er niets, is er iets niet correct werkt. Als u met behulp van een geavanceerde functies of als u met behulp van de andere types van het scannen mogelijk met het gereedschap, ik stel het uit te proberen met die ervoor zorgen dat het werkt zoals verwacht, ook.
 
 #### 2.1 HANDMATIG INSTALLEREN (VOOR CLI)
 
@@ -538,7 +538,10 @@ Configuratie voor signatures.
 ##### "Active"
 - Een lijst van de actief signatuurbestanden, gescheiden door komma's.
 
-*Notitie: Signatuurbestanden moeten eerst worden geïnstalleerd, voordat u ze kunt activeren.*
+*Notitie:*
+- *Signatuurbestanden moeten eerst worden geïnstalleerd voordat u ze kunt activeren.*
+- *Om de testbestanden correct te laten werken, moeten de signatuurbestanden worden geïnstalleerd en geactiveerd.*
+- *De waarde van deze richtlijn is in de cache opgeslagen. Na het wijzigingen, om enig effect te hebben, moet u mogelijk de cache verwijderen.*
 
 ##### "fail_silently"
 - Moet phpMussel rapporteren wanneer signatuurbestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -591,7 +594,7 @@ Bestand hanteren configuratie.
 
 Formaat | Kan lezen | Kan recursief lezen | Kan encryptie detecteren | Notities
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Vereist [libzip](http://php.net/manual/en/zip.requirements.php) (normaal is het gebundeld met PHP). Wordt ook ondersteund (gebruikt het zip-formaat): ✔️ OLE-object detectie. ✔️ Office macro detectie.
+Zip | ✔️ | ✔️ | ✔️ | Vereist [libzip](https://secure.php.net/manual/en/zip.requirements.php) (normaal is het gebundeld met PHP). Wordt ook ondersteund (gebruikt het zip-formaat): ✔️ OLE-object detectie. ✔️ Office macro detectie.
 Tar | ✔️ | ✔️ | ➖ | Geen speciale vereisten. Formaat ondersteunt geen encryptie.
 Rar | ✔️ | ✔️ | ✔️ | Vereist de [rar](https://pecl.php.net/package/rar)-extensie (wanneer deze extensie niet is geïnstalleerd, kan phpMussel geen rar-bestanden lezen).
 7zip | ❌ | ❌ | ❌ | Momenteel nog steeds bezig met onderzoek naar hoe 7zip-bestanden te lezen in phpMussel.
@@ -705,7 +708,7 @@ Noteren: Als de URL scanner wordt uitgeschakeld, zult u geen behoefte aan een va
 URL scanner API configuratie.
 
 ##### "lookup_hphosts"
-- Inschakelt gebruik van de [hpHosts](http://hosts-file.net/) API wanneer zet op true. hpHosts nodig geen API sleutel voor het uitvoeren API verzoeken.
+- Inschakelt gebruik van de [hpHosts](https://hosts-file.net/) API wanneer zet op true. hpHosts nodig geen API sleutel voor het uitvoeren API verzoeken.
 
 ##### "google_api_key"
 - Inschakelt gebruik van de Google Safe Browsing API wanneer de noodzakelijke API sleutel wordt gedefinieerd. Google Safe Browsing API nodig hebben een API sleutel, dat kan worden verkregen van [Hier](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Configuratie met betrekking tot wettelijke vereisten.
 *Voor meer informatie over wettelijke vereisten en hoe dit uw configuratie-eisen kan beïnvloeden, zie het sectie "[LEGALE INFORMATIE](#SECTION11)" van de documentatie.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].
+- Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee.
 
 ##### "privacy_policy"
 - Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen.
@@ -1334,4 +1337,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 14 December 2018 (2018.12.14).
+Laatste Bijgewerkt: 5 Januari 2019 (2019.01.05).

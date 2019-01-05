@@ -25,15 +25,15 @@
 PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 本腳本是基於GNU通用許可V2.0版許可協議發布的，​您可以在許可協議的允許範圍內自行修改和發布，​但請遵守GNU通用許可協議。​使用腳本的過程中，​作者不提供任何擔保和任何隱含擔保。​更多的細節請參見GNU通用公共許可證，​下的`LICENSE.txt`文件也可從訪問：
-- <http://www.gnu.org/licenses/>。
-- <http://opensource.org/licenses/>。
+- <https://www.gnu.org/licenses/>。
+- <https://opensource.org/licenses/>。
 
-謝謝[ClamAV](http://www.clamav.net/)為本腳本提供文件簽名庫訪問許可。​沒有它，​這個腳本很可能不會存在，​或者其價值有限。
+謝謝[ClamAV](https://www.clamav.net/)為本腳本提供文件簽名庫訪問許可。​沒有它，​這個腳本很可能不會存在，​或者其價值有限。
 
-謝謝SourceForge和GitHub為項目託管，​還有謝謝這些組織為提供一些簽名：​[SecuriteInfo.com](http://www.securiteinfo.com/)，​[PhishTank](http://www.phishtank.com/)，​[NLNetLabs](http://nlnetlabs.nl/)，​等人。
+謝謝SourceForge和GitHub為項目託管，​還有謝謝這些組織為提供一些簽名：​[SecuriteInfo.com](https://www.securiteinfo.com/)，​[PhishTank](https://www.phishtank.com/)，​[NLNetLabs](https://nlnetlabs.nl/)，​等人。
 
 現在phpMussel的代碼文件和關聯包可以從以下地址免費下載：
-- [SourceForge](http://phpmussel.sourceforge.net/)。
+- [SourceForge](https://sourceforge.net/projects/phpmussel/)。
 - [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
@@ -69,7 +69,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7） 到這裡，​您已經完成安裝，​現在您應測試phpMussel以確保它的正常運行！​為了保護系統中的文件（或者應該翻譯為保護上傳的文件），​可以嘗試通過常用的瀏覽器上傳的方式上傳包含在`_testfiles`文件夾內的內容到您的網站。​如果一切正常，​phpMussel應該出現阻止上傳信息，​如果出現什麼不正常情況例如您使用了其他高級的功能或使用的其它類型的掃描，​我建議嘗試它跟他們一起使用以確保都能工作正常。
+7） 到這裡，​您已經完成安裝，​現在您應測試phpMussel以確保它的正常運行！​為了保護系統中的文件（或者應該翻譯為保護上傳的文件），​可以嘗試通過常用的瀏覽器上傳的方式上傳包含在`_testfiles`文件夾內的內容到您的網站。​（確保在`Active`配置指令中包含`phpmussel*.*db`簽名文件，以便觸發測試文件）。​如果一切正常，​phpMussel應該出現阻止上傳信息，​如果出現什麼不正常情況例如您使用了其他高級的功能或使用的其它類型的掃描，​我建議嘗試它跟他們一起使用以確保都能工作正常。
 
 #### 2.1 安裝手工（CLI）
 
@@ -539,7 +539,10 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 ##### 『Active』
 - 活性簽名文件的列表，​以逗號分隔。
 
-*注意：首先必須安裝簽名文件，然後才能激活它們。*
+*注意：*
+- *首先必須安裝簽名文件，然後才能激活它們。*
+- *為了使測試文件正常工作，必須安裝並激活簽名文件。*
+- *該指令的值存儲在緩存中。​更改後，要使更改生效，您可能需要刪除緩存。*
 
 ##### 『fail_silently』
 - phpMussel應該報告當簽名文件是失踪或損壞嗎？​如果`fail_silently`是關閉，​失踪和損壞文件將會報告當掃描，​和如果`fail_silently`是激活，​失踪和損壞文件將會忽略，​有掃描報告為那些文件哪裡沒有問題。​這個應該按說被留下除非您遇到失敗或有其他類似問題。​False（假）=是關閉；​True（真）=是激活【默認】。
@@ -592,7 +595,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 
 格式 | 可以讀取 | 可以遞歸地讀取 | 可以檢測加密 | 筆記
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | 需要[libzip](http://php.net/manual/en/zip.requirements.php)（通常與PHP捆綁在一起）。 也支持（使用zip格式）： ✔️ OLE對象檢測。 ✔️ Office宏檢測。
+Zip | ✔️ | ✔️ | ✔️ | 需要[libzip](https://secure.php.net/manual/en/zip.requirements.php)（通常與PHP捆綁在一起）。 也支持（使用zip格式）： ✔️ OLE對象檢測。 ✔️ Office宏檢測。
 Tar | ✔️ | ✔️ | ➖ | 沒有特殊需要。格式不支持加密。
 Rar | ✔️ | ✔️ | ✔️ | 需要[rar](https://pecl.php.net/package/rar)擴展（當沒有安裝此擴展時，phpMussel無法讀取rar文件）。
 7zip | ❌ | ❌ | ❌ | 目前仍在研究如何在phpMussel中讀取7zip文件。
@@ -706,7 +709,7 @@ phpMussel包含URL掃描程序，​能夠檢測惡意URL在任何數據或文�
 URL掃描儀API配置。
 
 ##### 『lookup_hphosts』
-- 激活[hpHosts](http://hosts-file.net/) API當設置`true`。​hpHosts不需要API密鑰為了執行API請求。
+- 激活[hpHosts](https://hosts-file.net/) API當設置`true`。​hpHosts不需要API密鑰為了執行API請求。
 
 ##### 『google_api_key』
 - 激活Google Safe Browsing API當API密鑰是設置。​Google Safe Browsing API需要API密鑰，​可以得到從[這裡](https://console.developers.google.com/)。
@@ -727,7 +730,7 @@ URL掃描儀API配置。
 *請參閱文檔的『[法律信息](#SECTION11)』章節以獲取更多有關法律義務的信息，以及它可以如何影響您的配置義務。*
 
 ##### 『pseudonymise_ip_addresses』
-- 編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。
+- 編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。
 
 ##### 『privacy_policy』
 - 要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。
@@ -1327,7 +1330,7 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 一些推薦的資源用於了解更多信息：
 - [关于欧盟GDPR隐私合规，中国数字营销人不得不知的9大问题](http://www.adexchanger.cn/top_news/28813.html)
 - [史上最严的隐私条例出台，2018年开始执行](https://zhuanlan.zhihu.com/p/20865602)
-- [《欧盟数据保护条例》对中国企业的影响 —- 以阿里巴巴集团为例](http://spiegeler.com/%E3%80%8A%E6%AC%A7%E7%9B%9F%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8A%A4%E6%9D%A1%E4%BE%8B%E3%80%8B%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%9A%84%E5%BD%B1%E5%93%8D-%E4%BB%A5%E9%98%BF%E9%87%8C/)
+- [《欧盟数据保护条例》对中国企业的影响 —- 以阿里巴巴集团为例](https://spiegeler.com/%E3%80%8A%E6%AC%A7%E7%9B%9F%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8A%A4%E6%9D%A1%E4%BE%8B%E3%80%8B%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%9A%84%E5%BD%B1%E5%93%8D-%E4%BB%A5%E9%98%BF%E9%87%8C/)
 - [歐盟個人資料保護法 GDPR 即將上路！與電商賣家息息相關的 Google Analytics 資料保留政策，你瞭解了嗎？](https://shopline.hk/blog/google-analytics-gdpr/)
 - [歐盟一般資料保護規範](https://zh.wikipedia.org/wiki/%E6%AD%90%E7%9B%9F%E4%B8%80%E8%88%AC%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7%E8%A6%8F%E7%AF%84)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
@@ -1335,4 +1338,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2018年12月14日。
+最後更新：2019年1月5日。

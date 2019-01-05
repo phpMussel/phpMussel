@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.10.16).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -21,7 +21,7 @@ if (!defined('phpMussel')) {
 
 $phpMussel['lang']['Extended Description: Chart.js'] = 'フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。';
 $phpMussel['lang']['Extended Description: PHPMailer'] = '電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。';
-$phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。';
+$phpMussel['lang']['Extended Description: phpMussel'] = 'メインパッケージ（シグネチャ、​ドキュメンテーション、​およびコンフィギュレーションは含まれていません）。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['config_PHPMailer_Enable2FA'] = 'このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。';
@@ -71,15 +71,15 @@ $phpMussel['lang']['config_general_default_algo'] = '将来のすべてのパス
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​<code>false</code>（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​<code>true</code>（真） = スキャニング後、​クリーンでなければ直ちに削除。';
 $phpMussel['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​<code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​<code>true</code>（真） = ＣＬＩモードを無効にします。';
 $phpMussel['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​phpMusselをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。';
-$phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？ True = はい（Default/デフォルルト）。 False = いいえ。';
 $phpMussel['lang']['config_general_enable_plugins'] = 'プラグインのサポートを有効にしますか？​<code>false</code> = いいえ；​<code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'アップロードファイルがブロックされたメッセージと共に、​phpMusselから４０３ヘッダーを送るべきか、​通常の２００でよいかどうかについて。​<code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」；​<code>true</code>（真） = はい（４０３）。';
-$phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効 （Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。';
+$phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効（Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。';
 $phpMussel['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $phpMussel['lang']['config_general_lang'] = 'phpMusselのデフォルト言語を設定します。';
 $phpMussel['lang']['config_general_log_rotation_action'] = 'ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。';
 $phpMussel['lang']['config_general_log_rotation_limit'] = 'ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。';
-$phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？ True = はい。 False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。';
 $phpMussel['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMusselは、​必要とあれば、​phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。​一般的なphpMusselのユーザーは、​ウェブサイトやホスティング環境の保護ができれば充分と考えており、​フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、​無効で構いません。​ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。​フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。​検疫機能を無効にするには、​<code>quarantine_key</code>ディレクティブを空にしておくか、​空でない場合はディレクティブ内のコンテンツを消去して下さい。​有効にするには、​デイレクティブに何らかの値を入れて下さい。​<code>quarantine_key</code>は検疫機能における重要なセキュリティー要素であり、​検疫機能内に保存されたデータの執行を各種の攻撃から守っています。​<code>quarantine_key</code>はパスワードと同様に考えて下さい。​長い方がより安全と言えます。​最も効果的な使用法は<code>delete_on_sight</code>との併用です。';
@@ -90,15 +90,15 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMusselはスキャ�
 $phpMussel['lang']['config_general_scan_kills'] = 'ブロックしたか削除したアップロードの全てを記録するファイのファイル名。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を記録するファイルのファイル名。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
-$phpMussel['lang']['config_general_statistics'] = 'phpMussel使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$phpMussel['lang']['config_general_statistics'] = 'phpMussel使用統計を追跡しますか？ True = はい。 False = いいえ（Default/デフォルルト）。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。';
 $phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーン・オフセット（分）。';
 $phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
 $phpMussel['lang']['config_general_truncate'] = 'ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_legal_privacy_policy'] = '生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​<code>true</code>（真）=はい；​<code>false</code>（偽）=いいえ（Default/デフォルルト）。';
-$phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？ True = はい（Default/デフォルルト）。 False = いいえ。';
+$phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャ・ファイルのリスト。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMusselは改ざんやディフェーサー検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_encryption'] = 'phpMusselは暗号化ファイルを検出してブロックする必要がありますか？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
@@ -106,8 +106,8 @@ $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMusselは悪戯/�
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMusselはパッカーやパックデータ検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMusselはＰＵＡ/ＰＵＰ検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMusselはshellスクリプト検出のためにシグネチャを分析すべきか否か？​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。';
-$phpMussel['lang']['config_signatures_fail_extensions_silently'] = '拡張子がない場合にphpMusselがそれをレポートすべきか否か？​<code>fail_extensions_silently</code>が無効の場合、​拡張子なしはスキャニング時にレポートされ、​有効の場合は無視され問題は報告されません。​このディレクティブを無効にすることは、​セキュリティーを向上させるかもしれませんが、​誤検出も増加する恐れがあります。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
-$phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャファイルがない、​あるいは破損している場合に、​phpMusselがそれをリポートすべきか否か？​<code>fail_silently</code>が無効ならば、​問題はリポートされ、​有効であれば、​問題は無視されたスキャニングレポートが作成されます。​クラッシュするというような害がなければ、​デフォルト設定のままにしておくべきです。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
+$phpMussel['lang']['config_signatures_fail_extensions_silently'] = '拡張子がない場合にphpMusselがそれをレポートすべきか否か？​<code>fail_extensions_silently</code>が無効の場合、​拡張子なしはスキャニング時にレポートされ、​有効の場合は無視され問題は報告されません。​このディレクティブを無効にすることは、​セキュリティーを向上させるかもしれませんが、​誤検出も増加する恐れがあります。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効（Default/デフォルト）。';
+$phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャ・ファイルがない、​あるいは破損している場合に、​phpMusselがそれをリポートすべきか否か？​<code>fail_silently</code>が無効ならば、​問題はリポートされ、​有効であれば、​問題は無視されたスキャニングレポートが作成されます。​クラッシュするというような害がなければ、​デフォルト設定のままにしておくべきです。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
 $phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。';
 $phpMussel['lang']['config_template_data_theme'] = 'phpMusselに使用するデフォルトテーマ。';

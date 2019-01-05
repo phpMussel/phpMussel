@@ -9,6 +9,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
+
 ### Features:
 - Licensed as [GNU General Public License version 2.0](https://github.com/phpMussel/phpMussel/blob/master/LICENSE.txt) (GPLv2).
 - Easy to install, easy to customise, easy to use.
@@ -22,6 +23,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 - Good, strong, stable support base.
 
 ---
+
 
 ### Documentation:
 - **[English](https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md)**
@@ -47,4 +49,5 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*Last modified: 3 September 2018 (2018.09.03).*
+
+Last Updated: 23 December 2018 (2018.12.23).

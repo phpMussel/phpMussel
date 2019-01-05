@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.10.16).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = '您的时区。';
 $phpMussel['lang']['config_general_truncate'] = '截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。';
 $phpMussel['lang']['config_heuristic_threshold'] = '有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。​这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。​定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。​作为默认，​这个数值将会设置作为3。​一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，​而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。​它是通常最好忽略这个数值除非您遇到关联问题。';
 $phpMussel['lang']['config_legal_privacy_policy'] = '要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。';
 $phpMussel['lang']['config_signatures_Active'] = '活性签名文件的列表，​以逗号分隔。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel应该使用签名为广告软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel应该使用签名为污损和污损软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。';

@@ -25,15 +25,15 @@ phpMussel을 이용해 주셔서 감사합니다. phpMussel는 ClamAV를 비롯�
 phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License"(일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](http://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
+창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](https://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
 
-본 프로젝트 파일의 호스트 처인 SourceForge와 GitHub, phpMussel이 이용하는 서명 제공처이다 : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
+본 프로젝트 파일의 호스트 처인 SourceForge와 GitHub, phpMussel이 이용하는 서명 제공처이다 : [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) 이제 설치가 완료되었습니다 만, 만약을 위해 테스트를 실시합시다. 불법 파일 업로드 보호 기능을 테스트하려면 패키지에 `_testfiles`에 포함 된 테스트 파일을 브라우저를 사용하는 일반적인 방법으로 업로드합니다. 문제가 없으면 phpMussel에서 업로드를 차단했다는 메시지가 표시되고 그렇지 않은 경우는 무언가가 제대로 작동하지 않습니다. 또한 만약 뭔가 특별한 기능을 사용하고, 혹은 다른 유형의 스캐닝도 사용하고있는 것 같으면 서로 영향을 걷지 않을지도 체크해 두는 것이 좋습니다.
+7) 이제 설치가 완료되었습니다만, 만약을 위해 테스트를 합시다. 파일 업로드 보호를 테스트하려면, 패키지에 `_testfiles`에 포함된 테스트 파일을 브라우저를 사용하는 일반적인 방법으로 올립니다. (테스트 파일을 트리거하려면, `phpmussel*.*db` 서명 파일을 `Active` 설정 지시어에 포함 시켰는지 확인하십시오). 문제가 없으면 phpMussel에서 업로드를 차단했다는 메시지가 표시되고 그렇지 않은 경우는 무언가가 제대로 작동하지 않습니다. 또한 만약 뭔가 특별한 기능을 사용하고, 혹은 다른 유형의 스캐닝도 사용하고 있는 것 같으면 서로 영향을 걷지 않을지도 점검해 두는 것이 좋습니다.
 
 #### 2.1 수동 설치 (CLI 편)
 
@@ -538,7 +538,10 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 ##### "Active"
 - 쉼표로 구분 된 활성 시그니처 파일의 목록입니다.
 
-*노트 : 서명 파일은 설치 될 때까지 활성화 할 수 없습니다.*
+*노트 :*
+- *활성화하기 전에, 첫째로, 서명 파일을 설치해야 합니다.*
+- *테스트 파일이 올바르게 작동하려면, 서명 파일을 설치하고 활성화해야 합니다.*
+- *이 지시문의 값은 캐시 됩니다. 변경 후, 변경 사항을 적용하려면 캐시를 삭제해야 할 수 있습니다.*
 
 ##### "fail_silently"
 - 서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? `fail_silently`이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정).
@@ -591,7 +594,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 
 체재 | 읽을 수 있음 | 재귀 적으로 읽을 수 있음 | 암호화를 탐지 할 수 있습니다 | 노트
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | [libzip](http://php.net/manual/en/zip.requirements.php)가 필요합니다 (이것은 보통 PHP에 포함되어 있습니다). 추가 지원 (zip 형식 사용) : ✔️ OLE 개체 감지. ✔️ Office 매크로 감지.
+Zip | ✔️ | ✔️ | ✔️ | [libzip](https://secure.php.net/manual/en/zip.requirements.php)가 필요합니다 (이것은 보통 PHP에 포함되어 있습니다). 추가 지원 (zip 형식 사용) : ✔️ OLE 개체 감지. ✔️ Office 매크로 감지.
 Tar | ✔️ | ✔️ | ➖ | 특별한 요구 사항이 없습니다. 형식은 암호화를 지원하지 않습니다.
 Rar | ✔️ | ✔️ | ✔️ | [rar](https://pecl.php.net/package/rar) 확장자가 필요합니다 (이 확장 기능이 설치되어 있지 않으면, phpMussel은 rar 파일을 읽을 수 없습니다).
 7zip | ❌ | ❌ | ❌ | 현재 현재 phpMussel에서 7zip 파일을 읽는 방법을 조사하고 있습니다.
@@ -705,7 +708,7 @@ phpMussel에는 URL 스캐너가 내장되어 스캔 된 파일이나 데이터�
 URL 스캐너 API 조회 설정.
 
 ##### "lookup_hphosts"
-- True로하면 API를 [hpHosts](http://hosts-file.net/) 조회가 활성화됩니다. hpHosts은 API 조회를 수행하기 위해 API 키가 필요하지 않습니다.
+- True로하면 API를 [hpHosts](https://hosts-file.net/) 조회가 활성화됩니다. hpHosts은 API 조회를 수행하기 위해 API 키가 필요하지 않습니다.
 
 ##### "google_api_key"
 - 필요한 API 키가 정의되면, API는 Google Safe Browsing API 조회가 활성화됩니다. Google Safe Browsing API 룩 앱스에 필요한 API 키는에서 [얻을 수 있습니다](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ URL 스캐너 API 조회 설정.
 *법적 요구 사항 및 이것이 구성 요구 사항에 미치는 영향에 대한 자세한 내용은 설명서의 "[법률 정보](#SECTION11)"절을 참조하십시오.*
 
 ##### "pseudonymise_ip_addresses"
-- 로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).
+- 로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오.
 
 ##### "privacy_policy"
 - 생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.
@@ -1331,4 +1334,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2018년 12월 14일.
+최종 업데이트 : 2019년 1월 5일.

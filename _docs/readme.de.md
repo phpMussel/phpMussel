@@ -4,7 +4,7 @@
 - 1. [VORWORT](#SECTION1)
 - 2. [INSTALLATION](#SECTION2)
 - 3. [BENUTZUNG](#SECTION3)
-- 4. [FRONT-END-MANAGEMENT](#SECTION4)
+- 4. [FRONTEND-MANAGEMENT](#SECTION4)
 - 5. [CLI (BEFEHLSZEILENMODUS)](#SECTION5)
 - 6. [IM PAKET ENTHALTENE DATEIEN](#SECTION6)
 - 7. [EINSTELLUNGEN](#SECTION7)
@@ -13,7 +13,7 @@
 - 10. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION10)
 - 11. [RECHTSINFORMATION](#SECTION11)
 
-*Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
+*Hinweis für Übersetzungen: Im Falle von Fehlern (z.B., Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
 
 ---
 
@@ -25,15 +25,15 @@ Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner, Vir
 PHPMUSSEL COPYRIGHT 2013 und darüber hinaus GNU/GPLv2 by Caleb M (Maikuolan).
 
 Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE.txt`, ebenfalls verfügbar auf:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-Besonderer Dank geht an [ClamAV](http://www.clamav.net/) für die Inspiration und die Signaturen, die dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren würde oder bestenfalls einen sehr begrenzten Wert hätte.
+Besonderer Dank geht an [ClamAV](https://www.clamav.net/) für die Inspiration und die Signaturen, die dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren würde oder bestenfalls einen sehr begrenzten Wert hätte.
 
-Besonderer Dank geht auch an SourceForge und GitHub für das Hosten der Projektdateien, und an die weiteren Quellen einiger von phpMussel verwendeten Signaturen: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) und andere, und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
+Besonderer Dank geht auch an SourceForge und GitHub für das Hosten der Projektdateien, und an die weiteren Quellen einiger von phpMussel verwendeten Signaturen: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) und andere, und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
 
 Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos heruntergeladen werden:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,8 @@ Oder das in der `.htaccess` Datei:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket enthaltenen Testdateien `_testfiles` auf Ihre Webseite über die gewöhnlichen browserbasierten Methoden hochladen. (Damit die Testdateien erkannt werden, sollten auch die phpmussel*.db-Signaturdateien installiert und als `Active` konfiguriert sein.) Funktioniert das Programm ordnungsgemäß, erscheint eine Meldung von phpMussel, dass der Upload erfolgreich blockiert wurde. Erscheint keine Meldung, funktioniert das Programm nicht korrekt. Nutzen Sie andere erweiterte Funktionen oder weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
+7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket enthaltenen Testdateien `_testfiles` auf Ihre Webseite über die gewöhnlichen browserbasierten Methoden hochladen. (Damit die Testdateien erkannt werden, sollten auch die `phpmussel*.*db`-Signaturdateien installiert und als `Active` konfiguriert sein). Funktioniert das Programm ordnungsgemäß, erscheint eine Meldung von phpMussel, dass der Upload erfolgreich blockiert wurde. Erscheint keine Meldung, funktioniert das Programm nicht korrekt. Nutzen Sie andere erweiterte Funktionen oder weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
+
 
 #### 2.1 MANUELL INSTALLIEREN (CLI - BEFEHLSZEILENMODUS)
 
@@ -95,15 +96,15 @@ Da [phpMussel bei Packagist registriert ist](https://packagist.org/packages/phpm
 
 Seit v1.0.0, Signaturen werden nicht mit phpMussel enthalten. Signaturen werden von phpMussel benötigt, um bestimmte Bedrohungen zu erkennen. Es gibt 3 Hauptmethoden, um Signaturen zu installieren:
 
-1. Installieren Sie automatisch die Front-End-Updates-Seite.
+1. Installieren Sie automatisch die Frontend-Aktualisierungsseite.
 2. Signaturen mit "SigTool" generieren und manuell installieren.
 3. Signaturen aus "phpMussel/Signatures" herunterladen und manuell installieren.
 
-##### 2.3.1 Installieren Sie automatisch die Front-End-Updates-Seite.
+##### 2.3.1 Installieren Sie automatisch die Frontend-Aktualisierungsseite.
 
-Zuerst, müssen Sie sicherstellen, dass das Front-End aktiviert ist. *Sehen: [FRONT-END-MANAGEMENT](#SECTION4).*
+Zuerst, müssen Sie sicherstellen, dass das Frontend aktiviert ist. *Sehen: [FRONTEND-MANAGEMENT](#SECTION4).*
 
-Dann alles was Sie tun müssen, ist auf die Front-End-Updates-Seite gehen, finden Sie die notwendigen Signaturdateien, und mit die Optionen auf der Seite, installieren, und aktivieren.
+Dann alles was Sie tun müssen, ist auf die Frontend-Aktualisierungsseite gehen, finden Sie die notwendigen Signaturdateien, und mit die Optionen auf der Seite, installieren, und aktivieren.
 
 ##### 2.3.2 Signaturen mit "SigTool" generieren und manuell installieren.
 
@@ -176,15 +177,15 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 ---
 
 
-### 4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONTEND-MANAGEMENT
 
-#### 4.0 WAS IST DAS FRONT-END.
+#### 4.0 WAS IST DAS FRONTEND.
 
-Das Front-End bietet eine bequeme und einfache Möglichkeit, für Ihre phpMussel-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Updates-Seite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
+Das Frontend bietet eine bequeme und einfache Möglichkeit, für Ihre phpMussel-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Aktualisierungsseite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
 
-Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
+Das Frontend ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
 
-#### 4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+#### 4.1 WIE AKTIVIEREN SIE DAS FRONTEND.
 
 1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf `false` (wird es standardmäßig `true` sein).
 
@@ -192,19 +193,19 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 3) Einloggen Sie sich mit dem standardmäßig Benutzernamen und Passwort an (admin/password).
 
-Note: Nachdem Sie sich eingeloggt haben, um einen unautorisiert Zugriff auf das Front-End zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern! Dies ist sehr wichtig, weil es möglich ist, beliebigen PHP-Code auf Ihre Website über das Front-End zu hochladen.
+Note: Nachdem Sie sich eingeloggt haben, um einen unautorisiert Zugriff auf das Frontend zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern! Dies ist sehr wichtig, weil es möglich ist, beliebigen PHP-Code auf Ihre Website über das Frontend zu hochladen.
 
-Für eine optimale Sicherheit wird außerdem empfohlen, die "Zwei-Faktor-Authentifizierung" für alle Front-End-Konten zu aktivieren (Anweisungen unten).
+Für eine optimale Sicherheit wird außerdem empfohlen, die "Zwei-Faktor-Authentifizierung" für alle Frontend-Konten zu aktivieren (Anweisungen unten).
 
-#### 4.2 WIE MAN DAS FRONT-END BENUTZT.
+#### 4.2 WIE MAN DAS FRONTEND BENUTZT.
 
-Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
+Anweisungen sind auf jeder Seite des Frontends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
 
 #### 4.3 ZWEI-FAKTOR-AUTHENTIFIZIERUNG
 
-Es ist möglich, das Front-End sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die mit diesem Konto verknüpfte E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, damit sich ein Hacker oder potentieller Angreifer in diesem Konto einloggen kann, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Front-End sicherer.
+Es ist möglich, das Frontend sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die mit diesem Konto verknüpfte E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, damit sich ein Hacker oder potentieller Angreifer in diesem Konto einloggen kann, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Frontend sicherer.
 
-Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Front-End-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. phpMussel verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl phpMussel selbst mit PHP >= 5.4.0 kompatibel ist, PHPMailer benötigt PHP >= 5.5.0. Daher ist eine Zwei-Faktor-Authentifizierung für das phpMussel-Front-End für PHP 5.4-Benutzer nicht möglich.
+Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Frontend-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. phpMussel verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl phpMussel selbst mit PHP >= 5.4.0 kompatibel ist, PHPMailer benötigt PHP >= 5.5.0. Daher ist eine Zwei-Faktor-Authentifizierung für das phpMussel-Frontend für PHP 5.4-Benutzer nicht möglich.
 
 Nachdem Sie PHPMailer installiert haben, müssen Sie die Konfigurationsdirektiven für PHPMailer über die phpMussel-Konfigurationsseite oder Konfigurationsdatei auffüllen. Weitere Informationen zu diesen Konfigurationsanweisungen finden Sie im Konfigurationsabschnitt dieses Dokuments. Nachdem Sie die PHPMailer-Konfigurationsdirektiven gefüllt haben, setzen Sie `Enable2FA` auf `true`. Die Zwei-Faktor-Authentifizierung sollte jetzt aktiviert sein.
 
@@ -265,79 +266,79 @@ Datei | Beschreibung
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/cache/ | Cache-Verzeichnis (für temporäre Daten).
 /vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/fe_assets/ | Front-End-Daten.
+/vault/fe_assets/ | Frontend-Daten.
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/_2fa.html | Ein HTML-Template die verwendet wird wenn der Benutzer nach einem 2FA-Code gefragt wird.
-/vault/fe_assets/_accounts.html | Ein HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_cache.html | Ein HTML-Template für die Front-End Datencache-Seite.
-/vault/fe_assets/_config.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
-/vault/fe_assets/_config_row.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
+/vault/fe_assets/_accounts.html | Ein HTML-Template für das Frontend Kontenseite.
+/vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Frontend Kontenseite.
+/vault/fe_assets/_cache.html | Ein HTML-Template für die Frontend Datencache-Seite.
+/vault/fe_assets/_config.html | Ein HTML-Template für die Frontend-Konfigurationsseite.
+/vault/fe_assets/_config_row.html | Ein HTML-Template für die Frontend-Konfigurationsseite.
 /vault/fe_assets/_files.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_edit.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_rename.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_row.html | Ein HTML-Template für den Dateimanager.
-/vault/fe_assets/_home.html | Ein HTML-Template für das Front-End Startseite.
-/vault/fe_assets/_login.html | Ein HTML-Template für das Front-End Einloggen-Seite.
-/vault/fe_assets/_logs.html | Ein HTML-Template für das Front-End Protokolldateien-Seite.
-/vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
-/vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
-/vault/fe_assets/_quarantine.html | Ein HTML-Template für die Front-End Quarantäneseite.
-/vault/fe_assets/_quarantine_row.html | Ein HTML-Template für die Front-End Quarantäneseite.
-/vault/fe_assets/_siginfo.html | Ein HTML-Template für die Front-End Signature-Information-Seite.
-/vault/fe_assets/_siginfo_row.html | Ein HTML-Template für die Front-End Signature-Information-Seite.
-/vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
-/vault/fe_assets/_updates.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
-/vault/fe_assets/_updates_row.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
+/vault/fe_assets/_home.html | Ein HTML-Template für das Frontend Startseite.
+/vault/fe_assets/_login.html | Ein HTML-Template für das Frontend Einloggen-Seite.
+/vault/fe_assets/_logs.html | Ein HTML-Template für das Frontend Protokolldateien-Seite.
+/vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für das Frontend-Navigationslinks, für alle mit vollständiger Zugriff.
+/vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für das Frontend-Navigationslinks, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_quarantine.html | Ein HTML-Template für die Frontend Quarantäneseite.
+/vault/fe_assets/_quarantine_row.html | Ein HTML-Template für die Frontend Quarantäneseite.
+/vault/fe_assets/_siginfo.html | Ein HTML-Template für die Frontend Signature-Information-Seite.
+/vault/fe_assets/_siginfo_row.html | Ein HTML-Template für die Frontend Signature-Information-Seite.
+/vault/fe_assets/_statistics.html | Ein HTML-Template für die Frontend Statistikseite.
+/vault/fe_assets/_updates.html | Ein HTML-Template für das Frontend-Aktualisierungsseite.
+/vault/fe_assets/_updates_row.html | Ein HTML-Template für das Frontend-Aktualisierungsseite.
 /vault/fe_assets/_upload_test.html | Ein HTML-Template für die Upload-Testseite.
-/vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
-/vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen und Sitzungsinformationen; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
+/vault/fe_assets/frontend.css | CSS-Stylesheet für das Frontend.
+/vault/fe_assets/frontend.dat | Datenbank für das Frontend (Enthält Kontoinformationen und Sitzungsinformationen; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
-/vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
-/vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
-/vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
-/vault/fe_assets/scripts.js | Enthält Front-End-JavaScript-Daten.
+/vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Frontend.
+/vault/fe_assets/icons.php | Ikonen-Handler (die vom Frontend-Dateimanager verwendet wird).
+/vault/fe_assets/pips.php | Pips-Handler (die vom Frontend-Dateimanager verwendet wird).
+/vault/fe_assets/scripts.js | Enthält Frontend-JavaScript-Daten.
 /vault/lang/ | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
+/vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Frontend.
 /vault/lang/lang.ar.php | Arabische Sprachdateien.
-/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Front-End.
+/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Frontend.
 /vault/lang/lang.bn.php | Bangla Sprachdateien.
-/vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Front-End.
+/vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Frontend.
 /vault/lang/lang.de.php | Deutsche Sprachdateien.
-/vault/lang/lang.en.fe.php | Englische Sprachdateien für das Front-End.
+/vault/lang/lang.en.fe.php | Englische Sprachdateien für das Frontend.
 /vault/lang/lang.en.php | Englische Sprachdateien.
-/vault/lang/lang.es.fe.php | Spanische Sprachdateien für das Front-End.
+/vault/lang/lang.es.fe.php | Spanische Sprachdateien für das Frontend.
 /vault/lang/lang.es.php | Spanische Sprachdateien.
-/vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Front-End.
+/vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Frontend.
 /vault/lang/lang.fr.php | Französische Sprachdateien.
-/vault/lang/lang.hi.fe.php | Hindi Sprachdateien für das Front-End.
+/vault/lang/lang.hi.fe.php | Hindi Sprachdateien für das Frontend.
 /vault/lang/lang.hi.php | Hindi Sprachdateien.
-/vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Front-End.
+/vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Frontend.
 /vault/lang/lang.id.php | Indonesische Sprachdateien.
-/vault/lang/lang.it.fe.php | Italienische Sprachdateien für das Front-End.
+/vault/lang/lang.it.fe.php | Italienische Sprachdateien für das Frontend.
 /vault/lang/lang.it.php | Italienische Sprachdateien.
-/vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Front-End.
+/vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Frontend.
 /vault/lang/lang.ja.php | Japanische Sprachdateien.
-/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Front-End.
+/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Frontend.
 /vault/lang/lang.ko.php | Koreanische Sprachdateien.
-/vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
+/vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Frontend.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
-/vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Front-End.
+/vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Frontend.
 /vault/lang/lang.pt.php | Portugiesische Sprachdateien.
-/vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Front-End.
+/vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Frontend.
 /vault/lang/lang.ru.php | Russische Sprachdateien.
-/vault/lang/lang.th.fe.php | Thai Sprachdateien für das Front-End.
+/vault/lang/lang.th.fe.php | Thai Sprachdateien für das Frontend.
 /vault/lang/lang.th.php | Thai Sprachdateien.
-/vault/lang/lang.tr.fe.php | Türkische Sprachdateien für das Front-End.
+/vault/lang/lang.tr.fe.php | Türkische Sprachdateien für das Frontend.
 /vault/lang/lang.tr.php | Türkische Sprachdateien.
-/vault/lang/lang.ur.fe.php | Urdu Sprachdateien für das Front-End.
+/vault/lang/lang.ur.fe.php | Urdu Sprachdateien für das Frontend.
 /vault/lang/lang.ur.php | Urdu Sprachdateien.
-/vault/lang/lang.vi.fe.php | Vietnamesische Sprachdateien für das Front-End.
+/vault/lang/lang.vi.fe.php | Vietnamesische Sprachdateien für das Frontend.
 /vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
-/vault/lang/lang.zh-tw.fe.php | Chinesische Sprachdateien (traditionell) für das Front-End.
+/vault/lang/lang.zh-tw.fe.php | Chinesische Sprachdateien (traditionell) für das Frontend.
 /vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
-/vault/lang/lang.zh.fe.php | Chinesische Sprachdateien (vereinfacht) für das Front-End.
+/vault/lang/lang.zh.fe.php | Chinesische Sprachdateien (vereinfacht) für das Frontend.
 /vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/quarantine/ | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
 /vault/quarantine/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
@@ -351,22 +352,22 @@ Datei | Beschreibung
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
 /vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für phpMussel.
-/vault/components.dat | Komponenten-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
-/vault/frontend.php | Front-End-Handler.
-/vault/frontend_functions.php | Front-End-Funktionen-Datei.
+/vault/components.dat | Komponenten-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
+/vault/frontend.php | Frontend-Handler.
+/vault/frontend_functions.php | Frontend-Funktionen-Datei.
 /vault/functions.php | Funktionen-Datei.
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
 /vault/lang.php | Sprachdateien.
 /vault/php5.4.x.php | Polyfills für PHP 5.4.X (erforderlich für Abwärtskompatibilität mit PHP 5.4.X; sicher zu löschen für neuere PHP-Versionen).
-/vault/plugins.dat | Plugins-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/plugins.dat | Plugins-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 ※ /vault/scan_kills.txt | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
 ※ /vault/scan_log.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
 ※ /vault/scan_log_serialized.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
-/vault/shorthand.yaml | Enthält verschiedene Signatur-Identifikatoren, die von phpMussel bei der Interpretation von Signatur-Kurzschrift während eines Scans, und beim Zugriff auf Signatur-Informationen über das Front-End verarbeitet werden.
-/vault/signatures.dat | Signatur-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/shorthand.yaml | Enthält verschiedene Signatur-Identifikatoren, die von phpMussel bei der Interpretation von Signatur-Kurzschrift während eines Scans, und beim Zugriff auf Signatur-Informationen über das Frontend verarbeitet werden.
+/vault/signatures.dat | Signatur-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/template_default.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
-/vault/themes.dat | Themes-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/themes.dat | Themes-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/upload.php | Upload-Handler.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /.gitignore | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
@@ -422,7 +423,7 @@ Generelle Konfiguration von phpMussel.
 - Trunkate Protokolldateien, wenn sie eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei wachsen kann, bevor sie trunkiert wird. Der Standardwert von 0KB deaktiviert die Trunkierung (Protokolldateien können unbegrenzt wachsen). Hinweis: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht als kollektiv.
 
 ##### "log_rotation_limit"
-- Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation.
+- Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein dürfen. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation.
 
 ##### "log_rotation_action"
 - Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben. Delete = Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird. Archive = Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird.
@@ -488,7 +489,7 @@ Wert | Produziert | Beschreibung
 `Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
 `Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
 
-*Beachten: Diese Werte sind nirgends standardisiert und werden wahrscheinlich nicht über das Paket hinaus relevant sein. Auch, unterstützte Werte können sich in Zukunft ändern.*
+*Beachten: Diese Werte sind nirgends standardisiert und werden wahrscheinlich nicht über das Paket hinaus relevant sein. Auch unterstützte Werte können sich in Zukunft ändern.*
 
 ##### "quarantine_key"
 - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer, die nur daran interessiert sind, ihre Webauftritte oder ihre Hosting-Umgebung zu schützen ohne das Interesse, die markierten Dateien weitergehend zu untersuchen, sollten diese Funktionalität deaktivieren, Nutzer, die diese Dateien zur Ananlyse auf Malware o.ä. benötigen, sollten diese Funktion aktivieren. Die Isolation von markierten Dateien kann manchmal auch bei der Fehlersuche von Fehlalarmen helfen, wenn dies häufiger bei Ihnen auftritt. Um die Quarantänefunktion zu deaktivieren, lassen Sie die Richtlinie `quarantine_key` leer oder löschen Sie den Inhalt dieser Richtlinie, wenn sie nicht bereits leer ist. Um die Quarantänefunktion zu aktivieren, geben Sie einen Wert ein. Der `quarantine_key` ist ein wichtiges Sicherheitsmerkmal der Quarantänfunktionen, um zu verhindern, dass die Quarantänefunktionen einem Exploit ausgesetzt wird und gespeicherte Daten in der Quarantäneumgebung ausgeführt werden können. Der Wert des `quarantine_key` sollte so behandelt werden, wie Ihre Passwörter: Je länger, desto besser, und halten Sie sie geheim. Optimal in Verbindung mit `delete_on_sight`.
@@ -509,22 +510,22 @@ Wert | Produziert | Beschreibung
 - Für wie lange soll phpMussel die Scan-Ergebnisse zwischenspeichern? Wert entspricht der Anzahl Sekunden, wie lange die Scan-Ergebnisse zwischengespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von 0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
 
 ##### "disable_cli"
-- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
+- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (Beispielsweise PHPUnit) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn Sie den CLI-Modus nicht deaktivieren müssen, sollten Sie diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
 
 ##### "disable_frontend"
-- Front-End-Access deaktivieren? Front-End-Access kann machen phpMussel einfacher zu handhaben, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, phpMussel über die Back-End-Access zu verwalten, aber Front-End-Access vorgesehen ist, für wenn es nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].
+- Frontend-Access deaktivieren? Frontend-Access kann CIDRAM einfacher zu handhaben machen, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Frontend-Access ist für den Fall vorgesehen, wenn dies nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Frontend-Access aktivieren; True = Frontend-Access deaktivieren [Standardeinstellung].
 
 ##### "max_login_attempts"
-- Maximale Anzahl der Versucht zu einloggen (Front-End). Standardeinstellung = 5.
+- Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5.
 
 ##### "FrontEndLog"
-- Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+- Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "disable_webfonts"
 - Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "maintenance_mode"
-- Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w.
+- Deaktiviert alles andere als das Frontend. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w. Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung].
 
 ##### "default_algo"
 - Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).
@@ -538,7 +539,10 @@ Konfiguration der Signaturen.
 ##### "Active"
 - Eine Liste der aktiven Signaturdateien, die durch Kommas getrennt sind.
 
-*Hinweis: Signaturdateien müssen zuerst installiert werden, bevor Sie sie aktivieren können. Damit die Testdateien erkannt werden, müssen die phpMussel-Signaturdateien installiert sein. Nach einer Änderung der Konfiguration, muss ggfs. der Cache geleert werden.*
+*Hinweis:*
+- *Signaturdateien müssen zuerst installiert werden, bevor Sie sie aktivieren können.*
+- *Damit die Testdateien erkannt werden, müssen die phpMussel-Signaturdateien installiert sein.*
+- *Der Wert dieser Einstellung wird im Cache gespeichert. Nach einer Änderung der Konfiguration, muss ggfs. der Cache geleert werden.*
 
 ##### "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].
@@ -591,7 +595,7 @@ Generelle Konfigurationen für die Handhabung von Dateien.
 
 Format | Kann lesen | Kann rekursiv lesen | Kann die Verschlüsselung erkennen | Notizen
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Benötigt [libzip](http://php.net/manual/en/zip.requirements.php) (normalerweise sowieso mit PHP gebündelt). Auch unterstützt (verwendet das Zip-Format): ✔️ OLE-Objekt-Erkennung. ✔️ Office-Makro-Erkennung.
+Zip | ✔️ | ✔️ | ✔️ | Benötigt [libzip](https://secure.php.net/manual/en/zip.requirements.php) (normalerweise sowieso mit PHP gebündelt). Auch unterstützt (verwendet das Zip-Format): ✔️ OLE-Objekt-Erkennung. ✔️ Office-Makro-Erkennung.
 Tar | ✔️ | ✔️ | ➖ | Keine besonderen Anforderungen. Format unterstützt keine Verschlüsselung.
 Rar | ✔️ | ✔️ | ✔️ | Benötigt die [rar](https://pecl.php.net/package/rar)-Erweiterung (Wenn diese Erweiterung nicht installiert ist, kann phpMussel keine rar-Dateien lesen).
 7zip | ❌ | ❌ | ❌ | Derzeit wird noch untersucht, wie 7zip-Dateien in phpMussel gelesen werden können.
@@ -705,7 +709,7 @@ Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen
 URL-Scanner API-Abfrage Konfiguration.
 
 ##### "lookup_hphosts"
-- Aktiviert API-Abfragen zur [hpHosts](http://hosts-file.net/) API wenn der Wert auf `true` gesetzt ist. hpHosts erfordert keinen API-Schlüssel um API-Abfragen durchzuführen.
+- Aktiviert API-Abfragen zur [hpHosts](https://hosts-file.net/) API wenn der Wert auf `true` gesetzt ist. hpHosts erfordert keinen API-Schlüssel um API-Abfragen durchzuführen.
 
 ##### "google_api_key"
 - Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte API-Schlüssel festgelegt ist. Google Safe Browsing API-Abfragen erfordern einen API-Schlüssel, den Sie [hier](https://console.developers.google.com/) erhalten können.
@@ -726,10 +730,10 @@ Konfiguration für gesetzliche Anforderungen.
 *Für weitere Informationen zu gesetzlichen Anforderungen und wie sich dies auf Ihre Konfiguration-Anforderungen auswirken könnte, bitte beachten Sie den Sektion "[RECHTSINFORMATION](#SECTION11)" der Dokumentation.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
+- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "privacy_policy"
-- Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL, oder lassen Sie sie leer, um sie zu deaktivieren.
+- Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL ein, oder lassen Sie sie leer, um sie zu deaktivieren.
 
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
@@ -748,16 +752,16 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 #### "PHPMailer" (Kategorie)
 PHPMailer Konfiguration.
 
-Derzeit verwendet phpMussel PHPMailer nur für die Front-End-Zwei-Faktor-Authentifizierung. Wenn Sie das Front-End oder Zwei-Faktor-Authentifizierung für das Front-End nicht verwenden, können Sie diese Anweisungen ignorieren.
+Derzeit verwendet phpMussel PHPMailer nur für die Frontend-Zwei-Faktor-Authentifizierung. Wenn Sie das Frontend oder Zwei-Faktor-Authentifizierung für das Frontend nicht verwenden, können Sie diese Anweisungen ignorieren.
 
 ##### "EventLog"
 - Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "SkipAuthProcess"
-- Wenn Sie diese Direktive auf `true` setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails an MITM-Angriffe aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert.
+- Wenn Sie diese Direktive auf `true` setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails MITM-Angriffen aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert.
 
 ##### "Enable2FA"
-- Diese Direktive bestimmt, ob 2FA für Front-End-Konten verwendet werden soll.
+- Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll.
 
 ##### "Host"
 - Der SMTP-Host zum Senden von ausgehende E-Mails.
@@ -778,16 +782,16 @@ Derzeit verwendet phpMussel PHPMailer nur für die Front-End-Zwei-Faktor-Authent
 - Das Passwort zum Senden von E-Mails über SMTP.
 
 ##### "setFromAddress"
-- Die Absenderadresse, die beim Senden von E-Mails über SMTP anzugeben werden soll.
+- Die Absenderadresse, die beim Senden von E-Mails über SMTP verwendet werden soll.
 
 ##### "setFromName"
-- Der Name des Absenders, der beim Senden von E-Mails über SMTP anzugeben werden soll.
+- Der Name des Absenders, der beim Senden von E-Mails über SMTP verwendet werden soll.
 
 ##### "addReplyToAddress"
-- Die Antwortadresse, die beim Senden von E-Mails über SMTP anzugeben werden soll.
+- Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll.
 
 ##### "addReplyToName"
-- Der Name für der Antwort, die beim Senden von E-Mails über SMTP anzugeben werden soll.
+- Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll.
 
 ---
 
@@ -891,19 +895,19 @@ Diese Informationen wurden zuletzt am 2018.10.09 aktualisiert und gelten für al
 - [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)
 - [Wie häufig werden Signaturen aktualisiert?](#SIGNATURE_UPDATE_FREQUENCY)
 - [Ich habe ein Problem bei der Verwendung von phpMussel und ich weiß nicht was ich tun soll! Bitte helfen Sie!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
-- [Ich möchte phpMussel (vor v2) mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?](#MINIMUM_PHP_VERSION)
-- [Ich möchte phpMussel (v2) mit einer PHP-Version älter als 7.2.0 verwenden; Kannst du helfen?](#MINIMUM_PHP_VERSION_V2)
+- [Ich möchte phpMussel (vor v2) mit einer PHP-Version älter als 5.4.0 verwenden; Können Sie helfen?](#MINIMUM_PHP_VERSION)
+- [Ich möchte phpMussel (v2) mit einer PHP-Version älter als 7.2.0 verwenden; Können Sie helfen?](#MINIMUM_PHP_VERSION_V2)
 - [Kann ich eine einzige phpMussel-Installation verwenden, um mehrere Domains zu schützen?](#PROTECT_MULTIPLE_DOMAINS)
 - [Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?](#PAY_YOU_TO_DO_IT)
 - [Kann ich Sie oder einen der Entwickler dieses Projektes für private Arbeit einstellen?](#HIRE_FOR_PRIVATE_WORK)
-- [Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?](#SPECIALIST_MODIFICATIONS)
+- [Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Können Sie helfen?](#SPECIALIST_MODIFICATIONS)
 - [Ich bin ein Entwickler, Website-Designer oder Programmierer. Kann ich die Arbeit an diesem Projekt annehmen oder anbieten?](#ACCEPT_OR_OFFER_WORK)
-- [Ich möchte zum Projekt beitragen; Darf ich das machen?](#WANT_TO_CONTRIBUTE)
+- [Ich möchte zum Projekt beitragen; Darf ich dies machen?](#WANT_TO_CONTRIBUTE)
 - [Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?](#SCAN_DEBUGGING)
 - [Kann ich cron verwenden, um automatisch zu aktualisieren?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?](#SCAN_NON_ANSI)
 - [Blacklists – Whitelists – Greylists – Was sind sie und wie benutze ich sie?](#BLACK_WHITE_GREY)
-- [Wenn ich Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
+- [Wenn ich Signaturdateien über die Aktualisierungsseite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -911,9 +915,9 @@ Im Kontext von phpMussel, eine "Signatur" bezieht sich auf Daten, die als Indika
 
 #### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Was ist ein "Falsch-Positiv"?
 
-Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (dh, die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (dh, der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
+Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (d.h., die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (d.h., der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
 
-Einige andere Begriffe verwendet: "Wahr-Positiv", "Wahr-Negativ" und "Falsch-Negativ". Eine "Wahr-Positiv" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide wahr sind (oder "Positiv"), und eine "Wahr-Negativ" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide falsch sind (oder "Negativ"); Eine "Wahr-Positiv" oder Eine "Wahr-Negativ" gilt als eine "korrekte Folgerung" zu sein. Der Antithese von einem "Falsch-Positiv" ist eine "Falsch-Negativ"; Eine "Falsch-Negativ" ist, wenn die Ergebnisse des Tests negativ sind (dh, die Bedingung bestimmt wird negativ oder falsch zu sein), aber sind zu erwarten sein (oder sollte gewesen) positiv (dh, der Zustand, in Wirklichkeit, ist "positiv", oder "wahr").
+Einige andere Begriffe verwendet: "Wahr-Positiv", "Wahr-Negativ" und "Falsch-Negativ". Eine "Wahr-Positiv" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide wahr sind (oder "Positiv"), und eine "Wahr-Negativ" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide falsch sind (oder "Negativ"); Eine "Wahr-Positiv" oder Eine "Wahr-Negativ" gilt als eine "korrekte Folgerung" zu sein. Der Antithese von einem "Falsch-Positiv" ist eine "Falsch-Negativ"; Eine "Falsch-Negativ" ist, wenn die Ergebnisse des Tests negativ sind (d.h., die Bedingung bestimmt wird negativ oder falsch zu sein), aber sind zu erwarten sein (oder sollte gewesen) positiv (d.h., der Zustand, in Wirklichkeit, ist "positiv", oder "wahr").
 
 Im Kontext der phpMussel, Diese Begriffe beziehen sich auf der Signaturen von phpMussel, und die Dateien die Sie blockieren. Wenn phpMussel Blöcke eine Datei wegen schlechten, veraltete oder falsche Signaturen, sollte aber nicht so getan haben, oder wenn sie es tut, so aus den falschen Gründen, wir beziehen sich auf dieses Ereignis als eine "Falsch-Positiv". Wenn phpMussel, aufgrund unvorhergesehener Bedrohungen, fehlende Signaturen oder Defizite in ihren Signaturen, versagt eine Datei zu blockieren, die blockiert werden sollte, wir beziehen sich auf dieses Ereignis als eine "verpasste Erkennung" (das entspricht einem "Falsch-Negativ").
 
@@ -935,11 +939,11 @@ Die Aktualisierungshäufigkeit hängt von den betreffenden Signaturdateien ab. I
 - Haben Sie die **[Issues-Seite](https://github.com/phpMussel/phpMussel/issues)** überprüft, ob das Problem vorher erwähnt wurde? Wenn es vorher erwähnt wurde, überprüfen Sie ob irgendwelche Vorschläge, Ideen und/oder Lösungen zur Verfügung gestellt wurden, und folge wie nötig um das Problem zu lösen.
 - Wenn das Problem weiterhin besteht, bitte fragen Sie nach Hilfe, indem Sie auf der Issues-Seite ein neues Issue erstellen.
 
-#### <a name="MINIMUM_PHP_VERSION"></a>Ich möchte phpMussel (vor v2) mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
+#### <a name="MINIMUM_PHP_VERSION"></a>Ich möchte phpMussel (vor v2) mit einer PHP-Version älter als 5.4.0 verwenden; Können Sie helfen?
 
 Nein. PHP >= 5.4.0 ist eine Mindestanforderung für phpMussel < v2.
 
-#### <a name="MINIMUM_PHP_VERSION_V2"></a>Ich möchte phpMussel (v2) mit einer PHP-Version älter als 7.2.0 verwenden; Kannst du helfen?
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>Ich möchte phpMussel (v2) mit einer PHP-Version älter als 7.2.0 verwenden; Können Sie helfen?
 
 Nein. PHP >= 7.2.0 ist eine Mindestanforderung für phpMussel v2.
 
@@ -951,13 +955,13 @@ Ja. phpMussel-Installationen sind natürlich nicht auf bestimmte Domains gesperr
 
 #### <a name="PAY_YOU_TO_DO_IT"></a>Ich möchte keine Zeit damit verbringen (es zu installieren, es richtig zu ordnen, u.s.w.); Kann ich dich einfach bezahlen, um alles für mich zu tun?
 
-Vielleicht. Dies wird von Fall zu Fall berücksichtigt. Sag uns was du brauchst, was du anbietet, und wir werden Ihnen sagen, ob wir helfen können.
+Vielleicht. Dies wird von Fall zu Fall bewertet. Sagen Sie uns was sie brauchen und was du anbietest. Danach können wir ihnen sagen, ob wir helfen können.
 
 #### <a name="HIRE_FOR_PRIVATE_WORK"></a>Kann ich Sie oder einen der Entwickler dieses Projektes für private Arbeit einstellen?
 
 *Siehe oben.*
 
-#### <a name="SPECIALIST_MODIFICATIONS"></a>Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Kannst du helfen?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>Ich brauche spezialisierte Modifikationen, Anpassungen, u.s.w.; Können Sie helfen?
 
 *Siehe oben.*
 
@@ -965,7 +969,7 @@ Vielleicht. Dies wird von Fall zu Fall berücksichtigt. Sag uns was du brauchst,
 
 Ja. Unsere Lizenz verbietet dies nicht.
 
-#### <a name="WANT_TO_CONTRIBUTE"></a>Ich möchte zum Projekt beitragen; Darf ich das machen?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Ich möchte zum Projekt beitragen; Darf ich dies machen?
 
 Ja. Beiträge zum Projekt sind sehr willkommen. Bitte beachten Sie "CONTRIBUTING.md" für weitere Informationen.
 
@@ -1033,7 +1037,7 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Kann ich cron verwenden, um automatisch zu aktualisieren?
 
-Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der Update-Seite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
+Ja. Eine API ist in das Frontend integriert, um über externe Skripte mit der Aktualisierungsseite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
 
 #### <a name="SCAN_NON_ANSI"></a>Kann phpMussel Dateien mit nicht-ANSI-Namen scannen?
 
@@ -1108,9 +1112,9 @@ Die Signatur-Greylist ist eine Liste von Signaturen, die im Wesentlichen ignorie
 
 Die Signatur-Greylist ist nützlich, wenn Sie Probleme beheben müssen, die von einer bestimmten Signatur verursacht werden, ohne die gesamte Signaturdatei zu deaktivieren oder zu deinstallieren.
 
-#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Signaturdateien über die Aktualisierungsseite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
 
-Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, Sie können einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Updates-Seite anschließend die Dateien erneut sortiert, diese zusätzlichen Daten wirken sich auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne sie umbenennen zu müssen.
+Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, Sie können einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Aktualisierungsseite anschließend die Dateien erneut sortiert, diese zusätzlichen Daten wirken sich auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne sie umbenennen zu müssen.
 
 z.B., angenommen dass eine Konfigurationsdirektive mit den folgenden Dateien ist aufgeführt:
 
@@ -1120,7 +1124,7 @@ Wenn Sie `file3.php` zuerst ausführen möchten, Sie könnten etwas wie `aaa:` v
 
 `file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
 
-Wenn dann eine neue Datei `file6.php` aktiviert wird, wenn die Updates-Seite sie alle wieder sortiert, sollte es so enden:
+Wenn dann eine neue Datei `file6.php` aktiviert wird, wenn die Aktualisierungsseite sie alle wieder sortiert, sollte es so enden:
 
 `aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
 
@@ -1151,7 +1155,7 @@ Aus Gründen der Transparenz wird im Folgenden beschrieben, welche Art von Infor
 
 ##### 11.2.0 WEBFONTS
 
-Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das phpMussel-Front-End und die Seite "Upload verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten, das Betriebssystem und andere Details zur Anfrage verfügbar. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
+Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das phpMussel-Frontend und die Seite "Upload verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten, das Betriebssystem und andere Details zur Anfrage verfügbar. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
@@ -1186,10 +1190,10 @@ Es gibt mehrere Arten der Protokollierung, die phpMussel ausführen kann. Versch
 ##### 11.3.0 SCAN PROTOKOLLIERUNG
 
 Wenn in der Paketkonfiguration aktiviert, speichert phpMussel Protokolle der Dateien, die es gescannt. Diese Art der Protokollierung ist in zwei verschiedenen Formaten verfügbar:
-- Menschen lesbar oder benutzerfreundliche Protokolldateien.
+- Menschenlesbar oder benutzerfreundliche Protokolldateien.
 - Serialisierte Protokolldateien.
 
-Einträge in einer für Menschen lesbaren Protokolldatei sehen in etwa wie folgt aus (als Beispiel):
+Einträge in einer für menschenlesbaren Protokolldatei sehen in etwa wie folgt aus (als Beispiel):
 
 ```
 Mon, 21 May 2018 00:47:58 +0800 Gestartet.
@@ -1237,17 +1241,17 @@ Ein "scan kills"-Eintrag enthält normalerweise die folgenden Informationen:
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `scan_kills`
 
-##### 11.3.2 FRONT-END PROTOKOLLIERUNG
+##### 11.3.2 FRONTEND PROTOKOLLIERUNG
 
-Diese Art der Protokollierung bezieht sich auf Front-End-Einloggen-Versuchen und tritt nur auf, wenn ein Benutzer versucht, sich am Front-End anzumelden (vorausgesetzt, der Front-End-Zugriff ist aktiviert).
+Diese Art der Protokollierung bezieht sich auf Frontend-Einloggen-Versuchen und tritt nur auf, wenn ein Benutzer versucht, sich am Frontend anzumelden (vorausgesetzt, der Frontend-Zugriff ist aktiviert).
 
-Ein Front-End-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich anzumelden versucht, das Datum und die Uhrzeit des Versuchs, und die Ergebnisse des Versuchs (erfolgreich eingeloggt oder könnte sich nicht einloggen). Ein Front-End-Protokolleintrag sieht in etwa wie folgt aus (als Beispiel):
+Ein Frontend-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich anzumelden versucht, das Datum und die Uhrzeit des Versuchs, und die Ergebnisse des Versuchs (erfolgreich eingeloggt oder könnte sich nicht einloggen). Ein Frontend-Protokolleintrag sieht in etwa wie folgt aus (als Beispiel):
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Eingeloggt.
 ```
 
-*Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
+*Die für die Frontend-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 PROTOKOLLROTATION
@@ -1298,7 +1302,7 @@ phpMussel verwendet keine [Kryptografie](https://de.wikipedia.org/wiki/Kryptogra
 
 #### 11.4 COOKIES
 
-Wenn sich ein Benutzer erfolgreich am Front-End eingeloggt, phpMussel setzt eine einen [Cookie](https://de.wikipedia.org/wiki/HTTP-Cookie), um sich den Benutzer für nachfolgende Anfragen merken zu können (d.h., Cookies dienen zur Authentifizierung des Benutzers bei einer Einloggen-Sitzung). Auf der Einloggen-Seite wird eine Cookie-Warnung angezeigt, die den Benutzer warnen, dass ein Cookie gesetzt wird, wenn er die relevante Aktion ausführt. An anderen Stellen in der Codebasis werden keine Cookies gesetzt.
+Wenn sich ein Benutzer erfolgreich am Frontend eingeloggt, phpMussel setzt eine einen [Cookie](https://de.wikipedia.org/wiki/HTTP-Cookie), um sich den Benutzer für nachfolgende Anfragen merken zu können (d.h., Cookies dienen zur Authentifizierung des Benutzers bei einer Einloggen-Sitzung). Auf der Einloggen-Seite wird eine Cookie-Warnung angezeigt, die den Benutzer warnen, dass ein Cookie gesetzt wird, wenn er die relevante Aktion ausführt. An anderen Stellen in der Codebasis werden keine Cookies gesetzt.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_frontend`
@@ -1318,7 +1322,7 @@ Unter bestimmten Umständen können Sie gesetzlich dazu verpflichtet sein, auf a
 
 Die Datenschutz-Grundverordnung (DSGVO) ist eine Verordnung der Europäischen Union, die am 25. Mai 2018 in Kraft tritt. Das Hauptziel der Verordnung besteht darin, den EU-Bürgern und EU-Anwohnern die Kontrolle über ihre eigenen personenbezogenen Daten zu ermöglichen und die Regulierung innerhalb der EU in Bezug auf Privatsphäre und personenbezogene Daten zu vereinheitlichen.
 
-Die Verordnung enthält spezifische Bestimmungen für die Verarbeitung "personenbezogenen Daten" (PII) von "betroffenen Personen" (jede identifizierte oder identifizierbare natürliche Person) aus oder innerhalb der EU. Um der Verordnung zu entsprechen, müssen "Unternehmen" (gemäß der Definition in der Verordnung) und alle relevanten Systeme und Prozesse "[Datenschutz durch Design](https://digitalcourage.de/blog/2015/was-ist-privacy-design)" standardmäßig implementieren, müssen die höchstmögliche Privatsphäre Einstellungen verwenden, müssen die erforderlichen Sicherheitsmaßnahmen für gespeicherte oder verarbeitete Informationen implementieren (einschließlich, aber nicht beschränkt auf die Durchführung der Pseudonymisierung oder vollständigen Anonymisierung von Daten), müssen die Art der Daten, die sie sammeln, eindeutig und eindeutig angeben, aus welchen Gründen, für wie lange sie diese Daten speichern und ob sie diese Daten an Dritte weitergeben, die Arten von Daten, die mit Dritten geteilt werden, wie, warum, u.s.w.
+Die Verordnung enthält spezifische Bestimmungen für die Verarbeitung "[personenbezogenen Daten](https://de.wikipedia.org/wiki/Personenbezogene_Daten)" (PII) von "betroffenen Personen" (jede identifizierte oder identifizierbare natürliche Person) aus oder innerhalb der EU. Um der Verordnung zu entsprechen, müssen "Unternehmen" (gemäß der Definition in der Verordnung) und alle relevanten Systeme und Prozesse "[Datenschutz durch Design](https://digitalcourage.de/blog/2015/was-ist-privacy-design)" standardmäßig implementieren, müssen die höchstmögliche Privatsphäre Einstellungen verwenden, müssen die erforderlichen Sicherheitsmaßnahmen für gespeicherte oder verarbeitete Informationen implementieren (einschließlich, aber nicht beschränkt auf die Durchführung der Pseudonymisierung oder vollständigen Anonymisierung von Daten), müssen die Art der Daten, die sie sammeln, eindeutig und eindeutig angeben, aus welchen Gründen, für wie lange sie diese Daten speichern und ob sie diese Daten an Dritte weitergeben, die Arten von Daten, die mit Dritten geteilt werden, wie, warum, u.s.w.
 
 Daten dürfen nicht verarbeitet werden, es sei denn, es gibt eine gesetzliche Grundlage dafür, wie in der Verordnung definiert. Im Allgemeinen bedeutet dies, dass die Verarbeitung der Daten eines Datensubjekts auf gesetzlicher Grundlage gemäß den gesetzlichen Verpflichtungen oder nur nach ausdrücklicher, gut informierter und eindeutiger Zustimmung der betroffenen Person erfolgen muss.
 
@@ -1336,4 +1340,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 14 Dezember 2018 (2018.12.14).
+Zuletzt aktualisiert: 5 Januar 2019 (2019.01.05).

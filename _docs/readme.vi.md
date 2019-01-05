@@ -25,15 +25,15 @@ Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết k
 BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
 
 Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong tập tin `LICENSE.txt`, và kho chứa của tập tin này có thể tiềm đước tại:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-Chân thành cám ơn [ClamAV](http://www.clamav.net/) cho cả hai nguồn cảm hứng cho chương trình này và những chữ ký kịch bản này sử dụng, mà nếu không, bản này sẽ không có cơ hội tồn tại, hoặc ít nhất, sẽ có giá trị rất nhỏ.
+Chân thành cám ơn [ClamAV](https://www.clamav.net/) cho cả hai nguồn cảm hứng cho chương trình này và những chữ ký kịch bản này sử dụng, mà nếu không, bản này sẽ không có cơ hội tồn tại, hoặc ít nhất, sẽ có giá trị rất nhỏ.
 
-Chân thành cám ơn SourceForge và GitHub cho cung cấp một nơi cho các tập tin dự án, và những người cung cấp một số các chữ ký thêm mà được sử dụng bởi phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) vân vân, và chân thành cảm ơn những người đã ủng hộ chương trình này, và bất cứ ai khác mà tôi quên cảm ơn, và bạn, đã sử dụng bản này.
+Chân thành cám ơn SourceForge và GitHub cho cung cấp một nơi cho các tập tin dự án, và những người cung cấp một số các chữ ký thêm mà được sử dụng bởi phpMussel: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) vân vân, và chân thành cảm ơn những người đã ủng hộ chương trình này, và bất cứ ai khác mà tôi quên cảm ơn, và bạn, đã sử dụng bản này.
 
 Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các tập tin tải lên bảo vệ, thử tải lên các tập tin thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang mạng của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hay sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
+7) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các tập tin tải lên bảo vệ, thử tải lên các tập tin thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang mạng của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. (Đảm bảo bạn đã bao gồm các tập tin chữ ký `phpmussel*.*db` trong chỉ thị cấu hình `Active` cho các tập tin thử nghiệm để kích hoạt). Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hay sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
 
 #### 2.1 CÀI ĐẶT THỦ CÔNG (CHO CLI)
 
@@ -538,7 +538,10 @@ Cấu hình cho chữ ký.
 ##### "Active"
 - Một danh sách các kích hoạt tập tin chữ ký, giới hạn bởi dấu phẩy.
 
-*Chú thích: Tập tin chữ ký trước tiên phải được cài đặt, trước khi bạn có thể kích hoạt chúng.*
+*Chú thích:*
+- *Tập tin chữ ký trước tiên phải được cài đặt, trước khi bạn có thể kích hoạt chúng.*
+- *Để các tập tin thử nghiệm có thể làm việc đúng, các tập tin chữ ký phải được cài đặt và kích hoạt.*
+- *Giá trị của chỉ thị cấu hình này được lưu trữ trong bộ nhớ cache. Sau khi thay đổi nó, để thay đổi có hiệu lực, bạn có thể cần phải xóa bộ nhớ cache.*
 
 ##### "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
@@ -591,7 +594,7 @@ Cấu hình cho xử lý tập tin.
 
 Định dạng | Có thể đọc | Có thể đọc đệ quy | Có thể phát hiện mã hóa | Lưu ý
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Cần [libzip](http://php.net/manual/en/zip.requirements.php) (thường đi kèm với PHP). Cũng được hỗ trợ (sử dụng định dạng zip): ✔️ Phát hiện đối tượng OLE. ✔️ Phát hiện macro Office.
+Zip | ✔️ | ✔️ | ✔️ | Cần [libzip](https://secure.php.net/manual/en/zip.requirements.php) (thường đi kèm với PHP). Cũng được hỗ trợ (sử dụng định dạng zip): ✔️ Phát hiện đối tượng OLE. ✔️ Phát hiện macro Office.
 Tar | ✔️ | ✔️ | ➖ | Không cần bất cứ điều gì đặc biệt. Định dạng không hỗ trợ mã hóa.
 Rar | ✔️ | ✔️ | ✔️ | Cần phần mở rộng [rar](https://pecl.php.net/package/rar) (khi phần mở rộng này không được cài đặt, phpMussel không thể đọc tập tin rar).
 7zip | ❌ | ❌ | ❌ | Vẫn đang điều tra cách đọc các tập tin 7zip trong phpMussel.
@@ -705,7 +708,7 @@ Lưu ý: Nếu máy quét URL bị vô hiệu hóa, bạn sẽ không cần ph�
 Cấu hình cho tra cứu API của máy quét URL.
 
 ##### "lookup_hphosts"
-- Cho phép tra cứu API đến API của [hpHosts](http://hosts-file.net/) khi xác định như true. hpHosts không yêu cầu một khóa API để thực hiện tra cứu API.
+- Cho phép tra cứu API đến API của [hpHosts](https://hosts-file.net/) khi xác định như true. hpHosts không yêu cầu một khóa API để thực hiện tra cứu API.
 
 ##### "google_api_key"
 - Cho phép tra cứu API đến API của Google Safe Browsing khi khóa API cần thiết được xác định. Tra cứu đến API của Google Safe Browsing yêu cầu một khoá API, mà có thể thu được từ [Ở ĐÂY](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
 *Để biết thêm thông tin về các nghĩa vụ hợp pháp và cách nó có thể ảnh hưởng đến các nghĩa vụ cấu hình của bạn, vui lòng tham khảo phần "[THÔNG TIN HỢP PHÁP](#SECTION11)" của các tài liệu.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
+- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không.
 
 ##### "privacy_policy"
 - Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.
@@ -1143,7 +1146,7 @@ Theo như đã nêu trong giấy phép gói, gói được cung cấp mà không
 
 #### 11.2 BÊN THỨ BA
 
-Tùy thuộc vào cấu hình và triển khai chính xác của nó, gói có thể giao tiếp và chia sẻ thông tin với bên thứ ba trong một số trường hợp. Thông tin này có thể được định nghĩa là "[thông tin nhận dạng cá nhân](http://www.pcworld.com.vn/articles/cong-nghe/an-ninh-mang/2016/05/1248000/thong-tin-ca-nhan-tai-san-rieng-cung-la-tien/)" (PII) trong một số ngữ cảnh, bởi một số khu vực pháp lý.
+Tùy thuộc vào cấu hình và triển khai chính xác của nó, gói có thể giao tiếp và chia sẻ thông tin với bên thứ ba trong một số trường hợp. Thông tin này có thể được định nghĩa là "[thông tin nhận dạng cá nhân](https://www.pcworld.com.vn/articles/cong-nghe/an-ninh-mang/2016/05/1248000/thong-tin-ca-nhan-tai-san-rieng-cung-la-tien/)" (PII) trong một số ngữ cảnh, bởi một số khu vực pháp lý.
 
 Thông tin này có thể được các bên thứ ba này sử dụng như thế nào, là tuân theo của chính sách của các bên thứ ba, và nằm ngoài phạm vi của tài liệu này. Tuy nhiên, trong tất cả các trường hợp như vậy, việc chia sẻ thông tin với các bên thứ ba này có thể bị vô hiệu hóa. Trong tất cả các trường hợp như vậy, nếu bạn chọn kích hoạt nó, bạn có trách nhiệm nghiên cứu bất kỳ mối lo ngại nào về sự riêng tư, bảo mật, và việc sử dụng PII của các bên thứ ba này. Nếu có bất kỳ nghi ngờ nào, hoặc nếu bạn không hài lòng với hành vi của các bên thứ ba liên quan đến PII, tốt nhất là nên vô hiệu hóa tất cả việc chia sẻ thông tin với các bên thứ ba này.
 
@@ -1326,4 +1329,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Mười Hai 2018 (2018.12.14).
+Lần cuối cập nhật: 5 Tháng Một 2019 (2019.01.05).

@@ -25,15 +25,15 @@ Merci d'utiliser phpMussel, un script PHP pour la détection de virus, logiciels
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
 Ce script est un logiciel libre ; vous pouvez redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation ; soit la version 2 de la Licence, ou (à votre choix) toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même l'implicite garantie de COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General Public License pour plus de détails, situé dans le `LICENSE.txt` fichier et disponible également à partir de :
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
 Un spécial merci à ClamAV pour l'inspiration du le projet et pour les signatures que ce script utilise, sans qui, le script ne seraient probablement pas exister, ou, au mieux, auraient avoir un très limité valeur.
 
-Un spécial merci à SourceForge et GitHub pour l'hébergement du projet fichiers, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel : [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
+Un spécial merci à SourceForge et GitHub pour l'hébergement du projet fichiers, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel : [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
 
 Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de :
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Ou cette dans le `.htaccess` fichier :
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) À ce stade, vous avez fini ! Cependant, vous devriez probablement tester ce pour s'assurer qu'il fonctionne correctement. Pour tester les protections, essayez de télécharger les tester fichiers inclus dans le paquet sous `_testfiles` à votre site web par votre habituelles navigateur basé méthodes de téléchargement. Si tout fonctionne correctement, un message devrait apparaître à partir de phpMussel confirmant que le téléchargement a été bloqué avec succès. Si rien ne s'affiche, quelque chose ne fonctionne pas correctement. Si vous utilisez d'avancées fonctions ou si vous utilisez l'autres types d'analyse possibles avec l'outil, je vous suggère de l'essayer avec ceux pour s'assurer qu'il fonctionne comme prévu, aussi.
+7) À ce stade, vous avez fini ! Cependant, vous devriez probablement tester ce pour s'assurer qu'il fonctionne correctement. Pour tester les protections, essayez de télécharger les tester fichiers inclus dans le paquet sous `_testfiles` à votre site web par votre habituelles navigateur basé méthodes de téléchargement. (Assurez-vous que vous avez inclus les fichiers de signature `phpmussel*.*db` dans la directive de configuration `Active` pour les fichiers de test à bloquer). Si tout fonctionne correctement, un message devrait apparaître à partir de phpMussel confirmant que le téléchargement a été bloqué avec succès. Si rien ne s'affiche, quelque chose ne fonctionne pas correctement. Si vous utilisez d'avancées fonctions ou si vous utilisez l'autres types d'analyse possibles avec l'outil, je vous suggère de l'essayer avec ceux pour s'assurer qu'il fonctionne comme prévu, aussi.
 
 #### 2.1 INSTALLATION MANUELLE (POUR CLI)
 
@@ -538,7 +538,10 @@ Configuration pour les signatures.
 ##### « Active »
 - Une liste des fichiers de signatures active, délimitée par des virgules.
 
-*Remarque : Les fichiers de signatures doivent d'abord être installés, avant de pouvoir les activer.*
+*Remarque :*
+- *Les fichiers de signatures doivent d'abord être installés, avant de pouvoir les activer.*
+- *Pour que les fichiers de test fonctionnent correctement, les fichiers de signature doivent être installés et activés.*
+- *La valeur de cette directive est mise en cache. Après l'avoir modifié, vous devrez peut-être supprimer le cache pour que les modifications prennent effet.*
 
 ##### « fail_silently »
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés ? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé ; True = Activé [Défaut].
@@ -591,7 +594,7 @@ Configuration générale pour les gestion des fichiers.
 
 Format | Peut lire | Peut lire récursivement | Peut détecter le cryptage | Remarques
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Nécessite [libzip](http://php.net/manual/en/zip.requirements.php) (normalement livré avec PHP de toute façon). Aussi supporté (utilise le format zip) : ✔️ Détection d'objet OLE. ✔️ Détection de macro Office.
+Zip | ✔️ | ✔️ | ✔️ | Nécessite [libzip](https://secure.php.net/manual/en/zip.requirements.php) (normalement livré avec PHP de toute façon). Aussi supporté (utilise le format zip) : ✔️ Détection d'objet OLE. ✔️ Détection de macro Office.
 Tar | ✔️ | ✔️ | ➖ | Aucune exigence particulière. Le format ne supporte pas le cryptage.
 Rar | ✔️ | ✔️ | ✔️ | Nécessite l'extension [rar](https://pecl.php.net/package/rar) (quand cette extension n'est pas installée, phpMussel ne peut pas lire les fichiers rar).
 7zip | ❌ | ❌ | ❌ | Étudie actuellement comment lire les fichiers 7zip dans phpMussel.
@@ -705,7 +708,7 @@ Noter : Si le scanner d'URLs est désactivé, vous ne serez pas besoin de revoi
 Configuration du scanner d'URLs API chercher.
 
 ##### « lookup_hphosts »
-- Permet cherches de l'API [hpHosts](http://hosts-file.net/) quand définit comme true. hpHosts ne nécessite pas une clé de l'API pour effectuer des cherches de l'API.
+- Permet cherches de l'API [hpHosts](https://hosts-file.net/) quand définit comme true. hpHosts ne nécessite pas une clé de l'API pour effectuer des cherches de l'API.
 
 ##### « google_api_key »
 - Permet cherches de l'API Google Safe Browsing quand l'API clé nécessaire est définie. API Google Safe Browsing cherches nécessite une clé de l'API, qui peut être obtenu à partir [d'ici](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Configuration relative aux exigences légales.
 *Pour plus d'informations sur les exigences légales et comment cela peut affecter vos exigences de configuration, veuillez vous référer à la section « [INFORMATION LÉGALE](#SECTION11) » de la documentation.*
 
 ##### « pseudonymise_ip_addresses »
-- Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
+- Pseudonymiser les adresses IP lors de la journalisation ? True = Oui [Défaut] ; False = Non.
 
 ##### « privacy_policy »
 - L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.
@@ -1274,7 +1277,7 @@ Il est également possible de tronquer des fichiers journaux individuels lorsqu'
 Premièrement, si vous n'êtes pas familier avec le terme, « pseudonymisation » se réfère au traitement des données personnelles en tant que tel, il ne peut plus être identifié à une personne concernée sans information supplémentaire, et à condition que ces informations supplémentaires soient conservées séparément, et soumis à des mesures techniques et organisationnelles pour s'assurer que les données personnelles ne peuvent être identifiées à aucune personnes naturelles.
 
 Les ressources suivantes peuvent aider à l'expliquer plus en détail :
-- [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](http://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
+- [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](https://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
 - [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
 Dans certaines circonstances, vous pouvez être légalement requis d'anonymiser ou de pseudonymiser toute PII collectée, traitée, ou stockée. Bien que ce concept existe depuis longtemps, le GDPR/DSGVO mentionne notamment, et encourage spécifiquement la « pseudonymisation ».
@@ -1332,4 +1335,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 14 Décembre 2018 (2018.12.14).
+Dernière mise à jour : 5 Janvier 2019 (2019.01.05).

@@ -25,15 +25,15 @@ Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare tr
 PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPLv2 Caleb M (Maikuolan).
 
 Questo script è un software "libero"; è possibile ridistribuirlo e/o modificarlo sotto i termini della GNU General Public License come pubblicato dalla Free Software Foundation; o la versione 2 della licenza, o (a propria scelta) una versione successiva. Questo script è distribuito nella speranza che possa essere utile, ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO. Vedere la GNU General Public License per ulteriori dettagli, situato nella `LICENSE.txt` file e disponibili anche da:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
-Uno speciale grazie a [ClamAV](http://www.clamav.net/) per l'ispirazione del progetto e per le firme che questo script usi, senza la quale, lo script sarebbe probabilmente non esisterebbe, o nel migliore, avrebbe un molto limitato valore.
+Uno speciale grazie a [ClamAV](https://www.clamav.net/) per l'ispirazione del progetto e per le firme che questo script usi, senza la quale, lo script sarebbe probabilmente non esisterebbe, o nel migliore, avrebbe un molto limitato valore.
 
-Uno speciale grazie a SourceForge e GitHub per ospitare i progetto file, e le risorse di un certo numero di firme utilizzata da phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) e altri, e un grazie a tutti coloro che sostengono il progetto, a chiunque altro che io possa avere altrimenti dimenticato di menzionare, e per voi, per l'utilizzo dello script.
+Uno speciale grazie a SourceForge e GitHub per ospitare i progetto file, e le risorse di un certo numero di firme utilizzata da phpMussel: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) e altri, e un grazie a tutti coloro che sostengono il progetto, a chiunque altro che io possa avere altrimenti dimenticato di menzionare, e per voi, per l'utilizzo dello script.
 
 Questo documento ed il pacchetto associato ad esso possono essere scaricati liberamente da:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ O questo nel `.htaccess` file:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare il lavoro svolto per assicurarsi che funzioni correttamente. Per testare le protezioni di file caricamente, tentare di caricare i test file inclusi nella pacchetto all'interno `_testfiles` al vostro web sito via i vostri soliti metodi di browser basato file caricamento. Se tutto funziona, un messaggio dovrebbe apparire da phpMussel conferma che il caricamento è stato bloccato con successo. Se nulla appare, qualcosa non funziona correttamente. Se si sta utilizzando qualsiasi l'avanzate funzioni o se si sta utilizzando qualsiasi altri tipi di scansione possibili con lo strumento, mi piacerebbe suggerisco di provarlo quelli per assicurarsi che funzioni come previsto, anche.
+7) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare il lavoro svolto per assicurarsi che funzioni correttamente. Per testare le protezioni di file caricamente, tentare di caricare i test file inclusi nella pacchetto all'interno `_testfiles` al vostro web sito via i vostri soliti metodi di browser basato file caricamento. (Assicurati di aver incluso i file di firma `phpmussel*.*db` nella direttiva di configurazione `Active` per i file di test da attivare). Se tutto funziona, un messaggio dovrebbe apparire da phpMussel conferma che il caricamento è stato bloccato con successo. Se nulla appare, qualcosa non funziona correttamente. Se si sta utilizzando qualsiasi l'avanzate funzioni o se si sta utilizzando qualsiasi altri tipi di scansione possibili con lo strumento, mi piacerebbe suggerisco di provarlo quelli per assicurarsi che funzioni come previsto, anche.
 
 #### 2.1 INSTALLAZIONE MANUALMENTE (PER CLI)
 
@@ -538,7 +538,10 @@ Configurazione per firme.
 ##### "Active"
 - Un elenco dei file di firme attivi, delimitati da virgole.
 
-*Nota: Prima di poter essere attivati, è necessario installare i file delle firme.*
+*Nota:*
+- *Prima di poter essere attivati, è necessario installare i file delle firme.*
+- *Affinché i file di test funzionino correttamente, i file delle firme devono essere installati e attivati.*
+- *Il valore di questa direttiva è memorizzato nella cache. Dopo averlo modificato, affinché le modifiche abbiano effetto, potrebbe essere necessario eliminare la cache.*
 
 ##### "fail_silently"
 - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
@@ -591,7 +594,7 @@ Generale configurazione per la gestione dei file.
 
 Formato | Può leggere | Può leggere in modo ricorsivo | Può rilevare la crittografia | Note
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Richiede [libzip](http://php.net/manual/en/zip.requirements.php) (normalmente in bundle con PHP comunque). Supporta anche (usa il formato zip): ✔️ Rilevazione oggetti OLE. ✔️ Rilevamento di macro di Office.
+Zip | ✔️ | ✔️ | ✔️ | Richiede [libzip](https://secure.php.net/manual/en/zip.requirements.php) (normalmente in bundle con PHP comunque). Supporta anche (usa il formato zip): ✔️ Rilevazione oggetti OLE. ✔️ Rilevamento di macro di Office.
 Tar | ✔️ | ✔️ | ➖ | Nessun requisito speciale. Il formato non supporta la crittografia.
 Rar | ✔️ | ✔️ | ✔️ | Richiede l'estensione [rar](https://pecl.php.net/package/rar) (quando questa estensione non è installata, phpMussel non può leggere i file rar).
 7zip | ❌ | ❌ | ❌ | Al momento ancora studiando come leggere i file 7zip in phpMussel.
@@ -705,7 +708,7 @@ Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere nessuna 
 API configurazione per l'URL scanner.
 
 ##### "lookup_hphosts"
-- Abilita API richieste per l'API di [hpHosts](http://hosts-file.net/) quando impostato su true. hpHosts non richiede un API chiave per l'esecuzione di API richieste.
+- Abilita API richieste per l'API di [hpHosts](https://hosts-file.net/) quando impostato su true. hpHosts non richiede un API chiave per l'esecuzione di API richieste.
 
 ##### "google_api_key"
 - Abilita API richieste per l'API di Google Safe Browsing quando le API chiave necessarie è definito. L'API di Google Safe Browsing richiede un API chiave, che può essere ottenuto da [Qui](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Configurazione relativa ai requisiti legali.
 *Per ulteriori informazioni sui requisiti legali e su come ciò potrebbe influire sui requisiti di configurazione, si prega di fare riferimento alla sezione "[INFORMAZIONE LEGALE](#SECTION11)" della documentazione.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì; False = No [Predefinito].
+- Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì [Predefinito]; False = No.
 
 ##### "privacy_policy"
 - L'indirizzo di una politica sulla privacy pertinente da visualizzare nel piè di pagina delle pagine generate. Specificare un URL, o lasciare vuoto per disabilitare.
@@ -1331,4 +1334,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 14 Dicembre 2018 (2018.12.14).
+Ultimo Aggiornamento: 5 Gennaio 2019 (2019.01.05).

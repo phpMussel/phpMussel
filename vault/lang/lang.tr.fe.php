@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.10.16).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = 'Zaman diliminiz.';
 $phpMussel['lang']['config_general_truncate'] = 'Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Şüpheli ve potansiyel olarak kötü amaçlı dosya kalitesini tanımlamak için phpMussel\'de imzalar var. Bu dosya kalitesi, dosyanın kötü amaçlı olduğu anlamına gelmez, ancak çok sayıda dosya kalitesi dosyanın kötü amaçlı olduğunu gösterebilir. Bu "threshold" değeri, phpMussel\'a şüpheli ve potansiyel olarak kötü amaçlı dosya kalitesinin maksimum toplam ağırlığını bildirir. Bu maksimumu aşmak, dosyanın kötü amaçlı olarak tanımlanmasına neden olur. Bu bağlamda ağırlığın tanımı, belirlenen şüpheli ve potansiyel olarak kötü amaçlı özelliklerin toplam sayısıdır. Varsayılan olarak, Bu değer 3\'e ayarlanacaktır. Daha düşük bir değer genelde yanlış pozitif sonuçların ortaya çıkmasına neden olur, ancak daha yüksek sayıda kötü amaçlı dosyanın bayraklı olduğu görülürken, daha yüksek bir değer genellikle yanlış pozitiflerin oluşumuyla sonuçlanır, ancak bayrak altındaki kötü amaçlı dosyaların sayısı daha düşük olur. Mümkün olduğunda bu değeri varsayılan değerlerine bırakmak genellikle en iyisidir.';
 $phpMussel['lang']['config_legal_privacy_policy'] = 'Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın.';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $phpMussel['lang']['config_signatures_Active'] = 'Aktif imza dosyalarının virgülle ayrılmış bir listesi.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel reklam yazılımlarını algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'phpMussel bozulmalar ve defacement ları tespiti için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan].';

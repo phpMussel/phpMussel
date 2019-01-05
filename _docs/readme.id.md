@@ -25,15 +25,15 @@ Terima kasih untuk menggunakan phpMussel, sebuah skrip PHP di-design untuk mende
 PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPLv2 oleh Caleb M (Maikuolan).
 
 Skrip ini adalah perangkat lunak gratis; Anda dapat mendistribusikan kembali dan/atau memodifikasinya dalam batasan dari GNU General Public License, seperti di publikasikan dari Free Software Foundation; baik versi 2 dari License, atau (dalam opsi Anda) versi selanjutnya apapun. Skrip ini didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU. Mohon Lihat GNU General Public Licence untuk lebih detail, terletak di file `LICENSE.txt` dan tersedia juga dari:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
 Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan dimana skrip ini menggunakan ClamAV, tanpa nya skrip ini tidak akan ada, atau akan mengalami nilai yang kurang baik.
 
-Khusus terima kasih kepada SourceForge dan GitHub untuk menghost file proyek, dan kepada sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) dan lain-lain, dan khusus terima kasih kepada semua orang yang mendukung proyek, kepada orang lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada Anda, untuk menggunakan skrip.
+Khusus terima kasih kepada SourceForge dan GitHub untuk menghost file proyek, dan kepada sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel: [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) dan lain-lain, dan khusus terima kasih kepada semua orang yang mendukung proyek, kepada orang lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada Anda, untuk menggunakan skrip.
 
 Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
-- [SourceForge](http://phpmussel.sourceforge.net/).
+- [SourceForge](https://sourceforge.net/projects/phpmussel/).
 - [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
@@ -69,7 +69,7 @@ Atau ini di file `.htaccess`:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-7) Pada titik ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba file keamanan upload, coba mengupload file-file testing yang dimasukkan dalam paket di `_testfiles` ke website Anda melalui metode upload di browser Anda. Jika semua bekerja dengan baik, sebuah pesan akan muncul dari phpMussel mengkonfirmasikan bahwa upload sudah sukses di blok. Jika tidak ada yang terjadi, ada sesuatu yang tidak bekerja dengan baik. Jika Anda menggunakan fitur-fitur lanjut atau jika Anda menggunakan tipe-tipe yang lain untuk memeriksa mungkin dengan alat-alat itu, saya sarankan mencoba dengan nya untuk memastikan dia bekerja seperti yang diharapkan juga.
+7) Pada titik ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba file keamanan upload, coba mengupload file-file testing yang dimasukkan dalam paket di `_testfiles` ke website Anda melalui metode upload di browser Anda. (Pastikan Anda menyertakan file tanda tangan `phpmussel*.*db` di direktif konfigurasi `Active` untuk memicu file-file test). Jika semua bekerja dengan baik, sebuah pesan akan muncul dari phpMussel mengkonfirmasikan bahwa upload sudah sukses di blok. Jika tidak ada yang terjadi, ada sesuatu yang tidak bekerja dengan baik. Jika Anda menggunakan fitur-fitur lanjut atau jika Anda menggunakan tipe-tipe yang lain untuk memeriksa mungkin dengan alat-alat itu, saya sarankan mencoba dengan nya untuk memastikan dia bekerja seperti yang diharapkan juga.
 
 #### 2.1 MENGINSTAL SECARA MANUAL (UNTUK CLI)
 
@@ -538,7 +538,10 @@ Konfigurasi untuk tanda tangan.
 ##### "Active"
 - Daftar file tanda tangan yang aktif, dipisahkan oleh koma.
 
-*Catat: File tanda tangan harus diinstal pertama-tama, sebelum Anda dapat mengaktifkannya.*
+*Catat:*
+- *File tanda tangan harus diinstal pertama-tama, sebelum Anda dapat mengaktifkannya.*
+- *Agar file test berfungsi dengan benar, file tanda tangan harus diinstal dan diaktifkan.*
+- *Nilai dari arahan ini di-cache. Setelah mengubahnya, agar perubahan diterapkan, Anda mungkin perlu menghapus cache.*
 
 ##### "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
@@ -591,7 +594,7 @@ Konfigurasi umum untuk mengambil alih file-file.
 
 Format | Dapat membaca | Dapat membaca secara rekursif | Dapat mendeteksi enkripsi | Catatan
 ---|---|---|---|---
-Zip | ✔️ | ✔️ | ✔️ | Membutuhkan [libzip](http://php.net/manual/en/zip.requirements.php) (biasanya dibundel dengan PHP pula). Juga didukung (menggunakan format zip): ✔️ Deteksi objek OLE. ✔️ Deteksi makro Office.
+Zip | ✔️ | ✔️ | ✔️ | Membutuhkan [libzip](https://secure.php.net/manual/en/zip.requirements.php) (biasanya dibundel dengan PHP pula). Juga didukung (menggunakan format zip): ✔️ Deteksi objek OLE. ✔️ Deteksi makro Office.
 Tar | ✔️ | ✔️ | ➖ | Tidak ada persyaratan khusus. Format tidak mendukung enkripsi.
 Rar | ✔️ | ✔️ | ✔️ | Membutuhkan ekstensi [rar](https://pecl.php.net/package/rar) (ketika ekstensi ini tidak diinstal, phpMussel tidak dapat membaca file rar).
 7zip | ❌ | ❌ | ❌ | Saat ini masih menyelidiki cara membaca file 7zip di phpMussel.
@@ -705,7 +708,7 @@ Mencatat: Jika scanner URL dinonaktifkan, Anda tidak perlu meninjaunya direktif-
 Konfigurasi scanner URL memeriksa API.
 
 ##### "lookup_hphosts"
-- Memungkinkan pemeriksaan API ke [hpHosts](http://hosts-file.net/) API ketika diset untuk true. hpHosts tidak memerlukan kunci API untuk melakukan pemeriksaan API.
+- Memungkinkan pemeriksaan API ke [hpHosts](https://hosts-file.net/) API ketika diset untuk true. hpHosts tidak memerlukan kunci API untuk melakukan pemeriksaan API.
 
 ##### "google_api_key"
 - Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan. Pemeriksaan Google Safe Browsing API memerlukan kunci API, diperoleh dari di [Sini](https://console.developers.google.com/).
@@ -726,7 +729,7 @@ Konfigurasi yang berkaitan dengan persyaratan hukum.
 *Untuk informasi lebih lanjut tentang persyaratan hukum dan bagaimana ini dapat mempengaruhi persyaratan konfigurasi Anda, silahkan lihat bagian "[LEGAL INFORMATION](#SECTION11)" pada dokumentasi.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].
+- Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak.
 
 ##### "privacy_policy"
 - Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan.
@@ -1326,4 +1329,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 14 Desember 2018 (2018.12.14).
+Terakhir Diperbarui: 5 Januari 2019 (2019.01.05).

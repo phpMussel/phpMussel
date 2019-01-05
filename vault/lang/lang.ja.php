@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.10.15).
+ * This file: Japanese language data (last modified: 2018.12.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -75,7 +75,7 @@ $phpMussel['lang']['scan_missing_filename'] = 'ファイル名が存在しませ
 $phpMussel['lang']['scan_no_problems_found'] = '問題は検出されませんでした。';
 $phpMussel['lang']['scan_not_archive'] = '失敗（中身が存在しないかアーカイブではありません）！';
 $phpMussel['lang']['scan_reading'] = '読み込んでいます';
-$phpMussel['lang']['scan_signature_file_missing'] = 'シグネチャファイルがありません';
+$phpMussel['lang']['scan_signature_file_missing'] = 'シグネチャ・ファイルがありません';
 $phpMussel['lang']['scan_tampering'] = '検出された潜在的に危険なファイル改ざん';
 $phpMussel['lang']['scan_unauthorised_upload'] = '不正ファイルアップロード改ざんが検出されました';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = '不正ファイルアップロード改ざんまたはミスコンフィギュレーションが検出されました！';

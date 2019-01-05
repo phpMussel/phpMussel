@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.10.16).
+ * This file: English language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -97,7 +97,7 @@ $phpMussel['lang']['config_general_timezone'] = 'Your timezone.';
 $phpMussel['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'There are certain signatures of phpMussel that are intended to identify suspicious and potentially malicious qualities of files being uploaded without in themselves identifying those files being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious and potentially malicious qualities of files being uploaded that\'s allowable is before those files are to be flagged as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious qualities identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It\'s generally best to leave this value at its default unless you\'re experiencing problems related to it.';
 $phpMussel['lang']['config_legal_privacy_policy'] = 'The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.';
-$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
+$phpMussel['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.';
 $phpMussel['lang']['config_signatures_Active'] = 'A list of the active signature files, delimited by commas.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default].';
 $phpMussel['lang']['config_signatures_detect_deface'] = 'Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default].';
