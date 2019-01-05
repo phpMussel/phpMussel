@@ -24,9 +24,8 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
 
 /** Autoloader for phpMussel classes. */
 spl_autoload_register(function ($Class) {
-    static $ClassDir = __DIR__ . '/classes/';
     $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
-    $File = $ClassDir . ($Vendor === 'phpMussel' ? '' : $Vendor . '/') . (
+    $File = __DIR__ . '/classes/' . ($Vendor === 'phpMussel' ? '' : $Vendor . '/') . (
         (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
     ) . '.php';
     if (is_readable($File)) {
