@@ -23,6 +23,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   slightly reduce complaints sometimes made by certain code quality checkers
   and such). It's also less messy now to use an integer value of zero as a key.
 
+- [2019.01.05; Sub-minor code change; Maikuolan]: Changed the default value of
+  "pseudonymise_ip_addresses" from "false" to "true" in order to strengthen
+  GDPR compliance.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 

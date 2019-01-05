@@ -381,7 +381,7 @@ Config Defaults:
  legal:
   pseudonymise_ip_addresses:
    type: bool
-   default: false
+   default: true
   privacy_policy:
    type: string
    default: ""
