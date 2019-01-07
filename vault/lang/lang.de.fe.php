@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2019.01.05).
+ * This file: German language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Objekte markiert';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache-Daten und temporäre Dateien';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel Speicherplatz verwendet: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Speicherplatz verfügbar: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Andere Regeln, Signaturdateien, u.s.w.';
+$phpMussel['lang']['label_fmgr_safety'] = 'Sicherheitsmechanismen';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Speicherplatz verwendet insgesamt: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Speicherplatz insgesamt: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponente aktualisiert Metadaten';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateim
 $phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der phpMussel Frontend. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $phpMussel['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
+$phpMussel['lang']['tip_pie_html'] = 'Klicken Sie auf den Komponentennamen, um weitere Informationen zu erhalten.';
 $phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Diese Seite erleichtert die Verwaltung von, und listet alle Dateien auf, die sich derzeit in der Quarantäne befinden.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Hinweis: Die Quarantäne ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Siehe die <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.de.md#SECTION7">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken.';

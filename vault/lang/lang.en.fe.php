@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2019.01.05).
+ * This file: English language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Objects flagged';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk usage: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Free disk space: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Other rules, signature files, etc';
+$phpMussel['lang']['label_fmgr_safety'] = 'Safety mechanisms';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manag
 $phpMussel['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue.';
 $phpMussel['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';
+$phpMussel['lang']['tip_pie_html'] = 'Click the component name for more details.';
 $phpMussel['lang']['tip_quarantine'] = 'Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Note: Quarantine is currently disabled, but can be enabled via the configuration page.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">documentation</a> for information about the various configuration directives and their purposes.';

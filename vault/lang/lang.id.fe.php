@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.05).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Obyek ditandai';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Aturan dan file tanda tangan lain, dll';
+$phpMussel['lang']['label_fmgr_safety'] = 'Mekanisme keamanan';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager m
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$phpMussel['lang']['tip_pie_html'] = 'Klik nama komponen untuk detail lebih lanjut.';
 $phpMussel['lang']['tip_quarantine'] = 'Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';

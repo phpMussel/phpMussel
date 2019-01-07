@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.05).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'フラグされたオブジェクト';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMusselディスク使用量：';
 $phpMussel['lang']['label_fmgr_free_space'] = '空きディスク容量：';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'その他の規則、シグネチャ・ファイル、など';
+$phpMussel['lang']['label_fmgr_safety'] = '安全メカニズム';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計：';
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<
 $phpMussel['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザー名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
+$phpMussel['lang']['tip_pie_html'] = '詳細についてはコンポーネント名をクリックしてください。';
 $phpMussel['lang']['tip_quarantine'] = 'こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。';
 $phpMussel['lang']['tip_quarantine_disabled'] = '注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。';
 $phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';

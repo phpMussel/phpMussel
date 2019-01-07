@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.26).
+ * This file: Front-end functions file (last modified: 2019.01.07).
  */
 
 /**
@@ -354,29 +354,29 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     if ($Component === 'phpMussel') {
                         $Component .= ' (' . $phpMussel['lang']['field_component'] . ')';
                     }
-                } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
+                } elseif (preg_match('/(?:^\.ht|\.safety$|^salt\.dat$)/i', $ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['label_fmgr_safety'];
+                } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
                     $Component = $phpMussel['lang']['link_config'];
                 } elseif ($phpMussel['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $phpMussel['lang']['link_logs'];
-                } else {
-                    $LastFour = strtolower(substr($ThisNameFixed, -4));
-                    if (
-                        $LastFour === '.tmp' ||
-                        $ThisNameFixed === 'index.dat' ||
-                        $ThisNameFixed === 'fe_assets/frontend.dat' ||
-                        substr($ThisNameFixed, -9) === '.rollback'
-                    ) {
-                        $Component = $phpMussel['lang']['label_fmgr_cache_data'];
-                    } elseif ($LastFour === '.qfu') {
-                        $Component = $phpMussel['lang']['label_quarantined'];
-                    } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
-                        $Component = $phpMussel['lang']['label_fmgr_updates_metadata'];
-                    }
+                } elseif (preg_match('~^(?:greylist\.csv|signatures/.*\.(?:csv|db))$~i', $ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['label_fmgr_other_sig'];
+                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache/index|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['label_fmgr_cache_data'];
+                } elseif (preg_match('/\.qfu$/i', $ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['label_quarantined'];
+                } elseif (preg_match('/\.(?:dat|ya?ml)$/i', $ThisNameFixed)) {
+                    $Component = $phpMussel['lang']['label_fmgr_updates_metadata'];
                 }
                 if (!isset($phpMussel['Components']['Components'][$Component])) {
                     $phpMussel['Components']['Components'][$Component] = 0;
                 }
                 $phpMussel['Components']['Components'][$Component] += $Arr[$Key]['Filesize'];
+                if (!isset($phpMussel['Components']['ComponentFiles'][$Component])) {
+                    $phpMussel['Components']['ComponentFiles'][$Component] = [];
+                }
+                $phpMussel['Components']['ComponentFiles'][$Component][$ThisNameFixed] = $Arr[$Key]['Filesize'];
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));

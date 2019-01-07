@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2019.01.05).
+ * This file: Russian language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Помеченные объекты';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel Использование диска: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Свободное место на диске: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Другие правила, файлы сигнатуры и т.д.';
+$phpMussel['lang']['label_fmgr_safety'] = 'Механизмы безопасности';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использование диска: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Привет, {username}.<br />Фай�
 $phpMussel['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $phpMussel['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
+$phpMussel['lang']['tip_pie_html'] = 'Нажмите на название компонента для получения более подробной информации.';
 $phpMussel['lang']['tip_quarantine'] = 'Привет, {username}.<br />На этой странице перечислены все файлы, находящиеся в настоящее время в карантине, и облегчает управление этими файлами.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Заметка: В настоящее время карантин отключен, но может быть включен через страницу конфигурации.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ru.md#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей.';

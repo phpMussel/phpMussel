@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.05).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'نشان لگا دیا گیا آبجیک�
 $phpMussel['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel ڈسک استعمال: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'دیگر قواعد، دستخط فائلیں، وغیرہ';
+$phpMussel['lang']['label_fmgr_safety'] = 'سیفٹی کے طریقہ کار';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل �
 $phpMussel['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ phpMussel سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $phpMussel['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
+$phpMussel['lang']['tip_pie_html'] = 'مزید تفصیلات کے لئے جزو کا نام پر کلک کریں.';
 $phpMussel['lang']['tip_quarantine'] = 'ہیلو، {username}.<br />انتظامیہ کو سہولت دینے کے لئے، اس صفحہ کو فی الحال قرنطین میں موجود تمام فائلوں کی فہرست.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'نوٹ: قرنطین فی الحال غیر فعال ہے، لیکن ترتیب ترتیب کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ur.md#SECTION7">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';

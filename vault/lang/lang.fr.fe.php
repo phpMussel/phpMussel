@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2019.01.05).
+ * This file: French language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Objets marqués';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Données cache et fichiers temporaires';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Utilisation du disque par phpMussel : ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Espace disque libre : ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Autres règles, fichiers de signature, etc';
+$phpMussel['lang']['label_fmgr_safety'] = 'Mécanismes de sécurité';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Utilisation du disque totale : ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionna
 $phpMussel['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de phpMussel. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $phpMussel['lang']['tip_login'] = 'Nom d\'utilisateur défaut : <span class="txtRd">admin</span> – Mot de passe défaut : <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
+$phpMussel['lang']['tip_pie_html'] = 'Cliquez sur le nom du composant pour plus de détails.';
 $phpMussel['lang']['tip_quarantine'] = 'Bonjour, {username}.<br />Cette page répertorie tous les fichiers actuellement en quarantaine et facilite la gestion de ces fichiers.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Remarque : La quarantaine est actuellement désactivée, mais peut être activée via la page de configuration.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.fr.md#SECTION7">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';

@@ -27,6 +27,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   "pseudonymise_ip_addresses" from "false" to "true" in order to strengthen
   GDPR compliance.
 
+- [2019.01.07; Sub-minor code change; Maikuolan]: Improved the front-end file
+  manager, making items in the components list clickable, to display further
+  relevant information.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 

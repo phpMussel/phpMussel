@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = '对象已标记';
 $phpMussel['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel使用的磁盘空间： ';
 $phpMussel['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
+$phpMussel['lang']['label_fmgr_other_sig'] = '其他规则，签名文件，等等';
+$phpMussel['lang']['label_fmgr_safety'] = '安全机制';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
 $phpMussel['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '组件更新元数据';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = '你好，​{username}。​<br />文�
 $phpMussel['lang']['tip_home'] = '你好，​{username}。​<br />这是phpMussel的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
 $phpMussel['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。';
+$phpMussel['lang']['tip_pie_html'] = '单击组件名称以获取更多详细信息。';
 $phpMussel['lang']['tip_quarantine'] = '你好，​{username}。​<br />此页面列出当前在隔离中的所有文件，并可以用来管理这些文件。';
 $phpMussel['lang']['tip_quarantine_disabled'] = '注意：隔离目前禁用，但可以通过配置页面启用。';
 $phpMussel['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh.md#SECTION7">文档</a>以获取有关各种配置指令的信息和他们的目的。';

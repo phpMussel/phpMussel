@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Đối tượng bị gắn cờ';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Các quy tắc và tập tin chữ ký khác, vv';
+$phpMussel['lang']['label_fmgr_safety'] = 'Cơ chế an toàn';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý
 $phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$phpMussel['lang']['tip_pie_html'] = 'Nhấp vào tên thành phần để biết thêm chi tiết.';
 $phpMussel['lang']['tip_quarantine'] = 'Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';

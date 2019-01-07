@@ -63,3 +63,11 @@ a[href="?phpmussel-page=logout"]:hover,a[href="?phpmussel-page=logout"]:active,a
 }
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
+.pieul{list-style-type:none;margin:0;padding:0}
+.comCat::before{content:"➖";display:inline-block;margin-right:6px}
+.caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
+.caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
+.comSub{display:none}
+.active{display:block}
+@keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate(45deg)}}
+@keyframes revRotate{0%{transform:rotate(45deg)}100%{transform:rotate(0)}}

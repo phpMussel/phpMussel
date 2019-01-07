@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2019.01.05).
+ * This file: Portuguese language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Objetos marcados';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Dados de cache e arquivos temporários';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'Uso do disco pelo phpMussel: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Espaço livre no disco: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Outras regras, arquivos de assinatura, etc';
+$phpMussel['lang']['label_fmgr_safety'] = 'Mecanismos de segurança';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Uso total do disco: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espaço total no disco: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Metadados para atualização de componentes';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Olá, {username}.<br />O gerenciador d
 $phpMussel['lang']['tip_home'] = 'Olá, {username}.<br />Esta é a página principal do phpMussel front-end. Selecione um link no menu de navegação à esquerda para continuar.';
 $phpMussel['lang']['tip_login'] = 'Nome de usuário padrão: <span class="txtRd">admin</span> – Senha padrão: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro.';
+$phpMussel['lang']['tip_pie_html'] = 'Clique no nome do componente para mais detalhes.';
 $phpMussel['lang']['tip_quarantine'] = 'Olá, {username}.<br />Esta página lista todos os arquivos atualmente em quarentena e facilita o gerenciamento desses arquivos.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Nota: A quarentena está atualmente desativada, mas pode ser ativada através da página de configuração.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Consulte a <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.pt.md#SECTION7">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos.';

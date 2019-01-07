@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2019.01.05).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -31,7 +31,7 @@ $phpMussel['lang']['config_PHPMailer_Password'] = 'كلمة المرور لاس�
 $phpMussel['lang']['config_PHPMailer_Port'] = 'رقم المنفذ المراد استخدامه للبريد الإلكتروني الصادر. افتراضي = 587.';
 $phpMussel['lang']['config_PHPMailer_SMTPAuth'] = 'يحدد هذا التوجيه ما إذا كنت تريد مصادقة جلسات SMTP (يجب ألا يغير هذا عادة).';
 $phpMussel['lang']['config_PHPMailer_SMTPSecure'] = 'البروتوكول المستخدم عند إرسال البريد الإلكتروني عبر SMTP (TLS أو SSL).';
-$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
+$phpMussel['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
 $phpMussel['lang']['config_PHPMailer_Username'] = 'اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP.';
 $phpMussel['lang']['config_PHPMailer_addReplyToAddress'] = 'عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
 $phpMussel['lang']['config_PHPMailer_addReplyToName'] = 'اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'تم الإبلاغ عن الكائنات
 $phpMussel['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel إستخدام القرص: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'القواعد الأخرى وملفات التوقيع الأخرى';
+$phpMussel['lang']['label_fmgr_safety'] = 'آليات السلامة';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير
 $phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
+$phpMussel['lang']['tip_pie_html'] = 'انقر فوق اسم المكون لمزيد من التفاصيل.';
 $phpMussel['lang']['tip_quarantine'] = 'مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';

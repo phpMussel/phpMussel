@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.05).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'İşaretlenen nesneler';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Diğer kurallar, imza dosyaları, vb';
+$phpMussel['lang']['label_fmgr_safety'] = 'Güvenlik mekanizmaları';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Merhaba, {username}.<br />Dosya yönet
 $phpMussel['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, phpMussel ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin.';
 $phpMussel['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
+$phpMussel['lang']['tip_pie_html'] = 'Daha fazla ayrıntı için bileşen adına tıklayın.';
 $phpMussel['lang']['tip_quarantine'] = 'Merhaba, {username}.<br />Bu sayfada, şu anda karantinadaki tüm dosyaları listeler ve bu dosyaların yönetimini kolaylaştırır.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Not: Karantina şu anda devre dışıdır, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">belgelere</a> bakın.';

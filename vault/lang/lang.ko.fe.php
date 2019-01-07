@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.05).
+ * This file: Korean language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = '신고 된 개체';
 $phpMussel['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
+$phpMussel['lang']['label_fmgr_other_sig'] = '기타 규칙, 서명 파일, 등';
+$phpMussel['lang']['label_fmgr_safety'] = '안전 장치';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파�
 $phpMussel['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 phpMussel 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $phpMussel['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
+$phpMussel['lang']['tip_pie_html'] = '자세한 내용은 구성 요소 이름을 클릭하십시오.';
 $phpMussel['lang']['tip_quarantine'] = '안녕하세요, {username}.<br />관리를 용이하게하기 위해, 현재 격리 저장소에있는 모든 파일이이 페이지에 나열됩니다.';
 $phpMussel['lang']['tip_quarantine_disabled'] = '노트 : 격리는 현재 비활성화되어 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.05).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -185,6 +185,8 @@ $phpMussel['lang']['label_flagged'] = 'Objecten gemarkeerd';
 $phpMussel['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $phpMussel['lang']['label_fmgr_disk_usage'] = 'phpMussel-schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
+$phpMussel['lang']['label_fmgr_other_sig'] = 'Andere regels, signatuurbestanden, enz';
+$phpMussel['lang']['label_fmgr_safety'] = 'Veiligheidsmechanismen';
 $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
@@ -340,6 +342,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeh
 $phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de phpMussel frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $phpMussel['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$phpMussel['lang']['tip_pie_html'] = 'Klik op de componentnaam voor meer details.';
 $phpMussel['lang']['tip_quarantine'] = 'Hallo, {username}.<br />Deze pagina bevat een lijst met alle bestanden die momenteel in quarantaine staan en het beheer van die bestanden vergemakkelijkt.';
 $phpMussel['lang']['tip_quarantine_disabled'] = 'Notitie: Quarantaine is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $phpMussel['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.nl.md#SECTION7">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.10.01).
+ * This file: Front-end handler (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1991,7 +1991,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     $phpMussel['FE']['VaultPath'] = str_replace("\\", '/', $phpMussel['Vault']) . '*';
 
     /** Prepare components metadata working array. */
-    $phpMussel['Components'] = ['Files', 'Components', 'Names'];
+    $phpMussel['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
     /** Show/hide pie charts link and etc. */
     if (!$phpMussel['PieFile']) {
@@ -2249,7 +2249,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         $phpMussel['FE']['PieChartColours'] = [];
 
         /** Initialise pie chart legend. */
-        $phpMussel['FE']['PieChartHTML'] = '';
+        $phpMussel['FE']['PieChartHTML'] = '<ul class="pieul">' . $phpMussel['lang']['tip_pie_html'];
 
         /** Building pie chart values. */
         foreach ($phpMussel['Components']['Components'] as $phpMussel['Components']['ThisName'] => $phpMussel['Components']['ThisData']) {
@@ -2258,6 +2258,21 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             }
             $phpMussel['Components']['ThisSize'] = $phpMussel['Components']['ThisData'];
             $phpMussel['FormatFilesize']($phpMussel['Components']['ThisSize']);
+            $phpMussel['Components']['ThisListed'] = '';
+            if (!empty($phpMussel['Components']['ComponentFiles'][$phpMussel['Components']['ThisName']])) {
+                $phpMussel['Components']['ThisComponentFiles'] = &$phpMussel['Components']['ComponentFiles'][$phpMussel['Components']['ThisName']];
+                arsort($phpMussel['Components']['ThisComponentFiles']);
+                $phpMussel['Components']['ThisListed'] .= '<ul class="comSub txtBl">';
+                foreach ($phpMussel['Components']['ThisComponentFiles'] as $phpMussel['Components']['ThisFile'] => $phpMussel['Components']['ThisFileSize']) {
+                    $phpMussel['FormatFilesize']($phpMussel['Components']['ThisFileSize']);
+                    $phpMussel['Components']['ThisListed'] .= sprintf(
+                        '<li style="font-size:0.9em">%1$s – %2$s</li>',
+                        $phpMussel['Components']['ThisFile'],
+                        $phpMussel['Components']['ThisFileSize']
+                    );
+                }
+                $phpMussel['Components']['ThisListed'] .= '</ul>';
+            }
             $phpMussel['Components']['ThisName'] .= ' – ' . $phpMussel['Components']['ThisSize'];
             $phpMussel['FE']['PieChartValues'][] = $phpMussel['Components']['ThisData'];
             $phpMussel['FE']['PieChartLabels'][] = $phpMussel['Components']['ThisName'];
@@ -2268,16 +2283,29 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     hexdec(substr($phpMussel['Components']['ThisColour'], 2, 2)) . ',' .
                     hexdec(substr($phpMussel['Components']['ThisColour'], 4, 2));
                 $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour'];
-                $phpMussel['FE']['PieChartHTML'] .=
-                    '<span style="background:linear-gradient(90deg,rgba(' .
-                    $phpMussel['Components']['RGB'] . ',0.3),rgba(' .
-                    $phpMussel['Components']['RGB'] . ',0))"><span style="color:#' .
-                    $phpMussel['Components']['ThisColour'] . '">➖</span> ' .
-                    $phpMussel['Components']['ThisName'] . "</span><br />\n";
+                $phpMussel['FE']['PieChartHTML'] .= sprintf(
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    $phpMussel['Components']['RGB'],
+                    $phpMussel['Components']['ThisColour'],
+                    $phpMussel['Components']['ThisName'],
+                    $phpMussel['Components']['ThisListed']
+                ) . "\n";
             } else {
-                $phpMussel['FE']['PieChartHTML'] .= '➖ ' . $phpMussel['Components']['ThisName'] . "<br />\n";
+                $phpMussel['FE']['PieChartHTML'] .= sprintf(
+                    '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
+                    $phpMussel['Components']['ThisName'],
+                    $phpMussel['Components']['ThisListed']
+                ) . "\n";
             }
         }
+
+        /** Close pie chart legend and append necessary JavaScript for pie chart sub-items selector. */
+        $phpMussel['FE']['PieChartHTML'] .= '</ul><script type="text/javascript">' .
+            'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggle' .
+            'r.length;i++)toggler[i].addEventListener("click",function(){this.parentE' .
+            'lement.querySelector(".comSub").classList.toggle("active"),!this.classLi' .
+            'st.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(f' .
+            'unction(t){t.classList.toggle("caret-up")},200,this)});</script>';
 
         /** Finalise pie chart values. */
         $phpMussel['FE']['PieChartValues'] = '[' . implode(', ', $phpMussel['FE']['PieChartValues']) . ']';
