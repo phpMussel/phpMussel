@@ -261,6 +261,11 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
 &nbsp; <div dir="rtl" style="display:inline">کیشے ڈائریکٹری (عارضی اعداد و شمار کے لئے).</div> | /vault/cache/
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/classes/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">آرکائیو کو سنبھالنے کے لئے ذمہ دار.</div> | /vault/classes/ArchiveHandler.php
+&nbsp; <div dir="rtl" style="display:inline">فائل کمپریشن کو سنبھالنے کے لئے ذمہ دار ہے.</div> | /vault/classes/CompressionHandler.php
+&nbsp; <div dir="rtl" style="display:inline">عارضی فائلوں کو بنانے اور ہینڈل کرنے کے لئے ذمہ دار.</div> | /vault/classes/TemporaryFileHandler.php
 &nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اثاثوں.</div> | /vault/fe_assets/
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
@@ -1562,4 +1567,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 5 جنوری 2019 (2019.01.05).</div>
+<div dir="rtl">آخری تازہ کاری: 7 جنوری 2019 (2019.01.07).</div>

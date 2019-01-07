@@ -265,6 +265,11 @@ Data | Deskripsi
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh phpMussel.
+/vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/classes/ArchiveHandler.php | Bertanggung jawab untuk menangani arsip.
+/vault/classes/CompressionHandler.php | Bertanggung jawab untuk menangani kompresi file.
+/vault/classes/TemporaryFileHandler.php | Bertanggung jawab untuk membuat dan menangani file sementara.
 /vault/fe_assets/ | Data untuk akses bagian depan.
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/fe_assets/_2fa.html | Template HTML yang digunakan saat meminta pengguna untuk kode 2FA.
@@ -1329,4 +1334,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 5 Januari 2019 (2019.01.05).
+Terakhir Diperbarui: 7 Januari 2019 (2019.01.07).

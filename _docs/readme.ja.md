@@ -265,6 +265,11 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
 /vault/cache/ | キャッシュ・ディレクトリ（一時データ用）。
 /vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/classes/ | クラス・ディレクトリ。​phpMusselによって使用されるさまざまなクラスが含まれています。
+/vault/classes/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/classes/ArchiveHandler.php | アーカイブの処理を担当です。
+/vault/classes/CompressionHandler.php | ファイル圧縮の処理を担当です。
+/vault/classes/TemporaryFileHandler.php | 一時ファイルの作成と処理を担当です。
 /vault/fe_assets/ | フロントエンド資産。
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/fe_assets/_2fa.html | ユーザーに２ＦＡコードを要求するときに使用されるＨＴＭＬテンプレート。
@@ -1336,4 +1341,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：２０１９年１月５日。
+最終アップデート：２０１９年１月７日。

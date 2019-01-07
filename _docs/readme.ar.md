@@ -261,6 +261,11 @@
 &nbsp; <div dir="rtl" style="display:inline">دليل /vault/ (يحتوي على ملفات متنوعة).</div> | /vault/
 &nbsp; <div dir="rtl" style="display:inline">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها phpMussel.</div> | /vault/classes/
+&nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/classes/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">مسؤول عن التعامل مع المحفوظات.</div> | /vault/classes/ArchiveHandler.php
+&nbsp; <div dir="rtl" style="display:inline">مسؤولة عن التعامل مع ضغط الملفات.</div> | /vault/classes/CompressionHandler.php
+&nbsp; <div dir="rtl" style="display:inline">مسؤولة عن إنشاء والتعامل مع الملفات المؤقتة.</div> | /vault/classes/TemporaryFileHandler.php
 &nbsp; <div dir="rtl" style="display:inline">الأصول front-end.</div> | /vault/fe_assets/
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/fe_assets/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML المستخدم عند طلب المستخدم للحصول على كود 2FA.</div> | /vault/fe_assets/_2fa.html
@@ -1563,4 +1568,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 يناير 2019 (2019.01.05).</div>
+<div dir="rtl">آخر تحديث: 7 يناير 2019 (2019.01.07).</div>

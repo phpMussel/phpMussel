@@ -265,6 +265,11 @@ Tập tin | Chi tiết
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi phpMussel.
+/vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/classes/ArchiveHandler.php | Chịu trách nhiệm xử lý tập tin lưu trữ.
+/vault/classes/CompressionHandler.php | Chịu trách nhiệm xử lý nén tập tin.
+/vault/classes/TemporaryFileHandler.php | Chịu trách nhiệm tạo và xử lý các tập tin tạm thời.
 /vault/fe_assets/ | Các tài sản front-end.
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/_2fa.html | Tập tin mẫu HTML được sử dụng khi yêu cầu người dùng cho mã 2FA.
@@ -1329,4 +1334,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Một 2019 (2019.01.05).
+Lần cuối cập nhật: 7 Tháng Một 2019 (2019.01.07).

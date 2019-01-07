@@ -266,6 +266,11 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/ | 安全/保險庫【Vault】文件夾（包含若干文件）。
 /vault/cache/ | 緩存【Cache】文件夾（為臨時數據）。
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/classes/ | 類目錄。包含phpMussel使用的各種類。
+/vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/classes/ArchiveHandler.php | 負責處理檔案文件。
+/vault/classes/CompressionHandler.php | 負責處理文件壓縮。
+/vault/classes/TemporaryFileHandler.php | 負責創建和處理臨時文件。
 /vault/fe_assets/ | 前端資產。
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_2fa.html | 在向用戶詢問2FA代碼時使用的HTML模板。
@@ -1338,4 +1343,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2019年1月5日。
+最後更新：2019年1月7日。

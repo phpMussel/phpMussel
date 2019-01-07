@@ -265,6 +265,11 @@ Archivo | Descripción
 /vault/ | Vault directorio (contiene varios archivos).
 /vault/cache/ | Cache directorio (para los datos temporal).
 /vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/classes/ | Directorio de clases. Contiene varias clases utilizadas por phpMussel.
+/vault/classes/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/classes/ArchiveHandler.php | Responsable del manejo de archivos.
+/vault/classes/CompressionHandler.php | Responsable del manejo de la compresión de archivos.
+/vault/classes/TemporaryFileHandler.php | Responsable de crear y manejar archivos temporales.
 /vault/fe_assets/ | Archivos de front-end.
 /vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/fe_assets/_2fa.html | Un archivo HTML utilizada al pedirle al usuario un código 2FA.
@@ -1336,4 +1341,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 5 Enero de 2019 (2019.01.05).
+Última Actualización: 7 Enero de 2019 (2019.01.07).

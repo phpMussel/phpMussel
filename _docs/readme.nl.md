@@ -265,6 +265,11 @@ Bestand | Beschrijving
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door phpMussel.
+/vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/classes/ArchiveHandler.php | Verantwoordelijk voor het omgaan van archieven.
+/vault/classes/CompressionHandler.php | Verantwoordelijk voor het omgaan met bestandscompressie.
+/vault/classes/TemporaryFileHandler.php | Verantwoordelijk voor het maken en het omgaan van tijdelijke bestanden.
 /vault/fe_assets/ | Frontend data/gegevens.
 /vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/fe_assets/_2fa.html | Een HTML sjabloon die wordt gebruikt wanneer de gebruiker om een 2FA-code wordt gevraagd.
@@ -1337,4 +1342,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 5 Januari 2019 (2019.01.05).
+Laatste Bijgewerkt: 7 Januari 2019 (2019.01.07).

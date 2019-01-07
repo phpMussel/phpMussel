@@ -264,9 +264,14 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /_testfiles/swf_standard_testfile.swf | phpMussel SWF 서명 용 테스트 파일.
 /vault/ | 보루 토 디렉토리 (다양한 파일을 포함합니다).
 /vault/cache/ | 캐시 디렉토리 (임시 데이터 용).
-/vault/cache/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/cache/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
+/vault/classes/ | 클래스 디렉토리. phpMussel에서 사용하는 다양한 클래스가 들어 있습니다.
+/vault/classes/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
+/vault/classes/ArchiveHandler.php | 아카이브 처리에 대한 그것은 책임이있다.
+/vault/classes/CompressionHandler.php | 파일 압축을 처리에 대한 그것은 책임이있다.
+/vault/classes/TemporaryFileHandler.php | 임시 파일을 만들고 처리합니다.
 /vault/fe_assets/ | 프론트 엔드 자산.
-/vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/fe_assets/_2fa.html | 사용자에게 2FA 코드를 요청할 때 사용되는 HTML 템플릿입니다.
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
@@ -298,7 +303,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/fe_assets/scripts.js | 프런트 엔드 JavaScript 데이터가 들어 있습니다.
 /vault/lang/ | phpMussel 언어 데이터가 포함되어 있습니다.
-/vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
 /vault/lang/lang.ar.php | 아랍어 언어 데이터.
 /vault/lang/lang.bn.fe.php | 프론트 엔드 벵골어 언어 데이터.
@@ -340,11 +345,11 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/lang/lang.zh.fe.php | 프론트 엔드 중국어 간체 언어 데이터.
 /vault/lang/lang.zh.php | 중국어 간체 언어 데이터.
 /vault/quarantine/ | 검역 디렉토리 (격리 된 파일 포함합니다).
-/vault/quarantine/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/quarantine/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/signatures/ | 서명 디렉토리 (서명 파일이 포함되어 있습니다).
-/vault/signatures/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/signatures/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/signatures/switch.dat | 변수를 컨트롤 세트합니다.
-/vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/cli.php | CLI 핸들러.
@@ -1334,4 +1339,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2019년 1월 5일.
+최종 업데이트 : 2019년 1월 7일.
