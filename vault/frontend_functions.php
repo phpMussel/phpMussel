@@ -354,7 +354,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     if ($Component === 'phpMussel') {
                         $Component .= ' (' . $phpMussel['lang']['field_component'] . ')';
                     }
-                } elseif (preg_match('/(?:^\.ht|\.safety$|^salt\.dat$)/i', $ThisNameFixed)) {
+                } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $phpMussel['lang']['label_fmgr_safety'];
                 } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
                     $Component = $phpMussel['lang']['link_config'];
