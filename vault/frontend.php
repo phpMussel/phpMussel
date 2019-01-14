@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.07).
+ * This file: Front-end handler (last modified: 2019.01.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,15 +26,6 @@ if (!file_exists($phpMussel['Vault'] . 'frontend_functions.php')) {
 }
 /** Load the front-end functions file. */
 require $phpMussel['Vault'] . 'frontend_functions.php';
-
-/** Load PHPMailer classes if they've been installed. */
-if (file_exists($phpMussel['Vault'] . '/phpmailer/PHPMailer.php')) {
-    require $phpMussel['Vault'] . '/phpmailer/PHPMailer.php';
-    require $phpMussel['Vault'] . '/phpmailer/Exception.php';
-    require $phpMussel['Vault'] . '/phpmailer/OAuth.php';
-    require $phpMussel['Vault'] . '/phpmailer/POP3.php';
-    require $phpMussel['Vault'] . '/phpmailer/SMTP.php';
-}
 
 /** Set page selector if not already set. */
 if (empty($phpMussel['QueryVars']['phpmussel-page'])) {

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.01.05).
+ * This file: Functions file (last modified: 2019.01.09).
  */
 
 /**
@@ -25,7 +25,7 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
 /** Autoloader for phpMussel classes. */
 spl_autoload_register(function ($Class) {
     $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
-    $File = __DIR__ . '/classes/' . ($Vendor === 'phpMussel' ? '' : $Vendor . '/') . (
+    $File = __DIR__ . '/classes/' . ((!$Vendor || $Vendor === 'phpMussel') ? '' : $Vendor . '/') . (
         (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
     ) . '.php';
     if (is_readable($File)) {
