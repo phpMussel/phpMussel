@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.10.15).
+ * This file: Korean language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = '%s을 발견했습니다';
 $phpMussel['lang']['detected_control_characters'] = '제어 문자를 발견했습니다';
 $phpMussel['lang']['encrypted_archive'] = '암호화 된 아카이브 검색 : 암호화 된 아카이브는 허용되지 않습니다';
 $phpMussel['lang']['failed_to_access'] = '"%s"에 액세스하지 못했습니다!';
+$phpMussel['lang']['field_date'] = '날짜 ';
+$phpMussel['lang']['field_header_hash_reconstruction'] = '해시 서명 재구성';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE 단면 서명 재구성';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = '스캔 결과 (신고 된 이유)';
+$phpMussel['lang']['field_ip_address'] = 'IP 주소 ';
 $phpMussel['lang']['file'] = '파일';
 $phpMussel['lang']['filesize_limit_exceeded'] = '용 범위를 벗어난 파일 크기입니다';
 $phpMussel['lang']['filetype_blacklisted'] = '파일 형식이 블랙리스트입니다';

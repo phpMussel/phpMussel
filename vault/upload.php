@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2018.09.22).
+ * This file: Upload handler (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -42,9 +42,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
      * message you see on the "Upload Denied!" page generated whenever a file
      * upload has been blocked.
      *
-     * The $phpMussel['killdata'] variable contains a hash reference to every
-     * file upload blocked and to every file where something has been detected
-     * in that file, in the form of "FILE-MD5-HASH:FILESIZE:FILENAME".
+     * The $phpMussel['killdata'] variable contains hashes referencing every
+     * file upload blocked and every file where something has been detected in
+     * that file, in the form of "HASH:FILESIZE:FILENAME".
      *
      * If the file being scanned happens to be a PE file, in addition to the
      * information appended to $phpMussel['whyflagged'] and
@@ -317,19 +317,25 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             $phpMussel['memCache']['Handle']['Data'] = file_exists(
                 $phpMussel['Vault'] . $phpMussel['memCache']['Handle']['File']
             ) ? '' : $phpMussel['safety'] . "\n\n";
-            $phpMussel['memCache']['Handle']['Data'] .=
-                'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
-                "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
+            $phpMussel['memCache']['Handle']['Data'] .= sprintf(
+                "%s: %s\n%s: %s\n== %s ==\n%s\n== %s ==\n%s",
+                $phpMussel['lang']['field_date'],
+                $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
+                $phpMussel['lang']['field_ip_address'],
+                ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
                     $_SERVER[$phpMussel['IPAddr']]
-                ) : $_SERVER[$phpMussel['IPAddr']]) .
-                "\n== SCAN RESULTS / WHY FLAGGED ==\n" .
-                $phpMussel['whyflagged'] .
-                "\n== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==\n" .
-                $phpMussel['killdata'];
+                ) : $_SERVER[$phpMussel['IPAddr']]),
+                $phpMussel['lang']['field_header_scan_results_why_flagged'],
+                $phpMussel['whyflagged'],
+                $phpMussel['lang']['field_header_hash_reconstruction'],
+                $phpMussel['killdata']
+            );
             if ($phpMussel['PEData']) {
-                $phpMussel['memCache']['Handle']['Data'] .=
-                    "== PE SECTIONAL SIGNATURES RECONSTRUCTION (SECTION-SIZE:SECTION-HASH:FILE-NAME--SECTION-NAME) ==\n" .
-                    $phpMussel['PEData'];
+                $phpMussel['memCache']['Handle']['Data'] .= sprintf(
+                    "== %s ==\n%s",
+                    $phpMussel['lang']['field_header_pe_reconstruction'],
+                    $phpMussel['PEData']
+                );
             }
             $phpMussel['memCache']['Handle']['Data'] .= "\n";
             if ($phpMussel['BuildLogPath']($phpMussel['memCache']['Handle']['File'])) {

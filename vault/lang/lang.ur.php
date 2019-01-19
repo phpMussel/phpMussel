@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.10.15).
+ * This file: Urdu language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,11 @@ $phpMussel['lang']['detected'] = 'کے پتہ %s';
 $phpMussel['lang']['detected_control_characters'] = 'پتہ چلنے پر کنٹرول حروف';
 $phpMussel['lang']['encrypted_archive'] = 'مرموز محفوظ شدہ دستاویزات سے پتہ چلا؛ خفیہ کردہ ابلیھاگاروں کی اجازت نہیں';
 $phpMussel['lang']['failed_to_access'] = '"%s" تک رسائی حاصل کرنے میں ناکام!';
+$phpMussel['lang']['field_date'] = 'تاریخ';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'ہش کا دستخط دوبارہ تعمیر';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE سیکشن دستخط دوبارہ تعمیر';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'اسکین کے نتائج (پرچم کیوں)';
+$phpMussel['lang']['field_ip_address'] = 'IP پتہ';
 $phpMussel['lang']['file'] = 'فائل';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'فائل کی حد سے تجاوز کر گئی';
 $phpMussel['lang']['filetype_blacklisted'] = 'قسم کی فائل کو بلیک لسٹ';

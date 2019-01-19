@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.10.15).
+ * This file: Hindi language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = '%s का पता चला';
 $phpMussel['lang']['detected_control_characters'] = 'पता चला नियंत्रण अक्षर';
 $phpMussel['lang']['encrypted_archive'] = 'पता चला एन्क्रिप्टेड संग्रह; एन्क्रिप्ट किए गए अभिलेखागार की अनुमति नहीं है';
 $phpMussel['lang']['failed_to_access'] = '"%s" तक पहुंचने में विफल!';
+$phpMussel['lang']['field_date'] = 'समय';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'हैश हस्ताक्षर पुनर्निर्माण';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE अनुभागीय हस्ताक्षर पुनर्निर्माण';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'स्कैन परिणाम (ध्वजांकित क्यों)';
+$phpMussel['lang']['field_ip_address'] = 'IP पता';
 $phpMussel['lang']['file'] = 'फाइल';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'फाइल आकार सीमा पार हो गई';
 $phpMussel['lang']['filetype_blacklisted'] = 'काली सूची पर फाइल प्रकार';

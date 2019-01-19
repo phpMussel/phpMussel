@@ -1225,11 +1225,11 @@ Quando habilitado na configuração do pacote, o phpMussel mantém logs dos uplo
 As entradas para um arquivo de log de "mata do análise" normalmente se parece com isso (como um exemplo):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Data: Mon, 21 May 2018 00:47:56 +0800
+Endereço IP: 127.0.0.1
+== Resultados da verificação (por que indicado) ==
 Detectado phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Reconstrução de assinaturas hash ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Em quarentena como "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1336,4 +1336,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 7 Janeiro de 2019 (2019.01.07).
+Última Atualização: 19 Janeiro de 2019 (2019.01.19).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2018.10.15).
+ * This file: Chinese (simplified) language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = '检测%s';
 $phpMussel['lang']['detected_control_characters'] = '检测控制字符';
 $phpMussel['lang']['encrypted_archive'] = '检测加密档案文件; 加密档案文件不允许';
 $phpMussel['lang']['failed_to_access'] = '无法访问“%s”！';
+$phpMussel['lang']['field_date'] = '日期';
+$phpMussel['lang']['field_header_hash_reconstruction'] = '哈希签名重建';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE部分签名重建';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = '扫描结果（为什么标记）';
+$phpMussel['lang']['field_ip_address'] = 'IP地址';
 $phpMussel['lang']['file'] = '文件';
 $phpMussel['lang']['filesize_limit_exceeded'] = '文件大小超过限制';
 $phpMussel['lang']['filetype_blacklisted'] = '文件类型列入黑名单';

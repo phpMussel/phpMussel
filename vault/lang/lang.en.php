@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2018.10.15).
+ * This file: English language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = 'Detected %s';
 $phpMussel['lang']['detected_control_characters'] = 'Detected control characters';
 $phpMussel['lang']['encrypted_archive'] = 'Detected encrypted archive; Encrypted archives not permitted';
 $phpMussel['lang']['failed_to_access'] = 'Failed to access "%s"!';
+$phpMussel['lang']['field_date'] = 'Date';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Hash signatures reconstruction';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE sectional signatures reconstruction';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Scan results (why flagged)';
+$phpMussel['lang']['field_ip_address'] = 'IP address';
 $phpMussel['lang']['file'] = 'File';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Filesize limit exceeded';
 $phpMussel['lang']['filetype_blacklisted'] = 'Filetype blacklisted';

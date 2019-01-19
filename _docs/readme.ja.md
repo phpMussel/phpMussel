@@ -1225,11 +1225,11 @@ Mon, 21 May 2018 00:48:04 +0800 完了。
 「スキャン・キル」ログ・ファイルへのエントリは、通常、次のようになります（例として）：
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+日時: Mon, 21 May 2018 00:47:56 +0800
+ＩＰアドレス: 127.0.0.1
+== スキャン結果（なぜそれが識別されるのか） ==
 phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)を検出しました！
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== ハッシュ・シグネチャの再構築 ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 「/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu」として隔離。
 ```
@@ -1341,4 +1341,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：２０１９年１月７日。
+最終アップデート：２０１９年１月１９日。

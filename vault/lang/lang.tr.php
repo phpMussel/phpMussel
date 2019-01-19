@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.10.15).
+ * This file: Turkish language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -51,6 +51,11 @@ $phpMussel['lang']['detected'] = '%s algılandı';
 $phpMussel['lang']['detected_control_characters'] = 'Algılanan kontrol karakterleri';
 $phpMussel['lang']['encrypted_archive'] = 'Algılanan şifreli arşiv; Şifrelenmiş arşivlere izin verilmiyor';
 $phpMussel['lang']['failed_to_access'] = '"%s" erişilemedi!';
+$phpMussel['lang']['field_date'] = 'Tarih';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Karma imzaları rekonstrüksiyonu';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE kesit imzaları rekonstrüksiyonu';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Tarama sonuçları (neden işaretlendi)';
+$phpMussel['lang']['field_ip_address'] = 'IP adresi';
 $phpMussel['lang']['file'] = 'Dosya';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Dosya boyutu sınırı aşıldı';
 $phpMussel['lang']['filetype_blacklisted'] = 'Filetype kara listeye alındı';

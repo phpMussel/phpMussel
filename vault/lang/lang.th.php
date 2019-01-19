@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.10.15).
+ * This file: Thai language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = 'ตรวจพบแล้ว %s';
 $phpMussel['lang']['detected_control_characters'] = 'อักขระควบคุมถูกตรวจพบ';
 $phpMussel['lang']['encrypted_archive'] = 'เก็บถาวรที่เข้ารหัสถูกตรวจพบ; เก็บถาวรที่เข้ารหัสไม่ได้รับอนุญาต';
 $phpMussel['lang']['failed_to_access'] = 'ไม่สามารถเข้าถึง "%s"!';
+$phpMussel['lang']['field_date'] = 'วันที่';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'การก่อสร้างใหม่ของแฮชลายเซ็น';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'การก่อสร้างใหม่ PE ลายเซ็นที่เป็นส่วน';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'สแกนผลลัพธ์ (ทำไมถูกระบุ)';
+$phpMussel['lang']['field_ip_address'] = 'ที่อยู่ IP';
 $phpMussel['lang']['file'] = 'ไฟล์';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'จำกัดขนาดไฟล์เกินแล้ว';
 $phpMussel['lang']['filetype_blacklisted'] = 'ประเภทไฟล์คือในรายการดำ';

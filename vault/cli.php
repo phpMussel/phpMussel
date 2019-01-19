@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.10.20).
+ * This file: CLI handler (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -329,13 +329,13 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         if ($phpMussel['cmd'] === 'scan' || $phpMussel['cmd'] === 's') {
             echo "\n";
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
-            $out = $r = '';
+            $Out = $r = '';
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['start_time'], $phpMussel['Config']['general']['timeFormat']);
             echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             if (is_dir($phpMussel['stdin_clean'])) {
                 if (!is_readable($phpMussel['stdin_clean'])) {
-                    $out = '> ' . sprintf($phpMussel['lang']['failed_to_access'], $phpMussel['stdin_clean']) . "\n";
+                    $Out = '> ' . sprintf($phpMussel['lang']['failed_to_access'], $phpMussel['stdin_clean']) . "\n";
                 } else {
                     $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
@@ -347,33 +347,33 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                     foreach ($List as $Item) {
                         $Percent = round(($Current / $Total) * 100, 2) . '%';
                         echo $Percent . ' ' . $phpMussel['lang']['scan_complete'] . $phpMussel['lang']['_fullstop_final'];
-                        $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'] . $Item, $Item);
-                        if (!$out) {
-                            $out = '> ' . sprintf(
+                        $Out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'] . $Item, $Item);
+                        if (!$Out) {
+                            $Out = '> ' . sprintf(
                                 $phpMussel['lang']['_exclamation_final'],
                                 $phpMussel['lang']['cli_failed_to_complete'] . ' (' . $Item . ')'
                             ) . "\n";
                         }
-                        $r .= $out;
-                        echo "\r" . $phpMussel['prescan_decode']($out);
-                        $out = '';
+                        $r .= $Out;
+                        echo "\r" . $phpMussel['prescan_decode']($Out);
+                        $Out = '';
                     }
                 }
             } elseif (is_file($phpMussel['stdin_clean'])) {
-                $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'], $phpMussel['stdin_clean']);
-                if (!$out) {
-                    $out = '> ' . sprintf(
+                $Out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'], $phpMussel['stdin_clean']);
+                if (!$Out) {
+                    $Out = '> ' . sprintf(
                         $phpMussel['lang']['_exclamation_final'],
                         $phpMussel['lang']['cli_failed_to_complete']
                     ) . "\n";
                 }
-            } elseif (!$out) {
-                $out = '> ' . sprintf($phpMussel['lang']['cli_is_not_a'], $phpMussel['stdin_clean']) . "\n";
+            } elseif (!$Out) {
+                $Out = '> ' . sprintf($phpMussel['lang']['cli_is_not_a'], $phpMussel['stdin_clean']) . "\n";
             }
-            $r .= $out;
-            if ($out) {
-                echo $phpMussel['prescan_decode']($out);
-                $out = '';
+            $r .= $Out;
+            if ($Out) {
+                echo $phpMussel['prescan_decode']($Out);
+                $Out = '';
             }
             $phpMussel['memCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['end_time'], $phpMussel['Config']['general']['timeFormat']);

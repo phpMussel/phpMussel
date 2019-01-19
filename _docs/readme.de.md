@@ -1226,11 +1226,11 @@ Wenn in der Paketkonfiguration aktiviert, speichert phpMussel Protokolle der Upl
 Einträge in einem "scan kills" Protokolldatei sehen in etwa wie folgt aus (als Beispiel):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Datum: Mon, 21 May 2018 00:47:56 +0800
+IP Adresse: 127.0.0.1
+== Scan-Ergebnisse (warum gekennzeichnet) ==
 Entdeckt phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Rekonstruktion der Hash-Signaturen ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Als "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu" unter Quarantäne gestellt.
 ```
@@ -1345,4 +1345,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 7 Januar 2019 (2019.01.07).
+Zuletzt aktualisiert: 19 Januar 2019 (2019.01.19).

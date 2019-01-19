@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.12.26).
+ * This file: Japanese language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = '%sを検出しました';
 $phpMussel['lang']['detected_control_characters'] = '制御文字を検出しました';
 $phpMussel['lang']['encrypted_archive'] = '暗号化されたアーカイブ検出：暗号化されたアーカイブは許可されていません';
 $phpMussel['lang']['failed_to_access'] = '「%s」にアクセスできませんでした！';
+$phpMussel['lang']['field_date'] = '日時';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'ハッシュ・シグネチャの再構築';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'ＰＥセクション・シグネチャの再構築';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'スキャン結果（なぜそれが識別されるのか）';
+$phpMussel['lang']['field_ip_address'] = 'ＩＰアドレス';
 $phpMussel['lang']['file'] = 'ファイル';
 $phpMussel['lang']['filesize_limit_exceeded'] = '容範囲外ファイルサイズです';
 $phpMussel['lang']['filetype_blacklisted'] = 'ファイルタイプがブラックリスト記載です';

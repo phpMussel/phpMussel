@@ -1433,15 +1433,15 @@ When enabled in the package configuration, phpMussel keeps logs of the uploads t
 
 Entries to a "scan kills" logfile typically look something like this (as an example):
 
-```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
-3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
-```
+<pre dir="rtl">
+تاریخ: <code dir="ltr">Mon, 21 May 2018 00:47:56 +0800</code>
+IP پتہ: <code dir="ltr">127.0.0.1</code>
+== اسکین کے نتائج (پرچم کیوں) ==
+کے پتہ <code dir="ltr">phpMussel-Testfile.ASCII.Standard</code> (<code dir="ltr">ascii_standard_testfile.txt</code>)!
+== ہش کا دستخط دوبارہ تعمیر ==
+<code dir="ltr">3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt</code>
+طور قرنطینہ "<code dir="ltr">/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu</code>".
+</pre>
 
 A "scan kills" entry typically includes the following information:
 - The date and time that the upload was blocked.
@@ -1567,4 +1567,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 7 جنوری 2019 (2019.01.07).</div>
+<div dir="rtl">آخری تازہ کاری: 19 جنوری 2019 (2019.01.19).</div>

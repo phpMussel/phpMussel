@@ -1225,11 +1225,11 @@ Mon, 21 May 2018 00:48:04 +0800 Готово.
 Записи в этом типе файла журнала обычно выглядят примерно так (в качестве примера):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Дата: Mon, 21 May 2018 00:47:56 +0800
+IP-адрес: 127.0.0.1
+== Результаты сканирования (почему помечены) ==
 Обнаружено phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Реконструкция хэш-сигнатур ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Помещен на карантин в «/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu».
 ```
@@ -1336,4 +1336,4 @@ phpMussel не собирает и не обрабатывает какую-ли
 ---
 
 
-Последнее обновление: 7 Январь 2019 (2019.01.07).
+Последнее обновление: 19 Январь 2019 (2019.01.19).

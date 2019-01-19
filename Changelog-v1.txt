@@ -3,7 +3,7 @@ Changelog for phpMussel (>= v1.0.0, < v2.0.0), "Changelog-v1.txt".
 === VERSIONING GUIDELINES ===
 phpMussel adheres to the SemVer guidelines for versioning.
 
-Versioning guidelines for SemVer can be found at: http://www.semver.org/
+Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
@@ -30,6 +30,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2019.01.07; Sub-minor code change; Maikuolan]: Improved the front-end file
   manager, making items in the components list clickable, to display further
   relevant information.
+
+- [2019.01.19; Sub-minor code change; Maikuolan]: Refactored logging to provide
+  slightly better L10N, plus various other minor refactoring done elsewhere.
+  Updated the minimum safe PHP version fallback information.
 
 === Version/Release 1.7.0 ===
 MINOR RELEASE.

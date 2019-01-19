@@ -1225,11 +1225,11 @@ Cuando está habilitado en la configuración del paquete, phpMussel guarda los r
 Las entradas en un archivo de registro de "scan kills" normalmente se ve así (como un ejemplo):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Fecha: Mon, 21 May 2018 00:47:56 +0800
+Dirección IP: 127.0.0.1
+== Resultados de escaneo (por qué marcado) ==
 Detectado phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Reconstrucción de firmas hash ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 En cuarentena como "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1341,4 +1341,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 7 Enero de 2019 (2019.01.07).
+Última Actualización: 19 Enero de 2019 (2019.01.19).

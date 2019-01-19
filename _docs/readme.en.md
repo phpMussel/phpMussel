@@ -1225,11 +1225,11 @@ When enabled in the package configuration, phpMussel keeps logs of the uploads t
 Entries to a "scan kills" logfile typically look something like this (as an example):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Date: Mon, 21 May 2018 00:47:56 +0800
+IP address: 127.0.0.1
+== Scan results (why flagged) ==
 Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Hash signatures reconstruction ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1344,4 +1344,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 7 January 2019 (2019.01.07).
+Last Updated: 19 January 2019 (2019.01.19).

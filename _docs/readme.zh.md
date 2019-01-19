@@ -1226,11 +1226,11 @@ Mon, 21 May 2018 00:48:04 +0800 完了。
 “扫描杀死”日志文件的条目通常看起来像这样（作为示例）：
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+日期: Mon, 21 May 2018 00:47:56 +0800
+IP地址: 127.0.0.1
+== 扫描结果（为什么标记） ==
 检测phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)！
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== 哈希签名重建 ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 隔离为“/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu”。
 ```
@@ -1343,4 +1343,4 @@ phpMussel不收集或处理任何信息用于营销或广告目的，既不销�
 ---
 
 
-最后更新：2019年1月7日。
+最后更新：2019年1月19日。

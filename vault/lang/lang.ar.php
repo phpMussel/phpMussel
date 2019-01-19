@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.10.15).
+ * This file: Arabic language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,11 @@ $phpMussel['lang']['detected'] = 'الكشف %s';
 $phpMussel['lang']['detected_control_characters'] = 'الكشف أحرف التحكم';
 $phpMussel['lang']['encrypted_archive'] = 'كشف أرشيف المشفرة؛ أرشيف المشفرة غير مسموح';
 $phpMussel['lang']['failed_to_access'] = 'فشل في الوصول إلى "%s"!';
+$phpMussel['lang']['field_date'] = 'التاريخ';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'إعادة بناء التواقيع التجزئة';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'إعادة بناء التوقيعات القطاعية PE';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'نتائج المسح (لماذا تم الإبلاغ عنها)';
+$phpMussel['lang']['field_ip_address'] = 'عنوان IP';
 $phpMussel['lang']['file'] = 'ملف';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'تجاوز حد حجم ملف';
 $phpMussel['lang']['filetype_blacklisted'] = 'نوع الملف في القائمة السوداء';

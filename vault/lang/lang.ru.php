@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.10.15).
+ * This file: Russian language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -54,6 +54,11 @@ $phpMussel['lang']['detected'] = 'Обнаружено %s';
 $phpMussel['lang']['detected_control_characters'] = 'Обнаружены символы управления';
 $phpMussel['lang']['encrypted_archive'] = 'Обнаружен зашифрованный архив; Зашифрованные архивы не допускаются';
 $phpMussel['lang']['failed_to_access'] = 'Не удалось получить доступ к «%s»!';
+$phpMussel['lang']['field_date'] = 'Дата';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Реконструкция хэш-сигнатур';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'Реконструкция секционных сигнатурей PE';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Результаты сканирования (почему помечены)';
+$phpMussel['lang']['field_ip_address'] = 'IP-адрес';
 $phpMussel['lang']['file'] = 'файл';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Размер файла превышает лимит';
 $phpMussel['lang']['filetype_blacklisted'] = 'Тип файла находится в черном списке';

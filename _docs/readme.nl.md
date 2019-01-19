@@ -1225,11 +1225,11 @@ Indien ingeschakeld in de pakketconfiguratie houdt phpMussel logs bij van de upl
 Invoer van een "scan kills" logbestand ziet er ongeveer als volgt uit (bijvoorbeeld):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Datum: Mon, 21 May 2018 00:47:56 +0800
+IP adres: 127.0.0.1
+== Scanresultaten (waarom gemarkeerd) ==
 Gedetecteerd phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Hash signatures reconstructie ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 In quarantaine geplaatst als "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1342,4 +1342,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 7 Januari 2019 (2019.01.07).
+Laatste Bijgewerkt: 19 Januari 2019 (2019.01.19).

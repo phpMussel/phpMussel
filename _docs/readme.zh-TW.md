@@ -1226,11 +1226,11 @@ Mon, 21 May 2018 00:48:04 +0800 完了。
 『掃描殺死』日誌文件的條目通常看起來像這樣（作為示例）：
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+日期: Mon, 21 May 2018 00:47:56 +0800
+IP地址: 127.0.0.1
+== 掃描結果（為什麼標記） ==
 檢測phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)！
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== 哈希簽名重建 ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 隔離為『/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu』。
 ```
@@ -1343,4 +1343,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2019年1月7日。
+最後更新：2019年1月19日。

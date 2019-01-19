@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2018.10.15).
+ * This file: Vietnamese language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = 'Đã được phát hiện %s';
 $phpMussel['lang']['detected_control_characters'] = 'Ký tự điều khiển đã được phát hiện';
 $phpMussel['lang']['encrypted_archive'] = 'Kho đã mã hóa đã được phát hiện; Kho đã mã hóa chưa có sự cho phép';
 $phpMussel['lang']['failed_to_access'] = 'Không thể truy cập "%s"!';
+$phpMussel['lang']['field_date'] = 'Ngày';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Tái thiết chữ ký băm';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'Tái thiết chữ ký phần PE';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Kết quả quét (tại sao được gắn cờ)';
+$phpMussel['lang']['field_ip_address'] = 'Địa chỉ IP';
 $phpMussel['lang']['file'] = 'Tập tin';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Cở của tập tin đã bị quá giới hạn';
 $phpMussel['lang']['filetype_blacklisted'] = 'Loại tập tin đã vào danh sách đen';

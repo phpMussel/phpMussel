@@ -1225,11 +1225,11 @@ Lorsqu'il est activé dans la configuration du paquet, phpMussel conserve les jo
 Les entrées d'un fichier journal pour les « scan kills » ressemblent généralement à ceci (à titre d'exemple) :
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Date : Mon, 21 May 2018 00:47:56 +0800
+Adresse IP : 127.0.0.1
+== Résultats d'analyse (pourquoi marqué) ==
 Détecté phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt) !
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Reconstruction de signatures hachage ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Mis en quarantaine comme « /vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu ».
 ```
@@ -1340,4 +1340,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 7 Janvier 2019 (2019.01.07).
+Dernière mise à jour : 19 Janvier 2019 (2019.01.19).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.10.15).
+ * This file: Indonesian language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = 'Terdeteksi %s';
 $phpMussel['lang']['detected_control_characters'] = 'Terdeteksi kontrol karakter';
 $phpMussel['lang']['encrypted_archive'] = 'Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan';
 $phpMussel['lang']['failed_to_access'] = 'Gagal mengakses "%s"!';
+$phpMussel['lang']['field_date'] = 'Tanggal';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Rekonstruksi tanda tangan hash';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'Rekonstruksi tanda tangan PE sectional';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Hasil pindai (mengapa ditandai)';
+$phpMussel['lang']['field_ip_address'] = 'Alamat IP';
 $phpMussel['lang']['file'] = 'File';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'File ukuran batas melebihi';
 $phpMussel['lang']['filetype_blacklisted'] = 'File jenis pada hitam daftar';

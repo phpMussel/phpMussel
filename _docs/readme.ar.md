@@ -1433,15 +1433,15 @@ When these directives are left empty, this type of logging will remain disabled.
 
 <div dir="rtl">عادةً ما تبدو إدخالات السجل هذه شيئًا مثل هذا (كمثال):<br /><br /></div>
 
-```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
-Detected phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
-3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
-Quarantined as "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
-```
+<pre dir="rtl">
+التاريخ: <code dir="ltr">Mon, 21 May 2018 00:47:56 +0800</code>
+عنوان IP: <code dir="ltr">127.0.0.1</code>
+== نتائج المسح (لماذا تم الإبلاغ عنها) ==
+الكشف <code dir="ltr">phpMussel-Testfile.ASCII.Standard</code> (<code dir="ltr">ascii_standard_testfile.txt</code>)!
+== إعادة بناء التواقيع التجزئة ==
+<code dir="ltr">3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt</code>
+الحجر الصحي بأنه "<code dir="ltr">/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu</code>".
+</pre>
 
 A "scan kills" entry typically includes the following information:
 - The date and time that the upload was blocked.
@@ -1568,4 +1568,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 7 يناير 2019 (2019.01.07).</div>
+<div dir="rtl">آخر تحديث: 19 يناير 2019 (2019.01.19).</div>

@@ -1225,11 +1225,11 @@ Mon, 21 May 2018 00:48:04 +0800 완료.
 이러한 로그는 일반적으로 다음과 같습니다 (예로서) :
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+날짜 : Mon, 21 May 2018 00:47:56 +0800
+IP 주소 : 127.0.0.1
+== 스캔 결과 (신고 된 이유) ==
 phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)을 발견했습니다!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== 해시 서명 재구성 ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu"로 격리.
 ```
@@ -1339,4 +1339,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2019년 1월 7일.
+최종 업데이트 : 2019년 1월 19일.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.10.15).
+ * This file: Bangla language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = '%s সনাক্ত হয়েছে';
 $phpMussel['lang']['detected_control_characters'] = 'নিয়ন্ত্রণ অক্ষর সনাক্ত হয়েছে';
 $phpMussel['lang']['encrypted_archive'] = 'এনক্রিপ্ট আর্কাইভ সনাক্ত হয়েছে; এনক্রিপ্ট আর্কাইভ অনুমতি নেই';
 $phpMussel['lang']['failed_to_access'] = '"%s" অ্যাক্সেস করতে ব্যর্থ!';
+$phpMussel['lang']['field_date'] = 'তারিখ';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'হাশ স্বাক্ষর পুনর্গঠন';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE বিভাগীয় স্বাক্ষর পুনর্গঠন';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'স্ক্যান ফলাফল (কেন পতাকাঙ্কিত)';
+$phpMussel['lang']['field_ip_address'] = 'IP ঠিকানা';
 $phpMussel['lang']['file'] = 'ফাইল';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'ফাইলের আকার সীমা অতিক্রম করেছে';
 $phpMussel['lang']['filetype_blacklisted'] = 'ফাইলের ধরন কালো তালিকাতে রয়েছে।';

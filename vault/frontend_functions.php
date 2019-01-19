@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.01.07).
+ * This file: Front-end functions file (last modified: 2019.01.19).
  */
 
 /**
@@ -79,23 +79,23 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     }
     $QueryParts = explode($Delimiter, $Query);
     $CountParts = count($QueryParts);
-    if ($CountParts % 2) {
-        $Arr = [];
-        for ($Iter = 0; $Iter < $CountParts; $Iter++) {
-            if ($Iter % 2) {
-                $Arr[] = $QueryParts[$Iter];
-                continue;
-            }
-            $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
-            foreach ($QueryParts[$Iter] as $ThisPart) {
-                $Arr[] = $ThisPart;
-            }
-        }
-        $QueryParts = $Arr;
-        unset($ThisPart, $Iter, $Arr);
-    } else {
+    if (!($CountParts % 2)) {
         $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
+        return;
     }
+    $Arr = [];
+    for ($Iter = 0; $Iter < $CountParts; $Iter++) {
+        if ($Iter % 2) {
+            $Arr[] = $QueryParts[$Iter];
+            continue;
+        }
+        $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
+        foreach ($QueryParts[$Iter] as $ThisPart) {
+            $Arr[] = $ThisPart;
+        }
+    }
+    $QueryParts = $Arr;
+    unset($ThisPart, $Iter, $Arr, $CountParts);
 
     /** Safety mechanism. */
     if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($phpMussel['Vault'] . $QueryParts[0]) || !is_readable($phpMussel['Vault'] . $QueryParts[0])) {
@@ -684,18 +684,16 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.36') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.30')
+    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.38') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.32')
     ) || (
-        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.17')
+        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.22')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.7')
+        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.10')
     )) {
         $Level += 2;
     }
-    if ($phpMussel['VersionCompare']($Version, '7.1.0') || (
-        !$phpMussel['VersionCompare']($Date, '2018.12.1') && $phpMussel['VersionCompare']($Version, '7.2.0')
-    )) {
+    if ($phpMussel['VersionCompare']($Version, '7.2.0')) {
         $Level += 1;
     }
     $phpMussel['ForceVersionWarning'] = false;

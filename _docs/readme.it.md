@@ -1225,11 +1225,11 @@ Quando abilitato nella configurazione del pacchetto, phpMussel mantiene i regist
 Le voci di un file di registro di "scan uccisioni" in genere assomiglia a qualcosa come questo (ad esempio):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Data: Mon, 21 May 2018 00:47:56 +0800
+Indirizzo IP: 127.0.0.1
+== Risultati della scansione (perché contrassegnati) ==
 Rilevato phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Ricostruzione delle firme hash ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 In quarantena come "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1339,4 +1339,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 7 Gennaio 2019 (2019.01.07).
+Ultimo Aggiornamento: 19 Gennaio 2019 (2019.01.19).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2018.10.15).
+ * This file: Portuguese language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -51,6 +51,11 @@ $phpMussel['lang']['detected'] = 'Detectado %s';
 $phpMussel['lang']['detected_control_characters'] = 'Caracteres de controle detectado';
 $phpMussel['lang']['encrypted_archive'] = 'Detectado compactado arquivo criptografado; Compactado arquivos criptografados não permitido';
 $phpMussel['lang']['failed_to_access'] = 'Falha ao acessar "%s"!';
+$phpMussel['lang']['field_date'] = 'Data';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Reconstrução de assinaturas hash';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'Reconstrução de assinaturas PE seccionais';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Resultados da verificação (por que indicado)';
+$phpMussel['lang']['field_ip_address'] = 'Endereço IP';
 $phpMussel['lang']['file'] = 'Arquivo';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Arquivo tamanho limite excedido';
 $phpMussel['lang']['filetype_blacklisted'] = 'Tipo de arquivo está na negra lista';

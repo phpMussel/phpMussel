@@ -1225,11 +1225,11 @@ Ketika diaktifkan dalam konfigurasi paket, phpMussel menyimpan log dari upload y
 Entri ke log untuk file yang diblokir oleh pemindai biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Tanggal: Mon, 21 May 2018 00:47:56 +0800
+Alamat IP: 127.0.0.1
+== Hasil pindai (mengapa ditandai) ==
 Terdeteksi phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Rekonstruksi tanda tangan hash ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Dikarantina sebagai "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1334,4 +1334,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 7 Januari 2019 (2019.01.07).
+Terakhir Diperbarui: 19 Januari 2019 (2019.01.19).

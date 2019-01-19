@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.10.15).
+ * This file: Dutch language data (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,11 @@ $phpMussel['lang']['detected'] = 'Gedetecteerd %s';
 $phpMussel['lang']['detected_control_characters'] = 'Gedetecteerd controle karakters';
 $phpMussel['lang']['encrypted_archive'] = 'Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan';
 $phpMussel['lang']['failed_to_access'] = 'Toegang tot "%s" is mislukt!';
+$phpMussel['lang']['field_date'] = 'Datum';
+$phpMussel['lang']['field_header_hash_reconstruction'] = 'Hash signatures reconstructie';
+$phpMussel['lang']['field_header_pe_reconstruction'] = 'PE sectionele signatures reconstructie';
+$phpMussel['lang']['field_header_scan_results_why_flagged'] = 'Scanresultaten (waarom gemarkeerd)';
+$phpMussel['lang']['field_ip_address'] = 'IP adres';
 $phpMussel['lang']['file'] = 'Bestand';
 $phpMussel['lang']['filesize_limit_exceeded'] = 'Bestandsgrootte limiet overschreden';
 $phpMussel['lang']['filetype_blacklisted'] = 'Bestandstype in zwarte lijst';

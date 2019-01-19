@@ -1225,11 +1225,11 @@ Khi được kích hoạt trong cấu hình gói, phpMussel lưu nhật ký củ
 Các mục nhập vào tập tin nhật ký tải lên bị chặn thường trông giống như sau (ví dụ):
 
 ```
-DATE: Mon, 21 May 2018 00:47:56 +0800
-IP ADDRESS: 127.0.0.1
-== SCAN RESULTS / WHY FLAGGED ==
+Ngày: Mon, 21 May 2018 00:47:56 +0800
+Địa chỉ IP: 127.0.0.1
+== Kết quả quét (tại sao được gắn cờ) ==
 Đã được phát hiện phpMussel-Testfile.ASCII.Standard (ascii_standard_testfile.txt)!
-== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) ==
+== Tái thiết chữ ký băm ==
 3ed8a00c6c498a96a44d56533806153c:666:ascii_standard_testfile.txt
 Đã được kiểm dịch là "/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu".
 ```
@@ -1334,4 +1334,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Một 2019 (2019.01.07).
+Lần cuối cập nhật: 19 Tháng Một 2019 (2019.01.19).

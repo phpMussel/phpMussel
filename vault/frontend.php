@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.15).
+ * This file: Front-end handler (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -737,7 +737,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     $phpMussel['FE']['Warnings'] = '';
     if (($phpMussel['FE']['VersionWarning'] = $phpMussel['VersionWarning']()) > 0) {
         if ($phpMussel['FE']['VersionWarning'] >= 2) {
-            $phpMussel['FE']['VersionWarning'] = $phpMussel['FE']['VersionWarning'] % 2;
+            $phpMussel['FE']['VersionWarning'] %= 2;
             $phpMussel['FE']['Warnings'] .= '<li><a href="https://www.cvedetails.com/version-list/74/128/1/PHP-PHP.html">' . $phpMussel['lang']['warning_php_2'] . '</a></li>';
         }
         if ($phpMussel['FE']['VersionWarning'] >= 1) {
