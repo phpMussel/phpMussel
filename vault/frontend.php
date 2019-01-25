@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.19).
+ * This file: Front-end handler (last modified: 2019.01.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,11 +126,22 @@ $phpMussel['FE'] = [
 /** Plugin hook: "frontend_before". */
 $phpMussel['Execute_Hook']('frontend_before');
 
+/** Menu toggle JavaScript, needed by some front-end pages. */
+$phpMussel['MenuToggle'] = '<script type="text/javascript">' .
+    'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggl' .
+    'er.length;i++)toggler[i].addEventListener("click",function(){this.paren' .
+    'tElement.querySelector(".comSub").classList.toggle("active"),!this.clas' .
+    'sList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeo' .
+    'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
+
 /** Fetch pips data. */
 $phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php', true);
 if (!empty($phpMussel['Pips_Path']) && is_readable($phpMussel['Pips_Path'])) {
     require $phpMussel['Pips_Path'];
 }
+
+/** Instantiate YAML object for accessing data reconstruction. */
+$phpMussel['YAML-Object'] = new \Maikuolan\Common\YAML();
 
 /** Handle webfonts. */
 if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
@@ -664,8 +675,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     } else {
 
-        $phpMussel['Remote-YAML-phpMussel-Array'] = [];
-        $phpMussel['YAML']($phpMussel['Remote-YAML-phpMussel'], $phpMussel['Remote-YAML-phpMussel-Array']);
+        $phpMussel['Remote-YAML-phpMussel-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-phpMussel']))->Data;
 
         /** phpMussel latest stable. */
         $phpMussel['FE']['info_phpmussel_stable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable']) ?
@@ -705,8 +715,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     } else {
 
-        $phpMussel['Remote-YAML-PHP-Array'] = [];
-        $phpMussel['YAML']($phpMussel['Remote-YAML-PHP'], $phpMussel['Remote-YAML-PHP-Array']);
+        $phpMussel['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-PHP']))->Data;
 
         /** PHP latest stable. */
         $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
@@ -1543,7 +1552,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
-                    $phpMussel['YAML'](
+                    $phpMussel['YAML-Object']->process(
                         substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                         $phpMussel['Components']['RemoteMeta']
                     );
@@ -1922,7 +1931,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates.html'))
-    );
+    ) . $phpMussel['MenuToggle'];
 
     /** Inject dependencies into update instructions for core package component. */
     if (count($phpMussel['Components']['Dependencies'])) {
@@ -2290,13 +2299,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             }
         }
 
-        /** Close pie chart legend and append necessary JavaScript for pie chart sub-items selector. */
-        $phpMussel['FE']['PieChartHTML'] .= '</ul><script type="text/javascript">' .
-            'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggle' .
-            'r.length;i++)toggler[i].addEventListener("click",function(){this.parentE' .
-            'lement.querySelector(".comSub").classList.toggle("active"),!this.classLi' .
-            'st.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(f' .
-            'unction(t){t.classList.toggle("caret-up")},200,this)});</script>';
+        /** Close pie chart legend and append necessary JavaScript for pie chart menu toggle. */
+        $phpMussel['FE']['PieChartHTML'] .= '</ul>' . $phpMussel['MenuToggle'];
 
         /** Finalise pie chart values. */
         $phpMussel['FE']['PieChartValues'] = '[' . implode(', ', $phpMussel['FE']['PieChartValues']) . ']';

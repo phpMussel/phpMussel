@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.11.15).
+ * This file: Configuration handler (last modified: 2019.01.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -104,12 +104,14 @@ if (isset($phpMussel['Overrides']) && $phpMussel['Overrides'] === false) {
 }
 
 /** Attempts to parse the phpMussel configuration defaults file. */
-$phpMussel['YAML']($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml'), $phpMussel['Config']);
+$phpMussel['Config']['Config Defaults'] = (new \Maikuolan\Common\YAML($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml')))->Data;
 
 /** Kills the script if parsing the configuration defaults file fails. */
-if (empty($phpMussel['Config']['Config Defaults'])) {
+if (empty($phpMussel['Config']['Config Defaults']['Config Defaults'])) {
     header('Content-Type: text/plain');
     die('[phpMussel] Configuration defaults file is corrupt! Please reinstall phpMussel.');
+} else {
+    $phpMussel['Config']['Config Defaults'] = $phpMussel['Config']['Config Defaults']['Config Defaults'];
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */

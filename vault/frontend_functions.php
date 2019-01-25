@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.01.19).
+ * This file: Front-end functions file (last modified: 2019.01.25).
  */
 
 /**
@@ -33,9 +33,8 @@ $phpMussel['Congruency'] = function ($Base, $Model, $Validate = false) use (&$ph
     if (empty($Base) || empty($Model)) {
         return $Validate ? false : '';
     }
-    $BaseArr = $ModelArr = [];
-    $phpMussel['YAML']($Base, $BaseArr);
-    $phpMussel['YAML']($Model, $ModelArr);
+    $BaseArr = (new \Maikuolan\Common\YAML($Base))->Data;
+    $ModelArr = (new \Maikuolan\Common\YAML($Model))->Data;
     foreach ($BaseArr as $Element => $Data) {
         if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($ModelArr[$Element])) {
             if ($Validate) {
@@ -468,7 +467,7 @@ $phpMussel['FetchComponentsLists'] = function ($Base, &$Arr) use (&$phpMussel) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $phpMussel['ReadFile']($Base . $ThisFile);
             if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $phpMussel['YAML'](substr($Data, 4, $EoYAML - 4), $Arr);
+                $phpMussel['YAML-Object']->process(substr($Data, 4, $EoYAML - 4), $Arr);
             }
         }
     }
@@ -1137,7 +1136,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             ($phpMussel['Components']['EoYAML'] = strpos(
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], "\n\n"
             )) !== false &&
-            $phpMussel['YAML'](
+            $phpMussel['YAML-Object']->process(
                 substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                 $phpMussel['Components']['RemoteMeta']
             ) &&
@@ -1271,10 +1270,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
                     !$phpMussel['CheckFileUpdate']($ThisFile)
                 ) {
-                    $phpMussel['FE']['state_msg'] .=
-                        '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
-                        '<code>' . $ThisFileName . '</code> – ' .
-                        $phpMussel['lang']['response_sanity_1'] . '<br />';
+                    $phpMussel['FE']['state_msg'] .= sprintf(
+                        '<code>%s</code> – <code>%s</code> – %s<br />',
+                        $phpMussel['Components']['ThisTarget'],
+                        $ThisFileName,
+                        $phpMussel['lang']['response_sanity_1']
+                    );
                     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error'])) {
                         $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error']);
                     }
@@ -1599,17 +1600,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
 $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
     foreach ($ID as $ThisID) {
-        $Ident = strtolower(preg_replace('~[^\da-z]~i', '', $ThisID));
-        $HideLinkClass = 'hl_' . $Ident;
-        $ShowLinkClass = 'sl_' . $Ident;
-        $Ident = 'v_' . $Ident;
-        $Table = sprintf(
-            '<span class="v %1$s" style="display:none"><table><tr><td class="h4"><div class="s">%2$s</div></td><td class="h2"><div class="s">%3$s</div></td><td class="h2f"><div class="s">%4$s</div></td></tr>',
-            $Ident,
-            $phpMussel['lang']['field_file'],
-            $phpMussel['lang']['label_actual'],
-            $phpMussel['lang']['label_expected']
-        );
+        $Table = '<blockquote class="ng1 comSub">';
         if (!empty($phpMussel['Components']['Meta'][$ThisID]['Files'])) {
             $TheseFiles = $phpMussel['Components']['Meta'][$ThisID]['Files'];
         }
@@ -1623,11 +1614,9 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
         $Passed = true;
         for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
             $ThisFile = $TheseFiles['To'][$Iterate];
-            $FileFailMsg = '<code>' . $ThisID . '</code> – <code>' . $ThisFile . '</code> – ' . $phpMussel['lang']['response_possible_problem_found'] . '<br />';
             $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? false : $TheseFiles['Checksum'][$Iterate];
             $Class = 's';
             if (!$ThisFileData = $phpMussel['ReadFile']($phpMussel['Vault'] . $ThisFile)) {
-                $phpMussel['FE']['state_msg'] .= $FileFailMsg;
                 $Passed = false;
                 $Actual = '';
             } else {
@@ -1642,7 +1631,6 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
                     !$phpMussel['CheckFileUpdate']($ThisFileData)
                 )) {
-                    $phpMussel['FE']['state_msg'] .= $FileFailMsg;
                     $Passed = false;
                 }
                 if ($Checksum && $Class !== 'txtRd') {
@@ -1650,29 +1638,24 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
                 }
             }
             $Table .= sprintf(
-                '<tr><td class="h3"><code class="s">%1$s</code></td><td class="h1"><code class="%2$s">%3$s</code></td><td class="h1f"><code class="%2$s">%4$s</code></td></tr>',
+                '<code>%1$s</code> – %7$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
-                $Class,
+                $phpMussel['lang']['label_actual'],
                 $Actual,
-                $Checksum
+                $phpMussel['lang']['label_expected'],
+                $Checksum,
+                $Class,
+                ($Class === 'txtGn' ? $phpMussel['lang']['field_ok'] : $phpMussel['lang']['response_possible_problem_found'])
             );
         }
-        $Table .= '</table></span>';
-        $phpMussel['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
-            $Passed ? $phpMussel['lang']['response_verification_success'] : $phpMussel['lang']['response_verification_failed']
-        ) . sprintf(
-            ' %1$ssl_ %3$s%2$shide(\'v\');%10$sshow%5$shide(\'%3$s\');show(\'%4$s\');%6$s%7$s%8$s%1$shl_ %4$s%2$shide(\'v\');%10$s" style="display:none;%6$s%9$s%8$s',
-            '<a class="',
-            '" href="javascript:void(0);" onclick="javascript:',
-            $ShowLinkClass,
-            $HideLinkClass,
-            "('" . $Ident . "');",
-            '"><code>[',
-            $phpMussel['lang']['label_show_hash_table'],
-            ']</code></a>',
-            $phpMussel['lang']['label_hide_hash_table'],
-            'hide(\'hl_\');show(\'sl_\');'
-        ) . '<br />' . $Table;
+        $Table .= '</blockquote>';
+        $phpMussel['FE']['state_msg'] .= sprintf(
+            '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
+            $ThisID,
+            ($Passed ? 's' : 'txtRd'),
+            ($Passed ? $phpMussel['lang']['response_verification_success'] : $phpMussel['lang']['response_verification_failed']),
+            $Table
+        );
     }
 };
 
@@ -1691,8 +1674,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
         if (!file_exists($phpMussel['Vault'] . 'shorthand.yaml') || !is_readable($phpMussel['Vault'] . 'shorthand.yaml')) {
             return '<span class="s">' . $phpMussel['lang']['response_error'] . '</span>';
         }
-        $phpMussel['shorthand.yaml'] = [];
-        $phpMussel['YAML']($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml'), $phpMussel['shorthand.yaml']);
+        $phpMussel['shorthand.yaml'] = (new \Maikuolan\Common\YAML($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml')))->Data;
     }
 
     /** Get list of vendor search patterns and metadata search pattern partials. */

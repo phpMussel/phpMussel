@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.8.0-DEV+1918685
+ Version: 1.8.0-DEV+1924666
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -14,6 +14,7 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/.htaccess
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/ArchiveHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/CompressionHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/YAML.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/TemporaryFileHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/cli.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/config.php
@@ -67,6 +68,7 @@ phpMussel:
    - classes/.htaccess
    - classes/ArchiveHandler.php
    - classes/CompressionHandler.php
+   - classes/Maikuolan/YAML.php
    - classes/TemporaryFileHandler.php
    - cli.php
    - config.php
@@ -120,9 +122,10 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 2ef441347ac51e61a7f5f6fb51967398:12582
    - 52eff537b11ded595d2e81fbfc598087:3306
+   - 7261f42f38c01bdc4f2494f99496c116:8618
    - 8509c4de97c8fe9fe3e41ca696fe657b:1698
    - 197c13f58fbb5f4781db3e18b2639d26:24376
-   - fb45b56b875613a8645628a7ec21b249:8429
+   - c0212999465215c9e6041d6c7c45f508:8599
    - a5b131d036ee654c128060f1811a7502:12176
    - 8e03209e7fc6641b45094e584340feff:83
    - 4244aa2fa8e7ecb7e4f43295963f81dc:483
@@ -153,9 +156,9 @@ phpMussel:
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - 144ce0f21141bdabb1a95a1a317a2a21:147445
-   - 994b6adf809352c3c5e29c6983747bf5:101107
-   - 1530170817d840ccd0ac0408d6ae1a72:237155
+   - a322cf0db276f5c85049d8c6dfa42f73:147616
+   - 896e9158e9bddf4d30505681a869f2c5:100088
+   - 4d0e51d80dd66b16f7a26fecac0876d5:231088
    - 4538f959176875744009f4554e0425c8:4819
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703

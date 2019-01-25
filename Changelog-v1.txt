@@ -35,6 +35,11 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   slightly better L10N, plus various other minor refactoring done elsewhere.
   Updated the minimum safe PHP version fallback information.
 
+- [2019.01.25; Maikuolan]: The YAML handler has been migrated away from the
+  main functions file and into its own, dedicated class file (this class file
+  will also be released as part of a separate package in the near future).
+  Improved the UI for the front-end updates page verification feature.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 
