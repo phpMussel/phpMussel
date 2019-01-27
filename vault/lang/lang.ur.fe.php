@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.07).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال:
 $phpMussel['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $phpMussel['lang']['label_hide'] = 'چھپائیں';
-$phpMussel['lang']['label_hide_hash_table'] = 'ہیش ٹیبل چھپائیں';
 $phpMussel['lang']['label_never'] = 'کبھی نہیں';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $phpMussel['lang']['label_other'] = 'دیگر';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $phpMussel['lang']['label_scanned_objects'] = 'سکین کیا آبجیکٹ';
 $phpMussel['lang']['label_scanned_uploads'] = 'سکین کیا اپ لوڈ';
 $phpMussel['lang']['label_show'] = 'دکھائیں';
-$phpMussel['lang']['label_show_hash_table'] = 'ہیش ٹیبل دکھائیں';
 $phpMussel['lang']['label_size_in_quarantine'] = 'قرنطین میں سائز: ';
 $phpMussel['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $phpMussel['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';

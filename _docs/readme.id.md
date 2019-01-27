@@ -266,6 +266,8 @@ Data | Deskripsi
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh phpMussel.
+/vault/classes/Maikuolan/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh phpMussel.
+/vault/classes/Maikuolan/YAML.php | Prosesor YAML.
 /vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/classes/ArchiveHandler.php | Bertanggung jawab untuk menangani arsip.
 /vault/classes/CompressionHandler.php | Bertanggung jawab untuk menangani kompresi file.
@@ -1334,4 +1336,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 19 Januari 2019 (2019.01.19).
+Terakhir Diperbarui: 27 Januari 2019 (2019.01.27).

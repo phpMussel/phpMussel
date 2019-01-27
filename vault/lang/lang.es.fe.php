@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2019.01.07).
+ * This file: Spanish language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Uso del disco total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Espacio en disco total: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Componente actualiza metadatos';
 $phpMussel['lang']['label_hide'] = 'Esconder';
-$phpMussel['lang']['label_hide_hash_table'] = 'Ocultar tabla hash';
 $phpMussel['lang']['label_never'] = 'Nunca';
 $phpMussel['lang']['label_os'] = 'Sistema operativo utilizada:';
 $phpMussel['lang']['label_other'] = 'Otro';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI utilizada:';
 $phpMussel['lang']['label_scanned_objects'] = 'Objetos escaneados';
 $phpMussel['lang']['label_scanned_uploads'] = 'Subidas escaneadas';
 $phpMussel['lang']['label_show'] = 'Mostrar';
-$phpMussel['lang']['label_show_hash_table'] = 'Mostrar tabla hash';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Tamaño en cuarentena: ';
 $phpMussel['lang']['label_stable'] = 'Más nuevo estable:';
 $phpMussel['lang']['label_sysinfo'] = 'Información del sistema:';

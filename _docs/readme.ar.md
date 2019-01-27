@@ -262,6 +262,8 @@
 &nbsp; <div dir="rtl" style="display:inline">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها phpMussel.</div> | /vault/classes/
+&nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها phpMussel.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">معالج YAML.</div> | /vault/classes/Maikuolan/YAML.php
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/classes/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">مسؤول عن التعامل مع المحفوظات.</div> | /vault/classes/ArchiveHandler.php
 &nbsp; <div dir="rtl" style="display:inline">مسؤولة عن التعامل مع ضغط الملفات.</div> | /vault/classes/CompressionHandler.php
@@ -1392,9 +1394,9 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 <div dir="rtl">التسجيل هو جزء مهم من phpMussel لعدد من الأسباب. قد يكون من الصعب تشخيص وحل إيجابيات خاطئة عندما لا يتم تسجيل أحداث الحظر التي تسبب لهم. بدون تسجيل، قد يكون من الصعب تشخيص الإيجابيات الكاذبة، للتأكد من أداء phpMussel بشكل جيد، وقد يكون من الصعب تحديد مواطن ضعفها، وما هي التغييرات التي قد تكون مطلوبة لتكوينها أو توقيعاتها، لكي تستمر في العمل على النحو المنشود. بغض النظر، ربما لا يريد الجميع التسجيل، لذلك يبقى اختياريًا تمامًا. في phpMussel، يتم تعطيل التسجيل افتراضيًا. لتمكينه، يجب تكوين phpMussel وفقًا لذلك.<br /><br /></div>
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+<div dir="rtl">بالإضافة إلى، ما إذا كان تخزين هذا النوع من البياناتمسموحًا به قانونًا، وإلى الحد المسموح به قانونًا (ذلك بالقول، أنواع المعلومات التي يمكن تسجيلها، إلى متى، وتحت أي ظروف)، قد تختلف، وهذا يتوقف على الاختصاص واعتمادًا على سياق التنفيذ (فمثلا، سواء كنت تعمل كفرد أو مؤسسة، وعما إذا كان ذلك على أساس تجاري أو غير تجاري). لذلك قد يكون من المفيد لك قراءة هذا القسم بعناية.<br /><br /></div>
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+<div dir="rtl">هناك العديد من أنواع المعلومات المختلفة التي يمكن تسجيلها، لأسباب مختلفة.<br /><br /></div>
 
 ##### <div dir="rtl">١١.٣.٠ سجلات الفحص<br /><br /></div>
 
@@ -1500,8 +1502,8 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 
 <div dir="rtl">يمكن أن تساعد الموارد التالية في شرحها بمزيد من التفاصيل:</div>
 <div dir="rtl"><ul>
- <li><a href="https://www.trust-hub.com/news/what-is-pseudonymisation/">[trust-hub.com] What is pseudonymisation?</a></li>
- <li><a href="https://en.wikipedia.org/wiki/Pseudonymization">[Wikipedia] Pseudonymization]</a></li>
+ <li><a dir="ltr" href="https://www.trust-hub.com/news/what-is-pseudonymisation/">[trust-hub.com] What is pseudonymisation?</a></li>
+ <li><a dir="ltr" href="https://en.wikipedia.org/wiki/Pseudonymization">[Wikipedia] Pseudonymization</a></li>
 </ul></div>
 
 <div dir="rtl">في بعض الحالات، قد يُطلب منك قانونًا تنفيذ "anonymisation" أو "pseudonymisation" لأي معلومات PII تم جمعها أو معالجتها أو تخزينها. على الرغم من وجود هذا المفهوم منذ بعض الوقت، GDPR/DSGVO يذكر بشكل ملحوظ ويشجع "pseudonymisation".<br /><br /></div>
@@ -1568,4 +1570,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 19 يناير 2019 (2019.01.19).</div>
+<div dir="rtl">آخر تحديث: 27 يناير 2019 (2019.01.27).</div>

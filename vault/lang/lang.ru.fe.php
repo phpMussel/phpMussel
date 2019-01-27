@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2019.01.07).
+ * This file: Russian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Все использова
 $phpMussel['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $phpMussel['lang']['label_hide'] = 'Скрывать';
-$phpMussel['lang']['label_hide_hash_table'] = 'Скрыть хэш-таблицы';
 $phpMussel['lang']['label_never'] = 'Никогда';
 $phpMussel['lang']['label_os'] = 'Используемая операционная система:';
 $phpMussel['lang']['label_other'] = 'Другие';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'Используемая SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Объекты сканированные';
 $phpMussel['lang']['label_scanned_uploads'] = 'Загружает сканированные';
 $phpMussel['lang']['label_show'] = 'Показать';
-$phpMussel['lang']['label_show_hash_table'] = 'Показать хэш-таблицы';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Размер в карантине: ';
 $phpMussel['lang']['label_stable'] = 'Последние стабильный:';
 $phpMussel['lang']['label_sysinfo'] = 'Системная информация:';

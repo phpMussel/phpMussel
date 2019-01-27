@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2019.01.07).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'মোট ডিস্ক �
 $phpMussel['lang']['label_fmgr_total_space'] = 'মোট ডিস্ক স্থান: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'কম্পোনেন্ট আপডেট মেটাডেটা';
 $phpMussel['lang']['label_hide'] = 'লুকান';
-$phpMussel['lang']['label_hide_hash_table'] = 'হ্যাশ টেবিল লুকান';
 $phpMussel['lang']['label_never'] = 'না';
 $phpMussel['lang']['label_os'] = 'অপারেটিং সিস্টেম ব্যবহৃত:';
 $phpMussel['lang']['label_other'] = 'অন্যান্য';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $phpMussel['lang']['label_scanned_objects'] = 'অবজেক্টস স্ক্যান করা';
 $phpMussel['lang']['label_scanned_uploads'] = 'আপলোডগুলি স্ক্যান করা';
 $phpMussel['lang']['label_show'] = 'দেখাও';
-$phpMussel['lang']['label_show_hash_table'] = 'হ্যাশ টেবিল দেখান';
 $phpMussel['lang']['label_size_in_quarantine'] = 'সঙ্গরোধ আকার: ';
 $phpMussel['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $phpMussel['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';

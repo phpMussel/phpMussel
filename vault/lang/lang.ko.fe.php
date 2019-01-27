@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.07).
+ * This file: Korean language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $phpMussel['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $phpMussel['lang']['label_hide'] = '숨기다';
-$phpMussel['lang']['label_hide_hash_table'] = '해시 테이블 숨기기';
 $phpMussel['lang']['label_never'] = '못';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제 :';
 $phpMussel['lang']['label_other'] = '다른';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = '사용 된 SAPI :';
 $phpMussel['lang']['label_scanned_objects'] = '스캔 한 개체';
 $phpMussel['lang']['label_scanned_uploads'] = '스캔 한 업로드';
 $phpMussel['lang']['label_show'] = '보여';
-$phpMussel['lang']['label_show_hash_table'] = '해시 테이블 표시';
 $phpMussel['lang']['label_size_in_quarantine'] = '격리 크기 : ';
 $phpMussel['lang']['label_stable'] = '최신 안정 :';
 $phpMussel['lang']['label_sysinfo'] = '시스템 정보 :';

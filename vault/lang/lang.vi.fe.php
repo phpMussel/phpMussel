@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.07).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng �
 $phpMussel['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $phpMussel['lang']['label_hide'] = 'Che giấu';
-$phpMussel['lang']['label_hide_hash_table'] = 'Ẩn bảng băm';
 $phpMussel['lang']['label_never'] = 'Không bao giờ';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_other'] = 'Khác';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $phpMussel['lang']['label_scanned_objects'] = 'Đối tượng được quét';
 $phpMussel['lang']['label_scanned_uploads'] = 'Tải lên được quét';
 $phpMussel['lang']['label_show'] = 'Hiển thị';
-$phpMussel['lang']['label_show_hash_table'] = 'Hiển thị bảng băm';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Kích thước trong kiểm dịch: ';
 $phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';

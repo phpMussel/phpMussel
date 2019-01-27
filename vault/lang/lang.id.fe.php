@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.07).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $phpMussel['lang']['label_hide'] = 'Menyembunyikan';
-$phpMussel['lang']['label_hide_hash_table'] = 'Sembunyikan tabel hash';
 $phpMussel['lang']['label_never'] = 'Tak pernah';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_other'] = 'Lain';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
 $phpMussel['lang']['label_scanned_objects'] = 'Obyek dipindai';
 $phpMussel['lang']['label_scanned_uploads'] = 'Upload dipindai';
 $phpMussel['lang']['label_show'] = 'Menunjukkan';
-$phpMussel['lang']['label_show_hash_table'] = 'Tampilkan tabel hash';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Ukuran dalam karantina: ';
 $phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';

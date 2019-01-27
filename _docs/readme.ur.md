@@ -262,6 +262,8 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline">کیشے ڈائریکٹری (عارضی اعداد و شمار کے لئے).</div> | /vault/cache/
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/
+&nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">YAML ہینڈلر.</div> | /vault/classes/Maikuolan/YAML.php
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/classes/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">آرکائیو کو سنبھالنے کے لئے ذمہ دار.</div> | /vault/classes/ArchiveHandler.php
 &nbsp; <div dir="rtl" style="display:inline">فائل کمپریشن کو سنبھالنے کے لئے ذمہ دار ہے.</div> | /vault/classes/CompressionHandler.php
@@ -1394,7 +1396,7 @@ Logging is an important part of phpMussel for a number of reasons. Without loggi
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
-There are multiple types of logging that phpMussel can perform. Different types of logging involves different types of information, for different reasons.
+<div dir="rtl">بہت سے مختلف قسم کی معلومات درج کی جا سکتی ہیں، مختلف وجوہات کے لئے.<br /><br /></div>
 
 ##### <div dir="rtl">١١.٣.٠ اسکین لاگ<br /><br /></div>
 
@@ -1500,8 +1502,8 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 <div dir="rtl">مندرجہ ذیل وسائل اس سے مزید تفصیل میں وضاحت کرنے میں مدد کرسکتے ہیں:</div>
 <div dir="rtl"><ul>
- <li><a href="https://www.trust-hub.com/news/what-is-pseudonymisation/">[trust-hub.com] What is pseudonymisation?</a></li>
- <li><a href="https://en.wikipedia.org/wiki/Pseudonymization">[Wikipedia] Pseudonymization]</a></li>
+ <li><a dir="ltr" href="https://www.trust-hub.com/news/what-is-pseudonymisation/">[trust-hub.com] What is pseudonymisation?</a></li>
+ <li><a dir="ltr" href="https://en.wikipedia.org/wiki/Pseudonymization">[Wikipedia] Pseudonymization</a></li>
 </ul></div>
 
 <div dir="rtl">کچھ حالات میں، آپ کو کسی بھی PII جمع، عملدرآمد، یا ذخیرہ کرنے کے لئے "anonymisation" یا "pseudonymisation" کو لاگو کرنا قانونی طور پر ضروری ہوسکتا ہے. یہ تصور ابھی کچھ وقت تک وجود میں آیا ہے، لیکن GDPR/DSGVO خاص طور پر "pseudonymisation" کا ذکر اور حوصلہ افزائی کرتا ہے.<br /><br /></div>
@@ -1567,4 +1569,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 19 جنوری 2019 (2019.01.19).</div>
+<div dir="rtl">آخری تازہ کاری: 27 جنوری 2019 (2019.01.27).</div>

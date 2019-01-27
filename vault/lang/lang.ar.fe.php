@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2019.01.07).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام
 $phpMussel['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $phpMussel['lang']['label_hide'] = 'إخفائه';
-$phpMussel['lang']['label_hide_hash_table'] = 'إخفاء جدول تجزئة';
 $phpMussel['lang']['label_never'] = 'أبدا';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_other'] = 'آخر';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $phpMussel['lang']['label_scanned_objects'] = 'الكائنات التي الممسوحة ضوئيا';
 $phpMussel['lang']['label_scanned_uploads'] = 'التحميلات الممسوحة ضوئيا';
 $phpMussel['lang']['label_show'] = 'اظهره';
-$phpMussel['lang']['label_show_hash_table'] = 'إظهار جدول تجزئة';
 $phpMussel['lang']['label_size_in_quarantine'] = 'الحجر الصحي بحجم: ';
 $phpMussel['lang']['label_stable'] = 'أحدث مستقرة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';

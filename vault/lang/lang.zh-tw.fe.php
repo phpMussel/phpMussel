@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.07).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間
 $phpMussel['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $phpMussel['lang']['label_hide'] = '隱藏';
-$phpMussel['lang']['label_hide_hash_table'] = '隱藏哈希表';
 $phpMussel['lang']['label_never'] = '決不';
 $phpMussel['lang']['label_os'] = '目前使用操作系統：';
 $phpMussel['lang']['label_other'] = '其他';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
 $phpMussel['lang']['label_scanned_objects'] = '對像已掃描';
 $phpMussel['lang']['label_scanned_uploads'] = '上傳已掃描';
 $phpMussel['lang']['label_show'] = '顯示';
-$phpMussel['lang']['label_show_hash_table'] = '顯示哈希表';
 $phpMussel['lang']['label_size_in_quarantine'] = '大小在檢疫：';
 $phpMussel['lang']['label_stable'] = '最新穩定：';
 $phpMussel['lang']['label_sysinfo'] = '系統信息：';

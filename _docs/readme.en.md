@@ -266,6 +266,8 @@ File | Description
 /vault/cache/ | Cache directory (for temporary data).
 /vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/classes/ | Classes directory. Contains various classes used by phpMussel.
+/vault/classes/Maikuolan/ | Classes directory. Contains various classes used by CIDRAM.
+/vault/classes/Maikuolan/YAML.php | YAML handler.
 /vault/classes/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/classes/ArchiveHandler.php | Responsible for handling archives.
 /vault/classes/CompressionHandler.php | Responsible for handling file compression.
@@ -1344,4 +1346,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 19 January 2019 (2019.01.19).
+Last Updated: 27 January 2019 (2019.01.27).

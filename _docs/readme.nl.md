@@ -266,6 +266,8 @@ Bestand | Beschrijving
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door phpMussel.
+/vault/classes/Maikuolan/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door phpMussel.
+/vault/classes/Maikuolan/YAML.php | YAML-handler.
 /vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/classes/ArchiveHandler.php | Verantwoordelijk voor het omgaan van archieven.
 /vault/classes/CompressionHandler.php | Verantwoordelijk voor het omgaan met bestandscompressie.
@@ -1342,4 +1344,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 19 Januari 2019 (2019.01.19).
+Laatste Bijgewerkt: 27 Januari 2019 (2019.01.27).

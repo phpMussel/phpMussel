@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.07).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $phpMussel['lang']['label_hide'] = 'Saklamak';
-$phpMussel['lang']['label_hide_hash_table'] = 'Karma tabloyu gizle';
 $phpMussel['lang']['label_never'] = 'Asla';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_other'] = 'Diğer';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $phpMussel['lang']['label_scanned_objects'] = 'Nesneler tarandı';
 $phpMussel['lang']['label_scanned_uploads'] = 'Yüklenenler tarandı';
 $phpMussel['lang']['label_show'] = 'Göstermek';
-$phpMussel['lang']['label_show_hash_table'] = 'Karma tablosu göster';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Karantinadaki boyutu: ';
 $phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';

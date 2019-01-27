@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2019.01.07).
+ * This file: Thai language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ด
 $phpMussel['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'เมตาดาต้าสำหรับอัพเดตคอมโพเนนต์';
 $phpMussel['lang']['label_hide'] = 'ปิดบัง';
-$phpMussel['lang']['label_hide_hash_table'] = 'ซ่อนตารางแฮช';
 $phpMussel['lang']['label_never'] = 'ไม่เคย';
 $phpMussel['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $phpMussel['lang']['label_other'] = 'อื่น ๆ';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $phpMussel['lang']['label_scanned_objects'] = 'วัตถุถูกสแกน';
 $phpMussel['lang']['label_scanned_uploads'] = 'อัปโหลดถูกสแกน';
 $phpMussel['lang']['label_show'] = 'แสดง';
-$phpMussel['lang']['label_show_hash_table'] = 'แสดงตารางแฮช';
 $phpMussel['lang']['label_size_in_quarantine'] = 'ขนาดในกักกัน: ';
 $phpMussel['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $phpMussel['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.07).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $phpMussel['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $phpMussel['lang']['label_hide'] = 'Verbergen';
-$phpMussel['lang']['label_hide_hash_table'] = 'Verberg hash-tabel';
 $phpMussel['lang']['label_never'] = 'Nooit';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_other'] = 'Anders';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = 'SAPI gebruikt:';
 $phpMussel['lang']['label_scanned_objects'] = 'Objecten gescand';
 $phpMussel['lang']['label_scanned_uploads'] = 'Uploads gescand';
 $phpMussel['lang']['label_show'] = 'Zien';
-$phpMussel['lang']['label_show_hash_table'] = 'Toon hash-tabel';
 $phpMussel['lang']['label_size_in_quarantine'] = 'Grootte in quarantaine: ';
 $phpMussel['lang']['label_stable'] = 'Laatste stabiele:';
 $phpMussel['lang']['label_sysinfo'] = 'Systeem informatie:';

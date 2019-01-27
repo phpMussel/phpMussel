@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.07).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -191,7 +191,6 @@ $phpMussel['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合
 $phpMussel['lang']['label_fmgr_total_space'] = 'ディスク容量の合計：';
 $phpMussel['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $phpMussel['lang']['label_hide'] = '隠す';
-$phpMussel['lang']['label_hide_hash_table'] = 'ハッシュ・テーブルを隠する';
 $phpMussel['lang']['label_never'] = '決して';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_other'] = 'その他';
@@ -204,7 +203,6 @@ $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
 $phpMussel['lang']['label_scanned_objects'] = 'スキャンされたオブジェクト';
 $phpMussel['lang']['label_scanned_uploads'] = 'スキャンしたアップロード';
 $phpMussel['lang']['label_show'] = '表示する';
-$phpMussel['lang']['label_show_hash_table'] = 'ハッシュ・テーブルを表示する';
 $phpMussel['lang']['label_size_in_quarantine'] = '検疫のサイズ：';
 $phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';

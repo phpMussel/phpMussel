@@ -266,6 +266,8 @@ Archivo | Descripción
 /vault/cache/ | Cache directorio (para los datos temporal).
 /vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/classes/ | Directorio de clases. Contiene varias clases utilizadas por phpMussel.
+/vault/classes/Maikuolan/ | Directorio de clases. Contiene varias clases utilizadas por phpMussel.
+/vault/classes/Maikuolan/YAML.php | Controlador para YAML.
 /vault/classes/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/classes/ArchiveHandler.php | Responsable del manejo de archivos.
 /vault/classes/CompressionHandler.php | Responsable del manejo de la compresión de archivos.
@@ -352,12 +354,12 @@ Archivo | Descripción
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/.travis.php | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/.travis.yml | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
-/vault/cli.php | Módulo de la CLI.
+/vault/cli.php | Controlador para el CLI modo.
 /vault/components.dat | Archivo de metadatos de componentes; Utilizado por la página de actualizaciones del front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
 /vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de phpMussel.
-/vault/frontend.php | Módulo del front-end.
+/vault/frontend.php | Controlador para el front-end.
 /vault/frontend_functions.php | Archivo de funciones del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/greylist.csv | CSV de las firmas en la greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
@@ -372,7 +374,7 @@ Archivo | Descripción
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/template_default.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/themes.dat | Archivo de metadatos de temas; Utilizado por la página de actualizaciones del front-end.
-/vault/upload.php | Módulo de subida.
+/vault/upload.php | Controlador de subidas.
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /.gitignore | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /Changelog-v1.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
@@ -1341,4 +1343,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 19 Enero de 2019 (2019.01.19).
+Última Actualización: 27 Enero de 2019 (2019.01.27).
