@@ -1230,7 +1230,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (isset($phpMussel['DirValue']['choices'])) {
                 $phpMussel['ThisDir']['FieldOut'] = '<select class="auto" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>';
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
-                    if (isset($phpMussel['DirValue']['choice_filter'], $phpMussel[$phpMussel['DirValue']['choice_filter']])) {
+                    if (isset($phpMussel['DirValue']['choice_filter'])) {
                         if (!$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])) {
                             continue;
                         }
@@ -1278,9 +1278,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['ThisDir']['FieldOut'] = '<textarea name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" class="half"' . $phpMussel['ThisDir']['Trigger'] . '>' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
             } else {
                 $phpMussel['ThisDir']['FieldOut'] = '<input type="text" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '"' . $phpMussel['ThisDir']['Trigger'] . ' />';
-            }
-            if (!empty($phpMussel['DirValue']['allow_other'])) {
-                // aaa
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](

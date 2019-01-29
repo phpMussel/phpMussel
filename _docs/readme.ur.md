@@ -227,6 +227,8 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 <div dir="rtl">مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.<br /><br /></div>
 
+<div dir="rtl">یہ معلومات سب سے حالیہ v1 رہائی پر لاگو ہوتا ہے، اور شاید دوسرے ورژن یا ریلیزز کے لئے اتنی مناسب نہیں ہوسکتی ہے.<br /><br /></div>
+
 &nbsp; <div dir="rtl" style="display:inline">تفصیل</div> | <div dir="rtl" style="display:inline">فائل</div>
 ----|----
 &nbsp; <div dir="rtl" style="display:inline">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
@@ -1569,4 +1571,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 27 جنوری 2019 (2019.01.27).</div>
+<div dir="rtl">آخری تازہ کاری: 29 جنوری 2019 (2019.01.29).</div>

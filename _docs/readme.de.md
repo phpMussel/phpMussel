@@ -232,6 +232,8 @@ Zusätzlich, für Interessenten, ein Video-Tutorial, wie phpMussel im CLI-Modus 
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
+Diese Informationen gelten für die neueste Version 1 Release, und sind möglicherweise für andere Versionen oder Releases nicht relevant.
+
 Datei | Beschreibung
 ----|----
 /_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
@@ -1347,4 +1349,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 27 Januar 2019 (2019.01.27).
+Zuletzt aktualisiert: 29 Januar 2019 (2019.01.29).

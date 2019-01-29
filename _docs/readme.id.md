@@ -231,6 +231,8 @@ Sebagai tambahan, bagi yang berminat, sebuah video tutorial untuk bagaimana meng
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
+Informasi ini berlaku untuk rilis v1 terbaru, dan mungkin tidak begitu relevan untuk versi atau rilis lain.
+
 Data | Deskripsi
 ----|----
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
@@ -1336,4 +1338,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 27 Januari 2019 (2019.01.27).
+Terakhir Diperbarui: 29 Januari 2019 (2019.01.29).

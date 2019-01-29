@@ -231,6 +231,8 @@ Adicionalmente, para los interesados, un video tutorial de cómo utilizar phpMus
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
+Esta información se aplica a la versión v1.x.x más reciente y puede que no sea tan relevante para otras versiones.
+
 Archivo | Descripción
 ----|----
 /_docs/ | Documentación directorio (contiene varios archivos).
@@ -1343,4 +1345,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 27 Enero de 2019 (2019.01.27).
+Última Actualización: 29 Enero de 2019 (2019.01.29).

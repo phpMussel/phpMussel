@@ -231,6 +231,8 @@ Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te geb
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
+Deze informatie is van toepassing op de meest recente v1 release, en is mogelijk niet zo relevant voor andere versies of releases.
+
 Bestand | Beschrijving
 ----|----
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
@@ -1344,4 +1346,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 27 Januari 2019 (2019.01.27).
+Laatste Bijgewerkt: 29 Januari 2019 (2019.01.29).

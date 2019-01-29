@@ -231,6 +231,8 @@ Additionally, for those interested, a video tutorial for how to use phpMussel in
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
+This information applies to the most recent v1 release, and mightn't be so relevant for other versions or releases.
+
 File | Description
 ----|----
 /_docs/ | Documentation directory (contains various files).
@@ -1346,4 +1348,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 27 January 2019 (2019.01.27).
+Last Updated: 29 January 2019 (2019.01.29).

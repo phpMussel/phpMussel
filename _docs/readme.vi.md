@@ -231,6 +231,8 @@ Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách
 
 Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
 
+Thông tin này áp dụng cho phát hành v1 gần đây nhất, và có thể không phù hợp với các phiên bản hay phát hành khác.
+
 Tập tin | Chi tiết
 ----|----
 /_docs/ | Thư mực cho tài liệu.
@@ -1336,4 +1338,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Một 2019 (2019.01.27).
+Lần cuối cập nhật: 29 Tháng Một 2019 (2019.01.29).

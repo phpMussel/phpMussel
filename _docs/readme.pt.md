@@ -231,6 +231,8 @@ Além disso, para os interessados, um tutorial em vídeo para saber como usar ph
 
 A seguir está uma lista de todos os arquivos que deveriam ter sido incluídos na cópia arquivada desse script quando você baixá-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são.
 
+Essas informações se aplicam à versão v1.x.x mais recente, e podem não ser tão relevantes para outras versões.
+
 Arquivo | Descrição
 ----|----
 /_docs/ | Documentação diretório (contém vários arquivos).
@@ -1338,4 +1340,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 27 Janeiro de 2019 (2019.01.27).
+Última Atualização: 29 Janeiro de 2019 (2019.01.29).
