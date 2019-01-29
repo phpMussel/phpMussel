@@ -35,6 +35,8 @@ Config Defaults:
   timeFormat:
    type: string
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
+   preview: allow_other
+   allow_other: true
    choices:
     "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}": "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
     "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss}": "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss}"
@@ -389,6 +391,8 @@ Config Defaults:
   theme:
    type: string
    default: "default"
+   preview: allow_other
+   allow_other: true
    choices:
     default: "Default"
     rbi: "Red-Blue Inverted"

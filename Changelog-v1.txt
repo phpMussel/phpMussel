@@ -40,6 +40,10 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   will also be released as part of a separate package in the near future).
   Improved the UI for the front-end updates page verification feature.
 
+- [2019.01.29; Bug-fix; Maikuolan]: For some configuration directives where
+  predefined multiple choices are available, the front-end configuration page
+  was ignoring custom defined values; Fixed.
+
 === Version/Release 1.7.0 ===
 MINOR RELEASE.
 
