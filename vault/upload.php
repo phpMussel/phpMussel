@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.01.19).
+ * This file: Upload handler (last modified: 2019.02.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -143,9 +143,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']],
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 );
-                $phpMussel['whyflagged'] .= (
+                $phpMussel['whyflagged'] .= $phpMussel['L10N']->getString((
                     $phpMussel['upload']['ThisError'] === 3 || $phpMussel['upload']['ThisError'] === 4
-                ) ? $phpMussel['lang']['upload_error_34'] : $phpMussel['lang']['upload_error_' . $phpMussel['upload']['ThisError']];
+                ) ? 'upload_error_34' : 'upload_error_' . $phpMussel['upload']['ThisError']);
                 if (
                     ($phpMussel['upload']['ThisError'] === 1 || $phpMussel['upload']['ThisError'] === 2) &&
                     $phpMussel['Config']['general']['delete_on_sight'] &&
@@ -164,9 +164,9 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']],
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 );
-                $phpMussel['whyflagged'] .= sprintf($phpMussel['lang']['_exclamation'], sprintf(
+                $phpMussel['whyflagged'] .= sprintf($phpMussel['L10N']->getString('_exclamation'), sprintf(
                     '%s (%s)',
-                    $phpMussel['lang']['scan_unauthorised_upload'],
+                    $phpMussel['L10N']->getString('scan_unauthorised_upload'),
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 ));
             } elseif (
@@ -174,7 +174,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 !$phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]
             ) {
                 $phpMussel['killdata'] .= "-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?\n";
-                $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'];
+                $phpMussel['whyflagged'] .= $phpMussel['L10N']->getString('scan_unauthorised_upload_or_misconfig');
             } else {
 
                 /** Honeypot code. */
@@ -277,8 +277,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     if ($phpMussel['whyflagged']) {
 
         /** A fix for correctly displaying LTR/RTL text. */
-        if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {
-            $phpMussel['lang']['textDir'] = 'ltr';
+        if ($phpMussel['L10N']->getString('Text Direction') !== 'rtl') {
+            $phpMussel['lang']['Text Direction'] = 'ltr';
         }
 
         /** Merging parsable variables for the template data. */
@@ -319,21 +319,21 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             ) ? '' : $phpMussel['safety'] . "\n\n";
             $phpMussel['memCache']['Handle']['Data'] .= sprintf(
                 "%s: %s\n%s: %s\n== %s ==\n%s\n== %s ==\n%s",
-                $phpMussel['lang']['field_date'],
+                $phpMussel['L10N']->getString('field_date'),
                 $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
-                $phpMussel['lang']['field_ip_address'],
+                $phpMussel['L10N']->getString('field_ip_address'),
                 ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
                     $_SERVER[$phpMussel['IPAddr']]
                 ) : $_SERVER[$phpMussel['IPAddr']]),
-                $phpMussel['lang']['field_header_scan_results_why_flagged'],
+                $phpMussel['L10N']->getString('field_header_scan_results_why_flagged'),
                 $phpMussel['whyflagged'],
-                $phpMussel['lang']['field_header_hash_reconstruction'],
+                $phpMussel['L10N']->getString('field_header_hash_reconstruction'),
                 $phpMussel['killdata']
             );
             if ($phpMussel['PEData']) {
                 $phpMussel['memCache']['Handle']['Data'] .= sprintf(
                     "== %s ==\n%s",
-                    $phpMussel['lang']['field_header_pe_reconstruction'],
+                    $phpMussel['L10N']->getString('field_header_pe_reconstruction'),
                     $phpMussel['PEData']
                 );
             }
@@ -355,7 +355,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         /** Fallback to use if the HTML template file is missing. */
         if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['template_file'])) {
             header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['lang']['denied'] . ' ' . $phpMussel['TemplateData']['detected']);
+            die('[phpMussel] ' . $phpMussel['L10N']->getString('denied') . ' ' . $phpMussel['TemplateData']['detected']);
         }
 
         /** Send a 403 FORBIDDEN status code to the client if "forbid_on_block" is enabled. */
@@ -368,7 +368,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         /** Include privacy policy. */
         $phpMussel['TemplateData']['pp'] = empty(
             $phpMussel['Config']['legal']['privacy_policy']
-        ) ? '' : '<br /><a href="' . $phpMussel['Config']['legal']['privacy_policy'] . '">' . $phpMussel['lang']['PrivacyPolicy'] . '</a>';
+        ) ? '' : '<br /><a href="' . $phpMussel['Config']['legal']['privacy_policy'] . '">' . $phpMussel['L10N']->getString('PrivacyPolicy') . '</a>';
 
         /** Generate HTML output. */
         $phpMussel['HTML'] = $phpMussel['ParseVars'](

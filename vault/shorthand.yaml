@@ -1,3 +1,17 @@
+##\
+# This file is a part of the phpMussel package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# Authors:
+# @see PEOPLE.md
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: phpMussel shorthand data (last modified: 2019.02.03).
+#
 # Warning: When modifying the information in this file, be careful to ensure
 # that any changes made won't conflict with the what phpMussel recognises as
 # its delimiters or as special characters (newlines, semicolons, colons, etc),
@@ -5,6 +19,8 @@
 # inability to properly detect anything or to numerous severe false positives.
 # Generally (but not exclusively), "\x0?" (?H0), \x3A, \x3B, and null (\x00)
 # should be avoided.
+##/
+
 Vendor Shorthand:
  2: ClamAV
  3: phpMussel

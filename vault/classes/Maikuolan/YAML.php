@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2019.01.25).
+ * YAML handler (last modified: 2019.02.01).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -25,6 +25,9 @@ class YAML
     /** An array to contain all the data processed by the handler. */
     public $Data = [];
 
+    /** Flag used for rendering multi-line values. */
+    private $MultiLine = false;
+
     /**
      * Can optionally begin processing data as soon as the object is
      * instantiated, or just instantiate first, and manually make any needed
@@ -40,7 +43,7 @@ class YAML
     }
 
     /**
-     * Normalises values defined by the YAML closure.
+     * Normalises the values defined by the processLine method.
      *
      * @param string|int|bool $Value The value to be normalised.
      * @param int $ValueLen The length of the value to be normalised.
@@ -48,24 +51,34 @@ class YAML
      */
     private function normaliseValue(&$Value, $ValueLen, $ValueLow)
     {
-        if (substr($Value, 0, 1) === '"' && substr($Value, $ValueLen - 1) === '"') {
-            $Value = substr($Value, 1, $ValueLen - 2);
-        } elseif (substr($Value, 0, 1) === '\'' && substr($Value, $ValueLen - 1) === '\'') {
-            $Value = substr($Value, 1, $ValueLen - 2);
-        } elseif ($ValueLow === 'true' || $ValueLow === 'y') {
+        foreach ([
+            ['"', '"', 1],
+            ["'", "'", 1],
+            ['`', '`', 1],
+            ["\x91", "\x92", 1],
+            ["\x93", "\x94", 1],
+            ["\xe2\x80\x98", "\xe2\x80\x99", 3],
+            ["\xe2\x80\x9c", "\xe2\x80\x9d", 3]
+        ] as $Wrapper) {
+            if (substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
+                $Value = substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
+                return;
+            }
+        }
+        if ($ValueLow === 'true' || $ValueLow === 'y') {
             $Value = true;
         } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
             $Value = false;
         } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
             $Value = hex2bin($HexTest);
-        } else {
-            $ValueInt = (int)$Value;
-            if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt && $ValueLen > 1) {
-                $Value = $ValueInt;
-            }
-        }
-        if (!$Value) {
+        } elseif (preg_match('~^\d+$~', $Value)) {
+            $Value = (int)$Value;
+        } elseif (preg_match('~^\d+\.\d+$~', $Value)) {
+            $Value = (float)$Value;
+        } elseif (!$ValueLen) {
             $Value = false;
+        } else {
+            $Value = (string)$Value;
         }
     }
 
@@ -83,6 +96,9 @@ class YAML
         if (!is_array($Arr)) {
             $Arr = [];
         }
+        if ($Depth === 0) {
+            $this->MultiLine = false;
+        }
         $In = str_replace("\r", '', $In);
         $Key = $Value = $SendTo = '';
         $TabLen = $SoL = 0;
@@ -91,31 +107,42 @@ class YAML
                 ($EoL = strpos($In, "\n", $SoL)) === false
             ) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
             $SoL = ($EoL === false) ? false : $EoL + 1;
-            $ThisLine = preg_replace(['/#.*$/', '/\s+$/'], '', $ThisLine);
-            if (empty($ThisLine) || $ThisLine === "\n") {
+            if (!($ThisLine = preg_replace(['/(?<!\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
                 continue;
             }
+            $ThisLine = str_replace('\#', '#', $ThisLine);
             $ThisTab = 0;
             while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
                 $ThisTab++;
             }
-            if ($ThisTab > $Depth) {
+            if (($ThisTab > $Depth)) {
                 if ($TabLen === 0) {
                     $TabLen = $ThisTab;
                 }
-                $SendTo .= $ThisLine . "\n";
+                if (!$this->MultiLine) {
+                    $SendTo .= $ThisLine . "\n";
+                } else {
+                    if ($SendTo) {
+                        $SendTo .= "\n";
+                    }
+                    $SendTo .= substr($ThisLine, $TabLen);
+                }
                 continue;
             } elseif ($ThisTab < $Depth) {
                 return false;
-            } elseif (!empty($SendTo)) {
+            } elseif ($SendTo) {
                 if (empty($Key)) {
                     return false;
                 }
-                if (!isset($Arr[$Key])) {
-                    $Arr[$Key] = false;
-                }
-                if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
-                    return false;
+                if (!$this->MultiLine) {
+                    if (!isset($Arr[$Key])) {
+                        $Arr[$Key] = [];
+                    }
+                    if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
+                        return false;
+                    }
+                } else {
+                    $Arr[$Key] = $SendTo;
                 }
                 $SendTo = '';
             }
@@ -123,12 +150,16 @@ class YAML
                 return false;
             }
         }
-        if (!empty($SendTo) && !empty($Key)) {
-            if (!isset($Arr[$Key])) {
-                $Arr[$Key] = [];
-            }
-            if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
-                return false;
+        if ($SendTo && !empty($Key)) {
+            if (!$this->MultiLine) {
+                if (!isset($Arr[$Key])) {
+                    $Arr[$Key] = [];
+                }
+                if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
+                    return false;
+                }
+            } else {
+                $Arr[$Key] = $SendTo;
             }
         }
         return true;
@@ -146,7 +177,7 @@ class YAML
      */
     private function processLine(&$ThisLine, &$ThisTab, &$Key, &$Value, &$Arr)
     {
-        if (substr($ThisLine, -1) === ':') {
+        if (substr($ThisLine, -1) === ':' && strpos($ThisLine, ': ') === false) {
             $Key = substr($ThisLine, $ThisTab, -1);
             $KeyLen = strlen($Key);
             $KeyLow = strtolower($Key);
@@ -154,6 +185,7 @@ class YAML
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = false;
             }
+            $Value = false;
         } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
             $Value = substr($ThisLine, $ThisTab + 2);
             $ValueLen = strlen($Value);
@@ -188,7 +220,9 @@ class YAML
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = false;
             }
+            $Value = false;
         }
+        $this->MultiLine = ($Value === '|');
         return true;
     }
 
@@ -201,28 +235,30 @@ class YAML
      */
     private function processInner($Arr, &$Out, $Depth = 0)
     {
+        $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
         foreach ($Arr as $Key => $Value) {
             if ($Key === '---' && $Value === false) {
                 $Out .= "---\n";
                 continue;
             }
-            if (!isset($List)) {
-                $List = ($Key === 0);
-            }
-            $Out .= str_repeat(' ', $Depth) . (($List && is_int($Key)) ? '-' : $Key . ':');
+            $ThisDepth = str_repeat(' ', $Depth);
+            $Out .= $ThisDepth . ($Sequential ? '- ' : $Key . ': ');
             if (is_array($Value)) {
-                $Depth++;
                 $Out .= "\n";
-                $this->processInner($Value, $Out, $Depth);
-                $Depth--;
+                $this->processInner($Value, $Out, $Depth + 1);
                 continue;
             }
             if ($Value === true) {
-                $Out .= ' true';
+                $Out .= 'true';
             } elseif ($Value === false) {
-                $Out .= ' false';
+                $Out .= 'false';
+            } elseif (strpos($Value, "\n") !== false) {
+                $Value = str_replace("\n", "\n" . $ThisDepth . ' ', $Value);
+                $Out .= "|\n" . $ThisDepth . ' ' . $Value;
+            } elseif (is_string($Value)) {
+                $Out .= '"' . $Value . '"';
             } else {
-                $Out .= ' ' . $Value;
+                $Out .= $Value;
             }
             $Out .= "\n";
         }

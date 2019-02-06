@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.01.25).
+ * This file: Front-end functions file (last modified: 2019.02.04).
  */
 
 /**
@@ -151,7 +151,7 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
             break;
         }
     }
-    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $phpMussel['Plural']($Filesize, $phpMussel['lang'][$Scale[$Iterate]]);
+    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $phpMussel['L10N']->getPlural($Filesize, $Scale[$Iterate]);
 };
 
 /**
@@ -332,7 +332,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
             $Arr[$Key]['CanEdit'] = false;
             $Arr[$Key]['Directory'] = true;
             $Arr[$Key]['Filesize'] = 0;
-            $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_directory'];
+            $Arr[$Key]['Filetype'] = $phpMussel['L10N']->getString('field_filetype_directory');
             $Arr[$Key]['Icon'] = 'icon=directory';
         } elseif (is_file($Item)) {
             $Arr[$Key]['CanEdit'] = true;
@@ -342,7 +342,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                 $phpMussel['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
             }
             if (isset($phpMussel['Components']['Components'])) {
-                $Component = $phpMussel['lang']['field_filetype_unknown'];
+                $Component = $phpMussel['L10N']->getString('field_filetype_unknown');
                 $ThisNameFixed = str_replace("\\", '/', $ThisName);
                 if (isset($phpMussel['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($phpMussel['Components']['Names'][$phpMussel['Components']['Files'][$ThisNameFixed]])) {
@@ -351,22 +351,22 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                         $Component = $phpMussel['Components']['Files'][$ThisNameFixed];
                     }
                     if ($Component === 'phpMussel') {
-                        $Component .= ' (' . $phpMussel['lang']['field_component'] . ')';
+                        $Component .= ' (' . $phpMussel['L10N']->getString('field_component') . ')';
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['label_fmgr_safety'];
+                    $Component = $phpMussel['L10N']->getString('label_fmgr_safety');
                 } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['link_config'];
+                    $Component = $phpMussel['L10N']->getString('link_config');
                 } elseif ($phpMussel['FileManager-IsLogFile']($ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['link_logs'];
+                    $Component = $phpMussel['L10N']->getString('link_logs');
                 } elseif (preg_match('~^(?:greylist\.csv|signatures/.*\.(?:csv|db))$~i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['label_fmgr_other_sig'];
+                    $Component = $phpMussel['L10N']->getString('label_fmgr_other_sig');
                 } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache/index|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['label_fmgr_cache_data'];
+                    $Component = $phpMussel['L10N']->getString('label_fmgr_cache_data');
                 } elseif (preg_match('/\.qfu$/i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['label_quarantined'];
+                    $Component = $phpMussel['L10N']->getString('label_quarantined');
                 } elseif (preg_match('/\.(?:dat|ya?ml)$/i', $ThisNameFixed)) {
-                    $Component = $phpMussel['lang']['label_fmgr_updates_metadata'];
+                    $Component = $phpMussel['L10N']->getString('label_fmgr_updates_metadata');
                 }
                 if (!isset($phpMussel['Components']['Components'][$Component])) {
                     $phpMussel['Components']['Components'][$Component] = 0;
@@ -380,12 +380,12 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
                 if (!$Ext) {
-                    $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_unknown'];
+                    $Arr[$Key]['Filetype'] = $phpMussel['L10N']->getString('field_filetype_unknown');
                     $Arr[$Key]['Icon'] = 'icon=unknown';
                     $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
-                $Arr[$Key]['Filetype'] = $phpMussel['ParseVars'](['EXT' => $Ext], $phpMussel['lang']['field_filetype_info']);
+                $Arr[$Key]['Filetype'] = $phpMussel['ParseVars'](['EXT' => $Ext], $phpMussel['L10N']->getString('field_filetype_info'));
                 if ($Ext === 'ICO') {
                     $Arr[$Key]['Icon'] = 'file=' . urlencode($Prepend . $Item);
                     $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
@@ -440,7 +440,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     $Arr[$Key]['Icon'] = 'icon=text';
                 }
             } else {
-                $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_unknown'];
+                $Arr[$Key]['Filetype'] = $phpMussel['L10N']->getString('field_filetype_unknown');
             }
         }
         if (empty($Arr[$Key]['Icon'])) {
@@ -569,9 +569,9 @@ $phpMussel['IsActivable'] = function (&$Component) {
 
 /** Prepares component extended description (front-end updates page). */
 $phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$phpMussel) {
-    $Key = 'Extended Description: ' . $Key;
+    $Key = 'Extended Description ' . $Key;
     if (isset($phpMussel['lang'][$Key])) {
-        $Arr['Extended Description'] = $phpMussel['lang'][$Key];
+        $Arr['Extended Description'] = $phpMussel['L10N']->getString($Key);
     } elseif (empty($Arr['Extended Description'])) {
         $Arr['Extended Description'] = '';
     }
@@ -582,9 +582,9 @@ $phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$ph
 
 /** Prepares component name (front-end updates page). */
 $phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
-    $Key = 'Name: ' . $Key;
+    $Key = 'Name ' . $Key;
     if (isset($phpMussel['lang'][$Key])) {
-        $Arr['Name'] = $phpMussel['lang'][$Key];
+        $Arr['Name'] = $phpMussel['L10N']->getString($Key);
     } elseif (empty($Arr['Name'])) {
         $Arr['Name'] = '';
     }
@@ -735,7 +735,7 @@ $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
  * @param int $Decimals Decimal places (optional).
  */
 $phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) {
-    $Number = (real)$Number;
+    $Number = (float)$Number;
     $Sets = [
         'NoSep-1' => ['.', '', 3, false, 0],
         'NoSep-2' => [',', '', 3, false, 0],
@@ -839,7 +839,7 @@ $phpMussel['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$
             $Redirect .= '&' . $Switch . '=false';
             $LangItem = 'switch-' . $Switch . '-set-true';
         }
-        $Label = isset($phpMussel['lang'][$LangItem]) ? $phpMussel['lang'][$LangItem] : $LangItem;
+        $Label = $phpMussel['L10N']->getString($LangItem) ?: $LangItem;
         $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
     }
 };
@@ -858,9 +858,9 @@ $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$p
         /** Deletes all files in quarantine. */
         if ($DeleteMode) {
             $DeleteMe = substr($Item, $Offset);
-            $phpMussel['FE']['state_msg'] .= '<code>' . $DeleteMe . '</code> ' . (unlink(
-                $phpMussel['qfuPath'] . $DeleteMe
-            ) ? $phpMussel['lang']['response_file_deleted'] : $phpMussel['lang']['response_delete_error']) . '<br />';
+            $phpMussel['FE']['state_msg'] .= '<code>' . $DeleteMe . '</code> ' . $phpMussel['L10N']->getString(
+                unlink($phpMussel['qfuPath'] . $DeleteMe) ? 'response_file_deleted' : 'response_delete_error'
+            ) . '<br />';
             continue;
         }
         $Key++;
@@ -877,12 +877,12 @@ $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$p
         ) ? $phpMussel['TimeFormat'](
             (int)substr($Head, $DatePos + 20, 16),
             $phpMussel['Config']['general']['timeFormat']
-        ) : $phpMussel['lang']['field_filetype_unknown'];
+        ) : $phpMussel['L10N']->getString('field_filetype_unknown');
         /** Upload origin. */
         $Arr[$Key]['Upload-Origin'] = (
             ($OriginStartPos = strpos($Head, 'Uploaded From: ')) !== false &&
             ($OriginEndPos = strpos($Head, ' ', $OriginStartPos + 15)) !== false
-        ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['lang']['field_filetype_unknown'];
+        ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['L10N']->getString('field_filetype_unknown');
         /** If the phpMussel QFU (Quarantined File Upload) header isn't found, it probably isn't a quarantined file. */
         if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\x01")) {
             $Head = substr($Head, $HeadPos);
@@ -891,8 +891,8 @@ $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$p
             $Arr[$Key]['Upload-Size'] = isset($Arr[$Key]['Upload-Size'][1]) ? (int)$Arr[$Key]['Upload-Size'][1] : 0;
             $phpMussel['FormatFilesize']($Arr[$Key]['Upload-Size']);
         } else {
-            $Arr[$Key]['Upload-MD5'] = $phpMussel['lang']['field_filetype_unknown'];
-            $Arr[$Key]['Upload-Size'] = $phpMussel['lang']['field_filetype_unknown'];
+            $Arr[$Key]['Upload-MD5'] = $phpMussel['L10N']->getString('field_filetype_unknown');
+            $Arr[$Key]['Upload-Size'] = $phpMussel['L10N']->getString('field_filetype_unknown');
         }
         /** Appends Virus Total search URL for this hash onto the hash. */
         if (strlen($Arr[$Key]['Upload-MD5']) === 32) {
@@ -1021,7 +1021,7 @@ $phpMussel['AppendTests'] = function (&$Component, $ReturnState = false) use (&$
             $phpMussel['AppendToString'](
                 $Component['StatusOptions'],
                 '<hr />',
-                '<div class="s">' . $phpMussel['lang']['label_tests'] . ' ' . $TestsTotal
+                '<div class="s">' . $phpMussel['L10N']->getString('label_tests') . ' ' . $TestsTotal
             );
         }
     }
@@ -1257,7 +1257,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         $phpMussel['FE']['state_msg'] .=
                             '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
                             '<code>' . $ThisFileName . '</code> – ' .
-                            $phpMussel['lang']['response_checksum_error'] . '<br />';
+                            $phpMussel['L10N']->getString('response_checksum_error') . '<br />';
                         if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
                             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
                         }
@@ -1274,7 +1274,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         '<code>%s</code> – <code>%s</code> – %s<br />',
                         $phpMussel['Components']['ThisTarget'],
                         $ThisFileName,
-                        $phpMussel['lang']['response_sanity_1']
+                        $phpMussel['L10N']->getString('response_sanity_1')
                     );
                     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error'])) {
                         $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error']);
@@ -1354,12 +1354,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
                     empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
                 ) {
-                    $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_installed'];
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_successfully_installed');
                     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds'])) {
                         $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds']);
                     }
                 } else {
-                    $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_updated'];
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_successfully_updated');
                     if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds'])) {
                         $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds']);
                     }
@@ -1376,12 +1376,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
                 empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
             ) {
-                $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_failed_to_install'];
+                $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_failed_to_install');
                 if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails'])) {
                     $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails']);
                 }
             } else {
-                $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_failed_to_update'];
+                $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_failed_to_update');
                 if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails'])) {
                     $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails']);
                 }
@@ -1460,12 +1460,12 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
         fclose($Handle);
         $phpMussel['Components']['Meta'][$ID]['Version'] = false;
         $phpMussel['Components']['Meta'][$ID]['Files'] = false;
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_successfully_uninstalled'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_successfully_uninstalled');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds']);
         }
     } else {
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_uninstall_error'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_uninstall_error');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails']);
         }
@@ -1513,7 +1513,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         }
     }
     if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activation_failed'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activation_failed');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails']);
         }
@@ -1528,7 +1528,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
         fwrite($Handle, $phpMussel['Activation']['Config']);
         fclose($Handle);
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activated'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activated');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds']);
         }
@@ -1572,7 +1572,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         }
     }
     if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivation_failed'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivation_failed');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails']);
         }
@@ -1587,7 +1587,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
         fwrite($Handle, $phpMussel['Deactivation']['Config']);
         fclose($Handle);
-        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivated'];
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivated');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds']);
         }
@@ -1640,12 +1640,12 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
             $Table .= sprintf(
                 '<code>%1$s</code> – %7$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
-                $phpMussel['lang']['label_actual'],
+                $phpMussel['L10N']->getString('label_actual'),
                 $Actual,
-                $phpMussel['lang']['label_expected'],
+                $phpMussel['L10N']->getString('label_expected'),
                 $Checksum,
                 $Class,
-                ($Class === 'txtGn' ? $phpMussel['lang']['field_ok'] : $phpMussel['lang']['response_possible_problem_found'])
+                $phpMussel['L10N']->getString($Class === 'txtGn' ? 'field_ok' : 'response_possible_problem_found')
             );
         }
         $Table .= '</blockquote>';
@@ -1653,7 +1653,7 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
             '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
             $ThisID,
             ($Passed ? 's' : 'txtRd'),
-            ($Passed ? $phpMussel['lang']['response_verification_success'] : $phpMussel['lang']['response_verification_failed']),
+            $phpMussel['L10N']->getString($Passed ? 'response_verification_success' : 'response_verification_failed'),
             $Table
         );
     }
@@ -1672,7 +1672,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
     /** Check whether shorthand data has been fetched. If it hasn't, fetch it. */
     if (!isset($phpMussel['shorthand.yaml'])) {
         if (!file_exists($phpMussel['Vault'] . 'shorthand.yaml') || !is_readable($phpMussel['Vault'] . 'shorthand.yaml')) {
-            return '<span class="s">' . $phpMussel['lang']['response_error'] . '</span>';
+            return '<span class="s">' . $phpMussel['L10N']->getString('response_error') . '</span>';
         }
         $phpMussel['shorthand.yaml'] = (new \Maikuolan\Common\YAML($phpMussel['ReadFile']($phpMussel['Vault'] . 'shorthand.yaml')))->Data;
     }
@@ -1771,7 +1771,7 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
 
     /** Process totals. */
     foreach ($Subs as $Sub) {
-        $Label = isset($phpMussel['lang']['siginfo_sub_' . $Sub]) ? $phpMussel['lang']['siginfo_sub_' . $Sub] : $Sub;
+        $Label = $phpMussel['L10N']->getString('siginfo_sub_' . $Sub) ?: $Sub;
         $Class = 'sigtype_' . strtolower($Sub);
         $phpMussel['FE']['infoCatOptions'] .= "\n      <option value=\"" . $Class . '">' . $Label . '</option>';
         $ThisTable = '<span style="display:none" class="' . $Class . '"><table><tr><td class="center h4f" colspan="2"><span class="s">' . $Label . '</span></td></tr>' . "\n";
@@ -1781,14 +1781,12 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
                 continue;
             }
             $Total = $phpMussel['Number_L10N']($Total);
-            if ($Key === 'Other' && $Sub === 'SigTypes') {
-                $Label = isset($phpMussel['lang']['siginfo_key_Other_Metadata']) ? $phpMussel['lang']['siginfo_key_Other_Metadata'] : '';
-            } else {
-                $Label = isset($phpMussel['lang']['siginfo_key_' . $Key]) ? $phpMussel['lang']['siginfo_key_' . $Key] : '';
-            }
+            $Label = $phpMussel['L10N']->getString(
+                ($Key === 'Other' && $Sub === 'SigTypes') ? 'siginfo_key_Other_Metadata' : 'siginfo_key_' . $Key
+            );
             if ($Key !== 'Total' && $Key !== 'Other') {
                 if (!$Label) {
-                    $Label = sprintf($phpMussel['lang']['siginfo_xkey'], $Key);
+                    $Label = sprintf($phpMussel['L10N']->getString('siginfo_xkey'), $Key);
                 }
                 $CellClass = 'h3';
             } else {
@@ -1881,7 +1879,7 @@ $phpMussel['FileManager-IsLogFile'] = function ($File) use (&$phpMussel) {
  * @return string The JavaScript snippet.
  */
 $phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
-    $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($phpMussel['lang']['confirm_action'], $Action));
+    $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($phpMussel['L10N']->getString('confirm_action'), $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
 };
 
@@ -1970,7 +1968,7 @@ $phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '',
     /** Check whether class exists to either load it and continue or fail the operation. */
     if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) {
         if ($EventLog) {
-            $EventLogData .= $phpMussel['lang']['state_failed_missing'] . "\n";
+            $EventLogData .= $phpMussel['L10N']->getString('state_failed_missing') . "\n";
         }
     } else {
         try {
@@ -2068,16 +2066,16 @@ $phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '',
             /** Log the results of the send attempt. */
             if ($EventLog) {
                 $EventLogData .= ($State ? sprintf(
-                    $phpMussel['lang']['state_email_sent'],
+                    $phpMussel['L10N']->getString('state_email_sent'),
                     $SuccessDetails
-                ) : $phpMussel['lang']['response_error'] . ' - ' . $Mail->ErrorInfo) . "\n";
+                ) : $phpMussel['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
             }
 
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
             if ($EventLog) {
-                $EventLogData .= $phpMussel['lang']['response_error'] . ' - ' . $e->getMessage() . "\n";
+                $EventLogData .= $phpMussel['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
             }
 
         }

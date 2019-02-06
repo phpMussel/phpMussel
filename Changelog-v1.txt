@@ -7,7 +7,17 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.02.06; Maikuolan]: Completely overhauled the way that L10N data is
+  processed and handled. A new class has been written to handle all L10N data,
+  and L10N data is now processed and handled in an entirely object-oriented
+  way. L10N data isn't stored as PHP files anymore, to be required into the
+  package. Instead, L10N data is now stored entirely as YAML files. Using YAML
+  instead of PHP should theoretically be a little safer in certain, edge-case
+  scenarios, and should be much easier to work with for when introducing new
+  translations into the package in the future (i.e., for translators which
+  aren't familiar or aren't comfortable working with PHP). This overhaul also
+  serves as a small stepping stone towards a future, more object-oriented major
+  version release.
 
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
@@ -838,6 +848,11 @@ Caleb M (Maikuolan),
 
 ======
 
-Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
-file or in the "_docs/change_log.txt" file from any release versions prior to
-v1 (depending on which release version you're working from).
+"Changelog-v1.txt" contains changelog notes for versions => 1.0.0 < 2.0.0.
+
+Changelog notes for versions => 2.0.0 < 3.0.0 can be found in the
+"Changelog-v2.txt" file included with any relevant, corresponding releases.
+
+Changelog notes for versions < 1.0.0 can be found in the "Changelog-v0.txt"
+file or in the "_docs/change_log.txt" file included with any relevant,
+corresponding releases.
