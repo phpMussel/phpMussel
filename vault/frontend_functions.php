@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.04).
+ * This file: Front-end functions file (last modified: 2019.02.07).
  */
 
 /**
@@ -612,7 +612,7 @@ $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
  */
 $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
     $Path = $phpMussel['Vault'] . 'lang/lang.' . $ChoiceKey;
-    return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
+    return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
 };
 
 /**
