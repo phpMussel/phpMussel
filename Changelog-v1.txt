@@ -19,6 +19,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   serves as a small stepping stone towards a future, more object-oriented major
   version release.
 
+- [2019.02.07; Maikuolan]: Added suggested values for ipaddr as selectable
+  options to the front-end configuration page.
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 

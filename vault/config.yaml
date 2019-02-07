@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.02.03).
+# This file: Configuration defaults file (last modified: 2019.02.07).
 ##/
 
 Config Defaults:
@@ -127,6 +127,15 @@ Config Defaults:
   ipaddr:
    type: string
    default: "REMOTE_ADDR"
+   preview: allow_other
+   allow_other: true
+   choices:
+    HTTP_INCAP_CLIENT_IP: "HTTP_INCAP_CLIENT_IP (Incapsula)"
+    HTTP_CF_CONNECTING_IP: "HTTP_CF_CONNECTING_IP (Cloudflare)"
+    CF-Connecting-IP: "CF-Connecting-IP (Cloudflare)"
+    HTTP_X_FORWARDED_FOR: "HTTP_X_FORWARDED_FOR (Cloudbric)"
+    X-Forwarded-For: "X-Forwarded-For (Squid)"
+    REMOTE_ADDR: "REMOTE_ADDR (Default)"
   enable_plugins:
    type: bool
    default: true
