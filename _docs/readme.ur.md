@@ -265,6 +265,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">L10N ہینڈلر.</div> | /vault/classes/Maikuolan/L10N.php
 &nbsp; <div dir="rtl" style="display:inline">YAML ہینڈلر.</div> | /vault/classes/Maikuolan/YAML.php
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/classes/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">آرکائیو کو سنبھالنے کے لئے ذمہ دار.</div> | /vault/classes/ArchiveHandler.php
@@ -1447,13 +1448,15 @@ IP پتہ: <code dir="ltr">127.0.0.1</code>
 طور قرنطینہ "<code dir="ltr">/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu</code>".
 </pre>
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+<div dir="rtl">بلاک شدہ اپ لوڈس کے بارے میں معلومات عام طور پر شامل ہیں:<br /></div>
+<div dir="rtl"><ul>
+ <li>اپ لوڈ کردہ تاریخ اور وقت.</li>
+ <li>IP ایڈریس جہاں اپ لوڈ سے پیدا ہوا ہے.</li>
+ <li>فائل کیوں بلاک ہوگئی تھی (پتہ لگانا ہوئی).</li>
+ <li>اس فائل کا نام جو بلاک کیا گیا تھا.</li>
+ <li>MD5 اور اس فائل کا سائز جو بلاک ہے.</li>
+ <li>الگ تھلگ؟ کیا نام استعمال کیا؟</li>
+</ul></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1571,4 +1574,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 29 جنوری 2019 (2019.01.29).</div>
+<div dir="rtl">آخری تازہ کاری: 6 فروری 2019 (2019.02.06).</div>

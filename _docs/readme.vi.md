@@ -269,6 +269,7 @@ Tập tin | Chi tiết
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi phpMussel.
 /vault/classes/Maikuolan/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi phpMussel.
+/vault/classes/Maikuolan/L10N.php | Tập tin cho xử lý L10N.
 /vault/classes/Maikuolan/YAML.php | Tập tin cho xử lý YAML.
 /vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/classes/ArchiveHandler.php | Chịu trách nhiệm xử lý tập tin lưu trữ.
@@ -1338,4 +1339,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 29 Tháng Một 2019 (2019.01.29).
+Lần cuối cập nhật: 6 Tháng Hai 2019 (2019.02.06).

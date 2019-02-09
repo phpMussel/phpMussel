@@ -269,6 +269,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/cache/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/classes/ | 클래스 디렉토리. phpMussel에서 사용하는 다양한 클래스가 들어 있습니다.
 /vault/classes/Maikuolan/ | 클래스 디렉토리. phpMussel에서 사용하는 다양한 클래스가 들어 있습니다.
+/vault/classes/Maikuolan/L10N.php | L10N 핸들러.
 /vault/classes/Maikuolan/YAML.php | YAML 핸들러.
 /vault/classes/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/classes/ArchiveHandler.php | 아카이브 처리에 대한 그것은 책임이있다.
@@ -1343,4 +1344,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2019년 1월 29일.
+최종 업데이트 : 2019년 2월 6일.

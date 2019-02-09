@@ -269,6 +269,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/classes/ | クラス・ディレクトリ。​phpMusselによって使用されるさまざまなクラスが含まれています。
 /vault/classes/Maikuolan/ | クラス・ディレクトリ。​phpMusselによって使用されるさまざまなクラスが含まれています。
+/vault/classes/Maikuolan/L10N.php | Ｌ１０Ｎハンドラ。
 /vault/classes/Maikuolan/YAML.php | ＹＡＭＬハンドラ。
 /vault/classes/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/classes/ArchiveHandler.php | アーカイブの処理を担当です。
@@ -1345,4 +1346,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：２０１９年１月２９日。
+最終アップデート：２０１９年２月６日。

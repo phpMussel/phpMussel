@@ -265,6 +265,7 @@
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها phpMussel.</div> | /vault/classes/
 &nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها phpMussel.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">معالج L10N.</div> | /vault/classes/Maikuolan/L10N.php
 &nbsp; <div dir="rtl" style="display:inline">معالج YAML.</div> | /vault/classes/Maikuolan/YAML.php
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/classes/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">مسؤول عن التعامل مع المحفوظات.</div> | /vault/classes/ArchiveHandler.php
@@ -1408,20 +1409,22 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
  <li>سجلات مسلسلة.</li>
 </ul></div>
 
-Entries to a human readable logfile typically look something like this (as an example):
+<div dir="rtl">عادةً ما تبدو الإدخالات إلى ملف السجل البشري المقروء شيئًا مثل هذا (كمثال):<br /><br /></div>
 
 ```
-Mon, 21 May 2018 00:47:58 +0800 Started.
-> Checking 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
--> Detected phpMussel-Testfile.ASCII.Standard!
-Mon, 21 May 2018 00:48:04 +0800 Finished.
+Mon, 21 May 2018 00:47:58 +0800 بدأت.
+> فحص 'ascii_standard_testfile.txt' (FN: ce76ae7a; FD: 7b9bfed5):
+-> الكشف phpMussel-Testfile.ASCII.Standard!
+Mon, 21 May 2018 00:48:04 +0800 انتهى.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+<div dir="rtl">عادةً ما يتضمن إدخال سجل الفحص المعلومات التالية:<br /></div>
+<div dir="rtl"><ul>
+ <li>تاريخ ووقت فحص الملف.</li>
+ <li>اسم الملف الممسوح ضوئيًا.</li>
+ <li>CRC32b تجزئة اسم ومحتويات الملف.</li>
+ <li>ما تم اكتشافه في الملف (إذا تم اكتشاف أي شيء).</li>
+</ul></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1429,7 +1432,7 @@ A scan log entry typically includes the following information:
  <li><code dir="ltr">scan_log_serialized</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-When these directives are left empty, this type of logging will remain disabled.
+<div dir="rtl">عندما يتم ترك هذه التوجيهات فارغة، سيظل هذا النوع من التسجيل معطلاً.<br /><br /></div>
 
 ##### <div dir="rtl">١١.٣.١ التحميلات المحظورة<br /><br /></div>
 
@@ -1447,13 +1450,15 @@ When these directives are left empty, this type of logging will remain disabled.
 الحجر الصحي بأنه "<code dir="ltr">/vault/quarantine/0000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qfu</code>".
 </pre>
 
-A "scan kills" entry typically includes the following information:
-- The date and time that the upload was blocked.
-- The IP address where the upload originated from.
-- The reason why the file was blocked (what was detected).
-- The name of the file blocked.
-- An MD5 and the size of the file blocked.
-- Whether the file was quarantined, and under what internal name.
+<div dir="rtl">تتضمن معلومات حول التحميلات المحظورة عادةً ما يلي:<br /></div>
+<div dir="rtl"><ul>
+ <li>التاريخ والوقت الذي تم حظر التحميل فيه.</li>
+ <li>عنوان IP الذي نشأ فيه التحميل.</li>
+ <li>سبب حظر الملف (ما تم اكتشافه).</li>
+ <li>اسم الملف المحظور.</li>
+ <li>MD5 وحجم الملف المحظور.</li>
+ <li>ما إذا كان الملف قد تم عزله، وتحت أي اسم داخلي.</li>
+</ul></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1572,4 +1577,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 29 يناير 2019 (2019.01.29).</div>
+<div dir="rtl">آخر تحديث: 6 فبراير 2019 (2019.02.06).</div>

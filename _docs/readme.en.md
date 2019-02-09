@@ -269,6 +269,7 @@ File | Description
 /vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/classes/ | Classes directory. Contains various classes used by phpMussel.
 /vault/classes/Maikuolan/ | Classes directory. Contains various classes used by CIDRAM.
+/vault/classes/Maikuolan/L10N.php | L10N handler.
 /vault/classes/Maikuolan/YAML.php | YAML handler.
 /vault/classes/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/classes/ArchiveHandler.php | Responsible for handling archives.
@@ -1348,4 +1349,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 29 January 2019 (2019.01.29).
+Last Updated: 6 February 2019 (2019.02.06).

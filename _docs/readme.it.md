@@ -269,6 +269,7 @@ File | Descrizione
 /vault/cache/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/classes/ | Cartella delle classi. Contiene varie classi utilizzate da phpMussel.
 /vault/classes/Maikuolan/ | Cartella delle classi. Contiene varie classi utilizzate da phpMussel.
+/vault/classes/Maikuolan/L10N.php | Gestore di L10N.
 /vault/classes/Maikuolan/YAML.php | Gestore di YAML.
 /vault/classes/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/classes/ArchiveHandler.php | Responsabile della gestione degli archivi.
@@ -1343,4 +1344,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 29 Gennaio 2019 (2019.01.29).
+Ultimo Aggiornamento: 6 Febbraio 2019 (2019.02.06).

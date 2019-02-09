@@ -270,6 +270,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/classes/ | 類目錄。包含phpMussel使用的各種類。
 /vault/classes/Maikuolan/ | 類目錄。包含phpMussel使用的各種類。
+/vault/classes/Maikuolan/L10N.php | L10N處理文件。
 /vault/classes/Maikuolan/YAML.php | YAML處理文件。
 /vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/classes/ArchiveHandler.php | 負責處理檔案文件。
@@ -1347,4 +1348,4 @@ phpMussel不收集或處理任何信息用於營銷或廣告目的，既不銷�
 ---
 
 
-最後更新：2019年1月29日。
+最後更新：2019年2月6日。
