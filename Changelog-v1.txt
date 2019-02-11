@@ -22,6 +22,8 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 - [2019.02.07; Maikuolan]: Added suggested values for ipaddr as selectable
   options to the front-end configuration page.
 
+- [2019.02.11; Maikuolan]: Slightly refactored the loader.
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 
