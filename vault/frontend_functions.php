@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.07).
+ * This file: Front-end functions file (last modified: 2019.02.14).
  */
 
 /**
@@ -537,26 +537,29 @@ $phpMussel['IsInUse'] = function (&$Component) use (&$phpMussel) {
 
 /** Fetch remote data (front-end updates page). */
 $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
-    $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
-        $phpMussel['FE']['Cache'],
+    $phpMussel['Components']['ThisComponent']['RemoteData'] = '';
+    $phpMussel['FetchRemote-ContextFree'](
+        $phpMussel['Components']['ThisComponent']['RemoteData'],
         $phpMussel['Components']['ThisComponent']['Remote']
     );
-    if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
-        $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
-        if (
-            strtolower(substr($phpMussel['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
-            substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
-        ) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
+};
+
+/** Fetch remote data (context-free). */
+$phpMussel['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$phpMussel) {
+    $RemoteData = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], $Remote);
+    if (!$RemoteData) {
+        $RemoteData = $phpMussel['Request']($Remote);
+        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
+            $RemoteData = gzdecode($RemoteData);
         }
-        if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
+        if (empty($RemoteData)) {
+            $RemoteData = '-';
         }
         $phpMussel['FECacheAdd'](
             $phpMussel['FE']['Cache'],
             $phpMussel['FE']['Rebuild'],
-            $phpMussel['Components']['ThisComponent']['Remote'],
-            $phpMussel['Components']['ThisComponent']['RemoteData'],
+            $Remote,
+            $RemoteData,
             $phpMussel['Time'] + 3600
         );
     }
@@ -1103,33 +1106,11 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         $phpMussel['Components']['BytesRemoved'] = 0;
         $phpMussel['Components']['TimeRequired'] = microtime(true);
         $phpMussel['Components']['RemoteMeta'] = [];
-        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['FECacheGet'](
-            $phpMussel['FE']['Cache'],
+        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = '';
+        $phpMussel['FetchRemote-ContextFree'](
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'],
             $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
         );
-        if (!$phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']) {
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['Request'](
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
-            );
-            if (
-                strtolower(substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'], -2)) === 'gz' &&
-                substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 2) === "\x1f\x8b"
-            ) {
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = gzdecode(
-                    $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']
-                );
-            }
-            if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'])) {
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = '-';
-            }
-            $phpMussel['FECacheAdd'](
-                $phpMussel['FE']['Cache'],
-                $phpMussel['FE']['Rebuild'],
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'],
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'],
-                $phpMussel['Time'] + 3600
-            );
-        }
         $phpMussel['UpdateFailed'] = false;
         if (
             substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 4) === "---\n" &&

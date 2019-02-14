@@ -129,7 +129,7 @@ if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck
     if ($phpMussel['Config']['general']['enable_plugins']) {
         if (!is_dir($phpMussel['Vault'] . 'plugins')) {
             header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['Config']['lang']['plugins_directory_nonexistent']);
+            die('[phpMussel] ' . $phpMussel['L10N']->getString('plugins_directory_nonexistent'));
         }
         $phpMussel['MusselPlugins']['tempdata'] = [];
         if ((

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.05).
+ * This file: Front-end handler (last modified: 2019.02.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1516,7 +1516,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Meta' => $phpMussel['Components']['Meta'],
         'RemoteMeta' => $phpMussel['Components']['RemoteMeta'],
         'Remotes' => [],
-        'Dependencies' => [],
+        'Interdependent' => [],
         'Outdated' => [],
         'Verify' => [],
         'Out' => []
@@ -1605,19 +1605,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
             }
             if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
-                if (
-                    !empty($phpMussel['Components']['ThisComponent']['Latest']) &&
-                    $phpMussel['VersionCompare'](
-                        $phpMussel['Components']['ThisComponent']['Version'],
-                        $phpMussel['Components']['ThisComponent']['Latest']
-                    )
-                ) {
+                if (!empty($phpMussel['Components']['ThisComponent']['Latest']) && $phpMussel['VersionCompare'](
+                    $phpMussel['Components']['ThisComponent']['Version'],
+                    $phpMussel['Components']['ThisComponent']['Latest']
+                )) {
                     $phpMussel['Components']['ThisComponent']['Outdated'] = true;
                     if (
                         $phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang'] ||
                         $phpMussel['Components']['Key'] === 'theme/' . $phpMussel['Config']['template_data']['theme']
                     ) {
-                        $phpMussel['Components']['Dependencies'][] = $phpMussel['Components']['Key'];
+                        $phpMussel['Components']['Interdependent'][] = $phpMussel['Components']['Key'];
                     }
                     $phpMussel['Components']['Outdated'][] = $phpMussel['Components']['Key'];
                     $phpMussel['Components']['ThisComponent']['RowClass'] = 'r';
@@ -1957,13 +1954,20 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates.html'))
     ) . $phpMussel['MenuToggle'];
 
-    /** Inject dependencies into update instructions for core package component. */
-    if (count($phpMussel['Components']['Dependencies'])) {
-        $phpMussel['FE']['FE_Content'] = str_replace('<input name="ID" type="hidden" value="phpMussel" />',
-            '<input name="ID[]" type="hidden" value="' .
-            implode('" /><input name="ID[]" type="hidden" value="', $phpMussel['Components']['Dependencies']) .
-            '" /><input name="ID[]" type="hidden" value="phpMussel" />',
-        $phpMussel['FE']['FE_Content']);
+    /** Inject interdependent components to each other's update instructions. */
+    if (count($phpMussel['Components']['Interdependent'])) {
+        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel');
+        $phpMussel['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
+            '" /><input name="ID[]" type="hidden" value="',
+            $phpMussel['Components']['Interdependent']
+        ) . '" />';
+        foreach ($phpMussel['Components']['Interdependent'] as $phpMussel['Components']['ThisInter']) {
+            $phpMussel['FE']['FE_Content'] = str_replace(
+                '<input name="ID" type="hidden" value="' . $phpMussel['Components']['ThisInter'] . '" />',
+                $phpMussel['Components']['AllInter'],
+                $phpMussel['FE']['FE_Content']
+            );
+        }
     }
 
     /** Send output. */

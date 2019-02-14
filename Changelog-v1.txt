@@ -24,6 +24,10 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 - [2019.02.11; Maikuolan]: Slightly refactored the loader.
 
+- [2019.02.14; Bug-fix; Maikuolan]: A mechanism on the front-end updates page
+  to ensure that interdependent components updated simultaneously sometimes
+  wouldn't trigger properly; Fixed.
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 
