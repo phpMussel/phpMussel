@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.14).
+ * This file: Front-end functions file (last modified: 2019.02.23).
  */
 
 /**
@@ -683,7 +683,6 @@ $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMusse
  * return int Warning level.
  */
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
-    $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
     if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.38') || substr($Version, 0, 2) === '6.' || (
