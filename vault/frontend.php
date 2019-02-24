@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.14).
+ * This file: Front-end handler (last modified: 2019.02.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -650,7 +650,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Build repository backup locations information. */
     $phpMussel['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/phpmussel">BitBucket</a>',
+        '<a href="https://bitbucket.org/Maikuolan/phpmussel">Bitbucket</a>',
         '<a href="https://sourceforge.net/projects/phpmussel/">SourceForge</a>'
     ]);
 
@@ -2610,14 +2610,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     }
 
     /** Statistics have been counted since... */
-    if (empty($phpMussel['Statistics']['Other-Since'])) {
-        $phpMussel['FE']['Other-Since'] = '<span class="s">-</span>';
-    } else {
-        $phpMussel['FE']['Other-Since'] = '<span class="s">' . $phpMussel['TimeFormat'](
+    $phpMussel['FE']['Other-Since'] = '<span class="s">' . (
+        empty($phpMussel['Statistics']['Other-Since']) ? '-' : $phpMussel['TimeFormat'](
             $phpMussel['Statistics']['Other-Since'],
             $phpMussel['Config']['general']['timeFormat']
-        ) . '</span>';
-    }
+        )
+    ) . '</span>';
 
     /** Fetch and process various statistics. */
     foreach ([

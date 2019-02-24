@@ -28,6 +28,8 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   to ensure that interdependent components updated simultaneously sometimes
   wouldn't trigger properly; Fixed.
 
+- [2019.02.24; Maikuolan]: Added a new vendor shorthand entry (Malware.Expert).
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 

@@ -10,13 +10,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: phpMussel shorthand data (last modified: 2019.02.03).
+# This file: phpMussel shorthand data (last modified: 2019.02.24).
 #
 # Warning: When modifying the information in this file, be careful to ensure
 # that any changes made won't conflict with the what phpMussel recognises as
 # its delimiters or as special characters (newlines, semicolons, colons, etc),
 # or else your signature files could break very badly, resulting in an
-# inability to properly detect anything or to numerous severe false positives.
+# inability to properly detect anything, or numerous severe false positives.
 # Generally (but not exclusively), "\x0?" (?H0), \x3A, \x3B, and null (\x00)
 # should be avoided.
 ##/
@@ -35,6 +35,7 @@ Vendor Shorthand:
   3: Spam404
   4: Cybercrime.Tracker
  9: phpMussel
+ 10: Malware.Expert
 Vendor Weight Options:
  9: Weighted
  15: Weighted
@@ -50,6 +51,7 @@ Vendor Search Patterns:
  hpHosts: "\x1a\x82"
  Spam404: "\x1a\x83"
  Cybercrime.Tracker: "\x1a\x84"
+ Malware.Expert: "\x1a[\xa0-\xaf]"
 Metadata Shorthand:
  1: Testfile
  2: FN
