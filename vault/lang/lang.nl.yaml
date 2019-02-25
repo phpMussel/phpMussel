@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2019.02.04).
+# This file: Dutch language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Ik begrijp niet dat bevel, sorry."
+cli_algo_not_supported: "Opgegeven algoritme wordt niet ondersteund."
 cli_failed_to_complete: "Mislukt om het voltooien te scannen"
 cli_is_not_a: "%s is geen bestand of map."
 cli_ln2: |
@@ -112,15 +113,12 @@ cli_commands: |
  q
  - Verlaten CLI.
  - Aliassen: quit, exit.
- md5_file
- - Genereer MD5 signatures van bestanden [Syntaxis: md5_file bestandsnaam].
- - Alias: m.
- sha1_file
- - Genereer SHA1 signatures van bestanden [Syntaxis: sha1_file bestandsnaam].
- md5
- - Genereer MD5 signature van string [Syntaxis: md5 string].
- sha1
- - Genereer SHA1 signature van string [Syntaxis: sha1 string].
+ hash_file:%
+ - Genereer hash signatures van bestanden [Syntaxis: hash_file:algo bestandsnaam].
+ hash:%
+ - Genereer hash signature van string [Syntaxis: hash:algo string].
+ algo
+ - Maak een lijst van alle ondersteunde algoritmen.
  hex_encode
  - Converteren van binaire string naar hexadecimaal
    [Syntaxis: hex_encode string].

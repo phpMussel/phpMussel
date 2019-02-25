@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.02.04).
+# This file: Vietnamese language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -350,19 +350,42 @@ warning_php_2: "Phiên bản PHP của bạn rất dễ bị tổn thương! Đa
 warning_signatures_1: "Không có tập tin chữ ký nào đang hoạt động!"
 
 info_some_useful_links: |
- Một số liên kết hữu ích:<ul>
-       <li><a href="https://github.com/phpMussel/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
-       <li><a href="https://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
-       <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
-       <li><a href="https://www.phishtank.com/">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
-       <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
-       <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-       <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>
-       <li><a href="https://malwaretips.com/">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
+ Một số liên kết hữu ích:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho phpMussel.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/phpMussel/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
+           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Bổ sung khác nhau.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho ClamAV.</span>
+         <ul class="comSub">
+           <li><a href="https://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
+           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li><a href="https://malware.expert/">Malware.Expert</a> – Cung cấp chữ ký bổ sung cho ClamAV và quy tắc bổ sung cho ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Nhóm, diễn đàn, cộng đồng, vv.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://malwaretips.com/">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
+         <ul class="comSub">
+           <li><a href="https://www.phishtank.com/">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
+           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
+           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Tài nguyên thông tin và học tập.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

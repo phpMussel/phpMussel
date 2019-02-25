@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2019.02.04).
+# This file: Bangla language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: "। "
 _fullstop_final: "।"
 bad_command: "আমি এই কমান্ড বুঝতে পারছিনা, দুঃখিত।"
+cli_algo_not_supported: "নির্দিষ্ট অ্যালগরিদম সমর্থিত নয়।"
 cli_failed_to_complete: "স্ক্যানিং প্রক্রিয়া সম্পন্ন করতে ব্যর্থ হয়েছে"
 cli_is_not_a: "%s কোন ফাইল বা ডিরেক্টরি নয়।"
 cli_ln2: |
@@ -112,15 +113,12 @@ cli_commands: |
  q
  - CLI ছাড়ুন।
  - ওরফে: quit, exit।
- md5_file
- - ফাইল থেকে MD5 স্বাক্ষর তৈরি করুন [বাক্য গঠন: md5_file filename]।
- - ওরফে: m।
- sha1_file
- - ফাইল থেকে SHA1 স্বাক্ষর তৈরি করুন [বাক্য গঠন: sha1_file filename]।
- md5
- - স্ট্রিং থেকে MD5 স্বাক্ষর তৈরি করুন [বাক্য গঠন: md5 স্ট্রিং]।
- sha1
- - স্ট্রিং থেকে SHA1 স্বাক্ষর তৈরি করুন [বাক্য গঠন: sha1 স্ট্রিং]।
+ hash_file:%
+ - ফাইল থেকে হ্যাশ স্বাক্ষর তৈরি করুন [বাক্য গঠন: hash_file:algo filename]।
+ hash:%
+ - স্ট্রিং থেকে হ্যাশ স্বাক্ষর তৈরি করুন [বাক্য গঠন: hash:algo string]।
+ algo
+ - সমস্ত সমর্থিত আলগোরিদিম তালিকা করে।
  hex_encode
  - বাইনারি স্ট্রিং থেকে হেক্সাডেসিমাল রূপান্তর করুন [বাক্য গঠন: hex_encode স্ট্রিং]।
  - ওরফে: x।

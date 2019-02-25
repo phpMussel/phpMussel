@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2019.02.04).
+# This file: English language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -36,11 +36,12 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "I don't understand that command, sorry."
+cli_algo_not_supported: "Specified algorithm isn't supported."
 cli_failed_to_complete: "Failed to complete scanning process"
 cli_is_not_a: "%s is not a file or directory."
 cli_ln2: |
  Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
+ viruses, malware, and other threats within files uploaded to your system
  wherever the script is hooked, based on the signatures of ClamAV and
  others.
                                      ~ ~ ~
@@ -118,15 +119,12 @@ cli_commands: |
  q
  - Quit CLI.
  - Aliases: quit, exit.
- md5_file
- - Generate MD5 signatures from files [Syntax: md5_file filename].
- - Alias: m.
- sha1_file
- - Generate SHA1 signatures from files [Syntax: sha1_file filename].
- md5
- - Generate MD5 signature from string [Syntax: md5 string].
- sha1
- - Generate SHA1 signature from string [Syntax: sha1 string].
+ hash_file:%
+ - Generate hash signatures from files [Syntax: hash_file:algo filename].
+ hash:%
+ - Generate hash signature from string [Syntax: hash:algo string].
+ algo
+ - List all supported algorithms.
  hex_encode
  - Convert binary string to hexadecimal [Syntax: hex_encode string].
  - Alias: x.

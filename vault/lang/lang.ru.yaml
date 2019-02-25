@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2019.02.04).
+# This file: Russian language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Извините, команда непонятна."
+cli_algo_not_supported: "Указанный алгоритм не поддерживается."
 cli_failed_to_complete: "Не удалось завершить процесс сканирования"
 cli_is_not_a: "%s не файл или каталог."
 cli_ln2: |
@@ -91,7 +92,7 @@ scan_missing_filename: "Отсутствует имя файла"
 scan_no_problems_found: "Проблемы не найдены."
 scan_not_archive: "Не удалось (пуст или не архив)!"
 scan_reading: "Чтение"
-scan_signature_file_missing: "Отсутствует подпись файла"
+scan_signature_file_missing: "Отсутствует сигнатур файла"
 scan_tampering: "Обнаружена потенциально опасная модификация файла"
 scan_unauthorised_upload: "Обнаружены несанкционированные загрузки манипуляции файла"
 scan_unauthorised_upload_or_misconfig: "Обнаружены несанкционированное загрузки манипуляции файла или неправильная конфигурация! "
@@ -111,15 +112,12 @@ cli_commands: |
  q
  - Прекратить CLI.
  - Псевдонимы: quit, exit.
- md5_file
- - Создание MD5 подписи от файлы [Синтаксис: md5_file имя-файла].
- - Псевдоним: m.
- sha1_file
- - Создание SHA1 подписи от файлы [Синтаксис: sha1_file имя-файла].
- md5
- - Создание MD5 подпись от данные [Синтаксис: md5 данные].
- sha1
- - Создание SHA1 подпись от данные [Синтаксис: sha1 данные].
+ hash_file:%
+ - Создание хеш сигнатуры от файлы [Синтаксис: hash_file:алго имя-файла].
+ hash:%
+ - Создание хеш сигнатур от данные [Синтаксис: hash:алго данные].
+ algo
+ - Список всех поддерживаемых алгоритмов.
  hex_encode
  - Преобразует двоичные данные из шестнадцатеричной
    [Синтаксис: hex_encode данные].

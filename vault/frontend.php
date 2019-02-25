@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.24).
+ * This file: Front-end handler (last modified: 2019.02.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -764,7 +764,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_home.html'))
-    );
+    ) . $phpMussel['MenuToggle'];
 
     /** Send output. */
     echo $phpMussel['SendOutput']();

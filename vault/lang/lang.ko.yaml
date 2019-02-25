@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2019.02.04).
+# This file: Korean language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "미안 해요, 명령을 이해할 수 없습니다."
+cli_algo_not_supported: "지정된 알고리즘은 지원되지 않습니다."
 cli_failed_to_complete: "검색을 완료 할 수 없습니다"
 cli_is_not_a: "%s는 파일 또는 디렉토리가 아닙니다."
 cli_ln2: |
@@ -108,15 +109,12 @@ cli_commands: |
  q
  - CLI 종료.
  - 별칭 : quit, exit.
- md5_file
- - 파일 MD5 서명을 작성 [구문 : md5_file 파일].
- - 별칭 : m.
- sha1_file
- - 파일 SHA1 서명을 작성 [구문 : sha1_file 파일].
- md5
- - 문자열에서 MD5 서명을 작성 [구문 : md5 문자열].
- sha1
- - 문자열에서 SHA1 서명을 작성 [구문 : sha1 문자열].
+ hash_file:%
+ - 파일 해시 서명을 작성 [구문 : hash_file:연산 파일].
+ hash:%
+ - 문자열에서 해시 서명을 작성 [구문 : hash:연산 문자열].
+ algo
+ - 지원되는 모든 알고리즘을 나열하십시오.
  hex_encode
  - 2 진수 문자열을 16 진수 문자열로 변환 [구문 : hex_encode 문자열].
  - 별칭 : x.

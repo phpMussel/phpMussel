@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.02.04).
+# This file: Urdu language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -350,19 +350,42 @@ warning_php_2: "آپ کے PHP ورژن شدید خطرناک ہے! اپ ڈیٹ �
 warning_signatures_1: "کوئی دستخط فائلیں فعال نہیں ہیں!"
 
 info_some_useful_links: |
- کچھ مفید لنکس:<ul>
-       <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-       <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
-       <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
-       <li><a href="https://www.phishtank.com/" dir="ltr">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-       <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-       <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
-       <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="https://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
-       <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
-       <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
+ کچھ مفید لنکس:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">phpMussel کے لئے اوزار، وسائل، وغیرہ.</span>
+         <ul class="comSub">
+           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – ClamAV دستخط ڈیٹا بیس کا استعمال کرتے ہوئے phpMussel دستخط فائلوں کی تخلیق کرتا ہے.</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/extras">phpMussel/extras</a> – مختلف اضافی.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">ClamAV کے لئے اوزار، وسائل، وغیرہ.</span>
+         <ul class="comSub">
+           <li><a dir="ltr" href="https://www.clamav.net/">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
+           <li><a dir="ltr" href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
+           <li><a dir="ltr" href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
+           <li><a dir="ltr" href="https://malware.expert/">Malware.Expert</a> – ClamAV کے لئے اضافی دستخط اور ModSecurity کے لئے اضافی قواعد پیش کرتا ہے.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">گروپ، فورم، کمیونٹی، وغیرہ.</span>
+         <ul class="comSub">
+           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+           <li><a dir="ltr" href="https://malwaretips.com/">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">دیگر مفید اوزار، وسائل، خدمات، وغیرہ.</span>
+         <ul class="comSub">
+           <li><a dir="ltr" href="https://www.phishtank.com/">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
+           <li><a dir="ltr" href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
+           <li><a dir="ltr" href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="https://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
+           <li><a dir="ltr" href="https://www.malwarebytes.com/">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">معلومات اور سیکھنے کے وسائل.</span>
+         <ul class="comSub">
+           <li><a dir="ltr" href="https://php.earth/">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

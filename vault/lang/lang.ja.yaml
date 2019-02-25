@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2019.02.04).
+# This file: Japanese language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s！"
 _fullstop: "。"
 _fullstop_final: "。"
 bad_command: "すみませんが、​コマンドが理解できません。"
+cli_algo_not_supported: "指定されたアルゴリズムはサポートされていません。"
 cli_failed_to_complete: "スキャンを完了できませんでした"
 cli_is_not_a: "%sはファイルでもディレクトリでもありません。"
 cli_ln2: |
@@ -109,15 +110,12 @@ cli_commands: |
  q
  - ＣＬＩ終了。
  - エイリアス：quit，exit。
- md5_file
- - ファイルからＭＤ５シグネチャを作成 「構文: md5_file ファイル名」。
- - エイリアス：​m。
- sha1_file
- - ファイルからＳＨＡ１シグネチャを作成 「構文: sha1_file ファイル名」。
- md5
- - 文字列からＭＤ５シグネチャを作成 「構文: md5 文字列」。
- sha1
- - 文字列からＳＨＡ１シグネチャを作成 「構文: sha1 文字列」。
+ hash_file:%
+ - ファイルからハッシュ・シグネチャを作成 「構文: hash_file:アルゴ ファイル名」。
+ hash:%
+ - 文字列からハッシュ・シグネチャを作成 「構文: hash:アルゴ 文字列」。
+ algo
+ - サポートされているすべてのアルゴリズムを一覧表示します。
  hex_encode
  - ２進法文字列を１６進法文字列に変換 「構文: hex_encode 文字列」。
  - エイリアス：​x。

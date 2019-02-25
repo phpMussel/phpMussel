@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2019.02.04).
+# This file: Spanish language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "¡%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "No entiendo ese comando, lo siento."
+cli_algo_not_supported: "El algoritmo especificado no es soportado."
 cli_failed_to_complete: "No se pudo completar el proceso de escaneo"
 cli_is_not_a: "%s no es un archivo o directorio."
 cli_ln2: |
@@ -111,15 +112,12 @@ cli_commands: |
  q
  - Dejar CLI.
  - Alias: quit, exit.
- md5_file
- - Generar firmas MD5 de archivos [Sintaxis: md5_file archivo].
- - Alias: m.
- sha1_file
- - Generar firmas SHA1 de archivos [Sintaxis: sha1_file archivo].
- md5
- - Generar firma MD5 de string [Sintaxis: md5 string].
- sha1
- - Generar firma SHA1 de string [Sintaxis: sha1 string].
+ hash_file:%
+ - Generar firmas hash de archivos [Sintaxis: hash_file:algo archivo].
+ hash:%
+ - Generar firma hash de string [Sintaxis: hash:algo string].
+ algo
+ - Lista todos los algoritmos soportados.
  hex_encode
  - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
  - Alias: x.

@@ -30,6 +30,20 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 - [2019.02.24; Maikuolan]: Added a new vendor shorthand entry (Malware.Expert).
 
+- [2019.02.24; Maikuolan]: Added SHA1 and SHA256 support to the code for
+  processing hash signatures (there wasn't anything other than MD5 signatures
+  to process prior to now, so there wasn't any need to add support for other
+  hash algos; some SHA1 and SHA256 hash signatures were recently added to some
+  signatures files though, warranting that this support now be added).
+
+- [2019.02.25; Maikuolan]: Reorganised the "some useful links" list on the
+  front-end homepage a little (should look a little nicer now). Added a generic
+  "hash" command to CLI-mode in favour of the various former individual hash
+  commands, in order to be able to properly leverage all algos available to PHP
+  at any time without the need to implement support for specific algos in the
+  future (these various former individual hash commands will still work, but
+  should be considered deprecated, and will be dropped when v2 is released).
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 

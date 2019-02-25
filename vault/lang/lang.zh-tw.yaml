@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2019.02.04).
+# This file: Chinese (traditional) language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s！"
 _fullstop: "。"
 _fullstop_final: "。"
 bad_command: "我不明白的命令，​對不起。"
+cli_algo_not_supported: "指定的算法不支持。"
 cli_failed_to_complete: "完成掃描過程失敗"
 cli_is_not_a: "%s不是文件或文件夾。"
 cli_ln2: |
@@ -107,15 +108,12 @@ cli_commands: |
  q
  - 戒菸CLI模式。
  - 別名：quit，​exit。
- md5_file
- - 生成MD5簽名從文件​[語法：md5_file 文件名]。
- - 別名：m。
- sha1_file
- - 生成SHA1簽名從文件​[語法：sha1_file 文件名]。
- md5
- - 生成MD5簽名從數據​[語法：md5 數據]。
- sha1
- - 生成SHA1簽名從數據​[語法：sha1 數據]。
+ hash_file:%
+ - 生成哈希簽名從文件​[語法：hash_file:算法 文件名]。
+ hash:%
+ - 生成哈希簽名從數據​[語法：hash:算法 數據]。
+ algo
+ - 列出所有支持的算法。
  hex_encode
  - 兌換從二進制數據至十六進制​[語法：hex_encode 數據]。
  - 別名：x。

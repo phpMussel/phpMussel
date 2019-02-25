@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.02.04).
+# This file: Indonesian language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Saya tidak mengerti perintah itu, maaf."
+cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
@@ -112,15 +113,12 @@ cli_commands: |
  q
  - Berhenti CLI.
  - Alias: quit, exit.
- md5_file
- - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file file].
- - Alias: m.
- sha1_file
- - Menghasilkan tanda tangan SHA1 dari file [Sintaksis: sha1_file file].
- md5
- - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5 string].
- sha1
- - Menghasilkan tanda tangan SHA1 dari string [Sintaksis: sha1 string].
+ hash_file:%
+ - Menghasilkan tanda tangan hash dari file [Sintaksis: hash_file:algo file].
+ hash:%
+ - Menghasilkan tanda tangan hash dari string [Sintaksis: hash:algo string].
+ algo
+ - Daftar semua algoritma yang didukung.
  hex_encode
  - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
  - Alias: x.

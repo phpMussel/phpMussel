@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.02.04).
+# This file: Turkish language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -343,7 +343,7 @@ tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıy
 tip_siginfo: "Merhaba, {username}.<br />İmza bilgisi sayfası, şu anda aktif imzaların kaynakları ve türleri hakkında bazı temel bilgiler sağlar."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
-tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
+tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 tip_upload_test: "Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir."
 title_login: "Giriş"
 warning: "Uyarılar:"
@@ -352,19 +352,42 @@ warning_php_2: "PHP sürümünüz ağır savunmasız! Güncelleme önerilir!"
 warning_signatures_1: "Hiçbir imza dosyası aktif değil!"
 
 info_some_useful_links: |
- Bazı kullanışlı bağlantılar:<ul>
-       <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb.).</li>
-       <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
-       <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
-       <li><a href="https://www.phishtank.com/">PhishTank</a> – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-       <li><a href="https://www.virustotal.com/">VirusTotal</a> – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
-       <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="https://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
-       <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
-       <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb.) güvenli/güvensiz sürümlerini listeler.</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
+ Bazı kullanışlı bağlantılar:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">phpMussel için araçlar, kaynaklar, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
+           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
+           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Çeşitli ekstralar.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">ClamAV için araçlar, kaynaklar, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
+           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li><a href="https://malware.expert/">Malware.Expert</a> – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://www.phishtank.com/">PhishTank</a> – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
+           <li><a href="https://www.virustotal.com/">VirusTotal</a> – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
+           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="https://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
+           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb) güvenli/güvensiz sürümlerini listeler.</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

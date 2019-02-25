@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.02.04).
+# This file: Turkish language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Bu komutu anlamıyorum, üzgünüm."
+cli_algo_not_supported: "Belirtilen algoritma desteklenmiyor."
 cli_failed_to_complete: "Tarama işlemini tamamlama başarısız"
 cli_is_not_a: "%s bir dosya veya dizin değil."
 cli_ln2: |
@@ -112,15 +113,12 @@ cli_commands: |
  q
  - CLI'den çıkın.
  - Takma adları: quit, exit.
- md5_file
- - Dosyalardan MD5 imzaları oluştur [Sözdizimi: md5_file dosya-adı].
- - Takma ad: m.
- sha1_file
- - Dosyalardan SHA1 imzaları oluştur [Sözdizimi: sha1_file dosya-adı].
- md5
- - Dizeden MD5 imzası üret [Sözdizimi: md5 dizgesi].
- sha1
- - Dizeden SHA1 imzası üret [Sözdizimi: sha1 dizgesi].
+ hash_file:%
+ - Dosyalardan karma imzaları oluştur [Sözdizimi: hash_file:algo dosya-adı].
+ hash:%
+ - Dizeden karma imzası üret [Sözdizimi: hash:algo dizgesi].
+ algo
+ - Tüm desteklenen algoritmaları listele.
  hex_encode
  - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
  - Takma ad: x.

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2019.02.04).
+# This file: Arabic language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "أنا لا أفهم هذا الأمر، آسف."
+cli_algo_not_supported: "الخوارزمية المحددة غير مدعومة."
 cli_failed_to_complete: "فشل في إكمال عملية المسح."
 cli_is_not_a: "%s ليس ملف أو مجلد."
 cli_ln2: |
@@ -111,15 +112,12 @@ cli_commands: |
  q
  - CLI للخروج.
  - البديل: quit, exit.
- md5_file
- - خلق التوقيعات MD5 من ملفات [بناء الجملة: md5_file اسم الملف].
- - البديل: m.
- sha1_file
- - خلق التوقيعات SHA1 من ملفات [بناء الجملة: sha1_file اسم الملف].
- md5
- - خلق التوقيعات MD5 من النص [بناء الجملة: md5 نص].
- sha1
- - خلق التوقيعات SHA1 من النص [بناء الجملة: sha1 نص].
+ hash_file:%
+ - خلق التوقيعات التجزئة من ملفات [بناء الجملة: hash_file:algo filename].
+ hash:%
+ - خلق التوقيعات التجزئة من النص [بناء الجملة: hash:algo string].
+ algo
+ - قائمة جميع الخوارزميات المدعومة.
  hex_encode
  - تحول النص ثنائي إلى سداسي عشري [بناء الجملة: hex_encode نص].
  - البديل: x.

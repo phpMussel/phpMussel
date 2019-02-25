@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2019.02.04).
+# This file: Urdu language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "میں نے اس حکم کو نہیں سمجھتے افسوس."
+cli_algo_not_supported: "مخصوص الگورتھم کی حمایت نہیں کی جاتی ہے."
 cli_failed_to_complete: "سکیننگ کے عمل کو مکمل کرنے میں ناکام"
 cli_is_not_a: "%s یک فائل یا ڈائریکٹری نہیں ہے."
 cli_ln2: |
@@ -113,15 +114,12 @@ cli_commands: |
  q
  - CLI چھوڑو.
  - عرفیتیں: quit, exit.
- md5_file
- - فائلوں سے MD5 دستخط بنائیں [نحو: md5_file فائل کا نام].
- - عرف: m.
- sha1_file
- - فائلوں سے SHA1 دستخط بنائیں [نحو: sha1_file فائل کا نام].
- md5
- - سٹرنگ سے MD5 کے دستخط بنائیں [نحو: md5 سٹرنگ].
- sha1
- - سٹرنگ سے SHA1 کے دستخط بنائیں [نحو: sha1 سٹرنگ].
+ hash_file:%
+ - فائلوں سے ہیش دستخط بنائیں [نحو: hash_file:algo filename].
+ hash:%
+ - سٹرنگ سے ہیش کے دستخط بنائیں [نحو: hash:algo string].
+ algo
+ - تمام معاون الگورتھم کی فہرست کریں.
  hex_encode
  - شش اعشاری کو بائنری سٹرنگ میں تبدیل [نحو: hex_encode سٹرنگ].
  - عرف: x.

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2019.02.04).
+# This file: Hindi language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: "। "
 _fullstop_final: "।"
 bad_command: "मुझे यह आज्ञा नहीं समझती, खेद है।"
+cli_algo_not_supported: "निर्दिष्ट एल्गोरिथ्म समर्थित नहीं है।"
 cli_failed_to_complete: "स्कैनिंग प्रक्रिया को पूरा करने में विफल"
 cli_is_not_a: "%s एक फाइल या निर्देशिका नहीं है।"
 cli_ln2: |
@@ -112,15 +113,12 @@ cli_commands: |
  q
  - CLI से बाहर निकलें।
  - उपनाम: quit, exit।
- md5_file
- - फाइलों से MD5 हस्ताक्षर उत्पन्न करें [सिंटेक्स: md5_file फाइल-का-नाम]।
- - उपनाम: m।
- sha1_file
- - फाइलों से SHA1 हस्ताक्षर उत्पन्न करें [सिंटेक्स: sha1_file फाइल-का-नाम]।
- md5
- - स्ट्रिंग से MD5 हस्ताक्षर उत्पन्न करें [सिंटेक्स: md5 स्ट्रिंग]।
- sha1
- - स्ट्रिंग से SHA1 हस्ताक्षर उत्पन्न करें [सिंटेक्स: sha1 स्ट्रिंग]।
+ hash_file:%
+ - फाइलों से हैश हस्ताक्षर उत्पन्न करें [सिंटेक्स: hash_file:algo फाइल-का-नाम]।
+ hash:%
+ - स्ट्रिंग से हैश हस्ताक्षर उत्पन्न करें [सिंटेक्स: hash:algo स्ट्रिंग]।
+ algo
+ - सभी समर्थित एल्गोरिदम की सूची बनाएं।
  hex_encode
  - बाइनरी स्ट्रिंग को हेक्साडेसिमल में कनवर्ट करें [सिंटेक्स: hex_encode स्ट्रिंग]।
  - उपनाम: x।

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2019.02.04).
+# This file: Italian language data (last modified: 2019.02.25).
 ##/
 
 # Language settings.
@@ -30,6 +30,7 @@ _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Non capisco quel comando, mi dispiace."
+cli_algo_not_supported: "L'algoritmo specificato non è supportato."
 cli_failed_to_complete: "Completamento del processo di controllo fallito"
 cli_is_not_a: "%s non è né un file né una cartella."
 cli_ln2: |
@@ -111,15 +112,12 @@ cli_commands: |
  q
  - Esci dall'interfaccia a riga di comando.
  - Alias: quit, exit.
- md5_file
- - Genera le firme MD5 da file [Sintassi: md5_file nomefile].
- - Alias: m.
- sha1_file
- - Genera le firme SHA1 da file [Sintassi: sha1_file nomefile].
- md5
- - Genera le firme md5 da stringa [Sintassi: md5 stringa].
- sha1
- - Genera le firme SHA1 da stringa [Sintassi: sha1 stringa].
+ hash_file:%
+ - Genera le firme hash da file [Sintassi: hash_file:algo nomefile].
+ hash:%
+ - Genera le firme hash da stringa [Sintassi: hash:algo stringa].
+ algo
+ - Elenca tutti gli algoritmi supportati.
  hex_encode
  - Converti la stringa binaria in esadecimale [Sintassi: hex_encode stringa].
  - Alias: x.
