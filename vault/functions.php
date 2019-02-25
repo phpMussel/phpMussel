@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.02.24).
+ * This file: Functions file (last modified: 2019.02.25).
  */
 
 /**
@@ -4780,23 +4780,6 @@ $phpMussel['DirectoryRecursiveList'] = function ($Base) {
         $Arr[] = substr($Item, $Offset);
     }
     return $Arr;
-};
-
-/**
- * Internal aliases for common hash functions (used by CLI).
- *
- * @param string $Alias The alias used.
- * @param string $Data The data to be hashed.
- * @return string The output hash.
- */
-$phpMussel['HashAlias'] = function ($Alias, $Data) {
-    if ($Alias === 'm' || $Alias === 'md5' || $Alias === 'md5_file') {
-        return md5($Data);
-    }
-    if ($Alias === 'sha1' || $Alias === 'sha1_file') {
-        return sha1($Data);
-    }
-    return '';
 };
 
 /**
