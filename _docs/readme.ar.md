@@ -24,20 +24,20 @@
 
 <div dir="rtl">شكراً لك على إستخدام phpMussel، المبرمج بلغة PHP للكشف عن ملفات الإختراق والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على توقيعات ClamAV وغيرها.<br /><br /></div>
 
-<div dir="rtl">حقوق النشر محفوظة ل phpMussel لعام ٢٠١٣ وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
+<div dir="rtl">حقوق النشر محفوظة ل <a dir="ltr" href="https://phpmussel.github.io/">PHPMUSSEL</a> لعام ٢٠١٣ وما بعده تحت رخصة GNU/GPLv2 للمبرمج <a dir="ltr" href="https://github.com/Maikuolan">Caleb M (Maikuolan)</a>.<br /><br /></div>
 
 <div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف "LICENSE.txt" وللمزيد من المعلومات:</div>
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-<div dir="rtl">شكر خاص ل<a href="https://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً.<br /><br /></div>
+<div dir="rtl">شكر خاص ل<a dir="ltr" href="https://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً.<br /><br /></div>
 
-<div dir="rtl">شكر خاص أيضاً ل SourceForge و GitHub لإستضافتهم ملفات المشروع، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل: <a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="https://www.phishtank.com/">PhishTank</a> و <a href="https://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت.<br /><br /></div>
+<div dir="rtl">شكر خاص أيضاً ل SourceForge و Bitbucket و GitHub لإستضافتهم ملفات المشروع، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل: <a dir="ltr" href="https://www.phishtank.com/">PhishTank</a> و <a dir="ltr" href="https://nlnetlabs.nl/">NLNetLabs</a> و <a dir="ltr" href="https://malware.expert/">Malware.Expert</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت.<br /><br /></div>
 
 <div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من:</div>
-
+- [GitHub](https://github.com/phpMussel/phpMussel).
+- [Bitbucket](https://bitbucket.org/Maikuolan/phpmussel).
 - [SourceForge](https://sourceforge.net/projects/phpmussel/).
-- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -116,7 +116,7 @@
 
 ##### <div dir="rtl">٢.٣.٣ تحميل التوقيعات من <code dir="ltr">"phpMussel/Signatures"</code> وتثبيت يدويا.</div>
 
-<div dir="rtl">أولا، اذهب إلى <a href="https://github.com/phpMussel/Signatures" dir="ltr">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل <code dir="ltr">/vault/signatures</code> لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه <code dir="ltr">Active</code> في تهيئة phpMussel لتنشيطها.<br /><br /></div>
+<div dir="rtl">أولا، اذهب إلى <a dir="ltr" href="https://github.com/phpMussel/Signatures">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل <code dir="ltr">/vault/signatures</code> لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه <code dir="ltr">Active</code> في تهيئة phpMussel لتنشيطها.<br /><br /></div>
 
 ---
 
@@ -1577,4 +1577,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 فبراير 2019 (2019.02.06).</div>
+<div dir="rtl">آخر تحديث: 23 فبراير 2019 (2019.02.23).</div>

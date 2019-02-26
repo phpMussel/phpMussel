@@ -24,20 +24,20 @@
 
 <div dir="rtl">phpMussel، ایک PHP کی سکرپٹ کو جہاں کہیں سکرپٹ جھکا ہے، ClamAV اور دوسروں کے دستخط کی بنیاد پر آپ کے سسٹم پر اپ لوڈ کی فائلوں کے اندر اندر ٹروجن، وائرس، میلویئر اور دیگر خطرات کا پتہ لگانے کے لئے ڈیزائن کیا استعمال کرنے کے لئے آپ کا شکریہ.<br /><br /></div>
 
-<div dir="rtl">PHPMUSSEL کاپی رائٹ 2013 اور Caleb M (Maikuolan) کی طرف GNU/GPLv2 اجازت سے آگے.<br /><br /></div>
+<div dir="rtl"><a dir="ltr" href="https://phpmussel.github.io/">PHPMUSSEL</a> کاپی رائٹ 2013 اور <a dir="ltr" href="https://github.com/Maikuolan">Caleb M (Maikuolan)</a> کی طرف GNU/GPLv2 اجازت سے آگے.<br /><br /></div>
 
 <div dir="rtl">یہ سکرپٹ مفت سافٹ ویئر ہے. آپ اسے دوبارہ تقسیم اور/یا ترمیم کے طور پر مفت سافٹ ویئر فاؤنڈیشن کی جانب سے شائع GNU جنرل پبلک لائسنس کی شرائط کے تحت اس پر نظر ثانی کر سکتے ہیں؛ یا تو لائسنس کے ورژن 2، یا (آپ کے اختیارات پر) کسی بھی جدید ورژن. یہ سکرپٹ یہ مفید ہو جائے گا، لیکن کسی بھی وارنٹی کے بغیر امید میں تقسیم کیا جاتا ہے؛ کسی خاص مقصد کے لئے قابل فروختگی یا فٹنس کی بھی تقاضا وارنٹی کے بغیر. مزید تفصیلات کے لئے GNU جنرل پبلک لائسنس، "LICENSE.txt" فائل اور سے بھی دستیاب میں واقع دیکھیں:</div>
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-<div dir="rtl">کرنے کے لئے خصوصی شکریہ ادا کیا. <a href="https://www.clamav.net/">ClamAV</a> دونوں منصوبے پریرتا کے لئے اور اس سکرپٹ کا استعمال ہے کہ دستخط، اسکرپٹ کا امکان موجود نہیں کریں گے، جس کے بغیر، یا سب کے لئے، بہت محدود قدر ہو گی.<br /><br /></div>
+<div dir="rtl">کرنے کے لئے خصوصی شکریہ ادا کیا. <a dir="ltr" href="https://www.clamav.net/">ClamAV</a> دونوں منصوبے پریرتا کے لئے اور اس سکرپٹ کا استعمال ہے کہ دستخط، اسکرپٹ کا امکان موجود نہیں کریں گے، جس کے بغیر، یا سب کے لئے، بہت محدود قدر ہو گی.<br /><br /></div>
 
-SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی ذرائع کے phpMussel طرف سے استعمال کیا دستخطوں کی ایک بڑی تعداد کی: <a href="https://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="https://www.phishtank.com/">PhishTank</a>، <a href="https://nlnetlabs.nl/">NLNetLabs</a> اور دوسروں کو، اور یہ کہ میں نے ذکر کرنا وگرنہ بھول گئے ہیں، اور اسکرپٹ استعمال کرنے کے لئے، کسی اور کو اس منصوبے کی حمایت تمام والوں کے لئے خصوصی شکریہ.<br /><br /></div>
+SourceForge اور Bitbucket اور GitHub کے لئے خصوصی شکریہ، اور اضافی ذرائع کے phpMussel طرف سے استعمال کیا دستخطوں کی ایک بڑی تعداد کی: <a dir="ltr" href="https://www.phishtank.com/">PhishTank</a>، <a dir="ltr" href="https://nlnetlabs.nl/">NLNetLabs</a>، <a dir="ltr" href="https://malware.expert/">Malware.Expert</a> اور دوسروں کو، اور یہ کہ میں نے ذکر کرنا وگرنہ بھول گئے ہیں، اور اسکرپٹ استعمال کرنے کے لئے، کسی اور کو اس منصوبے کی حمایت تمام والوں کے لئے خصوصی شکریہ.<br /><br /></div>
 
 <div dir="rtl">یہ دستاویز اور اس کے متعلقہ پیکجوں کے لئے مفت سے ڈاؤن لوڈ کیا جا سکتا ہے:</div>
-
+- [GitHub](https://github.com/phpMussel/phpMussel).
+- [Bitbucket](https://bitbucket.org/Maikuolan/phpmussel).
 - [SourceForge](https://sourceforge.net/projects/phpmussel/).
-- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -116,7 +116,7 @@ SourceForge اور GitHub کے لئے خصوصی شکریہ، اور اضافی 
 
 ##### <div dir="rtl">٢.٣.٣ <code dir="ltr">"phpMussel/Signatures"</code> سے دستخط ڈاؤن لوڈ کریں اور دستی طور پر انسٹال کریں.</div>
 
-<div dir="rtl">سب سے پہلے، <a href="https://github.com/phpMussel/Signatures" dir="ltr">phpMussel/Signatures</a> پر جائیں. ذخیرہ پر مشتمل مختلف GZ کمپریسڈ دستخط فائلیں. آپ کی ضرورت فائلوں کو ڈاؤن لوڈ کریں، ان کو ڈسپوز کریں، اور ڈسپلے شدہ فائلوں کو <code dir="ltr">/vault/signatures</code> ڈائریکٹری میں ان کو نصب کرنے کیلئے کاپی کریں. کاپی شدہ فائلوں کے ناموں کو ان کی چالو کرنے کے لئے آپ کے phpMussel ترتیب میں <code dir="ltr">Active</code> ڈائریکٹری میں درج کریں.<br /><br /></div>
+<div dir="rtl">سب سے پہلے، <a dir="ltr" href="https://github.com/phpMussel/Signatures">phpMussel/Signatures</a> پر جائیں. ذخیرہ پر مشتمل مختلف GZ کمپریسڈ دستخط فائلیں. آپ کی ضرورت فائلوں کو ڈاؤن لوڈ کریں، ان کو ڈسپوز کریں، اور ڈسپلے شدہ فائلوں کو <code dir="ltr">/vault/signatures</code> ڈائریکٹری میں ان کو نصب کرنے کیلئے کاپی کریں. کاپی شدہ فائلوں کے ناموں کو ان کی چالو کرنے کے لئے آپ کے phpMussel ترتیب میں <code dir="ltr">Active</code> ڈائریکٹری میں درج کریں.<br /><br /></div>
 
 ---
 
@@ -1430,13 +1430,13 @@ A scan log entry typically includes the following information:
  <li><code dir="ltr">scan_log_serialized</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-When these directives are left empty, this type of logging will remain disabled.
+<div dir="rtl">جب یہ ہدایات خالی رہیں تو، اس قسم کی ریکارڈنگ غیر فعال رہیں گے.<br /><br /></div>
 
 ##### <div dir="rtl">١١.٣.١ بلاک اپ لوڈز لاگ<br /><br /></div>
 
-When enabled in the package configuration, phpMussel keeps logs of the uploads that have been blocked.
+<div dir="rtl">کی ترتیب فعال ہونے پر، phpMussel اپ لوڈ کی ریکارڈز کو برقرار رکھتا ہے جو بلاک کردی گئی ہیں.<br /><br /></div>
 
-Entries to a "scan kills" logfile typically look something like this (as an example):
+<div dir="rtl">یہ ریکارڈ عام طور پر اس طرح نظر آتے ہیں:<br /><br /></div>
 
 <pre dir="rtl">
 تاریخ: <code dir="ltr">Mon, 21 May 2018 00:47:56 +0800</code>
@@ -1465,9 +1465,9 @@ IP پتہ: <code dir="ltr">127.0.0.1</code>
 
 ##### <div dir="rtl">١١.٣.٢ سامنے کے آخر لاگ<br /><br /></div>
 
-This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
+<div dir="rtl">یہ سامنے کے آخر میں لاگ ان کرنے کی کوشش کرنے سے متعلق ہے. جب سامنے کے آخر میں رسائی کو فعال کیا جاتا ہے، جب صارف کو سامنے کے آخر میں لاگ ان کرنے کی کوشش ہوتی ہے، تو ریکارڈ کیا جاتا ہے.<br /><br /></div>
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+<div dir="rtl">اس ریکارڈ میں صارف کے IP ایڈریس، تاریخ اور وقت اور اس کے نتائج شامل ہیں (کامیاب یا ناکامی). یہ عام طور پر اس طرح کچھ نظر آتا ہے:<br /><br /></div>
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
@@ -1482,9 +1482,9 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 
 <div dir="rtl">آپ چاہتے ہیں، یا قانونی طور پر ہو سکتا ہے، کچھ وقت کے بعد لاگ ان کو صاف کرنے کے لئے (کتنی دیر تک آپ لاگ ان کو برقرار رکھ سکتے ہیں قانون کی طرف سے محدود ہوسکتے ہیں). یہ لاگ ان کے مطابق لاگ ان کی ترتیب میں تاریخ/وقت مارکر مقرر کرنے کی طرف سے کیا جا سکتا ہے (مثال کے طور پر، <code dir="ltr">{yyyy}-{mm}-{dd}.log</code>)، اور پھر لاگ گرد گھومنے کو چالو کرنے (لاگ گرد کی گردش آپ کو لاگ ان کی حد سے زیادہ حد تک زیادہ سے زیادہ لاگ ان پر لاگو کرنے کی اجازت دیتا ہے).<br /><br /></div>
 
-<div dir="rtl">مثال کے طور پر: اگر مجھے 30 دنوں کے بعد لاگز کو خارج کرنے کی ضرورت ہوتی ہے تو میں  <code dir="ltr">{dd}.log</code> اپنے لاگ ان کے نام میں ڈال سکتا ہوں (<code dir="ltr">{dd}</code> دن کی نمائندگی کرتا ہے)، <code dir="ltr">log_rotation_limit</code> کو 30 مقرر کریں، اور <code dir="ltr">log_rotation_action</code> کو <code dir="ltr">Delete</code> مقرر کریں.<br /><br /></div>
+<div dir="rtl">مثال کے طور پر: اگر مجھے 30 دنوں کے بعد لاگز کو خارج کرنے کی ضرورت ہوتی ہے تو میں <code dir="ltr">{dd}.log</code> اپنے لاگ ان کے نام میں ڈال سکتا ہوں (<code dir="ltr">{dd}</code> دن کی نمائندگی کرتا ہے)، <code dir="ltr">log_rotation_limit</code> کو 30 مقرر کریں، اور <code dir="ltr">log_rotation_action</code> کو <code dir="ltr">Delete</code> مقرر کریں.<br /><br /></div>
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+<div dir="rtl">اگر آپ کو کچھ وقت کے لئے ریکارڈ رکھنے کی ضرورت ہے تو، آپ کو لاگ گرد گھومنے کا استعمال نہ کرنے کا انتخاب کرسکتے ہیں، یا آپ <code dir="ltr">log_rotation_action</code> کی قدر <code dir="ltr">Archive</code> پر مقرر کر سکتے ہیں (اس ریکارڈ کو کمپیکٹ کریں گے، اس طرح ڈسک کے استعمال کو کم کرنا ہوگا).<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1574,4 +1574,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 6 فروری 2019 (2019.02.06).</div>
+<div dir="rtl">آخری تازہ کاری: 23 فروری 2019 (2019.02.23).</div>

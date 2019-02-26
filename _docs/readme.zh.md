@@ -22,7 +22,7 @@
 
 感谢使用phpMussel，​这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的PHP脚本。
 
-PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
+[PHPMUSSEL](https://phpmussel.github.io/) COPYRIGHT 2013 和走向未来 GNU/GPLv2 由 [Caleb M (Maikuolan)](https://github.com/Maikuolan)。
 
 本脚本是基于GNU通用许可V2.0版许可协议发布的，​您可以在许可协议的允许范围内自行修改和发布，​但请遵守GNU通用许可协议。​使用脚本的过程中，​作者不提供任何担保和任何隐含担保。​更多的细节请参见GNU通用公共许可证，​下的`LICENSE.txt`文件也可从访问：
 - <https://www.gnu.org/licenses/>。
@@ -30,11 +30,12 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 谢谢[ClamAV](https://www.clamav.net/)为本脚本提供文件签名库访问许可。​没有它，​这个脚本很可能不会存在，​或者其价值有限。
 
-谢谢SourceForge和GitHub为项目托管，​还有谢谢这些组织为提供一些签名：​[SecuriteInfo.com](https://www.securiteinfo.com/)，​[PhishTank](https://www.phishtank.com/)，​[NLNetLabs](https://nlnetlabs.nl/)，​等人。
+谢谢SourceForge和Bitbucket和GitHub为项目托管，​还有谢谢这些组织为提供一些签名：​[PhishTank](https://www.phishtank.com/)，​[NLNetLabs](https://nlnetlabs.nl/)，[Malware.Expert](https://malware.expert/)，​等人。
 
 现在phpMussel的代码文件和关联包可以从以下地址免费下载：
+- [GitHub](https://github.com/phpMussel/phpMussel)。
+- [Bitbucket](https://bitbucket.org/Maikuolan/phpmussel)。
 - [SourceForge](https://sourceforge.net/projects/phpmussel/)。
-- [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
 
@@ -1348,4 +1349,4 @@ phpMussel不收集或处理任何信息用于营销或广告目的，既不销�
 ---
 
 
-最后更新：2019年2月6日。
+最后更新：2019年2月23日。

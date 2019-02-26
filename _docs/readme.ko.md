@@ -22,7 +22,7 @@
 
 phpMussel을 이용해 주셔서 감사합니다. phpMussel는 ClamAV를 비롯한 서명을 이용하여 시스템에 업로드 된 파일을 대상하여 트로이 바이러스 나 악성 코드 등을 감지하도록 설계된 PHP 스크립트입니다.
 
-phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
+[phpMussel](https://phpmussel.github.io/) 저작권 2013 년 이후 [Caleb M (Maikuolan)](https://github.com/Maikuolan)의 GNU/GPLv2.
 
 본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License"(일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
 - <https://www.gnu.org/licenses/>.
@@ -30,11 +30,12 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](https://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
 
-본 프로젝트 파일의 호스트 처인 SourceForge와 GitHub, phpMussel이 이용하는 서명 제공처이다 : [SecuriteInfo.com](https://www.securiteinfo.com/), [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
+본 프로젝트 파일의 호스트 처인 SourceForge와 Bitbucket와 GitHub, phpMussel이 이용하는 서명 제공처이다 : [PhishTank](https://www.phishtank.com/), [NLNetLabs](https://nlnetlabs.nl/), [Malware.Expert](https://malware.expert/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
+- [GitHub](https://github.com/phpMussel/phpMussel).
+- [Bitbucket](https://bitbucket.org/Maikuolan/phpmussel).
 - [SourceForge](https://sourceforge.net/projects/phpmussel/).
-- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -1344,4 +1345,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2019년 2월 6일.
+최종 업데이트 : 2019년 2월 23일.

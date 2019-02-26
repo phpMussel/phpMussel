@@ -22,19 +22,20 @@
 
 phpMussel（ピー・エイチ・ピー・マッスル）をご利用頂き、​ありがとうございます。​phpMusselは、​ClamAV をはじめとしたシグネチャを利用して、​システムにアップロードされるファイルを対象して、​トロイ型のウィルスやマルウェア等を検出するようデザインされたPHPスクリプトです。
 
-PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利について：​Caleb M (Maikuolan)著。
+[PHPMUSSEL](https://phpmussel.github.io/)著作権２０１３とＧＮＵ一般公衆ライセンスv2を超える権利について：​[Caleb M (Maikuolan)](https://github.com/Maikuolan)著。
 
-本スクリプトはフリーウェアです。​フリーソフトウェア財団発行のGNU一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、​再配布ならびに加工が可能です。​配布の目的は、​役に立つことを願ってのものですが、​『保証はなく、​また商品性や特定の目的に適合するのを示唆するものでもありません』。​『LICENSE.txt』にある『GNU General Public License』（一般ライセンス）を参照して下さい。​以下のURLからも閲覧できます：
+本スクリプトはフリーウェアです。​フリーソフトウェア財団発行のＧＮＵ一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、​再配布ならびに加工が可能です。​配布の目的は、​役に立つことを願ってのものですが、​『保証はなく、​また商品性や特定の目的に適合するのを示唆するものでもありません』。​『LICENSE.txt』にある『GNU General Public License』（一般ライセンス）を参照して下さい。​以下のURLからも閲覧できます：
 - <https://www.gnu.org/licenses/>。
 - <https://opensource.org/licenses/>。
 
 作成のインスピレーションと本スクリプトが利用するシグネチャについて[ClamAV](https://www.clamav.net/)に感謝の意を表したいと思います。​この２つがなければ、​本スクリプトは存在しえないか、​あるいは極めて限られた利用価値しかもたないと言ってよいでしょう。
 
-本プロジェクトファイルのホスト先であるSourceForgeとGitHub、​phpMusselが利用するシグネチャの提供先である：​[SecuriteInfo.com](https://www.securiteinfo.com/)、​[PhishTank](https://www.phishtank.com/)、​[NLNetLabs](https://nlnetlabs.nl/) 他、​本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
+本プロジェクトファイルのホスト先であるSourceForgeとBitbucketとGitHub、​phpMusselが利用するシグネチャの提供先である：​[PhishTank](https://www.phishtank.com/)、​[NLNetLabs](https://nlnetlabs.nl/)、​[Malware.Expert](https://malware.expert/) 他、​本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
 
-本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
+本ドキュメントならびに関連パッケージは以下のＵＲＬからダウンロードできます。
+- [GitHub](https://github.com/phpMussel/phpMussel)。
+- [Bitbucket](https://bitbucket.org/Maikuolan/phpmussel)。
 - [SourceForge](https://sourceforge.net/projects/phpmussel/)。
-- [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
 
@@ -383,11 +384,11 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
 /CONTRIBUTING.md | プロジェクトに貢献する方法について。
-/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
+/LICENSE.txt | ＧＮＵ/ＧＰＬｖ２のライセンスのコピー（機能には関係のないファイルです）。
 /loader.php | ローダー・ファイルです。​主要スクリプトのロード、​アップロード等を行います。​フックするのはまさにこれです（本質的ファイル）！
 /PEOPLE.md | プロジェクトに関わる人々についての情報。
 /README.md | プロジェクト概要情報。
-/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
+/web.config | ＡＳＰ.ＮＥＴ設定ファイルです（スクリプトがＡＳＰ.ＮＥＴテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 
 ※ ファイル名は設定の仕方（`config.ini`内）により異なることがあります。
 
@@ -1346,4 +1347,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：２０１９年２月６日。
+最終アップデート：２０１９年２月２３日。
