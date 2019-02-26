@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2019.02.25).
+# This file: Russian language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -97,6 +97,7 @@ scan_tampering: "Обнаружена потенциально опасная м
 scan_unauthorised_upload: "Обнаружены несанкционированные загрузки манипуляции файла"
 scan_unauthorised_upload_or_misconfig: "Обнаружены несанкционированное загрузки манипуляции файла или неправильная конфигурация! "
 started: "Начало работы"
+too_many_files_in_archive: "Слишком много файлов в архиве"
 too_many_urls: "Слишком много URL"
 upload_error_1: "Файл превышает размер директивы upload_max_filesize. "
 upload_error_2: "Файл превышает размер заданных в директиве формы. "

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2019.02.25).
+# This file: Portuguese language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -99,6 +99,7 @@ scan_tampering: "Detectado potencialmente perigoso arquivo adulteração"
 scan_unauthorised_upload: "Não autorizada arquivo carregar manipulação detectado"
 scan_unauthorised_upload_or_misconfig: "Não autorizada arquivo carregar manipulação ou mau configuração detectado! "
 started: "Começado"
+too_many_files_in_archive: "Demasiados arquivos no arquivo compactado"
 too_many_urls: "Demasiados URLs"
 upload_error_1: "Arquivo tamanho excede a directiva upload_max_filesize. "
 upload_error_2: "Arquivo tamanho excede o formulário especificados arquivo tamanho limite. "

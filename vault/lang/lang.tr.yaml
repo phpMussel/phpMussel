@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.02.25).
+# This file: Turkish language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "Potansiyel olarak tehlikeli dosyaların değiştirilmesi algıl
 scan_unauthorised_upload: "Yetkisiz dosya yükleme işi algılandı"
 scan_unauthorised_upload_or_misconfig: "Yetkisiz dosya yükleme manipülasyonu veya yanlış yapılandırma algılandı! "
 started: "Başlatılan"
+too_many_files_in_archive: "Arşivde çok fazla dosya var"
 too_many_urls: "Çok fazla URL'ler"
 upload_error_1: "Dosya boyutu upload_max_filesize yönergesini aşıyor. "
 upload_error_2: "Dosya boyutu form tanımlı dosya boyutu sınırını aşıyor. "

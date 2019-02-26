@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.02.25).
+# This file: Turkish language data for the front-end (last modified: 2019.02.26).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -57,6 +57,7 @@ config_files_filetype_archives: "Arşiv içeriği için dosya türü kara listey
 config_files_filetype_blacklist: "Kara liste:"
 config_files_filetype_greylist: "Gri liste:"
 config_files_filetype_whitelist: "Sisteminiz yalnızca belirli dosya türlerinin yüklenmesine izin veriyorsa, veya sisteminiz belli dosya türlerini açıkça reddetiyorsa, bu dosya türlerini beyaz listelerde, kara listelerde ve gri listelerde belirtmek taramanın hızını artırabilir, komut dosyası belirli dosya türlerini atlamak için izin vererek. Biçim CSV (virgülle ayrılmış değerler). Her şeyi taramak istiyorsanız, bu değişkenleri boş bırakın; Bunu yapmak beyaz/kara/gri listeyi devre dışı bırakır. İşlem mantığı şu şekildedir: Dosya türü beyaz listede bulunuyorsa, dosyayı taramayın ve engellemeyin ve dosyayı kara listeye veya gri listeye karşı kontrol etmeyin. Dosya türü kara listede bulunuyorsa, dosyayı taramayın, ancak yine de engelleyin ve dosyayı gri liste karşı kontrol etmeyin. Gri liste boşsa, ya da gri liste boş değilse ve dosya türü gri listede bulunuyorsa, dosyayı normal göre tara ve taramanın sonuçlarına dayanarak engelleyip engellemeyeceğini belirleme, ancak gri liste boş değilse ve dosya türü gri listede değil, dosyayı kara listede olduğu gibi davranın, bu nedenle tarama değil, yine de engelleme. Beyaz liste:"
+config_files_max_files_in_archives: "Taramayı iptal etmeden önce arşiv içinden taranacak maksimum dosya sayısı. Varsayılan = 0 (maksimum değil)."
 config_files_max_recursion: "Arşivler için maksimum özyineleme derinliği sınırı. Varsayılan = 3."
 config_files_max_uploads: "Yükleme taraması sırasında taranacak maksimum dosya sayısı. Bu sayıyı aşmak taramayı durduracak ve kullanıcıya çok fazla yükleme yaptıkları bildirilecektir! Sisteminizi veya CMS'nizi DDoS girişiminde bulunduran teorik bir saldırıya karşı koruma sağlar. Tavsiye edilen: 10. Donanımınızın hızına bağlı olarak bu sayıyı yükseltebilir veya azaltabilirsiniz. Bu numaranın arşiv içeriğini hesaba katmadığını unutmayın."
 config_general_FrontEndLog: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."

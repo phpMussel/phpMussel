@@ -311,6 +311,9 @@ Config Defaults:
   block_encrypted_archives:
    type: bool
    default: true
+  max_files_in_archives:
+   type: int
+   default: 0
  attack_specific:
   chameleon_from_php:
    type: bool

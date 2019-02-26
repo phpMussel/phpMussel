@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.02.25).
+# This file: Indonesian language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "Terdeteksi perubahan berpotensi berbahaya dalam file"
 scan_unauthorised_upload: "Tidak sah file nama manipulasi terdeteksi"
 scan_unauthorised_upload_or_misconfig: "Tidak sah file nama manipulasi atau salah-konfigurasi terdeteksi! "
 started: "Dimulai"
+too_many_files_in_archive: "Terlalu banyak file dalam arsip"
 too_many_urls: "Terlalu banyak URL"
 upload_error_1: "File ukuran melebihi direktif upload_max_filesize. "
 upload_error_2: "File ukuran melebihi formulir ditentukan file ukuran batas. "

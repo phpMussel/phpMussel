@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data (last modified: 2019.02.25).
+# This file: Chinese (simplified) language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -93,6 +93,7 @@ scan_tampering: "检测潜在的危险文件篡改"
 scan_unauthorised_upload: "未经授权的文件上传操控是检测"
 scan_unauthorised_upload_or_misconfig: "未经授权的文件上传操控或配置错误是检测！"
 started: "开始"
+too_many_files_in_archive: "存档中太多的文件"
 too_many_urls: "太多的URL"
 upload_error_1: "文件大小超过upload_max_filesize指令。"
 upload_error_2: "文件大小超过文件大小限制指定由文件上传信息。"

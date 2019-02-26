@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2019.02.25).
+# This file: French language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "Altération de fichier potentiellement dangereuse détectée"
 scan_unauthorised_upload: "Non autorisée manipulation de téléchargement de fichiers détecté"
 scan_unauthorised_upload_or_misconfig: "Manipulation de téléchargement de fichiers non autorisée ou mauvaise configuration détectée ! "
 started: "Commencé"
+too_many_files_in_archive: "Trop de fichiers dans les archives"
 too_many_urls: "Trop d'URLs"
 upload_error_1: "La taille du fichier dépasse la directive upload_max_filesize. "
 upload_error_2: "La taille du fichier dépasse la limite spécifiée dans le formulaire taille limite. "

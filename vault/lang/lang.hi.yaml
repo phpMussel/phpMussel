@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2019.02.25).
+# This file: Hindi language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "संभावित खतरनाक फाइल छेड
 scan_unauthorised_upload: "अनधिकृत फाइल अपलोड मैनिपुलेशन का पता लगाया"
 scan_unauthorised_upload_or_misconfig: "अनधिकृत फाइल अपलोड हेरफेर या गलत कॉन्फ़िगरेशन का पता चला! "
 started: "शुरू कर दिया है"
+too_many_files_in_archive: "पुरालेख में बहुत सारी फाइलें"
 too_many_urls: "बहुत सारे URL"
 upload_error_1: "फाइल का आकार upload_max_file आकार निर्देशन से अधिक है। "
 upload_error_2: "फाइल का आकार फॉर्म-निर्दिष्ट फाइल आकार सीमा से अधिक है। "

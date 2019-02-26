@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2019.02.25).
+# This file: Dutch language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "Gedetecteerd potentieel gevaarlijke bestandswijziging"
 scan_unauthorised_upload: "Ongeautoriseerde bestand uploaden manipulatie gedetecteerd"
 scan_unauthorised_upload_or_misconfig: "Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! "
 started: "Gestart"
+too_many_files_in_archive: "Te veel bestanden in het archief"
 too_many_urls: "Te veel URL's"
 upload_error_1: "Bestandsgrootte overschrijdt de upload_max_filesize richtlijn. "
 upload_error_2: "Bestandsgrootte overschrijdt de vorm gespecificeerde bestandsgrootte limiet. "

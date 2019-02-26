@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2019.02.25).
+# This file: Japanese language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -95,13 +95,14 @@ scan_tampering: "検出された潜在的に危険なファイル改ざん"
 scan_unauthorised_upload: "不正ファイルアップロード改ざんが検出されました"
 scan_unauthorised_upload_or_misconfig: "不正ファイルアップロード改ざんまたはミスコンフィギュレーションが検出されました！"
 started: "開始しています"
-too_many_urls: "URLが多すぎます"
+too_many_files_in_archive: "アーカイブ内のファイルが多すぎます"
+too_many_urls: "ＵＲＬが多すぎます"
 upload_error_1: "指示された最大アップロードファイルサイズを超えています。"
 upload_error_2: "フォームのファイルサイズ上限を超えています。"
 upload_error_34: "アップロード失敗！​ホスト責任者に相談して下さい！"
 upload_error_6: "アップロードディレクトリがありません！​ホスト責任者に相談して下さい！"
 upload_error_7: "ディスクに書き込めません！​ホスト責任者に相談して下さい！"
-upload_error_8: "不適切なPHP設定が検出されました！​ホスト責任者に相談して下さい！"
+upload_error_8: "不適切なＰＨＰ設定が検出されました！​ホスト責任者に相談して下さい！"
 upload_limit_exceeded: "アップロードの制限を超えています。"
 x_does_not_exist: "「%s」は存在しません"
 

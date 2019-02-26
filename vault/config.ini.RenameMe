@@ -236,13 +236,13 @@ detect_encryption=true
 
 [files]
 
-; Maximum allowable number of files to scan during files upload scan before
-; aborting the scan and informing the user they are uploading too much at once!
-; Provides protection against a theoretical attack whereby an attacker attempts
-; to DDoS your system or CMS by overloading phpMussel to slow down the PHP
-; process to a grinding halt. Recommended: 10. You may wish to raise or lower
-; this number depending on the speed of your hardware. Note that this number
-; doesn't account for or include the contents of archives.
+; Maximum number of files that phpMussel is allowed to scan when scanning
+; uploads before aborting the scan and informing the user they are uploading
+; too much at once! Provides protection against a theoretical attack whereby an
+; attacker attempts to DDoS your system or CMS by overloading phpMussel to slow
+; down the PHP process to a grinding halt. Recommended: 10. You may wish to
+; raise or lower this number depending on the speed of your hardware. Note that
+; this number doesn't account for or include the contents of archives.
 max_uploads=10
 
 ; Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always
@@ -302,6 +302,10 @@ max_recursion=3
 ; reduce any risk associated with these such possibilities. False = No; True =
 ; Yes [Default].
 block_encrypted_archives=true
+
+; Maximum number of files to scan from within archives before aborting the
+; scan. Default = 0 (no maximum).
+max_files_in_archives=0
 
 
 [attack_specific]
@@ -424,20 +428,18 @@ only_allow_images=false
 
 [heuristic]
 
-; There are certain signatures of phpMussel that are intended to identify
-; suspicious and potentially malicious qualities of files being uploaded
-; without in themselves identifying those files being uploaded specifically as
-; being malicious. This "threshold" value tells phpMussel what the maximum
-; total weight of suspicious and potentially malicious qualities of files being
-; uploaded that's allowable is before those files are to be flagged as
-; malicious. The definition of weight in this context is the total number of
-; suspicious and potentially malicious qualities identified. By default, this
-; value will be set to 3. A lower value generally will result in a higher
-; occurrence of false positives but a higher number of malicious files being
-; flagged, whereas a higher value generally will result in a lower occurrence
-; of false positives but a lower number of malicious files being flagged. It's
-; generally best to leave this value at its default unless you're experiencing
-; problems related to it.
+; Some phpMussel signatures are intended to identify suspicious and potentially
+; malicious indicators in files, without in themselves identifying those files
+; as being malicious directly. This "threshold" value tells phpMussel the
+; maximum weight allowed before flagging those files as malicious. The
+; definition of weight in this context is the total number of suspicious and
+; potentially malicious indicators identified. By default, this value will be
+; set to 3. A lower value generally will result in a higher occurrence of false
+; positives but a higher number of malicious files being flagged, whereas a
+; higher value generally will result in a lower occurrence of false positives
+; but a lower number of malicious files being flagged. It's generally best to
+; leave this value at its default unless you're experiencing problems related
+; to it.
 threshold=3
 
 

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2019.02.25).
+# This file: English language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -104,6 +104,7 @@ scan_tampering: "Detected potentially dangerous file tampering"
 scan_unauthorised_upload: "Unauthorised file upload manipulation detected"
 scan_unauthorised_upload_or_misconfig: "Unauthorised file upload manipulation or misconfiguration detected! "
 started: "Started"
+too_many_files_in_archive: "Too many files in the archive"
 too_many_urls: "Too many URLs"
 upload_error_1: "Filesize exceeds the upload_max_filesize directive. "
 upload_error_2: "Filesize exceeds form-specified filesize limit. "

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2019.02.25).
+# This file: Thai language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -96,6 +96,7 @@ scan_tampering: "การปลอมแปลงไฟล์ที่อาจ
 scan_unauthorised_upload: "อัปโหลดไฟล์ที่ไม่ได้รับอนุญาตถูกตรวจพบ"
 scan_unauthorised_upload_or_misconfig: "อัปโหลดไฟล์ที่ไม่ได้รับอนุญาตหรือการกำหนดค่าที่ไม่ถูกต้องถูกตรวจพบ! "
 started: "เริ่มต้นแล้ว"
+too_many_files_in_archive: "มีไฟล์ในไฟล์เก็บถาวรมากเกินไป"
 too_many_urls: "มี URL มากเกินไป"
 upload_error_1: "ขนาดไฟล์เกินคำสั่ง upload_max_filesize. "
 upload_error_2: "ขนาดไฟล์เกินจำกัดขนาดไฟล์ที่ระบุโดยแบบฟอร์ม. "

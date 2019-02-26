@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.02.25).
+# This file: English language data for the front-end (last modified: 2019.02.26).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -57,6 +57,7 @@ config_files_filetype_archives: "Carry over filetype blacklisting/whitelisting t
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
 config_files_filetype_whitelist: "If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist. Logical order of processing is: If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist. If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist. If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway. Whitelist:"
+config_files_max_files_in_archives: "Maximum number of files to scan from within archives before aborting the scan. Default = 0 (no maximum)."
 config_files_max_recursion: "Maximum recursion depth limit for archives. Default = 3."
 config_files_max_uploads: "Maximum number of files that phpMussel is allowed to scan when scanning uploads before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives."
 config_general_FrontEndLog: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2019.02.25).
+# This file: Italian language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -97,6 +97,7 @@ scan_tampering: "Rilevato potenzialmente pericolosi alterazione del file"
 scan_unauthorised_upload: "Rilevata manipolazione non autorizzata del caricamento del file"
 scan_unauthorised_upload_or_misconfig: "Rilevata manipolazione non autorizzata del caricamento del file o malconfigurazione! "
 started: "Iniziato"
+too_many_files_in_archive: "Troppi file nell'archivio"
 too_many_urls: "Troppi URL"
 upload_error_1: "La dimensione del file supera la direttiva upload_max_filesize. "
 upload_error_2: "La dimensione del file supera la dimensione limite specificata dal modulo. "

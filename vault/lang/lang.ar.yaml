@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2019.02.25).
+# This file: Arabic language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -97,6 +97,7 @@ scan_tampering: "الكشف العبث ملف يحتمل أن تكون خطرة"
 scan_unauthorised_upload: "الكشف تلاعب تحميل الملف غير مصرح"
 scan_unauthorised_upload_or_misconfig: "تلاعب تحميل الملف غير مصرح أو تكوين الخطأ الكشف! "
 started: "بدأت"
+too_many_files_in_archive: "ملفات كثيرة جدا في الأرشيف"
 too_many_urls: "عدد كبير جدا من عناوين المواقع"
 upload_error_1: "حجم الملف تجاوز توجيهات upload_max_filesize. "
 upload_error_2: "حجم الملف تجاوز الحد حجم الملف التي يحددها شكل. "

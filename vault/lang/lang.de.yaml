@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2019.02.25).
+# This file: German language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "Potentiell gefährliche Datei-Manipulation erkannt"
 scan_unauthorised_upload: "Unerlaubte Upload-Manipulation erkannt"
 scan_unauthorised_upload_or_misconfig: "Unerlaubte Upload-Manipulation oder Fehlkonfiguration erkannt! "
 started: "Gestartet"
+too_many_files_in_archive: "Zu viele Dateien im Archiv"
 too_many_urls: "Zu viele URLs"
 upload_error_1: "Dateigröße überschreitet die Richtlinie upload_max_filesize. "
 upload_error_2: "Dateigröße überschreitet die im Formular angegebene Dateigröße. "

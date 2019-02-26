@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2019.02.25).
+# This file: Bangla language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -98,6 +98,7 @@ scan_tampering: "সম্ভাব্য বিপজ্জনক ফাইল 
 scan_unauthorised_upload: "অননুমোদিত ফাইল আপলোড ম্যানিপুলেশন সনাক্ত হয়েছে"
 scan_unauthorised_upload_or_misconfig: "অননুমোদিত ফাইল আপলোড ম্যানিপুলেশন বা ভুল কনফিগারেশন সনাক্ত হয়েছে! "
 started: "শুরু হয়েছে"
+too_many_files_in_archive: "সংরক্ষণাগার মধ্যে অনেক ফাইল"
 too_many_urls: "অনেকগুলি URLগুলি"
 upload_error_1: "ফাইলের আকার upload_max_filesize নির্দেশনা ছাড়িয়ে গেছে। "
 upload_error_2: "ফাইলের আকার ফরম-নির্দিষ্ট ফাইলের আকার সীমা অতিক্রম করে। "

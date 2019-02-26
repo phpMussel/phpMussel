@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.02.25).
+# This file: Spanish language data for the front-end (last modified: 2019.02.26).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -57,6 +57,7 @@ config_files_filetype_archives: "Heredar tipos de archivos blacklist/whitelist p
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
 config_files_filetype_whitelist: "Si su sistema sólo permite ciertos tipos de archivos para ser subido, o si su sistema niega explícitamente ciertos tipos de archivos, especificando los tipos de archivos en la whitelist, blacklist y/o greylist puede aumentar la velocidad a que escaneando se realizado por permitiendo la script para saltar sobre ciertos tipos de archivos. Formato es CSV (comas separados valores). Si desea escanear todo, en lugar de utilizando la whitelist, blacklist o greylist, dejar las variables en blanco; haciendo tal desactivará la whitelist/blacklist/greylist. Lógico orden de procesamiento es: Si el tipo de archivo está en la whitelist, no escanear y no bloquear el archivo, y no cotejar el archivo con la blacklist o la greylist. Si el tipo de archivo está en la blacklist, no escanear el archivo, pero bloquearlo en todo caso, y no cotejar el archivo con la greylist. Si la greylist está vacía o si la greylist está no vacía y el tipo de archivo está en la greylist, escanearlo como normal y determinar si para bloquearlo basado en los resultados de la escaneo, pero si la greylist está no vacía y el tipo de archivo está no en la greylist, tratar el archivo como si está en la blacklist, por lo tanto no escanearlo pero bloquearlo en todo caso. Whitelist:"
+config_files_max_files_in_archives: "Número máximo de archivos para analizar desde archivos comprimidos antes de abortar el análisis. Predefinido = 0 (sin maximo)."
 config_files_max_recursion: "Máximo recursividad nivel límite para compactados archivos. Predefinido = 3."
 config_files_max_uploads: "Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de PHP a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos."
 config_general_FrontEndLog: "Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar."

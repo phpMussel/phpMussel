@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2019.02.25).
+# This file: Vietnamese language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -97,6 +97,7 @@ scan_tampering: "Tập tin có khả năng gây nguy hiểm được phát hiệ
 scan_unauthorised_upload: "Sự thay đỗi của tập tin không được phép tải lên được phát hiện"
 scan_unauthorised_upload_or_misconfig: "Sự thay đỗi của tập tin không được phép tải lên được phát hiện! "
 started: "Đã bắt đầu"
+too_many_files_in_archive: "Quá nhiều tập tin trong kho lưu trữ"
 too_many_urls: "Quá nhiều URL"
 upload_error_1: "Cỡ của tập tin quá giới hạn upload_max_filesize chỉ dẫn. "
 upload_error_2: "Cỡ của tập tin quá giới hạn của cỡ file chỉ định. "

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2019.02.25).
+# This file: Korean language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -94,6 +94,7 @@ scan_tampering: "검색된 잠재적으로 위험한 파일 변조"
 scan_unauthorised_upload: "불법 파일 업로드 변조가 감지되었습니다"
 scan_unauthorised_upload_or_misconfig: "불법 파일 업로드 변조 또는 미스 콘 피규 레이션이 감지되었습니다! "
 started: "시작합니다"
+too_many_files_in_archive: "아카이브에 파일이 너무 많습니다"
 too_many_urls: "URL이 너무 많습니다"
 upload_error_1: "지시 된 최대 업로드 파일 크기를 초과합니다. "
 upload_error_2: "양식의 파일 크기 제한을 초과합니다. "

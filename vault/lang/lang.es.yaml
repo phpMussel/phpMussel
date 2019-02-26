@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2019.02.25).
+# This file: Spanish language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -97,6 +97,7 @@ scan_tampering: "Detectado potencialmente peligrosa archivo manipulación"
 scan_unauthorised_upload: "No autorizado archivos manipulación detectado"
 scan_unauthorised_upload_or_misconfig: "¡No autorizado archivos manipulación o malo configuración detectado! "
 started: "Iniciado"
+too_many_files_in_archive: "Demasiados archivos en el archivo"
 too_many_urls: "Demasiados URLs"
 upload_error_1: "Fichero tamaño excede la directiva upload_max_filesize. "
 upload_error_2: "Fichero tamaño excede la forma especificada fichero tamaño límite. "

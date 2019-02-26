@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2019.02.25).
+# This file: Urdu language data (last modified: 2019.02.26).
 ##/
 
 # Language settings.
@@ -99,6 +99,7 @@ scan_tampering: "پتہ چلنے پر ممکنہ طور پر خطرناک فائ
 scan_unauthorised_upload: "غیر مجاز فائل اپ ہیرا پھیری کے پتہ"
 scan_unauthorised_upload_or_misconfig: "غیر مجاز فائل اپ ہیرا پھیری یا غلط کنفیگریشن کے پتہ! "
 started: "شروع"
+too_many_files_in_archive: "آرکائیو میں بہت سی فائلیں"
 too_many_urls: "بہت سارے یو آر ایل"
 upload_error_1: "فائل upload_max_filesize ہدایت سے تجاوز. "
 upload_error_2: "فائل فارم مخصوص فائل کی حد سے متجاوز. "
