@@ -291,7 +291,7 @@ l10n/fr:
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2019.56.432
+ Version: 2019.56.541
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -304,7 +304,7 @@ l10n/hi:
    - lang/lang.hi.fe.yaml
    - lang/lang.hi.yaml
   Checksum:
-   - 88b59fca5fe8bd54c1fcb47f79bdad33330b3edd7c7eb818a0cbaf4916be57dc:93860
+   - aae61fccc97a286be18af133d5934c8c3fc5a3a7d615f814ac99cfbf872e96ec:94059
    - dc8f61f7133158a15fdd6f9fc14a48cf89fc600b0eafe88e8d72ec236c132cf8:10935
  Reannotate: components.dat
 l10n/id:
