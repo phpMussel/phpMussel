@@ -44,6 +44,11 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   future (these various former individual hash commands will still work, but
   should be considered deprecated, and will be dropped when v2 is released).
 
+- [2019.02.26-27; NEW FEATURE; Maikuolan]: Added the ability to flag or block
+  archives that contain a number of files exceeding a specified limit. This
+  limit can be specified using a newly added configuration directive,
+  "max_files_in_archives".
+
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
 

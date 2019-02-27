@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.02.25).
+ * This file: Functions file (last modified: 2019.02.27).
  */
 
 /**
@@ -4069,7 +4069,40 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** No errors reported. Let's try checking its contents. */
         if ($ArchiveObject->ErrorState === 0) {
+
+            /** Used to count the number of entries processed. */
+            $Processed = 0;
+
+            /** Iterate through the archive's contents. */
             while ($ArchiveObject->EntryNext()) {
+
+                /** Flag the archive if it exceeds the "max_files_in_archives" limit and return. */
+                if (
+                    $phpMussel['Config']['files']['max_files_in_archives'] > 0 &&
+                    $Processed > $phpMussel['Config']['files']['max_files_in_archives']
+                ) {
+                    $r = 2;
+                    $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
+                    $phpMussel['whyflagged'] .= sprintf(
+                        $phpMussel['L10N']->getString('_exclamation'),
+                        $phpMussel['L10N']->getString('too_many_files_in_archive') . ' (' . $ItemRef . ')'
+                    );
+                    $x .= sprintf(
+                        '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                        $Indent,
+                        $phpMussel['L10N']->getString('scan_checking'),
+                        $ItemRef,
+                        hash('crc32b', $File),
+                        hash('crc32b', $Data),
+                        "\n",
+                        $phpMussel['L10N']->getString('too_many_files_in_archive'),
+                        $phpMussel['L10N']->getString('_fullstop_final')
+                    );
+                    unset($ArchiveObject, $Pointer, $PointerObject);
+                    return;
+                }
+
+                $Processed++;
 
                 /** Encryption guard. */
                 if ($phpMussel['Config']['files']['block_encrypted_archives'] && $ArchiveObject->EntryIsEncrypted()) {
@@ -4224,6 +4257,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                 $phpMussel['ArchiveRecursor']($x, $r, $Content, '', $ScanDepth, $ThisItemRef);
 
             }
+
         }
 
     }
