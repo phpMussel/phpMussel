@@ -1,9 +1,10 @@
 <?php
 /**
- * YAML handler (last modified: 2019.02.01).
+ * YAML handler (last modified: 2019.02.28).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
+ * Source: https://github.com/Maikuolan/Common
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
@@ -35,7 +36,7 @@ class YAML
      *
      * @param string $In The data to process.
      */
-    public function __construct($In = false)
+    public function __construct($In = '')
     {
         if ($In) {
             $this->process($In, $this->Data);
