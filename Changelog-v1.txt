@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.9.0 ===
+MINOR RELEASE.
+
 - [2019.02.06; Maikuolan]: Completely overhauled the way that L10N data is
   processed and handled. A new class has been written to handle all L10N data,
   and L10N data is now processed and handled in an entirely object-oriented
@@ -48,6 +53,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   archives that contain a number of files exceeding a specified limit. This
   limit can be specified using a newly added configuration directive,
   "max_files_in_archives".
+
+Caleb M (Maikuolan),
+February 28, 2019.
 
 === Version/Release 1.8.0 ===
 MINOR RELEASE.
