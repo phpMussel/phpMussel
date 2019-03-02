@@ -7,7 +7,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.03.02; Bug-fix; Maikuolan]: The loader would sometimes fail to
+  correctly distinguish between direct requests and indirect requests, an
+  ability currently needed to be able to access the front-end; Fixed.
 
 === Version/Release 1.9.0 ===
 MINOR RELEASE.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.02.11).
+ * This file: The loader (last modified: 2019.03.02).
  */
 
 /**
@@ -66,7 +66,7 @@ $phpMussel['sigPath'] = $phpMussel['Vault'] . 'signatures/';
 $phpMussel['Direct'] = function () {
     return (
         !isset($_SERVER['SCRIPT_FILENAME']) ||
-        str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__))
+        str_replace("\\", '/', strtolower(realpath($_SERVER['SCRIPT_FILENAME']))) === str_replace("\\", '/', strtolower(__FILE__))
     );
 };
 
