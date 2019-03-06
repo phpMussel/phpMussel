@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.02.26).
+# This file: French language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -188,14 +188,16 @@ label_fmgr_total_disk_usage: "Utilisation du disque totale : "
 label_fmgr_total_space: "Espace disque total : "
 label_fmgr_updates_metadata: "Métadonnées pour la mise à jour des composants"
 label_hide: "Cacher"
+label_integrity_check: "Vérification de l'intégrité : "
 label_never: "Jamais"
 label_os: "Système opérateur utilisée :"
-label_other: "Autres"
 label_other-Active: "Fichiers de signatures actifs"
 label_other-Since: "Date de début"
+label_other: "Autres"
 label_php: "Version PHP utilisée :"
 label_phpmussel: "Version phpMussel utilisée :"
 label_quarantined: "Téléchargements mis en quarantaine"
+label_sanity_check: "Vérification de santé : "
 label_sapi: "SAPI utilisée :"
 label_scanned_objects: "Objets analysés"
 label_scanned_uploads: "Téléchargements analysés"
@@ -256,6 +258,7 @@ response_delete_error: "Échec du suppriment !"
 response_directory_deleted: "Répertoire supprimé avec succès !"
 response_directory_renamed: "Répertoire renommé avec succès !"
 response_error: "Erreur"
+response_failed: "Échoué"
 response_failed_to_install: "Échec de l'installation !"
 response_failed_to_update: "Échec de la mise à jour !"
 response_file_deleted: "Fichier supprimé avec succès !"
@@ -268,11 +271,13 @@ response_login_invalid_username: "Erreur de connexion ! Nom d'utilisateur n'exi
 response_login_password_field_empty: "Mot de passe entrée était vide !"
 response_login_username_field_empty: "Nom d'utilisateur entrée était vide !"
 response_login_wrong_endpoint: "Mauvais point final !"
+response_passed: "Passé"
 response_possible_problem_found: "Problème possible trouvé."
 response_rename_error: "Échec du renomment !"
 response_restore_error_1: "Échec de la restauration ! Fichier corrompu !"
 response_restore_error_2: "Échec de la restauration ! Clé de quarantaine incorrecte !"
 response_sanity_1: "Le fichier contient des contenus inattendus ! Fichier rejeté !"
+response_skipped: "Sauté"
 response_statistics_cleared: "Statistiques annulées."
 response_updates_already_up_to_date: "Déjà mise à jour."
 response_updates_not_installed: "Composant pas installé !"

@@ -11,6 +11,10 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   correctly distinguish between direct requests and indirect requests, an
   ability currently needed to be able to access the front-end; Fixed.
 
+- [2019.03.06; Maikuolan]: Slightly improved the front-end updates page
+  component verification feature. The distinction between failed integrity
+  checks and failed sanity checks should be a little more obvious now.
+
 === Version/Release 1.9.0 ===
 MINOR RELEASE.
 

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.02.26).
+# This file: Dutch language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -188,14 +188,16 @@ label_fmgr_total_disk_usage: "Totaal schijfgebruik: "
 label_fmgr_total_space: "Totale schijfruimte: "
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Verbergen"
+label_integrity_check: "Integriteitscontrole: "
 label_never: "Nooit"
 label_os: "Besturingssysteem gebruikt:"
-label_other: "Anders"
 label_other-Active: "Actieve signatuurbestanden"
 label_other-Since: "Begin datum"
+label_other: "Anders"
 label_php: "PHP versie gebruikt:"
 label_phpmussel: "phpMussel versie gebruikt:"
 label_quarantined: "Uploads in quarantaine"
+label_sanity_check: "Gezondheidscontrole: "
 label_sapi: "SAPI gebruikt:"
 label_scanned_objects: "Objecten gescand"
 label_scanned_uploads: "Uploads gescand"
@@ -256,6 +258,7 @@ response_delete_error: "Mislukt om te verwijderen!"
 response_directory_deleted: "Bestandsmap succesvol verwijderd!"
 response_directory_renamed: "De naam van de bestandsmap met succes veranderd!"
 response_error: "Fout"
+response_failed: "Mislukt"
 response_failed_to_install: "Installatie mislukt!"
 response_failed_to_update: "Update mislukt!"
 response_file_deleted: "Bestand succesvol verwijderd!"
@@ -268,11 +271,13 @@ response_login_invalid_username: "Inloggen mislukt! Gebruikersnaam bestaat niet!
 response_login_password_field_empty: "Password veld leeg!"
 response_login_username_field_empty: "Gebruikersnaam veld leeg!"
 response_login_wrong_endpoint: "Verkeerd eindpunt!"
+response_passed: "Geslaagd"
 response_possible_problem_found: "Mogelijk probleem gevonden."
 response_rename_error: "Mislukt om de naam te veranderen!"
 response_restore_error_1: "Kan niet herstellen! Beschadigd bestand!"
 response_restore_error_2: "Kan niet herstellen! Onjuiste quarantaine sleutel!"
 response_sanity_1: "Bestand bevat onverwachte inhoud! Bestand afgewezen!"
+response_skipped: "Overgeslagen"
 response_statistics_cleared: "Statistieken geannuleerd."
 response_updates_already_up_to_date: "Al bijgewerkt."
 response_updates_not_installed: "Component niet geïnstalleerd!"

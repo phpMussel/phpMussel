@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.02.26).
+# This file: Spanish language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -188,14 +188,16 @@ label_fmgr_total_disk_usage: "Uso del disco total: "
 label_fmgr_total_space: "Espacio en disco total: "
 label_fmgr_updates_metadata: "Componente actualiza metadatos"
 label_hide: "Esconder"
+label_integrity_check: "Verificación de integridad: "
 label_never: "Nunca"
 label_os: "Sistema operativo utilizada:"
-label_other: "Otro"
 label_other-Active: "Archivos de firmas activas"
 label_other-Since: "Fecha de inicio"
+label_other: "Otro"
 label_php: "Versión PHP utilizada:"
 label_phpmussel: "Versión phpMussel utilizada:"
 label_quarantined: "Subidas en cuarentena"
+label_sanity_check: "Verificación de cordura: "
 label_sapi: "SAPI utilizada:"
 label_scanned_objects: "Objetos escaneados"
 label_scanned_uploads: "Subidas escaneadas"
@@ -256,6 +258,7 @@ response_delete_error: "¡No se pudo eliminar!"
 response_directory_deleted: "¡Directorio eliminado con éxito!"
 response_directory_renamed: "¡El nombre del directorio cambiado con éxito!"
 response_error: "Error"
+response_failed: "Fallado"
 response_failed_to_install: "¡No se pudo instalar!"
 response_failed_to_update: "¡No se pudo actualizar!"
 response_file_deleted: "¡Archivo eliminado con éxito!"
@@ -268,11 +271,13 @@ response_login_invalid_username: "¡Error al iniciar sesión – El usuario no e
 response_login_password_field_empty: "¡La entrada de contraseña estaba vacío!"
 response_login_username_field_empty: "¡La entrada de usuario estaba vacío!"
 response_login_wrong_endpoint: "¡Punto final equivocado!"
+response_passed: "Pasado"
 response_possible_problem_found: "Posible problema encontrado."
 response_rename_error: "¡No se pudo cambiar el nombre!"
 response_restore_error_1: "¡Error al restaurar! Archivo corrupto!"
 response_restore_error_2: "¡Error al restaurar! Clave de cuarentena incorrecta!"
 response_sanity_1: "¡El archivo contiene contenido inesperado! Archivo rechazado!"
+response_skipped: "Omitido"
 response_statistics_cleared: "Estadística anulado."
 response_updates_already_up_to_date: "Ya está actualizado."
 response_updates_not_installed: "¡El componente no se instala!"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.02.26).
+# This file: Russian language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -189,14 +189,16 @@ label_fmgr_total_disk_usage: "Все использование диска: "
 label_fmgr_total_space: "Емкость диска: "
 label_fmgr_updates_metadata: "Метаданные обновлений компонентов"
 label_hide: "Скрывать"
+label_integrity_check: "Проверка целостности: "
 label_never: "Никогда"
 label_os: "Используемая операционная система:"
-label_other: "Другие"
 label_other-Active: "Активные файлы сигнатур"
 label_other-Since: "Дата начала"
+label_other: "Другие"
 label_php: "Используемая версия PHP:"
 label_phpmussel: "Используемая версия phpMussel:"
 label_quarantined: "Загрузка в карантин"
+label_sanity_check: "Проверка здоровья: "
 label_sapi: "Используемая SAPI:"
 label_scanned_objects: "Объекты сканированные"
 label_scanned_uploads: "Загружает сканированные"
@@ -257,6 +259,7 @@ response_delete_error: "Не удалось удалить!"
 response_directory_deleted: "Каталог успешно удален!"
 response_directory_renamed: "Каталог успешно переименован!"
 response_error: "Ошибка"
+response_failed: "Не удалось"
 response_failed_to_install: "Не удалось установить!"
 response_failed_to_update: "Не удалось обновить!"
 response_file_deleted: "Файл успешно удален!"
@@ -269,11 +272,13 @@ response_login_invalid_username: "Войти провал! Имя пользов
 response_login_password_field_empty: "Пароль пусто!"
 response_login_username_field_empty: "Имя пользователя пусто!"
 response_login_wrong_endpoint: "Неправильная конечная точка!"
+response_passed: "Удалось"
 response_possible_problem_found: "Возможная проблема."
 response_rename_error: "Не удалось переименовать!"
 response_restore_error_1: "Не удалось восстановить! Поврежденный файл!"
 response_restore_error_2: "Не удалось восстановить! Неправильный карантинный ключ!"
 response_sanity_1: "Файл содержит неожиданный контент! Файл отклонен!"
+response_skipped: "Проигнорировал"
 response_statistics_cleared: "Статистика очищена."
 response_updates_already_up_to_date: "Уже обновлено."
 response_updates_not_installed: "Компонент не установлен!"

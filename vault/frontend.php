@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.25).
+ * This file: Front-end handler (last modified: 2019.03.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1485,6 +1485,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     }
     unset($phpMussel['StateModified']);
 
+    /** Updates page form boilerplate. */
+    $phpMussel['CFBoilerplate'] =
+        '<form action="?%s" method="POST" style="display:inline">' .
+        '<input name="phpmussel-form-target" type="hidden" value="updates" />' .
+        '<input name="do" type="hidden" value="%s" />';
+
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = ['Meta' => [], 'RemoteMeta' => []];
 
@@ -1704,12 +1710,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         }
         $phpMussel['Components']['ThisComponent']['VersionSize'] = 0;
         if (
-            !empty($phpMussel['Components']['ThisComponent']['Files']['Checksum']) &&
-            is_array($phpMussel['Components']['ThisComponent']['Files']['Checksum'])
+            !empty($phpMussel['Components']['ThisComponent']['Files']['To']) &&
+            is_array($phpMussel['Components']['ThisComponent']['Files']['To'])
         ) {
             $phpMussel['Components']['ThisComponent']['Options'] .=
                 '<option value="verify-component">' . $phpMussel['L10N']->getString('field_verify') . '</option>';
             $phpMussel['Components']['Verify'][] = $phpMussel['Components']['Key'];
+        }
+        if (
+            !empty($phpMussel['Components']['ThisComponent']['Files']['Checksum']) &&
+            is_array($phpMussel['Components']['ThisComponent']['Files']['Checksum'])
+        ) {
             array_walk($phpMussel['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $phpMussel['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
@@ -1926,10 +1937,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Instructions to update everything at once. */
     if ($phpMussel['Components']['CountOutdated']) {
-        $phpMussel['FE']['UpdateAll'] .=
-            '<form action="?' . $phpMussel['FE']['UpdatesFormTarget'] .
-            '" method="POST" style="display:inline"><input name="phpmussel-form-target" type="hidden" value="updates" />' .
-            '<input name="do" type="hidden" value="update-component" />';
+        $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'update-component');
         foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['ThisOutdated']) {
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
         }
@@ -1938,10 +1946,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Instructions to verify everything at once. */
     if ($phpMussel['Components']['CountVerify']) {
-        $phpMussel['FE']['UpdateAll'] .=
-            '<form action="?' . $phpMussel['FE']['UpdatesFormTarget'] .
-            '" method="POST" style="display:inline"><input name="phpmussel-form-target" type="hidden" value="updates" />' .
-            '<input name="do" type="hidden" value="verify-component" />';
+        $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'verify-component');
         foreach ($phpMussel['Components']['Verify'] as $phpMussel['Components']['ThisVerify']) {
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisVerify'] . '" />';
         }
@@ -1991,7 +1996,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     }
 
     /** Cleanup. */
-    unset($phpMussel['Components']);
+    unset($phpMussel['Components'], $phpMussel['CFBoilerplate']);
 
 }
 

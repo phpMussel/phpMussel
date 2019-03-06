@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.02.26).
+# This file: German language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -188,14 +188,16 @@ label_fmgr_total_disk_usage: "Speicherplatz verwendet insgesamt: "
 label_fmgr_total_space: "Speicherplatz insgesamt: "
 label_fmgr_updates_metadata: "Komponente aktualisiert Metadaten"
 label_hide: "Verstecke"
+label_integrity_check: "Integritätsprüfung: "
 label_never: "Noch nie"
 label_os: "Betriebssystem verwendet:"
-label_other: "Andere"
 label_other-Active: "Aktive Signaturdateien"
 label_other-Since: "Anfangsdatum"
+label_other: "Andere"
 label_php: "PHP-Version verwendet:"
 label_phpmussel: "phpMussel-Version verwendet:"
 label_quarantined: "Uploads unter Quarantäne gestellt"
+label_sanity_check: "Gesundheitsüberprüfung: "
 label_sapi: "SAPI verwendet:"
 label_scanned_objects: "Objekte gescannt"
 label_scanned_uploads: "Uploads gescannt"
@@ -256,6 +258,7 @@ response_delete_error: "Löschung-Fehler!"
 response_directory_deleted: "Verzeichnis erfolgreich gelöscht!"
 response_directory_renamed: "Verzeichnis erfolgreich umbenannt!"
 response_error: "Fehler"
+response_failed: "Nicht bestanden"
 response_failed_to_install: "Installation fehlgeschlagen!"
 response_failed_to_update: "Aktualisierung fehlgeschlagen!"
 response_file_deleted: "Datei erfolgreich gelöscht!"
@@ -268,11 +271,13 @@ response_login_invalid_username: "Einloggen-Fehler! Benutzername existiert nicht
 response_login_password_field_empty: "Passwort-Feld leer!"
 response_login_username_field_empty: "Benutzername-Feld leer!"
 response_login_wrong_endpoint: "Falscher Endpunkt!"
+response_passed: "Bestanden"
 response_possible_problem_found: "Mögliches Problem gefunden."
 response_rename_error: "Umbenennung-Fehler!"
 response_restore_error_1: "Fehler beim Wiederherstellen! Beschädigte Datei!"
 response_restore_error_2: "Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!"
 response_sanity_1: "Datei enthält unerwarteten Inhalt! Datei abgelehnt!"
+response_skipped: "Übersprang"
 response_statistics_cleared: "Statistiken gelöscht."
 response_updates_already_up_to_date: "Schon aktuell."
 response_updates_not_installed: "Komponente nicht installiert!"

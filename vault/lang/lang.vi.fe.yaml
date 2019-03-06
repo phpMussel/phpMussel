@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.02.26).
+# This file: Vietnamese language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -186,14 +186,16 @@ label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:
 label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số: "
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
+label_integrity_check: "Kiểm tra tính toàn vẹn: "
 label_never: "Không bao giờ"
 label_os: "Hệ điều hành đang được dùng:"
-label_other: "Khác"
 label_other-Active: "Tập tin chữ ký kích hoạt"
 label_other-Since: "Ngày bắt đầu"
+label_other: "Khác"
 label_php: "Phiên bản PHP đang được dùng:"
 label_phpmussel: "Phiên bản phpMussel đang được dùng:"
 label_quarantined: "Tải lên trong kiểm dịch"
+label_sanity_check: "Kiểm tra an toàn: "
 label_sapi: "SAPI đang được dùng:"
 label_scanned_objects: "Đối tượng được quét"
 label_scanned_uploads: "Tải lên được quét"
@@ -254,6 +256,7 @@ response_delete_error: "Không thể xóa!"
 response_directory_deleted: "Thư mục xóa thành công!"
 response_directory_renamed: "Đổi tên thư mục thành công!"
 response_error: "Lỗi"
+response_failed: "Thất bại"
 response_failed_to_install: "Cài đặt không thành công!"
 response_failed_to_update: "Cập nhật không thành công!"
 response_file_deleted: "Tập tin xóa thành công!"
@@ -266,11 +269,13 @@ response_login_invalid_username: "Thất bại đăng nhập! Tên người dùn
 response_login_password_field_empty: "Mật khẩu là trống!"
 response_login_username_field_empty: "Tên người dùng là trống!"
 response_login_wrong_endpoint: "Điểm truy cập không đúng!"
+response_passed: "Thành công"
 response_possible_problem_found: "Có thể tìm thấy vấn đề."
 response_rename_error: "Không thể đổi tên!"
 response_restore_error_1: "Không thể khôi phục! Tập tin bị hỏng!"
 response_restore_error_2: "Không thể khôi phục! Khóa kiểm dịch sai rồi!"
 response_sanity_1: "Tập tin chứa nội dung không mong muốn! Tập tin đã bị từ chối!"
+response_skipped: "Bỏ qua"
 response_statistics_cleared: "Thống kê đã được xóa."
 response_updates_already_up_to_date: "Đã cập nhật."
 response_updates_not_installed: "Gói không được cài đặt!"

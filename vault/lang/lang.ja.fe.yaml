@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.02.26).
+# This file: Japanese language data for the front-end (last modified: 2019.03.06).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -186,6 +186,8 @@ label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
 label_hide: "隠す"
+label_integrity_check: "整合性チェック："
+label_sanity_check: "サニティ・チェック："
 label_never: "決して"
 label_os: "使用されたオペレーティングシステム："
 label_other: "その他"
@@ -254,6 +256,7 @@ response_delete_error: "削除に失敗しました！"
 response_directory_deleted: "ディレクトリが正常に削除されました！"
 response_directory_renamed: "ディレクトリの名前が変更されました！"
 response_error: "エラー"
+response_failed: "失敗しました"
 response_failed_to_install: "インストールに失敗しました！"
 response_failed_to_update: "アップデートに失敗しました！"
 response_file_deleted: "ファイルを削除が成功しました！"
@@ -266,11 +269,13 @@ response_login_invalid_username: "ログイン失敗！​ユーザー名は存�
 response_login_password_field_empty: "パスワード入力は空です！"
 response_login_username_field_empty: "ユーザー名入力は空です！"
 response_login_wrong_endpoint: "間違ったエンドポイント！"
+response_passed: "合格しました"
 response_possible_problem_found: "考えられる問題が見つかりました。"
 response_rename_error: "名前を変更できませんでした！"
 response_restore_error_1: "復元に失敗しました！​破損したファイル！"
 response_restore_error_2: "復元に失敗しました！​検疫キーが間違っています！"
 response_sanity_1: "ファイルに予期しないコンテンツがあります！​ファイルが拒否されました！"
+response_skipped: "スキップしました"
 response_statistics_cleared: "統計はクリアされました。"
 response_updates_already_up_to_date: "すでに最新の状態です。"
 response_updates_not_installed: "コンポーネントのインストールされていません！"
