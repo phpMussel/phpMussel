@@ -1665,7 +1665,7 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
 
             /** Append results. */
             $Table .= sprintf(
-                '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
+                '<code>%1$s</code> – %7$s%8$s – %9$s%10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
                 $phpMussel['L10N']->getString('label_actual'),
                 $Actual ?: '?',

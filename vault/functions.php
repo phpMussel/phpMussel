@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.02.27).
+ * This file: Functions file (last modified: 2019.03.19).
  */
 
 /**
@@ -1243,11 +1243,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         ) ?: '[phpMussel] Required variables aren\'t defined: Can\'t continue.');
     }
 
+    /** Plugin hook: "DataHandler_start". */
+    $phpMussel['Execute_Hook']('DataHandler_start');
+
     /** Identifies whether the scan target has been flagged for any reason yet. */
     $flagged = false;
 
     /** Increment scan depth. */
     $dpt++;
+
     /** Controls indenting relating to scan depth for normal logging and for CLI-mode scanning. */
     $lnap = str_pad('> ', ($dpt + 1), '-', STR_PAD_LEFT);
 
@@ -1980,6 +1984,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         ['URL_Scanner', 4],
         ['Complex_Extended', 5]
     ] as $ThisConf) {
+
+        /** Plugin hook: "new_sigfile_type". */
+        $phpMussel['Execute_Hook']('new_sigfile_type');
+
         $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
@@ -1988,6 +1996,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             if (!isset($phpMussel['memCache'][$SigFile])) {
                 $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
             }
+
+            /** Plugin hook: "new_sigfile". */
+            $phpMussel['Execute_Hook']('new_sigfile');
+
             if (!$phpMussel['memCache'][$SigFile]) {
                 $phpMussel['memCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
@@ -2367,6 +2379,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     ] as $ThisConf) {
         $DataSource = $ThisConf[1];
         $DataSourceLen = $ThisConf[2];
+
+        /** Plugin hook: "new_sigfile_type". */
+        $phpMussel['Execute_Hook']('new_sigfile_type');
+
         $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
@@ -2375,6 +2391,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             if (!isset($phpMussel['memCache'][$SigFile])) {
                 $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
             }
+
+            /** Plugin hook: "new_sigfile". */
+            $phpMussel['Execute_Hook']('new_sigfile');
+
             if (!$phpMussel['memCache'][$SigFile]) {
                 $phpMussel['memCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
@@ -2565,6 +2585,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
     }
 
+    /** Plugin hook: "before_domains_api_lookup". */
+    $phpMussel['Execute_Hook']('before_domains_api_lookup');
+
     /** Perform API lookups for domains. */
     if (isset($URLScanner) && !$Out) {
 
@@ -2717,6 +2740,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** URL scanner data cleanup. */
     unset($URLScanner);
+
+    /** Plugin hook: "before_chameleon_detections". */
+    $phpMussel['Execute_Hook']('before_chameleon_detections');
 
     /** PHP chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_php']) {
@@ -2922,6 +2948,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $phpMussel['whyflagged'] .= $heur['web'];
     }
 
+    /** Plugin hook: "before_vt". */
+    $phpMussel['Execute_Hook']('before_vt');
+
     /** Virus Total API integration. */
     if (
         !$Out &&
@@ -3101,6 +3130,9 @@ $phpMussel['SplitSigParts'] = function ($Sig, $Max = -1) {
  * @param string $MD5 A hash for the content, inherited from the parent.
  */
 $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &$Data, $Depth, $MD5) use (&$phpMussel) {
+
+    /** Plugin hook: "MetaDataScan_start". */
+    $phpMussel['Execute_Hook']('MetaDataScan_start');
 
     /** Data is empty. Nothing to scan. Exit early. */
     if (!$Filesize = strlen($Data)) {
@@ -3388,6 +3420,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             'required_variables_not_defined'
         ) ?: '[phpMussel] Required variables aren\'t defined: Can\'t continue.');
     }
+
+    /** Plugin hook: "Recursor_start". */
+    $phpMussel['Execute_Hook']('Recursor_start');
 
     /** Prepare signature files for the scan process. */
     if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
@@ -3847,6 +3882,9 @@ $phpMussel['ConvertCRX'] = function (&$Data) use (&$phpMussel) {
  * @param string $ItemRef A reference to the parent container (for logging).
  */
 $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDepth = 0, $ItemRef = '') use (&$phpMussel) {
+
+    /** Plugin hook: "ArchiveRecursor_start". */
+    $phpMussel['Execute_Hook']('ArchiveRecursor_start');
 
     /** Create quine detection array. */
     if (!$ScanDepth || !isset($phpMussel['Quine'])) {

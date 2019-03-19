@@ -15,6 +15,13 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   component verification feature. The distinction between failed integrity
   checks and failed sanity checks should be a little more obvious now.
 
+- [2019.03.19; Maikuolan]: Added a number of new plugin hooks:
+  "ArchiveRecursor_start", "before_chameleon_detections",
+  "before_domains_api_lookup", "before_vt", "DataHandler_start",
+  "MetaDataScan_start", "new_sigfile", "new_sigfile_type", "Recursor_start".
+  Refer to the v1 plugin boilerplate for more information about where these
+  hooks are executed.
+
 === Version/Release 1.9.0 ===
 MINOR RELEASE.
 
