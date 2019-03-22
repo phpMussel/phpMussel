@@ -22,6 +22,8 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   Refer to the v1 plugin boilerplate for more information about where these
   hooks are executed.
 
+- [2019.03.22; Maikuolan]: Added a new malware type shorthand entry (Miner).
+
 === Version/Release 1.9.0 ===
 MINOR RELEASE.
 

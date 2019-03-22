@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: phpMussel shorthand data (last modified: 2019.02.24).
+# This file: phpMussel shorthand data (last modified: 2019.03.22).
 #
 # Warning: When modifying the information in this file, be careful to ensure
 # that any changes made won't conflict with the what phpMussel recognises as
@@ -189,6 +189,8 @@ Malware Type Shorthand:
   9: Malvertisement
   13: Encrypted
   15: BadURL
+ 4:
+  0: Miner
 Malware Type Ignore Options:
  1:
   3: detect_adware
@@ -245,4 +247,5 @@ Malware Type Search Patterns:
  Malvertisement: "\x1a..\x39"
  Encrypted: "\x1a..\x3d"
  BadURL: "\x1a..\x3f"
+ Miner: "\x1a..\x40"
 
