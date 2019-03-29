@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.03.06).
+ * This file: Front-end handler (last modified: 2019.03.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1322,45 +1322,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
     if ($phpMussel['FE']['ASYNC']) {
 
-        /** Perform some function on a cache entry. */
-        if (!empty($_POST['cdi']) && !empty($_POST['do'])) {
-            if ($_POST['do'] === 'delete') {
+        /** Delete a cache entry. */
+        if (!empty($_POST['do']) && $_POST['do'] === 'delete') {
+            if (!empty($_POST['cdi'])) {
                 $phpMussel['CleanCache']($_POST['cdi']);
-            } elseif ($_POST['do'] === 'show') {
-                if ($phpMussel['Output'] = $phpMussel['FetchCache']($_POST['cdi'])) {
-                    echo '<textarea readonly>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $phpMussel['Output']) . '</textarea>';
-                    if ($_POST['cdi'] === 'HashCache') {
-                        foreach (explode(';', $phpMussel['Output']) as $phpMussel['ThisHash']) {
-                            if (!$phpMussel['ThisHash']) {
-                                continue;
-                            }
-                            $phpMussel['ThisHash'] = explode(':', $phpMussel['ThisHash']);
-                            echo '<small>' . sprintf(
-                                '"%1$s"<br />%2$s%3$s<br />%4$s%5$s',
-                                $phpMussel['ThisHash'][0],
-                                $phpMussel['L10N']->getString('label_expires'),
-                                ($phpMussel['ThisHash'][1] >= 0 ? $phpMussel['TimeFormat'](
-                                    $phpMussel['ThisHash'][1],
-                                    $phpMussel['Config']['general']['timeFormat']
-                                ) : $phpMussel['L10N']->getString('label_never')),
-                                '<code>' . ($phpMussel['ThisHash'][2] ? str_replace(['<', '>'], ['&lt;', '&gt;'], $phpMussel['HexSafe']($phpMussel['ThisHash'][2])) : $phpMussel['L10N']->getString('scan_no_problems_found')) . '</code><br />',
-                                '<code>' . ($phpMussel['ThisHash'][3] ? str_replace(['<', '>'], ['&lt;', '&gt;'], $phpMussel['HexSafe']($phpMussel['ThisHash'][3])) : $phpMussel['L10N']->getString('scan_no_problems_found')) . '</code>'
-                            ) . '</small><hr />';
-                        }
-                        unset($phpMussel['ThisHash']);
-                    }
-                }
-            }
-        }
-
-        /** Perform some function on a cache entry (the front-end cache). */
-        elseif (!empty($_POST['fecdi']) && !empty($_POST['do'])) {
-            if ($_POST['do'] === 'delete') {
+            } elseif (!empty($_POST['fecdi'])) {
                 $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], $_POST['fecdi']);
-            } elseif ($_POST['do'] === 'show') {
-                if ($phpMussel['Output'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], $_POST['fecdi'])) {
-                    echo '<textarea readonly>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $phpMussel['Output']) . '</textarea>';
-                }
             }
         }
 
@@ -1368,16 +1335,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
         /** Append async globals. */
         $phpMussel['FE']['JS'] .=
-            "function cdd(d,n){window.cdi=d,window.do=null==n?'delete':'show',$('POST',''" .
-            ",['phpmussel-form-target','cdi','do'],null,function(o){null==n?hideid(d+'Con" .
-            "tainer'):(w(d+'ID',r(d+'ID')+o),hideid(d+'SB'))})}window['phpmussel-form-tar" .
-            "get']='cache-data';function fecdd(d,n){window.fecdi=d,window.do=null==n?'del" .
-            "ete':'show',$('POST','',['phpmussel-form-target','fecdi','do'],null,function" .
-            "(o){null==n?hideid(d+'FEContainer'):(w(d+'FEID',r(d+'FEID')+o),hideid(d+'FES" .
-            "B'))})}window['phpmussel-form-target']='cache-data';";
+            "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['phpmusse" .
+            "l-form-target','cdi','do'],null,function(o){hideid(d+'Container')})}wind" .
+            "ow['phpmussel-form-target']='cache-data';function fecdd(d,n){window.fecd" .
+            "i=d,window.do='delete',$('POST','',['phpmussel-form-target','fecdi','do'" .
+            "],null,function(o){hideid(d+'FEContainer')})}window['phpmussel-form-targ" .
+            "et']='cache-data';";
 
         /** To be populated by the cache data. */
         $phpMussel['FE']['CacheData'] = '';
+
+        /** Array of all cache items from all sources. */
+        $phpMussel['CacheArray'] = ['fe_assets/frontend.dat' => []];
 
         /** Get cache index data. */
         if ($phpMussel['CacheIndexData'] = $phpMussel['ReadFile']($phpMussel['cachePath'] . 'index.dat')) {
@@ -1386,32 +1355,29 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                     continue;
                 }
                 $phpMussel['CacheIndexData'] = explode(':', $phpMussel['CacheIndexData']);
-                if ($phpMussel['CacheIndexData'][0] > 0 && $phpMussel['Time'] >= $phpMussel['CacheIndexData'][0]) {
+                if (
+                    isset($phpMussel['CacheIndexData'][1]) &&
+                    $phpMussel['CacheIndexData'][1] > 0 &&
+                    $phpMussel['Time'] >= $phpMussel['CacheIndexData'][1]
+                ) {
                     continue;
                 }
-                $phpMussel['CacheIndexData'][2] = (
-                    $phpMussel['ThisCacheData'] = $phpMussel['FetchCache']($phpMussel['CacheIndexData'][0])
-                ) ? strlen($phpMussel['ThisCacheData']) : 0;
-                $phpMussel['FormatFilesize']($phpMussel['CacheIndexData'][2]);
+                $phpMussel['CacheIndexData'][1] = ($phpMussel['CacheIndexData'][1] >= 0 ? $phpMussel['TimeFormat'](
+                    $phpMussel['CacheIndexData'][1],
+                    $phpMussel['Config']['general']['timeFormat']
+                ) : $phpMussel['L10N']->getString('label_never'));
                 $phpMussel['CacheIndexData'][3] = bin2hex(substr($phpMussel['CacheIndexData'][0], 0, 1)) . '.tmp';
-                $phpMussel['FE']['CacheData'] .= sprintf(
-                    "\n        " .
-                    '<div class="ng1" id="%1$sContainer"><span class="s">"cache/%4$s" -&gt; "%1$s"<br /><small>%7$s%3$s<br />%8$s%2$s</small><div id="%1$sID">' .
-                    '<input onclick="javascript:cdd(\'%1$s\')" type="button" value="%6$s" class="auto" /> ' .
-                    '<input onclick="javascript:cdd(\'%1$s\',1)" id="%1$sSB" type="button" value="%5$s" class="auto" />' .
-                    '</div></span></div>',
-                    $phpMussel['CacheIndexData'][0],
-                    ($phpMussel['CacheIndexData'][1] >= 0 ? $phpMussel['TimeFormat'](
-                        $phpMussel['CacheIndexData'][1],
-                        $phpMussel['Config']['general']['timeFormat']
-                    ) : $phpMussel['L10N']->getString('label_never')),
-                    $phpMussel['CacheIndexData'][2],
-                    $phpMussel['CacheIndexData'][3],
-                    $phpMussel['L10N']->getString('label_show'),
-                    $phpMussel['L10N']->getString('field_delete_file'),
-                    $phpMussel['L10N']->getString('field_size'),
-                    $phpMussel['L10N']->getString('label_expires')
-                ) . "\n";
+                if (!isset($phpMussel['CacheArray'][$phpMussel['CacheIndexData'][3]])) {
+                    $phpMussel['CacheArray'][$phpMussel['CacheIndexData'][3]] = [];
+                }
+                $phpMussel['CacheIndexData'][4] = $phpMussel['FetchCache']($phpMussel['CacheIndexData'][0]);
+                $phpMussel['CacheIndexData'][5] = strlen($phpMussel['CacheIndexData'][4]);
+                $phpMussel['FormatFilesize']($phpMussel['CacheIndexData'][5]);
+                $phpMussel['CacheArray'][$phpMussel['CacheIndexData'][3]][$phpMussel['CacheIndexData'][0]] = [
+                    $phpMussel['CacheIndexData'][0] => $phpMussel['CacheIndexData'][4],
+                    $phpMussel['L10N']->getString('field_size') => $phpMussel['CacheIndexData'][5],
+                    $phpMussel['L10N']->getString('label_expires') => $phpMussel['CacheIndexData'][1]
+                ];
             }
         }
 
@@ -1422,42 +1388,61 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                     continue;
                 }
                 $phpMussel['CacheIndexData'] = explode(',', $phpMussel['CacheIndexData']);
-                $phpMussel['CacheIndexData'][0] = base64_decode($phpMussel['CacheIndexData'][0]);
-                $phpMussel['CacheIndexData'][3] = strlen(base64_decode($phpMussel['CacheIndexData'][1]));
-                $phpMussel['FormatFilesize']($phpMussel['CacheIndexData'][3]);
-                $phpMussel['FE']['CacheData'] .= sprintf(
-                    "\n        " .
-                    '<div class="ng1" id="%1$sFEContainer"><span class="s">"fe_assets/frontend.dat" -&gt; "%1$s"<br /><small>%2$s%3$s<br />%4$s%5$s</small><div id="%1$sFEID">' .
-                    '<input onclick="javascript:fecdd(\'%1$s\')" type="button" value="%7$s" class="auto" /> ' .
-                    '<input onclick="javascript:fecdd(\'%1$s\',1)" id="%1$sFESB" type="button" value="%6$s" class="auto" />' .
-                    '</div></span></div>',
-                    $phpMussel['CacheIndexData'][0],
-                    $phpMussel['L10N']->getString('field_size'),
-                    $phpMussel['CacheIndexData'][3],
-                    $phpMussel['L10N']->getString('label_expires'),
-                    ($phpMussel['CacheIndexData'][2] >= 0 ? $phpMussel['TimeFormat'](
-                        $phpMussel['CacheIndexData'][2],
-                        $phpMussel['Config']['general']['timeFormat']
-                    ) : $phpMussel['L10N']->getString('label_never')),
-                    $phpMussel['L10N']->getString('label_show'),
-                    $phpMussel['L10N']->getString('field_delete_file')
-                ) . "\n";
+                $phpMussel['ThisCacheEntryName'] = base64_decode($phpMussel['CacheIndexData'][0]);
+                if (isset($phpMussel['CacheIndexData'][1])) {
+                    $phpMussel['CacheIndexData'][1] = base64_decode($phpMussel['CacheIndexData'][1]);
+                }
+                $phpMussel['CacheIndexData'][2] = ($phpMussel['CacheIndexData'][2] >= 0 ? $phpMussel['TimeFormat'](
+                    $phpMussel['CacheIndexData'][2],
+                    $phpMussel['Config']['general']['timeFormat']
+                ) : $phpMussel['L10N']->getString('label_never'));
+                $phpMussel['ThisCacheEntrySize'] = strlen($phpMussel['CacheIndexData'][1]);
+                $phpMussel['FormatFilesize']($phpMussel['ThisCacheEntrySize']);
+                if (
+                    preg_match('~\.ya?ml$~i', $phpMussel['ThisCacheEntryName']) ||
+                    substr($phpMussel['CacheIndexData'][1], 0, 4) === "---\n"
+                ) {
+                    $phpMussel['CacheIndexData']['TryYAML'] = new \Maikuolan\Common\YAML();
+                    if ($phpMussel['CacheIndexData']['TryYAML']->process(
+                        $phpMussel['CacheIndexData'][1],
+                        $phpMussel['CacheIndexData']['TryYAML']->Data
+                    ) && !empty($phpMussel['CacheIndexData']['TryYAML']->Data)) {
+                        $phpMussel['CacheIndexData'][1] = $phpMussel['CacheIndexData']['TryYAML']->Data;
+                    }
+                }
+                $phpMussel['Arrayify']($phpMussel['CacheIndexData'][1]);
+                $phpMussel['CacheArray']['fe_assets/frontend.dat'][$phpMussel['ThisCacheEntryName']] = $phpMussel['CacheIndexData'][1];
+                $phpMussel['CacheArray']['fe_assets/frontend.dat'][$phpMussel['ThisCacheEntryName']][
+                    $phpMussel['L10N']->getString('field_size')
+                ] = $phpMussel['ThisCacheEntrySize'];
+                $phpMussel['CacheArray']['fe_assets/frontend.dat'][$phpMussel['ThisCacheEntryName']][
+                    $phpMussel['L10N']->getString('label_expires')
+                ] = $phpMussel['CacheIndexData'][2];
             }
         }
+        unset($phpMussel['ThisCacheEntrySize'], $phpMussel['ThisCacheEntryName'], $phpMussel['CacheIndexData']);
+
+        /** Begin processing all cache items from all sources. */
+        foreach ($phpMussel['CacheArray'] as $phpMussel['CacheSourceName'] => $phpMussel['CacheSourceData']) {
+            if (empty($phpMussel['CacheSourceData'])) {
+                continue;
+            }
+            $phpMussel['FE']['CacheData'] .= '<div class="ng1"><span class="s">' . $phpMussel['CacheSourceName'] . '</span><br /><br /><ul class="pieul">' . $phpMussel['ArrayToClickableList'](
+                $phpMussel['CacheSourceData'], ($phpMussel['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0
+            ) . '</ul></div>';
+        }
+        unset($phpMussel['CacheSourceData'], $phpMussel['CacheSourceName'], $phpMussel['CacheArray']);
 
         /** Cache is empty. */
         if (!$phpMussel['FE']['CacheData']) {
             $phpMussel['FE']['CacheData'] = '<div class="ng1"><span class="s">' . $phpMussel['L10N']->getString('state_cache_is_empty') . '</span></div>';
         }
 
-        /** Cleanup. */
-        unset($phpMussel['ThisCacheData'], $phpMussel['CacheIndexData']);
-
         /** Parse output. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
             $phpMussel['lang'] + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_cache.html'))
-        );
+        ) . $phpMussel['MenuToggle'];
 
         /** Send output. */
         echo $phpMussel['SendOutput']();

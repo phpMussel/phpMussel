@@ -24,6 +24,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 - [2019.03.22; Maikuolan]: Added a new malware type shorthand entry (Miner).
 
+- [2019.03.29; Maikuolan]: Redesigned the front-end cache data page. It should
+  now be a little easier to navigate the page and to interpret its data.
+
 === Version/Release 1.9.0 ===
 MINOR RELEASE.
 
