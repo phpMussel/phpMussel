@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.03.19).
+ * This file: Functions file (last modified: 2019.04.02).
  */
 
 /**
@@ -397,10 +397,10 @@ $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = fals
  * @return bool Operation succeeded (true) or failed (false).
  */
 $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
-    if (!empty($phpMussel['memCache']['CacheCleaned'])) {
+    if (!empty($phpMussel['InstanceCache']['CacheCleaned'])) {
         return true;
     }
-    $phpMussel['memCache']['CacheCleaned'] = true;
+    $phpMussel['InstanceCache']['CacheCleaned'] = true;
     $CacheFiles = [];
     $FileIndex = $phpMussel['cachePath'] . 'index.dat';
     if (!is_readable($FileIndex)) {
@@ -839,10 +839,10 @@ $phpMussel['implode_bits'] = function ($Input) {
 $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
 
     /** Determine whether the signature is weighted. */
-    $phpMussel['memCache']['weighted'] = false;
+    $phpMussel['InstanceCache']['weighted'] = false;
 
     /** Determine whether the signature should be ignored due to package configuration. */
-    $phpMussel['memCache']['ignoreme'] = false;
+    $phpMussel['InstanceCache']['ignoreme'] = false;
 
     /** Byte 0 confirms whether the signature name uses shorthand. */
     if ($VN[0] !== "\x1a") {
@@ -887,7 +887,7 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
         !empty($phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]]) &&
         $phpMussel['shorthand.yaml']['Vendor Weight Options'][$Nibbles[0]] === 'Weighted'
     )) {
-        $phpMussel['memCache']['weighted'] = true;
+        $phpMussel['InstanceCache']['weighted'] = true;
     }
 
     /** Populate signature metadata information. */
@@ -915,7 +915,7 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
     if (!empty($phpMussel['shorthand.yaml']['Malware Type Ignore Options'][$Nibbles[0]][$Nibbles[1]])) {
         $IgnoreOption = $phpMussel['shorthand.yaml']['Malware Type Ignore Options'][$Nibbles[0]][$Nibbles[1]];
         if (isset($phpMussel['Config']['signatures'][$IgnoreOption]) && !$phpMussel['Config']['signatures'][$IgnoreOption]) {
-            $phpMussel['memCache']['ignoreme'] = true;
+            $phpMussel['InstanceCache']['ignoreme'] = true;
         }
     }
 
@@ -977,8 +977,8 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
     ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
     /** Fetch the cache entry for Google Safe Browsing, if it doesn't already exist. */
-    if (!isset($phpMussel['memCache']['urlscanner_google'])) {
-        $phpMussel['memCache']['urlscanner_google'] = $phpMussel['FetchCache']('urlscanner_google');
+    if (!isset($phpMussel['InstanceCache']['urlscanner_google'])) {
+        $phpMussel['InstanceCache']['urlscanner_google'] = $phpMussel['FetchCache']('urlscanner_google');
     }
     /** Generate new cache expiry time. */
     $newExpiry = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
@@ -987,10 +987,10 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
     /** This will contain the lookup response. */
     $Response = '';
     /** Check if this lookup has already been performed. */
-    while (strpos($phpMussel['memCache']['urlscanner_google'], $cacheRef) !== false) {
-        $Response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_google'], $cacheRef), ';');
+    while (strpos($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef) !== false) {
+        $Response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef), ';');
         /** Safety mechanism. */
-        if (!$Response || strpos($phpMussel['memCache']['urlscanner_google'], $cacheRef . $Response . ';') === false) {
+        if (!$Response || strpos($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef . $Response . ';') === false) {
             $Response = '';
             break;
         }
@@ -999,14 +999,14 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
             $Response = $phpMussel['substraf']($Response, ':');
             break;
         }
-        $phpMussel['memCache']['urlscanner_google'] =
-            str_ireplace($cacheRef . $Response . ';', '', $phpMussel['memCache']['urlscanner_google']);
+        $phpMussel['InstanceCache']['urlscanner_google'] =
+            str_ireplace($cacheRef . $Response . ';', '', $phpMussel['InstanceCache']['urlscanner_google']);
         $Response = '';
     }
     /** If this lookup has already been performed, return the results without repeating it. */
     if ($Response) {
         /** Update the cache entry for Google Safe Browsing. */
-        $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
+        $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['InstanceCache']['urlscanner_google']);
         if ($Response === '200') {
             /** Potentially harmful URL detected. */
             return 200;
@@ -1074,8 +1074,8 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
     }
 
     /** Update the cache entry for Google Safe Browsing. */
-    $phpMussel['memCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $returnVal . ';';
-    $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
+    $phpMussel['InstanceCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $returnVal . ';';
+    $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['InstanceCache']['urlscanner_google']);
 
     return $returnVal;
 };
@@ -1100,8 +1100,8 @@ $phpMussel['Detected'] = function (&$heur, &$lnap, &$VN, &$ofn, &$ofnSafe, &$out
         $flagged = true;
     }
     $heur['detections']++;
-    $phpMussel['memCache']['detections_count']++;
-    if ($phpMussel['memCache']['weighted']) {
+    $phpMussel['InstanceCache']['detections_count']++;
+    if ($phpMussel['InstanceCache']['weighted']) {
         $heur['weight']++;
         $heur['cli'] .= $lnap . sprintf(
             $phpMussel['L10N']->getString('_exclamation_final'),
@@ -1237,7 +1237,7 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$
  */
 $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$phpMussel) {
     /** If the memory cache isn't set at this point, something has gone very wrong. */
-    if (!isset($phpMussel['memCache'])) {
+    if (!isset($phpMussel['InstanceCache'])) {
         throw new \Exception($phpMussel['L10N']->getString(
             'required_variables_not_defined'
         ) ?: '[phpMussel] Required variables aren\'t defined: Can\'t continue.');
@@ -1281,7 +1281,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         ';$crc:' . $crc . ';$fourcc:' . $fourcc . ';$twocc:' . $twocc . ';';
 
     /** Indicates whether a signature is considered a "weighted" signature. */
-    $phpMussel['memCache']['weighted'] = false;
+    $phpMussel['InstanceCache']['weighted'] = false;
 
     /** Variables used for weighted signatures and for heuristic analysis. */
     $heur = ['detections' => 0, 'weight' => 0, 'cli' => '', 'web' => ''];
@@ -1289,7 +1289,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Scan target has no name? That's a little suspicious. */
     if (!$ofn) {
         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
-        $phpMussel['memCache']['detections_count']++;
+        $phpMussel['InstanceCache']['detections_count']++;
         $Out .= $lnap . sprintf(
             $phpMussel['L10N']->getString('_exclamation_final'),
             $phpMussel['L10N']->getString('scan_missing_filename')
@@ -1322,7 +1322,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
         }
         if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2])) {
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2]);
             if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3])) {
                 $phpMussel['whyflagged'] .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
@@ -1343,8 +1343,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 'CRC32B' => $crc,
                 '2CC' => $twocc,
                 '4CC' => $fourcc,
-                'ScanPhase' => $phpMussel['memCache']['phase'],
-                'Container' => $phpMussel['memCache']['container'],
+                'ScanPhase' => $phpMussel['InstanceCache']['phase'],
+                'Container' => $phpMussel['InstanceCache']['container'],
                 'Results' => !$Out ? 1 : 2,
                 'Output' => $Out
             ];
@@ -1389,8 +1389,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $len_hmb = ($str_len > 524288) ? 1 : 0;
     $len_mb = ($str_len > 1048576) ? 1 : 0;
     $len_hgb = ($str_len > 536870912) ? 1 : 0;
-    $phase = $phpMussel['memCache']['phase'];
-    $container = $phpMussel['memCache']['container'];
+    $phase = $phpMussel['InstanceCache']['phase'];
+    $container = $phpMussel['InstanceCache']['container'];
     $pdf_magic = ($fourcc == '25504446');
 
     /** CoEx flags for configuration directives related to signatures. */
@@ -1485,18 +1485,18 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $asciiable = (bool)$str_hex_norm_len;
 
     /** Used to identify whether to check against OLE signatures. */
-    $is_ole = !empty($phpMussel['memCache']['file_is_ole']) && (
-        !empty($phpMussel['memCache']['file_is_macro']) ||
+    $is_ole = !empty($phpMussel['InstanceCache']['file_is_ole']) && (
+        !empty($phpMussel['InstanceCache']['file_is_macro']) ||
         strpos(',bin,ole,xml,rels,', ',' . $xt . ',') !== false
     );
 
     /** Worked by the switch file. */
     $fileswitch = 'unassigned';
-    if (!isset($phpMussel['memCache']['switch.dat'])) {
-        $phpMussel['memCache']['switch.dat'] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . 'switch.dat', FILE_IGNORE_NEW_LINES);
+    if (!isset($phpMussel['InstanceCache']['switch.dat'])) {
+        $phpMussel['InstanceCache']['switch.dat'] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . 'switch.dat', FILE_IGNORE_NEW_LINES);
     }
-    if (!$phpMussel['memCache']['switch.dat']) {
-        $phpMussel['memCache']['scan_errors']++;
+    if (!$phpMussel['InstanceCache']['switch.dat']) {
+        $phpMussel['InstanceCache']['scan_errors']++;
         if (!$phpMussel['Config']['signatures']['fail_silently']) {
             if (!$flagged) {
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
@@ -1511,7 +1511,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             ) . "\n"];
         }
     }
-    foreach ($phpMussel['memCache']['switch.dat'] as $ThisRule) {
+    foreach ($phpMussel['InstanceCache']['switch.dat'] as $ThisRule) {
         $Switch = (strpos($ThisRule, ';') === false) ? $ThisRule : $phpMussel['substral']($ThisRule, ';');
         if (strpos($Switch, '=') === false) {
             continue;
@@ -1688,8 +1688,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $PEOriginalFilename =
     $PECompanyName = '';
     if (
-        !empty($phpMussel['memCache']['PE_Sectional']) ||
-        !empty($phpMussel['memCache']['PE_Extended']) ||
+        !empty($phpMussel['InstanceCache']['PE_Sectional']) ||
+        !empty($phpMussel['InstanceCache']['PE_Extended']) ||
         $phpMussel['Config']['attack_specific']['corrupted_exe']
     ) {
         $PEArr = [];
@@ -1729,7 +1729,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $flagged = true;
                     }
                     $heur['detections']++;
-                    $phpMussel['memCache']['detections_count']++;
+                    $phpMussel['InstanceCache']['detections_count']++;
                     $Out .= $lnap . sprintf(
                         $phpMussel['L10N']->getString('_exclamation_final'),
                         $phpMussel['L10N']->getString('corrupted')
@@ -1878,7 +1878,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Begin URL scanner. */
     if (
-        isset($phpMussel['memCache']['URL_Scanner']) ||
+        isset($phpMussel['InstanceCache']['URL_Scanner']) ||
         !empty($phpMussel['Config']['urlscanner']['lookup_hphosts']) ||
         !empty($phpMussel['Config']['urlscanner']['google_api_key'])
     ) {
@@ -1988,20 +1988,20 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         /** Plugin hook: "new_sigfile_type". */
         $phpMussel['Execute_Hook']('new_sigfile_type');
 
-        $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : [];
+        $SigFiles = isset($phpMussel['InstanceCache'][$ThisConf[0]]) ? explode(',', $phpMussel['InstanceCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
                 continue;
             }
-            if (!isset($phpMussel['memCache'][$SigFile])) {
-                $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
+            if (!isset($phpMussel['InstanceCache'][$SigFile])) {
+                $phpMussel['InstanceCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
             }
 
             /** Plugin hook: "new_sigfile". */
             $phpMussel['Execute_Hook']('new_sigfile');
 
-            if (!$phpMussel['memCache'][$SigFile]) {
-                $phpMussel['memCache']['scan_errors']++;
+            if (!$phpMussel['InstanceCache'][$SigFile]) {
+                $phpMussel['InstanceCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
                     if (!$flagged) {
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
@@ -2016,10 +2016,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     ) . "\n"];
                 }
             } elseif ($ThisConf[1] === 0) {
-                if (substr($phpMussel['memCache'][$SigFile], 0, 9) === 'phpMussel') {
-                    $phpMussel['memCache'][$SigFile] = substr($phpMussel['memCache'][$SigFile], 11, -1);
+                if (substr($phpMussel['InstanceCache'][$SigFile], 0, 9) === 'phpMussel') {
+                    $phpMussel['InstanceCache'][$SigFile] = substr($phpMussel['InstanceCache'][$SigFile], 11, -1);
                 }
-                $ArrayCSV = explode(',', $phpMussel['memCache'][$SigFile]);
+                $ArrayCSV = explode(',', $phpMussel['InstanceCache'][$SigFile]);
                 foreach ($ArrayCSV as $ItemCSV) {
                     if (strpos($str_hex_norm, $ItemCSV) !== false) {
                         if (!$flagged) {
@@ -2027,7 +2027,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $flagged = true;
                         }
                         $heur['detections']++;
-                        $phpMussel['memCache']['detections_count']++;
+                        $phpMussel['InstanceCache']['detections_count']++;
                         $Out .= $lnap . sprintf(
                             $phpMussel['L10N']->getString('_exclamation'),
                             $phpMussel['L10N']->getString('scan_command_injection')
@@ -2041,15 +2041,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 unset($ItemCSV, $ArrayCSV);
             } elseif ($ThisConf[1] === 1) {
                 foreach ([$md5, $sha, $sha256] as $CheckThisHash) {
-                    if (strpos($phpMussel['memCache'][$SigFile], "\n" . $CheckThisHash . ':' . $str_len . ':') !== false) {
-                        $xSig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], "\n" . $CheckThisHash . ':' . $str_len . ':');
+                    if (strpos($phpMussel['InstanceCache'][$SigFile], "\n" . $CheckThisHash . ':' . $str_len . ':') !== false) {
+                        $xSig = $phpMussel['substraf']($phpMussel['InstanceCache'][$SigFile], "\n" . $CheckThisHash . ':' . $str_len . ':');
                         if (strpos($xSig, "\n") !== false) {
                             $xSig = $phpMussel['substrbf']($xSig, "\n");
                         }
                         $xSig = $phpMussel['vn_shorthand']($xSig);
                         if (
-                            strpos($phpMussel['memCache']['greylist'], ',' . $xSig . ',') === false &&
-                            empty($phpMussel['memCache']['ignoreme'])
+                            strpos($phpMussel['InstanceCache']['greylist'], ',' . $xSig . ',') === false &&
+                            empty($phpMussel['InstanceCache']['ignoreme'])
                         ) {
                             $phpMussel['Detected']($heur, $lnap, $xSig, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                         }
@@ -2057,15 +2057,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
             } elseif ($ThisConf[1] === 2) {
                 for ($PEArr['k'] = 0; $PEArr['k'] < $NumOfSections; $PEArr['k']++) {
-                    if (strpos($phpMussel['memCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]) !== false) {
-                        $xSig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]);
+                    if (strpos($phpMussel['InstanceCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]) !== false) {
+                        $xSig = $phpMussel['substraf']($phpMussel['InstanceCache'][$SigFile], $PEArr['SectionArr'][$PEArr['k']]);
                         if (strpos($xSig, "\n") !== false) {
                             $xSig = $phpMussel['substrbf']($xSig, "\n");
                         }
                         $xSig = $phpMussel['vn_shorthand']($xSig);
                         if (
-                            strpos($phpMussel['memCache']['greylist'], ',' . $xSig . ',') === false &&
-                            empty($phpMussel['memCache']['ignoreme'])
+                            strpos($phpMussel['InstanceCache']['greylist'], ',' . $xSig . ',') === false &&
+                            empty($phpMussel['InstanceCache']['ignoreme'])
                         ) {
                             $phpMussel['Detected']($heur, $lnap, $xSig, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                         }
@@ -2074,15 +2074,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             } elseif ($ThisConf[1] === 3) {
                 if (!empty($PEArr['FINFO'])) {
                     foreach ($PEArr['FINFO'] as $PEArr['ThisPart']) {
-                        if (substr_count($phpMussel['memCache'][$SigFile], $PEArr['ThisPart'])) {
-                            $xSig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $PEArr['ThisPart']);
+                        if (substr_count($phpMussel['InstanceCache'][$SigFile], $PEArr['ThisPart'])) {
+                            $xSig = $phpMussel['substraf']($phpMussel['InstanceCache'][$SigFile], $PEArr['ThisPart']);
                             if (strpos($xSig, "\n") !== false) {
                                 $xSig = $phpMussel['substrbf']($xSig, "\n");
                             }
                             $xSig = $phpMussel['vn_shorthand']($xSig);
                             if (
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $xSig . ',') &&
-                                empty($phpMussel['memCache']['ignoreme'])
+                                !substr_count($phpMussel['InstanceCache']['greylist'], ',' . $xSig . ',') &&
+                                empty($phpMussel['InstanceCache']['ignoreme'])
                             ) {
                                 $phpMussel['Detected']($heur, $lnap, $xSig, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                             }
@@ -2092,8 +2092,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             } elseif ($ThisConf[1] === 4) {
                 foreach ([$URLScanner['DomainsNoLookup'], $URLScanner['URLsNoLookup']] as $URLScanner['ThisArr']) {
                     foreach ($URLScanner['ThisArr'] as $URLScanner['This']) {
-                        if (strpos($phpMussel['memCache'][$SigFile], $URLScanner['This']) !== false) {
-                            $xSig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $URLScanner['This']);
+                        if (strpos($phpMussel['InstanceCache'][$SigFile], $URLScanner['This']) !== false) {
+                            $xSig = $phpMussel['substraf']($phpMussel['InstanceCache'][$SigFile], $URLScanner['This']);
                             if (strpos($xSig, "\n") !== false) {
                                 $xSig = $phpMussel['substrbf']($xSig, "\n");
                             }
@@ -2112,15 +2112,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $URLScanner['Queries']
                 ] as $URLScanner['ThisArr']) {
                     foreach ($URLScanner['ThisArr'] as $URLScanner['This']) {
-                        if (substr_count($phpMussel['memCache'][$SigFile], $URLScanner['This'])) {
-                            $xSig = $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $URLScanner['This']);
+                        if (substr_count($phpMussel['InstanceCache'][$SigFile], $URLScanner['This'])) {
+                            $xSig = $phpMussel['substraf']($phpMussel['InstanceCache'][$SigFile], $URLScanner['This']);
                             if (strpos($xSig, "\n") !== false) {
                                 $xSig = $phpMussel['substrbf']($xSig, "\n");
                             }
                             if (
                                 ($xSig = $phpMussel['vn_shorthand']($xSig)) &&
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $xSig . ',') &&
-                                empty($phpMussel['memCache']['ignoreme'])
+                                !substr_count($phpMussel['InstanceCache']['greylist'], ',' . $xSig . ',') &&
+                                empty($phpMussel['InstanceCache']['ignoreme'])
                             ) {
                                 $phpMussel['Detected']($heur, $lnap, $xSig, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                             }
@@ -2168,10 +2168,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $ThisCheckValue = "\n$" . $ThisCheckFor . ':' . (
                         substr($ThisCheckFor, 0, 3) !== 'is_' ? $$ThisCheckFor : ($$ThisCheckFor ? '1' : '0')
                     ) . ';';
-                    if (strpos($phpMussel['memCache'][$SigFile], $ThisCheckValue) === false) {
+                    if (strpos($phpMussel['InstanceCache'][$SigFile], $ThisCheckValue) === false) {
                         continue;
                     }
-                    $xSig = explode($ThisCheckValue, $phpMussel['memCache'][$SigFile]);
+                    $xSig = explode($ThisCheckValue, $phpMussel['InstanceCache'][$SigFile]);
                     $xSigCount = count($xSig);
                     if (isset($xSig[0])) {
                         $xSig[0] = '';
@@ -2352,8 +2352,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             }
                             if (
                                 $SigName &&
-                                strpos($phpMussel['memCache']['greylist'], ',' . $SigName . ',') === false &&
-                                empty($phpMussel['memCache']['ignoreme'])
+                                strpos($phpMussel['InstanceCache']['greylist'], ',' . $SigName . ',') === false &&
+                                empty($phpMussel['InstanceCache']['ignoreme'])
                             ) {
                                 $phpMussel['Detected']($heur, $lnap, $SigName, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                             }
@@ -2383,20 +2383,20 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         /** Plugin hook: "new_sigfile_type". */
         $phpMussel['Execute_Hook']('new_sigfile_type');
 
-        $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : [];
+        $SigFiles = isset($phpMussel['InstanceCache'][$ThisConf[0]]) ? explode(',', $phpMussel['InstanceCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
                 continue;
             }
-            if (!isset($phpMussel['memCache'][$SigFile])) {
-                $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
+            if (!isset($phpMussel['InstanceCache'][$SigFile])) {
+                $phpMussel['InstanceCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
             }
 
             /** Plugin hook: "new_sigfile". */
             $phpMussel['Execute_Hook']('new_sigfile');
 
-            if (!$phpMussel['memCache'][$SigFile]) {
-                $phpMussel['memCache']['scan_errors']++;
+            if (!$phpMussel['InstanceCache'][$SigFile]) {
+                $phpMussel['InstanceCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
                     if (!$flagged) {
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
@@ -2412,9 +2412,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
                 continue;
             }
-            $NumSigs = count($phpMussel['memCache'][$SigFile]);
+            $NumSigs = count($phpMussel['InstanceCache'][$SigFile]);
             for ($SigNum = 0; $SigNum < $NumSigs; $SigNum++) {
-                if (!$ThisSig = $phpMussel['memCache'][$SigFile][$SigNum]) {
+                if (!$ThisSig = $phpMussel['InstanceCache'][$SigFile][$SigNum]) {
                     continue;
                 }
                 if (substr($ThisSig, 0, 1) == '>') {
@@ -2504,8 +2504,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $VN = $phpMussel['vn_shorthand']($VN[0]);
                         if (
                             $ThisSig &&
-                            strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
-                            empty($phpMussel['memCache']['ignoreme'])
+                            strpos($phpMussel['InstanceCache']['greylist'], ',' . $VN . ',') === false &&
+                            empty($phpMussel['InstanceCache']['ignoreme'])
                         ) {
                             if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
@@ -2532,8 +2532,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             continue;
                         }
                         if (
-                            strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
-                            empty($phpMussel['memCache']['ignoreme'])
+                            strpos($phpMussel['InstanceCache']['greylist'], ',' . $VN . ',') === false &&
+                            empty($phpMussel['InstanceCache']['ignoreme'])
                         ) {
                             if ($ThisConf[3] === 0) {
                                 $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : [$ThisSig];
@@ -2596,8 +2596,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         /** Codeblock for performing hpHosts API lookups. */
         if ($phpMussel['Config']['urlscanner']['lookup_hphosts'] && $URLScanner['DomainsCount']) {
             /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
-            if (!isset($phpMussel['memCache']['urlscanner_domains'])) {
-                $phpMussel['memCache']['urlscanner_domains'] = $phpMussel['FetchCache']('urlscanner_domains');
+            if (!isset($phpMussel['InstanceCache']['urlscanner_domains'])) {
+                $phpMussel['InstanceCache']['urlscanner_domains'] = $phpMussel['FetchCache']('urlscanner_domains');
             }
             $URLScanner['y'] = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
             $URLScanner['ScriptIdentEncoded'] = urlencode($phpMussel['ScriptIdent']);
@@ -2634,10 +2634,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     break;
                 }
                 $URLScanner['This'] = md5($URLScanner['DomainParts'][$i]) . ':' . strlen($URLScanner['DomainParts'][$i]) . ':';
-                while (substr_count($phpMussel['memCache']['urlscanner_domains'], $URLScanner['This'])) {
+                while (substr_count($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This'])) {
                     $URLScanner['Class'] =
-                        $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_domains'], $URLScanner['This']), ';');
-                    if (!substr_count($phpMussel['memCache']['urlscanner_domains'], $URLScanner['This'] . ':' . $URLScanner['Class'] . ';')) {
+                        $phpMussel['substrbf']($phpMussel['substral']($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This']), ';');
+                    if (!substr_count($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This'] . ':' . $URLScanner['Class'] . ';')) {
                         break;
                     }
                     $URLScanner['Expiry'] = (int)$phpMussel['substrbf']($URLScanner['Class'], ':');
@@ -2649,8 +2649,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $URLScanner['Class'] = $phpMussel['vn_shorthand']($URLScanner['Class']);
                         $phpMussel['Detected']($heur, $lnap, $URLScanner['Class'], $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                     }
-                    $phpMussel['memCache']['urlscanner_domains'] =
-                        str_ireplace($URLScanner['This'] . $URLScanner['Class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
+                    $phpMussel['InstanceCache']['urlscanner_domains'] =
+                        str_ireplace($URLScanner['This'] . $URLScanner['Class'] . ';', '', $phpMussel['InstanceCache']['urlscanner_domains']);
                 }
                 $URLScanner['req'] =
                     'v=' . $URLScanner['ScriptIdentEncoded'] .
@@ -2666,16 +2666,16 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $URLScanner['Class'] = substr($URLScanner['req_result'], 7, 3);
                     $URLScanner['Class'] = isset($URLScanner['classes'][$URLScanner['Class']]) ?
                         $URLScanner['classes'][$URLScanner['Class']] : "\x1a\x82\x10\x3fXXX";
-                    $phpMussel['memCache']['urlscanner_domains'] .=
+                    $phpMussel['InstanceCache']['urlscanner_domains'] .=
                         $URLScanner['This'] .
                         $URLScanner['y'] . ':' .
                         $URLScanner['Class'] . ';';
                     $URLScanner['Class'] = $phpMussel['vn_shorthand']($URLScanner['Class']);
                     $phpMussel['Detected']($heur, $lnap, $URLScanner['Class'], $ofn, $ofnSafe, $Out, $flagged, $md5, $str_len);
                 }
-                $phpMussel['memCache']['urlscanner_domains'] .= $URLScanner['Domains'][$i] . $URLScanner['y'] . ':;';
+                $phpMussel['InstanceCache']['urlscanner_domains'] .= $URLScanner['Domains'][$i] . $URLScanner['y'] . ':;';
             }
-            $phpMussel['SaveCache']('urlscanner_domains', $URLScanner['y'], $phpMussel['memCache']['urlscanner_domains']);
+            $phpMussel['SaveCache']('urlscanner_domains', $URLScanner['y'], $phpMussel['InstanceCache']['urlscanner_domains']);
         }
 
         $URLScanner['URLsCount'] = count($URLScanner['URLParts']);
@@ -2755,7 +2755,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('scan_chameleon'), 'PHP')
@@ -2800,7 +2800,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('scan_chameleon'), $Chameleon)
@@ -2830,7 +2830,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('scan_chameleon'), $Chameleon)
@@ -2851,7 +2851,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $flagged = true;
                 }
                 $heur['detections']++;
-                $phpMussel['memCache']['detections_count']++;
+                $phpMussel['InstanceCache']['detections_count']++;
                 $Out .= $lnap . sprintf(
                     $phpMussel['L10N']->getString('_exclamation_final'),
                     sprintf($phpMussel['L10N']->getString('scan_chameleon'), 'Office')
@@ -2882,7 +2882,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('scan_chameleon'), $phpMussel['L10N']->getString('image'))
@@ -2902,7 +2902,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             $Out .= $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('scan_chameleon'), 'PDF')
@@ -2922,7 +2922,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['L10N']->getString('detected_control_characters')
             ) . "\n";
             $heur['detections']++;
-            $phpMussel['memCache']['detections_count']++;
+            $phpMussel['InstanceCache']['detections_count']++;
             if (!$flagged) {
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                 $flagged = true;
@@ -2975,13 +2975,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
         if ($DoScan) {
             $VTWeight = ['weight' => 0, 'cli' => '', 'web' => ''];
-            if (!isset($phpMussel['memCache']['vt_quota'])) {
-                $phpMussel['memCache']['vt_quota'] = $phpMussel['FetchCache']('vt_quota');
+            if (!isset($phpMussel['InstanceCache']['vt_quota'])) {
+                $phpMussel['InstanceCache']['vt_quota'] = $phpMussel['FetchCache']('vt_quota');
             }
             $x = 0;
-            if (!empty($phpMussel['memCache']['vt_quota'])) {
-                $phpMussel['memCache']['vt_quota'] = explode(';', $phpMussel['memCache']['vt_quota']);
-                foreach ($phpMussel['memCache']['vt_quota'] as &$phpMussel['ThisQuota']) {
+            if (!empty($phpMussel['InstanceCache']['vt_quota'])) {
+                $phpMussel['InstanceCache']['vt_quota'] = explode(';', $phpMussel['InstanceCache']['vt_quota']);
+                foreach ($phpMussel['InstanceCache']['vt_quota'] as &$phpMussel['ThisQuota']) {
                     if ($phpMussel['ThisQuota'] > $phpMussel['Time']) {
                         $x++;
                     } else {
@@ -2989,8 +2989,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                 }
                 unset($phpMussel['ThisQuota']);
-                $phpMussel['memCache']['vt_quota'] =
-                    implode(';', $phpMussel['memCache']['vt_quota']);
+                $phpMussel['InstanceCache']['vt_quota'] =
+                    implode(';', $phpMussel['InstanceCache']['vt_quota']);
             }
             if ($x < $phpMussel['Config']['virustotal']['vt_quota_rate']) {
                 $VTParams = [
@@ -3004,11 +3004,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $VTParams, 12);
                 $VTJSON = json_decode($VTRequest, true);
                 $y = $phpMussel['Time'] + ($phpMussel['Config']['virustotal']['vt_quota_time'] * 60);
-                $phpMussel['memCache']['vt_quota'] .= $y . ';';
-                while (substr_count($phpMussel['memCache']['vt_quota'], ';;')) {
-                    $phpMussel['memCache']['vt_quota'] = str_ireplace(';;', ';', $phpMussel['memCache']['vt_quota']);
+                $phpMussel['InstanceCache']['vt_quota'] .= $y . ';';
+                while (substr_count($phpMussel['InstanceCache']['vt_quota'], ';;')) {
+                    $phpMussel['InstanceCache']['vt_quota'] = str_ireplace(';;', ';', $phpMussel['InstanceCache']['vt_quota']);
                 }
-                $phpMussel['SaveCache']('vt_quota', $y + 60, $phpMussel['memCache']['vt_quota']);
+                $phpMussel['SaveCache']('vt_quota', $y + 60, $phpMussel['InstanceCache']['vt_quota']);
                 if (isset($VTJSON['response_code'])) {
                     $VTJSON['response_code'] = (int)$VTJSON['response_code'];
                     if (
@@ -3020,15 +3020,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             if ($VTValue['detected'] && $VTValue['result']) {
                                 $VN = $VTKey . '(VirusTotal)-' . $VTValue['result'];
                                 if (
-                                    strpos($phpMussel['memCache']['greylist'], ',' . $VN . ',') === false &&
-                                    empty($phpMussel['memCache']['ignoreme'])
+                                    strpos($phpMussel['InstanceCache']['greylist'], ',' . $VN . ',') === false &&
+                                    empty($phpMussel['InstanceCache']['ignoreme'])
                                 ) {
                                     if (!$flagged) {
                                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                         $flagged = true;
                                     }
                                     $heur['detections']++;
-                                    $phpMussel['memCache']['detections_count']++;
+                                    $phpMussel['InstanceCache']['detections_count']++;
                                     if ($phpMussel['Config']['virustotal']['vt_weighting'] > 0) {
                                         $VTWeight['weight']++;
                                         $VTWeight['web'] .= $lnap . sprintf(
@@ -3203,13 +3203,13 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
     }
 
     /** Determine whether the file being scanned is a macro. */
-    $phpMussel['memCache']['file_is_macro'] = (
+    $phpMussel['InstanceCache']['file_is_macro'] = (
         preg_match('~vbaProject\.bin$~i', $Filename) ||
         preg_match('~^\xd0\xcf|\x00Attribut|\x01CompObj|\x05Document~', $Data)
     );
 
     /** Handle macro detection and blocking. */
-    if ($phpMussel['Config']['attack_specific']['block_macros'] && $phpMussel['memCache']['file_is_macro']) {
+    if ($phpMussel['Config']['attack_specific']['block_macros'] && $phpMussel['InstanceCache']['file_is_macro']) {
         $r = 2;
         $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
         $phpMussel['whyflagged'] .= sprintf(
@@ -3221,7 +3221,7 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
     }
 
     /** Increment objects scanned count. */
-    $phpMussel['memCache']['objects_scanned']++;
+    $phpMussel['InstanceCache']['objects_scanned']++;
 
     /** Send the scan target to the data handler. */
     try {
@@ -3412,10 +3412,10 @@ $phpMussel['SubstrAfterFinalSlash'] = function ($String) {
  *      otherwise returned as per described by the README documentation. The
  *      function may also die the script and return nothing, if something goes
  *      wrong, such as if the function is triggered in the absense of the
- *      required $phpMussel['memCache'] variable being set.
+ *      required $phpMussel['InstanceCache'] variable being set.
  */
 $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
-    if (!isset($phpMussel['memCache'])) {
+    if (!isset($phpMussel['InstanceCache'])) {
         throw new \Exception($phpMussel['L10N']->getString(
             'required_variables_not_defined'
         ) ?: '[phpMussel] Required variables aren\'t defined: Can\'t continue.');
@@ -3425,21 +3425,21 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     $phpMussel['Execute_Hook']('Recursor_start');
 
     /** Prepare signature files for the scan process. */
-    if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
+    if (empty($phpMussel['InstanceCache']['OrganisedSigFiles'])) {
         $phpMussel['OrganiseSigFiles']();
-        $phpMussel['memCache']['OrganisedSigFiles'] = true;
+        $phpMussel['InstanceCache']['OrganisedSigFiles'] = true;
     }
 
     if ($phpMussel['EOF']) {
         $phpMussel['whyflagged'] = $phpMussel['killdata'] = $phpMussel['PEData'] = '';
         if ($dpt === 0 || !isset(
-            $phpMussel['memCache']['objects_scanned'],
-            $phpMussel['memCache']['detections_count'],
-            $phpMussel['memCache']['scan_errors']
+            $phpMussel['InstanceCache']['objects_scanned'],
+            $phpMussel['InstanceCache']['detections_count'],
+            $phpMussel['InstanceCache']['scan_errors']
         )) {
-            $phpMussel['memCache']['objects_scanned'] = 0;
-            $phpMussel['memCache']['detections_count'] = 0;
-            $phpMussel['memCache']['scan_errors'] = 0;
+            $phpMussel['InstanceCache']['objects_scanned'] = 0;
+            $phpMussel['InstanceCache']['detections_count'] = 0;
+            $phpMussel['InstanceCache']['scan_errors'] = 0;
         }
     } else {
         if (!isset($phpMussel['killdata'])) {
@@ -3452,13 +3452,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['PEData'] = '';
         }
         if (!isset(
-            $phpMussel['memCache']['objects_scanned'],
-            $phpMussel['memCache']['detections_count'],
-            $phpMussel['memCache']['scan_errors']
+            $phpMussel['InstanceCache']['objects_scanned'],
+            $phpMussel['InstanceCache']['detections_count'],
+            $phpMussel['InstanceCache']['scan_errors']
         )) {
-            $phpMussel['memCache']['objects_scanned'] = 0;
-            $phpMussel['memCache']['detections_count'] = 0;
-            $phpMussel['memCache']['scan_errors'] = 0;
+            $phpMussel['InstanceCache']['objects_scanned'] = 0;
+            $phpMussel['InstanceCache']['detections_count'] = 0;
+            $phpMussel['InstanceCache']['scan_errors'] = 0;
         }
     }
 
@@ -3491,7 +3491,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      */
     if (is_dir($f)) {
         if (!is_readable($f)) {
-            $phpMussel['memCache']['scan_errors']++;
+            $phpMussel['InstanceCache']['scan_errors']++;
             return !$n ? 0 : $lnap . sprintf(
                 $phpMussel['L10N']->getString('_exclamation_final'),
                 sprintf($phpMussel['L10N']->getString('failed_to_access'), $ofn)
@@ -3509,23 +3509,23 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     }
 
     /** Define file phase. */
-    $phpMussel['memCache']['phase'] = 'file';
+    $phpMussel['InstanceCache']['phase'] = 'file';
 
     /** Indicates whether the scan target is a part of a container. */
-    $phpMussel['memCache']['container'] = 'none';
+    $phpMussel['InstanceCache']['container'] = 'none';
 
     /** Indicates whether the scan target is an OLE object. */
-    $phpMussel['memCache']['file_is_ole'] = false;
+    $phpMussel['InstanceCache']['file_is_ole'] = false;
 
     /** Fetch the greylist if it hasn't already been fetched. */
-    if (!isset($phpMussel['memCache']['greylist'])) {
+    if (!isset($phpMussel['InstanceCache']['greylist'])) {
         if (!file_exists($phpMussel['Vault'] . 'greylist.csv')) {
-            $phpMussel['memCache']['greylist'] = ',';
+            $phpMussel['InstanceCache']['greylist'] = ',';
             $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
             fwrite($Handle, ',');
             fclose($Handle);
         } else {
-            $phpMussel['memCache']['greylist'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
+            $phpMussel['InstanceCache']['greylist'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
         }
     }
 
@@ -3666,7 +3666,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     }
 
     /** Increment objects scanned count. */
-    $phpMussel['memCache']['objects_scanned']++;
+    $phpMussel['InstanceCache']['objects_scanned']++;
 
     /** Send the scan target to the data handler. */
     try {
@@ -3777,16 +3777,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     ) {
 
         /** Define archive phase. */
-        $phpMussel['memCache']['phase'] = 'archive';
+        $phpMussel['InstanceCache']['phase'] = 'archive';
 
         /** In case there's any temporary files we need to delete afterwards. */
-        $phpMussel['memCache']['tempfilesToDelete'] = [];
+        $phpMussel['InstanceCache']['tempfilesToDelete'] = [];
 
         /** Begin processing archives. */
         $phpMussel['ArchiveRecursor']($x, $r, $in, (isset($CompressionResults) && !$CompressionResults) ? '' : $f, 0, urlencode($ofn));
 
         /** Begin deleting any temporary files that snuck through. */
-        foreach ($phpMussel['memCache']['tempfilesToDelete'] as $DeleteThis) {
+        foreach ($phpMussel['InstanceCache']['tempfilesToDelete'] as $DeleteThis) {
             if (file_exists($DeleteThis)) {
                 unlink($DeleteThis);
             }
@@ -3898,7 +3898,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     $Indent = str_pad('> ', $ScanDepth + 1, '-', STR_PAD_LEFT);
 
     /** Reset container definition. */
-    $phpMussel['memCache']['container'] = 'none';
+    $phpMussel['InstanceCache']['container'] = 'none';
 
     /** The class to use to handle the data to be scanned. */
     $Handler = '';
@@ -3948,11 +3948,11 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
             $ConType = 'EPUB';
         } else {
             $ConType = 'ZIP';
-            $phpMussel['memCache']['container'] = 'zipfile';
+            $phpMussel['InstanceCache']['container'] = 'zipfile';
         }
         if ($ConType !== 'ZIP') {
-            $phpMussel['memCache']['file_is_ole'] = true;
-            $phpMussel['memCache']['container'] = 'pkfile';
+            $phpMussel['InstanceCache']['file_is_ole'] = true;
+            $phpMussel['InstanceCache']['container'] = 'pkfile';
         }
     } elseif (
         substr($Data, 257, 6) === "ustar\x00" ||
@@ -3960,11 +3960,11 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     ) {
         $Handler = 'TarHandler';
         $ConType = 'TarFile';
-        $phpMussel['memCache']['container'] = 'tarfile';
+        $phpMussel['InstanceCache']['container'] = 'tarfile';
     } elseif (substr($Data, 0, 4) === 'Rar!' || substr($Data, 0, 4) === "\x52\x45\x7e\x5e") {
         $Handler = 'RarHandler';
         $ConType = 'RarFile';
-        $phpMussel['memCache']['container'] = 'rarfile';
+        $phpMussel['InstanceCache']['container'] = 'rarfile';
     }
 
     /** Not an archive. Exit early. */
@@ -4041,7 +4041,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
              */
             $PointerObject = new \phpMussel\TemporaryFileHandler\TemporaryFileHandler($Data, $phpMussel['cachePath']);
             $Pointer = &$PointerObject->Filename;
-            $phpMussel['memCache']['tempfilesToDelete'][] = $Pointer;
+            $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
@@ -4090,7 +4090,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
              */
             $PointerObject = new \phpMussel\TemporaryFileHandler\TemporaryFileHandler($Data, $phpMussel['cachePath']);
             $Pointer = &$PointerObject->Filename;
-            $phpMussel['memCache']['tempfilesToDelete'][] = $Pointer;
+            $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
@@ -4401,21 +4401,21 @@ $phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
  *      otherwise returned as per described by the README documentation. The
  *      function may also die the script and return nothing, if something goes
  *      wrong, such as if the function is triggered in the absense of the
- *      required $phpMussel['memCache'] variable being set, and may also return
+ *      required $phpMussel['InstanceCache'] variable being set, and may also return
  *      false, in the absense of the required $phpMussel['HashCache']['Data']
  *      variable being set.
  */
 $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
-    if (!isset($phpMussel['memCache'])) {
+    if (!isset($phpMussel['InstanceCache'])) {
         throw new \Exception($phpMussel['L10N']->getString(
             'required_variables_not_defined'
         ) ?: '[phpMussel] Required variables aren\'t defined: Can\'t continue.');
     }
 
     /** Prepare signature files for the scan process. */
-    if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
+    if (empty($phpMussel['InstanceCache']['OrganisedSigFiles'])) {
         $phpMussel['OrganiseSigFiles']();
-        $phpMussel['memCache']['OrganisedSigFiles'] = true;
+        $phpMussel['InstanceCache']['OrganisedSigFiles'] = true;
     }
 
     /** Initialise statistics if they've been enabled. */
@@ -4499,23 +4499,23 @@ $phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$
     }
     $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['L10N']->getString('data_not_available') : trim($phpMussel['whyflagged']);
     if ($phpMussel['Config']['general']['scan_log_serialized']) {
-        if (!isset($phpMussel['memCache']['objects_scanned'])) {
-            $phpMussel['memCache']['objects_scanned'] = 0;
+        if (!isset($phpMussel['InstanceCache']['objects_scanned'])) {
+            $phpMussel['InstanceCache']['objects_scanned'] = 0;
         }
-        if (!isset($phpMussel['memCache']['detections_count'])) {
-            $phpMussel['memCache']['detections_count'] = 0;
+        if (!isset($phpMussel['InstanceCache']['detections_count'])) {
+            $phpMussel['InstanceCache']['detections_count'] = 0;
         }
-        if (!isset($phpMussel['memCache']['scan_errors'])) {
-            $phpMussel['memCache']['scan_errors'] = 1;
+        if (!isset($phpMussel['InstanceCache']['scan_errors'])) {
+            $phpMussel['InstanceCache']['scan_errors'] = 1;
         }
         $Handle = [
             'Data' => serialize([
-                'start_time' => $StartTime ?: (isset($phpMussel['memCache']['start_time']) ? $phpMussel['memCache']['start_time'] : '-'),
-                'end_time' => $FinishTime ?: (isset($phpMussel['memCache']['end_time']) ? $phpMussel['memCache']['end_time'] : '-'),
+                'start_time' => $StartTime ?: (isset($phpMussel['InstanceCache']['start_time']) ? $phpMussel['InstanceCache']['start_time'] : '-'),
+                'end_time' => $FinishTime ?: (isset($phpMussel['InstanceCache']['end_time']) ? $phpMussel['InstanceCache']['end_time'] : '-'),
                 'origin' => $Origin,
-                'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
-                'detections_count' => $phpMussel['memCache']['detections_count'],
-                'scan_errors' => $phpMussel['memCache']['scan_errors'],
+                'objects_scanned' => $phpMussel['InstanceCache']['objects_scanned'],
+                'detections_count' => $phpMussel['InstanceCache']['detections_count'],
+                'scan_errors' => $phpMussel['InstanceCache']['scan_errors'],
                 'detections' => $ScanData
             ]) . "\n",
             'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
@@ -4785,10 +4785,10 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
         fclose($Handle);
         $Nibbles = $phpMussel['split_nibble']($Class);
         if (!empty($Classes[$Nibbles[0]])) {
-            if (!isset($phpMussel['memCache'][$Classes[$Nibbles[0]]])) {
-                $phpMussel['memCache'][$Classes[$Nibbles[0]]] = ',';
+            if (!isset($phpMussel['InstanceCache'][$Classes[$Nibbles[0]]])) {
+                $phpMussel['InstanceCache'][$Classes[$Nibbles[0]]] = ',';
             }
-            $phpMussel['memCache'][$Classes[$Nibbles[0]]] .= $File . ',';
+            $phpMussel['InstanceCache'][$Classes[$Nibbles[0]]] .= $File . ',';
         }
     }
 

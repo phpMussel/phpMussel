@@ -7,7 +7,7 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.04.02; Maikuolan]: Changed a misleading variable name.
 
 === Version/Release 1.9.1 ===
 PATCH RELEASE.

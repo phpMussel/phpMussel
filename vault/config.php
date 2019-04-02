@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.03.31).
+ * This file: Configuration handler (last modified: 2019.04.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -188,3 +188,6 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 $phpMussel['DefaultAlgo'] = (
     !empty($phpMussel['Config']['general']['default_algo']) && defined($phpMussel['Config']['general']['default_algo'])
 ) ? constant($phpMussel['Config']['general']['default_algo']) : 1;
+
+/** Used just for the current, specific request instance. */
+$phpMussel['InstanceCache'] = [];
