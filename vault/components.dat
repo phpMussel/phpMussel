@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.10.0-DEV+19091494
+ Version: 1.10.0-DEV+19091543
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -14,6 +14,8 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/.htaccess
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/ArchiveHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/CompressionHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/Cache.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/ComplexStringHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/L10N.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/YAML.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/TemporaryFileHandler.php
@@ -69,6 +71,8 @@ phpMussel:
    - classes/.htaccess
    - classes/ArchiveHandler.php
    - classes/CompressionHandler.php
+   - classes/Maikuolan/Cache.php
+   - classes/Maikuolan/ComplexStringHandler.php
    - classes/Maikuolan/L10N.php
    - classes/Maikuolan/YAML.php
    - classes/TemporaryFileHandler.php
@@ -124,12 +128,14 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 2ef441347ac51e61a7f5f6fb51967398:12582
    - 52eff537b11ded595d2e81fbfc598087:3306
-   - d8290c281c92dd0107777e5fded27594a6bbbbfe753d47c1c2d53cf749cddebe:10184
+   - e264d7aba6db1ef369102a5049de5445f98da858b00595b6f06b0d79cbf8bab7:16700
+   - 62a71868a29c7f547571feab6815f58bdac93f2675af0cd5d4c46d89ebc96f6d:3460
+   - 3cf7f6740d13f159e9e657fc247e8f1b0a8ae61f5a8e0e6b6129ea1f35adade4:10134
    - 26eb6473da284240cdf37b67d96a28fb1e5d1cf163d7c3954d55705197a242af:10027
    - 8509c4de97c8fe9fe3e41ca696fe657b:1698
    - b53602f22242f4d460d2cf2b78611a3cb0cf102e7e40c6806edf7b0e122160a5:27183
    - d5ced63b6c52494da276a0ad2767b87b1018380edac810423a7e11354191826e:8695
-   - 07d6b01ef49f5483833ab4b2061e689d:13008
+   - defd7311fb331991b05b659275ca1300e1c482adb712a68fbd6dbc150d4acfbc:13775
    - 8e03209e7fc6641b45094e584340feff:83
    - 4244aa2fa8e7ecb7e4f43295963f81dc:483
    - 5127e6571ad646b2dbd612340c2b35f3:1963

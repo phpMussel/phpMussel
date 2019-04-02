@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.02.07).
+# This file: Configuration defaults file (last modified: 2019.04.02).
 ##/
 
 Config Defaults:
@@ -478,6 +478,50 @@ Config Defaults:
    type: string
    default: ""
   addReplyToName:
+   type: string
+   default: ""
+ supplementary_cache_options:
+  enable_apcu:
+   type: bool
+   default: false
+  enable_memcache:
+   type: bool
+   default: false
+  enable_memcached:
+   type: bool
+   default: false
+  enable_redis:
+   type: bool
+   default: false
+  enable_pdo:
+   type: bool
+   default: false
+  memcache_host:
+   type: string
+   default: "localhost"
+  memcache_port:
+   type: int
+   default: 11211
+  memcache_timeout:
+   type: int
+   default: 1
+  redis_host:
+   type: string
+   default: "localhost"
+  redis_port:
+   type: int
+   default: 6379
+  redis_timeout:
+   type: real
+   step: any
+   default: 2.5
+  pdo_dsn:
+   type: string
+   default: "mysql:dbname=phpmussel;host=localhost;port=3306"
+  pdo_username:
+   type: string
+   default: ""
+  pdo_password:
    type: string
    default: ""
 
