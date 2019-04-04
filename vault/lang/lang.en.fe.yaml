@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.03.06).
+# This file: English language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -103,6 +103,20 @@ config_signatures_detect_pua_pup: "Should phpMussel parse signatures for detecti
 config_signatures_detect_shell: "Should phpMussel parse signatures for detecting shell scripts? False = No; True = Yes [Default]."
 config_signatures_fail_extensions_silently: "Should phpMussel report when extensions are missing? If <code>fail_extensions_silently</code> is disabled, missing extensions will be reported on scanning, and if <code>fail_extensions_silently</code> is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default]."
 config_signatures_fail_silently: "Should phpMussel report when signatures files are missing or corrupted? If <code>fail_silently</code> is disabled, missing and corrupted files will be reported on scanning, and if <code>fail_silently</code> is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default]."
+config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = False."
+config_supplementary_cache_options_enable_memcache: "Specifies whether to try using Memcache for caching. Default = False."
+config_supplementary_cache_options_enable_memcached: "Specifies whether to try using Memcached for caching. Default = False."
+config_supplementary_cache_options_enable_pdo: "Specifies whether to try using PDO for caching. Default = False."
+config_supplementary_cache_options_enable_redis: "Specifies whether to try using Redis for caching. Default = False."
+config_supplementary_cache_options_memcache_host: "Memcache host value. Default = "localhost"."
+config_supplementary_cache_options_memcache_port: "Memcache port value. Default = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache timeout value. Default = "1"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN value. Default = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO password."
+config_supplementary_cache_options_pdo_username: "PDO username."
+config_supplementary_cache_options_redis_host: "Redis host value. Default = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis port value. Default = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis timeout value. Default = "2.5"."
 config_template_data_Magnification: "Font magnification. Default = 1."
 config_template_data_css_url: "The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the <code>css_url</code> variable. If you leave this variable blank, phpMussel will use the template file for the default theme."
 config_template_data_theme: "Default theme to use for phpMussel."

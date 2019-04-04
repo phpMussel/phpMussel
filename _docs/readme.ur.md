@@ -265,6 +265,8 @@ SourceForge اور Bitbucket اور GitHub کے لئے خصوصی شکریہ، �
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. phpMussel کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">ایک سادہ، متحد کیش ہینڈلر.</div> | /vault/classes/Maikuolan/Cache.php
+&nbsp; <div dir="rtl" style="display:inline">کمپلیکس تار ہینڈلر.</div> | /vault/classes/Maikuolan/ComplexStringHandler.php
 &nbsp; <div dir="rtl" style="display:inline">L10N ہینڈلر.</div> | /vault/classes/Maikuolan/L10N.php
 &nbsp; <div dir="rtl" style="display:inline">YAML ہینڈلر.</div> | /vault/classes/Maikuolan/YAML.php
 &nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/classes/.htaccess
@@ -395,11 +397,11 @@ SourceForge اور Bitbucket اور GitHub کے لئے خصوصی شکریہ، �
 
 [general](#general-قسم) | [signatures](#signatures-قسم) | [files](#files-قسم) | [attack_specific](#attack_specific-قسم)
 --:|--:|--:|--:
-[cleanup](#cleanup)<br />[scan_log](#scan_log)<br />[scan_log_serialized](#scan_log_serialized)<br />[scan_kills](#scan_kills)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[enable_plugins](#enable_plugins)<br />[forbid_on_block](#forbid_on_block)<br />[delete_on_sight](#delete_on_sight)<br />[lang](#lang)<br />[numbers](#numbers)<br />[quarantine_key](#quarantine_key)<br />[quarantine_max_filesize](#quarantine_max_filesize)<br />[quarantine_max_usage](#quarantine_max_usage)<br />[quarantine_max_files](#quarantine_max_files)<br />[honeypot_mode](#honeypot_mode)<br />[scan_cache_expiry](#scan_cache_expiry)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br /> | [Active](#Active)<br />[fail_silently](#fail_silently)<br />[fail_extensions_silently](#fail_extensions_silently)<br />[detect_adware](#detect_adware)<br />[detect_joke_hoax](#detect_joke_hoax)<br />[detect_pua_pup](#detect_pua_pup)<br />[detect_packer_packed](#detect_packer_packed)<br />[detect_shell](#detect_shell)<br />[detect_deface](#detect_deface)<br />[detect_encryption](#detect_encryption)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [max_uploads](#max_uploads)<br />[filesize_limit](#filesize_limit)<br />[filesize_response](#filesize_response)<br />[filetype_whitelist<br />filetype_blacklist<br />filetype_greylist](#filetype_whitelist-filetype_blacklist-filetype_greylist)<br />[check_archives](#check_archives)<br />[filesize_archives](#filesize_archives)<br />[filetype_archives](#filetype_archives)<br />[max_recursion](#max_recursion)<br />[block_encrypted_archives](#block_encrypted_archives)<br />[max_files_in_archives](#max_files_in_archives)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [chameleon_from_php](#chameleon_from_php)<br />[can_contain_php_file_extensions](#can_contain_php_file_extensions)<br />[chameleon_from_exe](#chameleon_from_exe)<br />[chameleon_to_archive](#chameleon_to_archive)<br />[chameleon_to_doc](#chameleon_to_doc)<br />[chameleon_to_img](#chameleon_to_img)<br />[chameleon_to_pdf](#chameleon_to_pdf)<br />[archive_file_extensions](#archive_file_extensions)<br />[block_control_characters](#block_control_characters)<br />[corrupted_exe](#corrupted_exe)<br />[decode_threshold](#decode_threshold)<br />[scannable_threshold](#scannable_threshold)<br />[allow_leading_trailing_dots](#allow_leading_trailing_dots)<br />[block_macros](#block_macros)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[cleanup](#cleanup)<br />[scan_log](#scan_log)<br />[scan_log_serialized](#scan_log_serialized)<br />[scan_kills](#scan_kills)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[enable_plugins](#enable_plugins)<br />[forbid_on_block](#forbid_on_block)<br />[delete_on_sight](#delete_on_sight)<br />[lang](#lang)<br />[numbers](#numbers)<br />[quarantine_key](#quarantine_key)<br />[quarantine_max_filesize](#quarantine_max_filesize)<br />[quarantine_max_usage](#quarantine_max_usage)<br />[quarantine_max_files](#quarantine_max_files)<br />[honeypot_mode](#honeypot_mode)<br />[scan_cache_expiry](#scan_cache_expiry)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br /> | [Active](#Active)<br />[fail_silently](#fail_silently)<br />[fail_extensions_silently](#fail_extensions_silently)<br />[detect_adware](#detect_adware)<br />[detect_joke_hoax](#detect_joke_hoax)<br />[detect_pua_pup](#detect_pua_pup)<br />[detect_packer_packed](#detect_packer_packed)<br />[detect_shell](#detect_shell)<br />[detect_deface](#detect_deface)<br />[detect_encryption](#detect_encryption)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [max_uploads](#max_uploads)<br />[filesize_limit](#filesize_limit)<br />[filesize_response](#filesize_response)<br />[filetype_whitelist<br />filetype_blacklist<br />filetype_greylist](#filetype_whitelist-filetype_blacklist-filetype_greylist)<br />[check_archives](#check_archives)<br />[filesize_archives](#filesize_archives)<br />[filetype_archives](#filetype_archives)<br />[max_recursion](#max_recursion)<br />[block_encrypted_archives](#block_encrypted_archives)<br />[max_files_in_archives](#max_files_in_archives)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [chameleon_from_php](#chameleon_from_php)<br />[can_contain_php_file_extensions](#can_contain_php_file_extensions)<br />[chameleon_from_exe](#chameleon_from_exe)<br />[chameleon_to_archive](#chameleon_to_archive)<br />[chameleon_to_doc](#chameleon_to_doc)<br />[chameleon_to_img](#chameleon_to_img)<br />[chameleon_to_pdf](#chameleon_to_pdf)<br />[archive_file_extensions](#archive_file_extensions)<br />[block_control_characters](#block_control_characters)<br />[corrupted_exe](#corrupted_exe)<br />[decode_threshold](#decode_threshold)<br />[scannable_threshold](#scannable_threshold)<br />[allow_leading_trailing_dots](#allow_leading_trailing_dots)<br />[block_macros](#block_macros)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 [compatibility](#compatibility-قسم) | [heuristic](#heuristic-قسم) | [virustotal](#virustotal-قسم) | [urlscanner](#urlscanner-قسم)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-اور-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
-[legal](#legal-قسم) | [template_data](#template_data-قسم) | [PHPMailer](#phpmailer-قسم)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br />
+[legal](#legal-قسم) | [template_data](#template_data-قسم) | [PHPMailer](#phpmailer-قسم) | [supplementary_cache_options](#supplementary_cache_options-قسم)
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
 
 #### <div dir="rtl">"general" (قسم)<br /></div>
 <div dir="rtl">جنرل phpMussel ترتیب.<br /><br /></div>
@@ -999,6 +1001,81 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">سپورٹ
  <li>ای میل بھیجنے پر جواب کا نام.</li>
 </ul></div>
 
+#### <div dir="rtl">"supplementary_cache_options" (قسم)<br /></div>
+<div dir="rtl">اضافی کیشنگ کے اختیارات.<br /><br /></div>
+
+<div dir="rtl">فی الحال، یہ انتہائی تجرباتی ہے، اور ممکنہ طور پر متوقع نہیں ہوسکتا ہے! اس وقت میں، میں اسے نظر انداز کرنے کی سفارش کرتا ہوں.<br /><br /></div>
+
+##### <div dir="rtl">"enable_apcu"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_memcache"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcache استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_memcached"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcached استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_redis"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے Redis استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_pdo"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے PDO استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"memcache_host"<br /></div>
+<div dir="rtl"><ul>
+ <li>Memcache کے میزبان نام. پہلے سے طے شدہ = "localhost".</li>
+</ul></div>
+
+##### <div dir="rtl">"memcache_port"<br /></div>
+<div dir="rtl"><ul>
+ <li>Memcache کے لئے بندرگاہ. پہلے سے طے شدہ = "11211".</li>
+</ul></div>
+
+##### <div dir="rtl">"memcache_timeout"<br /></div>
+<div dir="rtl"><ul>
+ <li>Memcache کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "1".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_host"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے میزبان نام. پہلے سے طے شدہ = "localhost".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_port"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے لئے بندرگاہ. پہلے سے طے شدہ = "6379".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_timeout"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5".</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_dsn"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کے لئے DSN. پہلے سے طے شدہ = "<code dir="ltr">mysql:dbname=phpmussel;host=localhost;port=3306</code>".</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_username"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کے لئے صارف نام.</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_password"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کیلئے پاس ورڈ.</li>
+</ul></div>
+
 ---
 
 
@@ -1210,6 +1287,7 @@ var_dump($Foo);
 - Size (`int`)
 - MD5 (`string`)
 - SHA1 (`string`)
+- SHA256 (`string`)
 - CRC32B (`string`)
 - 2CC (`string`)
 - 4CC (`string`)
@@ -1400,9 +1478,9 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 
 #### <div dir="rtl">١١.٣ لاگ<br /><br /></div>
 
-Logging is an important part of phpMussel for a number of reasons. Without logging, it may be difficult to diagnose false positives, to ascertain how well phpMussel performs, and to determine where its shortcomings, and what changes may be required to its configuration or signatures, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In phpMussel, logging is disabled by default. To enable it, phpMussel must be configured accordingly.
+<div dir="rtl">لاگنگ کئی وجوہات کے لئے phpMussel کا ایک اہم حصہ ہے. اس کے بغیر، غلطیوں کو تلاش کرنے اور مسائل کی تشخیص مشکل ہوسکتی ہے. اگر ہمارے پاس یہ معلومات نہیں ہے اور کسی چیز کو تبدیل کرنے کی ضرورت ہے، یہ جاننا مشکل ہوسکتا ہے کہ بالکل وہی چیز جو تبدیل کرنے کی ضرورت ہے. اس کے باوجود، ہر کوئی اس معلومات کو ریکارڈ نہیں کرنا چاہتا، لہذا یہ اختیاری رہتا ہے. phpMussel میں، یہ ڈیفالٹ کی طرف سے معذور ہے. اسے فعال کرنے کے لئے، phpMussel کے مطابق ترتیب دیا جانا چاہئے.<br /><br /></div>
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where phpMussel is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+<div dir="rtl">یہ یاد رکھنا چاہیے کہ لاگنگ کے لئے عین مطابق قانونی ضروریات دائرہ کاروں کے درمیان مختلف ہو سکتی ہیں. عملدرآمد کا تناظر بھی متعلقہ ہو سکتا ہے (مثال کے طور پر، ایک فرد کے طور پر، ایک کارپوریٹ ادارے کے طور پر، تجارتی بنیاد پر، غیر تجارتی بنیاد پر، وغیرہ). اس کی وجہ سے، یہاں کی معلومات آپ کے لئے مفید ہوسکتی ہے.<br /><br /></div>
 
 <div dir="rtl">بہت سے مختلف قسم کی معلومات درج کی جا سکتی ہیں، مختلف وجوہات کے لئے.<br /><br /></div>
 
@@ -1414,7 +1492,7 @@ Additionally, whether logging is legally permissible, and to the extent that it 
  <li>سیریلائزڈ لاگ.</li>
 </ul></div>
 
-Entries to a human readable logfile typically look something like this (as an example):
+<div dir="rtl">فائلوں میں ڈیٹا جو انسان کی طرف سے پڑھ سکتے ہیں، عام طور پر اس طرح لگ رہا ہے (ایک مثال کے طور):<br /><br /></div>
 
 ```
 Mon, 21 May 2018 00:47:58 +0800 Started.
@@ -1423,11 +1501,13 @@ Mon, 21 May 2018 00:47:58 +0800 Started.
 Mon, 21 May 2018 00:48:04 +0800 Finished.
 ```
 
-A scan log entry typically includes the following information:
-- The date and time that the file was scanned.
-- The name of the file scanned.
-- CRC32b hashes of the name and contents of the file.
-- What was detected in the file (if anything was detected).
+<div dir="rtl">اسکین لاگ ان عام طور پر مندرجہ ذیل معلومات شامل ہیں:<br /></div>
+<div dir="rtl"><ul>
+ <li>فائل اور تاریخ جس کا فائل اسکین کیا گیا تھا.</li>
+ <li>اس فائل کا نام اسکین کیا گیا تھا.</li>
+ <li>اس کے نام اور فائل کے مواد کے CRC32b ہش.</li>
+ <li>فائل میں کیا پتہ چلا تھا (اگر کچھ پتہ چلا).</li>
+</ul></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1579,4 +1659,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 26 فروری 2019 (2019.02.26).</div>
+<div dir="rtl">آخری تازہ کاری: 4 اپریل 2019 (2019.04.04).</div>

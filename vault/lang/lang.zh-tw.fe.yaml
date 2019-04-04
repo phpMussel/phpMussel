@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.03.06).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -103,6 +103,20 @@ config_signatures_detect_pua_pup: "phpMussel應該使用簽名為PUP/PUA（可�
 config_signatures_detect_shell: "phpMussel應該使用簽名為webshell腳本檢測嗎？​False（假）=不檢查，​True（真）=檢查【默認】。"
 config_signatures_fail_extensions_silently: "phpMussel應該報告當擴展是失踪嗎？​如果<code>fail_extensions_silently</code>是關閉，​失踪擴展將會報告當掃描，​和如果<code>fail_extensions_silently</code>是激活，​失踪擴展將會忽略，​有掃描報告為那些文件哪裡沒有任何問題。​關閉的這個指令可能的可以增加您的安全，​但可能還導致一個增加的假陽性。​False（假）=是關閉；True（真）=是激活【默認】。"
 config_signatures_fail_silently: "phpMussel應該報告當簽名文件是失踪或損壞嗎？​如果<code>fail_silently</code>是關閉，​失踪和損壞文件將會報告當掃描，​和如果<code>fail_silently</code>是激活，​失踪和損壞文件將會忽略，​有掃描報告為那些文件哪裡沒有問題。​這個應該按說被留下除非您遇到失敗或有其他類似問題。​False（假）=是關閉；True（真）=是激活【默認】。"
+config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_memcache: "指定是否嘗試使用Memcache進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_memcached: "指定是否嘗試使用Memcached進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_pdo: "指定是否嘗試使用PDO進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_redis: "指定是否嘗試使用Redis進行緩存。​默認 = False。"
+config_supplementary_cache_options_memcache_host: "Memcache主機值。​默認 = 『localhost』。"
+config_supplementary_cache_options_memcache_port: "Memcache端口值。​默認 = 『11211』。"
+config_supplementary_cache_options_memcache_timeout: "Memcache超時值。​默認 = 『1』。"
+config_supplementary_cache_options_pdo_dsn: "PDO DSN值。​默認 = 『mysql:dbname=phpmussel;host=localhost;port=3306』。"
+config_supplementary_cache_options_pdo_password: "PDO密碼。"
+config_supplementary_cache_options_pdo_username: "PDO用戶名。"
+config_supplementary_cache_options_redis_host: "Redis主機值。​默認 = 『localhost』。"
+config_supplementary_cache_options_redis_port: "Redis端口值。​默認 = 『6379』。"
+config_supplementary_cache_options_redis_timeout: "Redis超時值。​默認 = 『2.5』。"
 config_template_data_Magnification: "字體放大。​標準 = 1。"
 config_template_data_css_url: "模板文件為個性化主題使用外部CSS屬性，​而模板文件為t標準主題使用內部CSS屬性。​以指示phpMussel使用模板文件為個性化主題，​指定公共HTTP地址的您的個性化主題的CSS文件使用<code>css_url</code>變量。​如果您離開這個變量空白，​phpMussel將使用模板文件為默認主題。"
 config_template_data_theme: "用於phpMussel的默認主題。"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.03.06).
+# This file: Arabic language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -103,6 +103,20 @@ config_signatures_detect_pua_pup: "هل يجب على توقيعات phpMussel �
 config_signatures_detect_shell: "هل يجب على توقيعات phpMussel الكشف عن البرامج النصية قذيفة؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي]."
 config_signatures_fail_extensions_silently: "هل يجب على phpMussel الابلاغ عندما تفقد الملحقات؟ إذا تم تعطيل <code dir="ltr">fail_extensions_silently</code>، وسيتم إبلاغ ملحقات مفقودة على المسح، وإذا تم تمكين <code dir="ltr">fail_extensions_silently</code>، سيتم تجاهل ملحقات المفقودة، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. تعطيل هذا التوجيه قد يحتمل زيادة الأمان، ولكن قد يؤدي أيضا إلى زيادة من ايجابيات كاذبة. خطأ = معطل. صحيح/True = ممكن [افتراضي]."
 config_signatures_fail_silently: "هل يجب على phpMussel الابلاغ عندما يتم توقيع ملفات مفقودة أو تالفة؟ إذا كان <code dir="ltr">fail_silently</code> المعوقين، في عداد المفقودين وسيتم الإبلاغ عن ملفات فساد في المسح، وإذا <code dir="ltr">fail_silently</code> تمكين، في عداد المفقودين وسيتم تجاهل ملفات فساد، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. وهذا ين بغي عموما أن تترك وحدها إلا إذا كنت تعاني من أعطال أو مشاكل مشابهة. خطأ = معطل. صحيح/True = ممكن [افتراضي]."
+config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_enable_memcache: "يحدد هذا ما إذا كنت تريد استخدام Memcache للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_enable_memcached: "يحدد هذا ما إذا كنت تريد استخدام Memcached للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_enable_pdo: "يحدد هذا ما إذا كنت تريد استخدام PDO للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_enable_redis: "يحدد هذا ما إذا كنت تريد استخدام Redis للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_memcache_host: "قيمة المضيف Memcache. افتراضي = "localhost"."
+config_supplementary_cache_options_memcache_port: "قيمة منفذ Memcache. افتراضي = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache قيمة المهلة. افتراضي = "1"."
+config_supplementary_cache_options_pdo_dsn: "قيمة PDO DSN. افتراضي = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO كلمه السر."
+config_supplementary_cache_options_pdo_username: "PDO اسم المستخدم."
+config_supplementary_cache_options_redis_host: "قيمة المضيف Redis. افتراضي = "localhost"."
+config_supplementary_cache_options_redis_port: "قيمة منفذ Redis. افتراضي = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis قيمة المهلة. افتراضي = "2.5"."
 config_template_data_Magnification: "تكبير الخط. افتراضي = 1."
 config_template_data_css_url: "ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير."
 config_template_data_theme: "الموضوع الافتراضي لاستخدام phpMussel."
