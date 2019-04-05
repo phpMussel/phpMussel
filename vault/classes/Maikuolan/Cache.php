@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.04.02).
+ * A simple, unified cache handler (last modified: 2019.04.03).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -88,6 +88,9 @@ class Cache
 
     /** Prepared clear expired query for PDO. */
     const clearExpiredQuery = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `TIME < :time';
+
+    /** Prepared get all query for PDO. */
+    const getAllQuery = 'SELECT * FROM `Cache` WHERE 1';
 
     /** Default blocksize for file reading operations. */
     const BLOCKSIZE = 262144;
@@ -254,10 +257,10 @@ class Cache
     public function getEntry($Entry)
     {
         if ($this->Using === 'APCu') {
-            return apcu_fetch($Entry);
+            return $this->unserializeEntry(apcu_fetch($Entry));
         }
         if ($this->Using === 'Memcache' || $this->Using === 'Memcached' || $this->Using === 'Redis') {
-            return $this->WorkingData->get($Entry);
+            return $this->unserializeEntry($this->WorkingData->get($Entry));
         }
         if ($this->Using === 'PDO') {
             if ($this->clearExpiredPDO()) {
@@ -266,20 +269,20 @@ class Cache
             $PDO = $this->WorkingData->prepare(self::getQuery);
             if ($PDO !== false && $PDO->execute(['key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
-                return isset($Data['Data']) ? $Data['Data'] : false;
+                return isset($Data['Data']) ? $this->unserializeEntry($Data['Data']) : false;
             }
             return false;
         }
         if (is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
-            if (isset($this->WorkingData[$Entry]['Data']) && isset($this->WorkingData[$Entry]['Time'])) {
-                if ($this->WorkingData[$Entry]['Time'] > time()) {
-                    return $this->WorkingData[$Entry]['Data'];
+            if (isset($this->WorkingData[$Entry]['Data']) && !empty($this->WorkingData[$Entry]['Time'])) {
+                if ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > time()) {
+                    return $this->unserializeEntry($this->WorkingData[$Entry]['Data']);
                 }
                 unset($this->WorkingData[$Entry]);
                 $this->Modified = true;
                 return false;
             }
-            return $this->WorkingData[$Entry];
+            return $this->unserializeEntry($this->WorkingData[$Entry]);
         }
         return false;
     }
@@ -294,6 +297,7 @@ class Cache
      */
     public function setEntry($Key, $Value, $TTL = 3600)
     {
+        $Value = $this->serializeEntry($Value);
         if ($this->Using === 'APCu') {
             if (apcu_store($Key, $Value, $TTL)) {
                 return $this->Modified = true;
@@ -381,8 +385,8 @@ class Cache
             return false;
         }
         if (is_array($this->WorkingData)) {
-            if (isset($this->WorkingData[$Key])) {
-                unset($this->WorkingData[$Key]);
+            if (isset($this->WorkingData[$Entry])) {
+                unset($this->WorkingData[$Entry]);
                 return $this->Modified = true;
             }
         }
@@ -423,6 +427,93 @@ class Cache
     }
 
     /**
+     * Get all cache entries.
+     *
+     * @return array An associative array containing all existent cache entries.
+     */
+    public function getAllEntries()
+    {
+        if ($this->Using === 'Memcache' || $this->Using === 'Redis') {
+            /**
+             * I haven't figured out how to do this with Memcache or Redis yet, sorry.
+             * Feel free to help with a pull request if you've got an idea or two. :D
+             */
+            return [];
+        }
+        if ($this->Using === 'APCu') {
+            $Data = apcu_cache_info();
+            if (empty($Data['cache_list'])) {
+                return [];
+            }
+            $Output = [];
+            foreach ($Data['cache_list'] as $Entry) {
+                if (empty($Entry['info'])) {
+                    continue;
+                }
+                $Entry['Data'] = $this->getEntry($Entry['info']);
+                $Output[$Entry['info']] = $Entry['ttl'] > 0 ? [
+                    'Data' => $Entry['Data'],
+                    'Time' => $Entry['ttl']
+                ] : $Entry['Data'];
+            }
+            return $Output;
+        }
+        if ($this->Using === 'Memcached') {
+            $Keys = $this->WorkingData->getAllKeys();
+            if ($Keys !== false && $this->WorkingData->getDelayed($Keys)) {
+                $Data = $this->WorkingData->fetchAll();
+            }
+            if (!is_array($Data)) {
+                return [];
+            }
+            $Output = [];
+            foreach ($Data as $Entry) {
+                if (!is_array($Entry) || !isset($Entry['key'], $Entry['value'], $Entry['cas'])) {
+                    continue;
+                }
+                $Output[$Entry['key']] = ['Data' => $this->unserializeEntry($Entry['value'])];
+                if ($Entry['cas'] > 0) {
+                    if ($Entry['cas'] >= 2592000) {
+                        $Entry['cas'] -= 2592000;
+                    }
+                    $Output[$Entry['key']]['Time'] = $Entry['cas'];
+                } else {
+                    $Output[$Entry['key']] = $Output[$Entry['key']]['Data'];
+                }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'PDO') {
+            if ($this->clearExpiredPDO()) {
+                $this->Modified = true;
+            }
+            $PDO = $this->WorkingData->prepare(self::getAllQuery);
+            if ($PDO !== false && $PDO->execute()) {
+                $Data = $PDO->fetchAll();
+                $Output = [];
+                foreach ($Data as $Entry) {
+                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time'])) {
+                        continue;
+                    }
+                    $Output[$Entry['Key']] = $Entry['Time'] > 0 ? [
+                        'Data' => $this->unserializeEntry($Entry['Data']),
+                        'Time' => $Entry['Time']
+                    ] : $this->unserializeEntry($Entry['Data']);
+                }
+                return $Output;
+            }
+            return [];
+        }
+        if ($Arr = ($this->exposeWorkingDataArray() ?: [])) {
+            foreach ($Arr as &$Entry) {
+                $Entry = $this->unserializeEntry($Entry);
+            }
+            return $Arr;
+        }
+        return [];
+    }
+
+    /**
      * Clears expired entries from an array-based cache (used for flatfile
      * caching).
      *
@@ -436,14 +527,19 @@ class Cache
         }
         $Cleared = false;
         $Updated = [];
-        foreach ($Data as $Entry) {
-            if (is_array($Entry) && isset($Entry['Data']) && is_array($Entry['Data'])) {
-                if ($this->clearExpired($Entry['Data'])) {
-                    $Cleared = true;
+        foreach ($Data as $Key => $Value) {
+            if (is_array($Value)) {
+                foreach ($Value as &$SubValue) {
+                    if (is_array($SubValue)) {
+                        if ($this->clearExpired($SubValue)) {
+                            $Cleared = true;
+                        }
+                    }
                 }
+                unset($SubValue);
             }
-            if (!is_array($Entry) || !isset($Entry['Time']) || $Entry['Time'] > time()) {
-                $Updated[] = $Entry;
+            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > time()) {
+                $Updated[$Key] = $Value;
             } else {
                 $Cleared = true;
             }
@@ -470,8 +566,68 @@ class Cache
     }
 
     /**
+     * Unserialize a returned cache entry if necessary.
+     *
+     * @param mixed $Entry The returned cache entry.
+     * @return mixed An unserialized array, if the returned cache entry is
+     *      a serialized array, else the returned cache entry as verbatim.
+     */
+    public function unserializeEntry($Entry)
+    {
+        if (!$Entry || !is_string($Entry) || !preg_match('~^a\:\d+\:\{.*\}$~', $Entry)) {
+            return $Entry;
+        }
+        $Arr = unserialize($Entry);
+        if (is_array($Arr)) {
+            $this->clearExpired($Arr);
+            return $Arr;
+        }
+        return $Entry;
+    }
+
+    /**
+     * Serialize a cache entry prior to committing if necessary.
+     *
+     * @param string|array $Entry The cache entry to be serialized.
+     * @return string The cache entry as verbatim, or a serialized string.
+     */
+    public function serializeEntry($Entry)
+    {
+        return is_array($Entry) ? (serialize($Entry) ?: $Entry) : $Entry;
+    }
+
+    /**
+     * Attempt to strip objects from a data set (useful for when data from
+     * untrusted sources might potentially be being cached, which generally
+     * should be avoided anyway due to the security risk, but including
+     * this method here anyway, in case we mightn't have any choice in some
+     * circumstances). To be called by the implementation.
+     *
+     * @param mixed $Entry The data set to strip from.
+     * @return mixed The object-stripped data set.
+     */
+    public function stripObjects($Data)
+    {
+        if (is_object($Data)) {
+            return false;
+        }
+        if (!is_array($Data)) {
+            return $Data;
+        }
+        $Output = [];
+        foreach ($Data as $Key => $Value) {
+            if (is_object($Element)) {
+                continue;
+            }
+            $Output[$Key] = $this->stripObjects($Value);
+        }
+        return $Output;
+    }
+
+    /**
      * Expose working data array (useful when integrating the instantiated
-     * object to external caching mechanisms).
+     * object to external caching mechanisms). To be called by the
+     * implementation.
      *
      * @return array|bool The working data array, or false on error.
      */

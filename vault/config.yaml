@@ -484,44 +484,58 @@ Config Defaults:
   enable_apcu:
    type: bool
    default: false
+   experimental: true
   enable_memcache:
    type: bool
    default: false
+   experimental: true
   enable_memcached:
    type: bool
    default: false
+   experimental: true
   enable_redis:
    type: bool
    default: false
+   experimental: true
   enable_pdo:
    type: bool
    default: false
+   experimental: true
   memcache_host:
    type: string
    default: "localhost"
+   experimental: true
   memcache_port:
    type: int
    default: 11211
+   experimental: true
   memcache_timeout:
    type: int
    default: 1
+   experimental: true
   redis_host:
    type: string
    default: "localhost"
+   experimental: true
   redis_port:
    type: int
    default: 6379
+   experimental: true
   redis_timeout:
    type: real
    step: any
    default: 2.5
+   experimental: true
   pdo_dsn:
    type: string
    default: "mysql:dbname=phpmussel;host=localhost;port=3306"
+   experimental: true
   pdo_username:
    type: string
    default: ""
+   experimental: true
   pdo_password:
    type: string
    default: ""
+   experimental: true
 
