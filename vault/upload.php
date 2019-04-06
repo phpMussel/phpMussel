@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.04.02).
+ * This file: Upload handler (last modified: 2019.04.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -56,14 +56,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
      * directives of the phpMussel configuration file.
      */
     $phpMussel['whyflagged'] = $phpMussel['killdata'] = $phpMussel['PEData'] = '';
-
-    /** Create an array for our hash cache data. */
-    $phpMussel['HashCache'] = [];
-
-    /** Fetch the hash cache (a record of recently scanned files). */
-    $phpMussel['HashCache']['Data'] = (
-        $phpMussel['upload']['count'] > 0 && $phpMussel['Config']['general']['scan_cache_expiry'] > 0
-    ) ? $phpMussel['FetchCache']('HashCache') : '';
 
     /** Process the hash cache. */
     $phpMussel['PrepareHashCache']();
@@ -258,6 +250,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             return is_array($Item) ? implode(':', $Item) . ';' : $Item;
         }, $phpMussel['HashCache']['Data']);
         $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
+
+        /** Update hash cache. */
         $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
             'HashCache',
             $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'],

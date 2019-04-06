@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.04.03).
+ * A simple, unified cache handler (last modified: 2019.04.06).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -450,10 +450,11 @@ class Cache
                 if (empty($Entry['info'])) {
                     continue;
                 }
+                $Creation = isset($Entry['creation_time']) ? $Entry['creation_time'] : 0;
                 $Entry['Data'] = $this->getEntry($Entry['info']);
                 $Output[$Entry['info']] = $Entry['ttl'] > 0 ? [
                     'Data' => $Entry['Data'],
-                    'Time' => $Entry['ttl']
+                    'Time' => $Creation + $Entry['ttl']
                 ] : $Entry['Data'];
             }
             return $Output;
@@ -472,10 +473,7 @@ class Cache
                     continue;
                 }
                 $Output[$Entry['key']] = ['Data' => $this->unserializeEntry($Entry['value'])];
-                if ($Entry['cas'] > 0) {
-                    if ($Entry['cas'] >= 2592000) {
-                        $Entry['cas'] -= 2592000;
-                    }
+                if ($Entry['cas'] > 2592000) {
                     $Output[$Entry['key']]['Time'] = $Entry['cas'];
                 } else {
                     $Output[$Entry['key']] = $Output[$Entry['key']]['Data'];

@@ -605,3 +605,54 @@ addReplyToAddress=''
 addReplyToName=''
 
 
+[supplementary_cache_options]
+
+; Unstable/Experimental! Specifies whether to try using APCu for caching.
+; Default = False.
+enable_apcu=false
+
+; Unstable/Experimental! Specifies whether to try using Memcache for caching.
+; Default = False.
+enable_memcache=false
+
+; Unstable/Experimental! Specifies whether to try using Memcached for caching.
+; Default = False.
+enable_memcached=false
+
+; Unstable/Experimental! Specifies whether to try using Redis for caching.
+; Default = False.
+enable_redis=false
+
+; Unstable/Experimental! Specifies whether to try using PDO for caching.
+; Default = False.
+enable_pdo=false
+
+; Unstable/Experimental! Memcache host value. Default = "localhost".
+memcache_host='localhost'
+
+; Unstable/Experimental! Memcache port value. Default = "11211".
+memcache_port=11211
+
+; Unstable/Experimental! Memcache timeout value. Default = "1".
+memcache_timeout=1
+
+; Unstable/Experimental! Redis host value. Default = "localhost".
+redis_host='localhost'
+
+; Unstable/Experimental! Redis port value. Default = "6379".
+redis_port=6379
+
+; Unstable/Experimental! Redis timeout value. Default = "2.5".
+redis_timeout=2.5
+
+; Unstable/Experimental! PDO DSN value. Default =
+; "mysql:dbname=phpmussel;host=localhost;port=3306".
+pdo_dsn='mysql:dbname=phpmussel;host=localhost;port=3306'
+
+; Unstable/Experimental! PDO username.
+pdo_username=''
+
+; Unstable/Experimental! PDO password.
+pdo_password=''
+
+

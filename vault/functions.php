@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.04.02).
+ * This file: Functions file (last modified: 2019.04.06).
  */
 
 /**
@@ -463,6 +463,21 @@ $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
  */
 $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
     $phpMussel['CleanCache']();
+    $phpMussel['InitialiseCache']();
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($phpMussel['Cache']->Using) {
+        if (is_array($Entry)) {
+            $Out = [];
+            foreach ($Entry as $ThisKey => $ThisEntry) {
+                $Out[$ThisKey] = $phpMussel['Cache']->getEntry($ThisEntry);
+            }
+            return $Out;
+        }
+        return $phpMussel['Cache']->getEntry($Entry);
+    }
+
+    /** Default process. */
     if (!$Entry) {
         return '';
     }
@@ -508,6 +523,19 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
  */
 $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') use (&$phpMussel) {
     $phpMussel['CleanCache']();
+    $phpMussel['InitialiseCache']();
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($phpMussel['Cache']->Using) {
+        if ($Expiry <= 0) {
+            $Expiry = 0;
+        } elseif ($Expiry > $phpMussel['Time']) {
+            $Expiry = $Expiry - $phpMussel['Time'];
+        }
+        return $phpMussel['Cache']->setEntry($Entry, $ItemData, $Expiry);
+    }
+
+    /** Default process. */
     if (!$Entry || !$ItemData) {
         return false;
     }
@@ -539,6 +567,9 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
 
 /** Reads and prepares cached hash data. */
 $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
+    if (!isset($phpMussel['HashCache'])) {
+        $phpMussel['HashCache'] = [];
+    }
     if ($phpMussel['HashCache']['Data'] = (
         $phpMussel['Config']['general']['scan_cache_expiry'] > 0
     ) ? $phpMussel['FetchCache']('HashCache') : '') {
@@ -3411,7 +3442,7 @@ $phpMussel['SubstrAfterFinalSlash'] = function ($String) {
  *      parameter is an array and when $n and/or $zz is/are false, and
  *      otherwise returned as per described by the README documentation. The
  *      function may also die the script and return nothing, if something goes
- *      wrong, such as if the function is triggered in the absense of the
+ *      wrong, such as if the function is triggered in the absence of the
  *      required $phpMussel['InstanceCache'] variable being set.
  */
 $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
@@ -4400,9 +4431,9 @@ $phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
  *      the $f parameter is an array and when $n and/or $zz is/are false, and
  *      otherwise returned as per described by the README documentation. The
  *      function may also die the script and return nothing, if something goes
- *      wrong, such as if the function is triggered in the absense of the
+ *      wrong, such as if the function is triggered in the absence of the
  *      required $phpMussel['InstanceCache'] variable being set, and may also return
- *      false, in the absense of the required $phpMussel['HashCache']['Data']
+ *      false, in the absence of the required $phpMussel['HashCache']['Data']
  *      variable being set.
  */
 $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
@@ -4461,6 +4492,8 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                     $phpMussel['ThisItem'] = implode(':', $phpMussel['ThisItem']) . ';';
                 }
             }
+
+            /** Update hash cache. */
             $phpMussel['SaveCache'](
                 'HashCache',
                 $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
@@ -4720,7 +4753,12 @@ $phpMussel['GenerateSalt'] = function () {
     return $Salt;
 };
 
-/** Clears expired entries from a list. */
+/**
+ * Clears expired entries from a list.
+ *
+ * @param string $List The list to clear from.
+ * @param bool $Check A flag indicating when changes have occurred.
+ */
 $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
     if ($List) {
         $End = 0;
@@ -4754,7 +4792,11 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
     }
     if ($phpMussel['Config']['signatures']['Active'] !== $LastActive) {
         $phpMussel['ClearHashCache']();
-        $phpMussel['SaveCache']('Active', -1, $phpMussel['Config']['signatures']['Active']);
+        if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
+            $phpMussel['Cache']->deleteEntry('Active');
+        } else {
+            $phpMussel['SaveCache']('Active', -1, $phpMussel['Config']['signatures']['Active']);
+        }
     }
 
     $Classes = [
@@ -4956,7 +4998,9 @@ $phpMussel['Stats-Initialise'] = function () use (&$phpMussel) {
         $phpMussel['CacheModified'] = false;
 
         if ($phpMussel['Statistics'] = ($phpMussel['FetchCache']('Statistics') ?: [])) {
-            $phpMussel['Statistics'] = unserialize($phpMussel['Statistics']) ?: [];
+            if (is_string($phpMussel['Statistics'])) {
+                unserialize($phpMussel['Statistics']) ?: [];
+            }
         }
 
         if (empty($phpMussel['Statistics']['Other-Since'])) {
@@ -4980,6 +5024,14 @@ $phpMussel['Stats-Initialise'] = function () use (&$phpMussel) {
 
 /** Clears out the hash cache. */
 $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
+    $phpMussel['InitialiseCache']();
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($phpMussel['Cache']->Using) {
+        return $phpMussel['Cache']->deleteEntry('HashCache');
+    }
+
+    /** Default process. */
     $File = $phpMussel['cachePath'] . '48.tmp';
     $Data = $phpMussel['ReadFile']($File) ?: '';
     while (strpos($Data, 'HashCache:') !== false) {
@@ -5154,4 +5206,31 @@ $phpMussel['Pseudonymise-IP'] = function ($IP) {
         '\1.\2.\3.x',
         $IP
     );
+};
+
+/** Initialise cache. */
+$phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
+
+    /** Exit early if already initialised. */
+    if (isset($phpMussel['Cache'])) {
+        return;
+    }
+
+    /** Create new cache object. */
+    $phpMussel['Cache'] = new \Maikuolan\Common\Cache();
+    $phpMussel['Cache']->EnableAPCu = $phpMussel['Config']['supplementary_cache_options']['enable_apcu'];
+    $phpMussel['Cache']->EnableMemcache = $phpMussel['Config']['supplementary_cache_options']['enable_memcache'];
+    $phpMussel['Cache']->EnableMemcached = $phpMussel['Config']['supplementary_cache_options']['enable_memcached'];
+    $phpMussel['Cache']->EnableRedis = $phpMussel['Config']['supplementary_cache_options']['enable_redis'];
+    $phpMussel['Cache']->EnablePDO = $phpMussel['Config']['supplementary_cache_options']['enable_pdo'];
+    $phpMussel['Cache']->MemcacheHost = $phpMussel['Config']['supplementary_cache_options']['memcache_host'];
+    $phpMussel['Cache']->MemcachePort = $phpMussel['Config']['supplementary_cache_options']['memcache_port'];
+    $phpMussel['Cache']->MemcacheTimeout = $phpMussel['Config']['supplementary_cache_options']['memcache_timeout'];
+    $phpMussel['Cache']->RedisHost = $phpMussel['Config']['supplementary_cache_options']['redis_host'];
+    $phpMussel['Cache']->RedisPort = $phpMussel['Config']['supplementary_cache_options']['redis_port'];
+    $phpMussel['Cache']->RedisTimeout = $phpMussel['Config']['supplementary_cache_options']['redis_timeout'];
+    $phpMussel['Cache']->PDOdsn = $phpMussel['Config']['supplementary_cache_options']['pdo_dsn'];
+    $phpMussel['Cache']->PDOusername = $phpMussel['Config']['supplementary_cache_options']['pdo_username'];
+    $phpMussel['Cache']->PDOpassword = $phpMussel['Config']['supplementary_cache_options']['pdo_password'];
+    $phpMussel['Cache']->connect();
 };
