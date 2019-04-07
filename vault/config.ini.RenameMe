@@ -611,10 +611,6 @@ addReplyToName=''
 ; Default = False.
 enable_apcu=false
 
-; Unstable/Experimental! Specifies whether to try using Memcache for caching.
-; Default = False.
-enable_memcache=false
-
 ; Unstable/Experimental! Specifies whether to try using Memcached for caching.
 ; Default = False.
 enable_memcached=false
@@ -627,14 +623,11 @@ enable_redis=false
 ; Default = False.
 enable_pdo=false
 
-; Unstable/Experimental! Memcache host value. Default = "localhost".
-memcache_host='localhost'
+; Unstable/Experimental! Memcached host value. Default = "localhost".
+memcached_host='localhost'
 
-; Unstable/Experimental! Memcache port value. Default = "11211".
-memcache_port=11211
-
-; Unstable/Experimental! Memcache timeout value. Default = "1".
-memcache_timeout=1
+; Unstable/Experimental! Memcached port value. Default = "11211".
+memcached_port=11211
 
 ; Unstable/Experimental! Redis host value. Default = "localhost".
 redis_host='localhost'

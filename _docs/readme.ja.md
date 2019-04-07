@@ -406,7 +406,7 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 [compatibility](#compatibility-コンパーティブリティカテゴリ) | [heuristic](#heuristic-ヒューリスティックカテゴリ) | [virustotal](#virustotal-ウィルストータルカテゴリ) | [urlscanner](#urlscanner-ユーアールエルスキャナーカテゴリ)
 [ignore_upload_errors](#ignore_upload_errors-イグノアアップロードエラーズ)<br />[only_allow_images](#only_allow_images-オンリーアロウイメージ)<br /><br /><br /><br /> | [threshold](#threshold-スレッシュホールド)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key-ヴィティパブリックエイピーアイキー)<br />[vt_suspicion_level](#vt_suspicion_level-ヴィティサスピションレベル)<br />[vt_weighting](#vt_weighting-ヴィティウェイティング)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-ヴィティクォータレート-と-vt_quota_time-ヴィティクォータタイム)<br /> | [lookup_hphosts](#lookup_hphosts-ルックアップエイチピーホスツ)<br />[google_api_key](#google_api_key-グーグルエーピーアイキー)<br />[maximum_api_lookups](#maximum_api_lookups-マクシマムエーピーアイルックアップス)<br />[maximum_api_lookups_response](#maximum_api_lookups_response-マクシマムエーピーアイルックアップスレスポンス)<br />[cache_time](#cache_time-キャッシュタイム)<br />
 [legal](#legal-リーガルカテゴリ) | [template_data](#template_data-テンプレートデータカテゴリ) | [PHPMailer](#phpmailer-ピーエイチピーメーラーカテゴリ) | [supplementary_cache_options](#supplementary_cache_options-サプレメンタリーキャッシュオプションズカテゴリ)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses-プセユードニマイズアイピーアドレセズ)<br />[privacy_policy](#privacy_policy-プライバシーポリシー)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme-シームテーマ)<br />[Magnification](#magnification-マグニフィケーション)<br />[css_url](#css_url-シーエスエスユーアールエル)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog-イベントログ)<br />[SkipAuthProcess](#skipauthprocess-スキップオスプロセス)<br />[Enable2FA](#enable2fa-イネーブル２ｆａ)<br />[Host](#host-ホスト)<br />[Port](#port-ポート)<br />[SMTPSecure](#smtpsecure-ｓｍｔｐセキュア)<br />[SMTPAuth](#smtpauth-ｓｍｔｐオス)<br />[Username](#username-ユーザーネーム)<br />[Password](#password-パスワード)<br />[setFromAddress](#setfromaddress-セットフロムアドレス)<br />[setFromName](#setfromname-セットフロムネーム)<br />[addReplyToAddress](#addreplytoaddress-アッドリプライアドレス)<br />[addReplyToName](#addreplytoname-アッドリプライネーム)<br /><br /> | [enable_apcu](#enable_apcu-イネーブルａｐｃｕ)<br />[enable_memcache](#enable_memcache-イネーブルメムキャッシュ)<br />[enable_memcached](#enable_memcached-イネーブルメムキャッシュト)<br />[enable_redis](#enable_redis-イネーブルレディス)<br />[enable_pdo](#enable_pdo-イネーブルｐｄｏ)<br />[memcache_host](#memcache_host-メムキャッシュホスト)<br />[memcache_port](#memcache_port-メムキャッシュポート)<br />[memcache_timeout](#memcache_timeout-メムキャッシュタイムアウト)<br />[redis_host](#redis_host-レディスホスト)<br />[redis_port](#redis_port-レディスポート)<br />[redis_timeout](#redis_timeout-レディスタイムアウト)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username-ｐｄｏユーザーネーム)<br />[pdo_password](#pdo_password-ｐｄｏパスワード)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses-プセユードニマイズアイピーアドレセズ)<br />[privacy_policy](#privacy_policy-プライバシーポリシー)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme-シームテーマ)<br />[Magnification](#magnification-マグニフィケーション)<br />[css_url](#css_url-シーエスエスユーアールエル)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog-イベントログ)<br />[SkipAuthProcess](#skipauthprocess-スキップオスプロセス)<br />[Enable2FA](#enable2fa-イネーブル２ｆａ)<br />[Host](#host-ホスト)<br />[Port](#port-ポート)<br />[SMTPSecure](#smtpsecure-ｓｍｔｐセキュア)<br />[SMTPAuth](#smtpauth-ｓｍｔｐオス)<br />[Username](#username-ユーザーネーム)<br />[Password](#password-パスワード)<br />[setFromAddress](#setfromaddress-セットフロムアドレス)<br />[setFromName](#setfromname-セットフロムネーム)<br />[addReplyToAddress](#addreplytoaddress-アッドリプライアドレス)<br />[addReplyToName](#addreplytoname-アッドリプライネーム)<br /> | [enable_apcu](#enable_apcu-イネーブルａｐｃｕ)<br />[enable_memcached](#enable_memcached-イネーブルメムキャッシュト)<br />[enable_redis](#enable_redis-イネーブルレディス)<br />[enable_pdo](#enable_pdo-イネーブルｐｄｏ)<br />[memcached_host](#memcached_host-メムキャッシュホスト)<br />[memcached_port](#memcached_port-メムキャッシュポート)<br />[redis_host](#redis_host-レディスホスト)<br />[redis_port](#redis_port-レディスポート)<br />[redis_timeout](#redis_timeout-レディスタイムアウト)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username-ｐｄｏユーザーネーム)<br />[pdo_password](#pdo_password-ｐｄｏパスワード)<br /><br />
 
 #### "general" （全般、カテゴリー）
 全般的な設定。
@@ -816,9 +816,6 @@ PHPMailerコンフィギュレーション。
 ##### "enable_apcu" （イネーブル・ＡＰＣｕ）
 - キャッシュに「APCu」を使用するかどうかを指定します。 Default/デフォルルト = False。
 
-##### "enable_memcache" （イネーブル・メムキャッシュ）
-- キャッシュに「Memcache」を使用するかどうかを指定します。 Default/デフォルルト = False。
-
 ##### "enable_memcached" （イネーブル・メムキャッシュト）
 - キャッシュに「Memcached」を使用するかどうかを指定します。 Default/デフォルルト = False。
 
@@ -828,14 +825,11 @@ PHPMailerコンフィギュレーション。
 ##### "enable_pdo" （イネーブル・ＰＤＯ）
 - キャッシュに「PDO」を使用するかどうかを指定します。 Default/デフォルルト = False。
 
-##### "memcache_host" （メムキャッシュ・ホスト）
-- Memcacheのホスト値。 Default/デフォルルト = 「localhost」。
+##### "memcached_host" （メムキャッシュ・ホスト）
+- Memcachedのホスト値。 Default/デフォルルト = 「localhost」。
 
-##### "memcache_port" （メムキャッシュ・ポート）
-- Memcacheのポート値。 Default/デフォルルト = 「11211」。
-
-##### "memcache_timeout" （メムキャッシュ・タイムアウト）
-- Memcacheのタイムアウト値。 Default/デフォルルト = 「1」。
+##### "memcached_port" （メムキャッシュ・ポート）
+- Memcachedのポート値。 Default/デフォルルト = 「11211」。
 
 ##### "redis_host" （レディス・ホスト）
 - Redisのホスト値。 Default/デフォルルト = 「localhost」。
@@ -1400,4 +1394,4 @@ phpMusselは、マーケティングやアドバタイジング目的で情報�
 ---
 
 
-最終アップデート：２０１９年４月４日。
+最終アップデート：２０１９年４月７日。

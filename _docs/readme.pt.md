@@ -406,7 +406,7 @@ O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de con
 [compatibility](#compatibility-categoria) | [heuristic](#heuristic-categoria) | [virustotal](#virustotal-categoria) | [urlscanner](#urlscanner-categoria)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-e-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-categoria) | [template_data](#template_data-categoria) | [PHPMailer](#phpmailer-categoria) | [supplementary_cache_options](#supplementary_cache_options-categoria)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Categoria)
 Configuração geral por phpMussel.
@@ -816,9 +816,6 @@ Opções suplementares de cache.
 ##### "enable_apcu"
 - Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = False.
 
-##### "enable_memcache"
-- Especifica se deve tentar usar o Memcache para armazenamento em cache. Padrão = False.
-
 ##### "enable_memcached"
 - Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False.
 
@@ -828,14 +825,11 @@ Opções suplementares de cache.
 ##### "enable_pdo"
 - Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False.
 
-##### "memcache_host"
-- Valor da host do Memcache. Padrão = "localhost".
+##### "memcached_host"
+- Valor da host do Memcached. Padrão = "localhost".
 
-##### "memcache_port"
-- Valor da porta do Memcache. Padrão = "11211".
-
-##### "memcache_timeout"
-- Valor de tempo limite do memcache. Padrão = "1".
+##### "memcached_port"
+- Valor da porta do Memcached. Padrão = "11211".
 
 ##### "redis_host"
 - Valor da host do Redis. Padrão = "localhost".
@@ -1395,4 +1389,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 4 Abril de 2019 (2019.04.04).
+Última Atualização: 7 Abril de 2019 (2019.04.07).

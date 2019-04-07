@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.04.03).
+# This file: Russian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "Интерпретировать сигнату
 config_signatures_fail_extensions_silently: "Должна phpMussel сообщать, что отсутствует расширение файла? Если <code>fail_extensions_silently</code> деактивирована, то при сканировании придёт сообщение об отсутствии расширения файла, если же <code>fail_extensions_silently</code> активирована, то файлы с отсутствующим расширением будут игнорироваться, и при сканировании придёт сообщение, что с этими файлами всё в порядке. Деактивация или активация могут повысить Вашу безопасность, однако способствовать увеличению ложных сообщений. False = Деактивировано; True = Активировано [Стандарт]."
 config_signatures_fail_silently: "Реакция phpMussel на отсутсвие сигнатурей или дефект в них. Когда <code>fail_silently</code> деактивирована, то в течение сканирования будет сообщаться об отсутствии сигнатуры или изъянах в ней. В случае если <code>fail_silently</code> активирована, то отсутствующие или дефектные сигнатуры будут игнорироваться, не сообщая о проблемах. Эта опция должна оставаться такой, если только Вы не ожидаете отказа системы или чего-то подобного. False = Деактивировано; True = Активировано [Стандарт]."
 config_supplementary_cache_options_enable_apcu: "Указывает, использовать ли APCu для кэширования. Стандарт = False."
-config_supplementary_cache_options_enable_memcache: "Указывает, использовать ли Memcache для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_memcached: "Указывает, использовать ли Memcached для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_pdo: "Указывает, использовать ли PDO для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_redis: "Указывает, использовать ли Redis для кэширования. Стандарт = False."
-config_supplementary_cache_options_memcache_host: "Значение хоста Memcache. Стандарт = «localhost»."
-config_supplementary_cache_options_memcache_port: "Значение порта Memcache. Стандарт = «11211»."
-config_supplementary_cache_options_memcache_timeout: "Значение тайм-аута Memcache. Стандарт = «1»."
+config_supplementary_cache_options_memcached_host: "Значение хоста Memcached. Стандарт = «localhost»."
+config_supplementary_cache_options_memcached_port: "Значение порта Memcached. Стандарт = «11211»."
 config_supplementary_cache_options_pdo_dsn: "Значение DSN PDO. Стандарт = «mysql:dbname=phpmussel;host=localhost;port=3306»."
 config_supplementary_cache_options_pdo_password: "Пароль PDO."
 config_supplementary_cache_options_pdo_username: "Имя пользователя PDO."

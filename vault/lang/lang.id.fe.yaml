@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.04.03).
+# This file: Indonesian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "Harus phpMussel menggunakan tanda tangan untuk 
 config_signatures_fail_extensions_silently: "Seharusnya laporan phpMussel ketika ekstensi hilang? Jika <code>fail_extensions_silently</code> dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_extensions_silently</code> diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default]."
 config_signatures_fail_silently: "Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika <code>fail_silently</code> dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_silently</code> diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default]."
 config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False."
-config_supplementary_cache_options_enable_memcache: "Menentukan apakah akan mencoba menggunakan Memcache untuk cache. Default = False."
 config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
 config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
 config_supplementary_cache_options_enable_redis: "Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False."
-config_supplementary_cache_options_memcache_host: "Nilai host Memcache. Default = "localhost"."
-config_supplementary_cache_options_memcache_port: "Nilai port Memcache. Default = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Nilai batas waktu Memcache. Default = "1"."
+config_supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = "localhost"."
+config_supplementary_cache_options_memcached_port: "Nilai port Memcached. Default = "11211"."
 config_supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Kata sandi PDO."
 config_supplementary_cache_options_pdo_username: "Nama pengguna PDO."

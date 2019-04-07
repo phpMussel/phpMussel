@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.04.03).
+# This file: Dutch language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "Moet phpMussel verwerken signatures voor het de
 config_signatures_fail_extensions_silently: "Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als <code>fail_extensions_silently</code> is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als <code>fail_extensions_silently</code> is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard]."
 config_signatures_fail_silently: "Moet phpMussel rapporteren wanneer signatuurbestanden zijn ontbrekend of beschadigd? Als <code>fail_silently</code> is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als <code>fail_silently</code> is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard]."
 config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = False."
-config_supplementary_cache_options_enable_memcache: "Dit geeft aan of Memcache moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_memcached: "Dit geeft aan of Memcached moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_pdo: "Dit geeft aan of PDO moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_redis: "Dit geeft aan of Redis moet worden gebruikt voor caching. Standaard = False."
-config_supplementary_cache_options_memcache_host: "Memcache hostwaarde. Standaard = "localhost"."
-config_supplementary_cache_options_memcache_port: "Memcache poortwaarde. Standaard = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache timeoutwaarde. Standaard = "1"."
+config_supplementary_cache_options_memcached_host: "Memcached hostwaarde. Standaard = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached poortwaarde. Standaard = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-waarde. Standaard = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO wachtwoord."
 config_supplementary_cache_options_pdo_username: "PDO gebruikersnaam."

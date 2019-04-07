@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.04.03).
+# This file: Urdu language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "phpMussel شیل اسکرپٹ کا پتہ لگ�
 config_signatures_fail_extensions_silently: "رپورٹ phpMussel چاہئے جب توسیعات لاپتہ ہیں؟ تو <code dir="ltr">fail_extensions_silently</code> کے معذور، لاپتہ توسیعات سکیننگ پر اطلاع دی جائے گی، اور اگر <code dir="ltr">fail_extensions_silently</code> کے چالو حالت میں ہے، ملانے لاپتہ وہاں نہیں کسی بھی ہیں کہ سکیننگ ان فائلوں کے لئے رپورٹنگ کے ساتھ، نظر انداز کر دیا جائے گا مسائل. اس حکم کو غیر فعال ممکنہ طور پر آپ کی سیکورٹی میں اضافہ ہو سکتا ہے، بلکہ جھوٹے مثبت کا اضافہ کا باعث بن سکتا. False (جھوٹی) = معذور؛ True (سچے) = چالو کیا [پہلے سے طے شدہ]."
 config_signatures_fail_silently: "جب دستخط فائلوں غائب یا خراب phpMussel رپورٹ چاہئے؟ تو <code dir="ltr">fail_silently</code> کے، معذور لاپتہ اور خراب فائلوں سکیننگ پر اطلاع دی جائے گی، اور اگر <code dir="ltr">fail_silently</code> کے لاپتہ، فعال ہے اور خراب فائلوں ان فائلوں کے لئے رپورٹنگ سکیننگ کے ساتھ، نظر انداز کر دیا جائے گا کہ کوئی مسئلہ نہیں ہیں. آپ گر کر تباہ یا اسی طرح کے مسائل کا سامنا کر رہے ہیں جب تک کہ یہ عام تنہا چھوڑ دیا جانا چاہئے. False (جھوٹی) = معذور؛ True (سچے) = چالو کیا [پہلے سے طے شدہ]."
 config_supplementary_cache_options_enable_apcu: "اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
-config_supplementary_cache_options_enable_memcache: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcache استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
 config_supplementary_cache_options_enable_memcached: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcached استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
 config_supplementary_cache_options_enable_pdo: "اس کی وضاحت کرتا ہے کہ کیش کے لئے PDO استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
 config_supplementary_cache_options_enable_redis: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Redis استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
-config_supplementary_cache_options_memcache_host: "Memcache کے میزبان نام. پہلے سے طے شدہ = "localhost"."
-config_supplementary_cache_options_memcache_port: "Memcache کے لئے بندرگاہ. پہلے سے طے شدہ = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "1"."
+config_supplementary_cache_options_memcached_host: "Memcached کے میزبان نام. پہلے سے طے شدہ = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached کے لئے بندرگاہ. پہلے سے طے شدہ = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO کے لئے DSN. پہلے سے طے شدہ = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO کیلئے پاس ورڈ."
 config_supplementary_cache_options_pdo_username: "PDO کے لئے صارف نام."

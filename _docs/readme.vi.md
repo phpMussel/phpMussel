@@ -406,7 +406,7 @@ Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho
 [compatibility](#compatibility-thể-loại) | [heuristic](#heuristic-thể-loại) | [virustotal](#virustotal-thể-loại) | [urlscanner](#urlscanner-thể-loại)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-và-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-thể-loại) | [template_data](#template_data-thể-loại) | [PHPMailer](#phpmailer-thể-loại) | [supplementary_cache_options](#supplementary_cache_options-thể-loại)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Thể loại)
 Cấu hình chung cho phpMussel.
@@ -816,9 +816,6 @@ Tùy chọn bộ nhớ cache bổ sung.
 ##### "enable_apcu"
 - Điều này xác định có nên thử sử dụng APCu để lưu trữ không. Mặc định = False.
 
-##### "enable_memcache"
-- Điều này xác định có nên thử sử dụng Memcache để lưu trữ không. Mặc định = False.
-
 ##### "enable_memcached"
 - Điều này xác định có nên thử sử dụng Memcached để lưu trữ không. Mặc định = False.
 
@@ -828,14 +825,11 @@ Tùy chọn bộ nhớ cache bổ sung.
 ##### "enable_pdo"
 - Điều này xác định có nên thử sử dụng PDO để lưu trữ không. Mặc định = False.
 
-##### "memcache_host"
-- Giá trị máy chủ Memcache. Mặc định = "localhost".
+##### "memcached_host"
+- Giá trị máy chủ Memcached. Mặc định = "localhost".
 
-##### "memcache_port"
-- Giá trị cổng Memcache. Mặc định = "11211".
-
-##### "memcache_timeout"
-- Giá trị thời gian chờ Memcache. Mặc định = "1".
+##### "memcached_port"
+- Giá trị cổng Memcached. Mặc định = "11211".
 
 ##### "redis_host"
 - Giá trị máy chủ Redis. Mặc định = "localhost".
@@ -1393,4 +1387,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Tư 2019 (2019.04.04).
+Lần cuối cập nhật: 7 Tháng Tư 2019 (2019.04.07).

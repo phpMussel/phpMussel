@@ -401,7 +401,7 @@
 [compatibility](#compatibility-التصنيف) | [heuristic](#heuristic-التصنيف) | [virustotal](#virustotal-التصنيف) | [urlscanner](#urlscanner-التصنيف)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-و-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-التصنيف) | [template_data](#template_data-التصنيف) | [PHPMailer](#phpmailer-التصنيف) | [supplementary_cache_options](#supplementary_cache_options-التصنيف)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ phpMussel.<br /><br /></div>
@@ -1011,11 +1011,6 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">تمت إ�
  <li>يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = False (زائفة).</li>
 </ul></div>
 
-##### <div dir="rtl">"enable_memcache"<br /></div>
-<div dir="rtl"><ul>
- <li>يحدد هذا ما إذا كنت تريد استخدام Memcache للتخزين المؤقت. افتراضي = False (زائفة).</li>
-</ul></div>
-
 ##### <div dir="rtl">"enable_memcached"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد هذا ما إذا كنت تريد استخدام Memcached للتخزين المؤقت. افتراضي = False (زائفة).</li>
@@ -1031,19 +1026,14 @@ Phar | ❌ | ❌ | ❌ | &nbsp; <div dir="rtl" style="display:inline">تمت إ�
  <li>يحدد هذا ما إذا كنت تريد استخدام PDO للتخزين المؤقت. افتراضي = False (زائفة).</li>
 </ul></div>
 
-##### <div dir="rtl">"memcache_host"<br /></div>
+##### <div dir="rtl">"memcached_host"<br /></div>
 <div dir="rtl"><ul>
- <li>قيمة المضيف Memcache. افتراضي = "localhost".</li>
+ <li>قيمة المضيف Memcached. افتراضي = "localhost".</li>
 </ul></div>
 
-##### <div dir="rtl">"memcache_port"<br /></div>
+##### <div dir="rtl">"memcached_port"<br /></div>
 <div dir="rtl"><ul>
- <li>قيمة منفذ Memcache. افتراضي = "11211".</li>
-</ul></div>
-
-##### <div dir="rtl">"memcache_timeout"<br /></div>
-<div dir="rtl"><ul>
- <li>Memcache قيمة المهلة. افتراضي = "1".</li>
+ <li>قيمة منفذ Memcached. افتراضي = "11211".</li>
 </ul></div>
 
 ##### <div dir="rtl">"redis_host"<br /></div>
@@ -1660,4 +1650,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 4 أبريل 2019 (2019.04.04).</div>
+<div dir="rtl">آخر تحديث: 7 أبريل 2019 (2019.04.07).</div>

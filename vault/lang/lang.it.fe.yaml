@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.04.03).
+# This file: Italian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "Dovrebbe phpMussel utilizzare le firme per il r
 config_signatures_fail_extensions_silently: "Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se <code>fail_extensions_silently</code> è disattivato, mancanti estensioni saranno riportato sulla scansione, e se <code>fail_extensions_silently</code> è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito]."
 config_signatures_fail_silently: "Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se <code>fail_silently</code> è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se <code>fail_silently</code> è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito]."
 config_supplementary_cache_options_enable_apcu: "Specifica se provare a utilizzare APCu per la memorizzazione nella cache. Predefinito = False."
-config_supplementary_cache_options_enable_memcache: "Specifica se provare a utilizzare Memcache per la memorizzazione nella cache. Predefinito = False."
 config_supplementary_cache_options_enable_memcached: "Specifica se provare a utilizzare Memcached per la memorizzazione nella cache. Predefinito = False."
 config_supplementary_cache_options_enable_pdo: "Specifica se provare a utilizzare PDO per la memorizzazione nella cache. Predefinito = False."
 config_supplementary_cache_options_enable_redis: "Specifica se provare a utilizzare Redis per la memorizzazione nella cache. Predefinito = False."
-config_supplementary_cache_options_memcache_host: "Il valore dell'host Memcache. Predefinito = "localhost"."
-config_supplementary_cache_options_memcache_port: "Il valore della porta Memcache. Predefinito = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Il valore del tempo scaduto per Memcache. Predefinito = "1"."
+config_supplementary_cache_options_memcached_host: "Il valore dell'host Memcached. Predefinito = "localhost"."
+config_supplementary_cache_options_memcached_port: "Il valore della porta Memcached. Predefinito = "11211"."
 config_supplementary_cache_options_pdo_dsn: "Il valore della DSN per PDO. Predefinito = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "La password per PDO."
 config_supplementary_cache_options_pdo_username: "Il nome utente per PDO."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2019.04.03).
+# This file: Bangla language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "শেল স্ক্রিপ্ট সনা
 config_signatures_fail_extensions_silently: "এক্সটেনশনগুলি অনুপস্থিত যখন phpMussel রিপোর্ট করা উচিত? যদি <code>fail_extensions_silently</code> অক্ষম করা, স্ক্যান করার সময় অনুপস্থিত এক্সটেনশনগুলি প্রতিবেদন করা হবে। যদি <code>fail_extensions_silently</code> সক্ষম করা থাকে, তবে অনুপস্থিত এক্সটেনশনগুলি উপেক্ষা করা হবে এবং এটি প্রতিবেদন করা হবে যে স্ক্যান করা ফাইলগুলির সাথে কোনো সমস্যা নেই। এই নির্দেশটি অক্ষম করলে সম্ভবত আপনার নিরাপত্তা বৃদ্ধি পাবে, কিন্তু মিথ্যা ধনাত্মক বৃদ্ধি পেতে পারে। False = অক্ষম করা থাকে; True = সক্ষম করা থাকে [ডিফল্ট]।"
 config_signatures_fail_silently: "স্বাক্ষর ফাইলগুলি অনুপস্থিত বা দূষিত হলে phpMussel প্রতিবেদন করা উচিত? স্ক্যান করা হলে <code>fail_silently</code> অক্ষম, অনুপস্থিত এবং দূষিত ফাইলগুলির প্রতিবেদন করা হবে। যদি <code>fail_silently</code> সক্ষম করা থাকে, অনুপস্থিত এবং দূষিত ফাইলগুলি উপেক্ষা করা হবে এবং এটি রিপোর্ট করা হবে যে কোন সমস্যা নেই। আপনি ক্র্যাশ বা অনুরূপ সমস্যার সম্মুখীন না হওয়া পর্যন্ত এই একা থাকা উচিত। False = অক্ষম করা থাকে; True = সক্ষম করা থাকে [ডিফল্ট]।"
 config_supplementary_cache_options_enable_apcu: "এই ক্যাশিং জন্য APCu ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
-config_supplementary_cache_options_enable_memcache: "এই ক্যাশিং জন্য Memcache ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
 config_supplementary_cache_options_enable_memcached: "এই ক্যাশিং জন্য Memcached ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
 config_supplementary_cache_options_enable_pdo: "এই ক্যাশিং জন্য PDO ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
 config_supplementary_cache_options_enable_redis: "এই ক্যাশিং জন্য Redis ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
-config_supplementary_cache_options_memcache_host: "Memcache হোস্ট মান। ডিফল্ট = "localhost"।"
-config_supplementary_cache_options_memcache_port: "Memcache পোর্ট মান। ডিফল্ট = "11211"।"
-config_supplementary_cache_options_memcache_timeout: "Memcache সময়সীমা মান। ডিফল্ট = "1"।"
+config_supplementary_cache_options_memcached_host: "Memcached হোস্ট মান। ডিফল্ট = "localhost"।"
+config_supplementary_cache_options_memcached_port: "Memcached পোর্ট মান। ডিফল্ট = "11211"।"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN মান। ডিফল্ট = "mysql:dbname=phpmussel;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
 config_supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"

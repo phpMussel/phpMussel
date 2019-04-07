@@ -407,7 +407,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 [compatibility](#compatibility-类别) | [heuristic](#heuristic-类别) | [virustotal](#virustotal-类别) | [urlscanner](#urlscanner-类别)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate和vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-类别) | [template_data](#template_data-类别) | [PHPMailer](#phpmailer-类别) | [supplementary_cache_options](#supplementary_cache_options-类别)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### “general” （类别）
 基本phpMussel配置。
@@ -817,9 +817,6 @@ PHPMailer配置。
 ##### “enable_apcu”
 - 指定是否尝试使用APCu进行缓存。​标准 = False。
 
-##### “enable_memcache”
-- 指定是否尝试使用Memcache进行缓存。​标准 = False。
-
 ##### “enable_memcached”
 - 指定是否尝试使用Memcached进行缓存。​标准 = False。
 
@@ -829,14 +826,11 @@ PHPMailer配置。
 ##### “enable_pdo”
 - 指定是否尝试使用PDO进行缓存。​标准 = False。
 
-##### “memcache_host”
-- Memcache主机值。​标准 = “localhost”。
+##### “memcached_host”
+- Memcached主机值。​标准 = “localhost”。
 
-##### “memcache_port”
-- Memcache端口值。​标准 = “11211”。
-
-##### “memcache_timeout”
-- Memcache超时值。​标准 = “1”。
+##### “memcached_port”
+- Memcached端口值。​标准 = “11211”。
 
 ##### “redis_host”
 - Redis主机值。​标准 = “localhost”。
@@ -1402,4 +1396,4 @@ phpMussel不收集或处理任何信息用于营销或广告目的，既不销�
 ---
 
 
-最后更新：2019年4月4日。
+最后更新：2019年4月7日。

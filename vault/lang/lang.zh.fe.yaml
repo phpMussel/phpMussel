@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.04.03).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "phpMussel应该使用签名为webshell脚本检
 config_signatures_fail_extensions_silently: "phpMussel应该报告当扩展是失踪吗？​如果<code>fail_extensions_silently</code>是关闭，​失踪扩展将会报告当扫描，​和如果<code>fail_extensions_silently</code>是激活，​失踪扩展将会忽略，​有扫描报告为那些文件哪里没有任何问题。​关闭的这个指令可能的可以增加您的安全，​但可能还导致一个增加的假阳性。​False（假）=是关闭；True（真）=是激活【默认】。"
 config_signatures_fail_silently: "phpMussel应该报告当签名文件是失踪或损坏吗？​如果<code>fail_silently</code>是关闭，​失踪和损坏文件将会报告当扫描，​和如果<code>fail_silently</code>是激活，​失踪和损坏文件将会忽略，​有扫描报告为那些文件哪里没有问题。​这个应该按说被留下除非您遇到失败或有其他类似问题。​False（假）=是关闭；True（真）=是激活【默认】。"
 config_supplementary_cache_options_enable_apcu: "指定是否尝试使用APCu进行缓存。​标准 = False。"
-config_supplementary_cache_options_enable_memcache: "指定是否尝试使用Memcache进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_memcached: "指定是否尝试使用Memcached进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_pdo: "指定是否尝试使用PDO进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_redis: "指定是否尝试使用Redis进行缓存。​标准 = False。"
-config_supplementary_cache_options_memcache_host: "Memcache主机值。​标准 = “localhost”。"
-config_supplementary_cache_options_memcache_port: "Memcache端口值。​标准 = “11211”。"
-config_supplementary_cache_options_memcache_timeout: "Memcache超时值。​标准 = “1”。"
+config_supplementary_cache_options_memcached_host: "Memcached主机值。​标准 = “localhost”。"
+config_supplementary_cache_options_memcached_port: "Memcached端口值。​标准 = “11211”。"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN值。​标准 = “mysql:dbname=phpmussel;host=localhost;port=3306”。"
 config_supplementary_cache_options_pdo_password: "PDO密码。"
 config_supplementary_cache_options_pdo_username: "PDO用户名。"

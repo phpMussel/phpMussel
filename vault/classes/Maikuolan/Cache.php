@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.04.06).
+ * A simple, unified cache handler (last modified: 2019.04.07).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -20,9 +20,6 @@ class Cache
     /** Whether to try using APCu. */
     public $EnableAPCu = false;
 
-    /** Whether to try using Memcache. */
-    public $EnableMemcache = false;
-
     /** Whether to try using Memcached. */
     public $EnableMemcached = false;
 
@@ -32,14 +29,11 @@ class Cache
     /** Whether to try using PDO. */
     public $EnablePDO = false;
 
-    /** The host for Memcache(/d) to try using. */
-    public $MemcacheHost = 'localhost';
+    /** The host for Memcached to try using. */
+    public $MemcachedHost = 'localhost';
 
-    /** The port for Memcache(/d) to try using. */
-    public $MemcachePort = 11211;
-
-    /** The timeout for Memcache to try using. */
-    public $MemcacheTimeout = 1;
+    /** The port for Memcached to try using. */
+    public $MemcachedPort = 11211;
 
     /** The host for Redis to try using. */
     public $RedisHost = 'localhost';
@@ -99,19 +93,12 @@ class Cache
     const FLOCK_TIMEOUT = 10;
 
     /**
-     * Construct object, set whatever default values are needed, and optionally
-     * define some default cache data via an array.
+     * Construct object and set working data if needed.
      *
      * @param array|null $WorkingData An optional array of default cache data.
      */
     public function __construct($WorkingData = null)
     {
-        if (extension_loaded('memcache')) {
-            /** Set the default value for the Memcache port to use. */
-            if (!extension_loaded('memcached') && $Config = ini_get('memcache.default_port')) {
-                $this->MemcachePort = $Config;
-            }
-        }
         if (is_array($WorkingData)) {
             $this->WorkingData = $WorkingData;
         }
@@ -122,12 +109,12 @@ class Cache
      */
     public function __destruct()
     {
-        if ($this->Using === 'Memcache' || $this->Using === 'Redis') {
-            $this->WorkingData->close();
-            return;
-        }
         if ($this->Using === 'Memcached') {
             $this->WorkingData->quit();
+            return;
+        }
+        if ($this->Using === 'Redis') {
+            $this->WorkingData->close();
             return;
         }
         if ($this->Using === 'PDO') {
@@ -168,17 +155,9 @@ class Cache
             $this->Using = 'APCu';
             return true;
         }
-        if ($this->EnableMemcache && extension_loaded('memcache')) {
-            $this->WorkingData = new \Memcache();
-            if ($this->WorkingData->connect($this->MemcacheHost, $this->MemcachePort, $this->MemcacheTimeout)) {
-                $this->Using = 'Memcache';
-                return true;
-            }
-            $this->WorkingData = null;
-        }
         if ($this->EnableMemcached && extension_loaded('memcached')) {
             $this->WorkingData = new \Memcached();
-            if ($this->WorkingData->addServer($this->MemcacheHost, $this->MemcachePort)) {
+            if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
                 $this->Using = 'Memcached';
                 return true;
             }
@@ -259,7 +238,7 @@ class Cache
         if ($this->Using === 'APCu') {
             return $this->unserializeEntry(apcu_fetch($Entry));
         }
-        if ($this->Using === 'Memcache' || $this->Using === 'Memcached' || $this->Using === 'Redis') {
+        if ($this->Using === 'Memcached' || $this->Using === 'Redis') {
             return $this->unserializeEntry($this->WorkingData->get($Entry));
         }
         if ($this->Using === 'PDO') {
@@ -300,15 +279,6 @@ class Cache
         $Value = $this->serializeEntry($Value);
         if ($this->Using === 'APCu') {
             if (apcu_store($Key, $Value, $TTL)) {
-                return $this->Modified = true;
-            }
-            return false;
-        }
-        if ($this->Using === 'Memcache') {
-            if ($TTL >= 2592000) {
-                $TTL += time();
-            }
-            if ($this->WorkingData->set($Key, $Value, 0, $TTL)) {
                 return $this->Modified = true;
             }
             return false;
@@ -371,7 +341,7 @@ class Cache
             }
             return false;
         }
-        if ($this->Using === 'Memcache' || $this->Using === 'Memcached' || $this->Using === 'Redis') {
+        if ($this->Using === 'Memcached' || $this->Using === 'Redis') {
             if ($this->WorkingData->delete($Entry)) {
                 return $this->Modified = true;
             }
@@ -403,14 +373,11 @@ class Cache
         if ($this->Using === 'APCu') {
             return $this->Modified = apcu_clear_cache();
         }
-        if ($this->Using === 'Memcache' || $this->Using === 'Memcached') {
-            if ($this->WorkingData->flush()) {
-                return $this->Modified = true;
-            }
-            return false;
+        if ($this->Using === 'Memcached') {
+            return ($this->WorkingData->flush() && ($this->Modified = true));
         }
         if ($this->Using === 'Redis') {
-            return $this->Modified = $this->WorkingData->flushDb();
+            return ($this->WorkingData->flushDb() && ($this->Modified = true));
         }
         if ($this->Using === 'PDO') {
             $PDO = $this->WorkingData->prepare(self::clearQuery);
@@ -433,13 +400,6 @@ class Cache
      */
     public function getAllEntries()
     {
-        if ($this->Using === 'Memcache' || $this->Using === 'Redis') {
-            /**
-             * I haven't figured out how to do this with Memcache or Redis yet, sorry.
-             * Feel free to help with a pull request if you've got an idea or two. :D
-             */
-            return [];
-        }
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
             if (empty($Data['cache_list'])) {
@@ -478,6 +438,14 @@ class Cache
                 } else {
                     $Output[$Entry['key']] = $Output[$Entry['key']]['Data'];
                 }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'Redis') {
+            $Keys = $this->WorkingData->keys('*') ?: [];
+            $Output = [];
+            foreach ($Keys as $Key) {
+                $Output[$Key] = $this->unserializeEntry($this->WorkingData->get($Key));
             }
             return $Output;
         }

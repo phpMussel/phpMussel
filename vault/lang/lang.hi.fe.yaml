@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.04.03).
+# This file: Hindi language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "क्या खोल स्क्रिप्
 config_signatures_fail_extensions_silently: "क्या एक्सटेंशन गुम हैं तो phpMussel रिपोर्ट चाहिए? यदि <code>fail_extensions_silently</code> अक्षम है, लापता एक्सटेंशन स्कैनिंग के दौरान सूचित किया जाएगा, और यदि <code>fail_extensions_silently</code> सक्षम है, लापता एक्सटेंशन को नजरअंदाज कर दिया जाएगा, और यह सूचित किया जाएगा कि कोई समस्या नहीं है। इस निर्देश को अक्षम करने से संभवतः आपकी सुरक्षा में वृद्धि हो सकती है, लेकिन यह झूठी सकारात्मक वृद्धि की भी हो सकती है। False(झूठी) = अक्षम; True(सच्चे) = सक्षम [डिफ़ॉल्ट]।"
 config_signatures_fail_silently: "क्या phpMussel रिपोर्ट जब हस्ताक्षर फाइलें गायब या दूषित हैं? यदि <code>fail_silently</code> अक्षम है, लापता और दूषित फाइलों की सूचना स्कैनिंग के दौरान की जाएगी, और यदि <code>fail_silently</code> सक्षम है, लापता और भ्रष्ट फाइलें अनदेखा कर दी जाएंगी, और यह उन फाइलों के लिए रिपोर्ट की जाएगी जो किसी भी समस्याएं नहीं हैं। जब तक आप दुर्घटनाओं या इसी तरह की समस्याओं का सामना नहीं कर रहे हैं, तब तक इसे अकेला छोड़ दिया जाना चाहिए। False(झूठी) = अक्षम; True(सच्चे) = सक्षम [डिफ़ॉल्ट]।"
 config_supplementary_cache_options_enable_apcu: "निर्दिष्ट करता है कि कैशिंग के लिए APCu का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
-config_supplementary_cache_options_enable_memcache: "निर्दिष्ट करता है कि कैशिंग के लिए Memcache का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
 config_supplementary_cache_options_enable_memcached: "निर्दिष्ट करता है कि कैशिंग के लिए Memcached का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
 config_supplementary_cache_options_enable_pdo: "निर्दिष्ट करता है कि कैशिंग के लिए PDO का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
 config_supplementary_cache_options_enable_redis: "निर्दिष्ट करता है कि कैशिंग के लिए Redis का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
-config_supplementary_cache_options_memcache_host: "Memcache होस्ट वैल्यू। डिफ़ॉल्ट = "localhost"।"
-config_supplementary_cache_options_memcache_port: "Memcache पोर्ट वैल्यू। डिफ़ॉल्ट = "11211"।"
-config_supplementary_cache_options_memcache_timeout: "Memcache मध्यांतर वैल्यू। डिफ़ॉल्ट = "1"।"
+config_supplementary_cache_options_memcached_host: "Memcached होस्ट वैल्यू। डिफ़ॉल्ट = "localhost"।"
+config_supplementary_cache_options_memcached_port: "Memcached पोर्ट वैल्यू। डिफ़ॉल्ट = "11211"।"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN वैल्यू। डिफ़ॉल्ट = "mysql:dbname=phpmussel;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO पासवर्ड।"
 config_supplementary_cache_options_pdo_username: "PDO उपयोगकर्ता नाम।"

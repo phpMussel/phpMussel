@@ -406,7 +406,7 @@ Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `config.ini
 [compatibility](#compatibility-kategori) | [heuristic](#heuristic-kategori) | [virustotal](#virustotal-kategori) | [urlscanner](#urlscanner-kategori)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-dan-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-kategori) | [template_data](#template_data-kategori) | [PHPMailer](#phpmailer-kategori) | [supplementary_cache_options](#supplementary_cache_options-kategori)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Kategori)
 Konfigurasi umum dari phpMussel.
@@ -816,9 +816,6 @@ Opsi cache tambahan.
 ##### "enable_apcu"
 - Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False.
 
-##### "enable_memcache"
-- Menentukan apakah akan mencoba menggunakan Memcache untuk cache. Default = False.
-
 ##### "enable_memcached"
 - Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False.
 
@@ -828,14 +825,11 @@ Opsi cache tambahan.
 ##### "enable_pdo"
 - Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False.
 
-##### "memcache_host"
-- Nilai host Memcache. Default = "localhost".
+##### "memcached_host"
+- Nilai host Memcached. Default = "localhost".
 
-##### "memcache_port"
-- Nilai port Memcache. Default = "11211".
-
-##### "memcache_timeout"
-- Nilai batas waktu Memcache. Default = "1".
+##### "memcached_port"
+- Nilai port Memcached. Default = "11211".
 
 ##### "redis_host"
 - Nilai host Redis. Default = "localhost".
@@ -1393,4 +1387,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 4 April 2019 (2019.04.04).
+Terakhir Diperbarui: 7 April 2019 (2019.04.07).

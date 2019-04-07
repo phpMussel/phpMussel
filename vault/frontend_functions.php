@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.06).
+ * This file: Front-end functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -53,7 +53,7 @@ $phpMussel['Congruency'] = function ($Base, $Model, $Validate = false) use (&$ph
  * @return bool Success or failure.
  */
 $phpMussel['Delete'] = function ($File) use (&$phpMussel) {
-    if ((substr($File, 0, 1) === '"' && substr($File, -1) === '"') || (substr($File, 0, 1) === "'" && substr($File, -1) === "'")) {
+    if (preg_match('~^(\'.*\'|".*")$~', $File)) {
         $File = substr($File, 1, -1);
     }
     if (!empty($File) && file_exists($phpMussel['Vault'] . $File) && $phpMussel['Traverse']($File)) {
@@ -770,7 +770,7 @@ $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
         }
     }
     foreach ($phpMussel['FE_Executor_Files'] as $Name => $Data) {
-        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && file_exists($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
+        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && is_file($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
             $Handle = fopen($phpMussel['Vault'] . $Name, 'w');
             fwrite($Handle, $Data['New']);
             fclose($Handle);

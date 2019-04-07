@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.04.02).
+# This file: Configuration defaults file (last modified: 2019.04.07).
 ##/
 
 Config Defaults:
@@ -485,10 +485,6 @@ Config Defaults:
    type: bool
    default: false
    experimental: true
-  enable_memcache:
-   type: bool
-   default: false
-   experimental: true
   enable_memcached:
    type: bool
    default: false
@@ -501,17 +497,13 @@ Config Defaults:
    type: bool
    default: false
    experimental: true
-  memcache_host:
+  memcached_host:
    type: string
    default: "localhost"
    experimental: true
-  memcache_port:
+  memcached_port:
    type: int
    default: 11211
-   experimental: true
-  memcache_timeout:
-   type: int
-   default: 1
    experimental: true
   redis_host:
    type: string

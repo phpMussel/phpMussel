@@ -406,7 +406,7 @@ Ce qui suit est une liste des directives disponibles pour phpMussel dans le `con
 [compatibility](#compatibility-catégorie) | [heuristic](#heuristic-catégorie) | [virustotal](#virustotal-catégorie) | [urlscanner](#urlscanner-catégorie)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-et-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-catégorie) | [template_data](#template_data-catégorie) | [PHPMailer](#phpmailer-catégorie) | [supplementary_cache_options](#supplementary_cache_options-catégorie)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### « general » (Catégorie)
 Configuration générale pour phpMussel.
@@ -816,9 +816,6 @@ Options de cache supplémentaires.
 ##### « enable_apcu »
 - Spécifie s'il faut essayer d'utiliser APCu pour la mise en cache. Défaut = False.
 
-##### « enable_memcache »
-- Spécifie s'il faut essayer d'utiliser Memcache pour la mise en cache. Défaut = False.
-
 ##### « enable_memcached »
 - Spécifie s'il faut essayer d'utiliser Memcached pour la mise en cache. Défaut = False.
 
@@ -828,14 +825,11 @@ Options de cache supplémentaires.
 ##### « enable_pdo »
 - Spécifie s'il faut essayer d'utiliser PDO pour la mise en cache. Défaut = False.
 
-##### « memcache_host »
-- Valeur de l'hôte Memcache. Défaut = « localhost ».
+##### « memcached_host »
+- Valeur de l'hôte Memcached. Défaut = « localhost ».
 
-##### « memcache_port »
-- Valeur du port Memcache. Défaut = « 11211 ».
-
-##### « memcache_timeout »
-- Valeur du délai d'attente Memcache. Défaut = « 1 ».
+##### « memcached_port »
+- Valeur du port Memcached. Défaut = « 11211 ».
 
 ##### « redis_host »
 - Valeur de l'hôte Redis. Défaut = « localhost ».
@@ -1021,11 +1015,11 @@ Peut-être. Ceci est considéré au cas par cas. Faites-nous savoir ce dont vous
 
 #### <a name="HIRE_FOR_PRIVATE_WORK"></a>Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé ?
 
-*Voir au dessus.*
+*Voir au-dessus.*
 
 #### <a name="SPECIALIST_MODIFICATIONS"></a>J'ai besoin de modifications spécialisées, de personnalisations, etc ; Êtes-vous en mesure d'aider ?
 
-*Voir au dessus.*
+*Voir au-dessus.*
 
 #### <a name="ACCEPT_OR_OFFER_WORK"></a>Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet ?
 
@@ -1399,4 +1393,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 4 Avril 2019 (2019.04.04).
+Dernière mise à jour : 7 Avril 2019 (2019.04.07).

@@ -406,7 +406,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 [compatibility](#compatibility-카테고리) | [heuristic](#heuristic-카테고리) | [virustotal](#virustotal-카테고리) | [urlscanner](#urlscanner-카테고리)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate와-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-카테고리) | [template_data](#template_data-카테고리) | [PHPMailer](#phpmailer-카테고리) | [supplementary_cache_options](#supplementary_cache_options-카테고리)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (카테고리)
 일반 설정.
@@ -816,9 +816,6 @@ PHPMailer 구성.
 ##### "enable_apcu"
 - 캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = False.
 
-##### "enable_memcache"
-- 캐싱에 Memcache를 사용할지 여부를 지정합니다. Default (기본값) = False.
-
 ##### "enable_memcached"
 - 캐싱에 Memcached를 사용할지 여부를 지정합니다. Default (기본값) = False.
 
@@ -828,14 +825,11 @@ PHPMailer 구성.
 ##### "enable_pdo"
 - 캐싱에 PDO를 사용할지 여부를 지정합니다. Default (기본값) = False.
 
-##### "memcache_host"
-- Memcache 호스트 값. Default (기본값) = "localhost".
+##### "memcached_host"
+- Memcached 호스트 값. Default (기본값) = "localhost".
 
-##### "memcache_port"
-- Memcache 포트 값. Default (기본값) = "11211".
-
-##### "memcache_timeout"
-- Memcache 시간 초과 값. Default (기본값) = "1".
+##### "memcached_port"
+- Memcached 포트 값. Default (기본값) = "11211".
 
 ##### "redis_host"
 - Redis 호스트 값. Default (기본값) = "localhost".
@@ -1398,4 +1392,4 @@ phpMussel은 마케팅이나 광고 목적으로 정보를 수집하거나 처�
 ---
 
 
-최종 업데이트 : 2019년 4월 4일.
+최종 업데이트 : 2019년 4월 7일.

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.04.03).
+# This file: Korean language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "phpMussel는 shell 스크립트 탐지를 위�
 config_signatures_fail_extensions_silently: "확장자가없는 경우 phpMussel이 그것을보고해야하는지 여부? <code>fail_extensions_silently</code>이 잘못된 경우 확장자없이는 스캐닝시에보고되고 활성화되면 무시됩니다 문제는보고되지 않습니다. 이 지시어를 무효로하는 것은 보안을 향상시킬 수 있지만, 오진도 증가 할 수 있습니다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정)."
 config_signatures_fail_silently: "서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? <code>fail_silently</code>이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정)."
 config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = False."
-config_supplementary_cache_options_enable_memcache: "캐싱에 Memcache를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_memcached: "캐싱에 Memcached를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_pdo: "캐싱에 PDO를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_redis: "캐싱에 Redis를 사용할지 여부를 지정합니다. Default (기본값) = False."
-config_supplementary_cache_options_memcache_host: "Memcache 호스트 값. Default (기본값) = "localhost"."
-config_supplementary_cache_options_memcache_port: "Memcache 포트 값. Default (기본값) = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache 시간 초과 값. Default (기본값) = "1"."
+config_supplementary_cache_options_memcached_host: "Memcached 호스트 값. Default (기본값) = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached 포트 값. Default (기본값) = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN 값. Default (기본값) = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO 암호."
 config_supplementary_cache_options_pdo_username: "PDO 사용자 이름."

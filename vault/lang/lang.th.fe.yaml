@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.04.03).
+# This file: Thai language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -104,13 +104,11 @@ config_signatures_detect_shell: "ควร phpMussel แยกวิเครา
 config_signatures_fail_extensions_silently: "ควร phpMussel รายงานเมื่อไม่มีส่วนขยายหรือไม่? ถ้า <code>fail_extensions_silently</code> ถูกปิดใช้งาน ส่วนขยายที่ขาดหายไปจะมีการรายงานเมื่อทำการสแกน และถ้า <code>fail_extensions_silently</code> เปิดใช้งาน ส่วนขยายที่ขาดหายไปจะถูกละเลย และจะมีรายงานว่าไม่มีปัญหา. การปิดใช้งานคำสั่งนี้อาจเพิ่มความปลอดภัยของคุณ แต่ยังอาจนำไปสู่การเพิ่มขึ้น false positive. False = เปิดใช้งาน; True = เปิดใช้งาน [ค่าเริ่มต้น]."
 config_signatures_fail_silently: "ควร phpMussel รายงานเมื่อไฟล์ลายเซ็นสูญหายหรือเสียหายหรือไม่? ถ้า <code>fail_silently</code> ถูกปิดใช้งาน ไฟล์ที่ขาดหายไปและเสียหายจะรายงานเมื่อทำการสแกน และถ้า <code>fail_silently</code> เปิดใช้งาน ไฟล์ที่ขาดหายไปและเสียหายจะถูกละเลย และจะมีรายงานว่าไม่มีปัญหา. โดยทั่วไปแล้วควรทิ้งไว้ตามลำพังจนกว่าคุณจะประสบปัญหา. False = ปิดใช้งาน; True = เปิดใช้งาน [ค่าเริ่มต้น]."
 config_supplementary_cache_options_enable_apcu: "สิ่งนี้ระบุว่าจะใช้ APCu สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
-config_supplementary_cache_options_enable_memcache: "สิ่งนี้ระบุว่าจะใช้ Memcache สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
 config_supplementary_cache_options_enable_memcached: "สิ่งนี้ระบุว่าจะใช้ Memcached สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
 config_supplementary_cache_options_enable_pdo: "สิ่งนี้ระบุว่าจะใช้ PDO สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
 config_supplementary_cache_options_enable_redis: "สิ่งนี้ระบุว่าจะใช้ Redis สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
-config_supplementary_cache_options_memcache_host: "ค่าโฮสต์ Memcache. ค่าเริ่มต้น = "localhost"."
-config_supplementary_cache_options_memcache_port: "ค่าพอร์ต Memcache. ค่าเริ่มต้น = "11211"."
-config_supplementary_cache_options_memcache_timeout: "ค่าการหมดเวลา Memcache. ค่าเริ่มต้น = "1"."
+config_supplementary_cache_options_memcached_host: "ค่าโฮสต์ Memcached. ค่าเริ่มต้น = "localhost"."
+config_supplementary_cache_options_memcached_port: "ค่าพอร์ต Memcached. ค่าเริ่มต้น = "11211"."
 config_supplementary_cache_options_pdo_dsn: "ค่า DSN PDO. ค่าเริ่มต้น = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "รหัสผ่าน PDO."
 config_supplementary_cache_options_pdo_username: "ชื่อผู้ใช้ PDO."

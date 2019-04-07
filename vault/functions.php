@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.04.06).
+ * This file: Functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -5219,13 +5219,11 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
     /** Create new cache object. */
     $phpMussel['Cache'] = new \Maikuolan\Common\Cache();
     $phpMussel['Cache']->EnableAPCu = $phpMussel['Config']['supplementary_cache_options']['enable_apcu'];
-    $phpMussel['Cache']->EnableMemcache = $phpMussel['Config']['supplementary_cache_options']['enable_memcache'];
     $phpMussel['Cache']->EnableMemcached = $phpMussel['Config']['supplementary_cache_options']['enable_memcached'];
     $phpMussel['Cache']->EnableRedis = $phpMussel['Config']['supplementary_cache_options']['enable_redis'];
     $phpMussel['Cache']->EnablePDO = $phpMussel['Config']['supplementary_cache_options']['enable_pdo'];
-    $phpMussel['Cache']->MemcacheHost = $phpMussel['Config']['supplementary_cache_options']['memcache_host'];
-    $phpMussel['Cache']->MemcachePort = $phpMussel['Config']['supplementary_cache_options']['memcache_port'];
-    $phpMussel['Cache']->MemcacheTimeout = $phpMussel['Config']['supplementary_cache_options']['memcache_timeout'];
+    $phpMussel['Cache']->MemcachedHost = $phpMussel['Config']['supplementary_cache_options']['memcached_host'];
+    $phpMussel['Cache']->MemcachedPort = $phpMussel['Config']['supplementary_cache_options']['memcached_port'];
     $phpMussel['Cache']->RedisHost = $phpMussel['Config']['supplementary_cache_options']['redis_host'];
     $phpMussel['Cache']->RedisPort = $phpMussel['Config']['supplementary_cache_options']['redis_port'];
     $phpMussel['Cache']->RedisTimeout = $phpMussel['Config']['supplementary_cache_options']['redis_timeout'];

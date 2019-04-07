@@ -406,7 +406,7 @@ Het volgende is een lijst van variabelen die in de `config.ini` configuratiebest
 [compatibility](#compatibility-categorie) | [heuristic](#heuristic-categorie) | [virustotal](#virustotal-categorie) | [urlscanner](#urlscanner-categorie)
 [ignore_upload_errors](#ignore_upload_errors)<br />[only_allow_images](#only_allow_images)<br /><br /><br /><br /> | [threshold](#threshold)<br /><br /><br /><br /><br /> | [vt_public_api_key](#vt_public_api_key)<br />[vt_suspicion_level](#vt_suspicion_level)<br />[vt_weighting](#vt_weighting)<br />[vt_quota_rate<br />vt_quota_time](#vt_quota_rate-en-vt_quota_time)<br /> | [lookup_hphosts](#lookup_hphosts)<br />[google_api_key](#google_api_key)<br />[maximum_api_lookups](#maximum_api_lookups)<br />[maximum_api_lookups_response](#maximum_api_lookups_response)<br />[cache_time](#cache_time)<br />
 [legal](#legal-categorie) | [template_data](#template_data-categorie) | [PHPMailer](#phpmailer-categorie) | [supplementary_cache_options](#supplementary_cache_options-categorie)
-[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
+[pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Categorie)
 Algemene configuratie voor phpMussel.
@@ -816,9 +816,6 @@ Aanvullende cache-opties.
 ##### "enable_apcu"
 - Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = False.
 
-##### "enable_memcache"
-- Dit geeft aan of Memcache moet worden gebruikt voor caching. Standaard = False.
-
 ##### "enable_memcached"
 - Dit geeft aan of Memcached moet worden gebruikt voor caching. Standaard = False.
 
@@ -828,14 +825,11 @@ Aanvullende cache-opties.
 ##### "enable_pdo"
 - Dit geeft aan of PDO moet worden gebruikt voor caching. Standaard = False.
 
-##### "memcache_host"
-- Memcache hostwaarde. Standaard = "localhost".
+##### "memcached_host"
+- Memcached hostwaarde. Standaard = "localhost".
 
-##### "memcache_port"
-- Memcache poortwaarde. Standaard = "11211".
-
-##### "memcache_timeout"
-- Memcache timeoutwaarde. Standaard = "1".
+##### "memcached_port"
+- Memcached poortwaarde. Standaard = "11211".
 
 ##### "redis_host"
 - Redis hostwaarde. Standaard = "localhost".
@@ -1401,4 +1395,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 4 April 2019 (2019.04.04).
+Laatste Bijgewerkt: 7 April 2019 (2019.04.07).
