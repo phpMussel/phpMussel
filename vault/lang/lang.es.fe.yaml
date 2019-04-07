@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.03.06).
+# This file: Spanish language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -57,7 +57,7 @@ config_files_filetype_archives: "Heredar tipos de archivos blacklist/whitelist p
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
 config_files_filetype_whitelist: "Si su sistema sólo permite ciertos tipos de archivos para ser subido, o si su sistema niega explícitamente ciertos tipos de archivos, especificando los tipos de archivos en la whitelist, blacklist y/o greylist puede aumentar la velocidad a que escaneando se realizado por permitiendo la script para saltar sobre ciertos tipos de archivos. Formato es CSV (comas separados valores). Si desea escanear todo, en lugar de utilizando la whitelist, blacklist o greylist, dejar las variables en blanco; haciendo tal desactivará la whitelist/blacklist/greylist. Lógico orden de procesamiento es: Si el tipo de archivo está en la whitelist, no escanear y no bloquear el archivo, y no cotejar el archivo con la blacklist o la greylist. Si el tipo de archivo está en la blacklist, no escanear el archivo, pero bloquearlo en todo caso, y no cotejar el archivo con la greylist. Si la greylist está vacía o si la greylist está no vacía y el tipo de archivo está en la greylist, escanearlo como normal y determinar si para bloquearlo basado en los resultados de la escaneo, pero si la greylist está no vacía y el tipo de archivo está no en la greylist, tratar el archivo como si está en la blacklist, por lo tanto no escanearlo pero bloquearlo en todo caso. Whitelist:"
-config_files_max_files_in_archives: "Número máximo de archivos para analizar desde archivos comprimidos antes de abortar el análisis. Predefinido = 0 (sin maximo)."
+config_files_max_files_in_archives: "Número máximo de archivos para analizar desde archivos comprimidos antes de abortar el análisis. Predefinido = 0 (sin máximo)."
 config_files_max_recursion: "Máximo recursividad nivel límite para compactados archivos. Predefinido = 3."
 config_files_max_uploads: "Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de PHP a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos."
 config_general_FrontEndLog: "Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "¿Debe phpMussel utilizar firmas para detecta
 config_signatures_detect_shell: "¿Debe phpMussel utilizar firmas para detectar shell scripts? False = No; True = Sí [Predefinido]."
 config_signatures_fail_extensions_silently: "¿Debe phpMussel informan cuando extensiones están desaparecidos? Si <code>fail_extensions_silently</code> está desactivado, desaparecidos extensiones será reportado cuando escaneando, y si <code>fail_extensions_silently</code> está activado, desaparecidos extensiones será ignorado, with scanning reportando para aquellos archivos que no hay cualquier problemas. Desactivando esta directiva puede potencialmente aumentar su seguridad, pero también puede conducir a un aumento de falsos positivos. False = Desactivado; True = Activado [Predefinido]."
 config_signatures_fail_silently: "¿Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si <code>fail_silently</code> está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si <code>fail_silently</code> está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido]."
+config_supplementary_cache_options_enable_apcu: "Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = False."
+config_supplementary_cache_options_enable_memcached: "Especifica si se intenta utilizar Memcached para el almacenamiento en caché. Predefinido = False."
+config_supplementary_cache_options_enable_pdo: "Especifica si se intenta utilizar PDO para el almacenamiento en caché. Predefinido = False."
+config_supplementary_cache_options_enable_redis: "Especifica si se intenta utilizar Redis para el almacenamiento en caché. Predefinido = False."
+config_supplementary_cache_options_memcached_host: "Valor del host de Memcached. Predefinido = "localhost"."
+config_supplementary_cache_options_memcached_port: "Valor del puerto de Memcached. Predefinido = "11211"."
+config_supplementary_cache_options_pdo_dsn: "Valor del DSN de PDO. Predefinido = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "Contraseña de PDO."
+config_supplementary_cache_options_pdo_username: "Nombre del usuario de PDO."
+config_supplementary_cache_options_redis_host: "Valor del host de Redis. Predefinido = "localhost"."
+config_supplementary_cache_options_redis_port: "Valor del puerto de Redis. Predefinido = "6379"."
+config_supplementary_cache_options_redis_timeout: "Valor de tiempo de espera de Redis. Predefinido = "2.5"."
 config_template_data_Magnification: "Ampliación de fuente. Predefinido = 1."
 config_template_data_css_url: "El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir phpMussel de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la <code>css_url</code> variable. Si lo deja en blanco la variable, phpMussel utilizará el plantilla archivo para el predefinida tema."
 config_template_data_theme: "Tema predefinido a utilizar para phpMussel."

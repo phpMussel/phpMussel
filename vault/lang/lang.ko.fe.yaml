@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.03.06).
+# This file: Korean language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "phpMussel는 PUAs/PUPs 탐지를 위해 서�
 config_signatures_detect_shell: "phpMussel는 shell 스크립트 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정)."
 config_signatures_fail_extensions_silently: "확장자가없는 경우 phpMussel이 그것을보고해야하는지 여부? <code>fail_extensions_silently</code>이 잘못된 경우 확장자없이는 스캐닝시에보고되고 활성화되면 무시됩니다 문제는보고되지 않습니다. 이 지시어를 무효로하는 것은 보안을 향상시킬 수 있지만, 오진도 증가 할 수 있습니다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정)."
 config_signatures_fail_silently: "서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? <code>fail_silently</code>이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정)."
+config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = False."
+config_supplementary_cache_options_enable_memcached: "캐싱에 Memcached를 사용할지 여부를 지정합니다. Default (기본값) = False."
+config_supplementary_cache_options_enable_pdo: "캐싱에 PDO를 사용할지 여부를 지정합니다. Default (기본값) = False."
+config_supplementary_cache_options_enable_redis: "캐싱에 Redis를 사용할지 여부를 지정합니다. Default (기본값) = False."
+config_supplementary_cache_options_memcached_host: "Memcached 호스트 값. Default (기본값) = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached 포트 값. Default (기본값) = "11211"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN 값. Default (기본값) = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO 암호."
+config_supplementary_cache_options_pdo_username: "PDO 사용자 이름."
+config_supplementary_cache_options_redis_host: "Redis 호스트 값. Default (기본값) = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis 포트 값. Default (기본값) = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis 시간 초과 값. Default (기본값) = "2.5"."
 config_template_data_Magnification: "글꼴 배율. Default (기본 설정) = 1."
 config_template_data_css_url: "사용자 지정 테마 템플릿 파일은 외부 CSS 속성을 사용하고 있습니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다."
 config_template_data_theme: "phpMussel에 사용할 기본 테마."

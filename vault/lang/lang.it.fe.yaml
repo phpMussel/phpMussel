@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.03.06).
+# This file: Italian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "Dovrebbe phpMussel utilizzare le firme per il
 config_signatures_detect_shell: "Dovrebbe phpMussel utilizzare le firme per il rilevamento di shell script? False = No; True = Sì [Predefinito]."
 config_signatures_fail_extensions_silently: "Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se <code>fail_extensions_silently</code> è disattivato, mancanti estensioni saranno riportato sulla scansione, e se <code>fail_extensions_silently</code> è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito]."
 config_signatures_fail_silently: "Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se <code>fail_silently</code> è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se <code>fail_silently</code> è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito]."
+config_supplementary_cache_options_enable_apcu: "Specifica se provare a utilizzare APCu per la memorizzazione nella cache. Predefinito = False."
+config_supplementary_cache_options_enable_memcached: "Specifica se provare a utilizzare Memcached per la memorizzazione nella cache. Predefinito = False."
+config_supplementary_cache_options_enable_pdo: "Specifica se provare a utilizzare PDO per la memorizzazione nella cache. Predefinito = False."
+config_supplementary_cache_options_enable_redis: "Specifica se provare a utilizzare Redis per la memorizzazione nella cache. Predefinito = False."
+config_supplementary_cache_options_memcached_host: "Il valore dell'host Memcached. Predefinito = "localhost"."
+config_supplementary_cache_options_memcached_port: "Il valore della porta Memcached. Predefinito = "11211"."
+config_supplementary_cache_options_pdo_dsn: "Il valore della DSN per PDO. Predefinito = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "La password per PDO."
+config_supplementary_cache_options_pdo_username: "Il nome utente per PDO."
+config_supplementary_cache_options_redis_host: "Il valore dell'host Redis. Predefinito = "localhost"."
+config_supplementary_cache_options_redis_port: "Il valore della porta Redis. Predefinito = "6379"."
+config_supplementary_cache_options_redis_timeout: "Il valore del tempo scaduto per Redis. Predefinito = "2.5"."
 config_template_data_Magnification: "Ingrandimento del carattere. Predefinito = 1."
 config_template_data_css_url: "Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire phpMussel di utilizzare il modello file per i temi personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile <code>css_url</code>. Se si lascia questo variabile come vuoto, phpMussel utilizzerà il modello file per il predefinito tema."
 config_template_data_theme: "Tema predefinito da utilizzare per phpMussel."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.03.06).
+# This file: Turkish language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "phpMussel PU(A/P)'ları algılamak için imza
 config_signatures_detect_shell: "phpMussel kabuk komut dosyalarını algılamak için imzaları işleyecek mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan]."
 config_signatures_fail_extensions_silently: "Uzantılar eksik olduğunda phpMussel raporlamalı mı? <code>fail_extensions_silently</code> devre dışı bırakılırsa, eksik uzantılar tarama sırasında raporlanacak, ve <code>fail_extensions_silently</code> etkinleştirilmişse, eksik uzantılar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Bu yönergenin devre dışı bırakılması, potansiyel olarak güvenliğinizi artırabilir, ancak yanlış pozitifliklerin artmasına neden olabilir. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan]."
 config_signatures_fail_silently: "İmzalar dosyaları eksik veya bozuk olduğunda phpMussel raporlamalı mı? <code>fail_silently</code> devre dışı bırakılırsa, eksik veya bozuk dosyalar tarama sırasında rapor edilecektir, ve <code>fail_silently</code> etkinleştirilmişse, eksik ve bozuk dosyalar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Sorun yaşamadığınız sürece bu yalnız bırakılmalıdır. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan]."
+config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_memcached: "Önbelleğe almak için Memcached kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_pdo: "Önbelleğe almak için PDO kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_redis: "Önbelleğe almak için Redis kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_memcached_host: "Memcached ana bilgisayar değeri. Varsayılan = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached port değeri. Varsayılan = "11211"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN değeri. Varsayılan = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO parola."
+config_supplementary_cache_options_pdo_username: "PDO kullanıcı adı."
+config_supplementary_cache_options_redis_host: "Redis ana bilgisayar değeri. Varsayılan = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis port değeri. Varsayılan = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis zaman aşımı değeri. Varsayılan = "2.5"."
 config_template_data_Magnification: "Yazı tipi büyütme. Varsayılan = 1."
 config_template_data_css_url: "Özel temalar için CSS dosyası URL'si."
 config_template_data_theme: "phpMussel için kullanılacak varsayılan tema."

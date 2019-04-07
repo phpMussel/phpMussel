@@ -9,6 +9,13 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 - [2019.04.02; Maikuolan]: Changed a misleading variable name.
 
+- [2019.04.02-07; NEW FEATURE; Maikuolan]: Implemented a new, unified caching
+  system to the package, optionally allowing package users to choose from a
+  range of different caching mechanisms supported by the new caching system,
+  currently consisting of APCu, Memcached, Redis, and PDO-based caching,
+  alternatively deferring back to the package's existing flatfile caching
+  mechanism no other mechanisms are otherwise chosen.
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 

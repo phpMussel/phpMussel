@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.03.06).
+# This file: Indonesian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "Harus phpMussel menggunakan tanda tangan untu
 config_signatures_detect_shell: "Harus phpMussel menggunakan tanda tangan untuk mendeteksi skrip shell? False = Tidak; True = Ya [Default]."
 config_signatures_fail_extensions_silently: "Seharusnya laporan phpMussel ketika ekstensi hilang? Jika <code>fail_extensions_silently</code> dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_extensions_silently</code> diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default]."
 config_signatures_fail_silently: "Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika <code>fail_silently</code> dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_silently</code> diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default]."
+config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False."
+config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
+config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
+config_supplementary_cache_options_enable_redis: "Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False."
+config_supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = "localhost"."
+config_supplementary_cache_options_memcached_port: "Nilai port Memcached. Default = "11211"."
+config_supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "Kata sandi PDO."
+config_supplementary_cache_options_pdo_username: "Nama pengguna PDO."
+config_supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
+config_supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
+config_supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."
 config_template_data_Magnification: "Perbesaran font. Default = 1."
 config_template_data_css_url: "File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default."
 config_template_data_theme: "Tema default untuk phpMussel."

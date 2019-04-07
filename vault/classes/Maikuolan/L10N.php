@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.02.28).
+ * L10N handler (last modified: 2019.04.01).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -9,9 +9,8 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * "COMMON CLASSES PACKAGE" COPYRIGHT 2019 and beyond by Caleb Mazalevskis
- * (Maikuolan). Earliest iteration and deployment of "L10N handler" COPYRIGHT
- * 2019 and beyond by Caleb Mazalevskis (Maikuolan).
+ * "COMMON CLASSES PACKAGE", as well as the earliest iteration and deployment
+ * of this class, COPYRIGHT 2019 and beyond by Caleb Mazalevskis (Maikuolan).
  */
 
 namespace Maikuolan\Common;

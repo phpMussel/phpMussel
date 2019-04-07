@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.03.06).
+# This file: Urdu language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -103,6 +103,18 @@ config_signatures_detect_pua_pup: "phpMussel PUA/PUP کا پتہ لگانے کے
 config_signatures_detect_shell: "phpMussel شیل اسکرپٹ کا پتہ لگانے کے لئے دستخط تجزیہ کرنا چاہیے؟ False (جھوٹی) = کوئی؛ True (سچے) = جی ہاں [پہلے سے طے شدہ]."
 config_signatures_fail_extensions_silently: "رپورٹ phpMussel چاہئے جب توسیعات لاپتہ ہیں؟ تو <code dir="ltr">fail_extensions_silently</code> کے معذور، لاپتہ توسیعات سکیننگ پر اطلاع دی جائے گی، اور اگر <code dir="ltr">fail_extensions_silently</code> کے چالو حالت میں ہے، ملانے لاپتہ وہاں نہیں کسی بھی ہیں کہ سکیننگ ان فائلوں کے لئے رپورٹنگ کے ساتھ، نظر انداز کر دیا جائے گا مسائل. اس حکم کو غیر فعال ممکنہ طور پر آپ کی سیکورٹی میں اضافہ ہو سکتا ہے، بلکہ جھوٹے مثبت کا اضافہ کا باعث بن سکتا. False (جھوٹی) = معذور؛ True (سچے) = چالو کیا [پہلے سے طے شدہ]."
 config_signatures_fail_silently: "جب دستخط فائلوں غائب یا خراب phpMussel رپورٹ چاہئے؟ تو <code dir="ltr">fail_silently</code> کے، معذور لاپتہ اور خراب فائلوں سکیننگ پر اطلاع دی جائے گی، اور اگر <code dir="ltr">fail_silently</code> کے لاپتہ، فعال ہے اور خراب فائلوں ان فائلوں کے لئے رپورٹنگ سکیننگ کے ساتھ، نظر انداز کر دیا جائے گا کہ کوئی مسئلہ نہیں ہیں. آپ گر کر تباہ یا اسی طرح کے مسائل کا سامنا کر رہے ہیں جب تک کہ یہ عام تنہا چھوڑ دیا جانا چاہئے. False (جھوٹی) = معذور؛ True (سچے) = چالو کیا [پہلے سے طے شدہ]."
+config_supplementary_cache_options_enable_apcu: "اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
+config_supplementary_cache_options_enable_memcached: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcached استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
+config_supplementary_cache_options_enable_pdo: "اس کی وضاحت کرتا ہے کہ کیش کے لئے PDO استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
+config_supplementary_cache_options_enable_redis: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Redis استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
+config_supplementary_cache_options_memcached_host: "Memcached کے میزبان نام. پہلے سے طے شدہ = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached کے لئے بندرگاہ. پہلے سے طے شدہ = "11211"."
+config_supplementary_cache_options_pdo_dsn: "PDO کے لئے DSN. پہلے سے طے شدہ = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO کیلئے پاس ورڈ."
+config_supplementary_cache_options_pdo_username: "PDO کے لئے صارف نام."
+config_supplementary_cache_options_redis_host: "Redis کے میزبان نام. پہلے سے طے شدہ = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis کے لئے بندرگاہ. پہلے سے طے شدہ = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5"."
 config_template_data_Magnification: "فونٹ اضافہ. پہلے سے طے شدہ = 1."
 config_template_data_css_url: "ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال.، اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے کی <code dir="ltr">css_url</code> کے متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوعات سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت phpMussel ہدایت کرنے کے لئے. آپ کو اس متغیر خالی چھوڑ تو، phpMussel ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے."
 config_template_data_theme: "phpMussel لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ."

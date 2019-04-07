@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.03.29).
+ * This file: Front-end functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -53,7 +53,7 @@ $phpMussel['Congruency'] = function ($Base, $Model, $Validate = false) use (&$ph
  * @return bool Success or failure.
  */
 $phpMussel['Delete'] = function ($File) use (&$phpMussel) {
-    if ((substr($File, 0, 1) === '"' && substr($File, -1) === '"') || (substr($File, 0, 1) === "'" && substr($File, -1) === "'")) {
+    if (preg_match('~^(\'.*\'|".*")$~', $File)) {
         $File = substr($File, 1, -1);
     }
     if (!empty($File) && file_exists($phpMussel['Vault'] . $File) && $phpMussel['Traverse']($File)) {
@@ -161,7 +161,15 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
  * @param bool $Rebuild Flag indicating to rebuild cache file.
  * @param string $Entry Name of the cache entry to be deleted.
  */
-$phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
+$phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) use (&$phpMussel) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
+        $phpMussel['Cache']->deleteEntry($Entry);
+        return;
+    }
+
+    /** Default process. */
     $Entry64 = base64_encode($Entry);
     while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
         $EoL = strpos($Source, "\n", $EntryPos + 1);
@@ -183,6 +191,14 @@ $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
  * @param int $Expires When should the cache entry expire (be deleted).
  */
 $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$phpMussel) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
+        $phpMussel['Cache']->setEntry($Entry, $Data, $Expires - $phpMussel['Time']);
+        return;
+    }
+
+    /** Default process. */
     $phpMussel['FECacheRemove']($Source, $Rebuild, $Entry);
     $Expires = (int)$Expires;
     $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
@@ -198,7 +214,14 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
  * @param string $Entry Name of the cache entry to get.
  * return string|bool Returned cache entry data (or false on failure).
  */
-$phpMussel['FECacheGet'] = function (&$Source, $Entry) {
+$phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
+        return $phpMussel['Cache']->getEntry($Entry);
+    }
+
+    /** Default process. */
     $Entry = base64_encode($Entry);
     $EntryPos = strpos($Source, "\n" . $Entry . ',');
     if ($EntryPos !== false) {
@@ -747,7 +770,7 @@ $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
         }
     }
     foreach ($phpMussel['FE_Executor_Files'] as $Name => $Data) {
-        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && file_exists($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
+        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && is_file($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
             $Handle = fopen($phpMussel['Vault'] . $Name, 'w');
             fwrite($Handle, $Data['New']);
             fclose($Handle);
@@ -848,7 +871,7 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
  * @param string $Selector Switch selector variable.
  * @param bool $StateModified Determines whether the filter state has been modified.
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
- * @param string $Options Recontructed filter controls.
+ * @param string $Options Reconstructed filter controls.
  */
 $phpMussel['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$phpMussel) {
     foreach ($Switches as $Switch) {
@@ -2135,9 +2158,10 @@ $phpMussel['2FA-Number'] = function () {
  * @param array $Arr The array to convert from.
  * @param string $DeleteKey The key to use for async calls to delete a cache entry.
  * @param int $Depth Current cache entry list depth.
+ * @param string $ParentKey An optional key of the parent data source.
  * @return string The generated clickable list.
  */
-$phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0) use (&$phpMussel) {
+$phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$phpMussel) {
     $Output = '';
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
@@ -2150,7 +2174,11 @@ $phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Dept
                 if ($Try !== null) {
                     $Value = $Try;
                 }
-            } elseif (preg_match('~\.ya?ml$~i', $Key) || substr($Value, 0, 4) === "---\n") {
+            } elseif (
+                preg_match('~\.ya?ml$~i', $Key) ||
+                (preg_match('~^(?:Data|\d+)$~', $Key) && preg_match('~\.ya?ml$~i', $ParentKey)) ||
+                substr($Value, 0, 4) === "---\n"
+            ) {
                 $Try = new \Maikuolan\Common\YAML();
                 if ($Try->process($Value, $Try->Data) && !empty($Try->Data)) {
                     $Value = $Try->Data;
@@ -2160,8 +2188,18 @@ $phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Dept
             }
         }
         if (is_array($Value)) {
+            if ($Depth === 0) {
+                $SizeField = $phpMussel['L10N']->getString('field_size') ?: 'Size';
+                $Size = isset($Value['Data']) && is_string($Value['Data']) ? strlen($Value['Data']) : (
+                    isset($Value[0]) && is_string($Value[0]) ? strlen($Value[0]) : false
+                );
+                if ($Size !== false) {
+                    $phpMussel['FormatFilesize']($Size);
+                    $Value[$SizeField] = $Size;
+                }
+            }
             $Output .= '<span class="comCat" style="cursor:pointer"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
-            $Output .= $phpMussel['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1);
+            $Output .= $phpMussel['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
             $Output .= '</ul>';
         } else {
             if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {

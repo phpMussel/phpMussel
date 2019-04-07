@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.03.02).
+ * This file: The loader (last modified: 2019.04.02).
  */
 
 /**
@@ -101,13 +101,6 @@ if (!file_exists($phpMussel['Vault'] . 'lang.php')) {
 }
 /** Load the language handler. */
 require $phpMussel['Vault'] . 'lang.php';
-
-/**
- * Create an array to use as a temporary memory cache for scanning
- * operations (note: this has nothing to do with the memCache extension of
- * PHP; the variable name is coincidental).
- */
-$phpMussel['memCache'] = [];
 
 /**
  * Used to determine whether we've reached the end of this file without
