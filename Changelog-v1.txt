@@ -16,6 +16,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   alternatively deferring back to the package's existing flatfile caching
   mechanism no other mechanisms are otherwise chosen.
 
+- [2019.04.09; Maikuolan]: Slightly adjusted the file reading part of the cache
+  handler to account for some potential edge-case problems on some servers.
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 

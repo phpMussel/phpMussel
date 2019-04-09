@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.04.07).
+ * A simple, unified cache handler (last modified: 2019.04.09).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -126,13 +126,22 @@ class Cache
                 $this->Modified = true;
             }
             if ($this->FFDefault && $this->Modified && $this->Using === 'FF') {
-                $Handle = fopen($this->FFDefault, 'wb');
+                $Handle = false;
                 $Start = time();
+                while (true) {
+                    $Handle = fopen($this->FFDefault, 'wb');
+                    if ($Handle !== false || (time() - $Start) > self::FLOCK_TIMEOUT) {
+                        break;
+                    }
+                }
+                if ($Handle === false) {
+                    return;
+                }
+                $Locked = false;
                 while (true) {
                     if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
                         break;
                     }
-                    sleep(1);
                 }
                 if ($Locked) {
                     fwrite($Handle, serialize($this->WorkingData));
@@ -188,32 +197,46 @@ class Cache
         if ($this->FFDefault) {
             if (is_file($this->FFDefault)) {
                 if (is_readable($this->FFDefault) && is_writable($this->FFDefault)) {
-                    $Filesize = filesize($this->FFDefault);
-                    $Size = ($Filesize && self::BLOCKSIZE) ? ceil($Filesize / self::BLOCKSIZE) : 0;
-                    $Data = '';
-                    if ($Size > 0) {
-                        $Handle = fopen($this->FFDefault, 'rb');
-                        $Start = time();
-                        while (true) {
-                            if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
-                                break;
-                            }
-                            sleep(1);
-                        }
-                        if ($Locked) {
-                            $Step = 0;
-                            while ($Step < $Size) {
-                                $Data .= fread($Handle, self::BLOCKSIZE);
-                                $Step++;
-                            }
-                            flock($Handle, LOCK_UN);
-                        }
-                        fclose($Handle);
+                    $this->Using = 'FF';
+                    if (!$Filesize = filesize($this->FFDefault)) {
+                        $this->WorkingData = [];
+                        $this->Using = 'FF';
+                        return $this->Modified = true;
                     }
+                    $Data = '';
+                    $Handle = false;
+                    $Start = time();
+                    while (true) {
+                        $Handle = fopen($this->FFDefault, 'rb');
+                        if ($Handle !== false || (time() - $Start) > self::FLOCK_TIMEOUT) {
+                            break;
+                        }
+                    }
+                    if ($Handle === false) {
+                        return false;
+                    }
+                    $Locked = false;
+                    while (true) {
+                        if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
+                            break;
+                        }
+                    }
+                    if (!$Locked) {
+                        fclose($Handle);
+                        return false;
+                    }
+                    $Size = ($Filesize && self::BLOCKSIZE) ? ceil($Filesize / self::BLOCKSIZE) : 0;
+                    $Step = 0;
+                    while ($Step < $Size) {
+                        $Data .= fread($Handle, self::BLOCKSIZE);
+                        $Step++;
+                    }
+                    flock($Handle, LOCK_UN);
+                    fclose($Handle);
                     $Data = $Data ? unserialize($Data) : [];
                     $this->WorkingData = is_array($Data) ? $Data : [];
                     $this->Using = 'FF';
-                    return $Locked;
+                    return true;
                 }
             } else {
                 $Parent = dirname($this->FFDefault);
@@ -223,6 +246,7 @@ class Cache
                     return $this->Modified = true;
                 }
             }
+            return false;
         }
         return is_array($this->WorkingData);
     }
