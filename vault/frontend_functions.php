@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.07).
+ * This file: Front-end functions file (last modified: 2019.04.09).
  */
 
 /**
@@ -733,17 +733,17 @@ $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMusse
  */
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
     $Level = 0;
-    $Minor = substr($Version, 0, 4);
-    if (!empty($phpMussel['ForceVersionWarning']) || $phpMussel['VersionCompare']($Version, '5.6.38') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $phpMussel['VersionCompare']($Version, '7.0.32')
+    $Minor = (float)$Version;
+    if (!empty($phpMussel['ForceVersionWarning']) || $Minor < 7.1 || (
+        $Minor === 7.1 && $phpMussel['VersionCompare']($Version, '7.1.28')
     ) || (
-        $Minor === '7.1.' && $phpMussel['VersionCompare']($Version, '7.1.22')
+        $Minor === 7.2 && $phpMussel['VersionCompare']($Version, '7.2.16')
     ) || (
-        $Minor === '7.2.' && $phpMussel['VersionCompare']($Version, '7.2.10')
+        $Minor === 7.3 && $phpMussel['VersionCompare']($Version, '7.3.3')
     )) {
         $Level += 2;
     }
-    if ($phpMussel['VersionCompare']($Version, '7.2.0')) {
+    if ($Minor < 7.2) {
         $Level += 1;
     }
     $phpMussel['ForceVersionWarning'] = false;
