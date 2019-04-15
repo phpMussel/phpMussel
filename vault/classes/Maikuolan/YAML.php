@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2019.02.28).
+ * YAML handler (last modified: 2019.04.15).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -213,6 +213,12 @@ class YAML
             if ($ValueLen > 0) {
                 $Arr[$Key] = $Value;
             }
+        } elseif (substr($ThisLine, -1) === '-') {
+            $Arr[] = false;
+            end($Arr);
+            $Key = key($Arr);
+            reset($Arr);
+            $Value = false;
         } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
             $Key = $ThisLine;
             $KeyLen = strlen($Key);
@@ -243,16 +249,20 @@ class YAML
                 continue;
             }
             $ThisDepth = str_repeat(' ', $Depth);
-            $Out .= $ThisDepth . ($Sequential ? '- ' : $Key . ': ');
+            $Out .= $ThisDepth . ($Sequential ? '-' : $Key . ':');
             if (is_array($Value)) {
                 $Out .= "\n";
                 $this->processInner($Value, $Out, $Depth + 1);
                 continue;
+            } else {
+                $Out .= ' ';
             }
             if ($Value === true) {
                 $Out .= 'true';
             } elseif ($Value === false) {
                 $Out .= 'false';
+            } elseif (preg_match('~[^\t\n\r\x20-\x7e\xa0-\xff]~', $Value)) {
+                $Out .= '0x' . strtolower(bin2hex($Value));
             } elseif (strpos($Value, "\n") !== false) {
                 $Value = str_replace("\n", "\n" . $ThisDepth . ' ', $Value);
                 $Out .= "|\n" . $ThisDepth . ' ' . $Value;

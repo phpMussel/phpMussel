@@ -200,7 +200,6 @@ class Cache
                     $this->Using = 'FF';
                     if (!$Filesize = filesize($this->FFDefault)) {
                         $this->WorkingData = [];
-                        $this->Using = 'FF';
                         return $this->Modified = true;
                     }
                     $Data = '';
@@ -235,7 +234,6 @@ class Cache
                     fclose($Handle);
                     $Data = $Data ? unserialize($Data) : [];
                     $this->WorkingData = is_array($Data) ? $Data : [];
-                    $this->Using = 'FF';
                     return true;
                 }
             } else {
