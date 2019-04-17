@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.06).
+ * This file: Front-end handler (last modified: 2019.04.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -744,6 +744,34 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Cleanup. */
     unset($phpMussel['Remote-YAML-PHP-Array'], $phpMussel['Remote-YAML-PHP'], $phpMussel['ThisBranch'], $phpMussel['RemoteVerPath']);
+
+    /** Extension availability. */
+    $phpMussel['FE']['Extensions'] = "\n";
+    foreach ([
+        ['Lib' => 'pcre', 'Name' => 'PCRE'],
+        ['Lib' => 'curl', 'Name' => 'cURL'],
+        ['Lib' => 'apcu', 'Name' => 'APCu'],
+        ['Lib' => 'memcached', 'Name' => 'Memcached'],
+        ['Lib' => 'redis', 'Name' => 'Redis'],
+        ['Lib' => 'pdo', 'Name' => 'PDO'],
+        ['Lib' => 'bz2', 'Name' => 'Bz2'],
+        ['Lib' => 'lzf', 'Name' => 'Lzf'],
+        ['Lib' => 'rar', 'Name' => 'Rar'],
+        ['Lib' => 'zip', 'Name' => 'Zip']
+    ] as $phpMussel['ThisExtension']) {
+        if (extension_loaded($phpMussel['ThisExtension']['Lib'])) {
+            $phpMussel['ExtVer'] = (new ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
+            $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')</span>';
+        } else {
+            $phpMussel['ThisResponse'] = '<span class="txtRd">' . $phpMussel['L10N']->getString('response_no') . '</span>';
+        }
+        $phpMussel['FE']['Extensions'] .= sprintf(
+            '<tr><td class="h3">%s</td><td class="h3f">%s</td></tr>',
+            $phpMussel['ThisExtension']['Name'],
+            $phpMussel['ThisResponse']
+        );
+    }
+    unset($phpMussel['ExtVer'], $phpMussel['ThisResponse'], $phpMussel['ThisExtension']);
 
     /** Process warnings. */
     $phpMussel['FE']['Warnings'] = '';

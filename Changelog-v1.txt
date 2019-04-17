@@ -19,6 +19,10 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 - [2019.04.09; Maikuolan]: Slightly adjusted the file reading part of the cache
   handler to account for some potential edge-case problems on some servers.
 
+- [2019.04.17; Maikuolan]: The front-end homepage now checks and displays
+  whether various extensions that can be used by phpMussel are installed and
+  available (APCu, Memcached, Redis, PDO, PCRE, cURL, etc).
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 
