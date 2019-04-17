@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.04.07).
+# This file: Dutch language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -190,6 +190,7 @@ label_clientinfo: "Gebruikers informatie:"
 label_events: "Scan gebeurtenissen"
 label_expected: "Verwacht"
 label_expires: "Verloopt: "
+label_extension: "Extensie"
 label_flagged: "Objecten gemarkeerd"
 label_fmgr_cache_data: "Cache data en tijdelijke bestanden"
 label_fmgr_disk_usage: "phpMussel-schijfgebruik: "
@@ -200,6 +201,7 @@ label_fmgr_total_disk_usage: "Totaal schijfgebruik: "
 label_fmgr_total_space: "Totale schijfruimte: "
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Verbergen"
+label_installed_available: "Geïnstalleerd/Beschikbaar"
 label_integrity_check: "Integriteitscontrole: "
 label_never: "Nooit"
 label_os: "Besturingssysteem gebruikt:"
@@ -283,6 +285,7 @@ response_login_invalid_username: "Inloggen mislukt! Gebruikersnaam bestaat niet!
 response_login_password_field_empty: "Password veld leeg!"
 response_login_username_field_empty: "Gebruikersnaam veld leeg!"
 response_login_wrong_endpoint: "Verkeerd eindpunt!"
+response_no: "Nee"
 response_passed: "Geslaagd"
 response_possible_problem_found: "Mogelijk probleem gevonden."
 response_rename_error: "Mislukt om de naam te veranderen!"
@@ -301,6 +304,7 @@ response_updates_unable_to_determine: "Onbepaald."
 response_upload_error: "Mislukt om te uploaden!"
 response_verification_failed: "Verificatie mislukt! Component kan beschadigd zijn."
 response_verification_success: "Verificatie succes! Geen problemen gevonden."
+response_yes: "Ja"
 security_warning: "Er is een onverwacht probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw. Neem contact op met support als het probleem aanhoudt."
 siginfo_key_CVE: "Signatures die te maken hebben met CVE's (Algemene Kwetsbaarheden en Blootstellingen)."
 siginfo_key_Chameleon: "Signatures die te maken hebben met "kameleonaanvallen"."

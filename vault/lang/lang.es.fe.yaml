@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.04.07).
+# This file: Spanish language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -190,6 +190,7 @@ label_clientinfo: "Información del cliente:"
 label_events: "Escanear eventos"
 label_expected: "Esperado"
 label_expires: "Expirará: "
+label_extension: "Extensión"
 label_flagged: "Objetos marcados"
 label_fmgr_cache_data: "Datos de caché y archivos temporales"
 label_fmgr_disk_usage: "Uso del disco por phpMussel: "
@@ -200,6 +201,7 @@ label_fmgr_total_disk_usage: "Uso del disco total: "
 label_fmgr_total_space: "Espacio en disco total: "
 label_fmgr_updates_metadata: "Componente actualiza metadatos"
 label_hide: "Esconder"
+label_installed_available: "Instalado/Disponible"
 label_integrity_check: "Verificación de integridad: "
 label_never: "Nunca"
 label_os: "Sistema operativo utilizada:"
@@ -283,6 +285,7 @@ response_login_invalid_username: "¡Error al iniciar sesión – El usuario no e
 response_login_password_field_empty: "¡La entrada de contraseña estaba vacío!"
 response_login_username_field_empty: "¡La entrada de usuario estaba vacío!"
 response_login_wrong_endpoint: "¡Punto final equivocado!"
+response_no: "No"
 response_passed: "Pasado"
 response_possible_problem_found: "Posible problema encontrado."
 response_rename_error: "¡No se pudo cambiar el nombre!"
@@ -301,6 +304,7 @@ response_updates_unable_to_determine: "Incapaz de determinar."
 response_upload_error: "¡No se pudo subir!"
 response_verification_failed: "¡No se pudo verificar! Componente podría estar dañado."
 response_verification_success: "¡Verificado con éxito! No se encontraron problemas."
+response_yes: "Sí"
 security_warning: "Se produjo un problema inesperado al procesar su solicitud. Por favor, inténtalo de nuevo. Si este problema persiste, contáctese con soporte."
 siginfo_key_CVE: "Firmas que se ocupan de las CVE (Vulnerabilidades y Exposiciones Comunes)."
 siginfo_key_Chameleon: "Firmas que se ocupan de "ataques de camaleón"."

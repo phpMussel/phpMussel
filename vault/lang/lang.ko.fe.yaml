@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.04.07).
+# This file: Korean language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -188,6 +188,7 @@ label_clientinfo: "사용자 정보 :"
 label_events: "스캔 이벤트"
 label_expected: "예상 된"
 label_expires: "만료일 : "
+label_extension: "확장"
 label_flagged: "신고 된 개체"
 label_fmgr_cache_data: "캐시 데이터 및 임시 파일 "
 label_fmgr_disk_usage: "phpMussel 디스크 사용 : "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "총 디스크 사용 : "
 label_fmgr_total_space: "총 디스크 공간 : "
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
+label_installed_available: "설치되어있다 / 이용 가능"
 label_integrity_check: "무결성 검사 : "
 label_never: "못"
 label_os: "사용 된 운영 체제 :"
@@ -281,6 +283,7 @@ response_login_invalid_username: "로그인 실패! 사용자 이름은 존재�
 response_login_password_field_empty: "암호가 비어 있습니다!"
 response_login_username_field_empty: "사용자 이름 입력이 비어 있습니다!"
 response_login_wrong_endpoint: "잘못된 끝점!"
+response_no: "아니오"
 response_passed: "성공했습니다"
 response_possible_problem_found: "가능한 문제가 발견되었습니다."
 response_rename_error: "이름을 변경할 수 없습니다!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "결정 수 없습니다."
 response_upload_error: "업로드에 실패했습니다!"
 response_verification_failed: "검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다."
 response_verification_success: "검증 성공! 문제는 발견되지 않았습니다."
+response_yes: "예"
 security_warning: "요청을 처리하는 중에 예기치 않은 문제가 발생했습니다. 다시 시도하십시오. 문제가 지속되면 지원 부서에 문의하십시오."
 siginfo_key_CVE: "CVE를 다루는 서명."
 siginfo_key_Chameleon: ""카멜레온 공격"을 다루는 서명."

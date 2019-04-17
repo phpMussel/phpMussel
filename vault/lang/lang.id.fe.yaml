@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.04.07).
+# This file: Indonesian language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -188,6 +188,7 @@ label_clientinfo: "Informasi klien:"
 label_events: "Pindai acara"
 label_expected: "Diharapkan"
 label_expires: "Kedaluwarsa: "
+label_extension: "Ekstensi"
 label_flagged: "Obyek ditandai"
 label_fmgr_cache_data: "Data cache dan file sementara"
 label_fmgr_disk_usage: "Penggunaan disk phpMussel: "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "Penggunaan disk total: "
 label_fmgr_total_space: "Ruang disk total: "
 label_fmgr_updates_metadata: "Komponen memperbarui metadata"
 label_hide: "Menyembunyikan"
+label_installed_available: "Diinstal/Tersedia"
 label_integrity_check: "Pemeriksaan integritas: "
 label_never: "Tak pernah"
 label_os: "Sistem operasi digunakan:"
@@ -281,6 +283,7 @@ response_login_invalid_username: "Kegagalan masuk! Nama pengguna tidak ada!"
 response_login_password_field_empty: "Kata sandi yang kosong!"
 response_login_username_field_empty: "Nama pengguna yang kosong!"
 response_login_wrong_endpoint: "Jalur akses salah!"
+response_no: "Tidak"
 response_passed: "Lulus"
 response_possible_problem_found: "Kemungkinan masalah ditemukan."
 response_rename_error: "Gagal memodifikasi nama!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "Tidak dapat menentukan."
 response_upload_error: "Gagal mengupload!"
 response_verification_failed: "Verifikasi gagal! Komponen mungkin rusak."
 response_verification_success: "Verifikasi sukses! Tidak ada masalah ditemukan."
+response_yes: "Ya"
 security_warning: "Masalah yang tidak diharapkan terjadi saat memproses permintaan Anda. Silahkan coba lagi. Jika masalah terus berlanjut, hubungi dukungan."
 siginfo_key_CVE: "Tanda tangan yang berhubungan dengan CVE (Kerentanan dan Eksposur Umum)."
 siginfo_key_Chameleon: "Tanda tangan yang berhubungan dengan "serangan bunglon"."

@@ -232,7 +232,7 @@ Inoltre, per chi fosse interessato, un video tutorial su come utilizzare phpMuss
 
 Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
 
-Queste informazioni si applicano alla versione v1.x.x più recente e, potrebbero non essere così rilevanti per altre versioni.
+Queste informazioni si applicano alla versione v1 più recente e, potrebbero non essere così rilevanti per altre versioni.
 
 File | Descrizione
 ----|----

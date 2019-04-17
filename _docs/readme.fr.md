@@ -232,7 +232,7 @@ En outre, pour les personnes intéressées, un didacticiel vidéo pour savoir co
 
 Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
 
-Ces informations s'appliquent à la version v1.x.x plus récente, et pourraient ne pas être pertinentes pour d'autres versions.
+Ces informations s'appliquent à la version v1 plus récente, et pourraient ne pas être pertinentes pour d'autres versions.
 
 Fichier | Description
 ----|----

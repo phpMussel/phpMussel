@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.04.07).
+# This file: Arabic language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -188,6 +188,7 @@ label_clientinfo: "معلومات المستخدممعلومات المستخد�
 label_events: "مسح الأحداث"
 label_expected: "متوقع"
 label_expires: "تنتهي: "
+label_extension: "التمديد"
 label_flagged: "تم الإبلاغ عن الكائنات"
 label_fmgr_cache_data: "بيانات ذاكرة التخزين المؤقت والملفات المؤقتة"
 label_fmgr_disk_usage: "phpMussel إستخدام القرص: "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "إجمالي استخدام القرص: "
 label_fmgr_total_space: "إجمالي مساحة القرص: "
 label_fmgr_updates_metadata: "تحديثات البيانات الوصفية للمكون"
 label_hide: "إخفائه"
+label_installed_available: "المثبتة/متاح"
 label_integrity_check: "التحقق من النزاهة: "
 label_never: "أبدا"
 label_os: "نظام التشغيل المستخدمة:"
@@ -281,6 +283,7 @@ response_login_invalid_username: "فشل تسجيل الدخول! اسم الم�
 response_login_password_field_empty: "كلمه السر حقل فارغ!"
 response_login_username_field_empty: "اسم المستخدم حقل فارغ!"
 response_login_wrong_endpoint: "نقطة نهاية خاطئة!"
+response_no: "لا"
 response_passed: "إجتاز"
 response_possible_problem_found: "تم العثور على مشكلة محتملة."
 response_rename_error: "فشل في إعادة تسمية!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "غير قادر على تحديد."
 response_upload_error: "فشل لتحميل!"
 response_verification_failed: "فشل التحقق! يمكن أن يكون المكون تالفا."
 response_verification_success: "نجاح التحقق! لم يتم العثور على أية مشاكل."
+response_yes: "نعم"
 security_warning: "حدثت مشكلة غير متوقعة أثناء معالجة طلبك. حاول مرة اخرى. إذا استمرت المشاكل، فاتصل بالدعم."
 siginfo_key_CVE: "التوقيعات التي تتعامل مع CVE (نقاط الضعف والتعرض الشائعة)."
 siginfo_key_Chameleon: "التوقيعات التي تتعامل مع "هجمات الحرباء"."

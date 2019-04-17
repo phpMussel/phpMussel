@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.04.07).
+# This file: English language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -190,6 +190,7 @@ label_clientinfo: "Client information:"
 label_events: "Scan events"
 label_expected: "Expected"
 label_expires: "Expires: "
+label_extension: "Extension"
 label_flagged: "Objects flagged"
 label_fmgr_cache_data: "Cache data and temporary files"
 label_fmgr_disk_usage: "phpMussel disk usage: "
@@ -200,6 +201,7 @@ label_fmgr_total_disk_usage: "Total disk usage: "
 label_fmgr_total_space: "Total disk space: "
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Hide"
+label_installed_available: "Installed/Available"
 label_integrity_check: "Integrity check: "
 label_never: "Never"
 label_os: "Operating system used:"
@@ -283,6 +285,7 @@ response_login_invalid_username: "Login failure! Username doesn't exist!"
 response_login_password_field_empty: "Password field empty!"
 response_login_username_field_empty: "Username field empty!"
 response_login_wrong_endpoint: "Wrong endpoint!"
+response_no: "No"
 response_passed: "Passed"
 response_possible_problem_found: "Possible problem found."
 response_rename_error: "Failed to rename!"
@@ -301,6 +304,7 @@ response_updates_unable_to_determine: "Unable to determine."
 response_upload_error: "Failed to upload!"
 response_verification_failed: "Verification failed! Component could be corrupted."
 response_verification_success: "Verification success! No problems found."
+response_yes: "Yes"
 security_warning: "An unexpected problem occurred while processing your request. Please try again. If problems persist, contact support."
 siginfo_key_CVE: "Signatures that deal with CVEs (Common Vulnerabilities and Exposures)."
 siginfo_key_Chameleon: "Signatures that deal with "chameleon attacks"."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.04.07).
+# This file: German language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -190,6 +190,7 @@ label_clientinfo: "Client Information:"
 label_events: "Scan-Veranstaltungen"
 label_expected: "Erwartet"
 label_expires: "Läuft ab: "
+label_extension: "Erweiterung"
 label_flagged: "Objekte markiert"
 label_fmgr_cache_data: "Cache-Daten und temporäre Dateien"
 label_fmgr_disk_usage: "phpMussel Speicherplatz verwendet: "
@@ -200,6 +201,7 @@ label_fmgr_total_disk_usage: "Speicherplatz verwendet insgesamt: "
 label_fmgr_total_space: "Speicherplatz insgesamt: "
 label_fmgr_updates_metadata: "Komponente aktualisiert Metadaten"
 label_hide: "Verstecke"
+label_installed_available: "Installiert/Verfügbar"
 label_integrity_check: "Integritätsprüfung: "
 label_never: "Noch nie"
 label_os: "Betriebssystem verwendet:"
@@ -283,6 +285,7 @@ response_login_invalid_username: "Einloggen-Fehler! Benutzername existiert nicht
 response_login_password_field_empty: "Passwort-Feld leer!"
 response_login_username_field_empty: "Benutzername-Feld leer!"
 response_login_wrong_endpoint: "Falscher Endpunkt!"
+response_no: "Nein"
 response_passed: "Bestanden"
 response_possible_problem_found: "Mögliches Problem gefunden."
 response_rename_error: "Umbenennung-Fehler!"
@@ -301,6 +304,7 @@ response_updates_unable_to_determine: "Kann nicht ermittelt werden."
 response_upload_error: "Hochladen-Fehler!"
 response_verification_failed: "Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein."
 response_verification_success: "Verifizierung war Erfolg! Keine Probleme gefunden."
+response_yes: "Ja"
 security_warning: "Bei der Verarbeitung Ihrer Anfrage ist ein unerwartetes Problem aufgetreten. Bitte versuche es erneut. Wenn dieses Problem weiterhin besteht, kontaktieren Sie Support."
 siginfo_key_CVE: "Signaturen, die sich mit CVEs (Häufige Schwachstellen und Gefährdungen) befassen."
 siginfo_key_Chameleon: "Signaturen, die sich mit "Chamäleon-Attacken" befassen."

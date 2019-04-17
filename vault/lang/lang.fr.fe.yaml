@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.04.07).
+# This file: French language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -190,6 +190,7 @@ label_clientinfo: "Informations sur le client :"
 label_events: "événements d'analyse"
 label_expected: "Attendu"
 label_expires: "Expire : "
+label_extension: "Extension"
 label_flagged: "Objets marqués"
 label_fmgr_cache_data: "Données cache et fichiers temporaires"
 label_fmgr_disk_usage: "Utilisation du disque par phpMussel : "
@@ -200,6 +201,7 @@ label_fmgr_total_disk_usage: "Utilisation du disque totale : "
 label_fmgr_total_space: "Espace disque total : "
 label_fmgr_updates_metadata: "Métadonnées pour la mise à jour des composants"
 label_hide: "Cacher"
+label_installed_available: "Installé/Disponible"
 label_integrity_check: "Vérification de l'intégrité : "
 label_never: "Jamais"
 label_os: "Système opérateur utilisée :"
@@ -283,6 +285,7 @@ response_login_invalid_username: "Erreur de connexion ! Nom d'utilisateur n'exi
 response_login_password_field_empty: "Mot de passe entrée était vide !"
 response_login_username_field_empty: "Nom d'utilisateur entrée était vide !"
 response_login_wrong_endpoint: "Mauvais point final !"
+response_no: "Non"
 response_passed: "Passé"
 response_possible_problem_found: "Problème possible trouvé."
 response_rename_error: "Échec du renomment !"
@@ -301,6 +304,7 @@ response_updates_unable_to_determine: "Incapable de déterminer."
 response_upload_error: "Échec du téléchargement !"
 response_verification_failed: "Échec de la vérification ! Composant pourrait être corrompu."
 response_verification_success: "Succès de la vérification ! Aucun problème trouvé."
+response_yes: "Oui"
 security_warning: "Un problème inattendu s'est produit lors du traitement de votre requête. Veuillez réessayer. Si les problèmes persistent, contactez le support."
 siginfo_key_CVE: "Les signatures qui traitent des CVE (Vulnérabilités et Expositions Communes)."
 siginfo_key_Chameleon: "Les signatures qui traitent des « attaques caméléon »."

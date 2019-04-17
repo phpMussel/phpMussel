@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.04.07).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -188,6 +188,7 @@ label_clientinfo: "客戶信息："
 label_events: "掃描事件"
 label_expected: "預期"
 label_expires: "過期： "
+label_extension: "擴展"
 label_flagged: "對像已標記"
 label_fmgr_cache_data: "緩存數據和臨時文件"
 label_fmgr_disk_usage: "phpMussel使用的磁盤空間： "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "總共使用的磁盤空間： "
 label_fmgr_total_space: "總磁盤空間： "
 label_fmgr_updates_metadata: "組件更新元數據"
 label_hide: "隱藏"
+label_installed_available: "已安裝/可用"
 label_integrity_check: "完整性檢查："
 label_never: "決不"
 label_os: "目前使用操作系統："
@@ -281,6 +283,7 @@ response_login_invalid_username: "登錄失敗！​用戶名不存在！"
 response_login_password_field_empty: "密碼輸入是空的！"
 response_login_username_field_empty: "用戶名輸入是空的！"
 response_login_wrong_endpoint: "錯誤的端點！"
+response_no: "不是"
 response_passed: "成功"
 response_possible_problem_found: "可能的問題發現。"
 response_rename_error: "無法改名！"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "無法確定。"
 response_upload_error: "無法上傳！"
 response_verification_failed: "驗證失敗！組件可能已損壞。"
 response_verification_success: "驗證成功！沒有發現問題。"
+response_yes: "是"
 security_warning: "處理您的請求時出現意外問題。請再試一次。如果問題仍然存在，請聯繫技術支持。"
 siginfo_key_CVE: "處理CVE（常見漏洞和暴露）的簽名。"
 siginfo_key_Chameleon: "處理『變色龍攻擊』的簽名。"

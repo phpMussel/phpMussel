@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.04.07).
+# This file: Urdu language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -188,6 +188,7 @@ label_clientinfo: "کلائنٹ کی معلومات:"
 label_events: "واقعات اسکین کریں"
 label_expected: "متوقع"
 label_expires: "ختم ہو جاتی ہے: "
+label_extension: "کی توسیع"
 label_flagged: "نشان لگا دیا گیا آبجیکٹ"
 label_fmgr_cache_data: "کیش کردہ ڈیٹا اور عارضی فائلیں"
 label_fmgr_disk_usage: "phpMussel ڈسک استعمال: "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "کل ڈسک استعمال: "
 label_fmgr_total_space: "کل ڈسک کی جگہ: "
 label_fmgr_updates_metadata: "اجزاء اپ ڈیٹ میٹا ڈیٹا"
 label_hide: "چھپائیں"
+label_installed_available: "انسٹال/دستیاب ہے"
 label_integrity_check: "سالمیت کی جانچ: "
 label_never: "کبھی نہیں"
 label_os: "آپریٹنگ سسٹم استعمال کیا:"
@@ -281,6 +283,7 @@ response_login_invalid_username: "لاگ ان ناکامی! صارف کا نام
 response_login_password_field_empty: "پاس ورڈ میدان خالی!"
 response_login_username_field_empty: "صارف کا نام فیلڈ کو خالی!"
 response_login_wrong_endpoint: "غلط رسائی پوائنٹ!"
+response_no: "نہیں"
 response_passed: "کامیابی"
 response_possible_problem_found: "ممکنہ مسئلہ پایا."
 response_rename_error: "نام تبدیل کرنے میں ناکام!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "اس بات کا تعین کرنے سے �
 response_upload_error: "اپ لوڈ کرنے میں ناکام ہو گیا!"
 response_verification_failed: "توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے."
 response_verification_success: "توثیقی کامیابی! کوئی مسئلہ نہیں ملا."
+response_yes: "جی ہاں"
 security_warning: "آپ کی درخواست پر عمل کرتے ہوئے ایک غیر متوقع مسئلہ پیش آیا. دوبارہ کوشش کریں. اگر مسائل جاری رہیں تو، معاون سے رابطہ کریں."
 siginfo_key_CVE: "دستخط CVE سے نمٹنے کے."
 siginfo_key_Chameleon: "دستخط جو "chameleon حملوں" سے نمٹنے کے لئے ہے."

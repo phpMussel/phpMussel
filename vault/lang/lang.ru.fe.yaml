@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.04.07).
+# This file: Russian language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -191,6 +191,7 @@ label_clientinfo: "Информация о клиенте:"
 label_events: "События сканирования"
 label_expected: "Ожидаемый"
 label_expires: "Истекает: "
+label_extension: "Расширение"
 label_flagged: "Помеченные объекты"
 label_fmgr_cache_data: "Данные кэша и временные файлы"
 label_fmgr_disk_usage: "phpMussel Использование диска: "
@@ -201,6 +202,7 @@ label_fmgr_total_disk_usage: "Все использование диска: "
 label_fmgr_total_space: "Емкость диска: "
 label_fmgr_updates_metadata: "Метаданные обновлений компонентов"
 label_hide: "Скрывать"
+label_installed_available: "Установлено/Доступно"
 label_integrity_check: "Проверка целостности: "
 label_never: "Никогда"
 label_os: "Используемая операционная система:"
@@ -284,6 +286,7 @@ response_login_invalid_username: "Войти провал! Имя пользов
 response_login_password_field_empty: "Пароль пусто!"
 response_login_username_field_empty: "Имя пользователя пусто!"
 response_login_wrong_endpoint: "Неправильная конечная точка!"
+response_no: "Нет"
 response_passed: "Удалось"
 response_possible_problem_found: "Возможная проблема."
 response_rename_error: "Не удалось переименовать!"
@@ -302,6 +305,7 @@ response_updates_unable_to_determine: "Невозможно определить
 response_upload_error: "Не удалось загрузить!"
 response_verification_failed: "Ошибка проверки! Компонент может быть поврежден."
 response_verification_success: "Успех проверки! Нет проблем."
+response_yes: "Да"
 security_warning: "При обработке запроса возникла непредвиденная проблема. Пожалуйста, попробуйте еще раз. Если проблемы сохраняются, обратитесь в службу поддержки."
 siginfo_key_CVE: "Сигнатуры, которые касаются CVE (Общие Уязвимости и Риски)."
 siginfo_key_Chameleon: "Сигнатуры, которые касаются «хамелеонных атак»."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.04.07).
+# This file: Turkish language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -188,6 +188,7 @@ label_clientinfo: "Kullanıcı bilgisi:"
 label_events: "Tara olayları"
 label_expected: "Beklenen"
 label_expires: "Son Geçerlilik Tarihi: "
+label_extension: "Uzantısı"
 label_flagged: "İşaretlenen nesneler"
 label_fmgr_cache_data: "Önbellek verileri ve geçici dosyalar"
 label_fmgr_disk_usage: "phpMussel disk kullanımı: "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "Toplam disk kullanımı: "
 label_fmgr_total_space: "Toplam disk alanı: "
 label_fmgr_updates_metadata: "Bileşen güncellemeleri meta verileri"
 label_hide: "Saklamak"
+label_installed_available: "Yüklü/Mevcut"
 label_integrity_check: "Bütünlük denetimi: "
 label_never: "Asla"
 label_os: "Kullanılan işletim sistemi:"
@@ -281,6 +283,7 @@ response_login_invalid_username: "Giriş başarısız! Kullanıcı adı yok!"
 response_login_password_field_empty: "Parola alanı boş!"
 response_login_username_field_empty: "Kullanıcı adı alanı boş!"
 response_login_wrong_endpoint: "Yanlış bitiş noktası!"
+response_no: "Hayır"
 response_passed: "Geçti"
 response_possible_problem_found: "Olası problem bulundu."
 response_rename_error: "Yeniden adlandırılamadı!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "Belirlenemedi."
 response_upload_error: "Yüklenemedi!"
 response_verification_failed: "Doğrulama başarısız oldu! Bileşen bozulmuş olabilir."
 response_verification_success: "Doğrulama başarısı! Hiçbir sorun bulunamadı."
+response_yes: "Evet"
 security_warning: "İsteğiniz işlenirken beklenmeyen bir sorun oluştu. Lütfen tekrar deneyin. Sorun devam ederse, desteğe başvurun."
 siginfo_key_CVE: "CVE'lerle (Ortak Güvenlik Açıkları ve Etkilenmeler) ilgilenen imzalar."
 siginfo_key_Chameleon: ""Bukalemun saldırıları" ile ilgilenen imzalar."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.04.07).
+# This file: Vietnamese language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -188,6 +188,7 @@ label_clientinfo: "Thông tin người dùng:"
 label_events: "Sự kiện quét"
 label_expected: "Kỳ vọng"
 label_expires: "Hết hạn: "
+label_extension: "Phần mở rộng"
 label_flagged: "Đối tượng bị gắn cờ"
 label_fmgr_cache_data: "Dữ liệu bộ nhớ cache và các tập tin tạm thời"
 label_fmgr_disk_usage: "Số lượng sử dụng đĩa bởi phpMussel: "
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:
 label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số: "
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
+label_installed_available: "Được cài đặt / Có sẵn"
 label_integrity_check: "Kiểm tra tính toàn vẹn: "
 label_never: "Không bao giờ"
 label_os: "Hệ điều hành đang được dùng:"
@@ -281,6 +283,7 @@ response_login_invalid_username: "Thất bại đăng nhập! Tên người dùn
 response_login_password_field_empty: "Mật khẩu là trống!"
 response_login_username_field_empty: "Tên người dùng là trống!"
 response_login_wrong_endpoint: "Điểm truy cập không đúng!"
+response_no: "Không"
 response_passed: "Thành công"
 response_possible_problem_found: "Có thể tìm thấy vấn đề."
 response_rename_error: "Không thể đổi tên!"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "Không thể xác định."
 response_upload_error: "Không thể tải lên!"
 response_verification_failed: "Xác minh không thành công! Thành phần có thể bị hỏng."
 response_verification_success: "Xác minh thành công! Không tìm thấy vấn đề."
+response_yes: "Vâng"
 security_warning: "Đã xảy ra sự cố khi xử lý yêu cầu của bạn. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, hãy liên hệ với hỗ trợ."
 siginfo_key_CVE: "Chữ ký để xử lý CVE (lỗ hổng và tiếp xúc thường gặp)."
 siginfo_key_Chameleon: "Chữ ký để xử lý "cuộc tấn công tắc kè hoa"."

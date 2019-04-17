@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.04.07).
+# This file: Japanese language data for the front-end (last modified: 2019.04.17).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -188,6 +188,7 @@ label_clientinfo: "クライアント情報："
 label_events: "スキャンイベント"
 label_expected: "予想される"
 label_expires: "有効期限： "
+label_extension: "エクステンション"
 label_flagged: "フラグされたオブジェクト"
 label_fmgr_cache_data: "キャッシュ・データとテンポラリ・ファイル"
 label_fmgr_disk_usage: "phpMusselディスク使用量："
@@ -198,6 +199,7 @@ label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
 label_hide: "隠す"
+label_installed_available: "インストールされている/利用可能です"
 label_integrity_check: "整合性チェック："
 label_sanity_check: "サニティ・チェック："
 label_never: "決して"
@@ -281,6 +283,7 @@ response_login_invalid_username: "ログイン失敗！​ユーザー名は存�
 response_login_password_field_empty: "パスワード入力は空です！"
 response_login_username_field_empty: "ユーザー名入力は空です！"
 response_login_wrong_endpoint: "間違ったエンドポイント！"
+response_no: "いいえ"
 response_passed: "合格しました"
 response_possible_problem_found: "考えられる問題が見つかりました。"
 response_rename_error: "名前を変更できませんでした！"
@@ -299,6 +302,7 @@ response_updates_unable_to_determine: "決定することができません。"
 response_upload_error: "アップロードに失敗しました！"
 response_verification_failed: "確認に失敗！​コンポーネントが破損している可能性があります。"
 response_verification_success: "検証の成功！​問題は見つかりませんでした。"
+response_yes: "はい"
 security_warning: "要求の処理中に予期しない問題が発生しました。もう一度お試しください。問題が解決しない場合は、サポートに連絡してください。"
 siginfo_key_CVE: "ＣＶＥを扱うシグネチャ。"
 siginfo_key_Chameleon: "「カメレオンの攻撃」を扱うシグネチャ。"
