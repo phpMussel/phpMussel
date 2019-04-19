@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.09).
+ * This file: Front-end functions file (last modified: 2019.04.19).
  */
 
 /**
@@ -646,11 +646,11 @@ $phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
 };
 
 /** Duplication avoidance (front-end updates page). */
-$phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
-    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files'])) {
-        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']);
-        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Targets']]['Files']['To']);
-        return $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$phpMussel['Targets']]);
+$phpMussel['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$phpMussel) {
+    if (!empty($phpMussel['Components']['Meta'][$Targets]['Files'])) {
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$Targets]['Files']);
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$Targets]['Files']['To']);
+        return $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$Targets]);
     }
     return false;
 };
@@ -753,9 +753,24 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
 /**
  * Executes a list of closures or commands when specific conditions are met.
  *
- * @param array|string $Closures The list of closures or commands to execute.
+ * @param string|array $Closures The list of closures or commands to execute.
+ * @param bool $Queue Whether to queue the operation or perform immediately.
  */
-$phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
+$phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$phpMussel) {
+    if ($Queue && $Closures !== false) {
+        if (empty($phpMussel['FE_Executor_Queue'])) {
+            $phpMussel['FE_Executor_Queue'] = [];
+        }
+        $phpMussel['FE_Executor_Queue'][] = $Closures;
+        return;
+    }
+    if ($Closures === false && !empty($phpMussel['FE_Executor_Queue'])) {
+        foreach ($phpMussel['FE_Executor_Queue'] as $QueueItem) {
+            $phpMussel['FE_Executor']($QueueItem);
+        }
+        $phpMussel['FE_Executor_Queue'] = [];
+        return;
+    }
     $phpMussel['Arrayify']($Closures);
     $phpMussel['FE_Executor_Files'] = [];
     foreach ($Closures as $Closure) {
@@ -1105,36 +1120,50 @@ $phpMussel['UpdatesSortFunc'] = function ($A, $B) {
     return 0;
 };
 
-/** Updates handler. */
-$phpMussel['UpdatesHandler'] = function ($Action, $ID) use (&$phpMussel) {
+/**
+ * Updates handler.
+ *
+ * @param string $Action The action to take (update/install, verify, uninstall, activate, deactivate).
+ * @return string|array The ID(/s) of the component(/s) to perform the specified action upon.
+ */
+$phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
-    /** Define component targets. */
-    $phpMussel['Targets'] = $ID;
+    /** Support for executor calls. */
+    if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
+        $ID = substr($Action, $Pos + 1);
+        $Action = substr($Action, 0, $Pos);
+        if (strpos($ID, ',') !== false) {
+            $ID = explode(',', $ID);
+        }
+    }
 
     /** Update a component. */
     if ($Action === 'update-component') {
-        return $phpMussel['UpdatesHandler-Update']($ID);
-    }
-
-    /** Uninstall a component. */
-    if ($Action === 'uninstall-component') {
-        return $phpMussel['UpdatesHandler-Uninstall']($ID);
-    }
-
-    /** Activate a component. */
-    if ($Action === 'activate-component') {
-        return $phpMussel['UpdatesHandler-Activate']($ID);
-    }
-
-    /** Deactivate a component. */
-    if ($Action === 'deactivate-component') {
-        return $phpMussel['UpdatesHandler-Deactivate']($ID);
+        $phpMussel['UpdatesHandler-Update']($ID);
     }
 
     /** Verify a component. */
     if ($Action === 'verify-component') {
-        return $phpMussel['UpdatesHandler-Verify']($ID);
+        $phpMussel['UpdatesHandler-Verify']($ID);
     }
+
+    /** Uninstall a component. */
+    if (!is_array($ID) && $Action === 'uninstall-component') {
+        $phpMussel['UpdatesHandler-Uninstall']($ID);
+    }
+
+    /** Activate a component. */
+    if (!is_array($ID) && $Action === 'activate-component') {
+        $phpMussel['UpdatesHandler-Activate']($ID);
+    }
+
+    /** Deactivate a component. */
+    if (!is_array($ID) && $Action === 'deactivate-component') {
+        $phpMussel['UpdatesHandler-Deactivate']($ID);
+    }
+
+    /** Process and empty executor queue. */
+    $phpMussel['FE_Executor']();
 
 };
 
@@ -1143,10 +1172,10 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
     $FileData = [];
     $Annotations = [];
-    foreach ($ID as $phpMussel['Components']['ThisTarget']) {
+    foreach ($ID as $ThisTarget) {
         if (!isset(
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'],
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Reannotate']
+            $phpMussel['Components']['Meta'][$ThisTarget]['Remote'],
+            $phpMussel['Components']['Meta'][$ThisTarget]['Reannotate']
         )) {
             continue;
         }
@@ -1154,35 +1183,35 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         $phpMussel['Components']['BytesRemoved'] = 0;
         $phpMussel['Components']['TimeRequired'] = microtime(true);
         $phpMussel['Components']['RemoteMeta'] = [];
-        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = '';
+        $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'] = '';
         $phpMussel['FetchRemote-ContextFree'](
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'],
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote']
+            $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'],
+            $phpMussel['Components']['Meta'][$ThisTarget]['Remote']
         );
         $phpMussel['UpdateFailed'] = false;
         if (
-            substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 0, 4) === "---\n" &&
+            substr($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], 0, 4) === "---\n" &&
             ($phpMussel['Components']['EoYAML'] = strpos(
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], "\n\n"
+                $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
             )) !== false &&
             $phpMussel['YAML-Object']->process(
-                substr($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
+                substr($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                 $phpMussel['Components']['RemoteMeta']
             ) &&
-            !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required']) &&
+            !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
             !$phpMussel['VersionCompare'](
                 $phpMussel['ScriptVersion'],
-                $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required']
+                $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
             ) &&
             (
-                empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required PHP']) ||
-                !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Minimum Required PHP'])
+                empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP']) ||
+                !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP'])
             ) &&
-            !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']) &&
-            !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']) &&
-            !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
-            $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
-            ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Reannotate']) &&
+            !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
+            !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
+            !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
+            $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
+            ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($phpMussel['Vault'] . $ThisReannotate) &&
             ((
                 !empty($FileData[$ThisReannotate]) &&
@@ -1193,43 +1222,43 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 )
             )) &&
             preg_match(
-                "\x01(\n" . preg_quote($phpMussel['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
                 $phpMussel['Components']['OldMeta'],
                 $phpMussel['Components']['OldMetaMatches']
             ) &&
             ($phpMussel['Components']['OldMetaMatches'] = $phpMussel['Components']['OldMetaMatches'][0]) &&
-            ($phpMussel['Components']['NewMeta'] = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData']) &&
+            ($phpMussel['Components']['NewMeta'] = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match(
-                "\x01(\n" . preg_quote($phpMussel['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
                 $phpMussel['Components']['NewMeta'],
                 $phpMussel['Components']['NewMetaMatches']
             ) &&
             ($phpMussel['Components']['NewMetaMatches'] = $phpMussel['Components']['NewMetaMatches'][0]) &&
             (!$phpMussel['FE']['CronMode'] || empty(
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Tests']
-            ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']], true))
+                $phpMussel['Components']['Meta'][$ThisTarget]['Tests']
+            ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$ThisTarget], true))
         ) {
-            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']);
-            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
-            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']);
-            if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'])) {
-                $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum']);
+            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']);
+            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
+            $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
+            if (!empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'])) {
+                $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']);
             }
             $phpMussel['Components']['NewMeta'] = str_replace(
                 $phpMussel['Components']['OldMetaMatches'],
                 $phpMussel['Components']['NewMetaMatches'],
                 $phpMussel['Components']['OldMeta']
             );
-            $Count = count($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From']);
+            $Count = count($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $phpMussel['RemoteFiles'] = [];
             $phpMussel['IgnoredFiles'] = [];
             $Rollback = false;
             /** Write new and updated files and directories. */
             for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
-                if (empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'][$Iterate])) {
+                if (empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate])) {
                     continue;
                 }
-                $ThisFileName = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'][$Iterate];
+                $ThisFileName = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate];
                 /** Rolls back to previous version or uninstalls if an update/install fails. */
                 if ($Rollback) {
                     if (
@@ -1247,19 +1276,19 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     continue;
                 }
                 if (
-                    !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
-                    !empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) && (
-                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] ===
-                        $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]
+                    !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate]) &&
+                    !empty($phpMussel['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]) && (
+                        $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate] ===
+                        $phpMussel['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]
                     )
                 ) {
                     $phpMussel['IgnoredFiles'][$ThisFileName] = true;
                     continue;
                 }
                 if (
-                    empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate]) ||
+                    empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]) ||
                     !($ThisFile = $phpMussel['Request'](
-                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate]
+                        $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]
                     ))
                 ) {
                     $Iterate = 0;
@@ -1268,15 +1297,15 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 }
                 if (
                     strtolower(substr(
-                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['From'][$Iterate], -2
+                        $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2
                     )) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
                     substr($ThisFile, 0, 2) === "\x1f\x8b"
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
-                if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate])) {
-                    $ThisChecksum = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['Checksum'][$Iterate];
+                if (!empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate])) {
+                    $ThisChecksum = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
                     $ThisLen = strlen($ThisFile);
                     if (
                         (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
@@ -1284,11 +1313,11 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
                     ) {
                         $phpMussel['FE']['state_msg'] .=
-                            '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
+                            '<code>' . $ThisTarget . '</code> – ' .
                             '<code>' . $ThisFileName . '</code> – ' .
                             $phpMussel['L10N']->getString('response_checksum_error') . '<br />';
-                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
-                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
+                        if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['On Checksum Error'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['On Checksum Error'], true);
                         }
                         $Iterate = 0;
                         $Rollback = true;
@@ -1301,12 +1330,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 ) {
                     $phpMussel['FE']['state_msg'] .= sprintf(
                         '<code>%s</code> – <code>%s</code> – %s<br />',
-                        $phpMussel['Components']['ThisTarget'],
+                        $ThisTarget,
                         $ThisFileName,
                         $phpMussel['L10N']->getString('response_sanity_1')
                     );
-                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error'])) {
-                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Sanity Error']);
+                    if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['On Sanity Error'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['On Sanity Error'], true);
                     }
                     $Iterate = 0;
                     $Rollback = true;
@@ -1340,10 +1369,10 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             if ($Rollback) {
                 /** Prune unwanted empty directories (update/install failure+rollback). */
                 if (
-                    !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To']) &&
-                    is_array($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'])
+                    !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
+                    is_array($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
                 ) {
-                    array_walk($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+                    array_walk($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
                         if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
                             $phpMussel['DeleteDirectory']($ThisFile);
                         }
@@ -1352,8 +1381,8 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 $phpMussel['UpdateFailed'] = true;
             } else {
                 /** Prune unwanted files and directories (update/install success). */
-                if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['To'])) {
-                    $ThisArr = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files']['To'];
+                if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'])) {
+                    $ThisArr = $phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'];
                     $phpMussel['Arrayify']($ThisArr);
                     array_walk($ThisArr, function ($ThisFile) use (&$phpMussel) {
                         if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
@@ -1376,43 +1405,42 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 /** Assign updated component annotation. */
                 $FileData[$ThisReannotate] = $phpMussel['Components']['NewMeta'];
                 if (!isset($Annotations[$ThisReannotate])) {
-                    $Annotations[$ThisReannotate] = $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'];
+                    $Annotations[$ThisReannotate] = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'];
                 }
-                $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
+                $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
-                    empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
-                    empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
+                    empty($phpMussel['Components']['Meta'][$ThisTarget]['Version']) &&
+                    empty($phpMussel['Components']['Meta'][$ThisTarget]['Files'])
                 ) {
                     $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_successfully_installed');
-                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds'])) {
-                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds']);
+                    if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['When Install Succeeds'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Install Succeeds'], true);
                     }
                 } else {
                     $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_successfully_updated');
-                    if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds'])) {
-                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds']);
+                    if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['When Update Succeeds'])) {
+                        $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
                     }
                 }
-                $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']] =
-                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']];
+                $phpMussel['Components']['Meta'][$ThisTarget] = $phpMussel['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
             $phpMussel['UpdateFailed'] = true;
         }
         if ($phpMussel['UpdateFailed']) {
-            $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
+            $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
             if (
-                empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
-                empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
+                empty($phpMussel['Components']['Meta'][$ThisTarget]['Version']) &&
+                empty($phpMussel['Components']['Meta'][$ThisTarget]['Files'])
             ) {
                 $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_failed_to_install');
-                if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails'])) {
-                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails']);
+                if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['When Install Fails'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Install Fails'], true);
                 }
             } else {
                 $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_failed_to_update');
-                if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails'])) {
-                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails']);
+                if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['When Update Fails'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Update Fails'], true);
                 }
             }
         }
@@ -1441,7 +1469,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
 
 /** Updates handler: Uninstall a component. */
 $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
-    $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
+    $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $phpMussel['Components']['BytesRemoved'] = 0;
     $phpMussel['Components']['TimeRequired'] = microtime(true);
     if (
@@ -1456,7 +1484,7 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate']
         )) &&
         preg_match(
-            "\x01(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n\x01i",
+            "~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i",
             $phpMussel['Components']['OldMeta'],
             $phpMussel['Components']['OldMetaMatches']
         ) &&
@@ -1491,12 +1519,12 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
         $phpMussel['Components']['Meta'][$ID]['Files'] = false;
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_successfully_uninstalled');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'], true);
         }
     } else {
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_uninstall_error');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'], true);
         }
     }
     $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
@@ -1514,7 +1542,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         'Active' => $phpMussel['Config']['signatures']['Active'],
         'Modified' => false
     ];
-    $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
+    $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     if (empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
         $phpMussel['Activation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Activation']['Active']),
@@ -1544,7 +1572,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
     if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activation_failed');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Fails'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails'], true);
         }
     } else {
         $EOL = (strpos($phpMussel['Activation']['Config'], "\r\nActive=") !== false) ? "\r\n" : "\n";
@@ -1559,7 +1587,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         fclose($Handle);
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activated');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
     }
     /** Cleanup. */
@@ -1573,7 +1601,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         'Active' => $phpMussel['Config']['signatures']['Active'],
         'Modified' => false
     ];
-    $InUse = $phpMussel['ComponentFunctionUpdatePrep']();
+    $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     if (!empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
         $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Deactivation']['Active']),
@@ -1603,7 +1631,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
     if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivation_failed');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'], true);
         }
     } else {
         $EOL = (strpos($phpMussel['Deactivation']['Config'], "\r\nActive=") !== false) ? "\r\n" : "\n";
@@ -1618,7 +1646,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         fclose($Handle);
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivated');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
-            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds']);
+            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
         }
     }
     /** Cleanup. */
@@ -2213,4 +2241,14 @@ $phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Dept
         $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');
     }
     return $Output;
+};
+
+/** Append to the current state message. */
+$phpMussel['Message'] = function ($Message) use (&$phpMussel) {
+    if (isset($phpMussel['FE']['state_msg'])) {
+        if ($phpMussel['FE']['state_msg'] || substr($phpMussel['FE']['state_msg'], -6) !== '<br />') {
+            $phpMussel['FE']['state_msg'] .= '<br />';
+        }
+        $phpMussel['FE']['state_msg'] .= $Message . '<br />';
+    }
 };

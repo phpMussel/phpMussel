@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.17).
+ * This file: Front-end handler (last modified: 2019.04.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1827,7 +1827,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['Components']['ReannotateThis'] = $phpMussel['Components']['ThisComponent']['Reannotate'];
         $phpMussel['FetchRemote']();
         if (!preg_match(
-            "\x01(\n" . preg_quote($phpMussel['Components']['Key']) . ":?)(\n [^\n]*)*\n\x01i",
+            "~(\n" . preg_quote($phpMussel['Components']['Key']) . ":?)(\n [^\n]*)*\n~i",
             $phpMussel['Components']['ThisComponent']['RemoteData'],
             $phpMussel['Components']['RemoteDataThis']
         )) {

@@ -23,6 +23,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   whether various extensions that can be used by phpMussel are installed and
   available (APCu, Memcached, Redis, PDO, PCRE, cURL, etc).
 
+- [2019.04.19; Maikuolan]: Slightly refactored the front-end updater and made
+  some changes to the executor (needed for a smooth v2 transition).
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 
