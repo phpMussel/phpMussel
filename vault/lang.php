@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.02.04).
+ * This file: Language handler (last modified: 2019.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -82,6 +82,9 @@ $phpMussel['L10N'] = new \Maikuolan\Common\L10N($phpMussel['L10N']['ConfiguredDa
 
 /** Reference L10N object's contained data to ensure things don't break until we can properly implement the new object. */
 $phpMussel['lang'] = &$phpMussel['L10N']->Data;
+
+/** Temporary hotfix for missing textDir variable. */
+$phpMussel['lang']['textDir'] = (isset($phpMussel['lang']['Text Direction']) && $phpMussel['lang']['Text Direction'] === 'rtl') ? 'rtl' : 'ltr';
 
 /** Will remove later (temporary variable). */
 $phpMussel['Config']['general']['lang_override'] = false;
