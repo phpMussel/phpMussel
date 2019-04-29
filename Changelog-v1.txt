@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.10.0 ===
+MINOR RELEASE.
+
 - [2019.04.02; Maikuolan]: Changed a misleading variable name.
 
 - [2019.04.02-07; NEW FEATURE; Maikuolan]: Implemented a new, unified caching
@@ -36,6 +41,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 - [2019.04.29; Maikuolan]: Added some colours to the "fancy formatting" mode of
   the front-end logs page, to make it a little fancier (it was looking kind of
   boring before).
+
+Caleb M (Maikuolan),
+April 30, 2019.
 
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
