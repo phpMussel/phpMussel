@@ -33,6 +33,10 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   phpMussel the ability to detect whether data conforms to a specific character
   encoding.
 
+- [2019.04.29; Maikuolan]: Added some colours to the "fancy formatting" mode of
+  the front-end logs page, to make it a little fancier (it was looking kind of
+  boring before).
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 

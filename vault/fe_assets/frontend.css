@@ -38,7 +38,7 @@ a:active,a:focus{color:red}
 .nav{font-size:calc(14px * {Magnification});width:20%}
 .ng1,.h1f,.h3f{background:linear-gradient({Gradient_Degree}deg,#eee,#ccc)}
 .ng2,.h2f,.h4f{background:linear-gradient({Gradient_Degree}deg,#ddd,#bbb)}
-.r{background-color:#fda}
+.hFd:hover,.r{background-color:#fda}
 .rf{background:linear-gradient({Gradient_Degree}deg,#fda,#fa6)}
 .right{padding:20px;width:80%}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#900}
@@ -61,6 +61,8 @@ a[href="?phpmussel-page=logout"]:hover,a[href="?phpmussel-page=logout"]:active,a
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
   .extend{width:100%}
 }
+.hB{background-color:rgba(0,0,0,0.125)}
+.hW{background-color:rgba(255,255,255,0.125)}
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.19).
+ * This file: Front-end functions file (last modified: 2019.04.29).
  */
 
 /**
@@ -2250,5 +2250,61 @@ $phpMussel['Message'] = function ($Message) use (&$phpMussel) {
             $phpMussel['FE']['state_msg'] .= '<br />';
         }
         $phpMussel['FE']['state_msg'] .= $Message . '<br />';
+    }
+};
+
+/**
+ * Attempt to perform some simple formatting for the log data.
+ *
+ * @param string $In The log data to be formatted.
+ */
+$phpMussel['Formatter'] = function (&$In) {
+    if (strpos($In, "<br />\n") === false) {
+        $In = '<div class="fW">' . $In . '</div>';
+        return;
+    }
+    if (strpos($In, "<br />\n<br />\n") !== false) {
+        $Data = array_filter(explode("<br />\n<br />\n", $In));
+        $SeparatorType = 0;
+    } elseif (strpos($In, "\n&gt;") !== false) {
+        $Data = preg_split("~(<br />\n(?!-|&gt;)[^\n]+)\n(?!-|&gt;)~i", $In, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        $SeparatorType = 1;
+    } else {
+        $Data = array_filter(explode("<br />\n", $In));
+        $SeparatorType = 2;
+    }
+    $In = '';
+    if ($SeparatorType === 1) {
+        $Blocks = count($Data);
+        for ($Block = 0; $Block < $Blocks; $Block += 2) {
+            $Darken = empty($Darken);
+            $In .= '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">' . $Data[$Block] . $Data[$Block + 1] . "\n</div>";
+        }
+        $In = '<div style="filter:saturate(60%)"><span class="s">' . $In . '</span></div>';
+        return;
+    }
+    foreach ($Data as &$Block) {
+        $Darken = empty($Darken);
+        $Block = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">' . $Block;
+        $Block .= $SeparatorType === 0 ? "<br />\n<br />\n</div>" : "<br />\n</div>";
+        if ($SeparatorType === 2) {
+            $Block = preg_replace([
+                '~(a\:\d+\:)\{~',
+                '~("|\d);\}~',
+                '~\:(\d+)~',
+                '~\:"([^"]+)"~'
+            ], [
+                '\1<span class="txtRd">{</span>',
+                '\1;<span class="txtRd">}</span>',
+                ':<span class="txtGn">\1</span>',
+                ':"<span class="txtBl">\1</span>"'
+            ], $Block);
+        }
+    }
+    $In = implode('', $Data);
+    if ($SeparatorType === 2) {
+        $In = '<div style="filter:saturate(60%)"><span class="txtOe">' . $In . '</span></div>';
+    } else {
+        $In = '<div style="filter:saturate(60%)"><span class="s">' . $In . '</span></div>';
     }
 };
