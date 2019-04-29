@@ -26,6 +26,13 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 - [2019.04.19; Maikuolan]: Slightly refactored the front-end updater and made
   some changes to the executor (needed for a smooth v2 transition).
 
+- [2019.04.21; Bug-fix; Maikuolan]: Found a small bug affecting RTL users that
+  could potentially cause text to align incorrectly in some cases; Fixed.
+
+- [2019.04.28; Maikuolan]: Implemented a new class, "Demojibakefier", to give
+  phpMussel the ability to detect whether data conforms to a specific character
+  encoding.
+
 === Version/Release 1.9.1 ===
 PATCH RELEASE.
 
