@@ -29,7 +29,8 @@
 # Refer to:
 # https://github.com/github/linguist
 
-_docs/* linguist-documentation
+*.md linguist-documentation
+*.txt linguist-documentation
 components.dat linguist-language=YAML
 plugins.dat linguist-language=YAML
 themes.dat linguist-language=YAML
