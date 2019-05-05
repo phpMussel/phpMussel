@@ -9,15 +9,13 @@
         "issues": "https://github.com/phpMussel/phpMussel/issues",
         "wiki": "https://github.com/phpMussel/phpMussel/wiki",
         "source": "https://github.com/phpMussel/phpMussel",
-        "docs": "https://github.com/phpMussel/phpMussel/tree/master/_docs"
+        "docs": "https://github.com/phpMussel/Docs"
     },
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.2.0",
         "ext-pcre": "*"
     },
     "suggest": {
-        "php": ">=7.2.0 (this package performs significantly better with PHP >= 7.2.0).",
-        "maikuolan/phpmussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked.",
         "cidram/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel).",
         "ext-bz2": "*",
         "ext-curl": "*",
