@@ -4,70 +4,68 @@ phpMussel:
  Version: 1.10.1-DEV+19127451
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
- Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
- Tests: https://api.github.com/repos/phpMussel/phpMussel/commits/master/status
- When Checking:
-  - In "components.dat" Replace "~raw\.githubusercontent\.com/phpMussel/phpMussel/master~" With "raw.githubusercontent.com/phpMussel/phpMussel/v1"
+ Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
+ Tests: https://api.github.com/repos/phpMussel/phpMussel/commits/v1/status
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/cache/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/ArchiveHandler.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/CompressionHandler.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/Cache.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/ComplexStringHandler.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/Demojibakefier.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/L10N.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/Maikuolan/YAML.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/classes/TemporaryFileHandler.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/cli.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/config.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/config.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_2fa.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_accounts.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_accounts_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_cache.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_config.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_config_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_files.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_files_edit.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_files_rename.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_files_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_home.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_login.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_logs.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_nav_complete_access.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_nav_logs_access_only.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_quarantine.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_quarantine_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_siginfo.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_siginfo_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_statistics.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_updates.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_updates_row.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/_upload_test.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/frontend.css
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/frontend.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/icons.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/pips.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/fe_assets/scripts.js
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/frontend.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/frontend_functions.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/functions.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/php5.4.x.php
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/plugins/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/quarantine/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/shorthand.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/signatures/.htaccess
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/signatures/switch.dat
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/template_custom.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/template_default.html
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/upload.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/cache/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/ArchiveHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/CompressionHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/Cache.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/ComplexStringHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/Demojibakefier.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/L10N.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/YAML.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/TemporaryFileHandler.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/cli.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/config.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/config.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_2fa.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_accounts.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_accounts_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_cache.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_config.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_config_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_files.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_files_edit.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_files_rename.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_files_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_home.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_login.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_logs.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_nav_complete_access.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_nav_logs_access_only.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_quarantine.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_quarantine_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_siginfo.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_siginfo_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_statistics.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_updates.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_updates_row.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/_upload_test.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/frontend.css
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/frontend.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/icons.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/pips.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/scripts.js
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/frontend.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/frontend_functions.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/functions.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/php5.4.x.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/plugins/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/quarantine/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/shorthand.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/signatures/.htaccess
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/signatures/switch.dat
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/template_custom.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/template_default.html
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/upload.php
   To:
    - .htaccess
    - cache/.htaccess
@@ -191,12 +189,12 @@ l10n/en:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.en.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.en.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.en.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.en.yaml
   To:
    - lang/lang.en.fe.yaml
    - lang/lang.en.yaml
@@ -210,12 +208,12 @@ l10n/ar:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ar.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ar.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ar.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ar.yaml
   To:
    - lang/lang.ar.fe.yaml
    - lang/lang.ar.yaml
@@ -229,12 +227,12 @@ l10n/bn:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.bn.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.bn.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.bn.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.bn.yaml
   To:
    - lang/lang.bn.fe.yaml
    - lang/lang.bn.yaml
@@ -248,12 +246,12 @@ l10n/de:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.de.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.de.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.de.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.de.yaml
   To:
    - lang/lang.de.fe.yaml
    - lang/lang.de.yaml
@@ -267,12 +265,12 @@ l10n/es:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.es.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.es.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.es.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.es.yaml
   To:
    - lang/lang.es.fe.yaml
    - lang/lang.es.yaml
@@ -286,12 +284,12 @@ l10n/fr:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.fr.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.fr.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.fr.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.fr.yaml
   To:
    - lang/lang.fr.fe.yaml
    - lang/lang.fr.yaml
@@ -305,12 +303,12 @@ l10n/hi:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.hi.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.hi.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.hi.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.hi.yaml
   To:
    - lang/lang.hi.fe.yaml
    - lang/lang.hi.yaml
@@ -324,12 +322,12 @@ l10n/id:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.id.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.id.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.id.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.id.yaml
   To:
    - lang/lang.id.fe.yaml
    - lang/lang.id.yaml
@@ -343,12 +341,12 @@ l10n/it:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.it.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.it.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.it.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.it.yaml
   To:
    - lang/lang.it.fe.yaml
    - lang/lang.it.yaml
@@ -362,12 +360,12 @@ l10n/ja:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ja.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ja.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ja.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ja.yaml
   To:
    - lang/lang.ja.fe.yaml
    - lang/lang.ja.yaml
@@ -381,12 +379,12 @@ l10n/ko:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ko.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ko.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ko.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ko.yaml
   To:
    - lang/lang.ko.fe.yaml
    - lang/lang.ko.yaml
@@ -400,12 +398,12 @@ l10n/nl:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.nl.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.nl.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.nl.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.nl.yaml
   To:
    - lang/lang.nl.fe.yaml
    - lang/lang.nl.yaml
@@ -419,12 +417,12 @@ l10n/pt:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.pt.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.pt.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.pt.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.pt.yaml
   To:
    - lang/lang.pt.fe.yaml
    - lang/lang.pt.yaml
@@ -438,12 +436,12 @@ l10n/ru:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ru.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ru.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ru.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ru.yaml
   To:
    - lang/lang.ru.fe.yaml
    - lang/lang.ru.yaml
@@ -457,12 +455,12 @@ l10n/th:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.th.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.th.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.th.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.th.yaml
   To:
    - lang/lang.th.fe.yaml
    - lang/lang.th.yaml
@@ -476,12 +474,12 @@ l10n/tr:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.tr.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.tr.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.tr.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.tr.yaml
   To:
    - lang/lang.tr.fe.yaml
    - lang/lang.tr.yaml
@@ -495,12 +493,12 @@ l10n/ur:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ur.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.ur.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ur.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.ur.yaml
   To:
    - lang/lang.ur.fe.yaml
    - lang/lang.ur.yaml
@@ -514,12 +512,12 @@ l10n/vi:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.vi.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.vi.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.vi.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.vi.yaml
   To:
    - lang/lang.vi.fe.yaml
    - lang/lang.vi.yaml
@@ -533,12 +531,12 @@ l10n/zh-TW:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.zh-tw.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.zh-tw.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.zh-tw.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.zh-tw.yaml
   To:
    - lang/lang.zh-tw.fe.yaml
    - lang/lang.zh-tw.yaml
@@ -552,12 +550,12 @@ l10n/zh:
  Version: 2019.106.394
  Minimum Required: 1.8.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.zh.fe.yaml
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.zh.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.zh.fe.yaml
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/lang/lang.zh.yaml
   To:
    - lang/lang.zh.fe.yaml
    - lang/lang.zh.yaml
