@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.04.17).
+# This file: Vietnamese language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -359,7 +359,7 @@ tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách d�
 tip_pie_html: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_quarantine: "Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó."
 tip_quarantine_disabled: "Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình."
-tip_see_the_documentation: "Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md\#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
+tip_see_the_documentation: "Xem <a href="https://github.com/phpMussel/Docs/blob/master/readme.vi.md\#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
 tip_siginfo: "Xin chào, {username}.<br />Trang thông tin chữ ký cung cấp một số thông tin cơ bản về các nguồn và loại chữ ký hiện đang kích hoạt."
 tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt phpMussel của bạn."
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.04.17).
+# This file: Thai language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -359,7 +359,7 @@ tip_logs: "สวัสดี {username}.<br />เลือกไฟล์บั
 tip_pie_html: "คลิกที่ชื่อองค์ประกอบเพื่อดูรายละเอียดเพิ่มเติม."
 tip_quarantine: "สวัสดี {username}.<br />หน้านี้แสดงรายการไฟล์ทั้งหมดที่อยู่ในกักกันและอำนวยความสะดวกในการจัดการไฟล์เหล่านี้."
 tip_quarantine_disabled: "บันทึก: กักกันถูกปิดใช้งานอยู่ แต่สามารถเปิดใช้งานได้ผ่านทางหน้ากำหนดค่า."
-tip_see_the_documentation: "ดูที่<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md\#SECTION7">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
+tip_see_the_documentation: "ดูที่<a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
 tip_siginfo: "สวัสดี {username}.<br />หน้าข้อมูลลายเซ็นให้ข้อมูลเบื้องต้นเกี่ยวกับแหล่งที่มาและประเภทของลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
 tip_statistics: "สวัสดี {username}.<br />หน้านี้แสดงสถิติการใช้งานขั้นพื้นฐานเกี่ยวกับการติดตั้ง phpMussel ของคุณ."
 tip_statistics_disabled: "บันทึก: ขณะนี้การติดตามผลสถิติถูกปิดใช้งาน แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.04.17).
+# This file: English language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -363,7 +363,7 @@ tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view 
 tip_pie_html: "Click the component name for more details."
 tip_quarantine: "Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files."
 tip_quarantine_disabled: "Note: Quarantine is currently disabled, but can be enabled via the configuration page."
-tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md\#SECTION7">documentation</a> for information about the various configuration directives and their purposes."
+tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">documentation</a> for information about the various configuration directives and their purposes."
 tip_siginfo: "Hello, {username}.<br />The signature information page provides some basic information about the sources and types of the currently active signatures."
 tip_statistics: "Hello, {username}.<br />This page shows some basic usage statistics regarding your phpMussel installation."
 tip_statistics_disabled: "Note: Statistics tracking is currently disabled, but can be enabled via the configuration page."
