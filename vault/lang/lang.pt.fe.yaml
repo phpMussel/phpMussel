@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.04.17).
+# This file: Portuguese language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -363,7 +363,7 @@ tip_logs: "Olá, {username}.<br />Selecionar um arquivo de registro da lista aba
 tip_pie_html: "Clique no nome do componente para mais detalhes."
 tip_quarantine: "Olá, {username}.<br />Esta página lista todos os arquivos atualmente em quarentena e facilita o gerenciamento desses arquivos."
 tip_quarantine_disabled: "Nota: A quarentena está atualmente desativada, mas pode ser ativada através da página de configuração."
-tip_see_the_documentation: "Consulte a <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.pt.md\#SECTION7">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+tip_see_the_documentation: "Consulte a <a href="https://github.com/phpMussel/Docs/blob/master/readme.pt.md\#SECTION7">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
 tip_siginfo: "Olá, {username}.<br />A página de informações de assinaturas fornece algumas informações básicas sobre as origens e os tipos das assinaturas atualmente ativas."
 tip_statistics: "Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do phpMussel."
 tip_statistics_disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2019.04.17).
+# This file: Bangla language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -359,7 +359,7 @@ tip_logs: "হ্যালো, {username}।<br />যে লগ ফাইল এ
 tip_pie_html: "আরো বিস্তারিত জানার জন্য কম্পোনেন্ট নাম ক্লিক করুন।"
 tip_quarantine: "হ্যালো, {username}।<br />এই পৃষ্ঠাটি বর্তমানে সঙ্গরোধ মধ্যে সব ফাইল তালিকাভুক্ত এবং যারা ফাইল পরিচালনার সুবিধা।"
 tip_quarantine_disabled: "নোট: সঙ্গরোধ বর্তমানে নিষ্ক্রিয়, কিন্তু কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"
-tip_see_the_documentation: "বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md\#SECTION6">ডকুমেন্টেশনটি</a> দেখুন।"
+tip_see_the_documentation: "বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION6">ডকুমেন্টেশনটি</a> দেখুন।"
 tip_siginfo: "হ্যালো, {username}।<br />স্বাক্ষর তথ্য পৃষ্ঠা বর্তমানে সক্রিয় স্বাক্ষরগুলির সূত্র এবং প্রকারের বিষয়ে কিছু মৌলিক তথ্য সরবরাহ করে।"
 tip_statistics: "হ্যালো, {username}।<br />এই পৃষ্ঠাটি আপনার phpMussel ইনস্টলেশনের সম্পর্কিত কিছু মৌলিক ব্যবহারের পরিসংখ্যান দেখায়।"
 tip_statistics_disabled: "নোট: পরিসংখ্যান ট্র্যাকিং বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"

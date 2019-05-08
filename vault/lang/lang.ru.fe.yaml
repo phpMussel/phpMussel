@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.04.17).
+# This file: Russian language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -365,7 +365,7 @@ tip_logs: "Привет, {username}.<br />Выберите лог-файл из 
 tip_pie_html: "Нажмите на название компонента для получения более подробной информации."
 tip_quarantine: "Привет, {username}.<br />На этой странице перечислены все файлы, находящиеся в настоящее время в карантине, и облегчает управление этими файлами."
 tip_quarantine_disabled: "Заметка: В настоящее время карантин отключен, но может быть включен через страницу конфигурации."
-tip_see_the_documentation: "Просмотреть <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ru.md\#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей."
+tip_see_the_documentation: "Просмотреть <a href="https://github.com/phpMussel/Docs/blob/master/readme.ru.md\#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей."
 tip_siginfo: "Привет, {username}.<br />На странице информация о сигнатур содержится основная информация об источниках и типах активных сигнатур."
 tip_statistics: "Привет, {username}.<br />На этой странице показаны основные статистические данные об использовании вашей phpMussel-инсталляция."
 tip_statistics_disabled: "Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.04.17).
+# This file: Arabic language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -365,7 +365,7 @@ tip_logs: "مرحبا، {username}.<br />اختار سجلات من القائم
 tip_pie_html: "انقر فوق اسم المكون لمزيد من التفاصيل."
 tip_quarantine: "مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات."
 tip_quarantine_disabled: "ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة."
-tip_see_the_documentation: "راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md\#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."
+tip_see_the_documentation: "راجع <a href="https://github.com/phpMussel/Docs/blob/master/readme.ar.md\#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."
 tip_siginfo: "مرحبا، {username}.<br />توفر صفحة معلومات التوقيع بعض المعلومات الأساسية حول مصادر وأنواع التوقيعات النشطة حاليًا."
 tip_statistics: "مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت phpMussel."
 tip_statistics_disabled: "ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين."

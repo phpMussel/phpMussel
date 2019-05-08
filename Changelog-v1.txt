@@ -19,7 +19,7 @@ MINOR RELEASE.
   range of different caching mechanisms supported by the new caching system,
   currently consisting of APCu, Memcached, Redis, and PDO-based caching,
   alternatively deferring back to the package's existing flatfile caching
-  mechanism no other mechanisms are otherwise chosen.
+  mechanism when no other mechanisms are otherwise chosen.
 
 - [2019.04.09; Maikuolan]: Slightly adjusted the file reading part of the cache
   handler to account for some potential edge-case problems on some servers.
