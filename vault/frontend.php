@@ -1666,12 +1666,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             }
             if (!empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
                 $phpMussel['Activable'] = $phpMussel['IsActivable']($phpMussel['Components']['ThisComponent']);
-                if (
-                    ($phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang']) ||
-                    ($phpMussel['Components']['Key'] === 'theme/' . $phpMussel['Config']['template_data']['theme']) ||
-                    ($phpMussel['Components']['Key'] === 'phpMussel') ||
-                    $phpMussel['IsInUse']($phpMussel['Components']['ThisComponent'])
-                ) {
+                if (preg_match('~^(?:l10n/' . preg_quote(
+                    $phpMussel['Config']['general']['lang']
+                ) . '|theme/' . preg_quote(
+                    $phpMussel['Config']['template_data']['theme']
+                ) . '|phpMussel.*|Common Classes Package)$~i', $phpMussel['Components']['Key']) || $phpMussel['IsInUse'](
+                    $phpMussel['Components']['ThisComponent']
+                )) {
                     $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $phpMussel['L10N']->getString('state_component_is_active') . '</div>'
                     );

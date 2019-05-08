@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.04.17).
+# This file: Indonesian language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -359,7 +359,7 @@ tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat i
 tip_pie_html: "Klik nama komponen untuk detail lebih lanjut."
 tip_quarantine: "Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut."
 tip_quarantine_disabled: "Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi."
-tip_see_the_documentation: "Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md\#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
+tip_see_the_documentation: "Lihat <a href="https://github.com/phpMussel/Docs/blob/master/readme.id.md\#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_siginfo: "Salam, {username}.<br />Halaman informasi tanda tangan memberikan beberapa informasi dasar tentang sumber dan jenis tanda tangan yang saat ini aktif."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi phpMussel Anda."
 tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."

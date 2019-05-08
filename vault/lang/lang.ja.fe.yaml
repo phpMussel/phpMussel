@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.04.17).
+# This file: Japanese language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -231,7 +231,7 @@ link_config: "コンフィギュレーション"
 link_documentation: "ドキュメンテーション"
 link_file_manager: "ファイル・マネージャー"
 link_home: "ホーム"
-link_logs: "ロゴス"
+link_logs: "ログページ"
 link_quarantine: "検疫"
 link_siginfo: "シグネチャ情報"
 link_statistics: "統計"
@@ -359,7 +359,7 @@ tip_logs: "こんにちは、​{username}。​<br />そのログの内容を�
 tip_pie_html: "詳細についてはコンポーネント名をクリックしてください。"
 tip_quarantine: "こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。"
 tip_quarantine_disabled: "注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。"
-tip_see_the_documentation: "設定ディレクティブの詳細については、​<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md\#SECTION7">ドキュメント</a>を参照してください。"
+tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/phpMussel/Docs/blob/master/readme.ja.md\#SECTION7">ドキュメント</a>を参照してください。"
 tip_siginfo: "こんにちは、​{username}。<br />シグネチャ情報ページには、現在アクティブなシグネチャのソースとタイプに関する基本的な情報が表示されます。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、phpMusselのインストールに関する基本的な使用状況の統計情報が表示されます。"
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
