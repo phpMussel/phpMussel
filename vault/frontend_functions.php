@@ -79,8 +79,7 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     $QueryParts = explode($Delimiter, $Query);
     $CountParts = count($QueryParts);
     if (!($CountParts % 2)) {
-        $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
-        return;
+        return false;
     }
     $Arr = [];
     for ($Iter = 0; $Iter < $CountParts; $Iter++) {
@@ -139,7 +138,11 @@ $phpMussel['ZeroMin'] = function () {
     return $Sum < 0 ? 0 : $Sum;
 };
 
-/** Format filesize information. */
+/**
+ * Format filesize information.
+ *
+ * @param int $Filesize
+ */
 $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
     $Iterate = 0;
@@ -210,9 +213,8 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
  * Get an entry from the front-end cache data.
  *
  * @param string $Source Variable containing cache file data.
- * @param bool $Rebuild Flag indicating to rebuild cache file.
  * @param string $Entry Name of the cache entry to get.
- * return string|bool Returned cache entry data (or false on failure).
+ * @return string|bool Returned cache entry data (or false on failure).
  */
 $phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
 
@@ -243,7 +245,7 @@ $phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
  *
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
- * return bool True if the 2nd version is newer than the 1st version, and false
+ * @return bool True if the 2nd version is newer than the 1st version, and false
  *      otherwise (i.e., if they're the same, or if the 1st version is newer).
  */
 $phpMussel['VersionCompare'] = function ($A, $B) {
@@ -297,16 +299,21 @@ $phpMussel['VersionCompare'] = function ($A, $B) {
  * Remove sub-arrays from an array.
  *
  * @param array $Arr An array.
- * return array An array.
+ * @return array An array.
  */
-$phpMussel['ArrayFlatten'] = function ($Arr) {
+$phpMussel['ArrayFlatten'] = function (array $Arr) {
     return array_filter($Arr, function () {
         return (!is_array(func_get_args()[0]));
     });
 };
 
-/** Isolate a L10N array down to a single relevant L10N string. */
-$phpMussel['IsolateL10N'] = function (&$Arr, $Lang) {
+/**
+ * Reduce an L10N array down to a single relevant string.
+ *
+ * @param array $Arr An L10N array.
+ * @param string $Lang The language that we're hoping to isolate from the array.
+ */
+$phpMussel['IsolateL10N'] = function (array &$Arr, $Lang) {
     if (isset($Arr[$Lang])) {
         $Arr = $Arr[$Lang];
     } elseif (isset($Arr['en'])) {
@@ -510,7 +517,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
  * @param string $Base The path to the working directory.
  * @param array $Arr The array to use for rendering components file YAML data.
  */
-$phpMussel['FetchComponentsLists'] = function ($Base, &$Arr) use (&$phpMussel) {
+$phpMussel['FetchComponentsLists'] = function ($Base, array &$Arr) use (&$phpMussel) {
     $Files = new DirectoryIterator($Base);
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
@@ -570,8 +577,13 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     return $Arr;
 };
 
-/** Checks whether a component is in use (front-end closure). */
-$phpMussel['IsInUse'] = function (&$Component) use (&$phpMussel) {
+/**
+ * Checks whether a component is in use (front-end closure).
+ *
+ * @param array $Component An array of the component metadata.
+ * @return bool True for when in use; False for when not in use.
+ */
+$phpMussel['IsInUse'] = function (array &$Component) use (&$phpMussel) {
     $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
     foreach ($Files as $File) {
         if (substr($File, 0, 11) === 'signatures/' && preg_match(
@@ -614,8 +626,13 @@ $phpMussel['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&
     }
 };
 
-/** Check whether component is activable. */
-$phpMussel['IsActivable'] = function (&$Component) {
+/**
+ * Checks whether component is activable.
+ *
+ * @param array $Component An array of the component metadata.
+ * @return bool True for when activable; False for when not activable.
+ */
+$phpMussel['IsActivable'] = function (array &$Component) {
     return (!empty($Component['Files']['To'][0]) && substr($Component['Files']['To'][0], 0, 11) === 'signatures/');
 };
 
@@ -729,7 +746,7 @@ $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMusse
  * - maikuolan.github.io/Vulnerability-Charts/php.html
  *
  * @param string $Version The PHP version used (defaults to PHP_VERSION).
- * return int Warning level.
+ * @return int Warning level.
  */
 $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
     $Level = 0;
@@ -888,7 +905,7 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
  * @param string $Options Reconstructed filter controls.
  */
-$phpMussel['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$phpMussel) {
+$phpMussel['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$phpMussel) {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
         $phpMussel['FE'][$Switch] = empty($phpMussel['QueryVars'][$Switch]) ? false : (
@@ -2005,7 +2022,7 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
  * @param array $Attachments An optional array of attachments.
  * @return bool Operation failed (false) or succeeded (true).
  */
-$phpMussel['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $AltBody = '', $Attachments = []) use (&$phpMussel) {
+$phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = '', $AltBody = '', array $Attachments = []) use (&$phpMussel) {
     $EventLog = '';
     $EventLogData = '';
 
@@ -2189,7 +2206,7 @@ $phpMussel['2FA-Number'] = function () {
  * @param string $ParentKey An optional key of the parent data source.
  * @return string The generated clickable list.
  */
-$phpMussel['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$phpMussel) {
+$phpMussel['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$phpMussel) {
     $Output = '';
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';

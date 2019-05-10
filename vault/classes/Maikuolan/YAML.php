@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2019.04.15).
+ * YAML handler (last modified: 2019.05.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -89,13 +89,10 @@ class YAML
      * @param int $Depth Tab depth (inherited through recursion; ignore it).
      * @return bool True when entire process completes successfully. False to exit early.
      */
-    public function process($In, &$Arr, $Depth = 0)
+    public function process($In, array &$Arr, $Depth = 0)
     {
         if (!is_string($In) || strpos($In, "\n") === false) {
             return false;
-        }
-        if (!is_array($Arr)) {
-            $Arr = [];
         }
         if ($Depth === 0) {
             $this->MultiLine = false;
@@ -136,7 +133,7 @@ class YAML
                     return false;
                 }
                 if (!$this->MultiLine) {
-                    if (!isset($Arr[$Key])) {
+                    if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
                         $Arr[$Key] = [];
                     }
                     if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
@@ -153,7 +150,7 @@ class YAML
         }
         if ($SendTo && !empty($Key)) {
             if (!$this->MultiLine) {
-                if (!isset($Arr[$Key])) {
+                if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
                     $Arr[$Key] = [];
                 }
                 if (!$this->process($SendTo, $Arr[$Key], $TabLen)) {
@@ -170,13 +167,13 @@ class YAML
      * Process a single line of YAML input.
      *
      * @param string $ThisLine The line to be processed.
-     * @param string $ThisTab Size of the line indentation.
+     * @param int $ThisTab The size of the line indentation.
      * @param string|int $Key Line key.
      * @param string|int|bool $Value Line value.
      * @param array $Arr Where to store the data.
      * @return bool True when entire process completes successfully. False to exit early.
      */
-    private function processLine(&$ThisLine, &$ThisTab, &$Key, &$Value, &$Arr)
+    private function processLine(&$ThisLine, &$ThisTab, &$Key, &$Value, array &$Arr)
     {
         if (substr($ThisLine, -1) === ':' && strpos($ThisLine, ': ') === false) {
             $Key = substr($ThisLine, $ThisTab, -1);
@@ -240,7 +237,7 @@ class YAML
      * @param string $Out The reconstructed YAML.
      * @param int $Depth The level depth.
      */
-    private function processInner($Arr, &$Out, $Depth = 0)
+    private function processInner(array $Arr, &$Out, $Depth = 0)
     {
         $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
         foreach ($Arr as $Key => $Value) {
@@ -281,7 +278,7 @@ class YAML
      * @param array $Arr The array to reconstruct from.
      * @return string The reconstructed YAML.
      */
-    public function reconstruct($Arr)
+    public function reconstruct(array $Arr)
     {
         $Out = '';
         $this->processInner($Arr, $Out);

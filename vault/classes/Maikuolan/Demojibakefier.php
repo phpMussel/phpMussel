@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.04.29).
+ * Demojibakefier (last modified: 2019.05.10).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -256,9 +256,8 @@ class Demojibakefier
      *
      * @param string $String The originally supplied string.
      * @param array $Arr An array of potential candidates.
-     * @return array Input array with adjusted weights.
      */
-    private function weigh($String, &$Arr)
+    private function weigh($String, array &$Arr)
     {
         /** For when it really, really looks like UTF-8 (easier to detect in isolation than other encodings). */
         if (isset($Arr['UTF-8']['Weight']) && preg_match('~\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xec][\x80-\xbf]{2}|\xed[\x80-\x9f][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf]{2}|[\xf0-\xf3][\x80-\xbf]{3}|\xf4[\x80-\x9f][\x80-\xbf]~', $String)) {
@@ -458,9 +457,8 @@ class Demojibakefier
      * candidates.
      *
      * @param array $Arr An array of potential candidates.
-     * @return array The input array, hopefully reduced, if possible.
      */
-    private function dropVariants(&$Arr)
+    private function dropVariants(array &$Arr)
     {
         if (isset($Arr['GB18030'], $Arr['GB2312'])) {
             unset($Arr['GB2312']);
@@ -499,7 +497,7 @@ class Demojibakefier
      * See: https://en.wikipedia.org/wiki/Entropy_(information_theory)
      *
      * @param string $String The string to check.
-     * @return float The shannon entropy of the string.
+     * @return float|int The shannon entropy of the string.
      */
     public function shannonEntropy($String)
     {

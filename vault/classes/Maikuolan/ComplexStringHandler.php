@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2019.03.26).
+ * Complex string handler (last modified: 2019.05.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -70,9 +70,9 @@ class ComplexStringHandler
      * @param callable $Closure
      * @param bool $Glue Whether to work on the markers or the working data.
      */
-    public function iterateClosure($Closure, $Glue = false)
+    public function iterateClosure(callable $Closure, $Glue = false)
     {
-        if (!is_callable($Closure) || empty($this->Input)) {
+        if (empty($this->Input)) {
             return;
         }
         if (!$Glue) {

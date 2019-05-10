@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.04.07).
+ * This file: Functions file (last modified: 2019.05.10).
  */
 
 /**
@@ -75,16 +75,15 @@ $phpMussel['Execute_Hook'] = function ($HookID) use (&$phpMussel) {
 };
 
 /**
- * Replaces encapsulated substrings within an input string with the value of
- * elements within an input array, whose keys correspond to the substrings.
- * Accepts two input parameters: An input array (1), and an input string (2).
+ * Replaces encapsulated substrings within a string using the values of the
+ * corresponding elements within an array.
  *
- * @param array $Needle The input array (the needle[/s]).
- * @param string $Haystack The input string (the haystack).
- * @return string The resultant string.
+ * @param array $Needle An array containing replacement values.
+ * @param string $Haystack The string to work with.
+ * @return string The string with its encapsulated substrings replaced.
  */
-$phpMussel['ParseVars'] = function ($Needle, $Haystack) {
-    if (!is_array($Needle) || empty($Haystack)) {
+$phpMussel['ParseVars'] = function (array $Needle, $Haystack) {
+    if (empty($Haystack)) {
         return '';
     }
     array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
@@ -98,49 +97,16 @@ $phpMussel['ParseVars'] = function ($Needle, $Haystack) {
 /**
  * Implodes multidimensional arrays.
  *
- * @param array $ar The array to be imploded.
- * @param string|array $j An optional "needle" or "joiner" to use for imploding
- *      the array. If a numeric array is used, an element of the array
- *      corresponding to the recursion depth will be used as the needle or
- *      joiner.
- * @param int $i Used by the function when calling itself recursively, for the
- *      purpose of tracking recursion depth (shouldn't be used outside the
- *      function).
- * @param bool $e Optional; When set to false, empty elements will be ignored.
+ * @param array $Arr An array to implode.
  * @return string The imploded array.
  */
-$phpMussel['implode_md'] = function ($ar, $j = '', $i = 0, $e = true) use (&$phpMussel) {
-    if (!is_array($ar)) {
-        return $ar;
-    }
-    $c = count($ar);
-    if (!$c || is_array($i)) {
-        return false;
-    }
-    if (is_array($j)) {
-        if (!$x = $j[$i]) {
-            return false;
+$phpMussel['implode_md'] = function (array $Arr) use (&$phpMussel) {
+    foreach ($Arr as &$Key) {
+        if (is_array($Key)) {
+            $Key = $phpMussel['implode_md']($Key);
         }
-    } else {
-        $x = $j;
     }
-    $out = '';
-    while ($c > 0) {
-        $key = key($ar);
-        if (is_array($ar[$key])) {
-            $i++;
-            $ar[$key] = $phpMussel['implode_md']($ar[$key], $j, $i);
-            $i--;
-        }
-        if (!$out) {
-            $out = $ar[$key];
-        } elseif (!(!$e && empty($ar[$key]))) {
-            $out .= $x . $ar[$key];
-        }
-        next($ar);
-        $c--;
-    }
-    return $out;
+    return implode($Arr);
 };
 
 /**
@@ -377,14 +343,14 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Block
  *
  * @param string $Filename Refer to the description for file().
  * @param int $Flags Refer to the description for file().
- * @param array $Context Refer to the description for file().
+ * @param resource $Context Refer to the description for file().
  * @return array|bool Same as with file(), but won't trigger warnings.
  */
-$phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = false) {
+$phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = null) {
     if (!is_readable($Filename)) {
         return false;
     }
-    if (!$Context) {
+    if (!is_resource($Context)) {
         return !$Flags ? file($Filename) : file($Filename, $Flags);
     }
     return file($Filename, $Flags, $Context);
@@ -959,7 +925,7 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  * Used for performing lookups to the Google Safe Browsing API (v4).
  * @link https://developers.google.com/safe-browsing/v4/lookup-api
  *
- * @param array $urls An array of the URLs to lookup.
+ * @param array $URLs An array of the URLs to lookup.
  * @param array $URLsNoLookup An optional array of URLs to NOT lookup.
  * @param array $DomainsNoLookup An optional array of domains to NOT lookup.
  * @return int The results of the lookup. 200 if AT LEAST ONE of the queried
@@ -970,23 +936,23 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  *      throttled); 999 if something unexpected occurs (such as, for example,
  *      if a programmatic error is encountered).
  */
-$phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNoLookup = []) use (&$phpMussel) {
+$phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = [], array $DomainsNoLookup = []) use (&$phpMussel) {
     if (empty($phpMussel['Config']['urlscanner']['google_api_key'])) {
         return 401;
     }
     /** Count and prepare the URLs. */
-    if (!$c = count($urls)) {
+    if (!$c = count($URLs)) {
         return 400;
     }
     for ($i = 0; $i < $c; $i++) {
-        $Domain = (strpos($urls[$i], '/') !== false) ? $phpMussel['substrbf']($urls[$i], '/') : $urls[$i];
-        if (!empty($URLsNoLookup[$urls[$i]]) || !empty($DomainsNoLookup[$Domain])) {
-            unset($urls[$i]);
+        $Domain = (strpos($URLs[$i], '/') !== false) ? $phpMussel['substrbf']($URLs[$i], '/') : $URLs[$i];
+        if (!empty($URLsNoLookup[$URLs[$i]]) || !empty($DomainsNoLookup[$Domain])) {
+            unset($URLs[$i]);
             continue;
         }
-        $urls[$i] = ['url' => $urls[$i]];
+        $URLs[$i] = ['url' => $URLs[$i]];
     }
-    sort($urls);
+    sort($URLs);
     /** After we've prepared the URLs, we prepare our JSON array. */
     $arr = json_encode([
         'client' => [
@@ -1003,7 +969,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls, $URLsNoLookup = [], $DomainsNo
             ],
             'platformTypes' => ['ANY_PLATFORM'],
             'threatEntryTypes' => ['URL'],
-            'threatEntries' => $urls
+            'threatEntries' => $URLs
         ]
     ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
@@ -1164,7 +1130,7 @@ $phpMussel['Detected'] = function (&$heur, &$lnap, &$VN, &$ofn, &$ofnSafe, &$out
  * @param bool $Mode ALL (false) or ANY (true) must assert.
  * @return bool True if requirement conforms; False otherwise.
  */
-$phpMussel['ContainsMustAssert'] = function ($Haystacks, $Needles, $Padding = ',', $AssertState = false, $Mode = false) {
+$phpMussel['ContainsMustAssert'] = function (array $Haystacks, array $Needles, $Padding = ',', $AssertState = false, $Mode = false) {
     foreach ($Haystacks as $Haystack) {
         $Haystack = $Padding . $Haystack . $Padding;
         foreach ($Needles as $Needle) {
@@ -1191,7 +1157,7 @@ $phpMussel['ContainsMustAssert'] = function ($Haystacks, $Needles, $Padding = ',
  * @param string|int $Terminal The end of the boundary or string terminal offset value.
  * @param array $SectionOffsets Section offset values.
  */
-$phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$SectionOffsets) {
+$phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, array &$SectionOffsets) {
     if ($Initial === '*' && $Terminal === '*') {
         return;
     }
@@ -4660,11 +4626,11 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
- * @param array $Params (Optional) An associative array of key-value pairs to
- *      to send along with the request.
+ * @param array $Params An optional associative array of key-value pairs to
+ *      send with the request.
  * @return string The results of the request.
  */
-$phpMussel['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$phpMussel) {
+$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$phpMussel) {
     if (!$Timeout) {
         $Timeout = $phpMussel['Timeout'];
     }
