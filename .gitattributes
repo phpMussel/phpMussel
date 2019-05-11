@@ -9,7 +9,6 @@
 *.ini text eol=crlf
 *.renameme text eol=crlf
 *.RenameMe text eol=crlf
-*.txt text eol=crlf
 *.dat binary
 *.exe binary
 *.gif binary
