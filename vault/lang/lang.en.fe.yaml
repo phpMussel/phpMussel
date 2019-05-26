@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.05.05).
+# This file: English language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -377,7 +377,7 @@ warning_signatures_1: "No signature files are active!"
 
 info_some_useful_links: |
  Some useful links:<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, resources, etc for phpMussel.</span>
          <ul class="comSub">
            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>

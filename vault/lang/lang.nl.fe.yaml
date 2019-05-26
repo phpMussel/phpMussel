@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.05.05).
+# This file: Dutch language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -377,7 +377,7 @@ warning_signatures_1: "Geen signatuurbestanden zijn actief!"
 
 info_some_useful_links: |
  Enkele nuttige links:<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor phpMussel.</span>
          <ul class="comSub">
            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>

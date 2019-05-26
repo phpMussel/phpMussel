@@ -11,6 +11,8 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   some PHPDoc typos, and added some array type hints where applicable. Updated
   all common classes package classes to the latest compatible versions.
 
+- [2019.05.26; Maikuolan]: Performed some minor refactoring.
+
 === Version/Release 1.10.0 ===
 MINOR RELEASE.
 

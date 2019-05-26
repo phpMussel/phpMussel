@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.10).
+ * This file: Functions file (last modified: 2019.05.26).
  */
 
 /**
@@ -4598,6 +4598,9 @@ $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
 /**
  * Fix incorrect typecasting for some for some variables that sometimes default
  * to strings instead of booleans or integers.
+ *
+ * @param mixed $Var The variable to fix (passed by reference).
+ * @param string $Type The type (or pseudo-type) to cast the variable to.
  */
 $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
     if ($Type === 'string' || $Type === 'timezone') {
@@ -4628,12 +4631,10 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
  * @param string $URI The resource to request.
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
+ * @param int $Timeout An optional timeout limit.
  * @return string The results of the request.
  */
-$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$phpMussel) {
-    if (!$Timeout) {
-        $Timeout = $phpMussel['Timeout'];
-    }
+$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1) use (&$phpMussel) {
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -4656,7 +4657,7 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = '') use (
     curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, $Timeout);
+    curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $phpMussel['Timeout']));
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
 
     /** Execute and get the response. */
@@ -4667,6 +4668,7 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = '') use (
 
     /** Return the results of the request. */
     return $Response;
+
 };
 
 /**
@@ -4802,17 +4804,32 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
 
 };
 
-/** A simple safety wrapper for unpack. */
+/**
+ * A simple safety wrapper for unpack.
+ *
+ * @param string $Format Anything supported by unpack (usually "S" or "*l").
+ * @param string $Data The data to be unpacked.
+ * @return mixed The unpacked data.
+ */
 $phpMussel['UnpackSafe'] = function ($Format, $Data) {
     return (strlen($Data) > 1) ? unpack($Format, $Data) : '';
 };
 
-/** A simple safety wrapper for hex2bin. */
+/**
+ * A simple safety wrapper for hex2bin.
+ *
+ * @param string $Data Hexadecimally encoded data.
+ * @return string The decoded data.
+ */
 $phpMussel['HexSafe'] = function ($Data) use (&$phpMussel) {
     return ($Data && !preg_match('/[^\da-f]/i', $Data) && !(strlen($Data) % 2)) ? $phpMussel['Function']('HEX', $Data) : '';
 };
 
-/** If input isn't an array, make it so. Remove empty elements. */
+/**
+ * If input isn't an array, make it so. Remove empty elements.
+ *
+ * @param mixed $Input
+ */
 $phpMussel['Arrayify'] = function (&$Input) {
     if (!is_array($Input)) {
         $Input = [$Input];
@@ -4894,13 +4911,22 @@ $phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMu
     return is_file($Params) ? $Callable($Params) : sprintf($phpMussel['L10N']->getString('cli_is_not_a'), $Params) . "\n";
 };
 
-/** Handles errors (will expand this later). */
+/**
+ * Handles errors (will expand this later).
+ *
+ * @param int $errno See: https://php.net/set_error_handler
+ */
 $phpMussel['ErrorHandler_1'] = function ($errno) use (&$phpMussel) {
     return;
 };
 
-/** Duplication avoidance (some file handling for honeypot functionality). */
-$phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel) {
+/**
+ * Duplication avoidance (some file handling for honeypot functionality).
+ *
+ * @param array $Array Contains data relating to the file to be read.
+ * @param string $File The path to the file to be read.
+ */
+$phpMussel['ReadFile-For-Honeypot'] = function (array &$Array, $File) use (&$phpMussel) {
     if (!isset($Array['qdata'])) {
         $Array['qdata'] = '';
     }
@@ -5071,7 +5097,13 @@ $phpMussel['DeleteDirectory'] = function ($Dir) use (&$phpMussel) {
     }
 };
 
-/** Convert configuration directives for logfiles to regexable patterns. */
+/**
+ * Convert log file configuration directives to regular expressions.
+ *
+ * @param string $Str The log file configuration directive to work with.
+ * @param bool $GZ Whether to include GZ files in the resulting expression.
+ * @return string A corresponding regular expression.
+ */
 $phpMussel['BuildLogPattern'] = function ($Str, $GZ = false) {
     return '~^' . preg_replace(
         ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],

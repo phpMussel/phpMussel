@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.29).
+ * This file: Front-end functions file (last modified: 2019.05.18).
  */
 
 /**
@@ -605,7 +605,12 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
     );
 };
 
-/** Fetch remote data (context-free). */
+/**
+ * Fetch remote data (context-free).
+ *
+ * @param string $RemoteData Where to put the remote data.
+ * @param string $Remote Where to get the remote data.
+ */
 $phpMussel['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$phpMussel) {
     $RemoteData = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], $Remote);
     if (!$RemoteData) {
@@ -636,8 +641,13 @@ $phpMussel['IsActivable'] = function (array &$Component) {
     return (!empty($Component['Files']['To'][0]) && substr($Component['Files']['To'][0], 0, 11) === 'signatures/');
 };
 
-/** Prepares component extended description (front-end updates page). */
-$phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$phpMussel) {
+/**
+ * Prepares component extended description (front-end updates page).
+ *
+ * @param array $Arr Metadata of the component to be prepared.
+ * @param string $Key A key to use to help find L10N data for the component description.
+ */
+$phpMussel['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use (&$phpMussel) {
     $Key = 'Extended Description ' . $Key;
     if (isset($phpMussel['lang'][$Key])) {
         $Arr['Extended Description'] = $phpMussel['L10N']->getString($Key);
@@ -649,8 +659,13 @@ $phpMussel['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$ph
     }
 };
 
-/** Prepares component name (front-end updates page). */
-$phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
+/**
+ * Prepares component name (front-end updates page).
+ *
+ * @param array $Arr Metadata of the component to be prepared.
+ * @param string $Key A key to use to help find L10N data for the component name.
+ */
+$phpMussel['PrepareName'] = function (array &$Arr, $Key = '') use (&$phpMussel) {
     $Key = 'Name ' . $Key;
     if (isset($phpMussel['lang'][$Key])) {
         $Arr['Name'] = $phpMussel['L10N']->getString($Key);
@@ -662,7 +677,12 @@ $phpMussel['PrepareName'] = function (&$Arr, $Key = '') use (&$phpMussel) {
     }
 };
 
-/** Duplication avoidance (front-end updates page). */
+/**
+ * Duplication avoidance (front-end updates page).
+ *
+ * @param string $Targets
+ * @return bool Always false.
+ */
 $phpMussel['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$phpMussel) {
     if (!empty($phpMussel['Components']['Meta'][$Targets]['Files'])) {
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$Targets]['Files']);
@@ -715,6 +735,7 @@ $phpMussel['FilterTheme'] = function ($ChoiceKey) use (&$phpMussel) {
  *
  * @param string $Asset The asset filename.
  * @param bool $CanFail Is failure acceptable? (Default: False)
+ * @throws Exception if the asset can't be found.
  * @return string The asset path.
  */
 $phpMussel['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$phpMussel) {
@@ -812,10 +833,11 @@ $phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$
 };
 
 /**
- * Localises a number according to configuration specification.
+ * Formats/Localises a number according to specified configuration.
  *
- * @param int $Number The number to localise.
+ * @param int|float $Number The number to localise.
  * @param int $Decimals Decimal places (optional).
+ * @return string The formatted/localised number.
  */
 $phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) {
     $Number = (float)$Number;
@@ -862,8 +884,9 @@ $phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) 
 };
 
 /**
- * Generates JavaScript code for localising numbers according to configuration
- * specification.
+ * Generates JavaScript code for localising numbers locally.
+ *
+ * @return string The JavaScript code.
  */
 $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
     $Base =
@@ -927,7 +950,12 @@ $phpMussel['FilterSwitch'] = function (array $Switches, $Selector, &$StateModifi
     }
 };
 
-/** Quarantine file list generator (returns an array of quarantined files). */
+/**
+ * Quarantined file list generator (returns an array of quarantined files).
+ *
+ * @param bool $DeleteMode Whether to delete quarantined files when checking.
+ * @return array An array of quarantined files.
+ */
 $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$phpMussel) {
     $Arr = [];
     $Key = -1;
@@ -988,7 +1016,13 @@ $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$p
     return $Arr;
 };
 
-/** Restore a quarantined file (returns the restored file data or false on failure). */
+/**
+ * Restore a quarantined file (returns the restored file data or false on failure).
+ *
+ * @param string $File Path to the file to be restored.
+ * @param string $Key The quarantine key used to quarantine the file.
+ * @return string|bool The content of the restored file, or false on failure.
+ */
 $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
     $phpMussel['RestoreStatus'] = 1;
     if (!$File || !$Key) {
@@ -1031,8 +1065,14 @@ $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
     return $Output;
 };
 
-/** Duplication avoidance (front-end updates page). */
-$phpMussel['AppendTests'] = function (&$Component, $ReturnState = false) use (&$phpMussel) {
+/**
+ * Appends test data onto component metadata.
+ *
+ * @param array $Component The component to append test data onto.
+ * @param bool $ReturnState Whether to operate as a function or a procedure.
+ * @return bool|null Indicates whether tests have passed, when operating as a function.
+ */
+$phpMussel['AppendTests'] = function (array &$Component, $ReturnState = false) use (&$phpMussel) {
     $TestData = $phpMussel['FECacheGet'](
         $phpMussel['FE']['Cache'],
         $phpMussel['Components']['RemoteMeta'][$Component['ID']]['Tests']
@@ -1113,12 +1153,22 @@ $phpMussel['AppendTests'] = function (&$Component, $ReturnState = false) use (&$
     }
 };
 
-/** Traversal detection. */
+/**
+ * Traversal detection.
+ *
+ * @param string $Path The path to check for traversal.
+ * @return bool True when the path is traversal-free. False when traversal has been detected.
+ */
 $phpMussel['Traverse'] = function ($Path) {
     return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
 
-/** Sort function used by the front-end updates page. */
+/**
+ * Sort function used by the front-end updates page.
+ *
+ * @param string $A
+ * @param string $B
+ */
 $phpMussel['UpdatesSortFunc'] = function ($A, $B) {
     $CheckA = preg_match('/^l10n/i', $A);
     $CheckB = preg_match('/^l10n/i', $B);
@@ -1184,7 +1234,11 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
 };
 
-/** Updates handler: Update a component. */
+/**
+ * Updates handler: Update a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ */
 $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
     $FileData = [];
@@ -1484,7 +1538,11 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     unset($phpMussel['RemoteFiles'], $phpMussel['IgnoredFiles']);
 };
 
-/** Updates handler: Uninstall a component. */
+/**
+ * Updates handler: Uninstall a component.
+ *
+ * @param string $ID The ID of the component to uninstall.
+ */
 $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $phpMussel['Components']['BytesRemoved'] = 0;
@@ -1552,7 +1610,11 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
     );
 };
 
-/** Updates handler: Activate a component. */
+/**
+ * Updates handler: Activate a component.
+ *
+ * @param string $ID The ID of the component to activate.
+ */
 $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Activation'] = [
         'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
@@ -1611,7 +1673,11 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
     unset($phpMussel['Activation']);
 };
 
-/** Updates handler: Deactivate a component. */
+/**
+ * Updates handler: Deactivate a component.
+ *
+ * @param string $ID The ID of the component to deactivate.
+ */
 $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Deactivation'] = [
         'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
@@ -1670,7 +1736,11 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
     unset($phpMussel['Deactivation']);
 };
 
-/** Updates handler: Verify a component. */
+/**
+ * Updates handler: Verify a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ */
 $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
     foreach ($ID as $ThisID) {
@@ -1757,15 +1827,23 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
     }
 };
 
-/** Normalise linebreaks. */
+/**
+ * Normalise linebreaks.
+ *
+ * @param string $Data The data to normalise.
+ */
 $phpMussel['NormaliseLinebreaks'] = function (&$Data) {
     if (strpos($Data, "\r")) {
         $Data = (strpos($Data, "\r\n") !== false) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
     }
 };
 
-/** Signature information handler. */
-$phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
+/**
+ * Signature information handler.
+ *
+ * @param array $Active The currently active signature files.
+ */
+$phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
 
     /** Check whether shorthand data has been fetched. If it hasn't, fetch it. */
     if (!isset($phpMussel['shorthand.yaml'])) {
@@ -1899,7 +1977,13 @@ $phpMussel['SigInfoHandler'] = function ($Active) use (&$phpMussel) {
     return $Out;
 };
 
-/** Assign some basic variables (initial prepwork for most front-end pages). */
+/**
+ * Assign some basic variables (initial prepwork for most front-end pages).
+ *
+ * @param string $Title The page title.
+ * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
+ * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
+ */
 $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$phpMussel) {
 
     /** Set page title. */
@@ -1921,7 +2005,11 @@ $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) u
 
 };
 
-/** Send page output for front-end pages (plus some other final prepwork). */
+/**
+ * Send page output for front-end pages (plus some other final prepwork).
+ *
+ * @return string Page output.
+ */
 $phpMussel['SendOutput'] = function () use (&$phpMussel) {
     if ($phpMussel['FE']['JS']) {
         $phpMussel['FE']['JS'] = "\n<script type=\"text/javascript\">" . $phpMussel['FE']['JS'] . '</script>';
@@ -2260,7 +2348,11 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '',
     return $Output;
 };
 
-/** Append to the current state message. */
+/**
+ * Append to the current state message.
+ *
+ * @param string $Message What to append.
+ */
 $phpMussel['Message'] = function ($Message) use (&$phpMussel) {
     if (isset($phpMussel['FE']['state_msg'])) {
         if ($phpMussel['FE']['state_msg'] || substr($phpMussel['FE']['state_msg'], -6) !== '<br />') {
@@ -2318,10 +2410,7 @@ $phpMussel['Formatter'] = function (&$In) {
             ], $Block);
         }
     }
-    $In = implode('', $Data);
-    if ($SeparatorType === 2) {
-        $In = '<div style="filter:saturate(60%)"><span class="txtOe">' . $In . '</span></div>';
-    } else {
-        $In = '<div style="filter:saturate(60%)"><span class="s">' . $In . '</span></div>';
-    }
+    $In = '<div style="filter:saturate(60%)"><span class="' . (
+        $SeparatorType === 2 ? 'txtOe' : 's'
+    ) . '">' . implode('', $Data) . '</span></div>';
 };
