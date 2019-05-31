@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.05.11).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.05.31).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
@@ -67,6 +67,7 @@ config_general_delete_on_sight: "激活的这个指令将指示脚本马上删�
 config_general_disable_cli: "关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】；True（真）=关闭CLI模式。"
 config_general_disable_frontend: "关闭前端访问吗？​前端访问可以使phpMussel更易于管理，​但也可能是潜在的安全风险。​建议管理phpMussel通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问；True（真）=关闭前端访问【标准】。"
 config_general_disable_webfonts: "关闭网络字体吗？​True（真）=关闭【标准】；False（假）=不关闭。"
+config_general_disabled_channels: "这可用于防止phpMussel在发送请求时使用特定通道（例如，在更新时，在获取组件元数据时，等等）。"
 config_general_enable_plugins: "启用phpMussel插件支持吗？​False（假）=不要启用；True（真）=要启用【标准】。"
 config_general_forbid_on_block: "phpMussel应该发送<code>403</code>头随着文件上传受阻信息，​或坚持标准<code>200 OK</code>？​False（假）=发送<code>200</code>；True（真）=发送<code>403</code>【标准】。"
 config_general_honeypot_mode: "当这个指令（蜜罐模式）是激活，​phpMussel将尝试检疫所有文件上传它遇到，​无论的如果文件上传是匹配任何包括签名，​和没有扫描或分析的那些文件上传将发生。​这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，​但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，​也不推荐使用蜜罐功能为目的以外蜜罐。​作为标准，​这个指令是关闭。​False（假）=是关闭【标准】；True（真）=是激活。"

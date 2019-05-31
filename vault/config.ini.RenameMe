@@ -182,6 +182,11 @@ default_algo='PASSWORD_DEFAULT'
 ; Track phpMussel usage statistics? True = Yes; False = No [Default].
 statistics=false
 
+; This can be used to prevent phpMussel from using particular channels when
+; sending requests (e.g., when updating, when fetching component metadata,
+; etc).
+disabled_channels='VirusTotal_HTTP,hpHosts_HTTP'
+
 
 [signatures]
 

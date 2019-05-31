@@ -13,6 +13,15 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 - [2019.05.26; Maikuolan]: Performed some minor refactoring.
 
+- [2019.05.31; NEW FEATURE; Maikuolan]: Added the ability to automatically
+  switch between different channels when requesting a remote resource (e.g.,
+  when the front-end updates page attempts to update something, or attempts to
+  retrieve the latest available component metadata), for whenever such a
+  request fails (e.g., due to server errors, the requested resource no longer
+  existing at a particular location, etc), and added a new configuration
+  directive, "disabled_channels", to optionally prevent phpMussel from ever
+  requesting resources from particular, specific channels.
+
 === Version/Release 1.10.0 ===
 MINOR RELEASE.
 

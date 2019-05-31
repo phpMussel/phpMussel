@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.05.11).
+# This file: Japanese language data for the front-end (last modified: 2019.05.31).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -67,6 +67,7 @@ config_general_delete_on_sight: "このディレクティブを有効にする�
 config_general_disable_cli: "ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​<code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​<code>true</code>（真） = ＣＬＩモードを無効にします。"
 config_general_disable_frontend: "フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​phpMusselをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。"
 config_general_disable_webfonts: "ウェブフォンツを無効にしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_general_disabled_channels: "これは、要求を送信するときにphpMusselが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
 config_general_enable_plugins: "プラグインのサポートを有効にしますか？​<code>false</code> = いいえ；​<code>true</code> = はい 「Default/デフォルト設定」。"
 config_general_forbid_on_block: "アップロードファイルがブロックされたメッセージと共に、​phpMusselから４０３ヘッダーを送るべきか、​通常の２００でよいかどうかについて。​<code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」；​<code>true</code>（真） = はい（４０３）。"
 config_general_honeypot_mode: "ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効（Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。"
@@ -201,15 +202,15 @@ label_fmgr_updates_metadata: "コンポーネント・アップデート・メ�
 label_hide: "隠す"
 label_installed_available: "インストールされている/利用可能です"
 label_integrity_check: "整合性チェック："
-label_sanity_check: "サニティ・チェック："
 label_never: "決して"
 label_os: "使用されたオペレーティングシステム："
-label_other: "その他"
 label_other-Active: "アクティブなシグネチャ・ファイル"
 label_other-Since: "開始日"
+label_other: "その他"
 label_php: "使用されたPHPバージョン："
 label_phpmussel: "使用されたphpMusselバージョン："
 label_quarantined: "検疫されたアップロード"
+label_sanity_check: "サニティ・チェック："
 label_sapi: "使用されたSAPI："
 label_scanned_objects: "スキャンされたオブジェクト"
 label_scanned_uploads: "スキャンしたアップロード"

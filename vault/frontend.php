@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.05.10).
+ * This file: Front-end handler (last modified: 2019.05.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1116,7 +1116,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
-                if ($phpMussel['DirValue']['type'] === 'kb' || $phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'timezone' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real' || $phpMussel['DirValue']['type'] === 'bool') {
+                if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
                 if (!preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
@@ -1134,12 +1134,27 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $_POST[$phpMussel['ThisDir']['DirLangKeyOther']];
                     $phpMussel['ConfigModified'] = true;
                 }
+            } elseif (
+                empty($phpMussel['QueryVars']['updated']) &&
+                $phpMussel['ConfigModified'] &&
+                $phpMussel['DirValue']['type'] === 'checkbox' &&
+                isset($phpMussel['DirValue']['choices']) &&
+                is_array($phpMussel['DirValue']['choices'])
+            ) {
+                $phpMussel['DirValue']['Posts'] = [];
+                foreach ($phpMussel['DirValue']['choices'] as $phpMussel['DirValue']['ThisChoiceKey'] => $phpMussel['DirValue']['ThisChoice']) {
+                    if (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']])) {
+                        $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
+                    }
+                }
+                $phpMussel['DirValue']['Posts'] = implode(',', $phpMussel['DirValue']['Posts']) ?: '';
+                $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $phpMussel['DirValue']['Posts'];
             }
             if ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === true) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=true\r\n\r\n";
             } elseif ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === false) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=false\r\n\r\n";
-            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
+            } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "\r\n\r\n";
             } else {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=\'' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "'\r\n\r\n";
@@ -1260,7 +1275,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
             }
             if (isset($phpMussel['DirValue']['choices'])) {
-                $phpMussel['ThisDir']['FieldOut'] = '<select class="auto" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>';
+                if ($phpMussel['DirValue']['type'] !== 'checkbox') {
+                    $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>',
+                        $phpMussel['ThisDir']['DirLangKey'],
+                        $phpMussel['ThisDir']['Trigger']
+                    );
+                }
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
                     if (isset($phpMussel['DirValue']['choice_filter'])) {
                         if (!$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])) {
@@ -1273,19 +1294,33 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['lang'], $phpMussel['ChoiceValue']);
                         }
                     }
-                    $phpMussel['ThisDir']['FieldOut'] .= '<option value="' . $phpMussel['ChoiceKey'] . '"' . ((
-                        $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
-                    ) ? ' selected' : '') . '>' . $phpMussel['ChoiceValue'] . '</option>';
+                    if ($phpMussel['DirValue']['type'] === 'checkbox') {
+                        $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                            '<input type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /><label for="%1$s" class="s">%3$s</label><br />',
+                            $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
+                            $phpMussel['in_csv']($phpMussel['ChoiceKey'], $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ? ' checked' : '',
+                            $phpMussel['ChoiceValue']
+                        );
+                    } else {
+                        $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                            '<option value="%1$s"%2$s>%3$s</option>',
+                            $phpMussel['ChoiceKey'],
+                            $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' selected' : '',
+                            $phpMussel['ChoiceValue']
+                        );
+                    }
                 }
-                $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);
-                $phpMussel['ThisDir']['FieldOut'] .= empty($phpMussel['DirValue']['allow_other']) ? '</select>' : sprintf(
-                    '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
-                    $phpMussel['ThisDir']['SelectOther'] ? ' selected' : '',
-                    $phpMussel['L10N']->getString('label_other'),
-                    $phpMussel['ThisDir']['SelectOther'] ? '' : ' style="display:none"',
-                    $phpMussel['ThisDir']['DirLangKeyOther'],
-                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
-                );
+                if ($phpMussel['DirValue']['type'] !== 'checkbox') {
+                    $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);
+                    $phpMussel['ThisDir']['FieldOut'] .= empty($phpMussel['DirValue']['allow_other']) ? '</select>' : sprintf(
+                        '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                        $phpMussel['ThisDir']['SelectOther'] ? ' selected' : '',
+                        $phpMussel['L10N']->getString('label_other'),
+                        $phpMussel['ThisDir']['SelectOther'] ? '' : ' style="display:none"',
+                        $phpMussel['ThisDir']['DirLangKeyOther'],
+                        $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
+                    );
+                }
             } elseif ($phpMussel['DirValue']['type'] === 'bool') {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
                         '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
@@ -1298,7 +1333,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' selected' : ''),
                     ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? '' : ' selected')
                 );
-            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
+            } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
                     '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
                     $phpMussel['ThisDir']['DirLangKey'],

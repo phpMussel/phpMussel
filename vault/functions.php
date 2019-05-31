@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.26).
+ * This file: Functions file (last modified: 2019.05.31).
  */
 
 /**
@@ -2654,7 +2654,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     '&s=' . $URLScanner['DomainParts'][$i] .
                     '&class=true';
                 $URLScanner['req_result'] = $phpMussel['Request'](
-                    'http://verify.hosts-file.net/?' . $URLScanner['req'],
+                    'https://verify.hosts-file.net/?' . $URLScanner['req'],
                     ['v' => $URLScanner['ScriptIdentEncoded'], 's' => $URLScanner['DomainParts'][$i], 'Class' => true],
                     12
                 );
@@ -2995,7 +2995,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     'resource' => $md5
                 ];
                 $VTRequest = $phpMussel['Request'](
-                    'http://www.virustotal.com/vtapi/v2/file/report?apikey=' .
+                    'https://www.virustotal.com/vtapi/v2/file/report?apikey=' .
                     urlencode($phpMussel['Config']['virustotal']['vt_public_api_key']) .
                     '&resource=' . $md5,
                 $VTParams, 12);
@@ -4603,16 +4603,16 @@ $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
  * @param string $Type The type (or pseudo-type) to cast the variable to.
  */
 $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
-    if ($Type === 'string' || $Type === 'timezone') {
+    if (in_array($Type, ['string', 'timezone', 'checkbox'], true)) {
         $Var = (string)$Var;
-    } elseif ($Type === 'int' || $Type === 'integer') {
+    } elseif ($Type === 'int') {
         $Var = (int)$Var;
-    } elseif ($Type === 'real' || $Type === 'double' || $Type === 'float') {
+    } elseif ($Type === 'float') {
         $Var = (float)$Var;
-    } elseif ($Type === 'bool' || $Type === 'boolean') {
+    } elseif ($Type === 'bool') {
         $Var = (strtolower($Var) !== 'false' && $Var);
     } elseif ($Type === 'kb') {
-        $Var = $phpMussel['ReadBytes']($Var, 1);
+        $Var = $phpMussel['ReadBytes']((string)$Var, 1);
     } else {
         $LVar = strtolower($Var);
         if ($LVar === 'true') {
@@ -4632,9 +4632,53 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
  * @param int $Timeout An optional timeout limit.
- * @return string The results of the request.
+ * @param int $Depth Recursion depth of the current closure instance.
+ * @return string The results of the request, or an empty string upon failure.
  */
-$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1) use (&$phpMussel) {
+$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, $Depth = 0) use (&$phpMussel) {
+
+    /** Fetch channel information. */
+    if (!isset($phpMussel['Channels'])) {
+        $phpMussel['Channels'] = (
+            $Channels = $phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml')
+        ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+        if (!isset($phpMussel['Channels']['Triggers'])) {
+            $phpMussel['Channels']['Triggers'] = [];
+        }
+    }
+
+    /** Test channel triggers. */
+    foreach ($phpMussel['Channels']['Triggers'] as $TriggerName => $TriggerURI) {
+        if (
+            !isset($phpMussel['Channels'][$TriggerName]) ||
+            !is_array($phpMussel['Channels'][$TriggerName]) ||
+            substr($URI, 0, strlen($TriggerURI)) !== $TriggerURI
+        ) {
+            continue;
+        }
+        foreach ($phpMussel['Channels'][$TriggerName] as $Channel => $Options) {
+            if (!is_array($Options) || !isset($Options[$TriggerName])) {
+                continue;
+            }
+            $Len = strlen($Options[$TriggerName]);
+            if (substr($URI, 0, $Len) !== $Options[$TriggerName]) {
+                continue;
+            }
+            unset($Options[$TriggerName]);
+            if (empty($Options) || $phpMussel['in_csv'](key($Options), $phpMussel['Config']['general']['disabled_channels'])) {
+                continue;
+            }
+            $AlternateURI = current($Options) . substr($URI, $Len);
+            break;
+        }
+        if ($phpMussel['in_csv']($TriggerName, $phpMussel['Config']['general']['disabled_channels'])) {
+            if (isset($AlternateURI)) {
+                return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Depth);
+            }
+            return '';
+        }
+        break;
+    }
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -4662,6 +4706,17 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1) use (
 
     /** Execute and get the response. */
     $Response = curl_exec($Request);
+
+    /** Check for problems (e.g., resource not found, server errors, etc). */
+    if (($Info = curl_getinfo($Request)) && is_array($Info)) {
+
+        /** Request failed. Try again using an alternative address. */
+        if (isset($Info['http_code']) && $Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
+            curl_close($Request);
+            return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Depth + 1);
+        }
+
+    }
 
     /** Close the cURL session. */
     curl_close($Request);
@@ -4843,7 +4898,7 @@ $phpMussel['Arrayify'] = function (&$Input) {
  * @param string $In Input.
  * @param int $Mode Operating mode. 0 for true byte values, 1 for validating.
  *      Default is 0.
- * @return string|int Output (depends on operating mode).
+ * @return string|int Output (return type depends on operating mode).
  */
 $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
     if (preg_match('/[KMGT][oB]$/i', $In)) {
@@ -5229,4 +5284,26 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
     $phpMussel['Cache']->PDOusername = $phpMussel['Config']['supplementary_cache_options']['pdo_username'];
     $phpMussel['Cache']->PDOpassword = $phpMussel['Config']['supplementary_cache_options']['pdo_password'];
     $phpMussel['Cache']->connect();
+};
+
+/**
+ * Checks for a value within CSV.
+ *
+ * @param string $Value The value to look for.
+ * @param string $CSV The CSV to look in.
+ * @return bool True when found; False when not found.
+ */
+$phpMussel['in_csv'] = function ($Value, $CSV) use (&$phpMussel) {
+    if (!$Value || !$CSV) {
+        return false;
+    }
+    $Arr = explode(',', $CSV);
+    if (strpos($CSV, '"') !== false) {
+        foreach ($Arr as &$Item) {
+            if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {
+                $Item = substr($Item, 1, -1);
+            }
+        }
+    }
+    return in_array($Value, $Arr, true);
 };
