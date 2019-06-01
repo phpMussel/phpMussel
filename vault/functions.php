@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.31).
+ * This file: Functions file (last modified: 2019.06.01).
  */
 
 /**
@@ -5293,7 +5293,7 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
  * @param string $CSV The CSV to look in.
  * @return bool True when found; False when not found.
  */
-$phpMussel['in_csv'] = function ($Value, $CSV) use (&$phpMussel) {
+$phpMussel['in_csv'] = function ($Value, $CSV) {
     if (!$Value || !$CSV) {
         return false;
     }

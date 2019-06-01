@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.11.0 ===
+MINOR RELEASE.
+
 - [2019.05.10; Maikuolan]: Slightly refactored a handful of closures, fixed
   some PHPDoc typos, and added some array type hints where applicable. Updated
   all common classes package classes to the latest compatible versions.
@@ -21,6 +26,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   existing at a particular location, etc), and added a new configuration
   directive, "disabled_channels", to optionally prevent phpMussel from ever
   requesting resources from particular, specific channels.
+
+Caleb M (Maikuolan),
+June 1, 2019.
 
 === Version/Release 1.10.0 ===
 MINOR RELEASE.
