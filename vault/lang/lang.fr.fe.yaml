@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.05.31).
+# This file: French language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -176,6 +176,7 @@ field_true: "True (Vrai)"
 field_uninstall: "Désinstaller"
 field_update: "Mettre à jour"
 field_update_all: "Tout mettre à jour"
+field_update_signatures_files: "Mettre à jour les fichiers de signature"
 field_upload_file: "Télécharger un nouveau fichier"
 field_username: "Nom d'Utilisateur"
 field_verify: "Vérifier"

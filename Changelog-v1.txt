@@ -7,7 +7,9 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.06.17; Maikuolan]: Added the ability to optionally update only all
+  signature files to the front-end updates page (as opposed to updating
+  everything at once).
 
 === Version/Release 1.11.0 ===
 MINOR RELEASE.

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.05.31).
+# This file: Dutch language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -176,6 +176,7 @@ field_true: "True (Waar)"
 field_uninstall: "Verwijderen"
 field_update: "Bijwerken"
 field_update_all: "Bijwerken alles"
+field_update_signatures_files: "Bijwerken signatuurbestanden"
 field_upload_file: "Nieuw bestand uploaden"
 field_username: "Gebruikersnaam"
 field_verify: "Verifiëren"

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.04.06).
+ * This file: Upload handler (last modified: 2019.06.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,8 +19,8 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-/** Sets default error handler for the upload handler. */
-set_error_handler($phpMussel['ErrorHandler_1']);
+/** Initialise an error handler. */
+$phpMussel['InitialiseErrorHandler']();
 
 /** Create an array for our working data. */
 $phpMussel['upload'] = [];
@@ -401,4 +401,4 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 unset($phpMussel['upload']);
 
 /** Restores default error handler. */
-restore_error_handler();
+$phpMussel['RestoreErrorHandler']();

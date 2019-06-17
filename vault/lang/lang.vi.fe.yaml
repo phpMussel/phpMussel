@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.05.31).
+# This file: Vietnamese language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -174,6 +174,7 @@ field_true: "True (Đúng)"
 field_uninstall: "Gỡ bỏ cài đặt"
 field_update: "Cập nhật"
 field_update_all: "Cập nhật tất cả"
+field_update_signatures_files: "Cập nhật tập tin chữ ký"
 field_upload_file: "Tải lên tập tin mới"
 field_username: "Tên Người Dùng"
 field_verify: "Xác minh"

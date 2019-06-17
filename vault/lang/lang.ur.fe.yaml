@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.05.31).
+# This file: Urdu language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -174,6 +174,7 @@ field_true: "True (سچ)"
 field_uninstall: "غیر انسٹال"
 field_update: "اپ ڈیٹ"
 field_update_all: "تمام تجدید کریں"
+field_update_signatures_files: "دستخط فائلوں کو اپ ڈیٹ کریں"
 field_upload_file: "نئی فائل اپ لوڈ کریں"
 field_username: "صارف کا نام"
 field_verify: "تصدیق کریں"

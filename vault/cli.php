@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.04.02).
+ * This file: CLI handler (last modified: 2019.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,8 +24,8 @@ if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP']) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-/** Sets default error handler for CLI mode. */
-set_error_handler($phpMussel['ErrorHandler_1']);
+/** Initialise an error handler. */
+$phpMussel['InitialiseErrorHandler']();
 
 /** If CLI-mode is disabled, nothing here should be executed. */
 if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['general']['maintenance_mode']) {
@@ -489,4 +489,4 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 }
 
 /** Restores default error handler (assuming we somehow reach this far). */
-restore_error_handler();
+$phpMussel['RestoreErrorHandler']();

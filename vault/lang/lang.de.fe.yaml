@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.05.31).
+# This file: German language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -176,6 +176,7 @@ field_true: "True (Wahr)"
 field_uninstall: "Deinstallieren"
 field_update: "Aktualisieren"
 field_update_all: "Alle aktualisieren"
+field_update_signatures_files: "Signaturdateien aktualisieren"
 field_upload_file: "Neue Datei hochladen"
 field_username: "Benutzername"
 field_verify: "Verifizieren"

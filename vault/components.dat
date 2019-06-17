@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.11.0
+ Version: 1.11.1-DEV+19167668
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
@@ -138,7 +138,7 @@ phpMussel:
    - 8dc5d6efa3431b5d9bae534fd61d1da08826dde795c644ad5bb824a8aed82193:10146
    - fd4e0113cd4f974a348ebaca5fe4222444b98e8baae328a6ffc8159b6c7a78e7:10408
    - 8509c4de97c8fe9fe3e41ca696fe657b:1698
-   - b53602f22242f4d460d2cf2b78611a3cb0cf102e7e40c6806edf7b0e122160a5:27183
+   - 9f1fd8be200fbe8e1f280b97242d574d2d26c8c8b075e22bcbed4f9a467ee41f:27174
    - 61f7e4025d396db606991480651fcc4a5da4d22c636c8f6767484393c7cc5131:8696
    - 1948c8f1dc1b6a4fe8a61ea370f4467d44eb375fc89bb0fe16f49127a05065b0:14555
    - 8e03209e7fc6641b45094e584340feff:83
@@ -170,9 +170,9 @@ phpMussel:
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - 7a9ebe0ce9e484a0d60385c291835b469321f20043c70886600783c14ddc88fb:154067
+   - 954221fbc5a38f450445c5d36ea3cded07659915b4fd7498b119425d2e7de5f2:155355
    - da9f1e2da933bc944f468666eff6b3886290e570a51ad956b53ec85f5e88457c:108106
-   - 5be5344a1cef8f2768d4ce9c3ea727919e9fa48a94fecb437d0fa22400df6ba0:237458
+   - 74543f1e35f731664f3b401820fef3be2fa418164d7766a631fb89a12fc5201f:238673
    - bc506121beb14f2aebc8c27196f0642052144eae6118bcfc5dfb97674d274ff8:5227
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703
@@ -183,12 +183,12 @@ phpMussel:
    - 2c5e1906295c889436749adc4441ffa4:3233
    - bd8bdbc63bb268910e04e5261867deef:1020
    - 140921357f5c8cbd9243a333f7b1526c:1957
-   - 0fc3b0efece6a7be8b1688e7d5014fa90d6c2b87d8ea7ff07dd5d5a2ceb16d5b:20245
+   - e37097c5c2aec7b940048d689156e3e091a4d25ddd497380a3b611c46a74e291:20226
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English
  Extended Description: English language data
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -200,13 +200,13 @@ l10n/en:
    - lang/lang.en.fe.yaml
    - lang/lang.en.yaml
   Checksum:
-   - d4794dceee451615c0267a6815d474443f0499acef74549160c8ab6ecfb39fb9:48095
+   - b30bd12ecee6693cf4b2eefb5754e6ea1943b299b7b25da39094835b57b3bd61:48151
    - 350958230006ff2cc17b85aafca7a95967f0cef69dd2134a34a58a03456e9482:5846
  Reannotate: components.dat
 l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -218,13 +218,13 @@ l10n/ar:
    - lang/lang.ar.fe.yaml
    - lang/lang.ar.yaml
   Checksum:
-   - e1acfc1d074ad5791dfa3ae0dae04b286903c9e6ffe64a1a0108a08b216eae0a:68460
+   - ce7988788792bcedc185be23e3a3892e616553faae9bb264baab9424c62341c2:68530
    - 41dd7a207eaac1eb1ecb6100d314c310e542ec802a64da89ac2a541f22fc1e94:7196
  Reannotate: components.dat
 l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -236,13 +236,13 @@ l10n/bn:
    - lang/lang.bn.fe.yaml
    - lang/lang.bn.yaml
   Checksum:
-   - 64396c58f2fc089c622bde41436e551f08363a72d4480b5fbdad9bc483302efc:94194
+   - b1cc79fbcec2d23ca2767aa47fd8a3871527c6008a2b920ff95bd165d1f742af:94294
    - d4e4a29cbfaf0924b7ed2b41004b7628e82c1d0a448123e1295e36685b72cf9e:10989
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -254,13 +254,13 @@ l10n/de:
    - lang/lang.de.fe.yaml
    - lang/lang.de.yaml
   Checksum:
-   - 2852c544329e070df5391ac641a6c7c38062552d1963e923fb73d722a0ba55a6:52786
+   - de56c4d643e0e274fda7ef9fa127b6bc39f605d07dac1843da98a7ffcd27a4d7:52849
    - 536bb5c10e2a0c7292a12af7e396bbaa0a2334929c317e87256fac4cc7aa3cb7:6145
  Reannotate: components.dat
 l10n/es:
  Name: L10N: Español
  Extended Description: Lingüísticos datos Español
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -272,13 +272,13 @@ l10n/es:
    - lang/lang.es.fe.yaml
    - lang/lang.es.yaml
   Checksum:
-   - 6c605c96949db9b4cd502e23b21ab3d2219c8cf749051159cd8fb76a724c56aa:54396
+   - 359b8e2841391dab3f86c51f312ed6b0eb893cd0cbe2ffe9c9230c002c44a9b7:54459
    - 60d409df942d8609ef03479dd1d3176511aa47be34c2da3277bbbbfac2136f51:6016
  Reannotate: components.dat
 l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -290,13 +290,13 @@ l10n/fr:
    - lang/lang.fr.fe.yaml
    - lang/lang.fr.yaml
   Checksum:
-   - 645c3d99bdfa765499b6fe5784e80b72bc63cb4ac44e57037765ece1825ed3ba:56007
+   - e64d6cb3608422b4df097e62110284b00498eca97dd60d2d7ecbb951082107a7:56081
    - 2e6ba310bfd5fabf75f37d42660452634dabe61a045ce7ad3902ba7162e2022b:6575
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -308,13 +308,13 @@ l10n/hi:
    - lang/lang.hi.fe.yaml
    - lang/lang.hi.yaml
   Checksum:
-   - 8654fdeeb47a8478d7a0ded9b891247b5d72cd6903ebc2f7b27c693595563794:97079
+   - 55f104ce9b675007ae6b16c002e0a6c4d6f35e9e15f0aa13abfc35e91b272118:97179
    - dc8f61f7133158a15fdd6f9fc14a48cf89fc600b0eafe88e8d72ec236c132cf8:10935
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description: File Bahasa Indonesia
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -326,13 +326,13 @@ l10n/id:
    - lang/lang.id.fe.yaml
    - lang/lang.id.yaml
   Checksum:
-   - 970aea997a95a815ab12683f3efa574d6f9cdf8308789cb5d14a71aeba27ecce:50684
+   - 52516914af0e36646f7baa7a75c86d32642897f97bedd93340f61c684bd8b24f:50747
    - 183b423f99478b6cb7c0030e08ac3184923618ad442090641a62eb9c65e7fb8b:5841
  Reannotate: components.dat
 l10n/it:
  Name: L10N: Italiana
  Extended Description: Linguistici dati Italiana
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -344,13 +344,13 @@ l10n/it:
    - lang/lang.it.fe.yaml
    - lang/lang.it.yaml
   Checksum:
-   - 9a39b24f5ddb2f0e645375f509c9cc25f4a6ae6aca8088a24ff7c1ed298ccd74:53429
+   - ff399b688f1d389ea31a25ce7d15bd56ac6e3bb56bfd8404dde93f37914ff9a8:53490
    - e637fb6e4724a5ccd9ec701ecadee7c728de475fb1ee3ce4a9788e9b4c74d051:6072
  Reannotate: components.dat
 l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -362,13 +362,13 @@ l10n/ja:
    - lang/lang.ja.fe.yaml
    - lang/lang.ja.yaml
   Checksum:
-   - 87ffa3599b9263499f486bf6e2cbb145f09ad0844988c442de4453ad0ddfe273:63556
+   - 0339d863345ee8ba89ae1b0ccdf22cd7a3bf0bba2f2d3eb6b45bebb2727937d7:63647
    - b60b91cb29a77f1ab4244379576778ac088e248c0fd9bd3c3114b667c335b847:7885
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
  Extended Description: 한국어 언어 데이터
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -380,13 +380,13 @@ l10n/ko:
    - lang/lang.ko.fe.yaml
    - lang/lang.ko.yaml
   Checksum:
-   - 35b174dde091aef1eb163d6bd1d584a6ca8c4779a0cc4fae2da7b70622e67ab5:52577
+   - e9c45aa1b8613ff84b1cd38c5b3c6702ff6560c1d498352d8f8b9889db79886d:52637
    - af1f0bbab2bcb38fe92f2761fbd4fdef371d8cb1cfa5d8c79f17a668e9569b29:6666
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -398,13 +398,13 @@ l10n/nl:
    - lang/lang.nl.fe.yaml
    - lang/lang.nl.yaml
   Checksum:
-   - 92e0d5796976677435607f294d0d3650829d683b3485134d26b3c36b27a85477:52592
+   - ddf6cef49a5ee4033ef530706ad8b93982da13d054857b299d8d8f962ce1186c:52654
    - 2979336cc61e42ede801490eb4787b6bf8a9cda4f702475025073e6b412b5ddd:5980
  Reannotate: components.dat
 l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -416,13 +416,13 @@ l10n/pt:
    - lang/lang.pt.fe.yaml
    - lang/lang.pt.yaml
   Checksum:
-   - 52a47107fa4812b7788796969b0e1fb9cec24d4c883942153573b507f076d335:53027
+   - 3eb7af68226c377b6463124aa6e92ba1a9fcd528a3d8f64928ae83c28d3c0b92:53095
    - 9631054d99f2ac7ab86c68f64b424aab18c5339b558f5975b36868ae60e2a1f3:6101
  Reannotate: components.dat
 l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -434,13 +434,13 @@ l10n/ru:
    - lang/lang.ru.fe.yaml
    - lang/lang.ru.yaml
   Checksum:
-   - 41a665b48d693b5906c7a32a679952d9c7c70b52a98ac5044ed773c7e77f65b1:76591
+   - c2f8ae2dd72d7b8e4ee902ccba4691cb355619fe4fe0edfe43ff3fed52ac08f2:76671
    - 355b0b97a9bca2168ef60eac3a0c245375d826569f8932714f6ab99ef5bcb16c:8713
  Reannotate: components.dat
 l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -452,13 +452,13 @@ l10n/th:
    - lang/lang.th.fe.yaml
    - lang/lang.th.yaml
   Checksum:
-   - 2c56be58d47a450127a1b89a99554a2149e6f5c4e6654e13e572ffe8a50381af:93677
+   - 8963a9875ab15035abd8d2811d9558a8f63e27643cf2b4ca5636b0bf3f8b113f:93762
    - 40b721a741239e2b2eff0058b7c3fd4f5a87be1ff868abea017b7ac724a9df02:10468
  Reannotate: components.dat
 l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -470,13 +470,13 @@ l10n/tr:
    - lang/lang.tr.fe.yaml
    - lang/lang.tr.yaml
   Checksum:
-   - 5901b7d84a5c356fac3767995c1b5386690e7857e08c9507b3971d5db7cfd92d:50863
+   - 4bc05673c5cc09ede281724ab10c7f71a36fbfab478c6f2af3c59719506b1e8e:50926
    - f2efe8b4231df94d608683b4902be8e0b84137bb17bd6d3936e3f9f7028ed3cf:6115
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -488,13 +488,13 @@ l10n/ur:
    - lang/lang.ur.fe.yaml
    - lang/lang.ur.yaml
   Checksum:
-   - 51fae8c89a252fc838a6aaefcf42eaf3e485baa64d0b9e5d55f2f39b39785f58:74466
+   - f739180dde3630f567f7a6de6bb342f464af34ee6cf3888813fd493246eba17c:74549
    - 2b95579df30f2edcf069e32bb2dd3753272447a9fae9c5b16cf4a29a2630027a:7745
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -506,13 +506,13 @@ l10n/vi:
    - lang/lang.vi.fe.yaml
    - lang/lang.vi.yaml
   Checksum:
-   - 6bdf3e49b45b5b1a32b14b7cad34579800d7912ff663e5fb49dbe66c18f26210:61882
+   - 51a210997f77a5cb3126a5829d30cf8b15d69531d8411bb2f07d86e22fc3f52b:61948
    - 6b4b237cf62046726b20a1b45b9d5780d58f69c131a21b254cd9c1265547055e:7057
  Reannotate: components.dat
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description: 中文（傳統）語言數據
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -524,13 +524,13 @@ l10n/zh-TW:
    - lang/lang.zh-tw.fe.yaml
    - lang/lang.zh-tw.yaml
   Checksum:
-   - 6a2e474400592ebe012e7aea251f8c1b47f236f1322d3083674574cbc3b2b73c:45865
+   - b202f552bdc3d814c6e9a78b24b7f1cb6c9fa7867f1389cffcf8c39b03f99757:45917
    - 08ded8e625ffb4fd3f7e20203e272c3300c230fbb62beb7d4753d629be51191b:5514
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description: 中文（简体）语言数据
- Version: 2019.150.636
+ Version: 2019.167.668
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -542,7 +542,7 @@ l10n/zh:
    - lang/lang.zh.fe.yaml
    - lang/lang.zh.yaml
   Checksum:
-   - a19b90f395628336cca8c3c6d97bc16bb589b26728c7dc6f8c5ae4b206d62d6f:45844
+   - c2a17f701ac2987fcc3c5a46873fdbd7eaeb4656d2005e655e9c8a04d0839612:45896
    - 956b35626b74321abb762803d98c3777fa05e4dfe6ffdfb0098c1708605cb174:5513
  Reannotate: components.dat
 

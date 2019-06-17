@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.05.31).
+# This file: Portuguese language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -175,7 +175,8 @@ field_system_timezone: "Usar o fuso horário padrão do sistema."
 field_true: "True (Verdadeiro)"
 field_uninstall: "Desinstalar"
 field_update: "Atualizar"
-field_update_all: "Atualize tudo"
+field_update_all: "Atualizar tudo"
+field_update_signatures_files: "Atualizar arquivos de assinaturas"
 field_upload_file: "Carregar um novo ficheiro"
 field_username: "Nome de Usuário"
 field_verify: "Verifique isso"

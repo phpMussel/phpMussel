@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.05.31).
+ * This file: Front-end handler (last modified: 2019.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1570,6 +1570,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Remotes' => [],
         'Interdependent' => [],
         'Outdated' => [],
+        'OutdatedSignatureFiles' => [],
         'Verify' => [],
         'Out' => []
     ];
@@ -1669,6 +1670,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         $phpMussel['Components']['Interdependent'][] = $phpMussel['Components']['Key'];
                     }
                     $phpMussel['Components']['Outdated'][] = $phpMussel['Components']['Key'];
+                    if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
+                        $phpMussel['Components']['OutdatedSignatureFiles'][] = $phpMussel['Components']['Key'];
+                    }
                     $phpMussel['Components']['ThisComponent']['RowClass'] = 'r';
                     $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
                     if (
@@ -1977,13 +1981,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     $phpMussel['FE']['Components'] = implode('', $phpMussel['Components']['Out']);
 
     $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
+    $phpMussel['Components']['CountOutdatedSignatureFiles'] = count($phpMussel['Components']['OutdatedSignatureFiles']);
     $phpMussel['Components']['CountVerify'] = count($phpMussel['Components']['Verify']);
 
     /** Preparing for update all and verify all buttons. */
-    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountOutdatedSignatureFiles'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+
+    /** Instructions to update all signature files (but not necessarily everything). */
+    if ($phpMussel['Components']['CountOutdatedSignatureFiles']) {
+        $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'update-component');
+        foreach ($phpMussel['Components']['OutdatedSignatureFiles'] as $phpMussel['Components']['ThisOutdated']) {
+            $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
+        }
+        $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['L10N']->getString('field_update_signatures_files') . '" class="auto" /></form>';
+    }
 
     /** Instructions to update everything at once. */
-    if ($phpMussel['Components']['CountOutdated']) {
+    if ($phpMussel['Components']['CountOutdated'] && $phpMussel['Components']['CountOutdated'] !== $phpMussel['Components']['CountOutdatedSignatureFiles']) {
         $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'update-component');
         foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['ThisOutdated']) {
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.05.31).
+# This file: Hindi language data for the front-end (last modified: 2019.06.17).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -176,6 +176,7 @@ field_true: "True (सच)"
 field_uninstall: "अनइंस्टॉल करें"
 field_update: "अपडेट करो"
 field_update_all: "सब कुछ अपडेट करें"
+field_update_signatures_files: "सिग्नेचर फाइल अपडेट करें"
 field_upload_file: "नई फाइल अपलोड करें"
 field_username: "उपयोगकर्ता नाम"
 field_verify: "सत्यापित करें"
