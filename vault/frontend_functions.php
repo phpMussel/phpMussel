@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.18).
+ * This file: Front-end functions file (last modified: 2019.06.27).
  */
 
 /**
@@ -154,7 +154,7 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
             break;
         }
     }
-    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $phpMussel['L10N']->getPlural($Filesize, $Scale[$Iterate]);
+    $Filesize = $phpMussel['NumberFormatter']->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $phpMussel['L10N']->getPlural($Filesize, $Scale[$Iterate]);
 };
 
 /**
@@ -832,56 +832,36 @@ $phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$
     unset($phpMussel['FE_Executor_Files']);
 };
 
-/**
- * Formats/Localises a number according to specified configuration.
- *
- * @param int|float $Number The number to localise.
- * @param int $Decimals Decimal places (optional).
- * @return string The formatted/localised number.
- */
-$phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) {
-    $Number = (float)$Number;
-    $Sets = [
-        'NoSep-1' => ['.', '', 3, false, 0],
-        'NoSep-2' => [',', '', 3, false, 0],
-        'Latin-1' => ['.', ',', 3, false, 0],
-        'Latin-2' => ['.', ' ', 3, false, 0],
-        'Latin-3' => [',', '.', 3, false, 0],
-        'Latin-4' => [',', ' ', 3, false, 0],
-        'Latin-5' => ['·', ',', 3, false, 0],
-        'China-1' => ['.', ',', 4, false, 0],
-        'India-1' => ['.', ',', 2, false, -1],
-        'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1],
-        'Bengali-1' => ['.', ',', 2, ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'], -1],
-        'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-        'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-        'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0]
-    ];
-    $Set = empty($Sets[$phpMussel['Config']['general']['numbers']]) ? 'Latin-1' : $Sets[$phpMussel['Config']['general']['numbers']];
-    $DecPos = strpos($Number, '.') ?: strlen($Number);
-    if ($Decimals && $Set[0]) {
-        $Fraction = substr($Number, $DecPos + 1, $Decimals);
-        $Fraction .= str_repeat('0', $Decimals - strlen($Fraction));
-    }
-    for ($Formatted = '', $ThouPos = $Set[4], $Pos = 1; $Pos <= $DecPos; $Pos++) {
-        if ($ThouPos >= $Set[2]) {
-            $ThouPos = 1;
-            $Formatted = $Set[1] . $Formatted;
-        } else {
-            $ThouPos++;
-        }
-        $NegPos = $DecPos - $Pos;
-        $ThisChar = substr($Number, $NegPos, 1);
-        $Formatted = empty($Set[3][$ThisChar]) ? $ThisChar . $Formatted : $Set[3][$ThisChar] . $Formatted;
-    }
-    if ($Decimals && $Set[0]) {
-        $Formatted .= $Set[0];
-        for ($FracLen = strlen($Fraction), $Pos = 0; $Pos < $FracLen; $Pos++) {
-            $Formatted .= empty($Set[3][$Fraction[$Pos]]) ? $Fraction[$Pos] : $Set[3][$Fraction[$Pos]];
-        }
-    }
-    return $Formatted;
-};
+/** Used to format numbers according to the specified configuration. */
+$phpMussel['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($phpMussel['Config']['general']['numbers']);
+
+/** Used by the Number_L10N_JS closure (separated out to improve memory footprint). */
+$phpMussel['Number_L10N_JS_Sets'] = [
+    'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
+    'NoSep-2' => [',', '', 3, 'return l10nd', 1],
+    'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
+    'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
+    'Latin-3' => [',', '.', 3, 'return l10nd', 1],
+    'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
+    'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
+    'China-1' => ['.', ',', 4, 'return l10nd', 1],
+    'India-1' => ['.', ',', 2, 'return l10nd', 0],
+    'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
+    'India-3' => ['.', ',', 2, 'var nls=[\'૦\',\'૧\',\'૨\',\'૩\',\'૪\',\'૫\',\'૬\',\'૭\',\'૮\',\'૯\'];return nls[l10nd]||l10nd', 0],
+    'India-4' => ['.', ',', 2, 'var nls=[\'੦\',\'੧\',\'੨\',\'੩\',\'੪\',\'੫\',\'੬\',\'੭\',\'੮\',\'੯\'];return nls[l10nd]||l10nd', 0],
+    'India-5' => ['.', ',', 2, 'var nls=[\'೦\',\'೧\',\'೨\',\'೩\',\'೪\',\'೫\',\'೬\',\'೭\',\'೮\',\'೯\'];return nls[l10nd]||l10nd', 0],
+    'India-6' => ['.', ',', 2, 'var nls=[\'౦\',\'౧\',\'౨\',\'౩\',\'౪\',\'౫\',\'౬\',\'౭\',\'౮\',\'౯\'];return nls[l10nd]||l10nd', 0],
+    'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-3' => ['٫', '٬', 3, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-4' => ['٫', '٬', 2, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 0],
+    'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
+    'Burmese-1' => ['.', '', 3, 'var nls=[\'၀\',\'၁\',\'၂\',\'၃\',\'၄\',\'၅\',\'၆\',\'၇\',\'၈\',\'၉\'];return nls[l10nd]||l10nd', 1],
+    'Khmer-1' => [',', '.', 3, 'var nls=[\'០\',\'១\',\'២\',\'៣\',\'៤\',\'៥\',\'៦\',\'៧\',\'៨\',\'៩\'];return nls[l10nd]||l10nd', 1],
+    'Lao-1' => ['.', '', 3, 'var nls=[\'໐\',\'໑\',\'໒\',\'໓\',\'໔\',\'໕\',\'໖\',\'໗\',\'໘\',\'໙\'];return nls[l10nd]||l10nd', 1],
+    'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
+    'Thai-2' => ['.', '', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
+];
 
 /**
  * Generates JavaScript code for localising numbers locally.
@@ -896,27 +876,15 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
         '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
         'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
         '1)))+y}return e+y}';
-    $Sets = [
-        'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
-        'NoSep-2' => [',', '', 3, 'return l10nd', 1],
-        'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
-        'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
-        'Latin-3' => [',', '.', 3, 'return l10nd', 1],
-        'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
-        'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
-        'China-1' => ['.', ',', 4, 'return l10nd', 1],
-        'India-1' => ['.', ',', 2, 'return l10nd', 0],
-        'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
-        'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
-        'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-        'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-        'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
-    ];
-    if (!empty($phpMussel['Config']['general']['numbers']) && isset($Sets[$phpMussel['Config']['general']['numbers']])) {
-        $Set = $Sets[$phpMussel['Config']['general']['numbers']];
-        return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
+    if (
+        !empty($phpMussel['Config']['general']['numbers']) &&
+        isset($phpMussel['Number_L10N_JS_Sets'][$phpMussel['Config']['general']['numbers']])
+    ) {
+        $Set = $phpMussel['Number_L10N_JS_Sets'][$phpMussel['Config']['general']['numbers']];
+    } else {
+        $Set = $phpMussel['Number_L10N_JS_Sets']['Latin-1'];
     }
-    return sprintf($Base, $Sets['Latin-1'][0], $Sets['Latin-1'][1], $Sets['Latin-1'][2], $Sets['Latin-1'][3], $Sets['Latin-1'][4]);
+    return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
 };
 
 /**
@@ -1136,8 +1104,8 @@ $phpMussel['AppendTests'] = function (array &$Component, $ReturnState = false) u
                 '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
                 '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
                 $TestClr,
-                ($TestsPassed === '?' ? '?' : $phpMussel['Number_L10N']($TestsPassed)),
-                $phpMussel['Number_L10N']($TestsTotal),
+                ($TestsPassed === '?' ? '?' : $phpMussel['NumberFormatter']->format($TestsPassed)),
+                $phpMussel['NumberFormatter']->format($TestsTotal),
                 $Component['ID'],
                 $TestDetails
             );
@@ -1521,7 +1489,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $phpMussel['Components']['BytesAdded'],
             $phpMussel['Components']['BytesRemoved'],
-            $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+            $phpMussel['NumberFormatter']->format(microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
         );
     }
     /** Update annotations. */
@@ -1606,7 +1574,7 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
     $phpMussel['FE']['state_msg'] .= sprintf(
         $phpMussel['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
         $phpMussel['Components']['BytesRemoved'],
-        $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+        $phpMussel['NumberFormatter']->format(microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
     );
 };
 
@@ -1956,7 +1924,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
             if (!$Total) {
                 continue;
             }
-            $Total = $phpMussel['Number_L10N']($Total);
+            $Total = $phpMussel['NumberFormatter']->format($Total);
             $Label = $phpMussel['L10N']->getString(
                 ($Key === 'Other' && $Sub === 'SigTypes') ? 'siginfo_key_Other_Metadata' : 'siginfo_key_' . $Key
             );

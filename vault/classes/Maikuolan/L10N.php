@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.05.10).
+ * L10N handler (last modified: 2019.05.29).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -161,6 +161,15 @@ class L10N
         return ($Int >= 2 && $Int <= 4) ? 1 : 2;
     }
 
+    /** For e.g., Quenya, Tokelauan. */
+    private function int3Type10($Int)
+    {
+        if ($Int === 2) {
+            return 1;
+        }
+        return $Int > 2 ? 2 : 0;
+    }
+
     /** For e.g., Manx. */
     private function int4Type1($Int)
     {
@@ -254,6 +263,18 @@ class L10N
             return 3;
         }
         return 1;
+    }
+
+    /** For e.g., Na'vi. */
+    private function int4Type7($Int)
+    {
+        if ($Int === 2) {
+            return 1;
+        }
+        if ($Int === 3) {
+            return 2;
+        }
+        return $Int > 3 ? 3 : 0;
     }
 
     /** For e.g., Irish. */

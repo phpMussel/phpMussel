@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.17).
+ * This file: Front-end handler (last modified: 2019.06.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2585,7 +2585,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
     /** Number of files in quarantine state message. */
     $phpMussel['FE']['state_msg'] .= sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FilesInQuarantineCount'], 'state_quarantine'),
-        '<span class="txtRd">' . $phpMussel['Number_L10N']($phpMussel['FilesInQuarantineCount']) . '</span>'
+        '<span class="txtRd">' . $phpMussel['NumberFormatter']->format($phpMussel['FilesInQuarantineCount']) . '</span>'
     ) . '<br />';
 
     /** Initialise quarantine data string. */
@@ -2635,7 +2635,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
     $phpMussel['FE']['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcTime'] = '<div class="s">' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcTime'], 'state_loadtime'),
-        $phpMussel['Number_L10N']($phpMussel['FE']['ProcTime'], 3)
+        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcTime'], 3)
     ) . '</div>';
 
     /** Parse output. */
@@ -2698,14 +2698,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
         'API-Scanned',
         'API-Flagged'
     ] as $phpMussel['TheseStats']) {
-        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['Number_L10N'](
+        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['NumberFormatter']->format(
             empty($phpMussel['Statistics'][$phpMussel['TheseStats']]) ? 0 : $phpMussel['Statistics'][$phpMussel['TheseStats']]
         ) . '</span>';
     }
 
     /** Active signature files. */
     if (empty($phpMussel['Config']['signatures']['Active'])) {
-        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['Number_L10N'](0) . '</span>';
+        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['NumberFormatter']->format(0) . '</span>';
     } else {
         $phpMussel['FE']['Other-Active'] = 0;
         $phpMussel['StatWorking'] = explode(',', $phpMussel['Config']['signatures']['Active']);
@@ -2715,7 +2715,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
             }
         });
         $phpMussel['StatColour'] = $phpMussel['FE']['Other-Active'] ? 'txtGn' : 'txtRd';
-        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['Number_L10N'](
+        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['NumberFormatter']->format(
             $phpMussel['FE']['Other-Active']
         ) . '</span>';
     }
@@ -2831,7 +2831,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
     $phpMussel['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcessTime'] = '<br />' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcessTime'], 'state_loadtime'),
-        $phpMussel['Number_L10N']($phpMussel['FE']['ProcessTime'], 3)
+        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcessTime'], 3)
     );
 
     /** Set logfile list or no logfiles available message. */

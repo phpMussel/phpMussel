@@ -1,15 +1,21 @@
 Changelog for phpMussel (>= v1.0.0, < v2.0.0), "Changelog-v1.txt".
 
-=== VERSIONING GUIDELINES ===
-phpMussel adheres to the SemVer guidelines for versioning.
+=== VERSION RELEASE GUIDELINES ===
+phpMussel adopts and adheres to SemVer (Semantic Versioning). For more information
+about SemVer, please refer to:
+- https://semver.org/
 
-Versioning guidelines for SemVer can be found at: https://semver.org/
+Detailed version release guidelines for phpMussel can be found at:
+- https://github.com/phpMussel/phpMussel/blob/v1/CONTRIBUTING.md#phpmussel-version-release-guidelines
 
 === Changes made since last versioned release ===
 
 - [2019.06.17; Maikuolan]: Added the ability to optionally update only all
   signature files to the front-end updates page (as opposed to updating
   everything at once).
+
+- [2019.06.27; Maikuolan]: Shifted responsibility for number formatting out
+  from the front-end functions file, into its own, distinct class.
 
 === Version/Release 1.11.0 ===
 MINOR RELEASE.

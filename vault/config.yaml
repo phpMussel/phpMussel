@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.05.31).
+# This file: Configuration defaults file (last modified: 2019.06.27).
 ##/
 
 Config Defaults:
@@ -187,11 +187,21 @@ Config Defaults:
     Latin-5: "1,234,567·89"
     China-1: "123,4567.89"
     India-1: "12,34,567.89"
-    India-2: "१२,३४,५६७.८९"
-    Bengali-1: "১২,৩৪,৫৬৭.৮৯"
+    India-2: "१२,३४,५६७.८९ (देवनागरी)"
+    India-3: "૧૨,૩૪,૫૬૭.૮૯ (ગુજરાતી)"
+    India-4: "੧੨,੩੪,੫੬੭.੮੯ (ਗੁਰਮੁਖੀ)"
+    India-5: "೧೨,೩೪,೫೬೭.೮೯ (ಕನ್ನಡ)"
+    India-6: "౧౨,౩౪,౫౬౭.౮౯ (తెలుగు)"
     Arabic-1: "١٢٣٤٥٦٧٫٨٩"
     Arabic-2: "١٬٢٣٤٬٥٦٧٫٨٩"
+    Arabic-3: "۱٬۲۳۴٬۵۶۷٫۸۹"
+    Arabic-4: "۱۲٬۳۴٬۵۶۷٫۸۹"
+    Bengali-1: "১২,৩৪,৫৬৭.৮৯ (বাংলা সংখ্যাসমূহ)"
+    Burmese-1: "၁၂၃၄၅၆၇.၈၉"
+    Khmer-1: "១.២៣៤.៥៦៧,៨៩"
+    Lao-1: "໑໒໓໔໕໖໗.໘໙"
     Thai-1: "๑,๒๓๔,๕๖๗.๘๙"
+    Thai-2: "๑๒๓๔๕๖๗.๘๙"
   quarantine_key:
    type: "string"
    default: ""
