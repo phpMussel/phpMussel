@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.27).
+ * This file: Front-end handler (last modified: 2019.07.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1765,7 +1765,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             is_array($phpMussel['Components']['ThisComponent']['Files']['To'])
         ) {
             $phpMussel['Components']['ThisComponent']['Options'] .=
-                '<option value="verify-component">' . $phpMussel['L10N']->getString('field_verify') . '</option>';
+                '<option value="verify-component" selected>' . $phpMussel['L10N']->getString('field_verify') . '</option>';
             $phpMussel['Components']['Verify'][] = $phpMussel['Components']['Key'];
         }
         if (

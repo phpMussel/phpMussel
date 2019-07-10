@@ -17,6 +17,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.06.27; Maikuolan]: Shifted responsibility for number formatting out
   from the front-end functions file, into its own, distinct class.
 
+- [2019.07.10; Maikuolan]: The front-end updates page now sets "verify" as the
+  default option for components, to help reduce the risk that users select
+  "uninstall" or "deactivate" by accident.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 
