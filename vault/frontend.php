@@ -2371,16 +2371,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             $phpMussel['FE']['PieChartValues'][] = $phpMussel['Components']['ThisData'];
             $phpMussel['FE']['PieChartLabels'][] = $phpMussel['Components']['ThisName'];
             if ($phpMussel['PiePath']) {
-                $phpMussel['Components']['ThisColour'] = substr(md5($phpMussel['Components']['ThisName']), 0, 6);
-                $phpMussel['Components']['RGB'] =
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 0, 2)) . ',' .
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 2, 2)) . ',' .
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 4, 2));
-                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour'];
+                $phpMussel['Components']['ThisColour'] = $phpMussel['RGB']($phpMussel['Components']['ThisName']);
+                $phpMussel['Components']['RGB'] = implode(',', $phpMussel['Components']['ThisColour']['Values']);
+                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
                 $phpMussel['FE']['PieChartHTML'] .= sprintf(
                     '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $phpMussel['Components']['RGB'],
-                    $phpMussel['Components']['ThisColour'],
+                    $phpMussel['Components']['ThisColour']['Hash'],
                     $phpMussel['Components']['ThisName'],
                     $phpMussel['Components']['ThisListed']
                 ) . "\n";

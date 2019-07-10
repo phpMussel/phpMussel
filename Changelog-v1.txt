@@ -21,6 +21,8 @@ Detailed version release guidelines for phpMussel can be found at:
   default option for components, to help reduce the risk that users select
   "uninstall" or "deactivate" by accident.
 
+- [2019.07.10; Maikuolan]: Slightly improved front-end pie chart colouring.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 
