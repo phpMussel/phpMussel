@@ -773,11 +773,11 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Level = 0;
     $Minor = (float)$Version;
     if (!empty($phpMussel['ForceVersionWarning']) || $Minor < 7.1 || (
-        $Minor === 7.1 && $phpMussel['VersionCompare']($Version, '7.1.28')
+        $Minor === 7.1 && $phpMussel['VersionCompare']($Version, '7.1.30')
     ) || (
-        $Minor === 7.2 && $phpMussel['VersionCompare']($Version, '7.2.16')
+        $Minor === 7.2 && $phpMussel['VersionCompare']($Version, '7.2.19')
     ) || (
-        $Minor === 7.3 && $phpMussel['VersionCompare']($Version, '7.3.3')
+        $Minor === 7.3 && $phpMussel['VersionCompare']($Version, '7.3.6')
     )) {
         $Level += 2;
     }
