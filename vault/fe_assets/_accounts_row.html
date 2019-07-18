@@ -2,7 +2,7 @@
       <input id="{AccID}username" type="hidden" value="{AccUsername}" />
       <td class="h1 big"><div class="s">{AccUsername}</div>{AccWarnings}</td>
       <td class="h1 big"><div class="s">{AccPermissions}</div></td>
-      <td class="h1 big"><div class="s"><input id="{AccID}password" type="password" placeholder="{field_password}" /></div></td>
+      <td class="h1 big"><div class="s"><input id="{AccID}password" type="password" placeholder="{field_password}" autocomplete="new-password" /></div></td>
       <td class="h1f extend">
         <div class="s big">
           <select id="{AccID}do"><option value="update-password">{field_set_new_password}</option><option value="delete-account">{field_delete_account}</option></select>
@@ -10,7 +10,7 @@
         </div>
         <div class="s mob">
           <div class="s">{AccUsername}</div>{AccWarnings}<br /><em>{AccPermissions}</em><br />
-          <input id="{AccID}passwordmob" type="password" placeholder="{field_password}" /><br />
+          <input id="{AccID}passwordmob" type="password" placeholder="{field_password}" autocomplete="new-password" /><br />
           <select id="{AccID}domob"><option value="update-password">{field_set_new_password}</option><option value="delete-account">{field_delete_account}</option></select><br />
           <input type="button" value="{field_ok}" class="auto" onclick="javascript:acc('{AccID}username','{AccID}passwordmob','{AccID}','{AccID}domob')" />
         </div>

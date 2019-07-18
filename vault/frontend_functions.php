@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.10).
+ * This file: Front-end functions file (last modified: 2019.07.15).
  */
 
 /**
@@ -2407,7 +2407,9 @@ $phpMussel['RGB'] = function ($String = '', $Mode = 0) {
     if ($Mode === 1) {
         return $Diff;
     }
-    $Hash = str_pad(bin2hex(chr($Diff[0]) . chr($Diff[1]) . chr($Diff[2])), 6, '0', STR_PAD_LEFT);
+    for ($Hash = '', $Index = 0; $Index < 3; $Index++) {
+        $Hash .= str_pad(bin2hex(chr($Diff[$Index])), 2, '0', STR_PAD_LEFT);
+    }
     if ($Mode === 2) {
         return $Hash;
     }

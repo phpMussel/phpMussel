@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.10).
+ * This file: Front-end handler (last modified: 2019.07.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1099,7 +1099,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['CatKey']
         );
         foreach ($phpMussel['CatValue'] as $phpMussel['DirKey'] => $phpMussel['DirValue']) {
-            $phpMussel['ThisDir'] = ['FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
+            $phpMussel['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
             if (empty($phpMussel['DirValue']['type']) || !isset($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']])) {
                 continue;
             }
@@ -1114,9 +1114,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (!empty($phpMussel['DirValue']['experimental'])) {
                 $phpMussel['ThisDir']['DirLang'] = '<code class="exp">' . $phpMussel['L10N']->getString('config_experimental') . '</code> ' . $phpMussel['ThisDir']['DirLang'];
             }
+            $phpMussel['ThisDir']['autocomplete'] = empty($phpMussel['DirValue']['autocomplete']) ? '' : sprintf(
+                ' autocomplete="%s"',
+                $phpMussel['DirValue']['autocomplete']
+            );
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
-                if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone'], true)) {
+                if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
                 if (!preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
@@ -1265,8 +1269,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         $phpMussel['ThisDir']['DirLangKeyOther']
                     );
                 }
-            } else {
-                $phpMussel['ThisDir']['Preview'] = $phpMussel['ThisDir']['Trigger'] = '';
             }
             if ($phpMussel['DirValue']['type'] === 'timezone') {
                 $phpMussel['DirValue']['choices'] = ['SYSTEM' => $phpMussel['L10N']->getString('field_system_timezone')];
@@ -1335,16 +1337,31 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 );
             } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
                     (isset($phpMussel['DirValue']['step']) ? ' step="' . $phpMussel['DirValue']['step'] . '"' : ''),
+                    $phpMussel['ThisDir']['Trigger'],
+                    ($phpMussel['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
+                );
+            } elseif ($phpMussel['DirValue']['type'] === 'url' || (
+                empty($phpMussel['DirValue']['autocomplete']) && $phpMussel['DirValue']['type'] === 'string'
+            )) {
+                $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                    '<textarea name="%1$s" id="%1$s_field" class="half"%2$s%3$s>%4$s</textarea>',
+                    $phpMussel['ThisDir']['DirLangKey'],
+                    $phpMussel['ThisDir']['autocomplete'],
+                    $phpMussel['ThisDir']['Trigger'],
+                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
+                );
+            } else {
+                $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    $phpMussel['ThisDir']['DirLangKey'],
+                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
+                    $phpMussel['ThisDir']['autocomplete'],
                     $phpMussel['ThisDir']['Trigger']
                 );
-            } elseif ($phpMussel['DirValue']['type'] === 'string') {
-                $phpMussel['ThisDir']['FieldOut'] = '<textarea name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" class="half"' . $phpMussel['ThisDir']['Trigger'] . '>' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
-            } else {
-                $phpMussel['ThisDir']['FieldOut'] = '<input type="text" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '"' . $phpMussel['ThisDir']['Trigger'] . ' />';
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](

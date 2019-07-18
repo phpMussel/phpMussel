@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.06.27).
+# This file: Configuration defaults file (last modified: 2019.07.18).
 ##/
 
 Config Defaults:
@@ -432,8 +432,9 @@ Config Defaults:
    type: "bool"
    default: true
   privacy_policy:
-   type: "string"
+   type: "url"
    default: ""
+   autocomplete: "url"
  template_data:
   theme:
    type: "string"
@@ -454,8 +455,9 @@ Config Defaults:
    step: "any"
    default: 1
   css_url:
-   type: "string"
+   type: "url"
    default: ""
+   autocomplete: "url"
  PHPMailer:
   EventLog:
    type: "string"
@@ -485,21 +487,27 @@ Config Defaults:
   Username:
    type: "string"
    default: ""
+   autocomplete: "username"
   Password:
    type: "string"
    default: ""
+   autocomplete: "current-password"
   setFromAddress:
-   type: "string"
+   type: "email"
    default: ""
+   autocomplete: "email"
   setFromName:
    type: "string"
    default: ""
+   autocomplete: "name"
   addReplyToAddress:
-   type: "string"
+   type: "email"
    default: ""
+   autocomplete: "email"
   addReplyToName:
    type: "string"
    default: ""
+   autocomplete: "name"
  supplementary_cache_options:
   enable_apcu:
    type: "bool"
@@ -546,8 +554,10 @@ Config Defaults:
    type: "string"
    default: ""
    experimental: true
+   autocomplete: "username"
   pdo_password:
    type: "string"
    default: ""
    experimental: true
+   autocomplete: "current-password"
 
