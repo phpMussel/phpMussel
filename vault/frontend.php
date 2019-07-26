@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.18).
+ * This file: Front-end handler (last modified: 2019.07.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,9 +139,6 @@ $phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php', true);
 if (!empty($phpMussel['Pips_Path']) && is_readable($phpMussel['Pips_Path'])) {
     require $phpMussel['Pips_Path'];
 }
-
-/** Instantiate YAML object for accessing data reconstruction. */
-$phpMussel['YAML-Object'] = new \Maikuolan\Common\YAML();
 
 /** Handle webfonts. */
 if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
@@ -1110,6 +1107,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['ThisDir']['DirLang'] =
                 $phpMussel['L10N']->getString($phpMussel['ThisDir']['DirLangKey']) ?:
                 $phpMussel['L10N']->getString('config_' . $phpMussel['CatKey']) ?:
+                (isset($phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey']]) ? $phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey']] : '') ?:
+                (isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']]) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']] : '') ?:
                 $phpMussel['L10N']->getString('response_error');
             if (!empty($phpMussel['DirValue']['experimental'])) {
                 $phpMussel['ThisDir']['DirLang'] = '<code class="exp">' . $phpMussel['L10N']->getString('config_experimental') . '</code> ' . $phpMussel['ThisDir']['DirLang'];
@@ -1647,7 +1646,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
-                    $phpMussel['YAML-Object']->process(
+                    $phpMussel['YAML']->process(
                         substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                         $phpMussel['Components']['RemoteMeta']
                     );
@@ -2429,16 +2428,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
     /** Process files data. */
     array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
+        $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $phpMussel['L10N']->getString('field_delete_file') . '</option>';
-            $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $phpMussel['L10N']->getString('field_rename_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $phpMussel['L10N']->getString('field_delete'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $phpMussel['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
-            $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $phpMussel['L10N']->getString('field_edit_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $phpMussel['L10N']->getString('field_edit_file'));
         }
         if (!$ThisFile['Directory']) {
-            $ThisFile['ThisOptions'] .= '<option value="download-file">' . $phpMussel['L10N']->getString('field_download_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $phpMussel['L10N']->getString('field_download_file'));
         }
         if ($ThisFile['ThisOptions']) {
             $ThisFile['ThisOptions'] =

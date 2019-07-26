@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.05.31).
+ * This file: Configuration handler (last modified: 2019.07.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -104,46 +104,16 @@ if (isset($phpMussel['Overrides']) && $phpMussel['Overrides'] === false) {
 }
 
 /** Attempts to parse the phpMussel configuration defaults file. */
-$phpMussel['Config']['Config Defaults'] = (new \Maikuolan\Common\YAML($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml')))->Data;
+$phpMussel['YAML']->process($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml'), $phpMussel['Config']);
 
 /** Kills the script if parsing the configuration defaults file fails. */
-if (empty($phpMussel['Config']['Config Defaults']['Config Defaults'])) {
+if (empty($phpMussel['Config']['Config Defaults'])) {
     header('Content-Type: text/plain');
     die('[phpMussel] Configuration defaults file is corrupt! Please reinstall phpMussel.');
-} else {
-    $phpMussel['Config']['Config Defaults'] = $phpMussel['Config']['Config Defaults']['Config Defaults'];
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */
-$phpMussel['Config']['Temp'] = [];
-foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']['KeyCat'] => $phpMussel['Config']['Temp']['DCat']) {
-    if (!isset($phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']])) {
-        $phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']] = [];
-    }
-    if (isset($phpMussel['Config']['Temp']['Cat'])) {
-        unset($phpMussel['Config']['Temp']['Cat']);
-    }
-    $phpMussel['Config']['Temp']['Cat'] = &$phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']];
-    if (!is_array($phpMussel['Config']['Temp']['DCat'])) {
-        continue;
-    }
-    foreach ($phpMussel['Config']['Temp']['DCat'] as $phpMussel['Config']['Temp']['KeyDir'] => $phpMussel['Config']['Temp']['DDir']) {
-        if (
-            !isset($phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']]) &&
-            isset($phpMussel['Config']['Temp']['DDir']['default'])
-        ) {
-            $phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']] = $phpMussel['Config']['Temp']['DDir']['default'];
-        }
-        if (isset($phpMussel['Config']['Temp']['Dir'])) {
-            unset($phpMussel['Config']['Temp']['Dir']);
-        }
-        $phpMussel['Config']['Temp']['Dir'] = &$phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']];
-        if (isset($phpMussel['Config']['Temp']['DDir']['type'])) {
-            $phpMussel['AutoType']($phpMussel['Config']['Temp']['Dir'], $phpMussel['Config']['Temp']['DDir']['type']);
-        }
-    }
-}
-unset($phpMussel['Config']['Temp']);
+$phpMussel['Fallback']($phpMussel['Config']['Config Defaults'], $phpMussel['Config']);
 
 /** Failsafe for weird ipaddr configuration. */
 $phpMussel['IPAddr'] = (

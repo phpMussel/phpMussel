@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.15).
+ * This file: Front-end functions file (last modified: 2019.07.24).
  */
 
 /**
@@ -523,7 +523,7 @@ $phpMussel['FetchComponentsLists'] = function ($Base, array &$Arr) use (&$phpMus
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $phpMussel['ReadFile']($Base . $ThisFile);
             if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $phpMussel['YAML-Object']->process(substr($Data, 4, $EoYAML - 4), $Arr);
+                $phpMussel['YAML']->process(substr($Data, 4, $EoYAML - 4), $Arr);
             }
         }
     }
@@ -1233,7 +1233,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             ($phpMussel['Components']['EoYAML'] = strpos(
                 $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
             )) !== false &&
-            $phpMussel['YAML-Object']->process(
+            $phpMussel['YAML']->process(
                 substr($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                 $phpMussel['Components']['RemoteMeta']
             ) &&

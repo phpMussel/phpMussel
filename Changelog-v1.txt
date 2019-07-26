@@ -23,6 +23,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.07.10; Maikuolan]: Slightly improved front-end pie chart colouring.
 
+- [2019.07.26; Maikuolan]: Added condition to ensure that "delete" should never
+  be the default option selected for files shown at the front-end file manager.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 

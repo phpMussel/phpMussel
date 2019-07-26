@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.18).
+ * This file: Functions file (last modified: 2019.07.24).
  */
 
 /**
@@ -32,6 +32,9 @@ spl_autoload_register(function ($Class) {
         require $File;
     }
 });
+
+/** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
+$phpMussel['YAML'] = new \Maikuolan\Common\YAML();
 
 /**
  * Registers plugin closures/functions to their intended hooks.
@@ -4626,16 +4629,71 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
 };
 
 /**
+ * Check for supplementary configuration.
+ *
+ * @param string $Source The directive or CSV that we're checking from.
+ * @return array An an array of valid supplementary configuration sources.
+ */
+$phpMussel['Supplementary'] = function ($Source) use (&$phpMussel) {
+    $Out = [];
+    $Source = explode(',', $Source);
+    foreach ($Source as $File) {
+        if (($DecPos = strpos($File, '.')) === false) {
+            continue;
+        }
+        $File = substr($File, 0, $DecPos) . '.yaml';
+        if (file_exists($phpMussel['Vault'] . $File)) {
+            $Out[] = $File;
+        }
+    }
+    return $Out;
+};
+
+/**
+ * Performs fallbacks and autotyping for missing configuration directives.
+ *
+ * @param array $Fallbacks Fallback source.
+ * @param array $Config Configuration source.
+ */
+$phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpMussel) {
+    foreach ($Fallbacks as $KeyCat => $DCat) {
+        if (!isset($Config[$KeyCat])) {
+            $Config[$KeyCat] = [];
+        }
+        if (isset($Cat)) {
+            unset($Cat);
+        }
+        $Cat = &$Config[$KeyCat];
+        if (!is_array($DCat)) {
+            continue;
+        }
+        foreach ($DCat as $DKey => $DData) {
+            if (!isset($Cat[$DKey]) && isset($DData['default'])) {
+                $Cat[$DKey] = $DData['default'];
+            }
+            if (isset($Dir)) {
+                unset($Dir);
+            }
+            $Dir = &$Cat[$DKey];
+            if (isset($DData['type'])) {
+                $phpMussel['AutoType']($Dir, $DData['type']);
+            }
+        }
+    }
+};
+
+/**
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
  * @param int $Timeout An optional timeout limit.
+ * @param array $Headers An optional array of headers to send with the request.
  * @param int $Depth Recursion depth of the current closure instance.
  * @return string The results of the request, or an empty string upon failure.
  */
-$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, $Depth = 0) use (&$phpMussel) {
+$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0) use (&$phpMussel) {
 
     /** Fetch channel information. */
     if (!isset($phpMussel['Channels'])) {
@@ -4673,7 +4731,7 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, $Dept
         }
         if ($phpMussel['in_csv']($TriggerName, $phpMussel['Config']['general']['disabled_channels'])) {
             if (isset($AlternateURI)) {
-                return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Depth);
+                return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth);
             }
             return '';
         }
@@ -4703,19 +4761,26 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, $Dept
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $phpMussel['Timeout']));
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
+    curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
 
     /** Execute and get the response. */
     $Response = curl_exec($Request);
 
     /** Check for problems (e.g., resource not found, server errors, etc). */
-    if (($Info = curl_getinfo($Request)) && is_array($Info)) {
+    if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
+
+        /** Most recent HTTP code flag. */
+        $phpMussel['Most-Recent-HTTP-Code'] = $Info['http_code'];
 
         /** Request failed. Try again using an alternative address. */
-        if (isset($Info['http_code']) && $Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
+        if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
             curl_close($Request);
-            return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Depth + 1);
+            return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
         }
 
+    } else {
+        /** Most recent HTTP code flag. */
+        $phpMussel['Most-Recent-HTTP-Code'] = 200;
     }
 
     /** Close the cURL session. */
