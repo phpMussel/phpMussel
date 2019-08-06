@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.04.02).
+ * This file: CLI handler (last modified: 2019.08.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,8 +24,8 @@ if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP']) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-/** Sets default error handler for CLI mode. */
-set_error_handler($phpMussel['ErrorHandler_1']);
+/** Initialise an error handler. */
+$phpMussel['InitialiseErrorHandler']();
 
 /** If CLI-mode is disabled, nothing here should be executed. */
 if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['general']['maintenance_mode']) {
@@ -359,8 +359,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             echo "\n";
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             $Out = $r = '';
-            $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['InstanceCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['start_time'], $phpMussel['Config']['general']['timeFormat']);
+            $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
+            $phpMussel['InstanceCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['start_time'], $phpMussel['Config']['general']['time_format']);
             echo $s = $phpMussel['InstanceCache']['start_time_2822'] . ' ' . $phpMussel['L10N']->getString('started') . $phpMussel['L10N']->getString('_fullstop_final') . "\n";
             if (is_dir($phpMussel['stdin_clean'])) {
                 if (!is_readable($phpMussel['stdin_clean'])) {
@@ -404,8 +404,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 echo $phpMussel['prescan_decode']($Out);
                 $Out = '';
             }
-            $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['InstanceCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['end_time'], $phpMussel['Config']['general']['timeFormat']);
+            $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
+            $phpMussel['InstanceCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['end_time'], $phpMussel['Config']['general']['time_format']);
             $r = $s . $r;
             $s = $phpMussel['InstanceCache']['end_time_2822'] . ' ' . $phpMussel['L10N']->getString('finished') . $phpMussel['L10N']->getString('_fullstop_final') . "\n";
             echo $s;
@@ -489,4 +489,4 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 }
 
 /** Restores default error handler (assuming we somehow reach this far). */
-restore_error_handler();
+$phpMussel['RestoreErrorHandler']();

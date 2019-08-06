@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.29).
+ * This file: Front-end handler (last modified: 2019.08.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -48,7 +48,7 @@ $phpMussel['FE'] = [
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
 
     /** Font magnification. */
-    'Magnification' => $phpMussel['Config']['template_data']['Magnification'],
+    'Magnification' => $phpMussel['Config']['template_data']['magnification'],
 
     /** Warns if maintenance mode is enabled. */
     'MaintenanceWarning' => (
@@ -59,7 +59,7 @@ $phpMussel['FE'] = [
     'ActiveConfigFile' => !empty($phpMussel['Overrides']) ? $phpMussel['Domain'] . '.config.ini' : 'config.ini',
 
     /** Current time and date. */
-    'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
+    'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['time_format']),
 
     /** How the script identifies itself. */
     'ScriptIdent' => $phpMussel['ScriptIdent'],
@@ -139,9 +139,6 @@ $phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php', true);
 if (!empty($phpMussel['Pips_Path']) && is_readable($phpMussel['Pips_Path'])) {
     require $phpMussel['Pips_Path'];
 }
-
-/** Instantiate YAML object for accessing data reconstruction. */
-$phpMussel['YAML-Object'] = new \Maikuolan\Common\YAML();
 
 /** Handle webfonts. */
 if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
@@ -357,7 +354,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                         $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
 
                         /** Prepare 2FA email. */
-                        if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
+                        if ($phpMussel['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
                             $phpMussel['2FA-State'] = ['Number' => $phpMussel['2FA-Number']()];
                             $phpMussel['2FA-State']['Hash'] = password_hash($phpMussel['2FA-State']['Number'], $phpMussel['DefaultAlgo']);
                             $phpMussel['FECacheAdd'](
@@ -419,15 +416,15 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
             $phpMussel['LoginAttempts'],
             $phpMussel['Time'] + $phpMussel['TimeToAdd']
         );
-        if ($phpMussel['Config']['general']['FrontEndLog']) {
+        if ($phpMussel['Config']['general']['frontend_log']) {
             $phpMussel['LoggerMessage'] = $phpMussel['FE']['state_msg'];
         }
         if (!$phpMussel['FE']['CronMode']) {
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['FE']['state_msg'] . '<br /><br /></div>';
         }
-    } elseif ($phpMussel['Config']['general']['FrontEndLog']) {
+    } elseif ($phpMussel['Config']['general']['frontend_log']) {
         $phpMussel['LoggerMessage'] = $phpMussel['L10N']->getString((
-            $phpMussel['Config']['PHPMailer']['Enable2FA'] &&
+            $phpMussel['Config']['PHPMailer']['enable_two_factor'] &&
             $phpMussel['FE']['Permissions'] === 0
         ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
     }
@@ -485,7 +482,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                     ), -1);
 
                     /** Handle 2FA stuff here. */
-                    if ($phpMussel['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
+                    if ($phpMussel['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $phpMussel['FE']['UserRaw'])) {
                         $phpMussel['2FA-State'] = $phpMussel['FECacheGet'](
                             $phpMussel['FE']['Cache'],
                             '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']
@@ -533,7 +530,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                 $phpMussel['Failed2FA'],
                 $phpMussel['Time'] + $phpMussel['TimeToAdd']
             );
-            if ($phpMussel['Config']['general']['FrontEndLog']) {
+            if ($phpMussel['Config']['general']['frontend_log']) {
                 $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_invalid'));
             }
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
@@ -541,7 +538,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
             $phpMussel['FECacheRemove'](
                 $phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'Failed2FA' . $_SERVER[$phpMussel['IPAddr']]
             );
-            if ($phpMussel['Config']['general']['FrontEndLog']) {
+            if ($phpMussel['Config']['general']['frontend_log']) {
                 $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_valid'));
             }
         }
@@ -662,7 +659,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Fetch remote phpMussel version information and cache it if necessary. */
     if (($phpMussel['Remote-YAML-phpMussel'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'phpmussel-ver.yaml')) === false) {
-        $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', false, 8);
+        $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', [], 8);
         $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 86400);
     }
 
@@ -702,7 +699,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Fetch remote PHP version information and cache it if necessary. */
     if (($phpMussel['Remote-YAML-PHP'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'php-ver.yaml')) === false) {
-        $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', false, 8);
+        $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', [], 8);
         $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 86400);
     }
 
@@ -784,7 +781,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
             $phpMussel['FE']['Warnings'] .= '<li><a href="https://secure.php.net/supported-versions.php">' . $phpMussel['L10N']->getString('warning_php_1') . '</a></li>';
         }
     }
-    if (empty($phpMussel['Config']['signatures']['Active'])) {
+    if (empty($phpMussel['Config']['signatures']['active'])) {
         $phpMussel['FE']['Warnings'] .= '<li>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</li>';
     }
     if ($phpMussel['FE']['Warnings']) {
@@ -1099,7 +1096,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['CatKey']
         );
         foreach ($phpMussel['CatValue'] as $phpMussel['DirKey'] => $phpMussel['DirValue']) {
-            $phpMussel['ThisDir'] = ['FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
+            $phpMussel['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
             if (empty($phpMussel['DirValue']['type']) || !isset($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']])) {
                 continue;
             }
@@ -1110,13 +1107,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['ThisDir']['DirLang'] =
                 $phpMussel['L10N']->getString($phpMussel['ThisDir']['DirLangKey']) ?:
                 $phpMussel['L10N']->getString('config_' . $phpMussel['CatKey']) ?:
+                (isset($phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey']]) ? $phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey']] : '') ?:
+                (isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']]) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']] : '') ?:
                 $phpMussel['L10N']->getString('response_error');
             if (!empty($phpMussel['DirValue']['experimental'])) {
                 $phpMussel['ThisDir']['DirLang'] = '<code class="exp">' . $phpMussel['L10N']->getString('config_experimental') . '</code> ' . $phpMussel['ThisDir']['DirLang'];
             }
+            $phpMussel['ThisDir']['autocomplete'] = empty($phpMussel['DirValue']['autocomplete']) ? '' : sprintf(
+                ' autocomplete="%s"',
+                $phpMussel['DirValue']['autocomplete']
+            );
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
-                if ($phpMussel['DirValue']['type'] === 'kb' || $phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'timezone' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real' || $phpMussel['DirValue']['type'] === 'bool') {
+                if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
                 if (!preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
@@ -1134,12 +1137,27 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $_POST[$phpMussel['ThisDir']['DirLangKeyOther']];
                     $phpMussel['ConfigModified'] = true;
                 }
+            } elseif (
+                empty($phpMussel['QueryVars']['updated']) &&
+                $phpMussel['ConfigModified'] &&
+                $phpMussel['DirValue']['type'] === 'checkbox' &&
+                isset($phpMussel['DirValue']['choices']) &&
+                is_array($phpMussel['DirValue']['choices'])
+            ) {
+                $phpMussel['DirValue']['Posts'] = [];
+                foreach ($phpMussel['DirValue']['choices'] as $phpMussel['DirValue']['ThisChoiceKey'] => $phpMussel['DirValue']['ThisChoice']) {
+                    if (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']])) {
+                        $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
+                    }
+                }
+                $phpMussel['DirValue']['Posts'] = implode(',', $phpMussel['DirValue']['Posts']) ?: '';
+                $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $phpMussel['DirValue']['Posts'];
             }
             if ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === true) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=true\r\n\r\n";
             } elseif ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === false) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=false\r\n\r\n";
-            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
+            } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "\r\n\r\n";
             } else {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=\'' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "'\r\n\r\n";
@@ -1250,8 +1268,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         $phpMussel['ThisDir']['DirLangKeyOther']
                     );
                 }
-            } else {
-                $phpMussel['ThisDir']['Preview'] = $phpMussel['ThisDir']['Trigger'] = '';
             }
             if ($phpMussel['DirValue']['type'] === 'timezone') {
                 $phpMussel['DirValue']['choices'] = ['SYSTEM' => $phpMussel['L10N']->getString('field_system_timezone')];
@@ -1260,7 +1276,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
             }
             if (isset($phpMussel['DirValue']['choices'])) {
-                $phpMussel['ThisDir']['FieldOut'] = '<select class="auto" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>';
+                if ($phpMussel['DirValue']['type'] !== 'checkbox') {
+                    $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>',
+                        $phpMussel['ThisDir']['DirLangKey'],
+                        $phpMussel['ThisDir']['Trigger']
+                    );
+                }
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
                     if (isset($phpMussel['DirValue']['choice_filter'])) {
                         if (!$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])) {
@@ -1273,19 +1295,33 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['lang'], $phpMussel['ChoiceValue']);
                         }
                     }
-                    $phpMussel['ThisDir']['FieldOut'] .= '<option value="' . $phpMussel['ChoiceKey'] . '"' . ((
-                        $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
-                    ) ? ' selected' : '') . '>' . $phpMussel['ChoiceValue'] . '</option>';
+                    if ($phpMussel['DirValue']['type'] === 'checkbox') {
+                        $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                            '<input type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /><label for="%1$s" class="s">%3$s</label><br />',
+                            $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
+                            $phpMussel['in_csv']($phpMussel['ChoiceKey'], $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ? ' checked' : '',
+                            $phpMussel['ChoiceValue']
+                        );
+                    } else {
+                        $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                            '<option value="%1$s"%2$s>%3$s</option>',
+                            $phpMussel['ChoiceKey'],
+                            $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' selected' : '',
+                            $phpMussel['ChoiceValue']
+                        );
+                    }
                 }
-                $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);
-                $phpMussel['ThisDir']['FieldOut'] .= empty($phpMussel['DirValue']['allow_other']) ? '</select>' : sprintf(
-                    '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
-                    $phpMussel['ThisDir']['SelectOther'] ? ' selected' : '',
-                    $phpMussel['L10N']->getString('label_other'),
-                    $phpMussel['ThisDir']['SelectOther'] ? '' : ' style="display:none"',
-                    $phpMussel['ThisDir']['DirLangKeyOther'],
-                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
-                );
+                if ($phpMussel['DirValue']['type'] !== 'checkbox') {
+                    $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);
+                    $phpMussel['ThisDir']['FieldOut'] .= empty($phpMussel['DirValue']['allow_other']) ? '</select>' : sprintf(
+                        '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                        $phpMussel['ThisDir']['SelectOther'] ? ' selected' : '',
+                        $phpMussel['L10N']->getString('label_other'),
+                        $phpMussel['ThisDir']['SelectOther'] ? '' : ' style="display:none"',
+                        $phpMussel['ThisDir']['DirLangKeyOther'],
+                        $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
+                    );
+                }
             } elseif ($phpMussel['DirValue']['type'] === 'bool') {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
                         '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
@@ -1298,18 +1334,33 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' selected' : ''),
                     ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? '' : ' selected')
                 );
-            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
+            } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
                     (isset($phpMussel['DirValue']['step']) ? ' step="' . $phpMussel['DirValue']['step'] . '"' : ''),
+                    $phpMussel['ThisDir']['Trigger'],
+                    ($phpMussel['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
+                );
+            } elseif ($phpMussel['DirValue']['type'] === 'url' || (
+                empty($phpMussel['DirValue']['autocomplete']) && $phpMussel['DirValue']['type'] === 'string'
+            )) {
+                $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                    '<textarea name="%1$s" id="%1$s_field" class="half"%2$s%3$s>%4$s</textarea>',
+                    $phpMussel['ThisDir']['DirLangKey'],
+                    $phpMussel['ThisDir']['autocomplete'],
+                    $phpMussel['ThisDir']['Trigger'],
+                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
+                );
+            } else {
+                $phpMussel['ThisDir']['FieldOut'] = sprintf(
+                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    $phpMussel['ThisDir']['DirLangKey'],
+                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
+                    $phpMussel['ThisDir']['autocomplete'],
                     $phpMussel['ThisDir']['Trigger']
                 );
-            } elseif ($phpMussel['DirValue']['type'] === 'string') {
-                $phpMussel['ThisDir']['FieldOut'] = '<textarea name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" class="half"' . $phpMussel['ThisDir']['Trigger'] . '>' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
-            } else {
-                $phpMussel['ThisDir']['FieldOut'] = '<input type="text" name="' . $phpMussel['ThisDir']['DirLangKey'] . '" id="' . $phpMussel['ThisDir']['DirLangKey'] . '_field" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '"' . $phpMussel['ThisDir']['Trigger'] . ' />';
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](
@@ -1407,7 +1458,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                 }
                 $phpMussel['CacheIndexData'][1] = ($phpMussel['CacheIndexData'][1] >= 0 ? $phpMussel['TimeFormat'](
                     $phpMussel['CacheIndexData'][1],
-                    $phpMussel['Config']['general']['timeFormat']
+                    $phpMussel['Config']['general']['time_format']
                 ) : $phpMussel['L10N']->getString('label_never'));
                 $phpMussel['CacheIndexData'][3] = bin2hex(substr($phpMussel['CacheIndexData'][0], 0, 1)) . '.tmp';
                 if (!isset($phpMussel['CacheArray'][$phpMussel['CacheIndexData'][3]])) {
@@ -1437,7 +1488,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                 }
                 $phpMussel['CacheIndexData'][2] = ($phpMussel['CacheIndexData'][2] >= 0 ? $phpMussel['TimeFormat'](
                     $phpMussel['CacheIndexData'][2],
-                    $phpMussel['Config']['general']['timeFormat']
+                    $phpMussel['Config']['general']['time_format']
                 ) : $phpMussel['L10N']->getString('label_never'));
                 $phpMussel['Arrayify']($phpMussel['CacheIndexData'][1]);
                 $phpMussel['CacheArray']['fe_assets/frontend.dat'][$phpMussel['ThisCacheEntryName']] = $phpMussel['CacheIndexData'][1];
@@ -1535,6 +1586,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Remotes' => [],
         'Interdependent' => [],
         'Outdated' => [],
+        'OutdatedSignatureFiles' => [],
         'Verify' => [],
         'Out' => []
     ];
@@ -1594,7 +1646,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
-                    $phpMussel['YAML-Object']->process(
+                    $phpMussel['YAML']->process(
                         substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                         $phpMussel['Components']['RemoteMeta']
                     );
@@ -1634,6 +1686,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         $phpMussel['Components']['Interdependent'][] = $phpMussel['Components']['Key'];
                     }
                     $phpMussel['Components']['Outdated'][] = $phpMussel['Components']['Key'];
+                    if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
+                        $phpMussel['Components']['OutdatedSignatureFiles'][] = $phpMussel['Components']['Key'];
+                    }
                     $phpMussel['Components']['ThisComponent']['RowClass'] = 'r';
                     $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
                     if (
@@ -1726,7 +1781,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             is_array($phpMussel['Components']['ThisComponent']['Files']['To'])
         ) {
             $phpMussel['Components']['ThisComponent']['Options'] .=
-                '<option value="verify-component">' . $phpMussel['L10N']->getString('field_verify') . '</option>';
+                '<option value="verify-component" selected>' . $phpMussel['L10N']->getString('field_verify') . '</option>';
             $phpMussel['Components']['Verify'][] = $phpMussel['Components']['Key'];
         }
         if (
@@ -1942,13 +1997,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     $phpMussel['FE']['Components'] = implode('', $phpMussel['Components']['Out']);
 
     $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
+    $phpMussel['Components']['CountOutdatedSignatureFiles'] = count($phpMussel['Components']['OutdatedSignatureFiles']);
     $phpMussel['Components']['CountVerify'] = count($phpMussel['Components']['Verify']);
 
     /** Preparing for update all and verify all buttons. */
-    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountOutdatedSignatureFiles'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+
+    /** Instructions to update all signature files (but not necessarily everything). */
+    if ($phpMussel['Components']['CountOutdatedSignatureFiles']) {
+        $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'update-component');
+        foreach ($phpMussel['Components']['OutdatedSignatureFiles'] as $phpMussel['Components']['ThisOutdated']) {
+            $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
+        }
+        $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['L10N']->getString('field_update_signatures_files') . '" class="auto" /></form>';
+    }
 
     /** Instructions to update everything at once. */
-    if ($phpMussel['Components']['CountOutdated']) {
+    if ($phpMussel['Components']['CountOutdated'] && $phpMussel['Components']['CountOutdated'] !== $phpMussel['Components']['CountOutdatedSignatureFiles']) {
         $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'update-component');
         foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['ThisOutdated']) {
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
@@ -2322,16 +2387,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             $phpMussel['FE']['PieChartValues'][] = $phpMussel['Components']['ThisData'];
             $phpMussel['FE']['PieChartLabels'][] = $phpMussel['Components']['ThisName'];
             if ($phpMussel['PiePath']) {
-                $phpMussel['Components']['ThisColour'] = substr(md5($phpMussel['Components']['ThisName']), 0, 6);
-                $phpMussel['Components']['RGB'] =
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 0, 2)) . ',' .
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 2, 2)) . ',' .
-                    hexdec(substr($phpMussel['Components']['ThisColour'], 4, 2));
-                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour'];
+                $phpMussel['Components']['ThisColour'] = $phpMussel['RGB']($phpMussel['Components']['ThisName']);
+                $phpMussel['Components']['RGB'] = implode(',', $phpMussel['Components']['ThisColour']['Values']);
+                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
                 $phpMussel['FE']['PieChartHTML'] .= sprintf(
                     '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $phpMussel['Components']['RGB'],
-                    $phpMussel['Components']['ThisColour'],
+                    $phpMussel['Components']['ThisColour']['Hash'],
                     $phpMussel['Components']['ThisName'],
                     $phpMussel['Components']['ThisListed']
                 ) . "\n";
@@ -2366,16 +2428,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
     /** Process files data. */
     array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
+        $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $phpMussel['L10N']->getString('field_delete_file') . '</option>';
-            $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $phpMussel['L10N']->getString('field_rename_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $phpMussel['L10N']->getString('field_delete'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $phpMussel['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
-            $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $phpMussel['L10N']->getString('field_edit_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $phpMussel['L10N']->getString('field_edit_file'));
         }
         if (!$ThisFile['Directory']) {
-            $ThisFile['ThisOptions'] .= '<option value="download-file">' . $phpMussel['L10N']->getString('field_download_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $phpMussel['L10N']->getString('field_download_file'));
         }
         if ($ThisFile['ThisOptions']) {
             $ThisFile['ThisOptions'] =
@@ -2536,7 +2599,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
     /** Number of files in quarantine state message. */
     $phpMussel['FE']['state_msg'] .= sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FilesInQuarantineCount'], 'state_quarantine'),
-        '<span class="txtRd">' . $phpMussel['Number_L10N']($phpMussel['FilesInQuarantineCount']) . '</span>'
+        '<span class="txtRd">' . $phpMussel['NumberFormatter']->format($phpMussel['FilesInQuarantineCount']) . '</span>'
     ) . '<br />';
 
     /** Initialise quarantine data string. */
@@ -2579,14 +2642,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 
     /** Process signature files and fetch relevant values. */
     $phpMussel['FE']['InfoRows'] = $phpMussel['SigInfoHandler'](
-        array_unique(explode(',', $phpMussel['Config']['signatures']['Active']))
+        array_unique(explode(',', $phpMussel['Config']['signatures']['active']))
     );
 
     /** Calculate and append page load time, and append totals. */
     $phpMussel['FE']['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcTime'] = '<div class="s">' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcTime'], 'state_loadtime'),
-        $phpMussel['Number_L10N']($phpMussel['FE']['ProcTime'], 3)
+        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcTime'], 3)
     ) . '</div>';
 
     /** Parse output. */
@@ -2632,7 +2695,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     $phpMussel['FE']['Other-Since'] = '<span class="s">' . (
         empty($phpMussel['Statistics']['Other-Since']) ? '-' : $phpMussel['TimeFormat'](
             $phpMussel['Statistics']['Other-Since'],
-            $phpMussel['Config']['general']['timeFormat']
+            $phpMussel['Config']['general']['time_format']
         )
     ) . '</span>';
 
@@ -2649,24 +2712,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
         'API-Scanned',
         'API-Flagged'
     ] as $phpMussel['TheseStats']) {
-        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['Number_L10N'](
+        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['NumberFormatter']->format(
             empty($phpMussel['Statistics'][$phpMussel['TheseStats']]) ? 0 : $phpMussel['Statistics'][$phpMussel['TheseStats']]
         ) . '</span>';
     }
 
     /** Active signature files. */
-    if (empty($phpMussel['Config']['signatures']['Active'])) {
-        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['Number_L10N'](0) . '</span>';
+    if (empty($phpMussel['Config']['signatures']['active'])) {
+        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['NumberFormatter']->format(0) . '</span>';
     } else {
         $phpMussel['FE']['Other-Active'] = 0;
-        $phpMussel['StatWorking'] = explode(',', $phpMussel['Config']['signatures']['Active']);
+        $phpMussel['StatWorking'] = explode(',', $phpMussel['Config']['signatures']['active']);
         array_walk($phpMussel['StatWorking'], function ($SigFile) use (&$phpMussel) {
             if (!empty($SigFile) && is_readable($phpMussel['sigPath'] . $SigFile)) {
                 $phpMussel['FE']['Other-Active']++;
             }
         });
         $phpMussel['StatColour'] = $phpMussel['FE']['Other-Active'] ? 'txtGn' : 'txtRd';
-        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['Number_L10N'](
+        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['NumberFormatter']->format(
             $phpMussel['FE']['Other-Active']
         ) . '</span>';
     }
@@ -2782,7 +2845,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
     $phpMussel['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcessTime'] = '<br />' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcessTime'], 'state_loadtime'),
-        $phpMussel['Number_L10N']($phpMussel['FE']['ProcessTime'], 3)
+        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcessTime'], 3)
     );
 
     /** Set logfile list or no logfiles available message. */

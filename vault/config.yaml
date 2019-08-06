@@ -10,47 +10,47 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.04.07).
+# This file: Configuration defaults file (last modified: 2019.08.05).
 ##/
 
 Config Defaults:
  general:
   cleanup:
-   type: bool
+   type: "bool"
    default: true
   scan_log:
-   type: string
+   type: "string"
    default: "scan_log.txt"
   scan_log_serialized:
-   type: string
+   type: "string"
    default: "scan_log_serialized.txt"
   scan_kills:
-   type: string
+   type: "string"
    default: "scan_kills.txt"
   truncate:
-   type: kb
+   type: "kb"
    default: "0KB"
-   preview: kb
+   preview: "kb"
   log_rotation_limit:
-   type: int
+   type: "int"
    default: 0
   log_rotation_action:
-   type: string
+   type: "string"
    default: "Delete"
    choices:
-    Delete: Delete
-    Archive: Archive
+    Delete: "Delete"
+    Archive: "Archive"
   timezone:
-   type: timezone
+   type: "timezone"
    default: "SYSTEM"
-  timeOffset:
-   type: int
+  time_offset:
+   type: "int"
    default: 0
-   preview: minutes
-  timeFormat:
-   type: string
+   preview: "minutes"
+  time_format:
+   type: "string"
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}": "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
@@ -125,9 +125,9 @@ Config Defaults:
     "{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}": "{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}"
     "{d}. {m}. {yyyy}": "{d}. {m}. {yyyy}"
   ipaddr:
-   type: string
+   type: "string"
    default: "REMOTE_ADDR"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     HTTP_INCAP_CLIENT_IP: "HTTP_INCAP_CLIENT_IP (Incapsula)"
@@ -137,45 +137,45 @@ Config Defaults:
     X-Forwarded-For: "X-Forwarded-For (Squid)"
     REMOTE_ADDR: "REMOTE_ADDR (Default)"
   enable_plugins:
-   type: bool
+   type: "bool"
    default: true
   forbid_on_block:
-   type: bool
+   type: "bool"
    default: true
   delete_on_sight:
-   type: bool
+   type: "bool"
    default: false
   lang:
-   type: string
+   type: "string"
    default: "en"
    choices:
-    en: English
-    ar: العربية
-    bn: বাংলা
-    de: Deutsch
-    es: Español
-    fr: Français
-    hi: हिंदी
-    id: Bahasa Indonesia
-    it: Italiano
-    ja: 日本語
-    ko: 한국어
-    nl: Nederlandse
-    no: Norsk
-    pl: Polski
-    pt: Português
-    ru: Русский
-    sv: Svenska
-    ta: தமிழ்
-    th: ภาษาไทย
-    tr: Türkçe
-    ur: ‏اردو‏
-    vi: Tiếng Việt
-    zh: 中文（简体）
-    zh-tw: 中文（傳統）
+    en: "English"
+    ar: "العربية"
+    bn: "বাংলা"
+    de: "Deutsch"
+    es: "Español"
+    fr: "Français"
+    hi: "हिंदी"
+    id: "Bahasa Indonesia"
+    it: "Italiano"
+    ja: "日本語"
+    ko: "한국어"
+    nl: "Nederlandse"
+    no: "Norsk"
+    pl: "Polski"
+    pt: "Português"
+    ru: "Русский"
+    sv: "Svenska"
+    ta: "தமிழ்"
+    th: "ภาษาไทย"
+    tr: "Türkçe"
+    ur: "اردو"
+    vi: "Tiếng Việt"
+    zh: "中文（简体）"
+    zh-tw: "中文（傳統）"
    choice_filter: "FilterLang"
   numbers:
-   type: string
+   type: "string"
    default: "Latin-1"
    choices:
     NoSep-1: "1234567.89"
@@ -187,238 +187,259 @@ Config Defaults:
     Latin-5: "1,234,567·89"
     China-1: "123,4567.89"
     India-1: "12,34,567.89"
-    India-2: "१२,३४,५६७.८९"
-    Bengali-1: "১২,৩৪,৫৬৭.৮৯"
+    India-2: "१२,३४,५६७.८९ (देवनागरी)"
+    India-3: "૧૨,૩૪,૫૬૭.૮૯ (ગુજરાતી)"
+    India-4: "੧੨,੩੪,੫੬੭.੮੯ (ਗੁਰਮੁਖੀ)"
+    India-5: "೧೨,೩೪,೫೬೭.೮೯ (ಕನ್ನಡ)"
+    India-6: "౧౨,౩౪,౫౬౭.౮౯ (తెలుగు)"
     Arabic-1: "١٢٣٤٥٦٧٫٨٩"
     Arabic-2: "١٬٢٣٤٬٥٦٧٫٨٩"
+    Arabic-3: "۱٬۲۳۴٬۵۶۷٫۸۹"
+    Arabic-4: "۱۲٬۳۴٬۵۶۷٫۸۹"
+    Bengali-1: "১২,৩৪,৫৬৭.৮৯ (বাংলা সংখ্যাসমূহ)"
+    Burmese-1: "၁၂၃၄၅၆၇.၈၉"
+    Khmer-1: "១.២៣៤.៥៦៧,៨៩"
+    Lao-1: "໑໒໓໔໕໖໗.໘໙"
     Thai-1: "๑,๒๓๔,๕๖๗.๘๙"
+    Thai-2: "๑๒๓๔๕๖๗.๘๙"
   quarantine_key:
-   type: string
+   type: "string"
    default: ""
   quarantine_max_filesize:
-   type: kb
-   step: any
+   type: "kb"
+   step: "any"
    default: "2MB"
-   preview: kb
+   preview: "kb"
   quarantine_max_usage:
-   type: kb
-   step: any
+   type: "kb"
+   step: "any"
    default: "64MB"
-   preview: kb
+   preview: "kb"
   quarantine_max_files:
-   type: int
+   type: "int"
    default: 100
   honeypot_mode:
-   type: bool
+   type: "bool"
    default: false
   scan_cache_expiry:
-   type: int
+   type: "int"
    default: 21600
-   preview: seconds
+   preview: "seconds"
   disable_cli:
-   type: bool
+   type: "bool"
    default: false
   disable_frontend:
-   type: bool
+   type: "bool"
    default: true
   max_login_attempts:
-   type: int
+   type: "int"
    default: 5
-  FrontEndLog:
-   type: string
+  frontend_log:
+   type: "string"
    default: ""
   disable_webfonts:
-   type: bool
+   type: "bool"
    default: true
   maintenance_mode:
-   type: bool
+   type: "bool"
    default: false
   default_algo:
-   type: string
+   type: "string"
    default: "PASSWORD_DEFAULT"
    choices:
-    PASSWORD_DEFAULT: PASSWORD_DEFAULT
-    PASSWORD_BCRYPT: PASSWORD_BCRYPT
-    PASSWORD_ARGON2I: PASSWORD_ARGON2I (PHP >= 7.2.0)
+    PASSWORD_DEFAULT: "PASSWORD_DEFAULT"
+    PASSWORD_BCRYPT: "PASSWORD_BCRYPT"
+    PASSWORD_ARGON2I: "PASSWORD_ARGON2I (PHP >= 7.2.0)"
    choice_filter: "FilterAlgo"
   statistics:
-   type: bool
+   type: "bool"
    default: false
+  disabled_channels:
+   type: "checkbox"
+   default: "VirusTotal_HTTP,hpHosts_HTTP"
+   choices:
+    GitHub: "GitHub"
+    BitBucket: "BitBucket"
+    VirusTotal_HTTPS: "VirusTotal (HTTPS)"
+    VirusTotal_HTTP: "VirusTotal (HTTP)"
+    hpHosts_HTTPS: "hpHosts (HTTPS)"
+    hpHosts_HTTP: "hpHosts (HTTP)"
  signatures:
-  Active:
-   type: string
+  active:
+   type: "string"
    default: ""
   fail_silently:
-   type: bool
+   type: "bool"
    default: true
   fail_extensions_silently:
-   type: bool
+   type: "bool"
    default: true
   detect_adware:
-   type: bool
+   type: "bool"
    default: true
   detect_joke_hoax:
-   type: bool
+   type: "bool"
    default: true
   detect_pua_pup:
-   type: bool
+   type: "bool"
    default: true
   detect_packer_packed:
-   type: bool
+   type: "bool"
    default: true
   detect_shell:
-   type: bool
+   type: "bool"
    default: true
   detect_deface:
-   type: bool
+   type: "bool"
    default: true
   detect_encryption:
-   type: bool
+   type: "bool"
    default: true
  files:
   max_uploads:
-   type: int
+   type: "int"
    default: 10
   filesize_limit:
-   type: kb
-   step: any
+   type: "kb"
+   step: "any"
    default: "64MB"
-   preview: kb
+   preview: "kb"
   filesize_response:
-   type: bool
+   type: "bool"
    default: true
   filetype_whitelist:
-   type: string
+   type: "string"
    default: ""
   filetype_blacklist:
-   type: string
+   type: "string"
    default: "386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,cmd,com*,cpl,cpp,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,inx,ipa,isu,job,js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,out,paf,php*,pif,pl,prg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,sys,u3p,url,vb,vbe,vbs*,wor*,ws,wsf,xsl"
   filetype_greylist:
-   type: string
+   type: "string"
    default: ""
   check_archives:
-   type: bool
+   type: "bool"
    default: true
   filesize_archives:
-   type: bool
+   type: "bool"
    default: true
   filetype_archives:
-   type: bool
+   type: "bool"
    default: false
   max_recursion:
-   type: int
+   type: "int"
    default: 3
   block_encrypted_archives:
-   type: bool
+   type: "bool"
    default: true
   max_files_in_archives:
-   type: int
+   type: "int"
    default: 0
  attack_specific:
   chameleon_from_php:
-   type: bool
+   type: "bool"
    default: true
   can_contain_php_file_extensions:
-   type: string
+   type: "string"
    default: "inc,md,phar,php*,pzp,sig,tpl,txt,tzt"
   chameleon_from_exe:
-   type: bool
+   type: "bool"
    default: true
   chameleon_to_archive:
-   type: bool
+   type: "bool"
    default: true
   chameleon_to_doc:
-   type: bool
+   type: "bool"
    default: true
   chameleon_to_img:
-   type: bool
+   type: "bool"
    default: true
   chameleon_to_pdf:
-   type: bool
+   type: "bool"
    default: true
   archive_file_extensions:
-   type: string
+   type: "string"
    default: "7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,phar,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz,paq*,sit*,tbz*,zip*"
   block_control_characters:
-   type: bool
+   type: "bool"
    default: false
   corrupted_exe:
-   type: bool
+   type: "bool"
    default: true
   decode_threshold:
-   type: kb
-   step: any
+   type: "kb"
+   step: "any"
    default: "512KB"
-   preview: kb
+   preview: "kb"
   scannable_threshold:
-   type: kb
-   step: any
+   type: "kb"
+   step: "any"
    default: "32MB"
-   preview: kb
+   preview: "kb"
   allow_leading_trailing_dots:
-   type: bool
+   type: "bool"
    default: false
   block_macros:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
  compatibility:
   ignore_upload_errors:
-   type: bool
+   type: "bool"
    default: false
   only_allow_images:
-   type: bool
+   type: "bool"
    default: false
  heuristic:
   threshold:
-   type: int
+   type: "int"
    default: 3
  virustotal:
   vt_public_api_key:
-   type: string
+   type: "string"
    default: ""
   vt_suspicion_level:
-   type: int
+   type: "int"
    default: 1
   vt_weighting:
-   type: int
+   type: "int"
    default: 0
   vt_quota_rate:
-   type: int
+   type: "int"
    default: 4
   vt_quota_time:
-   type: int
+   type: "int"
    default: 1
-   preview: minutes
+   preview: "minutes"
  urlscanner:
   lookup_hphosts:
-   type: bool
+   type: "bool"
    default: true
   google_api_key:
-   type: string
+   type: "string"
    default: ""
   maximum_api_lookups:
-   type: int
+   type: "int"
    default: 10
   maximum_api_lookups_response:
-   type: bool
+   type: "bool"
    default: false
   cache_time:
-   type: int
+   type: "int"
    default: 3600
-   preview: seconds
+   preview: "seconds"
  legal:
   pseudonymise_ip_addresses:
-   type: bool
+   type: "bool"
    default: true
   privacy_policy:
-   type: string
+   type: "url"
    default: ""
+   autocomplete: "url"
  template_data:
   theme:
-   type: string
+   type: "string"
    default: "default"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     default: "Default"
@@ -429,105 +450,114 @@ Config Defaults:
     fullmoon: "Full Moon"
     unicorn: "Unicorn"
    choice_filter: "FilterTheme"
-  Magnification:
-   type: real
-   step: any
+  magnification:
+   type: "float"
+   step: "any"
    default: 1
   css_url:
-   type: string
+   type: "url"
    default: ""
+   autocomplete: "url"
  PHPMailer:
-  EventLog:
-   type: string
+  event_log:
+   type: "string"
    default: ""
-  SkipAuthProcess:
-   type: bool
+  skip_auth_process:
+   type: "bool"
    default: false
-  Enable2FA:
-   type: bool
+  enable_two_factor:
+   type: "bool"
    default: false
-  Host:
-   type: string
+  host:
+   type: "string"
    default: ""
-  Port:
-   type: int
+  port:
+   type: "int"
    default: 587
-  SMTPSecure:
-   type: string
+  smtp_secure:
+   type: "string"
    default: "default"
    choices:
     default: "-"
     tls: "TLS"
     ssl: "SSL"
-  SMTPAuth:
-   type: bool
+  smtp_auth:
+   type: "bool"
    default: true
-  Username:
-   type: string
+  username:
+   type: "string"
    default: ""
-  Password:
-   type: string
+   autocomplete: "username"
+  password:
+   type: "string"
    default: ""
-  setFromAddress:
-   type: string
+   autocomplete: "current-password"
+  set_from_address:
+   type: "email"
    default: ""
-  setFromName:
-   type: string
+   autocomplete: "email"
+  set_from_name:
+   type: "string"
    default: ""
-  addReplyToAddress:
-   type: string
+   autocomplete: "name"
+  add_reply_to_address:
+   type: "email"
    default: ""
-  addReplyToName:
-   type: string
+   autocomplete: "email"
+  add_reply_to_name:
+   type: "string"
    default: ""
+   autocomplete: "name"
  supplementary_cache_options:
   enable_apcu:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_memcached:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_redis:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_pdo:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   memcached_host:
-   type: string
+   type: "string"
    default: "localhost"
    experimental: true
   memcached_port:
-   type: int
+   type: "int"
    default: 11211
    experimental: true
   redis_host:
-   type: string
+   type: "string"
    default: "localhost"
    experimental: true
   redis_port:
-   type: int
+   type: "int"
    default: 6379
    experimental: true
   redis_timeout:
-   type: real
-   step: any
+   type: "float"
+   step: "any"
    default: 2.5
    experimental: true
   pdo_dsn:
-   type: string
+   type: "string"
    default: "mysql:dbname=phpmussel;host=localhost;port=3306"
    experimental: true
   pdo_username:
-   type: string
+   type: "string"
    default: ""
    experimental: true
+   autocomplete: "username"
   pdo_password:
-   type: string
+   type: "string"
    default: ""
    experimental: true
+   autocomplete: "current-password"
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.04.02).
+ * This file: The loader (last modified: 2019.04.30).
  */
 
 /**
@@ -30,9 +30,20 @@ if (defined('phpMussel')) {
 
 define('phpMussel', true);
 
-if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
+/** Autoloader for phpMussel classes. */
+spl_autoload_register(function ($Class) {
+    $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
+    $File = __DIR__ . '/vault/classes/' . ((!$Vendor || $Vendor === 'phpMussel') ? '' : $Vendor . '/') . (
+        (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
+    ) . '.php';
+    if (is_readable($File)) {
+        require $File;
+    }
+});
+
+if (!version_compare(PHP_VERSION, '7.2.0', '>=')) {
     header('Content-Type: text/plain');
-    die('[phpMussel] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use phpMussel.');
+    die('[phpMussel] Not compatible with PHP versions below 7.2.0; Please update PHP in order to use phpMussel.');
 }
 
 /** Create an array for our working data. */
@@ -103,6 +114,13 @@ if (!file_exists($phpMussel['Vault'] . 'lang.php')) {
 require $phpMussel['Vault'] . 'lang.php';
 
 /**
+ * Create an array to use as a temporary memory cache for scanning
+ * operations (note: this has nothing to do with the memCache extension of
+ * PHP; the variable name is coincidental).
+ */
+$phpMussel['memCache'] = [];
+
+/**
  * Used to determine whether we've reached the end of this file without
  * exiting cleanly (important for rendering scan results correctly).
  */
@@ -122,7 +140,7 @@ if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck
     if ($phpMussel['Config']['general']['enable_plugins']) {
         if (!is_dir($phpMussel['Vault'] . 'plugins')) {
             header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['L10N']->getString('plugins_directory_nonexistent'));
+            die('[phpMussel] ' . ($phpMussel['L10N']->getString('plugins_directory_nonexistent')));
         }
         $phpMussel['MusselPlugins']['tempdata'] = [];
         if ((

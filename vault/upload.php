@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.04.06).
+ * This file: Upload handler (last modified: 2019.08.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,8 +19,8 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-/** Sets default error handler for the upload handler. */
-set_error_handler($phpMussel['ErrorHandler_1']);
+/** Initialise an error handler. */
+$phpMussel['InitialiseErrorHandler']();
 
 /** Create an array for our working data. */
 $phpMussel['upload'] = [];
@@ -61,7 +61,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     $phpMussel['PrepareHashCache']();
 
     /** File upload scan start time. */
-    $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
+    $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
 
     /** Create an array for normalising the $_FILES data. */
     $phpMussel['upload']['FilesData'] = [];
@@ -71,7 +71,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         $phpMussel['InstanceCache']['Handle'] = ['qdata' =>
             "== HONEYPOT EVENT ==\nDATE: " . $phpMussel['TimeFormat'](
                 $phpMussel['InstanceCache']['start_time'],
-                $phpMussel['Config']['general']['timeFormat']
+                $phpMussel['Config']['general']['time_format']
             ) . "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
                 $_SERVER[$phpMussel['IPAddr']]
             ) : $_SERVER[$phpMussel['IPAddr']]) . "\n"
@@ -262,7 +262,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     }
 
     /** File upload scan finish time. */
-    $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
+    $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
 
     /** Trim trailing whitespace. */
     $phpMussel['whyflagged'] = trim($phpMussel['whyflagged']);
@@ -281,6 +281,10 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
         $phpMussel['TemplateData']['favicon'] = $phpMussel['favicon'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
+
+        /** Provided for v1-v2 template file backwards compatibility. */
+        unset($phpMussel['FieldTemplates']['magnification']);
+        $phpMussel['FieldTemplates']['Magnification'] = $phpMussel['Config']['template_data']['magnification'];
 
         /** Determine which template file to use, if this hasn't already been determined. */
         if (!isset($phpMussel['InstanceCache']['template_file'])) {
@@ -314,7 +318,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             $phpMussel['InstanceCache']['Handle']['Data'] .= sprintf(
                 "%s: %s\n%s: %s\n== %s ==\n%s\n== %s ==\n%s",
                 $phpMussel['L10N']->getString('field_date'),
-                $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
+                $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['time_format']),
                 $phpMussel['L10N']->getString('field_ip_address'),
                 ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
                     $_SERVER[$phpMussel['IPAddr']]
@@ -401,4 +405,4 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 unset($phpMussel['upload']);
 
 /** Restores default error handler. */
-restore_error_handler();
+$phpMussel['RestoreErrorHandler']();

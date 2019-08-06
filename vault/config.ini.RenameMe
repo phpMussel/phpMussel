@@ -48,11 +48,11 @@ log_rotation_action='Delete'
 timezone='SYSTEM'
 
 ; Timezone offset in minutes.
-timeOffset=0
+time_offset=0
 
 ; The date/time notation format used by phpMussel. Additional options may be
 ; added upon request.
-timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
+time_format='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
 
 ; Where to find the IP address of connecting requests? (Useful for services
 ; such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't
@@ -164,7 +164,7 @@ max_login_attempts=5
 
 ; File for logging front-end login attempts. Specify a filename, or leave blank
 ; to disable.
-FrontEndLog=''
+frontend_log=''
 
 ; Disable webfonts? True = Yes [Default]; False = No.
 disable_webfonts=true
@@ -186,7 +186,7 @@ statistics=false
 [signatures]
 
 ; A list of the active signature files, delimited by commas.
-Active=''
+active=''
 
 ; Should phpMussel report when signatures files are missing or corrupted? If
 ; fail_silently is disabled, missing and corrupted files will be reported on
@@ -546,7 +546,7 @@ privacy_policy=''
 theme='default'
 
 ; Font magnification. Default = 1.
-Magnification=1
+magnification=1
 
 ; The template file for custom themes utilises external CSS properties, whereas
 ; the template file for the default theme utilises internal CSS properties. To
@@ -561,48 +561,48 @@ css_url=''
 
 ; A file for logging all events in relation to PHPMailer. Specify a filename,
 ; or leave blank to disable.
-EventLog=''
+event_log=''
 
 ; Setting this directive to `true` instructs PHPMailer to skip the normal
 ; authentication process that normally occurs when sending email via SMTP. This
 ; should be avoided, because skipping this process may expose outbound email to
 ; MITM attacks, but may be necessary in cases where this process prevents
 ; PHPMailer from connecting to an SMTP server.
-SkipAuthProcess=false
+skip_auth_process=false
 
 ; This directive determines whether to use 2FA for front-end accounts.
-Enable2FA=false
+enable_two_factor=false
 
 ; The SMTP host to use for outbound email.
-Host=''
+host=''
 
 ; The port number to use for outbound email. Default = 587.
-Port=587
+port=587
 
 ; The protocol to use when sending email via SMTP (TLS or SSL).
-SMTPSecure='-'
+smtp_secure='-'
 
 ; This directive determines whether to authenticate SMTP sessions (should
 ; usually be left alone).
-SMTPAuth=true
+smtp_auth=true
 
 ; The username to use when sending email via SMTP.
-Username=''
+username=''
 
 ; The password to use when sending email via SMTP.
-Password=''
+password=''
 
 ; The sender address to cite when sending email via SMTP.
-setFromAddress=''
+set_from_address=''
 
 ; The sender name to cite when sending email via SMTP.
-setFromName=''
+set_from_name=''
 
 ; The reply address to cite when sending email via SMTP.
-addReplyToAddress=''
+add_reply_to_address=''
 
 ; The reply name to cite when sending email via SMTP.
-addReplyToName=''
+add_reply_to_name=''
 
 
 [supplementary_cache_options]
