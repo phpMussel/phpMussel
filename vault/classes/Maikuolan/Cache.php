@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.04.09).
+ * A simple, unified cache handler (last modified: 2019.05.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -69,22 +69,22 @@ class Cache
     private $WorkingData = null;
 
     /** Prepared set query for PDO. */
-    const setQuery = 'INSERT INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time) ON DUPLICATE KEY UPDATE `Data` = :data2, `Time` = :time2 WHERE `Key` = :key2';
+    const SET_QUERY = 'INSERT INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time) ON DUPLICATE KEY UPDATE `Data` = :data2, `Time` = :time2 WHERE `Key` = :key2';
 
     /** Prepared get query for PDO. */
-    const getQuery = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
+    const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
 
     /** Prepared delete query for PDO. */
-    const deleteQuery = 'DELETE FROM `Cache` WHERE `Key` = :key';
+    const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
 
     /** Prepared clear all query for PDO. */
-    const clearQuery = 'DELETE FROM `Cache` WHERE 1';
+    const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
 
     /** Prepared clear expired query for PDO. */
-    const clearExpiredQuery = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `TIME < :time';
+    const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `TIME < :time';
 
     /** Prepared get all query for PDO. */
-    const getAllQuery = 'SELECT * FROM `Cache` WHERE 1';
+    const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
 
     /** Default blocksize for file reading operations. */
     const BLOCKSIZE = 262144;
@@ -158,7 +158,7 @@ class Cache
      *
      * @return bool True on success; False on failure.
      */
-    public function connect()
+    public function connect(): bool
     {
         if ($this->EnableAPCu && extension_loaded('apcu') && ini_get('apc.enabled')) {
             $this->Using = 'APCu';
@@ -255,7 +255,7 @@ class Cache
      * @param string $Entry The name of the cache entry to get.
      * @return mixed The retrieved cache entry, or false on failure (e.g., if the cache entry doesn't exist).
      */
-    public function getEntry($Entry)
+    public function getEntry(string $Entry)
     {
         if ($this->Using === 'APCu') {
             return $this->unserializeEntry(apcu_fetch($Entry));
@@ -267,7 +267,7 @@ class Cache
             if ($this->clearExpiredPDO()) {
                 $this->Modified = true;
             }
-            $PDO = $this->WorkingData->prepare(self::getQuery);
+            $PDO = $this->WorkingData->prepare(self::GET_QUERY);
             if ($PDO !== false && $PDO->execute(['key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
                 return isset($Data['Data']) ? $this->unserializeEntry($Data['Data']) : false;
@@ -292,11 +292,11 @@ class Cache
      * Set a cache entry.
      *
      * @param string $Key The name of the cache entry to set.
-     * @param mixed $Value The value of the cache entry to get.
+     * @param mixed $Value The value of the cache entry to set.
      * @param int $TTL The number of seconds that the cache entry should persist.
      * @return bool True on success; False on failure.
      */
-    public function setEntry($Key, $Value, $TTL = 3600)
+    public function setEntry(string $Key, $Value, int $TTL = 3600): bool
     {
         $Value = $this->serializeEntry($Value);
         if ($this->Using === 'APCu') {
@@ -324,7 +324,7 @@ class Cache
             if ($TTL > 0) {
                 $TTL += time();
             }
-            $PDO = $this->WorkingData->prepare(self::setQuery);
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
             if ($PDO !== false && $PDO->execute([
                 'key' => $Key,
                 'data' => $Value,
@@ -355,7 +355,7 @@ class Cache
      * @param string $Entry The name of the cache entry to delete.
      * @return bool True on success; False on failure.
      */
-    public function deleteEntry($Entry)
+    public function deleteEntry(string $Entry): bool
     {
         if ($this->Using === 'APCu') {
             if (apcu_delete($Entry)) {
@@ -370,7 +370,7 @@ class Cache
             return false;
         }
         if ($this->Using === 'PDO') {
-            $PDO = $this->WorkingData->prepare(self::deleteQuery);
+            $PDO = $this->WorkingData->prepare(self::DELETE_QUERY);
             if ($PDO !== false && $PDO->execute(['key' => $Entry])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
@@ -390,7 +390,7 @@ class Cache
      *
      * @return bool True on success; False on failure.
      */
-    public function clearCache()
+    public function clearCache(): bool
     {
         if ($this->Using === 'APCu') {
             return $this->Modified = apcu_clear_cache();
@@ -402,7 +402,7 @@ class Cache
             return ($this->WorkingData->flushDb() && ($this->Modified = true));
         }
         if ($this->Using === 'PDO') {
-            $PDO = $this->WorkingData->prepare(self::clearQuery);
+            $PDO = $this->WorkingData->prepare(self::CLEAR_QUERY);
             if ($PDO !== false && $PDO->execute()) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
@@ -420,7 +420,7 @@ class Cache
      *
      * @return array An associative array containing all existent cache entries.
      */
-    public function getAllEntries()
+    public function getAllEntries(): array
     {
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
@@ -475,7 +475,7 @@ class Cache
             if ($this->clearExpiredPDO()) {
                 $this->Modified = true;
             }
-            $PDO = $this->WorkingData->prepare(self::getAllQuery);
+            $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
             if ($PDO !== false && $PDO->execute()) {
                 $Data = $PDO->fetchAll();
                 $Output = [];
@@ -508,7 +508,7 @@ class Cache
      * @param array $Data The array containing the cache data.
      * @return bool True if anything is cleared; False otherwise.
      */
-    public function clearExpired(&$Data)
+    public function clearExpired(array &$Data): bool
     {
         if (!is_array($Data)) {
             return false;
@@ -541,12 +541,12 @@ class Cache
      *
      * @return bool True if anything is cleared; False otherwise.
      */
-    public function clearExpiredPDO()
+    public function clearExpiredPDO(): bool
     {
         if ($this->Using !== 'PDO') {
             return false;
         }
-        $PDO = $this->WorkingData->prepare(self::clearExpiredQuery);
+        $PDO = $this->WorkingData->prepare(self::CLEAR_EXPIRED_QUERY);
         if ($PDO !== false && $PDO->execute(['time' => time()])) {
             return ($PDO->rowCount() > 0);
         }
@@ -576,8 +576,8 @@ class Cache
     /**
      * Serialize a cache entry prior to committing if necessary.
      *
-     * @param string|array $Entry The cache entry to be serialized.
-     * @return string The cache entry as verbatim, or a serialized string.
+     * @param mixed $Entry The cache entry to be serialized.
+     * @return mixed The cache entry as verbatim, or a serialized string.
      */
     public function serializeEntry($Entry)
     {

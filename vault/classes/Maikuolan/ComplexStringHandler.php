@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2019.03.26).
+ * Complex string handler (last modified: 2019.05.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -31,7 +31,7 @@ class ComplexStringHandler
      * @param string $Pattern An optional pattern to immediately call $this->generateMarkers.
      * @param callable $Closure An optional closure to immediately call $this->iterateClosure.
      */
-    public function __construct($Data = '', $Pattern = '', callable $Closure = null)
+    public function __construct(string $Data = '', string $Pattern = '', callable $Closure = null)
     {
         if (!empty($Data) && is_string($Data)) {
             $this->Input = $Data;
@@ -49,7 +49,7 @@ class ComplexStringHandler
      *
      * @param string $Pattern The pattern to use to generate the markers.
      */
-    public function generateMarkers($Pattern)
+    public function generateMarkers(string $Pattern)
     {
         preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         $Start = 0;
@@ -70,9 +70,9 @@ class ComplexStringHandler
      * @param callable $Closure
      * @param bool $Glue Whether to work on the markers or the working data.
      */
-    public function iterateClosure($Closure, $Glue = false)
+    public function iterateClosure(callable $Closure, bool $Glue = false)
     {
-        if (!is_callable($Closure) || empty($this->Input)) {
+        if (empty($this->Input)) {
             return;
         }
         if (!$Glue) {
@@ -89,7 +89,7 @@ class ComplexStringHandler
     }
 
     /** Recompile all data after all work has finished and return it. */
-    public function recompile()
+    public function recompile(): string
     {
         $Output = '';
         $Glue = 0;

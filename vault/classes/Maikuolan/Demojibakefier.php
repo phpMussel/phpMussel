@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.04.29).
+ * Demojibakefier (last modified: 2019.05.22).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -43,7 +43,7 @@ class Demojibakefier
     /**
      * @param string $NormaliseTo The encoding to normalise to (defaults to UTF-8).
      */
-    public function __construct($NormaliseTo = '')
+    public function __construct(string $NormaliseTo = '')
     {
         if ($NormaliseTo !== '' && in_array($NormaliseTo, $this->supported())) {
             $this->NormaliseTo = $NormaliseTo;
@@ -55,7 +55,7 @@ class Demojibakefier
      *
      * @return array An array of the encoding types that the class supports.
      */
-    public function supported()
+    public function supported(): array
     {
         return [
             'UTF-8',
@@ -135,7 +135,7 @@ class Demojibakefier
      * @param string $Encoding The encoding to check against (defaults to NormaliseTo).
      * @return bool True if the string conforms (per specs), or false otherwise.
      */
-    public function checkConformity($String, $Encoding = '')
+    public function checkConformity(string $String, string $Encoding = ''): bool
     {
         if ($Encoding === '') {
             $Encoding = $this->NormaliseTo;
@@ -256,9 +256,8 @@ class Demojibakefier
      *
      * @param string $String The originally supplied string.
      * @param array $Arr An array of potential candidates.
-     * @return array Input array with adjusted weights.
      */
-    private function weigh($String, &$Arr)
+    private function weigh(string $String, array &$Arr)
     {
         /** For when it really, really looks like UTF-8 (easier to detect in isolation than other encodings). */
         if (isset($Arr['UTF-8']['Weight']) && preg_match('~\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xec][\x80-\xbf]{2}|\xed[\x80-\x9f][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf]{2}|[\xf0-\xf3][\x80-\xbf]{3}|\xf4[\x80-\x9f][\x80-\xbf]~', $String)) {
@@ -458,9 +457,8 @@ class Demojibakefier
      * candidates.
      *
      * @param array $Arr An array of potential candidates.
-     * @return array The input array, hopefully reduced, if possible.
      */
-    private function dropVariants(&$Arr)
+    private function dropVariants(array &$Arr)
     {
         if (isset($Arr['GB18030'], $Arr['GB2312'])) {
             unset($Arr['GB2312']);
@@ -499,9 +497,9 @@ class Demojibakefier
      * See: https://en.wikipedia.org/wiki/Entropy_(information_theory)
      *
      * @param string $String The string to check.
-     * @return float The shannon entropy of the string.
+     * @return float|int The shannon entropy of the string.
      */
-    public function shannonEntropy($String)
+    public function shannonEntropy(string $String)
     {
         if (!$Len = strlen($String)) {
             return 0;
@@ -527,7 +525,7 @@ class Demojibakefier
      * @param string $String The string to normalise.
      * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
      */
-    public function normalise($String)
+    public function normalise(string $String): string
     {
         $this->Last = '';
         $this->Len = strlen($String);
@@ -593,7 +591,7 @@ class Demojibakefier
      * @param string $String The string to normalise.
      * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
      */
-    public function guard($String)
+    public function guard(string $String): string
     {
         return !function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
     }

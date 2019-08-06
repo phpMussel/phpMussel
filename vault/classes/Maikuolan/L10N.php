@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.04.01).
+ * L10N handler (last modified: 2019.05.29).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -36,20 +36,20 @@ class L10N
     public $Fallback = [];
 
     /** When there aren't multiple forms. */
-    private function int1()
+    private function int1(): int
     {
         return 0;
     }
 
     /** For e.g., Tagalog. */
-    private function int2Type1($Int)
+    private function int2Type1(int $Int): int
     {
         $Tail = $Int % 10;
         return ($Tail === 4 || $Tail === 6 || $Tail === 9) ? 1 : 0;
     }
 
     /** For e.g., Icelandic, Macedonian. */
-    private function int2Type2($Int)
+    private function int2Type2(int $Int): int
     {
         $Tail = $Int % 10;
         $Tail2 = $Int % 100;
@@ -57,19 +57,19 @@ class L10N
     }
 
     /** For e.g., Armenian, Bangla, French, Hindi, Marathi, Zulu. */
-    private function int2Type3($Int)
+    private function int2Type3(int $Int): int
     {
         return ($Int === 0 || $Int === 1) ? 0 : 1;
     }
 
     /** For e.g., Bulgarian, Danish, Dutch, English, Estonian, German, Greek, Italian. */
-    private function int2Type4($Int)
+    private function int2Type4(int $Int): int
     {
         return ($Int === 1) ? 0 : 1;
     }
 
     /** For e.g., Latvian, Prussian. */
-    private function int3Type1($Int)
+    private function int3Type1(int $Int): int
     {
         $Tail = $Int % 10;
         $Tail2 = $Int % 100;
@@ -80,7 +80,7 @@ class L10N
     }
 
     /** For e.g., Colognian, Langi. */
-    private function int3Type2($Int)
+    private function int3Type2(int $Int): int
     {
         if ($Int === 0) {
             return 2;
@@ -89,7 +89,7 @@ class L10N
     }
 
     /** For e.g., Cornish, Inuktitut. */
-    private function int3Type3($Int)
+    private function int3Type3(int $Int): int
     {
         if ($Int === 2) {
             return 2;
@@ -98,7 +98,7 @@ class L10N
     }
 
     /** For e.g., Russian, Ukrainian, Bosnian, Croatian, Serbian. */
-    private function int3Type4($Int)
+    private function int3Type4(int $Int): int
     {
         $Tail = $Int % 10;
         $Tail2 = $Int % 100;
@@ -109,7 +109,7 @@ class L10N
     }
 
     /** For e.g., Polish. */
-    private function int3Type5($Int)
+    private function int3Type5(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -120,7 +120,7 @@ class L10N
     }
 
     /** For e.g., Lithuanian. */
-    private function int3Type6($Int)
+    private function int3Type6(int $Int): int
     {
         $Tail = $Int % 10;
         $Tail2 = $Int % 100;
@@ -131,7 +131,7 @@ class L10N
     }
 
     /** For e.g., Tachelhit. */
-    private function int3Type7($Int)
+    private function int3Type7(int $Int): int
     {
         if ($Int > 10) {
             return 2;
@@ -140,7 +140,7 @@ class L10N
     }
 
     /** For e.g., Moldavian, Romanian. */
-    private function int3Type8($Int)
+    private function int3Type8(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -153,7 +153,7 @@ class L10N
     }
 
     /** For e.g., Czech, Slovak. */
-    private function int3Type9($Int)
+    private function int3Type9(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -161,8 +161,17 @@ class L10N
         return ($Int >= 2 && $Int <= 4) ? 1 : 2;
     }
 
+    /** For e.g., Quenya, Tokelauan. */
+    private function int3Type10(int $Int): int
+    {
+        if ($Int === 2) {
+            return 1;
+        }
+        return $Int > 2 ? 2 : 0;
+    }
+
     /** For e.g., Manx. */
-    private function int4Type1($Int)
+    private function int4Type1(int $Int): int
     {
         $Tail = $Int % 10;
         if ($Tail === 1) {
@@ -175,7 +184,7 @@ class L10N
     }
 
     /** For e.g., Gaelic. */
-    private function int4Type2($Int)
+    private function int4Type2(int $Int): int
     {
         if ($Int === 0 || $Int > 19) {
             return 3;
@@ -191,7 +200,7 @@ class L10N
     }
 
     /** For e.g., Breton. */
-    private function int4Type3($Int)
+    private function int4Type3(int $Int): int
     {
         $Tail = $Int % 10;
         $Tail2 = $Int % 100;
@@ -210,7 +219,7 @@ class L10N
     }
 
     /** For e.g., Sorbian, Slovenian. */
-    private function int4Type4($Int)
+    private function int4Type4(int $Int): int
     {
         $Tail2 = $Int % 100;
         if ($Tail2 === 1) {
@@ -226,7 +235,7 @@ class L10N
     }
 
     /** For e.g., Hebrew. */
-    private function int4Type5($Int)
+    private function int4Type5(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -241,7 +250,7 @@ class L10N
     }
 
     /** For e.g., Maltese. */
-    private function int4Type6($Int)
+    private function int4Type6(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -256,8 +265,20 @@ class L10N
         return 1;
     }
 
+    /** For e.g., Na'vi. */
+    private function int4Type7(int $Int): int
+    {
+        if ($Int === 2) {
+            return 1;
+        }
+        if ($Int === 3) {
+            return 2;
+        }
+        return $Int > 3 ? 3 : 0;
+    }
+
     /** For e.g., Irish. */
-    private function int5Type1($Int)
+    private function int5Type1(int $Int): int
     {
         if ($Int === 1) {
             return 0;
@@ -275,7 +296,7 @@ class L10N
     }
 
     /** For e.g., Arabic. */
-    private function int6Type1($Int)
+    private function int6Type1(int $Int): int
     {
         if ($Int === 0) {
             return 5;
@@ -297,7 +318,7 @@ class L10N
     }
 
     /** For e.g., Welsh. */
-    private function int6Type2($Int)
+    private function int6Type2(int $Int): int
     {
         if ($Int === 0) {
             return 5;
@@ -318,13 +339,13 @@ class L10N
     }
 
     /** For e.g., Armenian, Danish, French, Portuguese. */
-    private function fraction2Type1($Fraction)
+    private function fraction2Type1(float $Fraction): int
     {
         return ($Fraction >= 2) ? 1 : 0;
     }
 
     /** For e.g., Amharic, Bangla, Hindi, Marathi. */
-    private function fraction2Type2($Fraction)
+    private function fraction2Type2(float $Fraction): int
     {
         return ($Fraction >= 1) ? 1 : 0;
     }
@@ -336,7 +357,7 @@ class L10N
      * @param string $String Which L10N strings we're fetching from.
      * @return string The appropriate plural form as determined.
      */
-    public function getPlural($Number, $String)
+    public function getPlural($Number, string $String): string
     {
         if (isset($this->Data[$String])) {
             $Choices = $this->Data[$String];
@@ -371,7 +392,7 @@ class L10N
      * @param string $String The L10N string to fetch.
      * @return string The fetched L10N string.
      */
-    public function getString($String)
+    public function getString(string $String): string
     {
         if (isset($this->Data[$String])) {
             return $this->Data[$String];
@@ -383,7 +404,7 @@ class L10N
      * @param array $Data The L10N data.
      * @param array $Fallback The fallback L10N data (optional).
      */
-    public function __construct($Data = [], $Fallback = [])
+    public function __construct(array $Data = [], array $Fallback = [])
     {
         $this->Data = $Data;
         $this->Fallback = $Fallback;
