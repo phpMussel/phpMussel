@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary file handler (last modified: 2018.10.15).
+ * This file: Temporary file handler (last modified: 2019.08.06).
  */
 
 namespace phpMussel\TemporaryFileHandler;
@@ -25,7 +25,7 @@ class TemporaryFileHandler
      * @param string $Content The temporary file content.
      * @param string $Location The temporary file location.
      */
-    public function __construct($Content, $Location)
+    public function __construct(string $Content, string $Location)
     {
         /** Pad the location if necessary. */
         if (substr($Location, -1) !== '/' && substr($Location, -1) !== "\\") {

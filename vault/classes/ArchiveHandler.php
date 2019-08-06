@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2018.10.16).
+ * This file: Archive handler (last modified: 2019.08.06).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -28,7 +28,7 @@ interface ArchiveHandlerInterface
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
      */
-    public function EntryRead($Bytes = -1);
+    public function EntryRead(int $Bytes = -1);
 
     /**
      * Return the compressed size of the entry at the current entry pointer.
@@ -42,13 +42,17 @@ interface ArchiveHandlerInterface
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
-    public function EntryIsDirectory();
+    public function EntryIsDirectory(): bool;
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
-    public function EntryIsEncrypted();
+    public function EntryIsEncrypted(): bool;
 
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
@@ -65,7 +69,7 @@ interface ArchiveHandlerInterface
      *
      * @return bool False if there aren't any more entries.
      */
-    public function EntryNext();
+    public function EntryNext(): bool;
 }
 
 /**
@@ -137,7 +141,7 @@ class ZipHandler extends ArchiveHandler
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
      */
-    public function EntryRead($Bytes = -1)
+    public function EntryRead(int $Bytes = -1)
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -164,16 +168,20 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
-    public function EntryIsDirectory()
+    public function EntryIsDirectory(): bool
     {
         return (!$this->EntryActualSize() && !$this->EntryCompressedSize() && substr($this->EntryName, -1) === '/');
     }
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
-    public function EntryIsEncrypted()
+    public function EntryIsEncrypted(): bool
     {
         return !empty($this->StatIndex['encryption_method']);
     }
@@ -199,7 +207,7 @@ class ZipHandler extends ArchiveHandler
      *
      * @return bool False if there aren't any more entries.
      */
-    public function EntryNext()
+    public function EntryNext(): bool
     {
         $this->Index++;
         if ($this->Index < $this->NumFiles) {
@@ -248,7 +256,7 @@ class TarHandler extends ArchiveHandler
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
      */
-    public function EntryRead($Bytes = -1)
+    public function EntryRead(int $Bytes = -1)
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -276,8 +284,10 @@ class TarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
-    public function EntryIsDirectory()
+    public function EntryIsDirectory(): bool
     {
         $Name = $this->EntryName();
         return ((substr($Name, -1, 1) === "\\" || substr($Name, -1, 1) === '/') && $this->EntryActualSize === 0);
@@ -285,10 +295,11 @@ class TarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool Tar doesn't use encryption, therefore always false.
      */
-    public function EntryIsEncrypted()
+    public function EntryIsEncrypted(): bool
     {
-        /** Tar doesn't use encryption, therefore always false. */
         return false;
     }
 
@@ -313,7 +324,7 @@ class TarHandler extends ArchiveHandler
      *
      * @return bool False if there aren't any more entries.
      */
-    public function EntryNext()
+    public function EntryNext(): bool
     {
         if (($this->Offset + 1024) > $this->TotalSize) {
             return false;
@@ -375,7 +386,7 @@ class RarHandler extends ArchiveHandler
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
      */
-    public function EntryRead($Bytes = -1)
+    public function EntryRead(int $Bytes = -1)
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -407,16 +418,20 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
-    public function EntryIsDirectory()
+    public function EntryIsDirectory(): bool
     {
         return is_object($this->RarEntry) ? $this->RarEntry->isDirectory() : false;
     }
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
-    public function EntryIsEncrypted()
+    public function EntryIsEncrypted(): bool
     {
         return is_object($this->RarEntry) ? $this->RarEntry->isEncrypted() : false;
     }
@@ -442,7 +457,7 @@ class RarHandler extends ArchiveHandler
      *
      * @return bool False if there aren't any more entries.
      */
-    public function EntryNext()
+    public function EntryNext(): bool
     {
         if (!is_array($this->RarEntries)) {
             $this->RarEntries = scandir('rar://' . $this->PointerSelf);

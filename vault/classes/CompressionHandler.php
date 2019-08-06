@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Compression handler (last modified: 2018.10.13).
+ * This file: Compression handler (last modified: 2019.08.06).
  */
 
 namespace phpMussel\CompressionHandler;
@@ -27,7 +27,7 @@ class CompressionHandler
     /**
      * @param string $Data The data to be worked upon.
      */
-    public function __construct($Data)
+    public function __construct(string $Data)
     {
         $this->Data = $Data;
     }
@@ -36,12 +36,12 @@ class CompressionHandler
      * The basis for the other try methods.
      *
      * @param string $Using What the try methods uses.
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
      */
-    private function TryX($Using)
+    private function TryX(string $Using): int
     {
         /** Guard. */
         if (!function_exists($Using)) {
-            /** Missing prerequisite. */
             return 1;
         }
 
@@ -58,8 +58,12 @@ class CompressionHandler
         return 2;
     }
 
-    /** Try to decompress using GZ. */
-    public function TryGz()
+    /**
+     * Try to decompress using GZ.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
+    public function TryGz(): int
     {
         /** Guard. */
         if (substr($this->Data, 0, 2) !== "\x1f\x8b") {
@@ -70,8 +74,12 @@ class CompressionHandler
         return $this->TryX('gzdecode');
     }
 
-    /** Try to decompress using BZ. */
-    public function TryBz()
+    /**
+     * Try to decompress using BZ.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
+    public function TryBz(): int
     {
         /** Guard. */
         if (substr($this->Data, 0, 3) !== "\x42\x5a\x68") {
@@ -82,14 +90,23 @@ class CompressionHandler
         return $this->TryX('bzdecompress');
     }
 
-    /** Try to decompress using LZF. */
-    public function TryLzf()
+    /**
+     * Try to decompress using LZF.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
+    public function TryLzf(): int
     {
         return $this->TryX('lzf_decompress');
     }
 
-    /** Try everything. */
-    public function TryEverything()
+    /**
+     * Try everything.
+     *
+     * @return bool The state of the data before and after trying is the same when true is
+     *      returned, different when false is returned.
+     */
+    public function TryEverything(): bool
     {
         /** Fetch original data state. */
         $Original = $this->Data;
