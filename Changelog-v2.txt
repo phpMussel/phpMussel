@@ -1,0 +1,61 @@
+Changelog for phpMussel (>= v2.0.0, < v3.0.0), "Changelog-v2.txt".
+
+=== VERSION RELEASE GUIDELINES ===
+phpMussel adopts and adheres to SemVer (Semantic Versioning). For more information
+about SemVer, please refer to:
+- https://semver.org/
+
+Detailed version release guidelines for phpMussel can be found at:
+- https://github.com/phpMussel/phpMussel/blob/v1/CONTRIBUTING.md#phpmussel-version-release-guidelines
+
+=== Changes made since last versioned release ===
+
+- [2019.05.31; NEW FEATURE; Maikuolan]: Added the ability to automatically
+  switch between different channels when requesting a remote resource (e.g.,
+  when the front-end updates page attempts to update something, or attempts to
+  retrieve the latest available component metadata), for whenever such a
+  request fails (e.g., due to server errors, the requested resource no longer
+  existing at a particular location, etc), and added a new configuration
+  directive, "disabled_channels", to optionally prevent phpMussel from ever
+  requesting resources from particular, specific channels.
+
+- [2019.06.17; Maikuolan]: Added the ability to optionally update only all
+  signature files to the front-end updates page (as opposed to updating
+  everything at once).
+
+- [2019.06.27; Maikuolan]: Shifted responsibility for number formatting out
+  from the front-end functions file, into its own, distinct class.
+
+- [2019.07.10; Maikuolan]: The front-end updates page now sets "verify" as the
+  default option for components, to help reduce the risk that users select
+  "uninstall" or "deactivate" by accident.
+
+- [2019.07.10; Maikuolan]: Slightly improved front-end pie chart colouring.
+
+- [2019.07.26; Maikuolan]: Added condition to ensure that "delete" should never
+  be the default option selected for files shown at the front-end file manager.
+
+- [2019.08.05-06; MAJOR CODE CHANGE; Maikuolan]: Removed PHP 5.4 polyfills,
+  thereby immediately upping the minimum PHP version requirement for the
+  upcoming release. Updated the loader, upping the hardcoded minimum PHP
+  version requirement to PHP 7.2, and removed some no longer needed code.
+  Removed some extraneous .htaccess files (only really need our main .htaccess
+  file in the base of the vault nowadays; the extra .htaccess files in some of
+  the vault's subdirectories aren't necessary). Renamed a number of
+  configuration directives in order to better comply with the phpMussel code
+  style guidelines regarding the use of snake_case for configuration
+  directives. Shifted the class autoloader out from the functions file, into
+  the main loader. Added PHP7-style type hinting and return type declarations
+  wherever applicable. Updated all common classes package classes to the latest
+  compatible versions. Added some missing PHPDoc comments.
+
+======
+
+"Changelog-v2.txt" contains changelog notes for versions => 2.0.0 < 3.0.0.
+
+Changelog notes for versions => 1.0.0 < 2.0.0 can be found in the
+"Changelog-v1.txt" file included with any relevant, corresponding releases.
+
+Changelog notes for versions < 1.0.0 can be found in the "Changelog-v0.txt"
+file or in the "_docs/change_log.txt" file included with any relevant,
+corresponding releases.

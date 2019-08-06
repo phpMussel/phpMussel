@@ -2,8 +2,8 @@
 <form action="?" method="POST" style="text-align:center">
   <h1>{header_login}</h1>{state_msg}
   <table style="margin:auto;width:inherit"><tr><td><div id="pha"></div></td><td>
-    <input name="username" type="text" placeholder="{field_username}" /><br />
-    <input id="password" name="password" type="password" placeholder="{field_password}" onkeyup="javascript:RGBW()" />
+    <input name="username" type="text" placeholder="{field_username}" autocomplete="username" /><br />
+    <input id="password" name="password" type="password" placeholder="{field_password}" onkeyup="javascript:RGBW()" autocomplete="current-password" />
   </td><td><div id="phb"></div></td></tr></table>
   <input name="phpmussel-form-target" type="hidden" value="login" />
   <input type="submit" value="{field_log_in}" class="auto" /><br /><br />
