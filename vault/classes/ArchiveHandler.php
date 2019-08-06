@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2018.10.16).
+ * This file: Archive handler (last modified: 2019.08.06).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -42,11 +42,15 @@ interface ArchiveHandlerInterface
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
     public function EntryIsDirectory();
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
     public function EntryIsEncrypted();
 
@@ -164,6 +168,8 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
     public function EntryIsDirectory()
     {
@@ -172,6 +178,8 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
     public function EntryIsEncrypted()
     {
@@ -276,6 +284,8 @@ class TarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
     public function EntryIsDirectory()
     {
@@ -285,10 +295,11 @@ class TarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool Tar doesn't use encryption, therefore always false.
      */
     public function EntryIsEncrypted()
     {
-        /** Tar doesn't use encryption, therefore always false. */
         return false;
     }
 
@@ -407,6 +418,8 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
+     *
+     * @return bool True = Is a directory. False = Isn't a directory.
      */
     public function EntryIsDirectory()
     {
@@ -415,6 +428,8 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return whether the entry at the current entry pointer is encrypted.
+     *
+     * @return bool True = Is encrypted. False = Isn't encrypted.
      */
     public function EntryIsEncrypted()
     {

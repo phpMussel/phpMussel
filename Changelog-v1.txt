@@ -26,6 +26,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.07.26; Maikuolan]: Added condition to ensure that "delete" should never
   be the default option selected for files shown at the front-end file manager.
 
+- [2019.08.06; Maikuolan]: Added some missing PHPDoc comments.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 

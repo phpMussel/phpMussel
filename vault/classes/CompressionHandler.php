@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Compression handler (last modified: 2018.10.13).
+ * This file: Compression handler (last modified: 2019.08.06).
  */
 
 namespace phpMussel\CompressionHandler;
@@ -36,12 +36,12 @@ class CompressionHandler
      * The basis for the other try methods.
      *
      * @param string $Using What the try methods uses.
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
      */
     private function TryX($Using)
     {
         /** Guard. */
         if (!function_exists($Using)) {
-            /** Missing prerequisite. */
             return 1;
         }
 
@@ -58,7 +58,11 @@ class CompressionHandler
         return 2;
     }
 
-    /** Try to decompress using GZ. */
+    /**
+     * Try to decompress using GZ.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
     public function TryGz()
     {
         /** Guard. */
@@ -70,7 +74,11 @@ class CompressionHandler
         return $this->TryX('gzdecode');
     }
 
-    /** Try to decompress using BZ. */
+    /**
+     * Try to decompress using BZ.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
     public function TryBz()
     {
         /** Guard. */
@@ -82,13 +90,22 @@ class CompressionHandler
         return $this->TryX('bzdecompress');
     }
 
-    /** Try to decompress using LZF. */
+    /**
+     * Try to decompress using LZF.
+     *
+     * @return int 0 = Success. 1 = Missing prerequisite. 2 = Failure.
+     */
     public function TryLzf()
     {
         return $this->TryX('lzf_decompress');
     }
 
-    /** Try everything. */
+    /**
+     * Try everything.
+     *
+     * @return bool The state of the data before and after trying is the same when true is
+     *      returned, different when false is returned.
+     */
     public function TryEverything()
     {
         /** Fetch original data state. */
