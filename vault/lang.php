@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.04.21).
+ * This file: Language handler (last modified: 2019.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -80,44 +80,44 @@ $phpMussel['L10N']['FallbackData'] = (new \Maikuolan\Common\YAML($phpMussel['L10
 /** Build final L10N object. */
 $phpMussel['L10N'] = new \Maikuolan\Common\L10N($phpMussel['L10N']['ConfiguredData'], $phpMussel['L10N']['FallbackData']);
 
-/** Reference L10N object's contained data to ensure things don't break until we can properly implement the new object. */
-$phpMussel['lang'] = &$phpMussel['L10N']->Data;
-
-/** Temporary hotfix for missing textDir variable. */
-$phpMussel['lang']['textDir'] = (isset($phpMussel['lang']['Text Direction']) && $phpMussel['lang']['Text Direction'] === 'rtl') ? 'rtl' : 'ltr';
-
-/** Will remove later (temporary variable). */
-$phpMussel['Config']['general']['lang_override'] = false;
-
-/** Load user language overrides if possible and enabled. */
-if ($phpMussel['Config']['general']['lang_override'] && !empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    $phpMussel['lang_user'] = $phpMussel['lang'];
-    $phpMussel['user_lang'] = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-    if (($phpMussel['lang_pos'] = strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], ',')) !== false) {
-        $phpMussel['user_lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, $phpMussel['lang_pos']);
-    }
+/** Load client-specified L10N data if it's possible to do so. */
+if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+    $phpMussel['Client-L10N'] = &$phpMussel['L10N'];
+    $phpMussel['L10N-Lang-Attache'] = '';
+} else {
+    $phpMussel['Client-L10N'] = [
+        'Accepted' => preg_replace(['~^([^,]*).*$~', '~[^-a-z]~'], ['\1', ''], strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+    ];
     if (
-        empty($phpMussel['Config']['Config Defaults']['general']['lang']['choices'][$phpMussel['user_lang']]) &&
-        ($phpMussel['lang_pos'] = strpos($phpMussel['user_lang'], '-')) !== false
+        $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N']['Accepted'] &&
+        file_exists($phpMussel['Vault'] . 'lang/lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml')
     ) {
-        $phpMussel['user_lang'] = substr($phpMussel['user_lang'], 0, $phpMussel['lang_pos']);
-        if (empty($phpMussel['Config']['Config Defaults']['general']['lang']['choices'][$phpMussel['user_lang']])) {
-            $phpMussel['user_lang'] = '';
+        $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'lang/lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml');
+    }
+    if (empty($phpMussel['Client-L10N']['Data'])) {
+        $phpMussel['Client-L10N']['Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $phpMussel['Client-L10N']['Accepted']);
+        if (
+            $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N']['Accepted'] &&
+            file_exists($phpMussel['Vault'] . 'lang/lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml')
+        ) {
+            $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'lang/lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml');
         }
     }
 
-    /** Load the necessary language data. */
-    if (
-        $phpMussel['user_lang'] &&
-        $phpMussel['user_lang'] !== $phpMussel['Config']['general']['lang'] &&
-        file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['user_lang'] . '.php')
-    ) {
-        // rewrite this!!!
-        require $phpMussel['langPath'] . 'lang.' . $phpMussel['user_lang'] . '.php';
+    /** Process client-specific L10N data. */
+    if (empty($phpMussel['Client-L10N']['Data'])) {
+        $phpMussel['L10N-Lang-Attache'] = '';
+        $phpMussel['Client-L10N'] = [];
+    } else {
+        $phpMussel['Client-L10N']['Data'] = (new \Maikuolan\Common\YAML($phpMussel['Client-L10N']['Data']))->Data ?: [];
+        $phpMussel['L10N-Lang-Attache'] = ($phpMussel['Config']['general']['lang'] === $phpMussel['Client-L10N']['Accepted']) ? '' : sprintf(
+            ' lang="%s" dir="%s"',
+            $phpMussel['Client-L10N']['Accepted'],
+            isset($phpMussel['Client-L10N']['Data']['Text Direction']) ? $phpMussel['Client-L10N']['Data']['Text Direction'] : 'ltr'
+        );
+        $phpMussel['Client-L10N'] = $phpMussel['Client-L10N']['Data'];
     }
 
-    $phpMussel['Swap']($phpMussel['lang_user'], $phpMussel['lang']);
-    unset($phpMussel['user_lang'], $phpMussel['lang_pos']);
-} else {
-    $phpMussel['lang_user'] = &$phpMussel['lang'];
+    /** Build final client-specific L10N object. */
+    $phpMussel['Client-L10N'] = new \Maikuolan\Common\L10N($phpMussel['Client-L10N'], $phpMussel['L10N']);
 }

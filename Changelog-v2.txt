@@ -49,6 +49,8 @@ Detailed version release guidelines for phpMussel can be found at:
   wherever applicable. Updated all common classes package classes to the latest
   compatible versions. Added some missing PHPDoc comments.
 
+- [2019.08.17; Maikuolan]: Reinstated the "lang_override" directive.
+
 ======
 
 "Changelog-v2.txt" contains changelog notes for versions => 2.0.0 < 3.0.0.

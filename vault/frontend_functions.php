@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.05).
+ * This file: Front-end functions file (last modified: 2019.08.17).
  */
 
 /**
@@ -649,7 +649,7 @@ $phpMussel['IsActivable'] = function (array &$Component) {
  */
 $phpMussel['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use (&$phpMussel) {
     $Key = 'Extended Description ' . $Key;
-    if (isset($phpMussel['lang'][$Key])) {
+    if (isset($phpMussel['L10N']->Data[$Key])) {
         $Arr['Extended Description'] = $phpMussel['L10N']->getString($Key);
     } elseif (empty($Arr['Extended Description'])) {
         $Arr['Extended Description'] = '';
@@ -667,7 +667,7 @@ $phpMussel['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use
  */
 $phpMussel['PrepareName'] = function (array &$Arr, $Key = '') use (&$phpMussel) {
     $Key = 'Name ' . $Key;
-    if (isset($phpMussel['lang'][$Key])) {
+    if (isset($phpMussel['L10N']->Data[$Key])) {
         $Arr['Name'] = $phpMussel['L10N']->getString($Key);
     } elseif (empty($Arr['Name'])) {
         $Arr['Name'] = '';
@@ -1982,7 +1982,7 @@ $phpMussel['SendOutput'] = function () use (&$phpMussel) {
     if ($phpMussel['FE']['JS']) {
         $phpMussel['FE']['JS'] = "\n<script type=\"text/javascript\">" . $phpMussel['FE']['JS'] . '</script>';
     }
-    return $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    return $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['FE']['Template']);
 };
 
 /**

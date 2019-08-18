@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.05.29).
+ * L10N handler (last modified: 2019.08.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -363,6 +363,8 @@ class L10N
             $Choices = $this->Data[$String];
             $IntegerRule = $this->IntegerRule;
             $FractionRule = $this->FractionRule;
+        } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+            return $this->Fallback->getPlural($Number, $String);
         } elseif (isset($this->Fallback[$String])) {
             $Choices = $this->Fallback[$String];
             $IntegerRule = $this->FallbackIntegerRule;
@@ -397,28 +399,35 @@ class L10N
         if (isset($this->Data[$String])) {
             return $this->Data[$String];
         }
+        if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+            return $this->Fallback->getString($String);
+        }
         return isset($this->Fallback[$String]) ? $this->Fallback[$String] : '';
     }
 
     /**
      * @param array $Data The L10N data.
-     * @param array $Fallback The fallback L10N data (optional).
+     * @param array|\Maikuolan\Common\L10N $Fallback The fallback L10N data (optional).
      */
-    public function __construct(array $Data = [], array $Fallback = [])
+    public function __construct(array $Data = [], $Fallback = [])
     {
         $this->Data = $Data;
-        $this->Fallback = $Fallback;
+        if (is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
+            $this->Fallback = $Fallback;
+        }
         if (!empty($Data['IntegerRule']) && method_exists($this, $Data['IntegerRule'])) {
             $this->IntegerRule = $Data['IntegerRule'];
         }
         if (!empty($Data['FractionRule']) && method_exists($this, $Data['FractionRule'])) {
             $this->FractionRule = $Data['FractionRule'];
         }
-        if (!empty($Fallback['IntegerRule']) && method_exists($this, $Fallback['IntegerRule'])) {
-            $this->FallbackIntegerRule = $Fallback['IntegerRule'];
-        }
-        if (!empty($Fallback['FractionRule']) && method_exists($this, $Fallback['FractionRule'])) {
-            $this->FallbackFractionRule = $Fallback['FractionRule'];
+        if (is_array($Fallback)) {
+            if (!empty($Fallback['IntegerRule']) && method_exists($this, $Fallback['IntegerRule'])) {
+                $this->FallbackIntegerRule = $Fallback['IntegerRule'];
+            }
+            if (!empty($Fallback['FractionRule']) && method_exists($this, $Fallback['FractionRule'])) {
+                $this->FallbackFractionRule = $Fallback['FractionRule'];
+            }
         }
     }
 

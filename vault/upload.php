@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.08.05).
+ * This file: Upload handler (last modified: 2019.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -272,19 +272,39 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
         /** A fix for correctly displaying LTR/RTL text. */
         if ($phpMussel['L10N']->getString('Text Direction') !== 'rtl') {
-            $phpMussel['lang']['Text Direction'] = 'ltr';
+            $phpMussel['L10N']->Data['Text Direction'] = 'ltr';
         }
 
         /** Merging parsable variables for the template data. */
-        $phpMussel['TemplateData'] = $phpMussel['lang'] + $phpMussel['Config']['template_data'];
-        $phpMussel['TemplateData']['detected'] = $phpMussel['whyflagged'];
-        $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
-        $phpMussel['TemplateData']['favicon'] = $phpMussel['favicon'];
-        $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
+        $phpMussel['TemplateData'] = $phpMussel['Config']['template_data'] + [
+            'L10N-Lang-Attache' => $phpMussel['L10N-Lang-Attache'],
+            'detected' => $phpMussel['whyflagged'],
+            'phpmusselversion' => $phpMussel['ScriptIdent'],
+            'favicon' => $phpMussel['favicon'],
+            'xmlLang' => $phpMussel['Config']['general']['lang']
+        ];
+
+        /** Pull relevant client-specified L10N data first. */
+        if (!empty($phpMussel['L10N-Lang-Attache'])) {
+            foreach (['denied', 'denied_reason'] as $phpMussel['PullThis']) {
+                if (isset($phpMussel['Client-L10N']->Data[$phpMussel['PullThis']])) {
+                    $phpMussel['TemplateData'][$phpMussel['PullThis']] = $phpMussel['Client-L10N']->Data[$phpMussel['PullThis']];
+                }
+            }
+            unset($phpMussel['PullThis']);
+        }
+
+        /** Append default L10N data. */
+        $phpMussel['TemplateData'] += $phpMussel['L10N']->Data;
 
         /** Provided for v1-v2 template file backwards compatibility. */
-        unset($phpMussel['FieldTemplates']['magnification']);
-        $phpMussel['FieldTemplates']['Magnification'] = $phpMussel['Config']['template_data']['magnification'];
+        if (
+            isset($phpMussel['Config']['template_data']['magnification']) &&
+            !isset($phpMussel['Config']['template_data']['Magnification'])
+        ) {
+            unset($phpMussel['TemplateData']['magnification']);
+            $phpMussel['TemplateData']['Magnification'] = $phpMussel['Config']['template_data']['magnification'];
+        }
 
         /** Determine which template file to use, if this hasn't already been determined. */
         if (!isset($phpMussel['InstanceCache']['template_file'])) {
