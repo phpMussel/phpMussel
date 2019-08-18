@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.26).
+ * This file: Front-end handler (last modified: 2019.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -158,8 +158,8 @@ if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
 }
 
 /** A fix for correctly displaying LTR/RTL text. */
-if (empty($phpMussel['lang']['Text Direction']) || $phpMussel['lang']['Text Direction'] !== 'rtl') {
-    $phpMussel['lang']['Text Direction'] = 'ltr';
+if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Data['Text Direction'] !== 'rtl') {
+    $phpMussel['L10N']->Data['Text Direction'] = 'ltr';
     $phpMussel['FE']['FE_Align'] = 'left';
     $phpMussel['FE']['FE_Align_Reverse'] = 'right';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
@@ -223,7 +223,7 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
 if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
     header('Content-Type: text/css');
     echo $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.css'))
     );
     die;
@@ -575,7 +575,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
     if ($phpMussel['FE']['Permissions'] === 1) {
 
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_complete_access.html'))
         );
 
@@ -583,7 +583,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
     } elseif ($phpMussel['FE']['Permissions'] === 2) {
 
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
         );
 
@@ -606,7 +606,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
         /** Show them the two-factor authentication page. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_2fa.html'))
         );
 
@@ -614,7 +614,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
         /** Show them the login page. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_login.html'))
         );
 
@@ -790,7 +790,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_home.html'))
     ) . $phpMussel['MenuToggle'];
 
@@ -1031,7 +1031,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
             $phpMussel['RowInfo']['AccUsername'] = htmlentities(base64_decode($phpMussel['RowInfo']['AccUsername']));
             $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
             $phpMussel['FE']['Accounts'] .= $phpMussel['ParseVars'](
-                $phpMussel['lang'] + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']
+                $phpMussel['L10N']->Data + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']
             );
         }
         unset($phpMussel['RowInfo']);
@@ -1045,7 +1045,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
         /** Parse output. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts.html'))
         );
 
@@ -1292,7 +1292,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
                         $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
                         if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
-                            $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['lang'], $phpMussel['ChoiceValue']);
+                            $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data, $phpMussel['ChoiceValue']);
                         }
                     }
                     if ($phpMussel['DirValue']['type'] === 'checkbox') {
@@ -1364,7 +1364,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](
-                $phpMussel['lang'] + $phpMussel['ThisDir'], $phpMussel['FE']['ConfigRow']
+                $phpMussel['L10N']->Data + $phpMussel['ThisDir'], $phpMussel['FE']['ConfigRow']
             );
         }
         $phpMussel['FE']['ConfigFields'] .= "</table></span>\n";
@@ -1385,7 +1385,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config.html'))
     );
 
@@ -1517,7 +1517,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
         /** Parse output. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'],
+            $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_cache.html'))
         ) . $phpMussel['MenuToggle'];
 
@@ -1852,7 +1852,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
                 '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
-                $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
+                $phpMussel['L10N']->Data + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
             );
         }
@@ -1972,7 +1972,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
                 '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
-                $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
+                $phpMussel['L10N']->Data + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
             );
         }
@@ -2032,7 +2032,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates.html'))
     ) . $phpMussel['MenuToggle'];
 
@@ -2266,7 +2266,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
                 /** Parse output. */
                 $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-                    $phpMussel['lang'] + $phpMussel['FE'],
+                    $phpMussel['L10N']->Data + $phpMussel['FE'],
                     $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files_rename.html'))
                 );
 
@@ -2301,7 +2301,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
                 /** Parse output. */
                 $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-                    $phpMussel['lang'] + $phpMussel['FE'],
+                    $phpMussel['L10N']->Data + $phpMussel['FE'],
                     $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files_edit.html'))
                 );
 
@@ -2329,7 +2329,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files.html'))
     );
 
@@ -2419,7 +2419,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         $phpMussel['FE']['PieChartColours'] = '["' . implode('", "', $phpMussel['FE']['PieChartColours']) . '"]';
 
         /** Finalise pie chart. */
-        $phpMussel['FE']['PieChart'] = $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['PieFile']);
+        $phpMussel['FE']['PieChart'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['PieFile']);
 
     }
 
@@ -2446,7 +2446,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 '<input type="submit" value="' . $phpMussel['L10N']->getString('field_ok') . '" class="auto" />';
         }
         $phpMussel['FE']['FilesData'] .= $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['FilesRow']
+            $phpMussel['L10N']->Data + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['FilesRow']
         );
     });
 
@@ -2493,7 +2493,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_upload_test.html'))
     );
 
@@ -2608,7 +2608,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
     /** Process quarantine files data. */
     array_walk($phpMussel['FilesInQuarantine'], function ($ThisFile) use (&$phpMussel) {
         $phpMussel['FE']['FilesInQuarantine'] .= $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['QuarantineRow']
+            $phpMussel['L10N']->Data + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['QuarantineRow']
         );
     });
 
@@ -2617,7 +2617,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_quarantine.html'))
     );
 
@@ -2654,7 +2654,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_siginfo.html'))
     );
 
@@ -2738,7 +2738,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_statistics.html'))
     );
 
@@ -2760,7 +2760,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_logs.html'))
     );
 

@@ -28,6 +28,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.08.06; Maikuolan]: Added some missing PHPDoc comments.
 
+- [2019.08.17; Maikuolan]: Reinstated the "lang_override" directive.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 

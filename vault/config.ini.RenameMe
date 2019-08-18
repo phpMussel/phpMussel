@@ -84,6 +84,10 @@ delete_on_sight=false
 ; Specify the default language for phpMussel.
 lang='en'
 
+; Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes
+; [Default]; False = No.
+lang_override=true
+
 ; How do you prefer numbers to be displayed? Select the example that looks the
 ; most correct to you.
 numbers='Latin-1'
