@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.24).
+ * This file: Functions file (last modified: 2019.08.19).
  */
 
 /**
@@ -313,12 +313,11 @@ $phpMussel['substral'] = function ($h, $n) {
  *      developers as per their individual needs. Generally, a smaller value
  *      will increase stability but decrease performance, whereas a larger
  *      value will increase performance but decrease stability.
- * @return string|bool Content of the file returned by the function (or false
- *      on failure).
+ * @return string The file's contents (an empty string on failure).
  */
 $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Blocks = 128) {
     if (!$PreChecked && (!is_file($File) || !is_readable($File))) {
-        return false;
+        return '';
     }
     /** Blocksize to bytes. */
     $Blocksize = $Blocks * 1024;
@@ -336,7 +335,7 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Block
         }
         fclose($Handle);
     }
-    return $Data ?: false;
+    return $Data;
 };
 
 /**
@@ -346,7 +345,7 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Block
  *
  * @param string $Filename Refer to the description for file().
  * @param int $Flags Refer to the description for file().
- * @param resource $Context Refer to the description for file().
+ * @param resource|null $Context Refer to the description for file().
  * @return array|bool Same as with file(), but won't trigger warnings.
  */
 $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = null) {
@@ -3327,6 +3326,10 @@ $phpMussel['FetchExt'] = function ($ofn) {
 
 /**
  * Remove occurrence of $A from leading substring of $B.
+ *
+ * @param string $A
+ * @param string $B
+ * @return string
  */
 $phpMussel['RemoveLeadMatch'] = function ($A, $B) {
     $LenA = strlen($A);
@@ -3343,6 +3346,8 @@ $phpMussel['RemoveLeadMatch'] = function ($A, $B) {
 
 /**
  * Get substring of string after final slash.
+ *
+ * @param string $String The string
  */
 $phpMussel['SubstrAfterFinalSlash'] = function ($String) {
     return strpos($String, '/') !== false ? substr($String, strrpos($String, '/') + 1) : (
@@ -4330,24 +4335,22 @@ $phpMussel['DropTrailingCompressionExtension'] = function ($Filename) {
  * this way prior to completing the scan, would likely involve some type of
  * error).
  *
- * @param string $f The name of the item to be scanned, with path included.
- * @param string $ofn The name of the item to be scanned, without any path
- *      included (so, just the name by itself).
- * @return string The scan results, piped back to the parent from the child
- *      process and returned to the calling function as a string.
+ * @param string $Item The name of the item to be scanned w/ its path.
+ * @param string $ofn The name of the item to be scanned w/o its path.
+ * @return string The scan results to pipe back to the parent.
  */
-$phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
-    $pf = popen(
+$phpMussel['Fork'] = function ($Item = '', $ofn = '') use (&$phpMussel) {
+    $ProcessHandle = popen(
         $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['Vault'] .
-        '../loader.php" "cli_scan" "' . $f . '" "' . $ofn . '"',
+        '../loader.php" "cli_scan" "' . $Item . '" "' . $ofn . '"',
         'r'
     );
-    $s = '';
-    while ($x = fgets($pf)) {
-        $s .= $x;
+    $Output = '';
+    while ($Data = fgets($ProcessHandle)) {
+        $Output .= $Data;
     }
-    pclose($pf);
-    return $s;
+    pclose($ProcessHandle);
+    return $Output;
 };
 
 /** Assigns an array to use for dumping scan debug information (optional). */
@@ -4368,9 +4371,8 @@ $phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
 };
 
 /**
- * The main scan closure, responsible for initialising scans in most
- * circumstances. Should generally be called whenever phpMussel is
- * required by external scripts, apps, CMS, etc.
+ * The main scan closure, responsible for initialising most scan events. Should
+ * generally be called whenever phpMussel is leveraged by CMS, frameworks, etc.
  *
  * Please refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB
  * SERVERS)", for more information.
@@ -4876,7 +4878,7 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
         if ($LastActive) {
             $phpMussel['ClearHashCache']();
         }
-        return false;
+        return;
     }
     if ($phpMussel['Config']['signatures']['Active'] !== $LastActive) {
         $phpMussel['ClearHashCache']();
@@ -5087,7 +5089,12 @@ $phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
     }
 };
 
-/** Increments statistics if they've been enabled. */
+/**
+ * Increments statistics if they've been enabled.
+ *
+ * @param string $Statistic The statistic to increment.
+ * @param int $Amount The amount to increment it by.
+ */
 $phpMussel['Stats-Increment'] = function ($Statistic, $Amount) use (&$phpMussel) {
     if ($phpMussel['Config']['general']['statistics'] && isset($phpMussel['Statistics'][$Statistic])) {
         $phpMussel['Statistics'][$Statistic] += $Amount;

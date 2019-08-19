@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.17).
+ * This file: Front-end functions file (last modified: 2019.08.19).
  */
 
 /**
@@ -700,7 +700,7 @@ $phpMussel['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$phpMussel
  * @return bool Valid/Invalid.
  */
 $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
-    $Path = $phpMussel['Vault'] . 'lang/lang.' . $ChoiceKey;
+    $Path = $phpMussel['langPath'] . 'lang.' . $ChoiceKey;
     return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
 };
 
@@ -1810,6 +1810,7 @@ $phpMussel['NormaliseLinebreaks'] = function (&$Data) {
  * Signature information handler.
  *
  * @param array $Active The currently active signature files.
+ * @return string Signature information as prepared HTML output.
  */
 $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
 
