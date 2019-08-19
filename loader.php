@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.04.30).
+ * This file: The loader (last modified: 2019.08.19).
  */
 
 /**
@@ -138,32 +138,10 @@ if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck
     /** Plugins are detected and processed by phpMussel here. */
     $phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
     if ($phpMussel['Config']['general']['enable_plugins']) {
-        if (!is_dir($phpMussel['Vault'] . 'plugins')) {
-            header('Content-Type: text/plain');
-            die('[phpMussel] ' . ($phpMussel['L10N']->getString('plugins_directory_nonexistent')));
+        foreach ($phpMussel['PluginIterator'](['ThisPlugin' => 'plugin.php']) as $phpMussel['ThisPlugin']) {
+            require_once $phpMussel['ThisPlugin']['ThisPlugin'];
         }
-        $phpMussel['MusselPlugins']['tempdata'] = [];
-        if ((
-            $phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')
-        ) && is_resource($phpMussel['MusselPlugins']['tempdata']['d'])) {
-            while (true) {
-                $phpMussel['MusselPlugins']['tempdata']['f'] = readdir($phpMussel['MusselPlugins']['tempdata']['d']);
-                if (empty($phpMussel['MusselPlugins']['tempdata']['f'])) {
-                    break;
-                }
-                if (
-                    $phpMussel['MusselPlugins']['tempdata']['f'] !== '.' &&
-                    $phpMussel['MusselPlugins']['tempdata']['f'] !== '..' &&
-                    is_dir($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f']) &&
-                    file_exists($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php') &&
-                    !is_link($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php')
-                ) {
-                    require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
-                }
-            }
-            closedir($phpMussel['MusselPlugins']['tempdata']['d']);
-        }
-        unset($phpMussel['MusselPlugins']['tempdata']);
+        unset($phpMussel['ThisPlugin']);
     }
 
     /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
