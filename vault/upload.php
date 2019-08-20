@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.08.17).
+ * This file: Upload handler (last modified: 2019.08.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -391,7 +391,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         /** Generate HTML output. */
         $phpMussel['HTML'] = $phpMussel['ParseVars'](
             $phpMussel['TemplateData'],
-            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['InstanceCache']['template_file'], 0, true)
+            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['InstanceCache']['template_file'])
         );
 
         /** Plugin hook: "before_html_out". */

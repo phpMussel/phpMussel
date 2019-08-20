@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.19).
+ * This file: Front-end functions file (last modified: 2019.08.20).
  */
 
 /**
@@ -711,8 +711,11 @@ $phpMussel['FilterLang'] = function (string $ChoiceKey) use (&$phpMussel): bool 
  * @param string $ChoiceKey Hash algorithm.
  * @return bool Valid/Invalid.
  */
-$phpMussel['FilterAlgo'] = function (string $ChoiceKey) use (&$phpMussel): bool {
-    return ($ChoiceKey === 'PASSWORD_ARGON2I') ? !$phpMussel['VersionCompare'](PHP_VERSION, '7.2.0RC1') : true;
+$phpMussel['FilterAlgo'] = function ($ChoiceKey) use (&$phpMussel) {
+    if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
+        return $phpMussel['VersionCompare'](PHP_VERSION, '7.3.0');
+    }
+    return true;
 };
 
 /**
@@ -1895,7 +1898,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel): strin
 
     /** Build "other" totals. */
     foreach ($Subs as $Sub) {
-        $Other = isset($Totals[$Sub]['Total']) ? $Totals[$Sub]['Total'] : 0;
+        $Other = $Totals[$Sub]['Total'] ?? 0;
         foreach ($Totals[$Sub] as $Key => $SubTotal) {
             if ($Key === 'Total') {
                 continue;

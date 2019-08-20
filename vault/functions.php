@@ -318,24 +318,15 @@ $phpMussel['substral'] = function (string $h, string $n): string {
  * This function reads files and returns the contents of those files.
  *
  * @param string $File Path and filename of the file to read.
- * @param int $s Number of blocks to read from the file (optional; can be
- *      manually specified, but it's best to just ignore it and let the
- *      function work it out for itself).
- * @param bool $PreChecked When false, checks that the file exists and is
- *      writable. Defaults to false.
- * @param int $Blocks The total size of a single block in kilobytes (optional;
- *      defaults to 128, i.e., 128KB or 131072 bytes). This can be modified by
- *      developers as per their individual needs. Generally, a smaller value
- *      will increase stability but decrease performance, whereas a larger
- *      value will increase performance but decrease stability.
+ * @param int $Size Number of blocks to read from the file (optional).
  * @return string The file's contents (an empty string on failure).
  */
-$phpMussel['ReadFile'] = function (string $File, int $Size = 0, bool $PreChecked = false, int $Blocks = 128): string {
-    if (!$PreChecked && (!is_file($File) || !is_readable($File))) {
+$phpMussel['ReadFile'] = function (string $File, int $Size = 0): string {
+    if (!is_file($File) || !is_readable($File)) {
         return '';
     }
-    /** Blocksize to bytes. */
-    $Blocksize = $Blocks * 1024;
+    /** Default blocksize (128KB). */
+    static $Blocksize = 131072;
     $Filesize = filesize($File);
     if (!$Size) {
         $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
@@ -401,9 +392,7 @@ $phpMussel['CleanCache'] = function (string $Delete = '') use (&$phpMussel): boo
             if (($Delete && $Delete === $ThisData[0]) || ($ThisData[1] > 0 && $phpMussel['Time'] > $ThisData[1])) {
                 $FileKey = bin2hex(substr($ThisData[0], 0, 1));
                 if (!isset($CacheFiles[$FileKey])) {
-                    $CacheFiles[$FileKey] = !is_readable(
-                        $phpMussel['cachePath'] . $FileKey . '.tmp'
-                    ) ? '' : $phpMussel['ReadFile']($phpMussel['cachePath'] . $FileKey . '.tmp', 0, true);
+                    $CacheFiles[$FileKey] = $phpMussel['ReadFile']($phpMussel['cachePath'] . $FileKey . '.tmp');
                 }
                 while (strpos($CacheFiles[$FileKey], $ThisData[0] . ':') !== false) {
                     $CacheFiles[$FileKey] = str_ireplace($ThisData[0] . ':' . $phpMussel['substrbf'](
@@ -472,7 +461,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
         return $Out;
     }
     $File = $phpMussel['cachePath'] . bin2hex(substr($Entry, 0, 1)) . '.tmp';
-    if (!is_readable($File) || !$FileData = $phpMussel['ReadFile']($File, 0, true)) {
+    if (!$FileData = $phpMussel['ReadFile']($File)) {
         return '';
     }
     if (!$Item = strpos($FileData, $Entry . ':') !== false ? $Entry . ':' . $phpMussel['substrbf'](
@@ -1556,11 +1545,11 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                 if ($climode) {
                     $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
                 }
-                $lv_needle = isset($Fragment[2]) ? $Fragment[2] : '';
-                $pos_A = isset($Fragment[3]) ? $Fragment[3] : 0;
-                $pos_Z = isset($Fragment[4]) ? $Fragment[4] : 0;
-                $lv_min = isset($Fragment[5]) ? $Fragment[5] : 0;
-                $lv_max = isset($Fragment[6]) ? $Fragment[6] : -1;
+                $lv_needle = $Fragment[2] ?? '';
+                $pos_A = $Fragment[3] ?? 0;
+                $pos_Z = $Fragment[4] ?? 0;
+                $lv_min = $Fragment[5] ?? 0;
+                $lv_max = $Fragment[6] ?? -1;
                 if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
                     continue 2;
                 }
@@ -2222,11 +2211,11 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                                     if ($climode) {
                                         $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
                                     }
-                                    $lv_needle = (isset($ThisSigPart[2])) ? $ThisSigPart[2] : '';
-                                    $pos_A = (isset($ThisSigPart[3])) ? $ThisSigPart[3] : 0;
-                                    $pos_Z = (isset($ThisSigPart[4])) ? $ThisSigPart[4] : 0;
-                                    $lv_min = (isset($ThisSigPart[5])) ? $ThisSigPart[5] : 0;
-                                    $lv_max = (isset($ThisSigPart[6])) ? $ThisSigPart[6] : -1;
+                                    $lv_needle = $ThisSigPart[2] ?? '';
+                                    $pos_A = $ThisSigPart[3] ?? 0;
+                                    $pos_Z = $ThisSigPart[4] ?? 0;
+                                    $lv_min = $ThisSigPart[5] ?? 0;
+                                    $lv_max = $ThisSigPart[6] ?? -1;
                                     if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
                                         continue 2;
                                     }
@@ -2534,8 +2523,8 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                         if ($phpMussel['ConfineLength']($ThisSigLen)) {
                             continue;
                         }
-                        $xstrf = isset($VN[2]) ? $VN[2] : '*';
-                        $xstrt = isset($VN[3]) ? $VN[3] : '*';
+                        $xstrf = $VN[2] ?? '*';
+                        $xstrt = $VN[3] ?? '*';
                         $VN = $phpMussel['vn_shorthand']($VN[0]);
                         $VNLC = strtolower($VN);
                         if (($is_not_php && (
@@ -2678,8 +2667,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                 $phpMussel['LookupCount']++;
                 if (substr($URLScanner['req_result'], 0, 6) == "Listed") {
                     $URLScanner['Class'] = substr($URLScanner['req_result'], 7, 3);
-                    $URLScanner['Class'] = isset($URLScanner['classes'][$URLScanner['Class']]) ?
-                        $URLScanner['classes'][$URLScanner['Class']] : "\x1a\x82\x10\x3fXXX";
+                    $URLScanner['Class'] = $URLScanner['classes'][$URLScanner['Class']] ?? "\x1a\x82\x10\x3fXXX";
                     $phpMussel['InstanceCache']['urlscanner_domains'] .=
                         $URLScanner['This'] .
                         $URLScanner['y'] . ':' .

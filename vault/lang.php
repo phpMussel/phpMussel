@@ -72,8 +72,12 @@ if ($phpMussel['Config']['general']['enable_plugins']) {
             'Configured' => 'lang.' . $phpMussel['Config']['general']['lang'] . '.yaml',
             'Fallbacks' => 'lang.en.yaml'
         ]) as $phpMussel['Plugin-L10N']) {
-            $phpMussel['L10N']['Configured'][] = $phpMussel['Plugin-L10N']['Configured'];
-            $phpMussel['L10N']['Fallbacks'][] = $phpMussel['Plugin-L10N']['Fallbacks'];
+            if (isset($phpMussel['Plugin-L10N']['Configured'])) {
+                $phpMussel['L10N']['Configured'][] = $phpMussel['Plugin-L10N']['Configured'];
+            }
+            if (isset($phpMussel['Plugin-L10N']['Fallbacks'])) {
+                $phpMussel['L10N']['Fallbacks'][] = $phpMussel['Plugin-L10N']['Fallbacks'];
+            }
         }
     }
     unset($phpMussel['Plugin-L10N']);
