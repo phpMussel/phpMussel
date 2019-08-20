@@ -303,24 +303,15 @@ $phpMussel['substral'] = function ($h, $n) {
  * This function reads files and returns the contents of those files.
  *
  * @param string $File Path and filename of the file to read.
- * @param int $s Number of blocks to read from the file (optional; can be
- *      manually specified, but it's best to just ignore it and let the
- *      function work it out for itself).
- * @param bool $PreChecked When false, checks that the file exists and is
- *      writable. Defaults to false.
- * @param int $Blocks The total size of a single block in kilobytes (optional;
- *      defaults to 128, i.e., 128KB or 131072 bytes). This can be modified by
- *      developers as per their individual needs. Generally, a smaller value
- *      will increase stability but decrease performance, whereas a larger
- *      value will increase performance but decrease stability.
+ * @param int $Size Number of blocks to read from the file (optional).
  * @return string The file's contents (an empty string on failure).
  */
-$phpMussel['ReadFile'] = function ($File, $Size = 0, $PreChecked = false, $Blocks = 128) {
-    if (!$PreChecked && (!is_file($File) || !is_readable($File))) {
+$phpMussel['ReadFile'] = function ($File, $Size = 0) {
+    if (!is_file($File) || !is_readable($File)) {
         return '';
     }
-    /** Blocksize to bytes. */
-    $Blocksize = $Blocks * 1024;
+    /** Default blocksize (128KB). */
+    static $Blocksize = 131072;
     $Filesize = filesize($File);
     if (!$Size) {
         $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
@@ -386,9 +377,7 @@ $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
             if (($Delete && $Delete === $ThisData[0]) || ($ThisData[1] > 0 && $phpMussel['Time'] > $ThisData[1])) {
                 $FileKey = bin2hex(substr($ThisData[0], 0, 1));
                 if (!isset($CacheFiles[$FileKey])) {
-                    $CacheFiles[$FileKey] = !is_readable(
-                        $phpMussel['cachePath'] . $FileKey . '.tmp'
-                    ) ? '' : $phpMussel['ReadFile']($phpMussel['cachePath'] . $FileKey . '.tmp', 0, true);
+                    $CacheFiles[$FileKey] = $phpMussel['ReadFile']($phpMussel['cachePath'] . $FileKey . '.tmp');
                 }
                 while (strpos($CacheFiles[$FileKey], $ThisData[0] . ':') !== false) {
                     $CacheFiles[$FileKey] = str_ireplace($ThisData[0] . ':' . $phpMussel['substrbf'](
@@ -457,7 +446,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
         return $Out;
     }
     $File = $phpMussel['cachePath'] . bin2hex(substr($Entry, 0, 1)) . '.tmp';
-    if (!is_readable($File) || !$FileData = $phpMussel['ReadFile']($File, 0, true)) {
+    if (!$FileData = $phpMussel['ReadFile']($File)) {
         return '';
     }
     if (!$Item = strpos($FileData, $Entry . ':') !== false ? $Entry . ':' . $phpMussel['substrbf'](

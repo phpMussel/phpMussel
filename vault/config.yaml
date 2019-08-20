@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.08.17).
+# This file: Configuration defaults file (last modified: 2019.08.20).
 ##/
 
 Config Defaults:
@@ -253,6 +253,7 @@ Config Defaults:
     PASSWORD_DEFAULT: "PASSWORD_DEFAULT"
     PASSWORD_BCRYPT: "PASSWORD_BCRYPT"
     PASSWORD_ARGON2I: "PASSWORD_ARGON2I (PHP >= 7.2.0)"
+    PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
    choice_filter: "FilterAlgo"
   statistics:
    type: "bool"
