@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: Indonesian language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "Bahasa Indonesia"
 Text Direction: "ltr"
 IntegerRule: "int1"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Kebijakan Privasi"
 SafeBrowseLookup_200: "Berpotensi URL berbahaya terdeteksi"
 SafeBrowseLookup_400: "Kesalahan permintaan API"
@@ -34,19 +22,19 @@ cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
- Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
- mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
- file-file diupload ke system Anda dimana saja skrip di kaitkan,
- berdasarkan tanda tangan dari ClamAV dan lain-lain.
-                                     ~ ~ ~
- PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
-                                     ~ ~ ~
+  Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
+  mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
+  file-file diupload ke system Anda dimana saja skrip di kaitkan,
+  berdasarkan tanda tangan dari ClamAV dan lain-lain.
+  ~ ~ ~
+  PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
+  ~ ~ ~
 cli_ln3: |
- Sekarang phpMussel operasi di CLI mode (command line interface). Untuk
- memindai file atau direktori, menulis "scan", diikuti dengan nama file
- atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;
- Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis "q"
- dan tekan Enter untuk keluar.
+  Sekarang phpMussel operasi di CLI mode (command line interface). Untuk
+  memindai file atau direktori, menulis "scan", diikuti dengan nama file
+  atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;
+  Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis "q"
+  dan tekan Enter untuk keluar.
 cli_pe1: "Tidak valid file PE!"
 cli_pe2: "Seksi PE:"
 cli_signature_placeholder: "NAMA-TANDA-TANGAN"
@@ -58,7 +46,7 @@ denied_reason: "Upload diblokir karena alasan yang tercantum dibawah:"
 detected: "Terdeteksi %s"
 detected_control_characters: "Terdeteksi kontrol karakter"
 encrypted_archive: "Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan"
-failed_to_access: "Gagal mengakses "%s"!"
+failed_to_access: "Gagal mengakses \"%s\"!"
 field_date: "Tanggal"
 field_header_hash_reconstruction: "Rekonstruksi tanda tangan hash"
 field_header_pe_reconstruction: "Rekonstruksi tanda tangan PE sectional"
@@ -80,7 +68,7 @@ macros_not_permitted: "Makro tidak diizinkan"
 ok: "Oke"
 only_allow_images: "Upload file selain gambar tidak diizinkan"
 plugins_directory_nonexistent: "Direktori plugin tidak ada!"
-quarantined_as: "Dikarantina sebagai "/vault/quarantine/%s.qfu"."
+quarantined_as: "Dikarantina sebagai \"/vault/quarantine/%s.qfu\"."
 recursive: "Batas kedalaman rekursi melebihi"
 required_variables_not_defined: "Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan."
 scan_chameleon: "Bunglon %s serangan terdeteksi"
@@ -108,36 +96,35 @@ upload_error_7: "Disk-menulis kesalahan! Silahkan hubungi hostmaster untuk bantu
 upload_error_8: "PHP salah-konfigurasi terdeteksi! Silahkan hubungi hostmaster untuk bantuan! "
 upload_limit_exceeded: "Upload batas melebihi"
 x_does_not_exist: "%s tidak ada"
-
 cli_commands: |
- ..
- q
- - Berhenti CLI.
- - Alias: quit, exit.
- hash_file:%
- - Menghasilkan tanda tangan hash dari file [Sintaksis: hash_file:algo file].
- hash:%
- - Menghasilkan tanda tangan hash dari string [Sintaksis: hash:algo string].
- algo
- - Daftar semua algoritma yang didukung.
- hex_encode
- - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
- - Alias: x.
- hex_decode
- - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].
- base64_encode
- - Mengkonversi string biner ke string base64
- - [Sintaksis: base64_encode string].
- - Alias: b.
- base64_decode
- - Mengkonversi string base64 ke string biner
- - [Sintaksis: base64_decode string].
- pe_meta
- - Ekstrak metadata dari file PE [Sintaksis: pe_meta file].
- url_sig
- - Membuat tanda tangan pemindai URL [Sintaksis: url_sig string].
- scan
- - Pindai file atau direktori [Sintaksis: scan file].
- - Alias: s.
- c
- - Cetak ini daftar perintah.
+  ..
+  q
+  - Berhenti CLI.
+  - Alias: quit, exit.
+  hash_file:%
+  - Menghasilkan tanda tangan hash dari file [Sintaksis: hash_file:algo file].
+  hash:%
+  - Menghasilkan tanda tangan hash dari string [Sintaksis: hash:algo string].
+  algo
+  - Daftar semua algoritma yang didukung.
+  hex_encode
+  - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
+  - Alias: x.
+  hex_decode
+  - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].
+  base64_encode
+  - Mengkonversi string biner ke string base64
+  - [Sintaksis: base64_encode string].
+  - Alias: b.
+  base64_decode
+  - Mengkonversi string base64 ke string biner
+  - [Sintaksis: base64_decode string].
+  pe_meta
+  - Ekstrak metadata dari file PE [Sintaksis: pe_meta file].
+  url_sig
+  - Membuat tanda tangan pemindai URL [Sintaksis: url_sig string].
+  scan
+  - Pindai file atau direktori [Sintaksis: scan file].
+  - Alias: s.
+  c
+  - Cetak ini daftar perintah.
