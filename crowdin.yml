@@ -1,0 +1,7 @@
+files:
+  - source: /vault/lang/lang.en.yaml
+    translation: /vault/lang/lang.%two_letters_code%.yaml
+    languages_mapping:
+      two_letters_code:
+        zh-CN: zh
+        zh-TW: zh-tw
