@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: German language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "Deutsch"
 Text Direction: "ltr"
 IntegerRule: "int2Type4"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Datenschutz-Bestimmungen"
 SafeBrowseLookup_200: "Potentiell schädliche URL entdeckt"
 SafeBrowseLookup_400: "API-Anforderungsfehler"
@@ -34,19 +22,19 @@ cli_algo_not_supported: "Der angegebene Algorithmus wird nicht unterstützt."
 cli_failed_to_complete: "Ein vollständiger Scan konnte nicht durchgeführt werden"
 cli_is_not_a: "%s ist keine Datei oder ein Verzeichnis."
 cli_ln2: |
- Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem
- Script, um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu
- entdecken, die auf Ihr System hochgeladen werden könnten, welches die
- Signaturen von ClamAV und andere nutzt.
-                                     ~ ~ ~
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-                                     ~ ~ ~
+  Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem
+  Script, um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu
+  entdecken, die auf Ihr System hochgeladen werden könnten, welches die
+  Signaturen von ClamAV und andere nutzt.
+  ~ ~ ~
+  PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+  ~ ~ ~
 cli_ln3: |
- phpMussel befindet sich im CLI-Modus (Command Line Interface). Um eine
- Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie "scan",
- gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
- Enter; Geben Sie "c" und Enter für eine Liste der verfügbaren Befehle im
- CLI-Modus ein; Geben Sie "q" und Enter zum Beenden ein.
+  phpMussel befindet sich im CLI-Modus (Command Line Interface). Um eine
+  Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie "scan",
+  gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
+  Enter; Geben Sie "c" und Enter für eine Liste der verfügbaren Befehle im
+  CLI-Modus ein; Geben Sie "q" und Enter zum Beenden ein.
 cli_pe1: "Keine gültige PE-Datei!"
 cli_pe2: "PE-Sektionen:"
 cli_signature_placeholder: "IHR-SIGNATURNAME"
@@ -58,7 +46,7 @@ denied_reason: "Der Upload wurde aus den unten aufgeführten Gründen blockiert:
 detected: "Entdeckt %s"
 detected_control_characters: "Steuerzeichen erkannt"
 encrypted_archive: "Verschlüsseltes Archiv entdeckt; Verschlüsselte Archive sind nicht erlaubt"
-failed_to_access: "Fehler beim Zugriff auf "%s"!"
+failed_to_access: "Fehler beim Zugriff auf \"%s\"!"
 field_date: "Datum"
 field_header_hash_reconstruction: "Rekonstruktion der Hash-Signaturen"
 field_header_pe_reconstruction: "Rekonstruktion der PE-Sektional-Signaturen"
@@ -80,7 +68,7 @@ macros_not_permitted: "Makros sind nicht erlaubt"
 ok: "OK"
 only_allow_images: "Upload von Nicht-Bilddateien ist nicht erlaubt"
 plugins_directory_nonexistent: "Plugin-Verzeichnis nicht vorhanden!"
-quarantined_as: "Als "/vault/quarantine/%s.qfu" unter Quarantäne gestellt."
+quarantined_as: "Als \"/vault/quarantine/%s.qfu\" unter Quarantäne gestellt."
 recursive: "Rekursionstiefe-Limit überschritten"
 required_variables_not_defined: "Benötigte Variablen sind nicht definiert: Kann nicht fortfahren."
 scan_chameleon: "%s-Chamäleon-Angriff erkannt"
@@ -108,38 +96,37 @@ upload_error_7: "Festplatten-Schreibfehler! Bitte kontaktieren Sie den Hostmaste
 upload_error_8: "PHP-Fehlkonfiguration erkannt! Bitte kontaktieren Sie den Hostmaster für Unterstützung! "
 upload_limit_exceeded: "Uploadlimit überschritten"
 x_does_not_exist: "%s existiert nicht"
-
 cli_commands: |
- ..
- q
- - Beendet den CLI-Modus.
- - Alias: quit, exit.
- hash_file:%
- - Generiert Hash-Signaturen einer Datei [Syntax: hash_file:Algo Dateiname].
- hash:%
- - Generiert Hash-Signaturen eines String-Wertes [Syntax: hash:Algo String].
- algo
- - Listet alle unterstützten Algorithmen auf.
- hex_encode
- - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
-   [Syntax: hex_encode String].
- - Alias: x.
- hex_decode
- - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert
-   [Syntax: hex_decode String].
- base64_encode
- - Konvertiert einen Binär-Wert in einen Base64-Wert
-   [Syntax: base64_encode String].
- - Alias: b.
- base64_decode
- - Konvertiert einen Base64-Wert in einen Binär-Wert
-   [Syntax: base64_decode String].
- pe_meta
- - Extrahieren Sie Metadaten aus einer PE-Datei [Syntax: pe_meta Dateiname].
- url_sig
- - Generiere URL-Scanner-Signaturen [Syntax: url_sig String].
- scan
- - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan Dateiname].
- - Alias: s.
- c
- - Gibt diese Befehlsliste aus.
+  ..
+  q
+  - Beendet den CLI-Modus.
+  - Alias: quit, exit.
+  hash_file:%
+  - Generiert Hash-Signaturen einer Datei [Syntax: hash_file:Algo Dateiname].
+  hash:%
+  - Generiert Hash-Signaturen eines String-Wertes [Syntax: hash:Algo String].
+  algo
+  - Listet alle unterstützten Algorithmen auf.
+  hex_encode
+  - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
+  [Syntax: hex_encode String].
+  - Alias: x.
+  hex_decode
+  - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert
+  [Syntax: hex_decode String].
+  base64_encode
+  - Konvertiert einen Binär-Wert in einen Base64-Wert
+  [Syntax: base64_encode String].
+  - Alias: b.
+  base64_decode
+  - Konvertiert einen Base64-Wert in einen Binär-Wert
+  [Syntax: base64_decode String].
+  pe_meta
+  - Extrahieren Sie Metadaten aus einer PE-Datei [Syntax: pe_meta Dateiname].
+  url_sig
+  - Generiere URL-Scanner-Signaturen [Syntax: url_sig String].
+  scan
+  - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan Dateiname].
+  - Alias: s.
+  c
+  - Gibt diese Befehlsliste aus.
