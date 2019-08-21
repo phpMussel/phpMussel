@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: Dutch language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "Nederlandse"
 Text Direction: "ltr"
 IntegerRule: "int2Type4"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Privacybeleid"
 SafeBrowseLookup_200: "Potentieel schadelijke URL gedetecteerd"
 SafeBrowseLookup_400: "API aanvraag foute"
@@ -34,19 +22,19 @@ cli_algo_not_supported: "Opgegeven algoritme wordt niet ondersteund."
 cli_failed_to_complete: "Mislukt om het voltooien te scannen"
 cli_is_not_a: "%s is geen bestand of map."
 cli_ln2: |
- Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om
- trojans, virussen, malware en andere bedreigingen te ontworpen, binnen
- bestanden geüpload naar uw systeem waar het script is haakte, gebaseerd op
- de signatures van ClamAV en anderen.
-                                     ~ ~ ~
- PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).
-                                     ~ ~ ~
+  Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om
+  trojans, virussen, malware en andere bedreigingen te ontworpen, binnen
+  bestanden geüpload naar uw systeem waar het script is haakte, gebaseerd op
+  de signatures van ClamAV en anderen.
+  ~ ~ ~
+  PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).
+  ~ ~ ~
 cli_ln3: |
- Momenteel phpMussel is in CLI-modus (commandlijn interface). Om scannen
- een bestand of map, typ "scan", gevolgd door de naam van het bestand of de
- map die u wilt phpMussel te scannen en druk op Enter; Typ "c" en druk op
- Enter voor een lijst op CLI-modus commando's; Typ "q" en druk op Enter om
- te stoppen.
+  Momenteel phpMussel is in CLI-modus (commandlijn interface). Om scannen
+  een bestand of map, typ "scan", gevolgd door de naam van het bestand of de
+  map die u wilt phpMussel te scannen en druk op Enter; Typ "c" en druk op
+  Enter voor een lijst op CLI-modus commando's; Typ "q" en druk op Enter om
+  te stoppen.
 cli_pe1: "Geen geldig PE-bestand!"
 cli_pe2: "PE Secties:"
 cli_signature_placeholder: "UW-SIGNATURE-NAAM"
@@ -58,7 +46,7 @@ denied_reason: "De upload poging werd geblokkeerd voor de hieronder vermelde red
 detected: "Gedetecteerd %s"
 detected_control_characters: "Gedetecteerd controle karakters"
 encrypted_archive: "Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan"
-failed_to_access: "Toegang tot "%s" is mislukt!"
+failed_to_access: "Toegang tot \"%s\" is mislukt!"
 field_date: "Datum"
 field_header_hash_reconstruction: "Hash signatures reconstructie"
 field_header_pe_reconstruction: "PE sectionele signatures reconstructie"
@@ -80,7 +68,7 @@ macros_not_permitted: "Macro's zijn niet toegestaan"
 ok: "OK"
 only_allow_images: "Uploaden van niet-beeldbestanden is niet toegestaan"
 plugins_directory_nonexistent: "Plugins bestandsmap bestaat niet!"
-quarantined_as: "In quarantaine geplaatst als "/vault/quarantine/%s.qfu"."
+quarantined_as: "In quarantaine geplaatst als \"/vault/quarantine/%s.qfu\"."
 recursive: "Recursie dieptelimiet overschreden"
 required_variables_not_defined: "Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan."
 scan_chameleon: "%s kameleon aanval gedetecteerd"
@@ -108,38 +96,37 @@ upload_error_7: "Disc-schrijffout! Contact op met de hostmaster voor hulp! "
 upload_error_8: "PHP misconfiguratie gedetecteerd! Contact op met de hostmaster voor hulp! "
 upload_limit_exceeded: "Uploadlimiet overschreden"
 x_does_not_exist: "%s bestaat niet"
-
 cli_commands: |
- ..
- q
- - Verlaten CLI.
- - Aliassen: quit, exit.
- hash_file:%
- - Genereer hash signatures van bestanden [Syntaxis: hash_file:algo bestandsnaam].
- hash:%
- - Genereer hash signature van string [Syntaxis: hash:algo string].
- algo
- - Maak een lijst van alle ondersteunde algoritmen.
- hex_encode
- - Converteren van binaire string naar hexadecimaal
-   [Syntaxis: hex_encode string].
- - Alias: x.
- hex_decode
- - Converteren van hexadecimaal naar binaire string
-   [Syntaxis: hex_decode string].
- base64_encode
- - Converteren van binaire string naar base64 string
-   [Syntaxis: base64_encode string].
- - Alias: b.
- base64_decode
- - Converteren van base64 string naar binaire string
-   [Syntaxis: base64_decode string].
- pe_meta
- - Haal metagegevens uit een PE-bestand [Syntaxis: pe_meta bestandsnaam].
- url_sig
- - Genereren URL-scanner signatures [Syntaxis: url_sig string].
- scan
- - Scannen bestand of map [Syntaxis: scan bestandsnaam].
- - Alias: s.
- c
- - Print dit commando lijst.
+  ..
+  q
+  - Verlaten CLI.
+  - Aliassen: quit, exit.
+  hash_file:%
+  - Genereer hash signatures van bestanden [Syntaxis: hash_file:algo bestandsnaam].
+  hash:%
+  - Genereer hash signature van string [Syntaxis: hash:algo string].
+  algo
+  - Maak een lijst van alle ondersteunde algoritmen.
+  hex_encode
+  - Converteren van binaire string naar hexadecimaal
+  [Syntaxis: hex_encode string].
+  - Alias: x.
+  hex_decode
+  - Converteren van hexadecimaal naar binaire string
+  [Syntaxis: hex_decode string].
+  base64_encode
+  - Converteren van binaire string naar base64 string
+  [Syntaxis: base64_encode string].
+  - Alias: b.
+  base64_decode
+  - Converteren van base64 string naar binaire string
+  [Syntaxis: base64_decode string].
+  pe_meta
+  - Haal metagegevens uit een PE-bestand [Syntaxis: pe_meta bestandsnaam].
+  url_sig
+  - Genereren URL-scanner signatures [Syntaxis: url_sig string].
+  scan
+  - Scannen bestand of map [Syntaxis: scan bestandsnaam].
+  - Alias: s.
+  c
+  - Print dit commando lijst.
