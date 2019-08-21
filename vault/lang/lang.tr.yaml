@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: Turkish language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "Türkçe"
 Text Direction: "ltr"
 IntegerRule: "int2Type4"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Gizlilik Politikası"
 SafeBrowseLookup_200: "Potansiyel olarak zararlı URL tespit edildi"
 SafeBrowseLookup_400: "API istek hatası"
@@ -34,19 +22,19 @@ cli_algo_not_supported: "Belirtilen algoritma desteklenmiyor."
 cli_failed_to_complete: "Tarama işlemini tamamlama başarısız"
 cli_is_not_a: "%s bir dosya veya dizin değil."
 cli_ln2: |
- phpMussel programını kullandığınız için teşekkür ederiz; Sisteminize
- yüklenen dosyalardaki truva atlarını, virüsleri, zararlı yazılımları ve
- diğer tehditleri tespit etmek için tasarlanmış bir PHP betiği, ClamAV
- imzalarına ve diğerlerine dayalı olarak.
-                                     ~ ~ ~
- PHPMUSSEL TELIF HAKKI 2013 ve sonrası GNU/GPLv2 by Caleb M (Maikuolan).
-                                     ~ ~ ~
+  phpMussel programını kullandığınız için teşekkür ederiz; Sisteminize
+  yüklenen dosyalardaki truva atlarını, virüsleri, zararlı yazılımları ve
+  diğer tehditleri tespit etmek için tasarlanmış bir PHP betiği, ClamAV
+  imzalarına ve diğerlerine dayalı olarak.
+  ~ ~ ~
+  PHPMUSSEL TELIF HAKKI 2013 ve sonrası GNU/GPLv2 by Caleb M (Maikuolan).
+  ~ ~ ~
 cli_ln3: |
- Şu anda CLI modunda çalışan phpMussel (komut satırı arabirimi). Bir
- dosyayı veya dizini taramak için "scan" yazın, taramak istediğiniz
- dosyanın veya dizinin adını yazın ve Enter tuşuna basın; CLI modu
- komutlarının bir listesi için "c" yazın ve Enter tuşuna basın; Çıkmak için
- "q" yazın ve Enter tuşuna basın.
+  Şu anda CLI modunda çalışan phpMussel (komut satırı arabirimi). Bir
+  dosyayı veya dizini taramak için "scan" yazın, taramak istediğiniz
+  dosyanın veya dizinin adını yazın ve Enter tuşuna basın; CLI modu
+  komutlarının bir listesi için "c" yazın ve Enter tuşuna basın; Çıkmak için
+  "q" yazın ve Enter tuşuna basın.
 cli_pe1: "Geçerli bir PE dosyası değil!"
 cli_pe2: "PE Bölümleri:"
 cli_signature_placeholder: "IMZA-ADINIZ"
@@ -58,7 +46,7 @@ denied_reason: "Yükleme aşağıda belirtilen nedenlerle engellendi:"
 detected: "%s algılandı"
 detected_control_characters: "Algılanan kontrol karakterleri"
 encrypted_archive: "Algılanan şifreli arşiv; Şifrelenmiş arşivlere izin verilmiyor"
-failed_to_access: ""%s" erişilemedi!"
+failed_to_access: "\"%s\" erişilemedi!"
 field_date: "Tarih"
 field_header_hash_reconstruction: "Karma imzaları rekonstrüksiyonu"
 field_header_pe_reconstruction: "PE kesit imzaları rekonstrüksiyonu"
@@ -80,7 +68,7 @@ macros_not_permitted: "Makrolara izin verilmez"
 ok: "Tamam"
 only_allow_images: "Resim dışındaki dosyaları yüklemek izin verilmez"
 plugins_directory_nonexistent: "Eklentiler dizini yok!"
-quarantined_as: ""/vault/quarantine/%s.qfu" olarak karantinaya alındı."
+quarantined_as: "\"/vault/quarantine/%s.qfu\" olarak karantinaya alındı."
 recursive: "Yineleme derinliği sınırı aşıldı"
 required_variables_not_defined: "Gerekli değişkenler tanımlanmamış: Devam edemiyorum."
 scan_chameleon: "%s bukalemun saldırısı tespit edildi"
@@ -108,34 +96,33 @@ upload_error_7: "Disk yazma hatası! Lütfen yardım için hostmaster ile ileti�
 upload_error_8: "PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! "
 upload_limit_exceeded: "Yükleme sınırı aşıldı"
 x_does_not_exist: "%s mevcut değil"
-
 cli_commands: |
- ..
- q
- - CLI'den çıkın.
- - Takma adları: quit, exit.
- hash_file:%
- - Dosyalardan karma imzaları oluştur [Sözdizimi: hash_file:algo dosya-adı].
- hash:%
- - Dizeden karma imzası üret [Sözdizimi: hash:algo dizgesi].
- algo
- - Tüm desteklenen algoritmaları listele.
- hex_encode
- - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
- - Takma ad: x.
- hex_decode
- - Onaltılıyı ikili dizeye olarak dönüştür [Sözdizimi: hex_decode dizgesi].
- base64_encode
- - İkili'e base64 hale dönüştür [Sözdizimi: base64_encode dizgesi].
- - Takma ad: b.
- base64_decode
- - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
- pe_meta
- - Meta verileri bir PE dosyasından ayıklayın [Sözdizimi: pe_meta dosya-adı].
- url_sig
- - URL tarayıcı imzalarını oluştur [Sözdizimi: url_sig dizgesi].
- scan
- - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
- - Takma ad: s.
- c
- - Bu komut listesini yazdırın.
+  ..
+  q
+  - CLI'den çıkın.
+  - Takma adları: quit, exit.
+  hash_file:%
+  - Dosyalardan karma imzaları oluştur [Sözdizimi: hash_file:algo dosya-adı].
+  hash:%
+  - Dizeden karma imzası üret [Sözdizimi: hash:algo dizgesi].
+  algo
+  - Tüm desteklenen algoritmaları listele.
+  hex_encode
+  - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
+  - Takma ad: x.
+  hex_decode
+  - Onaltılıyı ikili dizeye olarak dönüştür [Sözdizimi: hex_decode dizgesi].
+  base64_encode
+  - İkili'e base64 hale dönüştür [Sözdizimi: base64_encode dizgesi].
+  - Takma ad: b.
+  base64_decode
+  - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
+  pe_meta
+  - Meta verileri bir PE dosyasından ayıklayın [Sözdizimi: pe_meta dosya-adı].
+  url_sig
+  - URL tarayıcı imzalarını oluştur [Sözdizimi: url_sig dizgesi].
+  scan
+  - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
+  - Takma ad: s.
+  c
+  - Bu komut listesini yazdırın.
