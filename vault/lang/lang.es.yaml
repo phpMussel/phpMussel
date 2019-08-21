@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: Spanish language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "Español"
 Text Direction: "ltr"
 IntegerRule: "int2Type4"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Política de Privacidad"
 SafeBrowseLookup_200: "URL potencialmente dañino detectado"
 SafeBrowseLookup_400: "Error de solicitud de la API"
@@ -34,18 +22,18 @@ cli_algo_not_supported: "El algoritmo especificado no es soportado."
 cli_failed_to_complete: "No se pudo completar el proceso de escaneo"
 cli_is_not_a: "%s no es un archivo o directorio."
 cli_ln2: |
- Gracias por usar phpMussel, un script PHP diseñado para detectar troyanos,
- virus, malware y otras amenazas en los archivos subidos al sistema dónde
- el script está adjunto, basado en las firmas de ClamAV y otros.
-                                     ~ ~ ~
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-                                     ~ ~ ~
+  Gracias por usar phpMussel, un script PHP diseñado para detectar troyanos,
+  virus, malware y otras amenazas en los archivos subidos al sistema dónde
+  el script está adjunto, basado en las firmas de ClamAV y otros.
+  ~ ~ ~
+  PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+  ~ ~ ~
 cli_ln3: |
- Ud. está ejecutando phpMussel en modo CLI (interfaz de línea de comandos).
- Para analizar un archivo o directorio, escribir "scan", seguido por el
- nombre del archivo o directorio que usted desea que phpMussel escanee y
- pulse Enter; Escriba "c" y pulse Enter para obtener una lista de comandos;
- Escriba "q" y pulse Enter para salir.
+  Ud. está ejecutando phpMussel en modo CLI (interfaz de línea de comandos).
+  Para analizar un archivo o directorio, escribir "scan", seguido por el
+  nombre del archivo o directorio que usted desea que phpMussel escanee y
+  pulse Enter; Escriba "c" y pulse Enter para obtener una lista de comandos;
+  Escriba "q" y pulse Enter para salir.
 cli_pe1: "¡No es un archivo PE válido!"
 cli_pe2: "Secciones PE:"
 cli_signature_placeholder: "NOMBRE-DE-FIRMA"
@@ -57,7 +45,7 @@ denied_reason: "La subida de archivo fue bloqueada por las razones que se indica
 detected: "Detectado %s"
 detected_control_characters: "Caracteres control detectados"
 encrypted_archive: "Archivo encriptado detectado; No se permiten archivos encriptados"
-failed_to_access: "¡Falló el acceso a "%s"!"
+failed_to_access: "¡Falló el acceso a \"%s\"!"
 field_date: "Fecha"
 field_header_hash_reconstruction: "Reconstrucción de firmas hash"
 field_header_pe_reconstruction: "Reconstrucción de firmas seccionales PE"
@@ -79,7 +67,7 @@ macros_not_permitted: "Macros no están permitidas"
 ok: "OK"
 only_allow_images: "Subir de archivos que no son imágenes no está permitido"
 plugins_directory_nonexistent: "¡Directorio de plugins no existe!"
-quarantined_as: "En cuarentena como "/vault/quarantine/%s.qfu"."
+quarantined_as: "En cuarentena como \"/vault/quarantine/%s.qfu\"."
 recursive: "Recursión profundidad límite excedido"
 required_variables_not_defined: "Variables requeridas no están definidos: No puede continuar."
 scan_chameleon: "%s camaleón ataque detectado"
@@ -107,34 +95,33 @@ upload_error_7: "¡Error en el disco contra escritura! Contacto el hostmaster pa
 upload_error_8: "¡PHP mala configuración detectado! Contacto el hostmaster para ayuda! "
 upload_limit_exceeded: "Subir límite excedido"
 x_does_not_exist: "%s no existe"
-
 cli_commands: |
- ..
- q
- - Dejar CLI.
- - Alias: quit, exit.
- hash_file:%
- - Generar firmas hash de archivos [Sintaxis: hash_file:algo archivo].
- hash:%
- - Generar firma hash de string [Sintaxis: hash:algo string].
- algo
- - Lista todos los algoritmos soportados.
- hex_encode
- - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
- - Alias: x.
- hex_decode
- - Convertir hexadecimal a string binaria [Sintaxis: hex_decode string].
- base64_encode
- - Convertir string binaria a string base64 [Sintaxis: base64_encode string].
- - Alias: b.
- base64_decode
- - Convertir string base64 a string binaria [Sintaxis: base64_decode string].
- pe_meta
- - Extraer metadatos de un archivo PE [Sintaxis: pe_meta archivo].
- url_sig
- - Generar firmas de escáner de URL [Sintaxis: url_sig string].
- scan
- - Analizar archivo o directorio [Sintaxis: scan archivo].
- - Alias: s.
- c
- - Imprimir esta lista de comandos.
+  ..
+  q
+  - Dejar CLI.
+  - Alias: quit, exit.
+  hash_file:%
+  - Generar firmas hash de archivos [Sintaxis: hash_file:algo archivo].
+  hash:%
+  - Generar firma hash de string [Sintaxis: hash:algo string].
+  algo
+  - Lista todos los algoritmos soportados.
+  hex_encode
+  - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
+  - Alias: x.
+  hex_decode
+  - Convertir hexadecimal a string binaria [Sintaxis: hex_decode string].
+  base64_encode
+  - Convertir string binaria a string base64 [Sintaxis: base64_encode string].
+  - Alias: b.
+  base64_decode
+  - Convertir string base64 a string binaria [Sintaxis: base64_decode string].
+  pe_meta
+  - Extraer metadatos de un archivo PE [Sintaxis: pe_meta archivo].
+  url_sig
+  - Generar firmas de escáner de URL [Sintaxis: url_sig string].
+  scan
+  - Analizar archivo o directorio [Sintaxis: scan archivo].
+  - Alias: s.
+  c
+  - Imprimir esta lista de comandos.
