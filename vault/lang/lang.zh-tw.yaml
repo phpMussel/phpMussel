@@ -1,24 +1,12 @@
-##\
-# This file is a part of the phpMussel package.
-# Homepage: https://phpmussel.github.io/
-#
-# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
-#
-# Authors:
-# @see PEOPLE.md
-#
-# License: GNU/GPLv2
-# @see LICENSE.txt
-#
-# This file: Chinese (traditional) language data (last modified: 2019.02.26).
-##/
-
-# Language settings.
+---
 Local Name: "中文（傳統）"
 Text Direction: "ltr"
 IntegerRule: "int1"
 FractionRule: "int1"
-
+cli_ln1: |
+  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+  |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "隱私政策"
 SafeBrowseLookup_200: "可能有害的URL檢測"
 SafeBrowseLookup_400: "API請求錯誤"
@@ -34,14 +22,14 @@ cli_algo_not_supported: "指定的算法不支持。"
 cli_failed_to_complete: "完成掃描過程失敗"
 cli_is_not_a: "%s不是文件或文件夾。"
 cli_ln2: |
- 謝謝對於使用phpMussel，​一個PHP腳本旨在檢測木馬，​病毒，​惡意軟件，​和其他威脅在文件上傳到您的系統隨地這個腳本是叫，​
- 根據ClamAV的簽名和其他簽名。
-                                     ~ ~ ~
- PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
-                                     ~ ~ ~
+  謝謝對於使用phpMussel，​一個PHP腳本旨在檢測木馬，​病毒，​惡意軟件，​和其他威脅在文件上傳到您的系統隨地這個腳本是叫，​
+  根據ClamAV的簽名和其他簽名。
+  ~ ~ ~
+  PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
+  ~ ~ ~
 cli_ln3: |
- 目前經營phpMussel在CLI模式（命令行界面）。掃描一個文件或文件夾，​鍵入『scan』，​其次是名的文件或文件夾您想phpMussel
- 掃描然後按Enter鍵。鍵入『c』然後按Enter鍵對於CLI模式命令名單。鍵入『q』然後按Enter鍵對於戒菸。
+  目前經營phpMussel在CLI模式（命令行界面）。掃描一個文件或文件夾，​鍵入『scan』，​其次是名的文件或文件夾您想phpMussel
+  掃描然後按Enter鍵。鍵入『c』然後按Enter鍵對於CLI模式命令名單。鍵入『q』然後按Enter鍵對於戒菸。
 cli_pe1: "不PE文件！"
 cli_pe2: "PE部分:"
 cli_signature_placeholder: "簽名名稱"
@@ -103,34 +91,33 @@ upload_error_7: "硬盤寫入錯誤！​請聯繫網站管理員或網站託管
 upload_error_8: "PHP配置錯誤是檢測！​請聯繫網站管理員或網站託管服務！"
 upload_limit_exceeded: "超過上傳限制"
 x_does_not_exist: "%s不存在"
-
 cli_commands: |
- ..
- q
- - 戒菸CLI模式。
- - 別名：quit，​exit。
- hash_file:%
- - 生成哈希簽名從文件​[語法：hash_file:算法 文件名]。
- hash:%
- - 生成哈希簽名從數據​[語法：hash:算法 數據]。
- algo
- - 列出所有支持的算法。
- hex_encode
- - 兌換從二進制數據至十六進制​[語法：hex_encode 數據]。
- - 別名：x。
- hex_decode
- - 兌換從十六進制二進制數據至​[語法：hex_decode 數據]。
- base64_encode
- - 兌換從二進制數據至基地64數據​[語法：base64_encode 數據]。
- - 別名：b。
- base64_decode
- - 兌換從基地64數據至二進制數據​[語法：base64_decode 數據]。
- pe_meta
- - 從PE文件中提取元數據​[語法：pe_meta 文件名]。
- url_sig
- - 生成URL掃描器簽名​[語法：url_sig 數據]。
- scan
- - 掃描文件或文件夾​[語法：scan 文件名]。
- - 別名：s。
- c
- - 打印此命令列表。
+  ..
+  q
+  - 戒菸CLI模式。
+  - 別名：quit，​exit。
+  hash_file:%
+  - 生成哈希簽名從文件​[語法：hash_file:算法 文件名]。
+  hash:%
+  - 生成哈希簽名從數據​[語法：hash:算法 數據]。
+  algo
+  - 列出所有支持的算法。
+  hex_encode
+  - 兌換從二進制數據至十六進制​[語法：hex_encode 數據]。
+  - 別名：x。
+  hex_decode
+  - 兌換從十六進制二進制數據至​[語法：hex_decode 數據]。
+  base64_encode
+  - 兌換從二進制數據至基地64數據​[語法：base64_encode 數據]。
+  - 別名：b。
+  base64_decode
+  - 兌換從基地64數據至二進制數據​[語法：base64_decode 數據]。
+  pe_meta
+  - 從PE文件中提取元數據​[語法：pe_meta 文件名]。
+  url_sig
+  - 生成URL掃描器簽名​[語法：url_sig 數據]。
+  scan
+  - 掃描文件或文件夾​[語法：scan 文件名]。
+  - 別名：s。
+  c
+  - 打印此命令列表。
