@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.23).
+ * This file: Front-end handler (last modified: 2019.08.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1735,8 +1735,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         '<div class="txtGn">' . $phpMussel['L10N']->getString('state_component_is_active') . '</div>'
                     );
                     if ($phpMussel['Activable']) {
-                        $phpMussel['Components']['ThisComponent']['Options'] .=
-                            '<option value="deactivate-component">' . $phpMussel['L10N']->getString('field_deactivate') . '</option>';
+                        $phpMussel['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $phpMussel['L10N']->getString('field_deactivate') . '</option>';
                         if (!empty($phpMussel['Components']['ThisComponent']['Uninstallable'])) {
                             $phpMussel['Components']['ThisComponent']['Options'] .=
                                 '<option value="deactivate-and-uninstall-component">' .
@@ -1775,9 +1774,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']) ||
                 !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP'])
             ) {
-                $phpMussel['Components']['ThisComponent']['Options'] .=
-                    '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>' .
-                    '<option value="update-and-activate-component">' . $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') . '</option>';
+                $phpMussel['Components']['ThisComponent']['Options'] .= '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>';
+                if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
+                    $phpMussel['Components']['ThisComponent']['Options'] .=
+                        '<option value="update-and-activate-component">' .
+                        $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') .
+                        '</option>';
+                }
             } elseif ($phpMussel['Components']['ThisComponent']['StatusOptions'] === $phpMussel['L10N']->getString('response_updates_not_installed')) {
                 $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars'](
                     ['V' => $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']],
@@ -1965,17 +1968,25 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         } else {
             $phpMussel['Components']['ThisComponent']['LatestSize'] = '';
         }
-        $phpMussel['Components']['ThisComponent']['StatusOptions'] = (
+        if (
             !empty($phpMussel['Components']['ThisComponent']['Minimum Required PHP']) &&
             $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['ThisComponent']['Minimum Required PHP'])
-        ) ? $phpMussel['ParseVars'](
-            ['V' => $phpMussel['Components']['ThisComponent']['Minimum Required PHP']],
-            $phpMussel['L10N']->getString('response_updates_not_installed_php')
-        ) :
-            $phpMussel['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
-            '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>' .
-            '<option value="update-and-activate-component">' . $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') . '</option>' .
-            '</select><input type="submit" value="' . $phpMussel['L10N']->getString('field_ok') . '" class="auto" />';
+        ) {
+            $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars']([
+                'V' => $phpMussel['Components']['ThisComponent']['Minimum Required PHP']
+            ], $phpMussel['L10N']->getString('response_updates_not_installed_php'));
+        } else {
+            $phpMussel['Components']['ThisComponent']['StatusOptions'] =
+                $phpMussel['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
+                '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>';
+            if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
+                $phpMussel['Components']['ThisComponent']['StatusOptions'] .=
+                    '<option value="update-and-activate-component">' .
+                    $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') .
+                    '</option>';
+            }
+            $phpMussel['Components']['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $phpMussel['L10N']->getString('field_ok') . '" class="auto" />';
+        }
         /** Append changelog. */
         $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
             $phpMussel['Components']['ThisComponent']['Changelog']
@@ -2457,7 +2468,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $phpMussel['L10N']->getString('field_delete'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $phpMussel['L10N']->getString('field_delete_file'));
             $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $phpMussel['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
