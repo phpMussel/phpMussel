@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.20).
+ * This file: Front-end functions file (last modified: 2019.08.23).
  */
 
 /**
@@ -73,7 +73,7 @@ $phpMussel['Delete'] = function ($File) use (&$phpMussel) {
  * @return bool Success or failure.
  */
 $phpMussel['In'] = function ($Query) use (&$phpMussel) {
-    if (!$Delimiter = substr($Query, 0, 1)) {
+    if (!isset($phpMussel['Updater-IO']) || !$Delimiter = substr($Query, 0, 1)) {
         return false;
     }
     $QueryParts = explode($Delimiter, $Query);
@@ -101,13 +101,7 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     }
 
     /** Fetch file content. */
-    if (!isset($phpMussel['FE_Executor_Files'][$QueryParts[0]])) {
-        $phpMussel['FE_Executor_Files'][$QueryParts[0]] = ['Old' => $phpMussel['ReadFile']($phpMussel['Vault'] . $QueryParts[0])];
-        $phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'] = $phpMussel['FE_Executor_Files'][$QueryParts[0]]['Old'];
-    }
-
-    /** For clean, easy referencing. */
-    $Data = &$phpMussel['FE_Executor_Files'][$QueryParts[0]]['New'];
+    $Data = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $QueryParts[0]);
 
     /** Normalise main instruction. */
     $QueryParts[1] = strtolower($QueryParts[1]);
@@ -816,7 +810,6 @@ $phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$
         return;
     }
     $phpMussel['Arrayify']($Closures);
-    $phpMussel['FE_Executor_Files'] = [];
     foreach ($Closures as $Closure) {
         if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
             $phpMussel[$Closure]();
@@ -828,14 +821,6 @@ $phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$
             }
         }
     }
-    foreach ($phpMussel['FE_Executor_Files'] as $Name => $Data) {
-        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && is_file($phpMussel['Vault'] . $Name) && is_writable($phpMussel['Vault'] . $Name)) {
-            $Handle = fopen($phpMussel['Vault'] . $Name, 'w');
-            fwrite($Handle, $Data['New']);
-            fclose($Handle);
-        }
-    }
-    unset($phpMussel['FE_Executor_Files']);
 };
 
 /** Used to format numbers according to the specified configuration. */
@@ -1138,49 +1123,74 @@ $phpMussel['Traverse'] = function ($Path) {
 };
 
 /**
- * Sort function used by the front-end updates page.
+ * Custom sort an array by key and then implode the results.
  *
- * @param string $A
- * @param string $B
+ * @param array $Arr The array to sort.
+ * @return string The sorted, imploded array.
  */
-$phpMussel['UpdatesSortFunc'] = function ($A, $B) {
-    $CheckA = preg_match('/^l10n/i', $A);
-    $CheckB = preg_match('/^l10n/i', $B);
-    if (($CheckA && !$CheckB) || ($A === 'phpMussel' && $B !== 'phpMussel')) {
-        return -1;
-    }
-    if (($CheckB && !$CheckA) || ($B === 'phpMussel' && $A !== 'phpMussel')) {
-        return 1;
-    }
-    if ($A < $B) {
-        return -1;
-    }
-    if ($A > $B) {
-        return 1;
-    }
-    return 0;
+$phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel) {
+    $Type = isset($phpMussel['FE']['sort-by-name']) ? $phpMussel['FE']['sort-by-name'] : false;
+    $Order = isset($phpMussel['FE']['descending-order']) ? $phpMussel['FE']['descending-order'] : false;
+    uksort($Arr, function ($A, $B) use ($Type, $Order) {
+        if (!$Type) {
+            $Priority = '~^(?:phpMussel[-a-z ]*(?<!db)(?<!db)$|Common Classes Package)~i';
+            $CheckA = preg_match($Priority, $A);
+            $CheckB = preg_match($Priority, $B);
+            if ($CheckA && !$CheckB) {
+                return $Order ? 1 : -1;
+            }
+            if ($CheckB && !$CheckA) {
+                return $Order ? -1 : 1;
+            }
+            if (!$CheckA && !$CheckB) {
+                $Priority = '~^l10n/~i';
+                $CheckA = preg_match($Priority, $A);
+                $CheckB = preg_match($Priority, $B);
+                if ($CheckA && !$CheckB) {
+                    return $Order ? 1 : -1;
+                }
+                if ($CheckB && !$CheckA) {
+                    return $Order ? -1 : 1;
+                }
+            }
+        }
+        if ($A < $B) {
+            return $Order ? 1 : -1;
+        }
+        if ($A > $B) {
+            return $Order ? -1 : 1;
+        }
+        return 0;
+    });
+    return implode('', $Arr);
 };
 
 /**
  * Updates handler.
  *
- * @param string $Action The action to take (update/install, verify, uninstall, activate, deactivate).
- * @return string|array The ID(/s) of the component(/s) to perform the specified action upon.
+ * @param string $Action The action to perform (update/install, verify,
+ *      uninstall, activate, deactivate).
+ * @return string|array The ID (or IDs) of the component (or components) to
+ *      perform the specified action upon.
  */
 $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
     /** Support for executor calls. */
-    if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
+    if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
-        $Action = substr($Action, 0, $Pos);
-        if (strpos($ID, ',') !== false) {
-            $ID = explode(',', $ID);
-        }
+        $Action = trim(substr($Action, 0, $Pos));
+        $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
     }
 
     /** Update a component. */
     if ($Action === 'update-component') {
         $phpMussel['UpdatesHandler-Update']($ID);
+    }
+
+    /** Update (or install) and activate a component (one-step solution). */
+    if (!is_array($ID) && $Action === 'update-and-activate-component') {
+        $phpMussel['UpdatesHandler-Update']($ID);
+        $phpMussel['UpdatesHandler-Activate']($ID);
     }
 
     /** Verify a component. */
@@ -1203,6 +1213,12 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
         $phpMussel['UpdatesHandler-Deactivate']($ID);
     }
 
+    /** Deactivate and uninstall a component (one-step solution). */
+    if (!is_array($ID) && $Action === 'deactivate-and-uninstall-component') {
+        $phpMussel['UpdatesHandler-Deactivate']($ID);
+        $phpMussel['UpdatesHandler-Uninstall']($ID);
+    }
+
     /** Process and empty executor queue. */
     $phpMussel['FE_Executor']();
 
@@ -1223,6 +1239,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Components']['Meta'][$ThisTarget]['Reannotate']
         )) {
             continue;
+        }
+        if ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])) {
+            $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $phpMussel['Components']['BytesAdded'] = 0;
         $phpMussel['Components']['BytesRemoved'] = 0;
@@ -1258,27 +1277,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($phpMussel['Vault'] . $ThisReannotate) &&
-            ((
-                !empty($FileData[$ThisReannotate]) &&
-                $phpMussel['Components']['OldMeta'] = $FileData[$ThisReannotate]
-            ) || (
-                $FileData[$ThisReannotate] = $phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
-                    $phpMussel['Vault'] . $ThisReannotate
-                )
-            )) &&
-            preg_match(
-                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
-                $phpMussel['Components']['OldMeta'],
-                $phpMussel['Components']['OldMetaMatches']
-            ) &&
-            ($phpMussel['Components']['OldMetaMatches'] = $phpMussel['Components']['OldMetaMatches'][0]) &&
-            ($phpMussel['Components']['NewMeta'] = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
-            preg_match(
-                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
-                $phpMussel['Components']['NewMeta'],
-                $phpMussel['Components']['NewMetaMatches']
-            ) &&
-            ($phpMussel['Components']['NewMetaMatches'] = $phpMussel['Components']['NewMetaMatches'][0]) &&
+            ($FileData[$ThisReannotate] = $OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
+            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
+            ($OldMetaMatches = $OldMetaMatches[0]) &&
+            ($NewMeta = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
+            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
+            ($NewMetaMatches = $NewMetaMatches[0]) &&
             (!$phpMussel['FE']['CronMode'] || empty(
                 $phpMussel['Components']['Meta'][$ThisTarget]['Tests']
             ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$ThisTarget], true))
@@ -1289,11 +1293,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             if (!empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'])) {
                 $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']);
             }
-            $phpMussel['Components']['NewMeta'] = str_replace(
-                $phpMussel['Components']['OldMetaMatches'],
-                $phpMussel['Components']['NewMetaMatches'],
-                $phpMussel['Components']['OldMeta']
-            );
+            $NewMeta = str_replace($OldMetaMatches, $NewMetaMatches, $OldMeta);
             $Count = count($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $phpMussel['RemoteFiles'] = [];
             $phpMussel['IgnoredFiles'] = [];
@@ -1448,7 +1448,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     unset($ThisArr);
                 }
                 /** Assign updated component annotation. */
-                $FileData[$ThisReannotate] = $phpMussel['Components']['NewMeta'];
+                $FileData[$ThisReannotate] = $NewMeta;
                 if (!isset($Annotations[$ThisReannotate])) {
                     $Annotations[$ThisReannotate] = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'];
                 }
@@ -1497,6 +1497,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Components']['BytesRemoved'],
             $phpMussel['NumberFormatter']->format(microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
         );
+        if ($Reactivate) {
+            $phpMussel['UpdatesHandler-Activate']($ThisTarget);
+        }
     }
     /** Update annotations. */
     foreach ($FileData as $ThisKey => $ThisFile) {
@@ -1504,9 +1507,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         if (!empty($Annotations[$ThisKey])) {
             $ThisFile = $phpMussel['Congruency']($ThisFile, $Annotations[$ThisKey]);
         }
-        $Handle = fopen($phpMussel['Vault'] . $ThisKey, 'w');
-        fwrite($Handle, $ThisFile);
-        fclose($Handle);
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $ThisKey, $ThisFile);
     }
     /** Cleanup. */
     unset($phpMussel['RemoteFiles'], $phpMussel['IgnoredFiles']);
@@ -1521,6 +1522,7 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $phpMussel['Components']['BytesRemoved'] = 0;
     $phpMussel['Components']['TimeRequired'] = microtime(true);
+    $phpMussel['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
     if (
         empty($InUse) &&
         !empty($phpMussel['Components']['Meta'][$ID]['Files']['To']) &&
@@ -1529,25 +1531,15 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
         ($ID !== 'phpMussel') &&
         !empty($phpMussel['Components']['Meta'][$ID]['Reannotate']) &&
         !empty($phpMussel['Components']['Meta'][$ID]['Uninstallable']) &&
-        ($phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
-            $phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate']
-        )) &&
-        preg_match(
-            "~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i",
-            $phpMussel['Components']['OldMeta'],
-            $phpMussel['Components']['OldMetaMatches']
-        ) &&
-        ($phpMussel['Components']['OldMetaMatches'] = $phpMussel['Components']['OldMetaMatches'][0])
+        ($OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'])) &&
+        preg_match("~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
+        ($OldMetaMatches = $OldMetaMatches[0])
     ) {
-        $phpMussel['Components']['NewMeta'] = str_replace(
-            $phpMussel['Components']['OldMetaMatches'],
-            preg_replace(
-                ["/\n Files:(\n  [^\n]*)*\n/i", "/\n Version: [^\n]*\n/i"],
-                "\n",
-                $phpMussel['Components']['OldMetaMatches']
-            ),
-            $phpMussel['Components']['OldMeta']
-        );
+        $NewMeta = str_replace($OldMetaMatches, preg_replace(
+            ["/\n Files:(\n  [^\n]*)*\n/i", "/\n Version: [^\n]*\n/i"],
+            "\n",
+            $OldMetaMatches
+        ), $OldMeta);
         array_walk($phpMussel['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
             if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
                 if (file_exists($phpMussel['Vault'] . $ThisFile)) {
@@ -1561,24 +1553,22 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
                 $phpMussel['DeleteDirectory']($ThisFile);
             }
         });
-        $Handle = fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], 'w');
-        fwrite($Handle, $phpMussel['Components']['NewMeta']);
-        fclose($Handle);
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], $NewMeta);
         $phpMussel['Components']['Meta'][$ID]['Version'] = false;
         $phpMussel['Components']['Meta'][$ID]['Files'] = false;
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_successfully_uninstalled');
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_successfully_uninstalled');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Succeeds'], true);
         }
     } else {
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_component_uninstall_error');
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_component_uninstall_error');
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Uninstall Fails'], true);
         }
     }
     $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
     $phpMussel['FE']['state_msg'] .= sprintf(
-        $phpMussel['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
+        $phpMussel['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
         $phpMussel['Components']['BytesRemoved'],
         $phpMussel['NumberFormatter']->format(microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
     );
@@ -1591,11 +1581,12 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
  */
 $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Activation'] = [
-        'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
+        'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'Active' => $phpMussel['Config']['signatures']['Active'],
         'Modified' => false
     ];
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
+    $phpMussel['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
     if (empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
         $phpMussel['Activation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Activation']['Active']),
@@ -1623,7 +1614,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         }
     }
     if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activation_failed');
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_activation_failed') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails'], true);
         }
@@ -1635,10 +1626,8 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Activation']['Config']
         );
         $phpMussel['Config']['signatures']['Active'] = $phpMussel['Activation']['Active'];
-        $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
-        fwrite($Handle, $phpMussel['Activation']['Config']);
-        fclose($Handle);
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_activated');
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], $phpMussel['Activation']['Config']);
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_activated') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
@@ -1654,11 +1643,12 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
  */
 $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Deactivation'] = [
-        'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
+        'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'Active' => $phpMussel['Config']['signatures']['Active'],
         'Modified' => false
     ];
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
+    $phpMussel['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
     if (!empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
         $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
             explode(',', $phpMussel['Deactivation']['Active']),
@@ -1686,7 +1676,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
         }
     }
     if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivation_failed');
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_deactivation_failed') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Fails'], true);
         }
@@ -1698,10 +1688,8 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Deactivation']['Config']
         );
         $phpMussel['Config']['signatures']['Active'] = $phpMussel['Deactivation']['Active'];
-        $Handle = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'w');
-        fwrite($Handle, $phpMussel['Deactivation']['Config']);
-        fclose($Handle);
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_deactivated');
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], $phpMussel['Deactivation']['Config']);
+        $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_deactivated') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
         }

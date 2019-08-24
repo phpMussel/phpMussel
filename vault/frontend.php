@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.17).
+ * This file: Front-end handler (last modified: 2019.08.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1535,7 +1535,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     $phpMussel['FE']['UpdatesFormTargetControls'] = '';
     $phpMussel['StateModified'] = false;
     $phpMussel['FilterSwitch'](
-        ['hide-non-outdated', 'hide-unused'],
+        ['hide-non-outdated', 'hide-unused', 'sort-by-name', 'descending-order'],
         isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
         $phpMussel['StateModified'],
         $phpMussel['FE']['UpdatesFormTarget'],
@@ -1546,6 +1546,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         die;
     }
     unset($phpMussel['StateModified']);
+
+    /** Useful for avoiding excessive IO operations when dealing with components. */
+    $phpMussel['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
     /** Updates page form boilerplate. */
     $phpMussel['CFBoilerplate'] =
@@ -1734,6 +1737,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                     if ($phpMussel['Activable']) {
                         $phpMussel['Components']['ThisComponent']['Options'] .=
                             '<option value="deactivate-component">' . $phpMussel['L10N']->getString('field_deactivate') . '</option>';
+                        if (!empty($phpMussel['Components']['ThisComponent']['Uninstallable'])) {
+                            $phpMussel['Components']['ThisComponent']['Options'] .=
+                                '<option value="deactivate-and-uninstall-component">' .
+                                $phpMussel['L10N']->getString('field_deactivate') . ' + ' . $phpMussel['L10N']->getString('field_uninstall') .
+                                '</option>';
+                        }
                     }
                 } else {
                     if ($phpMussel['Activable']) {
@@ -1767,7 +1776,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP'])
             ) {
                 $phpMussel['Components']['ThisComponent']['Options'] .=
-                    '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>';
+                    '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>' .
+                    '<option value="update-and-activate-component">' . $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') . '</option>';
             } elseif ($phpMussel['Components']['ThisComponent']['StatusOptions'] === $phpMussel['L10N']->getString('response_updates_not_installed')) {
                 $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars'](
                     ['V' => $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']],
@@ -1849,9 +1859,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             if (empty($phpMussel['Components']['ThisComponent']['RowClass'])) {
                 $phpMussel['Components']['ThisComponent']['RowClass'] = 'h1';
             }
-            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
-                '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
-            $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
+            if (!empty($phpMussel['FE']['sort-by-name']) && !empty($phpMussel['Components']['ThisComponent']['Name'])) {
+                $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['ThisComponent']['Name'];
+            } else {
+                $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['Key'];
+            }
+            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['SortKey']] = sprintf(
+                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                $phpMussel['Components']['ThisComponent']['ID'],
+                $phpMussel['Components']['ThisComponent']['Name']
+            );
+            $phpMussel['Components']['Out'][$phpMussel['Components']['ThisComponent']['SortKey']] = $phpMussel['ParseVars'](
                 $phpMussel['L10N']->Data + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
             );
@@ -1895,8 +1913,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             $phpMussel['Components']['RemoteDataThis'][0]
         );
         if (empty($phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']])) {
-            $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']] =
-                $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['Components']['ReannotateThis']);
+            $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']] = $phpMussel['Updater-IO']->readFile(
+                $phpMussel['Vault'] . $phpMussel['Components']['ReannotateThis']
+            );
         }
         if (substr(
             $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']], -2
@@ -1953,10 +1972,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             ['V' => $phpMussel['Components']['ThisComponent']['Minimum Required PHP']],
             $phpMussel['L10N']->getString('response_updates_not_installed_php')
         ) :
-            $phpMussel['L10N']->getString('response_updates_not_installed') .
-            '<br /><select name="do" class="auto"><option value="update-component">' .
-            $phpMussel['L10N']->getString('field_install') . '</option></select><input type="submit" value="' .
-            $phpMussel['L10N']->getString('field_ok') . '" class="auto" />';
+            $phpMussel['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
+            '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>' .
+            '<option value="update-and-activate-component">' . $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') . '</option>' .
+            '</select><input type="submit" value="' . $phpMussel['L10N']->getString('field_ok') . '" class="auto" />';
         /** Append changelog. */
         $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
             $phpMussel['Components']['ThisComponent']['Changelog']
@@ -1969,9 +1988,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['Components']['ThisComponent']['Filename'] = '';
         /** Finalise entry. */
         if (!$phpMussel['FE']['hide-unused']) {
-            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
-                '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
-            $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
+            if (!empty($phpMussel['FE']['sort-by-name']) && !empty($phpMussel['Components']['ThisComponent']['Name'])) {
+                $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['ThisComponent']['Name'];
+            } else {
+                $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['Key'];
+            }
+            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['SortKey']] = sprintf(
+                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                $phpMussel['Components']['ThisComponent']['ID'],
+                $phpMussel['Components']['ThisComponent']['Name']
+            );
+            $phpMussel['Components']['Out'][$phpMussel['Components']['ThisComponent']['SortKey']] = $phpMussel['ParseVars'](
                 $phpMussel['L10N']->Data + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
             );
@@ -1985,16 +2012,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         if (substr($Remote, -2) !== "\n\n" || substr($Remote, 0, 4) !== "---\n") {
             return;
         }
-        $Handle = fopen($phpMussel['Vault'] . $Key, 'w');
-        fwrite($Handle, $Remote);
-        fclose($Handle);
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $Key, $Remote);
     });
 
     /** Finalise output and unset working data. */
-    uksort($phpMussel['FE']['Indexes'], $phpMussel['UpdatesSortFunc']);
-    $phpMussel['FE']['Indexes'] = implode('', $phpMussel['FE']['Indexes']);
-    uksort($phpMussel['Components']['Out'], $phpMussel['UpdatesSortFunc']);
-    $phpMussel['FE']['Components'] = implode('', $phpMussel['Components']['Out']);
+    $phpMussel['FE']['Indexes'] = $phpMussel['UpdatesSortFunc']($phpMussel['FE']['Indexes']);
+    $phpMussel['FE']['Components'] = $phpMussel['UpdatesSortFunc']($phpMussel['Components']['Out']);
 
     $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
     $phpMussel['Components']['CountOutdatedSignatureFiles'] = count($phpMussel['Components']['OutdatedSignatureFiles']);
@@ -2052,20 +2075,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         }
     }
 
+    /** Finalise IO operations all at once. */
+    unset($phpMussel['Updater-IO']);
+
     /** Send output. */
     if (!$phpMussel['FE']['CronMode']) {
         /** Normal page output. */
         echo $phpMussel['SendOutput']();
     } elseif (!empty($UpdateAll)) {
-        /** Returned state message for cronable (locally updating). */
+        /** Returned state message for Cronable (locally updating). */
         $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])];
     } elseif (!empty($phpMussel['FE']['state_msg'])) {
-        /** Returned state message for cronable. */
+        /** Returned state message for Cronable. */
         echo json_encode([
             'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])
         ]);
     } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && count($phpMussel['Components']['Outdated'])) {
-        /** Returned list of outdated components for cronable. */
+        /** Returned list of outdated components for Cronable. */
         echo json_encode([
             'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg']),
             'outdated' => $phpMussel['Components']['Outdated']
