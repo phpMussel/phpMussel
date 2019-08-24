@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.23).
+ * This file: Front-end functions file (last modified: 2019.08.24).
  */
 
 /**
@@ -109,7 +109,7 @@ $phpMussel['In'] = function ($Query) use (&$phpMussel) {
     /** Replace file content. */
     if ($QueryParts[1] === 'replace' && !empty($QueryParts[3]) && strtolower($QueryParts[3]) === 'with') {
         $Data = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $Data);
-        return true;
+        return $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $QueryParts[0], $Data);
     }
 
     /** Nothing done. Return false (failure). */
@@ -437,7 +437,8 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                 }
                 $Arr[$Key]['Filetype'] = $phpMussel['ParseVars'](['EXT' => $Ext], $phpMussel['L10N']->getString('field_filetype_info'));
                 if ($Ext === 'ICO') {
-                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Prepend . $Item);
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
                     $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
@@ -498,6 +499,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
         }
         if ($Arr[$Key]['Filesize']) {
             $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
+            $Arr[$Key]['Filesize'] .= ' ⏰ <em>' . $phpMussel['TimeFormat'](filemtime($Item), $phpMussel['Config']['general']['timeFormat']) . '</em>';
         } else {
             $Arr[$Key]['Filesize'] = '';
         }

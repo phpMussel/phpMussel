@@ -36,6 +36,10 @@ Detailed version release guidelines for phpMussel can be found at:
   these actions had to be done separately, as two actions). Added some new
   switches/filters.
 
+- [2019.08.24; Maikuolan]: Added last modified date/time to the file listings
+  at the front-end file manager and fixed a possible issue with correct icon
+  display for some not yet used file formats.
+
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
 
