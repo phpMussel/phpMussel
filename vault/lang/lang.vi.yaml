@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2019.02.26).
+# This file: Vietnamese language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -78,7 +78,6 @@ invalid_url: "URL không hợp lệ!"
 macros_not_permitted: "Macro không được phép"
 ok: "OK"
 only_allow_images: "Ngoài ra hình ảnh, những tập tin khác không được phép tải lên"
-plugins_directory_nonexistent: "Thư mực plugin không tồn tại!"
 quarantined_as: "Đã được kiểm dịch là "/vault/quarantine/%s.qfu"."
 recursive: "Độ sâu đệ quy bị quá giới hạn"
 required_variables_not_defined: "Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục."

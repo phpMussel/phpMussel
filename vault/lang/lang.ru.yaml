@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2019.02.26).
+# This file: Russian language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -78,7 +78,6 @@ invalid_url: "Неверный URL!"
 macros_not_permitted: "Макросы не разрешены"
 ok: "Хорошо"
 only_allow_images: "Загрузка файлов, которые не являются изображением, не допускается"
-plugins_directory_nonexistent: "Каталог плагины не существует!"
 quarantined_as: "Помещен на карантин в «/vault/quarantine/%s.qfu»."
 recursive: "Лимит глубины рекурсии превышена"
 required_variables_not_defined: "Обязательные переменные не установлены: Продолжение невозможно."

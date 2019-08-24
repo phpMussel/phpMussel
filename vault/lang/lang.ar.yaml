@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2019.02.26).
+# This file: Arabic language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -78,7 +78,6 @@ invalid_url: "URL غير صالح!"
 macros_not_permitted: "وحدات الماكرو غير مسموح بها"
 ok: "حسنا"
 only_allow_images: "تحميل ملفات غير صورة غير مسموح"
-plugins_directory_nonexistent: "مجلد الإضافات لا وجود!"
 quarantined_as: "الحجر الصحي بأنه "/vault/quarantine/%s.qfu"."
 recursive: "تجاوزت الحد عمق العودية"
 required_variables_not_defined: "المتغيرات المطلوبة لم يتم تعريف: لا يمكن أن يستمر."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2019.02.26).
+# This file: Thai language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -77,7 +77,6 @@ invalid_url: "URL ไม่ถูกต้อง!"
 macros_not_permitted: "ไม่อนุญาตให้ใช้แมโคร"
 ok: "ตกลง"
 only_allow_images: "ไฟล์ที่ไม่ใช่ภาพไม่สามารถอัปโหลดได้"
-plugins_directory_nonexistent: "ไดเรกทอรีปลั๊กอินไม่มีอยู่!"
 quarantined_as: "เป็นกักกันที่ "/vault/quarantine/%s.qfu"."
 recursive: "จำกัดความลึกสำหรับการทับซ้ำเกินแล้ว"
 required_variables_not_defined: "ตัวแปรที่จำเป็นไม่ได้กำหนดไว้: ไม่สามารถดำเนินการต่อได้."

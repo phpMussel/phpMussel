@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2019.02.26).
+# This file: Bangla language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -79,7 +79,6 @@ invalid_url: "অবৈধ URL!"
 macros_not_permitted: "ম্যাক্রো অনুমোদিত নয়"
 ok: "OK"
 only_allow_images: "চিত্র ছাড়া অন্য ফাইল আপলোড করার অনুমতি নেই"
-plugins_directory_nonexistent: "প্লাগইন ডিরেক্টরি বিদ্যমান নেই!"
 quarantined_as: "সংগ্রাহক মধ্যে "/vault/quarantine/%s.qfu" হিসাবে।"
 recursive: "পুনরাবৃত্তি গভীরতা সীমা অতিক্রম করেছে"
 required_variables_not_defined: "প্রয়োজনীয় ভেরিয়েবল সংজ্ঞায়িত করা হয় না: চালিয়ে যেতে পারবেন না।"

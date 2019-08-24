@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2019.02.26).
+# This file: Italian language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -78,7 +78,6 @@ invalid_url: "URL non valido!"
 macros_not_permitted: "Macro non sono permesse"
 ok: "Fatto"
 only_allow_images: "Il caricamento di file che non sono immagini non è consentito"
-plugins_directory_nonexistent: "Direttorio dei plugin non esiste!"
 quarantined_as: "In quarantena come "/vault/quarantine/%s.qfu"."
 recursive: "Limite di profondità di controllo superato"
 required_variables_not_defined: "Variabili obbligatori non sono definite: Impossibile di continuare."

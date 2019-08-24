@@ -15,7 +15,6 @@
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponível através do licença <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-Extended Description phpMussel: "O pacote principal (menos as assinaturas, documentação e configuração)."
 bNav_home_logout: "<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Sair</a>"
 bNav_logout: "<a href="?phpmussel-page=logout">Sair</a>"
 config_PHPMailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
@@ -349,10 +348,14 @@ state_password_not_valid: "Atenção: Esta conta não está usando uma senha vá
 state_quarantine:
  - "Atualmente existe %s arquivo em quarentena."
  - "Atualmente existem %s arquivos em quarentena."
+switch-descending-order-set-false: "Ordenar em ordem crescente"
+switch-descending-order-set-true: "Ordenar em ordem descendente"
 switch-hide-non-outdated-set-false: "Não ocultar não desatualizado"
 switch-hide-non-outdated-set-true: "Ocultar não desatualizado"
 switch-hide-unused-set-false: "Não ocultar não utilizado"
 switch-hide-unused-set-true: "Ocultar não utilizado"
+switch-sort-by-name-set-false: "Ordenar por ID"
+switch-sort-by-name-set-true: "Ordenar por nome"
 tip_2fa_sent: "Um e-mail contendo um código de autenticação de dois fatores foi enviado para o seu endereço de e-mail. Por favor, confirme este código abaixo para obter acesso ao front-end. Se você não recebeu este e-mail, tente fazer logout, aguarde 10 minutos, e faça login novamente para receber um novo e-mail contendo um novo código."
 tip_accounts: "Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o phpMussel front-end."
 tip_cache_data: "Olá, {username}.<br />Aqui você pode rever o conteúdo do cache."

@@ -51,6 +51,12 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.08.17; Maikuolan]: Reinstated the "lang_override" directive.
 
+- [2019.08.23; Maikuolan]: Slightly refactored the front-end updates page,
+  related closures and other related functionality, and added the ability to
+  install/activate or to deactivate/uninstall with a single action (previously,
+  these actions had to be done separately, as two actions). Added some new
+  switches/filters.
+
 ======
 
 "Changelog-v2.txt" contains changelog notes for versions => 2.0.0 < 3.0.0.

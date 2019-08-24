@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.02.26).
+# This file: Turkish language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -79,7 +79,6 @@ invalid_url: "Geçersiz URL!"
 macros_not_permitted: "Makrolara izin verilmez"
 ok: "Tamam"
 only_allow_images: "Resim dışındaki dosyaları yüklemek izin verilmez"
-plugins_directory_nonexistent: "Eklentiler dizini yok!"
 quarantined_as: ""/vault/quarantine/%s.qfu" olarak karantinaya alındı."
 recursive: "Yineleme derinliği sınırı aşıldı"
 required_variables_not_defined: "Gerekli değişkenler tanımlanmamış: Devam edemiyorum."

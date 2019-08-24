@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.02.26).
+# This file: Indonesian language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -79,7 +79,6 @@ invalid_url: "URL tidak valid!"
 macros_not_permitted: "Makro tidak diizinkan"
 ok: "Oke"
 only_allow_images: "Upload file selain gambar tidak diizinkan"
-plugins_directory_nonexistent: "Direktori plugin tidak ada!"
 quarantined_as: "Dikarantina sebagai "/vault/quarantine/%s.qfu"."
 recursive: "Batas kedalaman rekursi melebihi"
 required_variables_not_defined: "Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan."

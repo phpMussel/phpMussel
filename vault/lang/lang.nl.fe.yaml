@@ -15,7 +15,6 @@
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is beschikbaar via de <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licentie."
-Extended Description phpMussel: "De primaire pakket (zonder de signatures, documentatie en configuratie)."
 bNav_home_logout: "<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>"
 bNav_logout: "<a href="?phpmussel-page=logout">Uitloggen</a>"
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
@@ -349,10 +348,14 @@ state_password_not_valid: "Waarschuwing: Dit account is niet gebruikt van een ge
 state_quarantine:
  - "Er is momenteel %s bestand in quarantaine."
  - "Er zijn momenteel %s bestanden in quarantaine."
+switch-descending-order-set-false: "Sorteer in oplopende volgorde"
+switch-descending-order-set-true: "Sorteer in aflopende volgorde"
 switch-hide-non-outdated-set-false: "De al bijgewerkt niet verbergen"
 switch-hide-non-outdated-set-true: "De al bijgewerkt verbergen"
 switch-hide-unused-set-false: "De ongebruikte niet verbergen"
 switch-hide-unused-set-true: "De ongebruikte verbergen"
+switch-sort-by-name-set-false: "Sorteer op ID"
+switch-sort-by-name-set-true: "Sorteer op naam"
 tip_2fa_sent: "Een e-mail met een tweefactorauthenticatie code is verzonden naar uw e-mailadres. Bevestig deze code hieronder om toegang te krijgen tot de frontend. Als u deze e-mail niet hebt ontvangen, probeert u uit te loggen, wacht 10 minuten, en in te loggen opnieuw aan om een nieuwe e-mail met een nieuwe code te ontvangen."
 tip_accounts: "Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend."
 tip_cache_data: "Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken."

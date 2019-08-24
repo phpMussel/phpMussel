@@ -15,7 +15,6 @@
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Requerido para usar cualquier funcionalidad que implique el envío de correo electrónico.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponible a través de la licencia <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-Extended Description phpMussel: "El paquete principal (menos las firmas, la documentación, y la configuración)."
 bNav_home_logout: "<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Cerrar Sesión</a>"
 bNav_logout: "<a href="?phpmussel-page=logout">Cerrar Sesión</a>"
 config_PHPMailer_add_reply_to_address: "La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
@@ -349,10 +348,14 @@ state_password_not_valid: "¡Advertencia: Esta cuenta no está utilizando una co
 state_quarantine:
  - "Hay %s archivo actualmente en cuarentena."
  - "Hay %s archivos actualmente en cuarentena."
+switch-descending-order-set-false: "Ordenar en orden ascendente"
+switch-descending-order-set-true: "Ordenar en orden descendente"
 switch-hide-non-outdated-set-false: "No ocultar no anticuado"
 switch-hide-non-outdated-set-true: "Ocultar no anticuado"
 switch-hide-unused-set-false: "No ocultar no utilizado"
 switch-hide-unused-set-true: "Ocultar no utilizado"
+switch-sort-by-name-set-false: "Ordenar por ID"
+switch-sort-by-name-set-true: "Ordenar por nombre"
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al phpMussel front-end."
 tip_cache_data: "Hola, {username}.<br />Aquí puede revisar el contenido de la caché."

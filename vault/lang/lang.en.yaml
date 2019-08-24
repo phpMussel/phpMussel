@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2019.02.26).
+# This file: English language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -85,7 +85,6 @@ invalid_url: "Invalid URL!"
 macros_not_permitted: "Macros aren't permitted"
 ok: "OK"
 only_allow_images: "Uploading files other than images isn't permitted"
-plugins_directory_nonexistent: "Plugins directory doesn't exist!"
 quarantined_as: "Quarantined as "/vault/quarantine/%s.qfu"."
 recursive: "Recursion depth limit exceeded"
 required_variables_not_defined: "Required variables aren't defined: Can't continue."

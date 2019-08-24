@@ -15,7 +15,6 @@
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> est disponible via la licence <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-Extended Description phpMussel: "Le paquet principal (moins les signatures, la documentation et la configuration)."
 bNav_home_logout: "<a href="?">Page d'Accueil</a> | <a href="?phpmussel-page=logout">Déconnecter</a>"
 bNav_logout: "<a href="?phpmussel-page=logout">Déconnecter</a>"
 config_PHPMailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
@@ -351,10 +350,14 @@ state_password_not_valid: "Attention : Ce compte n'utilise un mot de passe vali
 state_quarantine:
  - "Il y a %s fichier actuellement en quarantaine."
  - "Il y a %s fichiers actuellement en quarantaine."
+switch-descending-order-set-false: "Trier par ordre croissant"
+switch-descending-order-set-true: "Trier par ordre décroissant"
 switch-hide-non-outdated-set-false: "Ne masquer pas non dépassé"
 switch-hide-non-outdated-set-true: "Masquer non dépassé"
 switch-hide-unused-set-false: "Ne masquer pas inutilisé"
 switch-hide-unused-set-true: "Masquer inutilisé"
+switch-sort-by-name-set-false: "Trier par ID"
+switch-sort-by-name-set-true: "Trier par nom
 tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de phpMussel."
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."

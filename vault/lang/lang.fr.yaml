@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2019.02.26).
+# This file: French language data (last modified: 2019.08.19).
 ##/
 
 # Language settings.
@@ -79,7 +79,6 @@ invalid_url: "URL non valide !"
 macros_not_permitted: "Les macros ne sont pas autorisées"
 ok: "Bien"
 only_allow_images: "Le téléchargement de fichiers qui ne sont pas des images n'est pas autorisé"
-plugins_directory_nonexistent: "Le répertoire de plugins n'existe pas !"
 quarantined_as: "Mis en quarantaine comme « /vault/quarantine/%s.qfu »."
 recursive: "Profondeur limite de récursion dépassée"
 required_variables_not_defined: "Les variables requises ne sont pas définies : Vous ne pouvez pas continuer."
