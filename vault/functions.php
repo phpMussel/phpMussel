@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.08.19).
+ * This file: Functions file (last modified: 2019.08.28).
  */
 
 /**
@@ -403,7 +403,7 @@ $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
             }
             continue;
         }
-        $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'w');
+        $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'wb');
         fwrite($Handle, $CacheEntryValue);
         fclose($Handle);
     }

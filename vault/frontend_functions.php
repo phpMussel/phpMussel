@@ -11,39 +11,29 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.24).
+ * This file: Front-end functions file (last modified: 2019.08.28).
  */
 
 /**
- * Validates or ensures that two different sets of component metadata share the
- * same base elements (or components). One set acts as a model for which base
- * elements are expected, and if additional/superfluous entries are found in
- * the other set (the base), they'll be removed. Installed components are
- * ignored as to future-proof legacy support (just removes non-installed
- * components).
+ * Syncs downstream metadata with upstream metadata to remove superfluous
+ * entries. Installed components are ignored.
  *
- * @param string $Base The base set (generally, the local copy).
- * @param string $Model The model set (generally, the remote copy).
- * @param bool $Validate Validate (true) or ensure congruency (false; default).
- * @return string|bool If $Validate is true, returns true|false according to
- *      whether the sets are congruent. If $Validate is false, returns the
- *      corrected $Base set.
+ * @param string $Downstream Downstream/local data.
+ * @param string $Upstream Upstream/remote data.
+ * @return string Patched/synced data (or an empty string on failure).
  */
-$phpMussel['Congruency'] = function ($Base, $Model, $Validate = false) use (&$phpMussel) {
-    if (empty($Base) || empty($Model)) {
-        return $Validate ? false : '';
+$phpMussel['Congruency'] = function ($Downstream, $Upstream) use (&$phpMussel) {
+    if (empty($Downstream) || empty($Upstream)) {
+        return '';
     }
-    $BaseArr = (new \Maikuolan\Common\YAML($Base))->Data;
-    $ModelArr = (new \Maikuolan\Common\YAML($Model))->Data;
-    foreach ($BaseArr as $Element => $Data) {
-        if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($ModelArr[$Element])) {
-            if ($Validate) {
-                return false;
-            }
-            $Base = preg_replace("~\n" . preg_quote($Element) . ":?(\n [^\n]*)*\n~i", "\n", $Base);
+    $DownstreamArray = (new \Maikuolan\Common\YAML($Downstream))->Data;
+    $UpstreamArray = (new \Maikuolan\Common\YAML($Upstream))->Data;
+    foreach ($DownstreamArray as $Element => $Data) {
+        if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($UpstreamArray[$Element])) {
+            $Downstream = preg_replace("~\n" . preg_quote($Element) . ":?(\n [^\n]*)*\n~i", "\n", $Downstream);
         }
     }
-    return $Validate ? true : $Base;
+    return $Downstream;
 };
 
 /**
@@ -1233,8 +1223,7 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
  */
 $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
-    $FileData = [];
-    $Annotations = [];
+    $Congruents = [];
     foreach ($ID as $ThisTarget) {
         if (!isset(
             $phpMussel['Components']['Meta'][$ThisTarget]['Remote'],
@@ -1279,7 +1268,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($phpMussel['Vault'] . $ThisReannotate) &&
-            ($FileData[$ThisReannotate] = $OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
+            ($OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
@@ -1289,6 +1278,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 $phpMussel['Components']['Meta'][$ThisTarget]['Tests']
             ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$ThisTarget], true))
         ) {
+            $Congruents[$ThisReannotate] = $NewMeta;
             $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']);
             $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
@@ -1407,7 +1397,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     rename($phpMussel['Vault'] . $ThisFileName, $phpMussel['Vault'] . $ThisFileName . '.rollback');
                 }
                 $phpMussel['Components']['BytesAdded'] += strlen($ThisFile);
-                $Handle = fopen($phpMussel['Vault'] . $ThisFileName, 'w');
+                $Handle = fopen($phpMussel['Vault'] . $ThisFileName, 'wb');
                 $phpMussel['RemoteFiles'][$ThisFileName] = fwrite($Handle, $ThisFile);
                 $phpMussel['RemoteFiles'][$ThisFileName] = ($phpMussel['RemoteFiles'][$ThisFileName] !== false);
                 fclose($Handle);
@@ -1449,11 +1439,10 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     });
                     unset($ThisArr);
                 }
+
                 /** Assign updated component annotation. */
-                $FileData[$ThisReannotate] = $NewMeta;
-                if (!isset($Annotations[$ThisReannotate])) {
-                    $Annotations[$ThisReannotate] = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'];
-                }
+                $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $ThisReannotate, $NewMeta);
+
                 $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
                     empty($phpMussel['Components']['Meta'][$ThisTarget]['Version']) &&
@@ -1469,6 +1458,8 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
                     }
                 }
+
+                /** Replace downstream meta with upstream meta. */
                 $phpMussel['Components']['Meta'][$ThisTarget] = $phpMussel['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
@@ -1503,14 +1494,13 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }
-    /** Update annotations. */
-    foreach ($FileData as $ThisKey => $ThisFile) {
-        /** Remove superfluous metadata. */
-        if (!empty($Annotations[$ThisKey])) {
-            $ThisFile = $phpMussel['Congruency']($ThisFile, $Annotations[$ThisKey]);
-        }
-        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $ThisKey, $ThisFile);
+
+    /** Remove superfluous metadata. */
+    foreach ($Congruents as $File => $Upstream) {
+        $Downstream = $phpMussel['Congruency']($phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $File), $Upstream);
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $File, $Downstream);
     }
+
     /** Cleanup. */
     unset($phpMussel['RemoteFiles'], $phpMussel['IgnoredFiles']);
 };
