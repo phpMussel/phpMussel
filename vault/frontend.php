@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.24).
+ * This file: Front-end handler (last modified: 2019.08.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,7 +256,7 @@ if ($phpMussel['FE']['FrontEndData'] = $phpMussel['ReadFile']($phpMussel['Vault'
 
 /** Engage safety mechanism. */
 if (!$phpMussel['frontend.dat.safety']) {
-    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat.safety', 'w');
+    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat.safety', 'wb');
     fwrite($phpMussel['Handle'], '.');
     fclose($phpMussel['Handle']);
 }
@@ -2596,7 +2596,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
                     }
 
                     /** Restore the file. */
-                    $phpMussel['Handle'] = fopen($phpMussel['qfuPath'] . $_POST['qfu'] . '.restored', 'w');
+                    $phpMussel['Handle'] = fopen($phpMussel['qfuPath'] . $_POST['qfu'] . '.restored', 'wb');
                     fwrite($phpMussel['Handle'], $phpMussel['Restored']);
                     fclose($phpMussel['Handle']);
                     $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '.restored</code> ' . $phpMussel['L10N']->getString('response_file_restored') . '<br />';
@@ -2899,7 +2899,7 @@ if ($phpMussel['FE']['Rebuild']) {
         "USERS\n-----" . $phpMussel['FE']['UserList'] .
         "\nSESSIONS\n--------" . $phpMussel['FE']['SessionList'] .
         "\nCACHE\n-----" . $phpMussel['FE']['Cache'];
-    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat', 'w');
+    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat', 'wb');
     fwrite($phpMussel['Handle'], $phpMussel['FE']['FrontEndData']);
     fclose($phpMussel['Handle']);
 }

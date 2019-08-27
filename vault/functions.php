@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.08.19).
+ * This file: Functions file (last modified: 2019.08.28).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -418,7 +418,7 @@ $phpMussel['CleanCache'] = function (string $Delete = '') use (&$phpMussel): boo
             }
             continue;
         }
-        $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'w');
+        $Handle = fopen($phpMussel['cachePath'] . $CacheEntryKey . '.tmp', 'wb');
         fwrite($Handle, $CacheEntryValue);
         fclose($Handle);
     }
