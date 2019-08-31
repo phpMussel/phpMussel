@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.04.02).
+ * This file: The loader (last modified: 2019.08.31).
  */
 
 /**
@@ -111,72 +111,64 @@ $phpMussel['EOF'] = false;
 /** A safety feature for logging. */
 $phpMussel['safety'] = "\x3c\x3fphp die; \x3f\x3e";
 
-/**
- * If phpMussel is "disabled" (if the "disable lock" is engaged), nothing
- * within this block should execute (thus effectively disabling phpMussel).
- */
-if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck')) {
-
-    /** Plugins are detected and processed by phpMussel here. */
-    $phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
-    if ($phpMussel['Config']['general']['enable_plugins']) {
-        if (!is_dir($phpMussel['Vault'] . 'plugins')) {
-            header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['L10N']->getString('plugins_directory_nonexistent'));
-        }
-        $phpMussel['MusselPlugins']['tempdata'] = [];
-        if ((
-            $phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')
-        ) && is_resource($phpMussel['MusselPlugins']['tempdata']['d'])) {
-            while (true) {
-                $phpMussel['MusselPlugins']['tempdata']['f'] = readdir($phpMussel['MusselPlugins']['tempdata']['d']);
-                if (empty($phpMussel['MusselPlugins']['tempdata']['f'])) {
-                    break;
-                }
-                if (
-                    $phpMussel['MusselPlugins']['tempdata']['f'] !== '.' &&
-                    $phpMussel['MusselPlugins']['tempdata']['f'] !== '..' &&
-                    is_dir($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f']) &&
-                    file_exists($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php') &&
-                    !is_link($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php')
-                ) {
-                    require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
-                }
+/** Plugins are detected and processed by phpMussel here. */
+$phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
+if ($phpMussel['Config']['general']['enable_plugins']) {
+    if (!is_dir($phpMussel['Vault'] . 'plugins')) {
+        header('Content-Type: text/plain');
+        die('[phpMussel] ' . $phpMussel['L10N']->getString('plugins_directory_nonexistent'));
+    }
+    $phpMussel['MusselPlugins']['tempdata'] = [];
+    if ((
+        $phpMussel['MusselPlugins']['tempdata']['d'] = opendir($phpMussel['Vault'] . 'plugins')
+    ) && is_resource($phpMussel['MusselPlugins']['tempdata']['d'])) {
+        while (true) {
+            $phpMussel['MusselPlugins']['tempdata']['f'] = readdir($phpMussel['MusselPlugins']['tempdata']['d']);
+            if (empty($phpMussel['MusselPlugins']['tempdata']['f'])) {
+                break;
             }
-            closedir($phpMussel['MusselPlugins']['tempdata']['d']);
+            if (
+                $phpMussel['MusselPlugins']['tempdata']['f'] !== '.' &&
+                $phpMussel['MusselPlugins']['tempdata']['f'] !== '..' &&
+                is_dir($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f']) &&
+                file_exists($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php') &&
+                !is_link($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php')
+            ) {
+                require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
+            }
         }
-        unset($phpMussel['MusselPlugins']['tempdata']);
+        closedir($phpMussel['MusselPlugins']['tempdata']['d']);
+    }
+    unset($phpMussel['MusselPlugins']['tempdata']);
+}
+
+/* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
+
+    /**
+     * Check whether the upload handler exists and attempt to load it.
+     */
+    if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
+        require $phpMussel['Vault'] . 'upload.php';
     }
 
-    /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
-    if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
-
-        /**
-         * Check whether the upload handler exists and attempt to load it.
-         */
-        if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
-            require $phpMussel['Vault'] . 'upload.php';
-        }
-
-        /**
-         * Check whether the front-end handler exists and attempt to load
-         * it. Skip this check if front-end access is disabled.
-         */
-        if (
-            !$phpMussel['Config']['general']['disable_frontend'] &&
-            file_exists($phpMussel['Vault'] . 'frontend.php') &&
-            ($phpMussel['Direct']() || $phpMussel['Alternate'])
-        ) {
-            require $phpMussel['Vault'] . 'frontend.php';
-        }
-
+    /**
+     * Check whether the front-end handler exists and attempt to load
+     * it. Skip this check if front-end access is disabled.
+     */
+    if (
+        !$phpMussel['Config']['general']['disable_frontend'] &&
+        file_exists($phpMussel['Vault'] . 'frontend.php') &&
+        ($phpMussel['Direct']() || $phpMussel['Alternate'])
+    ) {
+        require $phpMussel['Vault'] . 'frontend.php';
     }
 
-    /** This code block only executed if we're in CLI mode. */
-    elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
-        require $phpMussel['Vault'] . 'cli.php';
-    }
+}
 
+/** This code block only executed if we're in CLI mode. */
+elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
+    require $phpMussel['Vault'] . 'cli.php';
 }
 
 if ($phpMussel['Config']['general']['cleanup']) {

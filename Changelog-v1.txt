@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.12.0 ===
+MINOR RELEASE.
+
 - [2019.06.17; Maikuolan]: Added the ability to optionally update only all
   signature files to the front-end updates page (as opposed to updating
   everything at once).
@@ -39,6 +44,12 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.08.24; Maikuolan]: Added last modified date/time to the file listings
   at the front-end file manager and fixed a possible issue with correct icon
   display for some not yet used file formats.
+
+- [2019.08.31; Maikuolan]: Removed some unnecessary code from the loader, left
+  over from some old features already removed a long time ago.
+
+Caleb M (Maikuolan),
+August 31, 2019.
 
 === Version/Release 1.11.0 ===
 MINOR RELEASE.
