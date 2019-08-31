@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.08.19).
+ * This file: The loader (last modified: 2019.08.31).
  */
 
 /**
@@ -114,13 +114,6 @@ if (!file_exists($phpMussel['Vault'] . 'lang.php')) {
 require $phpMussel['Vault'] . 'lang.php';
 
 /**
- * Create an array to use as a temporary memory cache for scanning
- * operations (note: this has nothing to do with the memCache extension of
- * PHP; the variable name is coincidental).
- */
-$phpMussel['memCache'] = [];
-
-/**
  * Used to determine whether we've reached the end of this file without
  * exiting cleanly (important for rendering scan results correctly).
  */
@@ -129,50 +122,42 @@ $phpMussel['EOF'] = false;
 /** A safety feature for logging. */
 $phpMussel['safety'] = "\x3c\x3fphp die; \x3f\x3e";
 
-/**
- * If phpMussel is "disabled" (if the "disable lock" is engaged), nothing
- * within this block should execute (thus effectively disabling phpMussel).
- */
-if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck')) {
+/** Plugins are detected and processed by phpMussel here. */
+$phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
+if ($phpMussel['Config']['general']['enable_plugins']) {
+    foreach ($phpMussel['PluginIterator'](['ThisPlugin' => 'plugin.php']) as $phpMussel['ThisPlugin']) {
+        require_once $phpMussel['ThisPlugin']['ThisPlugin'];
+    }
+    unset($phpMussel['ThisPlugin']);
+}
 
-    /** Plugins are detected and processed by phpMussel here. */
-    $phpMussel['MusselPlugins'] = ['hooks' => [], 'closures' => []];
-    if ($phpMussel['Config']['general']['enable_plugins']) {
-        foreach ($phpMussel['PluginIterator'](['ThisPlugin' => 'plugin.php']) as $phpMussel['ThisPlugin']) {
-            require_once $phpMussel['ThisPlugin']['ThisPlugin'];
-        }
-        unset($phpMussel['ThisPlugin']);
+/* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
+
+    /**
+     * Check whether the upload handler exists and attempt to load it.
+     */
+    if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
+        require $phpMussel['Vault'] . 'upload.php';
     }
 
-    /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
-    if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
-
-        /**
-         * Check whether the upload handler exists and attempt to load it.
-         */
-        if (file_exists($phpMussel['Vault'] . 'upload.php') && !$phpMussel['Alternate']) {
-            require $phpMussel['Vault'] . 'upload.php';
-        }
-
-        /**
-         * Check whether the front-end handler exists and attempt to load
-         * it. Skip this check if front-end access is disabled.
-         */
-        if (
-            !$phpMussel['Config']['general']['disable_frontend'] &&
-            file_exists($phpMussel['Vault'] . 'frontend.php') &&
-            ($phpMussel['Direct']() || $phpMussel['Alternate'])
-        ) {
-            require $phpMussel['Vault'] . 'frontend.php';
-        }
-
+    /**
+     * Check whether the front-end handler exists and attempt to load
+     * it. Skip this check if front-end access is disabled.
+     */
+    if (
+        !$phpMussel['Config']['general']['disable_frontend'] &&
+        file_exists($phpMussel['Vault'] . 'frontend.php') &&
+        ($phpMussel['Direct']() || $phpMussel['Alternate'])
+    ) {
+        require $phpMussel['Vault'] . 'frontend.php';
     }
 
-    /** This code block only executed if we're in CLI mode. */
-    elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
-        require $phpMussel['Vault'] . 'cli.php';
-    }
+}
 
+/** This code block only executed if we're in CLI mode. */
+elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
+    require $phpMussel['Vault'] . 'cli.php';
 }
 
 if ($phpMussel['Config']['general']['cleanup']) {

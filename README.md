@@ -57,8 +57,8 @@ An ideal solution for shared hosting environments, where it's often not possible
 ---|---|---|---|---
 Pre-Alpha<em><br />- Exploring early concepts/ideas. No code written/available yet.</em> | ✔ | ✔ | ✔
 Alpha<em><br />- Branched, but unstable. Not production-ready (high risk if used).</em> | ✔ | ✔ | ✔
-Beta<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> | ✔ | ✔
-Stable<em><br />- First production-ready version has been tagged/released.</em> | ✔ | ✔
+Beta<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> | ✔ | ✔ | ✔
+Stable<em><br />- First production-ready version has been tagged/released.</em> | ✔ | ✔ | ✔
 Mature<em><br />- Multiple stable versions/releases exist.</em> | ✔ | ✔
 Locked<em><br />- Still maintained, but new features won't be implemented anymore.</em> | ✔
 EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update ASAP.</em> | ✔
@@ -66,4 +66,4 @@ EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update 
 ---
 
 
-Last Updated: 22 July 2019 (2019.07.22).
+Last Updated: 31 August 2019 (2019.08.31).

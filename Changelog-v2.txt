@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 2.0.0 ===
+MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
+
 - [2019.05.31; NEW FEATURE; Maikuolan]: Added the ability to automatically
   switch between different channels when requesting a remote resource (e.g.,
   when the front-end updates page attempts to update something, or attempts to
@@ -60,6 +65,12 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.08.24; Maikuolan]: Added last modified date/time to the file listings
   at the front-end file manager and fixed a possible issue with correct icon
   display for some not yet used file formats.
+
+- [2019.08.31; Maikuolan]: Removed some unnecessary code from the loader, left
+  over from some old features already removed a long time ago.
+
+Caleb M (Maikuolan),
+August 31, 2019.
 
 ======
 
