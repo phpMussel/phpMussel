@@ -1,0 +1,121 @@
+##\
+# This file is a part of the phpMussel package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# Authors:
+# @see PEOPLE.md
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Swedish language data for the front-end (last modified: 2019.09.01).
+##/
+
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
+Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licensen."
+bNav_home_logout: "<a href="?">Hem</a> | <a href="?phpmussel-page=logout">Logga Ut</a>"
+bNav_logout: "<a href="?phpmussel-page=logout">Logga Ut</a>"
+config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
+config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
+config_PHPMailer_enable_two_factor: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
+config_PHPMailer_event_log: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_PHPMailer_host: "Den SMTP-värd som används för utgående e-post."
+config_PHPMailer_password: "Lösenordet som ska användas när du skickar e-post via SMTP."
+config_PHPMailer_port: "Portnumret som ska användas för utgående e-post. Standard = 587."
+config_PHPMailer_set_from_address: "Avsändarens adress att citera när du skickar e-post via SMTP."
+config_PHPMailer_set_from_name: "Avsändarens namn för att citera när du skickar e-post via SMTP."
+config_PHPMailer_skip_auth_process: "Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server."
+config_PHPMailer_smtp_auth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
+config_PHPMailer_smtp_secure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
+config_PHPMailer_username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
+config_experimental: "Instabil/Experimentell!"
+config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0)."
+config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end tillgång kan göra phpMussel mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera phpMussel via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard]."
+config_general_disable_webfonts: "Inaktivera webbfonter? True = Ja [Standard]; False = Nej."
+config_general_disabled_channels: "Detta kan användas för att förhindra att phpMussel använder särskilda kanaler när man skickar förfrågningar (t.ex., när man uppdaterar, när man hämtar komponentmetadata, osv)."
+config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
+config_general_lang: "Ange standardspråk för phpMussel."
+config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
+config_general_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här. Delete = Radera de äldsta loggfilerna, tills gränsen inte längre överskrids. Archive = För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
+config_general_log_rotation_limit: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad gräns här. Ett värde på 0 kommer att inaktivera loggroteringen."
+config_general_maintenance_mode: "Aktivera underhållsläge? True = Ja; False = Nej [Standard]. Inaktiverar allt annat än front-end. Ibland användbar för när du uppdaterar dina CMS, frameworks, osv."
+config_general_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
+config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
+config_general_statistics: "Spåra statistik för phpMussel? True = Ja; False = Nej [Standard]."
+config_general_time_format: "Datum/tid notationsformat som används av phpMussel. Ytterligare alternativ kan läggas till på begäran."
+config_general_time_offset: "Tidszonen kompenseras i minuter."
+config_general_timezone: "Din tidszon."
+config_general_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
+config_legal_privacy_policy: "Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera."
+config_legal_pseudonymise_ip_addresses: "Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej."
+config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = False."
+config_supplementary_cache_options_enable_memcached: "Detta anger om ska använda Memcached för caching. Standard = False."
+config_supplementary_cache_options_enable_pdo: "Detta anger om ska använda PDO för caching. Standard = False."
+config_supplementary_cache_options_enable_redis: "Detta anger om ska använda Redis för caching. Standard = False."
+config_supplementary_cache_options_memcached_host: "Memcached värdvärde. Standard = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached portvärde. Standard = "11211"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN-värde. Standard = "mysql:dbname=phpmussel;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO lösenord."
+config_supplementary_cache_options_pdo_username: "PDO användarnamn."
+config_supplementary_cache_options_redis_host: "Redis värdvärde. Standard = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis portvärde. Standard = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standard = "2.5"."
+config_template_data_css_url: "CSS-filadress för anpassade teman."
+config_template_data_magnification: "Font förstoring. Standard = 1."
+config_template_data_theme: "Standardtema som ska användas för phpMussel."
+confirm_action: "Är du säker på att du vill "%s"?"
+field_2fa: "2FA-kod"
+warning: "Varningar:"
+warning_php_1: "Din PHP-version stöds inte aktivt längre! Uppdatering rekommenderas!"
+warning_php_2: "Din PHP-version är allvarligt sårbar! Uppdatering rekommenderas starkt!"
+warning_signatures_1: "Inga signaturfiler är aktiva!"
+
+info_some_useful_links: |
+ Några användbara länkar:<br />
+     <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för phpMussel.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
+           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Creates phpMussel signature files using the ClamAV signatures database.</li>
+           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Various extras.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för ClamAV.</span>
+         <ul class="comSub">
+           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
+           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li><a href="https://malware.expert/">Malware.Expert</a> – Offers supplementary signatures for ClamAV and supplementary rules for ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
+         <ul class="comSub">
+           <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
+           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
+           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
+         </ul>
+       </li>
+     </ul>
+
+msg_template_2fa: |
+ <center><p>Hallå, %1$s.<br />
+ <br />
+ Din 2FA-kod för att logga in i phpMussel front-end:</p>
+ <h1>%2$s</h1>
+ <p>Denna kod löper ut om 10 minuter.</p></center>
+msg_subject_2fa: "Tvåfaktorsautentisering"

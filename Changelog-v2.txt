@@ -10,7 +10,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.09.04; Maikuolan]: Added *partial* internal language support for
+  Latvian, Norwegian, Polish, and Swedish. Will sync it all up with the other
+  translations when there's time.
 
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).

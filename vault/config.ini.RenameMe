@@ -1,14 +1,11 @@
 [general]
 
-; Unset variables and cache used by the script after the initial upload
-; scanning? False = No; True = Yes [Default]. If you -aren't- using the script
-; beyond the initial scanning of uploads, you should set this to true (yes), to
-; minimize memory usage. If you -are- using the script beyond the initial
-; scanning of uploads, should set to false (no), to avoid unnecessarily
-; reloading duplicate data into memory. In general practice, it should usually
-; be set to true, but, if you do this, you won't be able to use the script for
-; anything other than the initial file upload scanning. Has no influence in CLI
-; mode.
+; Unset variables and cache used by the script after scanning uploads? False =
+; No; True = Yes [Default]. If you *aren't* using the script for anything other
+; than scanning uploads, you should set this to true to minimise memory usage.
+; Otherwise, you should set it to false, in order to retain in memory the data
+; necessary to execute phpMussel without needlessly reloading it. Has no
+; influence in CLI mode.
 cleanup=true
 
 ; Filename of file to log all scanning results to. Specify a filename, or leave
@@ -163,7 +160,7 @@ disable_cli=false
 ; False = Enable front-end access; True = Disable front-end access [Default].
 disable_frontend=true
 
-; Maximum number of login attempts (front-end). Default = 5.
+; Maximum number of front-end login attempts. Default = 5.
 max_login_attempts=5
 
 ; File for logging front-end login attempts. Specify a filename, or leave blank
@@ -319,7 +316,7 @@ max_files_in_archives=0
 
 [attack_specific]
 
-; Search for PHP header in files that are neither PHP files nor recognised
+; Search for PHP headers in files that are neither PHP files nor recognised
 ; archives. False = Off; True = On.
 chameleon_from_php=true
 
@@ -572,7 +569,7 @@ css_url=''
 ; or leave blank to disable.
 event_log=''
 
-; Setting this directive to `true` instructs PHPMailer to skip the normal
+; Setting this directive to true instructs PHPMailer to skip the normal
 ; authentication process that normally occurs when sending email via SMTP. This
 ; should be avoided, because skipping this process may expose outbound email to
 ; MITM attacks, but may be necessary in cases where this process prevents

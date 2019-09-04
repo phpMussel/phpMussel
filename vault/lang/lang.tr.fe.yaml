@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.08.17).
+# This file: Turkish language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -76,7 +76,7 @@ config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarın
 config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
 config_general_maintenance_mode: "Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS'nizi, çerçeveleri vb. güncellenirken yararlıdır."
-config_general_max_login_attempts: "Maksimum giriş denemesi sayısı."
+config_general_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_quarantine_key: "phpMussel dosyaları karantinaya koyabilir, bunu yapmak istiyorsan. Web sitelerini korumak isteyen, dosyaları derinlemesine analiz etmek istemeyen kullanıcılar bu işlevselliği devre dışı bırakmalıdır. Dosyaları daha derinlemesine analiz etmek isteyen tüm kullanıcılar (ör., kötü amaçlı yazılım araştırmaları) bu işlevselliği etkinleştirmelidir. Dosyaları karantinaya koymak bazen yanlış pozitiflerin hata ayıklanmasına yardımcı olabilir. Bunu devre dışı bırakmak için <code>quarantine_key</code> yönergesini boş bırakın (veya henüz boş değilse içeriğini sil). Etkinleştirmek için bir miktar girin. <code>quarantine_key</code> karantina işlevinin önemli bir güvenlik özelliğidir. Bu yönerge, potansiyel saldırganların karantina içeriğini istismar etmesini önler. <code>quarantine_key</code>, şifrelerinizle aynı şekilde ele alınmalıdır: Dikkatli koruyun, ve uzun olanlar daha iyidir. En iyi efekti elde etmek için <code>delete_on_sight</code> ile birlikte kullanın."
 config_general_quarantine_max_files: "Karantinada bulunabilecek maksimum dosya sayısı. Karantinaya yeni dosyalar eklendiğinde, bu sayı aşılırsa, kalan dosyalar bu sayıyı geçmediği sürece eski dosyalar silinir. Varsayılan = 100."
