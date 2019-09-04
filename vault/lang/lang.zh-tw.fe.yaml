@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.08.17).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -61,7 +61,7 @@ config_files_max_files_in_archives: "在中止掃描之前從檔案中掃描的�
 config_files_max_recursion: "最大存檔遞歸深度限。​默認=3。"
 config_files_max_uploads: "最大允許數值的文件為掃描當文件上傳掃描之前中止掃描和告訴用戶他們是上傳太多在同一時間！​提供保護針對一個理論攻擊哪裡一個攻擊者嘗試DDoS您的系統或CMS通過超載phpMussel以減速PHP進程到一個停止。​推薦：10。​您可能想增加或減少這個數值，​根據速度的您的硬件。​注意這個數值不交待為或包括存檔內容。"
 config_general_FrontEndLog: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
-config_general_cleanup: "【反設置/刪除/清潔】腳本變量和緩存【Cache】之後執行嗎？​如果您不使用腳本外初始上傳掃描，​應該設置True【真/正】，​為了最小化內存使用。​如果您使用腳本為目的外初始上傳掃描，​應該設置False【假/負】，​為了避免不必要重新加載複製數據在內存。​在一般的做法，​它應該設置True【真/正】，​但，​如果您做這樣，​您將不能夠使用腳本為任何目的以外文件上傳掃描。​無影響在CLI模式。"
+config_general_cleanup: "掃描上傳後，銷毀變量和緩存？​False（假）=不要銷毀。​True（真）=銷毀【標準】。​如果您不使用該腳本進行掃描上傳以外的任何操作，您應該將其設置為<code>true</code>以最小化內存使用量。​否則，您應該將其設置為<code>false</code>，以便在內存中保留執行phpMussel所需的數據，而無需不必要地重新加載它。​無影響在CLI模式。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。"
 config_general_delete_on_sight: "激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。"
 config_general_disable_cli: "關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】；True（真）=關閉CLI模式。"
@@ -77,7 +77,7 @@ config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地�
 config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"
 config_general_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
 config_general_maintenance_mode: "啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。"
-config_general_max_login_attempts: "最大登錄嘗試次數（前端）。​標準=5。"
+config_general_max_login_attempts: "最大前端登錄嘗試次數。​標準=5。"
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
 config_general_quarantine_key: "phpMussel可以檢疫壞文件上傳在隔離在phpMussel的安全/保險庫【Vault】，​如果這個是某物您想。​普通用戶的phpMussel簡單地想保護他們的網站或宿主環境無任何興趣在深深分析任何嘗試文件上傳應該離開這個功能關閉，​但任何用戶有興趣在更深分析的嘗試文件上傳為目的惡意軟件研究或為類似這樣事情應該激活這個功能。​檢疫的嘗試文件上傳可以有時還助攻在調試假陽性，​如果這個是某物經常發生為您。​以關閉檢疫功能，​簡單地離開<code>quarantine_key</code>指令空白，​或抹去內容的這個指令如果它不已空白。​以激活隔離功能，​輸入一些值在這個指令。​<code>quarantine_key</code>是一個重要安全功能的隔離功能需要以預防檢疫功能從成為利用通過潛在攻擊者和以預防任何潛在執行的數據存儲在檢疫。​<code>quarantine_key</code>應該被處理在同樣方法作為您的密碼：更長是更好，​和緊緊保護它。​為獲得最佳效果，​在結合使用<code>delete_on_sight</code>。"
 config_general_quarantine_max_files: "隔離中可以存在的最大文件數量。​新文件添加到隔離時，如果超過此數量，則舊文件將被刪除，直到剩餘的文件不再超過此數量。​標準=100。"

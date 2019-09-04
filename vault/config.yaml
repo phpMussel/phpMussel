@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.08.20).
+# This file: Configuration defaults file (last modified: 2019.09.04).
 ##/
 
 Config Defaults:
@@ -160,6 +160,7 @@ Config Defaults:
     it: "Italiano"
     ja: "日本語"
     ko: "한국어"
+    lv: "Latviešu"
     nl: "Nederlandse"
     no: "Norsk"
     pl: "Polski"
