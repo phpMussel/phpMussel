@@ -14,6 +14,9 @@ Detailed version release guidelines for phpMussel can be found at:
   Latvian, Norwegian, Polish, and Swedish. Will sync it all up with the other
   translations when there's time.
 
+- [2019.09.06; Bug-fix; Maikuolan]: Found a way to trigger an invalid argument
+  warning at the front-end updates page in some contexts; Fixed.
+
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.28).
+ * This file: Front-end functions file (last modified: 2019.09.06).
  */
 
 /**
@@ -569,8 +569,9 @@ $phpMussel['Logs-RecursiveList'] = function (string $Base) use (&$phpMussel): ar
  * @param array $Component An array of the component metadata.
  * @return bool True for when in use; False for when not in use.
  */
-$phpMussel['IsInUse'] = function (array &$Component) use (&$phpMussel): bool {
+$phpMussel['IsInUse'] = function (array $Component) use (&$phpMussel): bool {
     $Files = $Component['Files']['To'] ?? [];
+    $phpMussel['Arrayify']($Files);
     foreach ($Files as $File) {
         if (substr($File, 0, 11) === 'signatures/' && preg_match(
             '~,(?:[\w\d]+:)?' . preg_quote(substr($File, 11)) . ',~',
