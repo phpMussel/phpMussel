@@ -10,7 +10,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.09.06; Bug-fix; Maikuolan]: Found a way to trigger an invalid argument
+  warning at the front-end updates page in some contexts; Fixed.
 
 === Version/Release 1.12.0 ===
 MINOR RELEASE.
