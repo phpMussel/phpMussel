@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.05.22).
+ * Demojibakefier (last modified: 2019.09.12).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -8,10 +8,9 @@
  * where a block of data might conceivably be composed of several different
  * unspecified, unknown encodings. Note that the class isn't intended to test
  * the intelligibility of a string, nor to consider the wider context of its
- * implementation. Also, this class is still super new. I don't yet consider it
- * "complete", and it mightn't yet always behave reliably, intuitively, or as
- * desired by the implementation. It should only be used as a last resort, when
- * everything else has already failed.
+ * implementation. Also, it mightn't yet always behave reliably, intuitively,
+ * or as desired by the implementation. It should only be used as a last
+ * resort, when everything else has already failed.
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -579,7 +578,7 @@ class Demojibakefier
             $this->Last = $Current;
             return $Valid[$Current]['String'];
         }
-        /** If we haven't decided on a particular candidate by this pointm we'll just give up and return the original string. */
+        /** If we haven't decided on a particular candidate by this point, we'll just return the original string. */
         return $String;
     }
 

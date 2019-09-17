@@ -11,11 +11,14 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.08.28).
+ * This file: Functions file (last modified: 2019.09.17).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
 $phpMussel['YAML'] = new \Maikuolan\Common\YAML();
+
+/** Instantiate events orchestrator in order to allow malleable logging and etc. */
+$phpMussel['Events'] = new \Maikuolan\Common\Events();
 
 /**
  * Registers plugin closures/functions to their intended hooks.
@@ -491,7 +494,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
  * @param string $Entry Name of the cache entry to create.
  * @param int $Expiry Unix time until the cache entry expires.
  * @param string $ItemData Contents of the cache entry.
- * @return bool This should always return true, unless something goes wrong.
+ * @return bool True on success; False on failure.
  */
 $phpMussel['SaveCache'] = function (string $Entry = '', int $Expiry = 0, string $ItemData = '') use (&$phpMussel): bool {
     $phpMussel['CleanCache']();
@@ -575,7 +578,7 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
  * @param string $Key Your quarantine key.
  * @param string $IP Data origin (usually, the IP address of the uploader).
  * @param string $ID The QFU filename to use (calculated beforehand).
- * @return bool This should always return true, unless something goes wrong.
+ * @return bool True on success; False on failure.
  */
 $phpMussel['Quarantine'] = function (string $In, string $Key, string $IP, string $ID) use (&$phpMussel): bool {
     if (!$In || !$Key || !$IP || !$ID || !function_exists('gzdeflate') || (
@@ -3723,7 +3726,6 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
         if ($z[0] === 2) {
             if (
                 $phpMussel['Config']['general']['quarantine_key'] &&
-                !$phpMussel['Config']['general']['honeypot_mode'] &&
                 strlen($in) < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
             ) {
                 $qfu =
@@ -3806,7 +3808,6 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
     if ($r === 2) {
         if (
             $phpMussel['Config']['general']['quarantine_key'] &&
-            !$phpMussel['Config']['general']['honeypot_mode'] &&
             strlen($in) < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
         ) {
             $qfu = $phpMussel['Time'] . '-' . md5(
@@ -4435,29 +4436,40 @@ $phpMussel['Scan'] = function ($f = '', bool $n = false, bool $zz = false, int $
     if (!$ofn) {
         $ofn = $f;
     }
-    $xst = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
-    $xst2822 = $phpMussel['TimeFormat']($xst, $phpMussel['Config']['general']['time_format']);
+
+    $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
+    $phpMussel['InstanceCache']['start_time_2822'] = $phpMussel['TimeFormat'](
+        $phpMussel['InstanceCache']['start_time'],
+        $phpMussel['Config']['general']['time_format']
+    );
     try {
         $r = $phpMussel['Recursor']($f, $n, $zz, $dpt, $ofn);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
-    $xet = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
-    $xet2822 = $phpMussel['TimeFormat']($xet, $phpMussel['Config']['general']['time_format']);
+    $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['time_offset'] * 60);
+    $phpMussel['InstanceCache']['end_time_2822'] = $phpMussel['TimeFormat'](
+        $phpMussel['InstanceCache']['end_time'],
+        $phpMussel['Config']['general']['time_format']
+    );
 
     /** Plugin hook: "after_scan". */
     $phpMussel['Execute_Hook']('after_scan');
 
     if ($n && !is_array($r)) {
-        $r =
-            $xst2822 . ' ' . $phpMussel['L10N']->getString('started') .
-            $phpMussel['L10N']->getString('_fullstop_final') . "\n" .
-            $r . $xet2822 . ' ' . $phpMussel['L10N']->getString('finished') .
-            $phpMussel['L10N']->getString('_fullstop_final') . "\n";
-        $phpMussel['WriteScanLog']($r);
+        $r = sprintf(
+            "%s %s%s\n" . $r . "%s %s%s\n",
+            $phpMussel['InstanceCache']['start_time_2822'],
+            $phpMussel['L10N']->getString('started'),
+            $phpMussel['L10N']->getString('_fullstop_final'),
+            $phpMussel['InstanceCache']['end_time_2822'],
+            $phpMussel['L10N']->getString('finished'),
+            $phpMussel['L10N']->getString('_fullstop_final')
+        );
+        $phpMussel['Events']->fireEvent('writeToScanLog', $r);
     }
     if (!isset($phpMussel['SkipSerial'])) {
-        $phpMussel['WriteSerial']($xst, $xet);
+        $phpMussel['Events']->fireEvent('writeToSerialLog');
     }
     if ($phpMussel['EOF']) {
         if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
@@ -4492,11 +4504,9 @@ $phpMussel['Scan'] = function ($f = '', bool $n = false, bool $zz = false, int $
 /**
  * Writes to the serialized logfile upon scan completion.
  *
- * @param string $StartTime When the scan started.
- * @param string $FinishTime When the scan finished.
  * @return bool True on success; False on failure.
  */
-$phpMussel['WriteSerial'] = function (string $StartTime = '', string $FinishTime = '') use (&$phpMussel): bool {
+$phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMussel): bool {
     if ($phpMussel['Mussel_sapi']) {
         $Origin = 'CLI';
     } else {
@@ -4517,12 +4527,12 @@ $phpMussel['WriteSerial'] = function (string $StartTime = '', string $FinishTime
         }
         $Handle = [
             'Data' => serialize([
-                'start_time' => $StartTime ?: (isset($phpMussel['InstanceCache']['start_time']) ? $phpMussel['InstanceCache']['start_time'] : '-'),
-                'end_time' => $FinishTime ?: (isset($phpMussel['InstanceCache']['end_time']) ? $phpMussel['InstanceCache']['end_time'] : '-'),
+                'start_time' => $phpMussel['InstanceCache']['start_time'] ?? '-',
+                'end_time' => $phpMussel['InstanceCache']['end_time'] ?? '-',
                 'origin' => $Origin,
-                'objects_scanned' => $phpMussel['InstanceCache']['objects_scanned'],
-                'detections_count' => $phpMussel['InstanceCache']['detections_count'],
-                'scan_errors' => $phpMussel['InstanceCache']['scan_errors'],
+                'objects_scanned' => $phpMussel['InstanceCache']['objects_scanned'] ?? 0,
+                'detections_count' => $phpMussel['InstanceCache']['detections_count'] ?? 0,
+                'scan_errors' => $phpMussel['InstanceCache']['scan_errors'] ?? 0,
                 'detections' => $ScanData
             ]) . "\n",
             'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
@@ -4542,7 +4552,7 @@ $phpMussel['WriteSerial'] = function (string $StartTime = '', string $FinishTime
         }
     }
     return false;
-};
+});
 
 /**
  * Writes to the standard scan log upon scan completion.
@@ -4550,16 +4560,18 @@ $phpMussel['WriteSerial'] = function (string $StartTime = '', string $FinishTime
  * @param string $Data What to write.
  * @return bool True on success; False on failure.
  */
-$phpMussel['WriteScanLog'] = function (string $Data) use (&$phpMussel): bool {
+$phpMussel['Events']->addHandler('writeToScanLog', function (string $Data) use (&$phpMussel): bool {
     if ($phpMussel['Config']['general']['scan_log']) {
         $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log']);
         if (!file_exists($phpMussel['Vault'] . $File)) {
             $Data = $phpMussel['safety'] . "\n" . $Data;
+            $WriteMode = 'w';
+        } else {
+            $WriteMode = (
+                $phpMussel['Config']['general']['truncate'] > 0 &&
+                filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+            ) ? 'w' : 'a';
         }
-        $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        )) ? 'w' : 'a';
         if ($phpMussel['BuildLogPath']($File)) {
             $Handle = fopen($phpMussel['Vault'] . $File, 'a');
             fwrite($Handle, $Data);
@@ -4571,7 +4583,36 @@ $phpMussel['WriteScanLog'] = function (string $Data) use (&$phpMussel): bool {
         }
     }
     return false;
-};
+});
+
+/**
+ * Writes to the scan kills log.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) use (&$phpMussel): bool {
+    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills']);
+    if (!file_exists($phpMussel['Vault'] . $File)) {
+        $Data = $phpMussel['safety'] . "\n\n" . $Data;
+        $WriteMode = 'w';
+    } else {
+        $WriteMode = (
+            $phpMussel['Config']['general']['truncate'] > 0 &&
+            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        ) ? 'w' : 'a';
+    }
+    if (!$phpMussel['BuildLogPath']($File)) {
+        return false;
+    }
+    $Stream = fopen($phpMussel['Vault'] . $File, $WriteMode);
+    fwrite($Stream, $Data);
+    fclose($Stream);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
+    }
+    return true;
+});
 
 /**
  * A simple closure for replacing date/time placeholders with corresponding
@@ -5034,62 +5075,6 @@ $phpMussel['CLI-RecursiveCommand'] = function (string $Command, callable $Callab
         return $Returnable;
     }
     return is_file($Params) ? $Callable($Params) : sprintf($phpMussel['L10N']->getString('cli_is_not_a'), $Params) . "\n";
-};
-
-/**
- * Duplication avoidance (some file handling for honeypot functionality).
- *
- * @param array $Array Contains data relating to the file to be read.
- * @param string $File The path to the file to be read.
- */
-$phpMussel['ReadFile-For-Honeypot'] = function (array &$Array, string $File) use (&$phpMussel) {
-    if (!isset($Array['qdata'])) {
-        $Array['qdata'] = '';
-    }
-    $Array['odata'] = $phpMussel['ReadFile']($File);
-    $Array['len'] = strlen($Array['odata']);
-    $Array['crc'] = hash('crc32b', $Array['odata']);
-    $Array['qfile'] = $phpMussel['Time'] . '-' . md5($phpMussel['Config']['general']['quarantine_key'] . $Array['crc'] . $phpMussel['Time']);
-    if ($Array['len'] > 0 && $Array['len'] < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])) {
-        $phpMussel['Quarantine'](
-            $Array['odata'],
-            $phpMussel['Config']['general']['quarantine_key'],
-            $_SERVER[$phpMussel['IPAddr']],
-            $Array['qfile']
-        );
-    }
-    if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($File)) {
-        unlink($File);
-    }
-    $Array['qdata'] .= sprintf(
-        'TEMP FILENAME: %1$s%6$sFILENAME: %2$s%6$sFILESIZE: %3$s%6$sMD5: %4$s%6$s%5$s',
-        $File,
-        urlencode($File),
-        $Array['len'],
-        md5($Array['odata']),
-        sprintf($phpMussel['L10N']->getString('quarantined_as'), $Array['qfile']),
-        "\n"
-    );
-};
-
-/** Duplication avoidance (assigning kill details and unlinking files). */
-$phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
-    $phpMussel['killdata'] .=
-        '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
-        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']] . ':' .
-        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . "\n";
-    $phpMussel['whyflagged'] .= sprintf($phpMussel['L10N']->getString('_exclamation'),
-        $phpMussel['L10N']->getString('upload_limit_exceeded') .
-        ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . ')'
-    );
-    if (
-        $phpMussel['Config']['general']['delete_on_sight'] &&
-        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
-        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
-        !$phpMussel['Config']['general']['honeypot_mode']
-    ) {
-        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
-    }
 };
 
 /**

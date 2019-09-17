@@ -17,6 +17,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.09.06; Bug-fix; Maikuolan]: Found a way to trigger an invalid argument
   warning at the front-end updates page in some contexts; Fixed.
 
+- [2019.09.17; Maikuolan]: Added an events orchestrator and refactored.
+
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

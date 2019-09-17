@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.08.19).
+ * This file: Upload handler (last modified: 2019.09.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -52,8 +52,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
      * that PE file will be appended to the $phpMussel['PEData'] variable.
      *
      * If logging is enabled, the information contained by these three
-     * variables will all be logged as per the specified by the logging-related
-     * directives of the phpMussel configuration file.
+     * variables will all be logged as per specified by the relevant directives
+     * in the phpMussel configuration file.
      */
     $phpMussel['whyflagged'] = $phpMussel['killdata'] = $phpMussel['PEData'] = '';
 
@@ -66,22 +66,17 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     /** Create an array for normalising the $_FILES data. */
     $phpMussel['upload']['FilesData'] = [];
 
-    /** Generate "HONEYPOT EVENT" header (if "honeypot_mode" is enabled). */
-    if ($phpMussel['Config']['general']['honeypot_mode']) {
-        $phpMussel['InstanceCache']['Handle'] = ['qdata' =>
-            "== HONEYPOT EVENT ==\nDATE: " . $phpMussel['TimeFormat'](
-                $phpMussel['InstanceCache']['start_time'],
-                $phpMussel['Config']['general']['time_format']
-            ) . "\nIP ADDRESS: " . ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-                $_SERVER[$phpMussel['IPAddr']]
-            ) : $_SERVER[$phpMussel['IPAddr']]) . "\n"
-        ];
-    }
+    /** Create empty handle array. */
+    $phpMussel['InstanceCache']['Handle'] = [];
 
+    /** Iterate through $_FILES array and scan as necessary. */
     foreach ($_FILES as $phpMussel['ThisFileKey'] => $phpMussel['ThisFileData']) {
+
+        /** Guard. */
         if (!isset($phpMussel['ThisFileData']['error'])) {
             continue;
         }
+
         /** Normalise the structure of the uploads array. */
         if (!is_array($phpMussel['ThisFileData']['error'])) {
             $phpMussel['upload']['FilesData']['FileSet'] = [
@@ -149,7 +144,17 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 continue;
             }
 
-            /** Protection against upload spoofing. */
+            /** Protection against upload spoofing (1/2). */
+            if (
+                !$phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] ||
+                !$phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]
+            ) {
+                $phpMussel['killdata'] .= "-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?\n";
+                $phpMussel['whyflagged'] .= $phpMussel['L10N']->getString('scan_unauthorised_upload_or_misconfig');
+                continue;
+            }
+
+            /** Protection against upload spoofing (2/2). */
             if (!is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']])) {
                 $phpMussel['killdata'] .= sprintf(
                     "UNAUTHORISED-FILE-UPLOAD-NO-HASH:%d:%s\n",
@@ -161,87 +166,101 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['L10N']->getString('scan_unauthorised_upload'),
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 ));
-            } elseif (
-                !$phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] ||
-                !$phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]
-            ) {
-                $phpMussel['killdata'] .= "-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?\n";
-                $phpMussel['whyflagged'] .= $phpMussel['L10N']->getString('scan_unauthorised_upload_or_misconfig');
-            } else {
-
-                /** Honeypot code. */
-                if (
-                    $phpMussel['Config']['general']['honeypot_mode'] &&
-                    $phpMussel['Config']['general']['quarantine_key']
-                ) {
-                    $phpMussel['ReadFile-For-Honeypot'](
-                        $phpMussel['InstanceCache']['Handle'],
-                        $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]
-                    );
-                }
-
-                /** Process this block if the number of files being uploaded exceeds "max_uploads". */
-                if (
-                    $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
-                    $phpMussel['Config']['files']['max_uploads'] >= 1
-                ) {
-                    $phpMussel['KillAndUnlink']();
-                    continue;
-                }
-
-                /** Used for serialised logging. */
-                if ($phpMussel['ThisIter'] === ($phpMussel['ThisFilesCount'] - 1)) {
-                    unset($phpMussel['SkipSerial']);
-                }
-
-                /** Execute the scan! */
-                try {
-                    $phpMussel['r'] = $phpMussel['Scan'](
-                        $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']],
-                        true,
-                        true,
-                        0,
-                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
-                    );
-                } catch (\Exception $e) {
-                    die($e->getMessage());
-                }
-
+                continue;
             }
+
+            /** Honeypot functionality. */
+            if ($phpMussel['Config']['general']['honeypot_mode']) {
+                $phpMussel['ThisFileSize'] = filesize($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
+                $phpMussel['ThisFileData'] = $phpMussel['ReadFile'](
+                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']],
+                    (
+                        $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
+                        $phpMussel['ThisFileSize'] > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
+                    ) ? $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']) : $phpMussel['ThisFileSize'],
+                    true
+                );
+                $phpMussel['killdata'] .= sprintf(
+                    "%s:%d:%s\n",
+                    md5($phpMussel['ThisFileData']),
+                    $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']],
+                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
+                );
+                $phpMussel['whyflagged'] .= $phpMussel['L10N']->getString('honeypot_event');
+                if (
+                    $phpMussel['Config']['general']['quarantine_key'] &&
+                    strlen($phpMussel['ThisFileData']) < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
+                ) {
+                    $phpMussel['ThisFileQuarantinedAs'] = sprintf(
+                        '%s-%s',
+                        $phpMussel['Time'],
+                        md5($phpMussel['Config']['general']['quarantine_key'] . hash('crc32b', $phpMussel['ThisFileData']) . $phpMussel['Time'])
+                    );
+                    $phpMussel['Quarantine'](
+                        $phpMussel['ThisFileData'],
+                        $phpMussel['Config']['general']['quarantine_key'],
+                        $_SERVER[$phpMussel['IPAddr']],
+                        $phpMussel['ThisFileQuarantinedAs']
+                    );
+                    $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $phpMussel['ThisFileQuarantinedAs']) . "\n";
+                }
+                unset($phpMussel['ThisFileQuarantinedAs'], $phpMussel['ThisFileData'], $phpMussel['ThisFileSize']);
+                if (
+                    $phpMussel['Config']['general']['delete_on_sight'] &&
+                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
+                    is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']])
+                ) {
+                    unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
+                }
+                continue;
+            }
+
+            /** Process this block if the number of files being uploaded exceeds "max_uploads". */
+            if (
+                $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
+                $phpMussel['Config']['files']['max_uploads'] >= 1
+            ) {
+                $phpMussel['killdata'] .=
+                    '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
+                    $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']] . ':' .
+                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . "\n";
+                $phpMussel['whyflagged'] .= sprintf($phpMussel['L10N']->getString('_exclamation'),
+                    $phpMussel['L10N']->getString('upload_limit_exceeded') .
+                    ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . ')'
+                );
+                if (
+                    $phpMussel['Config']['general']['delete_on_sight'] &&
+                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]) &&
+                    is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']])
+                ) {
+                    unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
+                }
+                continue;
+            }
+
+            /** Used for serialised logging. */
+            if ($phpMussel['ThisIter'] === ($phpMussel['ThisFilesCount'] - 1)) {
+                unset($phpMussel['SkipSerial']);
+            }
+
+            /** Execute the scan! */
+            try {
+                $phpMussel['r'] = $phpMussel['Scan'](
+                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']],
+                    true,
+                    true,
+                    0,
+                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
+                );
+            } catch (\Exception $e) {
+                die($e->getMessage());
+            }
+
         }
     }
+
     /** Cleanup. */
     unset($phpMussel['r'], $phpMussel['ThisIter'], $phpMussel['ThisFilesCount'], $phpMussel['ThisFileKey'], $phpMussel['ThisFileData']);
-
-    /** Honeypot code. */
-    if (
-        $phpMussel['Config']['general']['honeypot_mode'] &&
-        $phpMussel['Config']['general']['scan_kills'] &&
-        is_array($phpMussel['InstanceCache']['Handle'])
-    ) {
-        $phpMussel['InstanceCache']['Handle']['File'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills']);
-        $phpMussel['InstanceCache']['Handle']['WriteMode'] = (
-            !file_exists($phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File']) || (
-                $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-            )
-        ) ? 'w' : 'a';
-        if (!file_exists($phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File'])) {
-            $phpMussel['InstanceCache']['Handle']['qdata'] = $phpMussel['safety'] . "\n\n" . $phpMussel['InstanceCache']['Handle']['qdata'];
-        }
-        if ($phpMussel['BuildLogPath']($phpMussel['InstanceCache']['Handle']['File'])) {
-            $phpMussel['InstanceCache']['Handle']['Stream'] = fopen(
-                $phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File'],
-                $phpMussel['InstanceCache']['Handle']['WriteMode']
-            );
-            fwrite($phpMussel['InstanceCache']['Handle']['Stream'], $phpMussel['InstanceCache']['Handle']['qdata']);
-            fclose($phpMussel['InstanceCache']['Handle']['Stream']);
-            if ($phpMussel['InstanceCache']['Handle']['WriteMode'] === 'w') {
-                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
-            }
-        }
-        $phpMussel['InstanceCache']['Handle'] = '';
-    }
 
     /** Update the hash cache. */
     if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && !empty($phpMussel['HashCache']['Data']) && is_array($phpMussel['HashCache']['Data'])) {
@@ -323,19 +342,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
         /** Log "scan_kills" data. */
         if ($phpMussel['Config']['general']['scan_kills'] && !empty($phpMussel['killdata'])) {
-            $phpMussel['InstanceCache']['Handle'] = [
-                'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills'])
-            ];
-            $phpMussel['InstanceCache']['Handle']['WriteMode'] = (
-                !file_exists($phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File']) || (
-                    $phpMussel['Config']['general']['truncate'] > 0 &&
-                    filesize($phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-                )
-            ) ? 'w' : 'a';
-            $phpMussel['InstanceCache']['Handle']['Data'] = file_exists(
-                $phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File']
-            ) ? '' : $phpMussel['safety'] . "\n\n";
-            $phpMussel['InstanceCache']['Handle']['Data'] .= sprintf(
+            $phpMussel['InstanceCache']['Handle']['Data'] = sprintf(
                 "%s: %s\n%s: %s\n== %s ==\n%s\n== %s ==\n%s",
                 $phpMussel['L10N']->getString('field_date'),
                 $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['time_format']),
@@ -356,18 +363,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 );
             }
             $phpMussel['InstanceCache']['Handle']['Data'] .= "\n";
-            if ($phpMussel['BuildLogPath']($phpMussel['InstanceCache']['Handle']['File'])) {
-                $phpMussel['InstanceCache']['Handle']['Stream'] = fopen(
-                    $phpMussel['Vault'] . $phpMussel['InstanceCache']['Handle']['File'],
-                    $phpMussel['InstanceCache']['Handle']['WriteMode']
-                );
-                fwrite($phpMussel['InstanceCache']['Handle']['Stream'], $phpMussel['InstanceCache']['Handle']['Data']);
-                fclose($phpMussel['InstanceCache']['Handle']['Stream']);
-                if ($phpMussel['InstanceCache']['Handle']['WriteMode'] === 'w') {
-                    $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
-                }
-            }
-            $phpMussel['InstanceCache']['Handle'] = '';
+            $phpMussel['Events']->fireEvent('writeToScanKillsLog', $phpMussel['InstanceCache']['Handle']['Data']);
+            $phpMussel['InstanceCache']['Handle'] = [];
         }
 
         /** Fallback to use if the HTML template file is missing. */
