@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.06.17).
+ * This file: CLI handler (last modified: 2019.09.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -360,7 +360,10 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             $Out = $r = '';
             $phpMussel['InstanceCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['InstanceCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['start_time'], $phpMussel['Config']['general']['timeFormat']);
+            $phpMussel['InstanceCache']['start_time_2822'] = $phpMussel['TimeFormat'](
+                $phpMussel['InstanceCache']['start_time'],
+                $phpMussel['Config']['general']['timeFormat']
+            );
             echo $s = $phpMussel['InstanceCache']['start_time_2822'] . ' ' . $phpMussel['L10N']->getString('started') . $phpMussel['L10N']->getString('_fullstop_final') . "\n";
             if (is_dir($phpMussel['stdin_clean'])) {
                 if (!is_readable($phpMussel['stdin_clean'])) {
@@ -405,13 +408,16 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $Out = '';
             }
             $phpMussel['InstanceCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['InstanceCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['InstanceCache']['end_time'], $phpMussel['Config']['general']['timeFormat']);
+            $phpMussel['InstanceCache']['end_time_2822'] = $phpMussel['TimeFormat'](
+                $phpMussel['InstanceCache']['end_time'],
+                $phpMussel['Config']['general']['timeFormat']
+            );
             $r = $s . $r;
             $s = $phpMussel['InstanceCache']['end_time_2822'] . ' ' . $phpMussel['L10N']->getString('finished') . $phpMussel['L10N']->getString('_fullstop_final') . "\n";
             echo $s;
             $r .= $s;
-            $phpMussel['WriteScanLog']($r);
-            $phpMussel['WriteSerial']($phpMussel['InstanceCache']['start_time'], $phpMussel['InstanceCache']['end_time']);
+            $phpMussel['Events']->fireEvent('writeToScanLog', $r);
+            $phpMussel['Events']->fireEvent('writeToSerialLog');
             unset($r, $s);
         }
 

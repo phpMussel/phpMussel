@@ -1,9 +1,9 @@
 <?php
 /**
  * This file is a part of the phpMussel package.
- * Homepage: https://phpmussel.github.io/
+ * Homepage: https://phpMussel.github.io/
  *
- * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+ * phpMussel COPYRIGHT 2013 AND BEYOND BY THE phpMussel TEAM.
  *
  * Authors:
  * @see PEOPLE.md
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.06).
+ * This file: Front-end functions file (last modified: 2019.09.17).
  */
 
 /**
@@ -2057,6 +2057,33 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
 };
 
 /**
+ * Writes to the PHPMailer event log.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$phpMussel) {
+    if (!$phpMussel['Config']['PHPMailer']['EventLog']) {
+        return false;
+    }
+    $EventLog = (strpos($phpMussel['Config']['PHPMailer']['EventLog'], '{') !== false) ? $phpMussel['TimeFormat'](
+        $phpMussel['Time'],
+        $phpMussel['Config']['PHPMailer']['EventLog']
+    ) : $phpMussel['Config']['PHPMailer']['EventLog'];
+    $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
+        $phpMussel['Config']['general']['truncate'] > 0 &&
+        filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+    )) ? 'w' : 'a';
+    $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
+    }
+    return true;
+});
+
+/**
  * Wrapper for PHPMailer functionality.
  *
  * @param array $Recipients An array of recipients to send to.
@@ -2067,37 +2094,23 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
  * @return bool Operation failed (false) or succeeded (true).
  */
 $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = '', $AltBody = '', array $Attachments = []) use (&$phpMussel) {
-    $EventLog = '';
-    $EventLogData = '';
 
     /** Prepare event logging. */
-    if ($phpMussel['Config']['PHPMailer']['EventLog']) {
-        $EventLog = (strpos($phpMussel['Config']['PHPMailer']['EventLog'], '{') !== false) ? $phpMussel['TimeFormat'](
+    $EventLogData = sprintf(
+        '%s - %s - ',
+        $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']],
+        isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
             $phpMussel['Time'],
-            $phpMussel['Config']['PHPMailer']['EventLog']
-        ) : $phpMussel['Config']['PHPMailer']['EventLog'];
-        $EventLogData = ((
-            $phpMussel['Config']['legal']['pseudonymise_ip_addresses']
-        ) ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']]) . ' - ' . (
-            isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['timeFormat']
-            )
-        ) . ' - ';
-        $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        )) ? 'w' : 'a';
-    }
+            $phpMussel['Config']['general']['timeFormat']
+        )
+    );
 
     /** Operation success state. */
     $State = false;
 
     /** Check whether class exists to either load it and continue or fail the operation. */
     if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) {
-        if ($EventLog) {
-            $EventLogData .= $phpMussel['L10N']->getString('state_failed_missing') . "\n";
-        }
+        $EventLogData .= $phpMussel['L10N']->getString('state_failed_missing') . "\n";
     } else {
         try {
 
@@ -2192,32 +2205,21 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body
             $State = $Mail->send();
 
             /** Log the results of the send attempt. */
-            if ($EventLog) {
-                $EventLogData .= ($State ? sprintf(
-                    $phpMussel['L10N']->getString('state_email_sent'),
-                    $SuccessDetails
-                ) : $phpMussel['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
-            }
+            $EventLogData .= ($State ? sprintf(
+                $phpMussel['L10N']->getString('state_email_sent'),
+                $SuccessDetails
+            ) : $phpMussel['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
 
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
-            if ($EventLog) {
-                $EventLogData .= $phpMussel['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
-            }
+            $EventLogData .= $phpMussel['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
 
         }
     }
 
     /** Write to the event log. */
-    if ($EventLog) {
-        $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
-        fwrite($Handle, $EventLogData);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
-        }
-    }
+    $phpMussel['Events']->fireEvent('writeToPHPMailerEventLog', $EventLogData);
 
     /** Exit. */
     return $State;
