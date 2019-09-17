@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.09.01).
+# This file: Russian language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -362,7 +362,6 @@ tip_2fa_sent: "На ваш адрес электронной почты отпр
 tip_accounts: "Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к phpMussel фронтенд."
 tip_cache_data: "Привет, {username}.<br />Здесь вы можете просмотреть содержимое кеша."
 tip_config: "Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для phpMussel от фронтенд."
-tip_donate: "phpMussel предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать."
 tip_fe_cookie_warning: "Заметка: phpMussel использует cookie для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла cookie вашим браузером."
 tip_file_manager: "Привет, {username}.<br />Файловый менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим)."
 tip_home: "Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить."

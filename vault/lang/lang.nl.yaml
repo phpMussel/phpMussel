@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2019.08.19).
+# This file: Dutch language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Afgewerkt"
 generated_by: "Gegenereerde door"
 greylist_cleared: " Greylist geleegd."
 greylist_updated: " Greylist bijgewerkt."
+honeypot_event: "Honeypot evenement. "
 image: "Image"
 instance_already_active: "Instantie al actief! Controleer uw haken."
 invalid_data: "Ongeldige data!"

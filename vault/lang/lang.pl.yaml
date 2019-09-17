@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2019.09.01).
+# This file: Polish language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Skończone"
 generated_by: "Wygenerowane przez"
 greylist_cleared: " Szara lista została wyczyszczona."
 greylist_updated: " Szara lista została zaktualizowana."
+honeypot_event: "Wydarzenie honeypot. "
 image: "Obraz"
 instance_already_active: "Instancja jest już aktywna! Proszę sprawdź dokładnie swoje haki."
 invalid_data: "Niepoprawny dane!"

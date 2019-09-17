@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2019.08.19).
+# This file: German language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Fertig"
 generated_by: "Generiert von"
 greylist_cleared: " Greylist gelöscht."
 greylist_updated: " Greylist aktualisiert."
+honeypot_event: "Honeypot-Ereignis. "
 image: "Bild"
 instance_already_active: "Instanz bereits aktiv! Bitte prüfe deine Hooks."
 invalid_data: "Ungültige Daten!"

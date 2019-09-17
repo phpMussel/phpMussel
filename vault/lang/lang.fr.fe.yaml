@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.09.01).
+# This file: French language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -52,7 +52,7 @@ config_files_check_archives: "Essayer vérifier les contenus des archives ? Fal
 config_files_filesize_archives: "Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut]."
 config_files_filesize_limit: "Limite de taille des fichiers en Ko. 65536 = 64Mo [Défaut] ; 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements."
 config_files_filesize_response: "Que faire avec des fichiers qui dépassent la limite de taille des fichiers (si existant). False = Énumérer Blanche ; True = Énumérer Noire [Défaut]."
-config_files_filetype_archives: "Étendre type de fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut]."
+config_files_filetype_archives: "Étendre type de fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) [Défaut] ; True = Oui."
 config_files_filetype_blacklist: "Liste Noire :"
 config_files_filetype_greylist: "Liste Gris :"
 config_files_filetype_whitelist: "Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc ; Il va désactiver liste blanche/noire/gris. L'ordre logique de l'application est : Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon. Liste Blanche :"
@@ -362,7 +362,6 @@ tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de phpMussel."
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."
 tip_config: "Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour phpMussel à l'accès frontal."
-tip_donate: "phpMussel est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don."
 tip_fe_cookie_warning: "Remarque : phpMussel utilise un cookie pour authentifier les connexions. En vous connectant, vous donnez votre consentement pour qu'un cookie soit créé et stocké par votre navigateur."
 tip_file_manager: "Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci)."
 tip_home: "Bonjour, {username}.<br />C'est la page d'accueil de l'accès frontal de phpMussel. Sélectionnez un lien dans le menu de navigation à gauche pour continuer."

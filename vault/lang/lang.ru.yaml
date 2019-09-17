@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2019.08.19).
+# This file: Russian language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -70,6 +70,7 @@ finished: "Готово"
 generated_by: "Генерируется от"
 greylist_cleared: " Серый список очищен."
 greylist_updated: " Серый список обновлён."
+honeypot_event: "Свадебное мероприятие. "
 image: "Изображение"
 instance_already_active: "Пример уже активен! Пожалуйста перепроверьте свои крючки."
 invalid_data: "Неверные данные!"

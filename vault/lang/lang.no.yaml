@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2019.09.01).
+# This file: Norwegian language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Ferdig"
 generated_by: "Generert av"
 greylist_cleared: " Gråliste klarert."
 greylist_updated: " Gråliste oppdatert."
+honeypot_event: "Honeypot hendelse "
 image: "Bilde"
 instance_already_active: "Forekomst allerede aktivt! Vennligst kontroller krokene dine."
 invalid_data: "Ugyldig data!"

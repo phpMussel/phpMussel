@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.08.19).
+# This file: Turkish language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Bitirdi"
 generated_by: "Üreten"
 greylist_cleared: " Gri liste temizlendi."
 greylist_updated: " Gri liste güncellendi."
+honeypot_event: "Bal küpü olayı. "
 image: "Imaj"
 instance_already_active: "Örnek zaten etkin! Lütfen kancalarınızı tekrar kontrol edin."
 invalid_data: "Geçersiz veri!"

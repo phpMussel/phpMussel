@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.09.01).
+# This file: Dutch language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -52,7 +52,7 @@ config_files_check_archives: "Om de inhoud van archieven proberen te controleer?
 config_files_filesize_archives: "Erven het bestandsgrootte blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard]."
 config_files_filesize_limit: "Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard]; 0 = Geen limiet (altijd op de greylist), ieder (positief) numerieke waarde aanvaard. Dit kunt handig zijn als uw PHP configuratie beperkt de hoeveelheid van geheugen een proces kunt houden of als u PHP configuratie beperkt het bestandsgrootte van uploads."
 config_files_filesize_response: "Wat te doen met bestanden dat overschrijden het bestandsgrootte limiet (als aanwezig). False = Whitelist; True = Blacklist [Standaard]."
-config_files_filetype_archives: "Erven het bestandstype blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard]."
+config_files_filetype_archives: "Erven het bestandstype blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles) [Standaard]; True = Ja."
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
 config_files_filetype_whitelist: "Als uw systeem vergunningen alleen specifieke bestandstypen te uploaden, of als uw systeem expliciet ontkent bepaalde bestandstypen, specificeren deze bestandstypen in whitelists, blacklists en greylists kunt toenemen de snelheid waarin scannen is uitgevoerd via vergunningen het script te negeren bepaalde bestandstypen. Formaat is CSV (komma's gescheiden waarden). Als u wilt te scannen alles, eerder dan whitelist, blacklist of greylist, laat de variabele(/n) leeg; doen zo zal uitschakelen whitelist/blacklist/greylist. Logische volgorde van de verwerking is: Als het bestandstype is op de whitelist, niet scannen en niet blokkeren het bestand, en niet controleer het bestand tegen de blacklist of de greylist. Als het bestandstype is op de blacklist, niet scannen het bestand maar blokkeren het niettemin, en niet controleer het bestand tegen de greylist. Als de greylist is leeg of als de greylist is niet leeg en het bestandstype is op de greylist, scannen het bestand als per normaal en bepalen als om het gebaseerd op de resultaten van de scan te blokkeren, maar als de greylist is niet leeg en het bestandstype is niet op de greylist, behandel het bestand alsof op de blacklist, dus om het niet te scannen, maar toch blokkeren het niettemin. Whitelist:"
@@ -360,7 +360,6 @@ tip_2fa_sent: "Een e-mail met een tweefactorauthenticatie code is verzonden naar
 tip_accounts: "Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend."
 tip_cache_data: "Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken."
 tip_config: "Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor phpMussel te modificeren vanaf de frontend."
-tip_donate: "phpMussel wordt gratis aangeboden, maar als u wilt doneren aan het project, kan u dit doen door te klikken op de knop doneren."
 tip_fe_cookie_warning: "Notitie: phpMussel gebruikt een cookie om aanmeldingen te verifiëren. Door in te loggen, geeft u uw toestemming voor het maken en opslaan van een cookie door uw browser."
 tip_file_manager: "Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze)."
 tip_home: "Hallo, {username}.<br />Dit is de startpagina van de phpMussel frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan."

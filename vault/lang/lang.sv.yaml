@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2019.09.01).
+# This file: Swedish language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Färdiga"
 generated_by: "Genererad av"
 greylist_cleared: " Grålista rensade."
 greylist_updated: " Grålista uppdaterad."
+honeypot_event: "Honeypot händelse. "
 image: "Bild"
 instance_already_active: "Instansen redan aktiv! Vänligen kontrollera dina krokar."
 invalid_data: "Felaktig data!"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.09.01).
+# This file: Norwegian language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -41,12 +41,35 @@ config_attack_specific_chameleon_to_archive: "Oppdag dårlige overskrifter i ark
 config_attack_specific_chameleon_to_doc: "Søk etter Office-dokumenter med dårlige overskrifter (Støttet: DOC, DOT, PPS, PPT, XLA, XLS, WIZ). False = Av; True = På."
 config_attack_specific_chameleon_to_img: "Søk etter bilder med dårlige overskrifter (Støttet: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP). False = Av; True = På."
 config_attack_specific_chameleon_to_pdf: "Søk etter PDF-filer med dårlige overskrifter. False = Av; True = På."
-config_attack_specific_corrupted_exe: "Korrupte filer og parser feil. False = Overse; True = Blokkere [Standardverdi]. Oppdage og blokkere potensielt ødelagte PE-filer (Portable Executable)? Ofte (men ikke alltid), når visse aspekter av en PE-fil er ødelagt eller ikke kan parses riktig, kan det indikere en virusinfeksjon. Prosessene som brukes av de fleste antivirusprogrammer for å oppdage virus i PE-filer, krever parsing av disse filene på visse måter, som, hvis programmereren av et virus er klar over, spesifikt vil prøve å forhindre, for å la viruset deres forbli uoppdaget."
+config_attack_specific_corrupted_exe: "Korrupte filer og processr feil. False = Overse; True = Blokkere [Standardverdi]. Oppdage og blokkere potensielt ødelagte PE-filer (Portable Executable)? Ofte (men ikke alltid), når visse aspekter av en PE-fil er ødelagt eller ikke kan processs riktig, kan det indikere en virusinfeksjon. Prosessene som brukes av de fleste antivirusprogrammer for å oppdage virus i PE-filer, krever parsing av disse filene på visse måter, som, hvis programmereren av et virus er klar over, spesifikt vil prøve å forhindre, for å la viruset deres forbli uoppdaget."
 config_attack_specific_decode_threshold: "Terskel for lengden på rådata som avkodingskommandoer skal oppdages i (i tilfelle det er merkbare ytelsesproblemer under skanning). Standardverdi = 512KB. Null deaktiverer terskelen (fjerner en slik begrensning basert på filstørrelse)."
 config_attack_specific_scannable_threshold: "Terskel for lengden på rådata som phpMussel har lov til å lese og skanne (i tilfelle det er merkbare ytelsesproblemer under skanning). Standardverdi = 32MB. Null deaktiverer terskelen. Generelt bør denne verdien ikke være mindre enn den gjennomsnittlige filstørrelsen for filopplastinger du ønsker og forventer å motta til serveren eller nettstedet ditt, bør ikke være mer enn filesize_limit direktivet, og bør ikke være mer enn omtrent en femtedel av den totale tillatte minnetildelingen som er gitt til PHP via konfigurasjonsfilen "php.ini". Dette direktivet eksisterer for å prøve å forhindre at phpMussel bruker opp for mye minne (som forhindrer at det lykkes å skanne filer over en viss filstørrelse)."
 config_compatibility_ignore_upload_errors: "Dette direktivet bør vanligvis deaktiveres med mindre det er nødvendig for riktig funksjonalitet av phpMussel på ditt spesifikke system. Normalt, når deaktivert, når phpMussel oppdager tilstedeværelsen av elementer i array() <code>$_FILES</code>, den vil prøve å starte en skanning av filene som elementene representerer, og hvis elementene er tomme, vil phpMussel returnere en feilmelding. Dette er riktig oppførsel for phpMussel. Imidlertid kan tomme elementer i <code>$_FILES</code> for noen CMS oppstå som et resultat av den naturlige oppførselen til disse CMS, eller feil kan rapporteres når det ikke er noen, og i så fall vil den normale oppførselen for phpMussel forstyrre den normale oppførselen til disse CMS. Hvis en slik situasjon oppstår for deg, aktivering av dette alternativet instruere phpMussel til ikke å prøve å skanninger etter slike tomme elementer, å ignorere dem når de blir funnet og ikke returnere relaterte feilmeldinger, derfor som tillater videreføring av sideforespørselen. False = Av; True = På."
 config_compatibility_only_allow_images: "Hvis du forventer eller har tenkt å la bare bilder lastes opp til systemet eller CMS, og hvis du absolutt ikke krever andre filer enn bilder som skal lastes opp til systemet eller CMS, dette direktivet bør være aktivert, men ellers være deaktivert. Hvis dette direktivet er aktivert, vil det instruere phpMussel til, uten diskriminering, å blokkere eventuelle opplastinger identifisert som ikke-bildefiler, uten å skanne dem. Dette kan redusere behandlingstiden og minnebruken for forsøk på opplasting av filer som ikke-bildefiler. False = Av; True = På."
 config_experimental: "Ustabil/Eksperimentell!"
+config_files_block_encrypted_archives: "Oppdage og blokkere krypterte arkiver? Fordi phpMussel ikke er i stand til å skanne innholdet i krypterte arkiver, er det mulig at arkivkryptering kan brukes av en angriper som et middel til å forsøke å omgå phpMussel, antivirus-skannere og annen slik beskyttelse. Å instruere phpMussel til å blokkere krypterte arkiver som den oppdager, kan bidra til å redusere risikoen forbundet med disse mulighetene. False = Nei; True = Ja [Standardverdi]."
+config_files_check_archives: "Forsøk å sjekke innholdet i arkiver? False = Ikke sjekke; True = Sjekke [Standardverdi]."
+config_files_filesize_archives: "Arv inn svartelisten/hvitelisten for filstørrelse til innholdet i arkiver? False = Nei (behandle alt som grålistet); True = Ja [Standardverdi]."
+config_files_filesize_limit: "Filstørrelsesgrense i KB. 65536 = 64MB [Standardverdi]; 0 = Ingen grense (behandle alt som grålistet). Enhver (positiv) numerisk verdi akseptert. Dette kan være nyttig når PHP-konfigurasjonen begrenser mengden minne en prosess kan inneholde eller hvis PHP-konfigurasjonen din begrenser filstørrelse for opplastinger."
+config_files_filesize_response: "Hva gjør du med filer som overskrider filstørrelsesgrensen (hvis en finnes). False = Behandle som hvitelistet; True = Behandle som svartelistet [Standardverdi]."
+config_files_filetype_archives: "Arv inn svartelisten/hvitelisten for filtyper til innholdet i arkiver? False = Nei (behandle alt som grålistet) [Standardverdi]; True = Ja."
+config_files_filetype_blacklist: "Svarteliste:"
+config_files_filetype_greylist: "Gråliste:"
+config_files_filetype_whitelist: "Hvis systemet bare tillater opplasting av bestemte filtyper, eller hvis systemet eksplisitt avviser visse filtyper, å spesifisere filtypene i hvitelister, svartelister og grålister kan øke hastigheten som skanning utføres ved å la skriptet hoppe over bestemte filtyper. Format er CSV (kommaseparerte verdier). Hvis du vil skanne alt, i stedet for å bruke hvitelisten, svartelisten eller grålisten, du bør la variablene være tomt; Dette vil deaktivere hvitelisten/svartelisten/grålisten. Logisk rekkefølge på behandlingen er: Hvis filtypen er hvitlistet, ikke skanne og ikke blokkere filen, og ikke sjekke filen mot svartelisten eller grålisten. Hvis filtypen er svartelistet, ikke skanne filen, men blokkere den uansett, og ikke sjekk filen mot grålisten. Hvis grålisten er tom, eller hvis grålisten ikke er tom og filtypen er grålistet, skann filen som normalt og bestemme om den skal blokkeres basert på resultatene av skanningen, men hvis grålisten ikke er tom og filtypen ikke er grålistet, behandle filen som svartelistet, derfor ikke skanne den, men blokkerer den uansett. Hviteliste:"
+config_files_max_files_in_archives: "Maksimalt antall filer som skal skannes fra arkiv før abort. Standardverdi = 0 (ikke maksimalt)."
+config_files_max_recursion: "Maksimal rekursjonsdybde for arkiver. Standardverdi = 3."
+config_files_max_uploads: "Maksimalt antall filer som phpMussel har lov til å skanne når den skannes opplastinger før de avbryter skanningen og informerer brukeren om at de laster opp for mye på en gang! Gir beskyttelse mot et teoretisk angrep der en angriper forsøker å DDoS systemet eller CMS ved å overbelaste phpMussel for å bremse PHP-prosessen til en stansing. Anbefalt: 10. Det kan være lurt å heve eller senke dette tallet, avhengig av maskinvarens hastighet. Merk at dette nummeret ikke står for eller inkluderer innholdet i arkiver."
+config_general_cleanup: "Ødelegge variabler og hurtigbuffer som brukes av skriptet etter skanning av opplastinger? False = Nei; True = Ja [Standardverdi]. Hvis du *ikke* bruker skriptet til annet enn å skanne opplastinger, bør du stille dette til <code>true</code> for å minimere minnebruken. Ellers bør du stille den til <code>false</code>, for å beholde dataene som er nødvendige for å utføre phpMussel uten å laste dem unødvendig. Har ingen innflytelse i CLI-modus."
+config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0)."
+config_general_delete_on_sight: "Aktivering av dette direktivet vil instruere skriptet til å forsøke å øyeblikkelig slette eventuelt skannet filopplasting som samsvarer med deteksjonskriterier, enten via signaturer eller på annen måte. Filer som er bestemt for å være "rene" vil ikke bli berørt. Når det gjelder arkiver, vil hele arkivet bli slettet, uavhengig av om den fornærmede filen bare er en av flere filer som finnes i arkivet. For skanning av filopplasting er det vanligvis ikke nødvendig å aktivere dette direktivet, fordi PHP vanligvis vil rense innholdet i hurtigbufferen når utførelsen er fullført, som betyr at det vanligvis vil slette filer som er lastet opp gjennom den til serveren, med mindre de allerede er flyttet, kopiert eller slettet. Dette direktivet er lagt til her som et ekstra sikkerhetsmål for de hvis kopier av PHP ikke alltid oppfører seg på den måten som forventes. False = Etter skanning, la filen være i fred [Standardverdi]; True = Etter skanning, hvis ikke rent, slett umiddelbart."
+config_general_disable_cli: "Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (slik som PHPUnit, for eksempel) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus."
+config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre phpMussel mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere phpMussel via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi]."
+config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei."
+config_general_disabled_channels: "Dette kan brukes til å forhindre phpMussel i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
+config_general_enable_plugins: "Aktivere støtte for phpMussel-plugins? False = Nei; True = Ja [Standardverdi]."
+config_general_forbid_on_block: "Bør phpMussel sende 403 overskrifter med filen lastet opp blokkert melding, eller holde seg til de vanlige 200 OK? False = Nei (200); True = Ja (403) [Standardverdi]."
+config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_general_honeypot_mode: "Når honeypot-modus er aktivert, vil phpMussel forsøke å karantene hver eneste filopplasting som den møter, uansett om filen som lastes opp samsvarer med inkluderte signaturer eller ikke, og ingen skanning eller analyse av de forsøkte filopplastningene vil faktisk skje. Denne funksjonaliteten skal være nyttig for de som ønsker å bruke phpMussel i form av virus/malware-forskning, men det anbefales verken å aktivere denne funksjonaliteten hvis den tiltenkte bruken av phpMussel av brukeren er for faktisk skanning av filopplasting, og heller ikke anbefales å bruke honeypot-funksjonaliteten til andre formål enn honeypotting. Som standard er dette alternativet deaktivert. False = Deaktivert [Standardverdi]; True = Aktivert."
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for phpMussel."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
@@ -55,13 +78,32 @@ config_general_log_rotation_limit: "Loggrotasjon begrenser antall loggfiler som 
 config_general_maintenance_mode: "Aktiver vedlikeholdsmodus? True = Ja; False = Nei [Standardverdi]. Deaktiverer alt annet enn frontenden. Noen ganger nyttig for når du oppdaterer CMS, rammeverker, osv."
 config_general_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
+config_general_quarantine_key: "phpMussel er i stand til å plassere flaggede filopplastinger i karantene i phpMussel-hvelvet, hvis dette er noe du vil at den skal gjøre. Generelle brukere av phpMussel som bare ønsker å beskytte sine nettsteder eller vertsmiljø, uten å ha noen interesse i å analysere filopplasting dypt, bør la denne funksjonaliteten være deaktivert, men brukere som er interessert i ytterligere analyse av flaggede filopplastinger for malware-forskning eller lignende ting, bør aktivere denne funksjonaliteten. Plassering av flaggede filopplastinger i karantene kan noen ganger også hjelpe med å feilsøke falske positiver, hvis dette er noe som ofte oppstår for deg. For å deaktivere karantene-funksjonalitet, la <code>quarantine_key</code> direktivet være tomt, eller slette innholdet i det direktivet hvis det ikke allerede er tomt. For å aktivere karantene-funksjonalitet, oppgi en verdi i direktivet. <code>quarantine_key</code> er en viktig sikkerhetsfunksjon ved karantene-funksjonaliteten som kreves som et middel for å forhindre at karantene-funksjonaliteten blir utnyttet av potensielle angripere og som et middel til å forhindre potensiell utførelse av data som er lagret i karantenen. <code>quarantine_key</code> skal behandles på samme måte som passordene dine: Jo lengre, jo bedre, og pass godt på det. For best effekt, bruk sammen med <code>delete_on_sight</code>."
+config_general_quarantine_max_files: "Maksimale antallet filer som kan eksistere i karantenen. Når nye filer legges til i karantenen, hvis dette tallet overskrides, vil gamle filer bli slettet til resten ikke lenger overskrider dette tallet. Standardverdi = 100."
+config_general_quarantine_max_filesize: "Maksimal filstørrelse som er tillatt for filer som skal settes i karantene. Filer som er større enn den oppgitte verdien, vil IKKE bli satt i karantene. Dette direktivet er viktig som et middel for å gjøre det vanskeligere for potensielle angripere å oversvømme karantenen med uønskede data som potensielt kan forårsake bortkjørt dataforbruk på hosting-tjenesten din. Standardverdi = 2MB."
+config_general_quarantine_max_usage: "Maksimal minnebruk tillatt for karantenen. Hvis det totale minnet som brukes av karantenen når denne verdien, blir de eldste karantene filene slettet inntil det totale minnet som brukes ikke lenger når denne verdien. Dette direktivet er viktig som et middel for å gjøre det vanskeligere for potensielle angripere å oversvømme karantenen med uønskede data som potensielt kan forårsake bortkjørt dataforbruk på hosting-tjenesten din. Standardverdi = 64MB."
+config_general_scan_cache_expiry: "Hvor lenge skal phpMussel cacher resultatene av skanning? Verdi er antall sekunder å cache resultatene av skanning etter. Standard er 21600 sekunder (6 timer); En verdi på 0 vil deaktivere hurtigbufring av resultatene av skanning."
+config_general_scan_kills: "Filnavn for fil for å logge alle poster med blokkerte eller drepte opplastinger til. Spesifiser et filnavn, eller la være tomt for å deaktivere."
+config_general_scan_log: "Filnavn for fil å logge alle skanneresultatene til. Spesifiser et filnavn, eller la være tomt for å deaktivere."
+config_general_scan_log_serialized: "Filnavn for fil å logge alle skanneresultatene til (ved hjelp av et serialisert format). Spesifiser et filnavn, eller la være tomt for å deaktivere."
 config_general_statistics: "Spor phpMussel bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av phpMussel. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Din tidssone."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
+config_heuristic_threshold: "Noen phpMussel-signaturer er ment å identifisere mistenkelige og potensielt skadelige indikatorer i filer, uten i seg selv å identifisere disse filene som direkte skadelige. Denne terskelverdien forteller phpMussel den maksimale tillatte vekten før du flagger disse filene som skadelig. Definisjonen av vekt i denne sammenhengen er det totale antallet mistenkelige og potensielt skadelige indikatorer som er identifisert. Som standard blir denne verdien satt til 3. En lavere verdi vil generelt resultere i en høyere forekomst av falske positiver, men et høyere antall skadelige filer blir flagget, mens en høyere verdi generelt vil føre til en lavere forekomst av falske positiver, men at et lavere antall skadelige filer blir flagget. Det er vanligvis best å forlate denne verdien som standard med mindre du opplever problemer relatert til den."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
+config_signatures_active: "En liste over aktive signaturfiler, avgrenset av komma."
+config_signatures_detect_adware: "Bør phpMussel behandle signaturer for å oppdage adware? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_deface: "Bør phpMussel behandle signaturer for å oppdage defacements og defacers? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_encryption: "Bør phpMussel oppdage og blokkere krypterte filer? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_joke_hoax: "Bør phpMussel behandle signaturer for å oppdage spøk/bløff malware/virus? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_packer_packed: "Bør phpMussel behandle signaturer for å oppdage pakker og pakket data? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_pua_pup: "Bør phpMussel behandle signaturer for å oppdage PUAs/PUPs? False = Nei; True = Ja [Standardverdi]."
+config_signatures_detect_shell: "Bør phpMussel behandle signaturer for å oppdage skallskript? False = Nei; True = Ja [Standardverdi]."
+config_signatures_fail_extensions_silently: "Bør phpMussel rapportere når utvidelser mangler? Hvis <code>fail_extensions_silently</code> er deaktivert, manglende utvidelser vil bli rapportert ved skanning, og hvis <code>fail_extensions_silently</code> er aktivert, vil manglende utvidelser bli ignorert, med skanningen rapporterer for filene som det ikke er noen problemer. Deaktivering av dette direktivet kan potensielt øke sikkerheten din, men kan også føre til en økning av falske positiver. False = Deaktivert; True = Aktivert [Standardverdi]."
+config_signatures_fail_silently: "Bør phpMussel rapportere når signaturfiler mangler eller er ødelagt? Hvis <code>fail_silently</code> er deaktivert, manglende og ødelagte filer vil bli rapportert ved skanning, og hvis <code>fail_silently</code> er aktivert, manglende og ødelagte filer blir ignorert, med skanningen rapporterer for filene som det ikke er noen problemer. Dette bør generelt sett være i fred, med mindre du opplever krasj eller lignende problemer. False = Deaktivert; True = Aktivert [Standardverdi]."
 config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_memcached: "Dette angir om skal bruke Memcached for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_pdo: "Dette angir om skal bruke PDO for caching. Standardverdi = False."
@@ -77,6 +119,16 @@ config_supplementary_cache_options_redis_timeout: "Redis timeout-verdi. Standard
 config_template_data_css_url: "URL for CSS-fil for tilpassede temaer."
 config_template_data_magnification: "Font forstørrelse. Standardverdi = 1."
 config_template_data_theme: "Standard tema som skal brukes til phpMussel."
+config_urlscanner_cache_time: "Hvor lang tid (i sekunder) bør resultatene fra API-oppslag bufres for? Standard er 3600 sekunder (1 time)."
+config_urlscanner_google_api_key: "Aktiverer API-oppslag til Google Safe Browsing API når nødvendig API-nøkkel er definert."
+config_urlscanner_lookup_hphosts: "Aktiverer API-oppslag til hpHosts API når den er satt til true."
+config_urlscanner_maximum_api_lookups: "Maksimalt tillatt antall API-oppslag for å utføre per individuell skanne-iterasjon. Fordi hvert ekstra API-oppslag vil legge til den totale tiden som kreves for å fullføre hver skanne-iterasjon, kan det være lurt å stille en begrensning for å fremskynde den totale skanneprosessen. Når det er satt til 0, vil ikke et slikt maksimalt tillatt antall bli brukt. Satt til 10 som standard."
+config_urlscanner_maximum_api_lookups_response: "Hva å gjøre hvis det maksimalt tillatte antallet API-oppslag overskrides? False = Gjør ingenting (fortsett å behandle) [Standardverdi]; True = Flagger/blokker filen."
+config_virustotal_vt_public_api_key: "Eventuelt er phpMussel i stand til å skanne filer ved å bruke Virus Total API som en måte å gi et sterkt forbedret nivå mot beskyttelse mot virus, trojanere, malware og andre trusler. Som standard er skanning av filer ved å bruke Virus Total API deaktivert. For å aktivere den er det nødvendig med en API-nøkkel fra Virus Total. På grunn av den betydelige fordelen dette kan gi deg, anbefaler jeg det på det sterkeste. Vær imidlertid oppmerksom på at for å bruke Virus Total API, du <em><strong>MÅ</strong></em> godta deres vilkår for bruk og du <em><strong>MÅ</strong></em> overholde alle retningslinjer som beskrevet i Virus Total-dokumentasjonen! Du har IKKE lov til å bruke denne integrasjonsfunksjonen MED MINDRE: Du har lest og samtykker til vilkårene for Virus Total og dens API. Du har lest og du forstår minst innledningen til Virus Total Public API-dokumentasjonen (alt etter "VirusTotal Public API v2.0", men før "Contents")."
+config_virustotal_vt_quota_rate: "I henhold til Virus Total API-dokumentasjonen, "det er begrenset til høyst 4 forespørsler av enhver art i en gitt tidsperiode på 1 minutt. Hvis du kjører en honningklient, honeypot eller annen automatisering som skal gi ressurser til VirusTotal og ikke bare hente rapporter, har du rett til en høyere kvote for forespørsel". Som standard vil phpMussel følge disse begrensningene strengt, men på grunn av muligheten for at disse rentekvotene, er disse to direktiver gitt som et middel for deg å instruere phpMussel om hvilken grense den skal overholde. Med mindre du har blitt instruert om å gjøre det, anbefales det ikke at du øker disse verdiene, men hvis du har fått problemer knyttet til å nå rentekvoten, å redusere disse verdiene kan noen ganger hjelpe deg med å håndtere disse problemene. Grensen din bestemmes som <code>vt_quota_rate</code> forespørsler av hvilken som helst art i en gitt tidsramme på <code>vt_quota_time</code> minutt."
+config_virustotal_vt_quota_time: "(Se beskrivelse over)."
+config_virustotal_vt_suspicion_level: "Som standard vil phpMussel begrense hvilke filer den skanner ved å bruke Virus Total API til de filene den anser som "mistenkelig". Du kan eventuelt justere denne begrensningen ved å endre verdien på <code>vt_suspicion_level</code> direktivet."
+config_virustotal_vt_weighting: "Bør phpMussel bruke resultatene av skanning ved å bruke Virus Total API som deteksjoner eller som deteksjonsvekt? Dette direktivet finnes fordi, selv om skanning av en fil ved hjelp av flere motorer (som Virus Total gjør), bør føre til en økt antall deteksjoner (og derfor i et større antall skadelige filer som blir fanget), det kan også føre til et høyere antall falske positiver, og derfor kan resultatene av skanning under noen omstendigheter bli bedre brukt som en tillitsvurdering i stedet for som en endelig konklusjon. Hvis en verdi på 0 brukes, blir resultatene av skanning ved å bruke Virus Total API brukt som deteksjoner, og derfor, hvis en motor som brukes av Virus Total, flagger filen som skannes som skadelig, vil phpMussel anse filen som skadelig. Hvis det brukes annen verdi, blir resultatene av skanning ved å bruke Virus Total API brukt som deteksjonsvekt, og derfor vil antallet motorer som brukes av Virus Total som flagger filen som skannes som skadelig, tjene som en tillitsscore (eller deteksjonsvekt) for hvorvidt filen som skannes skal anses som skadelig av phpMussel eller ikke (verdien som brukes vil representere den minste konfidenspoeng eller vekt som kreves for å bli vurdert som skadelig). En verdi på 0 er brukes som standard."
 confirm_action: "Er du sikker på at du vil "%s"?"
 field_2fa: "2FA kode"
 field_activate: "Aktiver"
@@ -143,7 +195,7 @@ label_flagged: "Objekter flagget"
 label_fmgr_cache_data: "Cache data og midlertidige filer"
 label_fmgr_disk_usage: "phpMussel diskbruk: "
 label_fmgr_free_space: "Ledig diskplass: "
-label_fmgr_other_sig: "Andre regler, signaturfiler, etc"
+label_fmgr_other_sig: "Andre regler, signaturfiler, osv"
 label_fmgr_safety: "Sikkerhetsmekanismer"
 label_fmgr_total_disk_usage: "Totalt diskbruk: "
 label_fmgr_total_space: "Totalt diskplass: "
@@ -257,13 +309,13 @@ security_warning: "Et uventet problem oppstod under behandlingen av forespørsel
 siginfo_key_CVE: "Signaturer som omhandler CVE-er (vanlige sikkerhetsproblemer og eksponeringer)."
 siginfo_key_Chameleon: "Signaturer som omhandler "kameleonangrep"."
 siginfo_key_FN: "Signaturer som arbeider med filnavn (i motsetning til fildata)."
-siginfo_key_Fake: "Oppdagelser er falske, ondsinnede varianter av ellers godartede enheter (programvare, skript osv)."
+siginfo_key_Fake: "Oppdagelser er falske, skadelige varianter av ellers godartede enheter (programvare, skript osv)."
 siginfo_key_HEUR: "Signaturer hentet fra heuristiske data."
 siginfo_key_META: "Signaturer som arbeider med filmetadata (i motsetning til fildata)."
 siginfo_key_Other: "Uidentifisert eller annet."
 siginfo_key_Other_Metadata: "Ingen metadata tilgjengelig."
 siginfo_key_Suspect: "Det er mistanke om påvisninger, men ikke bekreftet (kan innebære kombinasjoner av forskjellige identifikatorer)."
-siginfo_key_Testfile: "Signaturer for testfiler (dvs., ikke ondsinnede deteksjoner)."
+siginfo_key_Testfile: "Signaturer for testfiler (dvs., ikke skadelige deteksjoner)."
 siginfo_key_Total: "Totalt aktive signaturer."
 siginfo_key_VT: "Signaturer inkludert eller basert på data fra Virus Total."
 siginfo_key_Werewolf: "Signaturer som omhandler "varulvangrep"."
@@ -306,7 +358,6 @@ tip_2fa_sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen
 tip_accounts: "Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til phpMussel-frontenden ved hjelp av kontosiden."
 tip_cache_data: "Hallo, {username}.<br />Her kan du se innholdet i cachen."
 tip_config: "Hallo, {username}.<br />Konfigurasjonssiden lar deg endre konfigurasjonen for phpMussel fra frontenden."
-tip_donate: "phpMussel tilbys gratis, men hvis du vil donere til prosjektet, du kan gjøre det ved å klikke på donate-knappen."
 tip_fe_cookie_warning: "Merk: phpMussel bruker en informasjonskapsel for å godkjenne innlogginger. Ved å logge inn, gir du ditt samtykke til at en informasjonskapsel skal opprettes og lagres av nettleseren din."
 tip_file_manager: "Hallo, {username}.<br />Filbehandleren lar deg slette, redigere, laste opp og laste ned filer. Bruk med forsiktighet (du kan ødelegge installasjonen din med dette)."
 tip_home: "Hallo, {username}.<br />Dette er hjemmesiden for frontenden av phpMussel. Velg en lenke fra navigasjonsmenyen til venstre for å fortsette."
@@ -330,26 +381,26 @@ warning_signatures_1: "Ingen signaturfiler er aktive!"
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, etc for phpMussel.</span>
+       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, osv for phpMussel.</span>
          <ul class="comSub">
            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues side for phpMussel (støtte, assistanse, osv).</li>
            <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Oppretter phpMussel-signaturfiler ved hjelp av ClamAV-signaturdatabasen.</li>
            <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Diverse statister.</li>
          </ul>
-       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, etc for ClamAV.</span>
+       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, osv for ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV hjemmeside (ClamAV® er en antivirusmotor med åpen kildekode for å oppdage trojanere, virus, malware og andre ondsinnede trusler).</li>
+           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV hjemmeside (ClamAV® er en antivirusmotor med åpen kildekode for å oppdage trojanere, virus, malware og andre skadelige trusler).</li>
            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Datasikkerhetsselskap som tilbyr supplerende signaturer for ClamAV.</li>
            <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Datasikkerhetsselskap som tilbyr supplerende signaturer for ClamAV.</li>
            <li><a href="https://malware.expert/">Malware.Expert</a> – Tilbyr supplerende signaturer for ClamAV og utfyllende regler for ModSecurity.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Grupper, fora, fellesskap, etc.</span>
+       <li><span class="comCat" style="cursor:pointer">Grupper, fora, fellesskap, osv.</span>
          <ul class="comSub">
            <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP læringsressurser og diskusjon.</li>
            <li><a href="https://malwaretips.com/">MalwareTips</a> – Nyttige diskusjonsfora fokusert på skadelig programvare.</li>
          </ul>
-       <li><span class="comCat" style="cursor:pointer">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
+       <li><span class="comCat" style="cursor:pointer">Andre nyttige verktøy, ressurser, tjenester, osv.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing-database brukt av phpMussel URL-skanner.</li>
            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal er en gratis tjeneste for å analysere mistenkelige filer og nettadresser.</li>

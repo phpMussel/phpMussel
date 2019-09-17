@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.09.01).
+# This file: Japanese language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -356,7 +356,6 @@ tip_2fa_sent: "２ＦＡコードを含むＥメールがあなたのＥメー�
 tip_accounts: "こんにちは、​{username}。​<br />アカウント・ページは、​phpMusselフロントエンドにアクセスできるユーザーを制御できます。"
 tip_cache_data: "こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。"
 tip_config: "こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからphpMusselの設定を変更することができます。"
-tip_donate: "phpMusselは無料で提供されています、​しかし、​あなたがしたい場合、​寄付ボタンをクリックすると、​プロジェクトに寄付することができます。"
 tip_fe_cookie_warning: "注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。"
 tip_file_manager: "こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。"
 tip_home: "こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2019.09.01).
+# This file: Latvian language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Gatavs"
 generated_by: "Ģenerējis"
 greylist_cleared: " Pelēkais saraksts ir notīrīts."
 greylist_updated: " Pelēkais saraksts ir atjaunināts."
+honeypot_event: "Medus poda pasākums. "
 image: "Attēls"
 instance_already_active: "Instance jau ir aktīva! Lūdzu, vēlreiz pārbaudiet savus āķus."
 invalid_data: "Nederīgi dati!"

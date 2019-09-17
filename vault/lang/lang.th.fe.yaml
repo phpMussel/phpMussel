@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.09.01).
+# This file: Thai language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -356,7 +356,6 @@ tip_2fa_sent: "อีเมลที่มีรหัส 2FA ถูกส่ง
 tip_accounts: "สวัสดี {username}.<br />หน้าบัญชีช่วยให้คุณสามารถควบคุมผู้ที่สามารถเข้าถึง front-end ของ phpMussel."
 tip_cache_data: "สวัสดี {username}.<br />ที่นี่คุณสามารถตรวจสอบเนื้อหาของแคชได้."
 tip_config: "สวัสดี {username}.<br />หน้าการกำหนดค่าช่วยให้คุณสามารถแก้ไขการกำหนดค่าสำหรับ phpMussel จาก front-end."
-tip_donate: "phpMussel ให้บริการฟรี แต่ถ้าคุณต้องการบริจาคให้กับโครงการ คุณสามารถทำได้โดยคลิกที่ปุ่มบริจาค."
 tip_fe_cookie_warning: "บันทึก: phpMussel ใช้คุกกี้เพื่อตรวจสอบการเข้าสู่ระบบ. เมื่อคุณลงชื่อเข้าใช้คุณยินยอมให้คุกกี้สร้างขึ้นและจัดเก็บโดยเบราเซอร์ของคุณ."
 tip_file_manager: "สวัสดี {username}.<br />ตัวจัดการไฟล์ ช่วยให้คุณสามารถลบบัญชี แก้ไข อัปโหลด และดาวน์โหลดไฟล์. ใช้ด้วยความระมัดระวัง (คุณสามารถทำลายการติดตั้งของคุณด้วยนี้)."
 tip_home: "สวัสดี {username}.<br />นี่คือโฮมเพจสำหรับ front-end ของ phpMussel. เลือกลิงค์จากเมนูนำทางด้านซ้ายเพื่อดำเนินการต่อ."

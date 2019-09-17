@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.09.01).
+# This file: Portuguese language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -52,7 +52,7 @@ config_files_check_archives: "Tentativa de verificar os conteúdos dos compactad
 config_files_filesize_archives: "Herdar o arquivo tamanho blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão]."
 config_files_filesize_limit: "Arquivo tamanho limit. Em KB. 65536 = 64MB [Padrão] 0 = Não limite (sempre greylisted), qualquer (positivo) numérico valor aceite. Isso pode ser útil quando sua PHP configuração limita a quantidade de memória que um processo pode ocupar ou se sua PHP configuração limita o arquivo tamanho de carregamentos."
 config_files_filesize_response: "Que fazer com arquivos que excedam o limite de arquivo tamanho (se existir). False = Whitelist; True = Blacklist [Padrão]."
-config_files_filetype_archives: "Herdar o arquivo tipo blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão]."
+config_files_filetype_archives: "Herdar o arquivo tipo blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo) [Padrão]; True = Sim."
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
 config_files_filetype_whitelist: "Se o seu sistema só permite certos tipos de arquivos sejam carregado, ou se o seu sistema explicitamente nega certos tipos de arquivos, especificando esses tipos de arquivos no whitelists, blacklists e greylists pode aumentar a velocidado em que a análise é realizada através de permitindo o script para ignorar certos tipos de arquivos. O formato CSV (Comma Separated Values). Se você quer analisar tudo, ao invés de fazendo whitelist, blacklist ou greylist, deixe as variáveis em branco; Isso irá desativar whitelist/blacklist/greylist). Lógico ordem de processamento é: Se o tipo de arquivo está na whitelist, não verificar e não bloqueia o arquivo, e não verificar o arquivo contra o blacklist ou greylist. Se o tipo de arquivo está na blacklist, não verificar o arquivo, mas bloqueá-lo de qualquer maneira, e não verificar o arquivo contra o greylist. Se o greylist está vazia ou se o greylist não está vazia e o tipo de arquivo é no greylist, verificar o arquivo como por normal e determinar se a bloqueá-lo com base nos resultados do verificando, mas se o greylist não está vazia e o tipo de arquivo não é no greylist, tratar o arquivo da mesma maneira como está na blacklist, portanto não verificá-lo, mas bloqueá-lo de qualquer maneira. Whitelist:"
@@ -360,7 +360,6 @@ tip_2fa_sent: "Um e-mail contendo um código de autenticação de dois fatores f
 tip_accounts: "Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o phpMussel front-end."
 tip_cache_data: "Olá, {username}.<br />Aqui você pode rever o conteúdo do cache."
 tip_config: "Olá, {username}.<br />A página de configuração permite que você modifique a configuração do phpMussel a partir do front-end."
-tip_donate: "phpMussel é oferecido gratuitamente, mas se você quiser doar para o projeto, você pode fazê-lo clicando no botão doar."
 tip_fe_cookie_warning: "Nota: phpMussel usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."
 tip_file_manager: "Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
 tip_home: "Olá, {username}.<br />Esta é a página principal do phpMussel front-end. Selecione um link no menu de navegação à esquerda para continuar."

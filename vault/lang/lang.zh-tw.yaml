@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2019.08.19).
+# This file: Chinese (traditional) language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -66,6 +66,7 @@ finished: "完了"
 generated_by: "所產生通過"
 greylist_cleared: " 灰名單清空。"
 greylist_updated: " 灰名單更新。"
+honeypot_event: "蜜罐事件。"
 image: "圖像"
 instance_already_active: "腳本已激活！​請仔細檢查您的鉤子。"
 invalid_data: "無效數據！"
