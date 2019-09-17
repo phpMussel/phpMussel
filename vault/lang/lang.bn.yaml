@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2019.02.26).
+# This file: Bangla language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "শেষ হয়েছে"
 generated_by: "জেনারেটর:"
 greylist_cleared: " ধূসর তালিকা মুছে ফেলা হয়েছে।"
 greylist_updated: " ধূসর তালিকা আপডেট করা হয়েছে।"
+honeypot_event: "হানিপোট ইভেন্ট। "
 image: "চিত্র"
 instance_already_active: "ইনস্ট্যান্স ইতিমধ্যে সক্রিয়! দয়া করে আপনার হুকগুলিকে ডবল চেক করুন।"
 invalid_data: "অবৈধ তথ্য!"

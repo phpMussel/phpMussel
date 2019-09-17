@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.09.01).
+# This file: English language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -361,7 +361,6 @@ tip_2fa_sent: "An email containing a two-factor authentication code has been sen
 tip_accounts: "Hello, {username}.<br />The accounts page allows you to control who can access the phpMussel front-end."
 tip_cache_data: "Hello, {username}.<br />Here you can review the contents of the cache."
 tip_config: "Hello, {username}.<br />The configuration page allows you to modify the configuration for phpMussel from the front-end."
-tip_donate: "phpMussel is offered free of charge, but if you want to donate to the project, you can do so by clicking the donate button."
 tip_fe_cookie_warning: "Note: phpMussel uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."
 tip_file_manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
 tip_home: "Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue."

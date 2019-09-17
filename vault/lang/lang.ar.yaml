@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2019.02.26).
+# This file: Arabic language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -70,6 +70,7 @@ finished: "انتهى"
 generated_by: "الناتج"
 greylist_cleared: " قائمة رمادية أفرغت."
 greylist_updated: " قائمة رمادية تحديثها."
+honeypot_event: "الحدث مصيدة.w "
 image: "صورة"
 instance_already_active: "نشطة بالفعل! يرجى إعادة الفحص اليشمل."
 invalid_data: "بيانات غير صالحة!"

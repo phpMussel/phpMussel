@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2019.02.26).
+# This file: Urdu language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -72,6 +72,7 @@ finished: "ختم"
 generated_by: "کی طرف سے پیدا"
 greylist_cleared: " صاف کر دیا گرے فہرست."
 greylist_updated: " گرے فہرست کو اپ ڈیٹ."
+honeypot_event: "ہنی پاٹ ایونٹ. "
 image: "تصویر"
 instance_already_active: "واقعے کی پہلے سے ہی چالو! براہ مہربانی اپنے ہکس دوبارہ چیک."
 invalid_data: "غلط ڈیٹا!"

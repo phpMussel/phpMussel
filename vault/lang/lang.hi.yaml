@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2019.02.26).
+# This file: Hindi language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "ख़त्म होना"
 generated_by: "जनरेटर"
 greylist_cleared: " धूसर सूची खाली कर दी गई।"
 greylist_updated: " धूसर सूची अपडेट किया गया।"
+honeypot_event: "हनीपोट घटना। "
 image: "छवि"
 instance_already_active: "उदाहरण पहले से ही सक्रिय है! कृपया अपने हुक दो बार जांचें।"
 invalid_data: "अमान्य डेटा!"

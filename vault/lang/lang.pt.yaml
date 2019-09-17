@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2019.02.26).
+# This file: Portuguese language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -72,6 +72,7 @@ finished: "Terminado"
 generated_by: "Gerado por"
 greylist_cleared: " Greylist esvaziado."
 greylist_updated: " Greylist atualizado."
+honeypot_event: "Evento honeypot. "
 image: "Imagem"
 instance_already_active: "Instância já está ativo! Por favor, verifique seus ganchos."
 invalid_data: "Dados inválidos!"

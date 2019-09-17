@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2019.02.26).
+# This file: Vietnamese language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -70,6 +70,7 @@ finished: "Hoàn thành"
 generated_by: "Được tạo bởi"
 greylist_cleared: " Danh sách xám đã được xóa."
 greylist_updated: " Danh sách xám được cập nhật."
+honeypot_event: "Sự kiện hũ mật ong. "
 image: "Hình ảnh"
 instance_already_active: "Trường hợp đã hoạt động! Xin hảy kiểm tra giây nói."
 invalid_data: "Dữ liệu không hợp lệ!"

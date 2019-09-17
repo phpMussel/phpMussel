@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.02.26).
+# This file: Indonesian language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Selesai"
 generated_by: "Dihasilkan oleh"
 greylist_cleared: " Greylist dikosongkan."
 greylist_updated: " Greylist diperbarui."
+honeypot_event: "Acara honeypot. "
 image: "Gambar"
 instance_already_active: "Kejadian sudah aktif! Silahkan periksa kait Anda."
 invalid_data: "Data tidak valid!"

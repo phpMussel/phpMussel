@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2019.02.26).
+# This file: Korean language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -67,6 +67,7 @@ finished: "완료"
 generated_by: "작성자"
 greylist_cleared: " 회색 목록이 해제되었습니다."
 greylist_updated: " 회색 목록이 업데이트되었습니다."
+honeypot_event: "허니팟 이벤트. "
 image: "이미지"
 instance_already_active: "인스턴스가 이미 활성화되어 있습니다! 후크를 다시 확인하십시오."
 invalid_data: "유효하지 않은 데이터!"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.01).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -53,7 +53,7 @@ config_files_check_archives: "嘗試匹配存檔內容嗎？​False（假）=�
 config_files_filesize_archives: "繼承文件大小黑名單/白名單在存檔內容嗎？​False（假）=不繼承（剛灰名單一切）；True（真）=繼承【默認】。"
 config_files_filesize_limit: "文件大小限在KB。​65536 = 64MB【默認】，​0 = 沒有限（始終灰名單），​任何正數值接受。​這個可以有用當您的PHP配置限內存量一個進程可以佔據或如果您的PHP配置限文件大小的上傳。"
 config_files_filesize_response: "如何處理文件超過文件大小限（如果存在）。​False（假）=白名單；True（真）=黑名單【默認】。"
-config_files_filetype_archives: "繼承文件類型黑名單/白名單在存檔內容嗎？​False（假）=不繼承（剛灰名單一切）；True（真）=繼承【默認】。"
+config_files_filetype_archives: "繼承文件類型黑名單/白名單在存檔內容嗎？​False（假）=不繼承（剛灰名單一切）【默認】；​True（真）=繼承。"
 config_files_filetype_blacklist: "黑名單："
 config_files_filetype_greylist: "灰名單："
 config_files_filetype_whitelist: "如果您的系統只允許具體文件類型被上傳，​或如果您的系統明確地否認某些文件類型，​指定那些文件類型在白名單，​黑名單和灰名單可以增加掃描執行速度通過允許腳本跳過某些文件類型。​格式是CSV（逗號分隔變量）。​如果您想掃描一切，​而不是白名單，​黑名單或灰名單，​留變量空；這樣做將關閉白名單/黑名單/灰名單。​進程邏輯順序是：如果文件類型已白名單，​不掃描和不受阻文件，​和不匹配文件對照黑名單或灰名單。​如果文件類型已黑名單，​不掃描文件但阻止它無論如何，​和不匹配文件對照灰名單。​如果灰名單是空，​或如果灰名單不空和文件類型已灰名單，​掃描文件像正常和確定如果阻止它基於掃描結果，​但如果灰名單不空和文件類型不灰名單，​過程文件彷彿已黑名單，​因此不掃描它但阻止它無論如何。​白名單："
@@ -357,7 +357,6 @@ tip_2fa_sent: "包含2FA代碼的電子郵件已發送到您的電子郵件地�
 tip_accounts: "你好，​{username}。​<br />帳戶頁面允許您控制誰可以訪問phpMussel前端。"
 tip_cache_data: "你好，​{username}。<br />在這裡您可以查看緩存的內容。"
 tip_config: "你好，​{username}。​<br />配置頁面允許您修改phpMussel配置從前端。"
-tip_donate: "phpMussel是免費提供的，​但如果您想捐贈給項目，​您可以通過點擊捐贈按鈕這樣做。"
 tip_fe_cookie_warning: "注意：phpMussel使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
 tip_file_manager: "你好，​{username}。​<br />文件管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"
 tip_home: "你好，​{username}。​<br />這是phpMussel的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"

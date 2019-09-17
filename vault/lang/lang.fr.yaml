@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2019.02.26).
+# This file: French language data (last modified: 2019.09.17).
 ##/
 
 # Language settings.
@@ -71,6 +71,7 @@ finished: "Terminé"
 generated_by: "Généré par"
 greylist_cleared: " Greylist vidé."
 greylist_updated: " Liste grise mise à jour."
+honeypot_event: "Honeypot événement. "
 image: "Image"
 instance_already_active: "Instance déjà active ! Veuillez vérifier vos crochets."
 invalid_data: "Données non valides !"

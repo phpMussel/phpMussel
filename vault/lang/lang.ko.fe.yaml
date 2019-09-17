@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.09.01).
+# This file: Korean language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -357,7 +357,6 @@ tip_2fa_sent: "2FA 코드가 포함 된 이메일이 귀하의 이메일 주소�
 tip_accounts: "안녕하세요, {username}.<br />계정 페이지는 phpMussel 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
 tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
 tip_config: "안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 phpMussel의 설정을 변경할 수 있습니다."
-tip_donate: "phpMussel는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다."
 tip_fe_cookie_warning: "노트 : phpMussel은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다."
 tip_file_manager: "안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
 tip_home: "안녕하세요, {username}.<br />이것은 phpMussel 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다."

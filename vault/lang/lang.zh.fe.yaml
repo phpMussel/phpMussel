@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.01).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
@@ -53,7 +53,7 @@ config_files_check_archives: "尝试匹配存档内容吗？​False（假）=�
 config_files_filesize_archives: "继承文件大小黑名单/白名单在存档内容吗？​False（假）=不继承（刚灰名单一切）；True（真）=继承【默认】。"
 config_files_filesize_limit: "文件大小限在KB。​65536 = 64MB【默认】，​0 = 没有限（始终灰名单），​任何正数值接受。​这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。"
 config_files_filesize_response: "如何处理文件超过文件大小限（如果存在）。​False（假）=白名单；True（真）=黑名单【默认】。"
-config_files_filetype_archives: "继承文件类型黑名单/白名单在存档内容吗？​False（假）=不继承（刚灰名单一切）；True（真）=继承【默认】。"
+config_files_filetype_archives: "继承文件类型黑名单/白名单在存档内容吗？​False（假）=不继承（刚灰名单一切）【默认】；​True（真）=继承。"
 config_files_filetype_blacklist: "黑名单："
 config_files_filetype_greylist: "灰名单："
 config_files_filetype_whitelist: "如果您的系统只允许具体文件类型被上传，​或如果您的系统明确地否认某些文件类型，​指定那些文件类型在白名单，​黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。​格式是CSV（逗号分隔变量）。​如果您想扫描一切，​而不是白名单，​黑名单或灰名单，​留变量空；这样做将关闭白名单/黑名单/灰名单。​进程逻辑顺序是：如果文件类型已白名单，​不扫描和不受阻文件，​和不匹配文件对照黑名单或灰名单。​如果文件类型已黑名单，​不扫描文件但阻止它无论如何，​和不匹配文件对照灰名单。​如果灰名单是空，​或如果灰名单不空和文件类型已灰名单，​扫描文件像正常和确定如果阻止它基于扫描结果，​但如果灰名单不空和文件类型不灰名单，​过程文件仿佛已黑名单，​因此不扫描它但阻止它无论如何。​白名单："
@@ -357,7 +357,6 @@ tip_2fa_sent: "包含2FA代码的电子邮件已发送到您的电子邮件地�
 tip_accounts: "你好，​{username}。​<br />帐户页面允许您控制谁可以访问phpMussel前端。"
 tip_cache_data: "你好，​{username}。​<br />在这里您可以查看缓存的内容。"
 tip_config: "你好，​{username}。​<br />配置页面允许您修改phpMussel配置从前端。"
-tip_donate: "phpMussel是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。"
 tip_fe_cookie_warning: "注意：phpMussel使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
 tip_file_manager: "你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。"
 tip_home: "你好，​{username}。​<br />这是phpMussel的前端主页。​从左侧的导航菜单中选择一个链接以继续。"
