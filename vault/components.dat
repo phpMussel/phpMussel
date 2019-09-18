@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.0.1-DEV+19259621
+ Version: 2.0.1-DEV+19260374
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -39,7 +39,7 @@ phpMussel Core:
    - 72d84484e1379ebb85dcf08d8132183da9da9dad8a598a3d6177510f4c64b85d:1712
    - ce5940833241fd75b5ff4d9fd00812ca2cd6dee814db3f1f50eceed95f5dbe6b:7028
    - b81b0d7d2d6865941997f2484b6bcfa9dd1d1b5cb1327a436d420d2a080cef65:15579
-   - 3318472701b3edc179b9544070152e63276d006c2f5cd71ae80ba709512667f9:239919
+   - adba98e78785a79c49d659b92708bda19c896f73bf649142b1aea67cbf7f7e79:240088
    - 9159be08161fe739b412520dedac27317904ef5ea3d96624c5833e0fb8bd7687:6526
    - 21030736e3a9242c7017794b327361de4f3cebcc1d61f94ea30bf168b785de08:4660
    - 3dffaea17f5c5d420fe87c33724e1f9e3355e3339620965ed4527ed8fee28d68:3233
@@ -184,7 +184,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.1.1-DEV+19259621
+ Version: 2.1.1-DEV+19260374
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -211,7 +211,7 @@ Common Classes Package:
    - 7dfe74c41bf9468f4a8959a5ced98a86865e36a846ccb6f19a978e8f36a4dc73:3477
    - 2aa2e394b1496782b681dbc36e508fd8fbb28d380d5c177e090f96c6c53e5d99:4489
    - 4563d991f5d60939a29118d28e674bcc9820647d09802551deb46a3e6c89682a:27635
-   - d4939aac4332c3a6fddf086bdcafd0a31ee00bb0af4cf9f139712d6aafbfa848:3123
+   - 2376884603d1a7b921717acc9bc1a82689d11269dcedb6a08824f7b4854824dc:3514
    - 8e1a2bffa8d7e9d6b3aee353c7b6bab481e5747c7715adb2eb0bcb70fad1c834:11277
    - d4704fb09a4f7e829f62215d2b0ffe7c0abab3214cb7a7526eaf08367c4452e2:12943
    - 6ffb5cafda36867ee445249781cacc39b942e29e265e804678ae0431f6cc436b:10453
@@ -381,7 +381,7 @@ l10n/it:
 l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
- Version: 2019.259.621
+ Version: 2019.260.374
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Uninstallable: true
@@ -394,7 +394,7 @@ l10n/ja:
    - lang/lang.ja.yaml
   Checksum:
    - 78624908724f1a3140e13522ede3647bc182929f6e5450e16bde4088bbf5e45c:63750
-   - dc41400e0bc937eb3e4246aec215e159df8027c85175b177278ee0bc5a825322:7850
+   - 9c1e23788d6dd08d8b74a030ebd07ac12ce338b462710f933fb4eebf73c9dfa8:7849
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
@@ -453,7 +453,7 @@ l10n/nl:
 l10n/no:
  Name: L10N: Norsk
  Extended Description: Norsk språkdata
- Version: 2019.259.621
+ Version: 2019.260.374
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Uninstallable: true
@@ -466,7 +466,7 @@ l10n/no:
    - lang/lang.no.yaml
   Checksum:
    - ae6fbedef79b580aa8ae38259ead40ee5794c0e3c939c98dc27fd1f62cf3d966:48934
-   - 6ba271d9ac02db45efe42a5f36ca24d7daef95d7fad72e75ca673c162042ebbb:5778
+   - 7830570b86e97714e851332aac40698e07f52083b1513b15b2c499b3d7781175:5779
  Reannotate: components.dat
 l10n/pl:
  Name: L10N: Polski
