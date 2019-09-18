@@ -15,6 +15,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.09.17; Maikuolan]: Added an events orchestrator and refactored.
 
+- [2019.09.18; Maikuolan]: Added an error handler event to be able to catch and
+  report errors more effectively.
+
 === Version/Release 1.12.0 ===
 MINOR RELEASE.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.17).
+ * This file: Functions file (last modified: 2019.09.18).
  */
 
 /**
@@ -5373,6 +5373,9 @@ $phpMussel['InitialiseErrorHandler'] = function () use (&$phpMussel) {
             $errfile = substr($errfile, $VaultLen);
         }
         $phpMussel['Errors'][] = [$errno, $errstr, $errfile, $errline];
+        if ($phpMussel['Events']->assigned('error')) {
+            $phpMussel['Events']->fireEvent('error', serialize([$errno, $errstr, $errfile, $errline]));
+        }
         return true;
     });
 };

@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2019.09.17).
+ * Events orchestrator (last modified: 2019.09.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -93,9 +93,21 @@ class Events
             return false;
         }
         foreach ($this->Handlers[$Event] as $Handler) {
-            $Previous = $Handler($Data);
+            $Handler($Data);
         }
         return true;
+    }
+
+    /**
+     * Check whether an event has had any handlers assigned to it (useful in
+     * case some data needs to be processed prior to calling fireEvent).
+     *
+     * @param string $Event The event to check.
+     * @return bool True if so; False if not so.
+     */
+    public function assigned($Event)
+    {
+        return isset($this->Handlers[$Event], $this->Status[$Event]);
     }
 
 }

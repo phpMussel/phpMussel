@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.12.1-DEV+19259621
+ Version: 1.12.1-DEV+19260374
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
@@ -142,7 +142,7 @@ phpMussel:
    - 77e880a862d7b040a83d24dbf66eaf40b1ea6a6ade7748192d96b04d596a182d:3443
    - f75cf25b25a09ebd2c1f86ae3273fa541337a91133b47fb99a44e40240753e06:4545
    - d5bf90dde70c6b07a3bb77f8af8fabd689b81899333244de731f14f2e1de665b:27557
-   - 0d0b912a077ac14c06df36f38a41c05a2213efbf29c4799cbdf39322f3f630f0:3054
+   - 07134da69350e0cb7e17736899156f0270b5c22a726c56dd02c1cda2723717e8:3432
    - 31386b2a69311543728a6f82180be9ef5c4789f64cbd33a7e220c637cbd3d843:11004
    - d73ad6bbae780a134c2f77af641248204b22e16d84ef1ffd19752c51f7bb2756:12924
    - fd4e0113cd4f974a348ebaca5fe4222444b98e8baae328a6ffc8159b6c7a78e7:10408
@@ -180,8 +180,8 @@ phpMussel:
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - 28abfb6f7a7b8572929fab81887eacd3c433c9024b483d690919805c4c6c2b41:158896
-   - adfb6c4284daeb55f80480f96b3ceb7317f3bf883172f215e20d53d4e063fda7:108562
-   - 8d21c2901e578f7be981a9ff6b5359ce4ac1fd5c567c91abaafca5cdb49adb2e:239033
+   - 569ca26404bd5662258fd7173d80dda9802e5ebbe07cf28606a7a97944aec305:108562
+   - f96dc8584b53076d0b756875634f8f74bb4d51d96c07bb16cb1255521e5fd809:239202
    - 5b1d9c7d447ea7f5a2ec8484c497e56d29df6db4418e87e225d03f6777239bbe:7108
    - 8e03209e7fc6641b45094e584340feff:83
    - 6351e0e03eb701945b54d491531e0f5a:1703
@@ -215,7 +215,7 @@ l10n/en:
 l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
- Version: 2019.259.621
+ Version: 2019.260.374
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -228,7 +228,7 @@ l10n/ar:
    - lang/lang.ar.yaml
   Checksum:
    - e7f20204720bb90fa4ecf6c93a0c4b6c9c948983412521dbf5b2603db6d3a0ee:68787
-   - 41867059107251aa023f9ce79ba9114d22df50098934237d05e43749ccb3abe5:7239
+   - 21fc6e5bb48c84d9d582d301a8072c7147f8f4ff87bfcb4ccbad8b4856edf19a:7238
  Reannotate: components.dat
 l10n/bn:
  Name: L10N: বাংলা

@@ -1,9 +1,9 @@
 <?php
 /**
  * This file is a part of the phpMussel package.
- * Homepage: https://phpMussel.github.io/
+ * Homepage: https://phpmussel.github.io/
  *
- * phpMussel COPYRIGHT 2013 AND BEYOND BY THE phpMussel TEAM.
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
  * Authors:
  * @see PEOPLE.md
