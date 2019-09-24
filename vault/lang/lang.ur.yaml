@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2019.09.17).
+# This file: Urdu language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -59,6 +59,7 @@ denied_reason: "آپ کا اپ لوڈ ذیل میں درج وجوہات کی ب�
 detected: "کے پتہ %s"
 detected_control_characters: "پتہ چلنے پر کنٹرول حروف"
 encrypted_archive: "مرموز محفوظ شدہ دستاویزات سے پتہ چلا؛ خفیہ کردہ ابلیھاگاروں کی اجازت نہیں"
+error_log_header: "اگر مندرجہ ذیل میں سے کوئی غلطی ہوتی رہتی ہے، جب آپ کو فالتو وقت مل جاتا ہے، آپ ان کی اطلاع دے سکتے ہیں اور GitHub پر phpMussel issues پیج سے مدد حاصل کرسکتے ہیں. براہ کرم غلطیوں اور کسی اور متعلقہ معلومات کا ذکر کریں. شکریہ."
 failed_to_access: ""%s" تک رسائی حاصل کرنے میں ناکام!"
 field_date: "تاریخ"
 field_header_hash_reconstruction: "ہش کا دستخط دوبارہ تعمیر"

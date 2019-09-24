@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.09.17).
+# This file: Portuguese language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -67,6 +67,7 @@ config_general_disable_frontend: "Desativar o acesso front-end? Acesso front-end
 config_general_disable_webfonts: "Desativar webfonts? True = Sim [Padrão]; False = Não."
 config_general_disabled_channels: "Isso pode ser usado para impedir que o phpMussel use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
 config_general_enable_plugins: "Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão]."
+config_general_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_forbid_on_block: "Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200); True = Sim (403) [Padrão]."
 config_general_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_honeypot_mode: "Quando o honeypot modo é ativada, phpMussel vai tente colocar no quarentena todos os uploads de arquivos que ele encontras, independentemente de se ou não o arquivo que está sendo carregado corresponde a qualquer incluídos assinaturas, e zero análise desses tentados arquivos carregamentos vai ocorrer. Esta funcionalidade deve ser útil por aqueles que desejam utilizar phpMussel por os fins de vírus/malware pesquisa, mas não é recomendado para ativar essa funcionalidade se o planejado uso de phpMussel pelo utilizador é por o real análise dos arquivos carregamentos nem recomendado para usar essa funcionalidade por fins outros que o uso do honeypot. Por padrão, essa opção está desativada. False = Desativado [Padrão]; True = Ativado."

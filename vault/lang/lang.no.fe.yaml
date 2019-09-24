@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.09.17).
+# This file: Norwegian language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -67,6 +67,7 @@ config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend til
 config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei."
 config_general_disabled_channels: "Dette kan brukes til å forhindre phpMussel i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_enable_plugins: "Aktivere støtte for phpMussel-plugins? False = Nei; True = Ja [Standardverdi]."
+config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_forbid_on_block: "Bør phpMussel sende 403 overskrifter med filen lastet opp blokkert melding, eller holde seg til de vanlige 200 OK? False = Nei (200); True = Ja (403) [Standardverdi]."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_honeypot_mode: "Når honeypot-modus er aktivert, vil phpMussel forsøke å karantene hver eneste filopplasting som den møter, uansett om filen som lastes opp samsvarer med inkluderte signaturer eller ikke, og ingen skanning eller analyse av de forsøkte filopplastningene vil faktisk skje. Denne funksjonaliteten skal være nyttig for de som ønsker å bruke phpMussel i form av virus/malware-forskning, men det anbefales verken å aktivere denne funksjonaliteten hvis den tiltenkte bruken av phpMussel av brukeren er for faktisk skanning av filopplasting, og heller ikke anbefales å bruke honeypot-funksjonaliteten til andre formål enn honeypotting. Som standard er dette alternativet deaktivert. False = Deaktivert [Standardverdi]; True = Aktivert."

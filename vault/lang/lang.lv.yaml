@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2019.09.17).
+# This file: Latvian language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Jūsu augšupielāde tika bloķēta zemāk uzskaitīto iemeslu d
 detected: "Atrasts %s"
 detected_control_characters: "Atrasts vadības simboli"
 encrypted_archive: "Atrasts šifrēts arhīvs; Šifrēti arhīvi nav atļauti"
+error_log_header: "Ja joprojām notiek kāda no šīm kļūdām, lai ziņot par viņiem vai meklēt atbalstu, lūdzu, rakstiet uz phpMussel issues lapu vietnē GitHub, kad jums ir brīvs brīdis, un iekļaujiet attiecīgās kļūdas kopā ar jebkuru citu būtisku informāciju. Paldies."
 failed_to_access: "Neizdevās piekļūt "%s"!"
 field_date: "Datums"
 field_header_hash_reconstruction: "Hašu parakstu rekonstrukcija"

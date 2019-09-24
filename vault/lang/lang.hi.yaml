@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2019.09.17).
+# This file: Hindi language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "आपके अपलोड को नीचे सूचीब
 detected: "%s का पता चला"
 detected_control_characters: "पता चला नियंत्रण अक्षर"
 encrypted_archive: "पता चला एन्क्रिप्टेड संग्रह; एन्क्रिप्ट किए गए अभिलेखागार की अनुमति नहीं है"
+error_log_header: "यदि निम्न में से कोई एक त्रुटि उत्पन्न होती रहती है, उन्हें रिपोर्ट करने के लिए, या समर्थन प्राप्त करने के लिए, कृपया GitHub में phpMussel issues पृष्ठ पर एक नया issue बनाएँ, और किसी भी अन्य प्रासंगिक जानकारी के साथ प्रश्न में त्रुटियों को शामिल करें। धन्यवाद।"
 failed_to_access: ""%s" तक पहुंचने में विफल!"
 field_date: "समय"
 field_header_hash_reconstruction: "हैश हस्ताक्षर पुनर्निर्माण"

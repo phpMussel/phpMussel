@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2019.09.17).
+# This file: Vietnamese language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -57,6 +57,7 @@ denied_reason: "Sự tải lên của bạn đã bị từ chối bởi lý do d
 detected: "Đã được phát hiện %s"
 detected_control_characters: "Ký tự điều khiển đã được phát hiện"
 encrypted_archive: "Kho đã mã hóa đã được phát hiện; Kho đã mã hóa chưa có sự cho phép"
+error_log_header: "Nếu bất kỳ lỗi nào sau đây tiếp tục xảy ra, để báo cáo họ, hoặc để tìm kiếm sự hỗ trợ, vui lòng tạo một issue mới tại trang các issue phpMussel tại GitHub khi bạn có thời gian rảnh, với các lỗi trong câu hỏi cùng với bất kỳ thông tin thích hợp khác được đính kèm. Cảm ơn."
 failed_to_access: "Không thể truy cập "%s"!"
 field_date: "Ngày"
 field_header_hash_reconstruction: "Tái thiết chữ ký băm"

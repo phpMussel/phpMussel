@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.09.17).
+# This file: Turkish language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Yükleme aşağıda belirtilen nedenlerle engellendi:"
 detected: "%s algılandı"
 detected_control_characters: "Algılanan kontrol karakterleri"
 encrypted_archive: "Algılanan şifreli arşiv; Şifrelenmiş arşivlere izin verilmiyor"
+error_log_header: "Aşağıdaki hatalardan herhangi biri devam ederse, bildirmek veya destek almak için, lütfen boş zamanınız olduğunda GitHub'daki phpMussel issue-ları sayfasında yeni bir issue yaratın ve ilgili hataları, ilgili diğer bilgilerle birlikte ekleyin. Thanks."
 failed_to_access: ""%s" erişilemedi!"
 field_date: "Tarih"
 field_header_hash_reconstruction: "Karma imzaları rekonstrüksiyonu"

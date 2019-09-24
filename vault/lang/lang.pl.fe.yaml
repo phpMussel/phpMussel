@@ -10,5 +10,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.09.01).
+# This file: Polish language data for the front-end (last modified: 2019.09.24).
 ##/
+
+info_some_useful_links: |
+ Kilka przydatnych linków:<br />
+     <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Narzędzia, zasoby, itp dla phpMussel.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Strona issues dla phpMussel (wsparcie, pomoc, itp).</li>
+           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Tworzy pliki podpis phpMussel przy użyciu bazy danych podpisów ClamAV.</li>
+           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Różne dodatki.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Narzędzia, zasoby, itp dla ClamAV.</span>
+         <ul class="comSub">
+           <li><a href="https://www.clamav.net/">ClamavNet</a> – Strona główna ClamAV (ClamAV® to silnik antywirusowy typu open source do wykrywania trojanów, wirusów, złośliwego oprogramowania i innych złośliwych zagrożeń).</li>
+           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Firma zajmująca się bezpieczeństwem komputerowym, która oferuje dodatkowe podpisy dla ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Firma zajmująca się bezpieczeństwem komputerowym, która oferuje dodatkowe podpisy dla ClamAV.</li>
+           <li><a href="https://malware.expert/">Malware.Expert</a> – Oferuje dodatkowe podpisy dla ClamAV i dodatkowe zasady dla ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grupy, fora, społeczności, itp.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – Materiały do nauki i dyskusja na temat PHP.</li>
+           <li><a href="https://malwaretips.com/">MalwareTips</a> – Przydatne fora dyskusyjne skupione na złośliwym oprogramowaniu.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Inne przydatne narzędzia, zasoby, usługi, itp.</span>
+         <ul class="comSub">
+           <li><a href="https://www.phishtank.com/">PhishTank</a> – Baza danych phishing wykorzystywana przez skaner phpMussel URL.</li>
+           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal to darmowa usługa do analizy podejrzanych plików i adresów URL.</li>
+           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis to darmowa usługa analizy złośliwego oprogramowania dostarczana przez <a href="https://www.payload-security.com/">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Specjaliści od złośliwego oprogramowania komputerowego.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Materiały informacyjne i edukacyjne.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – Materiały do nauki i dyskusja na temat PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Wykresy Podatności</a> – Wyświetla bezpieczne/niebezpieczne wersje różnych pakietów oprogramowania (HHVM, PHP, phpMyAdmin, Python, itp).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Wykresy Zgodności</a> – Wyświetla informacje o zgodności dla różnych pakietów oprogramowania (CIDRAM, phpMussel, itp).</li>
+         </ul>
+       </li>
+     </ul>
+
+msg_template_2fa: |
+ <center><p>Cześć, %1$s.<br />
+ <br />
+ Twój dwuskładnikowy kod uwierzytelniający do logowania do interfejsu CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Ten kod wygasa za 10 minut.</p></center>
+msg_subject_2fa: "Uwierzytelnianie Dwuskładnikowe"

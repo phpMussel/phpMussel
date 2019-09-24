@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.09.17).
+# This file: Turkish language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -67,6 +67,7 @@ config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön u
 config_general_disable_webfonts: "Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_disabled_channels: "Bu, istek gönderirken phpMussel'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb.)."
 config_general_enable_plugins: "phpMussel eklentileri için desteği etkinleştirilsin mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan]."
+config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_forbid_on_block: "phpMussel, dosya yüklemesi engellenen mesajla birlikte hangi başlıkları göndermelidir? Yanlış/False = 200 OK (Tamam); Doğru/True = 403 Forbidden (Yasak) [Varsayılan]."
 config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_honeypot_mode: "Honeypot modu etkinleştirildiğinde, phpMussel karşılaştığı her dosya yüklemesini karantinaya almaya çalışacaktır, dahil olan imzalardan herhangi biriyle eşleşip eşleşmediğine bakılmaksızın, ve aslında hiçbir tarama ya da analiz yapılmayacaktır. Bu işlevsellik, kötücül yazılım araştırması için yararlı olmalıdır, ancak normal şartlar altında bu işlevselliği etkinleştirmeniz önerilmez. Varsayılan olarak, bu seçenek devre dışıdır. Yanlış/False = Devre dışı [Varsayılan]; Doğru/True = Etkinleştirildi."

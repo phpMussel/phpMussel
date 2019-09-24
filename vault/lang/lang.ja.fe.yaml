@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.09.17).
+# This file: Japanese language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -67,6 +67,7 @@ config_general_disable_frontend: "フロントエンドへのアクセスを無�
 config_general_disable_webfonts: "ウェブフォンツを無効にしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_disabled_channels: "これは、要求を送信するときにphpMusselが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
 config_general_enable_plugins: "プラグインのサポートを有効にしますか？​<code>false</code> = いいえ；​<code>true</code> = はい 「Default/デフォルト設定」。"
+config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_forbid_on_block: "アップロードファイルがブロックされたメッセージと共に、​phpMusselから４０３ヘッダーを送るべきか、​通常の２００でよいかどうかについて。​<code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」；​<code>true</code>（真） = はい（４０３）。"
 config_general_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_honeypot_mode: "ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効（Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。"

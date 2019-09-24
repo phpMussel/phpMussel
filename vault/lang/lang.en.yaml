@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2019.09.17).
+# This file: English language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -64,6 +64,7 @@ denied_reason: "Your upload was blocked for the reasons listed below:"
 detected: "Detected %s"
 detected_control_characters: "Detected control characters"
 encrypted_archive: "Detected encrypted archive; Encrypted archives not permitted"
+error_log_header: "If any of the following errors persist, to report them, or to seek support, please create a new issue at the phpMussel issues page at GitHub when you've got a spare moment, with the errors in question along with any other pertinent information attached. Thanks."
 failed_to_access: "Failed to access "%s"!"
 field_date: "Date"
 field_header_hash_reconstruction: "Hash signatures reconstruction"

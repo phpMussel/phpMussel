@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.09.17).
+# This file: Swedish language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -67,6 +67,7 @@ config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end till
 config_general_disable_webfonts: "Inaktivera webbfonter? True = Ja [Standard]; False = Nej."
 config_general_disabled_channels: "Detta kan användas för att förhindra att phpMussel använder särskilda kanaler när man skickar förfrågningar (t.ex., när man uppdaterar, när man hämtar komponentmetadata, osv)."
 config_general_enable_plugins: "Aktivera support för phpMussel-plugins? False = Nej; True = Ja [Standard]."
+config_general_error_log: "En fil för att logga eventuella icke-dödliga fel som upptäcks. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_forbid_on_block: "Ska phpMussel skicka 403 rubriker med uppladdning blockerat meddelande, eller hålla fast vid de vanliga 200 OK? False = Nej (200); True = Ja (403) [Standard]."
 config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_honeypot_mode: "När honeypot-läget är aktiverat, kommer phpMussel att försöka karantänera varje filuppladdning som den stöter på, oavsett om filen som laddas upp matchar några inkluderade signaturer eller inte, och ingen faktisk skanning eller analys av de försökte filuppladdningarna kommer faktiskt att ske. Den här funktionen bör vara användbar för de som vill använda phpMussel för virus/malware-forskning, men det rekommenderas varken att aktivera den här funktionaliteten om den avsedda användningen av phpMussel av användaren är för faktisk filuppladdningsscanning, och inte heller rekommenderas att använda honeypot-funktionen för andra syften än honeypotting. Som standard är detta alternativ inaktiverat. False = Inaktiverad [Standard]; True = Aktiverad."

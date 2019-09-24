@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.09.17).
+# This file: German language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -67,6 +67,7 @@ config_general_disable_frontend: "Frontend-Access deaktivieren? Frontend-Access 
 config_general_disable_webfonts: "Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein."
 config_general_disabled_channels: "Dies kann verwendet werden, um zu verhindern, dass phpMussel beim Senden von Anforderungen bestimmte Kanäle verwendet (z.B., beim Aktualisieren, beim Abrufen von Komponentenmetadaten, u.s.w.)."
 config_general_enable_plugins: "Aktivieren Sie die Unterstützung für phpMussel Plugins? False = Nein; True = Ja [Standardeinstellung]."
+config_general_error_log: "Einer Datei zum Protokollieren aller erkannten Fehler, die nicht schwerwiegend sind. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_forbid_on_block: "Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. False = Nein (200); True = Ja (403) [Standardeinstellung]."
 config_general_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_honeypot_mode: "Ist der Honeypot-Modus aktiviert, wird phpMussel jede Datei aus dem Dateiupload isolieren, ohne Rücksicht darauf zu nehmen, ob diese Dateien Signaturen enthalten, es findet auch keine weitere Überprüfung statt. Diese Funktionalität dient ausschließlich dem Zweck der Viren- und Malwareforschung, es wird ausdrücklich nicht empfohlen, phpMussel mit dieser Funktion zum Zwecke der Dateiüberprüfung von Uploads oder anderen Zwecken außer "Honeypotting" zu verwenden. Standardmäßig ist diese Funktion deaktiviert. False = Deativiert [Standardwert]; True = Aktiviert."

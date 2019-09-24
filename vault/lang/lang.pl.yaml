@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2019.09.17).
+# This file: Polish language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Twoje przesyłanie zostało zablokowane z powodów wymienionych 
 detected: "Wykryto %s"
 detected_control_characters: "Wykryte znaki kontrolne"
 encrypted_archive: "Wykryto zaszyfrowane archiwum; Zaszyfrowane archiwa są niedozwolone"
+error_log_header: "Jeśli nadal występuje którykolwiek z poniższych błędów, w celu zgłaszać je lub szukać wsparcia, utwórz nowy issue na stronie issues-ów phpMussel w GitHub, gdy będziesz mieć wolną chwilę, z przedmiotowymi błędami wraz z wszelkimi innymi istotnymi informacjami dołączonymi. Dzięki."
 failed_to_access: "Nie można uzyskać dostępu do „%s”!"
 field_date: "Data"
 field_header_hash_reconstruction: "Rekonstrukcja sygnatury hashów"

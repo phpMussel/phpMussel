@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2019.09.17).
+# This file: Swedish language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Din uppladdning var blockerad av anledningarna nedan:"
 detected: "Upptäckt %s"
 detected_control_characters: "Upptäckt kontrolltecken"
 encrypted_archive: "Upptäckt krypterat arkiv; Krypterade arkiv är inte tillåtna"
+error_log_header: "Om något av följande fel kvarstår, att rapportera dem eller söka stöd, skapa ett nytt issue på issues-sidan för phpMussel på GitHub när du har ett ledigt ögonblick, med felen i fråga tillsammans med annan relevant information bifogad. Tack."
 failed_to_access: "Det gick inte att komma åt "%s"!"
 field_date: "Datum"
 field_header_hash_reconstruction: "Hash signatur rekonstruktion"
