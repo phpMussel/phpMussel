@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.18).
+ * This file: Functions file (last modified: 2019.09.24).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -4502,119 +4502,6 @@ $phpMussel['Scan'] = function ($f = '', bool $n = false, bool $zz = false, int $
 };
 
 /**
- * Writes to the serialized logfile upon scan completion.
- *
- * @return bool True on success; False on failure.
- */
-$phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMussel): bool {
-    if ($phpMussel['Mussel_sapi']) {
-        $Origin = 'CLI';
-    } else {
-        $Origin = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-            $_SERVER[$phpMussel['IPAddr']]
-        ) : $_SERVER[$phpMussel['IPAddr']];
-    }
-    $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['L10N']->getString('data_not_available') : trim($phpMussel['whyflagged']);
-    if ($phpMussel['Config']['general']['scan_log_serialized']) {
-        if (!isset($phpMussel['InstanceCache']['objects_scanned'])) {
-            $phpMussel['InstanceCache']['objects_scanned'] = 0;
-        }
-        if (!isset($phpMussel['InstanceCache']['detections_count'])) {
-            $phpMussel['InstanceCache']['detections_count'] = 0;
-        }
-        if (!isset($phpMussel['InstanceCache']['scan_errors'])) {
-            $phpMussel['InstanceCache']['scan_errors'] = 1;
-        }
-        $Handle = [
-            'Data' => serialize([
-                'start_time' => $phpMussel['InstanceCache']['start_time'] ?? '-',
-                'end_time' => $phpMussel['InstanceCache']['end_time'] ?? '-',
-                'origin' => $Origin,
-                'objects_scanned' => $phpMussel['InstanceCache']['objects_scanned'] ?? 0,
-                'detections_count' => $phpMussel['InstanceCache']['detections_count'] ?? 0,
-                'scan_errors' => $phpMussel['InstanceCache']['scan_errors'] ?? 0,
-                'detections' => $ScanData
-            ]) . "\n",
-            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
-        ];
-        $WriteMode = (!file_exists($phpMussel['Vault'] . $Handle['File']) || (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        )) ? 'w' : 'a';
-        if ($phpMussel['BuildLogPath']($Handle['File'])) {
-            $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
-            fwrite($Stream, $Handle['Data']);
-            fclose($Stream);
-            if ($WriteMode === 'w') {
-                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log_serialized']);
-            }
-            return true;
-        }
-    }
-    return false;
-});
-
-/**
- * Writes to the standard scan log upon scan completion.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$phpMussel['Events']->addHandler('writeToScanLog', function (string $Data) use (&$phpMussel): bool {
-    if ($phpMussel['Config']['general']['scan_log']) {
-        $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log']);
-        if (!file_exists($phpMussel['Vault'] . $File)) {
-            $Data = $phpMussel['safety'] . "\n" . $Data;
-            $WriteMode = 'w';
-        } else {
-            $WriteMode = (
-                $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-            ) ? 'w' : 'a';
-        }
-        if ($phpMussel['BuildLogPath']($File)) {
-            $Handle = fopen($phpMussel['Vault'] . $File, 'a');
-            fwrite($Handle, $Data);
-            fclose($Handle);
-            if ($WriteMode === 'w') {
-                $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log']);
-            }
-            return true;
-        }
-    }
-    return false;
-});
-
-/**
- * Writes to the scan kills log.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) use (&$phpMussel): bool {
-    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills']);
-    if (!file_exists($phpMussel['Vault'] . $File)) {
-        $Data = $phpMussel['safety'] . "\n\n" . $Data;
-        $WriteMode = 'w';
-    } else {
-        $WriteMode = (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        ) ? 'w' : 'a';
-    }
-    if (!$phpMussel['BuildLogPath']($File)) {
-        return false;
-    }
-    $Stream = fopen($phpMussel['Vault'] . $File, $WriteMode);
-    fwrite($Stream, $Data);
-    fclose($Stream);
-    if ($WriteMode === 'w') {
-        $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
-    }
-    return true;
-});
-
-/**
  * A simple closure for replacing date/time placeholders with corresponding
  * date/time information. Used by the logfiles and some timestamps.
  *
@@ -4623,8 +4510,14 @@ $phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) 
  * @return string|array The adjusted input(/s).
  */
 $phpMussel['TimeFormat'] = function (int $Time, $In) use (&$phpMussel) {
+
+    /** Guard. */
+    if (!is_array($In) && (strpos($In, '{') === false || strpos($In, '}') === false)) {
+        return $In;
+    }
+
     $Time = date('dmYHisDMP', $Time);
-    $values = [
+    $Values = [
         'dd' => substr($Time, 0, 2),
         'mm' => substr($Time, 2, 2),
         'yyyy' => substr($Time, 4, 4),
@@ -4637,11 +4530,11 @@ $phpMussel['TimeFormat'] = function (int $Time, $In) use (&$phpMussel) {
         'tz' => substr($Time, 20, 3) . substr($Time, 24, 2),
         't:z' => substr($Time, 20, 6)
     ];
-    $values['d'] = (int)$values['dd'];
-    $values['m'] = (int)$values['mm'];
-    return is_array($In) ? array_map(function ($Item) use (&$values, &$phpMussel) {
-        return $phpMussel['ParseVars']($values, $Item);
-    }, $In) : $phpMussel['ParseVars']($values, $In);
+    $Values['d'] = (int)$Values['dd'];
+    $Values['m'] = (int)$Values['mm'];
+    return is_array($In) ? array_map(function (string $Item) use (&$Values, &$phpMussel): string {
+        return $phpMussel['ParseVars']($Values, $Item);
+    }, $In) : $phpMussel['ParseVars']($Values, $In);
 };
 
 /**
@@ -5405,3 +5298,6 @@ $phpMussel['RestoreErrorHandler'] = function () use (&$phpMussel) {
     /** Restore previous error handler. */
     restore_error_handler();
 };
+
+/** Load all default event handlers. */
+require $phpMussel['Vault'] . 'event_handlers.php';

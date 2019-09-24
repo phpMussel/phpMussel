@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.17).
+ * This file: Front-end functions file (last modified: 2019.09.24).
  */
 
 /**
@@ -2030,19 +2030,24 @@ $phpMussel['GenerateConfirm'] = function (string $Action, string $Form) use (&$p
  * @param string $Message The message to be logged.
  */
 $phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$phpMussel) {
+
+    /** Guard. */
     if (!$phpMussel['Config']['general']['frontend_log'] || empty($phpMussel['FE']['DateTime'])) {
         return;
     }
-    $File = (strpos($phpMussel['Config']['general']['frontend_log'], '{') !== false) ? $phpMussel['TimeFormat'](
-        $phpMussel['Time'],
-        $phpMussel['Config']['general']['frontend_log']
-    ) : $phpMussel['Config']['general']['frontend_log'];
+
+    /** Applies formatting for dynamic log filenames. */
+    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['frontend_log']);
+
     $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $phpMussel['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
+
     $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) ? 'w' : 'a';
+
+    /** Build the path to the log and write it. */
     if ($phpMussel['BuildLogPath']($File)) {
         $Handle = fopen($phpMussel['Vault'] . $File, $WriteMode);
         fwrite($Handle, $Data);
@@ -2052,33 +2057,6 @@ $phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message
         }
     }
 };
-
-/**
- * Writes to the PHPMailer event log.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$phpMussel): bool {
-    if (!$phpMussel['Config']['PHPMailer']['event_log']) {
-        return false;
-    }
-    $EventLog = (strpos($phpMussel['Config']['PHPMailer']['event_log'], '{') !== false) ? $phpMussel['TimeFormat'](
-        $phpMussel['Time'],
-        $phpMussel['Config']['PHPMailer']['event_log']
-    ) : $phpMussel['Config']['PHPMailer']['event_log'];
-    $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
-    $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
-    fwrite($Handle, $Data);
-    fclose($Handle);
-    if ($WriteMode === 'w') {
-        $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['event_log']);
-    }
-    return true;
-});
 
 /**
  * Wrapper for PHPMailer functionality.
@@ -2096,10 +2074,7 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], string $Subject = ''
     $EventLogData = sprintf(
         '%s - %s - ',
         $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']],
-        isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
-            $phpMussel['Time'],
-            $phpMussel['Config']['general']['time_format']
-        )
+        $phpMussel['FE']['DateTime'] ?? $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['time_format'])
     );
 
     /** Operation success state. */

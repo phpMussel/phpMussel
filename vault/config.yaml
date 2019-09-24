@@ -27,6 +27,9 @@ Config Defaults:
   scan_kills:
    type: "string"
    default: "scan_kills.txt"
+  error_log:
+   type: "string"
+   default: ""
   truncate:
    type: "kb"
    default: "0KB"

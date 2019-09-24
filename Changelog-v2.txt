@@ -22,6 +22,14 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.09.18; Maikuolan]: Added an error handler event to be able to catch and
   report errors more effectively.
 
+- [2019.09.24; NEW FEATURE; Maikuolan]: Improved error logging and added a
+  default error log handler to take care of error logging in the absence of any
+  custom event handlers for error logging. A new configuration directive has
+  been added accordingly (error_log). Additionally, all event handlers have
+  been moved into their own file, to keep them separated from function/closure
+  definitions and to improve maintainability. Some minor refactoring has also
+  occurred affecting the aforementioned and calls made to the time formatter.
+
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

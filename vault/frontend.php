@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.28).
+ * This file: Front-end handler (last modified: 2019.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1289,11 +1289,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             continue;
                         }
                     }
+                    $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
                     if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
-                        $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
-                        if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
-                            $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data, $phpMussel['ChoiceValue']);
-                        }
+                        $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data, $phpMussel['ChoiceValue']);
                     }
                     if ($phpMussel['DirValue']['type'] === 'checkbox') {
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf(
