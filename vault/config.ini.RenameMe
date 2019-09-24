@@ -20,6 +20,10 @@ scan_log_serialized='scan_log_serialized.txt'
 ; a filename, or leave blank to disable.
 scan_kills='scan_kills.txt'
 
+; A file for logging any non-fatal errors detected. Specify a filename, or
+; leave blank to disable.
+error_log=''
+
 ; Truncate logfiles when they reach a certain size? Value is the maximum size
 ; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
 ; default value of 0KB disables truncation (logfiles can grow indefinitely).

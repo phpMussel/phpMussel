@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.17).
+ * This file: Front-end functions file (last modified: 2019.09.24).
  */
 
 /**
@@ -2033,19 +2033,24 @@ $phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
  * @param string $Message The message to be logged.
  */
 $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
+
+    /** Guard. */
     if (!$phpMussel['Config']['general']['FrontEndLog'] || empty($phpMussel['FE']['DateTime'])) {
         return;
     }
-    $File = (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) ? $phpMussel['TimeFormat'](
-        $phpMussel['Time'],
-        $phpMussel['Config']['general']['FrontEndLog']
-    ) : $phpMussel['Config']['general']['FrontEndLog'];
+
+    /** Applies formatting for dynamic log filenames. */
+    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['FrontEndLog']);
+
     $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $phpMussel['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
+
     $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) ? 'w' : 'a';
+
+    /** Build the path to the log and write it. */
     if ($phpMussel['BuildLogPath']($File)) {
         $Handle = fopen($phpMussel['Vault'] . $File, $WriteMode);
         fwrite($Handle, $Data);
@@ -2055,33 +2060,6 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
         }
     }
 };
-
-/**
- * Writes to the PHPMailer event log.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$phpMussel) {
-    if (!$phpMussel['Config']['PHPMailer']['EventLog']) {
-        return false;
-    }
-    $EventLog = (strpos($phpMussel['Config']['PHPMailer']['EventLog'], '{') !== false) ? $phpMussel['TimeFormat'](
-        $phpMussel['Time'],
-        $phpMussel['Config']['PHPMailer']['EventLog']
-    ) : $phpMussel['Config']['PHPMailer']['EventLog'];
-    $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
-    $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
-    fwrite($Handle, $Data);
-    fclose($Handle);
-    if ($WriteMode === 'w') {
-        $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
-    }
-    return true;
-});
 
 /**
  * Wrapper for PHPMailer functionality.

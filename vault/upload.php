@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.09.17).
+ * This file: Upload handler (last modified: 2019.09.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -253,6 +253,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 );
             } catch (\Exception $e) {
+                $phpMussel['Events']->fireEvent('final');
                 die($e->getMessage());
             }
 
@@ -332,7 +333,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         }
 
         /** Log "scan_kills" data. */
-        if ($phpMussel['Config']['general']['scan_kills'] && !empty($phpMussel['killdata'])) {
+        if (!empty($phpMussel['killdata'])) {
             $phpMussel['InstanceCache']['Handle']['Data'] = sprintf(
                 "%s: %s\n%s: %s\n== %s ==\n%s\n== %s ==\n%s",
                 $phpMussel['L10N']->getString('field_date'),
@@ -360,6 +361,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
         /** Fallback to use if the HTML template file is missing. */
         if (!file_exists($phpMussel['Vault'] . $phpMussel['InstanceCache']['template_file'])) {
+            $phpMussel['Events']->fireEvent('final');
             header('Content-Type: text/plain');
             die('[phpMussel] ' . $phpMussel['L10N']->getString('denied') . ' ' . $phpMussel['TemplateData']['detected']);
         }
@@ -402,12 +404,18 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             unset($phpMussel['WebFontPos']);
         }
 
+        /** Final event before we exit. */
+        $phpMussel['Events']->fireEvent('final');
+
         /** Send HTML output and the kill the script. */
         die($phpMussel['HTML']);
 
     }
 
 }
+
+/** Final event before we exit. */
+$phpMussel['Events']->fireEvent('final');
 
 /** Exit the upload handler cleanly. */
 unset($phpMussel['upload']);
