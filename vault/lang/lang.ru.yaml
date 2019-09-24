@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2019.09.17).
+# This file: Russian language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -57,6 +57,7 @@ denied_reason: "Ваша загрузка была заблокирована п
 detected: "Обнаружено %s"
 detected_control_characters: "Обнаружены символы управления"
 encrypted_archive: "Обнаружен зашифрованный архив; Зашифрованные архивы не допускаются"
+error_log_header: "Если какая-либо из следующих ошибок сохраняется, чтобы сообщить о них или получить помощь, пожалуйста, создайте новую issue на странице phpMussel issues на GitHub, когда у вас будет свободное время, и включите рассматриваемые ошибки вместе с любой другой соответствующей информацией. Спасибо."
 failed_to_access: "Не удалось получить доступ к «%s»!"
 field_date: "Дата"
 field_header_hash_reconstruction: "Реконструкция хэш-сигнатур"

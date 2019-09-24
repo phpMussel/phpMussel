@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2019.09.17).
+# This file: Portuguese language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -59,6 +59,7 @@ denied_reason: "Carregamento tentativa foi bloqueado pelos motivos a seguir indi
 detected: "Detectado %s"
 detected_control_characters: "Caracteres de controle detectado"
 encrypted_archive: "Detectado compactado arquivo criptografado; Compactado arquivos criptografados não permitido"
+error_log_header: "Se algum dos seguintes erros persistir, para reportá-los ou buscar apoio, crie um novo issue na página de issues do phpMussel no GitHub quando tiver um momento livre, com os erros em questão, juntamente com outras informações pertinentes anexadas. Obrigado."
 failed_to_access: "Falha ao acessar "%s"!"
 field_date: "Data"
 field_header_hash_reconstruction: "Reconstrução de assinaturas hash"

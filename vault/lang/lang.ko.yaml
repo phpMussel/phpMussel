@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2019.09.17).
+# This file: Korean language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -54,6 +54,7 @@ denied_reason: "다음과 같은 이유로 업로드가 거부되었습니다 :
 detected: "%s을 발견했습니다"
 detected_control_characters: "제어 문자를 발견했습니다"
 encrypted_archive: "암호화 된 아카이브 검색 : 암호화 된 아카이브는 허용되지 않습니다"
+error_log_header: "다음과 같은 오류가 계속 발생하면, 여가 시간이있을 때, GitHub의 phpMussel issues 페이지를 문제를보고하거나 도움을 요청하기 위해. 오류 및 기타 관련 정보를 포함하십시오. 감사."
 failed_to_access: ""%s"에 액세스하지 못했습니다!"
 field_date: "날짜 "
 field_header_hash_reconstruction: "해시 서명 재구성"

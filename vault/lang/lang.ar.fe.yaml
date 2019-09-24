@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.09.17).
+# This file: Arabic language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -69,6 +69,7 @@ config_general_disable_frontend: "تعطيل وصول front-end؟ وصول front
 config_general_disable_webfonts: "هل تريد تعطيل ويبفونتس؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_general_disabled_channels: "يمكن استخدام هذا لمنع phpMussel من استخدام قنوات معينة عند إرسال الطلبات (على سبيل المثال، عند التحديث، عند جلب بيانات تعريف المكون، إلخ)."
 config_general_enable_plugins: "تمكين دعم ملحقات phpMussel؟ زائفة/False = لا؛ صحيح/True = نعم [الافتراضي]."
+config_general_error_log: "ملف لتسجيل أي أخطاء غير مميتة المكتشفة. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_forbid_on_block: "هل phpMussel يرسل 403 من العناوين مع الرسالة منعت إيداع الملف، أو يبقى مع المعتادة 200 موافق؟ خطأ = رقم (200). صحيح/True = نعم (403) [الافتراضي]."
 config_general_honeypot_mode: "عند تمكين وضع مصيدة، و phpMussel محاولة لعزل كل تحميل ملف واحد أن يواجه، بغض النظر عن ما إذا كان أو لم يكن ملف يتم تحميلها يطابق أي وشملت التوقيعات، وسوف لا المسح الفعلي أو تحليل لتلك تحميل الملفات حاول أن يحدث في الواقع. وينبغي أن تكون هذه الوظيفة مفيدة لأولئك الذين يرغبون في استخدام phpMussel لأغراض فيروس / بحث عن البرامج الضارة، ولكن هذا لا يوصى لتمكين هذه الوظيفة إذا كان الغرض من استخدام phpMussel من قبل المستخدم هو الفعلي إيداع ملف المسح، ولا ينصح لاستخدام وظائف مصيدة لأغراض أخرى غير honeypotting. افتراضيا، يتم تعطيل هذا الخيار. زائفة/False = معطل [الافتراضي]. = الحقيقية تمكين."
 config_general_ipaddr: "أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"

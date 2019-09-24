@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2019.09.17).
+# This file: Italian language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -57,6 +57,7 @@ denied_reason: "Il tentativo di caricamento è stato bloccato per i motivi elenc
 detected: "Rilevato %s"
 detected_control_characters: "Rilevati caratteri di controllo"
 encrypted_archive: "Rilevato archivio criptato; Archivi criptati non ammessi"
+error_log_header: "Se persiste uno dei seguenti errori, per riportarli o per chiedere supporto, crea un nuovo issue nella pagina dei issues per phpMussel su GitHub quando hai un momento libero, con gli errori in questione insieme a qualsiasi altra informazione pertinente allegata. Grazie."
 failed_to_access: "Impossibile accedere a "%s"!"
 field_date: "Data"
 field_header_hash_reconstruction: "Ricostruzione delle firme hash"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2019.09.17).
+# This file: Spanish language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -57,6 +57,7 @@ denied_reason: "La subida de archivo fue bloqueada por las razones que se indica
 detected: "Detectado %s"
 detected_control_characters: "Caracteres control detectados"
 encrypted_archive: "Archivo encriptado detectado; No se permiten archivos encriptados"
+error_log_header: "Si alguno de los siguientes errores persiste, para reportarlos o buscar apoyo, cree un nuevo issue en la página de issues de phpMussel en GitHub cuando tenga un momento libre, con los errores en cuestión junto con cualquier otra información pertinente adjunta. Gracias."
 failed_to_access: "¡Falló el acceso a "%s"!"
 field_date: "Fecha"
 field_header_hash_reconstruction: "Reconstrucción de firmas hash"

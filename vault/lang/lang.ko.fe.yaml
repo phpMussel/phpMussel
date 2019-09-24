@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.09.17).
+# This file: Korean language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -69,6 +69,7 @@ config_general_disable_frontend: "프론트 엔드에 대한 액세스를 비활
 config_general_disable_webfonts: "웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_general_disabled_channels: "이것은 phpMussel이 요청을 보낼 때 특정 채널을 사용하지 못하게하는 데 사용할 수 있습니다 (예를 들어, 업데이트 할 때, 구성 요소 메타 데이터를 가져올 때, 등등)."
 config_general_enable_plugins: "플러그인 지원을 활성화 하시겠습니까? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정)."
+config_general_error_log: "치명적이지 않은 오류를 탐지하기위한 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_forbid_on_block: "업로드 파일이 차단 된 메시지와 함께 phpMussel에서 403 헤더를 보내야하거나 일반 200 좋은지에 대해. <code>false</code> = 아니오 (200) Default / 기본 설정; <code>true</code> = 예 (403)."
 config_general_honeypot_mode: "허니팟 모드가 활성화되어 있으면 phpMussel 업로드되어 온 모든 파일을 예외없이 검역합니다. 서명에 부합하는지 여부는 문제가되지 않습니다. 스캐닝 및 분석도 이루어지지 않습니다. phpMussel를 바이러스/악성 코드 리서치에 사용할 생각하는 사용자에게 유익 할 것입니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 기본 설정은 무효입니다. <code>false</code> = Disabled/장애인 (Default / 기본 설정); <code>true</code> = Enabled/유효."
 config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."

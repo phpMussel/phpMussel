@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.09.17).
+# This file: Indonesian language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Upload diblokir karena alasan yang tercantum dibawah:"
 detected: "Terdeteksi %s"
 detected_control_characters: "Terdeteksi kontrol karakter"
 encrypted_archive: "Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan"
+error_log_header: "Jika kesalahan berikut terus terjadi, untuk melaporkannya atau mencari dukungan, tolong buat issue baru di halaman issue untuk phpMussel di GitHub ketika Anda punya waktu luang, dengan kesalahan yang menjadi perhatian bersama dengan semua informasi terkait terlampir. Terima kasih."
 failed_to_access: "Gagal mengakses "%s"!"
 field_date: "Tanggal"
 field_header_hash_reconstruction: "Rekonstruksi tanda tangan hash"

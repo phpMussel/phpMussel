@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2019.09.17).
+# This file: French language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "Votre tentative de téléchargement a été bloquée pour les ra
 detected: "Détecté %s"
 detected_control_characters: "Caractères de contrôle ont été détectés"
 encrypted_archive: "Archive cryptée détectée ; Archives cryptées interdites"
+error_log_header: "Si les erreurs suivantes persistent, pour les rapporter ou pour obtenir de l'aide, créer un nouveau issue sur la page des issues pour phpMussel à GitHub lorsque vous avez un moment disponible, avec les erreurs en question ainsi que toute autre information pertinente jointe. Merci."
 failed_to_access: "Impossible d'accéder à « %s » !"
 field_date: "Date "
 field_header_hash_reconstruction: "Reconstruction de signatures hachage"

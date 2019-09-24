@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2019.09.17).
+# This file: Japanese language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -55,6 +55,7 @@ denied_reason: "以下の理由でアップロードは拒否されました："
 detected: "%sを検出しました"
 detected_control_characters: "制御文字を検出しました"
 encrypted_archive: "暗号化されたアーカイブ検出：暗号化されたアーカイブは許可されていません"
+error_log_header: "次のエラーのいずれかが引き続き発生する場合、それらを報告する、またはサポートを求めるには、GitHubのphpMusselイシューズ・ページで新しいイシューを作成してください。​エラーとその他の関連情報を含めますください。​ありがとう。"
 failed_to_access: "「%s」にアクセスできませんでした！"
 field_date: "日時"
 field_header_hash_reconstruction: "ハッシュ・シグネチャの再構築"

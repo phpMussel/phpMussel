@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2019.09.17).
+# This file: Dutch language data (last modified: 2019.09.23).
 ##/
 
 # Language settings.
@@ -58,6 +58,7 @@ denied_reason: "De upload poging werd geblokkeerd voor de hieronder vermelde red
 detected: "Gedetecteerd %s"
 detected_control_characters: "Gedetecteerd controle karakters"
 encrypted_archive: "Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan"
+error_log_header: "Als een van de volgende fouten blijft optreden, om ze te melden of om ondersteuning te zoeken, maak een nieuw issue aan op de phpMussel issues-pagina op GitHub wanneer u vrije tijd hebt, met de betreffende fouten samen met eventuele andere relevante informatie gehecht. Bedankt."
 failed_to_access: "Toegang tot "%s" is mislukt!"
 field_date: "Datum"
 field_header_hash_reconstruction: "Hash signatures reconstructie"
