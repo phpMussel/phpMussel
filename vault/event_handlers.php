@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Events handlers file (last modified: 2019.09.24).
+ * This file: Event handlers file (last modified: 2019.09.24).
  */
 
 /**
