@@ -35,6 +35,10 @@ Detailed version release guidelines for phpMussel can be found at:
   some cases (thanks to Costegillio for bringing this to my attention); Fixed.
   Refer github.com/phpMussel/phpMussel/issues/209
 
+- [2019.09.26; Bug-fix; Maikuolan]: Some of the missing directory guards were
+  faulty (thanks to Costegillio for bringing this to my attention); Fixed.
+  Refer github.com/phpMussel/phpMussel/issues/210
+
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

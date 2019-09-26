@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.24).
+ * This file: Front-end functions file (last modified: 2019.09.26).
  */
 
 /**
@@ -906,6 +906,12 @@ $phpMussel['FilterSwitch'] = function (array $Switches, string $Selector, bool &
  * @return array An array of quarantined files.
  */
 $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use (&$phpMussel): array {
+
+    /** Guard against missing quarantine directory. */
+    if (!$phpMussel['BuildLogPath']('quarantine/')) {
+        return [];
+    }
+
     $Arr = [];
     $Key = -1;
     $Offset = strlen($phpMussel['qfuPath']);
