@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.24).
+ * This file: Functions file (last modified: 2019.09.26).
  */
 
 /**
@@ -566,6 +566,12 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
  * @return bool True on success; False on failure.
  */
 $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
+
+    /** Guard against missing quarantine directory. */
+    if (!$phpMussel['BuildLogPath']($phpMussel['qfuPath'])) {
+        return false;
+    }
+
     if (!$In || !$Key || !$IP || !$ID || !function_exists('gzdeflate') || (
         strlen($Key) < 128 &&
         !$Key = $phpMussel['HexSafe'](hash('sha512', $Key) . hash('whirlpool', $Key))
@@ -5214,6 +5220,12 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
     $phpMussel['Cache']->PDOusername = $phpMussel['Config']['supplementary_cache_options']['pdo_username'];
     $phpMussel['Cache']->PDOpassword = $phpMussel['Config']['supplementary_cache_options']['pdo_password'];
     $phpMussel['Cache']->connect();
+
+    /** Guard against missing cache directory. */
+    if (!$phpMussel['Cache']->Using) {
+        $phpMussel['BuildLogPath']($phpMussel['cachePath']);
+    }
+
 };
 
 /**
