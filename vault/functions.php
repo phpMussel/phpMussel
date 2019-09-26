@@ -1211,6 +1211,31 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, ar
 };
 
 /**
+ * Match a variable referenced by a signature file (guards against some obscure
+ * referencing and typecasting problems).
+ *
+ * @param mixed $Actual The actual data found in the signature file.
+ * @param mixed $Expected The expected data to be matched against.
+ * @return bool True when they match; False when they don't.
+ */
+$phpMussel['MatchVarInSigFile'] = function ($Actual, $Expected) {
+    $LCActual = strtolower($Actual);
+    if ($LCActual === '0' || $LCActual === 'false') {
+        if ($Expected === 0 || $Expected === false) {
+            return true;
+        }
+    }
+    if ($LCActual === '1' || $LCActual === 'true') {
+        if ($Expected === 1 || $Expected === true) {
+            return true;
+        }
+    }
+    $Actual = (string)$Actual;
+    $Expected = (string)$Expected;
+    return $Actual === $Expected;
+};
+
+/**
  * Responsible for handling any data fed to it from the recursor. It shouldn't
  * be called manually nor from any other contexts. It takes the data given to
  * it from the recursor and checks that data against the various signatures of
@@ -1635,13 +1660,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             ) {
                 continue 2;
             } elseif (substr($Fragment[0], 0, 1) === '$') {
-                $vf = substr($Fragment[0], 1);
-                if (!isset($$vf) || is_array($$vf) || $$vf != $Fragment[1]) {
+                $VarInSigFile = substr($Fragment[0], 1);
+                if (!isset($$VarInSigFile) || is_array($$VarInSigFile) || $$VarInSigFile != $Fragment[1]) {
                     continue 2;
                 }
             } elseif (substr($Fragment[0], 0, 2) === '!$') {
-                $vf = substr($Fragment[0], 2);
-                if (!isset($$vf) || is_array($$vf) || $$vf == $Fragment[1]) {
+                $VarInSigFile = substr($Fragment[0], 2);
+                if (!isset($$VarInSigFile) || is_array($$VarInSigFile) || $$VarInSigFile == $Fragment[1]) {
                     continue 2;
                 }
             } elseif (strpos(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false) {
@@ -2330,15 +2355,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     continue 2;
                                 }
                                 if (substr($ThisSigPart[0], 0, 1) === '$') {
-                                    $vf = substr($ThisSigPart[0], 1);
-                                    if (!isset($$vf) || is_array($$vf) || $$vf != $ThisSigPart[1]) {
+                                    $VarInSigFile = substr($ThisSigPart[0], 1);
+                                    if (!isset($$VarInSigFile) || is_array($$VarInSigFile) || $$VarInSigFile != $ThisSigPart[1]) {
                                         continue 2;
                                     }
                                     continue;
                                 }
                                 if (substr($ThisSigPart[0], 0, 2) === '!$') {
-                                    $vf = substr($ThisSigPart[0], 2);
-                                    if (!isset($$vf) || is_array($$vf) || $$vf == $ThisSigPart[1]) {
+                                    $VarInSigFile = substr($ThisSigPart[0], 2);
+                                    if (!isset($$VarInSigFile) || is_array($$VarInSigFile) || $$VarInSigFile == $ThisSigPart[1]) {
                                         continue 2;
                                     }
                                     continue;
@@ -2456,9 +2481,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $SigNum = $ThisSig[3] - 1;
                         }
                     } elseif (substr($ThisSig[1], 0, 1) == '$') {
-                        $vf = substr($ThisSig[1], 1);
-                        if (isset($$vf) && !is_array($$vf)) {
-                            if ($$vf != $ThisSig[2]) {
+                        $VarInSigFile = substr($ThisSig[1], 1);
+                        if (isset($$VarInSigFile) && is_scalar($$VarInSigFile)) {
+                            if (!$phpMussel['MatchVarInSigFile']($ThisSig[2], $$VarInSigFile)) {
                                 if ($ThisSig[3] <= $SigNum) {
                                     break;
                                 }
@@ -2471,9 +2496,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         }
                         $SigNum = $ThisSig[3] - 1;
                     } elseif (substr($ThisSig[1], 0, 2) == '!$') {
-                        $vf = substr($ThisSig[1], 2);
-                        if (isset($$vf) && !is_array($$vf)) {
-                            if ($$vf == $ThisSig[2]) {
+                        $VarInSigFile = substr($ThisSig[1], 2);
+                        if (isset($$VarInSigFile) && is_scalar($$VarInSigFile)) {
+                            if ($phpMussel['MatchVarInSigFile']($ThisSig[2], $$VarInSigFile)) {
                                 if ($ThisSig[3] <= $SigNum) {
                                     break;
                                 }
@@ -3914,13 +3939,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
     }
 
     /** Get file extensions. */
-    if ($File) {
-        list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($File);
-    } elseif ($Exts = $phpMussel['substral']($ItemRef, '.')) {
-        list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($Exts);
-    } else {
-        $xt = $xts = $gzxt = $gzxts = '';
-    }
+    list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ItemRef);
 
     /** Set appropriate container definitions and specify handler class. */
     if (substr($Data, 0, 2) === 'PK') {

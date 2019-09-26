@@ -26,6 +26,11 @@ Detailed version release guidelines for phpMussel can be found at:
   definitions and to improve maintainability. Some minor refactoring has also
   occurred affecting the aforementioned and calls made to the time formatter.
 
+- [2019.09.26; Bug-fix; Maikuolan]: Some pre-condition checks weren't being
+  processed correctly, causing OLE objects to not be recognised correctly in
+  some cases (thanks to Costegillio for bringing this to my attention); Fixed.
+  Refer github.com/phpMussel/phpMussel/issues/209
+
 === Version/Release 1.12.0 ===
 MINOR RELEASE.
 
