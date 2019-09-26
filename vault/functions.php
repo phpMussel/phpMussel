@@ -568,7 +568,7 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
 $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
 
     /** Guard against missing quarantine directory. */
-    if (!$phpMussel['BuildLogPath']($phpMussel['qfuPath'])) {
+    if (!$phpMussel['BuildLogPath']('quarantine/')) {
         return false;
     }
 
@@ -5242,7 +5242,7 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
 
     /** Guard against missing cache directory. */
     if (!$phpMussel['Cache']->Using) {
-        $phpMussel['BuildLogPath']($phpMussel['cachePath']);
+        $phpMussel['BuildLogPath']('cache/');
     }
 
 };
