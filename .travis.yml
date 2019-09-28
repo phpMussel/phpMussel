@@ -1,14 +1,16 @@
+dist: trusty
+
 language: php
 
 php:
-  - '7.2'
-  - '7.3'
+ - '7.2'
+ - '7.3'
 
 before_script:
-  - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
-  - phpenv config-rm xdebug.ini || true
+ - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
+ - phpenv config-rm xdebug.ini || true
 
 script: phpunit .travis.php
 
 notifications:
-  email: false
+ email: false
