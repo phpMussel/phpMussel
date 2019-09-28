@@ -1,8 +1,8 @@
 ---
-plugin-legacy:
- Name: Legacy plugin for phpMussel.
- Extended Description: Provides backwards-compatibility for v0 users using <code>phpMusselR()</code> and <code>phpMussel()</code>, by redeclaring these deprecated functions as wrappers for their newer, closure counterparts. Non-v0 users don't need this plugin and shouldn't use it.
- Minimum Required: 1.0.0-DEV
+plugin-notifications:
+ Name: phpMussel notifications.
+ Extended Description: Receive email notifications from phpMussel whenever a file upload is blocked (requires PHP "mail" function to be correctly configured).
+ Minimum Required: 1.12.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/extras/master/plugins/plugins.dat
  Uninstallable: true
