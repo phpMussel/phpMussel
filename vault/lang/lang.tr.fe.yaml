@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.09.22).
+# This file: Turkish language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -160,6 +160,8 @@ field_password: "Parola"
 field_permissions: "İzinler"
 field_quarantine_key: "Karantina anahtarı"
 field_rename_file: "Adını değiştirmek"
+field_repair: "Tamir"
+field_repair_all: "Tümünü tamir"
 field_reset: "Sıfırla"
 field_restore_file: "Canlandır"
 field_set_new_password: "Yeni Şifre Oluştur"
@@ -292,6 +294,8 @@ response_possible_problem_found: "Olası problem bulundu."
 response_rename_error: "Yeniden adlandırılamadı!"
 response_restore_error_1: "Canlanamadı! Bozuk dosya!"
 response_restore_error_2: "Canlanamadı! Yanlış karantina anahtarı!"
+response_repair_process_completed: "Onarım işlemi tamamlandı."
+response_repair_process_failed: "Onarım işlemi başarısız oldu."
 response_sanity_1: "Dosya beklenmedik içerik barındırıyor! Dosya reddedildi!"
 response_skipped: "Atlandı"
 response_statistics_cleared: "İstatistikler temizlendi."

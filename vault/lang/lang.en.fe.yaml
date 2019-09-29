@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.09.22).
+# This file: English language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Password"
 field_permissions: "Permissions"
 field_quarantine_key: "Quarantine key"
 field_rename_file: "Rename"
+field_repair: "Repair"
+field_repair_all: "Repair all"
 field_reset: "Reset"
 field_restore_file: "Restore"
 field_set_new_password: "Set new password"
@@ -294,6 +296,8 @@ response_possible_problem_found: "Possible problem found."
 response_rename_error: "Failed to rename!"
 response_restore_error_1: "Failed to restore! Corrupted file!"
 response_restore_error_2: "Failed to restore! Incorrect quarantine key!"
+response_repair_process_completed: "Repair process completed."
+response_repair_process_failed: "Repair process failed."
 response_sanity_1: "File contains unexpected content! File rejected!"
 response_skipped: "Skipped"
 response_statistics_cleared: "Statistics cleared."

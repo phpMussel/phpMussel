@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.09.22).
+# This file: Indonesian language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Kata Sandi"
 field_permissions: "Izin"
 field_quarantine_key: "Kunci karantina"
 field_rename_file: "Memodifikasi nama"
+field_repair: "Memperbaiki"
+field_repair_all: "Memperbaiki semua"
 field_reset: "Mengatur Kembali"
 field_restore_file: "Memulihkan"
 field_set_new_password: "Buat Baru Kata Sandi"
@@ -173,7 +175,7 @@ field_status: "Status"
 field_system_timezone: "Gunakan zona waktu default sistem."
 field_true: "True (Benar)"
 field_uninstall: "Uninstal"
-field_update: "Perbarui"
+field_update: "Memperbarui"
 field_update_all: "Memperbarui semua"
 field_update_signatures_files: "Memperbarui file tanda tangan"
 field_upload_file: "Mengupload file baru"
@@ -292,6 +294,8 @@ response_possible_problem_found: "Kemungkinan masalah ditemukan."
 response_rename_error: "Gagal memodifikasi nama!"
 response_restore_error_1: "Gagal memulihkan! File rusak!"
 response_restore_error_2: "Gagal memulihkan! Kunci karantina salah!"
+response_repair_process_completed: "Proses perbaikan selesai."
+response_repair_process_failed: "Proses perbaikan gagal."
 response_sanity_1: "File berisi konten yang tidak diharapkan! File ditolak!"
 response_skipped: "Diabaikan"
 response_statistics_cleared: "Statistik dicabut"

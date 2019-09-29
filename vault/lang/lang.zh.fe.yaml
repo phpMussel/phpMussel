@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.22).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
@@ -160,6 +160,8 @@ field_password: "密码"
 field_permissions: "权限"
 field_quarantine_key: "隔离钥匙"
 field_rename_file: "改名"
+field_repair: "修复"
+field_repair_all: "修复全部"
 field_reset: "重启"
 field_restore_file: "恢复"
 field_set_new_password: "保存新密码"
@@ -292,6 +294,8 @@ response_possible_problem_found: "可能的问题发现。"
 response_rename_error: "无法改名！"
 response_restore_error_1: "无法恢复！损坏的文件！"
 response_restore_error_2: "无法恢复！不正确的隔离钥匙！"
+response_repair_process_completed: "修复过程完成。"
+response_repair_process_failed: "修复过程失败。"
 response_sanity_1: "文件包含意外的内容！​文件拒绝！"
 response_skipped: "跳过了"
 response_statistics_cleared: "统计删除。"

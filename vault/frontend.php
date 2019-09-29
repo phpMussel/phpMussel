@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.09.24).
+ * This file: Front-end handler (last modified: 2019.09.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1589,6 +1589,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Outdated' => [],
         'OutdatedSignatureFiles' => [],
         'Verify' => [],
+        'Repairable' => [],
         'Out' => []
     ];
 
@@ -1715,9 +1716,21 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                     }
                 } else {
                     $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtGn';
-                    $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString(
-                        'response_updates_already_up_to_date'
-                    );
+                    $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_already_up_to_date');
+                    if (isset(
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files'],
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To'],
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['From'],
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum'],
+                        $phpMussel['Components']['ThisComponent']['Files'],
+                        $phpMussel['Components']['ThisComponent']['Files']['To'],
+                        $phpMussel['Components']['ThisComponent']['Remote']
+                    ) && (
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To'] === $phpMussel['Components']['ThisComponent']['Files']['To']
+                    )) {
+                        $phpMussel['Components']['Repairable'][] = $phpMussel['Components']['Key'];
+                        $phpMussel['Components']['ThisComponent']['Options'] .= '<option value="repair-component">' . $phpMussel['L10N']->getString('field_repair') . '</option>';
+                    }
                 }
             }
             if (!empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
@@ -2031,9 +2044,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     $phpMussel['Components']['CountOutdated'] = count($phpMussel['Components']['Outdated']);
     $phpMussel['Components']['CountOutdatedSignatureFiles'] = count($phpMussel['Components']['OutdatedSignatureFiles']);
     $phpMussel['Components']['CountVerify'] = count($phpMussel['Components']['Verify']);
+    $phpMussel['Components']['CountRepairable'] = count($phpMussel['Components']['Repairable']);
 
-    /** Preparing for update all and verify all buttons. */
-    $phpMussel['FE']['UpdateAll'] = ($phpMussel['Components']['CountOutdated'] || $phpMussel['Components']['CountOutdatedSignatureFiles'] || $phpMussel['Components']['CountVerify']) ? '<hr />' : '';
+    /** Preparing the update all, verify all, repair all buttons. */
+    $phpMussel['FE']['UpdateAll'] = (
+        $phpMussel['Components']['CountOutdated'] ||
+        $phpMussel['Components']['CountOutdatedSignatureFiles'] ||
+        $phpMussel['Components']['CountVerify'] ||
+        $phpMussel['Components']['CountRepairable']
+    ) ? '<hr />' : '';
 
     /** Instructions to update all signature files (but not necessarily everything). */
     if ($phpMussel['Components']['CountOutdatedSignatureFiles']) {
@@ -2051,6 +2070,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisOutdated'] . '" />';
         }
         $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['L10N']->getString('field_update_all') . '" class="auto" /></form>';
+    }
+
+    /** Instructions to repair everything at once. */
+    if ($phpMussel['Components']['CountRepairable']) {
+        $phpMussel['FE']['UpdateAll'] .= sprintf($phpMussel['CFBoilerplate'], $phpMussel['FE']['UpdatesFormTarget'], 'repair-component');
+        foreach ($phpMussel['Components']['Repairable'] as $phpMussel['Components']['ThisRepairable']) {
+            $phpMussel['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $phpMussel['Components']['ThisRepairable'] . '" />';
+        }
+        $phpMussel['FE']['UpdateAll'] .= '<input type="submit" value="' . $phpMussel['L10N']->getString('field_repair_all') . '" class="auto" /></form>';
     }
 
     /** Instructions to verify everything at once. */

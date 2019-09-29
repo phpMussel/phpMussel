@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.09.22).
+# This file: Vietnamese language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Mật Khẩu"
 field_permissions: "Quyền"
 field_quarantine_key: "Khóa kiểm dịch"
 field_rename_file: "Đổi tên"
+field_repair: "Sửa chữa"
+field_repair_all: "Sửa chữa tất cả"
 field_reset: "Thiết Lập Lại"
 field_restore_file: "Khôi phục"
 field_set_new_password: "Đặt mật khẩu mới"
@@ -292,6 +294,8 @@ response_possible_problem_found: "Có thể tìm thấy vấn đề."
 response_rename_error: "Không thể đổi tên!"
 response_restore_error_1: "Không thể khôi phục! Tập tin bị hỏng!"
 response_restore_error_2: "Không thể khôi phục! Khóa kiểm dịch sai rồi!"
+response_repair_process_completed: "Quá trình sửa chữa hoàn thành."
+response_repair_process_failed: "Quá trình sửa chữa thất bại."
 response_sanity_1: "Tập tin chứa nội dung không mong muốn! Tập tin đã bị từ chối!"
 response_skipped: "Bỏ qua"
 response_statistics_cleared: "Thống kê đã được xóa."

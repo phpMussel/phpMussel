@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.09.22).
+# This file: Swedish language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Lösenord"
 field_permissions: "Behörigheter"
 field_quarantine_key: "Karantännyckel"
 field_rename_file: "Byt namn"
+field_repair: "Reparera"
+field_repair_all: "Reparera allt"
 field_reset: "Återställa"
 field_restore_file: "Restaurera"
 field_set_new_password: "Ange nytt lösenord"
@@ -292,6 +294,8 @@ response_possible_problem_found: "Möjligt problem hittades."
 response_rename_error: "Misslyckades med att byta namn!"
 response_restore_error_1: "Restaurering misslyckades! Skadad fil!"
 response_restore_error_2: "Restaurering misslyckades! Felaktig karantännyckel!"
+response_repair_process_completed: "Reparationsprocessen lyckades."
+response_repair_process_failed: "Reparationsprocessen misslyckades."
 response_sanity_1: "Filen innehåller oväntat innehåll! Filen avvisas!"
 response_skipped: "Ignoreras"
 response_statistics_cleared: "Statistik rensas."

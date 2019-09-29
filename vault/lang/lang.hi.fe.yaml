@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.09.22).
+# This file: Hindi language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -160,6 +160,8 @@ field_password: "पासवर्ड"
 field_permissions: "अनुमतियां"
 field_quarantine_key: "संगरोध कुंजी"
 field_rename_file: "नाम बदलें"
+field_repair: "मरम्मत करें"
+field_repair_all: "सभी को मरम्मत करें"
 field_reset: "रीसेट"
 field_restore_file: "पुनर्स्थापित"
 field_set_new_password: "नया पासवर्ड बनाएं"
@@ -294,6 +296,8 @@ response_possible_problem_found: "संभव समस्या मिली�
 response_rename_error: "नाम बदलने में विफल!"
 response_restore_error_1: "पुनर्स्थापित करने में विफल! दूषित फाइल!"
 response_restore_error_2: "पुनर्स्थापित करने में विफल! गलत संगरोध कुंजी!"
+response_repair_process_completed: "मरम्मत की प्रक्रिया पूरी।"
+response_repair_process_failed: "मरम्मत की प्रक्रिया विफल रही।"
 response_sanity_1: "फ़ाइल में अप्रत्याशित सामग्री है! फ़ाइल अस्वीकृत!"
 response_skipped: "जांच नहीं"
 response_statistics_cleared: "सांख्यिकी साफ है।"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.09.22).
+# This file: Japanese language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -160,6 +160,8 @@ field_password: "パスワード"
 field_permissions: "パーミッション"
 field_quarantine_key: "検疫キー"
 field_rename_file: "名前を変更する"
+field_repair: "修復する"
+field_repair_all: "すべてを修復する"
 field_reset: "リセット"
 field_restore_file: "復元"
 field_set_new_password: "新しいパスワードを設定します"
@@ -292,6 +294,8 @@ response_possible_problem_found: "考えられる問題が見つかりました�
 response_rename_error: "名前を変更できませんでした！"
 response_restore_error_1: "復元に失敗しました！​破損したファイル！"
 response_restore_error_2: "復元に失敗しました！​検疫キーが間違っています！"
+response_repair_process_completed: "修復プロセスが完了しました。"
+response_repair_process_failed: "修復プロセスが失敗しました。"
 response_sanity_1: "ファイルに予期しないコンテンツがあります！​ファイルが拒否されました！"
 response_skipped: "スキップしました"
 response_statistics_cleared: "統計はクリアされました。"

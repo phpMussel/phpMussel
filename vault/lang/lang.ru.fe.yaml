@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.09.22).
+# This file: Russian language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Пароль"
 field_permissions: "Разрешения"
 field_quarantine_key: "Карантинный ключ"
 field_rename_file: "Переименовывать"
+field_repair: "Починить"
+field_repair_all: "Починить все"
 field_reset: "Сбросить"
 field_restore_file: "Восстановить"
 field_set_new_password: "Установить новый пароль"
@@ -295,6 +297,8 @@ response_possible_problem_found: "Возможная проблема."
 response_rename_error: "Не удалось переименовать!"
 response_restore_error_1: "Не удалось восстановить! Поврежденный файл!"
 response_restore_error_2: "Не удалось восстановить! Неправильный карантинный ключ!"
+response_repair_process_completed: "Процесс ремонта завершен."
+response_repair_process_failed: "Процесс ремонта не удался."
 response_sanity_1: "Файл содержит неожиданный контент! Файл отклонен!"
 response_skipped: "Проигнорировал"
 response_statistics_cleared: "Статистика очищена."

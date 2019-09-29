@@ -39,6 +39,9 @@ Detailed version release guidelines for phpMussel can be found at:
   faulty (thanks to Costegillio for bringing this to my attention); Fixed.
   Refer github.com/phpMussel/phpMussel/issues/210
 
+- [2019.09.29; NEW FEATURE; Maikuolan]: Added the ability to automatically
+  repair some components via the front-end updates page.
+
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 

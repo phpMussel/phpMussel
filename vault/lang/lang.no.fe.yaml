@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.09.22).
+# This file: Norwegian language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -160,6 +160,8 @@ field_password: "Passord"
 field_permissions: "Tillatelser"
 field_quarantine_key: "Karantenenøkkel"
 field_rename_file: "Gi nytt navn"
+field_repair: "Reparer"
+field_repair_all: "Reparer alt"
 field_reset: "Tilbakestille"
 field_restore_file: "Restaurere"
 field_set_new_password: "Sett inn nytt passord"
@@ -292,6 +294,8 @@ response_possible_problem_found: "Mulig problem funnet."
 response_rename_error: "Omdøpe mislyktes!"
 response_restore_error_1: "Kunne ikke gjenopprette! Ødelagt fil!"
 response_restore_error_2: "Kunne ikke gjenopprette! Ugyldig karantenenøkkel!"
+response_repair_process_completed: "Reparasjonsprosessen er fullført."
+response_repair_process_failed: "Reparasjonsprosessen mislyktes."
 response_sanity_1: "Filen inneholder uventet innhold! Fil avvist!"
 response_skipped: "Ignorert"
 response_statistics_cleared: "Statistikk fjernet."

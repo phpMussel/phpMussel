@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.09.22).
+# This file: German language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -160,6 +160,8 @@ field_password: "Passwort"
 field_permissions: "Berechtigungen"
 field_quarantine_key: "Quarantäneschlüssel"
 field_rename_file: "Umbenennen"
+field_repair: "Reparieren"
+field_repair_all: "Reparieren alle"
 field_reset: "Zurücksetzen"
 field_restore_file: "Wiederherstellen"
 field_set_new_password: "Neues Passwort eingeben"
@@ -294,6 +296,8 @@ response_possible_problem_found: "Mögliches Problem gefunden."
 response_rename_error: "Umbenennung-Fehler!"
 response_restore_error_1: "Fehler beim Wiederherstellen! Beschädigte Datei!"
 response_restore_error_2: "Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!"
+response_repair_process_completed: "Reparaturvorgang abgeschlossen."
+response_repair_process_failed: "Reparaturvorgang fehlgeschlagen."
 response_sanity_1: "Datei enthält unerwarteten Inhalt! Datei abgelehnt!"
 response_skipped: "Übersprang"
 response_statistics_cleared: "Statistiken gelöscht."
