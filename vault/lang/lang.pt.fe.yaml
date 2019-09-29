@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.09.22).
+# This file: Portuguese language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "Senha"
 field_permissions: "Permissões"
 field_quarantine_key: "Chave de quarentena"
 field_rename_file: "Renomear"
+field_repair: "Reparar isso"
+field_repair_all: "Reparar tudo"
 field_reset: "Reiniciar"
 field_restore_file: "Restaurar"
 field_set_new_password: "Definir Nova Senha"
@@ -295,6 +297,8 @@ response_possible_problem_found: "Possível problema encontrado."
 response_rename_error: "Falha ao renomear!"
 response_restore_error_1: "Falha ao restaurar! Arquivo corrompido!"
 response_restore_error_2: "Falha ao restaurar! Chave de quarentena incorreta!"
+response_repair_process_completed: "Processo de reparo concluído."
+response_repair_process_failed: "Processo de reparo falhou."
 response_sanity_1: "Arquivo contém conteúdo inesperado! Arquivo rejeitado!"
 response_skipped: "Ignorado"
 response_statistics_cleared: "Estatísticas apagadas."

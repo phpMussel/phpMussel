@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.09.22).
+# This file: Italian language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "Password"
 field_permissions: "Permessi"
 field_quarantine_key: "Chiave di quarantena"
 field_rename_file: "Rinominare"
+field_repair: "Ripararlo"
+field_repair_all: "Ripara tutto"
 field_reset: "Azzerare"
 field_restore_file: "Ripristinare"
 field_set_new_password: "Imposta una nuova password"
@@ -293,6 +295,8 @@ response_possible_problem_found: "Possibile problema riscontrato."
 response_rename_error: "Non riuscito a rinominare!"
 response_restore_error_1: "Non riuscito a ripristinare! File corrotto!"
 response_restore_error_2: "Non riuscito a ripristinare! La chiave di quarantena è errata!"
+response_repair_process_completed: "Processo di riparazione completato."
+response_repair_process_failed: "Processo di riparazione non riuscito."
 response_sanity_1: "Il file contiene contenuti inattesi! File rifiutato!"
 response_skipped: "Saltato"
 response_statistics_cleared: "Statistiche revocate."

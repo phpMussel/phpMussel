@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -161,6 +161,8 @@ field_password: "密碼"
 field_permissions: "權限"
 field_quarantine_key: "隔離鑰匙"
 field_rename_file: "改名"
+field_repair: "修復"
+field_repair_all: "修復全部"
 field_reset: "重啟"
 field_restore_file: "恢復"
 field_set_new_password: "保存新密碼"
@@ -293,6 +295,8 @@ response_possible_problem_found: "可能的問題發現。"
 response_rename_error: "無法改名！"
 response_restore_error_1: "無法恢復！損壞的文件！"
 response_restore_error_2: "無法恢復！不正確的隔離鑰匙！"
+response_repair_process_completed: "修復過程完成。"
+response_repair_process_failed: "修復過程失敗。"
 response_sanity_1: "文件包含意外的內容！​文件拒絕！"
 response_skipped: "跳過了"
 response_statistics_cleared: "統計刪除。"

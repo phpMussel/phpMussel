@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.09.22).
+# This file: French language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "Mot de Passe"
 field_permissions: "Autorisations"
 field_quarantine_key: "Clé de quarantaine"
 field_rename_file: "Renommer"
+field_repair: "Réparer"
+field_repair_all: "Réparer tous"
 field_reset: "Réinitialiser"
 field_restore_file: "Restaurer"
 field_set_new_password: "Définir nouveau mot de passe"
@@ -295,6 +297,8 @@ response_possible_problem_found: "Problème possible trouvé."
 response_rename_error: "Échec du renomment !"
 response_restore_error_1: "Échec de la restauration ! Fichier corrompu !"
 response_restore_error_2: "Échec de la restauration ! Clé de quarantaine incorrecte !"
+response_repair_process_completed: "Le processus de réparation a été un succès."
+response_repair_process_failed: "Le processus de réparation a échoué."
 response_sanity_1: "Le fichier contient des contenus inattendus ! Fichier rejeté !"
 response_skipped: "Sauté"
 response_statistics_cleared: "Statistiques annulées."

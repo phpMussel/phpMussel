@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.09.22).
+# This file: Urdu language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -161,6 +161,8 @@ field_password: "پاس ورڈ"
 field_permissions: "اجازتیں"
 field_quarantine_key: "قرنطین کلید"
 field_rename_file: "نام تبدیل کریں"
+field_repair: "مرمت"
+field_repair_all: "سب کی مرمت کرو"
 field_reset: "پھر سیٹ کریں"
 field_restore_file: "بحال"
 field_set_new_password: "نیا پاس ورڈ مقرر"
@@ -293,6 +295,8 @@ response_possible_problem_found: "ممکنہ مسئلہ پایا."
 response_rename_error: "نام تبدیل کرنے میں ناکام!"
 response_restore_error_1: "بحال کرنے میں ناکام! خراب فائل!"
 response_restore_error_2: "بحال کرنے میں ناکام! غلط قرنطین کلید!"
+response_repair_process_completed: "مرمت کا عمل مکمل ہوگیا."
+response_repair_process_failed: "مرمت کا عمل ناکام ہوگیا."
 response_sanity_1: "فائل میں غیر متوقع مواد شامل ہے! فائل کو مسترد کر دیا!"
 response_skipped: "نظر انداز"
 response_statistics_cleared: "اعداد و شمار صاف ہوگئے."

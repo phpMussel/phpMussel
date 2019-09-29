@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.09.22).
+# This file: Spanish language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "Contraseña"
 field_permissions: "Permisos"
 field_quarantine_key: "Clave de cuarentena"
 field_rename_file: "Cambiar el nombre"
+field_repair: "Reparar"
+field_repair_all: "Reparar todo"
 field_reset: "Reiniciar"
 field_restore_file: "Restaurar"
 field_set_new_password: "Crear Nueva Contraseña"
@@ -295,6 +297,8 @@ response_possible_problem_found: "Posible problema encontrado."
 response_rename_error: "¡No se pudo cambiar el nombre!"
 response_restore_error_1: "¡Error al restaurar! Archivo corrupto!"
 response_restore_error_2: "¡Error al restaurar! Clave de cuarentena incorrecta!"
+response_repair_process_completed: "Proceso de reparación completado."
+response_repair_process_failed: "Proceso de reparación fallido."
 response_sanity_1: "¡El archivo contiene contenido inesperado! Archivo rechazado!"
 response_skipped: "Omitido"
 response_statistics_cleared: "Estadística anulado."

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.09.22).
+# This file: Dutch language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "Wachtwoord"
 field_permissions: "Machtigingen"
 field_quarantine_key: "Quarantaine sleutel"
 field_rename_file: "Naam veranderen"
+field_repair: "Repareren"
+field_repair_all: "Repareren alles"
 field_reset: "Resetten"
 field_restore_file: "Herstellen"
 field_set_new_password: "Stel Nieuw Wachtwoord"
@@ -295,6 +297,8 @@ response_possible_problem_found: "Mogelijk probleem gevonden."
 response_rename_error: "Mislukt om de naam te veranderen!"
 response_restore_error_1: "Kan niet herstellen! Beschadigd bestand!"
 response_restore_error_2: "Kan niet herstellen! Onjuiste quarantaine sleutel!"
+response_repair_process_completed: "Reparatieproces voltooid."
+response_repair_process_failed: "Reparatieproces is mislukt."
 response_sanity_1: "Bestand bevat onverwachte inhoud! Bestand afgewezen!"
 response_skipped: "Overgeslagen"
 response_statistics_cleared: "Statistieken geannuleerd."

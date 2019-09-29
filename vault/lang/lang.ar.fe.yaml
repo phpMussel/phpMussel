@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.09.22).
+# This file: Arabic language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -161,6 +161,8 @@ field_password: "كلمه السر"
 field_permissions: "أذونات"
 field_quarantine_key: "الحجر الصحي مفتاح"
 field_rename_file: "إعادة تسمية"
+field_repair: "إصلاح"
+field_repair_all: "إصلاح الكل"
 field_reset: "إعادة تعيين"
 field_restore_file: "استعادة"
 field_set_new_password: "تحديد جديد كلمه السر"
@@ -293,6 +295,8 @@ response_possible_problem_found: "تم العثور على مشكلة محتمل
 response_rename_error: "فشل في إعادة تسمية!"
 response_restore_error_1: "أخفق الاستعادة! ملف معطوب!"
 response_restore_error_2: "أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!"
+response_repair_process_completed: "اكتملت عملية الإصلاح."
+response_repair_process_failed: "فشلت عملية الإصلاح."
 response_sanity_1: "يحتوي الملف على محتوى غير متوقع! تم رفض الملف!"
 response_skipped: "تخطي"
 response_statistics_cleared: "تم مسح الإحصاءات."

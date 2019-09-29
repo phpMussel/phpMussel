@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.09.22).
+# This file: Thai language data for the front-end (last modified: 2019.09.28).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -161,6 +161,8 @@ field_password: "รหัสผ่าน"
 field_permissions: "สิทธิ์"
 field_quarantine_key: "คีย์กักกัน"
 field_rename_file: "เปลี่ยนชื่อ"
+field_repair: "ซ่อมแซม"
+field_repair_all: "ซ่อมแซมทั้งหมด"
 field_reset: "รีเซ็ต"
 field_restore_file: "ฟื้นฟู"
 field_set_new_password: "ตั้งรหัสผ่านใหม่"
@@ -293,6 +295,8 @@ response_possible_problem_found: "พบปัญหาที่เป็นไ�
 response_rename_error: "ล้มเหลวเปลี่ยนชื่อ!"
 response_restore_error_1: "ไม่สามารถฟื้นฟู! ไฟล์ที่เสียหาย!"
 response_restore_error_2: "ไม่สามารถฟื้นฟู! คีย์กักกันไม่ถูกต้อง!"
+response_repair_process_completed: "กระบวนการซ่อมแซมเสร็จสมบูรณ์."
+response_repair_process_failed: "กระบวนการซ่อมแซมล้มเหลว."
 response_sanity_1: "ไฟล์มีเนื้อหาที่ไม่คาดคิด! ไฟล์ถูกปฏิเสธ!"
 response_skipped: "ความละเว้น"
 response_statistics_cleared: "สถิติลบแล้ว"
