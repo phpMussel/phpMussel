@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 2.1.0 ===
+MINOR RELEASE.
+
 - [2019.09.04; Maikuolan]: Added *partial* internal language support for
   Latvian, Norwegian, Polish, and Swedish. Will sync it all up with the other
   translations when there's time.
@@ -41,6 +46,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.09.29; NEW FEATURE; Maikuolan]: Added the ability to automatically
   repair some components via the front-end updates page.
+
+- [2019.10.02; Maikuolan]: Added a new vendor shorthand entry (abuse.ch).
+
+Caleb M (Maikuolan),
+October 2, 2019.
 
 === Version/Release 2.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
@@ -105,6 +115,8 @@ August 31, 2019.
 ======
 
 "Changelog-v2.txt" contains changelog notes for versions => 2.0.0 < 3.0.0.
+
+Note: v2 branches from v1 at 1.10.0 onward.
 
 Changelog notes for versions => 1.0.0 < 2.0.0 can be found in the
 "Changelog-v1.txt" file included with any relevant, corresponding releases.

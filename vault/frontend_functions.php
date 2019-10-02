@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.29).
+ * This file: Front-end functions file (last modified: 2019.09.30).
  */
 
 /**
@@ -1809,10 +1809,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                     $RepairFailed = true;
                     continue;
                 }
-                if ($LocalFileSize) {
-                    $BytesRemoved += $LocalFileSize;
-                    unlink($phpMussel['Vault'] . $RemoteFileTo);
-                }
+                $BytesRemoved += $LocalFileSize;
                 $BytesAdded += $RemoteFileSize;
                 $Handle = fopen($phpMussel['Vault'] . $RemoteFileTo, 'wb');
                 fwrite($Handle, $RemoteFile);
