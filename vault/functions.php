@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.26).
+ * This file: Functions file (last modified: 2019.09.30).
  */
 
 /**
@@ -44,7 +44,7 @@ $phpMussel['Events'] = new \Maikuolan\Common\Events();
  *
  * @param string $What The name of the closure/function to execute.
  * @param string $Where Where to execute it (the designated "plugin hook").
- * @return bool Execution failed(false)/succeeded(true).
+ * @return bool True on success; False on failure.
  */
 $phpMussel['Register_Hook'] = function ($What, $Where) use (&$phpMussel) {
     if (!isset($phpMussel['MusselPlugins']['hooks'], $phpMussel['MusselPlugins']['closures']) || !$What || !$Where) {
@@ -64,7 +64,7 @@ $phpMussel['Register_Hook'] = function ($What, $Where) use (&$phpMussel) {
  * Executes plugin closures/functions.
  *
  * @param string $HookID Where to execute it (the designated "plugin hook").
- * @return bool Execution failed(false)/succeeded(true).
+ * @return bool True on success; False on failure.
  */
 $phpMussel['Execute_Hook'] = function ($HookID) use (&$phpMussel) {
     if (!isset($phpMussel['MusselPlugins']['hooks'][$HookID])) {

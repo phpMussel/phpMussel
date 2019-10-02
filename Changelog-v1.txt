@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.13.0 ===
+MINOR RELEASE.
+
 - [2019.09.06; Bug-fix; Maikuolan]: Found a way to trigger an invalid argument
   warning at the front-end updates page in some contexts; Fixed.
 
@@ -37,6 +42,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2019.09.29; NEW FEATURE; Maikuolan]: Added the ability to automatically
   repair some components via the front-end updates page.
+
+- [2019.10.02; Maikuolan]: Added a new vendor shorthand entry (abuse.ch).
+
+Caleb M (Maikuolan),
+October 2, 2019.
 
 === Version/Release 1.12.0 ===
 MINOR RELEASE.

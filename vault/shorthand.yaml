@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: phpMussel shorthand data (last modified: 2019.03.22).
+# This file: phpMussel shorthand data (last modified: 2019.10.02).
 #
 # Warning: When modifying the information in this file, be careful to ensure
 # that any changes made won't conflict with the what phpMussel recognises as
@@ -34,6 +34,7 @@ Vendor Shorthand:
   2: hpHosts
   3: Spam404
   4: Cybercrime.Tracker
+  5: abuse.ch
  9: phpMussel
  10: Malware.Expert
 Vendor Weight Options:
@@ -51,6 +52,7 @@ Vendor Search Patterns:
  hpHosts: "\x1a\x82"
  Spam404: "\x1a\x83"
  Cybercrime.Tracker: "\x1a\x84"
+ abuse.ch: "\x1a\x85"
  Malware.Expert: "\x1a[\xa0-\xaf]"
 Metadata Shorthand:
  1: Testfile
