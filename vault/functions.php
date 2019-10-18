@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.30).
+ * This file: Functions file (last modified: 2019.10.18).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -1733,7 +1733,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
         $PEArr['SectionArr'] = [];
         if ($twocc === '4d5a') {
             $PEArr['Offset'] = $phpMussel['UnpackSafe']('S', substr($str, 60, 4));
-            $PEArr['Offset'] = $PEArr['Offset'][1];
+            $PEArr['Offset'] = isset($PEArr['Offset'][1]) ? $PEArr['Offset'][1] : 0;
             while (true) {
                 $PEArr['DoScan'] = true;
                 if ($PEArr['Offset'] < 1 || $PEArr['Offset'] > 16384 || $PEArr['Offset'] > $str_len) {
@@ -1782,9 +1782,9 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                 $PEArr['OptHdrSize'] = $phpMussel['UnpackSafe']('S', substr($str, $PEArr['Offset'] + 20, 2));
                 $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
                 for ($PEArr['k'] = 0; $PEArr['k'] < $NumOfSections; $PEArr['k']++) {
-                    $PEArr['SectionArr'][$PEArr['k']] = [];
-                    $PEArr['SectionArr'][$PEArr['k']]['SectionHead'] =
-                        substr($str, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $NumOfSections * 40);
+                    $PEArr['SectionArr'][$PEArr['k']] = [
+                        'SectionHead' => substr($str, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $NumOfSections * 40)
+                    ];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionName'] =
                         str_ireplace("\x00", '', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 0, 8));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] =
@@ -1795,39 +1795,28 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                         $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 12, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'] =
                         $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'][1];
-                    $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] =
-                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 16, 4));
-                    $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] =
-                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'][1];
-                    $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
-                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 20, 4));
-                    $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
-                        $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'][1];
-                    $PEArr['SectionArr'][$PEArr['k']]['SectionData'] = substr(
-                        $str,
-                        $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'],
-                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']
-                    );
-                    $SectionOffsets[$PEArr['k']] = [
-                        $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'],
-                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']
-                    ];
+                    $SizeOfRawData = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 16, 4));
+                    $SizeOfRawData = $SizeOfRawData[1];
+                    $PointerToRawData = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 20, 4));
+                    $PointerToRawData = $PointerToRawData[1];
+                    $PEArr['SectionArr'][$PEArr['k']]['SectionData'] = substr($str, $PointerToRawData, $SizeOfRawData);
+                    $SectionOffsets[$PEArr['k']] = [$PointerToRawData, $SizeOfRawData];
                     $PEArr['SectionArr'][$PEArr['k']]['MD5'] = md5(
                         $PEArr['SectionArr'][$PEArr['k']]['SectionData']
                     );
                     $phpMussel['PEData'] .=
-                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] . ':' .
+                        $SizeOfRawData . ':' .
                         $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ':' . $ofn . '-' .
                         $PEArr['SectionArr'][$PEArr['k']]['SectionName'] . "\n";
-                    $CoExMeta .=
-                        'SectionName:' . $PEArr['SectionArr'][$PEArr['k']]['SectionName'] .
-                        ';VirtualSize:' . $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] .
-                        ';VirtualAddress:' . $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'] .
-                        ';SizeOfRawData:' . $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] .
-                        ';MD5:' . $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ';';
-                    $PEArr['SectionArr'][$PEArr['k']] =
-                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] . ':' .
-                        $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ':';
+                    $CoExMeta .= sprintf(
+                        'SectionName:%s;VirtualSize:%s;VirtualAddress:%s;SizeOfRawData:%s;MD5:%s;',
+                        $PEArr['SectionArr'][$PEArr['k']]['SectionName'],
+                        $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'],
+                        $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'],
+                        $SizeOfRawData,
+                        $PEArr['SectionArr'][$PEArr['k']]['MD5']
+                    );
+                    $PEArr['SectionArr'][$PEArr['k']] = $SizeOfRawData . ':' . $PEArr['SectionArr'][$PEArr['k']]['MD5'] . ':';
                 }
                 if (strpos($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
                     $PEArr['Parts'] = $phpMussel['substral']($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
@@ -1852,6 +1841,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $of
                     }
                     unset($PEVars, $PEArr['Parts']);
                 }
+                unset($PointerToRawData, $SizeOfRawData);
             }
         }
     }
@@ -4893,10 +4883,13 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
  *
  * @param string $Format Anything supported by unpack (usually "S" or "*l").
  * @param string $Data The data to be unpacked.
- * @return mixed The unpacked data.
+ * @return array The unpacked data (or an empty array upon failure).
  */
-$phpMussel['UnpackSafe'] = function (string $Format, string $Data) {
-    return (strlen($Data) > 1) ? unpack($Format, $Data) : '';
+$phpMussel['UnpackSafe'] = function (string $Format, string $Data): array {
+    if (strlen($Data) < 1) {
+        return [];
+    }
+    return unpack($Format, $Data) ?: [];
 };
 
 /**
