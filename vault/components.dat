@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.1-DEV+19290563
+ Version: 2.1.1-DEV+19295312
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.0
+ Version: 2.1.1-DEV+19295312
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -187,7 +187,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.2.0
+ Version: 2.2.1-DEV+19295312
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -210,7 +210,7 @@ Common Classes Package:
    - classes/Maikuolan/NumberFormatter.php
    - classes/Maikuolan/YAML.php
   Checksum:
-   - cb1ca29a1d8c9558c8b7affbe160294f43cb3855666ec040838e3fbb07452b42:21873
+   - f579d736189233467641c0dad58afd0c3c1d22c9a640107b3c687bb904c207b9:21771
    - 7dfe74c41bf9468f4a8959a5ced98a86865e36a846ccb6f19a978e8f36a4dc73:3477
    - 2aa2e394b1496782b681dbc36e508fd8fbb28d380d5c177e090f96c6c53e5d99:4489
    - 4563d991f5d60939a29118d28e674bcc9820647d09802551deb46a3e6c89682a:27635

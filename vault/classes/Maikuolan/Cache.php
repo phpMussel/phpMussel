@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.05.10).
+ * A simple, unified cache handler (last modified: 2019.10.23).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -510,9 +510,6 @@ class Cache
      */
     public function clearExpired(array &$Data): bool
     {
-        if (!is_array($Data)) {
-            return false;
-        }
         $Cleared = false;
         $Updated = [];
         foreach ($Data as $Key => $Value) {
@@ -524,7 +521,6 @@ class Cache
                         }
                     }
                 }
-                unset($SubValue);
             }
             if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > time()) {
                 $Updated[$Key] = $Value;
