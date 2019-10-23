@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.09.28).
+# This file: Russian language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -384,8 +384,6 @@ tip_updates: "Привет, {username}.<br />Обновления страниц
 tip_upload_test: "Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его."
 title_login: "Войти"
 warning: "Предупреждения:"
-warning_php_1: "Ваша версия PHP больше не поддерживается! Рекомендуется обновление!"
-warning_php_2: "Ваша версия PHP сильно уязвима! Настоятельно рекомендуется обновление!"
 warning_signatures_1: "Активные файлы сигнатуры не активны!"
 
 info_some_useful_links: |

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.09.28).
+# This file: Indonesian language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -378,8 +378,6 @@ tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk 
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
 warning: "Peringatan:"
-warning_php_1: "Versi PHP Anda tidak aktif didukung lagi! Memperbarui dianjurkan!"
-warning_php_2: "Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!"
 warning_signatures_1: "Tidak ada file tanda tangan yang aktif!"
 
 info_some_useful_links: |

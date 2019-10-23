@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.09.28).
+# This file: German language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
@@ -382,8 +382,6 @@ tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich
 tip_upload_test: "Hallo, {username}.<br />Das Upload-Testseite enthält ein Standard-Datei-Upload-Formular, das macht es möglich zu prüfen ob eine Datei normalerweise gestoppt von phpMussel werden soll, wenn Sie versuchen es hochzuladen."
 title_login: "Einloggen"
 warning: "Warnungen:"
-warning_php_1: "Ihre PHP-Version wird nicht mehr aktiv unterstützt! Aktualisierung wird empfohlen!"
-warning_php_2: "Ihre PHP-Version ist schwer verwundbar! Aktualisierung wird dringend empfohlen!"
 warning_signatures_1: "Keine Signaturdateien sind aktiv!"
 
 info_some_useful_links: |

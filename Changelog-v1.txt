@@ -10,7 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.10.23; Maikuolan]: Improved caching mechanism guard code. Deprecated
+  and removed the PHP vulnerable version warning formerly displayed at the
+  front-end homepage (it risked causing unnecessary alarm for some users,
+  especially those unable to update due to hosting restrictions, and posed a
+  general annoyance for some other users).
 
 === Version/Release 1.13.0 ===
 MINOR RELEASE.

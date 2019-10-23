@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.09.28).
+# This file: Dutch language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -382,8 +382,6 @@ tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de v
 tip_upload_test: "Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden."
 title_login: "Inloggen"
 warning: "Waarschuwingen:"
-warning_php_1: "Uw PHP versie wordt niet meer actief ondersteund! Het bijwerken is aanbevolen!"
-warning_php_2: "Uw PHP versie is ernstig kwetsbaar! Het bijwerken is sterk aanbevolen!"
 warning_signatures_1: "Geen signatuurbestanden zijn actief!"
 
 info_some_useful_links: |

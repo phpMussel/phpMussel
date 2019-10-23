@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.09.29).
+ * This file: Front-end handler (last modified: 2019.10.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -729,10 +729,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
             $phpMussel['ThisBranch'] = 'php' . $phpMussel['ThisBranch'];
             $phpMussel['FE']['info_php_branch'] = empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
                 $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
-            $phpMussel['ForceVersionWarning'] = (!empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin']) && (
-                $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin'] === '*' ||
-                $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['WarnMin'])
-            ));
         } else {
             $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
         }
@@ -772,15 +768,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Process warnings. */
     $phpMussel['FE']['Warnings'] = '';
-    if (($phpMussel['FE']['VersionWarning'] = $phpMussel['VersionWarning']()) > 0) {
-        if ($phpMussel['FE']['VersionWarning'] >= 2) {
-            $phpMussel['FE']['VersionWarning'] %= 2;
-            $phpMussel['FE']['Warnings'] .= '<li><a href="https://www.cvedetails.com/version-list/74/128/1/PHP-PHP.html">' . $phpMussel['L10N']->getString('warning_php_2') . '</a></li>';
-        }
-        if ($phpMussel['FE']['VersionWarning'] >= 1) {
-            $phpMussel['FE']['Warnings'] .= '<li><a href="https://secure.php.net/supported-versions.php">' . $phpMussel['L10N']->getString('warning_php_1') . '</a></li>';
-        }
-    }
     if (empty($phpMussel['Config']['signatures']['Active'])) {
         $phpMussel['FE']['Warnings'] .= '<li>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</li>';
     }

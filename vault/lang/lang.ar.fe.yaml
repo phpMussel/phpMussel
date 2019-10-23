@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.09.28).
+# This file: Arabic language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
@@ -384,8 +384,6 @@ tip_updates: "مرحبا، {username}.<br />الصفحة تحديثات يسمح
 tip_upload_test: "مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله."
 title_login: "تسجيل الدخول"
 warning: "تحذيرات:"
-warning_php_1: "لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!"
-warning_php_2: "إصدار PHP الخاص بك معرض للخطر بشدة! ينصح بشدة تحديث!"
 warning_signatures_1: "لا ملفات التوقيع نشطة!"
 
 info_some_useful_links: |
