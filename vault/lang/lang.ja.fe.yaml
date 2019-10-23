@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.09.28).
+# This file: Japanese language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
@@ -377,8 +377,6 @@ tip_updates: "こんにちは、​{username}。​<br />アップデート・�
 tip_upload_test: "こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。"
 title_login: "ログイン"
 warning: "警告："
-warning_php_1: "あなたのＰＨＰバージョンはもはや積極的にサポートされていません！​​アップデートおすすめします！"
-warning_php_2: "あなたのＰＨＰバージョンは深刻な脆弱性を持っています！​​アップデートを強くおすすめします！"
 warning_signatures_1: "アクティブ・シグネチャ・ファイルはありません！"
 
 info_some_useful_links: |

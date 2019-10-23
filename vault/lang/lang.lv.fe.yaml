@@ -10,13 +10,17 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2019.09.28).
+# This file: Latvian language data for the front-end (last modified: 2019.10.23).
 ##/
 
+tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
+tip_siginfo: "Parakstu informācijas lapā ir sniegta pamatinformācija par pašlaik aktīvo parakstu avotiem un veidiem."
+tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu phpMussel instalēšanu."
+tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
+tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus phpMussel komponentus (pamata pakete, paraksti, spraudņi, L10N faili, utt)."
+tip_upload_test: "Augšupielādes testa lapā ir standarta failu augšupielādes forma. Varat to izmantot, lai pārbaudītu, vai phpMussel parasti bloķē failu."
 title_login: "Pieslēgties"
 warning: "Brīdinājumi:"
-warning_php_1: "Jūsu PHP versija vairs netiek aktīvi atbalstīta! Atjaunināšana ir ieteicama!"
-warning_php_2: "Jūsu PHP versija ir ļoti nedroša! Atjaunināšana ir ļoti ieteicama!"
 warning_signatures_1: "Neviens paraksta fails nav aktīvs!"
 
 info_some_useful_links: |

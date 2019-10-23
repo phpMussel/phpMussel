@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.09.28).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -377,8 +377,6 @@ tip_updates: "你好，​{username}。​<br />更新頁面允許您安裝，�
 tip_upload_test: "你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。"
 title_login: "登錄"
 warning: "警告："
-warning_php_1: "您的PHP版本不再被積極支持！​推薦更新！"
-warning_php_2: "您的PHP版本非常脆弱！​強烈推薦更新！"
 warning_signatures_1: "沒有簽名文件是活動的！"
 
 info_some_useful_links: |

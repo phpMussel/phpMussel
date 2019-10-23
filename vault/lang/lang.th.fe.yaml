@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.09.28).
+# This file: Thai language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -377,8 +377,6 @@ tip_updates: "สวัสดี {username}.<br />หน้าอัปเดต
 tip_upload_test: "สวัสดี {username}.<br />หน้าทดสอบการอัปโหลดมีแบบฟอร์มอัปโหลดไฟล์มาตรฐาน ช่วยให้คุณสามารถทดสอบถ้าไฟล์ปกติจะถูกบล็อกโดย phpMussel เมื่อพยายามอัปโหลด."
 title_login: "เข้าสู่ระบบ"
 warning: "คำเตือน:"
-warning_php_1: "เวอร์ชัน PHP ของคุณไม่ได้รับการสนับสนุนอีกต่อไป! ปรับปรุงขอแนะนำ!"
-warning_php_2: "เวอร์ชัน PHP ของคุณมีความเสี่ยงสูง! ปรับปรุงขอแนะนำ!"
 warning_signatures_1: "ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!"
 
 info_some_useful_links: |

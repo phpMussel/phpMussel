@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.09.28).
+# This file: Italian language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>."
@@ -377,8 +377,6 @@ tip_updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di 
 tip_upload_test: "Salve, {username}.<br />La pagina di carica testare contiene un modulo per i caricamenti file standard, che permette di verificare se un file viene normalmente essere bloccata da phpMussel quando si cerca di caricarlo."
 title_login: "Accedi"
 warning: "Avvertimenti:"
-warning_php_1: "La vostra versione di PHP non è più supportata attivamente! Si consiglia di aggiornarlo!"
-warning_php_2: "La vostra versione PHP è severamente vulnerabile! Si consiglia fortemente di aggiornarlo!"
 warning_signatures_1: "Non ci sono file di firme attivi!"
 
 info_some_useful_links: |

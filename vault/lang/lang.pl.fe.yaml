@@ -10,13 +10,17 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.09.28).
+# This file: Polish language data for the front-end (last modified: 2019.10.23).
 ##/
 
+tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">dokumentacji</a>."
+tip_siginfo: "Witaj, {username}.<br />Strona informacji o podpisie zawiera podstawowe informacje o źródłach i typach aktualnie aktywnych podpisów."
+tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji phpMussel."
+tip_statistics_disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
+tip_updates: "Witaj, {username}.<br />Strona aktualizacji pozwala instalować, odinstalowywać i aktualizować różne składniki phpMussel (pakiet podstawowy, podpisy, wtyczki, pliki L10N, itp)."
+tip_upload_test: "Witaj, {username}.<br />Strona testowa przesyłania zawiera standardowy formularz przesyłania pliku. Możesz go użyć do przetestowania, czy plik normalnie zostałby zablokowany przez phpMussel."
 title_login: "Zaloguj sie"
 warning: "Ostrzeżenia:"
-warning_php_1: "Twoja wersja PHP nie jest już aktywnie obsługiwana! Aktualizacja jest zalecana!"
-warning_php_2: "Twoja wersja PHP jest bardzo niebezpieczne! Aktualizacja jest zdecydowanie zalecana!"
 warning_signatures_1: "Żadne pliki sygnatur nie są aktywne!"
 
 info_some_useful_links: |

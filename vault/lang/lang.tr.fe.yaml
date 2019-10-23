@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.09.28).
+# This file: Turkish language data for the front-end (last modified: 2019.10.23).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
@@ -379,8 +379,6 @@ tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın �
 tip_upload_test: "Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir."
 title_login: "Giriş"
 warning: "Uyarılar:"
-warning_php_1: "PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!"
-warning_php_2: "PHP sürümünüz ağır savunmasız! Güncelleme önerilir!"
 warning_signatures_1: "Hiçbir imza dosyası aktif değil!"
 
 info_some_useful_links: |
