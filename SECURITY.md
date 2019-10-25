@@ -21,9 +21,7 @@ In cases where reporting to the issues page or to publicly accessible channels w
 ## Currently Known Vulnerabilities
 
 ### Phar unserialization vulnerability.
-- **Description:** phpMussel's (former) reliance on PHP's phar wrapper for reading archives means that an unserialization vulnerability in PHP's phar wrapper is exploitable at the affected phpMussel versions.
+- **Description:** phpMussel's *former* reliance upon PHP's phar wrapper for reading archives means that an unserialization vulnerability in PHP's phar wrapper is exploitable at the affected phpMussel versions. There aren't any known cases of exploitation in the wild, but uploading a specially crafted file to an affected version allows arbitrary code execution (discovered, tested, and confirmed by [myself](https://github.com/Maikuolan)), so the risk factor should be regarded as __very high__. Newer phpMussel versions don't use PHP's phar wrapper, and are therefore unaffected.
 - **Related issues:** [#167](https://github.com/phpMussel/phpMussel/issues/167)
-- **Risk factor:** High (arbitrary code execution is theoretically possible).
-- **Known cases of exploitation in the wild:** None.
 - **Affected versions:** phpMussel >= 1.0.0 < 1.6.0
-- **Solution:** Update to phpMussel v1.6.0 or newer. Alternatively, if updating isn't possible, disable archive checking entirely by setting the "check_archives" configuration directive to "false" (thus avoiding execution of the affected parts of the codebase entirely). There doesn't seem to be any fix for the phar wrapper vulnerability, meaning that changing PHP versions won't do anything to solve the problem here.
+- **Solution:** Update to phpMussel v1.6.0 or newer. Alternatively, if updating isn't possible, disable archive checking entirely by setting the "*check_archives*" configuration directive to "*false*" (thus avoiding execution of the affected parts of the codebase entirely). There doesn't seem to be any fix for the phar wrapper vulnerability, meaning that changing PHP versions won't do anything to solve the problem here.
