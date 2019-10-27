@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.10.18).
+ * This file: Functions file (last modified: 2019.10.27).
  */
 
 /**
@@ -182,19 +182,18 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
     if ($decode) {
         $ostr .= $str;
         while (true) {
-            if (function_exists($phpMussel['Function']('GZ'))) {
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s*\(\s*["\'])(.{1,4096})(,\d)?(["\']\s*\))/i',
-                $str, $matches)) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('GZ', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i])) . '"',
-                            $str
-                        );
-                    }
-                    continue;
+            if (
+                function_exists($phpMussel['Function']('GZ')) &&
+                $c = preg_match_all('/(' . $phpMussel['Function']('GZ') . '\s*\(\s*["\'])(.{1,4096})(,\d)?(["\']\s*\))/i', $str, $matches)
+            ) {
+                for ($i = 0; $c > $i; $i++) {
+                    $str = str_ireplace(
+                        $matches[0][$i],
+                        '"' . $phpMussel['Function']('GZ', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i])) . '"',
+                        $str
+                    );
                 }
+                continue;
             }
             if ($c = preg_match_all(
                 '/(' . $phpMussel['Function']('B64') . '|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*' .
@@ -5309,5 +5308,8 @@ $phpMussel['RestoreErrorHandler'] = function () use (&$phpMussel) {
     restore_error_handler();
 };
 
-/** Load all default event handlers. */
-require $phpMussel['Vault'] . 'event_handlers.php';
+/** Make sure the vault is defined so that tests don't break. */
+if (isset($phpMussel['Vault'])) {
+    /** Load all default event handlers. */
+    require $phpMussel['Vault'] . 'event_handlers.php';
+}
