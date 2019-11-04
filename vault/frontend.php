@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.10.23).
+ * This file: Front-end handler (last modified: 2019.11.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -746,7 +746,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         ['Lib' => 'apcu', 'Name' => 'APCu'],
         ['Lib' => 'memcached', 'Name' => 'Memcached'],
         ['Lib' => 'redis', 'Name' => 'Redis'],
-        ['Lib' => 'pdo', 'Name' => 'PDO'],
+        ['Lib' => 'pdo', 'Name' => 'PDO', 'Drivers' => (class_exists('\PDO') ? \PDO::getAvailableDrivers() : [])],
         ['Lib' => 'bz2', 'Name' => 'Bz2'],
         ['Lib' => 'lzf', 'Name' => 'Lzf'],
         ['Lib' => 'rar', 'Name' => 'Rar'],
@@ -755,6 +755,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         if (extension_loaded($phpMussel['ThisExtension']['Lib'])) {
             $phpMussel['ExtVer'] = (new ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
             $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')</span>';
+            if (!empty($phpMussel['ThisExtension']['Drivers'])) {
+                $phpMussel['ThisResponse'] .= '<em class="txtGn"> – ' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '.</em>';
+            }
         } else {
             $phpMussel['ThisResponse'] = '<span class="txtRd">' . $phpMussel['L10N']->getString('response_no') . '</span>';
         }
