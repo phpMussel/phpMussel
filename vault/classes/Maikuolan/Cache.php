@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.10.23).
+ * A simple, unified cache handler (last modified: 2019.11.04).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -69,7 +69,7 @@ class Cache
     private $WorkingData = null;
 
     /** Prepared set query for PDO. */
-    const SET_QUERY = 'INSERT INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time) ON DUPLICATE KEY UPDATE `Data` = :data2, `Time` = :time2 WHERE `Key` = :key2';
+    const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
 
     /** Prepared get query for PDO. */
     const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
@@ -190,7 +190,7 @@ class Cache
             if (is_object($PDO)) {
                 $this->WorkingData = $PDO;
                 $this->Using = 'PDO';
-                return true;
+                return $this->checkTablesPDO();
             }
             unset($PDO);
         }
@@ -250,6 +250,62 @@ class Cache
     }
 
     /**
+     * Tries to check whether a table exists for the instance to use and
+     * automatically create it if it doesn't yet exist.
+     *
+     * Note that this hasn't been extensively tested against *every* database
+     * driver available to PDO, so it's therefore possible that this method may
+     * need to be refined/refactored/etc in the future, pending further
+     * research, testing and so on.
+     *
+     * @return bool True when it already exists or when it's successfully
+     *      created; False otherwise.
+     */
+    public function checkTablesPDO(): bool
+    {
+        /** Try to determine which kind of query to build. */
+        if (preg_match('~^sqlite\:[^\:]~i', $this->PDOdsn)) {
+            /** SQLite (excluding usage for in-memory and temporary tables). */
+            $Check = 'SELECT count(*) FROM `sqlite_master` WHERE `type` = \'table\' AND `name` = \'Cache\'';
+        } elseif (preg_match('~^informix\:~i', $this->PDOdsn)) {
+            /** Informix. */
+            $Check = 'SELECT count(*) FROM `systables` WHERE `tabname` = \'Cache\'';
+        } elseif (preg_match('~^firebird\:~i', $this->PDOdsn)) {
+            /** Firebird/Interbase. */
+            $Check = 'SELECT 1 FROM RDB$RELATIONS WHERE RDB$RELATION_NAME = \'Cache\'';
+        } else {
+            /** Standard fallback for everything else (MySQL, Oracle, PostgreSQL, etc). */
+            $Check = 'SELECT count(*) FROM `information_schema`.`tables` WHERE `TABLE_NAME` = \'Cache\'';
+        }
+
+        /** Try to build the query. Fail if exceptions are generated. */
+        try {
+            $Exists = $this->WorkingData->query($Check);
+        } catch (\Exception $e) {
+            return false;
+        }
+
+        /** In case of exceptions being silenced. */
+        if (!is_object($Exists) || !is_a($Exists, '\PDOStatement')) {
+            return false;
+        }
+
+        /** Time to perform our checks and to create the table if necessary. */
+        $Exists = $Exists->fetch(\PDO::FETCH_NUM);
+        if (empty($Exists[0])) {
+            $this->WorkingData->exec('CREATE TABLE Cache (Key TEXT PRIMARY KEY, Data TEXT, Time INT)');
+            $Exists = $this->WorkingData->query($Check);
+            if (is_object($Exists) && is_a($Exists, '\PDOStatement')) {
+                $Exists = $Exists->fetch(\PDO::FETCH_NUM);
+                if (empty($Exists[0])) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
      * Get a cache entry.
      *
      * @param string $Entry The name of the cache entry to get.
@@ -268,7 +324,7 @@ class Cache
                 $this->Modified = true;
             }
             $PDO = $this->WorkingData->prepare(self::GET_QUERY);
-            if ($PDO !== false && $PDO->execute(['key' => $Entry])) {
+            if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
                 return isset($Data['Data']) ? $this->unserializeEntry($Data['Data']) : false;
             }
@@ -325,14 +381,7 @@ class Cache
                 $TTL += time();
             }
             $PDO = $this->WorkingData->prepare(self::SET_QUERY);
-            if ($PDO !== false && $PDO->execute([
-                'key' => $Key,
-                'data' => $Value,
-                'time' => $TTL,
-                'key2' => $Key,
-                'data2' => $Value,
-                'time2' => $TTL
-            ])) {
+            if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
             return false;
@@ -371,7 +420,7 @@ class Cache
         }
         if ($this->Using === 'PDO') {
             $PDO = $this->WorkingData->prepare(self::DELETE_QUERY);
-            if ($PDO !== false && $PDO->execute(['key' => $Entry])) {
+            if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
             return false;
@@ -543,7 +592,7 @@ class Cache
             return false;
         }
         $PDO = $this->WorkingData->prepare(self::CLEAR_EXPIRED_QUERY);
-        if ($PDO !== false && $PDO->execute(['time' => time()])) {
+        if ($PDO !== false && $PDO->execute([':time' => time()])) {
             return ($PDO->rowCount() > 0);
         }
         return false;
