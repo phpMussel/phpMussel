@@ -21,6 +21,9 @@ Detailed version release guidelines for phpMussel can be found at:
   the latter). Added the checkTablesPDO method to try to automatically create a
   table for the Cache class instance to use when PDO is enabled.
 
+- [2019.11.04; Maikuolan]: Updated the installed/available extensions list to
+  be able to also list which related drivers are installed/available.
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 
