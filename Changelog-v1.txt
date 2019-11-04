@@ -16,6 +16,11 @@ Detailed version release guidelines for phpMussel can be found at:
   especially those unable to update due to hosting restrictions, and posed a
   general annoyance for some other users).
 
+- [2019.11.04; Maikuolan]: Updated the Cache class to use REPLACE INTO instead
+  of ON DUPLICATE KEY for SET_QUERY (SQLite and others don't properly support
+  the latter). Added the checkTablesPDO method to try to automatically create a
+  table for the Cache class instance to use when PDO is enabled.
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 
