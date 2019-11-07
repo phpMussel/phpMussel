@@ -1,4 +1,6 @@
 [general]
+; General configuration (any core configuration not belonging to other
+; categories).
 
 ; Unset variables and cache used by the script after scanning uploads? False =
 ; No; True = Yes [Default]. If you *aren't* using the script for anything other
@@ -181,7 +183,7 @@ maintenance_mode=false
 
 ; Defines which algorithm to use for all future passwords and sessions.
 ; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
-; (requires PHP >= 7.2.0).
+; (requires PHP &gt;= 7.2.0).
 default_algo='PASSWORD_DEFAULT'
 
 ; Track phpMussel usage statistics? True = Yes; False = No [Default].
@@ -194,6 +196,7 @@ disabled_channels='VirusTotal_HTTP,hpHosts_HTTP'
 
 
 [signatures]
+; Configuration for signatures, signature files, etc.
 
 ; A list of the active signature files, delimited by commas.
 Active=''
@@ -245,6 +248,7 @@ detect_encryption=true
 
 
 [files]
+; The specifics of how to handle files when scanning.
 
 ; Maximum number of files that phpMussel is allowed to scan when scanning
 ; uploads before aborting the scan and informing the user they are uploading
@@ -319,6 +323,7 @@ max_files_in_archives=0
 
 
 [attack_specific]
+; Relates to specific types of attacks.
 
 ; Search for PHP headers in files that are neither PHP files nor recognised
 ; archives. False = Off; True = On.
@@ -409,6 +414,7 @@ block_macros=false
 
 
 [compatibility]
+; Configuration for compatibility.
 
 ; This directive should generally be disabled unless it's required for correct
 ; functionality of phpMussel on your specific system. Normally, when disabled,
@@ -437,6 +443,7 @@ only_allow_images=false
 
 
 [heuristic]
+; Configuration for heuristic analysis.
 
 ; Some phpMussel signatures are intended to identify suspicious and potentially
 ; malicious indicators in files, without in themselves identifying those files
@@ -454,6 +461,7 @@ threshold=3
 
 
 [virustotal]
+; Configuration for Virus Total integration.
 
 ; Optionally, phpMussel is able to scan files using the Virus Total API as a
 ; way to provide a greatly enhanced level of protection against viruses,
@@ -516,6 +524,7 @@ vt_quota_time=1
 
 
 [urlscanner]
+; Configuration for the URL scanner.
 
 ; Enables API lookups to the hpHosts API when set to true.
 lookup_hphosts=true
@@ -541,6 +550,7 @@ cache_time=3600
 
 
 [legal]
+; Configuration for legal requirements.
 
 ; Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.
 pseudonymise_ip_addresses=true
@@ -551,6 +561,7 @@ privacy_policy=''
 
 
 [template_data]
+; Configuration for templates and themes.
 
 ; Default theme to use for phpMussel.
 theme='default'
@@ -568,6 +579,7 @@ css_url=''
 
 
 [PHPMailer]
+; Configuration for PHPMailer (used for two-factor authentication).
 
 ; A file for logging all events in relation to PHPMailer. Specify a filename,
 ; or leave blank to disable.
@@ -616,46 +628,42 @@ addReplyToName=''
 
 
 [supplementary_cache_options]
+; Supplementary cache options.
 
-; Unstable/Experimental! Specifies whether to try using APCu for caching.
-; Default = False.
+; Specifies whether to try using APCu for caching. Default = False.
 enable_apcu=false
 
-; Unstable/Experimental! Specifies whether to try using Memcached for caching.
-; Default = False.
+; Specifies whether to try using Memcached for caching. Default = False.
 enable_memcached=false
 
-; Unstable/Experimental! Specifies whether to try using Redis for caching.
-; Default = False.
+; Specifies whether to try using Redis for caching. Default = False.
 enable_redis=false
 
-; Unstable/Experimental! Specifies whether to try using PDO for caching.
-; Default = False.
+; Specifies whether to try using PDO for caching. Default = False.
 enable_pdo=false
 
-; Unstable/Experimental! Memcached host value. Default = "localhost".
+; Memcached host value. Default = "localhost".
 memcached_host='localhost'
 
-; Unstable/Experimental! Memcached port value. Default = "11211".
+; Memcached port value. Default = "11211".
 memcached_port=11211
 
-; Unstable/Experimental! Redis host value. Default = "localhost".
+; Redis host value. Default = "localhost".
 redis_host='localhost'
 
-; Unstable/Experimental! Redis port value. Default = "6379".
+; Redis port value. Default = "6379".
 redis_port=6379
 
-; Unstable/Experimental! Redis timeout value. Default = "2.5".
+; Redis timeout value. Default = "2.5".
 redis_timeout=2.5
 
-; Unstable/Experimental! PDO DSN value. Default =
-; "mysql:dbname=phpmussel;host=localhost;port=3306".
+; PDO DSN value. Default = "mysql:dbname=phpmussel;host=localhost;port=3306".
 pdo_dsn='mysql:dbname=phpmussel;host=localhost;port=3306'
 
-; Unstable/Experimental! PDO username.
+; PDO username.
 pdo_username=''
 
-; Unstable/Experimental! PDO password.
+; PDO password.
 pdo_password=''
 
 

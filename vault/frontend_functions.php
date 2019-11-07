@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.10.23).
+ * This file: Front-end functions file (last modified: 2019.11.05).
  */
 
 /**
@@ -2529,4 +2529,33 @@ $phpMussel['RGB'] = function ($String = '', $Mode = 0) {
         return $Hash;
     }
     return ['Values' => $Diff, 'Hash' => $Hash];
+};
+
+/**
+ * Provides stronger support for LTR inside RTL text.
+ *
+ * @param string $String The string to work with.
+ * @return string The string, modified if necessary.
+ */
+$phpMussel['LTRinRTF'] = function ($String = '') use (&$phpMussel) {
+
+    /** Get direction. */
+    $Direction = (
+        !isset($phpMussel['L10N']) ||
+        empty($phpMussel['L10N']->Data['Text Direction']) ||
+        $phpMussel['L10N']->Data['Text Direction'] !== 'rtl'
+    ) ? 'ltr' : 'rtl';
+
+    /** If the page isn't RTL, the string should be returned verbatim. */
+    if ($Direction !== 'rtl') {
+        return $String;
+    }
+
+    /** Modify the string to better suit RTL directionality and return it. */
+    return preg_replace(
+        ['~^(.+)-&gt;(.+)$~i', '~^(.+)➡(.+)$~i'],
+        ['\2&lt;-\1', '\2⬅\1'],
+        $String
+    );
+
 };

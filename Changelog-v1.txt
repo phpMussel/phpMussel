@@ -24,6 +24,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.11.04; Maikuolan]: Updated the installed/available extensions list to
   be able to also list which related drivers are installed/available.
 
+- [2019.11.07; Maikuolan]: Performed some aesthetic changes to the front-end
+  configuration page, replacing the directive index with a collapsible list,
+  added support for category descriptions, and replaced the extensions table
+  at the front-end homepage with a collapsible list.
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 
