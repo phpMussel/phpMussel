@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2019.09.23).
+# This file: Polish language data (last modified: 2019.11.07).
 ##/
 
 # Language settings.
@@ -49,7 +49,7 @@ cli_ln3: |
  Wpisz „q” i naciśnij Enter, aby wyjść.
 cli_pe1: "Nieprawidłowy plik PE!"
 cli_pe2: "Sekcje PE:"
-cli_signature_placeholder: "TWOJE-NAZWA-SYGNATURY"
+cli_signature_placeholder: "TWOJE-NAZWA-podpisY"
 cli_working: "Praca w toku"
 corrupted: "Wykryto uszkodzony PE"
 data_not_available: "Dane nie dostępne."
@@ -61,8 +61,8 @@ encrypted_archive: "Wykryto zaszyfrowane archiwum; Zaszyfrowane archiwa są nied
 error_log_header: "Jeśli nadal występuje którykolwiek z poniższych błędów, w celu zgłaszać je lub szukać wsparcia, utwórz nowy issue na stronie issues-ów phpMussel w GitHub, gdy będziesz mieć wolną chwilę, z przedmiotowymi błędami wraz z wszelkimi innymi istotnymi informacjami dołączonymi. Dzięki."
 failed_to_access: "Nie można uzyskać dostępu do „%s”!"
 field_date: "Data"
-field_header_hash_reconstruction: "Rekonstrukcja sygnatury hashów"
-field_header_pe_reconstruction: "Rekonstrukcja sygnaturów segmentowych PE"
+field_header_hash_reconstruction: "Rekonstrukcja podpisy hashów"
+field_header_pe_reconstruction: "Rekonstrukcja podpisów segmentowych PE"
 field_header_scan_results_why_flagged: "Wyniki skanowania (dlaczego oflagowane)"
 field_ip_address: "Adres IP"
 file: "Plik"
@@ -94,7 +94,7 @@ scan_missing_filename: "Brak nazwy pliku"
 scan_no_problems_found: "Nie znaleziono problemów."
 scan_not_archive: "Błąd (puste lub nie archiwum)!"
 scan_reading: "Czytam"
-scan_signature_file_missing: "Brak pliku sygnatury"
+scan_signature_file_missing: "Brak pliku podpisy"
 scan_tampering: "Wykryto potencjalnie niebezpieczne manipulowanie plików"
 scan_unauthorised_upload: "Wykryto nieautoryzowane manipulowanie przesyłania plików"
 scan_unauthorised_upload_or_misconfig: "Wykryto nieautoryzowane manipulowanie przesyłania plików lub błędną konfigurację! "
@@ -116,7 +116,7 @@ cli_commands: |
  - Zamknij CLI.
  - Aliasy: quit, exit.
  hash_file:%
- - Wygeneruj sygnatury skrótów z plików [Składnia: hash_file:algo nazwa_pliku].
+ - Wygeneruj podpisy skrótów z plików [Składnia: hash_file:algo nazwa_pliku].
  hash:%
  - Wygeneruj signature hash z ciągu [Składnia: hash:algo dane].
  algo
@@ -134,7 +134,7 @@ cli_commands: |
  pe_meta
  - Wyodrębnij metadane z pliku PE [Składnia: pe_meta nazwa_pliku].
  url_sig
- - Wygeneruj sygnatury skanera adresów URL [Składnia: url_sig dane].
+ - Wygeneruj podpisy skanera adresów URL [Składnia: url_sig dane].
  scan
  - Zeskanuj plik lub katalog [Składnia: scan nazwa_pliku].
  - Alias: s.

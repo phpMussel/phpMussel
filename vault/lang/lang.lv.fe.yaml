@@ -10,16 +10,28 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2019.10.23).
+# This file: Latvian language data for the front-end (last modified: 2019.11.07).
 ##/
 
+tip_2fa_sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
+tip_accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties phpMussel."
+tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
+tip_config: "Konfigurācijas lapa ļauj mainīt phpMussel konfigurāciju."
+tip_fe_cookie_warning: "Piezīme: phpMussel izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
+tip_file_manager: "Failu pārvaldnieks ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."
+tip_home: "Šī ir jūsu phpMussel instalācijas mājas lapa. Lai turpinātu, navigācijas izvēlnē kreisajā pusē atlasiet saiti."
+tip_login: "Noklusējuma lietotājvārds: <span class="txtRd">admin</span> – Noklusējuma parole: <span class="txtRd">password</span>"
+tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
+tip_pie_html: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
+tip_quarantine: "Šajā lapā ir uzskaitīti visi faili, kas pašlaik atrodas karantīnā, un atvieglo šo failu pārvaldību."
+tip_quarantine_disabled: "Piezīme: Karantīna pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
 tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
 tip_siginfo: "Parakstu informācijas lapā ir sniegta pamatinformācija par pašlaik aktīvo parakstu avotiem un veidiem."
 tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu phpMussel instalēšanu."
 tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus phpMussel komponentus (pamata pakete, paraksti, spraudņi, L10N faili, utt)."
 tip_upload_test: "Augšupielādes testa lapā ir standarta failu augšupielādes forma. Varat to izmantot, lai pārbaudītu, vai phpMussel parasti bloķē failu."
-title_login: "Pieslēgties"
+title_login: "Ielogošanās"
 warning: "Brīdinājumi:"
 warning_signatures_1: "Neviens paraksta fails nav aktīvs!"
 
@@ -65,7 +77,7 @@ info_some_useful_links: |
 msg_template_2fa: |
  <center><p>Sveiks, %1$s.<br />
  <br />
- Jūsu divu-faktoru autentifikācijas kods, lai pieteiktos phpMussel priekšplānā:</p>
+ Jūsu divu-faktoru autentifikācijas kods, lai ielogotos phpMussel:</p>
  <h1>%2$s</h1>
  <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.11.04).
+ * This file: Front-end handler (last modified: 2019.11.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -165,12 +165,14 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
     $phpMussel['FE']['Gradient_Degree'] = 90;
     $phpMussel['FE']['Half_Border'] = 'solid solid none none';
+    $phpMussel['FE']['45deg'] = '45deg';
 } else {
     $phpMussel['FE']['FE_Align'] = 'right';
     $phpMussel['FE']['FE_Align_Reverse'] = 'left';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
     $phpMussel['FE']['Gradient_Degree'] = 270;
     $phpMussel['FE']['Half_Border'] = 'solid none none solid';
+    $phpMussel['FE']['45deg'] = '-45deg';
 }
 
 /** A simple passthru for non-private theme images and related data. */
@@ -739,7 +741,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     unset($phpMussel['Remote-YAML-PHP-Array'], $phpMussel['Remote-YAML-PHP'], $phpMussel['ThisBranch'], $phpMussel['RemoteVerPath']);
 
     /** Extension availability. */
-    $phpMussel['FE']['Extensions'] = "\n";
+    $phpMussel['FE']['Extensions'] = [];
     foreach ([
         ['Lib' => 'pcre', 'Name' => 'PCRE'],
         ['Lib' => 'curl', 'Name' => 'cURL'],
@@ -754,19 +756,22 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     ] as $phpMussel['ThisExtension']) {
         if (extension_loaded($phpMussel['ThisExtension']['Lib'])) {
             $phpMussel['ExtVer'] = (new ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
-            $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')</span>';
+            $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')';
             if (!empty($phpMussel['ThisExtension']['Drivers'])) {
-                $phpMussel['ThisResponse'] .= '<em class="txtGn"> – ' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '.</em>';
+                $phpMussel['ThisResponse'] .= ', {' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '}';
             }
+            $phpMussel['ThisResponse'] .= '</span>';
         } else {
             $phpMussel['ThisResponse'] = '<span class="txtRd">' . $phpMussel['L10N']->getString('response_no') . '</span>';
         }
-        $phpMussel['FE']['Extensions'] .= sprintf(
-            '<tr><td class="h3">%s</td><td class="h3f">%s</td></tr>',
+        $phpMussel['FE']['Extensions'][] = '    <li><small>' . $phpMussel['LTRinRTF'](sprintf(
+            '%1$s➡%2$s',
             $phpMussel['ThisExtension']['Name'],
             $phpMussel['ThisResponse']
-        );
+        )) . '</small></li>';
     }
+    $phpMussel['FE']['Extensions'] = implode("\n", $phpMussel['FE']['Extensions']);
+    $phpMussel['FE']['ExtensionIsAvailable'] = $phpMussel['LTRinRTF']($phpMussel['L10N']->getString('label_extension') . '➡' . $phpMussel['L10N']->getString('label_installed_available'));
     unset($phpMussel['ExtVer'], $phpMussel['ThisResponse'], $phpMussel['ThisExtension']);
 
     /** Process warnings. */
@@ -1060,31 +1065,38 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     /** Directive template. */
     $phpMussel['FE']['ConfigRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config_row.html'));
 
-    /** Indexes. */
-    $phpMussel['FE']['Indexes'] = '            ';
+    $phpMussel['FE']['Indexes'] = '<ul class="pieul">';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    $phpMussel['FE']['ConfigFields'] = $phpMussel['RegenerateConfig'] = '';
+    $phpMussel['FE']['ConfigFields'] = sprintf(
+        '<style>.showlink::before,.hidelink::before{content:"➖";display:inline-block;margin-%1$s:6px}.hidelink::before{transform:rotate(%2$s)}</style>',
+        $phpMussel['FE']['FE_Align_Reverse'],
+        $phpMussel['FE']['45deg']
+    );
+    $phpMussel['RegenerateConfig'] = '';
     $phpMussel['ConfigModified'] = (!empty($phpMussel['QueryVars']['updated']) && $phpMussel['QueryVars']['updated'] === 'true');
     foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['CatKey'] => $phpMussel['CatValue']) {
         if (!is_array($phpMussel['CatValue'])) {
             continue;
         }
-        $phpMussel['RegenerateConfig'] .= '[' . $phpMussel['CatKey'] . "]\r\n\r\n";
+        $phpMussel['RegenerateConfig'] .= '[' . $phpMussel['CatKey'] . ']';
+        if ($phpMussel['CatInfo'] = $phpMussel['L10N']->getString('config_' . $phpMussel['CatKey']) ?: (
+            isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']]) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']] : ''
+        )) {
+            $phpMussel['CatInfo'] = '<br /><em>' . $phpMussel['CatInfo'] . '</em>';
+            $phpMussel['RegenerateConfig'] .= "\r\n; " . wordwrap(strip_tags($phpMussel['CatInfo']), 77, "\r\n; ");
+        }
+        $phpMussel['RegenerateConfig'] .= "\r\n\r\n";
         $phpMussel['FE']['ConfigFields'] .= sprintf(
                 '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-                '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-                '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-                "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+                '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
+                '<a class="hidelink" id="%1$s-hidelink" %2$s href="#" onclick="javascript:showid(\'%1$s-showlink\');hideid(\'%1$s-hidelink\');hide(\'%1$s-row\')">%1$s</a>' .
+                "%3\$s</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
             $phpMussel['CatKey'],
-            'style="display:none"'
+            'style="display:none"',
+            $phpMussel['CatInfo']
         );
-        $phpMussel['FE']['Indexes'] .= sprintf(
-            '<a id="%1$s-ishowlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-ihidelink" style="display:none" href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-            "<br /><br />\n            ",
-            $phpMussel['CatKey']
-        );
+        $phpMussel['CatData'] = '';
         foreach ($phpMussel['CatValue'] as $phpMussel['DirKey'] => $phpMussel['DirValue']) {
             $phpMussel['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
             if (empty($phpMussel['DirValue']['type']) || !isset($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']])) {
@@ -1092,8 +1104,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             $phpMussel['ThisDir']['DirLangKey'] = 'config_' . $phpMussel['CatKey'] . '_' . $phpMussel['DirKey'];
             $phpMussel['ThisDir']['DirLangKeyOther'] = $phpMussel['ThisDir']['DirLangKey'] . '_other';
-            $phpMussel['ThisDir']['DirName'] = $phpMussel['CatKey'] . '-&gt;' . $phpMussel['DirKey'];
-            $phpMussel['FE']['Indexes'] .= '<span class="' . $phpMussel['CatKey'] . '-index" style="display:none"><a href="#' . $phpMussel['ThisDir']['DirLangKey'] . '">' . $phpMussel['ThisDir']['DirName'] . "</a><br /><br /></span>\n            ";
+            $phpMussel['ThisDir']['DirName'] = $phpMussel['LTRinRTF']($phpMussel['CatKey'] . '➡' . $phpMussel['DirKey']);
+            $phpMussel['ThisDir']['Friendly'] = $phpMussel['L10N']->getString($phpMussel['ThisDir']['DirLangKey'] . '_label') ?: (
+                isset($phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label']) ? $phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label'] : ''
+            ) ?: $phpMussel['DirKey'];
+            $phpMussel['CatData'] .= sprintf(
+                '<li><a onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')" href="#%2$s">%3$s</a></li>',
+                $phpMussel['CatKey'],
+                $phpMussel['ThisDir']['DirLangKey'],
+                $phpMussel['ThisDir']['Friendly']
+            );
             $phpMussel['ThisDir']['DirLang'] =
                 $phpMussel['L10N']->getString($phpMussel['ThisDir']['DirLangKey']) ?:
                 $phpMussel['L10N']->getString('config_' . $phpMussel['CatKey']) ?:
@@ -1355,6 +1375,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['L10N']->Data + $phpMussel['ThisDir'], $phpMussel['FE']['ConfigRow']
             );
         }
+        $phpMussel['CatKeyFriendly'] = $phpMussel['L10N']->getString('config_' . $phpMussel['CatKey'] . '_label') ?: (
+            isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label']) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label'] : ''
+        ) ?: $phpMussel['CatKey'];
+        $phpMussel['FE']['Indexes'] .= sprintf(
+            '<li><span class="comCat" style="cursor:pointer">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            $phpMussel['CatKeyFriendly'],
+            $phpMussel['CatData']
+        );
         $phpMussel['FE']['ConfigFields'] .= "</table></span>\n";
         $phpMussel['RegenerateConfig'] .= "\r\n";
     }
@@ -1371,11 +1399,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         }
     }
 
+    $phpMussel['FE']['Indexes'] .= '</ul>';
+
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['L10N']->Data + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config.html'))
-    );
+    ) . $phpMussel['MenuToggle'];
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
@@ -1553,7 +1583,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     /** Cleanup. */
     unset($phpMussel['Components']['Files']);
 
-    /** Indexes. */
     $phpMussel['FE']['Indexes'] = [];
 
     /** A form has been submitted. */
