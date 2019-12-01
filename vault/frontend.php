@@ -1085,7 +1085,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         )) {
             $phpMussel['CatInfo'] = '<br /><em>' . $phpMussel['CatInfo'] . '</em>';
             $phpMussel['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
-                ['&amp;', '&gt;', '&lt;'],
+                ['&amp;', '&lt;', '&gt;'],
                 ['&', '<', '>'],
                 strip_tags($phpMussel['CatInfo'])
             ), 77, "\r\n; ");
@@ -1132,7 +1132,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['DirValue']['autocomplete']
             );
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(str_replace(
-                ['&amp;', '&gt;', '&lt;'],
+                ['&amp;', '&lt;', '&gt;'],
                 ['&', '<', '>'],
                 strip_tags($phpMussel['ThisDir']['DirLang'])
             ), 77, "\r\n; ") . "\r\n";
