@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.11.05).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.11.28).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
@@ -65,7 +65,7 @@ config_files_max_recursion: "最大存檔遞歸深度限。​默認=3。"
 config_files_max_uploads: "最大允許數值的文件為掃描當文件上傳掃描之前中止掃描和告訴用戶他們是上傳太多在同一時間！​提供保護針對一個理論攻擊哪裡一個攻擊者嘗試DDoS您的系統或CMS通過超載phpMussel以減速PHP進程到一個停止。​推薦：10。​您可能想增加或減少這個數值，​根據速度的您的硬件。​注意這個數值不交待為或包括存檔內容。"
 config_general: "基本配置（任何不屬於其他類別的核心配置）。"
 config_general_cleanup: "掃描上傳後，銷毀變量和緩存？​False（假）=不要銷毀。​True（真）=銷毀【標準】。​如果您不使用該腳本進行掃描上傳以外的任何操作，您應該將其設置為<code>true</code>以最小化內存使用量。​否則，您應該將其設置為<code>false</code>，以便在內存中保留執行phpMussel所需的數據，而無需不必要地重新加載它。​無影響在CLI模式。"
-config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。"
+config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_delete_on_sight: "激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。"
 config_general_disable_cli: "關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】；True（真）=關閉CLI模式。"
 config_general_disable_frontend: "關閉前端訪問嗎？​前端訪問可以使phpMussel更易於管理，​但也可能是潛在的安全風險。​建議管理phpMussel通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問；True（真）=關閉前端訪問【標準】。"
@@ -76,7 +76,7 @@ config_general_error_log: "用於記錄檢測到的任何非致命錯誤的文�
 config_general_forbid_on_block: "phpMussel應該發送<code>403</code>頭隨著文件上傳受阻信息，​或堅持標準<code>200 OK</code>？​False（假）=發送<code>200</code>；True（真）=發送<code>403</code>【標準】。"
 config_general_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_general_honeypot_mode: "當這個指令（蜜罐模式）是激活，​phpMussel將嘗試檢疫所有文件上傳它遇到，​無論的如果文件上傳是匹配任何包括簽名，​和沒有掃描或分析的那些文件上傳將發生。​這個功能應有用為那些想使用的phpMussel為目的病毒或惡意軟件研究，​但它是不推薦激活這個功能如果預期的用的phpMussel通過用戶是為標準文件上傳掃描，​也不推薦使用蜜罐功能為目的以外蜜罐。​作為標準，​這個指令是關閉。​False（假）=是關閉【標準】；True（真）=是激活。"
-config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）標準是<code>REMOTE_ADDR</code>。​警告！​不要修改此除非您知道什麼您做著！"
+config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準phpMussel語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
 config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"

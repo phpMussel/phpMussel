@@ -49,7 +49,7 @@ cli_ln3: |
  Wpisz „q” i naciśnij Enter, aby wyjść.
 cli_pe1: "Nieprawidłowy plik PE!"
 cli_pe2: "Sekcje PE:"
-cli_signature_placeholder: "TWOJE-NAZWA-podpisY"
+cli_signature_placeholder: "TWOJE-NAZWA-PODPISY"
 cli_working: "Praca w toku"
 corrupted: "Wykryto uszkodzony PE"
 data_not_available: "Dane nie dostępne."

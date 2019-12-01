@@ -10,9 +10,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.11.07).
+# This file: Polish language data for the front-end (last modified: 2019.12.01).
 ##/
 
+state_maintenance_mode: "Ostrzeżenie: Tryb konserwacji jest włączony!"
+state_password_not_valid: "Ostrzeżenie: To konto nie używa prawidłowego hasła!"
+state_quarantine:
+ - "W kwarantannie znajduje się %s plik."
+ - "W kwarantannie znajdują się %s pliki."
+ - "W kwarantannie znajduje się %s plików."
+switch-descending-order-set-false: "Sortuj w kolejności rosnącej"
+switch-descending-order-set-true: "Sortuj w kolejności malejącej"
+switch-hide-non-outdated-set-false: "Nie ukrywaj aktualnego"
+switch-hide-non-outdated-set-true: "Ukryj aktualne"
+switch-hide-unused-set-false: "Nie ukrywaj nieużywanego"
+switch-hide-unused-set-true: "Ukryj nieużywane"
+switch-sort-by-name-set-false: "Sortuj według identyfikatora"
+switch-sort-by-name-set-true: "Sortuj według nazwy"
 tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
 tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika phpMussel."
 tip_cache_data: "Witaj, {username}.<br />Tutaj możesz przejrzeć zawartość pamięci podręcznej."

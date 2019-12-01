@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2019.09.23).
+# This file: Latvian language data (last modified: 2019.11.17).
 ##/
 
 # Language settings.
@@ -79,7 +79,7 @@ invalid_data: "Nederīgi dati!"
 invalid_file: "Nederīgs fails"
 invalid_url: "Nederīgs URL!"
 macros_not_permitted: "Makro nav atļauts"
-ok: "OK"
+ok: "Labi"
 only_allow_images: "Nav atļauts augšupielādēt failus, kas nav attēli"
 quarantined_as: "Ievietots karantīnā kā "/vault/quarantine/%s.qfu"."
 recursive: "Ir pārsniegts rekursijas dziļuma ierobežojums"

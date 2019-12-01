@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.11.06).
+ * This file: Front-end handler (last modified: 2019.12.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1084,7 +1084,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']]) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey']] : ''
         )) {
             $phpMussel['CatInfo'] = '<br /><em>' . $phpMussel['CatInfo'] . '</em>';
-            $phpMussel['RegenerateConfig'] .= "\r\n; " . wordwrap(strip_tags($phpMussel['CatInfo']), 77, "\r\n; ");
+            $phpMussel['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
+                ['&amp;', '&gt;', '&lt;'],
+                ['&', '<', '>'],
+                strip_tags($phpMussel['CatInfo'])
+            ), 77, "\r\n; ");
         }
         $phpMussel['RegenerateConfig'] .= "\r\n\r\n";
         $phpMussel['FE']['ConfigFields'] .= sprintf(
@@ -1127,7 +1131,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 ' autocomplete="%s"',
                 $phpMussel['DirValue']['autocomplete']
             );
-            $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
+            $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(str_replace(
+                ['&amp;', '&gt;', '&lt;'],
+                ['&', '<', '>'],
+                strip_tags($phpMussel['ThisDir']['DirLang'])
+            ), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
                 if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
