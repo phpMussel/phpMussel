@@ -58,7 +58,7 @@ timeOffset=0
 timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
 
 ; Where to find the IP address of connecting requests? (Useful for services
-; such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't
+; such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't
 ; change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
 
@@ -183,7 +183,7 @@ maintenance_mode=false
 
 ; Defines which algorithm to use for all future passwords and sessions.
 ; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
-; (requires PHP &gt;= 7.2.0).
+; (requires PHP <= 7.2.0), PASSWORD_ARGON2ID (requires PHP <= 7.3.0).
 default_algo='PASSWORD_DEFAULT'
 
 ; Track phpMussel usage statistics? True = Yes; False = No [Default].

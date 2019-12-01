@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.11.05).
+# This file: Korean language data for the front-end (last modified: 2019.11.28).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
@@ -67,7 +67,7 @@ config_files_max_uploads: "한 번에 스캔 할 수있는 업로드 파일 수 
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_FrontEndLog: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_cleanup: "처음 업로드 후 변수 및 캐시 설정을 클리어 여부에 대한 스크립트입니다. <code>false</code> (가짜) = 아니오; <code>true</code> (진정한) = 예 (Default / 기본 설정). 업로드 스캔 이외의 용도로 스크립트를 사용하지 않는 경우 메모리 사용을 최소화하려면이 값을 <code>true</code>로 설정해야합니다. 그렇지 않으면, 필요에 따라 다시로드하지 않고 phpMussel을 실행하는 데 필요한 데이터를 메모리에 유지하려면 <code>false</code>로 설정해야합니다. CLI 모드에서 영향을주지 않습니다."
-config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다)."
+config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
 config_general_delete_on_sight: "이 지시문을 사용하면 감지 기준 (서명이든 뭐든)에 있던 업로드 파일은 즉시 삭제됩니다. 클린 판단 된 파일은 그대로입니다. 아카이브의 경우, 문제의 파일이 일부라도 아카이브 모든이 삭제 대상이됩니다. 업로드 파일 검사에서는 본 지시어를 활성화 할 필요는 없습니다. 왜냐하면 PHP는 스크립트 실행 후 자동으로 캐시의 내용을 파기하기 때문입니다. 즉, 파일이 이동되거나 복사되거나 삭제되지 않는 한, PHP는 서버에 업로드 한 파일을 남겨 두는 것은 보통 없습니다. 이 지시어는 보안에 공을들이는 목적으로 설치되어 있습니다. PHP는 드물게 예상치 못한 행동을 할 수 있기 때문입니다. <code>false</code> = 스캔 후 파일은 그대로 (기본 설정). <code>true</code> = 스캔 후 깨끗해야 즉시 삭제합니다."
 config_general_disable_cli: "CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. <code>false</code> = CLI 모드를 활성화합니다 (Default / 기본 설정); <code>true</code> = CLI 모드를 해제합니다."
 config_general_disable_frontend: "프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 phpMussel을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정)."
