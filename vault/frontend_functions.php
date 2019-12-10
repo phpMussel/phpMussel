@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.11.05).
+ * This file: Front-end functions file (last modified: 2019.12.10).
  */
 
 /**
@@ -1507,7 +1507,7 @@ $phpMussel['UpdatesHandler-Uninstall'] = function (string $ID) use (&$phpMussel)
             "\n",
             $OldMetaMatches
         ), $OldMeta);
-        array_walk($phpMussel['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+        array_walk($phpMussel['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$phpMussel, &$BytesRemoved) {
             if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
                 if (file_exists($phpMussel['Vault'] . $ThisFile)) {
                     $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFile);

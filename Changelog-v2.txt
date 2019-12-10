@@ -29,6 +29,9 @@ Detailed version release guidelines for phpMussel can be found at:
   added support for category descriptions, and replaced the extensions table
   at the front-end homepage with a collapsible list.
 
+- [2019.12.10; Bug-fix; Maikuolan]: Undefined variable notice when uninstalling
+  components via the front-end updates page; Fixed.
+
 === Version/Release 2.1.0 ===
 MINOR RELEASE.
 

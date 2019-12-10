@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.1-DEV+19334694
+ Version: 2.1.1-DEV+19343645
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -147,7 +147,7 @@ phpMussel Front-End:
    - 7e0321f3d6dc41b620573710a011d7d07e1cfc19943c06856e6adfbcaf22a5e1:929
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
    - 6e3addc8aaadba919ec35a265828a9429170aef9c76c240d79eb48ea4e0d5504:161904
-   - 7b89fad2a277bd1677edca034d85c95b788a0b7393516aa51dbf0ad6352b8789:116509
+   - f5fc4c2404a64aa946db6ff50a8d6c141ef5ebf8622b6a807b8ebfde70a52b18:116525
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
