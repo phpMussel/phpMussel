@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.10).
+ * This file: Front-end functions file (last modified: 2019.12.11).
  */
 
 /**
@@ -1771,7 +1771,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                         mkdir($ThisPath);
                     }
                 }
-                if (!is_writable($phpMussel['Vault'] . $RemoteFileTo)) {
+                if (file_exists($phpMussel['Vault'] . $RemoteFileTo) && !is_writable($phpMussel['Vault'] . $RemoteFileTo)) {
                     $RepairFailed = true;
                     continue;
                 }
