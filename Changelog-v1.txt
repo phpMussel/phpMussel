@@ -32,6 +32,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2019.12.10; Bug-fix; Maikuolan]: Undefined variable notice when uninstalling
   components via the front-end updates page; Fixed.
 
+- [2019.12.11; Bug-fix; Maikuolan]: Internal duplication of component metadata
+  at the downstream could sometimes occur in some specific contexts, thereby
+  preventing the front-end updates page offering the option to repair the
+  affected components; Fixed.
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 

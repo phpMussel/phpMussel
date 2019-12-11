@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.01).
+ * This file: Front-end handler (last modified: 2019.12.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1675,6 +1675,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
+                    $phpMussel['Components']['RemoteMeta'] = [];
                     $phpMussel['YAML']->process(
                         substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
                         $phpMussel['Components']['RemoteMeta']
@@ -1745,6 +1746,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                     $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtGn';
                     $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_already_up_to_date');
                     if (isset(
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']],
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files'],
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To'],
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['From'],
