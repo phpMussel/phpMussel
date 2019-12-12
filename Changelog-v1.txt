@@ -37,6 +37,9 @@ Detailed version release guidelines for phpMussel can be found at:
   preventing the front-end updates page offering the option to repair the
   affected components; Fixed.
 
+- [2019.12.12; Maikuolan]: Added a "clear all" button to the cache data page.
+  Refer github.com/CIDRAM/CIDRAM/issues/155
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.11).
+ * This file: Front-end handler (last modified: 2019.12.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1431,10 +1431,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
     if ($phpMussel['FE']['ASYNC']) {
 
         /** Delete a cache entry. */
-        if (!empty($_POST['do']) && $_POST['do'] === 'delete') {
+        if (isset($_POST['do']) && $_POST['do'] === 'delete') {
             if (!empty($_POST['cdi'])) {
-                $phpMussel['CleanCache']($_POST['cdi']);
-                if ($phpMussel['Cache']->Using) {
+                if ($_POST['cdi'] === '__') {
+                    $phpMussel['CleanCache']();
+                    $phpMussel['Cache']->clearCache();
+                } else {
+                    $phpMussel['CleanCache']();
                     $phpMussel['Cache']->deleteEntry($_POST['cdi']);
                 }
             } elseif (!empty($_POST['fecdi'])) {
@@ -1530,8 +1533,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
             if (empty($phpMussel['CacheSourceData'])) {
                 continue;
             }
-            $phpMussel['FE']['CacheData'] .= '<div class="ng1"><span class="s">' . $phpMussel['CacheSourceName'] . '</span><br /><br /><ul class="pieul">' . $phpMussel['ArrayToClickableList'](
-                $phpMussel['CacheSourceData'], ($phpMussel['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0, $phpMussel['CacheSourceName']
+            $phpMussel['FE']['CacheData'] .= '<div class="ng1" id="__' . ($phpMussel['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'FE' : '') . 'Container"><span class="s">' . $phpMussel['CacheSourceName'] . ' – (<span style="cursor:pointer" onclick="javascript:' . (
+                $phpMussel['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'
+            ) . '(\'__\')"><code class="s">' . $phpMussel['L10N']->getString('field_clear_all') . '</code></span>)</span><br /><br /><ul class="pieul">' . $phpMussel['ArrayToClickableList'](
+                $phpMussel['CacheSourceData'],
+                ($phpMussel['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'),
+                0,
+                $phpMussel['CacheSourceName']
             ) . '</ul></div>';
         }
         unset($phpMussel['CacheSourceData'], $phpMussel['CacheSourceName'], $phpMussel['CacheArray']);
