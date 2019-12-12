@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.11).
+ * This file: Front-end functions file (last modified: 2019.12.12).
  */
 
 /**
@@ -152,7 +152,18 @@ $phpMussel['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string 
 
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
-        $phpMussel['Cache']->deleteEntry($Entry);
+        if ($Entry === '__') {
+            $phpMussel['Cache']->clearCache();
+        } else {
+            $phpMussel['Cache']->deleteEntry($Entry);
+        }
+        return;
+    }
+
+    /** Default process for clearing all. */
+    if ($Entry === '__') {
+        $Source = "\n";
+        $Rebuild = true;
         return;
     }
 
