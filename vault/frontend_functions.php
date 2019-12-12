@@ -1095,7 +1095,10 @@ $phpMussel['AppendTests'] = function (array &$Component, $ReturnState = false) u
  * @return bool True when the path is traversal-free. False when traversal has been detected.
  */
 $phpMussel['Traverse'] = function ($Path) {
-    return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
+    return !preg_match(
+        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1f\[-^`?*$])~i',
+        str_replace("\\", '/', $Path)
+    );
 };
 
 /**

@@ -38,7 +38,10 @@ Detailed version release guidelines for phpMussel can be found at:
   affected components; Fixed.
 
 - [2019.12.12; Maikuolan]: Added a "clear all" button to the cache data page.
-  Refer github.com/CIDRAM/CIDRAM/issues/155
+
+- [2019.12.12; Bug-fix; Maikuolan]: The directory traversal detection code was
+  unintentionally catching .htaccess files, thereby causing unnecessary forced
+  failures on some specific front-end operations; Fixed.
 
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
