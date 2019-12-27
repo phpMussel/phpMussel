@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.12).
+ * This file: Front-end functions file (last modified: 2019.12.27).
  */
 
 /**
@@ -215,7 +215,14 @@ $phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
 
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
-        return $phpMussel['Cache']->getEntry($Entry);
+
+        /** Check whether already fetched for this instance. */
+        if (isset($phpMussel['CacheEntry-' . $Entry])) {
+            return $phpMussel['CacheEntry-' . $Entry];
+        }
+
+        /** Fetch the cache entry. */
+        return $phpMussel['CacheEntry-' . $Entry] = $phpMussel['Cache']->getEntry($Entry);
     }
 
     /** Default process. */
@@ -796,56 +803,32 @@ $phpMussel['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$
 /** Used to format numbers according to the specified configuration. */
 $phpMussel['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($phpMussel['Config']['general']['numbers']);
 
-/** Used by the Number_L10N_JS closure (separated out to improve memory footprint). */
-$phpMussel['Number_L10N_JS_Sets'] = [
-    'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
-    'NoSep-2' => [',', '', 3, 'return l10nd', 1],
-    'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
-    'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
-    'Latin-3' => [',', '.', 3, 'return l10nd', 1],
-    'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
-    'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
-    'China-1' => ['.', ',', 4, 'return l10nd', 1],
-    'India-1' => ['.', ',', 2, 'return l10nd', 0],
-    'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
-    'India-3' => ['.', ',', 2, 'var nls=[\'૦\',\'૧\',\'૨\',\'૩\',\'૪\',\'૫\',\'૬\',\'૭\',\'૮\',\'૯\'];return nls[l10nd]||l10nd', 0],
-    'India-4' => ['.', ',', 2, 'var nls=[\'੦\',\'੧\',\'੨\',\'੩\',\'੪\',\'੫\',\'੬\',\'੭\',\'੮\',\'੯\'];return nls[l10nd]||l10nd', 0],
-    'India-5' => ['.', ',', 2, 'var nls=[\'೦\',\'೧\',\'೨\',\'೩\',\'೪\',\'೫\',\'೬\',\'೭\',\'೮\',\'೯\'];return nls[l10nd]||l10nd', 0],
-    'India-6' => ['.', ',', 2, 'var nls=[\'౦\',\'౧\',\'౨\',\'౩\',\'౪\',\'౫\',\'౬\',\'౭\',\'౮\',\'౯\'];return nls[l10nd]||l10nd', 0],
-    'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-    'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-    'Arabic-3' => ['٫', '٬', 3, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 1],
-    'Arabic-4' => ['٫', '٬', 2, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 0],
-    'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
-    'Burmese-1' => ['.', '', 3, 'var nls=[\'၀\',\'၁\',\'၂\',\'၃\',\'၄\',\'၅\',\'၆\',\'၇\',\'၈\',\'၉\'];return nls[l10nd]||l10nd', 1],
-    'Khmer-1' => [',', '.', 3, 'var nls=[\'០\',\'១\',\'២\',\'៣\',\'៤\',\'៥\',\'៦\',\'៧\',\'៨\',\'៩\'];return nls[l10nd]||l10nd', 1],
-    'Lao-1' => ['.', '', 3, 'var nls=[\'໐\',\'໑\',\'໒\',\'໓\',\'໔\',\'໕\',\'໖\',\'໗\',\'໘\',\'໙\'];return nls[l10nd]||l10nd', 1],
-    'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
-    'Thai-2' => ['.', '', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
-];
-
 /**
  * Generates JavaScript code for localising numbers locally.
  *
  * @return string The JavaScript code.
  */
 $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
-    $Base =
+    if ($phpMussel['NumberFormatter']->ConversionSet === 'Western') {
+        $ConvJS = 'return l10nd';
+    } else {
+        $ConvJS = 'var nls=[' . $phpMussel['NumberFormatter']->getSetCSV(
+            $phpMussel['NumberFormatter']->ConversionSet
+        ) . '];return nls[l10nd]||l10nd';
+    }
+    return sprintf(
         'function l10nn(l10nd){%4$s};function nft(r){var x=r.indexOf(\'.\')!=-1?' .
         '\'%1$s\'+r.replace(/^.*\./gi,\'\'):\'\',n=r.replace(/\..*$/gi,\'\').rep' .
         'lace(/[^0-9]/gi,\'\'),t=n.length;for(e=\'\',b=%5$d,i=1;i<=t;i++){b>%3$d' .
         '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
         'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
-        '1)))+y}return e+y}';
-    if (
-        !empty($phpMussel['Config']['general']['numbers']) &&
-        isset($phpMussel['Number_L10N_JS_Sets'][$phpMussel['Config']['general']['numbers']])
-    ) {
-        $Set = $phpMussel['Number_L10N_JS_Sets'][$phpMussel['Config']['general']['numbers']];
-    } else {
-        $Set = $phpMussel['Number_L10N_JS_Sets']['Latin-1'];
-    }
-    return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
+        '1)))+y}return e+y}',
+        $phpMussel['NumberFormatter']->DecimalSeparator,
+        $phpMussel['NumberFormatter']->GroupSeparator,
+        $phpMussel['NumberFormatter']->GroupSize,
+        $ConvJS,
+        $phpMussel['NumberFormatter']->GroupOffset + 1
+    );
 };
 
 /**

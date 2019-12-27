@@ -43,6 +43,9 @@ Detailed version release guidelines for phpMussel can be found at:
   unintentionally catching .htaccess files, thereby causing unnecessary forced
   failures on some specific front-end operations; Fixed.
 
+- [2019.12.27; Bug-fix; Maikuolan]: The cache handler's mechanism for creating
+  missing tables in PDO used a malformed query and didn't work properly; Fixed.
+
 === Version/Release 1.13.0 ===
 MINOR RELEASE.
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.09.17).
+ * This file: CLI handler (last modified: 2019.12.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -40,10 +40,11 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
     /** Triggered by the forked child process in CLI-mode. */
     if ($phpMussel['cli_args'][1] == 'cli_scan') {
-        /** Fetch the command. **/
+
+        /** Fetch the command. */
         $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') ?: $phpMussel['cli_args'][2]);
 
-        /** Scan a file or directory. **/
+        /** Scan a file or directory. */
         if ($phpMussel['cmd'] === 'scan') {
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
                 $phpMussel['PrepareHashCache']();
@@ -79,8 +80,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             die;
         }
 
-        /** Generate a hash signature using a file or directory. **/
-        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file' || substr($phpMussel['cmd'], 0, 10) === 'hash_file:') {
+        /** Generate a hash signature using a file or directory. */
+        if (preg_match('~^(?:m(?:d5_file)?$|sha1_file$|hash_file\:)~', $phpMussel['cmd'])) {
             if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm') {
                 $phpMussel['ThisAlgo'] = 'md5';
             } elseif ($phpMussel['cmd'] === 'sha1_file') {
@@ -90,27 +91,43 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             }
             if (in_array($phpMussel['ThisAlgo'], hash_algos())) {
                 echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
-                    $HashMe = $phpMussel['ReadFile']($Params, 0, true);
-                    return hash($phpMussel['ThisAlgo'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                    if (filter_var($Params, FILTER_VALIDATE_URL)) {
+                        $Data = $phpMussel['Request']($Params);
+                    } elseif (is_file($Params) && is_readable($Params)) {
+                        $Data = $phpMussel['ReadFile']($Params, 0, true);
+                    }
+                    if (empty($Data)) {
+                        return $phpMussel['L10N']->getString('invalid_data') . "\n";
+                    }
+                    return hash($phpMussel['ThisAlgo'], $Data) . ':' . strlen($Data) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
                 });
             } else {
                 echo $phpMussel['L10N']->getString('cli_algo_not_supported') . "\n";
             }
         }
 
-        /** Generate a CoEx signature using a file. **/
+        /** Generate a CoEx signature using a file. */
         if ($phpMussel['cmd'] === 'coex_file') {
             echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
-                $HashMe = $phpMussel['ReadFile']($Params, 0, true);
-                return
-                    '$md5:' . md5($HashMe) . ';' .
-                    '$sha:' . sha1($HashMe) . ';' .
-                    '$str_len:' . strlen($HashMe) . ';' .
-                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                if (filter_var($Params, FILTER_VALIDATE_URL)) {
+                    $Data = $phpMussel['Request']($Params);
+                } elseif (is_file($Params) && is_readable($Params)) {
+                    $Data = $phpMussel['ReadFile']($Params, 0, true);
+                }
+                if (empty($Data)) {
+                    return $phpMussel['L10N']->getString('invalid_data') . "\n";
+                }
+                return sprintf(
+                    '$md5:%1$s;$sha:%2$s;$str_len:%3$s;%4$s',
+                    md5($Data),
+                    sha1($Data),
+                    strlen($Data),
+                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n"
+                );
             });
         }
 
-        /** Fetch PE metadata. **/
+        /** Fetch PE metadata. */
         if ($phpMussel['cmd'] === 'pe_meta') {
             echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
                 $Data = $phpMussel['ReadFile']($Params, 0, true);
@@ -221,16 +238,16 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             cli_set_process_title($phpMussel['ScriptIdent'] . ' - ' . $phpMussel['L10N']->getString('cli_working') . '...');
         }
 
-        /** Fetch the command. **/
+        /** Fetch the command. */
         $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['stdin_clean'], ' ') ?: $phpMussel['stdin_clean']);
 
-        /** Exit CLI-mode. **/
+        /** Exit CLI-mode. */
         if ($phpMussel['cmd'] === 'quit' || $phpMussel['cmd'] === 'q' || $phpMussel['cmd'] === 'exit') {
             die;
         }
 
-        /** Generate a hash signature using a file or directory. **/
-        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file' || substr($phpMussel['cmd'], 0, 10) === 'hash_file:') {
+        /** Generate a hash signature using a file or directory. */
+        if (preg_match('~^(?:m(?:d5_file)?$|sha1_file$|hash_file\:)~', $phpMussel['cmd'])) {
             if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm') {
                 $phpMussel['ThisAlgo'] = 'md5';
             } elseif ($phpMussel['cmd'] === 'sha1_file') {
@@ -240,34 +257,50 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             }
             if (in_array($phpMussel['ThisAlgo'], hash_algos())) {
                 echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
-                    $HashMe = $phpMussel['ReadFile']($Params, 0, true);
-                    return hash($phpMussel['ThisAlgo'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                    if (filter_var($Params, FILTER_VALIDATE_URL)) {
+                        $Data = $phpMussel['Request']($Params);
+                    } elseif (is_file($Params) && is_readable($Params)) {
+                        $Data = $phpMussel['ReadFile']($Params, 0, true);
+                    }
+                    if (empty($Data)) {
+                        return $phpMussel['L10N']->getString('invalid_data') . "\n";
+                    }
+                    return hash($phpMussel['ThisAlgo'], $Data) . ':' . strlen($Data) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
                 });
             } else {
                 echo "\n" . $phpMussel['L10N']->getString('cli_algo_not_supported') . "\n";
             }
         }
 
-        /** Generate a CoEx signature using a file. **/
+        /** Generate a CoEx signature using a file. */
         elseif ($phpMussel['cmd'] === 'coex_file') {
             echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
-                $HashMe = $phpMussel['ReadFile']($Params, 0, true);
-                return
-                    '$md5:' . md5($HashMe) . ';' .
-                    '$sha:' . sha1($HashMe) . ';' .
-                    '$str_len:' . strlen($HashMe) . ';' .
-                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                if (filter_var($Params, FILTER_VALIDATE_URL)) {
+                    $Data = $phpMussel['Request']($Params);
+                } elseif (is_file($Params) && is_readable($Params)) {
+                    $Data = $phpMussel['ReadFile']($Params, 0, true);
+                }
+                if (empty($Data)) {
+                    return $phpMussel['L10N']->getString('invalid_data') . "\n";
+                }
+                return sprintf(
+                    '$md5:%1$s;$sha:%2$s;$str_len:%3$s;%4$s',
+                    md5($Data),
+                    sha1($Data),
+                    strlen($Data),
+                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n"
+                );
             });
         }
 
-        /** Fetch PE metadata. **/
+        /** Fetch PE metadata. */
         elseif ($phpMussel['cmd'] === 'pe_meta') {
             echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
                 return $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $Params, $Params) . "\n";
             });
         }
 
-        /** Generate a hash signature using a string. **/
+        /** Generate a hash signature using a string. */
         elseif ($phpMussel['cmd'] === 'md5' || $phpMussel['cmd'] === 'sha1' || substr($phpMussel['cmd'], 0, 5) === 'hash:') {
             $phpMussel['ThisAlgo'] = (
                 $phpMussel['cmd'] === 'md5' || $phpMussel['cmd'] === 'sha1'
@@ -280,7 +313,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             }
         }
 
-        /** Generate a URL scanner signature from a URL. **/
+        /** Generate a URL scanner signature from a URL. */
         elseif ($phpMussel['cmd'] === 'url_sig') {
             echo "\n";
             $phpMussel['stdin_clean'] = $phpMussel['prescan_normalise'](substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1));
@@ -324,37 +357,37 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             unset($phpMussel['URL']);
         }
 
-        /** Generate a CoEx signature using a string. **/
+        /** Generate a CoEx signature using a string. */
         elseif ($phpMussel['cmd'] === 'coex') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo "\n\$md5:" . md5($phpMussel['TargetData']) . ';$sha:' . sha1($phpMussel['TargetData']) . ';$str_len:' . strlen($phpMussel['TargetData']) . ';' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
         }
 
-        /** Convert a binary string to a hexadecimal. **/
+        /** Convert a binary string to a hexadecimal. */
         elseif ($phpMussel['cmd'] === 'hex_encode' || $phpMussel['cmd'] === 'x') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo "\n" . bin2hex($phpMussel['TargetData']) . "\n";
         }
 
-        /** Convert a hexadecimal to a binary string. **/
+        /** Convert a hexadecimal to a binary string. */
         elseif ($phpMussel['cmd'] === 'hex_decode') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo "\n" . ($phpMussel['HexSafe']($phpMussel['TargetData']) ?: $phpMussel['L10N']->getString('invalid_data')) . "\n";
         }
 
-        /** Convert a binary string to a base64 string. **/
+        /** Convert a binary string to a base64 string. */
         elseif ($phpMussel['cmd'] === 'base64_encode' || $phpMussel['cmd'] === 'b') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo "\n" . base64_encode($phpMussel['TargetData']) . "\n";
         }
 
-        /** Convert a base64 string to a binary string. **/
+        /** Convert a base64 string to a binary string. */
         elseif ($phpMussel['cmd'] === 'base64_decode') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo "\n" . (base64_decode($phpMussel['TargetData']) ?: $phpMussel['L10N']->getString('invalid_data')) . "\n";
         }
 
-        /** Scan a file or directory. **/
+        /** Scan a file or directory. */
         elseif ($phpMussel['cmd'] === 'scan' || $phpMussel['cmd'] === 's') {
             echo "\n";
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
@@ -421,7 +454,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             unset($r, $s);
         }
 
-        /** Add an entry to the greylist. **/
+        /** Add an entry to the greylist. */
         elseif ($phpMussel['cmd'] === 'greylist' || $phpMussel['cmd'] === 'g') {
             echo "\n";
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
@@ -435,7 +468,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             }
         }
 
-        /** Clear the greylist. **/
+        /** Clear the greylist. */
         elseif ($phpMussel['cmd'] === 'greylist_clear' || $phpMussel['cmd'] === 'gc') {
             echo "\n";
             $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
@@ -446,7 +479,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             echo $phpMussel['L10N']->getString('greylist_cleared');
         }
 
-        /** Show the greylist. **/
+        /** Show the greylist. */
         elseif ($phpMussel['cmd'] === 'greylist_show' || $phpMussel['cmd'] === 'gs') {
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo file_exists(
@@ -459,12 +492,12 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             );
         }
 
-        /** Print the command list. **/
+        /** Print the command list. */
         elseif ($phpMussel['cmd'] === 'c') {
             echo $phpMussel['L10N']->getString('cli_commands');
         }
 
-        /** Print a list of supported algorithms. **/
+        /** Print a list of supported algorithms. */
         elseif ($phpMussel['cmd'] === 'algo') {
             $Algos = hash_algos();
             $Pos = 1;

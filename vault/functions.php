@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.10.27).
+ * This file: Functions file (last modified: 2019.12.09).
  */
 
 /**
@@ -1038,13 +1038,15 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
     /** The Google Safe Browsing API requires HTTPS+SSL (there's no way around this). */
     curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    /*
-     * Setting "CURLOPT_SSL_VERIFYPEER" to false can be somewhat risky due to man-in-the-middle attacks, but lookups
-     * seemed to always fail when it was set to true during testing, so, for the sake of this actually working at all,
-     * I'm setting it as false, but we should try to fix this in the future at some point.
+    /**
+     * Setting "CURLOPT_SSL_VERIFYPEER" to false can be somewhat risky due to
+     * MITM attacks, but lookups seemed to always fail when it was set to true
+     * during testing, so for the sake of this being able to actually work at
+     * all, I'm setting it as false, but we should try to fix this in the
+     * future at some point.
      */
     curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
-    /* We don't want to leave the client waiting for *too* long. */
+    /** We don't want to leave the client waiting for *too* long. */
     curl_setopt($Request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
     curl_setopt($Request, CURLOPT_POSTFIELDS, $arr);
@@ -4970,7 +4972,7 @@ $phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMu
         echo "\r         ";
         return $Returnable;
     }
-    return is_file($Params) ? $Callable($Params) : sprintf($phpMussel['L10N']->getString('cli_is_not_a'), $Params) . "\n";
+    return is_file($Params) || filter_var($Params, FILTER_VALIDATE_URL) ? $Callable($Params) : sprintf($phpMussel['L10N']->getString('cli_is_not_a'), $Params) . "\n";
 };
 
 /**
