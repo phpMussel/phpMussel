@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.08.17).
+ * L10N handler (last modified: 2019.12.26).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -430,5 +430,4 @@ class L10N
             }
         }
     }
-
 }

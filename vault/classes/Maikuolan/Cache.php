@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.11.04).
+ * A simple, unified cache handler (last modified: 2019.12.27).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -293,7 +293,7 @@ class Cache
         /** Time to perform our checks and to create the table if necessary. */
         $Exists = $Exists->fetch(\PDO::FETCH_NUM);
         if (empty($Exists[0])) {
-            $this->WorkingData->exec('CREATE TABLE Cache (Key TEXT PRIMARY KEY, Data TEXT, Time INT)');
+            $this->WorkingData->exec('CREATE TABLE `Cache` (`Key` VARCHAR(128) PRIMARY KEY, `Data` TEXT, `Time` INT)');
             $Exists = $this->WorkingData->query($Check);
             if (is_object($Exists) && is_a($Exists, '\PDOStatement')) {
                 $Exists = $Exists->fetch(\PDO::FETCH_NUM);
@@ -674,5 +674,4 @@ class Cache
         }
         return $this->WorkingData;
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.09.12).
+ * Demojibakefier (last modified: 2019.12.26).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -594,5 +594,4 @@ class Demojibakefier
     {
         return !function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
     }
-
 }
