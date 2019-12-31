@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.12).
+ * This file: Front-end handler (last modified: 2019.12.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1674,20 +1674,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             }
         } else {
             $phpMussel['FetchRemote']();
-            if (
-                substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 4) === "---\n" &&
-                ($phpMussel['Components']['EoYAML'] = strpos(
-                    $phpMussel['Components']['ThisComponent']['RemoteData'], "\n\n"
-                )) !== false
-            ) {
+            if ($phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['ExtractPage'](
+                $phpMussel['Components']['ThisComponent']['RemoteData']
+            )) {
 
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
-                    $phpMussel['Components']['RemoteMeta'] = [];
+                    $phpMussel['Components']['TempRemoteMeta'] = [];
                     $phpMussel['YAML']->process(
-                        substr($phpMussel['Components']['ThisComponent']['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
-                        $phpMussel['Components']['RemoteMeta']
+                        $phpMussel['Components']['ThisComponent']['RemoteData'],
+                        $phpMussel['Components']['TempRemoteMeta']
                     );
+                    foreach ($phpMussel['Components']['TempRemoteMeta'] as $phpMussel['Components']['TempKey'] => $phpMussel['Components']['TempData']) {
+                        if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['TempKey']])) {
+                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['TempKey']] = $phpMussel['Components']['TempData'];
+                        }
+                    }
+                    unset($phpMussel['Components']['TempRemoteMeta'], $phpMussel['Components']['TempData'], $phpMussel['Components']['TempKey']);
                 }
 
                 if (isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'])) {
@@ -1968,11 +1971,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['Vault'] . $phpMussel['Components']['ReannotateThis']
             );
         }
-        if (substr(
-            $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']], -2
-        ) !== "\n\n" || substr(
-            $phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']], 0, 4
-        ) !== "---\n") {
+        if (!$phpMussel['ExtractPage']($phpMussel['Components']['Remotes'][$phpMussel['Components']['ReannotateThis']])) {
             continue;
         }
         $phpMussel['ThisOffset'] = [0 => []];
@@ -2068,7 +2067,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Write annotations for newly found component metadata. */
     array_walk($phpMussel['Components']['Remotes'], function ($Remote, $Key) use (&$phpMussel) {
-        if (substr($Remote, -2) !== "\n\n" || substr($Remote, 0, 4) !== "---\n") {
+        if (!$phpMussel['ExtractPage']($Remote)) {
             return;
         }
         $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $Key, $Remote);
