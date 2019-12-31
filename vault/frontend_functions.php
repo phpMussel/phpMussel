@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.27).
+ * This file: Front-end functions file (last modified: 2019.12.31).
  */
 
 /**
@@ -193,6 +193,7 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         $phpMussel['Cache']->setEntry($Entry, $Data, $Expires - $phpMussel['Time']);
+        $phpMussel['CacheEntry-' . $Entry] = $Data;
         return;
     }
 
@@ -526,8 +527,8 @@ $phpMussel['FetchComponentsLists'] = function ($Base, array &$Arr) use (&$phpMus
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $phpMussel['ReadFile']($Base . $ThisFile);
-            if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $phpMussel['YAML']->process(substr($Data, 4, $EoYAML - 4), $Arr);
+            if ($Data = $phpMussel['ExtractPage']($Data)) {
+                $phpMussel['YAML']->process($Data, $Arr);
             }
         }
     }
@@ -1220,14 +1221,8 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         );
         $phpMussel['UpdateFailed'] = false;
         if (
-            substr($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], 0, 4) === "---\n" &&
-            ($phpMussel['Components']['EoYAML'] = strpos(
-                $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
-            )) !== false &&
-            $phpMussel['YAML']->process(
-                substr($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $phpMussel['Components']['EoYAML'] - 4),
-                $phpMussel['Components']['RemoteMeta']
-            ) &&
+            ($Meta = $phpMussel['ExtractPage']($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
+            $phpMussel['YAML']->process($Meta, $phpMussel['Components']['RemoteMeta']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
             !$phpMussel['VersionCompare'](
                 $phpMussel['ScriptVersion'],
@@ -1689,11 +1684,19 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
         }
         $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
         if (!isset($phpMussel['Components']['RemoteMeta'], $phpMussel['Components']['RemoteMeta'][$ThisTarget])) {
-            $phpMussel['Components']['RemoteMeta'] = [];
+            if (!isset($phpMussel['Components']['RemoteMeta'])) {
+                $phpMussel['Components']['RemoteMeta'] = [];
+            }
+            $TempMeta = [];
             $RemoteData = '';
             $phpMussel['FetchRemote-ContextFree']($RemoteData, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
-            if (substr($RemoteData, 0, 4) === "---\n" && ($EoYAML = strpos($RemoteData, "\n\n")) !== false) {
-                $phpMussel['YAML']->process(substr($RemoteData, 4, $EoYAML - 4), $phpMussel['Components']['RemoteMeta']);
+            if ($RemoteData = $phpMussel['ExtractPage']($RemoteData)) {
+                $phpMussel['YAML']->process($RemoteData, $TempMeta);
+            }
+            foreach ($TempMeta as $TempKey => $TempData) {
+                if (!isset($phpMussel['Components']['RemoteMeta'][$TempKey])) {
+                    $phpMussel['Components']['RemoteMeta'][$TempKey] = $TempData;
+                }
             }
         }
         if (isset(
@@ -2555,4 +2558,17 @@ $phpMussel['LTRinRTF'] = function ($String = '') use (&$phpMussel) {
         $String
     );
 
+};
+
+/**
+ * Extract page beginning with delimiter from YAML data or an empty string.
+ *
+ * @param string $Data The YAML data.
+ * @return string The extracted YAML page or an empty string on failure.
+ */
+$phpMussel['ExtractPage'] = function ($Data = '') {
+    if (substr($Data, 0, 4) !== "---\n" || substr($Data, -1) !== "\n") {
+        return '';
+    }
+    return substr($Data, 4);
 };

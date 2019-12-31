@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.12.09).
+ * This file: Functions file (last modified: 2019.12.31).
  */
 
 /**
@@ -4689,9 +4689,11 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
     curl_setopt($Request, CURLOPT_HEADER, false);
     if (empty($Params)) {
         curl_setopt($Request, CURLOPT_POST, false);
+        $Post = false;
     } else {
         curl_setopt($Request, CURLOPT_POST, true);
         curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
+        $Post = true;
     }
     if ($SSL) {
         curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
@@ -4703,12 +4705,21 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
     curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $phpMussel['Timeout']));
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
     curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
+    $Time = microtime(true);
 
     /** Execute and get the response. */
     $Response = curl_exec($Request);
 
+    /** Used for debugging. */
+    $Time = microtime(true) - $Time;
+
     /** Check for problems (e.g., resource not found, server errors, etc). */
     if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
+
+        /** Used for debugging. */
+        $phpMussel['DebugMessage'](sprintf(
+            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'
+        ));
 
         /** Most recent HTTP code flag. */
         $phpMussel['Most-Recent-HTTP-Code'] = $Info['http_code'];
@@ -4718,8 +4729,13 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
             curl_close($Request);
             return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
         }
-
     } else {
+
+        /** Used for debugging. */
+        $phpMussel['DebugMessage'](sprintf(
+            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, 200, (floor($Time * 100) / 100) . 's'
+        ));
+
         /** Most recent HTTP code flag. */
         $phpMussel['Most-Recent-HTTP-Code'] = 200;
     }
@@ -5310,8 +5326,23 @@ $phpMussel['RestoreErrorHandler'] = function () use (&$phpMussel) {
     restore_error_handler();
 };
 
+/**
+ * Prints debug messages (used in dev; not needed for production).
+ *
+ * @param string $Message The debug message to send.
+ */
+$phpMussel['DebugMessage'] = function ($Message) {
+    if (!defined('DEV_DEBUG_MODE') || DEV_DEBUG_MODE !== true) {
+        return;
+    }
+    $Handle = fopen('php://stdout', 'wb');
+    fwrite($Handle, $Message);
+    fclose($Handle);
+};
+
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($phpMussel['Vault'])) {
+
     /** Load all default event handlers. */
     require $phpMussel['Vault'] . 'event_handlers.php';
 }
