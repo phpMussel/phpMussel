@@ -187,7 +187,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.2.2
+ Version: 2.2.3-DEV+20000653
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -210,7 +210,7 @@ Common Classes Package:
    - classes/Maikuolan/NumberFormatter.php
    - classes/Maikuolan/YAML.php
   Checksum:
-   - 0636f7281c8d5e40c8fd84edaa1d6d60dc8826ac251bda1eff50895b95dc4370:24044
+   - 1353e4eaeb12bf8a13943facf1801a0beebc9bf4226548aecdb87cba81c6918c:24045
    - 22d1edebc6ad304620b40dc9c5c916454815ac43e7cba67052587b33f9a34a0f:3644
    - 07506af3b17981fc48eb805e3879293f1dbc3b56597fac99f9db0fc43fd6e602:4488
    - 9ec25a149bc9dd7ccfe662f5be4128f5119c0065a16a9a2097bec39ea8fa7dd6:27634

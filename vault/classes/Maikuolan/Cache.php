@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2019.12.27).
+ * A simple, unified cache handler (last modified: 2020.01.01).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -81,7 +81,7 @@ class Cache
     const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
 
     /** Prepared clear expired query for PDO. */
-    const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `TIME < :time';
+    const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
 
     /** Prepared get all query for PDO. */
     const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
