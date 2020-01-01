@@ -10,7 +10,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2020.01.01; Bug-fix; Maikuolan]: The cache handler's PDO query template for
+  deleting expired cache entries was malformed; Fixed.
 
 === Version/Release 1.13.1 ===
 PATCH RELEASE.
