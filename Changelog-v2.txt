@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 2.1.1 ===
+PATCH RELEASE.
+
 - [2019.10.23; Maikuolan]: Improved caching mechanism guard code. Deprecated
   and removed the PHP vulnerable version warning formerly displayed at the
   front-end homepage (it risked causing unnecessary alarm for some users,
@@ -55,6 +60,9 @@ Detailed version release guidelines for phpMussel can be found at:
   prepare newly found components from the upstream; Fixed. Also added a new
   mechanism to the codebase to aid with diagnosing bugs in the future (disabled
   by default; not configurable).
+
+Caleb M (Maikuolan),
+January 1, 2020.
 
 === Version/Release 2.1.0 ===
 MINOR RELEASE.
