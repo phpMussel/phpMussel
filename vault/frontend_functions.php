@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.31).
+ * This file: Front-end functions file (last modified: 2020.01.12).
  */
 
 /**
@@ -719,10 +719,10 @@ $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
  */
 $phpMussel['FilterAlgo'] = function ($ChoiceKey) use (&$phpMussel) {
     if ($ChoiceKey === 'PASSWORD_ARGON2I') {
-        return $phpMussel['VersionCompare'](PHP_VERSION, '7.2.0RC1');
+        return !$phpMussel['VersionCompare'](PHP_VERSION, '7.2.0RC1');
     }
     if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
-        return $phpMussel['VersionCompare'](PHP_VERSION, '7.3.0');
+        return !$phpMussel['VersionCompare'](PHP_VERSION, '7.3.0');
     }
     return true;
 };
