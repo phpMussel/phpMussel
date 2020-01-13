@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.13.2-DEV+20000653
+ Version: 1.13.2-DEV+20012498
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
@@ -183,7 +183,7 @@ phpMussel:
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - 235c5ef6a7497d558e288ffaef17dd3691f84d424150ee106782d4136d2d1a09:162859
-   - ee2a2aec63bdd701869dfc3082fdaf4104f31ee2c7f91117ceb7cc130a08448f:114443
+   - 73992b109a1391acbb5a860cb98462dbd0c29a77a5e15341f327a243394e7ca7:114443
    - 2aa5271b5dcab3cdf0e4a6ad02575eef5cb9fe13517e9054c8629afc65709796:236015
    - 5b1d9c7d447ea7f5a2ec8484c497e56d29df6db4418e87e225d03f6777239bbe:7108
    - 8e03209e7fc6641b45094e584340feff:83

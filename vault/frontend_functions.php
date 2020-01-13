@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.12).
+ * This file: Front-end functions file (last modified: 2020.01.13).
  */
 
 /**
@@ -1690,8 +1690,8 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             $TempMeta = [];
             $RemoteData = '';
             $phpMussel['FetchRemote-ContextFree']($RemoteData, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
-            if ($RemoteData = $phpMussel['ExtractPage']($RemoteData)) {
-                $phpMussel['YAML']->process($RemoteData, $TempMeta);
+            if ($Extracted = $phpMussel['ExtractPage']($RemoteData)) {
+                $phpMussel['YAML']->process($Extracted, $TempMeta);
             }
             foreach ($TempMeta as $TempKey => $TempData) {
                 if (!isset($phpMussel['Components']['RemoteMeta'][$TempKey])) {
