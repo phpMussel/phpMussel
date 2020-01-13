@@ -16,6 +16,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.01.12; Bug-fix; Maikuolan]: Found and fixed a small typo in the choice
   filter for the default_algo configuration directive.
 
+- [2020.01.13; Bug-fix; Maikuolan]: Repair was always failing, specifically for
+  just the very first component to appear in any particular components metadata
+  file; Fixed.
+
 === Version/Release 2.1.1 ===
 PATCH RELEASE.
 
