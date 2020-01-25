@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.31).
+ * This file: Front-end handler (last modified: 2020.01.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -217,8 +217,9 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
     if ($phpMussel['Success']) {
         die;
     }
-    unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
 
+    /** Cleanup. */
+    unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
 }
 
 /** A simple passthru for the front-end CSS. */
@@ -389,7 +390,6 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                         } else {
                             $phpMussel['FE']['UserState'] = 1;
                         }
-
                     } else {
                         $phpMussel['FE']['UserState'] = 1;
                     }
@@ -405,7 +405,6 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
         } else {
             $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_login_invalid_username');
         }
-
     }
 
     if ($phpMussel['FE']['state_msg']) {
@@ -503,7 +502,6 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                                 );
                                 $phpMussel['FE']['UserState'] = 1;
                             }
-
                         }
                         unset($phpMussel['2FA-State']);
                     } else {
@@ -545,7 +543,6 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
             }
         }
     }
-
 }
 
 /** The user is attempting an asynchronous request without adequate permissions. */
@@ -570,7 +567,6 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HTTP_HOST'], false, true);
         $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']);
         $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('state_logged_out'));
-
     }
 
     /** If the user has complete access. */
@@ -588,9 +584,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
             $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
         );
-
     }
-
 }
 
 $phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
@@ -611,7 +605,6 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
             $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_2fa.html'))
         );
-
     } else {
 
         /** Show them the login page. */
@@ -619,12 +612,10 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
             $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_login.html'))
         );
-
     }
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /**
@@ -670,21 +661,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
         /** phpMussel latest stable. */
         $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['L10N']->getString('response_error');
+
         /** phpMussel latest unstable. */
         $phpMussel['FE']['info_phpmussel_unstable'] = $phpMussel['L10N']->getString('response_error');
+
         /** phpMussel branch latest stable. */
         $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['L10N']->getString('response_error');
-
     } else {
-
         $phpMussel['Remote-YAML-phpMussel-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-phpMussel']))->Data;
 
         /** phpMussel latest stable. */
         $phpMussel['FE']['info_phpmussel_stable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable']) ?
             $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Stable'];
+
         /** phpMussel latest unstable. */
         $phpMussel['FE']['info_phpmussel_unstable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Unstable']) ?
             $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Unstable'];
+
         /** phpMussel branch latest stable. */
         if ($phpMussel['ThisBranch'] = substr($phpMussel['FE']['ScriptVersion'], 0, strpos($phpMussel['FE']['ScriptVersion'], '.') ?: 0)) {
             $phpMussel['ThisBranch'] = 'v' . ($phpMussel['ThisBranch'] ?: 1);
@@ -693,7 +686,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         } else {
             $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
         }
-
     }
 
     /** Cleanup. */
@@ -710,21 +702,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
         /** PHP latest stable. */
         $phpMussel['FE']['info_php_stable'] = $phpMussel['L10N']->getString('response_error');
+
         /** PHP latest unstable. */
         $phpMussel['FE']['info_php_unstable'] = $phpMussel['L10N']->getString('response_error');
+
         /** PHP branch latest stable. */
         $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
-
     } else {
-
         $phpMussel['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-PHP']))->Data;
 
         /** PHP latest stable. */
         $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
             $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Stable'];
+
         /** PHP latest unstable. */
         $phpMussel['FE']['info_php_unstable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Unstable']) ?
             $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Unstable'];
+
         /** PHP branch latest stable. */
         if ($phpMussel['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
             $phpMussel['ThisBranch'] .= substr(PHP_VERSION, strlen($phpMussel['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($phpMussel['ThisBranch'])) ?: 0);
@@ -734,7 +728,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         } else {
             $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
         }
-
     }
 
     /** Cleanup. */
@@ -791,7 +784,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** A simple passthru for the file manager icons. */
@@ -829,13 +821,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
             } elseif (!empty($phpMussel['Icons']['unknown'])) {
                 echo gzinflate(base64_decode($phpMussel['Icons']['unknown']));
             }
-
         }
-
     }
 
     die;
-
 }
 
 /** Accounts. */
@@ -958,7 +947,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
                 }
             }
         }
-
     }
 
     if (!$phpMussel['FE']['ASYNC']) {
@@ -1030,7 +1018,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
             );
         }
         unset($phpMussel['RowInfo']);
-
     }
 
     if ($phpMussel['FE']['ASYNC']) {
@@ -1046,9 +1033,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
         /** Send output. */
         echo $phpMussel['SendOutput']();
-
     }
-
 }
 
 /** Configuration. */
@@ -1417,7 +1402,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Cache data. */
@@ -1444,7 +1428,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
                 $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], $_POST['fecdi']);
             }
         }
-
     } else {
 
         /** Append async globals. */
@@ -1557,9 +1540,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
         /** Send output. */
         echo $phpMussel['SendOutput']();
-
     }
-
 }
 
 /** Updates. */
@@ -1606,7 +1587,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
         /** Trigger updates handler. */
         $phpMussel['UpdatesHandler']($_POST['do'], $_POST['ID']);
-
     }
 
     /** Page initial prepwork. */
@@ -1935,7 +1915,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
         /** Trigger updates handler. */
         $phpMussel['UpdatesHandler']('update-component', $phpMussel['Components']['Outdated']);
-
     }
 
     /** Prepare newly found component metadata and options for display. */
@@ -2173,7 +2152,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Cleanup. */
     unset($phpMussel['Components'], $phpMussel['CFBoilerplate']);
-
 }
 
 /** File Manager. */
@@ -2204,12 +2182,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
     /** Show/hide pie charts link and etc. */
     if (!$phpMussel['PieFile']) {
-
         $phpMussel['FE']['FMgrFormTarget'] = 'phpmussel-page=file-manager';
         $phpMussel['FE']['ShowHideLink'] = '<a href="?phpmussel-page=file-manager&show=true">' . $phpMussel['L10N']->getString('label_show') . '</a>';
-
     } else {
-
         $phpMussel['FE']['FMgrFormTarget'] = 'phpmussel-page=file-manager&show=true';
         $phpMussel['FE']['ShowHideLink'] = '<a href="?phpmussel-page=file-manager">' . $phpMussel['L10N']->getString('label_hide') . '</a>';
 
@@ -2231,7 +2206,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             }
             $phpMussel['Components']['ThisData'] = 0;
         }
-
     }
 
     /** Upload a new file. */
@@ -2268,7 +2242,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         } else {
             $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_upload_error');
         }
-
     }
 
     /** A form was submitted. */
@@ -2353,13 +2326,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                             is_dir($phpMussel['Vault'] . $_POST['filename_new']) ? 'response_directory_renamed' : 'response_file_renamed'
                         );
                     }
-
                 } elseif (!$phpMussel['FE']['state_msg']) {
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_rename_error');
                 }
-
             } else {
-
                 $phpMussel['FE']['FE_Title'] .= ' – ' . $phpMussel['L10N']->getString('field_rename_file') . ' – ' . $_POST['filename'];
                 $phpMussel['FE']['filename'] = $_POST['filename'];
 
@@ -2372,7 +2342,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 /** Send output. */
                 echo $phpMussel['SendOutput']();
                 die;
-
             }
 
         /** Edit a file. */
@@ -2391,9 +2360,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 fclose($phpMussel['Handle']);
 
                 $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_file_edited');
-
             } else {
-
                 $phpMussel['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
                 $phpMussel['FE']['filename'] = $_POST['filename'];
                 $phpMussel['FE']['content'] = htmlentities($phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']));
@@ -2407,7 +2374,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 /** Send output. */
                 echo $phpMussel['SendOutput']();
                 die;
-
             }
 
         /** Download a file. */
@@ -2418,9 +2384,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');
             echo $phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']);
             die;
-
         }
-
     }
 
     /** Template for file rows. */
@@ -2519,7 +2483,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
         /** Finalise pie chart. */
         $phpMussel['FE']['PieChart'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['PieFile']);
-
     }
 
     /** Cleanup. */
@@ -2567,7 +2530,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Upload Test. */
@@ -2598,7 +2560,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Quarantine. */
@@ -2662,7 +2623,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
                     fwrite($phpMussel['Handle'], $phpMussel['Restored']);
                     fclose($phpMussel['Handle']);
                     $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '.restored</code> ' . $phpMussel['L10N']->getString('response_file_restored') . '<br />';
-
                 }
 
                 /** Corrupted file! */
@@ -2678,9 +2638,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
                 /** Cleanup. */
                 unset($phpMussel['RestoreStatus'], $phpMussel['Restored']);
             }
-
         }
-
     }
 
     /** Delete all files in quarantine. */
@@ -2722,7 +2680,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Signature information. */
@@ -2759,7 +2716,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Statistics. */
@@ -2846,7 +2802,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 
     /** Cleanup. */
     unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Statistics']);
-
 }
 
 /** Logs. */
@@ -2952,7 +2907,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
 
     /** Send output. */
     echo $phpMussel['SendOutput']();
-
 }
 
 /** Rebuild cache. */

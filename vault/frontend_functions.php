@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.13).
+ * This file: Front-end functions file (last modified: 2020.01.25).
  */
 
 /**
@@ -1186,7 +1186,6 @@ $phpMussel['UpdatesHandler'] = function (string $Action, $ID = '') use (&$phpMus
 
     /** Process and empty executor queue. */
     $phpMussel['FE_Executor']();
-
 };
 
 /**
@@ -1810,7 +1809,6 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
 
             /** Replace downstream meta with upstream meta. */
             $phpMussel['Components']['Meta'][$ThisTarget] = $phpMussel['Components']['RemoteMeta'][$ThisTarget];
-
         } else {
             $RepairFailed = true;
 
@@ -1819,7 +1817,6 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['When Repair Fails'])) {
                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ThisTarget]['When Repair Fails'], true);
             }
-
         }
         $phpMussel['FormatFilesize']($BytesAdded);
         $phpMussel['FormatFilesize']($BytesRemoved);
@@ -2102,7 +2099,6 @@ $phpMussel['InitialPrepwork'] = function (string $Title = '', string $Tips = '',
 
     /** Load main front-end JavaScript data. */
     $phpMussel['FE']['JS'] = $JS ? $phpMussel['ReadFile']($phpMussel['GetAssetPath']('scripts.js')) : '';
-
 };
 
 /**
@@ -2328,12 +2324,10 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], string $Subject = ''
                 $phpMussel['L10N']->getString('state_email_sent'),
                 $SuccessDetails
             ) : $phpMussel['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
-
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
             $EventLogData .= $phpMussel['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
-
         }
     }
 
@@ -2551,7 +2545,6 @@ $phpMussel['LTRinRTF'] = function (string $String = '') use (&$phpMussel): strin
         ['\2&lt;-\1', '\2⬅\1'],
         $String
     );
-
 };
 
 /**

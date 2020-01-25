@@ -10,9 +10,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.12.01).
+# This file: Polish language data for the front-end (last modified: 2019.12.20).
 ##/
 
+state_logged_in: "Zalogowany."
+state_logged_in_2fa_pending: "Zalogowany + Oczekuje na potwierdzenie 2FA."
+state_logged_out: "Wylogowano."
+state_logs_access_only: "Dostęp tylko do dzienników"
 state_maintenance_mode: "Ostrzeżenie: Tryb konserwacji jest włączony!"
 state_password_not_valid: "Ostrzeżenie: To konto nie używa prawidłowego hasła!"
 state_quarantine:

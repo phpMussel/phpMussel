@@ -20,6 +20,8 @@ Detailed version release guidelines for phpMussel can be found at:
   just the very first component to appear in any particular components metadata
   file; Fixed.
 
+- [2020.01.25; Maikuolan]: Performed some minor refactoring.
+
 === Version/Release 2.1.1 ===
 PATCH RELEASE.
 
