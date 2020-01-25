@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.12.31).
+ * This file: Functions file (last modified: 2020.01.25).
  */
 
 /**
@@ -917,7 +917,6 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
 
     /** Return the signature name and exit the closure. */
     return $Out . substr($VN, 4);
-
 };
 
 /**
@@ -930,30 +929,34 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  * @return int The results of the lookup. 200 if AT LEAST ONE of the queried
  *      URLs are listed on any of Google Safe Browsing lists; 204 if NONE of
  *      the queried URLs are listed on any of Google Safe Browsing lists; 400
- *      if the request is malformed; 401 if the API key is missing or isn't
- *      authorised; 503 if the service is unavailable (e.g., if it's been
- *      throttled); 999 if something unexpected occurs (such as, for example,
- *      if a programmatic error is encountered).
+ *      if the request is malformed or if there aren't any URLs to look up; 401
+ *      if the API key is missing or isn't authorised; 503 if the service is
+ *      unavailable (e.g., if it's been throttled).
  */
 $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = [], array $DomainsNoLookup = []) use (&$phpMussel) {
+
+    /** Guard against missing API key. */
     if (empty($phpMussel['Config']['urlscanner']['google_api_key'])) {
         return 401;
     }
-    /** Count and prepare the URLs. */
-    if (!$c = count($URLs)) {
+
+    /** Count URLs and exit early if there aren't any. */
+    if (!$Count = count($URLs)) {
         return 400;
     }
-    for ($i = 0; $i < $c; $i++) {
-        $Domain = (strpos($URLs[$i], '/') !== false) ? $phpMussel['substrbf']($URLs[$i], '/') : $URLs[$i];
-        if (!empty($URLsNoLookup[$URLs[$i]]) || !empty($DomainsNoLookup[$Domain])) {
-            unset($URLs[$i]);
+
+    for ($Iterant = 0; $Iterant < $Count; $Iterant++) {
+        $Domain = (strpos($URLs[$Iterant], '/') !== false) ? $phpMussel['substrbf']($URLs[$Iterant], '/') : $URLs[$Iterant];
+        if (!empty($URLsNoLookup[$URLs[$Iterant]]) || !empty($DomainsNoLookup[$Domain])) {
+            unset($URLs[$Iterant]);
             continue;
         }
-        $URLs[$i] = ['url' => $URLs[$i]];
+        $URLs[$Iterant] = ['url' => $URLs[$Iterant]];
     }
     sort($URLs);
-    /** After we've prepared the URLs, we prepare our JSON array. */
-    $arr = json_encode([
+
+    /** After preparing URLs, prepare JSON array. */
+    $Arr = json_encode([
         'client' => [
             'clientId' => 'phpMussel',
             'clientVersion' => $phpMussel['ScriptVersion']
@@ -976,104 +979,141 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
     if (!isset($phpMussel['InstanceCache']['urlscanner_google'])) {
         $phpMussel['InstanceCache']['urlscanner_google'] = $phpMussel['FetchCache']('urlscanner_google');
     }
-    /** Generate new cache expiry time. */
-    $newExpiry = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
+
     /** Generate a reference for the cache entry for this lookup. */
-    $cacheRef = md5($arr) . ':' . $c . ':' . strlen($arr) . ':';
-    /** This will contain the lookup response. */
-    $Response = '';
+    $cacheRef = md5($Arr) . ':' . $Count . ':' . strlen($Arr) . ':';
+
     /** Check if this lookup has already been performed. */
     while (strpos($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef) !== false) {
         $Response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef), ';');
+
         /** Safety mechanism. */
         if (!$Response || strpos($phpMussel['InstanceCache']['urlscanner_google'], $cacheRef . $Response . ';') === false) {
             $Response = '';
             break;
         }
-        $expiry = $phpMussel['substrbf']($Response, ':');
-        if ($expiry > $phpMussel['Time']) {
+
+        $Expiry = $phpMussel['substrbf']($Response, ':');
+        if ($Expiry > $phpMussel['Time']) {
             $Response = $phpMussel['substraf']($Response, ':');
             break;
         }
-        $phpMussel['InstanceCache']['urlscanner_google'] =
-            str_ireplace($cacheRef . $Response . ';', '', $phpMussel['InstanceCache']['urlscanner_google']);
+        $phpMussel['InstanceCache']['urlscanner_google'] = str_ireplace(
+            $cacheRef . $Response . ';',
+            '',
+            $phpMussel['InstanceCache']['urlscanner_google']
+        );
         $Response = '';
     }
-    /** If this lookup has already been performed, return the results without repeating it. */
-    if ($Response) {
-        /** Update the cache entry for Google Safe Browsing. */
-        $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['InstanceCache']['urlscanner_google']);
+
+    /** If this lookup has already been performed, return the results. */
+    if (!empty($Response)) {
+
+        /** Potentially harmful URL detected. */
         if ($Response === '200') {
-            /** Potentially harmful URL detected. */
             return 200;
-        } elseif ($Response === '204') {
-            /** Potentially harmful URL *NOT* detected. */
+        }
+
+        /** Potentially harmful URL *NOT* detected. */
+        if ($Response === '204') {
             return 204;
-        } elseif ($Response === '400') {
-            /** Bad/malformed request. */
+        }
+
+        /** Malformed request. */
+        if ($Response === '400') {
             return 400;
-        } elseif ($Response === '401') {
-            /** Unauthorised (possibly a bad API key). */
+        }
+
+        /** Unauthorised (most likely an invalid API key used). */
+        if ($Response === '401') {
             return 401;
-        } elseif ($Response === '503') {
-            /** Service unavailable. */
+        }
+
+        /** Service unavailable. */
+        if ($Response === '503') {
             return 503;
         }
-        /** Something bad/unexpected happened. */
-        return 999;
+
+        /** Other, unknown problem (in theory, this should never be reached). */
+        if ($Response === '999') {
+            return 999;
+        }
     }
 
-    /** Prepare the URL to use with cURL. */
-    $uri =
-        'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' .
-        $phpMussel['Config']['urlscanner']['google_api_key'];
-
-    /** cURL stuff here. */
-    $Request = curl_init($uri);
-    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
-    curl_setopt($Request, CURLOPT_HEADER, false);
-    curl_setopt($Request, CURLOPT_POST, true);
-    /** Ensure it knows we're sending JSON data. */
-    curl_setopt($Request, CURLOPT_HTTPHEADER, ['Content-type: application/json']);
-    /** The Google Safe Browsing API requires HTTPS+SSL (there's no way around this). */
-    curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    /**
-     * Setting "CURLOPT_SSL_VERIFYPEER" to false can be somewhat risky due to
-     * MITM attacks, but lookups seemed to always fail when it was set to true
-     * during testing, so for the sake of this being able to actually work at
-     * all, I'm setting it as false, but we should try to fix this in the
-     * future at some point.
-     */
-    curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
-    /** We don't want to leave the client waiting for *too* long. */
-    curl_setopt($Request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
-    curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
-    curl_setopt($Request, CURLOPT_POSTFIELDS, $arr);
-
-    /** Execute and get the response. */
-    $Response = curl_exec($Request);
+    /** Perform lookup. */
+    $Response = $phpMussel['Request'](
+        'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $phpMussel['Config']['urlscanner']['google_api_key'],
+        $Arr,
+        $phpMussel['Timeout'],
+        ['Content-type: application/json']
+    );
     $phpMussel['LookupCount']++;
 
-    /** Check for errors and print to the screen if there were any. */
-    if (!$Response) {
-        throw new \Exception(curl_error($Request));
-    }
+    /** Generate new cache expiry time. */
+    $newExpiry = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
 
-    /** Close the cURL session. */
-    curl_close($Request);
-
+    /** Potentially harmful URL detected. */
     if (strpos($Response, '"matches":') !== false) {
-        /** Potentially harmful URL detected. */
         $returnVal = 200;
     } else {
-        /** Potentially harmful URL *NOT* detected. */
-        $returnVal = 204;
+
+        /**
+         * Other possible problem detected.
+         * @link https://developers.google.com/safe-browsing/v4/status-codes
+         */
+        if (isset($phpMussel['Most-Recent-HTTP-Code']) && $phpMussel['Most-Recent-HTTP-Code'] !== 200) {
+
+            /**
+             * Malformed request detected (e.g., invalid argument, invalid
+             * request payload, etc).
+             */
+            if ($phpMussel['Most-Recent-HTTP-Code'] === '400') {
+                $returnVal = 400;
+            }
+
+            /**
+             * Unauthorised (most likely an invalid API key used). Returning
+             * the same message for 401 and 403 because the returned message is
+             * suitable either way.
+             */
+            elseif ($phpMussel['Most-Recent-HTTP-Code'] >= '401' && $phpMussel['Most-Recent-HTTP-Code'] <= 403) {
+                $returnVal = 401;
+            }
+
+            /**
+             * Service unavailable or internal server error. Returning the same
+             * message for 429, 500, 503, 504 alike because, for our purpose,
+             * the returned message is suitable in any case.
+             */
+            elseif ($phpMussel['Most-Recent-HTTP-Code'] >= '429') {
+                $returnVal = 503;
+            }
+
+            /**
+             * Fallback for other error codes (in theory, this shouldn't ever
+             * be reached, but adding it here just in case).
+             */
+            else {
+                $returnVal = 999;
+            }
+
+            /**
+             * Enforce an additional 24 hours (the maximum computable back-off
+             * period, so as to play it safe) onto the expiry time for cached
+             * failed lookups.
+             * @link https://developers.google.com/safe-browsing/v4/request-frequency#back-off-mode
+             */
+            $newExpiry += 86400;
+        } else {
+
+            /** Potentially harmful URL *NOT* detected, and no other problems detected. */
+            $returnVal = 204;
+        }
     }
 
     /** Update the cache entry for Google Safe Browsing. */
     $phpMussel['InstanceCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $returnVal . ';';
-    $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['InstanceCache']['urlscanner_google']);
+    $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['InstanceCache']['urlscanner_google']);
 
     return $returnVal;
 };
@@ -2700,6 +2740,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             ) ? array_chunk($URLScanner['URLParts'], 500) : [$URLScanner['URLParts']];
             $URLScanner['URLChunks'] = count($URLScanner['URLsChunked']);
             for ($i = 0; $i < $URLScanner['URLChunks']; $i++) {
+
+                /** Maximum API lookups reached; abort accordingly. */
                 if (
                     $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
                     $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
@@ -2720,15 +2762,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                     break;
                 }
-                try {
-                    $URLScanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup'](
-                        $URLScanner['URLsChunked'][$i],
-                        $URLScanner['URLPartsNoLookup'],
-                        $URLScanner['DomainPartsNoLookup']
-                    );
-                } catch (\Exception $e) {
-                    throw new \Exception($e->getMessage());
-                }
+
+                /** Perform safe browsing API lookup (v4). */
+                $URLScanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup'](
+                    $URLScanner['URLsChunked'][$i],
+                    $URLScanner['URLPartsNoLookup'],
+                    $URLScanner['DomainPartsNoLookup']
+                );
+
+                /** Bad URLs found; Flag accordingly. */
                 if ($URLScanner['SafeBrowseLookup'] !== 204) {
                     if (!$flagged) {
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -2745,10 +2787,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['L10N']->getString('_exclamation'),
                         $URLScanner['L10N'] . ' (' . $ofnSafe . ')'
                     );
+
+                    /** Prevent further lookups in case of wrong API key used, malformed query, etc. */
+                    if ($URLScanner['SafeBrowseLookup'] !== 200) {
+                        break;
+                    }
                 }
             }
         }
-
     }
 
     /** URL scanner data cleanup. */
@@ -3268,12 +3314,10 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
              * needed by the archive handler.
              */
             $Data = $CompressionObject->Data;
-
         }
 
         /** Cleanup. */
         unset($CompressionResults, $CompressionObject);
-
     }
 
     /** Destroy item-specific metadata set by the archive handler instance. */
@@ -3288,7 +3332,6 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
 
     /** Or, if nothing bad was found for this entry, make a note of it. */
     $x .= $Indent . $phpMussel['L10N']->getString('scan_no_problems_found') . "\n";
-
 };
 
 /**
@@ -3719,12 +3762,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
              * needed by the archive handler.
              */
             $in = $CompressionObject->Data;
-
         }
 
         /** Cleanup. */
         unset($CompressionResults, $CompressionObject);
-
     }
 
     /** Executed if there were any problems or if anything was detected. */
@@ -3766,7 +3807,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             "\n",
             $z[1]
         );
-
     }
 
     $x = sprintf(
@@ -3809,7 +3849,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 unlink($DeleteThis);
             }
         }
-
     }
 
     /** Quarantine if necessary. */
@@ -3996,9 +4035,10 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle zip files. */
     if ($Handler === 'ZipHandler') {
+
         /**
          * Encryption guard.
-         * See: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
+         * @link https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
          */
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
             $Bits = $phpMussel['explode_bits'](substr($Data, 6, 2));
@@ -4046,6 +4086,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** ZipHandler needs a file pointer. */
         if (!$File || !is_readable($File)) {
+
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
@@ -4054,6 +4095,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
             $Pointer = &$PointerObject->Filename;
             $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
+
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
         }
@@ -4066,6 +4108,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle tar files. */
     if ($Handler === 'TarHandler') {
+
         /** TarHandler can work with data directly. */
         $ArchiveObject = new \phpMussel\ArchiveHandler\TarHandler($Data);
     }
@@ -4095,6 +4138,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** RarHandler needs a file pointer. */
         if (!$File || !is_readable($File)) {
+
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
@@ -4103,6 +4147,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
             $Pointer = &$PointerObject->Filename;
             $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
+
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
         }
@@ -4304,16 +4349,12 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
                 /** Finally, check whether the archive entry is an archive. */
                 $phpMussel['ArchiveRecursor']($x, $r, $Content, '', $ScanDepth, $ThisItemRef);
-
             }
-
         }
-
     }
 
     /** Unset order is important for temporary files to be able to be deleted properly. */
     unset($ArchiveObject, $Pointer, $PointerObject);
-
 };
 
 /**
@@ -4627,14 +4668,16 @@ $phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpM
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
- * @param array $Params An optional associative array of key-value pairs to
- *      send with the request.
+ * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
+ *      CURLOPT_POST is true, and the parameter is used to supply
+ *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
+ *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
  * @param int $Timeout An optional timeout limit.
  * @param array $Headers An optional array of headers to send with the request.
  * @param int $Depth Recursion depth of the current closure instance.
  * @return string The results of the request, or an empty string upon failure.
  */
-$phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0) use (&$phpMussel) {
+$phpMussel['Request'] = function ($URI, $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0) use (&$phpMussel) {
 
     /** Fetch channel information. */
     if (!isset($phpMussel['Channels'])) {
@@ -4676,8 +4719,14 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
             }
             return '';
         }
+        if (isset($phpMussel['Channels']['Overrides'], $phpMussel['Channels']['Overrides'][$TriggerName])) {
+            $Overrides = $phpMussel['Channels']['cURL Overrides'][$TriggerName];
+        }
         break;
     }
+
+    /** Empty overrides in case none declared. */
+    $Overrides = [];
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -4697,7 +4746,9 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
     }
     if ($SSL) {
         curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
+            isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
+        ));
     }
     curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
@@ -4745,7 +4796,6 @@ $phpMussel['Request'] = function ($URI, array $Params = [], $Timeout = -1, array
 
     /** Return the results of the request. */
     return $Response;
-
 };
 
 /**
@@ -4878,7 +4928,6 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
             $phpMussel['InstanceCache'][$Classes[$Nibbles[0]]] .= $File . ',';
         }
     }
-
 };
 
 /**
@@ -5254,7 +5303,6 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
     if (!$phpMussel['Cache']->Using) {
         $phpMussel['BuildLogPath']('cache/');
     }
-
 };
 
 /**

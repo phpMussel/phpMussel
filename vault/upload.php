@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2019.09.24).
+ * This file: Upload handler (last modified: 2020.01.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -256,7 +256,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 $phpMussel['Events']->fireEvent('final');
                 die($e->getMessage());
             }
-
         }
     }
 
@@ -278,7 +277,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             $phpMussel['HashCache']['Data']
         );
         unset($phpMussel['HashCache']);
-
     }
 
     /** File upload scan finish time. */
@@ -409,9 +407,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
         /** Send HTML output and the kill the script. */
         die($phpMussel['HTML']);
-
     }
-
 }
 
 /** Final event before we exit. */
