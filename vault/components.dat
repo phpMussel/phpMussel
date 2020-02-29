@@ -474,7 +474,7 @@ l10n/no:
 l10n/pl:
  Name: L10N: Polski
  Extended Description: Dane języku polskim
- Version: 2020.24.366
+ Version: 2020.59.600
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Uninstallable: true
@@ -486,7 +486,7 @@ l10n/pl:
    - lang/lang.pl.fe.yaml
    - lang/lang.pl.yaml
   Checksum:
-   - daf70d19dd51566c00216f4e96fc477099b279812e11dda584eb3445754d4b0e:8194
+   - c0359aa01e1c86601620c046520514103b99b2295927d835dec5cb14690d27f3:37965
    - 36c576cb338c6beb9c55ec5caeb857a0b46349667f5915de8af9eb83b4ecd3f7:6457
  Reannotate: components.dat
 l10n/pt:
@@ -582,7 +582,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2020.24.366
+ Version: 2020.59.600
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Uninstallable: true
@@ -594,7 +594,7 @@ l10n/ur:
    - lang/lang.ur.fe.yaml
    - lang/lang.ur.yaml
   Checksum:
-   - b95a74d321182084401780e9f99720021044489584e2416cceb281369a3dfdc5:76009
+   - 3bcef220d9c2c64a334d577d7018e049a3989aa583197045b022931823e0dc59:76007
    - 1f7021ac655ef26bfb093fa5fdc6d1766ad91d5c4b7589558bfb890f0afc3535:8093
  Reannotate: components.dat
 l10n/vi:
