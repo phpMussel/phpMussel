@@ -1,3 +1,4 @@
+/vendor
 /vault/cache/*
 !/vault/cache/.htaccess
 /vault/config.ini
