@@ -488,7 +488,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2020.24.366
+ Version: 2020.59.600
  Minimum Required: 1.8.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Uninstallable: true
@@ -500,7 +500,7 @@ l10n/ur:
    - lang/lang.ur.fe.yaml
    - lang/lang.ur.yaml
   Checksum:
-   - dab11710e6ce7a0c4f7505df659e6f8f5cad40d5c3a526263d9ae1465947fb9f:76103
+   - 0627964c6fbdf4f496358ea6f9911b3779e511cd0efcd87d3a7105c701797ff8:76101
    - bfa356ddf21be49d4c55299259c0038dd36ef74091d66ee3e563c215a2747778:8190
  Reannotate: components.dat
 l10n/vi:
