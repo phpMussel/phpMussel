@@ -22,6 +22,14 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.01.25; Maikuolan]: Performed some minor refactoring.
 
+- [2020.02.29; Maikuolan]: Added unit test suite (BDD testing and
+  unit testing with Codeception and PHPUnit).
+  Refer github.com/phpMussel/phpMussel/issues/177
+
+- [2020.03.01; Bug-fix; Maikuolan]: The number of expected arguments in a call
+  to sprintf in the functions file could potentially be manipulated in some
+  cases depending on the data supplied to it; Fixed.
+
 === Version/Release 1.13.1 ===
 PATCH RELEASE.
 
