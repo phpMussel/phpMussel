@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.01.25).
+ * This file: Functions file (last modified: 2020.03.01).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -4515,10 +4515,11 @@ $phpMussel['Scan'] = function ($f = '', bool $n = false, bool $zz = false, int $
 
     if ($n && !is_array($r)) {
         $r = sprintf(
-            "%s %s%s\n" . $r . "%s %s%s\n",
+            "%s %s%s\n%s%s %s%s\n",
             $phpMussel['InstanceCache']['start_time_2822'],
             $phpMussel['L10N']->getString('started'),
             $phpMussel['L10N']->getString('_fullstop_final'),
+            $r,
             $phpMussel['InstanceCache']['end_time_2822'],
             $phpMussel['L10N']->getString('finished'),
             $phpMussel['L10N']->getString('_fullstop_final')
