@@ -42,7 +42,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 - **[اردو](https://github.com/phpMussel/Docs/blob/master/readme.ur.md)**
 - **[Tiếng Việt](https://github.com/phpMussel/Docs/blob/master/readme.vi.md)**
 - **[中文（简体）](https://github.com/phpMussel/Docs/blob/master/readme.zh.md)**
-- **[中文（傳統）](https://github.com/phpMussel/Docs/blob/master/readme.zh-TW.md)**
+- **[中文（傳統）](https://github.com/phpMussel/Docs/blob/master/readme.zh-tw.md)**
 
 [\[CONTRIBUTING.md\] **Want to help?**](https://github.com/phpMussel/phpMussel/blob/v2/CONTRIBUTING.md)
 
