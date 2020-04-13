@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.12.19).
+# This file: Korean language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다."
 Extended Description phpMussel: "메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다)."
-bNav_home_logout: "<a href="?">홈</a> | <a href="?phpmussel-page=logout">로그 아웃</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">로그 아웃</a>"
 config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_PHPMailer_Enable2FA: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
 config_PHPMailer_EventLog: "PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -249,6 +247,7 @@ link_config: "구성"
 link_documentation: "문서"
 link_file_manager: "파일 관리자"
 link_home: "홈"
+link_log_out: "로그 아웃"
 link_logs: "로고스"
 link_quarantine: "격리"
 link_siginfo: "서명 정보"

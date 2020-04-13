@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.12.19).
+# This file: German language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar."
 Extended Description PHPMailer: "Erforderlich für die Verwendung von Funktionen zum Senden von E-Mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> ist über die <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-Lizenz verfügbar."
 Extended Description phpMussel: "Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration)."
-bNav_home_logout: "<a href="?">Startseite</a> | <a href="?phpmussel-page=logout">Ausloggen</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Ausloggen</a>"
 config_PHPMailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
 config_PHPMailer_Enable2FA: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
 config_PHPMailer_EventLog: "Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
@@ -251,6 +249,7 @@ link_config: "Konfiguration"
 link_documentation: "Dokumentation"
 link_file_manager: "Dateimanager"
 link_home: "Startseite"
+link_log_out: "Ausloggen"
 link_logs: "Protokolldateien"
 link_quarantine: "Quarantäne"
 link_siginfo: "Signature Information"

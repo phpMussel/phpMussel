@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.12.19).
+# This file: English language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> license."
 Extended Description phpMussel: "The main package (minus the signatures, documentation, and configuration)."
-bNav_home_logout: "<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Log Out</a>"
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_PHPMailer_Enable2FA: "This directive determines whether to use 2FA for front-end accounts."
 config_PHPMailer_EventLog: "A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable."
@@ -251,6 +249,7 @@ link_config: "Configuration"
 link_documentation: "Documentation"
 link_file_manager: "File Manager"
 link_home: "Home"
+link_log_out: "Log Out"
 link_logs: "Logs"
 link_quarantine: "Quarantine"
 link_siginfo: "Signature Information"

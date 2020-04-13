@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.12.19).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>可通过<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>许可证获得。"
 Extended Description phpMussel: "主包（没有签名文件，文档，和配置）。"
-bNav_home_logout: "<a href="?">主页</a> | <a href="?phpmussel-page=logout">登出</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">登出</a>"
 config_PHPMailer: "PHPMailer的配置（用于双因素身份验证）。"
 config_PHPMailer_Enable2FA: "该指令确定是否将2FA用于前端帐户。"
 config_PHPMailer_EventLog: "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。"
@@ -249,6 +247,7 @@ link_config: "配置"
 link_documentation: "文档"
 link_file_manager: "文件管理器"
 link_home: "主页"
+link_log_out: "登出"
 link_logs: "日志"
 link_quarantine: "隔离"
 link_siginfo: "签名信息"

@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.12.19).
+# This file: Arabic language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
 Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> متاح عبر الترخيص الرخصه <a dir="ltr" href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
 Extended Description phpMussel: "حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين)."
-bNav_home_logout: "<a href="?">الرئيسية</a> | <a href="?phpmussel-page=logout">خروج</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">خروج</a>"
 config_PHPMailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_PHPMailer_Enable2FA: "يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا."
 config_PHPMailer_EventLog: "ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
@@ -249,6 +247,7 @@ link_config: "التكوين"
 link_documentation: "توثيق"
 link_file_manager: "مدير الملفات"
 link_home: "الرئيسية"
+link_log_out: "خروج"
 link_logs: "سجلات"
 link_quarantine: "الحجر الصحي"
 link_siginfo: "معلومات التوقيع"

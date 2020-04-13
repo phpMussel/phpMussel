@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2019.12.19).
+# This file: Bangla language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> মাধ্যমে উপলব্ধ।"
 Extended Description PHPMailer: "ইমেল কার্যকারিতা পাঠানোর জন্য প্রয়োজনীয়।<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> লাইসেন্সের মাধ্যমে উপলব্ধ।"
 Extended Description phpMussel: "প্রধান প্যাকেজ (স্বাক্ষর, ডকুমেন্টেশন এবং কনফিগারেশন সহ না)।"
-bNav_home_logout: "<a href="?">হোম পেজ</a> | <a href="?phpmussel-page=logout">প্রস্থান</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">প্রস্থান</a>"
 config_PHPMailer: "PHPMailer জন্য কনফিগারেশন (দ্বি-গুণক প্রমাণীকরণ জন্য ব্যবহৃত)।"
 config_PHPMailer_Enable2FA: "এই নির্দেশটি ফ্রন্ট-এন্ড অ্যাকাউন্টগুলির জন্য 2FA ব্যবহার করে কিনা তা নির্ধারণ করে।"
 config_PHPMailer_EventLog: "PHPMailer সম্পর্কিত সকল ঘটনা লগইন করার জন্য একটি ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
@@ -249,6 +247,7 @@ link_config: "কনফিগারেশন"
 link_documentation: "ডকুমেন্টেশনটি"
 link_file_manager: "ফাইল ম্যানেজার"
 link_home: "হোম পেজ"
+link_log_out: "প্রস্থান"
 link_logs: "লগ ফাইল"
 link_quarantine: "সঙ্গরোধ"
 link_siginfo: "স্বাক্ষর তথ্য"

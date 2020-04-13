@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.12.19).
+# This file: Turkish language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
 Extended Description phpMussel: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
-bNav_home_logout: "<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Çıkış</a>"
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_Enable2FA: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
 config_PHPMailer_EventLog: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -249,6 +247,7 @@ link_config: "Yapılandırma"
 link_documentation: "Belgeler"
 link_file_manager: "Dosya Yöneticisi"
 link_home: "Ana Sayfa"
+link_log_out: "Çıkış"
 link_logs: "Kayıtlar"
 link_quarantine: "Karantina"
 link_siginfo: "İmza Bilgisi"

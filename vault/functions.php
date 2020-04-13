@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.03.01).
+ * This file: Functions file (last modified: 2020.04.13).
  */
 
 /**
@@ -312,8 +312,10 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0) {
     if (!is_file($File) || !is_readable($File)) {
         return '';
     }
+
     /** Default blocksize (128KB). */
     static $Blocksize = 131072;
+
     $Filesize = filesize($File);
     if (!$Size) {
         $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
@@ -1299,6 +1301,7 @@ $phpMussel['MatchVarInSigFile'] = function ($Actual, $Expected) {
  *      data handler from completing its normal process.
  */
 $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$phpMussel) {
+
     /** If the memory cache isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['InstanceCache'])) {
         throw new \Exception($phpMussel['L10N']->getString(
@@ -1330,10 +1333,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $sha = sha1($str);
     $sha256 = hash('sha256', $str);
     $crc = hash('crc32b', $str);
+
     /** $fourcc: First four bytes of the scan target in hexadecimal notation. */
     $fourcc = strtolower(bin2hex(substr($str, 0, 4)));
+
     /** $twocc: First two bytes of the scan target in hexadecimal notation. */
     $twocc = substr($fourcc, 0, 4);
+
     /**
      * $CoExMeta: Contains metadata pertaining to the scan target, intended to
      * be used by the "complex extended" signatures.
@@ -1363,6 +1369,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         );
         return [2, $Out];
     }
+
     /** URL-encoded version of the scan target name. */
     $ofnSafe = urlencode($ofn);
 
@@ -1417,12 +1424,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         if (!$Out) {
             return [1, ''];
         }
+
         /** Register object flagged. */
         if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] == 'cli_scan') {
             $phpMussel['Stats-Increment']('CLI-Flagged', 1);
         } else {
             $phpMussel['Stats-Increment']($phpMussel['EOF'] ? 'API-Flagged' : 'Web-Blocked', 1);
         }
+
         /** Object flagged. */
         return [2, $Out];
     }
@@ -2648,10 +2657,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
         /** Codeblock for performing hpHosts API lookups. */
         if ($phpMussel['Config']['urlscanner']['lookup_hphosts'] && $URLScanner['DomainsCount']) {
+
             /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
             if (!isset($phpMussel['InstanceCache']['urlscanner_domains'])) {
                 $phpMussel['InstanceCache']['urlscanner_domains'] = $phpMussel['FetchCache']('urlscanner_domains');
             }
+
             $URLScanner['y'] = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
             $URLScanner['ScriptIdentEncoded'] = urlencode($phpMussel['ScriptIdent']);
             $URLScanner['classes'] = [
@@ -3150,6 +3161,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     if ($Out) {
+
         /** Register object flagged. */
         if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] == 'cli_scan') {
             $phpMussel['Stats-Increment']('CLI-Flagged', 1);
@@ -3526,6 +3538,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Increment scan depth. */
     $dpt++;
+
     /** Controls indenting relating to scan depth for normal logging and for CLI-mode scanning. */
     $lnap = str_pad('> ', ($dpt + 1), '-', STR_PAD_LEFT);
 
@@ -3964,6 +3977,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Check whether Crx, and convert if necessary. */
     if ($phpMussel['ConvertCRX']($Data)) {
+
         /** Reset the file pointer (because the content has been modified anyway). */
         $File = '';
     }

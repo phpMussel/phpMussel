@@ -10,14 +10,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.12.19).
+# This file: Hindi language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।"
 Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> लाइसेंस के माध्यम से उपलब्ध है।"
 Extended Description phpMussel: "मुख्य पैकेज (हस्ताक्षर, डॉक्यूमेंटेशन, और कॉन्फ़िगरेशन के बिना)।"
-bNav_home_logout: "<a href="?">होमपेज</a> | <a href="?phpmussel-page=logout">लोग आउट</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">लोग आउट</a>"
 config_PHPMailer: "PHPMailer के लिए कॉन्फ़िगरेशन (दो-कारक प्रमाणीकरण के लिए उपयोग किया जाता है)।"
 config_PHPMailer_Enable2FA: "यह निर्देश निर्धारित करता है कि सामने के अंत खाते 2FA का उपयोग करते हैं या नहीं।"
 config_PHPMailer_EventLog: "PHPMailer के संबंध में सभी घटनाओं को लॉग इन करने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
@@ -251,6 +249,7 @@ link_config: "कॉन्फ़िगरेशन"
 link_documentation: "डॉक्यूमेंटेशन"
 link_file_manager: "फाइल प्रबंधक"
 link_home: "होमपेज"
+link_log_out: "लोग आउट"
 link_logs: "लॉग फाइलें"
 link_quarantine: "संगरोध"
 link_siginfo: "हस्ताक्षर जानकारी"
