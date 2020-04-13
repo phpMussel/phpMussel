@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.12.19).
+# This file: Russian language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-bNav_home_logout: "<a href="?">Домашняя Страница</a> | <a href="?phpmussel-page=logout">Выйдите</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Выйдите</a>"
 config_PHPMailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
 config_PHPMailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
 config_PHPMailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
@@ -251,6 +249,7 @@ link_config: "Конфигурация"
 link_documentation: "Документация"
 link_file_manager: "Файловый Менеджер"
 link_home: "Домашняя Страница"
+link_log_out: "Выйдите"
 link_logs: "Лог-Файлы"
 link_quarantine: "Карантинный"
 link_siginfo: "Информация о Сигнатур"

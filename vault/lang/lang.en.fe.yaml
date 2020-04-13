@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.12.19).
+# This file: English language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> license."
-bNav_home_logout: "<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Log Out</a>"
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_PHPMailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
 config_PHPMailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
@@ -250,6 +248,7 @@ link_config: "Configuration"
 link_documentation: "Documentation"
 link_file_manager: "File Manager"
 link_home: "Home"
+link_log_out: "Log Out"
 link_logs: "Logs"
 link_quarantine: "Quarantine"
 link_siginfo: "Signature Information"

@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.12.19).
+# This file: Norwegian language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> er tilgjengelig via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-lisensen."
-bNav_home_logout: "<a href="?">Hjem</a> | <a href="?phpmussel-page=logout">Logg Ut</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Logg Ut</a>"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -248,6 +246,7 @@ link_config: "Konfigurasjon"
 link_documentation: "Dokumentasjon"
 link_file_manager: "Filbehandler"
 link_home: "Hjem"
+link_log_out: "Logg Ut"
 link_logs: "Logger"
 link_quarantine: "Karantene"
 link_siginfo: "Signaturinformasjon"

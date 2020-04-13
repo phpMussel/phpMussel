@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2019.12.19).
+# This file: Latvian language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT">MIT licenci</a>."
 Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> ir pieejams caur <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> licenci."
-bNav_home_logout: "<a href="?">Mājas</a> | <a href="?phpmussel-page=logout">Izlogoties</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Izlogoties</a>"
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_PHPMailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -251,6 +249,7 @@ link_config: "Konfigurācija"
 link_documentation: "Dokumentācija"
 link_file_manager: "Failu Menedžeris"
 link_home: "Mājas"
+link_log_out: "Izlogoties"
 link_logs: "Logfaili"
 link_quarantine: "Karantīna"
 link_siginfo: "Paraksta Informācija"

@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.12.19).
+# This file: French language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> est disponible via la licence <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-bNav_home_logout: "<a href="?">Page d'Accueil</a> | <a href="?phpmussel-page=logout">Déconnecter</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Déconnecter</a>"
 config_PHPMailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs)."
 config_PHPMailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
@@ -250,6 +248,7 @@ link_config: "Configuration"
 link_documentation: "Documentation"
 link_file_manager: "Gestionnaire de Fichiers"
 link_home: "Page d'Accueil"
+link_log_out: "Déconnecter"
 link_logs: "Fichiers Journaux"
 link_quarantine: "Quarantaine"
 link_siginfo: "Informations sur les Signatures"

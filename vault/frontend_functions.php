@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.25).
+ * This file: Front-end functions file (last modified: 2020.04.13).
  */
 
 /**
@@ -1553,14 +1553,14 @@ $phpMussel['UpdatesHandler-Activate'] = function (string $ID) use (&$phpMussel) 
                 return ($Component && file_exists($phpMussel['sigPath'] . $Component));
             }
         ));
-        foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $phpMussel['Activation']['ThisFile']) {
+        foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $ThisFile) {
             if (
-                !empty($phpMussel['Activation']['ThisFile']) &&
-                file_exists($phpMussel['Vault'] . $phpMussel['Activation']['ThisFile']) &&
-                substr($phpMussel['Activation']['ThisFile'], 0, 11) === 'signatures/' &&
-                $phpMussel['Traverse']($phpMussel['Activation']['ThisFile'])
+                !empty($ThisFile) &&
+                file_exists($phpMussel['Vault'] . $ThisFile) &&
+                substr($ThisFile, 0, 11) === 'signatures/' &&
+                $phpMussel['Traverse']($ThisFile)
             ) {
-                $phpMussel['Activation']['active'][] = substr($phpMussel['Activation']['ThisFile'], 11);
+                $phpMussel['Activation']['active'][] = substr($ThisFile, 11);
             }
         }
         if (count($phpMussel['Activation']['active'])) {
@@ -1590,6 +1590,7 @@ $phpMussel['UpdatesHandler-Activate'] = function (string $ID) use (&$phpMussel) 
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
     }
+
     /** Cleanup. */
     unset($phpMussel['Activation']);
 };
@@ -1652,6 +1653,7 @@ $phpMussel['UpdatesHandler-Deactivate'] = function (string $ID) use (&$phpMussel
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
         }
     }
+
     /** Cleanup. */
     unset($phpMussel['Deactivation']);
 };

@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.12.19).
+# This file: Indonesian language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> tersedia melalui lisensi <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-bNav_home_logout: "<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Keluar</a>"
 config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
@@ -248,6 +246,7 @@ link_config: "Konfigurasi"
 link_documentation: "Dokumentasi"
 link_file_manager: "File Manager"
 link_home: "Halaman Utama"
+link_log_out: "Keluar"
 link_logs: "Log"
 link_quarantine: "Karantina"
 link_siginfo: "Informasi Tanda Tangan"

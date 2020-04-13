@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2019.12.19).
+# This file: Urdu language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے."
 Extended Description PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> لائسنس <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> کے ذریعہ دستیاب ہے."
-bNav_home_logout: "<a href="?">ہوم</a> | <a href="?phpmussel-page=logout">لاگ آوٹ</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">لاگ آوٹ</a>"
 config_PHPMailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق کے لئے استعمال کیا جاتا ہےn)."
 config_PHPMailer_add_reply_to_address: "ای میل بھیجنے پر جواب کا پتہ."
 config_PHPMailer_add_reply_to_name: "ای میل بھیجنے پر جواب کا نام."
@@ -248,6 +246,7 @@ link_config: "کنفگریشن"
 link_documentation: "دستاویزی"
 link_file_manager: "فائل منیجر"
 link_home: "ہوم"
+link_log_out: "لاگ آوٹ"
 link_logs: "لاگز"
 link_quarantine: "قرنطین"
 link_siginfo: "دستخط کی معلومات"

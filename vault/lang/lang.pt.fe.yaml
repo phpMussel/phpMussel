@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.12.19).
+# This file: Portuguese language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponível através do licença <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-bNav_home_logout: "<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Sair</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Sair</a>"
 config_PHPMailer: "Configuração para PHPMailer (usado para autenticação de dois fatores)."
 config_PHPMailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
@@ -250,6 +248,7 @@ link_config: "Configuração"
 link_documentation: "Documentação"
 link_file_manager: "Gerenciador de Arquivos"
 link_home: "Página Principal"
+link_log_out: "Sair"
 link_logs: "Arquivos de Registro"
 link_quarantine: "Quarentena"
 link_siginfo: "Informações de Assinaturas"

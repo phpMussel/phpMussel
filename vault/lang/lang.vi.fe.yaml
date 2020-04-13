@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.12.19).
+# This file: Vietnamese language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> có sẵn qua giấy phép <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
-bNav_home_logout: "<a href="?">Trang chủ</a> | <a href="?phpmussel-page=logout">Đăng xuất</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Đăng xuất</a>"
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
 config_PHPMailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
@@ -248,6 +246,7 @@ link_config: "Cấu Hình"
 link_documentation: "Tài liệu"
 link_file_manager: "Quản lý tập tin"
 link_home: "Trang chủ"
+link_log_out: "Đăng xuất"
 link_logs: "Bản ghi"
 link_quarantine: "Kiểm dịch"
 link_siginfo: "Thông tin chữ ký"

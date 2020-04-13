@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.12.19).
+# This file: Swedish language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licensen."
-bNav_home_logout: "<a href="?">Hem</a> | <a href="?phpmussel-page=logout">Logga Ut</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Logga Ut</a>"
 config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
@@ -248,6 +246,7 @@ link_config: "Konfiguration"
 link_documentation: "Dokumentation"
 link_file_manager: "Filhanterare"
 link_home: "Hem"
+link_log_out: "Logga Ut"
 link_logs: "Loggfiler"
 link_quarantine: "Karantän"
 link_siginfo: "Signaturinformation"

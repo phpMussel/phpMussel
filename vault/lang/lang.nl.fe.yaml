@@ -10,13 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.12.19).
+# This file: Dutch language data for the front-end (last modified: 2020.04.12).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is beschikbaar via de <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licentie."
-bNav_home_logout: "<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>"
-bNav_logout: "<a href="?phpmussel-page=logout">Uitloggen</a>"
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
@@ -250,6 +248,7 @@ link_config: "Configuratie"
 link_documentation: "Documentatie"
 link_file_manager: "Bestandsbeheer"
 link_home: "Startpagina"
+link_log_out: "Uitloggen"
 link_logs: "Logbestanden"
 link_quarantine: "Quarantaine"
 link_siginfo: "Signature Informatie"
