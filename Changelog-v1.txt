@@ -12,6 +12,12 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.04.13; Maikuolan]: Performed some minor refactoring.
 
+- [2020.04.14; Bug-fix; Maikuolan]: The phpMussel switch file isn't a signature
+  file, but unintentionally matched positive for the phpMussel signature file
+  magic number, allowing a very small but real risk that it would be
+  interpreted by phpMussel as a signature file, causing PHP errors to be
+  generated; Fixed.
+
 === Version/Release 1.13.2 ===
 PATCH RELEASE.
 
