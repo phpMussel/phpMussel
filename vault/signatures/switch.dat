@@ -1,4 +1,4 @@
-phpMussel switch file.
+Switch file for phpMussel.
 
 == Sets flags for ignoring some certain ClamAV signature files ==
 FD-RX:377f068[23]002de218:A:8;infectable=false
