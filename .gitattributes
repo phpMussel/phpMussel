@@ -30,6 +30,14 @@
 
 *.md linguist-documentation
 *.txt linguist-documentation
+
+vault/* linguist-detectable
+.github/* -linguist-detectable
+_testfiles/* -linguist-detectable
+tests/* -linguist-detectable
+vault/lang/* -linguist-detectable
+vault/signatures/* -linguist-detectable
+
 components.dat linguist-language=YAML
 plugins.dat linguist-language=YAML
 themes.dat linguist-language=YAML
