@@ -18,6 +18,8 @@ Detailed version release guidelines for phpMussel can be found at:
   interpreted by phpMussel as a signature file, causing PHP errors to be
   generated; Fixed.
 
+- [2020.05.07; Maikuolan]: Some very minor aesthetic improvements.
+
 === Version/Release 2.1.2 ===
 PATCH RELEASE.
 
