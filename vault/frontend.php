@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.04.13).
+ * This file: Front-end handler (last modified: 2020.05.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -591,7 +591,8 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
     }
 }
 
-$phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
+/** Line spacing fix. */
+$phpMussel['FE']['bNav'] .= ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
@@ -602,7 +603,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
     if ($phpMussel['FE']['UserState'] === 2) {
 
         /** Provide the option to log out (omit home link). */
-        $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a>', $phpMussel['L10N']->getString('link_log_out'));
+        $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a><br />', $phpMussel['L10N']->getString('link_log_out'));
 
         /** Show them the two-factor authentication page. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
@@ -610,6 +611,9 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_2fa.html'))
         );
     } else {
+
+        /** Omit the log out and home links. */
+        $phpMussel['FE']['bNav'] = '';
 
         /** Show them the login page. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
@@ -643,6 +647,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     /** Operating system used. */
     $phpMussel['FE']['info_os'] = php_uname();
 
+    /** Provide the log out and home links. */
     $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a>', $phpMussel['L10N']->getString('link_log_out'));
 
     /** Build repository backup locations information. */
