@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.04.12).
+# This file: English language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
-Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> license."
+Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> license."
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_PHPMailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
 config_PHPMailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
@@ -384,7 +384,7 @@ tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view 
 tip_pie_html: "Click the component name for more details."
 tip_quarantine: "Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files."
 tip_quarantine_disabled: "Note: Quarantine is currently disabled, but can be enabled via the configuration page."
-tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">documentation</a> for information about the various configuration directives and their purposes."
+tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
 tip_siginfo: "Hello, {username}.<br />The signature information page provides some basic information about the sources and types of the currently active signatures."
 tip_statistics: "Hello, {username}.<br />This page shows some basic usage statistics regarding your phpMussel installation."
 tip_statistics_disabled: "Note: Statistics tracking is currently disabled, but can be enabled via the configuration page."
@@ -399,36 +399,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, resources, etc for phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Creates phpMussel signature files using the ClamAV signatures database.</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Various extras.</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Creates phpMussel signature files using the ClamAV signatures database.</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Various extras.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Tools, resources, etc for ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – Offers supplementary signatures for ClamAV and supplementary rules for ModSecurity.</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Offers supplementary signatures for ClamAV and supplementary rules for ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Groups, forums, communities, etc.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP learning resources and discussion.</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – Useful malware focused discussion forums.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP learning resources and discussion.</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Useful malware focused discussion forums.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Other useful tools, resources, services, etc.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Computer anti-malware specialists.</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal is a free service for analysing suspicious files and URLs.</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis is a free malware analysis service provided by <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Computer anti-malware specialists.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informational and learning resources.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP learning resources and discussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
          </ul>
        </li>
      </ul>

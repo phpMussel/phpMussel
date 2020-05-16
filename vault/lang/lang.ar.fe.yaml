@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.04.12).
+# This file: Arabic language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
-Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> متاح عبر الترخيص الرخصه <a dir="ltr" href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> متاح عبر الترخيص الرخصه <a dir="ltr" href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 config_PHPMailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_PHPMailer_add_reply_to_address: "عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
 config_PHPMailer_add_reply_to_name: "اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
@@ -386,7 +386,7 @@ tip_logs: "مرحبا، {username}.<br />اختار سجلات من القائم
 tip_pie_html: "انقر فوق اسم المكون لمزيد من التفاصيل."
 tip_quarantine: "مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات."
 tip_quarantine_disabled: "ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة."
-tip_see_the_documentation: "راجع <a href="https://github.com/phpMussel/Docs/blob/master/readme.ar.md\#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."
+tip_see_the_documentation: "راجع <a href="https://github.com/phpMussel/Docs/blob/master/readme.ar.md\#SECTION7" hreflang="ar" rel="noopener external">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."
 tip_siginfo: "مرحبا، {username}.<br />توفر صفحة معلومات التوقيع بعض المعلومات الأساسية حول مصادر وأنواع التوقيعات النشطة حاليًا."
 tip_statistics: "مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت phpMussel."
 tip_statistics_disabled: "ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين."
@@ -401,36 +401,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، إلخ لـ phpMussel.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
-           <li><a dir="ltr" href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – ينشئ ملفات توقيع phpMussel باستخدام قاعدة بيانات توقيعات ClamAV.</li>
-           <li><a dir="ltr" href="https://github.com/phpMussel/extras">phpMussel/extras</a> – إضافات مختلفة.</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ينشئ ملفات توقيع phpMussel باستخدام قاعدة بيانات توقيعات ClamAV.</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – إضافات مختلفة.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، إلخ لـ ClamAV.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.clamav.net/">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
-           <li><a dir="ltr" href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
-           <li><a dir="ltr" href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
-           <li><a dir="ltr" href="https://malware.expert/">Malware.Expert</a> – يقدم التواقيع التكميلية لClamAV والقواعد التكميلية لModSecurity.</li>
+           <li><a dir="ltr" href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
+           <li><a dir="ltr" href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
+           <li><a dir="ltr" href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
+           <li><a dir="ltr" href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – يقدم التواقيع التكميلية لClamAV والقواعد التكميلية لModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">مجموعات، المنتديات، مجتمعات، إلخ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
-           <li><a dir="ltr" href="https://malwaretips.com/">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
+           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
+           <li><a dir="ltr" href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.phishtank.com/">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
-           <li><a dir="ltr" href="https://www.virustotal.com/">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
-           <li><a dir="ltr" href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-           <li><a dir="ltr" href="https://www.malwarebytes.com/">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
+           <li><a dir="ltr" href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
+           <li><a dir="ltr" href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
+           <li><a dir="ltr" href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
+           <li><a dir="ltr" href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">موارد المعلومات والتعلم.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://php.earth/">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
-           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
-           <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
+           <li><a dir="ltr" href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (PHP، HHVM، إلخ).</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
          </ul>
        </li>
      </ul>

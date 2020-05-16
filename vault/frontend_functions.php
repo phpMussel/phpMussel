@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.04.13).
+ * This file: Front-end functions file (last modified: 2020.05.16).
  */
 
 /**
@@ -898,6 +898,7 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
         ];
         $phpMussel['FormatFilesize']($Arr[$Key]['QFU-Size']);
         $Head = $phpMussel['ReadFile']($Item, 256);
+
         /** Upload date/time. */
         $Arr[$Key]['Upload-Date'] = (
             ($DatePos = strpos($Head, 'Time/Date Uploaded: ')) !== false
@@ -905,11 +906,13 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
             (int)substr($Head, $DatePos + 20, 16),
             $phpMussel['Config']['general']['time_format']
         ) : $phpMussel['L10N']->getString('field_filetype_unknown');
+
         /** Upload origin. */
         $Arr[$Key]['Upload-Origin'] = (
             ($OriginStartPos = strpos($Head, 'Uploaded From: ')) !== false &&
             ($OriginEndPos = strpos($Head, ' ', $OriginStartPos + 15)) !== false
         ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['L10N']->getString('field_filetype_unknown');
+
         /** If the phpMussel QFU (Quarantined File Upload) header isn't found, it probably isn't a quarantined file. */
         if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\x01")) {
             $Head = substr($Head, $HeadPos);
@@ -921,10 +924,11 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
             $Arr[$Key]['Upload-MD5'] = $phpMussel['L10N']->getString('field_filetype_unknown');
             $Arr[$Key]['Upload-Size'] = $phpMussel['L10N']->getString('field_filetype_unknown');
         }
+
         /** Appends Virus Total search URL for this hash onto the hash. */
         if (strlen($Arr[$Key]['Upload-MD5']) === 32) {
             $Arr[$Key]['Upload-MD5'] = sprintf(
-                '<a href="https://www.virustotal.com/#/file/%1$s">%1$s</a>',
+                '<a href="https://www.virustotal.com/#/file/%1$s" rel="noopener noreferrer external">%1$s</a>',
                 $Arr[$Key]['Upload-MD5']
             );
         }
@@ -1033,7 +1037,7 @@ $phpMussel['AppendTests'] = function (array &$Component, bool $ReturnState = fal
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
             $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
-                '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>'
+                '<a href="' . $ThisStatus['target_url'] . '" rel="noopener noreferrer external">' . $ThisStatus['context'] . '</a>'
             );
             if (!$ReturnState) {
                 $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');

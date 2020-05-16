@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2020.04.12).
+# This file: Hindi language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> के माध्यम से उपलब्ध है।"
-Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> लाइसेंस के माध्यम से उपलब्ध है।"
+Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
+Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> लाइसेंस के माध्यम से उपलब्ध है।"
 config_PHPMailer: "PHPMailer के लिए कॉन्फ़िगरेशन (दो-कारक प्रमाणीकरण के लिए उपयोग किया जाता है)।"
 config_PHPMailer_add_reply_to_address: "ईमेल भेजने के लिए उत्तर पता।"
 config_PHPMailer_add_reply_to_name: "ईमेल भेजने के लिए उत्तर का नाम।"
@@ -384,7 +384,7 @@ tip_logs: "हैलो, {username}।<br />इसकी सामग्री �
 tip_pie_html: "अधिक विवरण के लिए घटक नाम पर क्लिक करें।"
 tip_quarantine: "हैलो, {username}।<br />यह पृष्ठ वर्तमान में संगरोध में सभी फाइलों को सूचीबद्ध करता है और उन फाइलों के प्रबंधन की सुविधा देता है।"
 tip_quarantine_disabled: "नोट: संगरोध वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा सकता है।"
-tip_see_the_documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">डॉक्यूमेंटेशन</a> देखें।"
+tip_see_the_documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
 tip_siginfo: "हैलो, {username}।<br />हस्ताक्षर जानकारी पृष्ठ वर्तमान में सक्रिय हस्ताक्षर के स्रोतों और प्रकारों के बारे में कुछ बुनियादी जानकारी प्रदान करता है।"
 tip_statistics: "हैलो, {username}।<br />यह पृष्ठ आपके phpMussel स्थापना के बारे में कुछ बुनियादी उपयोग सांख्यिकी दिखाता है।"
 tip_statistics_disabled: "नोट: सांख्यिकी ट्रैकिंग वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
@@ -399,36 +399,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel के लिए उपकरण, संसाधन, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel के समस्याएं @ GitHub</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – ClamAV हस्ताक्षर डेटाबेस का उपयोग करके phpMussel हस्ताक्षर फ़ाइलें बनाता है।</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – विभिन्न एक्स्ट्रा।</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel के समस्याएं @ GitHub</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV हस्ताक्षर डेटाबेस का उपयोग करके phpMussel हस्ताक्षर फ़ाइलें बनाता है।</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – विभिन्न एक्स्ट्रा।</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">ClamAV के लिए उपकरण, संसाधन, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – ClamAV के लिए पूरक हस्ताक्षर और ModSecurity के पूरक नियम प्रदान करता है।</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV के लिए पूरक हस्ताक्षर और ModSecurity के पूरक नियम प्रदान करता है।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">समूह, मंच, समुदाय, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">अन्य उपयोगी उपकरण, संसाधन, सेवाएं, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – phpMussel यूआरएल स्कैनर द्वारा उपयोग किए गए फ़िशिंग डेटाबेस।</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal संदिग्ध फाइलें और URL का विश्लेषण करने के लिए एक नि: शुल्क सेवा है।</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis <a href="https://www.payload-security.com/">Payload Security</a> द्वारा प्रदान की जाने वाली एक मुफ्त मैलवेयर विश्लेषण सेवा है।</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – कंप्यूटर एंटी-मैलवेयर विशेषज्ञ।</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel यूआरएल स्कैनर द्वारा उपयोग किए गए फ़िशिंग डेटाबेस।</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal संदिग्ध फाइलें और URL का विश्लेषण करने के लिए एक नि: शुल्क सेवा है।</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a> द्वारा प्रदान की जाने वाली एक मुफ्त मैलवेयर विश्लेषण सेवा है।</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – कंप्यूटर एंटी-मैलवेयर विशेषज्ञ।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">सूचनात्मक और सीखने के संसाधन।</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
          </ul>
        </li>
      </ul>

@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.04.12).
+# This file: Swedish language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
-Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licensen."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licensen."
 config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
@@ -382,7 +382,7 @@ tip_logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att
 tip_pie_html: "Klicka på komponentnamnet för mer information."
 tip_quarantine: "Hallå, {username}.<br />Denna sida visar alla filer som för närvarande är i karantän och underlättar hanteringen av dessa filer."
 tip_quarantine_disabled: "Notera: Karantän är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
-tip_see_the_documentation: "Se <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
+tip_see_the_documentation: "Se <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
 tip_siginfo: "Hallå, {username}.<br />Signaturinformationssidan för signatur ger grundläggande information om källorna och typerna av de för närvarande aktiva signaturerna."
 tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din phpMussel-installation."
 tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
@@ -397,36 +397,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Olika extramaterial.</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Olika extramaterial.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – Erbjuder kompletterande signaturer för ClamAV och kompletterande regler för ModSecurity.</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Erbjuder kompletterande signaturer för ClamAV och kompletterande regler för ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – Phishing-databas som används av phpMussel URL-skannern.</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal är en gratistjänst för att analysera misstänkta filer och URLer.</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis är en gratis skadlig programvara analystjänst tillhandahålls av <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Dator och anti-malware specialister.</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-databas som används av phpMussel URL-skannern.</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal är en gratistjänst för att analysera misstänkta filer och URLer.</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis är en gratis skadlig programvara analystjänst tillhandahålls av <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Dator och anti-malware specialister.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
          </ul>
        </li>
      </ul>

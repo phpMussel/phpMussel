@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.04.12).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
-Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>可通過<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>許可證獲得。"
+Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
+Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>可通過<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>許可證獲得。"
 config_PHPMailer: "PHPMailer的配置（用於雙因素身份驗證）。"
 config_PHPMailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
 config_PHPMailer_add_reply_to_name: "通過SMTP發送電子郵件時引用的回複姓名。"
@@ -380,7 +380,7 @@ tip_logs: "你好，​{username}。​<br />選擇一個日誌從下面的列�
 tip_pie_html: "單擊組件名稱以獲取更多詳細信息。"
 tip_quarantine: "你好，​{username}。​<br />此頁面列出當前在隔離中的所有文件，並可以用來管理這些文件。"
 tip_quarantine_disabled: "注意：隔離目前禁用，但可以通過配置頁面啟用。"
-tip_see_the_documentation: "請參閱<a href="https://github.com/phpMussel/Docs/blob/master/readme.zh-TW.md\#SECTION7">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
+tip_see_the_documentation: "請參閱<a href="https://github.com/phpMussel/Docs/blob/master/readme.zh-TW.md\#SECTION7" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
 tip_siginfo: "你好，​{username}。<br />簽名信息頁面提供了有關當前活動簽名的來源和類型的一些基本信息。"
 tip_statistics: "你好，​{username}。​<br />此頁面顯示了有關phpMussel安裝的一些基本使用統計信息。"
 tip_statistics_disabled: "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"
@@ -395,37 +395,37 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel的工具，資源，等等。</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
-           <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – 各種附加功能。</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
+           <li><a href="https://www.oschina.net/p/phpMussel" hreflang="zh-CN" rel="noopener noreferrer external">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – 各種附加功能。</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">ClamAV的工具，資源，等等。</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – 提供ClamAV的補充簽名和ModSecurity的補充規則。</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – 提供ClamAV的補充簽名和ModSecurity的補充規則。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">團體，論壇，社區，等等。</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth ＠ Facebook</a> – PHP學習資源和討論。</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – PHP學習資源和討論。</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">其他有用的工具，資源，服務，等等</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="https://www.payload-security.com/">Payload Security</a>提供的免費惡意軟件分析服務。</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 電腦反惡意軟件專家。</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis是由<a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>提供的免費惡意軟件分析服務。</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – 電腦反惡意軟件專家。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">信息和學習資源。</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP學習資源和討論。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
          </ul>
        </li>
      </ul>

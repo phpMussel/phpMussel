@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2020.04.12).
+# This file: Thai language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT">MIT license</a>."
-Extended Description PHPMailer: "จำเป็นสำหรับการใช้ฟังก์ชันใด ๆ ที่เกี่ยวข้องกับการส่งอีเมล.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> สามารถใช้ได้ผ่านทางใบอนุญาต <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "จำเป็นสำหรับการใช้ฟังก์ชันใด ๆ ที่เกี่ยวข้องกับการส่งอีเมล.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> สามารถใช้ได้ผ่านทางใบอนุญาต <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 config_PHPMailer: "การกำหนดค่าสำหรับ PHPMailer (ใช้สำหรับการรับรองความถูกต้องด้วยสองปัจจัย)."
 config_PHPMailer_add_reply_to_address: "ที่อยู่ตอบกลับสำหรับเมื่อส่งอีเมล."
 config_PHPMailer_add_reply_to_name: "ชื่อตอบกลับสำหรับเมื่อส่งอีเมล."
@@ -380,7 +380,7 @@ tip_logs: "สวัสดี {username}.<br />เลือกไฟล์บั
 tip_pie_html: "คลิกที่ชื่อองค์ประกอบเพื่อดูรายละเอียดเพิ่มเติม."
 tip_quarantine: "สวัสดี {username}.<br />หน้านี้แสดงรายการไฟล์ทั้งหมดที่อยู่ในกักกันและอำนวยความสะดวกในการจัดการไฟล์เหล่านี้."
 tip_quarantine_disabled: "บันทึก: กักกันถูกปิดใช้งานอยู่ แต่สามารถเปิดใช้งานได้ผ่านทางหน้ากำหนดค่า."
-tip_see_the_documentation: "ดูที่<a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
+tip_see_the_documentation: "ดูที่<a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
 tip_siginfo: "สวัสดี {username}.<br />หน้าข้อมูลลายเซ็นให้ข้อมูลเบื้องต้นเกี่ยวกับแหล่งที่มาและประเภทของลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
 tip_statistics: "สวัสดี {username}.<br />หน้านี้แสดงสถิติการใช้งานขั้นพื้นฐานเกี่ยวกับการติดตั้ง phpMussel ของคุณ."
 tip_statistics_disabled: "บันทึก: ขณะนี้การติดตามผลสถิติถูกปิดใช้งาน แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."
@@ -395,36 +395,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร ฯลฯ สำหรับ phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – สร้างไฟล์ลายเซ็น phpMussel โดยใช้ฐานข้อมูลลายเซ็น ClamAV.</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – ตัวเลือกเพิ่มเติมต่างๆ.</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – สร้างไฟล์ลายเซ็น phpMussel โดยใช้ฐานข้อมูลลายเซ็น ClamAV.</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – ตัวเลือกเพิ่มเติมต่างๆ.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร ฯลฯ สำหรับ ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – เสนอลายเซ็นเสริมสำหรับ ClamAV และกฎเสริมสำหรับ ModSecurity.</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – เสนอลายเซ็นเสริมสำหรับ ClamAV และกฎเสริมสำหรับ ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">กลุ่ม ฟอรั่ม ชุมชน ฯลฯ.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร บริการ ฯลฯ ที่มีประโยชน์อื่น ๆ.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal เป็นบริการฟรีสำหรับการวิเคราะห์ไฟล์และ URL ที่น่าสงสัย.</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal เป็นบริการฟรีสำหรับการวิเคราะห์ไฟล์และ URL ที่น่าสงสัย.</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">แหล่งข้อมูลและการเรียนรู้.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (PHP, HHVM, ฯลฯ).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (ชาร์ตความเข้ากันได้)</a> – แสดงข้อมูลความเข้ากันได้ของแพคเกจต่างๆ (CIDRAM, phpMussel, ฯลฯ).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (PHP, HHVM, ฯลฯ).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts (ชาร์ตความเข้ากันได้)</a> – แสดงข้อมูลความเข้ากันได้ของแพคเกจต่างๆ (CIDRAM, phpMussel, ฯลฯ).</li>
          </ul>
        </li>
      </ul>

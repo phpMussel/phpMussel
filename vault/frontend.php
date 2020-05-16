@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.07).
+ * This file: Front-end handler (last modified: 2020.05.16).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -652,8 +652,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Build repository backup locations information. */
     $phpMussel['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/phpmussel">Bitbucket</a>',
-        '<a href="https://sourceforge.net/projects/phpmussel/">SourceForge</a>'
+        '<a href="https://bitbucket.org/Maikuolan/phpmussel" hreflang="en-US" target="_blank" rel="noopener external">Bitbucket</a>',
+        '<a href="https://sourceforge.net/projects/phpmussel/" hreflang="en-US" target="_blank" rel="noopener external">SourceForge</a>'
     ]);
 
     /** Where to find remote version information? */
@@ -1883,7 +1883,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         /** Append changelog. */
         $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
             $phpMussel['Components']['ThisComponent']['Changelog']
-        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
         /** Append tests. */
         if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisComponent']['ID']]['Tests'])) {
@@ -2028,7 +2028,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         /** Append changelog. */
         $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
             $phpMussel['Components']['ThisComponent']['Changelog']
-        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
         /** Append tests. */
         if (!empty($phpMussel['Components']['ThisComponent']['Tests'])) {

@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.04.12).
+# This file: Latvian language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT">MIT licenci</a>."
-Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> ir pieejams caur <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> licenci."
+Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
+Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> ir pieejams caur <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> licenci."
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_PHPMailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -386,7 +386,7 @@ tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī fail
 tip_pie_html: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_quarantine: "Šajā lapā ir uzskaitīti visi faili, kas pašlaik atrodas karantīnā, un atvieglo šo failu pārvaldību."
 tip_quarantine_disabled: "Piezīme: Karantīna pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
-tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
+tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
 tip_siginfo: "Parakstu informācijas lapā ir sniegta pamatinformācija par pašlaik aktīvo parakstu avotiem un veidiem."
 tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu phpMussel instalēšanu."
 tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
@@ -401,36 +401,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel rīki, resursi, utt.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel issues lapa (atbalsts, palīdzība, utt).</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – Izveido phpMussel parakstu failus, izmantojot ClamAV parakstu datu bāzi.</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Dažādas ekstras.</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – phpMussel issues lapa (atbalsts, palīdzība, utt).</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Izveido phpMussel parakstu failus, izmantojot ClamAV parakstu datu bāzi.</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Dažādas ekstras.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">ClamAV rīki, resursi, utt.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV mājas lapa (ClamAV® ir atvērtā koda pretvīrusu dzinējs, lai atklātu trojas zirgus, vīrusus, ļaunprātīgu programmatūru un citus ļaunprātīgus draudus).</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – Piedāvā papildu parakstus ClamAV un papildu noteikumi ModSecurity.</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV mājas lapa (ClamAV® ir atvērtā koda pretvīrusu dzinējs, lai atklātu trojas zirgus, vīrusus, ļaunprātīgu programmatūru un citus ļaunprātīgus draudus).</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Piedāvā papildu parakstus ClamAV un papildu noteikumi ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupas, forumi, kopienas, utt.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – Noderīgi diskusiju forumi, kas vērsti uz ļaunprātīgu programmatūru.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Noderīgi diskusiju forumi, kas vērsti uz ļaunprātīgu programmatūru.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – Pikšķerēšanas datu bāze, ko izmanto phpMussel URL skeneris.</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal ir bezmaksas pakalpojums aizdomīgu failu un vietrāžu URL analīzei.</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis ir bezmaksas ļaunprātīgas programmatūras analīzes pakalpojums, ko nodrošina uzņēmums <a href="https://www.payload-security.com/">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Datoru ļaundabīgo programmu speciālisti.</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Pikšķerēšanas datu bāze, ko izmanto phpMussel URL skeneris.</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal ir bezmaksas pakalpojums aizdomīgu failu un vietrāžu URL analīzei.</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis ir bezmaksas ļaunprātīgas programmatūras analīzes pakalpojums, ko nodrošina uzņēmums <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Datoru ļaundabīgo programmu speciālisti.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informācijas un mācību resursi.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
          </ul>
        </li>
      </ul>
