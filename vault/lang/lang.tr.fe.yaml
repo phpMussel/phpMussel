@@ -10,11 +10,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.04.12).
+# This file: Turkish language data for the front-end (last modified: 2020.05.16).
 ##/
 
-Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
-Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
+Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
+Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
 Extended Description phpMussel: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_Enable2FA: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
@@ -383,7 +383,7 @@ tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görü
 tip_pie_html: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_quarantine: "Merhaba, {username}.<br />Bu sayfada, şu anda karantinadaki tüm dosyaları listeler ve bu dosyaların yönetimini kolaylaştırır."
 tip_quarantine_disabled: "Not: Karantina şu anda devre dışıdır, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
-tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7">belgelere</a> bakın."
+tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">belgelere</a> bakın."
 tip_siginfo: "Merhaba, {username}.<br />İmza bilgisi sayfası, şu anda aktif imzaların kaynakları ve türleri hakkında bazı temel bilgiler sağlar."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
@@ -398,36 +398,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
-           <li><a href="https://github.com/phpMussel/SigTool">phpMussel SigTool</a> – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
-           <li><a href="https://github.com/phpMussel/extras">phpMussel/extras</a> – Çeşitli ekstralar.</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
+           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
+           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Çeşitli ekstralar.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">ClamAV için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
-           <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/">Sanesecurity</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
-           <li><a href="https://malware.expert/">Malware.Expert</a> – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
+           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
+           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-           <li><a href="https://malwaretips.com/">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/">PhishTank</a> – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
-           <li><a href="https://www.virustotal.com/">VirusTotal</a> – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
-           <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – <a href="https://www.payload-security.com/">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
-           <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
+           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
+           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
+           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
+           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb) güvenli/güvensiz sürümlerini listeler.</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb) güvenli/güvensiz sürümlerini listeler.</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
          </ul>
        </li>
      </ul>

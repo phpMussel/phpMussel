@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.04.13).
+ * This file: Functions file (last modified: 2020.05.16).
  */
 
 /**
@@ -4672,6 +4672,11 @@ $phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpM
                 unset($Dir);
             }
             $Dir = &$Cat[$DKey];
+            if (isset($DData['value_preg_filter']) && is_array($DData['value_preg_filter'])) {
+                foreach ($DData['value_preg_filter'] as $FilterKey => $FilterValue) {
+                    $Dir = preg_replace($FilterKey, $FilterValue, $Dir);
+                }
+            }
             if (isset($DData['type'])) {
                 $phpMussel['AutoType']($Dir, $DData['type']);
             }

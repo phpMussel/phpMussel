@@ -20,6 +20,15 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.05.07; Maikuolan]: Some very minor aesthetic improvements.
 
+- [2020.05.16; Maikuolan]: Slightly improved the safety of some included
+  hyperlinks by way of including rel tags like noopener, noreferrer, external.
+  Added the ability for configuration defaults to define regular expressions
+  to be applied to their own values through preg_replace, thus complimenting
+  the existing auto-typing functionality (phpMussel won't yet be using this
+  functionality for its own configuration defaults, but it is added with the
+  intent to provide a mechanism by which plugins may be able to provide
+  additional safeguards of their own against bad configuration values).
+
 === Version/Release 1.13.2 ===
 PATCH RELEASE.
 
