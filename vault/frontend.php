@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.16).
+ * This file: Front-end handler (last modified: 2020.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1003,20 +1003,32 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
                 $phpMussel['RowInfo']['AccPermissions'] = $phpMussel['L10N']->getString('response_error');
             }
             $phpMussel['RowInfo']['AccPassword'] = substr($phpMussel['RowInfo']['AccPassword'], 0, -2);
+
+            /** Account password warnings. */
             if ($phpMussel['RowInfo']['AccPassword'] === $phpMussel['FE']['DefaultPassword']) {
                 $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['L10N']->getString('state_default_password') . '</div>';
             } elseif ((
-                strlen($phpMussel['RowInfo']['AccPassword']) !== 60 && strlen($phpMussel['RowInfo']['AccPassword']) !== 96
+                strlen($phpMussel['RowInfo']['AccPassword']) !== 60 &&
+                strlen($phpMussel['RowInfo']['AccPassword']) !== 96 &&
+                strlen($phpMussel['RowInfo']['AccPassword']) !== 97
             ) || (
-                strlen($phpMussel['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$\d\d\$/', $phpMussel['RowInfo']['AccPassword'])
+                strlen($phpMussel['RowInfo']['AccPassword']) === 60 &&
+                !preg_match('/^\$2.\$\d\d\$/', $phpMussel['RowInfo']['AccPassword'])
             ) || (
-                strlen($phpMussel['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $phpMussel['RowInfo']['AccPassword'])
+                strlen($phpMussel['RowInfo']['AccPassword']) === 96 &&
+                !preg_match('/^\$argon2i\$/', $phpMussel['RowInfo']['AccPassword'])
+            ) || (
+                strlen($phpMussel['RowInfo']['AccPassword']) === 97 &&
+                !preg_match('/^\$argon2id\$/', $phpMussel['RowInfo']['AccPassword'])
             )) {
                 $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $phpMussel['L10N']->getString('state_password_not_valid') . '</div>';
             }
+
+            /** Logged in notice. */
             if (strrpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo']['AccUsername'] . ',') !== false) {
                 $phpMussel['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $phpMussel['L10N']->getString('state_logged_in') . '</div>';
             }
+
             $phpMussel['RowInfo']['AccID'] = bin2hex($phpMussel['RowInfo']['AccUsername']);
             $phpMussel['RowInfo']['AccUsername'] = htmlentities(base64_decode($phpMussel['RowInfo']['AccUsername']));
             $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
