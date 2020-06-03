@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.06.02).
+# This file: Turkish language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -260,6 +260,8 @@ logs_logfile_doesnt_exist: "Seçilen günlük dosyası yok!"
 logs_no_logfile_selected: "Hiçbir günlük dosyası seçilmedi."
 logs_no_logfiles_available: "Günlük dosyası yok."
 max_login_attempts_exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
+notice_click_here: "Daha fazla bilgi için buraya tıklayın."
+notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. Ancak, güncelleme için bazı manuel adımlar gereklidir."
 previewer_days: "Günler"
 previewer_hours: "Saatler"
 previewer_minutes: "Dakikalar"

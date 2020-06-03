@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.06.02).
+# This file: Vietnamese language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,7 +259,9 @@ link_upload_test: "Kiểm tra tải lên"
 logs_logfile_doesnt_exist: "Bản ghi đã chọn không tồn tại!"
 logs_no_logfile_selected: "Không có bản ghi được chọn."
 logs_no_logfiles_available: "Không có bản ghi có sẵn."
-max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối."
+max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
+notice_click_here: "Nhấp vào đây để có thêm thông tin."
+notice_new_major_version: "Ghi chú: %s hiện có sẵn (bạn đang sử dụng %s). Bạn đáp ứng yêu cầu PHP tối thiểu của phiên bản này. Tuy nhiên, một số bước thủ công được cần thiết để cập nhật."
 previewer_days: "Ngày"
 previewer_hours: "Giờ"
 previewer_minutes: "Phút"

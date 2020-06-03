@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.06.02).
+# This file: Portuguese language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -262,6 +262,8 @@ logs_logfile_doesnt_exist: "Arquivo de registro selecionado não existe!"
 logs_no_logfile_selected: "Não qualquer arquivo de registro selecionado."
 logs_no_logfiles_available: "Não quaisquer arquivos de registro disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
+notice_click_here: "Clique aqui para obter mais informações."
+notice_new_major_version: "Aviso: O %s está agora disponível (você está usando o %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
 previewer_days: "Dias"
 previewer_hours: "Horas"
 previewer_minutes: "Minutos"

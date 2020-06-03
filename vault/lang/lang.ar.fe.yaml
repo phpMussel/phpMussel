@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.06.02).
+# This file: Arabic language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -260,6 +260,8 @@ logs_logfile_doesnt_exist: "هذا سجل غير موجود!"
 logs_no_logfile_selected: "لا سجلات مختار."
 logs_no_logfiles_available: "لا سجلات متاح."
 max_login_attempts_exceeded: "تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول."
+notice_click_here: "انقر هنا للمزيد من المعلومات."
+notice_new_major_version: "تنويه: %s متاح الآن (كنت تستخدم %s). تستوفي الحد الأدنى لمتطلبات PHP لهذا الإصدار. ومع ذلك، بعض الخطوات اليدوية مطلوبة للتحديث."
 previewer_days: "أيام"
 previewer_hours: "ساعات"
 previewer_minutes: "الدقائق"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.06.02).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -260,6 +260,8 @@ logs_logfile_doesnt_exist: "選擇的日誌不存在！"
 logs_no_logfile_selected: "沒有選擇的日誌。"
 logs_no_logfiles_available: "沒有日誌可用。"
 max_login_attempts_exceeded: "最大登錄嘗試次數已經超過；拒絕訪問。"
+notice_click_here: "點擊這裡查看更多信息。"
+notice_new_major_version: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。​但是，需要一些手動步驟來更新。"
 previewer_days: "天"
 previewer_hours: "小時"
 previewer_minutes: "分"
