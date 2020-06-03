@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.05.16).
+# This file: Indonesian language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -242,6 +242,7 @@ label_your_ip: "IP Anda:"
 label_your_ua: "UA Anda:"
 link_accounts: "Akun"
 link_cache_data: "Data Cache"
+link_chat: "Obrolan"
 link_config: "Konfigurasi"
 link_documentation: "Dokumentasi"
 link_file_manager: "File Manager"
@@ -387,15 +388,14 @@ tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, nam
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll)."
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
-warning: "Peringatan:"
-warning_signatures_1: "Tidak ada file tanda tangan yang aktif!"
+warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"
 
 info_some_useful_links: |
  Beberapa link yang berguna:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, dll untuk phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Membuat file tanda tangan phpMussel menggunakan database tanda tangan ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Berbagai tambahan.</li>
          </ul>
@@ -409,7 +409,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Grup, forum, komunitas, dll.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – Sumber belajar dan diskusi PHP.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Berguna forum diskusi difokuskan pada malware.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>

@@ -32,6 +32,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.05.28; Bug-fix; Maikuolan]: The front-end accounts page was incorrectly
   reporting argon2id passwords as invalid; Fixed.
 
+- [2020.06.02; Maikuolan]: Worked on some more minor aesthetic improvements.
+  Also added some configuration filters (based on the work done last month) to
+  some specific potentially error-prone configuration directives to help reduce
+  the risk of erroneous values being specified there.
+
 === Version/Release 2.1.2 ===
 PATCH RELEASE.
 

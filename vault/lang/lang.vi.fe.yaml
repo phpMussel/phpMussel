@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.05.16).
+# This file: Vietnamese language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -242,6 +242,7 @@ label_your_ip: "IP của bạn:"
 label_your_ua: "UA của bạn:"
 link_accounts: "Tài Khoản"
 link_cache_data: "Dữ liệu cache"
+link_chat: "Chat"
 link_config: "Cấu Hình"
 link_documentation: "Tài liệu"
 link_file_manager: "Quản lý tập tin"
@@ -387,15 +388,14 @@ tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 tip_upload_test: "Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên."
 title_login: "Đăng nhập"
-warning: "Cảnh báo:"
-warning_signatures_1: "Không có tập tin chữ ký nào đang hoạt động!"
+warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"
 
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Bổ sung khác nhau.</li>
          </ul>
@@ -409,7 +409,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Nhóm, diễn đàn, cộng đồng, vv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>

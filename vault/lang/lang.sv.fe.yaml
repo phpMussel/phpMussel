@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.05.16).
+# This file: Swedish language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -242,6 +242,7 @@ label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Konton"
 link_cache_data: "Cacherdata"
+link_chat: "Chattrum"
 link_config: "Konfiguration"
 link_documentation: "Dokumentation"
 link_file_manager: "Filhanterare"
@@ -389,15 +390,14 @@ tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inakti
 tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i phpMussel (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
 tip_upload_test: "Hallå, {username}.<br />Uppladdningssidan innehåller ett standardformulär för uppladdning av filer, så att du kan testa om en fil normalt skulle blockeras av phpMussel när du försöker ladda upp den."
 title_login: "Inloggning"
-warning: "Varningar:"
-warning_signatures_1: "Inga signaturfiler är aktiva!"
+warning_signatures_1: "Varning: Inga signaturfiler är aktiva!"
 
 info_some_useful_links: |
  Några användbara länkar:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Olika extramaterial.</li>
          </ul>
@@ -411,7 +411,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP lärande resurser och diskussion.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>

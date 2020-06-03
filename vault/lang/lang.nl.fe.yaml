@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.05.16).
+# This file: Dutch language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -244,6 +244,7 @@ label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
 link_cache_data: "Cachegegevens"
+link_chat: "Chat"
 link_config: "Configuratie"
 link_documentation: "Documentatie"
 link_file_manager: "Bestandsbeheer"
@@ -391,15 +392,14 @@ tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschak
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende phpMussel componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, plugins, L10N bestanden, enz)."
 tip_upload_test: "Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden."
 title_login: "Inloggen"
-warning: "Waarschuwingen:"
-warning_signatures_1: "Geen signatuurbestanden zijn actief!"
+warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"
 
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Maakt phpMussel-signatuurbestanden aan met behulp van de ClamAV-signatuurdatabase.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Diverse extra's.</li>
          </ul>
@@ -413,7 +413,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Groepen, forums, communities, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP leermiddelen en discussie.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP leermiddelen en discussie.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Andere handige tools, bronnen, diensten, enz.</span>

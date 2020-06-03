@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.28).
+ * This file: Front-end handler (last modified: 2020.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,11 +49,6 @@ $phpMussel['FE'] = [
 
     /** Font magnification. */
     'Magnification' => $phpMussel['Config']['template_data']['magnification'],
-
-    /** Warns if maintenance mode is enabled. */
-    'MaintenanceWarning' => (
-        $phpMussel['Config']['general']['maintenance_mode']
-    ) ? "\n<div class=\"center\"><span class=\"txtRd\">" . $phpMussel['L10N']->getString('state_maintenance_mode') . '</span></div><hr />' : '',
 
     /** Define active configuration file. */
     'ActiveConfigFile' => !empty($phpMussel['Overrides']) ? $phpMussel['Domain'] . '.config.ini' : 'config.ini',
@@ -123,9 +118,47 @@ $phpMussel['FE'] = [
     'ASYNC' => !empty($_POST['ASYNC']),
 
     /** Will be populated by the page title. */
-    'FE_Title' => ''
+    'FE_Title' => '',
 
+    /**
+     * Defining some links here instead of in the template files or the L10N
+     * data so that it'll be easier to change them in the future if and when
+     * needed due to less potential duplication across the codebase (this
+     * excludes links shown at the front-end homepage).
+     */
+    'URL-Chat' => 'https://gitter.im/phpMussel2/Lobby',
+    'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
+    'URL-Website' => 'https://phpmussel.github.io/'
 ];
+
+/** Append "@ Gitter" to the chat link text. */
+if (isset($phpMussel['L10N']->Data['link_chat'])) {
+    $phpMussel['L10N']->Data['link_chat'] .= '@Gitter';
+} else {
+    $phpMussel['L10N']->Data['link_chat'] = '@Gitter';
+}
+
+/** Assign website link text. */
+$phpMussel['L10N']->Data['link_website'] = 'phpMussel@GitHub';
+
+/** To be populated by warnings. */
+$phpMussel['Warnings'] = [];
+
+/** Warns if maintenance mode is enabled. */
+if ($phpMussel['Config']['general']['maintenance_mode']) {
+    $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('state_maintenance_mode') . '</u></span>';
+}
+
+/** Warngs if no signature files are active. */
+if (empty($phpMussel['Config']['signatures']['active'])) {
+    $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</u></span>';
+}
+
+/** Prepare warnings. */
+$phpMussel['FE']['MaintenanceWarning'] = $phpMussel['Warnings'] ? "\n<div class=\"center\">⚠️ " . implode(" ⚠️<br />\n⚠️ ", $phpMussel['Warnings']) . ' ⚠️</div><hr />' : '';
+
+/** Cleanup. */
+unset($phpMussel['Warnings']);
 
 /** Plugin hook: "frontend_before". */
 $phpMussel['Execute_Hook']('frontend_before');
@@ -652,8 +685,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Build repository backup locations information. */
     $phpMussel['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/phpmussel" hreflang="en-US" target="_blank" rel="noopener external">Bitbucket</a>',
-        '<a href="https://sourceforge.net/projects/phpmussel/" hreflang="en-US" target="_blank" rel="noopener external">SourceForge</a>'
+        '<a href="https://bitbucket.org/Maikuolan/phpmussel" hreflang="en-US" target="_blank" rel="noopener external">phpMussel@Bitbucket</a>',
+        '<a href="https://sourceforge.net/projects/phpmussel/" hreflang="en-US" target="_blank" rel="noopener external">phpMussel@SourceForge</a>'
     ]);
 
     /** Where to find remote version information? */
@@ -775,15 +808,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     $phpMussel['FE']['Extensions'] = implode("\n", $phpMussel['FE']['Extensions']);
     $phpMussel['FE']['ExtensionIsAvailable'] = $phpMussel['LTRinRTF']($phpMussel['L10N']->getString('label_extension') . '➡' . $phpMussel['L10N']->getString('label_installed_available'));
     unset($phpMussel['ExtVer'], $phpMussel['ThisResponse'], $phpMussel['ThisExtension']);
-
-    /** Process warnings. */
-    $phpMussel['FE']['Warnings'] = '';
-    if (empty($phpMussel['Config']['signatures']['active'])) {
-        $phpMussel['FE']['Warnings'] .= '<li>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</li>';
-    }
-    if ($phpMussel['FE']['Warnings']) {
-        $phpMussel['FE']['Warnings'] = '<hr />' . $phpMussel['L10N']->getString('warning') . '<br /><div class="txtRd"><ul>' . $phpMussel['FE']['Warnings'] . '</ul></div>';
-    }
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](

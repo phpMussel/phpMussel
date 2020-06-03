@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.05.16).
+# This file: Arabic language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -242,6 +242,7 @@ label_your_ip: "عنوان IP الخاص بك:"
 label_your_ua: "وكيل المستخدم الخاص بك:"
 link_accounts: "حسابات"
 link_cache_data: "بيانات ذاكرة التخزين المؤقت"
+link_chat: "دردشة"
 link_config: "التكوين"
 link_documentation: "توثيق"
 link_file_manager: "مدير الملفات"
@@ -393,15 +394,14 @@ tip_statistics_disabled: "ملاحظة: يتم تعطيل تتبع الإحصا�
 tip_updates: "مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ)."
 tip_upload_test: "مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله."
 title_login: "تسجيل الدخول"
-warning: "تحذيرات:"
-warning_signatures_1: "لا ملفات التوقيع نشطة!"
+warning_signatures_1: "تحذير: لا ملفات التوقيع نشطة!"
 
 info_some_useful_links: |
  بعض الروابط المفيدة:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، إلخ لـ phpMussel.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
+           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
            <li><a dir="ltr" href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ينشئ ملفات توقيع phpMussel باستخدام قاعدة بيانات توقيعات ClamAV.</li>
            <li><a dir="ltr" href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – إضافات مختلفة.</li>
          </ul>
@@ -415,7 +415,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">مجموعات، المنتديات، مجتمعات، إلخ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
+           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
            <li><a dir="ltr" href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>

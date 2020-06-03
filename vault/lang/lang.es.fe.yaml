@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2020.05.16).
+# This file: Spanish language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -244,6 +244,7 @@ label_your_ip: "Tu IP:"
 label_your_ua: "Tu UA:"
 link_accounts: "Cuentas"
 link_cache_data: "Datos de Caché"
+link_chat: "Chat"
 link_config: "Configuración"
 link_documentation: "Documentación"
 link_file_manager: "Administración de Archivos"
@@ -391,15 +392,14 @@ tip_statistics_disabled: "Nota: El seguimiento de estadísticas está actualment
 tip_updates: "Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de phpMussel (el paquete básico, firmas, plugins, archivos de L10N, etc)."
 tip_upload_test: "Hola, {username}.<br />La página para subir pruebas contiene un formulario de subir de archivos estándar, permite probar si un archivo normalmente se bloquea por phpMussel cuando intentar subirlo."
 title_login: "Login"
-warning: "Advertencias:"
-warning_signatures_1: "¡No hay archivos de firma activos!"
+warning_signatures_1: "Advertencia: ¡No hay archivos de firma activos!"
 
 info_some_useful_links: |
  Algunos enlaces útiles:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Herramientas, recursos, etc. para phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">Los problemas de phpMussel @ GitHub</a> – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Crea archivos de firma por phpMussel usando la base de datos de firmas ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Varios extras.</li>
          </ul>
@@ -413,7 +413,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupos, foros, comunidades, etc.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Útiles foros de discusión enfocados en el malware.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Otras herramientas, recursos, servicios, etc. que son útiles.</span>

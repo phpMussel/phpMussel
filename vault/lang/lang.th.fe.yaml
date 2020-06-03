@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2020.05.16).
+# This file: Thai language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -242,6 +242,7 @@ label_your_ip: "IP ของคุณ:"
 label_your_ua: "UA ของคุณ:"
 link_accounts: "บัญชี"
 link_cache_data: "ข้อมูลแคช"
+link_chat: "แชท"
 link_config: "การกำหนดค่า"
 link_documentation: "เอกสาร"
 link_file_manager: "ตัวจัดการไฟล์"
@@ -387,15 +388,14 @@ tip_statistics_disabled: "บันทึก: ขณะนี้การติ�
 tip_updates: "สวัสดี {username}.<br />หน้าอัปเดตช่วยให้คุณสามารถติดตั้ง ถอนการติดตั้ง และอัปเดตคอมโพเนนต์ต่างๆของ phpMussel (แพคเกจหลัก ลายเซ็น ไฟล์การแปล ฯลฯ)."
 tip_upload_test: "สวัสดี {username}.<br />หน้าทดสอบการอัปโหลดมีแบบฟอร์มอัปโหลดไฟล์มาตรฐาน ช่วยให้คุณสามารถทดสอบถ้าไฟล์ปกติจะถูกบล็อกโดย phpMussel เมื่อพยายามอัปโหลด."
 title_login: "เข้าสู่ระบบ"
-warning: "คำเตือน:"
-warning_signatures_1: "ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!"
+warning_signatures_1: "คำเตือน: ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!"
 
 info_some_useful_links: |
  ลิงก์ที่เป็นประโยชน์:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร ฯลฯ สำหรับ phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – สร้างไฟล์ลายเซ็น phpMussel โดยใช้ฐานข้อมูลลายเซ็น ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – ตัวเลือกเพิ่มเติมต่างๆ.</li>
          </ul>
@@ -409,7 +409,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">กลุ่ม ฟอรั่ม ชุมชน ฯลฯ.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – ฟอรัมที่เป็นประโยชน์สำหรับการสนทนาเกี่ยวกับมัลแวร์.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร บริการ ฯลฯ ที่มีประโยชน์อื่น ๆ.</span>
