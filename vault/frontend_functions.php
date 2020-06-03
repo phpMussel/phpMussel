@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.05.16).
+ * This file: Front-end functions file (last modified: 2020.06.03).
  */
 
 /**
@@ -351,16 +351,82 @@ $phpMussel['AppendToString'] = function (&$String, $Delimit = '', $Append = '') 
  */
 $phpMussel['SanityCheck'] = function ($FileName, $FileData) {
 
+    /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
+    if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
+        return false;
+    }
+
     /** Check whether YAML is valid. */
     if (preg_match('~\.ya?ml$~i', $FileName)) {
         $ThisYAML = new \Maikuolan\Common\YAML();
         if (!($ThisYAML->process($FileData, $ThisYAML->Data))) {
             return false;
         }
+        return true;
     }
 
-    /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
-    if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
+    /** Check whether GIF is valid. */
+    if (preg_match('~\.gif$~i', $FileName)) {
+        return preg_match('~^GIF8[79]a~', $FileData);
+    }
+
+    /** Check whether PNG is valid. */
+    if (preg_match('~\.png$~i', $FileName)) {
+        return preg_match('~^\x89PNG~', $FileData);
+    }
+
+    /** Check whether CEDB file is valid. */
+    if (preg_match('~^signatures.*\.cedb$~i', $FileName)) {
+        return preg_match('~^phpMussel\xB0\n~', $FileData);
+    }
+
+    /** Check whether CSV file is valid. */
+    if (preg_match('~^signatures.*\.csv$~i', $FileName)) {
+        return preg_match('~^phpMussel\x00\n~', $FileData);
+    }
+
+    /** Check whether FDB file is valid. */
+    if (preg_match('~^signatures.*\.fdb$~i', $FileName)) {
+        return preg_match('~^phpMussel\x10\n~', $FileData);
+    }
+
+    /** Check whether HDB file is valid. */
+    if (preg_match('~^signatures.*\.hdb$~i', $FileName)) {
+        return preg_match('~^phpMussel \n~', $FileData);
+    }
+
+    /** Check whether HTDB file is valid. */
+    if (preg_match('~^signatures.*\.htdb$~i', $FileName)) {
+        return preg_match('~^phpMussel[p\x80]\n~', $FileData);
+    }
+
+    /** Check whether MDB file is valid. */
+    if (preg_match('~^signatures.*\.mdb$~i', $FileName)) {
+        return preg_match('~^phpMussel\xA0\n~', $FileData);
+    }
+
+    /** Check whether MEDB file is valid. */
+    if (preg_match('~^signatures.*\.medb$~i', $FileName)) {
+        return preg_match('~^phpMussel\x90\n~', $FileData);
+    }
+
+    /** Check whether NDB file is valid. */
+    if (preg_match('~^signatures.*\.ndb$~i', $FileName)) {
+        return preg_match('~^phpMussel[P\x60]\n~', $FileData);
+    }
+
+    /** Check whether UDB file is valid. */
+    if (preg_match('~^signatures.*\.udb$~i', $FileName)) {
+        return preg_match('~^phpMussel\xC0\n~', $FileData);
+    }
+
+    /** Check whether DB file is valid. */
+    if (preg_match('~^signatures.*\.db$~i', $FileName)) {
+        return preg_match('~^phpMussel[0@]\n~', $FileData);
+    }
+
+    /** Guard for any remaining uncaught signature files. */
+    if (preg_match('~^signatures.*db$~i', $FileName)) {
         return false;
     }
 
