@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2020.05.16).
+# This file: Bangla language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -243,6 +243,7 @@ label_your_ip: "আপনার IP:"
 label_your_ua: "আপনার UA:"
 link_accounts: "অ্যাকাউন্ট"
 link_cache_data: "ক্যাশ ডেটা"
+link_chat: "চ্যাট"
 link_config: "কনফিগারেশন"
 link_documentation: "ডকুমেন্টেশনটি"
 link_file_manager: "ফাইল ম্যানেজার"
@@ -388,15 +389,14 @@ tip_statistics_disabled: "নোট: পরিসংখ্যান ট্র্
 tip_updates: "হ্যালো, {username}।<br />আপডেট পৃষ্ঠাটি আপনাকে phpMussel কম্পোনেন্ট ইনস্টল, আনইনস্টল এবং আপডেট করতে দেয় (কোর প্যাকেজ, স্বাক্ষর, L10N ফাইল, ইত্যাদি)।"
 tip_upload_test: "হ্যালো, {username}।<br />আপলোড টেস্ট পৃষ্ঠাটিতে এটি একটি আপলোড করার চেষ্টা করার সময় একটি ফাইল সাধারণত phpMussel দ্বারা অবরুদ্ধ করা হবে কিনা পরীক্ষা করার জন্য একটি আদর্শ ফাইল আপলোড ফর্ম রয়েছে।"
 title_login: "লগ ইন"
-warning: "সতর্কবাণী:"
-warning_signatures_1: "কোন স্বাক্ষর ফাইল সক্রিয় নেই!"
+warning_signatures_1: "সতর্কতা: কোন স্বাক্ষর ফাইল সক্রিয় নেই!"
 
 info_some_useful_links: |
  কিছু দরকারী লিঙ্ক:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel সমর্থন @ GitHub</a> – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV স্বাক্ষর ডাটাবেস ব্যবহার করে phpMussel স্বাক্ষর ফাইল তৈরি করে।</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – বিভিন্ন অতিরিক্ত।</li>
          </ul>
@@ -410,7 +410,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">গ্রুপ, ফোরাম, সম্প্রদায়, ইত্যাদি।</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – ম্যালওয়ার উপর দৃষ্টি নিবদ্ধ করা দরকারী আলোচনা ফোরাম।</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">অন্যান্য দরকারী সরঞ্জাম, সম্পদ, সেবা, ইত্যাদি।</span>

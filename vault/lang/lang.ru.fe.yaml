@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.05.16).
+# This file: Russian language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -246,6 +246,7 @@ label_your_ip: "Ваш IP:"
 label_your_ua: "Ваш UA:"
 link_accounts: "Учетными Записями"
 link_cache_data: "Данные Кэша"
+link_chat: "Чат"
 link_config: "Конфигурация"
 link_documentation: "Документация"
 link_file_manager: "Файловый Менеджер"
@@ -394,15 +395,14 @@ tip_statistics_disabled: "Заметка: Отслеживание статис�
 tip_updates: "Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов phpMussel (пакет ядра, сигнатуры, плагины, L10N файлы, итд)."
 tip_upload_test: "Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его."
 title_login: "Войти"
-warning: "Предупреждения:"
-warning_signatures_1: "Активные файлы сигнатуры не активны!"
+warning_signatures_1: "Предупреждение: Активные файлы сигнатуры не активны!"
 
 info_some_useful_links: |
  Некоторые полезные ссылки:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Инструменты, ресурсы и т.д. для phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Создает файлы сигнатур phpMussel с использованием базы данных сигнатур ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Различные дополнения.</li>
          </ul>
@@ -416,7 +416,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Группы, форумы, сообщества и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Полезные вредоносные программы сфокусированные дискуссионных форумов.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Другие полезные инструменты, ресурсы, услуги и т.д.</span>

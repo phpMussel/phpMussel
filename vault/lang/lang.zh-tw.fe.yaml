@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.05.16).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -243,6 +243,7 @@ label_your_ip: "您的IP："
 label_your_ua: "您的UA："
 link_accounts: "帳戶"
 link_cache_data: "緩存數據"
+link_chat: "聊天室"
 link_config: "配置"
 link_documentation: "文檔"
 link_file_manager: "文件管理器"
@@ -388,15 +389,14 @@ tip_statistics_disabled: "注意：統計跟踪目前已被禁用，但可以通
 tip_updates: "你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新phpMussel的各種組件（核心包，​簽名，​插件，​L10N文件，​等等）。"
 tip_upload_test: "你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。"
 title_login: "登錄"
-warning: "警告："
-warning_signatures_1: "沒有簽名文件是活動的！"
+warning_signatures_1: "警告：沒有簽名文件是活動的！"
 
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel的工具，資源，等等。</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel問題頁面（支持，​協助，​等等）。</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
            <li><a href="https://www.oschina.net/p/phpMussel" hreflang="zh-CN" rel="noopener noreferrer external">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – 各種附加功能。</li>

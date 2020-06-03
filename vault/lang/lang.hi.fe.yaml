@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2020.05.16).
+# This file: Hindi language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -245,6 +245,7 @@ label_your_ip: "तुम्हारी IP:"
 label_your_ua: "तुम्हारी UA:"
 link_accounts: "खातों"
 link_cache_data: "कैश डेटा"
+link_chat: "चैट"
 link_config: "कॉन्फ़िगरेशन"
 link_documentation: "डॉक्यूमेंटेशन"
 link_file_manager: "फाइल प्रबंधक"
@@ -392,15 +393,14 @@ tip_statistics_disabled: "नोट: सांख्यिकी ट्रैक
 tip_updates: "हैलो, {username}।<br />अपडेट पेज आपको phpMussel के विभिन्न घटकों को इंस्टॉल, अनइंस्टॉल और अद्यतन करने की अनुमति देता है (मुख्य पैकेज, हस्ताक्षर, स्थानीयकरण फाइलें, आदि)।"
 tip_upload_test: "हैलो, {username}।<br />अपलोड टेस्ट पृष्ठ में एक मानक फाइल अपलोड फॉर्म है। यह आपको यह जांचने में सक्षम बनाता है कि फाइल को सामान्य रूप से इसे अपलोड करने का प्रयास करते समय phpMussel द्वारा अवरुद्ध किया जाएगा या नहीं।"
 title_login: "लॉग इन करें"
-warning: "चेतावनी:"
-warning_signatures_1: "कोई हस्ताक्षर फाइलें सक्रिय नहीं हैं!"
+warning_signatures_1: "चेतावनी: कोई हस्ताक्षर फाइलें सक्रिय नहीं हैं!"
 
 info_some_useful_links: |
  कुछ उपयोगी लिंक:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel के लिए उपकरण, संसाधन, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel के समस्याएं @ GitHub</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
+           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV हस्ताक्षर डेटाबेस का उपयोग करके phpMussel हस्ताक्षर फ़ाइलें बनाता है।</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – विभिन्न एक्स्ट्रा।</li>
          </ul>
@@ -414,7 +414,7 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">समूह, मंच, समुदाय, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">अन्य उपयोगी उपकरण, संसाधन, सेवाएं, आदि।</span>
