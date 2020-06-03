@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2020.06.02).
+# This file: Thai language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "ไฟล์บันทึกเลือกไม�
 logs_no_logfile_selected: "ไม่มีไฟล์บันทึกเลือก."
 logs_no_logfiles_available: "ไม่มีไฟล์บันทึกใช้ได้."
 max_login_attempts_exceeded: "จำนวนสูงสุดความพยายามเข้าสู่ระบบเกิน; ปฏิเสธการเข้าใช้."
+notice_click_here: "คลิกที่นี่สำหรับข้อมูลเพิ่มเติม."
+notice_new_major_version: "หมายเหตุ: %s พร้อมใช้งานแล้ว (คุณกำลังใช้ %s). ตรงตามข้อกำหนดขั้นต่ำของ PHP. อย่างไรก็ตาม จำเป็นต้องมีการทำงานด้วยตนเองเพื่อการอัพเดต."
 previewer_days: "วัน"
 previewer_hours: "ชั่วโมง"
 previewer_minutes: "นาที"

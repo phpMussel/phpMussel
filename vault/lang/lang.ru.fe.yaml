@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.06.02).
+# This file: Russian language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -262,6 +262,8 @@ logs_logfile_doesnt_exist: "Выбранный лог-файл не сущест
 logs_no_logfile_selected: "Не лог-файлы Выбранный."
 logs_no_logfiles_available: "Не лог-файлы доступны."
 max_login_attempts_exceeded: "Максимальное количество попыток входа в систему был превышен; Доступ закрыт."
+notice_click_here: "Для получения дополнительной информации нажмите здесь."
+notice_new_major_version: "Примечание: %s теперь доступен (вы используете %s). Вы соответствуете минимальным требованиям PHP этой версии. Однако для обновления требуются некоторые шаги вручную."
 previewer_days: "Дни"
 previewer_hours: "Часы"
 previewer_minutes: "Минуты"

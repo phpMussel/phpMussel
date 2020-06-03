@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2020.06.02).
+# This file: Polish language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -262,6 +262,8 @@ logs_logfile_doesnt_exist: "Wybrany plik dziennika nie istnieje!"
 logs_no_logfile_selected: "Nie wybrano pliku dziennika."
 logs_no_logfiles_available: "Brak dostępnych plików dziennika."
 max_login_attempts_exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
+notice_click_here: "Kliknij tutaj po więcej informacji."
+notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. Jednak do zaktualizowania wymagane są ręczne kroki."
 previewer_days: "Dni"
 previewer_hours: "Godziny"
 previewer_minutes: "Minuty"

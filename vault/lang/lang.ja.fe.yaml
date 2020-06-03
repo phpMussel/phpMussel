@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.06.02).
+# This file: Japanese language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "選択したログは存在しません！"
 logs_no_logfile_selected: "ログが選択されていません。"
 logs_no_logfiles_available: "いいえログが利用可能。"
 max_login_attempts_exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
+notice_click_here: "詳細については、ここをクリックしてください。"
+notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。​あなたはこのバージョンの最小ＰＨＰ要件を満たされています。​ただし、更新するにはいくつかの手動手順が必要です。"
 previewer_days: "日"
 previewer_hours: "時"
 previewer_minutes: "分"

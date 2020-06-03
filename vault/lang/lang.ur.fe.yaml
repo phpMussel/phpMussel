@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2020.06.02).
+# This file: Urdu language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "منتخب شدہ لاگ فائل موجود نہی�
 logs_no_logfile_selected: "کوئی لاگ فائل کو منتخب کیا."
 logs_no_logfiles_available: "کوئی لاگ مسلیں دستیاب."
 max_login_attempts_exceeded: "لاگ ان کوششوں کی زیادہ سے زیادہ تعداد سے تجاوز کر گئی. رسائی مسترد کر دی."
+notice_click_here: "مزید معلومات کے لئے یہاں کلک کریں."
+notice_new_major_version: "نوٹس: %s اب دستیاب ہے (آپ %s استعمال کر رہے ہیں). آپ اس ورژن کی کم از کم PHP کی ضرورت کو پورا کرتے ہیں. البتہ، کچھ دستی کام کو اپ ڈیٹ کرنے کی ضرورت ہے."
 previewer_days: "دن"
 previewer_hours: "گھنٹے"
 previewer_minutes: "منٹس"

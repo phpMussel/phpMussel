@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.06.02).
+# This file: Latvian language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -262,6 +262,8 @@ logs_logfile_doesnt_exist: "Atlasītais logfails neeksistē!"
 logs_no_logfile_selected: "Nav atlasīts logfails."
 logs_no_logfiles_available: "Neviens logfails nav pieejams."
 max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Pieeja noliegta."
+notice_click_here: "Noklikšķiniet šeit, lai iegūtu papildinformāciju."
+notice_new_major_version: "Paziņojums: Tagad ir pieejama %s (jūs izmantojat %s). Jūs atbilstat šīs versijas minimālajām PHP prasībām. Tomēr ir jāveic dažas manuālās darbības, lai atjauninātu."
 previewer_days: "Dienas"
 previewer_hours: "Stundas"
 previewer_minutes: "Minūtes"

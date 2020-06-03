@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.06.02).
+# This file: Norwegian language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "Utvalgte loggfilen finnes ikke!"
 logs_no_logfile_selected: "Ingen loggfil valgt."
 logs_no_logfiles_available: "Ingen loggfiler tilgjengelig."
 max_login_attempts_exceeded: "Maks antall påloggingsforsøk er overskredet; Tilgang nektet."
+notice_click_here: "Klikk her for mer informasjon."
+notice_new_major_version: "Notis: %s er nå tilgjengelig (du bruker %s). Du oppfyller denne versjonens minimum PHP-krav. Noen manuelle trinn kreves imidlertid for å oppdatere."
 previewer_days: "Dager"
 previewer_hours: "Timer"
 previewer_minutes: "Minutter"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.06.02).
+# This file: Indonesian language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "Log yang dipilih tidak ada!"
 logs_no_logfile_selected: "Tidak ada log dipilih."
 logs_no_logfiles_available: "Tidak ada log tersedia."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
+notice_click_here: "Klik disini untuk informasi lebih lanjut."
+notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. Namun, beberapa langkah manual diperlukan untuk memperbarui."
 previewer_days: "Hari"
 previewer_hours: "Jam"
 previewer_minutes: "Menit"

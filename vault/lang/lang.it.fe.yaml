@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2020.06.02).
+# This file: Italian language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "Log selezionato non esiste!"
 logs_no_logfile_selected: "Nessun file di log selezionato."
 logs_no_logfiles_available: "Nessun file di log disponibili."
 max_login_attempts_exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
+notice_click_here: "Clicca qui per maggiori informazioni."
+notice_new_major_version: "Avviso: %s è ora disponibile (stai usando %s). Soddisfa i requisiti minimi PHP di questa versione. Tuttavia, sono necessari alcuni passaggi manuali per l'aggiornamento."
 previewer_days: "Giorni"
 previewer_hours: "Ore"
 previewer_minutes: "Minuti"

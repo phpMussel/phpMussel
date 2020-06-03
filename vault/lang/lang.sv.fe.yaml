@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.06.02).
+# This file: Swedish language data for the front-end (last modified: 2020.06.03).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -259,6 +259,8 @@ logs_logfile_doesnt_exist: "Vald loggfil existerar inte!"
 logs_no_logfile_selected: "Ingen loggfil vald."
 logs_no_logfiles_available: "Inga loggfiler finns tillgängliga."
 max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
+notice_click_here: "Klicka här för mer information."
+notice_new_major_version: "Notera: %s är nu tillgängligt (du använder %s). Du uppfyller denna versions minsta PHP-krav. Vissa manuella steg krävs dock för att uppdatera."
 previewer_days: "Dagar"
 previewer_hours: "Timmar"
 previewer_minutes: "Minuter"
