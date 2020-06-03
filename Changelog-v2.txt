@@ -37,6 +37,9 @@ Detailed version release guidelines for phpMussel can be found at:
   some specific potentially error-prone configuration directives to help reduce
   the risk of erroneous values being specified there.
 
+- [2020.06.03; Maikuolan]: Slightly strengthened the sanity checks performed by
+  the front-end updates page when it verifies components.
+
 === Version/Release 2.1.2 ===
 PATCH RELEASE.
 
