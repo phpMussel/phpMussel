@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.02).
+ * This file: Front-end handler (last modified: 2020.06.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1798,11 +1798,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             }
             if (!empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
                 $phpMussel['Activable'] = $phpMussel['IsActivable']($phpMussel['Components']['ThisComponent']);
-                if (preg_match('~^(?:l10n/' . preg_quote(
-                    $phpMussel['Config']['general']['lang']
-                ) . '|theme/' . preg_quote(
+                if (preg_match('~^(?:theme/' . preg_quote(
                     $phpMussel['Config']['template_data']['theme']
-                ) . '|phpMussel.*|Common Classes Package)$~i', $phpMussel['Components']['Key']) || $phpMussel['IsInUse'](
+                ) . '|phpMussel(?! Upload handler).*|Common Classes Package)$~i', $phpMussel['Components']['Key']) || $phpMussel['IsInUse'](
                     $phpMussel['Components']['ThisComponent']
                 )) {
                     $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
@@ -1826,7 +1824,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         $phpMussel['Components']['ThisComponent']['Options'] .=
                             '<option value="uninstall-component">' . $phpMussel['L10N']->getString('field_uninstall') . '</option>';
                     }
-                    if (!empty($phpMussel['Components']['ThisComponent']['Provisional'])) {
+                    if (
+                        !empty($phpMussel['Components']['ThisComponent']['Provisional']) ||
+                        ($phpMussel['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $phpMussel['Components']['ThisComponent']['Name']))
+                    ) {
                         $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
                             '<div class="txtOe">' . $phpMussel['L10N']->getString('state_component_is_provisional') . '</div>'
                         );
