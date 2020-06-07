@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.02.29).
+ * This file: Configuration handler (last modified: 2020.06.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '1.13.2';
+$phpMussel['ScriptVersion'] = '1.13.3';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
@@ -142,7 +142,7 @@ if (!empty($phpMussel['Config']['general']['timezone']) && $phpMussel['Config'][
 }
 
 /** Determine whether operating in CLI-mode. */
-$phpMussel['Mussel_sapi'] = !defined('Via-Travis') && (
+$phpMussel['Mussel_sapi'] = (
     empty($_SERVER['REQUEST_METHOD']) ||
     substr(php_sapi_name(), 0, 3) === 'cli' || (
         empty($_SERVER[$phpMussel['IPAddr']]) &&
