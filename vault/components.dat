@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.3-DEV+20154505
+ Version: 2.1.3-DEV+20158609
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -39,7 +39,7 @@ phpMussel Core:
    - 4c0014ea4bf91dda4067edc44e6a9967e18c1697a15912a4fc4efc7a413c9c91:13209
    - 4e96539838cbd53669ad1a0f643c38016897803014896f42469ede4a50ec40e2:3812
    - 72d84484e1379ebb85dcf08d8132183da9da9dad8a598a3d6177510f4c64b85d:1712
-   - 0072592edfef05c41cccb97e375ea62c6794f7e3544a973c980966ce25eb85d9:7344
+   - 59d1c89f56dbfcd46f48e0cacd398f979805279fb115a8e30734e4f398992a56:7318
    - 0f069ee8619efc1b029e93f9eddc9b78cc29e7a4da11059d882a6d9fc6a8c880:15726
    - 4587762536b0844c7451947532b85ba0602a838b2bee23bf0722658a2e71f373:8929
    - b74572fa70d3a49a762ee2d52131e8ce62f56327a0b32b56cf527ce0db4e1504:238631
@@ -155,6 +155,7 @@ phpMussel Upload Handler:
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
+ Uninstallable: true
  Tests: https://api.github.com/repos/phpMussel/phpMussel/commits/v2/status
  Files:
   From:
