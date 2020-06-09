@@ -6,39 +6,9 @@
 # https://help.github.com/articles/dealing-with-line-endings/
 
 * text eol=lf
-*.ini text eol=crlf
-*.renameme text eol=crlf
-*.RenameMe text eol=crlf
-*.dat binary
-*.exe binary
-*.gif binary
-*.gz binary
-*.jpeg binary
-*.jpg binary
-*.ole binary
-*.pdf binary
-*.png binary
-*.rar binary
-*.rtf binary
-*.swf binary
-*.tar binary
-*.xdp binary
-*.zip binary
 
 # Refer to:
 # https://github.com/github/linguist
 
 *.md linguist-documentation
 *.txt linguist-documentation
-
-vault/* linguist-detectable
-.github/* -linguist-detectable
-_testfiles/* -linguist-detectable
-tests/* -linguist-detectable
-vault/lang/* -linguist-detectable
-vault/signatures/* -linguist-detectable
-
-components.dat linguist-language=YAML
-plugins.dat linguist-language=YAML
-themes.dat linguist-language=YAML
-config.ini.RenameMe linguist-language=INI

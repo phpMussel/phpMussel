@@ -13,18 +13,10 @@
     },
     "require": {
         "php": ">=7.2.0",
+        "phpmussel/core": "^3.0",
+        "phpmussel/frontend": "^3.0",
+        "phpmussel/cli": "^3.0",
+        "phpmussel/web": "^3.0",
         "ext-pcre": "*"
-    },
-    "suggest": {
-        "cidram/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel).",
-        "ext-bz2": "*",
-        "ext-curl": "*",
-        "ext-lzf": "*",
-        "ext-rar": "*",
-        "ext-zip": "*"
-    },
-    "require-dev": {
-        "codeception/codeception": "^2.3",
-        "symfony/event-dispatcher": "3.4.28"
     }
 }
