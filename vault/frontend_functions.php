@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.07).
+ * This file: Front-end functions file (last modified: 2020.06.10).
  */
 
 /**
@@ -2034,7 +2034,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel): strin
     /** Expand patterns for signature metadata. */
     foreach ($Arr['SigTypes'] as &$Type) {
         $Type = sprintf(
-            '\x1a(?![\x80-\x8f])[\x0%1$s\x1%1$s\x2%1$s\x3%1$s\x4%1$s\x5%1$s\x6%1$s\x7%1$s\x8%1$s\x9%1$s\xa%1$s\xb%1$s\xc%1$s\xd%1$s\xe%1$s\ef%1$s]',
+            '\x1a(?![\x80-\x8f])[\x0%1$s\x1%1$s\x2%1$s\x3%1$s\x4%1$s\x5%1$s\x6%1$s\x7%1$s\x8%1$s\x9%1$s\xa%1$s\xb%1$s\xc%1$s\xd%1$s\xe%1$s\ef%1$s].',
             $Type
         );
     }
@@ -2077,16 +2077,16 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel): strin
         }
         $Class = substr($Data, 9, 1);
         $Nibbles = $phpMussel['split_nibble']($Class);
-        $Class = !isset($Classes[$Nibbles[0]]) ? '?' : $Classes[$Nibbles[0]];
+        $Class = !isset($Classes[$Nibbles[0]]) ? [] : $Classes[$Nibbles[0]];
         $Totals['Files'][$File] = empty($Class[1]) ? substr_count($Data, ',') + 1 : preg_match_all('/' . $Class[1] . '\S+/', $Data);
-        if (!empty($Class[0])) {
+        if (isset($Class[0])) {
             $Totals['Classes'][$Class[0]] = isset($Totals['Classes'][$Class[0]]) ? $Totals['Classes'][$Class[0]] + $Totals['Files'][$File] : $Totals['Files'][$File];
         }
         foreach ($Subs as $Sub) {
             $Totals[$Sub]['Total'] = isset($Totals[$Sub]['Total']) ? $Totals[$Sub]['Total'] + $Totals['Files'][$File] : $Totals['Files'][$File];
         }
         $phpMussel['NormaliseLinebreaks']($Data);
-        if (!empty($Class[1])) {
+        if (isset($Class[1])) {
             foreach (['Vendors', 'SigTypes', 'Targets', 'MalwareTypes'] as $Sub) {
                 foreach ($Arr[$Sub] as $Key => $Pattern) {
                     $Counts = preg_match_all('/' . $Class[1] . $Pattern . '\S+/', $Data);

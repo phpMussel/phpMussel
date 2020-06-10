@@ -44,6 +44,9 @@ Detailed version release guidelines for phpMussel can be found at:
   updates page for determining whether a component is active or inactive. Also
   made the upload handler uninstallable.
 
+- [2020.06.10; Bug-fix; Maikuolan]: Wrong metadata counts sometimes reported by
+  the front-end signatures information page; Fixed.
+
 === Version/Release 2.1.2 ===
 PATCH RELEASE.
 
