@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary file handler (last modified: 2019.08.06).
+ * This file: Temporary file handler (last modified: 2020.06.11).
  */
 
 namespace phpMussel\TemporaryFileHandler;
