@@ -46,6 +46,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.06.10; Bug-fix; Maikuolan]: Wrong metadata counts sometimes reported by
   the front-end signatures information page; Fixed.
 
+- [2020.06.11; Maikuolan]: Slightly improved some PHPDoc annotations.
+
 === Version/Release 1.13.2 ===
 PATCH RELEASE.
 

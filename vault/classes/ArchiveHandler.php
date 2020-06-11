@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2019.08.06).
+ * This file: Archive handler (last modified: 2020.06.11).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -79,8 +79,7 @@ interface ArchiveHandlerInterface
 abstract class ArchiveHandler implements ArchiveHandlerInterface
 {
     /**
-     * Object construct error state (to help us determine the reason, when
-     * something goes wrong).
+     * @var int The instance's error state (in case something goes wrong).
      *
      * -1: Object not constructed (default state; shouldn't normally be seen).
      * 0: Object constructed successfully. No problems, as far as we know.
@@ -92,19 +91,31 @@ abstract class ArchiveHandler implements ArchiveHandlerInterface
 
 class ZipHandler extends ArchiveHandler
 {
-    /** The Zip object. */
+    /**
+     * @var \ZipArchive The zip object.
+     */
     private $ZipObject;
 
-    /** Number of files in the archive. */
+    /**
+     * @var int The number of files in the archive.
+     */
     private $NumFiles = 0;
 
-    /** Current entry index. */
+    /**
+     * @var int The current entry index.
+     */
     private $Index = -1;
 
-    /** Current entry attributes. */
+    /**
+     * @var array The current entry's attributes.
+     */
     private $StatIndex = [];
 
-    /** Construct the Zip archive object. */
+    /**
+     * Construct the zip archive object.
+     *
+     * @param string $Pointer
+     */
     public function __construct($Pointer)
     {
         /** Zip class requirements guard. */
@@ -140,6 +151,7 @@ class ZipHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
+     * @return string The entry's content or an empty string.
      */
     public function EntryRead($Bytes = -1)
     {
@@ -220,19 +232,31 @@ class ZipHandler extends ArchiveHandler
 
 class TarHandler extends ArchiveHandler
 {
-    /** Archive seek offset. */
+    /**
+     * @var int Archive seek offset.
+     */
     private $Offset = 0;
 
-    /** Total size of the archive. */
+    /**
+     * @var int The total size of the archive.
+     */
     private $TotalSize = 0;
 
-    /** The actual archive content. */
+    /**
+     * @var string The archive's actual content.
+     */
     private $Data = '';
 
-    /** Whether we've initialised an entry yet. */
+    /**
+     * @var bool Whether we've initialised an entry yet.
+     */
     private $Initialised = false;
 
-    /** Construct the Tar archive object. */
+    /**
+     * Construct the tar archive object.
+     *
+     * @param string $Pointer
+     */
     public function __construct($Pointer)
     {
         /** Guard against wrong type of file used as pointer. */
@@ -255,6 +279,7 @@ class TarHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
+     * @return string The entry's content or an empty string.
      */
     public function EntryRead($Bytes = -1)
     {
@@ -341,19 +366,31 @@ class TarHandler extends ArchiveHandler
 
 class RarHandler extends ArchiveHandler
 {
-    /** The Rar object. */
+    /**
+     * @var \RarArchive The rar object.
+     */
     private $RarObject;
 
-    /** Reference to the original pointer used. */
+    /**
+     * @var string A copy of the original pointer used.
+     */
     private $PointerSelf;
 
-    /** The current Rar entry. */
+    /**
+     * @var \RarEntry|false The current rar entry.
+     */
     private $RarEntry;
 
-    /** A list of all Rar entries. */
+    /**
+     * @var array|false A list of all Rar entries.
+     */
     private $RarEntries;
 
-    /** Construct the Rar archive object. */
+    /**
+     * Construct the rar archive object.
+     *
+     * @param string $Pointer
+     */
     public function __construct($Pointer)
     {
         /** Rar class requirements guard. */
@@ -385,6 +422,7 @@ class RarHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
+     * @return string The entry's content or an empty string.
      */
     public function EntryRead($Bytes = -1)
     {

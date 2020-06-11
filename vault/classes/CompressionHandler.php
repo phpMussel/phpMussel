@@ -11,17 +11,21 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Compression handler (last modified: 2019.08.06).
+ * This file: Compression handler (last modified: 2020.06.11).
  */
 
 namespace phpMussel\CompressionHandler;
 
 class CompressionHandler
 {
-    /** The data to be worked upon. */
+    /**
+     * @var string The data to be worked upon.
+     */
     public $Data = '';
 
-    /** If the class triggers any errors, they'll be stored here. */
+    /**
+     * @var array If the class triggers any errors, they'll be stored here.
+     */
     public $Errors = [];
 
     /**
