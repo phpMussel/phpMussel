@@ -49,6 +49,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.06.11; Maikuolan]: Slightly improved some PHPDoc annotations.
 
+- [2020.06.14; Maikuolan]: Adjusted some potentially misleading L10N data.
+
 === Version/Release 2.1.2 ===
 PATCH RELEASE.
 

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2019.09.23).
+# This file: Italian language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -79,7 +79,7 @@ invalid_file: "File non valido"
 invalid_url: "URL non valido!"
 macros_not_permitted: "Macro non sono permesse"
 ok: "Fatto"
-only_allow_images: "Il caricamento di file che non sono immagini non è consentito"
+only_allow_images: "Sono consentiti file di immagini solo"
 quarantined_as: "In quarantena come "/vault/quarantine/%s.qfu"."
 recursive: "Limite di profondità di controllo superato"
 required_variables_not_defined: "Variabili obbligatori non sono definite: Impossibile di continuare."

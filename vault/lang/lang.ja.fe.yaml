@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.06.03).
+# This file: Japanese language data for the front-end (last modified: 2020.06.14).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -46,7 +46,7 @@ config_attack_specific_decode_threshold: "デコード・コマンドが検出�
 config_attack_specific_scannable_threshold: "phpMusselが読みスキャンしてよい生データの長さの制限（スキャニング中に顕著な問題がある場合に必要に応じて設定）。​デフォルト＝３２ＭＢ。​ゼロあるいは値なし（null）はしきい値を無効化します。​値は、​サーバーやウェブサイトでアップロードされるファイルの平均ファイルサイズより大きく、​filesize_limitディレクティブより小さく設定すべきです。​また"php.ini"設定によってPHPに割り当てられたメモリーのおおよそ5分の１を超えるべきではありません。​このディレクティブはphpMusselがメモリーを使い過ぎないようにするためのものです。​（一定のサイズ以上のファイルはスキャンできなくなることもあります）。"
 config_compatibility: "互換性の設定。"
 config_compatibility_ignore_upload_errors: "システム上でphpMusselの機能に修正が必要でない限りはこのディレクティブは通常無効です。​無効に設定すると、​<code>$_FILES</code> array()に要素の存在を検知したとき、​その要素が表すファイルのスキャンが開始され、​要素が空白か無であればphpMusselはエラーメッセージを返します。​これは本来phpMusselがあるべき姿です。​しかしＣＭＳにおいては、​$_FILESの空要素は普通に発生するものであり、​正常なphpMusselの挙動が正常なＣＭＳの挙動を阻害する恐れがあります。​このような場合は、​本オプションを有効にして、​phpMusselが空要素をスキャンしてエラーメッセージを返すのを避け、​要求のあったページへスムーズに進むことができるようにします。​<code>false</code>（偽）=ＯＦＦ「オフ」です。<code>true</code>（真）=ＯＮ「オン」です。"
-config_compatibility_only_allow_images: "システムあるいはＣＭＳに画像ファイルのアップロードのみを許可するのであれば、​このディレクティブは有効にすべきであり、​そうでなければ無効とします。​有効にすると、​画像と特定できないファイルはスキャンすることなしにブロックしますので、​プロセス時間の短縮とメモリーの節約が期待できます。​<code>false</code>（偽） = OFF （オフ）；​<code>true</code>（真） = ON （オン） です。"
+config_compatibility_only_allow_images: "Trueに設定した場合、スキャナーで検出された非画像ファイルには、スキャンされずに、直ちにマークされます。​これは、場合によっては、スキャンの完了に必要な時間を短縮するのに役立ちます。​デフォルトではfalseに設定されています。"
 config_experimental: "不安定/実験的！"
 config_files: "スキャン時にファイルを処理する方法の詳細。"
 config_files_block_encrypted_archives: "暗号化されたアーカイブを検出しブロックするか否か？​phpMusselは暗号化されたアーカイブをスキャンすることはできないので、​アーカイブの暗号化によってphpMussel、​アンチウィルススキャナー等をかいくぐろうとする攻撃者がいるかもしれません。​暗号化されたアーカイブをブロックすることにより、​このようなリスクを回避することができます。​<code>false</code>（偽） = いいえ；​<code>true</code>（真） = はい（Default/デフォルト）。"

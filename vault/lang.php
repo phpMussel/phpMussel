@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.08.19).
+ * This file: Language handler (last modified: 2020.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -135,7 +135,7 @@ if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_AC
         $phpMussel['L10N-Lang-Attache'] = ($phpMussel['Config']['general']['lang'] === $phpMussel['Client-L10N']['Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
             $phpMussel['Client-L10N']['Accepted'],
-            isset($phpMussel['Client-L10N']['Data']['Text Direction']) ? $phpMussel['Client-L10N']['Data']['Text Direction'] : 'ltr'
+            $phpMussel['Client-L10N']['Data']['Text Direction'] ?? 'ltr'
         );
         $phpMussel['Client-L10N'] = $phpMussel['Client-L10N']['Data'];
     }

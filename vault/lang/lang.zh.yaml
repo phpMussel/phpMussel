@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data (last modified: 2019.09.23).
+# This file: Chinese (simplified) language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -75,7 +75,7 @@ invalid_file: "无效的文件"
 invalid_url: "无效的网址！"
 macros_not_permitted: "不允许使用宏"
 ok: "好"
-only_allow_images: "上传文件以外图片不允许"
+only_allow_images: "仅允许图像文件"
 quarantined_as: "隔离为“/vault/quarantine/%s.qfu”。"
 recursive: "递归深度超过是限制"
 required_variables_not_defined: "需要的变量是未定义：无法继续。"

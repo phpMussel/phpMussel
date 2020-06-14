@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2019.09.23).
+# This file: Korean language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -76,7 +76,7 @@ invalid_file: "유효하지 않은 파일"
 invalid_url: "유효하지 않은 URL!"
 macros_not_permitted: "매크로는 허용되지 않습니다"
 ok: "괜찮아"
-only_allow_images: "이미지 이외의 파일을 업로드하는 것은 허용되지 않습니다"
+only_allow_images: "이미지 파일 만 허용"
 quarantined_as: ""/vault/quarantine/%s.qfu"로 격리."
 recursive: "재귀 정의 호출의 반복 횟수를 초과했습니다"
 required_variables_not_defined: "요청이 있었던 변수가 정의되어 있지 않기 때문에 계속할 수 없습니다."

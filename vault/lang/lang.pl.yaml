@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2019.11.07).
+# This file: Polish language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -80,7 +80,7 @@ invalid_file: "Niepoprawny plik"
 invalid_url: "Niepoprawny URL!"
 macros_not_permitted: "Makra są niedozwolone"
 ok: "Dobrze"
-only_allow_images: "Przesyłanie plików innych niż obrazy jest niedozwolone"
+only_allow_images: "Dozwolone są tylko pliki graficzne"
 quarantined_as: "Poddany kwarantannie jako „/vault/quarantine/%s.qfu”."
 recursive: "Przekroczono limit głębokości rekurencji"
 required_variables_not_defined: "Wymagane zmienne nie są zdefiniowane: Nie można kontynuować."

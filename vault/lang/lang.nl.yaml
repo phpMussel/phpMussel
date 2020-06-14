@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2019.09.23).
+# This file: Dutch language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -73,14 +73,14 @@ generated_by: "Gegenereerde door"
 greylist_cleared: " Greylist geleegd."
 greylist_updated: " Greylist bijgewerkt."
 honeypot_event: "Honeypot evenement. "
-image: "Image"
+image: "Beeld"
 instance_already_active: "Instantie al actief! Controleer uw haken."
 invalid_data: "Ongeldige data!"
 invalid_file: "Ongeldige bestand"
 invalid_url: "Ongeldige URL!"
 macros_not_permitted: "Macro's zijn niet toegestaan"
 ok: "OK"
-only_allow_images: "Uploaden van niet-beeldbestanden is niet toegestaan"
+only_allow_images: "Alleen afbeeldingsbestanden zijn toegestaan"
 quarantined_as: "In quarantaine geplaatst als "/vault/quarantine/%s.qfu"."
 recursive: "Recursie dieptelimiet overschreden"
 required_variables_not_defined: "Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan."

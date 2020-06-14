@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2019.09.23).
+# This file: Japanese language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -77,7 +77,7 @@ invalid_file: "不正ファイル"
 invalid_url: "不正ＵＲＬ！"
 macros_not_permitted: "マクロは許可されていません"
 ok: "ＯＫです"
-only_allow_images: "画像以外のファイルをアップロードするのは許可されていません"
+only_allow_images: "画像ファイルのみ許可されています"
 quarantined_as: "「/vault/quarantine/%s.qfu」として隔離。"
 recursive: "再帰定義呼び出しの繰り返し回数が上限を超えました"
 required_variables_not_defined: "リクエストのあった変数は定義されていないため、​続行できません。"

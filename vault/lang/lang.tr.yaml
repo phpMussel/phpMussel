@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2019.09.23).
+# This file: Turkish language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -73,14 +73,14 @@ generated_by: "Üreten"
 greylist_cleared: " Gri liste temizlendi."
 greylist_updated: " Gri liste güncellendi."
 honeypot_event: "Bal küpü olayı. "
-image: "Imaj"
+image: "Resim"
 instance_already_active: "Örnek zaten etkin! Lütfen kancalarınızı tekrar kontrol edin."
 invalid_data: "Geçersiz veri!"
 invalid_file: "Geçersiz dosya"
 invalid_url: "Geçersiz URL!"
 macros_not_permitted: "Makrolara izin verilmez"
 ok: "Tamam"
-only_allow_images: "Resim dışındaki dosyaları yüklemek izin verilmez"
+only_allow_images: "Yalnızca resim dosyalarına izin verilir"
 quarantined_as: ""/vault/quarantine/%s.qfu" olarak karantinaya alındı."
 recursive: "Yineleme derinliği sınırı aşıldı"
 required_variables_not_defined: "Gerekli değişkenler tanımlanmamış: Devam edemiyorum."
