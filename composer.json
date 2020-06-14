@@ -19,5 +19,8 @@
         "phpmussel/cli": "^3.0",
         "phpmussel/web": "^3.0",
         "ext-pcre": "*"
+    },
+    "suggest": {
+        "phpmussel/phpmailer": "^1.0"
     }
 }
