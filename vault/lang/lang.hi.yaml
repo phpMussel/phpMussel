@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2019.09.23).
+# This file: Hindi language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -80,7 +80,7 @@ invalid_file: "अवैध फाइल"
 invalid_url: "अवैध URL!"
 macros_not_permitted: "मैक्रोज़ की अनुमति नहीं है"
 ok: "OK"
-only_allow_images: "छवियों के अलावा अन्य फाइल अपलोड करने की अनुमति नहीं है"
+only_allow_images: "केवल छवियों की अनुमति है"
 plugins_directory_nonexistent: "प्लगइन्स निर्देशिका मौजूद नहीं है!"
 quarantined_as: ""/vault/quarantine/%s.qfu" के रूप में क्वारंटाइन।"
 recursive: "पुनरावर्ती गहराई सीमा पार हो गई"

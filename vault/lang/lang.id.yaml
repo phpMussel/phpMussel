@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2019.09.23).
+# This file: Indonesian language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -80,7 +80,7 @@ invalid_file: "File tidak valid"
 invalid_url: "URL tidak valid!"
 macros_not_permitted: "Makro tidak diizinkan"
 ok: "Oke"
-only_allow_images: "Upload file selain gambar tidak diizinkan"
+only_allow_images: "Hanya file gambar diizinkan"
 plugins_directory_nonexistent: "Direktori plugin tidak ada!"
 quarantined_as: "Dikarantina sebagai "/vault/quarantine/%s.qfu"."
 recursive: "Batas kedalaman rekursi melebihi"

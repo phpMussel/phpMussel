@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2019.09.23).
+# This file: Urdu language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -81,7 +81,7 @@ invalid_file: "غلط فائل"
 invalid_url: "غلط URL!"
 macros_not_permitted: "میکرو کی اجازت نہیں ہے"
 ok: "ٹھیک ہے"
-only_allow_images: "تصاویر کے علاوہ دیگر اپ لوڈ کی فائلوں کی اجازت نہیں ہے"
+only_allow_images: "صرف تصویری فائلوں کی اجازت ہے"
 plugins_directory_nonexistent: "پلگ انز ڈائرکٹری کا کوئی وجود نہیں!"
 quarantined_as: "یہ طور قرنطینہ میں "/vault/quarantine/%s.qfu" کے."
 recursive: "تکرار کی گہرائی کی حد سے تجاوز کر گئی"

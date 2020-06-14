@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.06.03).
+# This file: Korean language data for the front-end (last modified: 2020.06.14).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -47,7 +47,7 @@ config_attack_specific_decode_threshold: "디코드 명령이 감지 될 원시 
 config_attack_specific_scannable_threshold: "phpMussel이 읽고 스캔 할 수있는 원시 데이터의 길이에 대한 임계 값 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 기본값 = 32MB. 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다. 값은 서버 나 웹 사이트에 업로드되는 파일의 평균 파일 크기보다 크고 filesize_limit 지시어보다 작게 설정해야합니다. 또한 "php.ini" 설정에 따라 PHP에 할당 된 메모리의 대략 5 분의 1을 초과해서는 없습니다. 이 지시문은 phpMussel가 메모리를 너무 많이 사용하지 않도록하기위한 것입니다. (일정 크기 이상의 파일은 스캔하지 못할 수도 있습니다)."
 config_compatibility: "호환성 설정."
 config_compatibility_ignore_upload_errors: "시스템에서 phpMussel의 기능에 수정이 필요한 경우가 아니면이 지시문은 일반적으로 사용할 수 없습니다. 비활성화하면 <code>$_FILES</code> array()요소를 감지했을 때, 그 요소가 나타내는 파일의 스캔이 시작됩니다, 요소가 비어 있거나없는 경우 phpMussel는 오류 메시지를 반환합니다. 이것은 본래 phpMussel가 있어야 할 모습입니다. 그러나 CMS에서는 $_FILES 하늘 요소는 일반적으로 발생하는 것이며, 정상적인 phpMussel의 행동이 정상적인 CMS의 거동을 저해 할 우려가 있습니다. 이러한 경우에는 본 옵션을 사용하여 phpMussel 빈 요소를 검사하고 오류 메시지를 반환을 피하고 요청한 페이지로 원활하게 진행할 수 있도록합니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다)."
-config_compatibility_only_allow_images: "시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다)."
+config_compatibility_only_allow_images: "True로 설정하면, 스캐너가 발견한 이미지가 아닌 파일은 스캔하지 않고 즉시 신고됩니다. 이는 때에 따라 스캔을 완료하는 데 필요한 시간을 줄이는 데 도움이 될 수 있습니다. 기본 설정에 따라 false로 설정되어 있습니다."
 config_experimental: "불안정/실험적!"
 config_files: "스캔 시 파일을 처리하는 방법에 대한 세부 사항."
 config_files_block_encrypted_archives: "암호화 된 아카이브를 감지하고 차단 여부? phpMussel은 암호화 된 아카이브를 검색 할 수 없기 때문에 아카이브의 암호화를 통해 phpMussel 안티 바이러스 스캐너 등을 かいくぐろ하려는 공격자가 있을지도 모릅니다. 암호화 된 아카이브를 차단함으로써 이러한 위험을 방지 할 수 있습니다. <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정)."

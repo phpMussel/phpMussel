@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2019.09.23).
+# This file: Chinese (traditional) language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -75,7 +75,7 @@ invalid_file: "無效的文件"
 invalid_url: "無效的網址！"
 macros_not_permitted: "不允許使用宏"
 ok: "好"
-only_allow_images: "上傳文件以外圖片不允許"
+only_allow_images: "僅允許圖像文件"
 plugins_directory_nonexistent: "插件文件夾不存在！"
 quarantined_as: "隔離為『/vault/quarantine/%s.qfu』。"
 recursive: "遞歸深度超過是限制"

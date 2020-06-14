@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.06.03).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.06.14).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -47,7 +47,7 @@ config_attack_specific_decode_threshold: "在原始數據中解碼命令的長�
 config_attack_specific_scannable_threshold: "原始數據讀取和掃描的最大長度（如果有任何引人注目性能問題當掃描）。​默認 = 32MB。​零或空值將關閉門檻。​按說，​這個數值應不會少於平均文件大小的文件上傳您想和期待收到您的服務器或網站，​應不會多於<code>filesize_limit</code>指令，​和應不會多於大致五分之一的總允許內存分配獲授PHP通過"php.ini"配置文件。​這個指令存在為嘗試防止phpMussel從用的太多內存（這個將防止它從能夠順利掃描文件以上的一個特別文件大小）。"
 config_compatibility: "兼容性配置。"
 config_compatibility_ignore_upload_errors: "這個指令按說應會關閉除非它是需要為對功能的phpMussel在您的具體系統。​按說，​當是關閉，​當phpMussel檢測存在元素在<code>$_FILES</code>數組，​它將嘗試引發一個掃描的文件代表通過那些元素，​和，​如果他們是空或空白，​phpMussel將回報一個錯誤信息。​這個是正確行為為phpMussel。​然而，​為某些CMS，​空元素在<code>$_FILES</code>可以發生因之的自然的行為的那些CMS，​或錯誤可能會報告當沒有任何，​在這種情況，​正常行為為phpMussel將會使乾擾為正常行為的那些CMS。​如果這樣的一個情況發生為您，​激活這個指令將指示phpMussel不嘗試引發掃描為這樣的空元素，​忽略他們當發現和不回報任何關聯錯誤信息，​從而允許延續的頁面請求。​False（假）=不忽略；True（真）=忽略。"
-config_compatibility_only_allow_images: "如果您只期待或只意味到允許圖像被上傳在您的系統或CMS，​和如果您絕對不需要任何文件以外圖像被上傳在您的系統或CMS，​這個指令應會激活，​但其他應會關閉。​如果這個指令是激活，​它將指示phpMussel受阻而不例外任何上傳確定為非圖像文件，​而不掃描他們。​這個可能減少處理時間和內存使用為非圖像文件上傳嘗試。​False（假）=還允許其他文件；True（真）=只允許圖像文件。"
+config_compatibility_only_allow_images: "設置為true時，掃描儀遇到的任何非圖像文件將被立即標記，而不會被掃描。​在某些情況下，這可能有助於減少完成掃描所需的時間。​默認情況下設置為false。"
 config_experimental: "不穩定/實驗！"
 config_files: "在掃描過程中如何處理文件。"
 config_files_block_encrypted_archives: "檢測和受阻加密的存檔嗎？​因為phpMussel是不能夠掃描加密的存檔內容，​它是可能存檔加密可能的可以使用通過一個攻擊者作為一種手段嘗試繞過phpMussel，​殺毒掃描儀和其他這樣的保護。​指示phpMussel受阻任何存檔它發現被加密可能的可以幫助減少任何風險有關聯這些可能性。​False（假）=不受阻；True（真）=受阻【默認】。"

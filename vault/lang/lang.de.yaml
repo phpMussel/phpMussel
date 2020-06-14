@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2019.09.23).
+# This file: German language data (last modified: 2020.06.14).
 ##/
 
 # Language settings.
@@ -80,7 +80,7 @@ invalid_file: "Ungültige Datei"
 invalid_url: "Ungültige URL!"
 macros_not_permitted: "Makros sind nicht erlaubt"
 ok: "OK"
-only_allow_images: "Upload von Nicht-Bilddateien ist nicht erlaubt"
+only_allow_images: "Nur Bilddateien erlaubt"
 plugins_directory_nonexistent: "Plugin-Verzeichnis nicht vorhanden!"
 quarantined_as: "Als "/vault/quarantine/%s.qfu" unter Quarantäne gestellt."
 recursive: "Rekursionstiefe-Limit überschritten"

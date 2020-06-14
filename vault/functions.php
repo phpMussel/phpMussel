@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.05.16).
+ * This file: Functions file (last modified: 2020.06.13).
  */
 
 /**
@@ -84,19 +84,19 @@ $phpMussel['Execute_Hook'] = function ($HookID) use (&$phpMussel) {
  * Replaces encapsulated substrings within a string using the values of the
  * corresponding elements within an array.
  *
- * @param array $Needle An array containing replacement values.
+ * @param array $Needles An array containing replacement values.
  * @param string $Haystack The string to work with.
  * @return string The string with its encapsulated substrings replaced.
  */
-$phpMussel['ParseVars'] = function (array $Needle, $Haystack) {
+$phpMussel['ParseVars'] = function (array $Needles, $Haystack) {
     if (empty($Haystack)) {
         return '';
     }
-    array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
+    foreach ($Needles as $Key => $Value) {
         if (!is_array($Value)) {
             $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
         }
-    });
+    }
     return $Haystack;
 };
 
@@ -636,7 +636,7 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
  * @param int $Delete How many bytes to delete from the target directory; Omit
  *      or set to 0 to avoid deleting files on the basis of total bytes.
  * @param int $DeleteFiles How many files to delete from the target directory;
-        Omit or set to 0 to avoid deleting files.
+ *      Omit or set to 0 to avoid deleting files.
  * @return array Contains two integer elements: `Size`: The actual, total
  *      memory used by the target directory. `Count`: The total number of files
  *      found in the target directory by the time of closure exit.

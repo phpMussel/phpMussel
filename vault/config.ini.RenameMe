@@ -431,14 +431,9 @@ block_macros=false
 ; allowing continuation of the page request. False = OFF; True = ON.
 ignore_upload_errors=false
 
-; If you only expect or only intend to allow images to be uploaded to your
-; system or CMS, and if you absolutely don't require any files other than
-; images to be uploaded to your system or CMS, this directive should be
-; enabled, but should otherwise be disabled. If this directive is enabled,
-; it'll instruct phpMussel to indiscriminately block any uploads identified as
-; non-image files, without scanning them. This may reduce processing time and
-; memory usage for attempted uploads of non-image files. False = OFF; True =
-; ON.
+; When set to true, any files encountered by the scanner which aren't images
+; will be flagged immediately, without being scanned. This may help reduce the
+; time needed to complete a scan in some cases. Set to false by default.
 only_allow_images=false
 
 
