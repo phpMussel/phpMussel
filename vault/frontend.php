@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.07).
+ * This file: Front-end handler (last modified: 2020.06.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2360,11 +2360,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
                     /** Add parent directories. */
                     while (strpos($phpMussel['ThisName'], '/') !== false || strpos($phpMussel['ThisName'], "\\") !== false) {
-                        $phpMussel['Separator'] = (strpos($phpMussel['ThisName'], '/') !== false) ? '/' : "\\";
-                        $phpMussel['ThisDir'] = substr($phpMussel['ThisName'], 0, strpos($phpMussel['ThisName'], $phpMussel['Separator']));
+                        $Separator = (strpos($phpMussel['ThisName'], '/') !== false) ? '/' : "\\";
+                        $phpMussel['ThisDir'] = substr($phpMussel['ThisName'], 0, strpos($phpMussel['ThisName'], $Separator));
                         $phpMussel['ThisPath'] .= $phpMussel['ThisDir'] . '/';
                         $phpMussel['ThisName'] = substr($phpMussel['ThisName'], strlen($phpMussel['ThisDir']) + 1);
-                        if (!file_exists($phpMussel['ThisPath']) || !is_dir($phpMussel['ThisPath'])) {
+                        if (!is_dir($phpMussel['ThisPath'])) {
                             mkdir($phpMussel['ThisPath']);
                         }
                     }

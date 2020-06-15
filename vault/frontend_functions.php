@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.10).
+ * This file: Front-end functions file (last modified: 2020.06.15).
  */
 
 /**
@@ -478,7 +478,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     if ($Component === 'phpMussel') {
                         $Component .= ' (' . $phpMussel['L10N']->getString('field_component') . ')';
                     }
-                } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
+                } elseif (preg_match('~(?:[^|/]\.ht|\.safety$)~i', $ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('label_fmgr_safety');
                 } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('link_config');
@@ -941,7 +941,7 @@ $phpMussel['FilterSwitch'] = function (array $Switches, $Selector, &$StateModifi
 $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$phpMussel) {
 
     /** Guard against missing quarantine directory. */
-    if (!$phpMussel['BuildLogPath']('quarantine/')) {
+    if (!$phpMussel['BuildPath']($phpMussel['qfuPath'], false)) {
         return [];
     }
 
@@ -1423,11 +1423,11 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 $ThisName = $ThisFileName;
                 $ThisPath = $phpMussel['Vault'];
                 while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $phpMussel['Separator'] = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $phpMussel['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $phpMussel['Separator']));
+                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
+                    $phpMussel['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $Separator));
                     $ThisPath .= $phpMussel['ThisDir'] . '/';
                     $ThisName = substr($ThisName, strlen($phpMussel['ThisDir']) + 1);
-                    if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+                    if (!is_dir($ThisPath)) {
                         mkdir($ThisPath);
                     }
                 }
@@ -1844,7 +1844,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                     $ThisDir = substr($ThisName, 0, strpos($ThisName, $Separator));
                     $ThisPath .= $ThisDir . '/';
                     $ThisName = substr($ThisName, strlen($ThisDir) + 1);
-                    if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+                    if (!is_dir($ThisPath)) {
                         mkdir($ThisPath);
                     }
                 }
@@ -2253,29 +2253,26 @@ $phpMussel['GenerateConfirm'] = function ($Action, $Form) use (&$phpMussel) {
 $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['general']['FrontEndLog'] || empty($phpMussel['FE']['DateTime'])) {
+    if (
+        empty($phpMussel['FE']['DateTime']) ||
+        !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']))
+    ) {
         return;
     }
-
-    /** Applies formatting for dynamic log filenames. */
-    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['FrontEndLog']);
 
     $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $phpMussel['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
-    $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
+    $WriteMode = (!file_exists($File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($phpMussel['BuildLogPath']($File)) {
-        $Handle = fopen($phpMussel['Vault'] . $File, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['general']['FrontEndLog']);
-        }
+    $Handle = fopen($File, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['general']['FrontEndLog']);
     }
 };
 

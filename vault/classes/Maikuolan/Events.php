@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2019.12.26).
+ * Events orchestrator (last modified: 2020.06.15).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,10 +17,14 @@ namespace Maikuolan\Common;
 
 class Events
 {
-    /** Event handlers. */
+    /**
+     * @var array Event handlers.
+     */
     private $Handlers = [];
 
-    /** The status of various events and their handlers. */
+    /**
+     * @var array The status of various events and their handlers.
+     */
     private $Status = [];
 
     /**
@@ -31,7 +35,7 @@ class Events
      * @param bool $Replace Whether to replace any/all existing handlers.
      * @return bool True on success; False on failure.
      */
-    public function addHandler($Event, callable $Handler, $Replace = false)
+    public function addHandler(string $Event, callable $Handler, bool $Replace = false): bool
     {
         if ($Replace || !isset($this->Handlers[$Event])) {
             $this->Handlers[$Event] = [];
@@ -51,7 +55,7 @@ class Events
      * @param bool $Replace Whether to replace any/all existing handlers.
      * @return bool True on success; False on failure.
      */
-    public function addHandlerFinal($Event, callable $Handler, $Replace = false)
+    public function addHandlerFinal(string $Event, callable $Handler, bool $Replace = false): bool
     {
         if ($Replace || !isset($this->Handlers[$Event])) {
             $this->Handlers[$Event] = [];
@@ -70,7 +74,7 @@ class Events
      * @param string $Event The event to destroy.
      * @return bool True on success; False on failure.
      */
-    public function destroyEvent($Event)
+    public function destroyEvent(string $Event): bool
     {
         if (!isset($this->Handlers[$Event], $this->Status[$Event])) {
             return false;
@@ -84,15 +88,16 @@ class Events
      *
      * @param string $Event The event to fire.
      * @param string $Data The data to send to the event handlers.
+     * @param mixed $Misc,... Anything that needs to be passed by reference.
      * @return bool True on success; False on failure.
      */
-    public function fireEvent($Event, $Data = '')
+    public function fireEvent(string $Event, string $Data = '', &...$Misc): bool
     {
         if (!isset($this->Handlers[$Event], $this->Status[$Event])) {
             return false;
         }
         foreach ($this->Handlers[$Event] as $Handler) {
-            $Handler($Data);
+            $Handler($Data, $Misc);
         }
         return true;
     }
@@ -104,7 +109,7 @@ class Events
      * @param string $Event The event to check.
      * @return bool True if so; False if not so.
      */
-    public function assigned($Event)
+    public function assigned(string $Event): bool
     {
         return isset($this->Handlers[$Event], $this->Status[$Event]);
     }

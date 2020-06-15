@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.13.3 ===
+PATCH RELEASE.
+
 - [2020.04.13; Maikuolan]: Performed some minor refactoring.
 
 - [2020.04.14; Bug-fix; Maikuolan]: The phpMussel switch file isn't a signature
@@ -49,6 +54,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.06.11; Maikuolan]: Slightly improved some PHPDoc annotations.
 
 - [2020.06.14; Maikuolan]: Adjusted some potentially misleading L10N data.
+
+- [2020.06.15; Maikuolan]: Performed some minor refactoring.
+
+Caleb M (Maikuolan),
+June 15, 2020.
 
 === Version/Release 1.13.2 ===
 PATCH RELEASE.

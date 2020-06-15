@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.13).
+ * This file: Functions file (last modified: 2020.06.15).
  */
 
 /**
@@ -569,7 +569,7 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
 $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
 
     /** Guard against missing quarantine directory. */
-    if (!$phpMussel['BuildLogPath']('quarantine/')) {
+    if (!$phpMussel['BuildPath']($phpMussel['qfuPath'], false)) {
         return false;
     }
 
@@ -5139,25 +5139,55 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
 };
 
 /**
- * Build directory path for logfiles.
+ * Build any missing parts of the given path, apply date/time replacements, and
+ * check whether the path is writable.
  *
- * @param string $File The file we're building for.
- * @return bool True on success; False on failure.
+ * @param string $Path The path we're building for.
+ * @param bool $PointsToFile Whether the path ultimately points to a file or a
+ *      directory.
+ * @return string If all missing parts were successfully built and the final
+ *      rebuilt path is writable, returns the final rebuilt path. Otherwise,
+ *      returns an empty string.
  */
-$phpMussel['BuildLogPath'] = function ($File) use (&$phpMussel) {
-    $ThisPath = $phpMussel['Vault'];
-    $File = str_replace("\\", '/', $File);
-    while (strpos($File, '/') !== false) {
-        $Dir = substr($File, 0, strpos($File, '/'));
-        $ThisPath .= $Dir . '/';
-        $File = substr($File, strlen($Dir) + 1);
-        if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
-            if (!mkdir($ThisPath)) {
-                return false;
-            }
+$phpMussel['BuildPath'] = function ($Path, $PointsToFile = true) use (&$phpMussel) {
+
+    /** Guard. */
+    if (!is_string($Path) || empty($Path)) {
+        return '';
+    }
+
+    /** Applies time/date replacements. */
+    $Path = $phpMussel['TimeFormat']($phpMussel['Time'], $Path);
+
+    /** Split path into steps. */
+    $Steps = preg_split('~[\\\/]~', $Path);
+
+    $Rebuilt = '';
+    $File = $PointsToFile ? array_pop($Steps) : '';
+
+    /** Build directories. */
+    foreach ($Steps as $Step) {
+        $Rebuilt .= ($Rebuilt ? DIRECTORY_SEPARATOR : '') . $Step;
+        if (preg_match('~^\.+$~', $Step)) {
+            continue;
+        }
+        if (!is_dir($Rebuilt) && !mkdir($Rebuilt)) {
+            return '';
         }
     }
-    return true;
+
+    /** Return an empty string if the final rebuilt path isn't writable. */
+    if (!is_writable($Rebuilt)) {
+        return '';
+    }
+
+    /** Append file. */
+    if ($File) {
+        $Rebuilt .= ($Rebuilt ? DIRECTORY_SEPARATOR : '') . $File;
+    }
+
+    /** Return the final rebuilt path. */
+    return $Rebuilt;
 };
 
 /**
@@ -5295,7 +5325,9 @@ $phpMussel['Pseudonymise-IP'] = function ($IP) {
     );
 };
 
-/** Initialise cache. */
+/**
+ * Initialise the cache.
+ */
 $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
 
     /** Exit early if already initialised. */
@@ -5320,8 +5352,8 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
     $phpMussel['Cache']->connect();
 
     /** Guard against missing cache directory. */
-    if (!$phpMussel['Cache']->Using) {
-        $phpMussel['BuildLogPath']('cache/');
+    if (!$phpMussel['Cache']->Using && !$phpMussel['BuildPath']($phpMussel['cachePath'], false)) {
+        die('[phpMussel] Unable to write to the cache.');
     }
 };
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2020.01.01).
+ * A simple, unified cache handler (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,55 +17,89 @@ namespace Maikuolan\Common;
 
 class Cache
 {
-    /** Whether to try using APCu. */
+    /**
+     * @var bool Whether to try using APCu.
+     */
     public $EnableAPCu = false;
 
-    /** Whether to try using Memcached. */
+    /**
+     * @var bool Whether to try using Memcached.
+     */
     public $EnableMemcached = false;
 
-    /** Whether to try using Redis. */
+    /**
+     * @var bool Whether to try using Redis.
+     */
     public $EnableRedis = false;
 
-    /** Whether to try using PDO. */
+    /**
+     * @var bool Whether to try using PDO.
+     */
     public $EnablePDO = false;
 
-    /** The host for Memcached to try using. */
+    /**
+     * @var string The host for Memcached to try using.
+     */
     public $MemcachedHost = 'localhost';
 
-    /** The port for Memcached to try using. */
+    /**
+     * @var int The port for Memcached to try using.
+     */
     public $MemcachedPort = 11211;
 
-    /** The host for Redis to try using. */
+    /**
+     * @var string The host for Redis to try using.
+     */
     public $RedisHost = 'localhost';
 
-    /** The port for Redis to try using. */
+    /**
+     * @var int The port for Redis to try using.
+     */
     public $RedisPort = 6379;
 
-    /** The timeout for Redis to try using. */
+    /**
+     * @var int|float The timeout for Redis to try using.
+     */
     public $RedisTimeout = 2.5;
 
-    /** The DSN to use for PDO connections. */
+    /**
+     * @var string The DSN to use for PDO connections.
+     */
     public $PDOdsn = '';
 
-    /** The username to use for PDO connections. */
+    /**
+     * @var string The username to use for PDO connections.
+     */
     public $PDOusername = '';
 
-    /** The password to use for PDO connections. */
+    /**
+     * @var string The password to use for PDO connections.
+     */
     public $PDOpassword = '';
 
-    /** Used to indicate which mechanism the object should preferably be using (consistency is nice). */
+    /**
+     * @var string Used to indicate which mechanism the object should preferably be using.
+     */
     public $Using = '';
 
-    /** The path to a flatfile to use for caching. */
+    /**
+     * @var string The path to a flatfile to use for caching.
+     */
     public $FFDefault = '';
 
-    /** Flag for whether the cache has been modified AFAIK since instantiation. */
+    /**
+     * @var bool Whether the cache has been modified since instantiation as far as we know.
+     */
     private $Modified = false;
 
-    /** An array to contain any thrown exceptions. */
+    /**
+     * @var array An array to contain any thrown exceptions.
+     */
     public $Exceptions = [];
 
-    /** Cache working object (needed by a number of mechanisms). */
+    /**
+     * @var mixed Cache working object (needed by a number of mechanisms).
+     */
     private $WorkingData = null;
 
     /** Prepared set query for PDO. */

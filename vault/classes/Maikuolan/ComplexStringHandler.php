@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2019.12.26).
+ * Complex string handler (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,13 +17,19 @@ namespace Maikuolan\Common;
 
 class ComplexStringHandler
 {
-    /** Supplied to the class at object instantiation or thereafter. */
+    /**
+     * @var string Supplied to the class at object instantiation or thereafter.
+     */
     public $Input = '';
 
-    /** The data to be worked upon by the class. */
+    /**
+     * @var array The data to be worked upon by the class.
+     */
     private $Working = [];
 
-    /** Markers and pattern matches defined by generateMarkers. */
+    /**
+     * @var array Markers and pattern matches defined by generateMarkers.
+     */
     private $Markers = [];
 
     /**

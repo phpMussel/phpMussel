@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2019.09.24).
+ * This file: Event handlers file (last modified: 2020.06.15).
  */
 
 /**
@@ -22,7 +22,7 @@
 $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['general']['scan_log_serialized']) {
+    if (!$File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log_serialized'])) {
         return false;
     }
 
@@ -45,35 +45,27 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
     if (!isset($phpMussel['InstanceCache']['scan_errors'])) {
         $phpMussel['InstanceCache']['scan_errors'] = 1;
     }
-    $Handle = [
-        'Data' => serialize([
-            'start_time' => isset($phpMussel['InstanceCache']['start_time']) ? $phpMussel['InstanceCache']['start_time'] : '-',
-            'end_time' => isset($phpMussel['InstanceCache']['end_time']) ? $phpMussel['InstanceCache']['end_time'] : '-',
-            'origin' => $Origin,
-            'objects_scanned' => isset($phpMussel['InstanceCache']['objects_scanned']) ? $phpMussel['InstanceCache']['objects_scanned'] : 0,
-            'detections_count' => isset($phpMussel['InstanceCache']['detections_count']) ? $phpMussel['InstanceCache']['detections_count'] : 0,
-            'scan_errors' => isset($phpMussel['InstanceCache']['scan_errors']) ? $phpMussel['InstanceCache']['scan_errors'] : 0,
-            'detections' => $ScanData
-        ]) . "\n",
-        'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
-    ];
-    $WriteMode = (!file_exists($phpMussel['Vault'] . $Handle['File']) || (
+    $Data = serialize([
+        'start_time' => isset($phpMussel['InstanceCache']['start_time']) ? $phpMussel['InstanceCache']['start_time'] : '-',
+        'end_time' => isset($phpMussel['InstanceCache']['end_time']) ? $phpMussel['InstanceCache']['end_time'] : '-',
+        'origin' => $Origin,
+        'objects_scanned' => isset($phpMussel['InstanceCache']['objects_scanned']) ? $phpMussel['InstanceCache']['objects_scanned'] : 0,
+        'detections_count' => isset($phpMussel['InstanceCache']['detections_count']) ? $phpMussel['InstanceCache']['detections_count'] : 0,
+        'scan_errors' => isset($phpMussel['InstanceCache']['scan_errors']) ? $phpMussel['InstanceCache']['scan_errors'] : 0,
+        'detections' => $ScanData
+    ]) . "\n";
+    $WriteMode = (!file_exists($File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($phpMussel['BuildLogPath']($Handle['File'])) {
-        $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
-        fwrite($Stream, $Handle['Data']);
-        fclose($Stream);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log_serialized']);
-        }
-        return true;
+    $Stream = fopen($File, $WriteMode);
+    fwrite($Stream, $Data);
+    fclose($Stream);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log_serialized']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -85,35 +77,27 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
 $phpMussel['Events']->addHandler('writeToScanLog', function ($Data) use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['general']['scan_log']) {
+    if (!$File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log'])) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log']);
-
-    if (!file_exists($phpMussel['Vault'] . $File)) {
+    if (!file_exists($File)) {
         $Data = $phpMussel['safety'] . "\n" . $Data;
         $WriteMode = 'w';
     } else {
         $WriteMode = (
             $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+            filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
         ) ? 'w' : 'a';
     }
 
-    /** Build the path to the log and write it. */
-    if ($phpMussel['BuildLogPath']($File)) {
-        $Handle = fopen($phpMussel['Vault'] . $File, 'a');
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log']);
-        }
-        return true;
+    $Handle = fopen($File, 'a');
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -125,29 +109,24 @@ $phpMussel['Events']->addHandler('writeToScanLog', function ($Data) use (&$phpMu
 $phpMussel['Events']->addHandler('writeToScanKillsLog', function ($Data) use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['general']['scan_kills'] || empty($phpMussel['killdata'])) {
+    if (
+        empty($phpMussel['killdata']) ||
+        !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_kills']))
+    ) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills']);
-
-    if (!file_exists($phpMussel['Vault'] . $File)) {
+    if (!file_exists($File)) {
         $Data = $phpMussel['safety'] . "\n\n" . $Data;
         $WriteMode = 'w';
     } else {
         $WriteMode = (
             $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+            filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
         ) ? 'w' : 'a';
     }
 
-    /** Build the path to the log. */
-    if (!$phpMussel['BuildLogPath']($File)) {
-        return false;
-    }
-
-    $Stream = fopen($phpMussel['Vault'] . $File, $WriteMode);
+    $Stream = fopen($File, $WriteMode);
     fwrite($Stream, $Data);
     fclose($Stream);
     if ($WriteMode === 'w') {
@@ -192,16 +171,16 @@ $phpMussel['Events']->addHandler('error', function ($Data) use (&$phpMussel) {
 $phpMussel['Events']->addHandler('final', function () use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['general']['error_log'] || !isset($phpMussel['Pending-Error-Log-Data'])) {
+    if (
+        !isset($phpMussel['Pending-Error-Log-Data']) ||
+        !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['error_log']))
+    ) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['error_log']);
-
-    if (!file_exists($phpMussel['Vault'] . $File) || !filesize($phpMussel['Vault'] . $File) || (
+    if (!file_exists($File) || !filesize($File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) {
         $WriteMode = 'w';
         $Data = $phpMussel['L10N']->getString('error_log_header') . "\n=====\n" . $phpMussel['Pending-Error-Log-Data'];
@@ -210,18 +189,13 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel) {
         $Data = $phpMussel['Pending-Error-Log-Data'];
     }
 
-    /** Build the path to the log and write it. */
-    if ($phpMussel['BuildLogPath']($File)) {
-        $Handle = fopen($phpMussel['Vault'] . $File, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['general']['error_log']);
-        }
-        return true;
+    $Handle = fopen($File, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['general']['error_log']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -233,28 +207,20 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel) {
 $phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$phpMussel) {
 
     /** Guard. */
-    if (!$phpMussel['Config']['PHPMailer']['EventLog']) {
+    if (!$EventLog = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['PHPMailer']['event_log'])) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $EventLog = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['PHPMailer']['EventLog']);
-
-    $WriteMode = (!file_exists($phpMussel['Vault'] . $EventLog) || (
+    $WriteMode = (!file_exists($EventLog) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($phpMussel['Vault'] . $EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        filesize($EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($phpMussel['BuildLogPath']($EventLog)) {
-        $Handle = fopen($phpMussel['Vault'] . $EventLog, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
-        }
-        return true;
+    $Handle = fopen($EventLog, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
     }
-
-    return false;
+    return true;
 });
