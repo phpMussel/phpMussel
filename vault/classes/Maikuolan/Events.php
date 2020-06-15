@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2019.12.26).
+ * Events orchestrator (last modified: 2020.06.15).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,10 +17,14 @@ namespace Maikuolan\Common;
 
 class Events
 {
-    /** Event handlers. */
+    /**
+     * @var array Event handlers.
+     */
     private $Handlers = [];
 
-    /** The status of various events and their handlers. */
+    /**
+     * @var array The status of various events and their handlers.
+     */
     private $Status = [];
 
     /**
@@ -84,15 +88,16 @@ class Events
      *
      * @param string $Event The event to fire.
      * @param string $Data The data to send to the event handlers.
+     * @param mixed $Misc,... Anything that needs to be passed by reference.
      * @return bool True on success; False on failure.
      */
-    public function fireEvent(string $Event, string $Data = ''): bool
+    public function fireEvent(string $Event, string $Data = '', &...$Misc): bool
     {
         if (!isset($this->Handlers[$Event], $this->Status[$Event])) {
             return false;
         }
         foreach ($this->Handlers[$Event] as $Handler) {
-            $Handler($Data);
+            $Handler($Data, $Misc);
         }
         return true;
     }

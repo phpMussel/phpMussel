@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2019.12.26).
+ * Delayed file IO class (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,13 +17,19 @@ namespace Maikuolan\Common;
 
 class DelayedIO
 {
-    /** Old data for the files being read/written. */
+    /**
+     * @var array Old data for the files being read/written.
+     */
     private $OldData = [];
 
-    /** New data for the files being read/written. */
+    /**
+     * @var array New data for the files being read/written.
+     */
     private $NewData = [];
 
-    /** Whether the files should be locked when read/written. */
+    /**
+     * @var array Whether the files should be locked when read/written.
+     */
     private $Locked = [];
 
     /** Size of each data block to read per iteration (131072 = 128KB). */

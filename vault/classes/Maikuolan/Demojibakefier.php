@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.12.26).
+ * Demojibakefier (last modified: 2020.06.11).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -27,13 +27,19 @@ namespace Maikuolan\Common;
 
 class Demojibakefier
 {
-    /** Supplied to the class at object instantiation or thereafter. */
+    /**
+     * @var string Supplied to the class at object instantiation or thereafter.
+     */
     public $NormaliseTo = 'UTF-8';
 
-    /** Encoding of the most recent chosen string character encoding candidate. */
+    /**
+     * @var string Encoding of the most recent chosen string character encoding candidate.
+     */
     public $Last = '';
 
-    /** Length of the string most recently supplied to normalise. */
+    /**
+     * @var int Length of the string most recently supplied to normalise.
+     */
     public $Len = -1;
 
     /** Some early control characters (w/o tabs, CR, or LF). */

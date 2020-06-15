@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2019.12.27).
+ * Number formatter (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,32 +17,46 @@ namespace Maikuolan\Common;
 
 class NumberFormatter
 {
-    /** Identifies the conversion set to use. */
+    /**
+     * @var string Identifies the conversion set to use.
+     */
     public $ConversionSet = 'Western';
 
-    /** Identifies the separator to use for separating number groups. */
+    /**
+     * @var string Identifies the separator to use for separating number groups.
+     */
     public $GroupSeparator = ',';
 
-    /** Identifies the group size to use for separating number groups. */
+    /**
+     * @var int Identifies the group size to use for separating number groups.
+     */
     public $GroupSize = 3;
 
-    /** Identifies the offset to use when counting the size of number groups. */
+    /**
+     * @var int Identifies the offset to use when counting the size of number groups.
+     */
     public $GroupOffset = 0;
 
-    /** Identifies the decimal separator to use. */
+    /**
+     * @var string Identifies the decimal separator to use.
+     */
     public $DecimalSeparator = '.';
 
-    /** Identifies the base system of the target format. */
+    /**
+     * @var int Identifies the base system of the target format.
+     */
     public $Base = 10;
 
     /**
-     * Conversion set for Hindu-Arabic or Western Arabic numerals (an empty
-     * array, because.. that's the default, meaning.. we don't need to convert
-     * anything anyway, but.. keeping it here, so that we can be explicit).
+     * @var array Conversion set for Hindu-Arabic or Western Arabic numerals.
+     *      The array here is intentionally empty, because it's our default
+     *      "conversion set" to use (keeping it here in order to be explicit).
      */
     private $Western = [];
 
-    /** Conversion set for Eastern Arabic numerals. */
+    /**
+     * @var array Conversion set for Eastern Arabic numerals.
+     */
     private $Eastern = [
         '0' => '٠',
         '1' => '١',
@@ -56,7 +70,9 @@ class NumberFormatter
         '9' => '٩'
     ];
 
-    /** Conversion set for Persian/Urdu numerals (Eastern Arabic variant). */
+    /**
+     * @var array Conversion set for Persian/Urdu numerals (Eastern Arabic variant).
+     */
     private $Persian = [
         '0' => '۰',
         '1' => '۱',
@@ -70,7 +86,9 @@ class NumberFormatter
         '9' => '۹'
     ];
 
-    /** Conversion set for Nagari/Bengali/Bangla numerals. */
+    /**
+     * @var array Conversion set for Nagari/Bengali/Bangla numerals.
+     */
     private $Nagari = [
         '0' => '০',
         '1' => '১',
@@ -84,7 +102,9 @@ class NumberFormatter
         '9' => '৯'
     ];
 
-    /** Conversion set for Devanagari numerals (used by Hindi, Marathi, etc). */
+    /**
+     * @var array Conversion set for Devanagari numerals (used by Hindi, Marathi, etc).
+     */
     private $Devanagari = [
         '0' => '०',
         '1' => '१',
@@ -98,7 +118,9 @@ class NumberFormatter
         '9' => '९'
     ];
 
-    /** Conversion set for Gujarati numerals. */
+    /**
+     * @var array Conversion set for Gujarati numerals.
+     */
     private $Gujarati = [
         '0' => '૦',
         '1' => '૧',
@@ -112,7 +134,9 @@ class NumberFormatter
         '9' => '૯'
     ];
 
-    /** Conversion set for Gurmukhi/Punjabi numerals. */
+    /**
+     * @var array Conversion set for Gurmukhi/Punjabi numerals.
+     */
     private $Gurmukhi = [
         '0' => '੦',
         '1' => '੧',
@@ -126,7 +150,9 @@ class NumberFormatter
         '9' => '੯'
     ];
 
-    /** Conversion set for Kannada numerals. */
+    /**
+     * @var array Conversion set for Kannada numerals.
+     */
     private $Kannada = [
         '0' => '೦',
         '1' => '೧',
@@ -140,7 +166,9 @@ class NumberFormatter
         '9' => '೯'
     ];
 
-    /** Conversion set for Telugu numerals. */
+    /**
+     * @var array Conversion set for Telugu numerals.
+     */
     private $Telugu = [
         '0' => '౦',
         '1' => '౧',
@@ -154,7 +182,9 @@ class NumberFormatter
         '9' => '౯'
     ];
 
-    /** Conversion set for Burmese numerals. */
+    /**
+     * @var array Conversion set for Burmese numerals.
+     */
     private $Burmese = [
         '0' => '၀',
         '1' => '၁',
@@ -168,7 +198,9 @@ class NumberFormatter
         '9' => '၉'
     ];
 
-    /** Conversion set for Khmer numerals. */
+    /**
+     * @var array Conversion set for Khmer numerals.
+     */
     private $Khmer = [
         '0' => '០',
         '1' => '១',
@@ -182,7 +214,9 @@ class NumberFormatter
         '9' => '៩'
     ];
 
-    /** Conversion set for Thai numerals. */
+    /**
+     * @var array Conversion set for Thai numerals.
+     */
     private $Thai = [
         '0' => '๐',
         '1' => '๑',
@@ -196,7 +230,9 @@ class NumberFormatter
         '9' => '๙'
     ];
 
-    /** Conversion set for Lao numerals. */
+    /**
+     * @var array Conversion set for Lao numerals.
+     */
     private $Lao = [
         '0' => '໐',
         '1' => '໑',
@@ -211,8 +247,9 @@ class NumberFormatter
     ];
 
     /**
-     * Conversion set for Mayan numerals (unlikely to ever be practical, but a
-     * nice kind of "easter egg", per se, to demonstrate what the class can do.
+     * @var array Conversion set for Mayan numerals (unlikely to ever be
+     *      needed, but serves as an amusing "easter egg" to demonstrate
+     *      the capabilities of the class).
      */
     private $Mayan = [
         '0' => '𝋠',
@@ -237,7 +274,9 @@ class NumberFormatter
         'j' => '𝋳'
     ];
 
-    /** Conversion set for Japanese numerals. */
+    /**
+     * @var array Conversion set for Japanese numerals.
+     */
     private $Japanese = [
         '0*' => '',
         '1' => '',
@@ -285,7 +324,9 @@ class NumberFormatter
         '^-10' => '埃'
     ];
 
-    /** Conversion set for Tamil numerals. */
+    /**
+     * @var array Conversion set for Tamil numerals.
+     */
     private $Tamil = [
         '0*' => '',
         '1' => '',
@@ -323,7 +364,9 @@ class NumberFormatter
         '^23' => '௱௲௲௲௲௲௲௲'
     ];
 
-    /** Conversion set for Javanese numerals. */
+    /**
+     * @var array Conversion set for Javanese numerals.
+     */
     private $Javanese = [
         '0' => '꧐',
         '1' => '꧑',
@@ -337,7 +380,9 @@ class NumberFormatter
         '9' => '꧙'
     ];
 
-    /** Conversion set for Roman numerals. */
+    /**
+     * @var array Conversion set for Roman numerals.
+     */
     private $Roman = [
         '0' => '',
         '1' => '',
@@ -381,7 +426,9 @@ class NumberFormatter
         '^3*3' => 'MMM'
     ];
 
-    /** Conversion set for Odia numerals. */
+    /**
+     * @var array Conversion set for Odia numerals.
+     */
     private $Odia = [
         '0' => '୦',
         '1' => '୧',
@@ -395,7 +442,9 @@ class NumberFormatter
         '9' => '୯'
     ];
 
-    /** Conversion set for Tibetan numerals. */
+    /**
+     * @var array Conversion set for Tibetan numerals.
+     */
     private $Tibetan = [
         '0' => '༠',
         '1' => '༡',

@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2019.12.26).
+ * L10N handler (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,25 +17,37 @@ namespace Maikuolan\Common;
 
 class L10N
 {
-    /** The pluralisation rule to use for integers. */
+    /**
+     * @var string The pluralisation rule to use for integers.
+     */
     private $IntegerRule = 'int1';
 
-    /** The pluralisation rule to use for fractions. */
+    /**
+     * @var string The pluralisation rule to use for fractions.
+     */
     private $FractionRule = 'int1';
 
-    /** The pluralisation rule to use for integers for the fallback. */
+    /**
+     * @var string The pluralisation rule to use for integers for the fallback.
+     */
     private $FallbackIntegerRule = 'int1';
 
-    /** The pluralisation rule to use for fractions for the fallback. */
+    /**
+     * @var string The pluralisation rule to use for fractions for the fallback.
+     */
     private $FallbackFractionRule = 'int1';
 
-    /** All relevant L10N data. */
+    /**
+     * @var array All relevant L10N data.
+     */
     public $Data = [];
 
-    /** All relevant fallback L10N data. */
+    /**
+     * @var array All relevant fallback L10N data.
+     */
     public $Fallback = [];
 
-    /** When there aren't multiple forms. */
+    /** For when there aren't multiple forms. */
     private function int1(): int
     {
         return 0;

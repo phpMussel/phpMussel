@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2019.12.26).
+ * YAML handler (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -23,10 +23,14 @@ namespace Maikuolan\Common;
 
 class YAML
 {
-    /** An array to contain all the data processed by the handler. */
+    /**
+     * @var array An array to contain all the data processed by the handler.
+     */
     public $Data = [];
 
-    /** Flag used for rendering multi-line values. */
+    /**
+     * @var bool Whether to render multi-line values.
+     */
     private $MultiLine = false;
 
     /**

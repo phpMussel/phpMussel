@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.3-DEV+20165456
+ Version: 2.1.3
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -41,15 +41,15 @@ phpMussel Core:
    - ae3beef8c43b660521c9a2d06a4a87ddc18cb971ad1b7147870d9764225d0317:1712
    - 59d1c89f56dbfcd46f48e0cacd398f979805279fb115a8e30734e4f398992a56:7318
    - 0f069ee8619efc1b029e93f9eddc9b78cc29e7a4da11059d882a6d9fc6a8c880:15726
-   - 4587762536b0844c7451947532b85ba0602a838b2bee23bf0722658a2e71f373:8929
-   - a12884e43496be120ce0aa10f35a0be0dda406f3b450c363286f9761d7a51e92:238607
+   - 00376c2351c206d263fb8bc5fddbb386817e36d37e5809de0387a1b84aa0f783:7307
+   - 375319675d807f909ca05c2df76c90b9a622b2bc43541af97d0ed83c8dae509d:239542
    - ba2224d958093e7a31d96ba88e752359d5685935368fffab321d9dc64ea33fe0:6466
    - 78dcaaf426b18fecceed9ac6d7f0eb86e8678b11f69ab1f863dfe7d214bfa68e:4696
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.3-DEV+20161442
+ Version: 2.1.3
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -146,12 +146,12 @@ phpMussel Front-End:
    - 92b6fc00b0261927ae86e7dcbdbd16d215a03182eec7d6c3c5086a858f1ccd92:17579
    - 7e0321f3d6dc41b620573710a011d7d07e1cfc19943c06856e6adfbcaf22a5e1:929
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - 8c6b514b699912206e37b9c70df44d9219c27cd2f76199b6a709fbc5cf7e4695:164564
-   - d428276f74688a3bd8369b18f4924df753d32dfa1600be0b564d28ddaa086bfd:116976
+   - 7bc4e6edd00a1a328cd7cd9761b82cdec3d3673303250b300ddb8a020af071d0:164498
+   - 97d0047e79fa7a9575cdb4fd35051ce82a0a9de64fa4a9b7a5c4e0a80c7ad249:116618
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.1.3-DEV+20158666
+ Version: 2.1.3
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -174,7 +174,7 @@ phpMussel Upload Handler:
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
- Version: 2.1.1
+ Version: 2.1.3
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -189,7 +189,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.2.3-DEV+20000653
+ Version: 2.3.2
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -200,6 +200,7 @@ Common Classes Package:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Demojibakefier.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Events.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/L10N.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Matrix.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/NumberFormatter.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/YAML.php
   To:
@@ -209,17 +210,19 @@ Common Classes Package:
    - classes/Maikuolan/Demojibakefier.php
    - classes/Maikuolan/Events.php
    - classes/Maikuolan/L10N.php
+   - classes/Maikuolan/Matrix.php
    - classes/Maikuolan/NumberFormatter.php
    - classes/Maikuolan/YAML.php
   Checksum:
-   - 1353e4eaeb12bf8a13943facf1801a0beebc9bf4226548aecdb87cba81c6918c:24045
-   - 22d1edebc6ad304620b40dc9c5c916454815ac43e7cba67052587b33f9a34a0f:3644
-   - 07506af3b17981fc48eb805e3879293f1dbc3b56597fac99f9db0fc43fd6e602:4488
-   - 9ec25a149bc9dd7ccfe662f5be4128f5119c0065a16a9a2097bec39ea8fa7dd6:27634
-   - 114c153f369741d3d5adb6b474399fed0e21e0db3c4c83bdf2cd639c33fb00cc:3512
-   - 3665ae80cd46094aab088dbf5b69caefaaa6f7d36d50cc6ae6522888e43bcff1:11276
-   - ee21975f4125746f6191b373b00169612145d388b7b674ee80fe7bdb47c550c2:18951
-   - 5cf5d9cb1d59cfefdee56df552c3693afe0d34f9199ff1ca5ef7809bd1489556:10452
+   - 6b6eeb8ffa6249065fd5e19f0d669c7953791f2a0810786e6bf8dfb252dcd7d2:24419
+   - 9d5647f9d6f9a239f0ab05a3011ca82b1bbd29aa286450f309e18b1176544968:3714
+   - 02663bc0ae580f0482e910eb0e38d45a68b92f7a8366814bd5a63a9181d51e83:4557
+   - 4fa9977e14641095849fd7d067f213529dcb55232a5afad521a9c6808d6567ce:27703
+   - f9a9638c077d7ab7d8b39812e22e75f58c9d5204fd300f392e6d1c895e1b8675:3653
+   - c567cbc6d7cab8a61e61ed2fc921490a5c80130dded0b541acf93185c3003157:11422
+   - c73d9ae1997505b2834a79b218b015be83498d3befe6741d9132a674f152c746:8634
+   - 0862a176d82479b6e916b270dcaa89857ceeeb67685ae5749d22039af036dc2d:19533
+   - 58713971db83a121128bd59e51b5fdf32dddee75cc1324bf69cb837bcf6619e2:10491
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English
