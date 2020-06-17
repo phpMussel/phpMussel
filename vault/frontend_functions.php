@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.15).
+ * This file: Front-end functions file (last modified: 2020.06.17).
  */
 
 /**
@@ -2255,6 +2255,7 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
     /** Guard. */
     if (
         empty($phpMussel['FE']['DateTime']) ||
+        !$phpMussel['Config']['general']['FrontEndLog'] ||
         !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']))
     ) {
         return;

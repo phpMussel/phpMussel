@@ -10,7 +10,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2020.06.17; Maikuolan]: Strengthened some guard code (the potential existed
+  for some edge-case errors to occasionally slip through the existing code).
 
 === Version/Release 1.13.3 ===
 PATCH RELEASE.
