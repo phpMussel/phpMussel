@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.06.15).
+ * This file: Event handlers file (last modified: 2020.06.17).
  */
 
 /**
@@ -22,7 +22,10 @@
 $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMussel): bool {
 
     /** Guard. */
-    if (!$File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log_serialized'])) {
+    if (
+        !$phpMussel['Config']['general']['scan_log_serialized'] ||
+        !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log_serialized']))
+    ) {
         return false;
     }
 
@@ -77,7 +80,10 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
 $phpMussel['Events']->addHandler('writeToScanLog', function (string $Data) use (&$phpMussel): bool {
 
     /** Guard. */
-    if (!$File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log'])) {
+    if (
+        !$phpMussel['Config']['general']['scan_log'] ||
+        !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_log']))
+    ) {
         return false;
     }
 
@@ -111,6 +117,7 @@ $phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) 
     /** Guard. */
     if (
         empty($phpMussel['killdata']) ||
+        !$phpMussel['Config']['general']['scan_kills'] ||
         !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['scan_kills']))
     ) {
         return false;
@@ -173,6 +180,7 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel): bool {
     /** Guard. */
     if (
         !isset($phpMussel['Pending-Error-Log-Data']) ||
+        !$phpMussel['Config']['general']['error_log'] ||
         !($File = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['general']['error_log']))
     ) {
         return false;
@@ -207,7 +215,10 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel): bool {
 $phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$phpMussel): bool {
 
     /** Guard. */
-    if (!$EventLog = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['PHPMailer']['event_log'])) {
+    if (
+        !$phpMussel['Config']['PHPMailer']['event_log'] ||
+        !($EventLog = $phpMussel['BuildPath']($phpMussel['Vault'] . $phpMussel['Config']['PHPMailer']['event_log']))
+    ) {
         return false;
     }
 

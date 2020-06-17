@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.15).
+ * This file: Functions file (last modified: 2020.06.17).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -5174,7 +5174,7 @@ $phpMussel['BuildPath'] = function (string $Path, bool $PointsToFile = true) use
     $Path = $phpMussel['TimeFormat']($phpMussel['Time'], $Path);
 
     /** Split path into steps. */
-    $Steps = preg_split('~[\\\/]~', $Path);
+    $Steps = preg_split('~[\\\/]~', $Path, PREG_SPLIT_NO_EMPTY);
 
     $Rebuilt = '';
     $File = $PointsToFile ? array_pop($Steps) : '';
