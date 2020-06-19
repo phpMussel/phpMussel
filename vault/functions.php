@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.17).
+ * This file: Functions file (last modified: 2020.06.19).
  */
 
 /**
@@ -334,23 +334,27 @@ $phpMussel['ReadFile'] = function ($File, $Size = 0) {
 };
 
 /**
- * A very simple wrapper for file() that checks for the existence of files
- * before attempting to read them, in order to avoid warnings about
- * non-existent files.
+ * A simple file() wrapper that checks for the existence of files before
+ * attempting to read them, in order to avoid warnings about non-existent
+ * files, with a normalised return value.
  *
  * @param string $Filename Refer to the description for file().
  * @param int $Flags Refer to the description for file().
  * @param resource|null $Context Refer to the description for file().
- * @return array|bool Same as with file(), but won't trigger warnings.
+ * @return array The file's contents or an empty array on failure.
  */
 $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = null) {
-    if (!is_readable($Filename)) {
-        return false;
+    /** Guard. */
+    if (!is_file($Filename) || !is_readable($Filename) || !$Filesize = filesize($Filename)) {
+        return [];
     }
+
     if (!is_resource($Context)) {
-        return !$Flags ? file($Filename) : file($Filename, $Flags);
+        $Output = !$Flags ? file($Filename) : file($Filename, $Flags);
+    } else {
+        $Output = file($Filename, $Flags, $Context);
     }
-    return file($Filename, $Flags, $Context);
+    return is_array($Output) ? $Output : [];
 };
 
 /**
@@ -2062,7 +2066,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             /** Plugin hook: "new_sigfile". */
             $phpMussel['Execute_Hook']('new_sigfile');
 
-            if (!$phpMussel['InstanceCache'][$SigFile]) {
+            if (empty($phpMussel['InstanceCache'][$SigFile])) {
                 $phpMussel['InstanceCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
                     if (!$flagged) {
@@ -2457,7 +2461,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             /** Plugin hook: "new_sigfile". */
             $phpMussel['Execute_Hook']('new_sigfile');
 
-            if (!$phpMussel['InstanceCache'][$SigFile]) {
+            if (empty($phpMussel['InstanceCache'][$SigFile])) {
                 $phpMussel['InstanceCache']['scan_errors']++;
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
                     if (!$flagged) {
@@ -3391,37 +3395,6 @@ $phpMussel['FetchExt'] = function ($ofn) {
         $gzxts = $gzxt = '-';
     }
     return [$xt, $xts, $gzxt, $gzxts];
-};
-
-/**
- * Remove occurrence of $A from leading substring of $B.
- *
- * @param string $A
- * @param string $B
- * @return string
- */
-$phpMussel['RemoveLeadMatch'] = function ($A, $B) {
-    $LenA = strlen($A);
-    $LenB = strlen($B);
-    for ($Iter = 0; $Iter < $LenA && $Iter < $LenB; $Iter++) {
-        $CharA = substr($A, $Iter, 1);
-        $CharB = substr($B, $Iter, 1);
-        if ($CharA !== $CharB) {
-            break;
-        }
-    }
-    return ($Iter === $LenB) ? '' : substr($B, $Iter);
-};
-
-/**
- * Get substring of string after final slash.
- *
- * @param string $String The string
- */
-$phpMussel['SubstrAfterFinalSlash'] = function ($String) {
-    return strpos($String, '/') !== false ? substr($String, strrpos($String, '/') + 1) : (
-        strpos($String, "\\") !== false ? substr($String, strrpos($String, "\\") + 1) : $String
-    );
 };
 
 /**
@@ -5160,7 +5133,7 @@ $phpMussel['BuildPath'] = function ($Path, $PointsToFile = true) use (&$phpMusse
     $Path = $phpMussel['TimeFormat']($phpMussel['Time'], $Path);
 
     /** Split path into steps. */
-    $Steps = preg_split('~[\\\/]~', $Path, PREG_SPLIT_NO_EMPTY);
+    $Steps = preg_split('~[\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
 
     $Rebuilt = '';
     $File = $PointsToFile ? array_pop($Steps) : '';

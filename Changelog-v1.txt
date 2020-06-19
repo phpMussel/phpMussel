@@ -10,8 +10,19 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.13.4 ===
+PATCH RELEASE.
+
 - [2020.06.17; Maikuolan]: Strengthened some guard code (the potential existed
   for some edge-case errors to occasionally slip through the existing code).
+
+- [2020.06.19; Bug-fix; Maikuolan]: Logging broken due to missing parameter in
+  the preg_split call in the recently introduced BuildPath closure; Fixed.
+
+Caleb M (Maikuolan),
+June 19, 2020.
 
 === Version/Release 1.13.3 ===
 PATCH RELEASE.
