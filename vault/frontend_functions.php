@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.17).
+ * This file: Front-end functions file (last modified: 2020.06.20).
  */
 
 /**
@@ -655,7 +655,7 @@ $phpMussel['Logs-RecursiveList'] = function (string $Base) use (&$phpMussel): ar
  * @return bool True for when in use; False for when not in use.
  */
 $phpMussel['IsInUse'] = function (array $Component) use (&$phpMussel): bool {
-    if ($Component['Name'] === 'L10N: ' . $phpMussel['L10N']->getString('Local Name')) {
+    if (!empty($Component['Name']) && $Component['Name'] === 'L10N: ' . $phpMussel['L10N']->getString('Local Name')) {
         return true;
     }
     $Files = $Component['Files']['To'] ?? [];
