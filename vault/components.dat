@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.5-DEV+20171552
+ Version: 2.1.5
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -39,17 +39,17 @@ phpMussel Core:
    - 86467ff1dc2df6e4f4448ec6ec2aec17453283e61b0f0972414842bdfd0e678e:13826
    - 28aa627ac3936c4b961a482bd20dce18afe641e8e1805d8a5f39b1f4e9e3e170:3859
    - ae3beef8c43b660521c9a2d06a4a87ddc18cb971ad1b7147870d9764225d0317:1712
-   - ae9945a763a330c454f1c47f73db2e34a5da22058ee9db314321d3bc70a765aa:7318
-   - 0f069ee8619efc1b029e93f9eddc9b78cc29e7a4da11059d882a6d9fc6a8c880:15726
+   - d7a698723dfce82f9cf2385719e553449acff5985c0b8ae58632b97e8e8e6df1:7333
+   - 6dbb095bc45cb36ebbdfa61d66b7a0a86db619fb5b9f9681f4d9f41f6db94bdd:15731
    - 0d0842cb47f7a692e28286c634893bb1435c3221ab92da60c93de5e53fea6daa:7652
-   - 048ef9a30adae9da1d5a5e26e92bf2554b4afae8282932f1a94e12944ea88598:239022
+   - 08af3f59d293bba3076d6eb4cac26a37a482acf5584e26c70cb9d2e8d8b2c861:242195
    - ba2224d958093e7a31d96ba88e752359d5685935368fffab321d9dc64ea33fe0:6466
    - 78dcaaf426b18fecceed9ac6d7f0eb86e8678b11f69ab1f863dfe7d214bfa68e:4696
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.5-DEV+20171552
+ Version: 2.1.5
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -146,12 +146,12 @@ phpMussel Front-End:
    - 92b6fc00b0261927ae86e7dcbdbd16d215a03182eec7d6c3c5086a858f1ccd92:17579
    - 7e0321f3d6dc41b620573710a011d7d07e1cfc19943c06856e6adfbcaf22a5e1:929
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - 7bc4e6edd00a1a328cd7cd9761b82cdec3d3673303250b300ddb8a020af071d0:164498
-   - 3f168cc6dc805b911e141f489481654353be0f50c94e94b4ee4b27902fe19491:116708
+   - fdcf000769e0dddb43a7ff6b7cc5547c2f181ab3cc12c1fa7b760e92df7dc3df:164542
+   - 5e3be436e8c15062b8edc9ead661df48587ddaaba46d6fcf1fb7b866e3fb9c08:116738
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.1.4
+ Version: 2.1.5
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -170,11 +170,11 @@ phpMussel Upload Handler:
   Checksum:
    - 68d157607aed65d23212d5e81b939ef9529d532b7bb679eb207a37604d444143:1065
    - b50e0fed13dfc51fffcb2ef6a657f9977220ab781c688c34000ac2503d0c5c1b:2031
-   - 4daf7be09f676dc25ac276cff82036ebbc692d633053f3d1c03c44638dfecefd:21263
+   - 283bf91e8466f9a5aa69823b8efa01f8355f915dc505ac2b412c2fba37e2be57:21264
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
- Version: 2.1.4
+ Version: 2.1.5
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -185,7 +185,7 @@ phpMussel CLI Handler:
   To:
    - cli.php
   Checksum:
-   - 0fd4c0135be99da61c730e69697943e3f9a8fa89f5f9de306a6483594a8444c0:28565
+   - 54401b6f21a73e827f66b6269a0100ecaf5ec39b599ebbf8c43d47d6d273707c:28762
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package

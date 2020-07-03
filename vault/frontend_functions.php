@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.20).
+ * This file: Front-end functions file (last modified: 2020.07.01).
  */
 
 /**
@@ -445,7 +445,7 @@ $phpMussel['FileManager-RecursiveList'] = function (string $Base) use (&$phpMuss
     $Arr = [];
     $Key = -1;
     $Offset = strlen($Base);
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
@@ -635,7 +635,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function (string $Path): bool {
  */
 $phpMussel['Logs-RecursiveList'] = function (string $Base) use (&$phpMussel): array {
     $Arr = [];
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
         if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$phpMussel['FileManager-IsLogFile']($ThisName)) {
@@ -671,7 +671,9 @@ $phpMussel['IsInUse'] = function (array $Component) use (&$phpMussel): bool {
     return false;
 };
 
-/** Fetch remote data (front-end updates page). */
+/**
+ * Fetch remote data (front-end updates page).
+ */
 $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
     $phpMussel['Components']['ThisComponent']['RemoteData'] = '';
     $phpMussel['FetchRemote-ContextFree'](
@@ -784,13 +786,10 @@ $phpMussel['FilterLang'] = function (string $ChoiceKey) use (&$phpMussel): bool 
  * the basis of their availability.
  *
  * @param string $ChoiceKey Hash algorithm.
- * @return bool Valid/Invalid.
+ * @return bool Available/Unavailable.
  */
-$phpMussel['FilterAlgo'] = function ($ChoiceKey) use (&$phpMussel) {
-    if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
-        return !$phpMussel['VersionCompare'](PHP_VERSION, '7.3.0');
-    }
-    return true;
+$phpMussel['FilterByDefined'] = function (string $ChoiceKey) {
+    return defined($ChoiceKey);
 };
 
 /**
@@ -945,7 +944,7 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
     $Arr = [];
     $Key = -1;
     $Offset = strlen($phpMussel['qfuPath']);
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($phpMussel['qfuPath']), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($phpMussel['qfuPath']), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         /** Skips if not a quarantined file. */
         if (!preg_match('~\.qfu$~i', $Item) || is_dir($Item) || !is_file($Item) || !is_readable($Item)) {
@@ -1161,7 +1160,7 @@ $phpMussel['Traverse'] = function (string $Path): bool {
  * @param array $Arr The array to sort.
  * @return string The sorted, imploded array.
  */
-$phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel) {
+$phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel): string {
     $Type = $phpMussel['FE']['sort-by-name'] ?? false;
     $Order = $phpMussel['FE']['descending-order'] ?? false;
     uksort($Arr, function (string $A, string $B) use ($Type, $Order) {
@@ -1279,7 +1278,10 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         $BytesAdded = 0;
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
-        if ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])) {
+        if (
+            $phpMussel['IsActivable']($phpMussel['Components']['Meta'][$ThisTarget]) &&
+            ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget]))
+        ) {
             $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $phpMussel['Components']['RemoteMeta'] = [];

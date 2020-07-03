@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2020.01.25).
+ * This file: Upload handler (last modified: 2020.07.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -182,7 +182,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 );
                 $phpMussel['killdata'] .= sprintf(
                     "%s:%d:%s\n",
-                    md5($phpMussel['ThisFileData']),
+                    hash('sha256', $phpMussel['ThisFileData']),
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']],
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']]
                 );
@@ -221,7 +221,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 $phpMussel['Config']['files']['max_uploads'] >= 1
             ) {
                 $phpMussel['killdata'] .=
-                    '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
+                    str_repeat('-', 64) . ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']] . ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . "\n";
                 $phpMussel['whyflagged'] .= sprintf($phpMussel['L10N']->getString('_exclamation'),
