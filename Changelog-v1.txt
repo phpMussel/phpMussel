@@ -10,9 +10,19 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.13.5 ===
+PATCH RELEASE.
+
 - [2020.06.20; Bug-fix; Maikuolan]: Logs were being written to the wrong
   directory in some cases due to the way that paths were being
   reconstructed; Fixed. Also improved some updates page guard code.
+
+- [2020.07.03; Maikuolan]: Performed some minor refactoring.
+
+Caleb M (Maikuolan),
+July 3, 2020.
 
 === Version/Release 1.13.4 ===
 PATCH RELEASE.

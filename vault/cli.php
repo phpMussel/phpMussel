@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.12.09).
+ * This file: CLI handler (last modified: 2020.07.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -118,11 +118,10 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                     return $phpMussel['L10N']->getString('invalid_data') . "\n";
                 }
                 return sprintf(
-                    '$md5:%1$s;$sha:%2$s;$str_len:%3$s;%4$s',
-                    md5($Data),
-                    sha1($Data),
+                    "\$sha256:%s;\$StringLength:%d;%s\n",
+                    hash('sha256', $Data),
                     strlen($Data),
-                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n"
+                    $phpMussel['L10N']->getString('cli_signature_placeholder')
                 );
             });
         }
@@ -180,8 +179,8 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                     $PEArr['PointerToRawData'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 20, 4));
                     $PEArr['PointerToRawData'] = $PEArr['PointerToRawData'][1];
                     $PEArr['SectionData'] = substr($Data, $PEArr['PointerToRawData'], $PEArr['SizeOfRawData']);
-                    $PEArr['MD5'] = md5($PEArr['SectionData']);
-                    $Returnable .= $PEArr['SizeOfRawData'] . ':' . $PEArr['MD5'] . ':' . $PEArr['SectionName'] . "\n";
+                    $PEArr['SHA256'] = hash('sha256', $PEArr['SectionData']);
+                    $Returnable .= $PEArr['SizeOfRawData'] . ':' . $PEArr['SHA256'] . ':' . $PEArr['SectionName'] . "\n";
                 }
                 $Returnable .= "\n";
                 if (strpos($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
@@ -202,7 +201,13 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                                 "\x00\x00\x00"
                             )))
                         )) {
-                            $Returnable .= '$' . $PEVars[1] . ':' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                            $Returnable .= sprintf(
+                                "\$%s:%s:%d:%s\n",
+                                $PEVars[1],
+                                hash('sha256', $PEArr['ThisData']),
+                                strlen($PEArr['ThisData']),
+                                $phpMussel['L10N']->getString('cli_signature_placeholder')
+                            );
                         }
                     }
                 }
@@ -284,11 +289,10 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                     return $phpMussel['L10N']->getString('invalid_data') . "\n";
                 }
                 return sprintf(
-                    '$md5:%1$s;$sha:%2$s;$str_len:%3$s;%4$s',
-                    md5($Data),
-                    sha1($Data),
+                    "\$sha256:%s;\$StringLength:%d;%s\n",
+                    hash('sha256', $Data),
                     strlen($Data),
-                    $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n"
+                    $phpMussel['L10N']->getString('cli_signature_placeholder')
                 );
             });
         }
@@ -360,7 +364,12 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         /** Generate a CoEx signature using a string. */
         elseif ($phpMussel['cmd'] === 'coex') {
             $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
-            echo "\n\$md5:" . md5($phpMussel['TargetData']) . ';$sha:' . sha1($phpMussel['TargetData']) . ';$str_len:' . strlen($phpMussel['TargetData']) . ';' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+            echo sprintf(
+                "\n\$sha256:%s;\$StringLength:%d;%s\n",
+                hash('sha256', $phpMussel['TargetData']),
+                strlen($phpMussel['TargetData']),
+                $phpMussel['L10N']->getString('cli_signature_placeholder')
+            );
         }
 
         /** Convert a binary string to a hexadecimal. */

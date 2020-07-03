@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.06.19).
+ * This file: Configuration handler (last modified: 2020.07.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '1.13.4';
+$phpMussel['ScriptVersion'] = '1.13.5';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
@@ -165,7 +165,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 /** Set default hashing algorithm. */
 $phpMussel['DefaultAlgo'] = (
     !empty($phpMussel['Config']['general']['default_algo']) && defined($phpMussel['Config']['general']['default_algo'])
-) ? constant($phpMussel['Config']['general']['default_algo']) : 1;
+) ? constant($phpMussel['Config']['general']['default_algo']) : PASSWORD_DEFAULT;
 
 /** Used just for the current, specific request instance. */
 $phpMussel['InstanceCache'] = [];

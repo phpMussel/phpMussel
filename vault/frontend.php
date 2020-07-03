@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.15).
+ * This file: Front-end handler (last modified: 2020.07.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,7 +149,7 @@ if ($phpMussel['Config']['general']['maintenance_mode']) {
     $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('state_maintenance_mode') . '</u></span>';
 }
 
-/** Warngs if no signature files are active. */
+/** Warns if no signature files are active. */
 if (empty($phpMussel['Config']['signatures']['Active'])) {
     $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</u></span>';
 }
@@ -624,9 +624,6 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
     }
 }
 
-/** Line spacing fix. */
-$phpMussel['FE']['bNav'] .= ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
-
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
@@ -790,7 +787,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         ['Lib' => 'zip', 'Name' => 'Zip']
     ] as $phpMussel['ThisExtension']) {
         if (extension_loaded($phpMussel['ThisExtension']['Lib'])) {
-            $phpMussel['ExtVer'] = (new ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
+            $phpMussel['ExtVer'] = (new \ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
             $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')';
             if (!empty($phpMussel['ThisExtension']['Drivers'])) {
                 $phpMussel['ThisResponse'] .= ', {' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '}';
@@ -1315,7 +1312,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             if ($phpMussel['DirValue']['type'] === 'timezone') {
                 $phpMussel['DirValue']['choices'] = ['SYSTEM' => $phpMussel['L10N']->getString('field_system_timezone')];
-                foreach (array_unique(DateTimeZone::listIdentifiers()) as $phpMussel['DirValue']['ChoiceValue']) {
+                foreach (array_unique(\DateTimeZone::listIdentifiers()) as $phpMussel['DirValue']['ChoiceValue']) {
                     $phpMussel['DirValue']['choices'][$phpMussel['DirValue']['ChoiceValue']] = $phpMussel['DirValue']['ChoiceValue'];
                 }
             }
@@ -1329,7 +1326,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
                     if (isset($phpMussel['DirValue']['choice_filter'])) {
-                        if (!$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])) {
+                        if (
+                            !is_string($phpMussel['ChoiceValue']) ||
+                            !$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])
+                        ) {
                             continue;
                         }
                     }
@@ -2744,7 +2744,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 
     /** Process signature files and fetch relevant values. */
     $phpMussel['FE']['InfoRows'] = $phpMussel['SigInfoHandler'](
-        array_unique(explode(',', $phpMussel['Config']['signatures']['Active']))
+        array_unique(array_filter(explode(',', $phpMussel['Config']['signatures']['Active']), function ($Item) {
+            return !empty($Item);
+        }))
     );
 
     /** Calculate and append page load time, and append totals. */
