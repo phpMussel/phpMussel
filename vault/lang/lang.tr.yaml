@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2020.06.14).
+# This file: Turkish language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -115,28 +115,28 @@ cli_commands: |
  q
  - CLI'den çıkın.
  - Takma adları: quit, exit.
- hash_file:%
- - Dosyalardan karma imzaları oluştur [Sözdizimi: hash_file:algo dosya-adı].
- hash:%
- - Dizeden karma imzası üret [Sözdizimi: hash:algo dizgesi].
+ hash_file:[algo] [dosya adı]
+ - Dosyalardan karma imzaları oluştur.
+ hash:[algo] [dizgesi]
+ - Dizeden karma imzası üret.
  algo
  - Tüm desteklenen algoritmaları listele.
- hex_encode
- - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
+ hex_encode [dizgesi]
+ - İkili dizgeyi onaltılık olarak dönüştür.
  - Takma ad: x.
- hex_decode
- - Onaltılıyı ikili dizeye olarak dönüştür [Sözdizimi: hex_decode dizgesi].
- base64_encode
- - İkili'e base64 hale dönüştür [Sözdizimi: base64_encode dizgesi].
+ hex_decode [dizgesi]
+ - Onaltılıyı ikili dizeye olarak dönüştür.
+ base64_encode [dizgesi]
+ - İkili'e base64 hale dönüştür.
  - Takma ad: b.
- base64_decode
- - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
- pe_meta
- - Meta verileri bir PE dosyasından ayıklayın [Sözdizimi: pe_meta dosya-adı].
- url_sig
- - URL tarayıcı imzalarını oluştur [Sözdizimi: url_sig dizgesi].
- scan
- - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
+ base64_decode [dizgesi]
+ - Base64'ü ikili hale dönüştür.
+ pe_meta [dosya adı]
+ - Meta verileri bir PE dosyasından ayıklayın.
+ url_sig [dizgesi]
+ - URL tarayıcı imzalarını oluştur.
+ scan [dosya adı]
+ - Dosya veya dizini tara.
  - Takma ad: s.
  c
  - Bu komut listesini yazdırın.

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2020.06.14).
+# This file: Polish language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -115,28 +115,28 @@ cli_commands: |
  q
  - Zamknij CLI.
  - Aliasy: quit, exit.
- hash_file:%
- - Wygeneruj podpisy skrótów z plików [Składnia: hash_file:algo nazwa_pliku].
- hash:%
- - Wygeneruj signature hash z ciągu [Składnia: hash:algo dane].
+ hash_file:[algo] [nazwa pliku]
+ - Wygeneruj podpisy skrótów z plików.
+ hash:[algo] [dane]
+ - Wygeneruj signature hash z ciągu.
  algo
  - Wyświetl wszystkie obsługiwane algorytmy.
- hex_encode
- - Konwertuj dane binarne na szesnastkowe [Składnia: hex_encode dane].
+ hex_encode [dane]
+ - Konwertuj dane binarne na szesnastkowe.
  - Alias: x.
- hex_decode
- - Konwertuj dane szesnastkowe na binarne [Składnia: hex_decode dane].
- base64_encode
- - Konwertuj dane binarne na dane base64 [Składnia: base64_encode dane].
+ hex_decode [dane]
+ - Konwertuj dane szesnastkowe na binarne.
+ base64_encode [dane]
+ - Konwertuj dane binarne na dane base64.
  - Alias: b.
- base64_decode
- - Konwertuj dane base64 na dane binarne [Składnia: base64_decode dane].
- pe_meta
- - Wyodrębnij metadane z pliku PE [Składnia: pe_meta nazwa_pliku].
- url_sig
- - Wygeneruj podpisy skanera adresów URL [Składnia: url_sig dane].
- scan
- - Zeskanuj plik lub katalog [Składnia: scan nazwa_pliku].
+ base64_decode [dane]
+ - Konwertuj dane base64 na dane binarne.
+ pe_meta [nazwa pliku]
+ - Wyodrębnij metadane z pliku PE.
+ url_sig [dane]
+ - Wygeneruj podpisy skanera adresów URL.
+ scan [nazwa pliku lub katalogu]
+ - Zeskanuj plik lub katalog.
  - Alias: s.
  c
  - Wydrukuj tę listę poleceń.

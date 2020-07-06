@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2020.06.14).
+# This file: Italian language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -43,7 +43,7 @@ cli_ln2: |
                                      ~ ~ ~
 cli_ln3: |
  Attualmente in esecuzione in modalità CLI (interfaccia a riga di
- comando). Per controllare un file o una cartella digita "scan" seguito dal
+ comando). Per scansionare un file o una cartella digita "scan" seguito dal
  nome del file o della cartella e premi Invio; digita "c" e premi Invio per
  l'elenco dei comandi in modalità CLI; digita "q" e premi Invio per uscire.
 cli_pe1: "Non è un PE file valida!"
@@ -114,28 +114,28 @@ cli_commands: |
  q
  - Esci dall'interfaccia a riga di comando.
  - Alias: quit, exit.
- hash_file:%
- - Genera le firme hash da file [Sintassi: hash_file:algo nomefile].
- hash:%
- - Genera le firme hash da stringa [Sintassi: hash:algo stringa].
+ hash_file:[algo] [nome del file]
+ - Genera le firme hash da file.
+ hash:[algo] [stringa]
+ - Genera le firme hash da stringa.
  algo
  - Elenca tutti gli algoritmi supportati.
- hex_encode
- - Converti la stringa binaria in esadecimale [Sintassi: hex_encode stringa].
+ hex_encode [stringa]
+ - Converti la stringa binaria in esadecimale.
  - Alias: x.
- hex_decode
- - Converti la stringa esadecimale in binaria [Sintassi: hex_decode stringa].
- base64_encode
- - Converti la stringa binaria in base64 [Sintassi: base64_encode stringa].
+ hex_decode [stringa]
+ - Converti la stringa esadecimale in binaria.
+ base64_encode [stringa]
+ - Converti la stringa binaria in base64.
  - Alias: b.
- base64_decode
- - Converti la stringa da base64 a binaria [Sintassi: base64_decode stringa].
- pe_meta
- - Estrarre i metadati da un file PE [Sintassi: pe_meta nomefile].
- url_sig
- - Genera firme di scanner URL [Sintassi: url_sig string].
- scan
- - Controlla un file o una cartella [Sintassi: scan nomefile].
+ base64_decode [stringa]
+ - Converti la stringa da base64 a binaria.
+ pe_meta [nome del file]
+ - Estrarre i metadati da un file PE.
+ url_sig [stringa]
+ - Genera firme di scanner URL.
+ scan [nome del file o della cartella]
+ - Scansiona un file o una cartella.
  - Alias: s.
  c
  - Mostra questa lista di comandi.

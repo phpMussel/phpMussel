@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2020.06.14).
+# This file: Vietnamese language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -114,28 +114,28 @@ cli_commands: |
  q
  - Thoát ra CLI.
  - Bí danh: quit, exit.
- hash_file:%
- - Phát ra mã chử ký từ tập tin [Cú pháp: hash_file:algo tên-tập-tin].
- hash:%
- - Phát ra mã chử ký từ dây [Cú pháp: hash:algo dây].
+ hash_file:[algo] [tên tập tin]
+ - Phát ra mã chử ký từ tập tin.
+ hash:[algo] [dây]
+ - Phát ra mã chử ký từ dây.
  algo
  - Liệt kê tất cả các thuật toán được hỗ trợ.
- hex_encode
- - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode dây].
+ hex_encode [dây]
+ - Chuyển đổi dây nhị phân thành hệ thập lục phân.
  - Bí danh: x.
- hex_decode
- - Chuyển đổi hệ thập lục phân thành dây nhị phân [Cú pháp: hex_decode dây].
- base64_encode
- - Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode dây].
+ hex_decode [dây]
+ - Chuyển đổi hệ thập lục phân thành dây nhị phân.
+ base64_encode [dây]
+ - Chuyển đổi dây nhị phân thành dây base64.
  - Bí danh: b.
- base64_decode
- - Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode dây].
- pe_meta
- - Trích xuất siêu dữ liệu từ tập tin PE [Cú pháp: pe_meta tên-tập-tin].
- url_sig
- - Tạo chữ ký của trình quét URL [Cú pháp: url_sig dây].
- scan
- - Xem tập tin hoạc hồ sơ [Cú pháp: scan tên-tập-tin].
+ base64_decode [dây]
+ - Chuyển đổi dây base64 thành dây nhị phân.
+ pe_meta [tên tập tin]
+ - Trích xuất siêu dữ liệu từ tập tin PE.
+ url_sig [dây]
+ - Tạo chữ ký của trình quét URL.
+ scan [tên tập tin]
+ - Xem tập tin hoạc hồ sơ.
  - Bí danh: s.
  c
  - In danh sách lệnh này.

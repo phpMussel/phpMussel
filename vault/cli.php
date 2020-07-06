@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.07.01).
+ * This file: CLI handler (last modified: 2020.07.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -39,7 +39,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
     ];
 
     /** Triggered by the forked child process in CLI-mode. */
-    if ($phpMussel['cli_args'][1] == 'cli_scan') {
+    if ($phpMussel['cli_args'][1] === 'cli_scan') {
 
         /** Fetch the command. */
         $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') ?: $phpMussel['cli_args'][2]);
@@ -321,41 +321,42 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         elseif ($phpMussel['cmd'] === 'url_sig') {
             echo "\n";
             $phpMussel['stdin_clean'] = $phpMussel['prescan_normalise'](substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1));
-            $phpMussel['URL'] = ['avoidme' => '', 'forthis' => ''];
+            $phpMussel['URL'] = ['AvoidMe' => '', 'ForThis' => ''];
             if (
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['domain']) ||
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $phpMussel['stdin_clean'], $phpMussel['URL']['url'])
             ) {
                 echo $phpMussel['L10N']->getString('invalid_url') . "\n";
-            } else {
-                echo 'DOMAIN:' . md5($phpMussel['URL']['domain'][3][0]) . ':' . strlen($phpMussel['URL']['domain'][3][0]) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
-                $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['url'][3][0]) . ':' . strlen($phpMussel['URL']['url'][3][0]);
-                $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';
-                echo 'URL:' . $phpMussel['URL']['forthis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
-                if (preg_match('/[^\da-z.-]$/i', $phpMussel['URL']['url'][3][0])) {
-                    $phpMussel['URL']['x'] = preg_replace('/[^\da-z.-]+$/i', '', $phpMussel['URL']['url'][3][0]);
-                    $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
-                    if (strpos($phpMussel['URL']['avoidme'], $phpMussel['URL']['forthis']) === false) {
-                        $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';
-                        echo 'URL:' . $phpMussel['URL']['forthis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
-                    }
+                unset($phpMussel['URL']);
+                continue;
+            }
+            echo 'DOMAIN:' . hash('md5', $phpMussel['URL']['domain'][3][0]) . ':' . strlen($phpMussel['URL']['domain'][3][0]) . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+            $phpMussel['URL']['ForThis'] = hash('md5', $phpMussel['URL']['url'][3][0]) . ':' . strlen($phpMussel['URL']['url'][3][0]);
+            $phpMussel['URL']['AvoidMe'] .= ',' . $phpMussel['URL']['ForThis'] . ',';
+            echo 'URL:' . $phpMussel['URL']['ForThis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+            if (preg_match('/[^\da-z.-]$/i', $phpMussel['URL']['url'][3][0])) {
+                $phpMussel['URL']['x'] = preg_replace('/[^\da-z.-]+$/i', '', $phpMussel['URL']['url'][3][0]);
+                $phpMussel['URL']['ForThis'] = hash('md5', $phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
+                if (strpos($phpMussel['URL']['AvoidMe'], $phpMussel['URL']['ForThis']) === false) {
+                    $phpMussel['URL']['AvoidMe'] .= ',' . $phpMussel['URL']['ForThis'] . ',';
+                    echo 'URL:' . $phpMussel['URL']['ForThis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
                 }
-                if (strpos($phpMussel['URL']['url'][3][0], '?') !== false) {
-                    $phpMussel['URL']['x'] = $phpMussel['substrbf']($phpMussel['URL']['url'][3][0], '?');
-                    $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
-                    if (strpos($phpMussel['URL']['avoidme'], $phpMussel['URL']['forthis']) === false) {
-                        $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';
-                        echo 'URL:' . $phpMussel['URL']['forthis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
-                    }
-                    $phpMussel['URL']['x'] = $phpMussel['substraf']($phpMussel['URL']['url'][3][0], '?');
-                    $phpMussel['URL']['forthis'] = md5($phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
-                    if (
-                        strpos($phpMussel['URL']['avoidme'], $phpMussel['URL']['forthis']) === false &&
-                        $phpMussel['URL']['forthis'] != 'd41d8cd98f00b204e9800998ecf8427e:0'
-                    ) {
-                        $phpMussel['URL']['avoidme'] .= ',' . $phpMussel['URL']['forthis'] . ',';
-                        echo 'QUERY:' . $phpMussel['URL']['forthis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
-                    }
+            }
+            if (strpos($phpMussel['URL']['url'][3][0], '?') !== false) {
+                $phpMussel['URL']['x'] = $phpMussel['substrbf']($phpMussel['URL']['url'][3][0], '?');
+                $phpMussel['URL']['ForThis'] = hash('md5', $phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
+                if (strpos($phpMussel['URL']['AvoidMe'], $phpMussel['URL']['ForThis']) === false) {
+                    $phpMussel['URL']['AvoidMe'] .= ',' . $phpMussel['URL']['ForThis'] . ',';
+                    echo 'URL:' . $phpMussel['URL']['ForThis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
+                }
+                $phpMussel['URL']['x'] = $phpMussel['substraf']($phpMussel['URL']['url'][3][0], '?');
+                $phpMussel['URL']['ForThis'] = hash('md5', $phpMussel['URL']['x']) . ':' . strlen($phpMussel['URL']['x']);
+                if (
+                    strpos($phpMussel['URL']['AvoidMe'], $phpMussel['URL']['ForThis']) === false &&
+                    $phpMussel['URL']['ForThis'] !== 'd41d8cd98f00b204e9800998ecf8427e:0'
+                ) {
+                    $phpMussel['URL']['AvoidMe'] .= ',' . $phpMussel['URL']['ForThis'] . ',';
+                    echo 'QUERY:' . $phpMussel['URL']['ForThis'] . ':' . $phpMussel['L10N']->getString('cli_signature_placeholder') . "\n";
                 }
             }
             unset($phpMussel['URL']);

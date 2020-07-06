@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2020.06.11).
+ * A simple, unified cache handler (last modified: 2020.07.06).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -102,36 +102,65 @@ class Cache
      */
     private $WorkingData = null;
 
-    /** Prepared set query for PDO. */
+    /**
+     * @var string Prepared set query for PDO.
+     */
     const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
 
-    /** Prepared get query for PDO. */
+    /**
+     * @var string Prepared get query for PDO.
+     */
     const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
 
-    /** Prepared delete query for PDO. */
+    /**
+     * @var string Prepared delete query for PDO.
+     */
     const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
 
-    /** Prepared clear all query for PDO. */
+    /**
+     * @var string Prepared clear all query for PDO.
+     */
     const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
 
-    /** Prepared clear expired query for PDO. */
+    /**
+     * @var string Prepared clear expired query for PDO.
+     */
     const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
 
-    /** Prepared get all query for PDO. */
+    /**
+     * @var string Prepared get all query for PDO.
+     */
     const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
 
-    /** Default blocksize for file reading operations. */
+    /**
+     * @var int Default blocksize for file reading operations.
+     */
     const BLOCKSIZE = 262144;
 
-    /** Number of seconds to try flocking a resource before giving up. */
+    /**
+     * @var int Number of seconds to try flocking a resource before giving up.
+     */
     const FLOCK_TIMEOUT = 10;
+
+    /**
+     * @var int The maximum permitted length of the names of keys. There aren't
+     *      any hard limits enforced by APCu, Redis, or flatfile caching.
+     *      Memcached enforces a 250 byte limit (see link). But, the query in
+     *      checkTablesPDO() for creating new PDO tables already uses
+     *      "VARCHAR(128)" for its keys column as a safe, reliable balance for
+     *      whatever possible database systems might be being utilised by PDO
+     *      at the systems where implemented, thus setting a 128 byte limit
+     *      here feels like a reasonable decision.
+     * @link https://github.com/memcached/memcached/blob/master/memcached.h#L56
+     */
+    const KEY_SIZE_LIMIT = 128;
 
     /**
      * Construct object and set working data if needed.
      *
      * @param array|null $WorkingData An optional array of default cache data.
      */
-    public function __construct($WorkingData = null)
+    public function __construct(array $WorkingData = null)
     {
         if (is_array($WorkingData)) {
             $this->WorkingData = $WorkingData;
@@ -258,11 +287,8 @@ class Cache
                         fclose($Handle);
                         return false;
                     }
-                    $Size = ($Filesize && self::BLOCKSIZE) ? ceil($Filesize / self::BLOCKSIZE) : 0;
-                    $Step = 0;
-                    while ($Step < $Size) {
+                    while (!feof($Handle)) {
                         $Data .= fread($Handle, self::BLOCKSIZE);
-                        $Step++;
                     }
                     flock($Handle, LOCK_UN);
                     fclose($Handle);
@@ -347,6 +373,7 @@ class Cache
      */
     public function getEntry(string $Entry)
     {
+        $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
             return $this->unserializeEntry(apcu_fetch($Entry));
         }
@@ -388,6 +415,7 @@ class Cache
      */
     public function setEntry(string $Key, $Value, int $TTL = 3600): bool
     {
+        $this->enforceKeyLimit($Key);
         $Value = $this->serializeEntry($Value);
         if ($this->Using === 'APCu') {
             if (apcu_store($Key, $Value, $TTL)) {
@@ -440,6 +468,7 @@ class Cache
      */
     public function deleteEntry(string $Entry): bool
     {
+        $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
             if (apcu_delete($Entry)) {
                 return $this->Modified = true;
@@ -534,7 +563,11 @@ class Cache
             }
             $Output = [];
             foreach ($Data as $Entry) {
-                if (!is_array($Entry) || !isset($Entry['key'], $Entry['value'], $Entry['cas'])) {
+                if (
+                    !is_array($Entry) ||
+                    !isset($Entry['key'], $Entry['value'], $Entry['cas']) ||
+                    strlen($Entry['key']) > self::KEY_SIZE_LIMIT
+                ) {
                     continue;
                 }
                 $Output[$Entry['key']] = ['Data' => $this->unserializeEntry($Entry['value'])];
@@ -550,6 +583,9 @@ class Cache
             $Keys = $this->WorkingData->keys('*') ?: [];
             $Output = [];
             foreach ($Keys as $Key) {
+                if (strlen($Key) > self::KEY_SIZE_LIMIT) {
+                    continue;
+                }
                 $Output[$Key] = $this->unserializeEntry($this->WorkingData->get($Key));
             }
             return $Output;
@@ -563,7 +599,11 @@ class Cache
                 $Data = $PDO->fetchAll();
                 $Output = [];
                 foreach ($Data as $Entry) {
-                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time'])) {
+                    if (
+                        !is_array($Entry) ||
+                        !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) ||
+                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT
+                    ) {
                         continue;
                     }
                     $Output[$Entry['Key']] = $Entry['Time'] > 0 ? [
@@ -707,5 +747,22 @@ class Cache
             $this->Modified = true;
         }
         return $this->WorkingData;
+    }
+
+    /**
+     * Enforce key size limit.
+     *
+     * @param string $Key The key to check. Transforms the key if it doesn't
+     *      conform; Does nothing otherwise.
+     */
+    private function enforceKeyLimit(string &$Key)
+    {
+        /**
+         * SHA512 produces a hash equal to the current key size limit, and
+         * provides sufficient noise for our needs here, so we'll use that.
+         */
+        if (strlen($Key) > self::KEY_SIZE_LIMIT) {
+            $Key = hash('sha512', $Key);
+        }
     }
 }

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.01).
+ * This file: Front-end functions file (last modified: 2020.07.04).
  */
 
 /**
@@ -1045,7 +1045,7 @@ $phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$p
         }
     }
     $Output = gzinflate($Output);
-    if (empty($Output) || md5($Output) !== $UploadMD5) {
+    if (empty($Output) || hash('md5', $Output) !== $UploadMD5) {
         $phpMussel['RestoreStatus'] = 3;
         return false;
     }
@@ -1386,8 +1386,8 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     $ThisChecksum = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
                     $ThisLen = strlen($ThisFile);
                     if (
-                        (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
-                        (sha1($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('md5', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('sha1', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
                         (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
                     ) {
                         $phpMussel['FE']['state_msg'] .=
@@ -1810,8 +1810,8 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                 $LocalFile = $phpMussel['ReadFile']($phpMussel['Vault'] . $RemoteFileTo);
                 $LocalFileSize = strlen($LocalFile);
                 if (
-                    (md5($LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
-                    (sha1($LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
+                    (hash('md5', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
+                    (hash('sha1', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
                     (hash('sha256', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum
                 ) {
                     continue;
@@ -1826,8 +1826,8 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                 }
                 $RemoteFileSize = strlen($RemoteFile);
                 if ((
-                    (md5($RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
-                    (sha1($RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
+                    (hash('md5', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
+                    (hash('sha1', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
                     (hash('sha256', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum
                 ) || (
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $RemoteFileTo) &&
@@ -1953,9 +1953,9 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
             $Len = strlen($ThisFileData);
             $HashPartLen = strpos($Checksum, ':') ?: 64;
             if ($HashPartLen === 32) {
-                $Actual = md5($ThisFileData) . ':' . $Len;
+                $Actual = hash('md5', $ThisFileData) . ':' . $Len;
             } else {
-                $Actual = (($HashPartLen === 40) ? sha1($ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
+                $Actual = (($HashPartLen === 40) ? hash('sha1', $ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
             }
 
             /** Integrity check. */

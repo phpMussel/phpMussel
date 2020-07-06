@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2020.06.14).
+# This file: Arabic language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -114,28 +114,28 @@ cli_commands: |
  q
  - CLI للخروج.
  - البديل: quit, exit.
- hash_file:%
- - خلق التوقيعات التجزئة من ملفات [بناء الجملة: hash_file:algo filename].
- hash:%
- - خلق التوقيعات التجزئة من النص [بناء الجملة: hash:algo string].
+ hash_file:[algo] [filename]
+ - خلق التوقيعات التجزئة من ملفات.
+ hash:[algo] [string]
+ - خلق التوقيعات التجزئة من النص.
  algo
  - قائمة جميع الخوارزميات المدعومة.
- hex_encode
- - تحول النص ثنائي إلى سداسي عشري [بناء الجملة: hex_encode نص].
+ hex_encode [string]
+ - تحول النص ثنائي إلى سداسي عشري.
  - البديل: x.
- hex_decode
- - تحول سداسي عشري إلى النص ثنائي [بناء الجملة: hex_decode نص].
- base64_encode
- - تحول النص ثنائي إلى نص base64 [بناء الجملة: base64_encode نص].
+ hex_decode [string]
+ - تحول سداسي عشري إلى النص ثنائي.
+ base64_encode [string]
+ - تحول النص ثنائي إلى نص base64.
  - البديل: b.
- base64_decode
- - تحول نص base64 إلى النص ثنائي [بناء الجملة: base64_decode نص].
- pe_meta
- - استخراج البيانات الوصفية من ملف PE [بناء الجملة: pe_meta اسم الملف].
- url_sig
- - توليد URL التوقيعات الماسح الضوئي [بناء الجملة: url_sig نص].
- scan
- - تفحص ملف أو دليل [بناء الجملة: scan اسم الملف].
+ base64_decode [string]
+ - تحول نص base64 إلى النص ثنائي.
+ pe_meta [filename]
+ - استخراج البيانات الوصفية من ملف PE.
+ url_sig [string]
+ - توليد URL التوقيعات الماسح الضوئي.
+ scan [filename]
+ - تفحص ملف أو دليل.
  - البديل: s.
  c
  - طباعة هذه القائمة الأوامر.

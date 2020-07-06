@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2020.06.14).
+# This file: Portuguese language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -116,28 +116,28 @@ cli_commands: |
  q
  - Deixar CLI.
  - Alias: quit, exit.
- hash_file:%
- - Gerar hash assinaturas de arquivos [Sintaxe: hash_file:algo arquivo].
- hash:%
- - Gerar hash assinatura de string [Sintaxe: hash:algo string].
+ hash_file:[algo] [nome do arquivo]
+ - Gerar hash assinaturas de arquivos.
+ hash:[algo] [string]
+ - Gerar hash assinatura de string.
  algo
  - Listar todos os algoritmos suportados.
- hex_encode
- - Converter binária string para hexadecimal [Sintaxe: hex_encode string].
+ hex_encode [string]
+ - Converter binária string para hexadecimal.
  - Alias: x.
- hex_decode
- - Converter hexadecimal para binária string [Sintaxe: hex_decode string].
- base64_encode
- - Converter binária string para base64 string [Sintaxe: base64_encode string].
+ hex_decode [string]
+ - Converter hexadecimal para binária string.
+ base64_encode [string]
+ - Converter binária string para base64 string.
  - Alias: b.
- base64_decode
- - Converter base64 string para binária string [Sintaxe: base64_decode string].
- pe_meta
- - Extrair metadados de um arquivo PE [Sintaxe: pe_meta arquivo].
- url_sig
- - Gerar assinaturas do scanner de URL [Sintaxe: url_sig string].
- scan
- - Verificar arquivo ou diretório [Sintaxe: scan nome_do_arquivo].
+ base64_decode [string]
+ - Converter base64 string para binária string.
+ pe_meta [nome do arquivo]
+ - Extrair metadados de um arquivo PE.
+ url_sig [string]
+ - Gerar assinaturas do scanner de URL.
+ scan [nome do arquivo ou diretório]
+ - Verificar um arquivo ou diretório.
  - Alias: s.
  c
  - Imprimir esta lista de comandos.

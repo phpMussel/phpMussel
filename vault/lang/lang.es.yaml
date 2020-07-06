@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2020.06.14).
+# This file: Spanish language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -42,7 +42,7 @@ cli_ln2: |
                                      ~ ~ ~
 cli_ln3: |
  Ud. está ejecutando phpMussel en modo CLI (interfaz de línea de comandos).
- Para analizar un archivo o directorio, escribir "scan", seguido por el
+ Para escanear un archivo o directorio, escribir "scan", seguido por el
  nombre del archivo o directorio que usted desea que phpMussel escanee y
  pulse Enter; Escriba "c" y pulse Enter para obtener una lista de comandos;
  Escriba "q" y pulse Enter para salir.
@@ -114,28 +114,28 @@ cli_commands: |
  q
  - Dejar CLI.
  - Alias: quit, exit.
- hash_file:%
- - Generar firmas hash de archivos [Sintaxis: hash_file:algo archivo].
- hash:%
- - Generar firma hash de string [Sintaxis: hash:algo string].
+ hash_file:[algo] [nombre del archivo]
+ - Generar firmas hash de archivos.
+ hash:[algo] [string]
+ - Generar firma hash de string.
  algo
  - Lista todos los algoritmos soportados.
- hex_encode
- - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
+ hex_encode [string]
+ - Convertir string binaria a hexadecimal.
  - Alias: x.
- hex_decode
- - Convertir hexadecimal a string binaria [Sintaxis: hex_decode string].
- base64_encode
- - Convertir string binaria a string base64 [Sintaxis: base64_encode string].
+ hex_decode [string]
+ - Convertir hexadecimal a string binaria.
+ base64_encode [string]
+ - Convertir string binaria a string base64.
  - Alias: b.
- base64_decode
- - Convertir string base64 a string binaria [Sintaxis: base64_decode string].
- pe_meta
- - Extraer metadatos de un archivo PE [Sintaxis: pe_meta archivo].
- url_sig
- - Generar firmas de escáner de URL [Sintaxis: url_sig string].
- scan
- - Analizar archivo o directorio [Sintaxis: scan archivo].
+ base64_decode [string]
+ - Convertir string base64 a string binaria.
+ pe_meta [nombre del archivo]
+ - Extraer metadatos de un archivo PE.
+ url_sig [string]
+ - Generar firmas de escáner de URL.
+ scan [nombre del archivo o directorio]
+ - Escanear un archivo o directorio.
  - Alias: s.
  c
  - Imprimir esta lista de comandos.

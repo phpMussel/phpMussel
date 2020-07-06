@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2020.06.14).
+# This file: Norwegian language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -115,28 +115,28 @@ cli_commands: |
  q
  - Avslutt CLI.
  - Aliaser: quit, exit.
- hash_file:%
- - Generer hashsignaturer fra filer [Syntaks: hash_file:algo filnavn].
- hash:%
- - Generer hashsignatur fra streng [Syntaks: hash:algo streng].
+ hash_file:[algo] [filnavn]
+ - Generer hashsignaturer fra filer.
+ hash:[algo] [streng]
+ - Generer hashsignatur fra streng.
  algo
  - Liste over alle støttede algoritmer.
- hex_encode
- - Konverter binær streng til heksadesimal [Syntaks: hex_encode streng].
+ hex_encode [streng]
+ - Konverter binær streng til heksadesimal.
  - Alias: x.
- hex_decode
- - Konverter heksadesimal til binær streng [Syntaks: hex_decode streng].
- base64_encode
- - Konverter binær streng til base64-streng [Syntaks: base64_encode streng].
+ hex_decode [streng]
+ - Konverter heksadesimal til binær streng.
+ base64_encode [streng]
+ - Konverter binær streng til base64-streng.
  - Alias: b.
- base64_decode
- - Konverter base64-streng til binær streng [Syntaks: base64_decode streng].
- pe_meta
- - Pakk ut metadata fra en PE-fil [Syntaks: pe_meta filnavn].
- url_sig
- - Generer URL-skannersignaturer [Syntaks: url_sig streng].
- scan
- - Skann fil eller katalog [Syntaks: scan filnavn].
+ base64_decode [streng]
+ - Konverter base64-streng til binær streng.
+ pe_meta [filnavn]
+ - Pakk ut metadata fra en PE-fil.
+ url_sig [streng]
+ - Generer URL-skannersignaturer.
+ scan [filnavn]
+ - Skann fil eller katalog.
  - Alias: s.
  c
  - Skriv ut denne kommandolisten.

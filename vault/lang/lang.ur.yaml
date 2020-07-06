@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2020.06.14).
+# This file: Urdu language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -116,28 +116,28 @@ cli_commands: |
  q
  - CLI چھوڑو.
  - عرفیتیں: quit, exit.
- hash_file:%
- - فائلوں سے ہیش دستخط بنائیں [نحو: hash_file:algo filename].
- hash:%
- - سٹرنگ سے ہیش کے دستخط بنائیں [نحو: hash:algo string].
+ hash_file:[algo] [filename]
+ - فائلوں سے ہیش دستخط بنائیں.
+ hash:[algo] [string]
+ - سٹرنگ سے ہیش کے دستخط بنائیں.
  algo
  - تمام معاون الگورتھم کی فہرست کریں.
- hex_encode
- - شش اعشاری کو بائنری سٹرنگ میں تبدیل [نحو: hex_encode سٹرنگ].
+ hex_encode [string]
+ - شش اعشاری کو بائنری سٹرنگ میں تبدیل.
  - عرف: x.
- hex_decode
- - بائنری سٹرنگ کو شش اعشاری میں تبدیل [نحو: hex_decode سٹرنگ].
- base64_encode
- - Base64 میں سٹرنگ کو بائنری سٹرنگ میں تبدیل [نحو: base64_encode سٹرنگ].
+ hex_decode [string]
+ - بائنری سٹرنگ کو شش اعشاری میں تبدیل.
+ base64_encode [string]
+ - Base64 میں سٹرنگ کو بائنری سٹرنگ میں تبدیل.
  - عرف: b.
- base64_decode
- - بائنری سٹرنگ کو Base64 میں سٹرنگ میں تبدیل [نحو: base64_decode سٹرنگ].
- pe_meta
- - PE فائل سے میٹا ڈیٹا کو لے لو [نحو: pe_meta فائل کا نام].
- url_sig
- - URL سکینر دستخط تخلیق کریں [نحو: url_sig سٹرنگ].
- scan
- - سکین فائل یا ڈائریکٹری [نحو: scan فائل کا نام].
+ base64_decode [string]
+ - بائنری سٹرنگ کو Base64 میں سٹرنگ میں تبدیل.
+ pe_meta [filename]
+ - PE فائل سے میٹا ڈیٹا کو لے لو.
+ url_sig [string]
+ - URL سکینر دستخط تخلیق کریں.
+ scan [filename]
+ - سکین فائل یا ڈائریکٹری.
  - عرف: s.
  c
  - اس حکم کی فہرست پرنٹ کریں.

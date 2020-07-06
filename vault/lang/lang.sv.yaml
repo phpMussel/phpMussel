@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2020.06.14).
+# This file: Swedish language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -115,28 +115,28 @@ cli_commands: |
  q
  - Avsluta CLI.
  - Alias: quit, exit.
- hash_file:%
- - Generera hash-signaturer från filer [Syntax: hash_file:algo filnamn].
- hash:%
- - Generera hash-signaturer från strängen [Syntax: hash:algo sträng].
+ hash_file:[algo] [filnamn]
+ - Generera hash-signaturer från filer.
+ hash:[algo] [sträng]
+ - Generera hash-signaturer från strängen.
  algo
  - Lista alla algoritmer som stöds.
- hex_encode
- - Konvertera binär sträng till hexadecimal [Syntax: hex_encode sträng].
+ hex_encode [sträng]
+ - Konvertera binär sträng till hexadecimal.
  - Alias: x.
- hex_decode
- - Konvertera hexadecimal till binär sträng [Syntax: hex_decode sträng].
- base64_encode
- - Konvertera binär sträng till bas64-sträng [Syntax: base64_encode sträng].
+ hex_decode [sträng]
+ - Konvertera hexadecimal till binär sträng.
+ base64_encode [sträng]
+ - Konvertera binär sträng till bas64-sträng.
  - Alias: b.
- base64_decode
- - Konvertera bas64-sträng till binär sträng [Syntax: base64_decode sträng].
- pe_meta
- - Extrahera metadata från en PE-fil [Syntax: pe_meta filnamn].
- url_sig
- - Generera URL-skannersignaturer [Syntax: url_sig sträng].
- scan
- - Skanna fil eller katalog [Syntax: scan filnamn].
+ base64_decode [sträng]
+ - Konvertera bas64-sträng till binär sträng.
+ pe_meta [filnamn]
+ - Extrahera metadata från en PE-fil.
+ url_sig [sträng]
+ - Generera URL-skannersignaturer.
+ scan [filnamn]
+ - Skanna fil eller katalog.
  - Alias: s.
  c
  - Skriv ut den här kommandolistan.

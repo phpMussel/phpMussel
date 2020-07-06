@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2020.06.14).
+# This file: German language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -115,32 +115,28 @@ cli_commands: |
  q
  - Beendet den CLI-Modus.
  - Alias: quit, exit.
- hash_file:%
- - Generiert Hash-Signaturen einer Datei [Syntax: hash_file:Algo Dateiname].
- hash:%
- - Generiert Hash-Signaturen eines String-Wertes [Syntax: hash:Algo String].
+ hash_file:[Algo] [Dateiname]
+ - Generiert Hash-Signaturen einer Datei.
+ hash:[Algo] [String]
+ - Generiert Hash-Signaturen eines String-Wertes.
  algo
  - Listet alle unterstützten Algorithmen auf.
- hex_encode
- - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
-   [Syntax: hex_encode String].
+ hex_encode [String]
+ - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
  - Alias: x.
- hex_decode
- - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert
-   [Syntax: hex_decode String].
- base64_encode
- - Konvertiert einen Binär-Wert in einen Base64-Wert
-   [Syntax: base64_encode String].
+ hex_decode [String]
+ - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
+ base64_encode [String]
+ - Konvertiert einen Binär-Wert in einen Base64-Wert.
  - Alias: b.
- base64_decode
- - Konvertiert einen Base64-Wert in einen Binär-Wert
-   [Syntax: base64_decode String].
- pe_meta
- - Extrahieren Sie Metadaten aus einer PE-Datei [Syntax: pe_meta Dateiname].
- url_sig
- - Generiere URL-Scanner-Signaturen [Syntax: url_sig String].
- scan
- - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan Dateiname].
+ base64_decode [String]
+ - Konvertiert einen Base64-Wert in einen Binär-Wert.
+ pe_meta [Dateiname]
+ - Extrahieren Sie Metadaten aus einer PE-Datei.
+ url_sig [String]
+ - Generiere URL-Scanner-Signaturen.
+ scan [Dateiname oder Verzeichnisname]
+ - Überprüft eine Datei oder ein Verzeichnis.
  - Alias: s.
  c
  - Gibt diese Befehlsliste aus.
