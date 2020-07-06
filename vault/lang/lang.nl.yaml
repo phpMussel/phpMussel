@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2020.06.14).
+# This file: Dutch language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -116,32 +116,28 @@ cli_commands: |
  q
  - Verlaten CLI.
  - Aliassen: quit, exit.
- hash_file:%
- - Genereer hash signatures van bestanden [Syntaxis: hash_file:algo bestandsnaam].
- hash:%
- - Genereer hash signature van string [Syntaxis: hash:algo string].
+ hash_file:[algo] [bestandsnaam]
+ - Genereer hash signatures van bestanden.
+ hash:[algo] [string]
+ - Genereer hash signature van string.
  algo
  - Maak een lijst van alle ondersteunde algoritmen.
- hex_encode
- - Converteren van binaire string naar hexadecimaal
-   [Syntaxis: hex_encode string].
+ hex_encode [string]
+ - Converteren van binaire string naar hexadecimaal.
  - Alias: x.
- hex_decode
- - Converteren van hexadecimaal naar binaire string
-   [Syntaxis: hex_decode string].
- base64_encode
- - Converteren van binaire string naar base64 string
-   [Syntaxis: base64_encode string].
+ hex_decode [string]
+ - Converteren van hexadecimaal naar binaire string.
+ base64_encode [string]
+ - Converteren van binaire string naar base64 string.
  - Alias: b.
- base64_decode
- - Converteren van base64 string naar binaire string
-   [Syntaxis: base64_decode string].
- pe_meta
- - Haal metagegevens uit een PE-bestand [Syntaxis: pe_meta bestandsnaam].
- url_sig
- - Genereren URL-scanner signatures [Syntaxis: url_sig string].
- scan
- - Scannen bestand of map [Syntaxis: scan bestandsnaam].
+ base64_decode [string]
+ - Converteren van base64 string naar binaire string.
+ pe_meta [bestandsnaam]
+ - Haal metagegevens uit een PE-bestand.
+ url_sig [string]
+ - Genereren URL-scanner signatures.
+ scan [bestandsnaam]
+ - Scannen bestand of map.
  - Alias: s.
  c
  - Print dit commando lijst.

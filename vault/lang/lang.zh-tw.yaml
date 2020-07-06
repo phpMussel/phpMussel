@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2020.06.14).
+# This file: Chinese (traditional) language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -111,28 +111,28 @@ cli_commands: |
  q
  - 戒菸CLI模式。
  - 別名：quit，​exit。
- hash_file:%
- - 生成哈希簽名從文件​[語法：hash_file:算法 文件名]。
- hash:%
- - 生成哈希簽名從數據​[語法：hash:算法 數據]。
+ hash_file:[算法] [文件名]
+ - 生成哈希簽名從文件​。
+ hash:[算法] [數據]
+ - 生成哈希簽名從數據​。
  algo
  - 列出所有支持的算法。
- hex_encode
- - 兌換從二進制數據至十六進制​[語法：hex_encode 數據]。
+ hex_encode [數據]
+ - 兌換從二進制數據至十六進制​。
  - 別名：x。
- hex_decode
- - 兌換從十六進制二進制數據至​[語法：hex_decode 數據]。
- base64_encode
- - 兌換從二進制數據至基地64數據​[語法：base64_encode 數據]。
+ hex_decode [數據]
+ - 兌換從十六進制二進制數據至​。
+ base64_encode [數據]
+ - 兌換從二進制數據至基地64數據​。
  - 別名：b。
- base64_decode
- - 兌換從基地64數據至二進制數據​[語法：base64_decode 數據]。
- pe_meta
- - 從PE文件中提取元數據​[語法：pe_meta 文件名]。
- url_sig
- - 生成URL掃描器簽名​[語法：url_sig 數據]。
- scan
- - 掃描文件或文件夾​[語法：scan 文件名]。
+ base64_decode [數據]
+ - 兌換從基地64數據至二進制數據​。
+ pe_meta [文件名]
+ - 從PE文件中提取元數據​。
+ url_sig [數據]
+ - 生成URL掃描器簽名​。
+ scan [文件名]
+ - 掃描文件或文件夾​。
  - 別名：s。
  c
  - 打印此命令列表。

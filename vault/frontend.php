@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.02).
+ * This file: Front-end handler (last modified: 2020.07.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -385,7 +385,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_login_wrong_endpoint');
                 } else {
                     if (!$phpMussel['FE']['CronMode']) {
-                        $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
+                        $phpMussel['FE']['SessionKey'] = hash('md5', $phpMussel['GenerateSalt']());
                         $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
                         setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HTTP_HOST'], false, true);
                         $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
@@ -861,7 +861,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['FE']['Permissions'] === 1) {
 
     /** $_POST overrides for mobile display. */
-    if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] == 'delete-account')) {
+    if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] === 'delete-account')) {
         $_POST['do'] = $_POST['do_mob'];
     }
     if (empty($_POST['username']) && !empty($_POST['username_mob'])) {

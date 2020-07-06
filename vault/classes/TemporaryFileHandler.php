@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary file handler (last modified: 2020.06.11).
+ * This file: Temporary file handler (last modified: 2020.07.04).
  */
 
 namespace phpMussel\TemporaryFileHandler;
@@ -28,8 +28,8 @@ class TemporaryFileHandler
     public function __construct($Content, $Location)
     {
         /** Pad the location if necessary. */
-        if (substr($Location, -1) !== '/' && substr($Location, -1) !== "\\") {
-            $Location .= '/';
+        if (($Pad = substr($Location, -1)) && ($Pad !== '/') && ($Pad !== "\\") && ($Pad !== DIRECTORY_SEPARATOR)) {
+            $Location .= DIRECTORY_SEPARATOR;
         }
 
         /** If we can't write to the specified location, exit early. */
@@ -38,7 +38,7 @@ class TemporaryFileHandler
         }
 
         /** Let's generate a unique name for the temporary file. */
-        $Filename = time() . '-' . md5($Content) . '.tmp';
+        $Filename = time() . '-' . hash('sha256', $Content) . '.tmp';
 
         /** Now let's attempt to create the temporary file. */
         if ($Handle = fopen($Location . $Filename, 'wb')) {

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2020.06.14).
+# This file: English language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -122,28 +122,28 @@ cli_commands: |
  q
  - Quit CLI.
  - Aliases: quit, exit.
- hash_file:%
- - Generate hash signatures from files [Syntax: hash_file:algo filename].
- hash:%
- - Generate hash signature from string [Syntax: hash:algo string].
+ hash_file:[algo] [filename]
+ - Generate hash signatures from files.
+ hash:[algo] [string]
+ - Generate hash signature from string.
  algo
  - List all supported algorithms.
- hex_encode
- - Convert binary string to hexadecimal [Syntax: hex_encode string].
+ hex_encode [string]
+ - Convert binary string to hexadecimal.
  - Alias: x.
- hex_decode
- - Convert hexadecimal to binary string [Syntax: hex_decode string].
- base64_encode
- - Convert binary string to base64 string [Syntax: base64_encode string].
+ hex_decode [string]
+ - Convert hexadecimal to binary string.
+ base64_encode [string]
+ - Convert binary string to base64 string.
  - Alias: b.
- base64_decode
- - Convert base64 string to binary string [Syntax: base64_decode string].
- pe_meta
- - Extract metadata from a PE file [Syntax: pe_meta filename].
- url_sig
- - Generate URL scanner signatures [Syntax: url_sig string].
- scan
- - Scan file or directory [Syntax: scan filename].
+ base64_decode [string]
+ - Convert base64 string to binary string.
+ pe_meta [filename]
+ - Extract metadata from a PE file.
+ url_sig [string]
+ - Generate URL scanner signatures.
+ scan [name of the file or directory]
+ - Scan a file or directory.
  - Alias: s.
  c
  - Print this command list.

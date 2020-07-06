@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2020.06.14).
+# This file: Indonesian language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -116,30 +116,28 @@ cli_commands: |
  q
  - Berhenti CLI.
  - Alias: quit, exit.
- hash_file:%
- - Menghasilkan tanda tangan hash dari file [Sintaksis: hash_file:algo file].
- hash:%
- - Menghasilkan tanda tangan hash dari string [Sintaksis: hash:algo string].
+ hash_file:[algo] [file]
+ - Menghasilkan tanda tangan hash dari file.
+ hash:[algo] [string]
+ - Menghasilkan tanda tangan hash dari string.
  algo
  - Daftar semua algoritma yang didukung.
- hex_encode
- - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
+ hex_encode [string]
+ - Mengkonversi string biner ke heksadesimal.
  - Alias: x.
- hex_decode
- - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].
- base64_encode
- - Mengkonversi string biner ke string base64
- - [Sintaksis: base64_encode string].
+ hex_decode [string]
+ - Mengkonversi heksadesimal ke string biner.
+ base64_encode [string]
+ - Mengkonversi string biner ke string base64.
  - Alias: b.
- base64_decode
- - Mengkonversi string base64 ke string biner
- - [Sintaksis: base64_decode string].
- pe_meta
- - Ekstrak metadata dari file PE [Sintaksis: pe_meta file].
- url_sig
- - Membuat tanda tangan pemindai URL [Sintaksis: url_sig string].
- scan
- - Pindai file atau direktori [Sintaksis: scan file].
+ base64_decode [string]
+ - Mengkonversi string base64 ke string biner.
+ pe_meta [file]
+ - Ekstrak metadata dari file PE.
+ url_sig [string]
+ - Membuat tanda tangan pemindai URL.
+ scan [file]
+ - Pindai file atau direktori.
  - Alias: s.
  c
  - Cetak ini daftar perintah.

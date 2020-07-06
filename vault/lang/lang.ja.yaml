@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2020.06.14).
+# This file: Japanese language data (last modified: 2020.07.04).
 ##/
 
 # Language settings.
@@ -113,28 +113,28 @@ cli_commands: |
  q
  - ＣＬＩ終了。
  - エイリアス：quit，exit。
- hash_file:%
- - ファイルからハッシュ・シグネチャを作成 「構文: hash_file:アルゴ ファイル名」。
- hash:%
- - 文字列からハッシュ・シグネチャを作成 「構文: hash:アルゴ 文字列」。
+ hash_file:[アルゴ] [ファイル名]
+ - ファイルからハッシュ・シグネチャを作成。
+ hash:[アルゴ] [文字列]
+ - 文字列からハッシュ・シグネチャを作成。
  algo
  - サポートされているすべてのアルゴリズムを一覧表示します。
- hex_encode
- - ２進法文字列を１６進法文字列に変換 「構文: hex_encode 文字列」。
+ hex_encode [文字列]
+ - ２進法文字列を１６進法文字列に変換。
  - エイリアス：​x。
- hex_decode
- - １６進法文字列を２進法文字列に変換 「構文: hex_decode 文字列」。
- base64_encode
- - ２進法文字列をＢＡＳＥ６４文字列に変換 「構文: base64_encode 文字列」。
+ hex_decode [文字列]
+ - １６進法文字列を２進法文字列に変換。
+ base64_encode [文字列]
+ - ２進法文字列をＢＡＳＥ６４文字列に変換。
  - エイリアス：​b。
- base64_decode
- - ＢＡＳＥ６４文字列を２進法文字列に変換 「構文: base64_decode 文字列」。
- pe_meta
- - ＰＥファイルからメタデータを抽出する 「構文: pe_meta ファイル名」。
- url_sig
- - ＵＲＬスキャナ・シグネチャを生成する 「構文: url_sig 文字列」。
- scan
- - ファイルまたはディレクトリをスキャン 「構文: scan ファイル名」。
+ base64_decode [文字列]
+ - ＢＡＳＥ６４文字列を２進法文字列に変換。
+ pe_meta [ファイル名]
+ - ＰＥファイルからメタデータを抽出する。
+ url_sig [文字列]
+ - ＵＲＬスキャナ・シグネチャを生成する。
+ scan [ファイル名]
+ - ファイルまたはディレクトリをスキャン。
  - エイリアス：s。
  c
  - コマンドリストをプリント。

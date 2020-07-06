@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2020.07.01).
+ * This file: Upload handler (last modified: 2020.07.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -194,7 +194,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['ThisFileQuarantinedAs'] = sprintf(
                         '%s-%s',
                         $phpMussel['Time'],
-                        md5($phpMussel['Config']['general']['quarantine_key'] . hash('crc32b', $phpMussel['ThisFileData']) . $phpMussel['Time'])
+                        hash('md5', $phpMussel['Config']['general']['quarantine_key'] . hash('crc32b', $phpMussel['ThisFileData']) . $phpMussel['Time'])
                     );
                     $phpMussel['Quarantine'](
                         $phpMussel['ThisFileData'],
