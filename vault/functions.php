@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.06).
+ * This file: Functions file (last modified: 2020.07.11).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -766,11 +766,7 @@ $phpMussel['lv_match'] = function (string $Needle, string $Haystack, int $pos_A 
         return $bool ? false : 0;
     }
     if ($nlen > $hlen) {
-        $x = [$Needle, $nlen, $Haystack, $hlen];
-        $Haystack = $x[0];
-        $hlen = $x[1];
-        $Needle = $x[2];
-        $nlen = $x[3];
+        [$Haystack, $hlen, $Needle, $nlen] = [$Needle, $nlen, $Haystack, $hlen];
     }
     if ($cost_ins === 1 && $cost_rep === 1 && $cost_del === 1) {
         $lv = $case ? levenshtein(
@@ -1813,7 +1809,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
                     break;
                 }
                 $PEArr['Magic'] = substr($str, $PEArr['Offset'], 2);
-                if ($PEArr['Magic']!=='PE') {
+                if ($PEArr['Magic'] !== 'PE') {
                     $PEArr['DoScan'] = false;
                     break;
                 }
@@ -1873,7 +1869,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
                     $PointerToRawData = $PointerToRawData[1];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionData'] = substr($str, $PointerToRawData, $SizeOfRawData);
                     $SectionOffsets[$PEArr['k']] = [$PointerToRawData, $SizeOfRawData];
-                    foreach(['md5', 'sha1', 'sha256'] as $TryHash) {
+                    foreach (['md5', 'sha1', 'sha256'] as $TryHash) {
                         $PEArr['SectionArr'][$PEArr['k']][$TryHash] = hash($TryHash, $PEArr['SectionArr'][$PEArr['k']]['SectionData']);
                     }
                     $phpMussel['PEData'] .=
@@ -1912,7 +1908,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
                                 "\x00\x00\x00"
                             )))
                         )) {
-                            foreach(['md5', 'sha1', 'sha256'] as $TryHash) {
+                            foreach (['md5', 'sha1', 'sha256'] as $TryHash) {
                                 $PEArr['FINFO'][] = sprintf(
                                     '$%s:%s:%d:',
                                     $PEVars[1],
@@ -4201,6 +4197,11 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
 
             /** Iterate through the archive's contents. */
             while ($ArchiveObject->EntryNext()) {
+
+                /** Skip directories (useless for scanning here). */
+                if ($ArchiveObject->EntryIsDirectory()) {
+                    continue;
+                }
 
                 /** Flag the archive if it exceeds the "max_files_in_archives" limit and return. */
                 if (
