@@ -12,6 +12,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.07.06; Maikuolan]: Performed some minor refactoring.
 
+- [2020.07.11; Bug-fix; Maikuolan]: The code for scanning zip files was
+  treating directories as files, which wasn't affecting the overall results or
+  performance of the scan process, but was adding some small amount of
+  pointless and unwanted overhead to it; Fixed.
+
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
 

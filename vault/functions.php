@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.06).
+ * This file: Functions file (last modified: 2020.07.07).
  */
 
 /**
@@ -1798,7 +1798,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                     break;
                 }
                 $PEArr['Magic'] = substr($str, $PEArr['Offset'], 2);
-                if ($PEArr['Magic']!=='PE') {
+                if ($PEArr['Magic'] !== 'PE') {
                     $PEArr['DoScan'] = false;
                     break;
                 }
@@ -1858,7 +1858,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                     $PointerToRawData = $PointerToRawData[1];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionData'] = substr($str, $PointerToRawData, $SizeOfRawData);
                     $SectionOffsets[$PEArr['k']] = [$PointerToRawData, $SizeOfRawData];
-                    foreach(['md5', 'sha1', 'sha256'] as $TryHash) {
+                    foreach (['md5', 'sha1', 'sha256'] as $TryHash) {
                         $PEArr['SectionArr'][$PEArr['k']][$TryHash] = hash($TryHash, $PEArr['SectionArr'][$PEArr['k']]['SectionData']);
                     }
                     $phpMussel['PEData'] .=
@@ -1897,7 +1897,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                 "\x00\x00\x00"
                             )))
                         )) {
-                            foreach(['md5', 'sha1', 'sha256'] as $TryHash) {
+                            foreach (['md5', 'sha1', 'sha256'] as $TryHash) {
                                 $PEArr['FINFO'][] = sprintf(
                                     '$%s:%s:%d:',
                                     $PEVars[1],
@@ -4187,6 +4187,11 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
             /** Iterate through the archive's contents. */
             while ($ArchiveObject->EntryNext()) {
+
+                /** Skip directories (useless for scanning here). */
+                if ($ArchiveObject->EntryIsDirectory()) {
+                    continue;
+                }
 
                 /** Flag the archive if it exceeds the "max_files_in_archives" limit and return. */
                 if (

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2020.06.11).
+ * This file: Archive handler (last modified: 2020.07.11).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -119,7 +119,7 @@ class ZipHandler extends ArchiveHandler
     public function __construct($Pointer)
     {
         /** Zip class requirements guard. */
-        if (!class_exists('ZipArchive')) {
+        if (!class_exists('\ZipArchive')) {
             $this->ErrorState = 1;
             return;
         }
@@ -185,7 +185,7 @@ class ZipHandler extends ArchiveHandler
      */
     public function EntryIsDirectory()
     {
-        return (!$this->EntryActualSize() && !$this->EntryCompressedSize() && substr($this->EntryName, -1) === '/');
+        return (!$this->EntryActualSize() && !$this->EntryCompressedSize() && substr($this->EntryName(), -1) === '/');
     }
 
     /**
@@ -315,7 +315,8 @@ class TarHandler extends ArchiveHandler
     public function EntryIsDirectory()
     {
         $Name = $this->EntryName();
-        return ((substr($Name, -1, 1) === "\\" || substr($Name, -1, 1) === '/') && $this->EntryActualSize === 0);
+        $Separator = substr($Name, -1, 1);
+        return (($Separator === "\\" || $Separator === '/') && $this->EntryActualSize === 0);
     }
 
     /**
@@ -394,7 +395,7 @@ class RarHandler extends ArchiveHandler
     public function __construct($Pointer)
     {
         /** Rar class requirements guard. */
-        if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
+        if (!class_exists('\RarArchive') || !class_exists('\RarEntry')) {
             $this->ErrorState = 1;
             return;
         }
