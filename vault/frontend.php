@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.04).
+ * This file: Front-end handler (last modified: 2020.07.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -467,11 +467,18 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
         ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
     }
 
+    /** Safer for the front-end logger. */
+    $phpMussel['NameToLog'] = preg_replace('~[\x00-\x1f]~', '', $_POST['username'] ?? '');
+
     /** Handle front-end logging. */
-    $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], (
-        empty($_POST['username']) ? '' : $_POST['username']
-    ), empty($phpMussel['LoggerMessage']) ? '' : $phpMussel['LoggerMessage']);
-    unset($phpMussel['LoggerMessage']);
+    $phpMussel['FELogger'](
+        $_SERVER[$phpMussel['IPAddr']],
+        $phpMussel['NameToLog'],
+        $phpMussel['LoggerMessage'] ?? ''
+    );
+
+    /** Cleanup. */
+    unset($phpMussel['NameToLog'], $phpMussel['LoggerMessage']);
 }
 
 /** Determine whether the user has logged in. */
@@ -634,6 +641,9 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
 
         /** Provide the option to log out (omit home link). */
         $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a><br />', $phpMussel['L10N']->getString('link_log_out'));
+
+        /** Aesthetic spacer. */
+        $phpMussel['FE']['2fa_status_spacer'] = empty($phpMussel['FE']['state_msg']) ? '' : '<br /><br />';
 
         /** Show them the two-factor authentication page. */
         $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
@@ -1411,6 +1421,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 );
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
+            if (!empty($phpMussel['DirValue']['See also']) && is_array($phpMussel['DirValue']['See also'])) {
+                $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $phpMussel['L10N']->getString('label_see_also'));
+                foreach ($phpMussel['DirValue']['See also'] as $phpMussel['DirValue']['Ref key'] => $phpMussel['DirValue']['Ref link']) {
+                    $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                        '<li><a dir="ltr" href="%s">%s</a></li>',
+                        $phpMussel['DirValue']['Ref link'],
+                        $phpMussel['DirValue']['Ref key']
+                    );
+                }
+                $phpMussel['ThisDir']['FieldOut'] .= "\n</ul>";
+            }
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](
                 $phpMussel['L10N']->Data + $phpMussel['ThisDir'], $phpMussel['FE']['ConfigRow']
             );

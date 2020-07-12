@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2020.07.04).
+# This file: Hindi language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "अनुत्तीर्ण होना (आवश
 scan_filename_manipulation_detected: "फाइलनाम हेरफेर का पता चला"
 scan_missing_filename: "गुम फाइल नाम"
 scan_no_problems_found: "कोई समस्या नहीं मिली।"
-scan_not_archive: "अनुत्तीर्ण होना (खाली या नहीं एक संग्रह)!"
 scan_reading: "पढ़ना"
 scan_signature_file_missing: "हस्ताक्षर फाइल लापता है"
 scan_tampering: "संभावित खतरनाक फाइल छेड़छाड़ की गई"

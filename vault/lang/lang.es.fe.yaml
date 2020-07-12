@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2020.06.14).
+# This file: Spanish language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Cuando es true, cualquier archivo encon
 config_experimental: "¡Inestable/Experimental!"
 config_files: "Los detalles de cómo manejar archivos al escanear."
 config_files_block_encrypted_archives: "Detectar y bloquear compactados archivos encriptados? Debido phpMussel no es capaz de escanear el contenido de los compactados archivos encriptados, es posible que este puede ser empleado por un atacante como un medio de evitando phpMussel, antivirus escáneres y otras protecciones. Instruir phpMussel para bloquear cualquier compactado archivo que se descubre es encriptado potencialmente podría ayudar a reducir el riesgo asociado a estos tales posibilidades. False = No; True = Sí [Predefinido]."
-config_files_check_archives: "Intente comprobar el contenido de los compactados archivos? False = No (no comprobar); True = Sí (comprobar) [Predefinido]."
+config_files_check_archives: "Intente comprobar el contenido de los compactados archivos? False = No (no comprobar); True = Sí (comprobar) [Predefinido]. Soportado: Zip (requiere libzip), Tar, Rar (requiere la extensión rar)."
 config_files_filesize_archives: "Heredar tamaño de archivos blacklist/whitelist para los contenidos de compactados archivos? False = No (todo en la greylist); True = Sí [Predefinido]."
 config_files_filesize_limit: "Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido]; 0 = Sin límite (siempre en la greylist), cualquier (positivo) numérico valor aceptado. Esto puede ser útil cuando su PHP configuración limita la cantidad de memoria un proceso puede contener o si su PHP configuración limita el tamaño de archivo subidos."
 config_files_filesize_response: "Qué hacer con los archivos que superen el límite del tamaño de archivos (si existe). False = Whitelist; True = Blacklist [Predefinido]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Nombre del archivo para registrar todos los
 config_general_statistics: "¿Seguir las estadísticas de uso de phpMussel? True = Sí; False = No [Predefinido]."
 config_general_time_format: "El formato de notación de fecha/hora usado por phpMussel. Se pueden añadir opciones adicionales bajo petición."
 config_general_time_offset: "Desplazamiento del huso horario en minutos."
-config_general_timezone: "Tu zona horaria."
+config_general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
 config_general_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
 config_heuristic: "Configuración para análisis heurístico."
 config_heuristic_threshold: "Hay ciertas firmas de phpMussel eso tienen la intención de identificar sospechosas y potencialmente maliciosos cualidades de los archivos que se subido sin que en ellos la identificación de los archivos que se subido específicamente como malicioso. Este "threshold" (umbral) valor dice phpMussel qué lo máximo total peso de sospechosas y potencialmente maliciosos cualidades de los archivos que se subido eso es permisible es antes de que esos archivos han de ser señalado como malicioso. La definición de peso en este contexto es el número total de sospechosas y potencialmente maliciosos cualidades identificados. Por predefinido, este valor es 3. Un valor inferior generalmente resultará en una mayor incidencia de falsos positivos pero un mayor número de archivos maliciosos siendo identificado, mientras un valor mayor generalmente resultará en una inferior incidencia de falsos positivos pero un inferior número de archivos maliciosos siendo identificado. Generalmente es mejor dejar este valor en su predefinido a menos que usted está experimentando problemas relacionados con ella."
@@ -101,7 +101,7 @@ config_legal: "Configuración para requisitos legales."
 config_legal_privacy_policy: "La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar."
 config_legal_pseudonymise_ip_addresses: "¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí [Predefinido]; False = No."
 config_signatures: "Configuración para firmas, archivos de firma, etc."
-config_signatures_active: "Una lista de los archivos de firmas activa, delimitados por comas."
+config_signatures_active: "Una lista de los archivos de firmas activa, delimitados por comas. Nota: Los archivos de firma deben estar primero instalados, antes de poder activarlos. Para que los archivos de prueba funcionen correctamente, los archivos de firma deben estar instalados y activados."
 config_signatures_detect_adware: "¿Debe phpMussel utilizar firmas para detectar adware? False = No; True = Sí [Predefinido]."
 config_signatures_detect_deface: "¿Debe phpMussel utilizar firmas para detectar defacements y defacers? False = No; True = Sí [Predefinido]."
 config_signatures_detect_encryption: "¿Debe phpMussel detectar y bloquear archivos cifrados? False = No; True = Sí [Predefinido]."
@@ -230,6 +230,7 @@ label_sanity_check: "Verificación de cordura: "
 label_sapi: "SAPI utilizada:"
 label_scanned_objects: "Objetos escaneados"
 label_scanned_uploads: "Subidas escaneadas"
+label_see_also: "Ver también:"
 label_show: "Mostrar"
 label_size_in_quarantine: "Tamaño en cuarentena: "
 label_stable: "Más nuevo estable:"

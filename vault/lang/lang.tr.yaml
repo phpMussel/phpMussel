@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2020.07.04).
+# This file: Turkish language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Başarısız oldu (gerekli uzantıları eksik)!"
 scan_filename_manipulation_detected: "Dosya adı işleme algılandı"
 scan_missing_filename: "Dosya adı eksik"
 scan_no_problems_found: "Hiçbir sorun bulunamadı."
-scan_not_archive: "Başarısız oldu (boş veya bir arşiv değil)!"
 scan_reading: "Okuma"
 scan_signature_file_missing: "İmza dosyası eksik"
 scan_tampering: "Potansiyel olarak tehlikeli dosyaların değiştirilmesi algılandı"

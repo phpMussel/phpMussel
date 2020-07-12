@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.06.14).
+# This file: Latvian language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Ja iestatīts uz true, visus failus, ka
 config_experimental: "Nestabils/Eksperimentāls!"
 config_files: "Skenēšanas failu apstrādes specifika."
 config_files_block_encrypted_archives: "Atklāt un bloķēt šifrētus arhīvus? Uzskatot par phpMussel nevar skenēt šifrētu arhīvu saturu, iespējams, ka uzbrucējs var izmantot arhīva šifrēšanu, lai mēģinātu apiet phpMussel, pretvīrusu skenerus un citas šādas aizsardzības. Uzdot phpMussel bloķēt visus arhīvus, kurus tā atklāj par šifrētu, iespējams, varētu samazināt risku, kas saistīts ar šīm šādām iespējām. False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]."
-config_files_check_archives: "Mēģinājums pārbaudīt arhīvu saturu? False (Nepatiess) = Nepārbaudiet; True (Patiess) = Pārbaudiet [Noklusējuma]."
+config_files_check_archives: "Mēģinājums pārbaudīt arhīvu saturu? False (Nepatiess) = Nepārbaudiet; True (Patiess) = Pārbaudiet [Noklusējuma]. Atbalstītās: Zip (prasa libzip), Tar, Rar (prasa rar pagarinājumu)."
 config_files_filesize_archives: "Vai faila lielums melnajā/baltajā sarakstā būtu jāattiecina uz arhīvu saturu? False (Nepatiess) = Nē (visu tikai iekļauj pelēkajā sarakstā); True (Patiess) = Jā [Noklusējuma]."
 config_files_filesize_limit: "Faila lieluma ierobežojums (kā KB). 65536 = 64MB [Noklusējuma]; 0 = Nav ierobežojumu (vienmēr pelēkā sarakstā). Jebkura (pozitīva) skaitliska vērtība ir pieņemams. Tas var būt noderīgi, ja jūsu PHP konfigurācija ierobežo procesa ietilpību vai ja jūsu PHP konfigurācija ierobežo augšupielādes failu lielumu."
 config_files_filesize_response: "Ko darīt ar failiem, kas pārsniedz faila lieluma ierobežojumu (ja tāds pastāv). False (Nepatiess) = Baltajā sarakstā; True (Patiess) = Melnajā sarakstā [Noklusējuma]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Faila nosaukums, kurā reģistrēt visus sk
 config_general_statistics: "Vai izsekot phpMussel lietošanas statistiku? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_general_time_format: "phpMussel izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
 config_general_time_offset: "Laika joslas nobīde minūtēs."
-config_general_timezone: "Jūsu laika josla."
+config_general_timezone: "To izmanto, lai norādītu izmantojamo laika joslu (piemēram, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, utt). Norādiet “SYSTEM”, lai PHP varētu rīkoties ar to automātiski."
 config_general_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
 config_heuristic: "Heiristiskās analīzes konfigurācija."
 config_heuristic_threshold: "Daži phpMussel paraksti ir paredzēti, lai failos identificētu aizdomīgus un potenciāli ļaunprātīgus rādītājus, neidentificējot šos failus kā ļaunprātīgus tieši paši par sevi. Šī direktīva nosaka phpMussel maksimālo pieļaujamo svaru pirms šo failu atzīmēšanas kā ļaunprātīgus. Svara definīcija šajā kontekstā ir kopējais identificēto aizdomīgo un potenciāli ļaunprātīgo indikatoru skaits. Pēc noklusējuma šī vērtība ir 3. Zemāka vērtība parasti rada lielāku nepatiesu pozitīvu rezultātu bet tiek atzīmēts lielāku skaits ļaunprātīgu failu, turpretim augstāka vērtība parasti rada mazāku nepatiesu pozitīvu rezultātu atzīmēts bet tiek atzīmēts mazāku skaits ļaunprātīgu failu. Parasti vislabāk ir mainīt šo vērtību tikai tad, ja noklusējums jums rada problēmas."
@@ -101,7 +101,7 @@ config_legal: "Juridisko prasību konfigurācija."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_signatures: "Parakstu, parakstu failu, utt konfigurācija."
-config_signatures_active: "Aktīvo paraksta failu saraksts, atdalīts ar komatiem."
+config_signatures_active: "Aktīvo paraksta failu saraksts, atdalīts ar komatiem. Piezīme: Lai varētu tos aktivizēt, vispirms ir jāinstalē paraksta faili. Lai testa faili darbotos pareizi, paraksta faili ir jāinstalē un jāaktivizē."
 config_signatures_detect_adware: "Vai phpMussel vajadzētu parsēt parakstus reklāmprogrammatūru noteikšanai? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]."
 config_signatures_detect_deface: "Vai phpMussel vajadzētu parsēt parakstus vietņu vandālismu un vandalnieku noteikšanai? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]."
 config_signatures_detect_encryption: "Vai phpMussel vajadzētu atklāt un bloķēt šifrētus failus? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]."
@@ -231,6 +231,7 @@ label_sanity_check: "Saprāta pārbaude: "
 label_sapi: "Izmantotā SAPI:"
 label_scanned_objects: "Skenēto objektu skaits"
 label_scanned_uploads: "Skenēto augšupielāžu skaits"
+label_see_also: "Skatīt arī:"
 label_show: "Parādiet"
 label_size_in_quarantine: "Izmērs karantīnā: "
 label_stable: "Jaunākā stabilā:"

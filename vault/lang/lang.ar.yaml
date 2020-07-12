@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2020.07.04).
+# This file: Arabic language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -91,7 +91,6 @@ scan_extensions_missing: "فشل (مفقود ملحقات المطلوبة)!"
 scan_filename_manipulation_detected: "الكشف تلاعب اسم الملف"
 scan_missing_filename: "مفقود اسم الملف"
 scan_no_problems_found: "الكشف لا مشاكل."
-scan_not_archive: "فشل (فارغة أو ليس أرشيفا)!"
 scan_reading: "قراءة"
 scan_signature_file_missing: "مفقود ملف التوقيع"
 scan_tampering: "الكشف العبث ملف يحتمل أن تكون خطرة"

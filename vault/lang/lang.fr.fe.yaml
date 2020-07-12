@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.06.14).
+# This file: French language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Lorsqu'il est défini sur true, tous le
 config_experimental: "Instable/Expérimental !"
 config_files: "Les spécificités de la gestion des fichiers lors de l'analyse."
 config_files_block_encrypted_archives: "Détecter et bloquer les archives cryptées ? Parce phpMussel est pas capable d'analyse du contenu des archives cryptées, il est possible que le cryptage des archives peut être utilisé par un attaquant un moyen a tenter de contourner phpMussel, analyseurs anti-virus et d'autres protections. Instruire phpMussel pour bloquer toutes les archives cryptées qu'il découvre pourrait aider à réduire les risques associés à ces possibilités. False = Non ; True = Oui [Défaut]."
-config_files_check_archives: "Essayer vérifier les contenus des archives ? False = Non (ne pas vérifier) ; True = Oui (vérifier) [Défaut]."
+config_files_check_archives: "Essayer vérifier les contenus des archives ? False = Non (ne pas vérifier) ; True = Oui (vérifier) [Défaut]. Supporté : Zip (nécessite libzip), Tar, Rar (nécessite l'extension rar)."
 config_files_filesize_archives: "Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives ? False = Non (énumérer grise tout) ; True = Oui [Défaut]."
 config_files_filesize_limit: "Limite de taille des fichiers en Ko. 65536 = 64Mo [Défaut] ; 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements."
 config_files_filesize_response: "Que faire avec des fichiers qui dépassent la limite de taille des fichiers (si existant). False = Énumérer Blanche ; True = Énumérer Noire [Défaut]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Nom du fichier à enregistrer tous les rés
 config_general_statistics: "Suivre les statistiques d'utilisation pour phpMussel ? True = Oui ; False = Non [Défaut]."
 config_general_time_format: "Le format de notation de la date/heure utilisé par phpMussel. Des options supplémentaires peuvent être ajoutées sur requête."
 config_general_time_offset: "Décalage horaire en minutes."
-config_general_timezone: "Votre fuseau horaire."
+config_general_timezone: "Ceci est utilisé pour spécifier le fuseau horaire à utiliser (par exemple, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spécifiez « SYSTEM » pour laisser PHP gérer cela automatiquement pour vous."
 config_general_truncate: "Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S'applique aux fichiers journaux individuels ! La taille des fichiers journaux n'est pas considérée collectivement."
 config_heuristic: "Configuration pour l'analyse heuristique."
 config_heuristic_threshold: "Il ya certaines signatures des phpMussel qui sont destinés à identifier des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement sans en eux-mêmes identifier les fichiers en cours de téléchargement spécifiquement comme étant malveillants. Cette « threshold » (seuil) valeur raconte à phpMussel ce que le total maximum poids des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement pour ce qui est admissible avant que ces fichiers doivent être signalées comme malveillant. La définition du poids dans ce contexte est le nombre total de suspectes et potentiellement malveillants qualités identifié. Par défaut, cette valeur sera fixée à 3. Une valeur inférieur va résulter généralement avec une fréquence supérieur de faux positifs mais une nombre supérieur de fichiers signalé comme malveillant, tandis que une valeur inférieur va résulter généralement avec une fréquence inférieur de faux positifs mais un nombre inférieur de fichiers signalé comme malveillant. Il est généralement préférable de laisser cette valeur à sa valeur défaut, sauf si vous rencontrez des problèmes qui sont liés à elle."
@@ -101,7 +101,7 @@ config_legal: "Configuration pour les exigences légales."
 config_legal_privacy_policy: "L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver."
 config_legal_pseudonymise_ip_addresses: "Pseudonymiser les adresses IP lors de la journalisation ? True = Oui [Défaut] ; False = Non."
 config_signatures: "Configuration pour les signatures, fichiers de signatures, etc."
-config_signatures_active: "Une liste des fichiers de signatures active, délimitée par des virgules."
+config_signatures_active: "Une liste des fichiers de signatures active, délimitée par des virgules. Remarque : Les fichiers de signatures doivent d'abord être installés, avant de pouvoir les activer. Pour que les fichiers de test fonctionnent correctement, les fichiers de signature doivent être installés et activés."
 config_signatures_detect_adware: "Devrait phpMussel utiliser signatures pour détecter les adwares ? False = Non ; True = Oui [Défaut]."
 config_signatures_detect_deface: "Devrait phpMussel utiliser signatures pour détecter les defacements and defacers ? False = Non ; True = Oui [Défaut]."
 config_signatures_detect_encryption: "Devrait phpMussel détecter et bloquer les fichiers cryptés ? False = Non ; True = Oui [Défaut]."
@@ -230,6 +230,7 @@ label_sanity_check: "Vérification de santé : "
 label_sapi: "SAPI utilisée :"
 label_scanned_objects: "Objets analysés"
 label_scanned_uploads: "Téléchargements analysés"
+label_see_also: "Voir également :"
 label_show: "Montrer"
 label_size_in_quarantine: "Taille en quarantaine : "
 label_stable: "Dernier stable :"

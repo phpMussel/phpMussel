@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.04).
+ * This file: Front-end functions file (last modified: 2020.07.12).
  */
 
 /**
@@ -2387,8 +2387,10 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], string $Subject = ''
             $Mail->AltBody = $AltBody;
 
             /** Process attachments. */
-            foreach ($Attachments as $Attachment) {
-                $Mail->addAttachment($Attachment);
+            if (is_array($Attachments)) {
+                foreach ($Attachments as $Attachment) {
+                    $Mail->addAttachment($Attachment);
+                }
             }
 
             /** Send it! */

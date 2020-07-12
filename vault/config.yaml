@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2020.06.23).
+# This file: Configuration defaults file (last modified: 2020.07.08).
 ##/
 
 Config Defaults:
@@ -139,6 +139,9 @@ Config Defaults:
     HTTP_X_FORWARDED_FOR: "HTTP_X_FORWARDED_FOR (Cloudbric)"
     X-Forwarded-For: "X-Forwarded-For (Squid)"
     REMOTE_ADDR: "REMOTE_ADDR (Default)"
+   See also:
+    NGINX Reverse Proxy: "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"
+    Squid configuration directive forwarded_for: "http://www.squid-cache.org/Doc/config/forwarded_for/"
   enable_plugins:
    type: "bool"
    default: true
@@ -170,7 +173,6 @@ Config Defaults:
     pt: "Português"
     ru: "Русский"
     sv: "Svenska"
-    ta: "தமிழ்"
     th: "ภาษาไทย"
     tr: "Türkçe"
     ur: "اردو"
@@ -422,6 +424,9 @@ Config Defaults:
   vt_public_api_key:
    type: "string"
    default: ""
+   See also:
+    Terms of Service: "https://www.virustotal.com/en/about/terms-of-service/"
+    Getting started: "https://developers.virustotal.com/reference"
   vt_suspicion_level:
    type: "int"
    default: 1
@@ -439,9 +444,13 @@ Config Defaults:
   lookup_hphosts:
    type: "bool"
    default: true
+   See also:
+    hosts-file.net: "https://hosts-file.net/"
   google_api_key:
    type: "string"
    default: ""
+   See also:
+    Google API Console: "https://console.developers.google.com/"
   maximum_api_lookups:
    type: "int"
    default: 10

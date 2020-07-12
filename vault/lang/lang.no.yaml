@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2020.07.04).
+# This file: Norwegian language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Mislyktes (mangler nødvendige utvidelser)!"
 scan_filename_manipulation_detected: "Filnavnmanipulasjon oppdaget"
 scan_missing_filename: "Mangler filnavn"
 scan_no_problems_found: "Ingen problemer funnet."
-scan_not_archive: "Mislyktes (tomt eller ikke et arkiv)!"
 scan_reading: "Leser"
 scan_signature_file_missing: "Signaturfil mangler"
 scan_tampering: "Oppdaget potensielt farlig filhindring"

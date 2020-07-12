@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.06.14).
+# This file: Dutch language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Indien ingesteld op true, worden alle n
 config_experimental: "Instabiel/Experimenteel!"
 config_files: "De details over het omgaan met bestanden tijdens het scannen."
 config_files_block_encrypted_archives: "Detecteren en blokkeren gecodeerde archieven? Omdat phpMussel is niet in staat te scannen de inhoud van gecodeerde archieven, het is mogelijk dat archief encryptie kan worden toegepast door een aanvaller als middel van probeert te omzeilen phpMussel, anti-virus scanners en andere dergelijke beveiligingen. Instrueren phpMussel te blokkeren elke archieven dat het ontdekt worden gecodeerde zou kunnen helpen het risico in verband met deze dergelijke mogelijkheden te verminderen. False = Nee; True = Ja [Standaard]."
-config_files_check_archives: "Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard]."
+config_files_check_archives: "Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard]. Ondersteunde: Zip (vereist libzip), Tar, Rar (vereist de rar-extensie)."
 config_files_filesize_archives: "Erven het bestandsgrootte blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard]."
 config_files_filesize_limit: "Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard]; 0 = Geen limiet (altijd op de greylist), ieder (positief) numerieke waarde aanvaard. Dit kunt handig zijn als uw PHP configuratie beperkt de hoeveelheid van geheugen een proces kunt houden of als u PHP configuratie beperkt het bestandsgrootte van uploads."
 config_files_filesize_response: "Wat te doen met bestanden dat overschrijden het bestandsgrootte limiet (als aanwezig). False = Whitelist; True = Blacklist [Standaard]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Bestandsnaam van het bestand te opnemen all
 config_general_statistics: "Track phpMussel gebruiksstatistieken? True = Ja; False = Nee [Standaard]."
 config_general_time_format: "De datum notatie gebruikt door phpMussel. Extra opties kunnen worden toegevoegd op aanvraag."
 config_general_time_offset: "Tijdzone offset in minuten."
-config_general_timezone: "Uw tijdzone."
+config_general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te geven (b.v., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, enz). Geef "SYSTEM" op om PHP dit automatisch voor u te laten afhandelen."
 config_general_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
 config_heuristic: "Configuratie voor heuristische analyse."
 config_heuristic_threshold: "Er zijn bepaalde signatures van phpMussel dat zijn bedoeld om verdachte en potentieel kwaadaardige kwaliteiten te identificeren van bestanden wordt geüpload zonder zichzelf om bestanden wordt geüpload te identificeren specifiek als kwaadaardige. Dit "threshold" waarde vertelt phpMussel het maximaal totaalgewicht van verdachte en potentieel kwaadaardige kwaliteiten van bestanden wordt geüpload dat is toelaatbaar voordat deze bestanden worden gemarkeerd als kwaadaardig. De definitie van gewicht in dit verband is het aantal van verdachte en potentieel kwaadaardige kwaliteiten dat zijn geïdentificeerd. Standaard, dit waarde wordt ingesteld op 3. Algemeen, een lagere waarde zal resulteren in meer valse positieven maar meer kwaadaardige bestanden wordt gemarkeerd, terwijl een hogere waarde zal resulteren in minder valse positieven maar minder kwaadaardige bestanden wordt gemarkeerd. Algemeen, het is beste om dit waarde te laten op zijn standaard, tenzij u problemen ondervindt met betrekking tot het."
@@ -101,7 +101,7 @@ config_legal: "Configuratie voor wettelijke vereisten."
 config_legal_privacy_policy: "Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen."
 config_legal_pseudonymise_ip_addresses: "Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee."
 config_signatures: "Configuratie voor signatures, signatuurbestanden, enz."
-config_signatures_active: "Een lijst van de actief signatuurbestanden, gescheiden door komma's."
+config_signatures_active: "Een lijst van de actief signatuurbestanden, gescheiden door komma's. Notitie: Signatuurbestanden moeten eerst worden geïnstalleerd voordat u ze kunt activeren. Om de testbestanden correct te laten werken, moeten de signatuurbestanden worden geïnstalleerd en geactiveerd."
 config_signatures_detect_adware: "Moet phpMussel verwerken signatures voor het detecteren van adware? False = Nee; True = Ja [Standaard]."
 config_signatures_detect_deface: "Moet phpMussel verwerken signatures voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard]."
 config_signatures_detect_encryption: "Moet phpMussel gecodeerde bestanden detecteren en blokkeren? False = Nee; True = Ja [Standaard]."
@@ -230,6 +230,7 @@ label_sanity_check: "Gezondheidscontrole: "
 label_sapi: "SAPI gebruikt:"
 label_scanned_objects: "Objecten gescand"
 label_scanned_uploads: "Uploads gescand"
+label_see_also: "Zie ook:"
 label_show: "Zien"
 label_size_in_quarantine: "Grootte in quarantaine: "
 label_stable: "Laatste stabiele:"

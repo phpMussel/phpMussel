@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2020.07.04).
+# This file: Dutch language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Mislukt (ontbrekende vereiste extensies)!"
 scan_filename_manipulation_detected: "Bestandsnaam manipulatie ontdekt"
 scan_missing_filename: "Ontbrekende bestandsnaam"
 scan_no_problems_found: "Geen problemen gevonden."
-scan_not_archive: "Mislukt (leeg of is geen archief)!"
 scan_reading: "Lezen van"
 scan_signature_file_missing: "Signatuurbestand ontbreekt"
 scan_tampering: "Gedetecteerd potentieel gevaarlijke bestandswijziging"

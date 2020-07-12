@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2020.07.04).
+# This file: Bangla language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "ব্যর্থ (অনুপস্থিত প্
 scan_filename_manipulation_detected: "ফাইলনেম ম্যানিপুলেশন সনাক্ত হয়েছে"
 scan_missing_filename: "অনুপস্থিত ফাইলের নাম"
 scan_no_problems_found: "কোন সমস্যা খুঁজে পাওয়া যায়নি।"
-scan_not_archive: "ব্যর্থ (খালি বা না একটি আর্কাইভ)!"
 scan_reading: "পড়ছি"
 scan_signature_file_missing: "স্বাক্ষর ফাইলটি অনুপস্থিত"
 scan_tampering: "সম্ভাব্য বিপজ্জনক ফাইল টিমপারিং সনাক্ত হয়েছে"

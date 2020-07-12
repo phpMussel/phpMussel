@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2020.06.14).
+# This file: Polish language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Po ustawieniu na true, wszystkie pliki 
 config_experimental: "Niestabilny/Eksperymentalny!"
 config_files: "Szczegóły dotyczące obsługi plików podczas skanowania."
 config_files_block_encrypted_archives: "Wykrywać i blokować zaszyfrowane archiwa? Ponieważ phpMussel nie jest w stanie skanować zawartości zaszyfrowanych archiwów, możliwe jest, że osoba atakująca może zastosować szyfrowanie archiwów w celu ominięcia phpMussel, skanerów antywirusowych i innych takich zabezpieczeń. Poinstruowanie phpMussel, aby zablokował wszelkie archiwa, które odkryje, że ma być zaszyfrowane, może potencjalnie pomóc zmniejszyć ryzyko związane z takimi możliwościami. False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]."
-config_files_check_archives: "Czy należy sprawdzić zawartość archiwów? False (Fałszywy) = Nie sprawdzaj; True (Prawdziwe) = Sprawdzaj [Domyślna]."
+config_files_check_archives: "Czy należy sprawdzić zawartość archiwów? False (Fałszywy) = Nie sprawdzaj; True (Prawdziwe) = Sprawdzaj [Domyślna]. Obsługiwane: Zip (wymaga libzip), Tar, Rar (wymaga rozszerzenia rar)."
 config_files_filesize_archives: "Czy zastosować zawartość czarnej/białej listy rozmiarów plików do zawartości archiwów? False (Fałszywy) = Nie (traktuj wszystko tak, jakby znajdowało się na szarej liście); True (Prawdziwe) = Tak [Domyślna]."
 config_files_filesize_limit: "Limit rozmiaru pliku w KB. 65536 = 64MB [Domyślna]; 0 = Nie limit (zawsze na szarej liście). Każda (dodatnia) wartość liczbowa jest akceptowana. Może to być przydatne, gdy konfiguracja PHP ogranicza ilość pamięci, którą proces może pomieścić lub jeśli konfiguracja PHP ogranicza rozmiar przesyłanych plików."
 config_files_filesize_response: "Co zrobić z plikami, które przekraczają limit rozmiaru pliku (jeśli taki istnieje). False (Fałszywy) = Dodaj go do białej listy; True (Prawdziwe) = Dodaj go do czarnej listy [Domyślna]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Nazwa pliku do rejestrowania wszystkich wyn
 config_general_statistics: "Śledzić statystyki użytkowania phpMussel? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]."
 config_general_time_format: "Format notacja daty/godziny używany przez phpMussel. Dodatkowe opcje mogą być dodane na życzenie."
 config_general_time_offset: "Przesunięcie strefy czasowej w minutach."
-config_general_timezone: "Twoja strefa czasowa."
+config_general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
 config_general_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
 config_heuristic: "Konfiguracja analizy heurystycznej."
 config_heuristic_threshold: "Niektóre podpisy phpMussel mają na celu identyfikację podejrzanych i potencjalnie złośliwych wskaźników w plikach, same w sobie nie identyfikując tych plików jako złośliwe. Ta wartość informuje phpMussel o maksymalnej dopuszczalnej wadze przed oznaczeniem tych plików jako złośliwych. Definicja wadze w tym kontekście to całkowita liczba podejrzanych i potencjalnie złośliwych wskaźników. Domyślnie ta wartość zostanie ustawiona na 3. Niższa wartość generalnie spowoduje częstsze występowanie wyników fałszywie pozytywne ale oflagowana jest większa liczba złośliwych plików, podczas gdy wyższa wartość generalnie spowoduje mniejsze występowanie wyników fałszywie pozytywne ale oflagowana jest mniejsza liczba złośliwych plików. Na ogół najlepiej jest zmieniać tę wartość tylko w przypadku problemów."
@@ -101,7 +101,7 @@ config_legal: "Konfiguracja wymagań prawnych."
 config_legal_privacy_policy: "Adres odpowiedniej polityki prywatności, która ma być wyświetlana w stopce każdej wygenerowanej strony. Podaj adres URL, lub pozostaw puste, aby wyłączyć."
 config_legal_pseudonymise_ip_addresses: "Pseudonimizować adresy IP podczas logowania? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_signatures: "Konfiguracja podpisów, plików podpisów, itp."
-config_signatures_active: "Lista aktywnych plików sygnatur, oddzielonych przecinkami."
+config_signatures_active: "Lista aktywnych plików sygnatur, oddzielonych przecinkami. Uwaga: Pliki sygnatur należy najpierw zainstalować, zanim będzie można je aktywować. Aby pliki testowe działały poprawnie, pliki sygnatur muszą zostać zainstalowane i aktywowane."
 config_signatures_detect_adware: "Czy phpMussel powinien przetwarzać podpisy wykrywania adware? False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]."
 config_signatures_detect_deface: "Czy phpMussel powinien przetwarzać podpisy wykrywania zniekształcenie strony internetowej? False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]."
 config_signatures_detect_encryption: "Czy phpMussel powinien wykrywać i blokować zaszyfrowane pliki? False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]."
@@ -231,6 +231,7 @@ label_sanity_check: "Sprawdzanie poczytalności: "
 label_sapi: "SAPI w użyciu:"
 label_scanned_objects: "Skanowane obiekty"
 label_scanned_uploads: "Przesłane zeskanowane pliki"
+label_see_also: "Zobacz też:"
 label_show: "Pokaż"
 label_size_in_quarantine: "Rozmiar w kwarantannie: "
 label_stable: "Najnowsza stabilna:"

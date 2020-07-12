@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2020.07.04).
+# This file: Indonesian language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Gagal (hilang ekstensi yang dibutuhkan)!"
 scan_filename_manipulation_detected: "File nama manipulasi terdeteksi"
 scan_missing_filename: "Hilang nama file"
 scan_no_problems_found: "Tidak ada masalah yang diketahui."
-scan_not_archive: "Gagal (kosong atau tidak sebuah arsip)!"
 scan_reading: "Bacaan"
 scan_signature_file_missing: "Tanda tangan file hilang"
 scan_tampering: "Terdeteksi perubahan berpotensi berbahaya dalam file"

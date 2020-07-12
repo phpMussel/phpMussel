@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2020.07.04).
+# This file: Spanish language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -91,7 +91,6 @@ scan_extensions_missing: "¡Fracasado (desaparecido requeridos extensiones)!"
 scan_filename_manipulation_detected: "Manipulación del fichero nombre detectado"
 scan_missing_filename: "Nombre del archivo está ausente"
 scan_no_problems_found: "No problemas encontrado."
-scan_not_archive: "¡Fracasado (vacío o no es un archivo)!"
 scan_reading: "Leyendo"
 scan_signature_file_missing: "Firma archivo desaparecido"
 scan_tampering: "Detectado potencialmente peligrosa archivo manipulación"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2020.07.04).
+# This file: Polish language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Błąd (brak wymaganych rozszerzeń)!"
 scan_filename_manipulation_detected: "Wykryto manipulację nazwą pliku"
 scan_missing_filename: "Brak nazwy pliku"
 scan_no_problems_found: "Nie znaleziono problemów."
-scan_not_archive: "Błąd (puste lub nie archiwum)!"
 scan_reading: "Czytam"
 scan_signature_file_missing: "Brak pliku podpisy"
 scan_tampering: "Wykryto potencjalnie niebezpieczne manipulowanie plików"

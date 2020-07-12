@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2020.07.04).
+# This file: French language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Échec (extensions requises manquantes) !"
 scan_filename_manipulation_detected: "Manipulation de nom de fichier détectée"
 scan_missing_filename: "Nom de fichier manquant"
 scan_no_problems_found: "Pas de problème trouvé."
-scan_not_archive: "Échec (vide ou pas une archive) !"
 scan_reading: "Lecture en cours"
 scan_signature_file_missing: "Fichiers des signatures manquant"
 scan_tampering: "Altération de fichier potentiellement dangereuse détectée"

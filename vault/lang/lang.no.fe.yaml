@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.06.14).
+# This file: Norwegian language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -50,7 +50,7 @@ config_compatibility_only_allow_images: "Når satt til true, alle filer som skan
 config_experimental: "Ustabil/Eksperimentell!"
 config_files: "Spesifikasjonene for hvordan du håndterer filer når du skanner."
 config_files_block_encrypted_archives: "Oppdage og blokkere krypterte arkiver? Fordi phpMussel ikke er i stand til å skanne innholdet i krypterte arkiver, er det mulig at arkivkryptering kan brukes av en angriper som et middel til å forsøke å omgå phpMussel, antivirus-skannere og annen slik beskyttelse. Å instruere phpMussel til å blokkere krypterte arkiver som den oppdager, kan bidra til å redusere risikoen forbundet med disse mulighetene. False = Nei; True = Ja [Standardverdi]."
-config_files_check_archives: "Forsøk å sjekke innholdet i arkiver? False = Ikke sjekke; True = Sjekke [Standardverdi]."
+config_files_check_archives: "Forsøk å sjekke innholdet i arkiver? False = Ikke sjekke; True = Sjekke [Standardverdi]. Støttet: Zip (krever libzip), Tar, Rar (krever rar forlengelse)."
 config_files_filesize_archives: "Arv inn svartelisten/hvitelisten for filstørrelse til innholdet i arkiver? False = Nei (behandle alt som grålistet); True = Ja [Standardverdi]."
 config_files_filesize_limit: "Filstørrelsesgrense i KB. 65536 = 64MB [Standardverdi]; 0 = Ingen grense (behandle alt som grålistet). Enhver (positiv) numerisk verdi akseptert. Dette kan være nyttig når PHP-konfigurasjonen begrenser mengden minne en prosess kan inneholde eller hvis PHP-konfigurasjonen din begrenser filstørrelse for opplastinger."
 config_files_filesize_response: "Hva gjør du med filer som overskrider filstørrelsesgrensen (hvis en finnes). False = Behandle som hvitelistet; True = Behandle som svartelistet [Standardverdi]."
@@ -93,7 +93,7 @@ config_general_scan_log_serialized: "Filnavn for fil å logge alle skanneresulta
 config_general_statistics: "Spor phpMussel bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av phpMussel. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
-config_general_timezone: "Din tidssone."
+config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_heuristic: "Konfigurasjon for heuristisk analyse."
 config_heuristic_threshold: "Noen phpMussel-signaturer er ment å identifisere mistenkelige og potensielt skadelige indikatorer i filer, uten i seg selv å identifisere disse filene som direkte skadelige. Denne terskelverdien forteller phpMussel den maksimale tillatte vekten før du flagger disse filene som skadelig. Definisjonen av vekt i denne sammenhengen er det totale antallet mistenkelige og potensielt skadelige indikatorer som er identifisert. Som standard blir denne verdien satt til 3. En lavere verdi vil generelt resultere i en høyere forekomst av falske positiver, men et høyere antall skadelige filer blir flagget, mens en høyere verdi generelt vil føre til en lavere forekomst av falske positiver, men at et lavere antall skadelige filer blir flagget. Det er vanligvis best å forlate denne verdien som standard med mindre du opplever problemer relatert til den."
@@ -101,7 +101,7 @@ config_legal: "Konfigurasjon for juridiske krav."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, etc."
-config_signatures_active: "En liste over aktive signaturfiler, avgrenset av komma."
+config_signatures_active: "En liste over aktive signaturfiler, avgrenset av komma. Merk: Signaturfiler må først installeres før du kan aktivere dem. For at testfilene skal fungere korrekt, må signaturfilene installeres og aktiveres."
 config_signatures_detect_adware: "Bør phpMussel behandle signaturer for å oppdage adware? False = Nei; True = Ja [Standardverdi]."
 config_signatures_detect_deface: "Bør phpMussel behandle signaturer for å oppdage defacements og defacers? False = Nei; True = Ja [Standardverdi]."
 config_signatures_detect_encryption: "Bør phpMussel oppdage og blokkere krypterte filer? False = Nei; True = Ja [Standardverdi]."
@@ -228,6 +228,7 @@ label_sanity_check: "Sikkerhetskontroll: "
 label_sapi: "SAPI brukt:"
 label_scanned_objects: "Objekter skannet"
 label_scanned_uploads: "Opplastinger skannet"
+label_see_also: "Se også:"
 label_show: "Vis"
 label_size_in_quarantine: "Størrelse i karantene: "
 label_stable: "Siste stabile:"

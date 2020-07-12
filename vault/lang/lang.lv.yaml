@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2020.07.04).
+# This file: Latvian language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Neizdevās (trūkst nepieciešamo paplašinājumu)!"
 scan_filename_manipulation_detected: "Atrasts manipulācijas ar faila vārdu"
 scan_missing_filename: "Trūkst faila nosaukuma"
 scan_no_problems_found: "Netika atrasta neviena problēma."
-scan_not_archive: "Neizdevās (tukšs vai nav arhīvs)!"
 scan_reading: "Lasu tagad"
 scan_signature_file_missing: "Trūkst paraksta faila"
 scan_tampering: "Atrasts potenciāli bīstams faila viltojums"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2020.07.04).
+# This file: Urdu language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -93,7 +93,6 @@ scan_extensions_missing: "ناکام ہوگیا (ضروری ملانے کے لا
 scan_filename_manipulation_detected: "فائل کا نام ہیرا پھیری کے پتہ"
 scan_missing_filename: "لاپتہ فائل کا نام"
 scan_no_problems_found: "کوئی مسئلہ نہیں پایا."
-scan_not_archive: "ناکام ہوگیا (خالی یا ایک آرکائیو نہیں)!"
 scan_reading: "پڑھنا"
 scan_signature_file_missing: "دستخط کی فائل لاپتہ"
 scan_tampering: "پتہ چلنے پر ممکنہ طور پر خطرناک فائل چھیڑچھاڑ"

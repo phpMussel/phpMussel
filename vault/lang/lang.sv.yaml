@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2020.07.04).
+# This file: Swedish language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Misslyckades (saknas obligatoriska tillägg)!"
 scan_filename_manipulation_detected: "Filnamn manipulation upptäckt"
 scan_missing_filename: "Filnamn saknas"
 scan_no_problems_found: "Inga problem hittades."
-scan_not_archive: "Misslyckades (tomt eller inte ett arkiv)!"
 scan_reading: "Läser"
 scan_signature_file_missing: "Signaturfil saknas"
 scan_tampering: "Upptäckt potentiellt farligt fil manipulering"
