@@ -629,6 +629,123 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
         );
     }
+
+    /** Where to find remote version information? */
+    $phpMussel['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
+
+    /** Fetch remote phpMussel version information and cache it if necessary. */
+    if (($phpMussel['Remote-YAML-phpMussel'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'phpmussel-ver.yaml')) === false) {
+        $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', [], 8);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 86400);
+    }
+
+    /** Major version notice. */
+    $phpMussel['MajorVersionNotice'] = '';
+
+    /** Process remote phpMussel version information. */
+    if (empty($phpMussel['Remote-YAML-phpMussel'])) {
+
+        /** phpMussel latest stable. */
+        $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['L10N']->getString('response_error');
+
+        /** phpMussel latest unstable. */
+        $phpMussel['FE']['info_phpmussel_unstable'] = $phpMussel['L10N']->getString('response_error');
+
+        /** phpMussel branch latest stable. */
+        $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['L10N']->getString('response_error');
+    } else {
+        $phpMussel['Remote-YAML-phpMussel-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-phpMussel']))->Data;
+
+        /** phpMussel latest stable. */
+        if (empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable'])) {
+            $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['L10N']->getString('response_error');
+        } else {
+            $phpMussel['FE']['MajorVersionCurrent'] = (int)substr(
+                $phpMussel['ScriptVersion'],
+                0,
+                strpos($phpMussel['ScriptVersion'], '.') ?: strlen($phpMussel['ScriptVersion'])
+            );
+            $phpMussel['FE']['MajorVersionLatest'] = (int)substr(
+                $phpMussel['Remote-YAML-phpMussel-Array']['Stable'],
+                0,
+                strpos($phpMussel['Remote-YAML-phpMussel-Array']['Stable'], '.') ?: strlen($phpMussel['Remote-YAML-phpMussel-Array']['Stable'])
+            );
+            if (
+                $phpMussel['FE']['MajorVersionCurrent'] < $phpMussel['FE']['MajorVersionLatest'] &&
+                !empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable Minimum PHP Required']) &&
+                is_string($phpMussel['Remote-YAML-phpMussel-Array']['Stable Minimum PHP Required']) &&
+                version_compare(PHP_VERSION, $phpMussel['Remote-YAML-phpMussel-Array']['Stable Minimum PHP Required'], '>=')
+            ) {
+                $phpMussel['MajorVersionNotice'] = sprintf(
+                    $phpMussel['L10N']->getString('notice_new_major_version'),
+                    'phpMussel v' . $phpMussel['Remote-YAML-phpMussel-Array']['Stable'],
+                    $phpMussel['ScriptIdent']
+                );
+            }
+            $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['Remote-YAML-phpMussel-Array']['Stable'];
+        }
+
+        /** phpMussel latest unstable. */
+        $phpMussel['FE']['info_phpmussel_unstable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Unstable']) ?
+            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Unstable'];
+
+        /** phpMussel branch latest stable. */
+        if ($phpMussel['ThisBranch'] = substr($phpMussel['ScriptVersion'], 0, strpos($phpMussel['ScriptVersion'], '.') ?: 1)) {
+            $phpMussel['ThisBranch'] = 'v' . ($phpMussel['ThisBranch'] ?: 1);
+            if (empty($phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'])) {
+                $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['L10N']->getString('response_error');
+            } else {
+                $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
+            }
+        } else {
+            $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
+        }
+    }
+
+    /** Cleanup. */
+    unset($phpMussel['Remote-YAML-phpMussel-Array'], $phpMussel['Remote-YAML-phpMussel']);
+
+    /** Fetch remote PHP version information and cache it if necessary. */
+    if (($phpMussel['Remote-YAML-PHP'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'php-ver.yaml')) === false) {
+        $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', [], 8);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 86400);
+    }
+
+    /** Process remote PHP version information. */
+    if (empty($phpMussel['Remote-YAML-PHP'])) {
+
+        /** PHP latest stable. */
+        $phpMussel['FE']['info_php_stable'] = $phpMussel['L10N']->getString('response_error');
+
+        /** PHP latest unstable. */
+        $phpMussel['FE']['info_php_unstable'] = $phpMussel['L10N']->getString('response_error');
+
+        /** PHP branch latest stable. */
+        $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
+    } else {
+        $phpMussel['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-PHP']))->Data;
+
+        /** PHP latest stable. */
+        $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
+            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Stable'];
+
+        /** PHP latest unstable. */
+        $phpMussel['FE']['info_php_unstable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Unstable']) ?
+            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Unstable'];
+
+        /** PHP branch latest stable. */
+        if ($phpMussel['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
+            $phpMussel['ThisBranch'] .= substr(PHP_VERSION, strlen($phpMussel['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($phpMussel['ThisBranch'])) ?: 0);
+            $phpMussel['ThisBranch'] = 'php' . $phpMussel['ThisBranch'];
+            $phpMussel['FE']['info_php_branch'] = empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
+                $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
+        } else {
+            $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
+        }
+    }
+
+    /** Cleanup. */
+    unset($phpMussel['Remote-YAML-PHP-Array'], $phpMussel['Remote-YAML-PHP'], $phpMussel['ThisBranch'], $phpMussel['RemoteVerPath']);
 }
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
@@ -695,92 +812,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
         '<a href="https://bitbucket.org/Maikuolan/phpmussel" hreflang="en-US" target="_blank" rel="noopener external">phpMussel@Bitbucket</a>',
         '<a href="https://sourceforge.net/projects/phpmussel/" hreflang="en-US" target="_blank" rel="noopener external">phpMussel@SourceForge</a>'
     ]);
-
-    /** Where to find remote version information? */
-    $phpMussel['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
-
-    /** Fetch remote phpMussel version information and cache it if necessary. */
-    if (($phpMussel['Remote-YAML-phpMussel'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'phpmussel-ver.yaml')) === false) {
-        $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', [], 8);
-        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 86400);
-    }
-
-    /** Process remote phpMussel version information. */
-    if (empty($phpMussel['Remote-YAML-phpMussel'])) {
-
-        /** phpMussel latest stable. */
-        $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['L10N']->getString('response_error');
-
-        /** phpMussel latest unstable. */
-        $phpMussel['FE']['info_phpmussel_unstable'] = $phpMussel['L10N']->getString('response_error');
-
-        /** phpMussel branch latest stable. */
-        $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['L10N']->getString('response_error');
-    } else {
-        $phpMussel['Remote-YAML-phpMussel-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-phpMussel']))->Data;
-
-        /** phpMussel latest stable. */
-        $phpMussel['FE']['info_phpmussel_stable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable']) ?
-            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Stable'];
-
-        /** phpMussel latest unstable. */
-        $phpMussel['FE']['info_phpmussel_unstable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Unstable']) ?
-            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Unstable'];
-
-        /** phpMussel branch latest stable. */
-        if ($phpMussel['ThisBranch'] = substr($phpMussel['FE']['ScriptVersion'], 0, strpos($phpMussel['FE']['ScriptVersion'], '.') ?: 0)) {
-            $phpMussel['ThisBranch'] = 'v' . ($phpMussel['ThisBranch'] ?: 1);
-            $phpMussel['FE']['info_phpmussel_branch'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
-                $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
-        } else {
-            $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
-        }
-    }
-
-    /** Cleanup. */
-    unset($phpMussel['Remote-YAML-phpMussel-Array'], $phpMussel['Remote-YAML-phpMussel']);
-
-    /** Fetch remote PHP version information and cache it if necessary. */
-    if (($phpMussel['Remote-YAML-PHP'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'php-ver.yaml')) === false) {
-        $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', [], 8);
-        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 86400);
-    }
-
-    /** Process remote PHP version information. */
-    if (empty($phpMussel['Remote-YAML-PHP'])) {
-
-        /** PHP latest stable. */
-        $phpMussel['FE']['info_php_stable'] = $phpMussel['L10N']->getString('response_error');
-
-        /** PHP latest unstable. */
-        $phpMussel['FE']['info_php_unstable'] = $phpMussel['L10N']->getString('response_error');
-
-        /** PHP branch latest stable. */
-        $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
-    } else {
-        $phpMussel['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-PHP']))->Data;
-
-        /** PHP latest stable. */
-        $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
-            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Stable'];
-
-        /** PHP latest unstable. */
-        $phpMussel['FE']['info_php_unstable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Unstable']) ?
-            $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Unstable'];
-
-        /** PHP branch latest stable. */
-        if ($phpMussel['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
-            $phpMussel['ThisBranch'] .= substr(PHP_VERSION, strlen($phpMussel['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($phpMussel['ThisBranch'])) ?: 0);
-            $phpMussel['ThisBranch'] = 'php' . $phpMussel['ThisBranch'];
-            $phpMussel['FE']['info_php_branch'] = empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
-                $phpMussel['L10N']->getString('response_error') : $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
-        } else {
-            $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
-        }
-    }
-
-    /** Cleanup. */
-    unset($phpMussel['Remote-YAML-PHP-Array'], $phpMussel['Remote-YAML-PHP'], $phpMussel['ThisBranch'], $phpMussel['RemoteVerPath']);
 
     /** Extension availability. */
     $phpMussel['FE']['Extensions'] = [];
@@ -1611,6 +1642,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
 /** Updates. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['FE']['Permissions'] === 1 || ($phpMussel['FE']['Permissions'] === 3 && $phpMussel['FE']['CronMode']))) {
+
+    /** Include major version notice (if relevant). */
+    if ($phpMussel['MajorVersionNotice']) {
+        $phpMussel['FE']['state_msg'] .= $phpMussel['MajorVersionNotice'] . '<hr />';
+    }
 
     $phpMussel['FE']['UpdatesFormTarget'] = 'phpmussel-page=updates';
     $phpMussel['FE']['UpdatesFormTargetControls'] = '';

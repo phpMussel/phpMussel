@@ -17,6 +17,9 @@ Detailed version release guidelines for phpMussel can be found at:
   performance of the scan process, but was adding some small amount of
   pointless and unwanted overhead to it; Fixed.
 
+- [2020.07.12; Maikuolan]: Added a major version checker to the front-end
+  updates page.
+
 === Version/Release 2.1.5 ===
 PATCH RELEASE.
 
