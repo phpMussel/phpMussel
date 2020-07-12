@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data (last modified: 2020.07.04).
+# This file: Chinese (simplified) language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -88,7 +88,6 @@ scan_extensions_missing: "失败（失踪必需的扩展）！"
 scan_filename_manipulation_detected: "文件名操控检测"
 scan_missing_filename: "文件名是失踪"
 scan_no_problems_found: "没有任何问题发现。"
-scan_not_archive: "失败（空或不是存档）！"
 scan_reading: "阅读"
 scan_signature_file_missing: "签名文件是失踪"
 scan_tampering: "检测潜在的危险文件篡改"

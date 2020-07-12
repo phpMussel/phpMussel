@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2020.07.04).
+# This file: Japanese language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -90,7 +90,6 @@ scan_extensions_missing: "失敗（要求のあった拡張子がありません
 scan_filename_manipulation_detected: "ファイルネイム不正操作が検出されました"
 scan_missing_filename: "ファイル名が存在しません"
 scan_no_problems_found: "問題は検出されませんでした。"
-scan_not_archive: "失敗（中身が存在しないかアーカイブではありません）！"
 scan_reading: "読み込んでいます"
 scan_signature_file_missing: "シグネチャ・ファイルがありません"
 scan_tampering: "検出された潜在的に危険なファイル改ざん"

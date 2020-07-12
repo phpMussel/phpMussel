@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2020.07.04).
+# This file: Korean language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -89,7 +89,6 @@ scan_extensions_missing: "실패 (요청한 확장자가 없습니다)!"
 scan_filename_manipulation_detected: "파일 네이무 조작이 감지되었습니다"
 scan_missing_filename: "파일 이름이 존재하지 않습니다"
 scan_no_problems_found: "문제는 발견되지 않았습니다."
-scan_not_archive: "실패 (내용이 없거나 보관하지 않습니다)!"
 scan_reading: "로드 중입니다"
 scan_signature_file_missing: "서명 파일이 없습니다"
 scan_tampering: "검색된 잠재적으로 위험한 파일 변조"

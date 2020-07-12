@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2020.07.11).
+ * This file: Archive handler (last modified: 2020.07.12).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -316,7 +316,7 @@ class TarHandler extends ArchiveHandler
     {
         $Name = $this->EntryName();
         $Separator = substr($Name, -1, 1);
-        return (($Separator === "\\" || $Separator === '/') && $this->EntryActualSize === 0);
+        return (($Separator === "\\" || $Separator === '/') && $this->EntryActualSize() === 0);
     }
 
     /**

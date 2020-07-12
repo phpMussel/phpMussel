@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2020.07.04).
+# This file: English language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -99,7 +99,6 @@ scan_extensions_missing: "Failed (missing required extensions)!"
 scan_filename_manipulation_detected: "Filename manipulation detected"
 scan_missing_filename: "Missing filename"
 scan_no_problems_found: "No problems found."
-scan_not_archive: "Failed (empty or not an archive)!"
 scan_reading: "Reading"
 scan_signature_file_missing: "Signature file missing"
 scan_tampering: "Detected potentially dangerous file tampering"

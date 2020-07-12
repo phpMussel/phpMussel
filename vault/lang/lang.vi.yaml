@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2020.07.04).
+# This file: Vietnamese language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Thất bại (phần nối cần thiết bị thiểu)
 scan_filename_manipulation_detected: "Sự thay đổi của tên tập tin được phát hiện"
 scan_missing_filename: "Tên tập tin bị thiểu"
 scan_no_problems_found: "Không tiềm được vấn đề."
-scan_not_archive: "Thất bại (tróng hoạc không phải trong kho lưu trữ)!"
 scan_reading: "Đang đọc"
 scan_signature_file_missing: "Tập tin quan trọng bị mất"
 scan_tampering: "Tập tin có khả năng gây nguy hiểm được phát hiện"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2020.07.04).
+# This file: Russian language data (last modified: 2020.07.11).
 ##/
 
 # Language settings.
@@ -92,7 +92,6 @@ scan_extensions_missing: "Не удалось (отсутствуют необх
 scan_filename_manipulation_detected: "Обнаружена манипуляция имени файла"
 scan_missing_filename: "Отсутствует имя файла"
 scan_no_problems_found: "Проблемы не найдены."
-scan_not_archive: "Не удалось (пуст или не архив)!"
 scan_reading: "Чтение"
 scan_signature_file_missing: "Отсутствует сигнатур файла"
 scan_tampering: "Обнаружена потенциально опасная модификация файла"

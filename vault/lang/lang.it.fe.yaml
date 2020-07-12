@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2020.06.14).
+# This file: Italian language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -51,7 +51,7 @@ config_compatibility_only_allow_images: "Se impostato su true, tutti i file rile
 config_experimental: "Instabile/Sperimentale!"
 config_files: "I dettagli su come gestire i file durante la scansione."
 config_files_block_encrypted_archives: "Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. False = No; True = Sì [Predefinito]."
-config_files_check_archives: "Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito]."
+config_files_check_archives: "Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito]. Supportato: Zip (richiede libzip), Tar, Rar (richiede l'estensione rar)."
 config_files_filesize_archives: "Eredita file dimensione limite blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito]."
 config_files_filesize_limit: "File dimensione limite in KB. 65536 = 64MB [Predefinito]; 0 = Nessun limite (sempre sul greylist), qualsiasi (positivo) numerico valore accettato. Questo può essere utile quando la configurazione di PHP limita la quantità di memoria che un processo può contenere o se i configurazione ha limitato la dimensione dei file caricamenti."
 config_files_filesize_response: "Cosa fare con i file che superano il file dimensione limite (se esistente). False = Whitelist; True = Blacklist [Predefinito]."
@@ -94,7 +94,7 @@ config_general_scan_log_serialized: "Il nome del file per registrare tutti i ris
 config_general_statistics: "Monitorare le statistiche di utilizzo di phpMussel? True = Sì; False = No [Predefinito]."
 config_general_timeFormat: "Il formato della data/ora di notazione usata da phpMussel. Ulteriori opzioni possono essere aggiunti su richiesta."
 config_general_timeOffset: "Fuso orario offset in minuti."
-config_general_timezone: "Il vostro fuso orario."
+config_general_timezone: "Questo è usato per specificare il fuso orario da usare (per esempio, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ecc). Specifica "SYSTEM" per consentire a PHP di gestirlo automaticamente."
 config_general_truncate: "Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in B/KB/MB/GB/TB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0KB disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente."
 config_heuristic: "Configurazione per analisi euristica."
 config_heuristic_threshold: "Ci sono particolare firme di phpMussel che sono destinato a identificare sospetti e potenzialmente maligno qualità dei file che vengono essere caricati senza in sé identificando i file che vengono essere caricati in particolare ad essere maligno. Questo "threshold" (soglia) valore dice phpMussel cosa che il totale massimo peso di sospetti e potenzialmente maligno qualità dei file che vengono essere caricati che è ammissibile è prima che quei file devono essere contrassegnati come maligno. La definizione di peso in questo contesto è il totale numero di sospetti e potenzialmente maligno qualità identificato. Per predefinito, questo valore viene impostato su 3. Un inferiore valore generalmente sarà risultare di una maggiore presenza di falsi positivi ma una maggior numero di file essere contrassegnato come maligno, mentre una maggiore valore generalmente sarà risultare di un inferiore presenza di falsi positivi ma un inferiore numero di file essere contrassegnato come maligno. È generalmente meglio di lasciare questo valore a suo predefinito a meno che si incontrare problemi ad esso correlati."
@@ -102,7 +102,7 @@ config_legal: "Configurazione per requisiti legali."
 config_legal_privacy_policy: "L'indirizzo di una politica sulla privacy pertinente da visualizzare nel piè di pagina delle pagine generate. Specificare un URL, o lasciare vuoto per disabilitare."
 config_legal_pseudonymise_ip_addresses: "Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì [Predefinito]; False = No."
 config_signatures: "Configurazione per firme, file di firma, ecc."
-config_signatures_Active: "Un elenco dei file di firme attivi, delimitati da virgole."
+config_signatures_Active: "Un elenco dei file di firme attivi, delimitati da virgole. Nota: Prima di poter essere attivati, è necessario installare i file delle firme. Affinché i file di test funzionino correttamente, i file delle firme devono essere installati e attivati."
 config_signatures_detect_adware: "Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No; True = Sì [Predefinito]."
 config_signatures_detect_deface: "Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? False = No; True = Sì [Predefinito]."
 config_signatures_detect_encryption: "Dovrebbe phpMussel rilevare e bloccare i file crittografati? False = No; True = Sì [Predefinito]."
@@ -229,6 +229,7 @@ label_sanity_check: "Controllo sanitario: "
 label_sapi: "SAPI utilizzata:"
 label_scanned_objects: "Oggetti scansionati"
 label_scanned_uploads: "Caricamenti scansionati"
+label_see_also: "Guarda anche:"
 label_show: "Mostrare"
 label_size_in_quarantine: "Dimensione in quarantena: "
 label_stable: "Più recente stabile:"

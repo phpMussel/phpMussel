@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2020.06.14).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -51,7 +51,7 @@ config_compatibility_only_allow_images: "设置为true时，扫描仪遇到的�
 config_experimental: "不稳定/实验！"
 config_files: "在扫描过程中如何处理文件。"
 config_files_block_encrypted_archives: "检测和受阻加密的存档吗？​因为phpMussel是不能够扫描加密的存档内容，​它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，​杀毒扫描仪和其他这样的保护。​指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。​False（假）=不受阻；True（真）=受阻【默认】。"
-config_files_check_archives: "尝试匹配存档内容吗？​False（假）=不匹配；True（真）=匹配【默认】。"
+config_files_check_archives: "尝试匹配存档内容吗？​False（假）=不匹配；True（真）=匹配【默认】。 已支持：Zip（需要libzip），Tar，Rar（需要rar扩展名）。"
 config_files_filesize_archives: "继承文件大小黑名单/白名单在存档内容吗？​False（假）=不继承（刚灰名单一切）；True（真）=继承【默认】。"
 config_files_filesize_limit: "文件大小限在KB。​65536 = 64MB【默认】，​0 = 没有限（始终灰名单），​任何正数值接受。​这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。"
 config_files_filesize_response: "如何处理文件超过文件大小限（如果存在）。​False（假）=白名单；True（真）=黑名单【默认】。"
@@ -94,7 +94,7 @@ config_general_scan_log_serialized: "文件为记录在所有扫描结果（它�
 config_general_statistics: "跟踪phpMussel使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。"
 config_general_timeFormat: "phpMussel使用的日期符号格式。​可根据要求增加附加选项。"
 config_general_timeOffset: "时区偏移量（分钟）。"
-config_general_timezone: "您的时区。"
+config_general_timezone: "这用于指定要使用的时区​（例如，Africa/Cairo，America/New_York，Asia/Tokyo，Australia/Perth，Europe/Berlin，Pacific/Guam，等等）。​指定“SYSTEM”使PHP自动为您处理。"
 config_general_truncate: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
 config_heuristic: "用于启发式分析的配置。"
 config_heuristic_threshold: "有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。​这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。​定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。​作为默认，​这个数值将会设置作为3。​一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，​而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。​它是通常最好忽略这个数值除非您遇到关联问题。"
@@ -102,7 +102,7 @@ config_legal: "法律要求的配置。"
 config_legal_privacy_policy: "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。"
 config_legal_pseudonymise_ip_addresses: "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。"
 config_signatures: "签名，签名文件，等的配置。"
-config_signatures_Active: "活性签名文件的列表，​以逗号分隔。"
+config_signatures_Active: "活性签名文件的列表，​以逗号分隔。​注意：首先必须安装签名文件，然后才能激活它们。​为了使测试文件正常工作，必须安装并激活签名文件。"
 config_signatures_detect_adware: "phpMussel应该使用签名为广告软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。"
 config_signatures_detect_deface: "phpMussel应该使用签名为污损和污损软件检测吗？​False（假）=不检查，​True（真）=检查【默认】。"
 config_signatures_detect_encryption: "phpMussel应该检测并阻止加密的文件吗？​False（假）=不检查，​True（真）=检查【默认】。"
@@ -229,6 +229,7 @@ label_sanity_check: "安全检查："
 label_sapi: "目前使用SAPI："
 label_scanned_objects: "对象已扫描"
 label_scanned_uploads: "上传已扫描"
+label_see_also: "也可以看看："
 label_show: "显示"
 label_size_in_quarantine: "大小在检疫："
 label_stable: "最新稳定："

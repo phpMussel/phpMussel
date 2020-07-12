@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.06.14).
+# This file: English language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -51,7 +51,7 @@ config_compatibility_only_allow_images: "When set to true, any files encountered
 config_experimental: "Unstable/Experimental!"
 config_files: "The specifics of how to handle files when scanning."
 config_files_block_encrypted_archives: "Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default]."
-config_files_check_archives: "Attempt to check the contents of archives? False = Don't check; True = Check [Default]."
+config_files_check_archives: "Attempt to check the contents of archives? False = Don't check; True = Check [Default]. Supported: Zip (requires libzip), Tar, Rar (requires the rar extension)."
 config_files_filesize_archives: "Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default]."
 config_files_filesize_limit: "Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always greylisted). Any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads."
 config_files_filesize_response: "What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Default]."
@@ -94,7 +94,7 @@ config_general_scan_log_serialized: "Filename of file to log all scanning result
 config_general_statistics: "Track phpMussel usage statistics? True = Yes; False = No [Default]."
 config_general_timeFormat: "The date/time notation format used by phpMussel. Additional options may be added upon request."
 config_general_timeOffset: "Timezone offset in minutes."
-config_general_timezone: "Your timezone."
+config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
 config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
 config_heuristic: "Configuration for heuristic analysis."
 config_heuristic_threshold: "Some phpMussel signatures are intended to identify suspicious and potentially malicious indicators in files, without in themselves identifying those files as being malicious directly. This "threshold" value tells phpMussel the maximum weight allowed before flagging those files as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious indicators identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it."
@@ -102,7 +102,7 @@ config_legal: "Configuration for legal requirements."
 config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
 config_signatures: "Configuration for signatures, signature files, etc."
-config_signatures_Active: "A list of the active signature files, delimited by commas."
+config_signatures_Active: "A list of the active signature files, delimited by commas. Note: Signature files must firstly be installed, before you can activate them. For the test files to work correctly, the signature files must be installed and activated. Note: Signature files must first be installed, before you can activate them."
 config_signatures_detect_adware: "Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default]."
 config_signatures_detect_deface: "Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default]."
 config_signatures_detect_encryption: "Should phpMussel detect and block encrypted files? False = No; True = Yes [Default]."
@@ -231,6 +231,7 @@ label_sanity_check: "Sanity check: "
 label_sapi: "SAPI used:"
 label_scanned_objects: "Objects scanned"
 label_scanned_uploads: "Uploads scanned"
+label_see_also: "See also:"
 label_show: "Show"
 label_size_in_quarantine: "Size in quarantine: "
 label_stable: "Latest stable:"

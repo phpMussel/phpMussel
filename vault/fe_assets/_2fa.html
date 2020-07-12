@@ -1,7 +1,7 @@
 <div class="login">
 <form action="?" method="POST" style="text-align:center">
   <h1>{header_login}</h1>
-  <div class="txtRd"><small>{tip_2fa_sent}</small><br /><br /></div>{state_msg}
+  <div class="txtRd"><small>{tip_2fa_sent}</small><br /><br />{state_msg}{2fa_status_spacer}</div>
   <input id="2fa" name="2fa" type="text" placeholder="{field_2fa}" autocomplete="one-time-code" />
   <input name="phpmussel-form-target" type="hidden" value="2fa" /><br />
   <input type="submit" value="{field_confirm}" class="auto" /><br /><br />
