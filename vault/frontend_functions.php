@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.13).
+ * This file: Front-end functions file (last modified: 2020.07.14).
  */
 
 /**
@@ -715,6 +715,9 @@ $phpMussel['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$
  * @return bool True for when activable; False for when not activable.
  */
 $phpMussel['IsActivable'] = function (array &$Component): bool {
+    if (!isset($Component['Files'], $Component['Files']['To'], $Component['Files']['To'][0])) {
+        return false;
+    }
     return (!empty($Component['Files']['To'][0]) && substr($Component['Files']['To'][0], 0, 11) === 'signatures/');
 };
 
@@ -1903,7 +1906,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if ($Reactivate) {
+        if (!empty($Reactivate)) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }

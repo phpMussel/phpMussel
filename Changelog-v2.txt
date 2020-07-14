@@ -24,6 +24,9 @@ Detailed version release guidelines for phpMussel can be found at:
   incorrectly when dealing with non-ANSI data (i.e., when using languages
   other than English); Fixed.
 
+- [2020.07.13; Bug-fix; Maikuolan]: Possible problem found with IsActivable
+  when updating certain components via the front-end updates page; Fixed.
+
 === Version/Release 2.1.5 ===
 PATCH RELEASE.
 
