@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.07).
+ * This file: Functions file (last modified: 2020.07.16).
  */
 
 /**
@@ -1974,7 +1974,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
     /** Begin URL scanner. */
     if (
         isset($phpMussel['InstanceCache']['URL_Scanner']) ||
-        !empty($phpMussel['Config']['urlscanner']['lookup_hphosts']) ||
         !empty($phpMussel['Config']['urlscanner']['google_api_key'])
     ) {
         $phpMussel['LookupCount'] = 0;
@@ -2692,93 +2691,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
     if (isset($URLScanner) && !$Out) {
 
         $URLScanner['DomainsCount'] = count($URLScanner['DomainParts']);
-
-        /** Codeblock for performing hpHosts API lookups. */
-        if ($phpMussel['Config']['urlscanner']['lookup_hphosts'] && $URLScanner['DomainsCount']) {
-
-            /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
-            if (!isset($phpMussel['InstanceCache']['urlscanner_domains'])) {
-                $phpMussel['InstanceCache']['urlscanner_domains'] = $phpMussel['FetchCache']('urlscanner_domains');
-            }
-
-            $URLScanner['y'] = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
-            $URLScanner['ScriptIdentEncoded'] = urlencode($phpMussel['ScriptIdent']);
-            $URLScanner['classes'] = [
-                'EMD' => "\x1a\x82\x10\x1bXXX",
-                'EXP' => "\x1a\x82\x10\x16XXX",
-                'GRM' => "\x1a\x82\x10\x32XXX",
-                'HFS' => "\x1a\x82\x10\x32XXX",
-                'PHA' => "\x1a\x82\x10\x32XXX",
-                'PSH' => "\x1a\x82\x10\x31XXX"
-            ];
-            for ($i = 0; $i < $URLScanner['DomainsCount']; $i++) {
-                if (!empty($URLScanner['DomainPartsNoLookup'][$URLScanner['DomainParts'][$i]])) {
-                    continue;
-                }
-                if (
-                    $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
-                    $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
-                ) {
-                    if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
-                        if (!$flagged) {
-                            $phpMussel['killdata'] .= $sha256 . ':' . $StringLength . ':' . $OriginalFilename . "\n";
-                            $flagged = true;
-                        }
-                        $Out .= $lnap . sprintf(
-                            $phpMussel['L10N']->getString('_exclamation_final'),
-                            $phpMussel['L10N']->getString('too_many_urls')
-                        ) . "\n";
-                        $phpMussel['whyflagged'] .= sprintf(
-                            $phpMussel['L10N']->getString('_exclamation'),
-                            $phpMussel['L10N']->getString('too_many_urls') . ' (' . $OriginalFilenameSafe . ')'
-                        );
-                    }
-                    break;
-                }
-                $URLScanner['This'] = hash('md5', $URLScanner['DomainParts'][$i]) . ':' . strlen($URLScanner['DomainParts'][$i]) . ':';
-                while (substr_count($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This'])) {
-                    $URLScanner['Class'] =
-                        $phpMussel['substrbf']($phpMussel['substral']($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This']), ';');
-                    if (!substr_count($phpMussel['InstanceCache']['urlscanner_domains'], $URLScanner['This'] . ':' . $URLScanner['Class'] . ';')) {
-                        break;
-                    }
-                    $URLScanner['Expiry'] = (int)$phpMussel['substrbf']($URLScanner['Class'], ':');
-                    if ($URLScanner['Expiry'] > $phpMussel['Time']) {
-                        $URLScanner['Class'] = $phpMussel['substraf']($URLScanner['Class'], ':');
-                        if (!$URLScanner['Class']) {
-                            continue 2;
-                        }
-                        $URLScanner['Class'] = $phpMussel['vn_shorthand']($URLScanner['Class']);
-                        $phpMussel['Detected']($heur, $lnap, $URLScanner['Class'], $OriginalFilename, $OriginalFilenameSafe, $Out, $flagged, $md5, $StringLength);
-                    }
-                    $phpMussel['InstanceCache']['urlscanner_domains'] =
-                        str_ireplace($URLScanner['This'] . $URLScanner['Class'] . ';', '', $phpMussel['InstanceCache']['urlscanner_domains']);
-                }
-                $URLScanner['req'] =
-                    'v=' . $URLScanner['ScriptIdentEncoded'] .
-                    '&s=' . $URLScanner['DomainParts'][$i] .
-                    '&class=true';
-                $URLScanner['req_result'] = $phpMussel['Request'](
-                    'https://verify.hosts-file.net/?' . $URLScanner['req'],
-                    ['v' => $URLScanner['ScriptIdentEncoded'], 's' => $URLScanner['DomainParts'][$i], 'Class' => true],
-                    12
-                );
-                $phpMussel['LookupCount']++;
-                if (substr($URLScanner['req_result'], 0, 6) === 'Listed') {
-                    $URLScanner['Class'] = substr($URLScanner['req_result'], 7, 3);
-                    $URLScanner['Class'] = isset($URLScanner['classes'][$URLScanner['Class']]) ?
-                        $URLScanner['classes'][$URLScanner['Class']] : "\x1a\x82\x10\x3fXXX";
-                    $phpMussel['InstanceCache']['urlscanner_domains'] .=
-                        $URLScanner['This'] .
-                        $URLScanner['y'] . ':' .
-                        $URLScanner['Class'] . ';';
-                    $URLScanner['Class'] = $phpMussel['vn_shorthand']($URLScanner['Class']);
-                    $phpMussel['Detected']($heur, $lnap, $URLScanner['Class'], $OriginalFilename, $OriginalFilenameSafe, $Out, $flagged, $md5, $StringLength);
-                }
-                $phpMussel['InstanceCache']['urlscanner_domains'] .= $URLScanner['Domains'][$i] . $URLScanner['y'] . ':;';
-            }
-            $phpMussel['SaveCache']('urlscanner_domains', $URLScanner['y'], $phpMussel['InstanceCache']['urlscanner_domains']);
-        }
 
         $URLScanner['URLsCount'] = count($URLScanner['URLParts']);
 

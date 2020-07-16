@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2020.07.08).
+# This file: Configuration defaults file (last modified: 2020.07.16).
 ##/
 
 Config Defaults:
@@ -265,14 +265,12 @@ Config Defaults:
    default: false
   disabled_channels:
    type: "checkbox"
-   default: "VirusTotal_HTTP,hpHosts_HTTP"
+   default: "VirusTotal_HTTP"
    choices:
     GitHub: "GitHub"
     BitBucket: "BitBucket"
     VirusTotal_HTTPS: "VirusTotal (HTTPS)"
     VirusTotal_HTTP: "VirusTotal (HTTP)"
-    hpHosts_HTTPS: "hpHosts (HTTPS)"
-    hpHosts_HTTP: "hpHosts (HTTP)"
    value_preg_filter:
     "~\s~": ""
  signatures:
@@ -437,11 +435,6 @@ Config Defaults:
    default: 1
    preview: "minutes"
  urlscanner:
-  lookup_hphosts:
-   type: "bool"
-   default: true
-   See also:
-    hosts-file.net: "https://hosts-file.net/"
   google_api_key:
    type: "string"
    default: ""

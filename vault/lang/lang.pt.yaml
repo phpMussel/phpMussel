@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2020.07.11).
+# This file: Portuguese language data (last modified: 2020.07.13).
 ##/
 
 # Language settings.
@@ -97,8 +97,8 @@ scan_no_problems_found: "Não problemas encontrados."
 scan_reading: "Lendo"
 scan_signature_file_missing: "Assinatura arquivo faltando"
 scan_tampering: "Detectado potencialmente perigoso arquivo adulteração"
-scan_unauthorised_upload: "Não autorizada arquivo carregar manipulação detectado"
-scan_unauthorised_upload_or_misconfig: "Não autorizada arquivo carregar manipulação ou mau configuração detectado! "
+scan_unauthorised_upload: "Não autorizada arquivo manipulação de carregamento detectado"
+scan_unauthorised_upload_or_misconfig: "Não autorizada arquivo manipulação de carregamento ou mau configuração detectado! "
 started: "Começado"
 too_many_files_in_archive: "Demasiados arquivos no arquivo compactado"
 too_many_urls: "Demasiados URLs"

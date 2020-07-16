@@ -192,7 +192,7 @@ statistics=false
 ; This can be used to prevent phpMussel from using particular channels when
 ; sending requests (e.g., when updating, when fetching component metadata,
 ; etc).
-disabled_channels='VirusTotal_HTTP,hpHosts_HTTP'
+disabled_channels='VirusTotal_HTTP'
 
 
 [signatures]
@@ -520,9 +520,6 @@ vt_quota_time=1
 
 [urlscanner]
 ; Configuration for the URL scanner.
-
-; Enables API lookups to the hpHosts API when set to true.
-lookup_hphosts=true
 
 ; Enables API lookups to the Google Safe Browsing API when the necessary API
 ; key is defined.

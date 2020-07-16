@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.07.08).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -132,7 +132,6 @@ config_template_data_theme: "用於phpMussel的默認主題。"
 config_urlscanner: "URL掃描程序的配置。"
 config_urlscanner_cache_time: "多長時間（以秒為單位）應API結果被緩存？​默認是3600秒（1小時）。"
 config_urlscanner_google_api_key: "激活Google Safe Browsing API當API密鑰是設置。"
-config_urlscanner_lookup_hphosts: "激活hpHosts API當設置<code>true</code>。"
 config_urlscanner_maximum_api_lookups: "最大數值API請求來執行每個掃描迭代。​額外API請求將增加的總要求完成時間每掃描迭代，​所以，​您可能想來規定一個限以加快全掃描過程。​當設置<code>0</code>，​沒有最大數值將會應用的。​設置<code>10</code>作為默認。"
 config_urlscanner_maximum_api_lookups_response: "該什麼辦如果最大數值API請求已超過？​False（假）=沒做任何事（繼續處理）【默認】；True（真）=標誌/受阻文件。"
 config_virustotal: "Virus Total整合的配置。"
@@ -306,7 +305,6 @@ response_login_username_field_empty: "用戶名輸入是空的！"
 response_login_wrong_endpoint: "錯誤的端點！"
 response_no: "不是"
 response_passed: "成功"
-response_possible_problem_found: "可能的問題發現。"
 response_rename_error: "無法改名！"
 response_restore_error_1: "無法恢復！損壞的文件！"
 response_restore_error_2: "無法恢復！不正確的隔離鑰匙！"
@@ -404,6 +402,7 @@ info_some_useful_links: |
            <li><a href="https://www.oschina.net/p/phpMussel" hreflang="zh-CN" rel="noopener noreferrer external">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – 各種附加功能。</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV的工具，資源，等等。</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
@@ -417,6 +416,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – PHP學習資源和討論。</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 有用的討論論壇關於惡意軟件。</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">其他有用的工具，資源，服務，等等</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.07.08).
+# This file: Portuguese language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -132,7 +132,6 @@ config_template_data_theme: "Tema padrão a ser usado para phpMussel."
 config_urlscanner: "Configuração para o analisador de URL."
 config_urlscanner_cache_time: "Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora)."
 config_urlscanner_google_api_key: "Permite o uso do Google Safe Browsing API quando a API chave necessária está definida."
-config_urlscanner_lookup_hphosts: "Permite o uso do hpHosts API quando definido para true."
 config_urlscanner_maximum_api_lookups: "Número máximo admissível de API solicitações para executar por cada iteração de análise. Porque cada API solicitação adicional irá acrescentar ao tempo total necessário para completar cada iteração de análise, você pode querer estipular uma limitação a fim de acelerar o processo de análise. Quando definido para 0, nenhuma número máximo admissível será aplicada. Definido para 10 por padrão."
 config_urlscanner_maximum_api_lookups_response: "Que fazer se o número máximo admissível de API solicitações está ultrapassado? False = Fazer nada (continuar o processamento) [Padrão]; True = Marcar/bloquear o arquivo."
 config_virustotal: "Configuração para integração do Virus Total."
@@ -258,7 +257,7 @@ link_siginfo: "Informações de Assinaturas"
 link_statistics: "Estatisticas"
 link_textmode: "Formatação de texto: <a href="%1$sfalse">Simples</a> – <a href="%1$strue">Chique</a>"
 link_updates: "Atualizações"
-link_upload_test: "Carregar Teste"
+link_upload_test: "Carregamento Teste"
 logs_logfile_doesnt_exist: "Arquivo de registro selecionado não existe!"
 logs_no_logfile_selected: "Não qualquer arquivo de registro selecionado."
 logs_no_logfiles_available: "Não quaisquer arquivos de registro disponíveis."
@@ -308,7 +307,6 @@ response_login_username_field_empty: "Entrada de nome de usuário vazio!"
 response_login_wrong_endpoint: "Ponto final errado!"
 response_no: "Não"
 response_passed: "Passado"
-response_possible_problem_found: "Possível problema encontrado."
 response_rename_error: "Falha ao renomear!"
 response_restore_error_1: "Falha ao restaurar! Arquivo corrompido!"
 response_restore_error_2: "Falha ao restaurar! Chave de quarentena incorreta!"
@@ -394,7 +392,7 @@ tip_siginfo: "Olá, {username}.<br />A página de informações de assinaturas f
 tip_statistics: "Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do phpMussel."
 tip_statistics_disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."
 tip_updates: "Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do phpMussel (o pacote principal, assinaturas, plugins, arquivos de L10N, etc)."
-tip_upload_test: "Olá, {username}.<br />A página de carregar teste contém um formulário padrão para carregando arquivos, permitindo que você teste se um arquivo seria normalmente bloqueado através phpMussel quando carregando."
+tip_upload_test: "Olá, {username}.<br />A página de carregamento teste contém um formulário padrão para carregando arquivos, permitindo que você teste se um arquivo seria normalmente bloqueado através phpMussel quando carregando."
 title_login: "Login"
 warning_signatures_1: "Atenção: Nenhum arquivo de assinaturas está ativo!"
 
@@ -407,6 +405,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Cria arquivos de assinatura para o phpMussel usando o banco de dados de assinaturas do ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Vários extras.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Ferramentas, recursos, etc para o ClamAV.</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – Página principal para ClamAV (ClamAV® ClamAV é um mecanismo de antivírus de código aberto para detectar trojans, vírus, malware e outras ameaças maliciosas).</li>
@@ -420,6 +419,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP recursos de aprendizagem e discussão.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Fórum de discussão focado em malware útil.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Base de dados de phishing utilizada pelo phpMussel URL scanner.</li>

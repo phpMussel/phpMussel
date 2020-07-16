@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.07.08).
+# This file: Korean language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -132,7 +132,6 @@ config_template_data_theme: "phpMussel에 사용할 기본 테마."
 config_urlscanner: "URL 스캐너 설정."
 config_urlscanner_cache_time: "API 조회의 결과를 얼마나 캐시할지 (초 단위)? 기본값은 3600 초 (한 시간)."
 config_urlscanner_google_api_key: "필요한 API 키가 정의되면, API는 Google Safe Browsing API 조회가 활성화됩니다."
-config_urlscanner_lookup_hphosts: "True로하면 API를 hpHosts 조회가 활성화됩니다."
 config_urlscanner_maximum_api_lookups: "스캔 반복의 API 조회의 최대 수입니다. API 조회 때마다 스캔 반복의 시간이 쌓여 버리므로, 스캔 처리 속도 향상을 위해 제한을두고 싶다고 생각할지도 모릅니다. 0은 제한 없음을 의미합니다. 기본값은 10입니다."
 config_urlscanner_maximum_api_lookups_response: "API 조회 횟수 제한을 초과했을 때의 대응입니다. <code>false</code> = 아무것도 / 처리를 계속한다 (Default / 기본 설정); <code>true</code> = 파일에 플래그를 지정 / 차단한다."
 config_virustotal: "Virus Total 통합 설정."
@@ -306,7 +305,6 @@ response_login_username_field_empty: "사용자 이름 입력이 비어 있습�
 response_login_wrong_endpoint: "잘못된 끝점!"
 response_no: "아니오"
 response_passed: "성공했습니다"
-response_possible_problem_found: "가능한 문제가 발견되었습니다."
 response_rename_error: "이름을 변경할 수 없습니다!"
 response_restore_error_1: "복원하지 못했습니다! 손상된 파일!"
 response_restore_error_2: "복원하지 못했습니다! 잘못된 격리 키!"
@@ -403,6 +401,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV 서명 데이터베이스를 사용하여 phpMussel 서명 파일을 만듭니다.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – 다양한 부가 기능.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
@@ -416,6 +415,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP 학습 자원과 토론.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
