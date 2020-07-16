@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.07.08).
+# This file: Swedish language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -131,7 +131,6 @@ config_template_data_theme: "Standardtema som ska användas för phpMussel."
 config_urlscanner: "Konfiguration för URL-skannern."
 config_urlscanner_cache_time: "Hur länge (i sekunder) ska resultaten av API-sökningar cachas för? Standard är 3600 sekunder (1 timme)."
 config_urlscanner_google_api_key: "Aktiverar API-sökningar till Googles Safe Browsing API när den nödvändiga API-nyckeln är definierad."
-config_urlscanner_lookup_hphosts: "Aktiverar API-sökningar till hpHosts API när det är true."
 config_urlscanner_maximum_api_lookups: "Maximalt antal tillåtna API-sökningar att utföra per enskild skanna iteration. Eftersom varje ytterligare API-sökning kommer att lägga till den totala tiden som krävs för att slutföra varje skanning-iteration, kanske du vill ange en begränsning för att påskynda den totala skanningsprocessen. När den är inställd på 0 kommer inget sådant maximalt tillåtet nummer att tillämpas. Ställ in på 10 som standard."
 config_urlscanner_maximum_api_lookups_response: "Vad gör man om det högsta tillåtna antalet API-sökningar överskrids? False = Gör ingenting (fortsätt att bearbeta) [Standard]; True = Flagga/blockera filen."
 config_virustotal: "Konfiguration för Virus Total integration."
@@ -305,7 +304,6 @@ response_login_username_field_empty: "Användarnamn fältet tomt!"
 response_login_wrong_endpoint: "Felaktig slutpunkt!"
 response_no: "Nej"
 response_passed: "Passerade"
-response_possible_problem_found: "Möjligt problem hittades."
 response_rename_error: "Misslyckades med att byta namn!"
 response_restore_error_1: "Restaurering misslyckades! Skadad fil!"
 response_restore_error_2: "Restaurering misslyckades! Felaktig karantännyckel!"
@@ -404,6 +402,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Olika extramaterial.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för ClamAV.</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
@@ -417,6 +416,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP lärande resurser och diskussion.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-databas som används av phpMussel URL-skannern.</li>

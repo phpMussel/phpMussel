@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.07.08).
+# This file: Japanese language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -131,7 +131,6 @@ config_template_data_theme: "phpMusselに使用するデフォルトテーマ。
 config_urlscanner: "URLスキャナーの設定。"
 config_urlscanner_cache_time: "ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？​デフォルトは３６００秒（一時間）。"
 config_urlscanner_google_api_key: "必要なＡＰＩ鍵が定義されれば、​ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。"
-config_urlscanner_lookup_hphosts: "Trueにすると、​APIのhpHostsルックアップが有効になります。"
 config_urlscanner_maximum_api_lookups: "スキャン反復におけるAPIルックアップの最大回数。​APIルックアップの度にスキャン反復の時間が積み重なってしまうので、​スキャン処理の速度向上のため、​制限を設けたいと考えるかもしれません。​０は制限なしを意味します。​デフォルトは１０です。"
 config_urlscanner_maximum_api_lookups_response: "APIルックアップの回数制限を超えた時の対応です。​<code>false</code>（偽） = 何もしない/処理を継続する（Default/デフォルト）；​<code>true</code>（真） = ファイルにフラグを付ける/ブロックする。"
 config_virustotal: "Virus Total統合の設定。"
@@ -305,7 +304,6 @@ response_login_username_field_empty: "ユーザー名入力は空です！"
 response_login_wrong_endpoint: "間違ったエンドポイント！"
 response_no: "いいえ"
 response_passed: "合格しました"
-response_possible_problem_found: "考えられる問題が見つかりました。"
 response_rename_error: "名前を変更できませんでした！"
 response_restore_error_1: "復元に失敗しました！​破損したファイル！"
 response_restore_error_2: "復元に失敗しました！​検疫キーが間違っています！"
@@ -402,6 +400,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – その他エキストラ。</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV用のツール、リソース、など。</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
@@ -415,6 +414,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – ＰＨＰ学習リソースとディスカッション。</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 便利なマルウェア対策ディスカッションフォーラム。</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">その他の便利なツール、リソース、サービス、など。</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>

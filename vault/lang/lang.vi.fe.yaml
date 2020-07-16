@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.07.08).
+# This file: Vietnamese language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -131,7 +131,6 @@ config_template_data_theme: "Chủ đề mặc định để sử dụng cho php
 config_urlscanner: "Cấu hình cho trình quét URL."
 config_urlscanner_cache_time: "Kết quả tra cứu API nên được lưu trữ trong (trong giây) bao lâu? Mặc định là 3600 giây (1 giờ)."
 config_urlscanner_google_api_key: "Cho phép tra cứu API đến API của Google Safe Browsing khi khóa API cần thiết được xác định."
-config_urlscanner_lookup_hphosts: "Cho phép tra cứu API đến API của hpHosts khi xác định như true."
 config_urlscanner_maximum_api_lookups: "Số lượng tối đa cho phép của tra cứu API để thực hiện mỗi quét lặp cá nhân. Bởi vì mỗi tra cứu API thêm sẽ thêm vào tổng thời gian cần thiết để hoàn thành mỗi quét lặp, bạn có thể muốn để quy định một giới hạn để đẩy nhanh các quá trình quét tổng thể. Khi thiết lập để 0, không số lượng tối đa cho phép sẽ được áp dụng. Đặt 10 theo mặc định."
 config_urlscanner_maximum_api_lookups_response: "Phải làm gì nếu số lượng tối đa cho phép của tra cứu API được vượt quá? False = Không làm gì cả (tiếp tục chế biến) [Mặc định]; True = Dấu/Chặn các tập tin."
 config_virustotal: "Cấu hình cho hội nhập Virus Total."
@@ -305,7 +304,6 @@ response_login_username_field_empty: "Tên người dùng là trống!"
 response_login_wrong_endpoint: "Điểm truy cập không đúng!"
 response_no: "Không"
 response_passed: "Thành công"
-response_possible_problem_found: "Có thể tìm thấy vấn đề."
 response_rename_error: "Không thể đổi tên!"
 response_restore_error_1: "Không thể khôi phục! Tập tin bị hỏng!"
 response_restore_error_2: "Không thể khôi phục! Khóa kiểm dịch sai rồi!"
@@ -402,6 +400,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Bổ sung khác nhau.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho ClamAV.</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
@@ -415,6 +414,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>

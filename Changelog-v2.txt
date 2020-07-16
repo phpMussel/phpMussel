@@ -27,6 +27,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.07.13; Bug-fix; Maikuolan]: Possible problem found with IsActivable
   when updating certain components via the front-end updates page; Fixed.
 
+- [2020.07.16; DEPRECATION/REMOVAL; Maikuolan]: host-file.net is dead. All
+  related hpHosts content and configuration directives removed accordingly.
+
 === Version/Release 2.1.5 ===
 PATCH RELEASE.
 

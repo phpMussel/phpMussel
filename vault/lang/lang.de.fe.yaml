@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2020.07.08).
+# This file: German language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -131,7 +131,6 @@ config_template_data_theme: "Standard-Thema für phpMussel verwenden."
 config_urlscanner: "Konfiguration für den URL-Scanner."
 config_urlscanner_cache_time: "Wie lange (in Sekunden) sollen die Ergebnisse von API-Abfragen zwischengespeichert werden? Standardeinstellung ist 3600 Sekunden (1 Stunde)."
 config_urlscanner_google_api_key: "Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte API-Schlüssel festgelegt ist."
-config_urlscanner_lookup_hphosts: "Aktiviert API-Abfragen zur hpHosts API wenn der Wert auf <code>true</code> gesetzt ist."
 config_urlscanner_maximum_api_lookups: "Die maximal erlaubte Anzahl von API-Abfragen die bei jedem Scan-Durchgang durchgeführt werden. Weil jede zusätzliche API-Abfrage die Zeit für einen Scan-Durchgang erhöht, wollen Sie unter Umständen ein Limit festlegen, um den gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird kein Limit angewendet. Standardmäßig ist der Wert auf 10 gesetzt."
 config_urlscanner_maximum_api_lookups_response: "Was soll passieren, wenn die maximale Anzahl der erlaubten API-Abfragen erreicht wird? False = Nichts (Verarbeitung fortführen) [Standardeinstellung]; True = Markiere/blockiere die Datei."
 config_virustotal: "Konfiguration für die Integration von Virus Total."
@@ -307,7 +306,6 @@ response_login_username_field_empty: "Benutzername-Feld leer!"
 response_login_wrong_endpoint: "Falscher Endpunkt!"
 response_no: "Nein"
 response_passed: "Bestanden"
-response_possible_problem_found: "Mögliches Problem gefunden."
 response_rename_error: "Umbenennung-Fehler!"
 response_restore_error_1: "Fehler beim Wiederherstellen! Beschädigte Datei!"
 response_restore_error_2: "Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!"
@@ -406,6 +404,7 @@ info_some_useful_links: |
            <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Erstellt phpMussel-Signaturdateien mit der ClamAV-Signaturdatenbank.</li>
            <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Sonstiges Extras.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Werkzeuge, Ressourcen, u.s.w. für ClamAV.</span>
          <ul class="comSub">
            <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
@@ -419,6 +418,7 @@ info_some_useful_links: |
            <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP Lernressourcen und Diskussion.</li>
            <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Nützliche Malware konzentrierte Diskussionsforen.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">Andere nützliche Werkzeuge, Ressourcen, Dienste, u.s.w.</span>
          <ul class="comSub">
            <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>

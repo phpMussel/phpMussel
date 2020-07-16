@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2020.07.08).
+# This file: Urdu language data for the front-end (last modified: 2020.07.16).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -131,7 +131,6 @@ config_template_data_theme: "phpMussel لئے استعمال کرنے کے لئ�
 config_urlscanner: "URL سکینر کی ترتیبات."
 config_urlscanner_cache_time: "کب تک (سیکنڈوں میں) API لک اپ کے نتائج کے لئے محفوظ ہو جائے چاہئے؟ پہلے سے طے شدہ 3600 سیکنڈ ہے (1 گھنٹہ)."
 config_urlscanner_google_api_key: "ضروری API کلید وضاحت کی گئی ہے جب گوگل محفوظ براؤزنگ API کو API لک اپ کو فعال کرتا ہے."
-config_urlscanner_lookup_hphosts: "درست پر سیٹ ہونے hpHosts API کو API لک اپ کو فعال کرتا ہے."
 config_urlscanner_maximum_api_lookups: "انفرادی اسکین iteration کے مطابق انجام دینے کے لئے API لک اپ کی زیادہ سے زیادہ قابل اجازت تعداد. ہر اضافی API لک اپ ہر ایک اسکین تکرار مکمل کرنے کی ضرورت کل وقت کا اضافہ کریں گے، لہذا آپ کو مجموعی طور پر اسکین کے عمل کو تیز کرنے کے لئے ایک حد مقرر کر سکتے ہیں. 0 مقرر کرتے وقت، کوئی ایسی زیادہ سے زیادہ قابل اجازت تعداد میں لاگو کیا جائے گا. پہلے سے طے شدہ کی طرف سے 10 سیٹ کریں."
 config_urlscanner_maximum_api_lookups_response: "API لک اپ کی زیادہ سے زیادہ قابل اجازت تعداد سے تجاوز کر جاتا ہے تو کیا کیا جائے؟ False (جھوٹی) = کچھ بھی نہیں (پروسیسنگ جاری رہے) [پہلے سے طے شدہ] ہو؛ True (سچے) = فلیگ / فائل بلاک."
 config_virustotal: "Virus Total انضمام کی ترتیبات."
@@ -305,7 +304,6 @@ response_login_username_field_empty: "صارف کا نام فیلڈ کو خال�
 response_login_wrong_endpoint: "غلط رسائی پوائنٹ!"
 response_no: "نہیں"
 response_passed: "کامیابی"
-response_possible_problem_found: "ممکنہ مسئلہ پایا."
 response_rename_error: "نام تبدیل کرنے میں ناکام!"
 response_restore_error_1: "بحال کرنے میں ناکام! خراب فائل!"
 response_restore_error_2: "بحال کرنے میں ناکام! غلط قرنطین کلید!"
@@ -402,6 +400,7 @@ info_some_useful_links: |
            <li><a dir="ltr" href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV دستخط ڈیٹا بیس کا استعمال کرتے ہوئے phpMussel دستخط فائلوں کی تخلیق کرتا ہے.</li>
            <li><a dir="ltr" href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – مختلف اضافی.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV کے لئے اوزار، وسائل، وغیرہ.</span>
          <ul class="comSub">
            <li><a dir="ltr" href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
@@ -415,6 +414,7 @@ info_some_useful_links: |
            <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
            <li><a dir="ltr" href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
          </ul>
+       </li>
        <li><span class="comCat" style="cursor:pointer">دیگر مفید اوزار، وسائل، خدمات، وغیرہ.</span>
          <ul class="comSub">
            <li><a dir="ltr" href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
