@@ -6,7 +6,7 @@
 
 ## **What is phpMussel?**
 
-An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to **detect trojans, viruses, malware and other threats** within files uploaded to your system wherever the script is hooked, based on the signatures of [ClamAV](https://www.clamav.net/) and others. For information regarding *HOW TO INSTALL* {2A+2B} and *HOW TO USE* {3A+3B} phpMussel, please refer either to the [Wiki](https://github.com/phpMussel/phpMussel/wiki) or to the [documentation](https://github.com/phpMussel/Docs/tree/master) (direct links to that documentation included under the "Documentation" header below this paragraph).
+An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to **detect trojans, viruses, malware and other threats** within files uploaded to your system wherever the script is hooked, based on the signatures of [ClamAV](https://www.clamav.net/) and others. For information regarding *HOW TO INSTALL* and *HOW TO USE* phpMussel, please refer either to the [Wiki](https://github.com/phpMussel/phpMussel/wiki) or to the [documentation](https://github.com/phpMussel/Docs/tree/master) (direct links to that documentation included under the "Documentation" header below this paragraph).
 
 ---
 
@@ -66,4 +66,4 @@ EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update 
 ---
 
 
-Last Updated: 6 July 2020 (2020.07.06).
+Last Updated: 20 July 2020 (2020.07.20).
