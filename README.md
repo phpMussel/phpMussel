@@ -67,22 +67,3 @@ EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update 
 
 
 Last Updated: 20 July 2020 (2020.07.20).
-
-
-
-### Current major version development status:
-
-⬇Stage reached⬇ ➡Major version➡ | v0 | v1 | v2 | v3
-:--|:-:|:-:|:-:|:-:
-Pre-Alpha<em><br />- Exploring early concepts/ideas. No code written/available yet.</em> | ✔ | ✔ | ✔ | ✔
-Alpha<em><br />- Branched, but unstable. Not production-ready (high risk if used).</em> | ✔ | ✔ | ✔ | ✔
-Beta<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> | ✔ | ✔ | ✔
-Stable<em><br />- First production-ready version has been tagged/released.</em> | ✔ | ✔ | ✔
-Mature<em><br />- Multiple stable versions/releases exist.</em> | ✔ | ✔ | ✔
-Locked<em><br />- Still maintained, but new features won't be implemented anymore.</em> | ✔ | ✔
-EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update ASAP.</em> | ✔
-
----
-
-
-Last Updated: 20 July 2020 (2020.07.20).
