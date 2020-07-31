@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2020.07.11).
+# This file: Turkish language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Dosya"
 filesize_limit_exceeded: "Dosya boyutu sınırı aşıldı"
 filetype_blacklisted: "Filetype kara listeye alındı"
 finished: "Bitirdi"
-generated_by: "Üreten"
+generated_by: "%s tarafından üretildi"
 greylist_cleared: " Gri liste temizlendi."
 greylist_updated: " Gri liste güncellendi."
 honeypot_event: "Bal küpü olayı. "

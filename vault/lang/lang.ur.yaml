@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2020.07.11).
+# This file: Urdu language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -70,7 +70,7 @@ file: "فائل"
 filesize_limit_exceeded: "فائل کی حد سے تجاوز کر گئی"
 filetype_blacklisted: "قسم کی فائل کو بلیک لسٹ"
 finished: "ختم"
-generated_by: "کی طرف سے پیدا"
+generated_by: "%s کے ذریعہ تیار کردہ"
 greylist_cleared: " صاف کر دیا گرے فہرست."
 greylist_updated: " گرے فہرست کو اپ ڈیٹ."
 honeypot_event: "ہنی پاٹ ایونٹ. "

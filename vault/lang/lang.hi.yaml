@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2020.07.11).
+# This file: Hindi language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "फाइल"
 filesize_limit_exceeded: "फाइल आकार सीमा पार हो गई"
 filetype_blacklisted: "काली सूची पर फाइल प्रकार"
 finished: "ख़त्म होना"
-generated_by: "जनरेटर"
+generated_by: "%s द्वारा निर्मित"
 greylist_cleared: " धूसर सूची खाली कर दी गई।"
 greylist_updated: " धूसर सूची अपडेट किया गया।"
 honeypot_event: "हनीपोट घटना। "

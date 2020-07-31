@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2020.07.04).
+ * This file: Upload handler (last modified: 2020.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -294,13 +294,16 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
         }
 
         /** Merging parsable variables for the template data. */
-        $phpMussel['TemplateData'] = $phpMussel['Config']['template_data'] + [
+        $phpMussel['TemplateData'] = array_merge($phpMussel['Config']['template_data'], [
             'L10N-Lang-Attache' => $phpMussel['L10N-Lang-Attache'],
+            'GeneratedBy' => sprintf(
+                $phpMussel['Client-L10N']->getString('generated_by'),
+                '<div id="phpmusselversion" dir="ltr">' . $phpMussel['ScriptIdent'] . '</div>'
+            ),
             'detected' => $phpMussel['whyflagged'],
-            'phpmusselversion' => $phpMussel['ScriptIdent'],
             'favicon' => $phpMussel['favicon'],
             'xmlLang' => $phpMussel['Config']['general']['lang']
-        ];
+        ]);
 
         /** Pull relevant client-specified L10N data first. */
         if (!empty($phpMussel['L10N-Lang-Attache'])) {

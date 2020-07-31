@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2020.07.11).
+# This file: Dutch language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Bestand"
 filesize_limit_exceeded: "Bestandsgrootte limiet overschreden"
 filetype_blacklisted: "Bestandstype in zwarte lijst"
 finished: "Afgewerkt"
-generated_by: "Gegenereerde door"
+generated_by: "Gegenereerde door %s"
 greylist_cleared: " Greylist geleegd."
 greylist_updated: " Greylist bijgewerkt."
 honeypot_event: "Honeypot evenement. "

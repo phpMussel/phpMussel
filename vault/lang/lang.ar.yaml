@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2020.07.11).
+# This file: Arabic language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -68,7 +68,7 @@ file: "ملف"
 filesize_limit_exceeded: "تجاوز حد حجم ملف"
 filetype_blacklisted: "نوع الملف في القائمة السوداء"
 finished: "انتهى"
-generated_by: "الناتج"
+generated_by: "تم إنشاؤها بواسطة %s"
 greylist_cleared: " قائمة رمادية أفرغت."
 greylist_updated: " قائمة رمادية تحديثها."
 honeypot_event: "الحدث مصيدة. "

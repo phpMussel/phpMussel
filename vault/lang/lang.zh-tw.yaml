@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2020.07.11).
+# This file: Chinese (traditional) language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -64,7 +64,7 @@ file: "文件"
 filesize_limit_exceeded: "文件大小超過限制"
 filetype_blacklisted: "文件類型列入黑名單"
 finished: "完了"
-generated_by: "所產生通過"
+generated_by: "由%s生成"
 greylist_cleared: " 灰名單清空。"
 greylist_updated: " 灰名單更新。"
 honeypot_event: "蜜罐事件。"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2020.07.11).
+# This file: Bangla language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "ফাইল"
 filesize_limit_exceeded: "ফাইলের আকার সীমা অতিক্রম করেছে"
 filetype_blacklisted: "ফাইলের ধরন কালো তালিকাতে রয়েছে।"
 finished: "শেষ হয়েছে"
-generated_by: "জেনারেটর:"
+generated_by: "%s দ্বারা উত্পাদিত"
 greylist_cleared: " ধূসর তালিকা মুছে ফেলা হয়েছে।"
 greylist_updated: " ধূসর তালিকা আপডেট করা হয়েছে।"
 honeypot_event: "হানিপোট ইভেন্ট। "
