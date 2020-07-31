@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2020.07.11).
+# This file: Russian language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -68,7 +68,7 @@ file: "файл"
 filesize_limit_exceeded: "Размер файла превышает лимит"
 filetype_blacklisted: "Тип файла находится в черном списке"
 finished: "Готово"
-generated_by: "Генерируется от"
+generated_by: "Сгенерировано %s"
 greylist_cleared: " Серый список очищен."
 greylist_updated: " Серый список обновлён."
 honeypot_event: "Свадебное мероприятие. "

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2020.07.11).
+# This file: Norwegian language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Fil"
 filesize_limit_exceeded: "Filstørrelsen overskredet"
 filetype_blacklisted: "Filtype svartelistet"
 finished: "Ferdig"
-generated_by: "Generert av"
+generated_by: "Generert av %s"
 greylist_cleared: " Gråliste klarert."
 greylist_updated: " Gråliste oppdatert."
 honeypot_event: "Honeypot hendelse. "

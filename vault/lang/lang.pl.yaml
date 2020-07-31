@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2020.07.11).
+# This file: Polish language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Plik"
 filesize_limit_exceeded: "Przekroczono limit rozmiaru pliku"
 filetype_blacklisted: "Typ pliku na czarnej liście"
 finished: "Skończone"
-generated_by: "Wygenerowane przez"
+generated_by: "Wygenerowane przez %s"
 greylist_cleared: " Szara lista została wyczyszczona."
 greylist_updated: " Szara lista została zaktualizowana."
 honeypot_event: "Wydarzenie honeypot. "

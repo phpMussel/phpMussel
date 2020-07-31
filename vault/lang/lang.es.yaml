@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2020.07.11).
+# This file: Spanish language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -68,7 +68,7 @@ file: "Archivo"
 filesize_limit_exceeded: "Excede el límite del archivo tamaño"
 filetype_blacklisted: "Tipo de archivo en la lista negra"
 finished: "Terminado"
-generated_by: "Generado por"
+generated_by: "Generado por %s"
 greylist_cleared: " Greylist vaciado."
 greylist_updated: " Greylist actualizado."
 honeypot_event: "Evento honeypot. "

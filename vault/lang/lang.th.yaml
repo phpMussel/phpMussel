@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2020.07.11).
+# This file: Thai language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -67,7 +67,7 @@ file: "ไฟล์"
 filesize_limit_exceeded: "จำกัดขนาดไฟล์เกินแล้ว"
 filetype_blacklisted: "ประเภทไฟล์คือในรายการดำ"
 finished: "เสร็จแล้ว"
-generated_by: "สร้างขึ้นโดย"
+generated_by: "สร้างโดย %s"
 greylist_cleared: " รายการเทาล้างแล้ว."
 greylist_updated: " รายการเทาอัปเดตแล้ว."
 honeypot_event: "เหตุการณ์ honeypot. "

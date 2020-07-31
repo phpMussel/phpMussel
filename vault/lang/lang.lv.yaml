@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2020.07.11).
+# This file: Latvian language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Fails"
 filesize_limit_exceeded: "Pārsniegts faila lieluma ierobežojums"
 filetype_blacklisted: "Faila tips iekļauts melnajā sarakstā"
 finished: "Gatavs"
-generated_by: "Ģenerējis"
+generated_by: "Ģenerējis %s"
 greylist_cleared: " Pelēkais saraksts ir notīrīts."
 greylist_updated: " Pelēkais saraksts ir atjaunināts."
 honeypot_event: "Medus poda pasākums. "

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2020.07.11).
+# This file: German language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Datei"
 filesize_limit_exceeded: "Dateigröße überschritten"
 filetype_blacklisted: "Dateityp auf Blacklist"
 finished: "Fertig"
-generated_by: "Generiert von"
+generated_by: "Generiert von %s"
 greylist_cleared: " Greylist gelöscht."
 greylist_updated: " Greylist aktualisiert."
 honeypot_event: "Honeypot-Ereignis. "

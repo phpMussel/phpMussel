@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2020.07.11).
+# This file: Swedish language data (last modified: 2020.07.31).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ file: "Fil"
 filesize_limit_exceeded: "Filstorleksgränsen överskred"
 filetype_blacklisted: "Filtyp svartlistad"
 finished: "Färdiga"
-generated_by: "Genererad av"
+generated_by: "Genererad av %s"
 greylist_cleared: " Grålista rensade."
 greylist_updated: " Grålista uppdaterad."
 honeypot_event: "Honeypot händelse. "
