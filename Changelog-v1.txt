@@ -38,6 +38,9 @@ Detailed version release guidelines for phpMussel can be found at:
   Also slightly improved the aesthetics of the front-end, and changed the
   logout link to a logout button.
 
+- [2020.08.06; Bug-fix; Maikuolan]: Two lines in the updater code were swapped
+  the wrong way around, which could cause notices to appear sometimes; Fixed.
+
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
 
