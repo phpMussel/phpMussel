@@ -1534,7 +1534,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if ($Reactivate) {
+        if (!empty($Reactivate)) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }
@@ -1906,7 +1906,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if (!empty($Reactivate)) {
+        if ($Reactivate) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }
