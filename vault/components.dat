@@ -1,14 +1,13 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.6-DEV+20213716
+ Version: 2.1.6-DEV+20217400
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Tests: https://api.github.com/repos/phpMussel/phpMussel/commits/v2/status
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/.htaccess
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/channels.yaml
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/ArchiveHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/CompressionHandler.php
@@ -21,7 +20,6 @@ phpMussel Core:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/shorthand.yaml
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/signatures/switch.dat
   To:
-   - .htaccess
    - channels.yaml
    - classes/ArchiveHandler.php
    - classes/CompressionHandler.php
@@ -34,12 +32,11 @@ phpMussel Core:
    - shorthand.yaml
    - signatures/switch.dat
   Checksum:
-   - f3bb6d0e49a90f3834e0a54432ef2ace2e4851b3e43b38f78f7a8a0b0548c8cd:83
    - f0698ab5d3994ac1ba19e745dabac6beb899e5627a316132374d42106f9c046c:1570
    - 647183e05acca7c247c85253427de9875c4add077be90e8df8efe8d82c231b34:13856
    - 28aa627ac3936c4b961a482bd20dce18afe641e8e1805d8a5f39b1f4e9e3e170:3859
    - e726959274174f48de9e0a3cf1fa5fd227ce73c9c03640857263e9dc0fc157a7:1777
-   - d7a698723dfce82f9cf2385719e553449acff5985c0b8ae58632b97e8e8e6df1:7333
+   - 4701ba95f4c4c19f661097d848291d8dc009db07b537aec7192a1e4c1183245d:7473
    - 2eef0831ba50418267926340b3347b924c93a6df1d4904ff730edd4b92cbadd4:16016
    - 0d0842cb47f7a692e28286c634893bb1435c3221ab92da60c93de5e53fea6daa:7652
    - 05b1299e586d45c43d49806a13f352d86caa0796cc2aa5d9884334f591ba7da1:236959
@@ -49,7 +46,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.6-DEV+20213716
+ Version: 2.1.6-DEV+20217400
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -82,6 +79,12 @@ phpMussel Front-End:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/frontend.css
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/frontend.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/icons.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_bl_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_bl_o.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_rd_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_rd_o.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_wt_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/lock_wt_o.png
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/pips.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/fe_assets/scripts.js
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/frontend.php
@@ -113,6 +116,12 @@ phpMussel Front-End:
    - fe_assets/frontend.css
    - fe_assets/frontend.html
    - fe_assets/icons.php
+   - fe_assets/lock_bl_c.png
+   - fe_assets/lock_bl_o.png
+   - fe_assets/lock_rd_c.png
+   - fe_assets/lock_rd_o.png
+   - fe_assets/lock_wt_c.png
+   - fe_assets/lock_wt_o.png
    - fe_assets/pips.php
    - fe_assets/scripts.js
    - frontend.php
@@ -129,7 +138,7 @@ phpMussel Front-End:
    - d24f5b81f21b72cc3980122652386bf2a636c88a86a5d7f0f714c77be77b0860:735
    - 910e667bb03456935bdec49dce6cabac768f618b2ec26b685aff8a49d8559b39:549
    - 65a148ce75188eb48d21bdd8d0c0a23064213b5eeccc9d6e2cc7a63a681f2f71:1503
-   - 2948c3943c3d770e1e4b71971209b4180e59ce6454c76ba0baa80d2fe327e2d1:2330
+   - 2a0cabb2c4fd203621df504f7bbe9ffc6ceb91ac2ded95a4273296a086c9dcfa:2521
    - 8c3c55676a2db053a91749507c9c037400a74944bfccfb203969a393f564fcf4:332
    - 502526ae5a9dc576d2709954780443694d7ce3bb7e13db357f5c74f7b5f4740e:1431
    - a9033fec4b01acc6846840d3584f03b6d22ad03ae2ee0f9b0b5ac0edf7a34587:672
@@ -141,12 +150,18 @@ phpMussel Front-End:
    - 294c5267f3aaaae1840ca487a725e7046940b72c7f495fecd96e19bd5b0dda0d:955
    - 5d17e156680aaba2948f596e7cc8aa868847cb40a96709f13cb1fa32bdfa485d:650
    - a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606
-   - 737c74ade6c6ae75dda6b74ea8fa1a91511775983dba5cfc2acbe77a133bf864:6636
+   - 84fdac5d87e14c9e5ff58034579e661054d8f994520cab542683689a64609de2:6923
    - a3780370d21fb717f151e05d61e08deff5a098d7e92aed097964c4ac03c44b69:977
    - 92b6fc00b0261927ae86e7dcbdbd16d215a03182eec7d6c3c5086a858f1ccd92:17579
-   - 7e0321f3d6dc41b620573710a011d7d07e1cfc19943c06856e6adfbcaf22a5e1:929
+   - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
+   - 240b0d3b501aa8715c43aff11340e921c1d19c384e17d9947dbb231367bdb20d:806
+   - 4f881a40dee13d495d32364923ccf71c9f43916be33c0aa8e2f7fa2d2daaabde:788
+   - ea0da98550d384c33d602b7b6343ca071caa252cc8b0d5a289461ca6c83bb0f4:795
+   - e92590ab306614305ee17863d4c313dd4ac0ea5c75552236e83fb09779f01452:761
+   - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
+   - 75e549858c95f3d2f8516ba5149052faa6a73eaa2b87815fedd98ee1fa406084:814
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - d2ec2608b7e63453c3c93cf321033d7833cd0467a6d2393137e5af03666f9811:167551
+   - 99919376add780c28d2d1ee4fa933d14cd76c39403306aff095b2da141da410e:168133
    - 5d4659d36b63237e40a42acd95c26ab430d2ec15868c780f0528340b5dae7eb2:117104
  Reannotate: components.dat
 phpMussel Upload Handler:

@@ -6,6 +6,8 @@
     <input id="password" name="password" type="password" placeholder="{field_password}" onkeyup="javascript:RGBW()" autocomplete="current-password" />
   </td><td><div id="phb"></div></td></tr></table>
   <input name="phpmussel-form-target" type="hidden" value="login" />
+  <input name="hostname" id="hostnameoverride" type="hidden" value="" />
+  <script type="text/javascript">document.getElementById('hostnameoverride').value=window.location.hostname;</script>
   <input type="submit" value="{field_log_in}" class="auto" /><br /><br />
   <div class="txtRd"><small>{tip_fe_cookie_warning}</small></div><br /><br />
   <div class="icon48x48"></div>

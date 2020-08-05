@@ -51,8 +51,10 @@ a:active,a:focus{color:red}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
 @keyframes UplT{0%{opacity:0.0}100%{opacity:1.0}}
 .mob{display:none}
-a[href="?phpmussel-page=logout"]{padding-left:10px;background-image:url(data:image/gif;base64,{PIP_Key});background-repeat:no-repeat;background-position:0% 50%}
-a[href="?phpmussel-page=logout"]:hover,a[href="?phpmussel-page=logout"]:active,a[href="?phpmussel-page=logout"]:focus{background-image:url(data:image/gif;base64,{PIP_Key2})}
+input[id=logoutbutton]{opacity:.5;border-top-{FE_Align_Reverse}-radius:10px;border-bottom-{FE_Align_Reverse}-radius:10px;padding-{FE_Align}:18px;background-position:center {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}')}
+input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{opacity:1;background-image:url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
+input[id=homebutton]{opacity:.5;border-top-{FE_Align}-radius:10px;border-bottom-{FE_Align}-radius:10px}
+input[id=homebutton]:active,input[id=homebutton]:focus,input[id=homebutton]:hover{opacity:1}
 @media only all and (max-width:640px) {
   .big,.dt{display:none}
   .mob{display:block}
