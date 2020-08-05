@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.07.03).
+ * This file: Configuration handler (last modified: 2020.08.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -38,6 +38,9 @@ $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 $phpMussel['HTTP_HOST'] = empty($_SERVER['HTTP_HOST']) ? '' : (
     strpos($_SERVER['HTTP_HOST'], ':') === false ? $_SERVER['HTTP_HOST'] : substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ':'))
 );
+
+/** Allow post override of HTTP_HOST (assists with proxied front-end pages). */
+$phpMussel['HostnameOverride'] = empty($_POST['hostname']) ? '' : $_POST['hostname'];
 
 /** phpMussel favicon. */
 $phpMussel['favicon'] =

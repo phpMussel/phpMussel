@@ -1,14 +1,13 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.13.6-DEV+20213716
+ Version: 1.13.6-DEV+20217400
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
  Tests: https://api.github.com/repos/phpMussel/phpMussel/commits/v1/status
  Files:
   From:
-   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/.htaccess
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/channels.yaml
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/ArchiveHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/CompressionHandler.php
@@ -51,6 +50,12 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/frontend.css
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/frontend.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/icons.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_bl_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_bl_o.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_rd_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_rd_o.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_wt_c.png
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/lock_wt_o.png
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/pips.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/fe_assets/scripts.js
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/frontend.php
@@ -64,7 +69,6 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/template_default.html
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/upload.php
   To:
-   - .htaccess
    - channels.yaml
    - classes/ArchiveHandler.php
    - classes/CompressionHandler.php
@@ -107,6 +111,12 @@ phpMussel:
    - fe_assets/frontend.css
    - fe_assets/frontend.html
    - fe_assets/icons.php
+   - fe_assets/lock_bl_c.png
+   - fe_assets/lock_bl_o.png
+   - fe_assets/lock_rd_c.png
+   - fe_assets/lock_rd_o.png
+   - fe_assets/lock_wt_c.png
+   - fe_assets/lock_wt_o.png
    - fe_assets/pips.php
    - fe_assets/scripts.js
    - frontend.php
@@ -120,7 +130,6 @@ phpMussel:
    - template_default.html
    - upload.php
   Checksum:
-   - 8e03209e7fc6641b45094e584340feff:83
    - f0698ab5d3994ac1ba19e745dabac6beb899e5627a316132374d42106f9c046c:1570
    - 19c1ee74de5957037546abcf66fdd266872f38bb12b1c589d55bdbda5cfedc15:13768
    - 9ef98e34f7aa1ba8b9866a8c688253adbf16ecc2b1ea06dff183f4ec0ebf4bfe:3819
@@ -134,7 +143,7 @@ phpMussel:
    - 676a9676cf0613cafc99684b0765fadd97b2feeccc0b875991b154f301057371:10446
    - 1f0d1a26c529ed85727f988690aeb195c24c6f9bff543af3f9a7c9972d43c328:1763
    - bb5ac8d698da65cb61b393ceeee51c9946f0110db1220d5ae5345f6b2cac94e4:28731
-   - 526d91f52df1adadb846ea72d39828a3875c3f57c73e48defe9cebf4f77670e2:7333
+   - d9762959ae3f8b4a146ac58e03bc5a9eaf99f75cf50fad7e59d4660d6f34d4a0:7500
    - be42382b6599ccd8cadfcf743060317f9608528093e224abf8f377f1feddaf74:15919
    - 4ddd1f47d2cf0fa774be8a73413f9f7f6d81dad2b298142a4fd746c8025e9480:7847
    - 525daa72f2945b7a22356fd75b01e2a1e6dfb667ad52b0becad51ead86832eb7:531
@@ -148,7 +157,7 @@ phpMussel:
    - 817c04f7217c98b021c57158262f79f2:735
    - 2a24554e237207fb3e984e807f93a8fa:549
    - 65a148ce75188eb48d21bdd8d0c0a23064213b5eeccc9d6e2cc7a63a681f2f71:1503
-   - 2948c3943c3d770e1e4b71971209b4180e59ce6454c76ba0baa80d2fe327e2d1:2330
+   - 2a0cabb2c4fd203621df504f7bbe9ffc6ceb91ac2ded95a4273296a086c9dcfa:2521
    - 69a7d9b084c9c210676d40b491979bdf:332
    - 502526ae5a9dc576d2709954780443694d7ce3bb7e13db357f5c74f7b5f4740e:1431
    - a9033fec4b01acc6846840d3584f03b6d22ad03ae2ee0f9b0b5ac0edf7a34587:672
@@ -156,16 +165,22 @@ phpMussel:
    - 8e7ef9395446478f7717face6fef6459:1036
    - 94ee65686917b41b065c6c572e81bb46:634
    - 6b2ce7be71a2ce411c30ec360e8ac711:145
-   - 51f1b242d8fd4c0f1d1eeba8989d2301:2410
-   - b8ae2ae765bfcb58e08ed4d79f1389f9:955
-   - 119569ae458e30518e45ed5c56fcbfd7:650
-   - 59f74de5f0b6a4db8fcbf15e6a680de3:606
-   - 737c74ade6c6ae75dda6b74ea8fa1a91511775983dba5cfc2acbe77a133bf864:6636
+   - 5de0613ff024ef4b12edb6a2447eb0090816d60648bf2bbdcf4d054adfa86d0e:2410
+   - 294c5267f3aaaae1840ca487a725e7046940b72c7f495fecd96e19bd5b0dda0d:955
+   - 5d17e156680aaba2948f596e7cc8aa868847cb40a96709f13cb1fa32bdfa485d:650
+   - a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606
+   - 84fdac5d87e14c9e5ff58034579e661054d8f994520cab542683689a64609de2:6923
    - a3780370d21fb717f151e05d61e08deff5a098d7e92aed097964c4ac03c44b69:977
-   - 4d4b8356beee307735f73ceddf6d21b0:17579
-   - 1f7377ba8beb1a4d28714fa320973741:929
+   - 92b6fc00b0261927ae86e7dcbdbd16d215a03182eec7d6c3c5086a858f1ccd92:17579
+   - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
+   - 240b0d3b501aa8715c43aff11340e921c1d19c384e17d9947dbb231367bdb20d:806
+   - 4f881a40dee13d495d32364923ccf71c9f43916be33c0aa8e2f7fa2d2daaabde:788
+   - ea0da98550d384c33d602b7b6343ca071caa252cc8b0d5a289461ca6c83bb0f4:795
+   - e92590ab306614305ee17863d4c313dd4ac0ea5c75552236e83fb09779f01452:761
+   - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
+   - 75e549858c95f3d2f8516ba5149052faa6a73eaa2b87815fedd98ee1fa406084:814
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - b6e61808e768cae507de9295e088b42adda7ef5728900d69a3626fa1d89a2b19:167634
+   - d53737327d5f89686d8ef5a11c8ddf07a3233c8aef41d0453d0304ec95446eb4:168216
    - 8958549ca26b36be4d6349dc6cfd6115f0ca295a4c327e5460485ad1386d06c3:116636
    - c5b2df4e7a76a7e9f16e930aa3a2cef841b36fdef02c4b17718b8e7be8bca834:235852
    - 5b1d9c7d447ea7f5a2ec8484c497e56d29df6db4418e87e225d03f6777239bbe:7108

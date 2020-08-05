@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.31).
+ * This file: Front-end handler (last modified: 2020.08.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -103,11 +103,18 @@ $phpMussel['FE'] = [
     /** Will be populated by the current session data. */
     'ThisSession' => '',
 
-    /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
-    'bNav' => sprintf(
-        '<a href="?">%s</a> | <a href="?phpmussel-page=logout">%s</a>',
-        $phpMussel['L10N']->getString('link_home'),
+    /** Used to log out. */
+    'LogoutButton' => sprintf(
+        '<form action="?phpmussel-page=logout" method="POST" style="display:inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
+        '<input name="hostname" id="hostnameoverride" type="hidden" value="" />',
+        '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>',
         $phpMussel['L10N']->getString('link_log_out')
+    ),
+
+    /** Used to return home. */
+    'HomeButton' => sprintf(
+        '<form action="?" method="GET" style="display:inline"><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
+        $phpMussel['L10N']->getString('link_home')
     ),
 
     /** State reflecting whether the current request is cronable. */
@@ -135,6 +142,9 @@ $phpMussel['FE'] = [
     'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
     'URL-Website' => 'https://phpmussel.github.io/'
 ];
+
+/** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
+$phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . ' ' . $phpMussel['FE']['LogoutButton'];
 
 /** Append "@ Gitter" to the chat link text. */
 if (isset($phpMussel['L10N']->Data['link_chat'])) {
@@ -392,7 +402,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     if (!$phpMussel['FE']['CronMode']) {
                         $phpMussel['FE']['SessionKey'] = hash('md5', $phpMussel['GenerateSalt']());
                         $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HTTP_HOST'], false, true);
+                        setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HostnameOverride'] ?: $phpMussel['HTTP_HOST'], false, true);
                         $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
                             $phpMussel['FE']['SessionKey'], $phpMussel['DefaultAlgo']
                         ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
@@ -613,7 +623,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         $phpMussel['FE']['Rebuild'] = true;
         $phpMussel['FE']['UserState'] = 0;
         $phpMussel['FE']['Permissions'] = 0;
-        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HTTP_HOST'], false, true);
+        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HostnameOverride'] ?: $phpMussel['HTTP_HOST'], false, true);
         $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']);
         $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('state_logged_out'));
     }
@@ -762,7 +772,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
     if ($phpMussel['FE']['UserState'] === 2) {
 
         /** Provide the option to log out (omit home link). */
-        $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a><br />', $phpMussel['L10N']->getString('link_log_out'));
+        $phpMussel['FE']['bNav'] = $phpMussel['FE']['LogoutButton'];
 
         /** Aesthetic spacer. */
         $phpMussel['FE']['2fa_status_spacer'] = empty($phpMussel['FE']['state_msg']) ? '' : '<br /><br />';
@@ -809,8 +819,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     /** Operating system used. */
     $phpMussel['FE']['info_os'] = php_uname();
 
-    /** Provide the log out and home links. */
-    $phpMussel['FE']['bNav'] = sprintf('<a href="?phpmussel-page=logout">%s</a>', $phpMussel['L10N']->getString('link_log_out'));
+    /** Provide the option to log out (omit home link). */
+    $phpMussel['FE']['bNav'] = $phpMussel['FE']['LogoutButton'];
 
     /** Build repository backup locations information. */
     $phpMussel['FE']['BackupLocations'] = implode(' | ', [
