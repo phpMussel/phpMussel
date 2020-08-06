@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.14).
+ * This file: Front-end functions file (last modified: 2020.08.06).
  */
 
 /**
@@ -1451,11 +1451,11 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
                     is_array($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
                 ) {
-                    array_walk($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+                    foreach ($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'] as $ThisFile) {
                         if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
                             $phpMussel['DeleteDirectory']($ThisFile);
                         }
-                    });
+                    }
                 }
                 $phpMussel['UpdateFailed'] = true;
             } else {
@@ -1463,7 +1463,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'])) {
                     $ThisArr = $phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'];
                     $phpMussel['Arrayify']($ThisArr);
-                    array_walk($ThisArr, function ($ThisFile) use (&$phpMussel) {
+                    foreach ($ThisArr as $ThisFile) {
                         if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
                             if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
                                 unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
@@ -1478,8 +1478,8 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                                 $phpMussel['DeleteDirectory']($ThisFile);
                             }
                         }
-                    });
-                    unset($ThisArr);
+                    }
+                    unset($ThisFile, $ThisArr);
                 }
 
                 /** Assign updated component annotation. */
@@ -1574,19 +1574,20 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
             "\n",
             $OldMetaMatches
         ), $OldMeta);
-        array_walk($phpMussel['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$phpMussel, &$BytesRemoved) {
-            if (!empty($ThisFile) && $phpMussel['Traverse']($ThisFile)) {
-                if (file_exists($phpMussel['Vault'] . $ThisFile)) {
-                    $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFile);
-                    unlink($phpMussel['Vault'] . $ThisFile);
-                }
-                if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
-                    $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFile . '.rollback');
-                    unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
-                }
-                $phpMussel['DeleteDirectory']($ThisFile);
+        foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $ThisFile) {
+            if (empty($ThisFile) || !$phpMussel['Traverse']($ThisFile)) {
+                continue;
             }
-        });
+            if (file_exists($phpMussel['Vault'] . $ThisFile)) {
+                $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFile);
+                unlink($phpMussel['Vault'] . $ThisFile);
+            }
+            if (file_exists($phpMussel['Vault'] . $ThisFile . '.rollback')) {
+                $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFile . '.rollback');
+                unlink($phpMussel['Vault'] . $ThisFile . '.rollback');
+            }
+            $phpMussel['DeleteDirectory']($ThisFile);
+        }
         $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$ID]['Reannotate'], $NewMeta);
         $phpMussel['Components']['Meta'][$ID]['Version'] = false;
         $phpMussel['Components']['Meta'][$ID]['Files'] = false;

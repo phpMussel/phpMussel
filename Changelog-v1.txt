@@ -41,6 +41,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.08.06; Bug-fix; Maikuolan]: Two lines in the updater code were swapped
   the wrong way around, which could cause notices to appear sometimes; Fixed.
 
+- [2020.08.06; Maikuolan]: Addressed a potential problem with calculating the
+  number of bytes removed when updating components and slightly refactored the
+  front-end functions.
+
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
 
