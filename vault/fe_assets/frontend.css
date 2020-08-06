@@ -10,6 +10,12 @@ input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
+input{border-radius:0}
+button,input[type=button],input[type=submit],textarea{border-radius:6px}
+select,option,button,input,textarea{filter:grayscale(.1) brightness(.94)}
+select:active,textarea:active,button:active,input:active{filter:grayscale(0) brightness(1)}
+select:disabled,textarea:disabled,button:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
+select:focus,textarea:focus,button:focus,input:focus,select:hover,textarea:hover,button:hover,input:hover{filter:grayscale(0) brightness(1)}
 table,.spanner{width:100%}
 textarea.half{height:75px}
 textarea{height:150px}
@@ -49,12 +55,11 @@ a:active,a:focus{color:red}
 .ufts{width:220px}
 .vr{float:{FE_Align};width:1px;height:inherit;background-color:#900}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
-@keyframes UplT{0%{opacity:0.0}100%{opacity:1.0}}
+@keyframes UplT{0%{opacity:0}100%{opacity:1}}
 .mob{display:none}
-input[id=logoutbutton]{opacity:.5;border-top-{FE_Align_Reverse}-radius:10px;border-bottom-{FE_Align_Reverse}-radius:10px;padding-{FE_Align}:18px;background-position:center {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}')}
-input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{opacity:1;background-image:url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
-input[id=homebutton]{opacity:.5;border-top-{FE_Align}-radius:10px;border-bottom-{FE_Align}-radius:10px}
-input[id=homebutton]:active,input[id=homebutton]:focus,input[id=homebutton]:hover{opacity:1}
+input[id=logoutbutton]{border-top-{FE_Align_Reverse}-radius:10px;border-bottom-{FE_Align_Reverse}-radius:10px;padding-{FE_Align}:18px;background-position:center {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}')}
+input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-image:url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
+input[id=homebutton]{border-top-{FE_Align}-radius:10px;border-bottom-{FE_Align}-radius:10px}
 @media only all and (max-width:640px) {
   .big,.dt{display:none}
   .mob{display:block}

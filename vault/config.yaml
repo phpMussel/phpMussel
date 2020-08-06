@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2020.07.16).
+# This file: Configuration defaults file (last modified: 2020.08.06).
 ##/
 
 Config Defaults:
@@ -470,11 +470,12 @@ Config Defaults:
    allow_other: true
    choices:
     default: "Default"
+    bluemetal: "Blue Metal"
+    fullmoon: "Full Moon"
+    moss: "Moss"
+    primer: "Primer"
     rbi: "Red-Blue Inverted"
     slate: "Slate"
-    bluemetal: "Blue Metal"
-    moss: "Moss"
-    fullmoon: "Full Moon"
    choice_filter: "FilterTheme"
   magnification:
    type: "float"
