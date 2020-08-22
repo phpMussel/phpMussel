@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.08.04).
+ * This file: Front-end handler (last modified: 2020.08.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -144,7 +144,7 @@ $phpMussel['FE'] = [
 ];
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
-$phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . ' ' . $phpMussel['FE']['LogoutButton'];
+$phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . $phpMussel['FE']['LogoutButton'];
 
 /** Append "@ Gitter" to the chat link text. */
 if (isset($phpMussel['L10N']->Data['link_chat'])) {
