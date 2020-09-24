@@ -11,7 +11,7 @@ input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 input{border-radius:0}
-input[type=button],input[type=submit]{border-radius:18px}
+input[type=button],input[type=submit],input[type=reset]{border-radius:18px}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active,input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
