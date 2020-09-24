@@ -43,7 +43,7 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.08.06; Maikuolan]: Addressed a potential problem with calculating the
   number of bytes removed when updating components and slightly refactored the
-  front-end functions.
+  front-end functions file.
 
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
