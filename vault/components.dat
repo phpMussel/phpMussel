@@ -204,7 +204,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.3.3-DEV+20187464
+ Version: 2.3.4
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -231,8 +231,8 @@ Common Classes Package:
   Checksum:
    - 942bb78fccfe6056c10cc3b0d658e0c52c2036efb2c7bfb8880c01bd12078cc7:26173
    - 9d5647f9d6f9a239f0ab05a3011ca82b1bbd29aa286450f309e18b1176544968:3714
-   - 02663bc0ae580f0482e910eb0e38d45a68b92f7a8366814bd5a63a9181d51e83:4557
-   - 4fa9977e14641095849fd7d067f213529dcb55232a5afad521a9c6808d6567ce:27703
+   - bc4945610f059562d15b9b689130bd28109165ef521bd93c7d0fd1fb900d5536:4477
+   - 081d5bef788a88c6e98d295a881dc827dc87382844274396ab8e787fec53a9fb:29245
    - f9a9638c077d7ab7d8b39812e22e75f58c9d5204fd300f392e6d1c895e1b8675:3653
    - c567cbc6d7cab8a61e61ed2fc921490a5c80130dded0b541acf93185c3003157:11422
    - c73d9ae1997505b2834a79b218b015be83498d3befe6741d9132a674f152c746:8634
