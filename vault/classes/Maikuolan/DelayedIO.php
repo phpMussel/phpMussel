@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2020.06.11).
+ * Delayed file IO class (last modified: 2020.07.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -32,10 +32,14 @@ class DelayedIO
      */
     private $Locked = [];
 
-    /** Size of each data block to read per iteration (131072 = 128KB). */
+    /**
+     * @var int Size of each data block to read per iteration (131072 = 128KB).
+     */
     const BLOCKSIZE = 131072;
 
-    /** How many seconds until an attempt to lock the handle should time-out. */
+    /**
+     * @var int How many seconds until an attempt to lock the handle should time-out.
+     */
     const LOCK_TIMEOUT = 5;
 
     /**
@@ -53,7 +57,7 @@ class DelayedIO
         if (isset($this->NewData[$File])) {
             return $this->NewData[$File];
         }
-        if (!is_file($File) || !is_readable($File) || !($Size = filesize($File))) {
+        if (!is_file($File) || !is_readable($File) || !filesize($File)) {
             return '';
         }
         $Handle = fopen($File, 'rb');
@@ -74,12 +78,9 @@ class DelayedIO
                 return '';
             }
         }
-        $Iterations = ceil($Size / self::BLOCKSIZE) ?: 0;
         $Data = '';
-        $Current = 0;
-        while ($Current < $Iterations) {
+        while (!feof($Handle)) {
             $Data .= fread($Handle, self::BLOCKSIZE);
-            $Current++;
         }
         if ($Locked) {
             $Time = time();

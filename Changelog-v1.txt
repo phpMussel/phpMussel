@@ -45,6 +45,8 @@ Detailed version release guidelines for phpMussel can be found at:
   number of bytes removed when updating components and slightly refactored the
   front-end functions file.
 
+- [2020.09.30; Maikuolan]: Synced up common classes.
+
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
 
