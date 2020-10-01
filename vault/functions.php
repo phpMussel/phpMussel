@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.16).
+ * This file: Functions file (last modified: 2020.10.01).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -2775,6 +2775,13 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
     /** Plugin hook: "before_chameleon_detections". */
     $phpMussel['Execute_Hook']('before_chameleon_detections');
 
+    /** Chameleon attack bypasses for Mac OS X thumbnails and screenshots. */
+    $ThumbnailBypass = (
+        substr($OriginalFilename, 0, 2) === '._' &&
+        !preg_match('~[^\x00-\x1f]~', substr($str, 0, 8)) &&
+        substr($str, 8, 8) === 'Mac OS X'
+    );
+
     /** PHP chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_php']) {
         if ($phpMussel['ContainsMustAssert']([
@@ -2896,7 +2903,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
     }
 
     /** Image chameleon attack detection. */
-    if ($phpMussel['Config']['attack_specific']['chameleon_to_img']) {
+    if (!$ThumbnailBypass && $phpMussel['Config']['attack_specific']['chameleon_to_img']) {
         $Chameleon = '';
         if (
             (($xt === 'bmp' || $xt === 'dib') && $twocc !== '424d') ||

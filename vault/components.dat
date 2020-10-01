@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.6-DEV+20218656
+ Version: 2.1.6
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -36,17 +36,17 @@ phpMussel Core:
    - 647183e05acca7c247c85253427de9875c4add077be90e8df8efe8d82c231b34:13856
    - 28aa627ac3936c4b961a482bd20dce18afe641e8e1805d8a5f39b1f4e9e3e170:3859
    - e726959274174f48de9e0a3cf1fa5fd227ce73c9c03640857263e9dc0fc157a7:1777
-   - 4701ba95f4c4c19f661097d848291d8dc009db07b537aec7192a1e4c1183245d:7473
+   - f01c0fe2c5864f9c8c108d8c673bedafe1d24a7da87b9d01ff6884c36e96a278:7473
    - a89e0c1041f10e7db69b56286d553655d7db3e6689254757d6abdaf7e0332390:16037
    - 0d0842cb47f7a692e28286c634893bb1435c3221ab92da60c93de5e53fea6daa:7652
-   - 05b1299e586d45c43d49806a13f352d86caa0796cc2aa5d9884334f591ba7da1:236959
+   - 4bd4dd32726c480a4d6e0ee085268eadd84de3b87aebe850516ded03443ca421:237246
    - ba2224d958093e7a31d96ba88e752359d5685935368fffab321d9dc64ea33fe0:6466
    - 78dcaaf426b18fecceed9ac6d7f0eb86e8678b11f69ab1f863dfe7d214bfa68e:4696
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.6-DEV+20267685
+ Version: 2.1.6
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -166,7 +166,7 @@ phpMussel Front-End:
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.1.6-DEV+20213716
+ Version: 2.1.6
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -189,7 +189,7 @@ phpMussel Upload Handler:
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
- Version: 2.1.6-DEV+20187464
+ Version: 2.1.6
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
