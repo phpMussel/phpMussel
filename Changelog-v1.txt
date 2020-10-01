@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.13.6 ===
+PATCH RELEASE.
+
 - [2020.07.06; Maikuolan]: Performed some minor refactoring.
 
 - [2020.07.11; Bug-fix; Maikuolan]: The code for scanning zip files was
@@ -46,6 +51,13 @@ Detailed version release guidelines for phpMussel can be found at:
   front-end functions file.
 
 - [2020.09.30; Maikuolan]: Synced up common classes.
+
+- [2020.10.01; Bug-fix; Maikuolan]: Discovered that the image chameleon attack
+  detection could generate false positives against Mac OS X thumbnails; Fixed.
+  Refer github.com/phpMussel/phpMussel/issues/223
+
+Caleb M (Maikuolan),
+October 1, 2020.
 
 === Version/Release 1.13.5 ===
 PATCH RELEASE.
