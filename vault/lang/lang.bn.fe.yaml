@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2020.07.16).
+# This file: Bangla language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -244,6 +244,7 @@ link_accounts: "অ্যাকাউন্ট"
 link_cache_data: "ক্যাশ ডেটা"
 link_chat: "চ্যাট"
 link_config: "কনফিগারেশন"
+link_copy_to_clipboard: "ক্লিপবোর্ডে অনুলিপি করুন"
 link_documentation: "ডকুমেন্টেশনটি"
 link_file_manager: "ফাইল ম্যানেজার"
 link_home: "হোম পেজ"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.07.17).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -244,6 +244,7 @@ link_accounts: "帳戶"
 link_cache_data: "緩存數據"
 link_chat: "聊天室"
 link_config: "配置"
+link_copy_to_clipboard: "複製到剪貼板"
 link_documentation: "文檔"
 link_file_manager: "文件管理器"
 link_home: "主頁"

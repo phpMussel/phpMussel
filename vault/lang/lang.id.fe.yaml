@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.07.16).
+# This file: Indonesian language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -244,6 +244,7 @@ link_accounts: "Akun"
 link_cache_data: "Data Cache"
 link_chat: "Obrolan"
 link_config: "Konfigurasi"
+link_copy_to_clipboard: "Menyalin ke clipboard"
 link_documentation: "Dokumentasi"
 link_file_manager: "File Manager"
 link_home: "Halaman Utama"

@@ -7,61 +7,62 @@
     <table><tr><td class="spanner">
       <form id="statForm" action="?phpmussel-page=statistics" method="POST">
         <input name="ClearStats" type="hidden" value="1" />
-        <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
+        <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='Web\n{label_events} – {Web-Events}\n{label_scanned_uploads} – {Web-Scanned}\n{label_blocked} – {Web-Blocked}\n{label_quarantined} – {Web-Quarantined}\n\nCLI\n{label_events} – {CLI-Events}\n{label_scanned_objects} – {CLI-Scanned}\n{label_flagged} – {CLI-Flagged}\n\nAPI\n{label_events} – {API-Events}\n{label_scanned_objects} – {API-Scanned}\n{label_flagged} – {API-Flagged}\n\n{label_other}\n{label_other-Since} – {Other-Since}\n{label_other-Active} – {Other-Active}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
+        <input type="button" value="{field_clear_all}" class="auto" onclick="{Confirm-ClearAll}" />
       </form>
     </td></tr></table>
     <table>
       <tr><td class="center h4f" colspan="2"><div class="s">Web</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{label_events}</div></td>
-        <td class="h3f">{Web-Events}</td>
+        <td class="h3f"><div class="s">{Web-Events}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_scanned_uploads}</div></td>
-        <td class="h3f">{Web-Scanned}</td>
+        <td class="h3f"><div class="s">{Web-Scanned}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_blocked}</div></td>
-        <td class="h3f">{Web-Blocked}</td>
+        <td class="h3f"><div class="s">{Web-Blocked}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_quarantined}</div></td>
-        <td class="h3f">{Web-Quarantined}</td>
+        <td class="h3f"><div class="s">{Web-Quarantined}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">CLI</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{label_events}</div></td>
-        <td class="h3f">{CLI-Events}</td>
+        <td class="h3f"><div class="s">{CLI-Events}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_scanned_objects}</div></td>
-        <td class="h3f">{CLI-Scanned}</td>
+        <td class="h3f"><div class="s">{CLI-Scanned}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_flagged}</div></td>
-        <td class="h3f">{CLI-Flagged}</td>
+        <td class="h3f"><div class="s">{CLI-Flagged}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">API</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{label_events}</div></td>
-        <td class="h3f">{API-Events}</td>
+        <td class="h3f"><div class="s">{API-Events}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_scanned_objects}</div></td>
-        <td class="h3f">{API-Scanned}</td>
+        <td class="h3f"><div class="s">{API-Scanned}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_flagged}</div></td>
-        <td class="h3f">{API-Flagged}</td>
+        <td class="h3f"><div class="s">{API-Flagged}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{label_other-Since}</div></td>
-        <td class="h3f">{Other-Since}</td>
+        <td class="h3f"><div class="s">{Other-Since}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_other-Active}</div></td>
-        <td class="h3f">{Other-Active}</td>
+        <td class="h3f"><div class="{Class-Active}">{Other-Active}</div></td>
       </tr>
     </table>
   </td>

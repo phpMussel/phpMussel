@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.07.16).
+# This file: Portuguese language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -246,6 +246,7 @@ link_accounts: "Contas"
 link_cache_data: "Dados de Cache"
 link_chat: "Bate-papo"
 link_config: "Configuração"
+link_copy_to_clipboard: "Copiar para área de transferência"
 link_documentation: "Documentação"
 link_file_manager: "Gerenciador de Arquivos"
 link_home: "Página Principal"

@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.07.16).
+# This file: Latvian language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -247,6 +247,7 @@ link_accounts: "Konti"
 link_cache_data: "Kešatmiņas Dati"
 link_chat: "Tērzēšanas"
 link_config: "Konfigurācija"
+link_copy_to_clipboard: "Kopēt starpliktuvē"
 link_documentation: "Dokumentācija"
 link_file_manager: "Failu Menedžeris"
 link_home: "Mājas"
