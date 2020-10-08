@@ -36,6 +36,8 @@
         <small>{label_your_ua} <code>{UA}</code></small>
       </li>
     </ul>
+    <hr />
+    <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{HomeCopyData}';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
   </div></td>
 </tr>
 </table>

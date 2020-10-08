@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.07.16).
+# This file: French language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -247,6 +247,7 @@ link_accounts: "Comptes"
 link_cache_data: "Données de Cache"
 link_chat: "Tchat"
 link_config: "Configuration"
+link_copy_to_clipboard: "Copier dans le presse-papier"
 link_documentation: "Documentation"
 link_file_manager: "Gestionnaire de Fichiers"
 link_home: "Page d'Accueil"

@@ -10,7 +10,10 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2020.10.05; Maikuolan]: Very minor aesthetic fix.
+
+- [2020.10.08; Maikuolan]: Added some 'copy to clipboard' buttons to the
+  homepage and statistics page.
 
 === Version/Release 1.13.6 ===
 PATCH RELEASE.

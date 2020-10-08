@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.08.22).
+ * This file: Front-end handler (last modified: 2020.10.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -830,6 +830,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
 
     /** Extension availability. */
     $phpMussel['FE']['Extensions'] = [];
+    $phpMussel['FE']['ExtensionsCopyData'] = '';
     foreach ([
         ['Lib' => 'pcre', 'Name' => 'PCRE'],
         ['Lib' => 'curl', 'Name' => 'cURL'],
@@ -844,12 +845,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     ] as $phpMussel['ThisExtension']) {
         if (extension_loaded($phpMussel['ThisExtension']['Lib'])) {
             $phpMussel['ExtVer'] = (new \ReflectionExtension($phpMussel['ThisExtension']['Lib']))->getVersion();
-            $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')';
+            $phpMussel['ThisResponse'] = $phpMussel['L10N']->getString('response_yes') . ' (' . $phpMussel['ExtVer'] . ')';
             if (!empty($phpMussel['ThisExtension']['Drivers'])) {
                 $phpMussel['ThisResponse'] .= ', {' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '}';
             }
-            $phpMussel['ThisResponse'] .= '</span>';
+            $phpMussel['FE']['ExtensionsCopyData'] .= $phpMussel['LTRinRTF'](
+                sprintf('- %1$s➡%2$s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['ThisResponse'])
+            );
+            $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['ThisResponse'] . '</span>';
         } else {
+            $phpMussel['FE']['ExtensionsCopyData'] .= $phpMussel['LTRinRTF'](
+                sprintf('- %1$s➡%2$s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['L10N']->getString('response_no'))
+            );
             $phpMussel['ThisResponse'] = '<span class="txtRd">' . $phpMussel['L10N']->getString('response_no') . '</span>';
         }
         $phpMussel['FE']['Extensions'][] = '    <li><small>' . $phpMussel['LTRinRTF'](sprintf(
@@ -861,6 +868,29 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['C
     $phpMussel['FE']['Extensions'] = implode("\n", $phpMussel['FE']['Extensions']);
     $phpMussel['FE']['ExtensionIsAvailable'] = $phpMussel['LTRinRTF']($phpMussel['L10N']->getString('label_extension') . '➡' . $phpMussel['L10N']->getString('label_installed_available'));
     unset($phpMussel['ExtVer'], $phpMussel['ThisResponse'], $phpMussel['ThisExtension']);
+
+    /** Build clipboard data. */
+    $phpMussel['FE']['HomeCopyData'] = sprintf(
+        '%1$s\n\n- %2$s %3$s\n- %4$s %5$s\n- %6$s %7$s\n- %8$s %9$s\n\n- %10$s %11$s\n- %4$s %12$s\n- %6$s %13$s\n- %8$s %14$s\n- %15$s %16$s\n\n%17$s\n%18$s',
+        $phpMussel['L10N']->getString('label_sysinfo'),
+        $phpMussel['L10N']->getString('label_phpmussel'),
+        $phpMussel['FE']['ScriptVersion'],
+        $phpMussel['L10N']->getString('label_branch'),
+        $phpMussel['FE']['info_phpmussel_branch'],
+        $phpMussel['L10N']->getString('label_stable'),
+        $phpMussel['FE']['info_phpmussel_stable'],
+        $phpMussel['L10N']->getString('label_unstable'),
+        $phpMussel['FE']['info_phpmussel_unstable'],
+        $phpMussel['L10N']->getString('label_php'),
+        $phpMussel['FE']['info_php'],
+        $phpMussel['FE']['info_php_branch'],
+        $phpMussel['FE']['info_php_stable'],
+        $phpMussel['FE']['info_php_unstable'],
+        $phpMussel['L10N']->getString('label_sapi'),
+        $phpMussel['FE']['info_sapi'],
+        $phpMussel['FE']['ExtensionIsAvailable'],
+        $phpMussel['FE']['ExtensionsCopyData']
+    );
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
@@ -2867,12 +2897,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     }
 
     /** Statistics have been counted since... */
-    $phpMussel['FE']['Other-Since'] = '<span class="s">' . (
-        empty($phpMussel['Statistics']['Other-Since']) ? '-' : $phpMussel['TimeFormat'](
-            $phpMussel['Statistics']['Other-Since'],
-            $phpMussel['Config']['general']['timeFormat']
-        )
-    ) . '</span>';
+    $phpMussel['FE']['Other-Since'] = empty($phpMussel['Statistics']['Other-Since']) ? '-' : $phpMussel['TimeFormat'](
+        $phpMussel['Statistics']['Other-Since'],
+        $phpMussel['Config']['general']['timeFormat']
+    );
 
     /** Fetch and process various statistics. */
     foreach ([
@@ -2887,26 +2915,26 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
         'API-Scanned',
         'API-Flagged'
     ] as $phpMussel['TheseStats']) {
-        $phpMussel['FE'][$phpMussel['TheseStats']] = '<span class="s">' . $phpMussel['NumberFormatter']->format(
+        $phpMussel['FE'][$phpMussel['TheseStats']] = $phpMussel['NumberFormatter']->format(
             empty($phpMussel['Statistics'][$phpMussel['TheseStats']]) ? 0 : $phpMussel['Statistics'][$phpMussel['TheseStats']]
-        ) . '</span>';
+        );
     }
 
     /** Active signature files. */
     if (empty($phpMussel['Config']['signatures']['Active'])) {
-        $phpMussel['FE']['Other-Active'] = '<span class="txtRd">' . $phpMussel['NumberFormatter']->format(0) . '</span>';
+        $phpMussel['FE']['Other-Active'] = $phpMussel['NumberFormatter']->format(0);
+        $phpMussel['FE']['Class-Active'] = 'txtRd';
     } else {
         $phpMussel['FE']['Other-Active'] = 0;
-        $phpMussel['StatWorking'] = explode(',', $phpMussel['Config']['signatures']['Active']);
-        array_walk($phpMussel['StatWorking'], function ($SigFile) use (&$phpMussel) {
-            if (!empty($SigFile) && is_readable($phpMussel['sigPath'] . $SigFile)) {
+        foreach (explode(',', $phpMussel['Config']['signatures']['Active']) as $phpMussel['StatWorking']) {
+            if (strlen($phpMussel['StatWorking']) && is_readable($phpMussel['sigPath'] . $phpMussel['StatWorking'])) {
                 $phpMussel['FE']['Other-Active']++;
             }
-        });
-        $phpMussel['StatColour'] = $phpMussel['FE']['Other-Active'] ? 'txtGn' : 'txtRd';
-        $phpMussel['FE']['Other-Active'] = '<span class="' . $phpMussel['StatColour'] . '">' . $phpMussel['NumberFormatter']->format(
+        }
+        $phpMussel['FE']['Other-Active'] = $phpMussel['NumberFormatter']->format(
             $phpMussel['FE']['Other-Active']
-        ) . '</span>';
+        );
+        $phpMussel['FE']['Class-Active'] = $phpMussel['FE']['Other-Active'] ? 'txtGn' : 'txtRd';
     }
 
     /** Parse output. */

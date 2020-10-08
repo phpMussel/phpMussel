@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.07.16).
+# This file: English language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -247,6 +247,7 @@ link_accounts: "Accounts"
 link_cache_data: "Cache Data"
 link_chat: "Chat"
 link_config: "Configuration"
+link_copy_to_clipboard: "Copy to clipboard"
 link_documentation: "Documentation"
 link_file_manager: "File Manager"
 link_home: "Home"
