@@ -17,6 +17,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.10.09; Maikuolan]: Aesthetic patch + added a new theme.
 
+- [2020.10.10; Bug-fix; Maikuolan]: MajorVersionNotice not declared early
+  enough in frontend.php, causing an undefined index notice to occur; Fixed.
+
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
 
