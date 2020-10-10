@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.10.08).
+ * This file: Front-end handler (last modified: 2020.10.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -612,6 +612,9 @@ if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['ASYNC']) {
     die($phpMussel['L10N']->getString('state_async_deny'));
 }
 
+/** Major version notice. */
+$phpMussel['MajorVersionNotice'] = '';
+
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
 if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2) && !$phpMussel['FE']['CronMode']) {
 
@@ -653,9 +656,6 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', [], 8);
         $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 86400);
     }
-
-    /** Major version notice. */
-    $phpMussel['MajorVersionNotice'] = '';
 
     /** Process remote phpMussel version information. */
     if (empty($phpMussel['Remote-YAML-phpMussel'])) {
