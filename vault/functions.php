@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.10.01).
+ * This file: Functions file (last modified: 2020.10.18).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -2638,7 +2638,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
                                 strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
                         )) || ($is_not_html && (
                                 strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
-                        )) || $$DataSourceLen < $ThisSigLen) {
+                        ))) {
                             continue;
                         }
                         if (

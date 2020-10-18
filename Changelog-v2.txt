@@ -20,6 +20,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.10.10; Bug-fix; Maikuolan]: MajorVersionNotice not declared early
   enough in frontend.php, causing an undefined index notice to occur; Fixed.
 
+- [2020.10.18; Bug-fix; Maikuolan]: A small, minor scan optimisation mechanism
+  found to be faulty, causing signatures to sometimes be skipped when not
+  intended.
+  Refer github.com/phpMussel/phpMussel/issues/224
+
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
 
