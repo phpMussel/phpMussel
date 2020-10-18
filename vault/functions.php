@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.10.01).
+ * This file: Functions file (last modified: 2020.10.18).
  */
 
 /**
@@ -2627,7 +2627,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                 strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
                         )) || ($is_not_html && (
                                 strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
-                        )) || $$DataSourceLen < $ThisSigLen) {
+                        ))) {
                             continue;
                         }
                         if (
