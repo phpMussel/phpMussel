@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default theme icons handler (last modified: 2017.06.09).
+ * This file: Default theme icons handler (last modified: 2020.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */

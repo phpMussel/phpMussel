@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2020.06.12).
+ * This file: Language handler (last modified: 2020.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */

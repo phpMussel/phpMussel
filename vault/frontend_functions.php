@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.08.06).
+ * This file: Front-end functions file (last modified: 2020.10.26).
  */
 
 /**
@@ -985,7 +982,7 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
         ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['L10N']->getString('field_filetype_unknown');
 
         /** If the phpMussel QFU (Quarantined File Upload) header isn't found, it probably isn't a quarantined file. */
-        if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\x01")) {
+        if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\1")) {
             $Head = substr($Head, $HeadPos);
             $Arr[$Key]['Upload-MD5'] = bin2hex(substr($Head, 11, 16));
             $Arr[$Key]['Upload-Size'] = $phpMussel['UnpackSafe']('l*', substr($Head, 27, 4));
@@ -1021,7 +1018,7 @@ $phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$p
     }
     $Data = $phpMussel['ReadFile']($File);
     /** Fetch headers. */
-    if (($HeadPos = strpos($Data, "\xa1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\x01")) {
+    if (($HeadPos = strpos($Data, "\xa1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\1")) {
         $phpMussel['RestoreStatus'] = 2;
         return false;
     }
@@ -1044,7 +1041,7 @@ $phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$p
             }
             $L = substr($Data, $Cycle, 1);
             $R = substr($Key, $Inner, 1);
-            $Output .= ($L === false ? "\x00" : $L) ^ ($R === false ? "\x00" : $R);
+            $Output .= ($L === false ? "\0" : $L) ^ ($R === false ? "\0" : $R);
         }
     }
     $Output = gzinflate($Output);

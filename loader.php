@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2020.03.01).
+ * This file: The loader (last modified: 2020.10.26).
  */
 
 /**

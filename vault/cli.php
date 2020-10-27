@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.07.04).
+ * This file: CLI handler (last modified: 2020.10.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,7 +166,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $Returnable .= $phpMussel['L10N']->getString('cli_pe2') . "\n";
                 for ($PEArr['k'] = 0; $PEArr['k'] < $PEArr['NumOfSections']; $PEArr['k']++) {
                     $PEArr['SectionHead'] = substr($Data, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
-                    $PEArr['SectionName'] = str_ireplace("\x00", '', substr($PEArr['SectionHead'], 0, 8));
+                    $PEArr['SectionName'] = str_ireplace("\0", '', substr($PEArr['SectionHead'], 0, 8));
                     $PEArr['VirtualSize'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 8, 4));
                     $PEArr['VirtualSize'] = $PEArr['VirtualSize'][1];
                     $PEArr['VirtualAddress'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 12, 4));
@@ -183,22 +180,22 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                     $Returnable .= $PEArr['SizeOfRawData'] . ':' . $PEArr['SHA256'] . ':' . $PEArr['SectionName'] . "\n";
                 }
                 $Returnable .= "\n";
-                if (strpos($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
-                    $PEArr['Parts'] = $phpMussel['substral']($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+                if (strpos($Data, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24") !== false) {
+                    $PEArr['Parts'] = $phpMussel['substral']($Data, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24");
                     $PEArr['FINFO'] = [];
                     foreach ([
-                        ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
-                        ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
-                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00", 'PEProductName'],
-                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEProductVersion'],
-                        ["L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00", 'PECopyright'],
-                        ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
-                        ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
+                        ["F\0i\0l\0e\0D\0e\0s\0c\0r\0i\0p\0t\0i\0o\0n\0\0\0", 'PEFileDescription'],
+                        ["F\0i\0l\0e\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEFileVersion'],
+                        ["P\0r\0o\0d\0u\0c\0t\0N\0a\0m\0e\0\0\0", 'PEProductName'],
+                        ["P\0r\0o\0d\0u\0c\0t\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEProductVersion'],
+                        ["L\0e\0g\0a\0l\0C\0o\0p\0y\0r\0i\0g\0h\0t\0\0\0", 'PECopyright'],
+                        ["O\0r\0i\0g\0i\0n\0a\0l\0F\0i\0l\0e\0n\0a\0m\0e\0\0\0", 'PEOriginalFilename'],
+                        ["C\0o\0m\0p\0a\0n\0y\0N\0a\0m\0e\0\0\0", 'PECompanyName'],
                     ] as $PEVars) {
                         if (strpos($PEArr['Parts'], $PEVars[0]) !== false && (
-                            $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf'](
+                            $PEArr['ThisData'] = trim(str_ireplace("\0", '', $phpMussel['substrbf'](
                                 $phpMussel['substral']($PEArr['Parts'], $PEVars[0]),
-                                "\x00\x00\x00"
+                                "\0\0\0"
                             )))
                         )) {
                             $Returnable .= sprintf(
