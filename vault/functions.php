@@ -5,13 +5,10 @@
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * Authors:
- * @see PEOPLE.md
- *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.10.18).
+ * This file: Functions file (last modified: 2020.10.26).
  */
 
 /**
@@ -588,7 +585,7 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
     }
     $k = strlen($Key);
     $FileSize = strlen($In);
-    $Head = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](hash('md5', $In)) . pack('l*', $FileSize) . "\x01";
+    $Head = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](hash('md5', $In)) . pack('l*', $FileSize) . "\1";
     $In = gzdeflate($In, 9);
     $Out = '';
     $i = 0;
@@ -599,7 +596,7 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
             }
             $L = substr($In, $i, 1);
             $R = substr($Key, $j, 1);
-            $Out .= ($L === false ? "\x00" : $L) ^ ($R === false ? "\x00" : $R);
+            $Out .= ($L === false ? "\0" : $L) ^ ($R === false ? "\0" : $R);
         }
     }
     $Out =
@@ -1651,13 +1648,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                         if (
                             strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') === false || (
                                 $Fragment[0] === 'FD' &&
-                                strpos("\x01" . substr($str_hex, 0, $Fragment[3] * 2), "\x01" . $Fragment[1]) === false
+                                strpos("\1" . substr($str_hex, 0, $Fragment[3] * 2), "\1" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex, 0, $Fragment[3] * 2))
                             ) || (
                                 $Fragment[0] === 'FD-NORM' &&
-                                strpos("\x01" . substr($str_hex_norm, 0, $Fragment[3] * 2), "\x01" . $Fragment[1]) === false
+                                strpos("\1" . substr($str_hex_norm, 0, $Fragment[3] * 2), "\1" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-NORM-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, 0, $Fragment[3] * 2))
@@ -1690,13 +1687,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $OriginalFilename)
                             ) || (
                                 $Fragment[0] === 'FD' &&
-                                strpos("\x01" . $str_hex, "\x01" . $Fragment[1]) === false
+                                strpos("\1" . $str_hex, "\1" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex)
                             ) || (
                                 $Fragment[0] === 'FD-NORM' &&
-                                strpos("\x01" . $str_hex_norm, "\x01" . $Fragment[1]) === false
+                                strpos("\1" . $str_hex_norm, "\1" . $Fragment[1]) === false
                             ) || (
                                 $Fragment[0] === 'FD-NORM-RX' &&
                                 !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex_norm)
@@ -1843,7 +1840,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                         'SectionHead' => substr($str, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $NumOfSections * 40)
                     ];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionName'] =
-                        str_ireplace("\x00", '', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 0, 8));
+                        str_ireplace("\0", '', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 0, 8));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] =
                         $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 8, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] =
@@ -1879,22 +1876,22 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                         $SizeOfRawData . ':' . $PEArr['SectionArr'][$PEArr['k']]['sha256'] . ':'
                     ];
                 }
-                if (strpos($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
-                    $PEArr['Parts'] = $phpMussel['substral']($str, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+                if (strpos($str, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24") !== false) {
+                    $PEArr['Parts'] = $phpMussel['substral']($str, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24");
                     $PEArr['FINFO'] = [];
                     foreach ([
-                        ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
-                        ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
-                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00", 'PEProductName'],
-                        ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEProductVersion'],
-                        ["L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00", 'PECopyright'],
-                        ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
-                        ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
+                        ["F\0i\0l\0e\0D\0e\0s\0c\0r\0i\0p\0t\0i\0o\0n\0\0\0", 'PEFileDescription'],
+                        ["F\0i\0l\0e\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEFileVersion'],
+                        ["P\0r\0o\0d\0u\0c\0t\0N\0a\0m\0e\0\0\0", 'PEProductName'],
+                        ["P\0r\0o\0d\0u\0c\0t\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEProductVersion'],
+                        ["L\0e\0g\0a\0l\0C\0o\0p\0y\0r\0i\0g\0h\0t\0\0\0", 'PECopyright'],
+                        ["O\0r\0i\0g\0i\0n\0a\0l\0F\0i\0l\0e\0n\0a\0m\0e\0\0\0", 'PEOriginalFilename'],
+                        ["C\0o\0m\0p\0a\0n\0y\0N\0a\0m\0e\0\0\0", 'PECompanyName'],
                     ] as $PEVars) {
                         if (strpos($PEArr['Parts'], $PEVars[0]) !== false && (
-                            ${$PEVars[1]} = trim(str_ireplace("\x00", '', $phpMussel['substrbf'](
+                            ${$PEVars[1]} = trim(str_ireplace("\0", '', $phpMussel['substrbf'](
                                 $phpMussel['substral']($PEArr['Parts'], $PEVars[0]),
-                                "\x00\x00\x00"
+                                "\0\0\0"
                             )))
                         )) {
                             foreach (['md5', 'sha1', 'sha256'] as $TryHash) {
@@ -1978,7 +1975,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
     ) {
         $phpMussel['LookupCount'] = 0;
         $URLScanner = [
-            'FixedSource' => preg_replace('~(data|f(ile|tps?)|https?|sftp):~i', "\x01\\1:", str_replace("\\", '/', $str_norm)) . "\x01",
+            'FixedSource' => preg_replace('~(data|f(ile|tps?)|https?|sftp):~i', "\x01\\1:", str_replace("\\", '/', $str_norm)) . "\1",
             'DomainsNoLookup' => [],
             'DomainsCount' => 0,
             'Domains' => [],
@@ -2322,13 +2319,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                         if ($ThisSigPart[2] === 'A') {
                                             if (strpos(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,', ',' . $ThisSigPart[0] . ',') === false || (
                                                 $ThisSigPart[0] === 'FD' &&
-                                                strpos("\x01" . substr($str_hex, 0, $ThisSigPart[3] * 2), "\x01" . $ThisSigPart[1]) === false
+                                                strpos("\1" . substr($str_hex, 0, $ThisSigPart[3] * 2), "\1" . $ThisSigPart[1]) === false
                                             ) || (
                                                 $ThisSigPart[0] === 'FD-RX' &&
                                                 !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', substr($str_hex, 0, $ThisSigPart[3] * 2))
                                             ) || (
                                                 $ThisSigPart[0] === 'FD-NORM' &&
-                                                strpos("\x01" . substr($str_hex_norm, 0, $ThisSigPart[3] * 2), "\x01" . $ThisSigPart[1]) === false
+                                                strpos("\1" . substr($str_hex_norm, 0, $ThisSigPart[3] * 2), "\1" . $ThisSigPart[1]) === false
                                             ) || (
                                                 $ThisSigPart[0] === 'FD-NORM-RX' &&
                                                 !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', substr($str_hex_norm, 0, $ThisSigPart[3] * 2))
@@ -2366,13 +2363,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                             !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $OriginalFilename)
                                         ) || (
                                             $ThisSigPart[0] === 'FD' &&
-                                            strpos("\x01" . $str_hex, "\x01" . $ThisSigPart[1]) === false
+                                            strpos("\1" . $str_hex, "\1" . $ThisSigPart[1]) === false
                                         ) || (
                                             $ThisSigPart[0] === 'FD-RX' &&
                                             !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $str_hex)
                                         ) || (
                                             $ThisSigPart[0] === 'FD-NORM' &&
-                                            strpos("\x01" . $str_hex_norm, "\x01" . $ThisSigPart[1]) === false
+                                            strpos("\1" . $str_hex_norm, "\1" . $ThisSigPart[1]) === false
                                         ) || (
                                             $ThisSigPart[0] === 'FD-NORM-RX' &&
                                             !preg_match('/\A(?:' . $ThisSigPart[1] . ')/i', $str_hex_norm)
@@ -2640,12 +2637,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                                 $ThisString = $$DataSource;
                                 $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
                                 if ($xstrf === 'A') {
-                                    $ThisString = "\x01" . $ThisString;
-                                    $ThisSig[0] = "\x01" . $ThisSig[0];
+                                    $ThisString = "\1" . $ThisString;
+                                    $ThisSig[0] = "\1" . $ThisSig[0];
                                 }
                                 if ($xstrt === 'Z') {
-                                    $ThisString .= "\x01";
-                                    $ThisSig[$ThisSigCount - 1] .= "\x01";
+                                    $ThisString .= "\1";
+                                    $ThisSig[$ThisSigCount - 1] .= "\1";
                                 }
                                 for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
                                     if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
@@ -3942,7 +3939,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
             $phpMussel['InstanceCache']['container'] = 'pkfile';
         }
     } elseif (
-        substr($Data, 257, 6) === "ustar\x00" ||
+        substr($Data, 257, 6) === "ustar\0" ||
         strpos(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',') !== false
     ) {
         $Handler = 'TarHandler';
