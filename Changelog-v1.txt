@@ -25,6 +25,8 @@ Detailed version release guidelines for phpMussel can be found at:
   intended.
   Refer github.com/phpMussel/phpMussel/issues/224
 
+- [2020.10.30; Maikuolan]: Redesigned the login pips and refactored some CSS.
+
 === Version/Release 1.13.6 ===
 PATCH RELEASE.
 
