@@ -48,7 +48,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.7-DEV+20300453
+ Version: 2.1.7-DEV+20303329
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -140,7 +140,7 @@ phpMussel Front-End:
    - d24f5b81f21b72cc3980122652386bf2a636c88a86a5d7f0f714c77be77b0860:735
    - 910e667bb03456935bdec49dce6cabac768f618b2ec26b685aff8a49d8559b39:549
    - f89923bb40df45806664c18a21cf51c1f1a765cd86109d2e6b858582f496ef24:1746
-   - 2a0cabb2c4fd203621df504f7bbe9ffc6ceb91ac2ded95a4273296a086c9dcfa:2521
+   - b623372b0068f6f13d1c536480b8331e4b35afbbf1d3fb08e43ea7e99fc3a104:1366
    - 8c3c55676a2db053a91749507c9c037400a74944bfccfb203969a393f564fcf4:332
    - 502526ae5a9dc576d2709954780443694d7ce3bb7e13db357f5c74f7b5f4740e:1431
    - a9033fec4b01acc6846840d3584f03b6d22ad03ae2ee0f9b0b5ac0edf7a34587:672
@@ -152,7 +152,7 @@ phpMussel Front-End:
    - 79d21a386767688768b0ca8a3d3a08821328e2bafca3238071dabfbddeb6f0ce:954
    - 5d17e156680aaba2948f596e7cc8aa868847cb40a96709f13cb1fa32bdfa485d:650
    - a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606
-   - 6cb38c235733a5f4dd1322e8a91ff33222677a6b8e45ece1ec6eb1a5db8970bd:7541
+   - 73bc9dec0162201ec5dbe41f1a4dc3caa21c7f1bd8d53ac50186f65ff94ff578:7629
    - a3780370d21fb717f151e05d61e08deff5a098d7e92aed097964c4ac03c44b69:977
    - 90065e7ce5419096a9a09e4ee01c3c13fcb44dec1f7d20156c7bdee3fd45ba5c:17546
    - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
