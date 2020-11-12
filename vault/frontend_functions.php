@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.10.26).
+ * This file: Front-end functions file (last modified: 2020.11.12).
  */
 
 /**
@@ -687,7 +687,7 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
  */
 $phpMussel['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$phpMussel) {
     $RemoteData = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], $Remote);
-    if (!$RemoteData) {
+    if ($RemoteData === false) {
         $RemoteData = $phpMussel['Request']($Remote);
         if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
             $RemoteData = gzdecode($RemoteData);
@@ -1757,15 +1757,15 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+        $TempMeta = [];
+        $RemoteData = '';
+        $phpMussel['FetchRemote-ContextFree']($RemoteData, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
+        if ($Extracted = $phpMussel['ExtractPage']($RemoteData)) {
+            $phpMussel['YAML']->process($Extracted, $TempMeta);
+        }
         if (!isset($phpMussel['Components']['RemoteMeta'], $phpMussel['Components']['RemoteMeta'][$ThisTarget])) {
             if (!isset($phpMussel['Components']['RemoteMeta'])) {
                 $phpMussel['Components']['RemoteMeta'] = [];
-            }
-            $TempMeta = [];
-            $RemoteData = '';
-            $phpMussel['FetchRemote-ContextFree']($RemoteData, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
-            if ($Extracted = $phpMussel['ExtractPage']($RemoteData)) {
-                $phpMussel['YAML']->process($Extracted, $TempMeta);
             }
             foreach ($TempMeta as $TempKey => $TempData) {
                 if (!isset($phpMussel['Components']['RemoteMeta'][$TempKey])) {

@@ -27,6 +27,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2020.10.30; Maikuolan]: Redesigned the login pips and refactored some CSS.
 
+- [2020.11.12; Bug-fix; Maikuolan]: Fixed potential undefined index error
+  caused by the front-end updates page repair mechanism.
+
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
 
