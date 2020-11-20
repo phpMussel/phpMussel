@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.1.7-DEV+20324179
+ Version: 2.2.0-DEV+20324597
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -35,13 +35,13 @@ phpMussel Core:
    - signatures/switch.dat
   Checksum:
    - 4664d7cae8a441537a1ce25c670a787c220739cc9d2016e9df1ef8d94ee42edd:1540
-   - 47bac1b0e028f7f19cb90c7844474b430f7fc34f4cbe9487479bd25d952b4123:13821
+   - 8146a08d65142a354ce21d83ac1e6d620e32e37d0924f26ef9e02b94e6c2ab81:30827
    - 9aaa1e48f1a2e612bf8302efe5b8fdfd26c22094787fb5183b2a3eab248ebabe:3826
    - 7008413d2b1fbd2514e817b498442c2a5897e65f1da03ad2cc2c5d8fba67df10:1744
-   - fd0e2276a2339ec8ba9f2280ec7f9f17d84ae7d6abc1b245d22617b37a8973c7:7440
+   - 5df6b93e499a5402afcfc81adb1e0b1a20ba4b16f275bd843599fad9f9b8fe50:7440
    - 5653f57d83958e15b7471f069724c426673956f1796d2bc20c6bcb71c36118b9:16037
    - 1b21e46faf43af3566a013a51648840bd443f2bc9ca6c04b0cf70940d5bdbe4a:7619
-   - ecfd8e5fa3bdaa05f11df74a01df2d54a7176dcf5e26f7df68ed2cc6d55806b1:238290
+   - 8464112fe6daad37041f7259fdc8bee34a09cdcf7876e4648e3a75b46830c3da:238336
    - 86be4e0354458580151e44ab9138944fd004489a6182d1a3b867c9572787ab80:6433
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
