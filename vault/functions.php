@@ -4101,7 +4101,7 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
         /** Encryption guard. */
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
-            if (preg_match('~xref.*/Encrypt .*startxref$~', $Data)) {
+            if (($XPos = strrpos($Data, "\nxref")) !== false && strpos($Data, "\n/Encrypt", $XPos + 5) !== false) {
                 $r = -4;
                 $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= sprintf(

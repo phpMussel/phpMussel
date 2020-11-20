@@ -30,6 +30,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.11.12; Bug-fix; Maikuolan]: Fixed potential undefined index error
   caused by the front-end updates page repair mechanism.
 
+- [2020.11.20; Maikuolan]: Added partial support for detecting objects and
+  files embedded within pdf files (due to the nature of how this has been
+  implemented, for the purpose of scanning these embedded objects and files,
+  phpMussel will regard pdf as an archive format; this is intentional).
+
 === Version/Release 1.13.6 ===
 PATCH RELEASE.
 
