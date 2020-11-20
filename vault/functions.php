@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.10.26).
+ * This file: Functions file (last modified: 2020.11.20).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -235,7 +235,7 @@ $phpMussel['prescan_normalise'] = function (string $str, bool $html = false, boo
             }
             if ($c = preg_match_all(
                 '/(' . $phpMussel['Function']('HEX') . '\s*\(\s*["\'])([\da-f]{1,4096})(["\']\s*\))/i',
-            $str, $matches )) {
+            $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -663,7 +663,7 @@ $phpMussel['MemoryUse'] = function (string $Path, int $Delete = 0, int $DeleteFi
     $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Path), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $File = str_replace("\\", '/', substr($Item, $Offset));
-        if ($File && preg_match('~\.qfu$~i', $Item) && is_file($Item) && !is_link($Item) && is_readable($Item)) {
+        if ($File && strtolower(substr($Item, -4)) === '.qfu' && is_file($Item) && !is_link($Item) && is_readable($Item)) {
             $Files[$File] = filemtime($Item);
         }
     }
@@ -1365,6 +1365,21 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
         $$Algo = hash($Algo, $str);
     }
 
+    /** Scan target has no name? That's a little suspicious. */
+    if (!$OriginalFilename) {
+        $phpMussel['killdata'] .= $sha256 . ':' . $StringLength . ":\n";
+        $phpMussel['InstanceCache']['detections_count']++;
+        $Out .= $lnap . sprintf(
+            $phpMussel['L10N']->getString('_exclamation_final'),
+            $phpMussel['L10N']->getString('scan_missing_filename')
+        ) . "\n";
+        $phpMussel['whyflagged'] .= sprintf(
+            $phpMussel['L10N']->getString('_exclamation'),
+            $phpMussel['L10N']->getString('scan_missing_filename')
+        );
+        return [2, $Out];
+    }
+
     /** $fourcc: First four bytes of the scan target in hexadecimal notation. */
     $fourcc = strtolower(bin2hex(substr($str, 0, 4)));
 
@@ -1385,21 +1400,6 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
 
     /** Variables used for weighted signatures and for heuristic analysis. */
     $heur = ['detections' => 0, 'weight' => 0, 'cli' => '', 'web' => ''];
-
-    /** Scan target has no name? That's a little suspicious. */
-    if (!$OriginalFilename) {
-        $phpMussel['killdata'] .= $sha256 . ':' . $StringLength . ":\n";
-        $phpMussel['InstanceCache']['detections_count']++;
-        $Out .= $lnap . sprintf(
-            $phpMussel['L10N']->getString('_exclamation_final'),
-            $phpMussel['L10N']->getString('scan_missing_filename')
-        ) . "\n";
-        $phpMussel['whyflagged'] .= sprintf(
-            $phpMussel['L10N']->getString('_exclamation'),
-            $phpMussel['L10N']->getString('scan_missing_filename')
-        );
-        return [2, $Out];
-    }
 
     /** URL-encoded version of the scan target name. */
     $OriginalFilenameSafe = urlencode($OriginalFilename);
@@ -3240,7 +3240,7 @@ $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, stri
 
     /** Determine whether the file being scanned is a macro. */
     $phpMussel['InstanceCache']['file_is_macro'] = (
-        preg_match('~vbaProject\.bin$~i', $Filename) ||
+        strtolower(substr($Filename, -14)) === 'vbaproject.bin' ||
         preg_match('~^\xd0\xcf|\x00Attribut|\x01CompObj|\x05Document~', $Data)
     );
 
@@ -3294,7 +3294,7 @@ $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, stri
         }
 
         /** Cleanup. */
-        unset($CompressionResults, $CompressionObject);
+        unset($CompressionObject);
     }
 
     /** Destroy item-specific metadata set by the archive handler instance. */
@@ -3712,7 +3712,7 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
         }
 
         /** Cleanup. */
-        unset($CompressionResults, $CompressionObject);
+        unset($CompressionObject);
     }
 
     /** Executed if there were any problems or if anything was detected. */
@@ -3956,10 +3956,14 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
         $Handler = 'TarHandler';
         $ConType = 'TarFile';
         $phpMussel['InstanceCache']['container'] = 'tarfile';
-    } elseif (substr($Data, 0, 4) === 'Rar!' || substr($Data, 0, 4) === "\x52\x45\x7e\x5e") {
+    } elseif (substr($Data, 0, 4) === 'Rar!' || substr($Data, 0, 4) === 'RE~^') {
         $Handler = 'RarHandler';
         $ConType = 'RarFile';
         $phpMussel['InstanceCache']['container'] = 'rarfile';
+    } elseif (substr($Data, 0, 4) === "\x25PDF") {
+        $Handler = 'PdfHandler';
+        $ConType = 'PdfFile';
+        $phpMussel['InstanceCache']['container'] = 'pdffile';
     }
 
     /** Not an archive. Exit early. */
@@ -4010,7 +4014,7 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
         }
 
         /** Guard. */
-        if (!class_exists('ZipArchive')) {
+        if (!class_exists('\ZipArchive')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
                 $r = -1;
                 $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
@@ -4062,7 +4066,7 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
     if ($Handler === 'RarHandler') {
 
         /** Guard. */
-        if (!class_exists('RarArchive') || !class_exists('RarEntry')) {
+        if (!class_exists('\RarArchive') || !class_exists('\RarEntry')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
                 $r = -1;
                 $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
@@ -4101,6 +4105,37 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
         if ($Pointer) {
             $ArchiveObject = new \phpMussel\ArchiveHandler\RarHandler($Pointer);
         }
+    }
+
+    /** Handle PDF files. */
+    if ($Handler === 'PdfHandler') {
+
+        /** Encryption guard. */
+        if ($phpMussel['Config']['files']['block_encrypted_archives']) {
+            if (preg_match('~xref.*/Encrypt .*startxref$~', $Data)) {
+                $r = -4;
+                $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
+                $phpMussel['whyflagged'] .= sprintf(
+                    $phpMussel['L10N']->getString('_exclamation'),
+                    $phpMussel['L10N']->getString('encrypted_archive') . ' (' . $ItemRef . ')'
+                );
+                $x .= sprintf(
+                    '-%1$s%2$s \'%3$s\' (FN: %4$s; FD: %5$s):%6$s--%1$s%7$s%8$s%6$s',
+                    $Indent,
+                    $phpMussel['L10N']->getString('scan_checking'),
+                    $ItemRef,
+                    hash('crc32b', $File),
+                    hash('crc32b', $Data),
+                    "\n",
+                    $phpMussel['L10N']->getString('encrypted_archive'),
+                    $phpMussel['L10N']->getString('_fullstop_final')
+                );
+                return;
+            }
+        }
+
+        /** PdfHandler can work with data directly. */
+        $ArchiveObject = new \phpMussel\ArchiveHandler\PdfHandler($Data);
     }
 
     /** Archive object has been instantiated. Let's proceed. */
