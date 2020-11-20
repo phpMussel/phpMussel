@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.12).
+ * This file: Front-end functions file (last modified: 2020.11.20).
  */
 
 /**
@@ -363,13 +363,14 @@ $phpMussel['SanityCheck'] = function ($FileName, $FileData) {
     }
 
     /** Check whether GIF is valid. */
-    if (preg_match('~\.gif$~i', $FileName)) {
-        return preg_match('~^GIF8[79]a~', $FileData);
+    if (strtolower(substr($FileName, -4)) === '.gif') {
+        $Sample = substr($FileData, 0, 6);
+        return $Sample === 'GIF87a' || $Sample === 'GIF89a';
     }
 
     /** Check whether PNG is valid. */
-    if (preg_match('~\.png$~i', $FileName)) {
-        return preg_match('~^\x89PNG~', $FileData);
+    if (strtolower(substr($FileName, -4)) === '.png') {
+        return substr($FileData, 0, 4) === "\x89PNG";
     }
 
     /** Check whether CEDB file is valid. */
@@ -477,7 +478,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$)~i', $ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('label_fmgr_safety');
-                } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
+                } elseif (strtolower($ThisNameFixed) === 'config.ini') {
                     $Component = $phpMussel['L10N']->getString('link_config');
                 } elseif ($phpMussel['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('link_logs');
@@ -945,7 +946,7 @@ $phpMussel['Quarantine-RecursiveList'] = function ($DeleteMode = false) use (&$p
     $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($phpMussel['qfuPath']), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         /** Skips if not a quarantined file. */
-        if (!preg_match('~\.qfu$~i', $Item) || is_dir($Item) || !is_file($Item) || !is_readable($Item)) {
+        if (strtolower(substr($Item, -4)) !== '.qfu' || is_dir($Item) || !is_file($Item) || !is_readable($Item)) {
             continue;
         }
         /** Deletes all files in quarantine. */
