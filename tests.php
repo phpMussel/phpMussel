@@ -64,7 +64,7 @@ $Expected = [
 
 // Test scanning against the standard phpMussel test samples.
 $Actual = $phpMussel['Scan']($Testfiles, true, false);
-ksort($Actual);
+sort($Actual, SORT_STRING);
 if ($Actual !== $Expected) {
     exit(5);
 }

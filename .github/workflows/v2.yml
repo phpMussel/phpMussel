@@ -1,4 +1,4 @@
-name: core
+name: v2
 
 on: [push, pull_request]
 
