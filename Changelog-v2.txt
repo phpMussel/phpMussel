@@ -39,6 +39,10 @@ Detailed version release guidelines for phpMussel can be found at:
   Actions. Replaced existing tests. (More work needs to eventually be done
   towards tests. This will eventually happen at some point).
 
+- [2020.11.27; Maikuolan]: Some minor code-style cleanup and removed support
+  showing test results at the updates page (since we're using different
+  mechanisms now anyway).
+
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
 

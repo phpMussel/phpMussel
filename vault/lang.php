@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2020.10.26).
+ * This file: Language handler (last modified: 2020.11.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,9 +24,11 @@ if (empty($phpMussel['Config']['general']['lang'])) {
 /** L10N data. */
 $phpMussel['L10N'] = ['Configured' => [], 'ConfiguredData' => '', 'Fallbacks' => [], 'FallbackData' => ''];
 
-/** If the language directive is set to English, don't bother about fallbacks. */
+/**
+ * If the language directive is set to English, don't bother about fallbacks.
+ * If it isn't set to English, we'll use English as the fallback.
+ */
 if ($phpMussel['Config']['general']['lang'] === 'en') {
-
     /** Standard L10N data. */
     $phpMussel['L10N']['Configured'][] = $phpMussel['langPath'] . 'lang.en.yaml';
     if (
@@ -38,10 +40,7 @@ if ($phpMussel['Config']['general']['lang'] === 'en') {
         /** Front-end L10N data. */
         $phpMussel['L10N']['Configured'][] = $phpMussel['langPath'] . 'lang.en.fe.yaml';
     }
-
-/** If the language directive isn't set to English, we'll use English as the fallback. */
 } else {
-
     /** Standard L10N data. */
     $phpMussel['L10N']['Configured'][] = $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.yaml';
     $phpMussel['L10N']['Fallbacks'][] = $phpMussel['langPath'] . 'lang.en.yaml';
@@ -55,7 +54,6 @@ if ($phpMussel['Config']['general']['lang'] === 'en') {
         $phpMussel['L10N']['Configured'][] = $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.fe.yaml';
         $phpMussel['L10N']['Fallbacks'][] = $phpMussel['langPath'] . 'lang.en.fe.yaml';
     }
-
 }
 
 /** Fetch any needed plugin L10N data. */
