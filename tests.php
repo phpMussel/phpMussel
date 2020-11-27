@@ -1,4 +1,11 @@
 <?php
+// Prevent running tests outside of Composer (if the package is deployed
+// somewhere live with this file still intact, useful to prevent hammering and
+// cycles being needlessly wasted).
+if (!isset($_SERVER['COMPOSER_BINARY'])) {
+    die;
+}
+
 // Suppress unexpected errors from output and exit early as a failure when encountered.
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     exit(1);
