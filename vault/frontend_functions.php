@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.20).
+ * This file: Front-end functions file (last modified: 2020.11.27).
  */
 
 /**
@@ -518,8 +518,9 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                 if (preg_match(
                     '/^(?:.?[BGL]Z.?|7Z|A(CE|LZ|P[KP]|R[CJ]?)?|B([AH]|Z2?)|CAB|DMG|' .
                     'I(CE|SO)|L(HA|Z[HOWX]?)|P(AK|AQ.?|CK|EA)|RZ|S(7Z|EA|EN|FX|IT.?|QX)|' .
-                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/'
-                , $Ext)) {
+                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=archive';
                 } elseif (preg_match('/^[SDX]?HT[AM]L?$/', $Ext)) {
@@ -544,20 +545,23 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=swf';
                 } elseif (preg_match(
-                    '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/'
-                , $Ext)) {
+                    '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=image';
                 } elseif (preg_match(
                     '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|MV)|GIFV|HLV|' .
-                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/'
-                , $Ext)) {
+                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=video';
                 } elseif (preg_match(
                     '/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|' .
-                    'R(AM?|M[AX])|SWA|W(AVE?|MA))$/'
-                , $Ext)) {
+                    'R(AM?|M[AX])|SWA|W(AVE?|MA))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=audio';
                 } elseif (preg_match('/^(?:MD|NFO|RTF|TXT)$/', $Ext)) {
@@ -1053,94 +1057,6 @@ $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
 };
 
 /**
- * Appends test data onto component metadata.
- *
- * @param array $Component The component to append test data onto.
- * @param bool $ReturnState Whether to operate as a function or a procedure.
- * @return bool|null Indicates whether tests have passed, when operating as a function.
- */
-$phpMussel['AppendTests'] = function (array &$Component, $ReturnState = false) use (&$phpMussel) {
-    $TestData = $phpMussel['FECacheGet'](
-        $phpMussel['FE']['Cache'],
-        $phpMussel['Components']['RemoteMeta'][$Component['ID']]['Tests']
-    );
-    if (!$TestData) {
-        $TestData = $phpMussel['Request'](
-            $phpMussel['Components']['RemoteMeta'][$Component['ID']]['Tests']
-        ) ?: '-';
-        $phpMussel['FECacheAdd'](
-            $phpMussel['FE']['Cache'],
-            $phpMussel['FE']['Rebuild'],
-            $phpMussel['Components']['RemoteMeta'][$Component['ID']]['Tests'],
-            $TestData,
-            $phpMussel['Time'] + 1800
-        );
-    }
-    if (substr($TestData, 0, 1) === '{' && substr($TestData, -1) === '}') {
-        $TestData = json_decode($TestData, true, 5);
-    }
-    if (!empty($TestData['statuses']) && is_array($TestData['statuses'])) {
-        $TestsTotal = 0;
-        $TestsPassed = 0;
-        $TestDetails = '';
-        foreach ($TestData['statuses'] as $ThisStatus) {
-            if (empty($ThisStatus['context']) || empty($ThisStatus['state'])) {
-                continue;
-            }
-            $TestsTotal++;
-            $StatusHead = '';
-            if ($ThisStatus['state'] === 'success') {
-                if ($TestsPassed !== '?') {
-                    $TestsPassed++;
-                }
-                $StatusHead .= '<span class="txtGn">✔️ ';
-            } elseif ($ThisStatus['state'] === 'pending') {
-                $TestsPassed = '?';
-                $StatusHead .= '<span class="txtOe">❓ ';
-            } else {
-                if ($ReturnState) {
-                    return false;
-                }
-                $StatusHead .= '<span class="txtRd">❌ ';
-            }
-            $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
-                '<a href="' . $ThisStatus['target_url'] . '" rel="noopener noreferrer external">' . $ThisStatus['context'] . '</a>'
-            );
-            if (!$ReturnState) {
-                $phpMussel['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
-            }
-        }
-        if (!$ReturnState) {
-            if ($TestsTotal === $TestsPassed) {
-                $TestClr = 'txtGn';
-            } else {
-                $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
-            }
-            $TestsTotal = sprintf(
-                '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
-                '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
-                '</span><span id="%4$s-hidetests" style="display:none">' .
-                '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
-                '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
-                $TestClr,
-                ($TestsPassed === '?' ? '?' : $phpMussel['NumberFormatter']->format($TestsPassed)),
-                $phpMussel['NumberFormatter']->format($TestsTotal),
-                $Component['ID'],
-                $TestDetails
-            );
-            $phpMussel['AppendToString'](
-                $Component['StatusOptions'],
-                '<hr />',
-                '<div class="s">' . $phpMussel['L10N']->getString('label_tests') . ' ' . $TestsTotal
-            );
-        }
-    }
-    if ($ReturnState) {
-        return true;
-    }
-};
-
-/**
  * Traversal detection.
  *
  * @param string $Path The path to check for traversal.
@@ -1314,9 +1230,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             ($NewMeta = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0]) &&
-            (!$phpMussel['FE']['CronMode'] || empty(
-                $phpMussel['Components']['Meta'][$ThisTarget]['Tests']
-            ) || $phpMussel['AppendTests']($phpMussel['Components']['Meta'][$ThisTarget], true))
+            !$phpMussel['FE']['CronMode']
         ) {
             $Congruents[$ThisReannotate] = $NewMeta;
             $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']);
@@ -1373,9 +1287,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     continue;
                 }
                 if (
-                    strtolower(substr(
-                        $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2
-                    )) === 'gz' &&
+                    strtolower(
+                        substr($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2)
+                    ) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
                     substr($ThisFile, 0, 2) === "\x1f\x8b"
                 ) {

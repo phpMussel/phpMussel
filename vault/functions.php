@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.11.20).
+ * This file: Functions file (last modified: 2020.11.27).
  */
 
 /**
@@ -196,7 +196,9 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 '/(' . $phpMussel['Function']('B64') . '|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*' .
                 '\(\s*["\'\`])([\da-z+\/]{4})*([\da-z+\/]{4}|[\da-z+\/]{3}=|[\da-z+\/]{2}==)(["\'\`]' .
                 '\s*\))/i',
-            $str, $matches)) {
+                $str,
+                $matches
+            )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -208,7 +210,9 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
             }
             if ($c = preg_match_all(
                 '/(' . $phpMussel['Function']('R13') . '\s*\(\s*["\'])([^\'"\(\)]{1,4096})(["\']\s*\))/i',
-            $str, $matches)) {
+                $str,
+                $matches
+            )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -220,7 +224,9 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
             }
             if ($c = preg_match_all(
                 '/(' . $phpMussel['Function']('HEX') . '\s*\(\s*["\'])([\da-f]{1,4096})(["\']\s*\))/i',
-            $str, $matches)) {
+                $str,
+                $matches
+            )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -232,7 +238,9 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
             }
             if ($c = preg_match_all(
                 '/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*["\']\s*H\*\s*["\']\s*,\s*["\'])([\da-fA-F]{1,4096})(["\']\s*\))/',
-            $str, $matches)) {
+                $str,
+                $matches
+            )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_replace($matches[0][$i], '"' . $phpMussel['HexSafe']($phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"', $str);
                 }
@@ -386,7 +394,8 @@ $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
                 }
                 while (strpos($CacheFiles[$FileKey], $ThisData[0] . ':') !== false) {
                     $CacheFiles[$FileKey] = str_ireplace($ThisData[0] . ':' . $phpMussel['substrbf'](
-                        $phpMussel['substraf']($CacheFiles[$FileKey], $ThisData[0] . ':'), ';'
+                        $phpMussel['substraf']($CacheFiles[$FileKey], $ThisData[0] . ':'),
+                        ';'
                     ) . ';', '', $CacheFiles[$FileKey]);
                 }
                 $ThisData = '';
@@ -455,7 +464,8 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
         return '';
     }
     if (!$Item = strpos($FileData, $Entry . ':') !== false ? $Entry . ':' . $phpMussel['substrbf'](
-        $phpMussel['substraf']($FileData, $Entry . ':'), ';'
+        $phpMussel['substraf']($FileData, $Entry . ':'),
+        ';'
     ) . ';' : '') {
         return '';
     }
@@ -509,7 +519,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     while (strpos($Data, $Entry . ':') !== false) {
         $Data = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($Data, $Entry . ':'), ';') . ';', '', $Data);
     }
-    $Data .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData,9)) . ';';
+    $Data .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData, 9)) . ';';
     $Handle = fopen($File, 'w');
     fwrite($Handle, $Data);
     fclose($Handle);
@@ -756,15 +766,25 @@ $phpMussel['lv_match'] = function ($Needle, $Haystack, $pos_A = 0, $pos_Z = 0, $
     }
     if ($cost_ins === 1 && $cost_rep === 1 && $cost_del === 1) {
         $lv = $case ? levenshtein(
-            $Haystack, $Needle
+            $Haystack,
+            $Needle
         ) : levenshtein(
-            strtolower($Haystack), strtolower($Needle)
+            strtolower($Haystack),
+            strtolower($Needle)
         );
     } else {
         $lv = $case ? levenshtein(
-            $Haystack, $Needle, $cost_ins, $cost_rep, $cost_del
+            $Haystack,
+            $Needle,
+            $cost_ins,
+            $cost_rep,
+            $cost_del
         ) : levenshtein(
-            strtolower($Haystack), strtolower($Needle), $cost_ins, $cost_rep, $cost_del
+            strtolower($Haystack),
+            strtolower($Needle),
+            $cost_ins,
+            $cost_rep,
+            $cost_del
         );
     }
     return $bool ? (($min === 0 || $lv >= $min) && ($max === -1 || $lv <= $max)) : $lv;
@@ -1556,7 +1576,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
         '/0a(?:4(?:36f6e74656e742d54797065|4617465|6726f6d|d6573736167652d4944|d4' .
         '94d452d56657273696f6e)|5(?:265706c792d546f|2657475726e2d50617468|3656e64' .
         '6572|375626a656374|46f|82d4d61696c6572))3a20/i',
-    $str_hex) || preg_match('/0a2d2d.{32}(?:2d2d)?(?:0d)?0a/i', $str_hex));
+        $str_hex
+    ) || preg_match('/0a2d2d.{32}(?:2d2d)?(?:0d)?0a/i', $str_hex));
 
     /** Look for potential Mach-O indicators. */
     $is_macho = preg_match('/^(?:cafe(?:babe|d00d)|c[ef]faedfe|feedfac[ef])$/', $fourcc);
@@ -1626,7 +1647,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                 if (!isset($Fragment[1]) || substr($Fragment[1], 0, 1) !== '$') {
                     continue 2;
                 }
-                $lv_haystack = substr($Fragment[1],1);
+                $lv_haystack = substr($Fragment[1], 1);
                 if (!isset($$lv_haystack) || is_array($$lv_haystack)) {
                     continue 2;
                 }
@@ -2621,9 +2642,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                         $VN = $phpMussel['vn_shorthand']($VN[0]);
                         $VNLC = strtolower($VN);
                         if (($is_not_php && (
-                                strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
+                            strpos($VNLC, '-php') !== false || strpos($VNLC, '.php') !== false
                         )) || ($is_not_html && (
-                                strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
+                            strpos($VNLC, '-htm') !== false || strpos($VNLC, '.htm') !== false
                         ))) {
                             continue;
                         }
@@ -2686,7 +2707,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
 
     /** Perform API lookups for domains. */
     if (isset($URLScanner) && !$Out) {
-
         $URLScanner['DomainsCount'] = count($URLScanner['DomainParts']);
 
         $URLScanner['URLsCount'] = count($URLScanner['URLParts']);
@@ -3025,7 +3045,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
                     'https://www.virustotal.com/vtapi/v2/file/report?apikey=' .
                     urlencode($phpMussel['Config']['virustotal']['vt_public_api_key']) .
                     '&resource=' . $md5,
-                $VTParams, 12);
+                    $VTParams,
+                    12
+                );
                 $VTJSON = json_decode($VTRequest, true);
                 $y = $phpMussel['Time'] + ($phpMussel['Config']['virustotal']['vt_quota_time'] * 60);
                 $phpMussel['InstanceCache']['vt_quota'] .= $y . ';';
@@ -3312,11 +3334,13 @@ $phpMussel['Indicator-Image'] = function ($Ext, $Head) {
     return (
         preg_match(
             '/^(?:bm[2p]|c(d5|gm)|d(ib|w[fg]|xf)|ecw|fits|gif|img|j(f?if?|p[2s]|pe?g?2?|xr)|p(bm|cx|dd|gm|ic|n[gms]|' .
-            'pm|s[dp])|s(id|v[ag])|tga|w(bmp?|ebp|mp)|x(cf|bmp))$/'
-        , $Ext) ||
+            'pm|s[dp])|s(id|v[ag])|tga|w(bmp?|ebp|mp)|x(cf|bmp))$/',
+            $Ext
+        ) ||
         preg_match(
-            '/^(?:0000000c6a502020|25504446|38425053|424d|474946383[79]61|57454250|67696d7020786366|89504e47|ffd8ff)/'
-        , $Head)
+            '/^(?:0000000c6a502020|25504446|38425053|424d|474946383[79]61|57454250|67696d7020786366|89504e47|ffd8ff)/',
+            $Head
+        )
     );
 };
 
@@ -4217,7 +4241,8 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
                 $ThisItemRef = $ItemRef . '>' . urlencode($Filename);
 
                 /** Verify filesize, integrity, etc. Exit early in case of problems. */
-                if ($Filesize !== strlen($Content) || ($InternalCRC &&
+                if ($Filesize !== strlen($Content) || (
+                    $InternalCRC &&
                     preg_replace('~^0+~', '', $DataCRC32) !== preg_replace('~^0+~', '', $InternalCRC)
                 )) {
                     $r = 2;
@@ -4749,7 +4774,11 @@ $phpMussel['Request'] = function ($URI, $Params = [], $Timeout = -1, array $Head
 
         /** Used for debugging. */
         $phpMussel['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'
+            "\r%s - %s - %s - %s\n",
+            $Post ? 'POST' : 'GET',
+            $URI,
+            $Info['http_code'],
+            (floor($Time * 100) / 100) . 's'
         ));
 
         /** Most recent HTTP code flag. */
@@ -4764,7 +4793,11 @@ $phpMussel['Request'] = function ($URI, $Params = [], $Timeout = -1, array $Head
 
         /** Used for debugging. */
         $phpMussel['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, 200, (floor($Time * 100) / 100) . 's'
+            "\r%s - %s - %s - %s\n",
+            $Post ? 'POST' : 'GET',
+            $URI,
+            200,
+            (floor($Time * 100) / 100) . 's'
         ));
 
         /** Most recent HTTP code flag. */
@@ -4857,7 +4890,6 @@ $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
 
 /** Fetch information about signature files and prepare for use with the scan process. */
 $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
-
     $LastActive = $phpMussel['FetchCache']('Active') ?: '';
     if (empty($phpMussel['Config']['signatures']['Active'])) {
         if ($LastActive) {

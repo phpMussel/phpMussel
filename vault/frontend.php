@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.10.26).
+ * This file: Front-end handler (last modified: 2020.11.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2021,11 +2021,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             $phpMussel['Components']['ThisComponent']['Changelog']
         ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
-        /** Append tests. */
-        if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisComponent']['ID']]['Tests'])) {
-            $phpMussel['AppendTests']($phpMussel['Components']['ThisComponent']);
-        }
-
         /** Append filename. */
         $phpMussel['Components']['ThisComponent']['Filename'] = (
             empty($phpMussel['Components']['ThisComponent']['Files']['To']) ||
@@ -2165,11 +2160,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['Components']['ThisComponent']['Changelog'] = empty(
             $phpMussel['Components']['ThisComponent']['Changelog']
         ) ? '' : '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
-
-        /** Append tests. */
-        if (!empty($phpMussel['Components']['ThisComponent']['Tests'])) {
-            $phpMussel['AppendTests']($phpMussel['Components']['ThisComponent']);
-        }
 
         /** Append filename (empty). */
         $phpMussel['Components']['ThisComponent']['Filename'] = '';

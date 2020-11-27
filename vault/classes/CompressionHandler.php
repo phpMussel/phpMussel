@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Compression handler (last modified: 2020.10.26).
+ * This file: Compression handler (last modified: 2020.11.27).
  */
 
 namespace phpMussel\CompressionHandler;
@@ -147,6 +147,6 @@ class CompressionHandler
          * whether they're the same or different. If the same, then data
          * probably wasn't compressed to begin with.
          */
-         return ($Original === $this->Data);
+        return ($Original === $this->Data);
     }
 }
