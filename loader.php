@@ -8,25 +8,23 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2020.10.26).
+ * This file: The loader (last modified: 2020.11.27).
  */
 
 /**
  * phpMussel should only be loaded once per PHP instance. To ensure this, we
  * check for the existence of a "phpMussel" constant. If it doesn't exist, we
  * define it and continue loading. If it already exists, we warn the client and
- * kill the script. We'll skip this process if we're performing unit testing.
+ * kill the script.
  */
-if (!defined('UNIT_TESTING_IN_PROGRESS')) {
-    if (defined('phpMussel')) {
-        header('Content-Type: text/plain');
-        echo '[phpMussel] ' . (
-            isset($phpMussel['L10N']) ? $phpMussel['L10N']->getString('instance_already_active') : 'Instance already active! Please double-check your hooks.'
-        );
-        die;
-    }
-    define('phpMussel', true);
+if (defined('phpMussel')) {
+    header('Content-Type: text/plain');
+    echo '[phpMussel] ' . (
+        isset($phpMussel['L10N']) ? $phpMussel['L10N']->getString('instance_already_active') : 'Instance already active! Please double-check your hooks.'
+    );
+    die;
 }
+define('phpMussel', true);
 
 if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
     header('Content-Type: text/plain');

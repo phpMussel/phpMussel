@@ -16,16 +16,14 @@
         "ext-pcre": "*"
     },
     "suggest": {
-        "php": ">=7.2.0 (this package performs significantly better with PHP >= 7.2.0).",
-        "cidram/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel).",
+        "ext-apcu": "*",
         "ext-bz2": "*",
         "ext-curl": "*",
         "ext-lzf": "*",
         "ext-rar": "*",
         "ext-zip": "*"
     },
-    "require-dev": {
-        "codeception/codeception": "^2.3",
-        "symfony/event-dispatcher": "3.4.28"
+    "scripts": {
+        "test": "@php tests.php"
     }
 }
