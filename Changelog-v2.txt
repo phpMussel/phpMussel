@@ -35,6 +35,10 @@ Detailed version release guidelines for phpMussel can be found at:
   implemented, for the purpose of scanning these embedded objects and files,
   phpMussel will regard pdf as an archive format; this is intentional).
 
+- [2020.11.27; Maikuolan]: Ditched external test frameworks in favour of GitHub
+  Actions. Replaced existing tests. (More work needs to eventually be done
+  towards tests. This will eventually happen at some point).
+
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
 

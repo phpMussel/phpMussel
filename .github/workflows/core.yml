@@ -1,0 +1,34 @@
+name: core
+
+on: [push, pull_request]
+
+jobs:
+ build:
+  runs-on: ${{ matrix.operating-system }}
+
+  strategy:
+   matrix:
+    operating-system: [ubuntu-latest]
+    php-versions: ['7.2', '7.3', '7.4']
+  name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+
+  - name: Set up PHP
+    uses: shivammathur/setup-php@v2
+    with:
+     php-version: ${{ matrix.php-versions }}
+     # See: https://github.com/shivammathur/setup-php/wiki
+     # Ability to test phpMussel's lzf and rar support would be nice too, but those extensions aren't supported by any
+     # version of shivammathur/setup-php yet. :-)
+     extensions: pcre, apcu, bz2, curl, zip
+
+  - name: Validate composer.json and composer.lock
+    run: composer validate
+
+  - name: Install dependencies
+    run: composer install --prefer-dist --no-progress
+
+  - name: Run tests
+    run: composer run-script --timeout=360 test
