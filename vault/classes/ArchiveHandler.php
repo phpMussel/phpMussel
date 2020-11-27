@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2020.11.19).
+ * This file: Archive handler (last modified: 2020.11.20).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -331,7 +331,7 @@ class TarHandler extends ArchiveHandler
      *
      * @return false Tar doesn't provide internal CRCs.
      */
-    public function EntryCRC()
+    public function EntryCRC(): bool
     {
         return false;
     }
