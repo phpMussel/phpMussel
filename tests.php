@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
+ *
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+ */
+
 // Prevent running tests outside of Composer (if the package is deployed
 // somewhere live with this file still intact, useful to prevent hammering and
 // cycles being needlessly wasted).

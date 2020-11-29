@@ -1,0 +1,29 @@
+name: PHP-CS-Fixer
+
+on: [push, pull_request]
+
+jobs:
+ build:
+  runs-on: ${{ matrix.operating-system }}
+
+  strategy:
+   matrix:
+    operating-system: [ubuntu-latest]
+    php-versions: ['7.4']
+  name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+
+  - name: Set up PHP
+    uses: shivammathur/setup-php@v2
+    with:
+     php-version: ${{ matrix.php-versions }}
+     extensions: pcre
+     tools: php-cs-fixer
+
+  - name: PHP-CS-Fixer Check
+    run: |
+     php-cs-fixer fix -v --dry-run ./vault --rules=@PSR2
+     php-cs-fixer fix -v --dry-run ./loader.php --rules=@PSR2
+     php-cs-fixer fix -v --dry-run ./test.php --rules=@PSR2

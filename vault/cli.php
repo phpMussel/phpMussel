@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.10.26).
+ * This file: CLI handler (last modified: 2020.11.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -528,7 +528,6 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         else {
             echo "\n" . $phpMussel['L10N']->getString('bad_command') . "\n";
         }
-
     }
 
     die;
