@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2020.11.27).
+ * This file: The loader (last modified: 2020.11.29).
  */
 
 /**
@@ -127,7 +127,7 @@ if ($phpMussel['Config']['general']['enable_plugins']) {
     unset($phpMussel['ThisPlugin']);
 }
 
-/* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+/** This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
 if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
 
     /**
@@ -148,7 +148,6 @@ if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
     ) {
         require $phpMussel['Vault'] . 'frontend.php';
     }
-
 }
 
 /** This code block only executed if we're in CLI mode. */
@@ -169,10 +168,7 @@ if ($phpMussel['Config']['general']['cleanup']) {
 
     /** Unset our working data so that we can exit cleanly. */
     unset($x, $phpMussel);
-
 } else {
-
     /** Let the script know that we haven't exited cleanly. */
     $phpMussel['EOF'] = true;
-
 }

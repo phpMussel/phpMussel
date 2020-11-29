@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2020.10.26).
+ * This file: Upload handler (last modified: 2020.11.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -221,7 +221,8 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     str_repeat('-', 64) . ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['ThisIter']] . ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . "\n";
-                $phpMussel['whyflagged'] .= sprintf($phpMussel['L10N']->getString('_exclamation'),
+                $phpMussel['whyflagged'] .= sprintf(
+                    $phpMussel['L10N']->getString('_exclamation'),
                     $phpMussel['L10N']->getString('upload_limit_exceeded') .
                     ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['ThisIter']] . ')'
                 );
@@ -261,7 +262,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
     /** Update the hash cache. */
     if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && !empty($phpMussel['HashCache']['Data']) && is_array($phpMussel['HashCache']['Data'])) {
-
         $phpMussel['HashCache']['Data'] = array_map(function ($Item) {
             return is_array($Item) ? implode(':', $Item) . ';' : $Item;
         }, $phpMussel['HashCache']['Data']);

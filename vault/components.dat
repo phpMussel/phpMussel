@@ -48,7 +48,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.1.7-DEV+20331373
+ Version: 2.2.0-DEV+20333285
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -163,12 +163,12 @@ phpMussel Front-End:
    - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - 500c03bfa0a63dd5f0d62c7add69fdf30b8c14da85826f850daf20e38d7ae16b:169053
+   - ff1bf049260e5d9ee66ef1c167b5c71959be0a5156c3f7d878031841a7db0164:169551
    - 8facb8080c0b5a7dc518659d9986a570a9f6d3bfe7ab73287b9c7814d2a3b9c3:113034
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.1.7-DEV+20300453
+ Version: 2.2.0-DEV+20333285
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -187,11 +187,11 @@ phpMussel Upload Handler:
   Checksum:
    - 7b656811c946982d7646c2e03934eb75f256a8c093d21d7caa9e4c0a82ce99b8:1020
    - ba70f6d5f271714fe04a4fcc466821c5b1605ea4940a30ae46850da128ac45cb:1986
-   - 82cd26bf9fb8fb90136fb25bfa61feabf7e9c2260eb2b88df45e022dc05eabfb:21408
+   - ab2210cb90bffde9d6cf70b7605cc89583b0af8736ffe6a2cc85bce54789cde7:21428
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
- Version: 2.1.7-DEV+20300453
+ Version: 2.2.0-DEV+20333285
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -202,7 +202,7 @@ phpMussel CLI Handler:
   To:
    - cli.php
   Checksum:
-   - c7329115cc5f7a6505a6e4d558c7097122b535b0409be399a91cc5f8b94e4e26:28420
+   - 2787492048f8f9eb144eb04fa24b7f529daee88c43f66b8ca5310baf33b39d5e:28419
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
