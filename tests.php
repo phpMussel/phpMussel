@@ -15,6 +15,7 @@ if (!isset($_SERVER['COMPOSER_BINARY'])) {
 
 // Suppress unexpected errors from output and exit early as a failure when encountered.
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    echo 'Error triggered: ' . $errstr . PHP_EOL;
     exit(1);
 });
 
@@ -29,15 +30,17 @@ $Vault = __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR;
 
 // Fetch the signatures needed for testing the scanner.
 $ZipObj = new \ZipArchive();
-if ($ZipObj->open($TestPath . 'signatures.zip') === TRUE) {
+if ($ZipObj->open($TestPath . 'signatures.zip') === true) {
     $ZipObj->extractTo($Vault . 'signatures' . DIRECTORY_SEPARATOR);
     $ZipObj->close();
     unset($ZipObj);
 } else {
+    echo 'Problem encountered trying to open signatures.zip.' . PHP_EOL;
     exit(3);
 }
 
 if (!is_readable(__DIR__ . DIRECTORY_SEPARATOR . 'loader.php') || !is_readable($Vault . 'config.ini.RenameMe')) {
+    echo 'Loader or configuration is not readable.' . PHP_EOL;
     exit(2);
 }
 
@@ -73,10 +76,11 @@ $Expected = [
 $Actual = $phpMussel['Scan']($Testfiles, true, false);
 sort($Actual, SORT_STRING);
 if ($Actual !== $Expected) {
+    echo 'Actual scan results does not match expected scan results.' . PHP_EOL;
     exit(5);
 }
 
 restore_error_handler();
 
-// All tests passed.
+echo 'All tests passed.' . PHP_EOL;
 exit(0);
