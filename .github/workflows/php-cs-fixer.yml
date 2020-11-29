@@ -26,4 +26,4 @@ jobs:
     run: |
      php-cs-fixer fix -v --dry-run ./vault --rules=@PSR2
      php-cs-fixer fix -v --dry-run ./loader.php --rules=@PSR2
-     php-cs-fixer fix -v --dry-run ./test.php --rules=@PSR2
+     php-cs-fixer fix -v --dry-run ./tests.php --rules=@PSR2
