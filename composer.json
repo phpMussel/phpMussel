@@ -13,12 +13,12 @@
     },
     "require": {
         "php": ">=7.2.0",
-        "maikuolan/common": "^2.3.3",
-        "phpmussel/core": "^3.0.2",
-        "phpmussel/frontend": "^3.0.1",
-        "phpmussel/cli": "^3.0",
-        "phpmussel/web": "^3.0.1",
-        "phpmussel/phpmailer": "^3.0",
+        "maikuolan/common": "^2.4.0",
+        "phpmussel/core": "^3.1",
+        "phpmussel/frontend": "^3.1",
+        "phpmussel/cli": "^3.1",
+        "phpmussel/web": "^3.1",
+        "phpmussel/phpmailer": "^3.1",
         "ext-pcre": "*"
     }
 }
