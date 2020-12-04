@@ -6,9 +6,14 @@ about SemVer, please refer to:
 - https://semver.org/
 
 Detailed version release guidelines for phpMussel can be found at:
-- https://github.com/phpMussel/phpMussel/blob/v1/CONTRIBUTING.md#phpmussel-version-release-guidelines
+- https://github.com/phpMussel/.github/blob/master/CONTRIBUTING.md
 
 === Changes made since last versioned release ===
+
+(none)
+
+=== Version/Release 2.2.0 ===
+MINOR RELEASE.
 
 - [2020.10.05; Maikuolan]: Very minor aesthetic fix.
 
@@ -42,6 +47,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.11.27; Maikuolan]: Some minor code-style cleanup and removed support
   showing test results at the updates page (since we're using different
   mechanisms now anyway).
+
+Caleb M (Maikuolan),
+December 4, 2020.
 
 === Version/Release 2.1.6 ===
 PATCH RELEASE.
