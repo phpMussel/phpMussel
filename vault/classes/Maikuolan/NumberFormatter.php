@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2020.06.11).
+ * Number formatter (last modified: 2020.12.03).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -46,6 +46,11 @@ class NumberFormatter
      * @var int Identifies the base system of the target format.
      */
     public $Base = 10;
+
+    /**
+     * @var int Maximum ratio or degrees possible when calculating fractions.
+     */
+    private $MaxDegrees = 9999;
 
     /**
      * @var array Conversion set for Hindu-Arabic or Western Arabic numerals.
@@ -278,7 +283,8 @@ class NumberFormatter
      * @var array Conversion set for Japanese numerals.
      */
     private $Japanese = [
-        '0*' => '',
+        '+0' => '',
+        '-+0' => '',
         '1' => '',
         '2' => '二',
         '3' => '三',
@@ -288,7 +294,7 @@ class NumberFormatter
         '7' => '七',
         '8' => '八',
         '9' => '九',
-        '^0*1' => '一',
+        '^0+1' => '一',
         '^1' => '十',
         '^2' => '百',
         '^3' => '千',
@@ -328,7 +334,8 @@ class NumberFormatter
      * @var array Conversion set for Tamil numerals.
      */
     private $Tamil = [
-        '0*' => '',
+        '.' => true,
+        '+0' => '',
         '1' => '',
         '2' => '௨',
         '3' => '௩',
@@ -338,7 +345,7 @@ class NumberFormatter
         '7' => '௭',
         '8' => '௮',
         '9' => '௯',
-        '^0*1' => '௧',
+        '^0+1' => '௧',
         '^1' => '௰',
         '^2' => '௱',
         '^3' => '௲',
@@ -381,9 +388,10 @@ class NumberFormatter
     ];
 
     /**
-     * @var array Conversion set for Roman numerals.
+     * @var array Conversion set for Roman numerals (modern standard form with vinculum).
      */
     private $Roman = [
+        '.' => true,
         '0' => '',
         '1' => '',
         '2' => '',
@@ -394,36 +402,63 @@ class NumberFormatter
         '7' => '',
         '8' => '',
         '9' => '',
-        '^0*1' => 'I',
-        '^0*2' => 'II',
-        '^0*3' => 'III',
-        '^0*4' => 'IV',
-        '^0*5' => 'V',
-        '^0*6' => 'VI',
-        '^0*7' => 'VII',
-        '^0*8' => 'VIII',
-        '^0*9' => 'IX',
-        '^1*1' => 'X',
-        '^1*2' => 'XX',
-        '^1*3' => 'XXX',
-        '^1*4' => 'XL',
-        '^1*5' => 'L',
-        '^1*6' => 'LX',
-        '^1*7' => 'LXX',
-        '^1*8' => 'LXXX',
-        '^1*9' => 'XC',
-        '^2*1' => 'C',
-        '^2*2' => 'CC',
-        '^2*3' => 'CCC',
-        '^2*4' => 'CD',
-        '^2*5' => 'D',
-        '^2*6' => 'DC',
-        '^2*7' => 'DCC',
-        '^2*8' => 'DCCC',
-        '^2*9' => 'CM',
-        '^3*1' => 'M',
-        '^3*2' => 'MM',
-        '^3*3' => 'MMM'
+        '^0+1' => 'I',
+        '^0+2' => 'II',
+        '^0+3' => 'III',
+        '^0+4' => 'IV',
+        '^0+5' => 'V',
+        '^0+6' => 'VI',
+        '^0+7' => 'VII',
+        '^0+8' => 'VIII',
+        '^0+9' => 'IX',
+        '^1+1' => 'X',
+        '^1+2' => 'XX',
+        '^1+3' => 'XXX',
+        '^1+4' => 'XL',
+        '^1+5' => 'L',
+        '^1+6' => 'LX',
+        '^1+7' => 'LXX',
+        '^1+8' => 'LXXX',
+        '^1+9' => 'XC',
+        '^2+1' => 'C',
+        '^2+2' => 'CC',
+        '^2+3' => 'CCC',
+        '^2+4' => 'CD',
+        '^2+5' => 'D',
+        '^2+6' => 'DC',
+        '^2+7' => 'DCC',
+        '^2+8' => 'DCCC',
+        '^2+9' => 'CM',
+        '^3+1' => 'M',
+        '^3+2' => 'MM',
+        '^3+3' => 'MMM',
+        '^3+4' => 'I̅V̅',
+        '^3+5' => 'V̅',
+        '^3+6' => 'V̅I̅',
+        '^3+7' => 'V̅I̅I̅',
+        '^3+8' => 'V̅I̅I̅I̅',
+        '^3+9' => 'I̅X̅',
+        '^4+1' => 'X̅',
+        '^4+2' => 'X̅X̅',
+        '^4+3' => 'X̅X̅X̅',
+        '^4+4' => 'X̅L̅',
+        '^4+5' => 'L̅',
+        '^4+6' => 'L̅X̅',
+        '^4+7' => 'L̅X̅X̅',
+        '^4+8' => 'L̅X̅X̅X̅',
+        '^4+9' => 'X̅C̅',
+        '^5+1' => 'C̅',
+        '^5+2' => 'C̅C̅',
+        '^5+3' => 'C̅C̅C̅',
+        '^5+4' => 'C̅D̅',
+        '^5+5' => 'D̅',
+        '^5+6' => 'D̅C̅',
+        '^5+7' => 'D̅C̅C̅',
+        '^5+8' => 'D̅C̅C̅C̅',
+        '^5+9' => 'C̅M̅',
+        '^6+1' => 'M̅',
+        '^6+2' => 'M̅M̅',
+        '^6+3' => 'M̅M̅M̅'
     ];
 
     /**
@@ -456,6 +491,482 @@ class NumberFormatter
         '7' => '༧',
         '8' => '༨',
         '9' => '༩'
+    ];
+
+    /**
+     * @var array Conversion set for Mongolian numerals.
+     */
+    private $Mongolian = [
+        '0' => '᠐',
+        '1' => '᠑',
+        '2' => '᠒',
+        '3' => '᠓',
+        '4' => '᠔',
+        '5' => '᠕',
+        '6' => '᠖',
+        '7' => '᠗',
+        '8' => '᠘',
+        '9' => '᠙'
+    ];
+
+    /**
+     * @var array Conversion set for Hebrew numerals (modern standard).
+     */
+    private $Hebrew = [
+        '.' => true,
+        '+0' => '',
+        '1' => 'א',
+        '2' => 'ב',
+        '3' => 'ג',
+        '4' => 'ד',
+        '5' => 'ה',
+        '6' => 'ו',
+        '7' => 'ז',
+        '8' => 'ח',
+        '9' => 'ט',
+        '^0+10' => 'י',
+        '^0+11' => 'יא',
+        '^0+12' => 'יב',
+        '^0+13' => 'יג',
+        '^0+14' => 'יד',
+        '^0+15' => 'ט״ו',
+        '^0+16' => 'ט״ז',
+        '^0+17' => 'יז',
+        '^0+18' => 'יח',
+        '^0+19' => 'יט',
+        '^1+1' => '',
+        '^1+2' => 'כ',
+        '^1+3' => 'ל',
+        '^1+4' => 'מ',
+        '^1+5' => 'נ',
+        '^1+6' => 'ס',
+        '^1+7' => 'ע',
+        '^1+8' => 'פ',
+        '^1+9' => 'צ',
+        '^2+1' => 'ק',
+        '^2+2' => 'ר',
+        '^2+3' => 'ש',
+        '^2+4' => 'ת',
+        '^2+5' => 'ך',
+        '^2+6' => 'ם',
+        '^2+7' => 'ן',
+        '^2+8' => 'ף',
+        '^2+9' => 'ץ',
+        '^3' => '׳',
+        '^4' => '׳י',
+        '^5' => '׳ק',
+        '^6' => '׳׳',
+        '^7' => '׳י׳',
+        '^8' => '׳ק׳',
+        '^9' => '׳׳׳',
+        '^10' => '׳י׳׳',
+        '^11' => '׳ק׳׳',
+        '^12' => '׳׳׳׳',
+        '^13' => '׳י׳׳׳',
+        '^14' => '׳ק׳׳׳',
+        '^15' => '׳׳׳׳׳'
+    ];
+
+    /**
+     * @var array Conversion set for Armenian numerals (historic with overline).
+     */
+    private $Armenian = [
+        '.' => true,
+        '0' => '',
+        '1' => '',
+        '2' => '',
+        '3' => '',
+        '4' => '',
+        '5' => '',
+        '6' => '',
+        '7' => '',
+        '8' => '',
+        '9' => '',
+        '^0+1' => 'Ա',
+        '^0+2' => 'Բ',
+        '^0+3' => 'Գ',
+        '^0+4' => 'Դ',
+        '^0+5' => 'Ե',
+        '^0+6' => 'Զ',
+        '^0+7' => 'Է',
+        '^0+8' => 'Ը',
+        '^0+9' => 'Թ',
+        '^1+1' => 'Ժ',
+        '^1+2' => 'Ի',
+        '^1+3' => 'Լ',
+        '^1+4' => 'Խ',
+        '^1+5' => 'Ծ',
+        '^1+6' => 'Կ',
+        '^1+7' => 'Հ',
+        '^1+8' => 'Ձ',
+        '^1+9' => 'Ղ',
+        '^2+1' => 'Ճ',
+        '^2+2' => 'Մ',
+        '^2+3' => 'Յ',
+        '^2+4' => 'Ն',
+        '^2+5' => 'Շ',
+        '^2+6' => 'Ո',
+        '^2+7' => 'Չ',
+        '^2+8' => 'Պ',
+        '^2+9' => 'Ջ',
+        '^3+1' => 'Ռ',
+        '^3+2' => 'Ս',
+        '^3+3' => 'Վ',
+        '^3+4' => 'Տ',
+        '^3+5' => 'Ր',
+        '^3+6' => 'Ց',
+        '^3+7' => 'Ւ',
+        '^3+8' => 'Փ',
+        '^3+9' => 'Ք',
+        '^4+1' => 'Ժ̅',
+        '^4+2' => 'Ի̅',
+        '^4+3' => 'Լ̅',
+        '^4+4' => 'Խ̅',
+        '^4+5' => 'Ծ̅',
+        '^4+6' => 'Կ̅',
+        '^4+7' => 'Հ̅',
+        '^4+8' => 'Ձ̅',
+        '^4+9' => 'Ղ̅',
+        '^5+1' => 'Ճ̅',
+        '^5+2' => 'Մ̅',
+        '^5+3' => 'Յ̅',
+        '^5+4' => 'Ն̅',
+        '^5+5' => 'Շ̅',
+        '^5+6' => 'Ո̅',
+        '^5+7' => 'Չ̅',
+        '^5+8' => 'Պ̅',
+        '^5+9' => 'Ջ̅',
+        '^6+1' => 'Ռ̅',
+        '^6+2' => 'Ս̅',
+        '^6+3' => 'Վ̅',
+        '^6+4' => 'Տ̅',
+        '^6+5' => 'Ր̅',
+        '^6+6' => 'Ց̅',
+        '^6+7' => 'Ւ̅',
+        '^6+8' => 'Փ̅',
+        '^6+9' => 'Ք̅'
+    ];
+
+    /**
+     * @var array Conversion set for standard simplified Chinese numerals.
+     */
+    private $ChineseSimplified = [
+        '+0' => '',
+        '-0' => '〇',
+        '=0' => '〇',
+        '1' => '一',
+        '2' => '二',
+        '3' => '三',
+        '4' => '四',
+        '5' => '五',
+        '6' => '六',
+        '7' => '七',
+        '8' => '八',
+        '9' => '九',
+        '^1+1' => '十',
+        '^1' => '十',
+        '^2' => '百',
+        '^3' => '千',
+        '^4' => '万',
+        '^5' => '十',
+        '^6' => '百',
+        '^7' => '千',
+        '^8' => '亿',
+        '^9' => '十',
+        '^10' => '百',
+        '^11' => '千',
+        '^12' => '兆',
+        '^13' => '十',
+        '^14' => '百',
+        '^15' => '千',
+        '^16' => '京',
+        '^17' => '十',
+        '^18' => '百',
+        '^19' => '千',
+        '^20' => '垓',
+        '^21' => '十',
+        '^22' => '百',
+        '^23' => '千',
+        '^24' => '秭',
+        '^25' => '十',
+        '^26' => '百',
+        '^27' => '千',
+        '^28' => '穰',
+        '^29' => '十',
+        '^30' => '百',
+        '^31' => '千',
+        '^32' => '沟',
+        '^33' => '十',
+        '^34' => '百',
+        '^35' => '千',
+        '^36' => '涧',
+        '^37' => '十',
+        '^38' => '百',
+        '^39' => '千',
+        '^40' => '正',
+        '^41' => '十',
+        '^42' => '百',
+        '^43' => '千',
+        '^44' => '载',
+        '^45' => '十',
+        '^46' => '百',
+        '^47' => '千'
+    ];
+
+    /**
+     * @var array Conversion set for standard traditional Chinese numerals.
+     */
+    private $ChineseTraditional = [
+        '+0' => '',
+        '-0' => '零',
+        '=0' => '零',
+        '1' => '一',
+        '2' => '二',
+        '3' => '三',
+        '4' => '四',
+        '5' => '五',
+        '6' => '六',
+        '7' => '七',
+        '8' => '八',
+        '9' => '九',
+        '^1+1' => '十',
+        '^1' => '十',
+        '^2' => '百',
+        '^3' => '千',
+        '^4' => '萬',
+        '^5' => '十',
+        '^6' => '百',
+        '^7' => '千',
+        '^8' => '億',
+        '^9' => '十',
+        '^10' => '百',
+        '^11' => '千',
+        '^12' => '兆',
+        '^13' => '十',
+        '^14' => '百',
+        '^15' => '千',
+        '^16' => '京',
+        '^17' => '十',
+        '^18' => '百',
+        '^19' => '千',
+        '^20' => '垓',
+        '^21' => '十',
+        '^22' => '百',
+        '^23' => '千',
+        '^24' => '秭',
+        '^25' => '十',
+        '^26' => '百',
+        '^27' => '千',
+        '^28' => '穰',
+        '^29' => '十',
+        '^30' => '百',
+        '^31' => '千',
+        '^32' => '溝',
+        '^33' => '十',
+        '^34' => '百',
+        '^35' => '千',
+        '^36' => '澗',
+        '^37' => '十',
+        '^38' => '百',
+        '^39' => '千',
+        '^40' => '正',
+        '^41' => '十',
+        '^42' => '百',
+        '^43' => '千',
+        '^44' => '載',
+        '^45' => '十',
+        '^46' => '百',
+        '^47' => '千'
+    ];
+
+    /**
+     * @var array Conversion set for financial simplified Chinese numerals.
+     */
+    private $ChineseSimplifiedFinancial = [
+        '+0' => '',
+        '-0' => '零',
+        '=0' => '零',
+        '1' => '壹',
+        '2' => '贰',
+        '3' => '叁',
+        '4' => '肆',
+        '5' => '伍',
+        '6' => '陆',
+        '7' => '柒',
+        '8' => '捌',
+        '9' => '玖',
+        '^1+1' => '拾',
+        '^1' => '拾',
+        '^2' => '佰',
+        '^3' => '仟',
+        '^4' => '萬',
+        '^5' => '拾',
+        '^6' => '佰',
+        '^7' => '仟',
+        '^8' => '億',
+        '^9' => '拾',
+        '^10' => '佰',
+        '^11' => '仟',
+        '^12' => '兆',
+        '^13' => '拾',
+        '^14' => '佰',
+        '^15' => '仟',
+        '^16' => '京',
+        '^17' => '拾',
+        '^18' => '佰',
+        '^19' => '仟',
+        '^20' => '垓',
+        '^21' => '拾',
+        '^22' => '佰',
+        '^23' => '仟',
+        '^24' => '秭',
+        '^25' => '拾',
+        '^26' => '佰',
+        '^27' => '仟',
+        '^28' => '穰',
+        '^29' => '拾',
+        '^30' => '佰',
+        '^31' => '仟',
+        '^32' => '沟',
+        '^33' => '拾',
+        '^34' => '佰',
+        '^35' => '仟',
+        '^36' => '涧',
+        '^37' => '拾',
+        '^38' => '佰',
+        '^39' => '仟',
+        '^40' => '正',
+        '^41' => '拾',
+        '^42' => '佰',
+        '^43' => '仟',
+        '^44' => '载',
+        '^45' => '拾',
+        '^46' => '佰',
+        '^47' => '仟'
+    ];
+
+    /**
+     * @var array Conversion set for financial traditional Chinese numerals.
+     */
+    private $ChineseTraditionalFinancial = [
+        '+0' => '',
+        '-0' => '零',
+        '=0' => '零',
+        '1' => '壹',
+        '2' => '貳',
+        '3' => '叄',
+        '4' => '肆',
+        '5' => '伍',
+        '6' => '陸',
+        '7' => '柒',
+        '8' => '捌',
+        '9' => '玖',
+        '^1+1' => '拾',
+        '^1' => '拾',
+        '^2' => '佰',
+        '^3' => '仟',
+        '^4' => '萬',
+        '^5' => '拾',
+        '^6' => '佰',
+        '^7' => '仟',
+        '^8' => '億',
+        '^9' => '拾',
+        '^10' => '佰',
+        '^11' => '仟',
+        '^12' => '兆',
+        '^13' => '拾',
+        '^14' => '佰',
+        '^15' => '仟',
+        '^16' => '京',
+        '^17' => '拾',
+        '^18' => '佰',
+        '^19' => '仟',
+        '^20' => '垓',
+        '^21' => '拾',
+        '^22' => '佰',
+        '^23' => '仟',
+        '^24' => '秭',
+        '^25' => '拾',
+        '^26' => '佰',
+        '^27' => '仟',
+        '^28' => '穰',
+        '^29' => '拾',
+        '^30' => '佰',
+        '^31' => '仟',
+        '^32' => '沟',
+        '^33' => '拾',
+        '^34' => '佰',
+        '^35' => '仟',
+        '^36' => '涧',
+        '^37' => '拾',
+        '^38' => '佰',
+        '^39' => '仟',
+        '^40' => '正',
+        '^41' => '拾',
+        '^42' => '佰',
+        '^43' => '仟',
+        '^44' => '载',
+        '^45' => '拾',
+        '^46' => '佰',
+        '^47' => '仟'
+    ];
+
+    /**
+     * @var array Symbols quick lookup table.
+     */
+    private $Symbols = [
+        10 => 'a',
+        11 => 'b',
+        12 => 'c',
+        13 => 'd',
+        14 => 'e',
+        15 => 'f',
+        16 => 'g',
+        17 => 'h',
+        18 => 'i',
+        19 => 'j',
+        20 => 'k',
+        21 => 'l',
+        22 => 'm',
+        23 => 'n',
+        24 => 'o',
+        25 => 'p',
+        26 => 'q',
+        27 => 'r',
+        28 => 's',
+        29 => 't',
+        30 => 'u',
+        31 => 'v',
+        32 => 'w',
+        33 => 'x',
+        34 => 'y',
+        35 => 'z',
+        'a' => '10',
+        'b' => '11',
+        'c' => '12',
+        'd' => '13',
+        'e' => '14',
+        'f' => '15',
+        'g' => '16',
+        'h' => '17',
+        'i' => '18',
+        'j' => '19',
+        'k' => '20',
+        'l' => '21',
+        'm' => '22',
+        'n' => '23',
+        'o' => '24',
+        'p' => '25',
+        'q' => '26',
+        'r' => '27',
+        's' => '28',
+        't' => '29',
+        'u' => '30',
+        'v' => '31',
+        'w' => '32',
+        'x' => '33',
+        'y' => '34',
+        'z' => '35'
     ];
 
     /**
@@ -612,15 +1123,39 @@ class NumberFormatter
             $this->DecimalSeparator = '・';
             return;
         }
-        if ($Format === 'Tamil' || $Format === 'Roman') {
+        if ($Format === 'Tamil' || $Format === 'Roman' || $Format === 'Hebrew' || $Format === 'Armenian') {
             $this->ConversionSet = $Format;
             $this->GroupSeparator = '';
             $this->DecimalSeparator = '';
             return;
         }
-        if ($Format === 'Javanese' || $Format === 'Odia' || $Format === 'Tibetan') {
+        if ($Format === 'Javanese' || $Format === 'Odia' || $Format === 'Tibetan' || $Format === 'Mongolian') {
             $this->ConversionSet = $Format;
             $this->GroupSeparator = '';
+            return;
+        }
+        if ($Format === 'Chinese-Simplified') {
+            $this->ConversionSet = 'ChineseSimplified';
+            $this->GroupSeparator = '';
+            $this->DecimalSeparator = '点';
+            return;
+        }
+        if ($Format === 'Chinese-Traditional') {
+            $this->ConversionSet = 'ChineseTraditional';
+            $this->GroupSeparator = '';
+            $this->DecimalSeparator = '點';
+            return;
+        }
+        if ($Format === 'Chinese-Simplified-Financial') {
+            $this->ConversionSet = 'ChineseSimplifiedFinancial';
+            $this->GroupSeparator = '';
+            $this->DecimalSeparator = '点';
+            return;
+        }
+        if ($Format === 'Chinese-Traditional-Financial') {
+            $this->ConversionSet = 'ChineseTraditionalFinancial';
+            $this->GroupSeparator = '';
+            $this->DecimalSeparator = '點';
             return;
         }
     }
@@ -630,40 +1165,42 @@ class NumberFormatter
      *
      * @param mixed $Number The number to format (int, float, string, etc).
      * @param int $Decimals The number of decimal places (optional).
-     * @return string The formatted number.
+     * @return string The formatted number, or an empty string on failure.
      */
     public function format($Number, $Decimals = 0)
     {
-        $CSet = $this->{$this->ConversionSet};
-        $DecPos = strpos($Number, '.') ?: strlen($Number);
-        if ($Decimals > 0 && $this->DecimalSeparator) {
-            $Fraction = substr($Number, $DecPos + 1) ?: '';
-            if ($Fraction && $this->Base !== 10 && $this->Base > 1 && $this->Base <= 36) {
-                $Len = strlen($Fraction);
-                $Fraction = (float)('0.' . $Fraction);
-                $NewFraction = '';
-                for ($Pos = 0; $Pos < $Decimals; $Pos++) {
-                    $Fraction *= 10;
-                    $Part = floor($Fraction > 0 ? ($this->Base / (10 / $Fraction)) : $Fraction);
-                    $Fraction -= $Part ? (10 / ($this->Base / $Part)) : 0;
-                    $NewFraction .= (string)($Part ? base_convert($Part, 10, $this->Base) : $Part);
-                }
-                $Fraction = $NewFraction;
-            }
-            if ($Fraction) {
-                $Fraction = substr($Fraction, 0, $Decimals);
-            }
-            $Len = strlen($Fraction);
-            if ($Len < $Decimals) {
-                $Fraction .= str_repeat('0', $Decimals - $Len);
-            }
+        if ($this->Base < 2 || $this->Base > 36) {
+            return '';
         }
-        $Number = (string)(int)substr($Number, 0, $DecPos);
-        if ($this->Base !== 10 && $this->Base > 1 && $this->Base <= 36) {
+        $CSet = $this->{$this->ConversionSet};
+        $DecPos = strpos($Number, '.');
+        if ($DecPos !== false) {
+            if ($Decimals > 0 && $this->DecimalSeparator && empty($CSet['.'])) {
+                $Fraction = substr($Number, $DecPos + 1) ?: '';
+                $Len = strlen($Fraction);
+                if ($Len > 0) {
+                    $Fraction = $this->convertFraction($Fraction, 10, $this->Base, $Decimals);
+                    $Fraction = substr($Fraction, 0, $Decimals);
+                    $Len = strlen($Fraction);
+                }
+                if ($Len < $Decimals) {
+                    $Fraction .= str_repeat('0', $Decimals - $Len);
+                }
+            }
+            $Number = (string)(int)substr($Number, 0, $DecPos);
+        } else {
+            $Number = (string)(int)$Number;
+        }
+        if ($this->Base !== 10) {
             $Number = base_convert($Number, 10, $this->Base);
         }
-        $DecPos = strlen($Number);
-        for ($Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $DecPos - 1; $Pos > -1; $Pos--, $Unit++) {
+        if (isset($CSet['=' . $Number])) {
+            $Formatted = $CSet['=' . $Number];
+            $WholeLen = -1;
+        } else {
+            $WholeLen = strlen($Number);
+        }
+        for ($Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $WholeLen - 1; $Pos > -1; $Pos--, $Unit++) {
             if ($ThouPos >= $this->GroupSize) {
                 $ThouPos = 1;
                 $Formatted = $this->GroupSeparator . $Formatted;
@@ -671,34 +1208,48 @@ class NumberFormatter
                 $ThouPos++;
             }
             $Key = substr($Number, $Pos, 1);
-            if (isset($CSet[$Key . '*'])) {
-                $Formatted = $CSet[$Key . '*'] . $Formatted;
-                continue;
+            $Double = $Pos > 0 ? substr($Number, $Pos - 1, 1) . $Key : '';
+            $Power = '';
+            $Digit = '';
+            if (isset($CSet['^' . $Unit . '+' . $Double])) {
+                $Digit = $CSet['^' . $Unit . '+' . $Double];
+            } elseif (isset($CSet['^' . $Unit . '+' . $Key])) {
+                $Digit = $CSet['^' . $Unit . '+' . $Key];
+            } elseif (isset($CSet['+' . $Key])) {
+                $Digit = $CSet['+' . $Key];
+            } else {
+                $Digit = isset($CSet[$Key]) ? $CSet[$Key] : $Key;
+                if (isset($CSet['^' . $Unit . '*' . $Key])) {
+                    $Power = $CSet['^' . $Unit . '*' . $Key];
+                } elseif (isset($CSet['^' . $Unit])) {
+                    $Power = $CSet['^' . $Unit];
+                }
             }
-            $Add = isset($CSet[$Key]) ? $CSet[$Key] : $Key;
-            if (isset($CSet['^' . $Unit . '*' . $Key])) {
-                $Add .= $CSet['^' . $Unit . '*' . $Key];
-            } elseif (isset($CSet['^' . $Unit])) {
-                $Add .= $CSet['^' . $Unit];
-            }
-            $Formatted = $Add . $Formatted;
+            $Formatted = $Digit . $Power . $Formatted;
         }
-        if ($Decimals && $this->DecimalSeparator) {
+        if (isset($Fraction) && $Decimals && $this->DecimalSeparator && empty($CSet['.'])) {
             $Formatted .= $this->DecimalSeparator;
             for ($Len = strlen($Fraction), $Pos = 0; $Pos < $Len; $Pos++) {
                 $Key = substr($Fraction, $Pos, 1);
-                if (isset($CSet[$Key . '*'])) {
-                    $Formatted .= $CSet[$Key . '*'];
-                    continue;
+                $Power = '';
+                $Digit = '';
+                if (isset($CSet['^-' . $Pos . '+' . $Key])) {
+                    $Digit = $CSet['^-' . $Pos . '+' . $Key];
+                } elseif (isset($CSet['-+' . $Key])) {
+                    $Digit = $CSet['-+' . $Key];
+                } else {
+                    if (isset($CSet['-' . $Key])) {
+                        $Digit = $CSet['-' . $Key];
+                    } else {
+                        $Digit = isset($CSet[$Key]) ? $CSet[$Key] : $Key;
+                    }
+                    if (isset($CSet['^-' . $Pos . '*' . $Key])) {
+                        $Power = $CSet['^-' . $Pos . '*' . $Key];
+                    } elseif (isset($CSet['^-' . $Pos])) {
+                        $Power = $CSet['^-' . $Pos];
+                    }
                 }
-                $Add = isset($CSet[$Key]) ? $CSet[$Key] : $Key;
-                $NegUnit = ($Pos * -1) - 1;
-                if (isset($CSet['^' . $NegUnit . '*' . $Key])) {
-                    $Add .= $CSet['^' . $NegUnit . '*' . $Key];
-                } elseif (isset($CSet['^' . $NegUnit])) {
-                    $Add .= $CSet['^' . $NegUnit];
-                }
-                $Formatted .= $Add;
+                $Formatted .= $Digit . $Power;
             }
         }
         return $Formatted;
@@ -717,5 +1268,74 @@ class NumberFormatter
         }
         $CSet = $this->$Set;
         return "'" . implode("','", $CSet) . "'";
+    }
+
+    /**
+     * Prepare to convert a fraction.
+     *
+     * @param string $Fraction The fraction to convert.
+     * @param int $From The base to convert from.
+     * @param int $To The base to convert to.
+     * @param int $Limit Maximum number of places permitted.
+     * @return string The converted fraction, or an empty string on failure.
+     */
+    private function convertFraction($Fraction = '', $From = 10, $To = 10, $Limit = 8)
+    {
+        if ($From < 2 || $To < 2 || $From > 36 || $To > 36 || $Limit < 1) {
+            return '';
+        }
+        $FracLen = strlen($Fraction);
+        if ($From === $To || $FracLen < 1) {
+            return $Fraction;
+        }
+        $Fraction = rtrim($Fraction, '0');
+        if ($From !== 10) {
+            $PreFloat = [];
+            for ($Index = 0; $Index < $FracLen; $Index++) {
+                $PreFloat[$Index] = substr($Fraction, $Index, 1);
+                if (isset($this->Symbols[$PreFloat[$Index]])) {
+                    $PreFloat[$Index] = $this->Symbols[$PreFloat[$Index]];
+                }
+                $PreFloat[$Index] = ($PreFloat[$Index] / $From) * 10;
+                while ($PreFloat[$Index] >= 10) {
+                    $Lookback = $Index;
+                    while ($PreFloat[$Lookback] >= 10) {
+                        $PreFloat[$Lookback] -= 10;
+                        if (isset($PreFloat[$Lookback])) {
+                            $Lookback--;
+                            $PreFloat[$Lookback]++;
+                        }
+                    }
+                }
+            }
+            $Float = implode('', $PreFloat);
+        }
+        $Float = (float)('0.' . $Fraction);
+        $Sum = 0;
+        $Degree = 0;
+        while ($Degree < $this->MaxDegrees) {
+            $Sum += $Float;
+            $Degree++;
+            if ($Sum > 0 && strpos($Sum, '.') === false) {
+                break;
+            }
+        }
+        $Ratio = $To / $Degree;
+        $Try = $Sum * $Ratio;
+        $Arr = [];
+        $Index = 0;
+        while ($Try > 0 && $Index < $Limit) {
+            $Digit = floor($Try);
+            $Try = ($Try - $Digit) * $To;
+            $Arr[$Index] = $Digit;
+            if (isset($this->Symbols[$Arr[$Index]])) {
+                $Arr[$Index] = $this->Symbols[$Arr[$Index]];
+            }
+            if (strlen($Arr[$Index]) > 1) {
+                $Arr[$Index] = 0;
+            }
+            $Index++;
+        }
+        return implode('', $Arr);
     }
 }
