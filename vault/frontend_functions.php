@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.27).
+ * This file: Front-end functions file (last modified: 2020.12.05).
  */
 
 /**
@@ -1229,8 +1229,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
-            ($NewMetaMatches = $NewMetaMatches[0]) &&
-            !$phpMussel['FE']['CronMode']
+            ($NewMetaMatches = $NewMetaMatches[0])
         ) {
             $Congruents[$ThisReannotate] = $NewMeta;
             $phpMussel['Arrayify']($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']);
