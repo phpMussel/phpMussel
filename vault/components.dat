@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.2.0
+ Version: 2.2.1-DEV+21009482
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -36,10 +36,10 @@ phpMussel Core:
    - f6775e6a5175d74de84b7dffa776adefe94634a6e821cc24b1d6ffa0ac6b5da9:30939
    - d21545ea43768c51663c7de4764525dbeb8eb6d1989110e30b113991dbbd59e0:3825
    - 7008413d2b1fbd2514e817b498442c2a5897e65f1da03ad2cc2c5d8fba67df10:1744
-   - 5df6b93e499a5402afcfc81adb1e0b1a20ba4b16f275bd843599fad9f9b8fe50:7440
+   - e928199900ef5f8f5ca99fea230007b174c1b47e724c381d2056fc5bfdbf98c3:7982
    - f173096ab8d805da60f6b261577ea7bd10451d54b6d329b33812188d18b39119:16084
-   - 1b21e46faf43af3566a013a51648840bd443f2bc9ca6c04b0cf70940d5bdbe4a:7619
-   - ed5ca7cf894e3651ed1b9a66539145215c6250087325e211ff0414b28e03f491:238803
+   - 6f0f6ed08d8febdb3d535b9c3f522ea7b8107b511627892c5c28768b03ee1dd2:7613
+   - b89d5dde6c45630d7147b385be7c25610c0cc7d20fe273d92ec00bfdbd520dff:232378
    - d37d07a98a16177ffd05bc7b6de3da1a35b378e069e92d6b3bba9fb5cc033c19:6409
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
@@ -161,7 +161,7 @@ phpMussel Front-End:
    - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - 4c2e17022b82115d84dc23c2be8a68b5166243c20029df0d944c1c9d1489fc33:169391
+   - 48869e79ec17b06704f47cd88b164647cbb50e88929881d83cf7f70fb4d70eec:169401
    - b220cbb7aafeda197370b2e6cba077099a802a4e33f53219e812ec887b16bb29:112989
  Reannotate: components.dat
 phpMussel Upload Handler:
@@ -204,7 +204,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.4.0
+ Version: 2.5.0-DEV+21009482
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
  Files:
@@ -217,6 +217,7 @@ Common Classes Package:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/L10N.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Matrix.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/NumberFormatter.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Request.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/YAML.php
   To:
    - classes/Maikuolan/Cache.php
@@ -227,6 +228,7 @@ Common Classes Package:
    - classes/Maikuolan/L10N.php
    - classes/Maikuolan/Matrix.php
    - classes/Maikuolan/NumberFormatter.php
+   - classes/Maikuolan/Request.php
    - classes/Maikuolan/YAML.php
   Checksum:
    - 942bb78fccfe6056c10cc3b0d658e0c52c2036efb2c7bfb8880c01bd12078cc7:26173
@@ -237,6 +239,7 @@ Common Classes Package:
    - c567cbc6d7cab8a61e61ed2fc921490a5c80130dded0b541acf93185c3003157:11422
    - c73d9ae1997505b2834a79b218b015be83498d3befe6741d9132a674f152c746:8634
    - 7db9090c0773c407653bd138336af8e7791a43ad97d11708d6802859d622f8ee:35576
+   - ac33471412fd611f0b55f5c2089831a024472e545a5065e72ad015241feba857:7712
    - 58713971db83a121128bd59e51b5fdf32dddee75cc1324bf69cb837bcf6619e2:10491
  Reannotate: components.dat
 l10n/en:

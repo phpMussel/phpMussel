@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.10.26).
+ * This file: Event handlers file (last modified: 2020.12.13).
  */
 
 /**
@@ -17,7 +17,6 @@
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMussel): bool {
-
     /** Guard. */
     if (
         !$phpMussel['Config']['general']['scan_log_serialized'] ||
@@ -75,7 +74,6 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('writeToScanLog', function (string $Data) use (&$phpMussel): bool {
-
     /** Guard. */
     if (
         !$phpMussel['Config']['general']['scan_log'] ||
@@ -110,7 +108,6 @@ $phpMussel['Events']->addHandler('writeToScanLog', function (string $Data) use (
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) use (&$phpMussel): bool {
-
     /** Guard. */
     if (
         empty($phpMussel['killdata']) ||
@@ -145,7 +142,6 @@ $phpMussel['Events']->addHandler('writeToScanKillsLog', function (string $Data) 
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('error', function (string $Data) use (&$phpMussel): bool {
-
     /** Guard. */
     if (!$phpMussel['Config']['general']['error_log']) {
         return false;
@@ -173,7 +169,6 @@ $phpMussel['Events']->addHandler('error', function (string $Data) use (&$phpMuss
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('final', function () use (&$phpMussel): bool {
-
     /** Guard. */
     if (
         !isset($phpMussel['Pending-Error-Log-Data']) ||
@@ -210,7 +205,6 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel): bool {
  * @return bool True on success; False on failure.
  */
 $phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$phpMussel): bool {
-
     /** Guard. */
     if (
         !$phpMussel['Config']['PHPMailer']['event_log'] ||

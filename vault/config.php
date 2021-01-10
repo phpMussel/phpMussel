@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.11.20).
+ * This file: Configuration handler (last modified: 2021.01.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -17,16 +17,13 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '2.2.0';
+$phpMussel['ScriptVersion'] = '2.2.1';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
 
 /** phpMussel User Agent (for external requests). */
 $phpMussel['ScriptUA'] = $phpMussel['ScriptIdent'] . ' (https://phpmussel.github.io/)';
-
-/** Default timeout (for external requests). */
-$phpMussel['Timeout'] = 12;
 
 /** Determine PHP path. */
 $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
@@ -169,3 +166,15 @@ $phpMussel['DefaultAlgo'] = (
 
 /** Used just for the current, specific request instance. */
 $phpMussel['InstanceCache'] = [];
+
+/** Instantiate the request class. */
+$phpMussel['Request'] = new \Maikuolan\Common\Request();
+$phpMussel['Request']->Channels = (
+    $Channels = $phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml')
+) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+if (!isset($phpMussel['Request']->Channels['Triggers'])) {
+    $phpMussel['Request']->Channels['Triggers'] = [];
+}
+$phpMussel['Request']->Disabled = $phpMussel['Config']['general']['disabled_channels'];
+$phpMussel['Request']->UserAgent = $phpMussel['ScriptUA'];
+$phpMussel['Request']->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);

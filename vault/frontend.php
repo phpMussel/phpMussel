@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.12.03).
+ * This file: Front-end handler (last modified: 2021.01.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -620,9 +620,8 @@ $phpMussel['MajorVersionNotice'] = '';
 
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
 if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2) && !$phpMussel['FE']['CronMode']) {
+    /** Log out the user. */
     if ($phpMussel['QueryVars']['phpmussel-page'] === 'logout') {
-
-        /** Log out the user. */
         $phpMussel['FE']['SessionList'] = str_ireplace($phpMussel['FE']['ThisSession'], '', $phpMussel['FE']['SessionList']);
         $phpMussel['FE']['ThisSession'] = '';
         $phpMussel['FE']['Rebuild'] = true;
@@ -633,15 +632,14 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('state_logged_out'));
     }
 
-    /** If the user has complete access. */
     if ($phpMussel['FE']['Permissions'] === 1) {
+        /** If the user has complete access. */
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
             $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_complete_access.html'))
         );
-
-    /** If the user has logs access only. */
     } elseif ($phpMussel['FE']['Permissions'] === 2) {
+        /** If the user has logs access only. */
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
             $phpMussel['L10N']->Data + $phpMussel['FE'],
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
@@ -1428,7 +1426,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf(
                             '<input type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /><label for="%1$s" class="s">%3$s</label><br />',
                             $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
-                            $phpMussel['in_csv']($phpMussel['ChoiceKey'], $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ? ' checked' : '',
+                            $phpMussel['Request']->inCsv($phpMussel['ChoiceKey'], $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ? ' checked' : '',
                             $phpMussel['ChoiceValue']
                         );
                     } else {
