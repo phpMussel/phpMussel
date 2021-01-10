@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.14.1-DEV+20339499
+ Version: 1.14.1-DEV+21009482
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat
@@ -18,6 +18,7 @@ phpMussel:
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/Events.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/L10N.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/NumberFormatter.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/Request.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/Maikuolan/YAML.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/classes/TemporaryFileHandler.php
    - https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/cli.php
@@ -79,6 +80,7 @@ phpMussel:
    - classes/Maikuolan/Events.php
    - classes/Maikuolan/L10N.php
    - classes/Maikuolan/NumberFormatter.php
+   - classes/Maikuolan/Request.php
    - classes/Maikuolan/YAML.php
    - classes/TemporaryFileHandler.php
    - cli.php
@@ -140,12 +142,13 @@ phpMussel:
    - b6ea5a55cc6142036b41cac2fbc21d260f2c1a8dcc1e34268a3695e71027ac0b:3476
    - ee5a457bc8b11f28e258bd625c96d2eb0540a3b5b4ca97ea03b6ad69ab85f4ed:11149
    - 4f131313de9a10e8407e5a0f95c55b451a750bb238c977d6d438392a5618a981:35555
+   - 3428cda44adf89ff9a5818a546058bb6546f878aef4c763d096bd5b2c71c6af8:7741
    - 676a9676cf0613cafc99684b0765fadd97b2feeccc0b875991b154f301057371:10446
    - e75f6ab3f64a455e1b80ab3bac5c38eb2465ec3100f69850c0eaf6fa678d959d:1730
    - f0ad808a4ff981395231be1a39f7caa842414db7b4667c0b4f5893450db37b92:28415
-   - a337d6ea8b7ac05f995c2f9014e357ffb1c7179222c92e31236761941ebe1c7f:7467
+   - a706f26e425a6319e9b5566875e9cbb08154d1dd6a05038045667b14c686b2b8:8009
    - fbec4b5059d164b959be4a7a4617e8c285dbf26d2ed003f2517ca5a146715ce6:15987
-   - 0e468105cb7eb62f17432ee19fb6db130fc613e5ef4763b197953fd98b056afa:7814
+   - 5af7d49749ba782c6f0a02d30d4e3fcbb27368f4f3324545dafe3503c65fea50:7808
    - 525daa72f2945b7a22356fd75b01e2a1e6dfb667ad52b0becad51ead86832eb7:531
    - 205e59afd4aa6cb6bbc2f41ac472b3cb552c198beea5be87eb02e4cce794a9e0:2067
    - 0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424
@@ -180,9 +183,9 @@ phpMussel:
    - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - 50eb612e1a6aeab40b9c4f73a243cfa182deee5721cf1537da21a780ad17d4a3:169532
+   - 65cd9ca2807a4379620f1553ac0f391c5bd7c6b70e707a5ddcba3612129bb475:169542
    - 0ede657e133b1f0b0ef2d72f1c29adf5993ae1a910534b22ee7d4636be84f5a7:112526
-   - a8cdcdb4ca4f02936cfc99647d64323a2cf5fb06489cc6a211b707c845e8dfa6:237696
+   - 575f148e0574a393efc0b9f180b4ec29d64564a691f8ec999aba3fefdb2d5ab1:231321
    - 7c250e232f7cd4f2dc9db36a06b7ca62339813e419cdb71af89f07dcc26130c6:7051
    - a7cc0c8e1bc173269581b3094408d8eed4089d122100e90437f570ccd59eecb8:1659
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666

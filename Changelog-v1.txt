@@ -13,6 +13,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2020.12.05; Bug-fix; Maikuolan]: Possible compatibility problem with
   Cronable introduced on November 27th; Fixed.
 
+- [2021.01.10; Maikuolan]: Separated the code for performing outbound requests
+  through cURL out to its own independent class.
+
 === Version/Release 1.14.0 ===
 MINOR RELEASE.
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.11.27).
+ * This file: Functions file (last modified: 2021.01.10).
  */
 
 /**
@@ -1067,7 +1067,7 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
     $Response = $phpMussel['Request'](
         'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $phpMussel['Config']['urlscanner']['google_api_key'],
         $Arr,
-        $phpMussel['Timeout'],
+        $phpMussel['Request']->DefaultTimeout,
         ['Content-type: application/json']
     );
     $phpMussel['LookupCount']++;
@@ -1079,18 +1079,16 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
     if (strpos($Response, '"matches":') !== false) {
         $returnVal = 200;
     } else {
-
         /**
          * Other possible problem detected.
          * @link https://developers.google.com/safe-browsing/v4/status-codes
          */
-        if (isset($phpMussel['Most-Recent-HTTP-Code']) && $phpMussel['Most-Recent-HTTP-Code'] !== 200) {
-
+        if (isset($phpMussel['Request']->MostRecentStatusCode) && $phpMussel['Request']->MostRecentStatusCode !== 200) {
             /**
              * Malformed request detected (e.g., invalid argument, invalid
              * request payload, etc).
              */
-            if ($phpMussel['Most-Recent-HTTP-Code'] === '400') {
+            if ($phpMussel['Request']->MostRecentStatusCode === '400') {
                 $returnVal = 400;
             }
 
@@ -1099,7 +1097,7 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
              * the same message for 401 and 403 because the returned message is
              * suitable either way.
              */
-            elseif ($phpMussel['Most-Recent-HTTP-Code'] >= '401' && $phpMussel['Most-Recent-HTTP-Code'] <= 403) {
+            elseif ($phpMussel['Request']->MostRecentStatusCode >= '401' && $phpMussel['Request']->MostRecentStatusCode <= 403) {
                 $returnVal = 401;
             }
 
@@ -1108,7 +1106,7 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
              * message for 429, 500, 503, 504 alike because, for our purpose,
              * the returned message is suitable in any case.
              */
-            elseif ($phpMussel['Most-Recent-HTTP-Code'] >= '429') {
+            elseif ($phpMussel['Request']->MostRecentStatusCode >= '429') {
                 $returnVal = 503;
             }
 
@@ -1128,7 +1126,6 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
              */
             $newExpiry += 86400;
         } else {
-
             /** Potentially harmful URL *NOT* detected, and no other problems detected. */
             $returnVal = 204;
         }
@@ -4670,148 +4667,6 @@ $phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpM
 };
 
 /**
- * Used to send cURL requests.
- *
- * @param string $URI The resource to request.
- * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
- *      CURLOPT_POST is true, and the parameter is used to supply
- *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
- *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
- * @param int $Timeout An optional timeout limit.
- * @param array $Headers An optional array of headers to send with the request.
- * @param int $Depth Recursion depth of the current closure instance.
- * @return string The results of the request, or an empty string upon failure.
- */
-$phpMussel['Request'] = function ($URI, $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0) use (&$phpMussel) {
-
-    /** Fetch channel information. */
-    if (!isset($phpMussel['Channels'])) {
-        $phpMussel['Channels'] = (
-            $Channels = $phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml')
-        ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
-        if (!isset($phpMussel['Channels']['Triggers'])) {
-            $phpMussel['Channels']['Triggers'] = [];
-        }
-    }
-
-    /** Test channel triggers. */
-    foreach ($phpMussel['Channels']['Triggers'] as $TriggerName => $TriggerURI) {
-        if (
-            !isset($phpMussel['Channels'][$TriggerName]) ||
-            !is_array($phpMussel['Channels'][$TriggerName]) ||
-            substr($URI, 0, strlen($TriggerURI)) !== $TriggerURI
-        ) {
-            continue;
-        }
-        foreach ($phpMussel['Channels'][$TriggerName] as $Channel => $Options) {
-            if (!is_array($Options) || !isset($Options[$TriggerName])) {
-                continue;
-            }
-            $Len = strlen($Options[$TriggerName]);
-            if (substr($URI, 0, $Len) !== $Options[$TriggerName]) {
-                continue;
-            }
-            unset($Options[$TriggerName]);
-            if (empty($Options) || $phpMussel['in_csv'](key($Options), $phpMussel['Config']['general']['disabled_channels'])) {
-                continue;
-            }
-            $AlternateURI = current($Options) . substr($URI, $Len);
-            break;
-        }
-        if ($phpMussel['in_csv']($TriggerName, $phpMussel['Config']['general']['disabled_channels'])) {
-            if (isset($AlternateURI)) {
-                return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth);
-            }
-            return '';
-        }
-        if (isset($phpMussel['Channels']['Overrides'], $phpMussel['Channels']['Overrides'][$TriggerName])) {
-            $Overrides = $phpMussel['Channels']['cURL Overrides'][$TriggerName];
-        }
-        break;
-    }
-
-    /** Empty overrides in case none declared. */
-    $Overrides = [];
-
-    /** Initialise the cURL session. */
-    $Request = curl_init($URI);
-
-    $LCURI = strtolower($URI);
-    $SSL = (substr($LCURI, 0, 6) === 'https:');
-
-    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
-    curl_setopt($Request, CURLOPT_HEADER, false);
-    if (empty($Params)) {
-        curl_setopt($Request, CURLOPT_POST, false);
-        $Post = false;
-    } else {
-        curl_setopt($Request, CURLOPT_POST, true);
-        curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
-        $Post = true;
-    }
-    if ($SSL) {
-        curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
-            isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
-        ));
-    }
-    curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
-    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $phpMussel['Timeout']));
-    curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
-    curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
-    $Time = microtime(true);
-
-    /** Execute and get the response. */
-    $Response = curl_exec($Request);
-
-    /** Used for debugging. */
-    $Time = microtime(true) - $Time;
-
-    /** Check for problems (e.g., resource not found, server errors, etc). */
-    if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-
-        /** Used for debugging. */
-        $phpMussel['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n",
-            $Post ? 'POST' : 'GET',
-            $URI,
-            $Info['http_code'],
-            (floor($Time * 100) / 100) . 's'
-        ));
-
-        /** Most recent HTTP code flag. */
-        $phpMussel['Most-Recent-HTTP-Code'] = $Info['http_code'];
-
-        /** Request failed. Try again using an alternative address. */
-        if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
-            curl_close($Request);
-            return $phpMussel['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
-        }
-    } else {
-
-        /** Used for debugging. */
-        $phpMussel['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n",
-            $Post ? 'POST' : 'GET',
-            $URI,
-            200,
-            (floor($Time * 100) / 100) . 's'
-        ));
-
-        /** Most recent HTTP code flag. */
-        $phpMussel['Most-Recent-HTTP-Code'] = 200;
-    }
-
-    /** Close the cURL session. */
-    curl_close($Request);
-
-    /** Return the results of the request. */
-    return $Response;
-};
-
-/**
  * Used to generate new salts when necessary, which may be occasionally used by
  * some specific optional peripheral features (note: should not be considered
  * cryptographically secure; especially so for versions of PHP < 7).
@@ -5328,7 +5183,6 @@ $phpMussel['Pseudonymise-IP'] = function ($IP) {
  * Initialise the cache.
  */
 $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
-
     /** Exit early if already initialised. */
     if (isset($phpMussel['Cache'])) {
         return;
@@ -5357,33 +5211,10 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
 };
 
 /**
- * Checks for a value within CSV.
- *
- * @param string $Value The value to look for.
- * @param string $CSV The CSV to look in.
- * @return bool True when found; False when not found.
- */
-$phpMussel['in_csv'] = function ($Value, $CSV) {
-    if (!$Value || !$CSV) {
-        return false;
-    }
-    $Arr = explode(',', $CSV);
-    if (strpos($CSV, '"') !== false) {
-        foreach ($Arr as &$Item) {
-            if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {
-                $Item = substr($Item, 1, -1);
-            }
-        }
-    }
-    return in_array($Value, $Arr, true);
-};
-
-/**
  * Initialises an error handler to catch any errors generated by phpMussel when
  * needed.
  */
 $phpMussel['InitialiseErrorHandler'] = function () use (&$phpMussel) {
-
     /** Stores any errors generated by the error handler. */
     $phpMussel['Errors'] = [];
 
@@ -5417,7 +5248,6 @@ $phpMussel['InitialiseErrorHandler'] = function () use (&$phpMussel) {
  * Restores previous error handler after having initialised an error handler.
  */
 $phpMussel['RestoreErrorHandler'] = function () use (&$phpMussel) {
-
     /** Reset errors array. */
     $phpMussel['Errors'] = [];
 
@@ -5425,23 +5255,8 @@ $phpMussel['RestoreErrorHandler'] = function () use (&$phpMussel) {
     restore_error_handler();
 };
 
-/**
- * Prints debug messages (used in dev; not needed for production).
- *
- * @param string $Message The debug message to send.
- */
-$phpMussel['DebugMessage'] = function ($Message) {
-    if (!defined('DEV_DEBUG_MODE') || DEV_DEBUG_MODE !== true) {
-        return;
-    }
-    $Handle = fopen('php://stdout', 'wb');
-    fwrite($Handle, $Message);
-    fclose($Handle);
-};
-
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($phpMussel['Vault'])) {
-
     /** Load all default event handlers. */
     require $phpMussel['Vault'] . 'event_handlers.php';
 }
