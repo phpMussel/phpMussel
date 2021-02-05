@@ -16,7 +16,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.01.10; Maikuolan]: Separated the code for performing outbound requests
   through cURL out to its own independent class.
 
-- [2021.02.05; Maikuolan]: The default timeout for external requests is now configurable.
+- [2021.02.05; Maikuolan]: The default timeout for external requests is now
+  configurable.
+
+- [2021.02.05; Maikuolan]: The preview text next to the input fields on the
+  configuration page didn't quite align properly; Fixed.
 
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
