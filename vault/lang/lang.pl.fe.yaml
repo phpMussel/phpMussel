@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2020.10.26).
+# This file: Polish language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -62,6 +62,7 @@ config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależ
 config_general_cleanup: "Zwolnić zmienne i pamięć podręczną używaną przez skrypt po skanowaniu przesłanych plików? False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]. Jeśli używasz skryptu tylko do skanowania przesyłanych plików (t.j., nic więcej), powinieneś ustawić to na <code>true</code>, aby zminimalizować zużycie pamięci. W przeciwnym razie powinieneś ustawić go na <code>false</code>, aby zachować w pamięci dane niezbędne do wykonania phpMussel bez niepotrzebnego przeładowywania. Nie ma wpływu w trybie CLI."
 config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I (wymaga PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
 config_general_delete_on_sight: "Włączenie tej dyrektywy instruuje skrypt, aby spróbował natychmiast usunąć wszelkie zeskanowane próby przesłania pliku spełniające dowolne kryteria wykrywania, czy to przez podpisy, czy w inny sposób. Pliki oznaczone jako „czyste” nie zostaną dotknięte. W przypadku archiwów całe archiwum zostanie usunięte, niezależnie od tego, czy plik naruszający prawo jest tylko jednym z kilku plików zawartych w archiwum. W przypadku skanowania wysyłania plików zwykle nie jest konieczne włączenie tej dyrektywy, ponieważ PHP zwykle automatycznie wyczyści zawartość swojej pamięci podręcznej po zeskanowaniu wykonywania co oznacza, że zazwyczaj usuwa wszystkie pliki przesłane przez serwer na serwer, chyba że zostały już przeniesione, skopiowane lub usunięte. Ta dyrektywa została dodana tutaj jako dodatkowy środek bezpieczeństwa dla tych, których kopie PHP mogą nie zawsze zachowywać się w oczekiwany sposób. False (Fałszywy) = Po zeskanowaniu skanowania pozostaw plik w spokoju [Domyślna]; True (Prawdziwe) = Po zeskanowaniu, jeśli nie jest czyste, usuń natychmiast."
+config_general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
 config_general_disable_cli: "Wyłączyć tryb CLI? Tryb CLI jest domyślnie włączony, ale czasami może zakłócać działanie niektórych narzędzi testujących (na przykład PHPUnit) i innych aplikacji opartych na CLI. Jeśli nie musisz wyłączać trybu CLI, powinieneś zignorować tę dyrektywę. False (Fałszywy) = Włącz tryb CLI [Domyślna]; True (Prawdziwe) = Wyłącz tryb CLI."
 config_general_disable_frontend: "Wyłączyć dostęp do interfejsu użytkownika? Interfejs użytkownika może sprawić, że phpMussel będzie łatwiejszy w zarządzaniu, ale może również stanowić potencjalne zagrożenie bezpieczeństwa. Dostęp do interfejsu użytkownika jest zapewniany dla wygody, ale należy go włączać tylko wtedy, gdy jest to potrzebne. False (Fałszywy) = Włącz dostęp do interfejsu użytkownika; True (Prawdziwe) = Wyłącz dostęp do interfejsu użytkownika [Domyślna]."
 config_general_disable_webfonts: "Wyłączyć czcionki internetowe? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -232,7 +233,6 @@ label_show: "Pokaż"
 label_size_in_quarantine: "Rozmiar w kwarantannie: "
 label_stable: "Najnowsza stabilna:"
 label_sysinfo: "Informacje o systemie:"
-label_tests: "Testy:"
 label_unstable: "Najnowsza niestabilna:"
 label_upload_date: "Data przesłania: "
 label_upload_hash: "Suma kontrolna przesłania: "

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.10.26).
+# This file: Vietnamese language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -62,6 +62,7 @@ config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào khôn
 config_general_cleanup: "Phá hủy các biến và bộ đệm được sử dụng bởi tập lệnh sau khi quét tải lên? False = Không; True = Vâng [Mặc định]. Nếu bạn không sử dụng tập lệnh cho bất cứ điều gì ngoài việc quét tải lên, bạn nên đặt nó thành <code>true</code> để giảm thiểu việc sử dụng bộ nhớ. Mặt khác, bạn nên đặt nó thành <code>false</code>, để giữ lại trong bộ nhớ dữ liệu cần thiết để thực thi phpMussel mà không cần tải lại nó. Không có ảnh hưởng trong CLI."
 config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
 config_general_delete_on_sight: "Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp kho lưu trữ, các toàn bộ kho lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các kho lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức."
+config_general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
 config_general_disable_cli: "Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI."
 config_general_disable_frontend: "Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho phpMussel dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý phpMussel từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định]."
 config_general_disable_webfonts: "Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không."
@@ -229,7 +230,6 @@ label_show: "Hiển thị"
 label_size_in_quarantine: "Kích thước trong kiểm dịch: "
 label_stable: "Ổn định mới nhất:"
 label_sysinfo: "Thông tin hệ thống:"
-label_tests: "Kiểm tra:"
 label_unstable: "Không ổn định mới nhất:"
 label_upload_date: "Ngày tải lên: "
 label_upload_hash: "Băm tải lên: "

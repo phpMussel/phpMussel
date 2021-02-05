@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.10.26).
+# This file: Latvian language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -62,6 +62,7 @@ config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas
 config_general_cleanup: "Vai atiestatīt mainīgos un kešatmiņu, ko skripts izmanto pēc augšupielādes skenēšanas? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]. Ja skenēšana augšupielāde ir vienīgais, ko vēlaties darīt, jums vajadzētu iestatīt šo mainīgo uz <code>true</code>, lai samazinātu atmiņas izmantošanu. Ja vēlaties, lai phpMussel izdarītu vairāk, jums vajadzētu iestatīt šo mainīgo uz <code>false</code>, lai atmiņā saglabātu datus, kas nepieciešami phpMussel izpildei, bez nevajadzīgi atkārtota ielāde. CLI režīmā nav ietekmes."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
 config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False (Nepatiess) = After scanning, leave the file alone [Noklusējuma]; True (Patiess) = After scanning, if not clean, delete immediately."
+config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
 config_general_disable_cli: "Vai atspējot CLI režīmu? CLI režīms ir iespējots pēc noklusējuma, taču dažreiz tas var traucēt pārbaudes rīku darbībai (piemēram, PHPUnit) un citām CLI balstītām lietojumprogrammām. Ja jums nav jāatspējo CLI režīms, jums vajadzētu ignorēt šo direktīvu. False (Nepatiess) = Iespējot CLI režīmu [Noklusējuma]; True (Patiess) = Atspējot CLI režīmu."
 config_general_disable_frontend: "Vai atspējot administratīvo piekļuvi, kas izmanto tīmekļa pārlūku? Administratīvā piekļuve, izmantojot tīmekļa pārlūku, var padarīt phpMussel pārvaldāmāku, taču tas var būt arī potenciāls drošības risks. phpMussel ieteicams pārvaldīt, izmantojot citus līdzekļus, kad vien iespējams (piemēram, izmantojot FTP), taču administratīvā piekļuve, izmantojot tīmekļa pārlūku, tiek nodrošināta gadījumos, kad citi līdzekļi nav dzīvotspējīgi. Iespējojiet to, ja jums tas ir nepieciešams; Atspējojiet to, ja jums nav. False (Nepatiess) = Iespējojiet to; True (Patiess) = Atspējojiet to [Noklusējuma]."
 config_general_disable_webfonts: "Vai atspējot tīmekļa fontus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -232,7 +233,6 @@ label_show: "Parādiet"
 label_size_in_quarantine: "Izmērs karantīnā: "
 label_stable: "Jaunākā stabilā:"
 label_sysinfo: "Sistēmas informācija:"
-label_tests: "Pārbaudes:"
 label_unstable: "Jaunākā nestabilā:"
 label_upload_date: "Augšupielādes datums: "
 label_upload_hash: "Augšupielādes kontrolsumma: "

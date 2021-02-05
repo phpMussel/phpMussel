@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.10.26).
+# This file: Swedish language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -62,6 +62,7 @@ config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillh
 config_general_cleanup: "Förstöra variabler och cache som används av skriptet efter att ha skannat uppladdningar? False = Nej; True = Ja [Standard]. Om du *inte* använder skriptet för något annat än att skanna uppladdningar, du bör ställa in detta till <code>true</code> för att minimera minnesanvändningen. Annars bör du ställa in den till <code>false</code> för att behålla de data som krävs för att köra phpMussel utan att behöva ladda om det onödigt. Har inget inflytande i CLI-läget."
 config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
 config_general_delete_on_sight: "Aktivering av detta direktiv kommer att instruera skriptet att omedelbart ta bort alla skannade filuppladdningar som överensstämmer med upptäcktskriterier, oavsett om det är signaturer eller på annat sätt. Filer som fastställts för att vara "rena" kommer inte att beröras. När det gäller arkiv kommer hela arkivet att raderas, oavsett om den kränkande filen endast är en av flera filer som finns i arkivet. För skanning av filuppladdning är det vanligtvis inte nödvändigt att aktivera detta direktiv, för vanligtvis PHP rensar automatiskt innehållet i sin cache när körningen är klar, vilket betyder att det vanligtvis raderar alla filer som laddats upp via den till servern om de inte redan har flyttats, kopierats eller raderats. Detta direktiv läggs till här som ett extra mått på säkerhet för dem vars kopior av PHP inte alltid kan bete sig på det förväntade sättet. False = Efter skanning, lämnar filen ensam [Standard]; True = Ta bort omedelbart efter skanning, om inte ren."
+config_general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."
 config_general_disable_cli: "Inaktivera CLI-läge? CLI-läge är som standard aktiverat, men kan ibland störa vissa testverktyg (t.ex., PHPUnit) och andra CLI-baserade applikationer. Om du inte behöver avaktivera CLI-läge, bör du ignorera detta direktiv. False = Aktivera CLI-läge [Standard]; True = Inaktivera CLI-läge."
 config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end tillgång kan göra phpMussel mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera phpMussel via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard]."
 config_general_disable_webfonts: "Inaktivera webbfonter? True = Ja [Standard]; False = Nej."
@@ -229,7 +230,6 @@ label_show: "Visa"
 label_size_in_quarantine: "Storlek i karantän: "
 label_stable: "Senaste stabila:"
 label_sysinfo: "Systeminformation:"
-label_tests: "Tester:"
 label_unstable: "Senaste instabil:"
 label_upload_date: "Uppladdningsdatum: "
 label_upload_hash: "Uppladdningskontrollsumma: "

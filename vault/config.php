@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.01.10).
+ * This file: Configuration handler (last modified: 2021.02.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,6 +169,7 @@ $phpMussel['InstanceCache'] = [];
 
 /** Instantiate the request class. */
 $phpMussel['Request'] = new \Maikuolan\Common\Request();
+$phpMussel['Request']->DefaultTimeout = $phpMussel['Config']['general']['default_timeout'];
 $phpMussel['Request']->Channels = (
     $Channels = $phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml')
 ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];

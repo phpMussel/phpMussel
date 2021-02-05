@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.10.26).
+# This file: English language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -62,6 +62,7 @@ config_general: "General configuration (any core configuration not belonging to 
 config_general_cleanup: "Unset variables and cache used by the script after scanning uploads? False = No; True = Yes [Default]. If you *aren't* using the script for anything other than scanning uploads, you should set this to <code>true</code> to minimise memory usage. Otherwise, you should set it to <code>false</code>, in order to retain in memory the data necessary to execute phpMussel without needlessly reloading it. Has no influence in CLI mode."
 config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requires PHP &gt;= 7.3.0)."
 config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately."
+config_general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
 config_general_disable_cli: "Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode."
 config_general_disable_frontend: "Disable front-end access? Front-end access can make phpMussel more manageable, but can also be a potential security risk, too. It's recommended to manage phpMussel via the back-end whenever possible, but front-end access is provided for when it isn't possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default]."
 config_general_disable_webfonts: "Disable webfonts? True = Yes [Default]; False = No."
@@ -231,7 +232,6 @@ label_show: "Show"
 label_size_in_quarantine: "Size in quarantine: "
 label_stable: "Latest stable:"
 label_sysinfo: "System information:"
-label_tests: "Tests:"
 label_unstable: "Latest unstable:"
 label_upload_date: "Upload date: "
 label_upload_hash: "Upload hash: "

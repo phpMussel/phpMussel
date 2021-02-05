@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.10.26).
+# This file: Portuguese language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -62,6 +62,7 @@ config_general: "Configuração geral (qualquer configuração principal que nã
 config_general_cleanup: "Deletar script variáveis e cache após a execução? False = Não; True = Sim [Padrão]. Se você não estiver usando o script para outra coisa senão a verificação de carregamentos, você deve defina-o como <code>true</code> para minimizar o uso de memória. Caso contrário, você deve defini-lo como <code>false</code>, a fim de reter na memória os dados necessários para executar o phpMussel sem recarregá-lo desnecessariamente. Não tem influência em CLI modo."
 config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requer PHP &gt;= 7.3.0)."
 config_general_delete_on_sight: "Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. False = Após a análise, deixe o arquivo sozinho [Padrão]; True = Após a análise, se não limpo, deletar imediatamente."
+config_general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
 config_general_disable_cli: "Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode interferir com certas testes ferramentas (tal como PHPUnit, por exemplo) e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI modo, você deve ignorar esta directiva. False = Ativar o CLI modo [Padrão]; True = Desativar o CLI modo."
 config_general_disable_frontend: "Desativar o acesso front-end? Acesso front-end pode fazer phpMussel mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar phpMussel através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão]."
 config_general_disable_webfonts: "Desativar webfonts? True = Sim [Padrão]; False = Não."
@@ -231,7 +232,6 @@ label_show: "Mostrar"
 label_size_in_quarantine: "Tamanho em quarentena: "
 label_stable: "Mais novo de estável:"
 label_sysinfo: "Informação do sistema:"
-label_tests: "Testes:"
 label_unstable: "Mais novo de instável:"
 label_upload_date: "Data do carregamento: "
 label_upload_hash: "Hash do carregamento: "
