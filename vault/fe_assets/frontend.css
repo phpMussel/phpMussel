@@ -95,3 +95,4 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select{height:20px;padding-top:0;padding-bottom:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
+td code~input{vertical-align:middle}
