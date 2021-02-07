@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2020.10.26).
+# This file: Hindi language data for the front-end (last modified: 2020.12.10).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -232,7 +232,6 @@ label_show: "दिखाना"
 label_size_in_quarantine: "संगरोध में आकार: "
 label_stable: "नवीनतम स्थिर:"
 label_sysinfo: "प्रणाली की जानकारी:"
-label_tests: "परीक्षण:"
 label_unstable: "नवीनतम अस्थिर:"
 label_upload_date: "अपलोड की तारीख: "
 label_upload_hash: "अपलोड का हैश: "

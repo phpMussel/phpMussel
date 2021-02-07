@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.10.26).
+# This file: Japanese language data for the front-end (last modified: 2020.12.10).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -230,7 +230,6 @@ label_show: "表示する"
 label_size_in_quarantine: "検疫のサイズ："
 label_stable: "最新安定："
 label_sysinfo: "システムインフォメーション："
-label_tests: "テスト："
 label_unstable: "最新不安定："
 label_upload_date: "アップロード日："
 label_upload_hash: "アップロードのハッシュ："

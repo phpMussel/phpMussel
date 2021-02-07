@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.10.26).
+# This file: Korean language data for the front-end (last modified: 2020.12.10).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -230,7 +230,6 @@ label_show: "보여"
 label_size_in_quarantine: "격리 크기 : "
 label_stable: "최신 안정 :"
 label_sysinfo: "시스템 정보 :"
-label_tests: "테스트 :"
 label_unstable: "최신 불안정 :"
 label_upload_date: "업로드 날짜 : "
 label_upload_hash: "업로드 해시 : "

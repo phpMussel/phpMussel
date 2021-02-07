@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2020.10.26).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2020.12.10).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -230,7 +230,6 @@ label_show: "显示"
 label_size_in_quarantine: "大小在检疫："
 label_stable: "最新稳定："
 label_sysinfo: "系统信息："
-label_tests: "测试："
 label_unstable: "最新不稳定："
 label_upload_date: "上传日期："
 label_upload_hash: "上传哈希："

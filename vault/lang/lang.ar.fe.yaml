@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.10.26).
+# This file: Arabic language data for the front-end (last modified: 2020.12.10).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -230,7 +230,6 @@ label_show: "اظهره"
 label_size_in_quarantine: "الحجر الصحي بحجم: "
 label_stable: "أحدث مستقرة:"
 label_sysinfo: "معلومات النظام:"
-label_tests: "اختبارات:"
 label_unstable: "أحدث غير مستقرة:"
 label_upload_date: "تحميل تاريخ: "
 label_upload_hash: "تحميل التجزئة: "
