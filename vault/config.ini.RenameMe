@@ -47,7 +47,9 @@ log_rotation_limit=0
 ; logfiles, until the limit is no longer exceeded.
 log_rotation_action='Delete'
 
-; Your timezone.
+; This is used to specify the timezone to use (e.g., Africa/Cairo,
+; America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam,
+; etc). Specify "SYSTEM" to let PHP handle this for you automatically.
 timezone='SYSTEM'
 
 ; Timezone offset in minutes.
@@ -189,16 +191,26 @@ default_algo='PASSWORD_DEFAULT'
 ; Track phpMussel usage statistics? True = Yes; False = No [Default].
 statistics=false
 
+; Hide version information from logs and page output? True = Yes; False = No
+; [Default].
+hide_version=false
+
 ; This can be used to prevent phpMussel from using particular channels when
 ; sending requests (e.g., when updating, when fetching component metadata,
 ; etc).
 disabled_channels='VirusTotal_HTTP'
 
+; Default timeout to use for external requests? Default = 12 seconds.
+default_timeout=12
+
 
 [signatures]
 ; Configuration for signatures, signature files, etc.
 
-; A list of the active signature files, delimited by commas.
+; A list of the active signature files, delimited by commas. Note: Signature
+; files must firstly be installed, before you can activate them. For the test
+; files to work correctly, the signature files must be installed and activated.
+; Note: Signature files must first be installed, before you can activate them.
 active=''
 
 ; Should phpMussel report when signatures files are missing or corrupted? If
@@ -294,7 +306,8 @@ filetype_blacklist='386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,
 filetype_greylist=''
 
 ; Attempt to check the contents of archives? False = Don't check; True = Check
-; [Default].
+; [Default]. Supported: Zip (requires libzip), Tar, Rar (requires the rar
+; extension).
 check_archives=true
 
 ; Carry over filesize blacklisting/whitelisting to the contents of archives?

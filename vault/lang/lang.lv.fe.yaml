@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.02.05).
+# This file: Latvian language data for the front-end (last modified: 2021.02.07).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -71,6 +71,7 @@ config_general_enable_plugins: "Vai iespējot phpMussel spraudņu atbalstu? Fals
 config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas nav fatālas. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_forbid_on_block: "Vai phpMussel vajadzētu nosūtīt 403 galvenes ar failu augšupielādētu bloķētu ziņojumu, vai pieturēties pie parastiem 200 OK? False (Nepatiess) = Nē (200); True (Patiess) = Jā (403) [Noklusējuma]."
 config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_general_hide_version: "Vai paslēpt versiju informāciju no logs un lapas izvades? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_general_honeypot_mode: "Kad medus poda režīms ir iespējots, phpMussel mēģinās karantīnā ievietot katru augšupielādēto failu, neatkarīgi no tā, vai augšupielādējamais fails atbilst iekļautajiem parakstiem un faktiski netiks veikta šo augšupielādēto failu skenēšana vai analīze. Šī funkcionalitāte varētu būt noderīga tiem, kas vēlas izmantot phpMussel vīrusu un ļaunprātīgas programmatūras izpētes mērķiem, bet nav ieteicams iespējot šo funkcionalitāti tipiskos apstākļos, ja lietotājs vēlas, lai notiek failu augšupielādes skenēšana, utt. Pēc noklusējuma šī opcija ir atspējota. False (Nepatiess) = Atspējots [Noklusējuma]; True (Patiess) = Iespējots."
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet phpMussel noklusējuma valodu."

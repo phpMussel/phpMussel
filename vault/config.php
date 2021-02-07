@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.02.05).
+ * This file: Configuration handler (last modified: 2021.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -166,6 +166,11 @@ $phpMussel['DefaultAlgo'] = (
 
 /** Used just for the current, specific request instance. */
 $phpMussel['InstanceCache'] = [];
+
+/** Revert script ident if "hide_version" is true. */
+if (!empty($phpMussel['Config']['general']['hide_version'])) {
+    $phpMussel['ScriptIdent'] = 'phpMussel';
+}
 
 /** Instantiate the request class. */
 $phpMussel['Request'] = new \Maikuolan\Common\Request();

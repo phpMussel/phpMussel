@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.02.05).
+# This file: Swedish language data for the front-end (last modified: 2021.02.07).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -71,6 +71,7 @@ config_general_enable_plugins: "Aktivera support för phpMussel-plugins? False =
 config_general_error_log: "En fil för att logga eventuella icke-dödliga fel som upptäcks. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_forbid_on_block: "Ska phpMussel skicka 403 rubriker med uppladdning blockerat meddelande, eller hålla fast vid de vanliga 200 OK? False = Nej (200); True = Ja (403) [Standard]."
 config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_general_hide_version: "Dölj versionsinformation från loggar och sidoutgång? True = Ja; False = Nej [Standard]."
 config_general_honeypot_mode: "När honeypot-läget är aktiverat, kommer phpMussel att försöka karantänera varje filuppladdning som den stöter på, oavsett om filen som laddas upp matchar några inkluderade signaturer eller inte, och ingen faktisk skanning eller analys av de försökte filuppladdningarna kommer faktiskt att ske. Den här funktionen bör vara användbar för de som vill använda phpMussel för virus/malware-forskning, men det rekommenderas varken att aktivera den här funktionaliteten om den avsedda användningen av phpMussel av användaren är för faktisk filuppladdningsscanning, och inte heller rekommenderas att använda honeypot-funktionen för andra syften än honeypotting. Som standard är detta alternativ inaktiverat. False = Inaktiverad [Standard]; True = Aktiverad."
 config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_lang: "Ange standardspråk för phpMussel."

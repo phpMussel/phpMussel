@@ -22,6 +22,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.02.05; Maikuolan]: The preview text next to the input fields on the
   configuration page didn't quite align properly; Fixed.
 
+- [2021.02.07; NEW FEATURE; Maikuolan]: Added the ability to hide the phpMussel
+  version used.
+
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
 

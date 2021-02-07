@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.02.05).
+# This file: Thai language data for the front-end (last modified: 2021.02.07).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -71,6 +71,7 @@ config_general_enable_plugins: "เปิดใช้งานการสนั
 config_general_error_log: "ไฟล์สำหรับบันทึกข้อผิดพลาดที่ไม่ร้ายแรงที่ตรวจพบ. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
 config_general_forbid_on_block: "ควร phpMussel ส่งส่วนหัว 403 มีข้อความเกี่ยวกับอัปโหลดไฟล์ที่ถูกบล็อก, หรือเก็บไว้กับปกติ 200 OK? False = ส่ง 200; True = ส่ง 403 [ค่าเริ่มต้น]."
 config_general_frontend_log: "ไฟล์สำหรับบันทึกพยายามเข้าสู่ระบบที่ front-end. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
+config_general_hide_version: "ซ่อนข้อมูลเวอร์ชันจากบันทึกและเอาต์พุตหน้าเว็บ? True = หยุดใช้; False = ไม่หยุดใช้ [ค่าเริ่มต้น]."
 config_general_honeypot_mode: "เมื่อเปิดใช้งานโหมด honeypot, phpMussel จะพยายามกักกันการอัปโหลดไฟล์ทั้งหมดที่มันเจอ, ไม่ว่าจะเป็นหรือไม่ก็ตามไฟล์ตรงกับลายเซ็นที่รวมอยู่, และทั้งการสแกนและการวิเคราะห์สำหรับไฟล์เหล่านี้จะไม่เกิดขึ้นจริง. ฟังก์ชันนี้ควรมีประโยชน์สำหรับผู้ที่ต้องการใช้ phpMussel เพื่อวัตถุประสงค์ในการวิจัยไวรัส/มัลแวร์, แต่ไม่แนะนำเพื่อให้สามารถใช้งานฟังก์ชันนี้ได้ถ้าใช้ของ phpMussel ตั้งใจโดยผู้ใช้สำหรับการอัปโหลดไฟล์จริง, และไม่แนะนำสำหรับวัตถุประสงค์ที่ไม่เกี่ยวข้องกับฟังก์ชันการทำงานของ honeypot. โดยค่าเริ่มต้น, ตัวเลือกนี้ถูกปิดใช้งาน. False = เปิดใช้งาน [ค่าเริ่มต้น]; True = เปิดใช้งาน."
 config_general_ipaddr: "ตำแหน่งของที่อยู่ IP สำหรับคำขอการเชื่อมต่อ (เป็นประโยชน์สำหรับบริการเช่น Cloudflare, ฯลฯ). ค่าเริ่มต้น = REMOTE_ADDR. คำเตือน: อย่าเปลี่ยนสิ่งนี้จนกว่าคุณจะรู้ว่าคุณกำลังทำอะไร!"
 config_general_lang: "ระบุภาษาค่าเริ่มต้นสำหรับ phpMussel."

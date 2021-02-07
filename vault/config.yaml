@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.02.05).
+# This file: Configuration defaults file (last modified: 2021.02.07).
 ##/
 
 Config Defaults:
@@ -267,6 +267,9 @@ Config Defaults:
     PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
    choice_filter: "FilterByDefined"
   statistics:
+   type: "bool"
+   default: false
+  hide_version:
    type: "bool"
    default: false
   disabled_channels:

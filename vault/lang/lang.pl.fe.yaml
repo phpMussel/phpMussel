@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.02.05).
+# This file: Polish language data for the front-end (last modified: 2021.02.07).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -71,6 +71,7 @@ config_general_enable_plugins: "Włączyć obsługę wtyczek phpMussel? False (F
 config_general_error_log: "Plik służący do rejestrowania wykrytych błędów niekrytycznych. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_forbid_on_block: "Czy phpMussel powinien wysyłać 403 nagłówki z wiadomość o zablokowanym przesyłaniu plików lub trzymać się zwykłego 200 OK? False (Fałszywy) = Nie (200); True (Prawdziwe) = Tak (403) [Domyślna]."
 config_general_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_general_hide_version: "Ukryć informacje o wersji z dzienników i danych wyjściowych strony? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]."
 config_general_honeypot_mode: "Gdy włączony jest tryb honeypot, phpMussel będzie próbował poddać kwarantannie każdy napotkany plik, niezależnie od tego, czy przesyłany plik pasuje do zawartych w nim podpisów, i faktycznie nie nastąpi faktyczne skanowanie ani analiza tych prób przesłania plików. Ta funkcja powinna być użyteczna dla tych, którzy chcą używać phpMussel do celów badań wirusów i złośliwego oprogramowania, ale nie zaleca się włączenie tej funkcjonalność, jeśli zamierzone użycie phpMussel przez użytkownika jest przeznaczone do rzeczywistego skanowania przesyłania plików, ani do celów innych niż zamierzone. Domyślnie ta opcja jest wyłączona. False (Fałszywy) = Wyłączone [Domyślna]; True (Prawdziwe) = Włączony."
 config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydatny w przypadku usług takich jak Cloudflare i podobnych). Domyślna = REMOTE_ADDR. OSTRZEŻENIE: Nie zmieniaj tego, jeśli nie wiesz, co robisz!"
 config_general_lang: "Określ domyślny język dla phpMussel."
