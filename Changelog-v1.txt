@@ -19,6 +19,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.02.05; Maikuolan]: The preview text next to the input fields on the
   configuration page didn't quite align properly; Fixed.
 
+- [2021.02.20; Maikuolan]: Sync common classes package.
+
 === Version/Release 1.14.0 ===
 MINOR RELEASE.
 
