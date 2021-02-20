@@ -25,6 +25,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.02.07; NEW FEATURE; Maikuolan]: Added the ability to hide the phpMussel
   version used.
 
+- [2021.02.20; Maikuolan]: Sync common classes package.
+
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
 

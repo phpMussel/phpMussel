@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2020.06.11).
+ * Complex string handler (last modified: 2021.02.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -94,7 +94,11 @@ class ComplexStringHandler
         }
     }
 
-    /** Recompile all data after all work has finished and return it. */
+    /**
+     * Recompile all data after all work has finished and return it.
+     *
+     * @return string
+     */
     public function recompile(): string
     {
         $Output = '';
@@ -109,7 +113,11 @@ class ComplexStringHandler
         return $Output;
     }
 
-    /** PHP's magic "__toString" method to act as an alias for "recompile". */
+    /**
+     * PHP's magic "__toString" method to act as an alias for "recompile".
+     *
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->recompile();
