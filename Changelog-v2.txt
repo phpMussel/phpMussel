@@ -27,6 +27,10 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.02.20; Maikuolan]: Sync common classes package.
 
+- [2021.02.22; Bug-fix; Maikuolan]: Reactivate flag within the front-end
+  updater's internal procedure for updating and repairing components sometimes
+  raised incorrectly; Fixed.
+
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
 
