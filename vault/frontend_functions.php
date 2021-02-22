@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.12.05).
+ * This file: Front-end functions file (last modified: 2021.02.22).
  */
 
 /**
@@ -1193,6 +1193,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         $BytesAdded = 0;
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
+        $Reactivate = false;
         if (
             $phpMussel['IsActivable']($phpMussel['Components']['Meta'][$ThisTarget]) &&
             ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget]))
@@ -1443,7 +1444,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if (!empty($Reactivate)) {
+        if ($Reactivate === true) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }
@@ -1665,6 +1666,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
         $RepairFailed = false;
+        $Reactivate = false;
         if ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])) {
             $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }

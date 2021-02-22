@@ -587,12 +587,14 @@ class Demojibakefier
         });
 
         $this->dropVariants($Valid);
+        $Copy = $Valid;
         $Current = key($Valid);
-        foreach ($Valid as $Key => $Value) {
+        foreach ($Copy as $Key => $Value) {
             if ($Value['Weight'] < $Valid[$Current]['Weight']) {
                 unset($Valid[$Key]);
             }
         }
+        unset($Copy);
 
         /** Check whether we can return a single possible value. */
         if (($Count = count($Valid)) === 1) {
