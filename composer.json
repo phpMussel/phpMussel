@@ -5,11 +5,11 @@
     "homepage": "https://phpmussel.github.io/",
     "license": "GPL-2.0-or-later",
     "support": {
-        "chat": "https://gitter.im/phpMussel2/Lobby",
         "issues": "https://github.com/phpMussel/phpMussel/issues",
-        "wiki": "https://github.com/phpMussel/phpMussel/wiki",
         "source": "https://github.com/phpMussel/phpMussel",
-        "docs": "https://github.com/phpMussel/Docs"
+        "docs": "https://github.com/phpMussel/Docs",
+        "rss": "https://github.com/phpMussel/phpMussel/releases.atom",
+        "chat": "https://gitter.im/phpMussel2/Lobby"
     },
     "require": {
         "php": ">=5.4.0",
