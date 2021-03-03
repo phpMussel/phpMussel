@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2020.11.27).
+ * This file: Archive handler (last modified: 2021.03.03).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -127,7 +127,7 @@ class ZipHandler extends ArchiveHandler
             return;
         }
 
-        $this->ZipObject = new \ZipArchive;
+        $this->ZipObject = new \ZipArchive();
         if (!$this->ZipObject->open($Pointer)) {
             $this->ErrorState = 2;
             return;

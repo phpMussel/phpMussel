@@ -1820,7 +1820,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if ($Reactivate) {
+        if ($Reactivate === true) {
             $phpMussel['UpdatesHandler-Activate']($ThisTarget);
         }
     }
