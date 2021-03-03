@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2020.07.17).
+ * Delayed file IO class (last modified: 2021.03.03).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -35,12 +35,12 @@ class DelayedIO
     /**
      * @var int Size of each data block to read per iteration (131072 = 128KB).
      */
-    const BLOCKSIZE = 131072;
+    public const BLOCKSIZE = 131072;
 
     /**
      * @var int How many seconds until an attempt to lock the handle should time-out.
      */
-    const LOCK_TIMEOUT = 5;
+    public const LOCK_TIMEOUT = 5;
 
     /**
      * Read a file, or fetch from object memory if already read before.

@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2020.07.06).
+ * A simple, unified cache handler (last modified: 2021.03.03).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -105,42 +105,42 @@ class Cache
     /**
      * @var string Prepared set query for PDO.
      */
-    const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
+    public const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
 
     /**
      * @var string Prepared get query for PDO.
      */
-    const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
+    public const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
 
     /**
      * @var string Prepared delete query for PDO.
      */
-    const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
+    public const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
 
     /**
      * @var string Prepared clear all query for PDO.
      */
-    const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
+    public const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
 
     /**
      * @var string Prepared clear expired query for PDO.
      */
-    const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
+    public const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
 
     /**
      * @var string Prepared get all query for PDO.
      */
-    const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
+    public const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
 
     /**
      * @var int Default blocksize for file reading operations.
      */
-    const BLOCKSIZE = 262144;
+    public const BLOCKSIZE = 262144;
 
     /**
      * @var int Number of seconds to try flocking a resource before giving up.
      */
-    const FLOCK_TIMEOUT = 10;
+    public const FLOCK_TIMEOUT = 10;
 
     /**
      * @var int The maximum permitted length of the names of keys. There aren't
@@ -153,7 +153,7 @@ class Cache
      *      here feels like a reasonable decision.
      * @link https://github.com/memcached/memcached/blob/master/memcached.h#L56
      */
-    const KEY_SIZE_LIMIT = 128;
+    public const KEY_SIZE_LIMIT = 128;
 
     /**
      * Construct object and set working data if needed.
