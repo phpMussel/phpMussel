@@ -5,20 +5,20 @@
     "homepage": "https://phpmussel.github.io/",
     "license": "GPL-2.0-or-later",
     "support": {
-        "chat": "https://gitter.im/phpMussel2/Lobby",
         "issues": "https://github.com/phpMussel/phpMussel/issues",
-        "wiki": "https://github.com/phpMussel/phpMussel/wiki",
         "source": "https://github.com/phpMussel/phpMussel",
-        "docs": "https://github.com/phpMussel/Docs"
+        "docs": "https://github.com/phpMussel/Docs",
+        "rss": "https://github.com/phpMussel/phpMussel/releases.atom",
+        "chat": "https://gitter.im/phpMussel2/Lobby"
     },
     "require": {
         "php": ">=7.2.0",
-        "maikuolan/common": "^2.4.0",
-        "phpmussel/core": "^3.1",
-        "phpmussel/frontend": "^3.1",
-        "phpmussel/cli": "^3.1",
-        "phpmussel/web": "^3.1",
-        "phpmussel/phpmailer": "^3.1",
+        "maikuolan/common": "^2.5",
+        "phpmussel/core": "^3.2",
+        "phpmussel/frontend": "^3.1.1",
+        "phpmussel/cli": "^3.1.1",
+        "phpmussel/web": "^3.1.1",
+        "phpmussel/phpmailer": "^3.1.1",
         "ext-pcre": "*"
     }
 }
