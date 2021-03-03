@@ -105,42 +105,42 @@ class Cache
     /**
      * @var string Prepared set query for PDO.
      */
-    public const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
+    const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
 
     /**
      * @var string Prepared get query for PDO.
      */
-    public const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
+    const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
 
     /**
      * @var string Prepared delete query for PDO.
      */
-    public const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
+    const DELETE_QUERY = 'DELETE FROM `Cache` WHERE `Key` = :key';
 
     /**
      * @var string Prepared clear all query for PDO.
      */
-    public const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
+    const CLEAR_QUERY = 'DELETE FROM `Cache` WHERE 1';
 
     /**
      * @var string Prepared clear expired query for PDO.
      */
-    public const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
+    const CLEAR_EXPIRED_QUERY = 'DELETE FROM `Cache` WHERE `Time` > 0 AND `Time` < :time';
 
     /**
      * @var string Prepared get all query for PDO.
      */
-    public const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
+    const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
 
     /**
      * @var int Default blocksize for file reading operations.
      */
-    public const BLOCKSIZE = 262144;
+    const BLOCKSIZE = 262144;
 
     /**
      * @var int Number of seconds to try flocking a resource before giving up.
      */
-    public const FLOCK_TIMEOUT = 10;
+    const FLOCK_TIMEOUT = 10;
 
     /**
      * @var int The maximum permitted length of the names of keys. There aren't
@@ -153,7 +153,7 @@ class Cache
      *      here feels like a reasonable decision.
      * @link https://github.com/memcached/memcached/blob/master/memcached.h#L56
      */
-    public const KEY_SIZE_LIMIT = 128;
+    const KEY_SIZE_LIMIT = 128;
 
     /**
      * Construct object and set working data if needed.

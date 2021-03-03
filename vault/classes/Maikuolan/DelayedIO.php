@@ -35,12 +35,12 @@ class DelayedIO
     /**
      * @var int Size of each data block to read per iteration (131072 = 128KB).
      */
-    public const BLOCKSIZE = 131072;
+    const BLOCKSIZE = 131072;
 
     /**
      * @var int How many seconds until an attempt to lock the handle should time-out.
      */
-    public const LOCK_TIMEOUT = 5;
+    const LOCK_TIMEOUT = 5;
 
     /**
      * Read a file, or fetch from object memory if already read before.

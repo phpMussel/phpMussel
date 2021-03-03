@@ -48,7 +48,7 @@ class Demojibakefier
     public $Segments = 65536;
 
     /** Some early control characters (w/o tabs, CR, or LF). */
-    public const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
+    const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
 
     /**
      * @param string $NormaliseTo The encoding to normalise to (defaults to UTF-8).
