@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2021.03.03).
+ * This file: Archive handler (last modified: 2021.03.11).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -29,13 +29,17 @@ interface ArchiveHandlerInterface
 
     /**
      * Return the compressed size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryCompressedSize();
+    public function EntryCompressedSize(): int;
 
     /**
      * Return the actual size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryActualSize();
+    public function EntryActualSize(): int;
 
     /**
      * Return whether the entry at the current entry pointer is a directory.
@@ -53,8 +57,10 @@ interface ArchiveHandlerInterface
 
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
+     *
+     * @return string
      */
-    public function EntryCRC();
+    public function EntryCRC(): string;
 
     /**
      * Return the name of the entry at the current entry pointer.
@@ -161,18 +167,22 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return the compressed size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryCompressedSize()
+    public function EntryCompressedSize(): int
     {
-        return isset($this->StatIndex['comp_size']) ? $this->StatIndex['comp_size'] : 0;
+        return (int)($this->StatIndex['comp_size'] ?? 0);
     }
 
     /**
      * Return the actual size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryActualSize()
+    public function EntryActualSize(): int
     {
-        return isset($this->StatIndex['size']) ? $this->StatIndex['size'] : 0;
+        return (int)($this->StatIndex['size'] ?? 0);
     }
 
     /**
@@ -197,10 +207,12 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
+     *
+     * @return string
      */
-    public function EntryCRC()
+    public function EntryCRC(): string
     {
-        return (isset($this->StatIndex['crc']) && is_int($this->StatIndex['crc'])) ? dechex($this->StatIndex['crc']) : false;
+        return (isset($this->StatIndex['crc']) && is_int($this->StatIndex['crc'])) ? dechex($this->StatIndex['crc']) : '';
     }
 
     /**
@@ -290,16 +302,20 @@ class TarHandler extends ArchiveHandler
     /**
      * Return the compressed size of the entry at the current entry pointer.
      * Note: Tar doesn't compress, so in this case, it's the same as the uncompressed size.
+     *
+     * @return int
      */
-    public function EntryCompressedSize()
+    public function EntryCompressedSize(): int
     {
         return octdec(preg_replace('/\D/', '', substr($this->Data, $this->Offset + 124, 12))) ?: 0;
     }
 
     /**
      * Return the actual size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryActualSize()
+    public function EntryActualSize(): int
     {
         return octdec(preg_replace('/\D/', '', substr($this->Data, $this->Offset + 124, 12))) ?: 0;
     }
@@ -329,11 +345,11 @@ class TarHandler extends ArchiveHandler
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
      *
-     * @return false Tar doesn't provide internal CRCs.
+     * @return string Empty because TAR doesn't provide internal CRCs.
      */
-    public function EntryCRC(): bool
+    public function EntryCRC(): string
     {
-        return false;
+        return '';
     }
 
     /**
@@ -440,18 +456,22 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return the compressed size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryCompressedSize()
+    public function EntryCompressedSize(): int
     {
-        return is_object($this->RarEntry) ? $this->RarEntry->getPackedSize() : false;
+        return is_object($this->RarEntry) ? (int)$this->RarEntry->getPackedSize() : 0;
     }
 
     /**
      * Return the actual size of the entry at the current entry pointer.
+     *
+     * @return int
      */
-    public function EntryActualSize()
+    public function EntryActualSize(): int
     {
-        return is_object($this->RarEntry) ? $this->RarEntry->getUnpackedSize() : false;
+        return is_object($this->RarEntry) ? (int)$this->RarEntry->getUnpackedSize() : 0;
     }
 
     /**
@@ -476,10 +496,12 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
+     *
+     * @return string
      */
-    public function EntryCRC()
+    public function EntryCRC(): string
     {
-        return is_object($this->RarEntry) ? $this->RarEntry->getCrc() : false;
+        return is_object($this->RarEntry) ? (string)$this->RarEntry->getCrc() : '';
     }
 
     /**
@@ -843,7 +865,7 @@ class PdfHandler extends ArchiveHandler
      */
     public function EntryCompressedSize(): int
     {
-        return $this->Objects[$this->Index]['EntryCompressedSize'] ?? 0;
+        return (int)($this->Objects[$this->Index]['EntryCompressedSize'] ?? 0);
     }
 
     /**
@@ -853,7 +875,7 @@ class PdfHandler extends ArchiveHandler
      */
     public function EntryActualSize(): int
     {
-        return $this->Objects[$this->Index]['EntryActualSize'] ?? 0;
+        return (int)($this->Objects[$this->Index]['EntryActualSize'] ?? 0);
     }
 
     /**
@@ -879,11 +901,11 @@ class PdfHandler extends ArchiveHandler
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
      *
-     * @return false Pdf doesn't provide internal CRCs.
+     * @return string Empty because PDF doesn't provide internal CRCs.
      */
-    public function EntryCRC(): bool
+    public function EntryCRC(): string
     {
-        return false;
+        return '';
     }
 
     /**

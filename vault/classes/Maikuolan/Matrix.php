@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2020.06.11).
+ * Matrix handler (last modified: 2021.03.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -45,8 +45,9 @@ class Matrix
      * @param array|int $Magnitude The magnitude of each direction. Int if all
      *      the same, or an array to specify for each dimension.
      * @param mixed $Data The data that each coordinate should contain.
+     * @return void
      */
-    public function createMatrix(int $Dimensions, $Magnitude, $Data)
+    public function createMatrix(int $Dimensions, $Magnitude, $Data): void
     {
         $this->Dimensions = $Dimensions;
         $this->Magnitude = $Magnitude;
@@ -59,8 +60,9 @@ class Matrix
      *
      * @param array $Vector The vector we're working on.
      * @param int $Dimension The dimension we're working on.
+     * @return void
      */
-    private function populateVector(array &$Vector, int $Dimension)
+    private function populateVector(array &$Vector, int $Dimension): void
     {
         /** Fill the coordinate with the specified data and exit. */
         if ($Dimension >= $this->Dimensions) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2021.02.20).
+ * Complex string handler (last modified: 2021.03.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -54,8 +54,9 @@ class ComplexStringHandler
      * Generate markers and working data.
      *
      * @param string $Pattern The pattern to use to generate the markers.
+     * @return void
      */
-    public function generateMarkers(string $Pattern)
+    public function generateMarkers(string $Pattern): void
     {
         preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         $Start = 0;
@@ -75,8 +76,9 @@ class ComplexStringHandler
      *
      * @param callable $Closure
      * @param bool $Glue Whether to work on the markers or the working data.
+     * @return void
      */
-    public function iterateClosure(callable $Closure, bool $Glue = false)
+    public function iterateClosure(callable $Closure, bool $Glue = false): void
     {
         if (empty($this->Input)) {
             return;

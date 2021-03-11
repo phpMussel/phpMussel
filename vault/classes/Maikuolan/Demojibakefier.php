@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2021.03.03).
+ * Demojibakefier (last modified: 2021.03.11).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -262,8 +262,9 @@ class Demojibakefier
      *
      * @param string $String The originally supplied string.
      * @param array $Arr An array of potential candidates.
+     * @return void
      */
-    private function weigh(string $String, array &$Arr)
+    private function weigh(string $String, array &$Arr): void
     {
         /** For when it really, really looks like UTF-8 (easier to detect in isolation than other encodings). */
         if (isset($Arr['UTF-8']['Weight']) && preg_match('~\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xec][\x80-\xbf]{2}|\xed[\x80-\x9f][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf]{2}|[\xf0-\xf3][\x80-\xbf]{3}|\xf4[\x80-\x9f][\x80-\xbf]~', $String)) {
@@ -463,8 +464,9 @@ class Demojibakefier
      * candidates.
      *
      * @param array $Arr An array of potential candidates.
+     * @return void
      */
-    private function dropVariants(array &$Arr)
+    private function dropVariants(array &$Arr): void
     {
         if (isset($Arr['GB18030'], $Arr['GB2312'])) {
             unset($Arr['GB2312']);
@@ -582,7 +584,7 @@ class Demojibakefier
         $this->weigh($String, $Valid);
 
         /** Sort weights from highest to lowest and attempt to reduce candidates by the largest weight. */
-        uasort($Valid, function ($A, $B) {
+        uasort($Valid, function ($A, $B): int {
             return $A['Weight'] === $B['Weight'] ? 0 : ($A['Weight'] < $B['Weight'] ? 1 : -1);
         });
 

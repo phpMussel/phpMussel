@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.02.20).
+ * YAML handler (last modified: 2021.03.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -71,8 +71,9 @@ class YAML
      * @param string|int|bool $Value The value to be normalised.
      * @param int $ValueLen The length of the value to be normalised.
      * @param string|int|bool $ValueLow The value to be normalised, lowercased.
+     * @return void
      */
-    private function normaliseValue(&$Value, int $ValueLen, $ValueLow)
+    private function normaliseValue(&$Value, int $ValueLen, $ValueLow): void
     {
         /** Check for anchors and populate if necessary. */
         $AnchorMatches = [];
@@ -291,8 +292,9 @@ class YAML
      * @param array $Arr The array to reconstruct from.
      * @param string $Out The reconstructed YAML.
      * @param int $Depth The level depth.
+     * @return void
      */
-    private function processInner(array $Arr, string &$Out, int $Depth = 0)
+    private function processInner(array $Arr, string &$Out, int $Depth = 0): void
     {
         $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
         foreach ($Arr as $Key => $Value) {

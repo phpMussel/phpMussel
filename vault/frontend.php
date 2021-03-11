@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.01.10).
+ * This file: Front-end handler (last modified: 2021.03.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1984,7 +1984,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             !empty($phpMussel['Components']['ThisComponent']['Files']['Checksum']) &&
             is_array($phpMussel['Components']['ThisComponent']['Files']['Checksum'])
         ) {
-            array_walk($phpMussel['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
+            array_walk($phpMussel['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$phpMussel): void {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $phpMussel['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
@@ -2003,7 +2003,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum']) &&
             is_array($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum'])
         ) {
-            array_walk($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$phpMussel) {
+            array_walk($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$phpMussel): void {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $phpMussel['Components']['ThisComponent']['LatestSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
@@ -2200,7 +2200,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     unset($phpMussel['Components']['ThisComponent']);
 
     /** Write annotations for newly found component metadata. */
-    array_walk($phpMussel['Components']['Remotes'], function ($Remote, $Key) use (&$phpMussel) {
+    array_walk($phpMussel['Components']['Remotes'], function ($Remote, $Key) use (&$phpMussel): void {
         if (!$phpMussel['ExtractPage']($Remote)) {
             return;
         }
@@ -2638,7 +2638,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     unset($phpMussel['PieFile'], $phpMussel['PiePath'], $phpMussel['Components']);
 
     /** Process files data. */
-    array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
+    array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel): void {
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
@@ -2807,7 +2807,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
     $phpMussel['FE']['FilesInQuarantine'] = '';
 
     /** Process quarantine files data. */
-    array_walk($phpMussel['FilesInQuarantine'], function ($ThisFile) use (&$phpMussel) {
+    array_walk($phpMussel['FilesInQuarantine'], function ($ThisFile) use (&$phpMussel): void {
         $phpMussel['FE']['FilesInQuarantine'] .= $phpMussel['ParseVars'](
             $phpMussel['L10N']->Data + $phpMussel['FE'] + $ThisFile,
             $phpMussel['FE']['QuarantineRow']
@@ -3029,7 +3029,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
     }
 
     /** Define logfile list. */
-    array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel) {
+    array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel): void {
         $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
             '      <a href="?phpmussel-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
             $Arr['Filename'],

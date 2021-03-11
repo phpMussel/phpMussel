@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.11.29).
+ * This file: CLI handler (last modified: 2021.03.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -87,7 +87,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $phpMussel['ThisAlgo'] = substr($phpMussel['cmd'], 10);
             }
             if (in_array($phpMussel['ThisAlgo'], hash_algos())) {
-                echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
+                echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel): string {
                     if (filter_var($Params, FILTER_VALIDATE_URL)) {
                         $Data = $phpMussel['Request']($Params);
                     } elseif (is_file($Params) && is_readable($Params)) {
@@ -105,7 +105,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
         /** Generate a CoEx signature using a file. */
         if ($phpMussel['cmd'] === 'coex_file') {
-            echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
+            echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel): string {
                 if (filter_var($Params, FILTER_VALIDATE_URL)) {
                     $Data = $phpMussel['Request']($Params);
                 } elseif (is_file($Params) && is_readable($Params)) {
@@ -125,7 +125,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
         /** Fetch PE metadata. */
         if ($phpMussel['cmd'] === 'pe_meta') {
-            echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel) {
+            echo $phpMussel['CLI-RecursiveCommand']($phpMussel['cli_args'][2], function ($Params) use (&$phpMussel): string {
                 $Data = $phpMussel['ReadFile']($Params, 0, true);
                 $Returnable = '';
                 if (substr($Data, 0, 2) !== 'MZ') {
@@ -258,7 +258,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
                 $phpMussel['ThisAlgo'] = substr($phpMussel['cmd'], 10);
             }
             if (in_array($phpMussel['ThisAlgo'], hash_algos())) {
-                echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
+                echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel): string {
                     if (filter_var($Params, FILTER_VALIDATE_URL)) {
                         $Data = $phpMussel['Request']($Params);
                     } elseif (is_file($Params) && is_readable($Params)) {
@@ -276,7 +276,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
         /** Generate a CoEx signature using a file. */
         elseif ($phpMussel['cmd'] === 'coex_file') {
-            echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
+            echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel): string {
                 if (filter_var($Params, FILTER_VALIDATE_URL)) {
                     $Data = $phpMussel['Request']($Params);
                 } elseif (is_file($Params) && is_readable($Params)) {
@@ -296,7 +296,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
         /** Fetch PE metadata. */
         elseif ($phpMussel['cmd'] === 'pe_meta') {
-            echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel) {
+            echo "\n" . $phpMussel['CLI-RecursiveCommand']($phpMussel['stdin_clean'], function ($Params) use (&$phpMussel): string {
                 return $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $Params, $Params) . "\n";
             });
         }

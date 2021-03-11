@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.01.10).
+ * This file: Functions file (last modified: 2021.03.11).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -469,7 +469,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
     }
     if (is_array($Entry)) {
         $Out = [];
-        array_walk($Entry, function ($Value, $Key) use (&$phpMussel, &$Out) {
+        array_walk($Entry, function ($Value, $Key) use (&$phpMussel, &$Out): void {
             $Out[$Key] = $phpMussel['FetchCache']($Value);
         });
         return $Out;

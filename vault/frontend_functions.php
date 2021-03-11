@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.22).
+ * This file: Front-end functions file (last modified: 2021.03.11).
  */
 
 /**
@@ -620,7 +620,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function (string $Path): bool {
     }
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
-    array_walk($Path, function ($Segment) use (&$Valid) {
+    array_walk($Path, function ($Segment) use (&$Valid): void {
         if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
@@ -793,7 +793,7 @@ $phpMussel['FilterLang'] = function (string $ChoiceKey) use (&$phpMussel): bool 
  * @param string $ChoiceKey Hash algorithm.
  * @return bool Available/Unavailable.
  */
-$phpMussel['FilterByDefined'] = function (string $ChoiceKey) {
+$phpMussel['FilterByDefined'] = function (string $ChoiceKey): bool {
     return defined($ChoiceKey);
 };
 

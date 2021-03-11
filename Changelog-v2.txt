@@ -31,6 +31,8 @@ Detailed version release guidelines for phpMussel can be found at:
   updater's internal procedure for updating and repairing components sometimes
   raised incorrectly; Fixed.
 
+- [2021.03.11; Maikuolan]: Added some missing return type declarations.
+
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
 

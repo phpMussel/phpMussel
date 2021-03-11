@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.02.07).
+ * This file: Configuration handler (last modified: 2021.03.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -93,7 +93,7 @@ if (
 
     /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
     if ($phpMussel['Overrides'] = parse_ini_file($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini', true)) {
-        array_walk($phpMussel['Overrides'], function ($Keys, $Category) use (&$phpMussel) {
+        array_walk($phpMussel['Overrides'], function ($Keys, $Category) use (&$phpMussel): void {
             foreach ($Keys as $Directive => $Value) {
                 $phpMussel['Config'][$Category][$Directive] = $Value;
             }

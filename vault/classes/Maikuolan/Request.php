@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2021.01.10).
+ * Request handler (last modified: 2021.03.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -210,8 +210,9 @@ class Request
      * Sends messages to stdout.
      *
      * @param string $Message The message to send.
+     * @return void
      */
-    public function sendMessage(string $Message)
+    public function sendMessage(string $Message): void
     {
         if ($this->SendToOut !== true) {
             return;
