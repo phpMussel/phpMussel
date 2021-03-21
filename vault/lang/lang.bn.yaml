@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2020.10.26).
+# This file: Bangla language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "হানিপোট ইভেন্ট। "
 image: "চিত্র"
 instance_already_active: "ইনস্ট্যান্স ইতিমধ্যে সক্রিয়! দয়া করে আপনার হুকগুলিকে ডবল চেক করুন।"
 invalid_data: "অবৈধ তথ্য!"
-invalid_file: "অবৈধ ফাইল"
+invalid_file: "অবৈধ ফাইল!"
 invalid_url: "অবৈধ URL!"
 macros_not_permitted: "ম্যাক্রো অনুমোদিত নয়"
 ok: "OK"

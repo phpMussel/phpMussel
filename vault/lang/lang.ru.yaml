@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2020.10.26).
+# This file: Russian language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -72,7 +72,7 @@ honeypot_event: "Свадебное мероприятие. "
 image: "Изображение"
 instance_already_active: "Пример уже активен! Пожалуйста перепроверьте свои крючки."
 invalid_data: "Неверные данные!"
-invalid_file: "Неверный файл"
+invalid_file: "Неверный файл!"
 invalid_url: "Неверный URL!"
 macros_not_permitted: "Макросы не разрешены"
 ok: "Хорошо"

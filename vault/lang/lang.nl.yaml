@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2020.10.26).
+# This file: Dutch language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Honeypot evenement. "
 image: "Beeld"
 instance_already_active: "Instantie al actief! Controleer uw haken."
 invalid_data: "Ongeldige data!"
-invalid_file: "Ongeldige bestand"
+invalid_file: "Ongeldige bestand!"
 invalid_url: "Ongeldige URL!"
 macros_not_permitted: "Macro's zijn niet toegestaan"
 ok: "OK"

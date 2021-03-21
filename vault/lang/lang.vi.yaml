@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2020.10.26).
+# This file: Vietnamese language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -72,7 +72,7 @@ honeypot_event: "Sự kiện hũ mật ong. "
 image: "Hình ảnh"
 instance_already_active: "Trường hợp đã hoạt động! Xin hảy kiểm tra giây nói."
 invalid_data: "Dữ liệu không hợp lệ!"
-invalid_file: "Tập tin không hợp lệ"
+invalid_file: "Tập tin không hợp lệ!"
 invalid_url: "URL không hợp lệ!"
 macros_not_permitted: "Macro không được phép"
 ok: "OK"

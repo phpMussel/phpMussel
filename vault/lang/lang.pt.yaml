@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2020.10.26).
+# This file: Portuguese language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -74,7 +74,7 @@ honeypot_event: "Evento honeypot. "
 image: "Imagem"
 instance_already_active: "Instância já está ativo! Por favor, verifique seus ganchos."
 invalid_data: "Dados inválidos!"
-invalid_file: "Arquivo inválido"
+invalid_file: "Arquivo inválido!"
 invalid_url: "URL inválido!"
 macros_not_permitted: "Macros não são permitidas"
 ok: "OK"

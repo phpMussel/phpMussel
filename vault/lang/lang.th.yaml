@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2020.10.26).
+# This file: Thai language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -71,7 +71,7 @@ honeypot_event: "เหตุการณ์ honeypot. "
 image: "ภาพ"
 instance_already_active: "ตัวอย่างที่ใช้งานอยู่แล้ว! โปรดตรวจสอบตะขอของคุณอีกครั้ง."
 invalid_data: "ข้อมูลไม่ถูกต้อง!"
-invalid_file: "ไฟล์ไม่ถูกต้อง"
+invalid_file: "ไฟล์ไม่ถูกต้อง!"
 invalid_url: "URL ไม่ถูกต้อง!"
 macros_not_permitted: "ไม่อนุญาตให้ใช้แมโคร"
 ok: "ตกลง"

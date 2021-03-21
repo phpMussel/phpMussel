@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.01.10).
+ * This file: Functions file (last modified: 2021.03.21).
  */
 
 /**
@@ -405,7 +405,7 @@ $phpMussel['CleanCache'] = function ($Delete = '') use (&$phpMussel) {
         }
         $FileData = str_replace(';;', ';', implode(';', array_filter($FileData)) . ';');
         if ($FileDataOld !== $FileData) {
-            $Handle = fopen($FileIndex, 'w');
+            $Handle = fopen($FileIndex, 'wb');
             fwrite($Handle, $FileData);
             fclose($Handle);
         }
@@ -474,7 +474,7 @@ $phpMussel['FetchCache'] = function ($Entry = '') use (&$phpMussel) {
         while (strpos($FileData, $Entry . ':') !== false) {
             $FileData = str_ireplace($Item, '', $FileData);
         }
-        $Handle = fopen($File, 'w');
+        $Handle = fopen($File, 'wb');
         fwrite($Handle, $FileData);
         fclose($Handle);
         return '';
@@ -520,7 +520,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
         $Data = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($Data, $Entry . ':'), ';') . ';', '', $Data);
     }
     $Data .= $Entry . ':' . $Expiry . ':' . bin2hex(gzdeflate($ItemData, 9)) . ';';
-    $Handle = fopen($File, 'w');
+    $Handle = fopen($File, 'wb');
     fwrite($Handle, $Data);
     fclose($Handle);
     $IndexFile = $phpMussel['cachePath'] . 'index.dat';
@@ -530,7 +530,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     }
     $IndexNewData .= $Entry . ':' . $Expiry . ';';
     if ($IndexNewData !== $IndexData) {
-        $IndexHandle = fopen($IndexFile, 'w');
+        $IndexHandle = fopen($IndexFile, 'wb');
         fwrite($IndexHandle, $IndexNewData);
         fclose($IndexHandle);
     }
@@ -578,7 +578,6 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
  * @return bool True on success; False on failure.
  */
 $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
-
     /** Guard against missing quarantine directory. */
     if (!$phpMussel['BuildPath']($phpMussel['qfuPath'], false)) {
         return false;
@@ -629,7 +628,7 @@ $phpMussel['Quarantine'] = function ($In, $Key, $IP, $ID) use (&$phpMussel) {
     if ($DeductBytes > 0 || $DeductFiles > 0) {
         $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath'], $DeductBytes, $DeductFiles);
     }
-    $Handle = fopen($phpMussel['qfuPath'] . $ID . '.qfu', 'a');
+    $Handle = fopen($phpMussel['qfuPath'] . $ID . '.qfu', 'ab');
     fwrite($Handle, $Out);
     fclose($Handle);
     if (!$phpMussel['EOF']) {
@@ -957,7 +956,6 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  *      unavailable (e.g., if it's been throttled).
  */
 $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = [], array $DomainsNoLookup = []) use (&$phpMussel) {
-
     /** Guard against missing API key. */
     if (empty($phpMussel['Config']['urlscanner']['google_api_key'])) {
         return 401;
@@ -1031,7 +1029,6 @@ $phpMussel['SafeBrowseLookup'] = function (array $URLs, array $URLsNoLookup = []
 
     /** If this lookup has already been performed, return the results. */
     if (!empty($Response)) {
-
         /** Potentially harmful URL detected. */
         if ($Response === '200') {
             return 200;
@@ -2093,7 +2090,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
         ['URL_Scanner', 4],
         ['Complex_Extended', 5]
     ] as $ThisConf) {
-
         /** Plugin hook: "new_sigfile_type". */
         $phpMussel['Execute_Hook']('new_sigfile_type');
 
@@ -3134,7 +3130,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
     }
 
     if ($Out) {
-
         /** Register object flagged. */
         if (isset($phpMussel['cli_args'][1]) && $phpMussel['cli_args'][1] === 'cli_scan') {
             $phpMussel['Stats-Increment']('CLI-Flagged', 1);
@@ -3280,7 +3275,6 @@ $phpMussel['MetaDataScan'] = function (&$x, &$r, $Indent, $ItemRef, $Filename, &
      * only bother doing this if the file hasn't already been flagged though.
      */
     if ($Scan[0] === 1) {
-
         /** Create a new compression object. */
         $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($Data);
 
@@ -3540,7 +3534,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if (!isset($phpMussel['InstanceCache']['greylist'])) {
         if (!file_exists($phpMussel['Vault'] . 'greylist.csv')) {
             $phpMussel['InstanceCache']['greylist'] = ',';
-            $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
+            $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'ab');
             fwrite($Handle, ',');
             fclose($Handle);
         } else {
@@ -3557,10 +3551,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if (!$f || !$d = is_file($f)) {
         return (!$n) ? 0 :
             $lnap . $phpMussel['L10N']->getString('scan_checking') . ' \'' . $OriginalFilename .
-            '\' (FN: ' . $fnCRC . "):\n-" . $lnap . sprintf(
-                $phpMussel['L10N']->getString('_exclamation_final'),
-                $phpMussel['L10N']->getString('invalid_file')
-            ) . "\n";
+            '\' (FN: ' . $fnCRC . "):\n-" . $lnap . $phpMussel['L10N']->getString('invalid_file') . "\n";
     }
 
     $fS = filesize($f);
@@ -3700,7 +3691,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      * only bother doing this if the file hasn't already been flagged though.
      */
     if ($z[0] === 1) {
-
         /** Create a new compression object. */
         $CompressionObject = new \phpMussel\CompressionHandler\CompressionHandler($in);
 
@@ -3727,7 +3717,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Executed if there were any problems or if anything was detected. */
     if ($z[0] !== 1) {
-
         /** Quarantine if necessary. */
         if ($z[0] === 2) {
             if (
@@ -3788,7 +3777,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         !empty($in) &&
         $phpMussel['Config']['files']['max_recursion'] > 1
     ) {
-
         /** Define archive phase. */
         $phpMussel['InstanceCache']['phase'] = 'archive';
 
@@ -3918,7 +3906,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Check whether Crx, and convert if necessary. */
     if ($phpMussel['ConvertCRX']($Data)) {
-
         /** Reset the file pointer (because the content has been modified anyway). */
         $File = '';
     }
@@ -3994,7 +3981,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle zip files. */
     if ($Handler === 'ZipHandler') {
-
         /**
          * Encryption guard.
          * @link https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
@@ -4067,14 +4053,12 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle tar files. */
     if ($Handler === 'TarHandler') {
-
         /** TarHandler can work with data directly. */
         $ArchiveObject = new \phpMussel\ArchiveHandler\TarHandler($Data);
     }
 
     /** Handle rar files. */
     if ($Handler === 'RarHandler') {
-
         /** Guard. */
         if (!class_exists('\RarArchive') || !class_exists('\RarEntry')) {
             if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
@@ -4119,7 +4103,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Handle PDF files. */
     if ($Handler === 'PdfHandler') {
-
         /** Encryption guard. */
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
             if (($XPos = strrpos($Data, "\nxref")) !== false && strpos($Data, "\n/Encrypt", $XPos + 5) !== false) {
@@ -4150,7 +4133,6 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
 
     /** Archive object has been instantiated. Let's proceed. */
     if (isset($ArchiveObject) && is_object($ArchiveObject)) {
-
         /** No errors reported. Let's try checking its contents. */
         if ($ArchiveObject->ErrorState === 0) {
 
@@ -4386,7 +4368,7 @@ $phpMussel['Fork'] = function ($Item = '', $OriginalFilename = '') use (&$phpMus
     $ProcessHandle = popen(
         $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['Vault'] .
         '../loader.php" "cli_scan" "' . $Item . '" "' . $OriginalFilename . '"',
-        'r'
+        'rb'
     );
     $Output = '';
     while ($Data = fgets($ProcessHandle)) {
@@ -4550,7 +4532,6 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $Orig
  * @return string|array The adjusted input(/s).
  */
 $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
-
     /** Guard. */
     if (!is_array($In) && (strpos($In, '{') === false || strpos($In, '}') === false)) {
         return $In;
@@ -4583,6 +4564,7 @@ $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
  *
  * @param mixed $Var The variable to fix (passed by reference).
  * @param string $Type The type (or pseudo-type) to cast the variable to.
+ * @return void
  */
 $phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
     if (in_array($Type, ['string', 'timezone', 'checkbox', 'url', 'email'], true)) {
@@ -4633,6 +4615,7 @@ $phpMussel['Supplementary'] = function ($Source) use (&$phpMussel) {
  *
  * @param array $Fallbacks Fallback source.
  * @param array $Config Configuration source.
+ * @return void
  */
 $phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpMussel) {
     foreach ($Fallbacks as $KeyCat => $DCat) {
@@ -4968,7 +4951,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
     if (strlen($Data) < 2) {
         unset($File);
     } else {
-        $Handle = fopen($File, 'w');
+        $Handle = fopen($File, 'wb');
         fwrite($Handle, $Data);
         fclose($Handle);
     }
@@ -4978,7 +4961,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
         $IndexNewData = str_ireplace('HashCache:' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, 'HashCache:'), ';') . ';', '', $IndexNewData);
     }
     if ($IndexNewData !== $IndexData) {
-        $IndexHandle = fopen($IndexFile, 'w');
+        $IndexHandle = fopen($IndexFile, 'wb');
         fwrite($IndexHandle, $IndexNewData);
         fclose($IndexHandle);
     }
@@ -4997,7 +4980,6 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
  *      returns an empty string.
  */
 $phpMussel['BuildPath'] = function ($Path, $PointsToFile = true) use (&$phpMussel) {
-
     /** Guard. */
     if (!is_string($Path) || empty($Path)) {
         return '';
@@ -5089,6 +5071,7 @@ $phpMussel['BuildLogPattern'] = function ($Str, $GZ = false) {
  * @return bool True on success; False on failure.
  */
 $phpMussel['GZCompressFile'] = function ($File) {
+    /** Guard. */
     if (!is_file($File) || !is_readable($File)) {
         return false;
     }

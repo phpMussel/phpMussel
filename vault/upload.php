@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2020.11.29).
+ * This file: Upload handler (last modified: 2021.03.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -68,7 +68,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
     /** Iterate through $_FILES array and scan as necessary. */
     foreach ($_FILES as $phpMussel['ThisFileKey'] => $phpMussel['ThisFileData']) {
-
         /** Guard. */
         if (!isset($phpMussel['ThisFileData']['error'])) {
             continue;
@@ -243,7 +242,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
             /** Execute the scan! */
             try {
-                $phpMussel['r'] = $phpMussel['Scan'](
+                $phpMussel['rb'] = $phpMussel['Scan'](
                     $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']],
                     true,
                     true,
@@ -258,7 +257,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
     }
 
     /** Cleanup. */
-    unset($phpMussel['r'], $phpMussel['ThisIter'], $phpMussel['ThisFilesCount'], $phpMussel['ThisFileKey'], $phpMussel['ThisFileData']);
+    unset($phpMussel['rb'], $phpMussel['ThisIter'], $phpMussel['ThisFilesCount'], $phpMussel['ThisFileKey'], $phpMussel['ThisFileData']);
 
     /** Update the hash cache. */
     if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && !empty($phpMussel['HashCache']['Data']) && is_array($phpMussel['HashCache']['Data'])) {
@@ -284,7 +283,6 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
 
     /** Begin processing file upload detections. */
     if ($phpMussel['whyflagged']) {
-
         /** A fix for correctly displaying LTR/RTL text. */
         if ($phpMussel['L10N']->getString('Text Direction') !== 'rtl') {
             $phpMussel['L10N']->Data['Text Direction'] = 'ltr';

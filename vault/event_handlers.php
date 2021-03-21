@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.12.13).
+ * This file: Event handlers file (last modified: 2021.03.18).
  */
 
 /**
@@ -56,12 +56,12 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
     $WriteMode = (!file_exists($File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
+    )) ? 'wb' : 'ab';
 
     $Stream = fopen($File, $WriteMode);
     fwrite($Stream, $Data);
     fclose($Stream);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log_serialized']);
     }
     return true;
@@ -84,18 +84,18 @@ $phpMussel['Events']->addHandler('writeToScanLog', function ($Data) use (&$phpMu
 
     if (!file_exists($File)) {
         $Data = $phpMussel['safety'] . "\n" . $Data;
-        $WriteMode = 'w';
+        $WriteMode = 'wb';
     } else {
         $WriteMode = (
             $phpMussel['Config']['general']['truncate'] > 0 &&
             filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        ) ? 'w' : 'a';
+        ) ? 'wb' : 'ab';
     }
 
-    $Handle = fopen($File, 'a');
+    $Handle = fopen($File, 'ab');
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_log']);
     }
     return true;
@@ -119,18 +119,18 @@ $phpMussel['Events']->addHandler('writeToScanKillsLog', function ($Data) use (&$
 
     if (!file_exists($File)) {
         $Data = $phpMussel['safety'] . "\n\n" . $Data;
-        $WriteMode = 'w';
+        $WriteMode = 'wb';
     } else {
         $WriteMode = (
             $phpMussel['Config']['general']['truncate'] > 0 &&
             filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        ) ? 'w' : 'a';
+        ) ? 'wb' : 'ab';
     }
 
     $Stream = fopen($File, $WriteMode);
     fwrite($Stream, $Data);
     fclose($Stream);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['general']['scan_kills']);
     }
     return true;
@@ -182,17 +182,17 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel) {
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
     )) {
-        $WriteMode = 'w';
+        $WriteMode = 'wb';
         $Data = $phpMussel['L10N']->getString('error_log_header') . "\n=====\n" . $phpMussel['Pending-Error-Log-Data'];
     } else {
-        $WriteMode = 'a';
+        $WriteMode = 'ab';
         $Data = $phpMussel['Pending-Error-Log-Data'];
     }
 
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['general']['error_log']);
     }
     return true;
@@ -216,12 +216,12 @@ $phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) us
     $WriteMode = (!file_exists($EventLog) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
+    )) ? 'wb' : 'ab';
 
     $Handle = fopen($EventLog, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['PHPMailer']['EventLog']);
     }
     return true;

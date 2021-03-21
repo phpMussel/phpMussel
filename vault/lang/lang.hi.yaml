@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2020.10.26).
+# This file: Hindi language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "हनीपोट घटना। "
 image: "छवि"
 instance_already_active: "उदाहरण पहले से ही सक्रिय है! कृपया अपने हुक दो बार जांचें।"
 invalid_data: "अमान्य डेटा!"
-invalid_file: "अवैध फाइल"
+invalid_file: "अवैध फाइल!"
 invalid_url: "अवैध URL!"
 macros_not_permitted: "मैक्रोज़ की अनुमति नहीं है"
 ok: "OK"

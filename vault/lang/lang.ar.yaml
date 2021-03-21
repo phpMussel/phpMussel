@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2020.10.26).
+# This file: Arabic language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -72,7 +72,7 @@ honeypot_event: "الحدث مصيدة. "
 image: "صورة"
 instance_already_active: "نشطة بالفعل! يرجى إعادة الفحص اليشمل."
 invalid_data: "بيانات غير صالحة!"
-invalid_file: "ملف غير صالح"
+invalid_file: "ملف غير صالح!"
 invalid_url: "URL غير صالح!"
 macros_not_permitted: "وحدات الماكرو غير مسموح بها"
 ok: "حسنا"

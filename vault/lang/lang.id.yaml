@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2020.10.26).
+# This file: Indonesian language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Acara honeypot. "
 image: "Gambar"
 instance_already_active: "Kejadian sudah aktif! Silahkan periksa kait Anda."
 invalid_data: "Data tidak valid!"
-invalid_file: "File tidak valid"
+invalid_file: "File tidak valid!"
 invalid_url: "URL tidak valid!"
 macros_not_permitted: "Makro tidak diizinkan"
 ok: "Oke"
