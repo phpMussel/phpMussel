@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2020.10.26).
+# This file: Turkish language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Bal küpü olayı. "
 image: "Resim"
 instance_already_active: "Örnek zaten etkin! Lütfen kancalarınızı tekrar kontrol edin."
 invalid_data: "Geçersiz veri!"
-invalid_file: "Geçersiz dosya"
+invalid_file: "Geçersiz dosya!"
 invalid_url: "Geçersiz URL!"
 macros_not_permitted: "Makrolara izin verilmez"
 ok: "Tamam"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2020.10.26).
+# This file: French language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Honeypot événement. "
 image: "Image"
 instance_already_active: "Instance déjà active ! Veuillez vérifier vos crochets."
 invalid_data: "Données non valides !"
-invalid_file: "Fichier non valide"
+invalid_file: "Fichier non valide !"
 invalid_url: "URL non valide !"
 macros_not_permitted: "Les macros ne sont pas autorisées"
 ok: "Bien"

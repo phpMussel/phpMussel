@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2020.10.26).
+# This file: Chinese (traditional) language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -68,7 +68,7 @@ honeypot_event: "蜜罐事件。"
 image: "圖像"
 instance_already_active: "腳本已激活！​請仔細檢查您的鉤子。"
 invalid_data: "無效數據！"
-invalid_file: "無效的文件"
+invalid_file: "無效的文件！"
 invalid_url: "無效的網址！"
 macros_not_permitted: "不允許使用宏"
 ok: "好"

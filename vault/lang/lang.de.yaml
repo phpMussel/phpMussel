@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2020.10.26).
+# This file: German language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Honeypot-Ereignis. "
 image: "Bild"
 instance_already_active: "Instanz bereits aktiv! Bitte prüfe deine Hooks."
 invalid_data: "Ungültige Daten!"
-invalid_file: "Ungültige Datei"
+invalid_file: "Ungültige Datei!"
 invalid_url: "Ungültige URL!"
 macros_not_permitted: "Makros sind nicht erlaubt"
 ok: "OK"

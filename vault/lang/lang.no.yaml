@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2020.10.26).
+# This file: Norwegian language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Honeypot hendelse. "
 image: "Bilde"
 instance_already_active: "Forekomst allerede aktivt! Vennligst kontroller krokene dine."
 invalid_data: "Ugyldig data!"
-invalid_file: "Ugyldig fil"
+invalid_file: "Ugyldig fil!"
 invalid_url: "Ugyldig URL!"
 macros_not_permitted: "Makroer er ikke tillatt"
 ok: "Greit"

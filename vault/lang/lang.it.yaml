@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2020.10.26).
+# This file: Italian language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -72,7 +72,7 @@ honeypot_event: "Evento honeypot. "
 image: "Immagine"
 instance_already_active: "Istanza già attivo! Si prega di ricontrolla i vostri ganci."
 invalid_data: "Dati non validi!"
-invalid_file: "File non valido"
+invalid_file: "File non valido!"
 invalid_url: "URL non valido!"
 macros_not_permitted: "Macro non sono permesse"
 ok: "Fatto"

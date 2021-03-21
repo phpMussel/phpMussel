@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2021.03.11).
+ * This file: CLI handler (last modified: 2021.03.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -37,7 +37,6 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
 
     /** Triggered by the forked child process in CLI-mode. */
     if ($phpMussel['cli_args'][1] === 'cli_scan') {
-
         /** Fetch the command. */
         $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') ?: $phpMussel['cli_args'][2]);
 
@@ -220,11 +219,10 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
     echo $phpMussel['L10N']->getString('cli_ln1') . "\n" . $phpMussel['L10N']->getString('cli_ln2') . "\n\n" . $phpMussel['L10N']->getString('cli_ln3');
 
     /** Open STDIN. */
-    $phpMussel['stdin_handle'] = fopen('php://stdin', 'r');
+    $phpMussel['stdin_handle'] = fopen('php://stdin', 'rb');
 
     while (true) {
-
-        /** Set CLI process title (PHP => 5.5.0). */
+        /** Set CLI process title. */
         if (function_exists('cli_set_process_title')) {
             cli_set_process_title($phpMussel['ScriptIdent']);
         }
@@ -235,7 +233,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         /** Wait for user input. */
         $phpMussel['stdin_clean'] = trim(fgets($phpMussel['stdin_handle']));
 
-        /** Set CLI process title with "working" notice (PHP => 5.5.0). */
+        /** Set CLI process title with "working" notice. */
         if (function_exists('cli_set_process_title')) {
             cli_set_process_title($phpMussel['ScriptIdent'] . ' - ' . $phpMussel['L10N']->getString('cli_working') . '...');
         }
@@ -467,7 +465,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             if (!empty($phpMussel['stdin_clean'])) {
                 $Greylist = file_exists($phpMussel['Vault'] . 'greylist.csv') ? $phpMussel['stdin_clean'] . ',' : ',' . $phpMussel['stdin_clean'] . ',';
-                $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
+                $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'ab');
                 fwrite($Handle, $Greylist);
                 fclose($Handle);
                 unset($Handle, $Greylist);
@@ -478,7 +476,7 @@ if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['ge
         /** Clear the greylist. */
         elseif ($phpMussel['cmd'] === 'greylist_clear' || $phpMussel['cmd'] === 'gc') {
             echo "\n";
-            $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
+            $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'ab');
             ftruncate($Handle, 0);
             fwrite($Handle, ',');
             fclose($Handle);

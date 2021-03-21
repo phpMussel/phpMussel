@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2020.10.26).
+# This file: Japanese language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -70,7 +70,7 @@ honeypot_event: "ハニーポット・イベント。"
 image: "画像"
 instance_already_active: "インスタンスが既にアクティブです！​フックを再確認して下さい。"
 invalid_data: "不正データ！"
-invalid_file: "不正ファイル"
+invalid_file: "不正ファイル！"
 invalid_url: "不正ＵＲＬ！"
 macros_not_permitted: "マクロは許可されていません"
 ok: "ＯＫです"

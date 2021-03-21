@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2020.10.26).
+# This file: Latvian language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Medus poda pasākums. "
 image: "Attēls"
 instance_already_active: "Instance jau ir aktīva! Lūdzu, vēlreiz pārbaudiet savus āķus."
 invalid_data: "Nederīgi dati!"
-invalid_file: "Nederīgs fails"
+invalid_file: "Nederīgs fails!"
 invalid_url: "Nederīgs URL!"
 macros_not_permitted: "Makro nav atļauts"
 ok: "Labi"

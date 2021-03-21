@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2020.10.26).
+# This file: Spanish language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -72,7 +72,7 @@ honeypot_event: "Evento honeypot. "
 image: "Imagen"
 instance_already_active: "Instancia ya está activo! Por favor, compruebe sus ganchos."
 invalid_data: "¡Datos no válidos!"
-invalid_file: "Archivo no válido"
+invalid_file: "Archivo no válido!"
 invalid_url: "¡URL no válido!"
 macros_not_permitted: "Macros no están permitidas"
 ok: "OK"

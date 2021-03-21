@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.11).
+ * This file: Front-end functions file (last modified: 2021.03.21).
  */
 
 /**
@@ -146,7 +146,6 @@ $phpMussel['FormatFilesize'] = function (int &$Filesize) use (&$phpMussel) {
  * @param string $Entry Name of the cache entry to be deleted.
  */
 $phpMussel['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $Entry) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         if ($Entry === '__') {
@@ -186,7 +185,6 @@ $phpMussel['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string 
  * @param int $Expires When should the cache entry expire (be deleted).
  */
 $phpMussel['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         $phpMussel['Cache']->setEntry($Entry, $Data, $Expires - $phpMussel['Time']);
@@ -210,10 +208,8 @@ $phpMussel['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $En
  * @return string|bool Returned cache entry data (or false on failure).
  */
 $phpMussel['FECacheGet'] = function (string &$Source, string $Entry) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
-
         /** Check whether already fetched for this instance. */
         if (isset($phpMussel['CacheEntry-' . $Entry])) {
             return $phpMussel['CacheEntry-' . $Entry];
@@ -589,9 +585,10 @@ $phpMussel['FileManager-RecursiveList'] = function (string $Base) use (&$phpMuss
  *
  * @param string $Base The path to the working directory.
  * @param array $Arr The array to use for rendering components file YAML data.
+ * @return void
  */
-$phpMussel['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$phpMussel) {
-    $Files = new DirectoryIterator($Base);
+$phpMussel['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$phpMussel): void {
+    $Files = new \DirectoryIterator($Base);
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $phpMussel['ReadFile']($Base . $ThisFile);
@@ -728,8 +725,9 @@ $phpMussel['IsActivable'] = function (array &$Component): bool {
  *
  * @param array $Arr Metadata of the component to be prepared.
  * @param string $Key A key to use to help find L10N data for the component description.
+ * @return void
  */
-$phpMussel['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '') use (&$phpMussel) {
+$phpMussel['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '') use (&$phpMussel): void {
     $Key = 'Extended Description ' . $Key;
     if (isset($phpMussel['L10N']->Data[$Key])) {
         $Arr['Extended Description'] = $phpMussel['L10N']->getString($Key);
@@ -746,8 +744,9 @@ $phpMussel['PrepareExtendedDescription'] = function (array &$Arr, string $Key = 
  *
  * @param array $Arr Metadata of the component to be prepared.
  * @param string $Key A key to use to help find L10N data for the component name.
+ * @return void
  */
-$phpMussel['PrepareName'] = function (array &$Arr, string $Key = '') use (&$phpMussel) {
+$phpMussel['PrepareName'] = function (array &$Arr, string $Key = '') use (&$phpMussel): void {
     $Key = 'Name ' . $Key;
     if (isset($phpMussel['L10N']->Data[$Key])) {
         $Arr['Name'] = $phpMussel['L10N']->getString($Key);
@@ -841,8 +840,9 @@ $phpMussel['GetAssetPath'] = function (string $Asset, bool $CanFail = false) use
  *
  * @param string|array $Closures The list of closures or commands to execute.
  * @param bool $Queue Whether to queue the operation or perform immediately.
+ * @return void
  */
-$phpMussel['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (&$phpMussel) {
+$phpMussel['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (&$phpMussel): void {
     if ($Queue && $Closures !== false) {
         if (empty($phpMussel['FE_Executor_Queue'])) {
             $phpMussel['FE_Executor_Queue'] = [];
@@ -910,8 +910,9 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel): string {
  * @param bool $StateModified Determines whether the filter state has been modified.
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
  * @param string $Options Reconstructed filter controls.
+ * @return void
  */
-$phpMussel['FilterSwitch'] = function (array $Switches, string $Selector, bool &$StateModified, string &$Redirect, string &$Options) use (&$phpMussel) {
+$phpMussel['FilterSwitch'] = function (array $Switches, string $Selector, bool &$StateModified, string &$Redirect, string &$Options) use (&$phpMussel): void {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
         $phpMussel['FE'][$Switch] = empty($phpMussel['QueryVars'][$Switch]) ? false : (
@@ -940,7 +941,6 @@ $phpMussel['FilterSwitch'] = function (array $Switches, string $Selector, bool &
  * @return array An array of quarantined files.
  */
 $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use (&$phpMussel): array {
-
     /** Guard against missing quarantine directory. */
     if (!$phpMussel['BuildPath']($phpMussel['qfuPath'], false)) {
         return [];
@@ -1014,18 +1014,18 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
  *
  * @param string $File Path to the file to be restored.
  * @param string $Key The quarantine key used to quarantine the file.
- * @return string|bool The content of the restored file, or false on failure.
+ * @return string The content of the restored file, or an empty string on failure.
  */
-$phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$phpMussel) {
+$phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$phpMussel): string {
     $phpMussel['RestoreStatus'] = 1;
     if (!$File || !$Key) {
-        return false;
+        return '';
     }
     $Data = $phpMussel['ReadFile']($File);
     /** Fetch headers. */
     if (($HeadPos = strpos($Data, "\xa1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\1")) {
         $phpMussel['RestoreStatus'] = 2;
-        return false;
+        return '';
     }
     $Data = substr($Data, $HeadPos);
     $UploadMD5 = bin2hex(substr($Data, 11, 16));
@@ -1052,10 +1052,10 @@ $phpMussel['Quarantine-Restore'] = function (string $File, string $Key) use (&$p
     $Output = gzinflate($Output);
     if (empty($Output) || hash('md5', $Output) !== $UploadMD5) {
         $phpMussel['RestoreStatus'] = 3;
-        return false;
+        return '';
     }
     $phpMussel['RestoreStatus'] = 0;
-    return $Output;
+    return (string)$Output;
 };
 
 /**
@@ -1123,7 +1123,6 @@ $phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel): string 
  *      perform the specified action upon.
  */
 $phpMussel['UpdatesHandler'] = function (string $Action, $ID = '') use (&$phpMussel) {
-
     /** Support for executor calls. */
     if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
@@ -1181,8 +1180,9 @@ $phpMussel['UpdatesHandler'] = function (string $Action, $ID = '') use (&$phpMus
  * Updates handler: Update a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel): void {
     $phpMussel['Arrayify']($ID);
     $Congruents = [];
     foreach ($ID as $ThisTarget) {
@@ -1334,17 +1334,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                     $Rollback = true;
                     continue;
                 }
-                $ThisName = $ThisFileName;
-                $ThisPath = $phpMussel['Vault'];
-                while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $phpMussel['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $Separator));
-                    $ThisPath .= $phpMussel['ThisDir'] . '/';
-                    $ThisName = substr($ThisName, strlen($phpMussel['ThisDir']) + 1);
-                    if (!is_dir($ThisPath)) {
-                        mkdir($ThisPath);
-                    }
-                }
+                $phpMussel['BuildPath']($phpMussel['Vault'] . $ThisFileName);
                 if (is_readable($phpMussel['Vault'] . $ThisFileName)) {
                     $BytesRemoved += filesize($phpMussel['Vault'] . $ThisFileName);
                     if (file_exists($phpMussel['Vault'] . $ThisFileName . '.rollback')) {
@@ -1465,8 +1455,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
  * Updates handler: Uninstall a component.
  *
  * @param string $ID The ID of the component to uninstall.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Uninstall'] = function (string $ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Uninstall'] = function (string $ID) use (&$phpMussel): void {
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $BytesRemoved = 0;
     $TimeRequired = microtime(true);
@@ -1527,8 +1518,9 @@ $phpMussel['UpdatesHandler-Uninstall'] = function (string $ID) use (&$phpMussel)
  * Updates handler: Activate a component.
  *
  * @param string $ID The ID of the component to activate.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Activate'] = function (string $ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Activate'] = function (string $ID) use (&$phpMussel): void {
     $phpMussel['Activation'] = [
         'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'active' => $phpMussel['Config']['signatures']['active'],
@@ -1590,8 +1582,9 @@ $phpMussel['UpdatesHandler-Activate'] = function (string $ID) use (&$phpMussel) 
  * Updates handler: Deactivate a component.
  *
  * @param string $ID The ID of the component to deactivate.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Deactivate'] = function (string $ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Deactivate'] = function (string $ID) use (&$phpMussel): void {
     $phpMussel['Deactivation'] = [
         'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'active' => $phpMussel['Config']['signatures']['active'],
@@ -1653,8 +1646,9 @@ $phpMussel['UpdatesHandler-Deactivate'] = function (string $ID) use (&$phpMussel
  * Updates handler: Repair a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to repair.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel): void {
     $phpMussel['Arrayify']($ID);
     foreach ($ID as $ThisTarget) {
         if (!isset(
@@ -1753,17 +1747,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                     $RepairFailed = true;
                     continue;
                 }
-                $ThisName = $RemoteFileTo;
-                $ThisPath = $phpMussel['Vault'];
-                while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $ThisDir = substr($ThisName, 0, strpos($ThisName, $Separator));
-                    $ThisPath .= $ThisDir . '/';
-                    $ThisName = substr($ThisName, strlen($ThisDir) + 1);
-                    if (!is_dir($ThisPath)) {
-                        mkdir($ThisPath);
-                    }
-                }
+                $phpMussel['BuildPath']($phpMussel['Vault'] . $RemoteFileTo);
                 if (file_exists($phpMussel['Vault'] . $RemoteFileTo) && !is_writable($phpMussel['Vault'] . $RemoteFileTo)) {
                     $RepairFailed = true;
                     continue;
@@ -1830,8 +1814,9 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
  * Updates handler: Verify a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ * @return void
  */
-$phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
+$phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel): void {
     $phpMussel['Arrayify']($ID);
     foreach ($ID as $ThisID) {
         $Table = '<blockquote class="ng1 comSub">';
@@ -2074,9 +2059,9 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel): strin
  * @param string $Title The page title.
  * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
  * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
+ * @return void
  */
-$phpMussel['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$phpMussel) {
-
+$phpMussel['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$phpMussel): void {
     /** Set page title. */
     $phpMussel['FE']['FE_Title'] = 'phpMussel – ' . $Title;
 
@@ -2165,9 +2150,9 @@ $phpMussel['GenerateConfirm'] = function (string $Action, string $Form) use (&$p
  * @param string $IPAddr The IP address triggering the log event.
  * @param string $User The user triggering the log event.
  * @param string $Message The message to be logged.
+ * @return void
  */
-$phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$phpMussel) {
-
+$phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$phpMussel): void {
     /** Guard. */
     if (
         empty($phpMussel['FE']['DateTime']) ||
@@ -2183,12 +2168,12 @@ $phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message
     $WriteMode = (!file_exists($File) || (
         $phpMussel['Config']['general']['truncate'] > 0 &&
         filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
+    )) ? 'wb' : 'ab';
 
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $phpMussel['LogRotation']($phpMussel['Config']['general']['frontend_log']);
     }
 };
@@ -2420,8 +2405,9 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKe
  * Append to the current state message.
  *
  * @param string $Message What to append.
+ * @return void
  */
-$phpMussel['Message'] = function (string $Message) use (&$phpMussel) {
+$phpMussel['Message'] = function (string $Message) use (&$phpMussel): void {
     if (isset($phpMussel['FE']['state_msg'])) {
         if ($phpMussel['FE']['state_msg'] || substr($phpMussel['FE']['state_msg'], -6) !== '<br />') {
             $phpMussel['FE']['state_msg'] .= '<br />';
@@ -2434,8 +2420,9 @@ $phpMussel['Message'] = function (string $Message) use (&$phpMussel) {
  * Attempt to perform some simple formatting for the log data.
  *
  * @param string $In The log data to be formatted.
+ * @return void
  */
-$phpMussel['Formatter'] = function (string &$In) {
+$phpMussel['Formatter'] = function (string &$In): void {
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="fW">' . $In . '</div>';
         return;

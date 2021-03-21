@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2020.10.26).
+# This file: Swedish language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -73,7 +73,7 @@ honeypot_event: "Honeypot händelse. "
 image: "Bild"
 instance_already_active: "Instansen redan aktiv! Vänligen kontrollera dina krokar."
 invalid_data: "Felaktig data!"
-invalid_file: "Felaktig fil"
+invalid_file: "Felaktig fil!"
 invalid_url: "Felaktig URL!"
 macros_not_permitted: "Makron är inte tillåtna"
 ok: "OK"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2020.10.26).
+# This file: Korean language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -69,7 +69,7 @@ honeypot_event: "허니팟 이벤트. "
 image: "이미지"
 instance_already_active: "인스턴스가 이미 활성화되어 있습니다! 후크를 다시 확인하십시오."
 invalid_data: "유효하지 않은 데이터!"
-invalid_file: "유효하지 않은 파일"
+invalid_file: "유효하지 않은 파일!"
 invalid_url: "유효하지 않은 URL!"
 macros_not_permitted: "매크로는 허용되지 않습니다"
 ok: "괜찮아"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2020.10.26).
+# This file: Urdu language data (last modified: 2021.03.20).
 ##/
 
 # Language settings.
@@ -74,7 +74,7 @@ honeypot_event: "ہنی پاٹ ایونٹ. "
 image: "تصویر"
 instance_already_active: "واقعے کی پہلے سے ہی چالو! براہ مہربانی اپنے ہکس دوبارہ چیک."
 invalid_data: "غلط ڈیٹا!"
-invalid_file: "غلط فائل"
+invalid_file: "غلط فائل!"
 invalid_url: "غلط URL!"
 macros_not_permitted: "میکرو کی اجازت نہیں ہے"
 ok: "ٹھیک ہے"
