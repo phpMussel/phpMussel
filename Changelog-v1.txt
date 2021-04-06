@@ -25,6 +25,9 @@ Detailed version release guidelines for phpMussel can be found at:
   updater's internal procedure for updating and repairing components sometimes
   raised incorrectly; Fixed.
 
+- [2021.04.06; Bug-fix; Maikuolan]: Unnecessary count check enforced on
+  interdependent replacements; Removed.
+
 === Version/Release 1.14.0 ===
 MINOR RELEASE.
 
