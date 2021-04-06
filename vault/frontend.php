@@ -2045,7 +2045,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['Key'];
             }
             $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['SortKey']] = sprintf(
-                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                "<a href=\"#%s\">%s</a><br /><br />\n      ",
                 $phpMussel['Components']['ThisComponent']['ID'],
                 $phpMussel['Components']['ThisComponent']['Name']
             );
@@ -2177,7 +2177,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['Components']['ThisComponent']['SortKey'] = $phpMussel['Components']['Key'];
             }
             $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['SortKey']] = sprintf(
-                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                "<a href=\"#%s\">%s</a><br /><br />\n      ",
                 $phpMussel['Components']['ThisComponent']['ID'],
                 $phpMussel['Components']['ThisComponent']['Name']
             );
@@ -2259,21 +2259,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     ) . $phpMussel['MenuToggle'];
 
     /** Inject interdependent components to each other's update instructions. */
-    if (count($phpMussel['Components']['Interdependent'])) {
-        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel Core');
-        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel Front-End');
-        array_unshift($phpMussel['Components']['Interdependent'], 'Common Classes Package');
-        $phpMussel['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
-            '" /><input name="ID[]" type="hidden" value="',
-            $phpMussel['Components']['Interdependent']
-        ) . '" />';
-        foreach ($phpMussel['Components']['Interdependent'] as $phpMussel['Components']['ThisInter']) {
-            $phpMussel['FE']['FE_Content'] = str_replace(
-                '<input name="ID" type="hidden" value="' . $phpMussel['Components']['ThisInter'] . '" />',
-                $phpMussel['Components']['AllInter'],
-                $phpMussel['FE']['FE_Content']
-            );
-        }
+    array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel Core', 'phpMussel Front-End', 'Common Classes Package');
+    $phpMussel['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
+        '" /><input name="ID[]" type="hidden" value="',
+        $phpMussel['Components']['Interdependent']
+    ) . '" />';
+    foreach ($phpMussel['Components']['Interdependent'] as $phpMussel['Components']['ThisInter']) {
+        $phpMussel['FE']['FE_Content'] = str_replace(
+            '<input name="ID" type="hidden" value="' . $phpMussel['Components']['ThisInter'] . '" />',
+            $phpMussel['Components']['AllInter'],
+            $phpMussel['FE']['FE_Content']
+        );
     }
 
     /** Finalise IO operations all at once. */

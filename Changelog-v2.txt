@@ -33,8 +33,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.03.11; Maikuolan]: Added some missing return type declarations.
 
-- [2021.04.06; Bug-fix; Maikuolan]: Some interdependent components weren't
-  explicitly marked at the front-end updates page; Fixed.
+- [2021.04.06; Bug-fixes; Maikuolan]: Some interdependent components weren't
+  explicitly marked at the front-end updates page; Fixed. Unnecessary count
+  check enforced on interdependent replacements; Removed.
 
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
