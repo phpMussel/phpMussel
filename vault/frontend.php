@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.21).
+ * This file: Front-end handler (last modified: 2021.04.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -21,6 +21,7 @@ if (!file_exists($phpMussel['Vault'] . 'frontend_functions.php')) {
     header('Content-Type: text/plain');
     die('[phpMussel] Front-end functions file missing! Please reinstall phpMussel.');
 }
+
 /** Load the front-end functions file. */
 require $phpMussel['Vault'] . 'frontend_functions.php';
 
@@ -1703,6 +1704,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     /** Useful for avoiding excessive IO operations when dealing with components. */
     $phpMussel['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
+    /** Useful for checking dependency version constraints. */
+    $phpMussel['Operation'] = new \Maikuolan\Common\Operation();
+
     /** Updates page form boilerplate. */
     $phpMussel['CFBoilerplate'] =
         '<form action="?%s" method="POST" style="display:inline">' .
@@ -2256,7 +2260,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Inject interdependent components to each other's update instructions. */
     if (count($phpMussel['Components']['Interdependent'])) {
-        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel');
+        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel Core');
+        array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel Front-End');
+        array_unshift($phpMussel['Components']['Interdependent'], 'Common Classes Package');
         $phpMussel['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
             '" /><input name="ID[]" type="hidden" value="',
             $phpMussel['Components']['Interdependent']
