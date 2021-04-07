@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.02.07).
+# This file: Dutch language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -200,6 +200,7 @@ label_backup_location: "Repository backup locaties (in geval van nood, of als al
 label_blocked: "Uploads geblokkeerd"
 label_branch: "Branch laatste stabiele:"
 label_clientinfo: "Gebruikers informatie:"
+label_dependencies: "Afhankelijkheden:"
 label_events: "Scan gebeurtenissen"
 label_expected: "Verwacht"
 label_expires: "Verloopt: "
@@ -304,21 +305,22 @@ response_login_password_field_empty: "Password veld leeg!"
 response_login_username_field_empty: "Gebruikersnaam veld leeg!"
 response_login_wrong_endpoint: "Verkeerd eindpunt!"
 response_no: "Nee"
+response_not_satisfied: "Niet tevreden."
 response_passed: "Geslaagd"
+response_ready_to_install: "Klaar om te installeren."
 response_rename_error: "Mislukt om de naam te veranderen!"
-response_restore_error_1: "Kan niet herstellen! Beschadigd bestand!"
-response_restore_error_2: "Kan niet herstellen! Onjuiste quarantaine sleutel!"
 response_repair_process_completed: "Reparatieproces voltooid."
 response_repair_process_failed: "Reparatieproces is mislukt."
+response_restore_error_1: "Kan niet herstellen! Beschadigd bestand!"
+response_restore_error_2: "Kan niet herstellen! Onjuiste quarantaine sleutel!"
 response_sanity_1: "Bestand bevat onverwachte inhoud! Bestand afgewezen!"
+response_satisfied: "Tevreden."
 response_skipped: "Overgeslagen"
 response_statistics_cleared: "Statistieken geannuleerd."
 response_updates_already_up_to_date: "Al bijgewerkt."
 response_updates_not_installed: "Component niet geïnstalleerd!"
-response_updates_not_installed_php: "Component niet geïnstalleerd (heeft nodig PHP &gt;= {V})!"
 response_updates_outdated: "Verouderd!"
 response_updates_outdated_manually: "Verouderd (neem handmatig bijwerken)!"
-response_updates_outdated_php_version: "Verouderd (heeft nodig PHP &gt;= {V})!"
 response_updates_unable_to_determine: "Onbepaald."
 response_upload_error: "Mislukt om te uploaden!"
 response_verification_failed: "Verificatie mislukt! Component kan beschadigd zijn."

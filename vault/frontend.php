@@ -762,7 +762,6 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('title_login'), $phpMussel['L10N']->getString('tip_login'), false);
 
@@ -798,7 +797,6 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
  * front-end home page.
  */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['CronMode']) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_home'), $phpMussel['L10N']->getString('tip_home'), false);
 
@@ -936,7 +934,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
 
 /** Accounts. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** $_POST overrides for mobile display. */
     if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] === 'delete-account')) {
         $_POST['do'] = $_POST['do_mob'];
@@ -1157,7 +1154,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
 /** Configuration. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_config'), $phpMussel['L10N']->getString('tip_config'));
 
@@ -1544,7 +1540,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
 /** Cache data. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_cache_data'), $phpMussel['L10N']->getString('tip_cache_data'));
 
@@ -1679,7 +1674,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 
 /** Updates. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['FE']['Permissions'] === 1 || ($phpMussel['FE']['Permissions'] === 3 && $phpMussel['FE']['CronMode']))) {
-
     /** Include major version notice (if relevant). */
     if ($phpMussel['MajorVersionNotice']) {
         $phpMussel['FE']['state_msg'] .= $phpMussel['MajorVersionNotice'] . '<hr />';
@@ -1719,9 +1713,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     /** Fetch components lists. */
     $phpMussel['FetchComponentsLists']($phpMussel['Vault'], $phpMussel['Components']['Meta']);
 
-    /** Cleanup. */
-    unset($phpMussel['Components']['Files']);
-
     $phpMussel['FE']['Indexes'] = [];
 
     /** A form has been submitted. */
@@ -1740,12 +1731,27 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'RemoteMeta' => $phpMussel['Components']['RemoteMeta'],
         'Remotes' => [],
         'Interdependent' => [],
+        'Installed Versions' => ['PHP' => PHP_VERSION],
+        'Available Versions' => [],
         'Outdated' => [],
         'OutdatedSignatureFiles' => [],
         'Verify' => [],
         'Repairable' => [],
         'Out' => []
     ];
+
+    /** Determine which components are currently installed, prior to processing any metadata. */
+    foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
+        if (
+            !empty($phpMussel['Components']['ThisComponent']['Version']) &&
+            !empty($phpMussel['Components']['ThisComponent']['Files']['To'])
+        ) {
+            $phpMussel['Components']['Installed Versions'][$phpMussel['Components']['Key']] = $phpMussel['Components']['ThisComponent']['Version'];
+        }
+    }
+
+    /** Component aliases (needed to discern some dependencies). */
+    $phpMussel['Components']['Installed Versions']['phpMussel'] = &$phpMussel['Components']['Installed Versions']['phpMussel Core'];
 
     /** Prepare installed component metadata and options for display. */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
@@ -1759,6 +1765,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         if (!empty($phpMussel['Components']['ThisComponent']['When Checking'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['ThisComponent']['When Checking']);
         }
+
+        /** Determine whether all dependency constraints have been met. */
+        $phpMussel['CheckConstraints']($phpMussel['Components']['ThisComponent'], false, $phpMussel['Components']['Key']);
 
         $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
@@ -1795,7 +1804,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             if ($phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['ExtractPage'](
                 $phpMussel['Components']['ThisComponent']['RemoteData']
             )) {
-
                 /** Process remote components metadata. */
                 if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
                     $phpMussel['Components']['TempRemoteMeta'] = [];
@@ -1814,11 +1822,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 if (isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'])) {
                     $phpMussel['Components']['ThisComponent']['Latest'] =
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'];
-                } else {
-                    if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
-                        $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
-                    }
+                    $phpMussel['Components']['Available Versions'][$phpMussel['Components']['Key']] =
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'];
+                } elseif (!$phpMussel['Components']['ThisComponent']['StatClass']) {
+                    $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
                 }
+
+                /** Determine whether all dependency constraints have been met. */
+                $phpMussel['CheckConstraints']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']], true);
+                $phpMussel['Components']['ThisComponent']['Remote Dependency Status'] =
+                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Dependency Status'];
+                $phpMussel['Components']['ThisComponent']['Remote All Constraints Met'] =
+                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['All Constraints Met'];
             } elseif (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
             }
@@ -1858,14 +1873,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         )
                     ) {
                         $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_outdated_manually');
-                    } elseif (
-                        !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']) &&
-                        $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP'])
-                    ) {
-                        $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars'](
-                            ['V' => $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']],
-                            $phpMussel['L10N']->getString('response_updates_outdated_php_version')
-                        );
                     } else {
                         $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_outdated');
                         $phpMussel['Components']['ThisComponent']['Options'] .=
@@ -1946,10 +1953,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             empty($phpMussel['Components']['ThisComponent']['Files']['To']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To'])
         ) {
-            if (
-                empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']) ||
-                !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP'])
-            ) {
+            if (!empty($phpMussel['Components']['ThisComponent']['Remote All Constraints Met'])) {
                 $phpMussel['Components']['ThisComponent']['Options'] .= '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>';
                 if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
                     $phpMussel['Components']['ThisComponent']['Options'] .=
@@ -1957,11 +1961,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                         $phpMussel['L10N']->getString('field_install') . ' + ' . $phpMussel['L10N']->getString('field_activate') .
                         '</option>';
                 }
-            } elseif ($phpMussel['Components']['ThisComponent']['StatusOptions'] === $phpMussel['L10N']->getString('response_updates_not_installed')) {
-                $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars'](
-                    ['V' => $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required PHP']],
-                    $phpMussel['L10N']->getString('response_updates_not_installed_php')
-                );
             }
         }
         $phpMussel['Components']['ThisComponent']['VersionSize'] = 0;
@@ -2114,6 +2113,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
         $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['Components']['ThisComponent']['Version'];
+        $phpMussel['Components']['Available Versions'][$phpMussel['Components']['Key']] = $phpMussel['Components']['ThisComponent']['Version'];
         $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['L10N']->getString('response_updates_not_installed');
         $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
         $phpMussel['Components']['ThisComponent']['RowClass'] = 'h2';
@@ -2141,16 +2141,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         } else {
             $phpMussel['Components']['ThisComponent']['LatestSize'] = '';
         }
-        if (
-            !empty($phpMussel['Components']['ThisComponent']['Minimum Required PHP']) &&
-            $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['ThisComponent']['Minimum Required PHP'])
-        ) {
-            $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['ParseVars']([
-                'V' => $phpMussel['Components']['ThisComponent']['Minimum Required PHP']
-            ], $phpMussel['L10N']->getString('response_updates_not_installed_php'));
-        } else {
-            $phpMussel['Components']['ThisComponent']['StatusOptions'] =
-                $phpMussel['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
+        $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_not_installed');
+        if (!empty($phpMussel['Components']['ThisComponent']['Remote All Constraints Met'])) {
+            $phpMussel['Components']['ThisComponent']['StatusOptions'] .= '<br /><select name="do" class="auto">' .
                 '<option value="update-component">' . $phpMussel['L10N']->getString('field_install') . '</option>';
             if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
                 $phpMussel['Components']['ThisComponent']['StatusOptions'] .=
@@ -2301,7 +2294,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
 /** File Manager. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_file_manager'), $phpMussel['L10N']->getString('tip_file_manager'), false);
 
@@ -2661,7 +2653,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
 /** Upload Test. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_upload_test'), $phpMussel['L10N']->getString('tip_upload_test'), false);
 
@@ -2689,7 +2680,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
 /** Quarantine. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_quarantine'), $phpMussel['L10N']->getString('tip_quarantine'));
 
@@ -2805,7 +2795,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
 
 /** Signature information. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_siginfo'), $phpMussel['L10N']->getString('tip_siginfo'));
 
@@ -2841,7 +2830,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
 
 /** Statistics. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel['FE']['Permissions'] === 1) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_statistics'), $phpMussel['L10N']->getString('tip_statistics'), false);
 
@@ -2923,7 +2911,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
 
 /** Logs. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']['Permissions'] > 0) {
-
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_logs'), $phpMussel['L10N']->getString('tip_logs'), false);
 

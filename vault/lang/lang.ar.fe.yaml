@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.02.07).
+# This file: Arabic language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -198,6 +198,7 @@ label_backup_location: "مواقع النسخ الاحتياطي مستودع (�
 label_blocked: "تم حظر التحميلات"
 label_branch: "فرع أحدث مستقرة:"
 label_clientinfo: "معلومات المستخدممعلومات المستخدم:"
+label_dependencies: "التبعيات:"
 label_events: "مسح الأحداث"
 label_expected: "متوقع"
 label_expires: "تنتهي: "
@@ -302,21 +303,22 @@ response_login_password_field_empty: "كلمه السر حقل فارغ!"
 response_login_username_field_empty: "اسم المستخدم حقل فارغ!"
 response_login_wrong_endpoint: "نقطة نهاية خاطئة!"
 response_no: "لا"
+response_not_satisfied: "غير راضية."
 response_passed: "إجتاز"
+response_ready_to_install: "جاهز للتركيب."
 response_rename_error: "فشل في إعادة تسمية!"
-response_restore_error_1: "أخفق الاستعادة! ملف معطوب!"
-response_restore_error_2: "أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!"
 response_repair_process_completed: "اكتملت عملية الإصلاح."
 response_repair_process_failed: "فشلت عملية الإصلاح."
+response_restore_error_1: "أخفق الاستعادة! ملف معطوب!"
+response_restore_error_2: "أخفق الاستعادة! الحجر الصحي مفتاح غير صحيح!"
 response_sanity_1: "يحتوي الملف على محتوى غير متوقع! تم رفض الملف!"
+response_satisfied: "راضي."
 response_skipped: "تخطي"
 response_statistics_cleared: "تم مسح الإحصاءات."
 response_updates_already_up_to_date: "تحديث غير مطلوب."
 response_updates_not_installed: "وحدة غير مثبت!"
-response_updates_not_installed_php: "وحدة غير مثبت (يتطلب PHP &gt;= {V})!"
 response_updates_outdated: "عفا عليها الزمن!"
 response_updates_outdated_manually: "عفا عليها الزمن (يرجى تحديث يدويا)!"
-response_updates_outdated_php_version: "عفا عليها الزمن (يتطلب PHP &gt;= {V})!"
 response_updates_unable_to_determine: "غير قادر على تحديد."
 response_upload_error: "فشل لتحميل!"
 response_verification_failed: "فشل التحقق! يمكن أن يكون المكون تالفا."

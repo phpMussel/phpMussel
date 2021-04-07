@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.02.07).
+# This file: Polish language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -201,6 +201,7 @@ label_backup_location: "Lokalizacje kopii zapasowych repozytorium (w nagłym wyp
 label_blocked: "Przesyłanie zablokowane"
 label_branch: "Oddział najnowsza stabilna:"
 label_clientinfo: "Informacja klientów:"
+label_dependencies: "Zależności:"
 label_events: "Zdarzenia skanowania"
 label_expected: "Spodziewany"
 label_expires: "Wygasa: "
@@ -305,21 +306,22 @@ response_login_password_field_empty: "Pole hasła puste!"
 response_login_username_field_empty: "Pole nazwy użytkownika jest puste!"
 response_login_wrong_endpoint: "Niewłaściwy punkt końcowy!"
 response_no: "Nie"
+response_not_satisfied: "Niespełnione."
 response_passed: "Wszystko dobrze"
+response_ready_to_install: "Gotowy do instalacji."
 response_rename_error: "Nie zmieniłem nazwy!"
-response_restore_error_1: "Niepowodzenie przywracania! Uszkodzony plik!"
-response_restore_error_2: "Niepowodzenie przywracania! Niepoprawny klucz kwarantanny!"
 response_repair_process_completed: "Zakończenie procesu naprawy."
 response_repair_process_failed: "Niepowodzenie procesu naprawy."
+response_restore_error_1: "Niepowodzenie przywracania! Uszkodzony plik!"
+response_restore_error_2: "Niepowodzenie przywracania! Niepoprawny klucz kwarantanny!"
 response_sanity_1: "Plik zawiera nieoczekiwaną treść! Plik odrzucony!"
+response_satisfied: "Spełnione."
 response_skipped: "Pominięte"
 response_statistics_cleared: "Statystyki wyczyszczone."
 response_updates_already_up_to_date: "Już na bieżąco."
 response_updates_not_installed: "Komponent nie został zainstalowany!"
-response_updates_not_installed_php: "Komponent nie został zainstalowany (wymaga PHP &gt;= {V})!"
 response_updates_outdated: "Nieaktualny!"
 response_updates_outdated_manually: "Nieaktualny (proszę, zaktualizuj ręcznie)!"
-response_updates_outdated_php_version: "Nieaktualny (wymaga PHP &gt;= {V})!"
 response_updates_unable_to_determine: "Nie można ustalić."
 response_upload_error: "Niepowodzenie przesyłania!"
 response_verification_failed: "Niepowodzenie weryfikacji! Komponent może być uszkodzony."

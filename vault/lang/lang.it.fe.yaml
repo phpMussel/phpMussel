@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.03.12).
+# This file: Italian language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -198,6 +198,7 @@ label_backup_location: "Posizioni di backup del repository (in caso di emergenza
 label_blocked: "Caricamenti bloccati"
 label_branch: "Branch più recente stabile:"
 label_clientinfo: "Informazioni sul cliente:"
+label_dependencies: "Dipendenze:"
 label_events: "Scansioni eventi"
 label_expected: "Previsto"
 label_expires: "Scade: "
@@ -302,21 +303,22 @@ response_login_password_field_empty: "L'input password era vuoto!"
 response_login_username_field_empty: "L'input nome utente era vuoto!"
 response_login_wrong_endpoint: "Punto finale errato!"
 response_no: "No"
+response_not_satisfied: "Non soddisfatto."
 response_passed: "Superato"
+response_ready_to_install: "Pronto a installare."
 response_rename_error: "Non riuscito a rinominare!"
-response_restore_error_1: "Non riuscito a ripristinare! File corrotto!"
-response_restore_error_2: "Non riuscito a ripristinare! La chiave di quarantena è errata!"
 response_repair_process_completed: "Processo di riparazione completato."
 response_repair_process_failed: "Processo di riparazione non riuscito."
+response_restore_error_1: "Non riuscito a ripristinare! File corrotto!"
+response_restore_error_2: "Non riuscito a ripristinare! La chiave di quarantena è errata!"
 response_sanity_1: "Il file contiene contenuti inattesi! File rifiutato!"
+response_satisfied: "Soddisfatto."
 response_skipped: "Saltato"
 response_statistics_cleared: "Statistiche revocate."
 response_updates_already_up_to_date: "Aggiornato già."
 response_updates_not_installed: "Componente non installato!"
-response_updates_not_installed_php: "Componente non installato (richiede PHP &gt;= {V})!"
 response_updates_outdated: "Non aggiornato!"
 response_updates_outdated_manually: "Non aggiornato (si prega di aggiornare manualmente)!"
-response_updates_outdated_php_version: "Non aggiornato (richiede PHP &gt;= {V})!"
 response_updates_unable_to_determine: "Incapace di determinare."
 response_upload_error: "Non riuscito a caricare!"
 response_verification_failed: "Non è riuscito a verificare! Componente potrebbe essere danneggiato."

@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2021.03.11).
+ * Matrix handler (last modified: 2021.04.05).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -9,9 +9,8 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * "COMMON CLASSES PACKAGE" COPYRIGHT 2019 and beyond by Caleb Mazalevskis
- * (Maikuolan). Earliest iteration and deployment of "Matrix handler" COPYRIGHT
- * 2020 and beyond by Caleb Mazalevskis (Maikuolan).
+ * "COMMON CLASSES PACKAGE" COPYRIGHT 2019 and beyond by Caleb Mazalevskis.
+ * *This particular class*, COPYRIGHT 2020 and beyond by Caleb Mazalevskis.
  */
 
 namespace Maikuolan\Common;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.02.07).
+# This file: German language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -200,6 +200,7 @@ label_backup_location: "Repository-Sicherungsspeicherorte (im Notfall, oder wenn
 label_blocked: "Uploads blockiert"
 label_branch: "Branch neueste stabil:"
 label_clientinfo: "Client Information:"
+label_dependencies: "Abhängigkeiten:"
 label_events: "Scan-Veranstaltungen"
 label_expected: "Erwartet"
 label_expires: "Läuft ab: "
@@ -304,21 +305,22 @@ response_login_password_field_empty: "Passwort-Feld leer!"
 response_login_username_field_empty: "Benutzername-Feld leer!"
 response_login_wrong_endpoint: "Falscher Endpunkt!"
 response_no: "Nein"
+response_not_satisfied: "Nicht zufrieden."
 response_passed: "Bestanden"
+response_ready_to_install: "Bereit zur Installation."
 response_rename_error: "Umbenennung-Fehler!"
-response_restore_error_1: "Fehler beim Wiederherstellen! Beschädigte Datei!"
-response_restore_error_2: "Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!"
 response_repair_process_completed: "Reparaturvorgang abgeschlossen."
 response_repair_process_failed: "Reparaturvorgang fehlgeschlagen."
+response_restore_error_1: "Fehler beim Wiederherstellen! Beschädigte Datei!"
+response_restore_error_2: "Fehler beim Wiederherstellen! Falscher Quarantäneschlüssel!"
 response_sanity_1: "Datei enthält unerwarteten Inhalt! Datei abgelehnt!"
+response_satisfied: "Zufrieden."
 response_skipped: "Übersprang"
 response_statistics_cleared: "Statistiken gelöscht."
 response_updates_already_up_to_date: "Schon aktuell."
 response_updates_not_installed: "Komponente nicht installiert!"
-response_updates_not_installed_php: "Komponente nicht installiert (erfordert PHP &gt;= {V})!"
 response_updates_outdated: "Veraltet!"
 response_updates_outdated_manually: "Veraltet (bitte manuell aktualisieren)!"
-response_updates_outdated_php_version: "Veraltet (erfordert PHP &gt;= {V})!"
 response_updates_unable_to_determine: "Kann nicht ermittelt werden."
 response_upload_error: "Hochladen-Fehler!"
 response_verification_failed: "Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein."

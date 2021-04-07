@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.02.07).
+# This file: Swedish language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -198,6 +198,7 @@ label_backup_location: "Repository backup platser (i nödfall, eller om allt ann
 label_blocked: "Uppladdningar blockerade"
 label_branch: "Branch senaste stabila:"
 label_clientinfo: "Klientinformation:"
+label_dependencies: "Programvarukrav:"
 label_events: "Skanna händelser"
 label_expected: "Förväntad"
 label_expires: "Utgår: "
@@ -302,21 +303,22 @@ response_login_password_field_empty: "Lösenord fältet tomt!"
 response_login_username_field_empty: "Användarnamn fältet tomt!"
 response_login_wrong_endpoint: "Felaktig slutpunkt!"
 response_no: "Nej"
+response_not_satisfied: "Inte nöjda."
 response_passed: "Passerade"
+response_ready_to_install: "Redo att installeras."
 response_rename_error: "Misslyckades med att byta namn!"
-response_restore_error_1: "Restaurering misslyckades! Skadad fil!"
-response_restore_error_2: "Restaurering misslyckades! Felaktig karantännyckel!"
 response_repair_process_completed: "Reparationsprocessen lyckades."
 response_repair_process_failed: "Reparationsprocessen misslyckades."
+response_restore_error_1: "Restaurering misslyckades! Skadad fil!"
+response_restore_error_2: "Restaurering misslyckades! Felaktig karantännyckel!"
 response_sanity_1: "Filen innehåller oväntat innehåll! Filen avvisas!"
+response_satisfied: "Nöjda."
 response_skipped: "Ignoreras"
 response_statistics_cleared: "Statistik rensas."
 response_updates_already_up_to_date: "Redan uppdaterad."
 response_updates_not_installed: "Komponenten inte installerad!"
-response_updates_not_installed_php: "Komponenten inte installerad (kräver PHP &gt;= {V})!"
 response_updates_outdated: "Föråldrad!"
 response_updates_outdated_manually: "Föråldrad (vänligen uppdatera manuellt)!"
-response_updates_outdated_php_version: "Föråldrad (kräver PHP &gt;= {V})!"
 response_updates_unable_to_determine: "Kan inte bestämma."
 response_upload_error: "Misslyckades med att ladda upp!"
 response_verification_failed: "Verifiering misslyckades! Komponenten kan vara skadad."

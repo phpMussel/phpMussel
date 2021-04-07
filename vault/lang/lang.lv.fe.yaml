@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.02.07).
+# This file: Latvian language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -201,6 +201,7 @@ label_backup_location: "Repozitorija rezerves vietas (ārkārtas gadījumā vai 
 label_blocked: "Bloķēto augšupielāžu skaits"
 label_branch: "Jaunākā stabilā (uz šīs "branch"):"
 label_clientinfo: "Informācija par klientu:"
+label_dependencies: "Atkarības:"
 label_events: "Skenēšanas notikumu skaits"
 label_expected: "Paredzams"
 label_expires: "Derīguma termiņš: "
@@ -305,21 +306,22 @@ response_login_password_field_empty: "Paroles lauks ir tukšs!"
 response_login_username_field_empty: "Lietotājvārda lauks ir tukšs!"
 response_login_wrong_endpoint: "Nepareizs galapunkts!"
 response_no: "Nē"
+response_not_satisfied: "Neapmierināts."
 response_passed: "Izturējis"
+response_ready_to_install: "Gatavs instalēšanai."
 response_rename_error: "Pārdēvēt neizdevās!"
-response_restore_error_1: "Atjaunot neizdevās! Bojāts fails!"
-response_restore_error_2: "Atjaunot neizdevās! Nepareiza karantīnas atslēga!"
 response_repair_process_completed: "Remonta process pabeigts."
 response_repair_process_failed: "Remonta process neizdevās."
+response_restore_error_1: "Atjaunot neizdevās! Bojāts fails!"
+response_restore_error_2: "Atjaunot neizdevās! Nepareiza karantīnas atslēga!"
 response_sanity_1: "Failā ir neparedzēts saturs! Fails noraidīts!"
+response_satisfied: "Apmierināts."
 response_skipped: "Izlaists"
 response_statistics_cleared: "Statistika ir notīrīta."
 response_updates_already_up_to_date: "Jau aktuāls."
 response_updates_not_installed: "Komponents nav instalēts!"
-response_updates_not_installed_php: "Komponents nav instalēts (nepieciešama PHP &gt;= {V})!"
 response_updates_outdated: "Novecojis!"
 response_updates_outdated_manually: "Novecojis (lūdzu, atjauniniet manuāli)!"
-response_updates_outdated_php_version: "Novecojis (nepieciešama &gt;= {V})!"
 response_updates_unable_to_determine: "Nevar noteikt."
 response_upload_error: "Neizdevās augšupielādēt!"
 response_verification_failed: "Verifikācija neizdevās! Komponents var būt bojāta."
