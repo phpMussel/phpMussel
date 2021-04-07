@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.12.10).
+# This file: Turkish language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -197,6 +197,7 @@ label_backup_location: "Repository yedek konumları (acil bir durumda, ya da her
 label_blocked: "Yüklemeler engellendi"
 label_branch: "Branşı en yeni kararlı:"
 label_clientinfo: "Kullanıcı bilgisi:"
+label_dependencies: "Gereksinimler:"
 label_events: "Tara olayları"
 label_expected: "Beklenen"
 label_expires: "Son Geçerlilik Tarihi: "
@@ -301,21 +302,22 @@ response_login_password_field_empty: "Parola alanı boş!"
 response_login_username_field_empty: "Kullanıcı adı alanı boş!"
 response_login_wrong_endpoint: "Yanlış bitiş noktası!"
 response_no: "Hayır"
+response_not_satisfied: "Karşılanmadı."
 response_passed: "Geçti"
+response_ready_to_install: "Yüklemeye hazır."
 response_rename_error: "Yeniden adlandırılamadı!"
-response_restore_error_1: "Canlanamadı! Bozuk dosya!"
-response_restore_error_2: "Canlanamadı! Yanlış karantina anahtarı!"
 response_repair_process_completed: "Onarım işlemi tamamlandı."
 response_repair_process_failed: "Onarım işlemi başarısız oldu."
+response_restore_error_1: "Canlanamadı! Bozuk dosya!"
+response_restore_error_2: "Canlanamadı! Yanlış karantina anahtarı!"
 response_sanity_1: "Dosya beklenmedik içerik barındırıyor! Dosya reddedildi!"
+response_satisfied: "Karşılandı."
 response_skipped: "Atlandı"
 response_statistics_cleared: "İstatistikler temizlendi."
 response_updates_already_up_to_date: "Zaten güncel."
 response_updates_not_installed: "Bileşen yüklü değil!"
-response_updates_not_installed_php: "Bileşen yüklü değil (PHP &gt;= {V} gerektirir)!"
 response_updates_outdated: "Eski!"
 response_updates_outdated_manually: "Eski (lütfen manuel olarak güncelleyin)!"
-response_updates_outdated_php_version: "Eski (PHP &gt;= {V} gerektirir)!"
 response_updates_unable_to_determine: "Belirlenemedi."
 response_upload_error: "Yüklenemedi!"
 response_verification_failed: "Doğrulama başarısız oldu! Bileşen bozulmuş olabilir."

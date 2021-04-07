@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.02.20).
+ * YAML handler (last modified: 2021.04.05).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -9,11 +9,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * "COMMON CLASSES PACKAGE" COPYRIGHT 2019 and beyond by Caleb Mazalevskis
- * (Maikuolan). Earliest iteration and deployment of "YAML handler" COPYRIGHT
- * 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+ * "COMMON CLASSES PACKAGE" COPYRIGHT 2019 and beyond by Caleb Mazalevskis.
+ * *This particular class*, COPYRIGHT 2016 and beyond by Caleb Mazalevskis.
  *
- * Note: Some parts of the YAML specification isn't supported by this class.
+ * Note: Some parts of the YAML specification aren't supported by this class.
  * See the included documentation for more information.
  */
 

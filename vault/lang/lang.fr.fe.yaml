@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.12.10).
+# This file: French language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -199,6 +199,7 @@ label_backup_location: "Emplacements de sauvegarde du référentiel (en cas d'ur
 label_blocked: "Téléchargements bloqués"
 label_branch: "Dernier stable de branche :"
 label_clientinfo: "Informations sur le client :"
+label_dependencies: "Dépendances :"
 label_events: "événements d'analyse"
 label_expected: "Attendu"
 label_expires: "Expire : "
@@ -303,21 +304,22 @@ response_login_password_field_empty: "Mot de passe entrée était vide !"
 response_login_username_field_empty: "Nom d'utilisateur entrée était vide !"
 response_login_wrong_endpoint: "Mauvais point final !"
 response_no: "Non"
+response_not_satisfied: "Pas satisfait."
 response_passed: "Passé"
+response_ready_to_install: "Prêt à installer."
 response_rename_error: "Échec du renomment !"
-response_restore_error_1: "Échec de la restauration ! Fichier corrompu !"
-response_restore_error_2: "Échec de la restauration ! Clé de quarantaine incorrecte !"
 response_repair_process_completed: "Le processus de réparation a été un succès."
 response_repair_process_failed: "Le processus de réparation a échoué."
+response_restore_error_1: "Échec de la restauration ! Fichier corrompu !"
+response_restore_error_2: "Échec de la restauration ! Clé de quarantaine incorrecte !"
 response_sanity_1: "Le fichier contient des contenus inattendus ! Fichier rejeté !"
+response_satisfied: "Satisfait."
 response_skipped: "Sauté"
 response_statistics_cleared: "Statistiques annulées."
 response_updates_already_up_to_date: "Déjà mise à jour."
 response_updates_not_installed: "Composant pas installé !"
-response_updates_not_installed_php: "Composant pas installé (il nécessite PHP &gt;= {V}) !"
 response_updates_outdated: "Dépassé !"
 response_updates_outdated_manually: "Dépassé (s'il vous plaît mettre à jour manuellement) !"
-response_updates_outdated_php_version: "Dépassé (il nécessite PHP &gt;= {V}) !"
 response_updates_unable_to_determine: "Incapable de déterminer."
 response_upload_error: "Échec du téléchargement !"
 response_verification_failed: "Échec de la vérification ! Composant pourrait être corrompu."

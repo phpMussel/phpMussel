@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.21).
+ * This file: Front-end functions file (last modified: 2021.04.06).
  */
 
 /**
@@ -146,7 +146,6 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
  * @param string $Entry Name of the cache entry to be deleted.
  */
 $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         if ($Entry === '__') {
@@ -186,7 +185,6 @@ $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) use (&$phpM
  * @param int $Expires When should the cache entry expire (be deleted).
  */
 $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         $phpMussel['Cache']->setEntry($Entry, $Data, $Expires - $phpMussel['Time']);
@@ -210,7 +208,6 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
  * @return string|bool Returned cache entry data (or false on failure).
  */
 $phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
-
     /** Override if using a different preferred caching mechanism. */
     if (isset($phpMussel['Cache']) && $phpMussel['Cache']->Using) {
         /** Check whether already fetched for this instance. */
@@ -346,7 +343,6 @@ $phpMussel['AppendToString'] = function (&$String, $Delimit = '', $Append = '') 
  * @return bool True when passed; False when failed.
  */
 $phpMussel['SanityCheck'] = function ($FileName, $FileData) {
-
     /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
     if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
         return false;
@@ -1124,7 +1120,6 @@ $phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel) {
  *      perform the specified action upon.
  */
 $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
-
     /** Support for executor calls. */
     if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
@@ -1218,10 +1213,6 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             !$phpMussel['VersionCompare'](
                 $phpMussel['ScriptVersion'],
                 $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
-            ) &&
-            (
-                empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP']) ||
-                !$phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP'])
             ) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
@@ -1922,7 +1913,6 @@ $phpMussel['NormaliseLinebreaks'] = function (&$Data) {
  * @return string Signature information as prepared HTML output.
  */
 $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
-
     /** Check whether shorthand data has been fetched. If it hasn't, fetch it. */
     if (!isset($phpMussel['shorthand.yaml'])) {
         if (!file_exists($phpMussel['Vault'] . 'shorthand.yaml') || !is_readable($phpMussel['Vault'] . 'shorthand.yaml')) {
@@ -2064,7 +2054,6 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
  * @return void
  */
 $phpMussel['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$phpMussel) {
-
     /** Set page title. */
     $phpMussel['FE']['FE_Title'] = 'phpMussel – ' . $Title;
 
@@ -2192,7 +2181,6 @@ $phpMussel['FELogger'] = function ($IPAddr, $User, $Message) use (&$phpMussel) {
  * @return bool Operation failed (false) or succeeded (true).
  */
 $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = '', $AltBody = '', array $Attachments = []) use (&$phpMussel) {
-
     /** Prepare event logging. */
     $EventLogData = sprintf(
         '%s - %s - ',
@@ -2516,7 +2504,6 @@ $phpMussel['RGB'] = function ($String = '', $Mode = 0) {
  * @return string The string, modified if necessary.
  */
 $phpMussel['LTRinRTF'] = function ($String = '') use (&$phpMussel) {
-
     /** Get direction. */
     $Direction = (
         !isset($phpMussel['L10N']) ||
@@ -2548,4 +2535,65 @@ $phpMussel['ExtractPage'] = function ($Data = '') {
         return '';
     }
     return substr($Data, 4);
+};
+
+/**
+ * Determine whether all dependency constraints have been met.
+ *
+ * @param array $ThisComponent Reference to the component being worked upon.
+ * @param bool $Source False for installed; True for available.
+ * @param string $Name If specified, if not installed, won't check constraints.
+ * @return void
+ */
+$phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = false, $Name = '') use (&$phpMussel) {
+    $ThisComponent['All Constraints Met'] = true;
+    $ThisComponent['Dependency Status'] = '';
+    if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
+        $Name && !isset($phpMussel['Components']['Installed Versions'][$Name])
+    )) {
+        return;
+    }
+    foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
+        if ((
+            isset($phpMussel['Components']['Installed Versions'][$Dependency]) &&
+            $phpMussel['Operation']->singleCompare($phpMussel['Components']['Installed Versions'][$Dependency], $Constraints)
+        ) || (
+            extension_loaded($Dependency) &&
+            ($phpMussel['Components']['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
+            $phpMussel['Operation']->singleCompare($phpMussel['Components']['Installed Versions'][$Dependency], $Constraints)
+        )) {
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtGn">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $phpMussel['L10N']->getString('response_satisfied')
+            );
+        } elseif (
+            $Source &&
+            isset($phpMussel['Components']['Available Versions'][$Dependency]) &&
+            $phpMussel['Operation']->singleCompare($phpMussel['Components']['Available Versions'][$Dependency], $Constraints)
+        ) {
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtOe">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $phpMussel['L10N']->getString('response_ready_to_install')
+            );
+        } else {
+            $ThisComponent['All Constraints Met'] = false;
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtRd">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $phpMussel['L10N']->getString('response_not_satisfied')
+            );
+        }
+    }
+    if ($ThisComponent['Dependency Status']) {
+        $ThisComponent['Dependency Status'] = sprintf(
+            '<hr /><small><span class="s">%s</span><br />%s</small>',
+            $phpMussel['L10N']->getString('label_dependencies'),
+            $ThisComponent['Dependency Status']
+        );
+    }
 };

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.12.10).
+# This file: Japanese language data for the front-end (last modified: 2021.04.06).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -197,6 +197,7 @@ label_backup_location: "リポジトリ・バックアップの場所（緊急�
 label_blocked: "ブロックされたアップロード"
 label_branch: "ブランチ最新安定："
 label_clientinfo: "クライアント情報："
+label_dependencies: "依存関係："
 label_events: "スキャンイベント"
 label_expected: "予想される"
 label_expires: "有効期限： "
@@ -301,21 +302,22 @@ response_login_password_field_empty: "パスワード入力は空です！"
 response_login_username_field_empty: "ユーザー名入力は空です！"
 response_login_wrong_endpoint: "間違ったエンドポイント！"
 response_no: "いいえ"
+response_not_satisfied: "満たされていません。"
 response_passed: "合格しました"
+response_ready_to_install: "インストールの準備ができました。"
 response_rename_error: "名前を変更できませんでした！"
-response_restore_error_1: "復元に失敗しました！​破損したファイル！"
-response_restore_error_2: "復元に失敗しました！​検疫キーが間違っています！"
 response_repair_process_completed: "修復プロセスが完了しました。"
 response_repair_process_failed: "修復プロセスが失敗しました。"
+response_restore_error_1: "復元に失敗しました！​破損したファイル！"
+response_restore_error_2: "復元に失敗しました！​検疫キーが間違っています！"
 response_sanity_1: "ファイルに予期しないコンテンツがあります！​ファイルが拒否されました！"
+response_satisfied: "満たされました。"
 response_skipped: "スキップしました"
 response_statistics_cleared: "統計はクリアされました。"
 response_updates_already_up_to_date: "すでに最新の状態です。"
 response_updates_not_installed: "コンポーネントのインストールされていません！"
-response_updates_not_installed_php: "コンポーネントのインストールされていません（PHP &gt;= {V}が必要です）！"
 response_updates_outdated: "時代遅れです！"
 response_updates_outdated_manually: "時代遅れです（手動でアップデートしてください）！"
-response_updates_outdated_php_version: "時代遅れです（PHP &gt;= {V}が必要です）！"
 response_updates_unable_to_determine: "決定することができません。"
 response_upload_error: "アップロードに失敗しました！"
 response_verification_failed: "確認に失敗！​コンポーネントが破損している可能性があります。"
