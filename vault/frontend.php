@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.06).
+ * This file: Front-end handler (last modified: 2021.04.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1730,9 +1730,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         'Meta' => $phpMussel['Components']['Meta'],
         'RemoteMeta' => $phpMussel['Components']['RemoteMeta'],
         'Remotes' => [],
-        'Interdependent' => [],
         'Installed Versions' => ['PHP' => PHP_VERSION],
         'Available Versions' => [],
+        'Install Together' => [],
         'Outdated' => [],
         'OutdatedSignatureFiles' => [],
         'Verify' => [],
@@ -1752,6 +1752,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Component aliases (needed to discern some dependencies). */
     $phpMussel['Components']['Installed Versions']['phpMussel Core'] = &$phpMussel['Components']['Installed Versions']['phpMussel'];
+    $phpMussel['Components']['Available Versions']['phpMussel Core'] = &$phpMussel['Components']['Available Versions']['phpMussel'];
 
     /** Prepare installed component metadata and options for display. */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
@@ -1816,7 +1817,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                             $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['TempKey']] = $phpMussel['Components']['TempData'];
                         }
                     }
-                    unset($phpMussel['Components']['TempRemoteMeta'], $phpMussel['Components']['TempData'], $phpMussel['Components']['TempKey']);
                 }
 
                 if (isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Version'])) {
@@ -1834,6 +1834,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                     $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Dependency Status'];
                 $phpMussel['Components']['ThisComponent']['Remote All Constraints Met'] =
                     $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['All Constraints Met'];
+                if (isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Install Together'])) {
+                    if (!isset($phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']])) {
+                        $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']] = [];
+                    }
+                    $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']] = array_merge(
+                        $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']],
+                        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Install Together']
+                    );
+                }
             } elseif (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
             }
@@ -1848,33 +1857,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
             }
             if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
-                if (!empty($phpMussel['Components']['ThisComponent']['Latest']) && $phpMussel['VersionCompare'](
+                if (!empty($phpMussel['Components']['ThisComponent']['Latest']) && $phpMussel['Operation']->singleCompare(
                     $phpMussel['Components']['ThisComponent']['Version'],
-                    $phpMussel['Components']['ThisComponent']['Latest']
+                    '<' . $phpMussel['Components']['ThisComponent']['Latest']
                 )) {
                     $phpMussel['Components']['ThisComponent']['Outdated'] = true;
-                    if (
-                        $phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang'] ||
-                        $phpMussel['Components']['Key'] === 'theme/' . $phpMussel['Config']['template_data']['theme']
-                    ) {
-                        $phpMussel['Components']['Interdependent'][] = $phpMussel['Components']['Key'];
-                    }
                     $phpMussel['Components']['Outdated'][] = $phpMussel['Components']['Key'];
                     if ($phpMussel['IsActivable']($phpMussel['Components']['ThisComponent'])) {
                         $phpMussel['Components']['OutdatedSignatureFiles'][] = $phpMussel['Components']['Key'];
                     }
                     $phpMussel['Components']['ThisComponent']['RowClass'] = 'r';
                     $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                    if (
-                        empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required']) ||
-                        $phpMussel['VersionCompare'](
-                            $phpMussel['ScriptVersion'],
-                            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required']
-                        )
-                    ) {
-                        $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_outdated_manually');
-                    } else {
-                        $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_outdated');
+                    $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['L10N']->getString('response_updates_outdated');
+                    if (!empty($phpMussel['Components']['ThisComponent']['Remote All Constraints Met'])) {
                         $phpMussel['Components']['ThisComponent']['Options'] .=
                             '<option value="update-component">' . $phpMussel['L10N']->getString('field_update') . '</option>';
                     }
@@ -2057,6 +2052,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 
     /** Update request via Cronable. */
     if (!empty($phpMussel['Alternate']) && !empty($UpdateAll) && !empty($phpMussel['Components']['Outdated'])) {
+        /** Fetch dependency installation triggers. */
+        $phpMussel['Components']['Build'] = $phpMussel['Components']['Outdated'];
+        foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['Key']) {
+            if (isset($phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']])) {
+                $phpMussel['Components']['Build'] = array_merge(
+                    $phpMussel['Components']['Build'],
+                    $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']]
+                );
+            }
+        }
+        $phpMussel['Components']['Outdated'] = array_unique($phpMussel['Components']['Build']);
+
         /** Trigger updates handler. */
         $phpMussel['UpdatesHandler']('update-component', $phpMussel['Components']['Outdated']);
     }
@@ -2109,11 +2116,26 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             0,
             $phpMussel['ThisOffset']
         ) . $phpMussel['Components']['RemoteDataThis'] . "\n";
+
+        /** Determine whether all dependency constraints have been met. */
+        $phpMussel['CheckConstraints']($phpMussel['Components']['ThisComponent'], true);
+        $phpMussel['Components']['ThisComponent']['Remote Dependency Status'] = $phpMussel['Components']['ThisComponent']['Dependency Status'];
+        $phpMussel['Components']['ThisComponent']['Dependency Status'] = '';
+        $phpMussel['Components']['ThisComponent']['Remote All Constraints Met'] = $phpMussel['Components']['ThisComponent']['All Constraints Met'];
+        if (isset($phpMussel['Components']['ThisComponent']['Install Together'])) {
+            if (!isset($phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']])) {
+                $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']] = [];
+            }
+            $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']] = array_merge(
+                $phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']],
+                $phpMussel['Components']['ThisComponent']['Install Together']
+            );
+        }
+
         $phpMussel['PrepareName']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent'], $phpMussel['Components']['Key']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
         $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['Components']['ThisComponent']['Version'];
-        $phpMussel['Components']['Available Versions'][$phpMussel['Components']['Key']] = $phpMussel['Components']['ThisComponent']['Version'];
         $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['L10N']->getString('response_updates_not_installed');
         $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
         $phpMussel['Components']['ThisComponent']['RowClass'] = 'h2';
@@ -2180,9 +2202,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             );
         }
     }
-
-    /** Cleanup. */
-    unset($phpMussel['Components']['ThisComponent']);
 
     /** Write annotations for newly found component metadata. */
     array_walk($phpMussel['Components']['Remotes'], function ($Remote, $Key) use (&$phpMussel) {
@@ -2251,16 +2270,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates.html'))
     ) . $phpMussel['MenuToggle'];
 
-    /** Inject interdependent components to each other's update instructions. */
-    array_unshift($phpMussel['Components']['Interdependent'], 'phpMussel');
-    $phpMussel['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
-        '" /><input name="ID[]" type="hidden" value="',
-        $phpMussel['Components']['Interdependent']
-    ) . '" />';
-    foreach ($phpMussel['Components']['Interdependent'] as $phpMussel['Components']['ThisInter']) {
+    /** Process dependency installation triggers. */
+    foreach ($phpMussel['Components']['Install Together'] as $phpMussel['Components']['Key'] => $phpMussel['Components']['ID']) {
+        $phpMussel['Components']['Build'] = '';
+        $phpMussel['Components']['ID'] = array_unique($phpMussel['Components']['ID']);
+        foreach ($phpMussel['Components']['ID'] as $phpMussel['Components']['ThisID']) {
+            $phpMussel['Components']['Build'] .= '<input name="InstallTogether[]" type="hidden" value="' . $phpMussel['Components']['ThisID'] . '" />';
+        }
         $phpMussel['FE']['FE_Content'] = str_replace(
-            '<input name="ID" type="hidden" value="' . $phpMussel['Components']['ThisInter'] . '" />',
-            $phpMussel['Components']['AllInter'],
+            '<input name="ID[]" type="hidden" value="' .$phpMussel['Components']['Key'] . '" />',
+            $phpMussel['Components']['Build'] . '<input name="ID[]" type="hidden" value="' .$phpMussel['Components']['Key'] . '" />',
             $phpMussel['FE']['FE_Content']
         );
     }
@@ -2289,7 +2308,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     }
 
     /** Cleanup. */
-    unset($phpMussel['Components'], $phpMussel['CFBoilerplate']);
+    unset($phpMussel['Components'], $phpMussel['CFBoilerplate'], $phpMussel['Operation']);
 }
 
 /** File Manager. */

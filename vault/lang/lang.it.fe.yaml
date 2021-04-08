@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.04.06).
+# This file: Italian language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -317,7 +317,6 @@ response_statistics_cleared: "Statistiche revocate."
 response_updates_already_up_to_date: "Aggiornato già."
 response_updates_not_installed: "Componente non installato!"
 response_updates_outdated: "Non aggiornato!"
-response_updates_outdated_manually: "Non aggiornato (si prega di aggiornare manualmente)!"
 response_updates_unable_to_determine: "Incapace di determinare."
 response_upload_error: "Non riuscito a caricare!"
 response_verification_failed: "Non è riuscito a verificare! Componente potrebbe essere danneggiato."

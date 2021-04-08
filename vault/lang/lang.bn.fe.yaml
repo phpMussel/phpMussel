@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.04.06).
+# This file: Bangla language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -317,7 +317,6 @@ response_statistics_cleared: "পরিসংখ্যান পরিস্ক�
 response_updates_already_up_to_date: "ইতিমধ্যে আপ-টু-ডেট।"
 response_updates_not_installed: "কম্পোনেন্ট ইনস্টল করা নেই!"
 response_updates_outdated: "আউটডেটেড!"
-response_updates_outdated_manually: "আউটডেটেড (দয়া করে ম্যানুয়ালি আপডেট করুন)!"
 response_updates_unable_to_determine: "নির্ধারণ করতে অক্ষম।"
 response_upload_error: "আপলোড করতে ব্যর্থ!"
 response_verification_failed: "যাচাইয়ের ব্যর্থ! কম্পোনেন্ট ভাঙ্গা হতে পারে।"

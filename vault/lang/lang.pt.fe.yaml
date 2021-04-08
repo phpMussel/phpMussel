@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.04.06).
+# This file: Portuguese language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -319,7 +319,6 @@ response_statistics_cleared: "Estatísticas apagadas."
 response_updates_already_up_to_date: "Já atualizado."
 response_updates_not_installed: "Componente não instalado!"
 response_updates_outdated: "Desatualizado!"
-response_updates_outdated_manually: "Desatualizado (por favor atualize manualmente)!"
 response_updates_unable_to_determine: "Não foi possível determinar."
 response_upload_error: "Falha ao carregar!"
 response_verification_failed: "Verificação falhada! Componente pode estar corrompido."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.04.06).
+# This file: Arabic language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -317,7 +317,6 @@ response_statistics_cleared: "تم مسح الإحصاءات."
 response_updates_already_up_to_date: "تحديث غير مطلوب."
 response_updates_not_installed: "وحدة غير مثبت!"
 response_updates_outdated: "عفا عليها الزمن!"
-response_updates_outdated_manually: "عفا عليها الزمن (يرجى تحديث يدويا)!"
 response_updates_unable_to_determine: "غير قادر على تحديد."
 response_upload_error: "فشل لتحميل!"
 response_verification_failed: "فشل التحقق! يمكن أن يكون المكون تالفا."

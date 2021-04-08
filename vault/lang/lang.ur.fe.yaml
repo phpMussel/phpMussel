@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.04.06).
+# This file: Urdu language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -317,7 +317,6 @@ response_statistics_cleared: "اعداد و شمار صاف ہوگئے."
 response_updates_already_up_to_date: "پہلے سے اپ ڈیٹ."
 response_updates_not_installed: "اجزاء انسٹال نہیں!"
 response_updates_outdated: "فرسودہ!"
-response_updates_outdated_manually: "فرسودہ (دستی طور پر اپ ڈیٹ کریں)!"
 response_updates_unable_to_determine: "اس بات کا تعین کرنے سے قاصر ہے."
 response_upload_error: "اپ لوڈ کرنے میں ناکام ہو گیا!"
 response_verification_failed: "توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے."

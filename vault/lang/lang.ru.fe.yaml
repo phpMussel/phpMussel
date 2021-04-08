@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.04.06).
+# This file: Russian language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -320,7 +320,6 @@ response_statistics_cleared: "Статистика очищена."
 response_updates_already_up_to_date: "Уже обновлено."
 response_updates_not_installed: "Компонент не установлен!"
 response_updates_outdated: "Устаревший!"
-response_updates_outdated_manually: "Устаревший (пожалуйста обновить вручную)!"
 response_updates_unable_to_determine: "Невозможно определить."
 response_upload_error: "Не удалось загрузить!"
 response_verification_failed: "Ошибка проверки! Компонент может быть поврежден."

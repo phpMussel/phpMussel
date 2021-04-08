@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.04.06).
+# This file: French language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -319,7 +319,6 @@ response_statistics_cleared: "Statistiques annulées."
 response_updates_already_up_to_date: "Déjà mise à jour."
 response_updates_not_installed: "Composant pas installé !"
 response_updates_outdated: "Dépassé !"
-response_updates_outdated_manually: "Dépassé (s'il vous plaît mettre à jour manuellement) !"
 response_updates_unable_to_determine: "Incapable de déterminer."
 response_upload_error: "Échec du téléchargement !"
 response_verification_failed: "Échec de la vérification ! Composant pourrait être corrompu."

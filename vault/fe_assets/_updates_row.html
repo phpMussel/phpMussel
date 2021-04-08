@@ -1,5 +1,5 @@
     <tr>
-      <form action="?{UpdatesFormTarget}" method="POST"><input name="phpmussel-form-target" type="hidden" value="updates" /><input name="ID" type="hidden" value="{ID}" />
+      <form action="?{UpdatesFormTarget}" method="POST"><input name="phpmussel-form-target" type="hidden" value="updates" /><input name="ID[]" type="hidden" value="{ID}" />
         <td class="{RowClass}"><div class="s"><a name="{ID}"></a>{Name}</div><br />{Extended Description}</td>
         <td class="{RowClass} big"><div class="{StatClass}">{Version}</div>{VersionSize}{Filename}{Dependency Status}</td>
         <td class="{RowClass} big"><div class="{StatClass}">{Latest}</div>{LatestSize}{Changelog}{Remote Dependency Status}</td>

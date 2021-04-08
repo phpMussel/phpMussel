@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.06).
+ * This file: Front-end functions file (last modified: 2021.04.07).
  */
 
 /**
@@ -233,62 +233,6 @@ $phpMussel['FECacheGet'] = function (&$Source, $Entry) use (&$phpMussel) {
         }
     }
     return false;
-};
-
-/**
- * Compare two different versions of phpMussel, or two different versions of a
- * component for phpMussel, to see which is newer (mostly used by the updater).
- *
- * @param string $A The 1st version string.
- * @param string $B The 2nd version string.
- * @return bool True if the 2nd version is newer than the 1st version, and false
- *      otherwise (i.e., if they're the same, or if the 1st version is newer).
- */
-$phpMussel['VersionCompare'] = function ($A, $B) {
-    $Normalise = function (&$Ver) {
-        $Ver =
-            preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(alpha\d|RC\d{1,2}|-[.\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([\w]+)-([\d\w]+)-([\d\w]+)$~i', $Ver, $Matches);
-        $Ver = [
-            'Major' => isset($Matches[1]) ? $Matches[1] : 0,
-            'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
-            'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
-            'Build' => isset($Matches[4]) ? $Matches[4] : 0
-        ];
-        if ($Ver['Build'] && substr($Ver['Build'], 0, 1) === '-') {
-            $Ver['Build'] = substr($Ver['Build'], 1);
-        }
-        $Ver = array_map(function ($Var) {
-            $VarInt = (int)$Var;
-            $VarLen = strlen($Var);
-            if ($Var == $VarInt && strlen($VarInt) === $VarLen && $VarLen > 1) {
-                return $VarInt;
-            }
-            return strtolower($Var);
-        }, $Ver);
-    };
-    $Normalise($A);
-    $Normalise($B);
-    return (
-        $B['Major'] > $A['Major'] || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] > $A['Minor']
-        ) || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] === $A['Minor'] &&
-            $B['Patch'] > $A['Patch']
-        ) || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] === $A['Minor'] &&
-            $B['Patch'] === $A['Patch'] &&
-            !empty($A['Build']) && (
-                empty($B['Build']) || $B['Build'] > $A['Build']
-            )
-        )
-    );
 };
 
 /**
@@ -1116,8 +1060,9 @@ $phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel) {
  *
  * @param string $Action The action to perform (update/install, verify,
  *      uninstall, activate, deactivate).
- * @return string|array The ID (or IDs) of the component (or components) to
- *      perform the specified action upon.
+ * @param string|array $ID The IDs of the components to perform the specified
+ *      action upon.
+ * @return void
  */
 $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
     /** Support for executor calls. */
@@ -1127,13 +1072,13 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
         $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
     }
 
-    /** Update a component. */
+    /** Update (or install) a component. */
     if ($Action === 'update-component') {
         $phpMussel['UpdatesHandler-Update']($ID);
     }
 
     /** Update (or install) and activate a component (one-step solution). */
-    if (!is_array($ID) && $Action === 'update-and-activate-component') {
+    if ($Action === 'update-and-activate-component') {
         $phpMussel['UpdatesHandler-Update']($ID);
         $phpMussel['UpdatesHandler-Activate']($ID);
     }
@@ -1149,22 +1094,22 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
     }
 
     /** Uninstall a component. */
-    if (!is_array($ID) && $Action === 'uninstall-component') {
+    if ($Action === 'uninstall-component') {
         $phpMussel['UpdatesHandler-Uninstall']($ID);
     }
 
     /** Activate a component. */
-    if (!is_array($ID) && $Action === 'activate-component') {
+    if ($Action === 'activate-component') {
         $phpMussel['UpdatesHandler-Activate']($ID);
     }
 
     /** Deactivate a component. */
-    if (!is_array($ID) && $Action === 'deactivate-component') {
+    if ($Action === 'deactivate-component') {
         $phpMussel['UpdatesHandler-Deactivate']($ID);
     }
 
     /** Deactivate and uninstall a component (one-step solution). */
-    if (!is_array($ID) && $Action === 'deactivate-and-uninstall-component') {
+    if ($Action === 'deactivate-and-uninstall-component') {
         $phpMussel['UpdatesHandler-Deactivate']($ID);
         $phpMussel['UpdatesHandler-Uninstall']($ID);
     }
@@ -1176,11 +1121,18 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 /**
  * Updates handler: Update a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ * @param string|array $ID The IDs of the components to update.
  * @return void
  */
 $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
+
+    /** Fetch dependency installation triggers. */
+    if (!empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
+        $ID = array_merge($ID, $_POST['InstallTogether']);
+    }
+
+    $ID = array_unique($ID);
     $Congruents = [];
     foreach ($ID as $ThisTarget) {
         if (!isset(
@@ -1209,11 +1161,6 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         if (
             ($Meta = $phpMussel['ExtractPage']($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
             $phpMussel['YAML']->process($Meta, $phpMussel['Components']['RemoteMeta']) &&
-            !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
-            !$phpMussel['VersionCompare'](
-                $phpMussel['ScriptVersion'],
-                $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
-            ) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
@@ -1447,10 +1394,13 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
 /**
  * Updates handler: Uninstall a component.
  *
- * @param string $ID The ID of the component to uninstall.
+ * @param string|array $ID The ID of the component to uninstall.
  * @return void
  */
 $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $BytesRemoved = 0;
     $TimeRequired = microtime(true);
@@ -1510,10 +1460,13 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
 /**
  * Updates handler: Activate a component.
  *
- * @param string $ID The ID of the component to activate.
+ * @param string|array $ID The ID of the component to activate.
  * @return void
  */
 $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $phpMussel['Activation'] = [
         'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'Active' => $phpMussel['Config']['signatures']['Active'],
@@ -1574,10 +1527,13 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
 /**
  * Updates handler: Deactivate a component.
  *
- * @param string $ID The ID of the component to deactivate.
+ * @param string|array $ID The ID of the component to deactivate.
  * @return void
  */
 $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $phpMussel['Deactivation'] = [
         'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'Active' => $phpMussel['Config']['signatures']['Active'],
@@ -1638,11 +1594,12 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel) {
 /**
  * Updates handler: Repair a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to repair.
+ * @param string|array $ID The IDs of the components to repair.
  * @return void
  */
 $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
+    $ID = array_unique($ID);
     foreach ($ID as $ThisTarget) {
         if (!isset(
             $phpMussel['Components']['Meta'][$ThisTarget]['Files'],
@@ -1806,11 +1763,12 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
 /**
  * Updates handler: Verify a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ * @param string|array $ID The IDs of the components to verify.
  * @return void
  */
 $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
     $phpMussel['Arrayify']($ID);
+    $ID = array_unique($ID);
     foreach ($ID as $ThisID) {
         $Table = '<blockquote class="ng1 comSub">';
         if (empty($phpMussel['Components']['Meta'][$ThisID]['Files'])) {
@@ -2548,6 +2506,9 @@ $phpMussel['ExtractPage'] = function ($Data = '') {
 $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = false, $Name = '') use (&$phpMussel) {
     $ThisComponent['All Constraints Met'] = true;
     $ThisComponent['Dependency Status'] = '';
+    if (!isset($ThisComponent['Dependencies']) && !empty($ThisComponent['Minimum Required'])) {
+        $ThisComponent['Dependencies'] = ['phpMussel Core' => '>=' . $ThisComponent['Minimum Required']];
+    }
     if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
         $Name && !isset($phpMussel['Components']['Installed Versions'][$Name])
     )) {
@@ -2563,9 +2524,9 @@ $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = fals
             $phpMussel['Operation']->singleCompare($phpMussel['Components']['Installed Versions'][$Dependency], $Constraints)
         )) {
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtGn">%s: %s – %s</span><br />',
+                '<span class="txtGn">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $phpMussel['L10N']->getString('response_satisfied')
             );
         } elseif (
@@ -2574,17 +2535,21 @@ $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = fals
             $phpMussel['Operation']->singleCompare($phpMussel['Components']['Available Versions'][$Dependency], $Constraints)
         ) {
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtOe">%s: %s – %s</span><br />',
+                '<span class="txtOe">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $phpMussel['L10N']->getString('response_ready_to_install')
             );
+            if (!isset($ThisComponent['Install Together'])) {
+                $ThisComponent['Install Together'] = [];
+            }
+            $ThisComponent['Install Together'][] = $Dependency;
         } else {
             $ThisComponent['All Constraints Met'] = false;
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtRd">%s: %s – %s</span><br />',
+                '<span class="txtRd">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $phpMussel['L10N']->getString('response_not_satisfied')
             );
         }
