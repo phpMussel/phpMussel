@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.04.06).
+# This file: Dutch language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -320,7 +320,6 @@ response_statistics_cleared: "Statistieken geannuleerd."
 response_updates_already_up_to_date: "Al bijgewerkt."
 response_updates_not_installed: "Component niet geïnstalleerd!"
 response_updates_outdated: "Verouderd!"
-response_updates_outdated_manually: "Verouderd (neem handmatig bijwerken)!"
 response_updates_unable_to_determine: "Onbepaald."
 response_upload_error: "Mislukt om te uploaden!"
 response_verification_failed: "Verificatie mislukt! Component kan beschadigd zijn."

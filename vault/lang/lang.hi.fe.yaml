@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.04.06).
+# This file: Hindi language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -320,7 +320,6 @@ response_statistics_cleared: "सांख्यिकी साफ है।"
 response_updates_already_up_to_date: "पहले से ही आधुनिक।"
 response_updates_not_installed: "घटक इंस्टॉल नहीं है!"
 response_updates_outdated: "पदावनत!"
-response_updates_outdated_manually: "पदावनत (कृपया मैन्युअल अपडेट करें)!"
 response_updates_unable_to_determine: "निर्धारित करने में असमर्थ।"
 response_upload_error: "अपलोड करने में विफल!"
 response_verification_failed: "सत्यापन असफल! घटक भ्रष्ट हो सकता है।"

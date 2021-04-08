@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.04.06).
+# This file: Polish language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -321,7 +321,6 @@ response_statistics_cleared: "Statystyki wyczyszczone."
 response_updates_already_up_to_date: "Już na bieżąco."
 response_updates_not_installed: "Komponent nie został zainstalowany!"
 response_updates_outdated: "Nieaktualny!"
-response_updates_outdated_manually: "Nieaktualny (proszę, zaktualizuj ręcznie)!"
 response_updates_unable_to_determine: "Nie można ustalić."
 response_upload_error: "Niepowodzenie przesyłania!"
 response_verification_failed: "Niepowodzenie weryfikacji! Komponent może być uszkodzony."

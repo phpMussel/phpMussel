@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.04.06).
+# This file: Norwegian language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -318,7 +318,6 @@ response_statistics_cleared: "Statistikk fjernet."
 response_updates_already_up_to_date: "Allerede oppdatert."
 response_updates_not_installed: "Komponent ikke installert!"
 response_updates_outdated: "Utdatert!"
-response_updates_outdated_manually: "Utdatert (vennligst oppdatere manuelt)!"
 response_updates_unable_to_determine: "Kan ikke fastslå."
 response_upload_error: "Opplasting mislyktes!"
 response_verification_failed: "Verifisering mislyktes! Komponent kan bli skadet."

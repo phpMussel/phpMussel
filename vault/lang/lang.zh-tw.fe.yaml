@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.04.06).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -318,7 +318,6 @@ response_statistics_cleared: "統計刪除。"
 response_updates_already_up_to_date: "已經更新。"
 response_updates_not_installed: "組件不安裝！"
 response_updates_outdated: "過時！"
-response_updates_outdated_manually: "過時（請更新手動）！"
 response_updates_unable_to_determine: "無法確定。"
 response_upload_error: "無法上傳！"
 response_verification_failed: "驗證失敗！組件可能已損壞。"

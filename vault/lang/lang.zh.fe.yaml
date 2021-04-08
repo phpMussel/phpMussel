@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.04.06).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.04.07).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -318,7 +318,6 @@ response_statistics_cleared: "统计删除。"
 response_updates_already_up_to_date: "已经更新。"
 response_updates_not_installed: "组件不安装！"
 response_updates_outdated: "过时！"
-response_updates_outdated_manually: "过时（请更新手动）！"
 response_updates_unable_to_determine: "无法确定。"
 response_upload_error: "无法上传！"
 response_verification_failed: "验证失败！组件可能已损坏。"
