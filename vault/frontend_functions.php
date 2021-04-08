@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.07).
+ * This file: Front-end functions file (last modified: 2021.04.08).
  */
 
 /**
@@ -1151,16 +1151,12 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         ) {
             $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }
-        $phpMussel['Components']['RemoteMeta'] = [];
-        $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'] = '';
-        $phpMussel['FetchRemote-ContextFree'](
-            $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'],
-            $phpMussel['Components']['Meta'][$ThisTarget]['Remote']
-        );
-        $phpMussel['UpdateFailed'] = false;
+        $NewMeta = '';
+        $phpMussel['FetchRemote-ContextFree']($NewMeta, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
+        $phpMussel['CheckConstraints']($phpMussel['Components']['RemoteMeta'][$ThisTarget], true);
+        $UpdateFailed = false;
         if (
-            ($Meta = $phpMussel['ExtractPage']($phpMussel['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
-            $phpMussel['YAML']->process($Meta, $phpMussel['Components']['RemoteMeta']) &&
+            $phpMussel['Components']['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
@@ -1170,7 +1166,6 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
             ($OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
-            ($NewMeta = $phpMussel['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0])
         ) {
@@ -1301,7 +1296,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         }
                     }
                 }
-                $phpMussel['UpdateFailed'] = true;
+                $UpdateFailed = true;
             } else {
                 /** Prune unwanted files and directories (update/install success). */
                 if (!empty($phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'])) {
@@ -1349,9 +1344,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                 $phpMussel['Components']['Meta'][$ThisTarget] = $phpMussel['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
-            $phpMussel['UpdateFailed'] = true;
+            $UpdateFailed = true;
         }
-        if ($phpMussel['UpdateFailed']) {
+        if ($UpdateFailed) {
             $phpMussel['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
             if (
                 empty($phpMussel['Components']['Meta'][$ThisTarget]['Version']) &&
@@ -1634,8 +1629,6 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
             }
         }
         if (isset(
-            $phpMussel['Components']['RemoteMeta'][$ThisTarget],
-            $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files'],
             $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['To'],
             $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'],
             $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']
@@ -2515,7 +2508,27 @@ $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = fals
         return;
     }
     foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
-        if ((
+        if (strpos($Dependency, '{theme}') !== false && $phpMussel['Config']['template_data']['theme'] === 'default') {
+            continue;
+        }
+        $Dependency = str_replace(
+            ['{lang}', '{theme}'],
+            [$phpMussel['Config']['general']['lang'], $phpMussel['Config']['template_data']['theme']],
+            $Dependency
+        );
+        if ($Constraints === 'Latest') {
+            if (isset($phpMussel['Components']['Available Versions'][$Dependency])) {
+                $Constraints = '>=' . $phpMussel['Components']['Available Versions'][$Dependency];
+            }
+        }
+        if ($Constraints === 'Latest' || strlen($Constraints) < 1) {
+            $ThisComponent['All Constraints Met'] = false;
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtRd">%s – %s</span><br />',
+                $Dependency,
+                $phpMussel['L10N']->getString('response_not_satisfied')
+            );
+        } elseif ((
             isset($phpMussel['Components']['Installed Versions'][$Dependency]) &&
             $phpMussel['Operation']->singleCompare($phpMussel['Components']['Installed Versions'][$Dependency], $Constraints)
         ) || (
@@ -2560,5 +2573,20 @@ $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = fals
             $phpMussel['L10N']->getString('label_dependencies'),
             $ThisComponent['Dependency Status']
         );
+    }
+};
+
+/**
+ * Determine which components are currently installed or available.
+ *
+ * @param array $Source Components metadata source.
+ * @param array $To Where to set the information.
+ * @return void
+ */
+$phpMussel['CheckVersions'] = function (array &$Source, array &$To) use (&$phpMussel) {
+    foreach ($Source as $Key => &$Component) {
+        if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
+            $To[$Key] = $Component['Version'];
+        }
     }
 };
