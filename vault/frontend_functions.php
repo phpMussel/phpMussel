@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.08).
+ * This file: Front-end functions file (last modified: 2021.04.09).
  */
 
 /**
@@ -802,12 +802,14 @@ $phpMussel['FE_Executor'] = function ($Closures = false, bool $Queue = false) us
     }
     $phpMussel['Arrayify']($Closures);
     foreach ($Closures as $Closure) {
+        $Closure = $phpMussel['Operation']->ifCompare($phpMussel, $Closure);
         if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
             $phpMussel[$Closure]();
         } elseif (($Pos = strpos($Closure, ' ')) !== false) {
             $Params = substr($Closure, $Pos + 1);
             $Closure = substr($Closure, 0, $Pos);
             if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
+                $Params = $phpMussel['Operation']->ifCompare($phpMussel, $Params);
                 $phpMussel[$Closure]($Params);
             }
         }

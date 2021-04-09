@@ -37,6 +37,9 @@ Detailed version release guidelines for phpMussel can be found at:
   explicitly marked at the front-end updates page; Fixed. Unnecessary count
   check enforced on interdependent replacements; Removed.
 
+- [2021.04.07-09; Maikuolan]: Added proper component dependency support to the
+  front-end updates page and revamped related code and update mechanisms.
+
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
 

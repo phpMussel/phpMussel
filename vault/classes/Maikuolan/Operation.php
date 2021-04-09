@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2021.04.06).
+ * Operation handler (last modified: 2021.04.09).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,11 +17,6 @@ namespace Maikuolan\Common;
 
 class Operation
 {
-    /**
-     * @var array Data sources for operations.
-     */
-    public $Sources = [];
-
     /**
      * @var array Caching to optimise operations.
      */
@@ -173,41 +168,156 @@ class Operation
      */
     public function splitVersionParts(string $Version = ''): array
     {
-        $EndTack = preg_split('~[+-]~', strtolower($Version), -1, PREG_SPLIT_NO_EMPTY);
-        $Parts = explode('.', strtolower(array_shift($EndTack)));
+        $Version = preg_replace(['~[-_+]~', '~(\d)([a-z])~'], ['.', '\1.\2'], strtolower($Version));
+        $Parts = explode('.', $Version);
         if (substr($Parts[0], 0, 1) === 'v') {
             $Parts[0] = substr($Parts[0], 1);
         }
         foreach ($Parts as &$Part) {
-            $Part = (int)$Part;
+            if (preg_match('~^([a-z])~', $Part, $Initial)) {
+                if ($Initial[0] === 'd') {
+                    $Part = -5;
+                } elseif ($Initial[0] === 'a') {
+                    $Part = -4;
+                } elseif ($Initial[0] === 'b') {
+                    $Part = -3;
+                } elseif ($Initial[0] === 'r') {
+                    $Part = -2;
+                } elseif ($Initial[0] === 'p') {
+                    $Part = -1;
+                } elseif (strlen($Initial[0]) > 0) {
+                    $Part = -6;
+                } else {
+                    $Part = 0;
+                }
+            } else {
+                $Part = (int)$Part;
+            }
         }
         $PartsPad = 3 - count($Parts);
         while ($PartsPad > 0) {
             $Parts[] = 0;
             $PartsPad--;
         }
-        $ByStage = [];
-        $Matches = [];
-        if (isset($EndTack[0])) {
-            preg_match('~^([a-z])?.*?(\d*)?$~', $EndTack[0], $Matches);
-            if ($Matches[1] === 'a') {
-                $ByStage[] = -3;
-            } elseif ($Matches[1] === 'b') {
-                $ByStage[] = -2;
-            } elseif (strlen($Matches[1]) > 0) {
-                $ByStage[] = -1;
-            } else {
-                $ByStage[] = 0;
-            }
-            if ($Matches[2] === '') {
-                unset($EndTack[0]);
-            } else {
-                $EndTack[0] = $Matches[2];
+        return $Parts;
+    }
+
+    /**
+     * Traverse data path.
+     *
+     * @param mixed $Data The data to traverse.
+     * @param string|array $Path The path to traverse.
+     * @return mixed The traversed data, or an empty string on failure.
+     */
+    public function dataTraverse(&$Data, $Path = [])
+    {
+        if (!is_array($Path)) {
+            $Path = explode('.', $Path);
+        }
+        $Segment = array_shift($Path);
+        if ($Segment === null || strlen($Segment) === 0) {
+            return is_scalar($Data) ? $Data : '';
+        }
+        if (is_array($Data) && isset($Data[$Segment])) {
+            return $this->dataTraverse($Data[$Segment], $Path);
+        }
+        if (is_string($Data)) {
+            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
+                $Data = $Segment($Data);
             }
         }
-        foreach ($EndTack as &$Part) {
-            $Part = (int)$Part;
+        return $this->dataTraverse($Data, $Path);
+    }
+
+    /**
+     * If compare operation.
+     *
+     * @param mixed $Data The data to traverse.
+     * @param string $IfString The if string.
+     * @return string The results of the operation (or an empty string on failure).
+     */
+    public function ifCompare(&$Data, string $IfString): string
+    {
+        $LCIfString = strtolower($IfString);
+
+        /** Guard. */
+        if (substr($LCIfString, 0, 3) !== 'if ') {
+            $IfString = trim($IfString);
+            if (substr($IfString, 0, 1) === '{' && substr($IfString, -1) === '}') {
+                $IfString = $this->dataTraverse($Data, substr($IfString, 1, -1));
+            }
+            return $IfString;
         }
-        return array_merge($Parts, $ByStage, $EndTack);
+
+        $IfString = substr($IfString, 3);
+        $LCIfString = substr($LCIfString, 3);
+
+        if (($ElsePos = strpos($LCIfString, ' else')) === false) {
+            $ElseString = '';
+        } else {
+            $ElseString = substr($IfString, $ElsePos + 5);
+            $IfString = substr($IfString, 0, $ElsePos);
+            $LCIfString = strtolower($IfString);
+        }
+        if (($ThenPos = strpos($LCIfString, ' then')) === false) {
+            $ThenString = '';
+        } else {
+            $ThenString = substr($IfString, $ThenPos + 5);
+            $IfString = substr($IfString, 0, $ThenPos);
+            $LCIfString = strtolower($IfString);
+        }
+
+        /** Process condition. */
+        foreach (explode('||', $IfString) as $PartsOr) {
+            $IfPass = true;
+            foreach (explode('&&', $PartsOr) as $PartsAnd) {
+                $Parts = preg_split('~([<>]=?|[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
+                foreach ($Parts as &$Part) {
+                    $Part = trim($Part);
+                    if (substr($Part, 0, 1) === '{' && substr($Part, -1) === '}') {
+                        $Part = $this->dataTraverse($Data, substr($Part, 1, -1));
+                    }
+                }
+                $CParts = count($Parts);
+                if (($CParts % 2) === 0) {
+                    $IfPass = false;
+                    continue 2;
+                } elseif ($CParts === 1) {
+                    if (!$Parts[0]) {
+                        $IfPass = false;
+                    }
+                    continue 2;
+                } elseif ($CParts === 3) {
+                    if ($Parts[1] === '===') {
+                        $Try = ($Parts[0] === $Parts[2]);
+                    } else {
+                        $Initial = substr($Parts[1], 0, 1);
+                        if ($Initial === '=' || $Initial === '^') {
+                            $Parts[1] = $Initial;
+                        }
+                        $Try = $this->singleCompare($Parts[0], $Parts[1] . $Parts[2]);
+                    }
+                    if (!$Try) {
+                        $IfPass = false;
+                        continue 2;
+                    }
+                }
+            }
+            if ($IfPass) {
+                break;
+            }
+        }
+
+        if ($IfPass) {
+            $ThenString = trim($ThenString);
+            if (substr($ThenString, 0, 1) === '{' && substr($ThenString, -1) === '}') {
+                $ThenString = $this->dataTraverse($Data, substr($ThenString, 1, -1));
+            }
+            return $ThenString;
+        }
+        if ($ElseString) {
+            return $this->ifCompare($Data, $ElseString);
+        }
+        return '';
     }
 }
