@@ -1,11 +1,11 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.2.1-DEV+21095583
+ Version: 2.3.0
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
-  Common Classes Package: ^2.6
+  Common Classes Package: ^2.6.0.1
   phpMussel Front-End: Latest
   l10n/{lang}: Latest
   theme/{theme}: Latest
@@ -51,11 +51,11 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.2.1-DEV+21095583
+ Version: 2.3.0
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
-  Common Classes Package: ^2.6
+  Common Classes Package: ^2.6.0.1
   phpMussel Core: Latest
   l10n/{lang}: Latest
   theme/{theme}: Latest
@@ -160,7 +160,7 @@ phpMussel Front-End:
    - 79d21a386767688768b0ca8a3d3a08821328e2bafca3238071dabfbddeb6f0ce:954
    - 03f8ad68bbb9053685fd0f2deb1a9a971793eafa7924aca8c6bcd3f99a60a75c:643
    - a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606
-   - 03e2b0b19dbf8afd4922394412f47ff7f596f9ceb6b222e237606a11583ae8cf:7666
+   - 1f85529042a0e28168043073fa628f8e3c9e4a0cabcafa81067a36f2cc47ee73:7661
    - a3780370d21fb717f151e05d61e08deff5a098d7e92aed097964c4ac03c44b69:977
    - 90065e7ce5419096a9a09e4ee01c3c13fcb44dec1f7d20156c7bdee3fd45ba5c:17546
    - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
@@ -176,7 +176,7 @@ phpMussel Front-End:
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.2.1-DEV+21095583
+ Version: 2.3.0
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -202,7 +202,7 @@ phpMussel Upload Handler:
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
- Version: 2.2.1-DEV+21095583
+ Version: 2.3.0
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -220,7 +220,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.6.0
+ Version: 2.6.0.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -259,7 +259,7 @@ Common Classes Package:
    - c567cbc6d7cab8a61e61ed2fc921490a5c80130dded0b541acf93185c3003157:11422
    - a911d60fb1c01458b8d9d00eb7b15841a32a9bb6e276d8ac184972d05be4a48f:8630
    - 7dca6ed2c07fa5c4c2f01059a42466d562aa9b4197a7e21c6ddbae25715aff63:37317
-   - 0a3fb74823267c714b2e7f7f665e0785abab621010dd5e415dafad7e1688ff50:11345
+   - 6123c324d1e446a1db10d9e7576ad1543ad615119038c058236ba16bab0b967b:11653
    - 7ff645221ec021e4562f62cd219af1dd0b8ef434bcc5186a4a6d69e8954994a5:7736
    - 7d1230049d0e440cd30babfa3a962975a0f19dceee8062959c923d9f81c908dd:12883
  Reannotate: components.dat

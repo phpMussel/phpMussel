@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 2.3.0 ===
+MINOR RELEASE.
+
 - [2020.12.05; Bug-fix; Maikuolan]: Possible compatibility problem with
   Cronable introduced on November 27th; Fixed.
 
@@ -39,6 +44,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.04.07-09; Maikuolan]: Added proper component dependency support to the
   front-end updates page and revamped related code and update mechanisms.
+
+Caleb M (Maikuolan),
+April 10, 2020.
 
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
