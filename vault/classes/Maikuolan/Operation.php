@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2021.04.09).
+ * Operation handler (last modified: 2021.04.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -95,8 +95,8 @@ class Operation
     public function multiCompare(array $Operand, array $Prefix): bool
     {
         $Result = false;
-        while ($ThisOperand = array_shift($Actual)) {
-            $ThisPrefix = array_shift($Actual);
+        while ($ThisOperand = array_shift($Operand)) {
+            $ThisPrefix = array_shift($Prefix);
             $Result = $this->singleCompare($ThisOperand, $ThisPrefix);
             if (!$Result) {
                 return false;
@@ -168,11 +168,12 @@ class Operation
      */
     public function splitVersionParts(string $Version = ''): array
     {
-        $Version = preg_replace(['~[-_+]~', '~(\d)([a-z])~'], ['.', '\1.\2'], strtolower($Version));
+        $Version = preg_replace(
+            ['~^v\.?~', '~[-_+]~', '~(\d)([a-z])~', '~([a-z])(\d)~'],
+            ['', '.', '\1.\2', '\1.\2'],
+            strtolower($Version)
+        );
         $Parts = explode('.', $Version);
-        if (substr($Parts[0], 0, 1) === 'v') {
-            $Parts[0] = substr($Parts[0], 1);
-        }
         foreach ($Parts as &$Part) {
             if (preg_match('~^([a-z])~', $Part, $Initial)) {
                 if ($Initial[0] === 'd') {
@@ -251,7 +252,6 @@ class Operation
 
         $IfString = substr($IfString, 3);
         $LCIfString = substr($LCIfString, 3);
-
         if (($ElsePos = strpos($LCIfString, ' else')) === false) {
             $ElseString = '';
         } else {
@@ -264,7 +264,17 @@ class Operation
         } else {
             $ThenString = substr($IfString, $ThenPos + 5);
             $IfString = substr($IfString, 0, $ThenPos);
-            $LCIfString = strtolower($IfString);
+            if (substr($ThenString, 0, 1) === '{') {
+                if (substr($ThenString, -1) === '}') {
+                    $ThenString = substr($ThenString, 1 -1);
+                } elseif (substr($ElseString, 0, 1) !== '{' && substr($ElseString, -1) === '}') {
+                    $ThenString = substr($ThenString, 1) . ' else' . substr($ElseString, 0, -1);
+                    $ElseString = '';
+                }
+            }
+        }
+        if (substr($ElseString, 0, 1) === '{' && substr($ElseString, -1) === '}') {
+            $ElseString = substr($ElseString, 1 -1);
         }
 
         /** Process condition. */
@@ -309,11 +319,7 @@ class Operation
         }
 
         if ($IfPass) {
-            $ThenString = trim($ThenString);
-            if (substr($ThenString, 0, 1) === '{' && substr($ThenString, -1) === '}') {
-                $ThenString = $this->dataTraverse($Data, substr($ThenString, 1, -1));
-            }
-            return $ThenString;
+            return $this->ifCompare($Data, $ThenString);
         }
         if ($ElseString) {
             return $this->ifCompare($Data, $ElseString);
