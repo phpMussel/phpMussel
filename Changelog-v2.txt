@@ -10,7 +10,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2021.04.11; Maikuolan]: Updates handler activation closure will now activate
+  its own dependencies, too.
 
 === Version/Release 2.3.0 ===
 MINOR RELEASE.
