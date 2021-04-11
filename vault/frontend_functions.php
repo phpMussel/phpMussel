@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.09).
+ * This file: Front-end functions file (last modified: 2021.04.11).
  */
 
 /**
@@ -1082,7 +1082,13 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
     /** Update (or install) and activate a component (one-step solution). */
     if ($Action === 'update-and-activate-component') {
         $phpMussel['UpdatesHandler-Update']($ID);
-        $phpMussel['UpdatesHandler-Activate']($ID);
+        if (
+            isset($phpMussel['Components']['Meta'][$ID]) &&
+            $phpMussel['IsActivable']($ID) &&
+            !$phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ID])
+        ) {
+            $phpMussel['UpdatesHandler-Activate']($ID);
+        }
     }
 
     /** Repair a component. */
@@ -1112,7 +1118,13 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
     /** Deactivate and uninstall a component (one-step solution). */
     if ($Action === 'deactivate-and-uninstall-component') {
-        $phpMussel['UpdatesHandler-Deactivate']($ID);
+        if (
+            isset($phpMussel['Components']['Meta'][$ID]) &&
+            $phpMussel['IsActivable']($ID) &&
+            $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ID])
+        ) {
+            $phpMussel['UpdatesHandler-Deactivate']($ID);
+        }
         $phpMussel['UpdatesHandler-Uninstall']($ID);
     }
 
@@ -1515,10 +1527,30 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
+        $Success = true;
     }
 
     /** Cleanup. */
     unset($phpMussel['Activation']);
+
+    /** Deal with dependency activation. */
+    if (
+        !empty($Success) &&
+        !empty($phpMussel['Components']['Meta'][$ID]['Dependencies']) &&
+        is_array($phpMussel['Components']['Meta'][$ID]['Dependencies'])
+    ) {
+        foreach ($phpMussel['Components']['Meta'][$ID]['Dependencies'] as $Dependency => $Constraints) {
+            if (
+                !isset($phpMussel['Components']['Meta'][$Dependency]) ||
+                empty($phpMussel['Components']['Installed Versions'][$Dependency]) ||
+                !$phpMussel['IsActivable']($phpMussel['Components']['Meta'][$Dependency]) ||
+                $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])
+            ) {
+                continue;
+            }
+            $phpMussel['UpdatesHandler-Activate']($Dependency);
+        }
+    }
 };
 
 /**
@@ -1599,7 +1631,6 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
     $ID = array_unique($ID);
     foreach ($ID as $ThisTarget) {
         if (!isset(
-            $phpMussel['Components']['Meta'][$ThisTarget]['Files'],
             $phpMussel['Components']['Meta'][$ThisTarget]['Files']['To'],
             $phpMussel['Components']['Meta'][$ThisTarget]['Remote']
         )) {

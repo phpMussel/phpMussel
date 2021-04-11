@@ -12,6 +12,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.04.11; Bug-fix; Maikuolan]: Some component aliases were missing; Fixed.
 
+- [2021.04.11; Maikuolan]: Updates handler activation closure will now activate
+  its own dependencies, too.
+
 === Version/Release 1.14.1 ===
 PATCH RELEASE.
 
