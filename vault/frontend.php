@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.08).
+ * This file: Front-end handler (last modified: 2021.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1733,6 +1733,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     /** Component aliases (needed to discern some dependencies). */
     $phpMussel['Components']['Installed Versions']['phpMussel Core'] = &$phpMussel['Components']['Installed Versions']['phpMussel'];
     $phpMussel['Components']['Available Versions']['phpMussel Core'] = &$phpMussel['Components']['Available Versions']['phpMussel'];
+    $phpMussel['Components']['Installed Versions']['phpMussel Front-End'] = &$phpMussel['Components']['Installed Versions']['phpMussel'];
+    $phpMussel['Components']['Available Versions']['phpMussel Front-End'] = &$phpMussel['Components']['Available Versions']['phpMussel'];
+    $phpMussel['Components']['Installed Versions']['Common Classes Package'] = &$phpMussel['Components']['Installed Versions']['phpMussel'];
+    $phpMussel['Components']['Available Versions']['Common Classes Package'] = &$phpMussel['Components']['Available Versions']['phpMussel'];
 
     /** Fetch available versions beforehand (needed for dependency checks). */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {

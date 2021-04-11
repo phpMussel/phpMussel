@@ -10,7 +10,7 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2021.04.11; Bug-fix; Maikuolan]: Some component aliases were missing; Fixed.
 
 === Version/Release 1.14.1 ===
 PATCH RELEASE.
