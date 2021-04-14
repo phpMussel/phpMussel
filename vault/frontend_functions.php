@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.11).
+ * This file: Front-end functions file (last modified: 2021.04.14).
  */
 
 /**
@@ -2541,14 +2541,7 @@ $phpMussel['CheckConstraints'] = function (array &$ThisComponent, $Source = fals
         return;
     }
     foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
-        if (strpos($Dependency, '{theme}') !== false && $phpMussel['Config']['template_data']['theme'] === 'default') {
-            continue;
-        }
-        $Dependency = str_replace(
-            ['{lang}', '{theme}'],
-            [$phpMussel['Config']['general']['lang'], $phpMussel['Config']['template_data']['theme']],
-            $Dependency
-        );
+        $Dependency = str_replace('{lang}', $phpMussel['Config']['general']['lang'], $Dependency);
         if ($Constraints === 'Latest') {
             if (isset($phpMussel['Components']['Available Versions'][$Dependency])) {
                 $Constraints = '>=' . $phpMussel['Components']['Available Versions'][$Dependency];
