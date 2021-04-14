@@ -13,6 +13,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.04.11; Maikuolan]: Updates handler activation closure will now activate
   its own dependencies, too.
 
+- [2021.04.14; Bug-fix; Maikuolan]: Including the configured theme as a default
+  dependency would prevent updates occurring for the component in question when
+  using custom themes; Removed the dependency to resolve the problem.
+
 === Version/Release 2.3.0 ===
 MINOR RELEASE.
 
