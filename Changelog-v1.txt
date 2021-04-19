@@ -19,6 +19,10 @@ Detailed version release guidelines for phpMussel can be found at:
   dependency would prevent updates occurring for the component in question when
   using custom themes; Removed the dependency to resolve the problem.
 
+- [2021.04.19; Bug-fix; Maikuolan]: BuildPath could potentially trigger
+  warnings when open_basedir is defined, causing logging, among various
+  other internal file operations, to fail (related to PHP bug 69240); Fixed.
+
 === Version/Release 1.14.1 ===
 PATCH RELEASE.
 
