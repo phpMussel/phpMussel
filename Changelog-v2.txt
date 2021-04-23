@@ -21,6 +21,9 @@ Detailed version release guidelines for phpMussel can be found at:
   warnings when open_basedir is defined, causing logging, among various
   other internal file operations, to fail (related to PHP bug 69240); Fixed.
 
+- [2021.04.23; Bug-fix; Maikuolan]: The "one-step solution" options available
+  at the front-end updates page were broken; Fixed.
+
 === Version/Release 2.3.0 ===
 MINOR RELEASE.
 
