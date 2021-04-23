@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.14).
+ * This file: Front-end functions file (last modified: 2021.04.23).
  */
 
 /**
@@ -1068,10 +1068,22 @@ $phpMussel['UpdatesSortFunc'] = function (array $Arr) use (&$phpMussel) {
  */
 $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
     /** Support for executor calls. */
-    if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
+    if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
         $Action = trim(substr($Action, 0, $Pos));
         $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
+    }
+
+    /** Strip empty IDs. */
+    if (is_array($ID)) {
+        $ID = array_filter($ID, function($Value) {
+            return $Value !== '';
+        });
+    }
+
+    /** Guard. */
+    if (empty($ID)) {
+        return;
     }
 
     /** Update (or install) a component. */
@@ -1081,13 +1093,16 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
     /** Update (or install) and activate a component (one-step solution). */
     if ($Action === 'update-and-activate-component') {
-        $phpMussel['UpdatesHandler-Update']($ID);
-        if (
-            isset($phpMussel['Components']['Meta'][$ID]) &&
-            $phpMussel['IsActivable']($ID) &&
-            !$phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ID])
-        ) {
-            $phpMussel['UpdatesHandler-Activate']($ID);
+        $phpMussel['Arrayify']($ID);
+        foreach ($ID as $ThisID) {
+            $phpMussel['UpdatesHandler-Update']([$ThisID]);
+            if (
+                isset($phpMussel['Components']['Meta'][$ThisID]) &&
+                $phpMussel['IsActivable']($phpMussel['Components']['Meta'][$ThisID]) &&
+                !$phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisID])
+            ) {
+                $phpMussel['UpdatesHandler-Activate']([$ThisID]);
+            }
         }
     }
 
@@ -1118,14 +1133,17 @@ $phpMussel['UpdatesHandler'] = function ($Action, $ID = '') use (&$phpMussel) {
 
     /** Deactivate and uninstall a component (one-step solution). */
     if ($Action === 'deactivate-and-uninstall-component') {
-        if (
-            isset($phpMussel['Components']['Meta'][$ID]) &&
-            $phpMussel['IsActivable']($ID) &&
-            $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ID])
-        ) {
-            $phpMussel['UpdatesHandler-Deactivate']($ID);
+        $phpMussel['Arrayify']($ID);
+        foreach ($ID as $ThisID) {
+            if (
+                isset($phpMussel['Components']['Meta'][$ThisID]) &&
+                $phpMussel['IsActivable']($phpMussel['Components']['Meta'][$ThisID]) &&
+                $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisID])
+            ) {
+                $phpMussel['UpdatesHandler-Deactivate']([$ThisID]);
+            }
+            $phpMussel['UpdatesHandler-Uninstall']([$ThisID]);
         }
-        $phpMussel['UpdatesHandler-Uninstall']($ID);
     }
 
     /** Process and empty executor queue. */
