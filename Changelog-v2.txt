@@ -58,7 +58,7 @@ MINOR RELEASE.
   front-end updates page and revamped related code and update mechanisms.
 
 Caleb M (Maikuolan),
-April 10, 2020.
+April 10, 2021.
 
 === Version/Release 2.2.0 ===
 MINOR RELEASE.
