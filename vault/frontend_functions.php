@@ -1078,7 +1078,7 @@ $phpMussel['UpdatesHandler'] = function (string $Action, $ID = '') use (&$phpMus
 
     /** Strip empty IDs. */
     if (is_array($ID)) {
-        $ID = array_filter($ID, function($Value) {
+        $ID = array_filter($ID, function ($Value) {
             return $Value !== '';
         });
     }
