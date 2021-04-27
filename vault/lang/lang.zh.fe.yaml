@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.04.07).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.04.27).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -377,12 +377,11 @@ tip_config: "你好，​{username}。​<br />配置页面允许您修改phpMus
 tip_fe_cookie_warning: "注意：phpMussel使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
 tip_file_manager: "你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。"
 tip_home: "你好，​{username}。​<br />这是phpMussel的前端主页。​从左侧的导航菜单中选择一个链接以继续。"
-tip_login: "标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>"
 tip_logs: "你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。"
 tip_pie_html: "单击组件名称以获取更多详细信息。"
 tip_quarantine: "你好，​{username}。​<br />此页面列出当前在隔离中的所有文件，并可以用来管理这些文件。"
 tip_quarantine_disabled: "注意：隔离目前禁用，但可以通过配置页面启用。"
-tip_see_the_documentation: "请参阅<a href="https://github.com/phpMussel/Docs/blob/master/readme.zh.md\#SECTION7" hreflang="zh-CN" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
+tip_see_the_documentation: "请参阅<a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.zh.md\#SECTION7" hreflang="zh-CN" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
 tip_siginfo: "你好，​{username}。<br />签名信息页面提供了有关当前活动签名的来源和类型的一些基本信息。"
 tip_statistics: "你好，​{username}。​<br />此页面显示了有关phpMussel安装的一些基本使用统计信息。"
 tip_statistics_disabled: "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.04.07).
+# This file: English language data for the front-end (last modified: 2021.04.27).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -381,12 +381,11 @@ tip_config: "Hello, {username}.<br />The configuration page allows you to modify
 tip_fe_cookie_warning: "Note: phpMussel uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."
 tip_file_manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
 tip_home: "Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue."
-tip_login: "Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>"
 tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile."
 tip_pie_html: "Click the component name for more details."
 tip_quarantine: "Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files."
 tip_quarantine_disabled: "Note: Quarantine is currently disabled, but can be enabled via the configuration page."
-tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
+tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
 tip_siginfo: "Hello, {username}.<br />The signature information page provides some basic information about the sources and types of the currently active signatures."
 tip_statistics: "Hello, {username}.<br />This page shows some basic usage statistics regarding your phpMussel installation."
 tip_statistics_disabled: "Note: Statistics tracking is currently disabled, but can be enabled via the configuration page."

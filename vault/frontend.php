@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.08).
+ * This file: Front-end handler (last modified: 2021.04.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -188,23 +188,6 @@ $phpMussel['MenuToggle'] = '<script type="text/javascript">' .
 $phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php', true);
 if (!empty($phpMussel['Pips_Path']) && is_readable($phpMussel['Pips_Path'])) {
     require $phpMussel['Pips_Path'];
-}
-
-/** Handle webfonts. */
-if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
-    $phpMussel['FE']['Template'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $phpMussel['FE']['Template']);
-} else {
-    $phpMussel['WebFontPos'] = [
-        'Begin' => strpos($phpMussel['FE']['Template'], '<!-- WebFont Begin -->'),
-        'End' => strpos($phpMussel['FE']['Template'], '<!-- WebFont End -->')
-    ];
-    if ($phpMussel['WebFontPos']['Begin'] !== false && $phpMussel['WebFontPos']['End'] !== false) {
-        $phpMussel['FE']['Template'] = (
-            substr($phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']) .
-            substr($phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20)
-        );
-    }
-    unset($phpMussel['WebFontPos']);
 }
 
 /** A fix for correctly displaying LTR/RTL text. */
@@ -646,7 +629,10 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
             $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
         );
     }
+}
 
+/** Only execute this code block for already logged in users. */
+if ($phpMussel['FE']['UserState'] === 1) {
     /** Where to find remote version information? */
     $phpMussel['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
 
@@ -763,7 +749,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('title_login'), $phpMussel['L10N']->getString('tip_login'), false);
+    $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('title_login'), '', false);
 
     if ($phpMussel['FE']['UserState'] === 2) {
         /** Provide the option to log out (omit home link). */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.04.07).
+# This file: Portuguese language data for the front-end (last modified: 2021.04.27).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -381,12 +381,11 @@ tip_config: "Olá, {username}.<br />A página de configuração permite que voc�
 tip_fe_cookie_warning: "Nota: phpMussel usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."
 tip_file_manager: "Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
 tip_home: "Olá, {username}.<br />Esta é a página principal do phpMussel front-end. Selecione um link no menu de navegação à esquerda para continuar."
-tip_login: "Nome de usuário padrão: <span class="txtRd">admin</span> – Senha padrão: <span class="txtRd">password</span>"
 tip_logs: "Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro."
 tip_pie_html: "Clique no nome do componente para mais detalhes."
 tip_quarantine: "Olá, {username}.<br />Esta página lista todos os arquivos atualmente em quarentena e facilita o gerenciamento desses arquivos."
 tip_quarantine_disabled: "Nota: A quarentena está atualmente desativada, mas pode ser ativada através da página de configuração."
-tip_see_the_documentation: "Consulte a <a href="https://github.com/phpMussel/Docs/blob/master/readme.pt.md\#SECTION7" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+tip_see_the_documentation: "Consulte a <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.pt.md\#SECTION7" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
 tip_siginfo: "Olá, {username}.<br />A página de informações de assinaturas fornece algumas informações básicas sobre as origens e os tipos das assinaturas atualmente ativas."
 tip_statistics: "Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do phpMussel."
 tip_statistics_disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."
