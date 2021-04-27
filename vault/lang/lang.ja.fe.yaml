@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.04.07).
+# This file: Japanese language data for the front-end (last modified: 2021.04.27).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -376,12 +376,11 @@ tip_config: "こんにちは、​{username}。​<br />コンフィグレーシ
 tip_fe_cookie_warning: "注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。"
 tip_file_manager: "こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。"
 tip_home: "こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。"
-tip_login: "デフォルト・ユーザー名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>"
 tip_logs: "こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。"
 tip_pie_html: "詳細についてはコンポーネント名をクリックしてください。"
 tip_quarantine: "こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。"
 tip_quarantine_disabled: "注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。"
-tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/phpMussel/Docs/blob/master/readme.ja.md\#SECTION7" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
+tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ja.md\#SECTION7" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
 tip_siginfo: "こんにちは、​{username}。<br />シグネチャ情報ページには、現在アクティブなシグネチャのソースとタイプに関する基本的な情報が表示されます。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、phpMusselのインストールに関する基本的な使用状況の統計情報が表示されます。"
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"

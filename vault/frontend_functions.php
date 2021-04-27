@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.23).
+ * This file: Front-end functions file (last modified: 2021.04.27).
  */
 
 /**
@@ -2083,7 +2083,32 @@ $phpMussel['SendOutput'] = function () use (&$phpMussel) {
     if ($phpMussel['FE']['JS']) {
         $phpMussel['FE']['JS'] = "\n<script type=\"text/javascript\">" . $phpMussel['FE']['JS'] . '</script>';
     }
-    return $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['FE']['Template']);
+    $Template = $phpMussel['FE']['Template'];
+    $Labels = [];
+    $Segments = [];
+    if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
+        $Labels[] = 'WebFont';
+    } else {
+        $Segments[] = 'WebFont';
+    }
+    if (isset($phpMussel['FE']['UserState']) && $phpMussel['FE']['UserState'] === 1) {
+        $Labels[] = 'Logged In';
+        $Segments[] = 'Logged Out';
+    } else {
+        $Labels[] = 'Logged Out';
+        $Segments[] = 'Logged In';
+    }
+    foreach ($Labels as $Label) {
+        $Template = str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
+    }
+    foreach ($Segments as $Segment) {
+        $BPos = strpos($Template, '<!-- ' . $Segment . ' Begin -->');
+        $EPos = strpos($Template, '<!-- ' . $Segment . ' End -->');
+        if ($BPos !== false && $EPos !== false) {
+            $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
+        }
+    }
+    return $phpMussel['ParseVars'](array_merge($phpMussel['L10N']->Data, $phpMussel['FE']), $Template);
 };
 
 /**

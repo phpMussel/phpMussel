@@ -26,6 +26,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.04.23; Bug-fix; Maikuolan]: The "one-step solution" options available
   at the front-end updates page were broken; Fixed.
 
+- [2021.04.27; Maikuolan]: Removed the default username/password tip from the
+  front-end login page.
+
 === Version/Release 1.14.1 ===
 PATCH RELEASE.
 
