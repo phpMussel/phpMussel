@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.27).
+ * This file: Front-end functions file (last modified: 2021.05.01).
  */
 
 /**
@@ -2186,11 +2186,8 @@ $phpMussel['FELogger'] = function (string $IPAddr, string $User, string $Message
     $Data = $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $phpMussel['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
-    $WriteMode = (!file_exists($File) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'wb' : 'ab';
-
+    $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($File) || ($Truncate > 0 && filesize($File) >= $Truncate)) ? 'wb' : 'ab';
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);

@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.3.1-DEV+21116630
+ Version: 2.3.1-DEV+21120494
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -42,7 +42,7 @@ phpMussel Core:
    - 7008413d2b1fbd2514e817b498442c2a5897e65f1da03ad2cc2c5d8fba67df10:1744
    - a0f7ad8de5e4ebd009e1d519b3ec87fdfd22c9deba195cb52be17f9faea9127e:8245
    - 9ef753fe6578160ebea345e11f9177eb2f262572105b2e46ecc2604931c393ed:16820
-   - 504052f4974d1c2992aa98dc531f92828c7482331ca88e532d39bcf1ff0f1937:7631
+   - 7ac9a9a27a888a4eca182c3ecc41adbdac0636e44ad253e4d5abdd427605e430:7465
    - 5aeced1909d75ec38b677e8a7bf3d518a6d244d1a1a3ecc5723627f10307f344:232613
    - d37d07a98a16177ffd05bc7b6de3da1a35b378e069e92d6b3bba9fb5cc033c19:6409
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
@@ -50,7 +50,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.3.1-DEV+21116630
+ Version: 2.3.1-DEV+21120494
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -170,7 +170,7 @@ phpMussel Front-End:
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
    - f14f9c7fec4b1b81d38b5c71f9ccc746ad61d7fda3e53fe21b72b6e42b68416f:168889
-   - e3e8127badb9a487d35797b5439b6a567aa59fb5dd09b7321d87fee357028484:116851
+   - 2fc954ecdd3f428f058c611b95d0224db68b7752f5c0157de3a0440e25ccff84:116821
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
