@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.03.18).
+ * This file: Event handlers file (last modified: 2021.05.01).
  */
 
 /**
@@ -53,11 +53,8 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
         'scan_errors' => isset($phpMussel['InstanceCache']['scan_errors']) ? $phpMussel['InstanceCache']['scan_errors'] : 0,
         'detections' => $ScanData
     ]) . "\n";
-    $WriteMode = (!file_exists($File) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'wb' : 'ab';
-
+    $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($File) || ($Truncate > 0 && filesize($File) >= $Truncate)) ? 'wb' : 'ab';
     $Stream = fopen($File, $WriteMode);
     fwrite($Stream, $Data);
     fclose($Stream);
@@ -86,12 +83,9 @@ $phpMussel['Events']->addHandler('writeToScanLog', function ($Data) use (&$phpMu
         $Data = $phpMussel['safety'] . "\n" . $Data;
         $WriteMode = 'wb';
     } else {
-        $WriteMode = (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        ) ? 'wb' : 'ab';
+        $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+        $WriteMode = ($Truncate > 0 && filesize($File) >= $Truncate) ? 'wb' : 'ab';
     }
-
     $Handle = fopen($File, 'ab');
     fwrite($Handle, $Data);
     fclose($Handle);
@@ -121,12 +115,9 @@ $phpMussel['Events']->addHandler('writeToScanKillsLog', function ($Data) use (&$
         $Data = $phpMussel['safety'] . "\n\n" . $Data;
         $WriteMode = 'wb';
     } else {
-        $WriteMode = (
-            $phpMussel['Config']['general']['truncate'] > 0 &&
-            filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-        ) ? 'wb' : 'ab';
+        $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+        $WriteMode = ($Truncate > 0 && filesize($File) >= $Truncate) ? 'wb' : 'ab';
     }
-
     $Stream = fopen($File, $WriteMode);
     fwrite($Stream, $Data);
     fclose($Stream);
@@ -178,17 +169,14 @@ $phpMussel['Events']->addHandler('final', function () use (&$phpMussel) {
         return false;
     }
 
-    if (!file_exists($File) || !filesize($File) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) {
+    $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+    if (!file_exists($File) || !filesize($File) || ($Truncate > 0 && filesize($File) >= $Truncate)) {
         $WriteMode = 'wb';
         $Data = $phpMussel['L10N']->getString('error_log_header') . "\n=====\n" . $phpMussel['Pending-Error-Log-Data'];
     } else {
         $WriteMode = 'ab';
         $Data = $phpMussel['Pending-Error-Log-Data'];
     }
-
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
@@ -213,11 +201,8 @@ $phpMussel['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) us
         return false;
     }
 
-    $WriteMode = (!file_exists($EventLog) || (
-        $phpMussel['Config']['general']['truncate'] > 0 &&
-        filesize($EventLog) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-    )) ? 'wb' : 'ab';
-
+    $Truncate = $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($EventLog) || ($Truncate > 0 && filesize($EventLog) >= $Truncate)) ? 'wb' : 'ab';
     $Handle = fopen($EventLog, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
