@@ -33,7 +33,7 @@ a:active,a:focus{color:red}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
 .dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
 .gen,input,select,textarea{font-family:'Open Sans',sans-serif,Verdana,Arial,Helvetica}
-.gen{letter-spacing:0px;white-space:nowrap}
+.gen{letter-spacing:0;white-space:nowrap}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
 .h1,.h1f,.h2,.h2f,.r,.rf{width:25%}
 .h1,.h3,.spanner{background-color:#eee}
@@ -56,7 +56,7 @@ a:active,a:focus{color:red}
 .vr{float:{FE_Align};width:1px;height:inherit;background-color:#900}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
 @keyframes UplT{0%{opacity:0}100%{opacity:1}}
-.mob{display:none}
+.comSub,.mob{display:none}
 input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:center {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}')}
 input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-image:url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
 input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Align_Reverse}-radius:0;margin-{FE_Align_Reverse}:0}
@@ -77,7 +77,6 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
-.comSub{display:none}
 .active{display:block}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
@@ -93,6 +92,6 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 #testnavlink::before{content:"🔬"}
 #updtnavlink::before{content:"🔄"}
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
-select{height:20px;padding-top:0;padding-bottom:0}
+select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
-td code~input{vertical-align:middle}
+td code~input,td code~select{vertical-align:middle}
