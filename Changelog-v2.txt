@@ -31,6 +31,7 @@ Detailed version release guidelines for phpMussel can be found at:
   properly; Fixed.
 
 - [2021.05.07; Maikuolan]: Very slightly reworked/improved the front-end CSS.
+  File manager update: Successfully uploaded files now return a 201 status.
 
 === Version/Release 2.3.0 ===
 MINOR RELEASE.

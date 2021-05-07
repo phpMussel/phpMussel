@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.27).
+ * This file: Front-end handler (last modified: 2021.05.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2375,8 +2375,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
 
         /** Move the newly uploaded file to the designated location. */
         if ($phpMussel['SafeToContinue']) {
-            rename($_FILES['upload-file']['tmp_name'], $phpMussel['Vault'] . $_FILES['upload-file']['name']);
-            $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_file_uploaded');
+            if (rename($_FILES['upload-file']['tmp_name'], $phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_file_uploaded');
+                header('HTTP/1.0 201 Created');
+                header('HTTP/1.1 201 Created');
+                header('Status: 201 Created');
+            } else {
+                $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_upload_error');
+            }
         } else {
             $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_upload_error');
         }
