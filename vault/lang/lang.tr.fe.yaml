@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.04.27).
+# This file: Turkish language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -197,6 +197,7 @@ label_backup_location: "Repository yedek konumları (acil bir durumda, ya da her
 label_blocked: "Yüklemeler engellendi"
 label_branch: "Branşı en yeni kararlı:"
 label_clientinfo: "Kullanıcı bilgisi:"
+label_default: "Varsayılan"
 label_dependencies: "Gereksinimler:"
 label_events: "Tara olayları"
 label_expected: "Beklenen"

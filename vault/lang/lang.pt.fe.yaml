@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.04.27).
+# This file: Portuguese language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -199,6 +199,7 @@ label_backup_location: "Locais de backup de repositório (em caso de emergência
 label_blocked: "Uploads bloqueados"
 label_branch: "Mais novo de estável de branch:"
 label_clientinfo: "Informação ao cliente:"
+label_default: "Padrão"
 label_dependencies: "Dependências:"
 label_events: "Eventos de análise"
 label_expected: "Esperado"

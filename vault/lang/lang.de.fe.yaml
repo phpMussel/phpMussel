@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.04.27).
+# This file: German language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -199,6 +199,7 @@ label_backup_location: "Repository-Sicherungsspeicherorte (im Notfall, oder wenn
 label_blocked: "Uploads blockiert"
 label_branch: "Branch neueste stabil:"
 label_clientinfo: "Client Information:"
+label_default: "Standardeinstellung"
 label_dependencies: "Abhängigkeiten:"
 label_events: "Scan-Veranstaltungen"
 label_expected: "Erwartet"

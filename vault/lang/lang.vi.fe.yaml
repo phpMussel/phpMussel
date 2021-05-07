@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.04.27).
+# This file: Vietnamese language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -197,6 +197,7 @@ label_backup_location: "Vị trí sao lưu kho lưu trữ (trong trường hợp
 label_blocked: "Tải lên bị chặn"
 label_branch: "Chi nhánh ổn định mới nhất:"
 label_clientinfo: "Thông tin người dùng:"
+label_default: "Mặc định"
 label_dependencies: "Sự phụ thuộc:"
 label_events: "Sự kiện quét"
 label_expected: "Kỳ vọng"
