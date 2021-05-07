@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.04.27).
+# This file: Norwegian language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -198,6 +198,7 @@ label_backup_location: "Repository backup steder (i nødstilfelle, eller hvis al
 label_blocked: "Opplastinger blokkert"
 label_branch: "Branch siste stabile:"
 label_clientinfo: "Klientinformasjon:"
+label_default: "Standardverdi"
 label_dependencies: "Avhengigheter:"
 label_events: "Skann hendelser"
 label_expected: "Forventet"

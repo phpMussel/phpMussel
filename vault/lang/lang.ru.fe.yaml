@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.04.27).
+# This file: Russian language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -201,6 +201,7 @@ label_backup_location: "Расположение резервных хранил
 label_blocked: "Загружает блокировки"
 label_branch: "Ветвь последние стабильный:"
 label_clientinfo: "Информация о клиенте:"
+label_default: "Стандарт"
 label_dependencies: "Зависимости:"
 label_events: "События сканирования"
 label_expected: "Ожидаемый"

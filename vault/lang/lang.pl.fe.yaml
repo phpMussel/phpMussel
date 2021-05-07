@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.04.27).
+# This file: Polish language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -201,6 +201,7 @@ label_backup_location: "Lokalizacje kopii zapasowych repozytorium (w nagłym wyp
 label_blocked: "Przesyłanie zablokowane"
 label_branch: "Oddział najnowsza stabilna:"
 label_clientinfo: "Informacja klientów:"
+label_default: "Domyślna"
 label_dependencies: "Zależności:"
 label_events: "Zdarzenia skanowania"
 label_expected: "Spodziewany"

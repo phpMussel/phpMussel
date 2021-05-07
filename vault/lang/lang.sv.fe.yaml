@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.04.27).
+# This file: Swedish language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -198,6 +198,7 @@ label_backup_location: "Repository backup platser (i nödfall, eller om allt ann
 label_blocked: "Uppladdningar blockerade"
 label_branch: "Branch senaste stabila:"
 label_clientinfo: "Klientinformation:"
+label_default: "Standard"
 label_dependencies: "Programvarukrav:"
 label_events: "Skanna händelser"
 label_expected: "Förväntad"
