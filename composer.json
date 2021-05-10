@@ -20,5 +20,8 @@
         "phpmussel/web": "^3.1.1",
         "phpmussel/phpmailer": "^3.1.1",
         "ext-pcre": "*"
+    },
+    "replace": {
+        "maikuolan/phpmussel": "self.version"
     }
 }
