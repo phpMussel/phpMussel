@@ -25,5 +25,8 @@
     },
     "scripts": {
         "test": "@php tests.php"
+    },
+    "replace": {
+        "maikuolan/phpmussel": "self.version"
     }
 }
