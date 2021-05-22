@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.3.1-DEV+21126472
+ Version: 2.3.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -43,14 +43,14 @@ phpMussel Core:
    - a0f7ad8de5e4ebd009e1d519b3ec87fdfd22c9deba195cb52be17f9faea9127e:8245
    - bab6aebff81757f6e7abdaaeb90d7317e8fb66882f3c8b6fb2245e3d91a699a1:16828
    - 7ac9a9a27a888a4eca182c3ecc41adbdac0636e44ad253e4d5abdd427605e430:7465
-   - 5aeced1909d75ec38b677e8a7bf3d518a6d244d1a1a3ecc5723627f10307f344:232613
+   - 916375b91a23979eddf5becfde2172ee7fb47d8876129d5262e64ac7fba10bdb:232491
    - d37d07a98a16177ffd05bc7b6de3da1a35b378e069e92d6b3bba9fb5cc033c19:6409
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.3.1-DEV+21129708
+ Version: 2.3.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -318,8 +318,8 @@ l10n/bn:
    - lang/lang.bn.fe.yaml
    - lang/lang.bn.yaml
   Checksum:
-   - 90cedc8ead2c0ea27cc9331805856c590ea50a25342219fb93717d19f549b29e:98072
-   - c956adc8f630da5141296c9ae1b06b4b20db04dd6b3e7619a92faec9dcaf9b3e:11344
+   - 65400b0fa9518264d04bfed88164ea3a896b9782caf5bd846b82812690e799ec:98082
+   - 3c286da1f6aede2cdecc2f619f2df3bb22c11cd319400e32bae2227dc6fadba2:11354
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.19).
+ * This file: Functions file (last modified: 2021.05.07).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -5122,9 +5122,9 @@ $phpMussel['GZCompressFile'] = function (string $File): bool {
  * @return bool False when log rotation is disabled or errors occur; True otherwise.
  */
 $phpMussel['LogRotation'] = function (string $Pattern) use (&$phpMussel): bool {
-    $Action = empty($phpMussel['Config']['general']['log_rotation_action']) ? '' : $phpMussel['Config']['general']['log_rotation_action'];
-    $Limit = empty($phpMussel['Config']['general']['log_rotation_limit']) ? 0 : $phpMussel['Config']['general']['log_rotation_limit'];
-    if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {
+    $Limit = $phpMussel['Config']['general']['log_rotation_limit'] ?? 0;
+    $Action = $phpMussel['Config']['general']['log_rotation_action'] ?? '';
+    if ($Limit < 1 || ($Action !== 'Delete' && $Action !== 'Archive')) {
         return false;
     }
     $Pattern = $phpMussel['BuildLogPattern']($Pattern);
