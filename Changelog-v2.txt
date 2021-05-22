@@ -37,6 +37,8 @@ Detailed version release guidelines for phpMussel can be found at:
   being immediately dumped instead of being written to the corresponding
   component metadata files; Fixed.
 
+- [2021.05.22; Maikuolan]: Synced common classes package.
+
 === Version/Release 2.3.0 ===
 MINOR RELEASE.
 
@@ -55,7 +57,7 @@ MINOR RELEASE.
 - [2021.02.07; NEW FEATURE; Maikuolan]: Added the ability to hide the phpMussel
   version used.
 
-- [2021.02.20; Maikuolan]: Sync common classes package.
+- [2021.02.20; Maikuolan]: Synced common classes package.
 
 - [2021.02.22; Bug-fix; Maikuolan]: Reactivate flag within the front-end
   updater's internal procedure for updating and repairing components sometimes

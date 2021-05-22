@@ -5,7 +5,7 @@ phpMussel Core:
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
-  Common Classes Package: ^2.6.0.1
+  Common Classes Package: ^2.6.1
   phpMussel Front-End: Latest
   l10n/{lang}: >=2021.95.583
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
@@ -54,7 +54,7 @@ phpMussel Front-End:
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
-  Common Classes Package: ^2.6.0.1
+  Common Classes Package: ^2.6.1
   phpMussel Core: Latest
   l10n/{lang}: >=2021.95.583
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt
@@ -218,7 +218,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.6.0.1
+ Version: 2.6.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -249,17 +249,17 @@ Common Classes Package:
    - classes/Maikuolan/Request.php
    - classes/Maikuolan/YAML.php
   Checksum:
-   - 5982d38920ed2ebbb3cfd73b64f7818ec42a770328b7ad806956680432eac428:26236
-   - ff74a0ac1606b17ca6a0a0cb62e89d2540170e736504b503ccf6cd5e0b0d394b:3848
-   - 66fa03ecafc419f7e0d2b9080671a542f3919132c58148ad05656d2027a60c48:4491
-   - 17dfa6fbccae26975bd444feb8d8bfc1d6e9accc78a8e1476967664779cbd47a:29309
-   - f9a9638c077d7ab7d8b39812e22e75f58c9d5204fd300f392e6d1c895e1b8675:3653
-   - c567cbc6d7cab8a61e61ed2fc921490a5c80130dded0b541acf93185c3003157:11422
-   - a911d60fb1c01458b8d9d00eb7b15841a32a9bb6e276d8ac184972d05be4a48f:8630
-   - 7dca6ed2c07fa5c4c2f01059a42466d562aa9b4197a7e21c6ddbae25715aff63:37317
-   - 6123c324d1e446a1db10d9e7576ad1543ad615119038c058236ba16bab0b967b:11653
-   - 7ff645221ec021e4562f62cd219af1dd0b8ef434bcc5186a4a6d69e8954994a5:7736
-   - 7d1230049d0e440cd30babfa3a962975a0f19dceee8062959c923d9f81c908dd:12883
+   - 242bc95d59d21424a19c1ff2d1edd870d5de45a95b6bb2f17905fd10dd2bd990:26560
+   - 9d8f02b68939ec77f47d53b6c6887bdff0f4411a14a5c922261deea3255f61ba:4125
+   - b564350e2f8473a84b57b2fcf656a0013f5838c2d16f0fd0d6d9301f95f4e408:4775
+   - 81aeaf60b0dda2bc58cdbc1f8bf0dc8822634fb2d267951339f488ba0ed23b21:29808
+   - de0e156044bc7023392f6d23ca3d89ddd15da2f09972b74157ff91e7d7a5813f:3910
+   - d8ba08a45022b7f5588e6baf99d434a1a24855226dcd17b6543b2f0c5c0984d6:16349
+   - 59a32cd77ecee23e001a0349bf7cf7ca8ac6745c66e8e6018facc5225946b41b:9264
+   - 3fa857a64503b8c33c7b1ebe8d09441b7f3dabd9f17b1c237bbd410861b011a3:37594
+   - 97a76bc493c74dd232ff752aab4c618de3231211e2ce6ad027f8a14054e3971d:11962
+   - 6bef4b61595c9bface65bac4f38c9c25b3a3081e61e6f26b3a9374a6f873a368:7993
+   - 3e32fa6f4838a67c2961fe870ac0637339594502aa204e420202092f23d7309f:13160
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

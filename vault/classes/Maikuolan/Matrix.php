@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2021.04.05).
+ * Matrix handler (last modified: 2021.05.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -36,6 +36,13 @@ class Matrix
      * @var mixed The default data to be used to populate each coordinate.
      */
     public $Data = [];
+
+    /**
+     * @var string The tag/release the version of this file belongs to (might
+     *      be needed by some implementations to ensure compatibility).
+     * @link https://github.com/Maikuolan/Common/tags
+     */
+    public const VERSION = '2.6.1';
 
     /**
      * Create the matrix.
@@ -134,8 +141,14 @@ class Matrix
                     $Last = -1;
                 }
             }
-            $Indexes[] = ['First' => $First, 'Last' => $Last];
+            $Indexes[] = ['First' => (int)$First, 'Last' => (int)$Last];
             $Dimension++;
+        }
+
+        /** Exception: Number of indexes doesn't match number of dimensions. */
+        if (($IndexCount = count($Indexes)) !== $this->Dimensions) {
+            throw new \Exception(sprintf('iterateCallback() expects %d dimensions, but %d were given', $this->Dimensions, $IndexCount));
+            return;
         }
 
         /** Perform iteration. */
@@ -165,6 +178,7 @@ class Matrix
      * @param array $Indexes The coordinates to iterate over.
      * @param callable $Callback The callback function to iterate.
      * @param array $Data Other data optionally passed to the callback.
+     * @return \Generator
      */
     private function iterateCallbackGenerator(array $Indexes, callable $Callback, array $Data): \Generator
     {
@@ -180,6 +194,7 @@ class Matrix
      * @param string $KeyRoot Need to supply the correct key for return values.
      * @param callable $Callback The callback function to iterate.
      * @param array $Data Other data optionally passed to the callback.
+     * @return \Generator
      */
     private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot = '', callable $Callback, array $Data): \Generator
     {
@@ -191,7 +206,6 @@ class Matrix
 
         /** Iterate through ranges. */
         for ($Index['Current'] = $Index['First']; $Index['Current'] <= $Index['Last']; $Index['Current']++) {
-
             /** Guard. */
             if (!isset($Matrix[$Index['Current']])) {
                 continue;
@@ -204,7 +218,6 @@ class Matrix
             $Key = $KeyRoot . (strlen($KeyRoot) ? ',' : '') . $Index['Current'];
 
             if (is_numeric($Index['Current'])) {
-
                 /** Get previous coordinate. */
                 if (isset($Matrix[$Index['Current'] - 1])) {
                     $Previous = &$Matrix[$Index['Current'] - 1];

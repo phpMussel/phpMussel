@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2021.03.03).
+ * A simple, unified cache handler (last modified: 2021.05.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -156,9 +156,17 @@ class Cache
     public const KEY_SIZE_LIMIT = 128;
 
     /**
+     * @var string The tag/release the version of this file belongs to (might
+     *      be needed by some implementations to ensure compatibility).
+     * @link https://github.com/Maikuolan/Common/tags
+     */
+    public const VERSION = '2.6.1';
+
+    /**
      * Construct object and set working data if needed.
      *
      * @param array|null $WorkingData An optional array of default cache data.
+     * @return void
      */
     public function __construct(array $WorkingData = null)
     {
@@ -169,6 +177,8 @@ class Cache
 
     /**
      * Object destructor. Used to close any open connections, save cache to disk, etc.
+     *
+     * @return void
      */
     public function __destruct()
     {
@@ -754,6 +764,7 @@ class Cache
      *
      * @param string $Key The key to check. Transforms the key if it doesn't
      *      conform; Does nothing otherwise.
+     * @return void
      */
     private function enforceKeyLimit(string &$Key)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2021.03.11).
+ * Demojibakefier (last modified: 2021.05.22).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -47,11 +47,21 @@ class Demojibakefier
      */
     public $Segments = 65536;
 
-    /** Some early control characters (w/o tabs, CR, or LF). */
-    public const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
+    /**
+     * @var string Some early control characters (w/o tabs, CR, or LF).
+     */
+    const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
+
+    /**
+     * @var string The tag/release the version of this file belongs to (might
+     *      be needed by some implementations to ensure compatibility).
+     * @link https://github.com/Maikuolan/Common/tags
+     */
+    public const VERSION = '2.6.1';
 
     /**
      * @param string $NormaliseTo The encoding to normalise to (defaults to UTF-8).
+     * @return void
      */
     public function __construct(string $NormaliseTo = '')
     {
@@ -146,13 +156,24 @@ class Demojibakefier
         if ($Encoding === '') {
             $Encoding = $this->NormaliseTo;
         }
-        if ($Encoding === 'UTF-8') { // See: https://tools.ietf.org/html/rfc3629#section-4
+        /**
+         * @link https://tools.ietf.org/html/rfc3629#section-4
+         */
+        if ($Encoding === 'UTF-8') {
             return !preg_match('~[' . self::CTRL0 . '\x7f\xc0\xc1\xf5-\xff]|[\xc2-\xdf](?![\x80-\xbf])|\xe0(?![\xa0-\xbf][\x80-\xbf])|[\xe1-\xec](?![\x80-\xbf]{2})|\xed(?![\x80-\x9f][\x80-\xbf])|\xf0(?![\x90-\xbf][\x80-\xbf]{2})[\xf0-\xf3](?![\x80-\xbf]{3})\xf4(?![\x80-\x9f][\x80-\xbf]{2})~', $String);
         }
-        if ($Encoding === 'UTF-16BE') { // See: https://en.wikipedia.org/wiki/UTF-16 and https://unicode.org/faq/utf_bom.html
+        /**
+         * @link https://en.wikipedia.org/wiki/UTF-16
+         * @link https://unicode.org/faq/utf_bom.html
+         */
+        if ($Encoding === 'UTF-16BE') {
             return !(strlen($String) % 2) && !preg_match('~[\xd8-\xdb][\x00-\xff](?![\xdc-\xdf][\x00-\xff])|(?<![\xd8-\xdb][\x00-\xff])[\xdc-\xdf][\x00-\xff]~', $String);
         }
-        if ($Encoding === 'UTF-16LE') { // See: https://en.wikipedia.org/wiki/UTF-16 and https://unicode.org/faq/utf_bom.html
+        /**
+         * @link https://en.wikipedia.org/wiki/UTF-16
+         * @link https://unicode.org/faq/utf_bom.html
+         */
+        if ($Encoding === 'UTF-16LE') {
             return !(strlen($String) % 2) && !preg_match('~[\x00-\xff][\xdc-\xdf](?![\x00-\xff][\xd8-\xdb])|(?<![\x00-\xff][\xdc-\xdf])[\x00-\xff][\xd8-\xdb]~', $String);
         }
         if (preg_match('~^ISO-8859-(?:[12459]|1[03456])$~', $Encoding)) {
@@ -212,10 +233,17 @@ class Demojibakefier
         if ($Encoding === 'JOHAB') {
             return !preg_match('~[' . self::CTRL0 . '\x7f\xff]|(?<![\x84-\xd3\xd8-\xde\xe0-\xf9])[\xd4-\xd7\xdf\xfa-\xfe]~', $String);
         }
-        if ($Encoding === 'UCS-2') { // See: https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
+        /**
+         * @link https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
+         */
+        if ($Encoding === 'UCS-2') {
             return !(strlen($String) % 2);
         }
-        if (preg_match('~^UCS-4|UTF-32[BL]E$~', $Encoding)) { // See: https://en.wikipedia.org/wiki/Universal_Coded_Character_Set and https://en.wikipedia.org/wiki/UTF-32
+        /**
+         * @link https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
+         * @link https://en.wikipedia.org/wiki/UTF-32
+         */
+        if (preg_match('~^UCS-4|UTF-32[BL]E$~', $Encoding)) {
             return !(strlen($String) % 4);
         }
         if (preg_match('~^CP(?:[47]37|86[012356])$~', $Encoding)) {
@@ -502,7 +530,7 @@ class Demojibakefier
 
     /**
      * Calculate the shannon entropy of a string.
-     * See: https://en.wikipedia.org/wiki/Entropy_(information_theory)
+     * @link https://en.wikipedia.org/wiki/Entropy_(information_theory)
      *
      * @param string $String The string to check.
      * @return float|int The shannon entropy of the string.
