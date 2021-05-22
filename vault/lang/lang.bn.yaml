@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2021.03.20).
+# This file: Bangla language data (last modified: 2021.05.09).
 ##/
 
 # Language settings.
@@ -61,7 +61,7 @@ field_date: "তারিখ"
 field_header_hash_reconstruction: "হাশ স্বাক্ষর পুনর্গঠন"
 field_header_pe_reconstruction: "PE বিভাগীয় স্বাক্ষর পুনর্গঠন"
 field_header_scan_results_why_flagged: "স্ক্যান ফলাফল (কেন পতাকাঙ্কিত)"
-field_ip_address: "IP ঠিকানা"
+field_ip_address: "আইপি ঠিকানা"
 file: "ফাইল"
 filesize_limit_exceeded: "ফাইলের আকার সীমা অতিক্রম করেছে"
 filetype_blacklisted: "ফাইলের ধরন কালো তালিকাতে রয়েছে।"
