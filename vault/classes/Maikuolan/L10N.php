@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2020.06.11).
+ * L10N handler (last modified: 2021.05.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -47,20 +47,41 @@ class L10N
      */
     public $Fallback = [];
 
-    /** For when there aren't multiple forms. */
+    /**
+     * @var string The tag/release the version of this file belongs to (might
+     *      be needed by some implementations to ensure compatibility).
+     * @link https://github.com/Maikuolan/Common/tags
+     */
+    const VERSION = '1.6.1';
+
+    /**
+     * For when there aren't multiple forms.
+     *
+     * @return int Always 0, since always the same.
+     */
     private function int1()
     {
         return 0;
     }
 
-    /** For e.g., Tagalog. */
+    /**
+     * Two grammatical numbers, type one. For e.g., Tagalog.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function int2Type1($Int)
     {
         $Tail = $Int % 10;
         return ($Tail === 4 || $Tail === 6 || $Tail === 9) ? 1 : 0;
     }
 
-    /** For e.g., Icelandic, Macedonian. */
+    /**
+     * Two grammatical numbers, type two. For e.g., Icelandic, Macedonian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function int2Type2($Int)
     {
         $Tail = $Int % 10;
@@ -68,19 +89,36 @@ class L10N
         return ($Tail === 1 && $Tail2 !== 11) ? 0 : 1;
     }
 
-    /** For e.g., Armenian, Bangla, French, Hindi, Marathi, Zulu. */
+    /**
+     * Two grammatical numbers, type three. For e.g., Armenian, Bangla,
+     * French, Hindi, Marathi, Zulu.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function int2Type3($Int)
     {
         return ($Int === 0 || $Int === 1) ? 0 : 1;
     }
 
-    /** For e.g., Bulgarian, Danish, Dutch, English, Estonian, German, Greek, Italian. */
+    /**
+     * Two grammatical numbers, type four. For e.g., Bulgarian, Danish,
+     * Dutch, English, Estonian, German, Greek, Italian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function int2Type4($Int)
     {
         return ($Int === 1) ? 0 : 1;
     }
 
-    /** For e.g., Latvian, Prussian. */
+    /**
+     * Three grammatical numbers, type one. For e.g., Latvian, Prussian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form. 2: Zero form.
+     */
     private function int3Type1($Int)
     {
         $Tail = $Int % 10;
@@ -91,7 +129,12 @@ class L10N
         return ($Tail === 1) ? 0 : 1;
     }
 
-    /** For e.g., Colognian, Langi. */
+    /**
+     * Three grammatical numbers, type two. For e.g., Colognian, Langi.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Other form. 2: Zero form.
+     */
     private function int3Type2($Int)
     {
         if ($Int === 0) {
@@ -100,16 +143,27 @@ class L10N
         return ($Int === 1) ? 0 : 1;
     }
 
-    /** For e.g., Cornish, Inuktitut. */
+    /**
+     * Three grammatical numbers, type three. For e.g., Cornish, Inuktitut.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Other form.
+     */
     private function int3Type3($Int)
     {
         if ($Int === 2) {
-            return 2;
+            return 1;
         }
-        return ($Int === 1) ? 0 : 1;
+        return ($Int === 1) ? 0 : 2;
     }
 
-    /** For e.g., Russian, Ukrainian, Bosnian, Croatian, Serbian. */
+    /**
+     * Three grammatical numbers, type four. For e.g., Russian, Ukrainian,
+     * Bosnian, Croatian, Serbian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Many form.
+     */
     private function int3Type4($Int)
     {
         $Tail = $Int % 10;
@@ -120,7 +174,12 @@ class L10N
         return ($Tail >= 2 && $Tail <= 4 && ($Tail2 < 10 || $Tail2 >= 20)) ? 1 : 2;
     }
 
-    /** For e.g., Polish. */
+    /**
+     * Three grammatical numbers, type five. For e.g., Polish.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Many form.
+     */
     private function int3Type5($Int)
     {
         if ($Int === 1) {
@@ -131,7 +190,12 @@ class L10N
         return ($Tail >= 2 && $Tail <= 4 && ($Tail2 < 10 || $Tail2 >= 20)) ? 1 : 2;
     }
 
-    /** For e.g., Lithuanian. */
+    /**
+     * Three grammatical numbers, type six. For e.g., Lithuanian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Other form.
+     */
     private function int3Type6($Int)
     {
         $Tail = $Int % 10;
@@ -142,7 +206,12 @@ class L10N
         return ($Tail === 1) ? 0 : 1;
     }
 
-    /** For e.g., Tachelhit. */
+    /**
+     * Three grammatical numbers, type seven. For e.g., Tachelhit.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Other form.
+     */
     private function int3Type7($Int)
     {
         if ($Int > 10) {
@@ -151,7 +220,12 @@ class L10N
         return ($Int > 1) ? 1 : 0;
     }
 
-    /** For e.g., Moldavian, Romanian. */
+    /**
+     * Three grammatical numbers, type eight. For e.g., Moldavian, Romanian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Other form.
+     */
     private function int3Type8($Int)
     {
         if ($Int === 1) {
@@ -164,7 +238,12 @@ class L10N
         return 2;
     }
 
-    /** For e.g., Czech, Slovak. */
+    /**
+     * Three grammatical numbers, type nine. For e.g., Czech, Slovak.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Other form.
+     */
     private function int3Type9($Int)
     {
         if ($Int === 1) {
@@ -173,7 +252,12 @@ class L10N
         return ($Int >= 2 && $Int <= 4) ? 1 : 2;
     }
 
-    /** For e.g., Quenya, Tokelauan. */
+    /**
+     * Three grammatical numbers, type nine. For e.g., Quenya, Tokelauan.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Other form.
+     */
     private function int3Type10($Int)
     {
         if ($Int === 2) {
@@ -182,7 +266,12 @@ class L10N
         return $Int > 2 ? 2 : 0;
     }
 
-    /** For e.g., Manx. */
+    /**
+     * Four grammatical numbers, type one. For e.g., Manx.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Other form.
+     */
     private function int4Type1($Int)
     {
         $Tail = $Int % 10;
@@ -195,7 +284,12 @@ class L10N
         return (($Int % 20) === 0) ? 2 : 3;
     }
 
-    /** For e.g., Gaelic. */
+    /**
+     * Four grammatical numbers, type two. For e.g., Gaelic.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Other form.
+     */
     private function int4Type2($Int)
     {
         if ($Int === 0 || $Int > 19) {
@@ -211,7 +305,12 @@ class L10N
         return 2;
     }
 
-    /** For e.g., Breton. */
+    /**
+     * Four grammatical numbers, type three. For e.g., Breton.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Other form.
+     */
     private function int4Type3($Int)
     {
         $Tail = $Int % 10;
@@ -230,7 +329,12 @@ class L10N
         return 3;
     }
 
-    /** For e.g., Sorbian, Slovenian. */
+    /**
+     * Four grammatical numbers, type four. For e.g., Sorbian, Slovenian.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Other form.
+     */
     private function int4Type4($Int)
     {
         $Tail2 = $Int % 100;
@@ -246,7 +350,12 @@ class L10N
         return 3;
     }
 
-    /** For e.g., Hebrew. */
+    /**
+     * Four grammatical numbers, type five. For e.g., Hebrew.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Many form. 3: Other form.
+     */
     private function int4Type5($Int)
     {
         if ($Int === 1) {
@@ -261,7 +370,12 @@ class L10N
         return 3;
     }
 
-    /** For e.g., Maltese. */
+    /**
+     * Four grammatical numbers, type six. For e.g., Maltese.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Few form. 2: Many form. 3: Other form.
+     */
     private function int4Type6($Int)
     {
         if ($Int === 1) {
@@ -272,12 +386,17 @@ class L10N
             return 2;
         }
         if ($Int === 0 || ($Tail2 > 1 && $Tail2 < 11)) {
-            return 3;
+            return 1;
         }
-        return 1;
+        return 3;
     }
 
-    /** For e.g., Na'vi. */
+    /**
+     * Four grammatical numbers, type seven. For e.g., Na'vi.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Trial form. 3: Other form.
+     */
     private function int4Type7($Int)
     {
         if ($Int === 2) {
@@ -289,7 +408,12 @@ class L10N
         return $Int > 3 ? 3 : 0;
     }
 
-    /** For e.g., Irish. */
+    /**
+     * Five grammatical numbers, type one. For e.g., Irish.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Many form. 4: Other form.
+     */
     private function int5Type1($Int)
     {
         if ($Int === 1) {
@@ -307,7 +431,12 @@ class L10N
         return 4;
     }
 
-    /** For e.g., Arabic. */
+    /**
+     * Six grammatical numbers, type one. For e.g., Arabic.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Many form. 4: Other form. 5: Zero form.
+     */
     private function int6Type1($Int)
     {
         if ($Int === 0) {
@@ -329,7 +458,12 @@ class L10N
         return 2;
     }
 
-    /** For e.g., Welsh. */
+    /**
+     * Six grammatical numbers, type two. For e.g., Welsh.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Trial form. 3: Many form. 4: Other form. 5: Zero form.
+     */
     private function int6Type2($Int)
     {
         if ($Int === 0) {
@@ -350,13 +484,23 @@ class L10N
         return 4;
     }
 
-    /** For e.g., Armenian, Danish, French, Portuguese. */
+    /**
+     * Two fraction forms, type one. For e.g., Armenian, Danish, French, Portuguese.
+     *
+     * @param float $Fraction The fraction of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function fraction2Type1($Fraction)
     {
         return ($Fraction >= 2) ? 1 : 0;
     }
 
-    /** For e.g., Amharic, Bangla, Hindi, Marathi. */
+    /**
+     * Two fraction forms, type two. For e.g., Amharic, Bangla, Hindi, Marathi.
+     *
+     * @param float $Fraction The fraction of things.
+     * @return int 0: Singular form. 1: Other form.
+     */
     private function fraction2Type2($Fraction)
     {
         return ($Fraction >= 1) ? 1 : 0;

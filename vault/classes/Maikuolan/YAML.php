@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.04.05).
+ * YAML handler (last modified: 2021.05.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -51,11 +51,19 @@ class YAML
     public $Anchors = [];
 
     /**
+     * @var string The tag/release the version of this file belongs to (might
+     *      be needed by some implementations to ensure compatibility).
+     * @link https://github.com/Maikuolan/Common/tags
+     */
+    const VERSION = '1.6.1';
+
+    /**
      * Can optionally begin processing data as soon as the object is
      * instantiated, or just instantiate first, and manually make any needed
      * calls afterwards (though the former is recommended over the latter).
      *
      * @param string $In The data to process.
+     * @return void
      */
     public function __construct($In = '')
     {
@@ -70,6 +78,7 @@ class YAML
      * @param string|int|bool $Value The value to be normalised.
      * @param int $ValueLen The length of the value to be normalised.
      * @param string|int|bool $ValueLow The value to be normalised, lowercased.
+     * @return void
      */
     private function normaliseValue(&$Value, $ValueLen, $ValueLow)
     {
@@ -290,6 +299,7 @@ class YAML
      * @param array $Arr The array to reconstruct from.
      * @param string $Out The reconstructed YAML.
      * @param int $Depth The level depth.
+     * @return void
      */
     private function processInner(array $Arr, &$Out, $Depth = 0)
     {
