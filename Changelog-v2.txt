@@ -10,7 +10,7 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2021.05.28; Maikuolan]: Performed some minor refactoring.
 
 === Version/Release 2.3.1 ===
 PATCH RELEASE.

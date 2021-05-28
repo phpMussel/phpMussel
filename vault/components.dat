@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.3.1
+ Version: 2.3.2-DEV+21147410
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -42,7 +42,7 @@ phpMussel Core:
    - 7008413d2b1fbd2514e817b498442c2a5897e65f1da03ad2cc2c5d8fba67df10:1744
    - 78e4a9548bc66ea90753ee7337595aae7b73a2d84efa4484033d544c5d91af72:8245
    - bab6aebff81757f6e7abdaaeb90d7317e8fb66882f3c8b6fb2245e3d91a699a1:16828
-   - 7ac9a9a27a888a4eca182c3ecc41adbdac0636e44ad253e4d5abdd427605e430:7465
+   - 9798ff7ea07c6a3b2e29aa5bbfc6200f0e05a527e2f6bfaf5f32375e18eb8287:7501
    - 916375b91a23979eddf5becfde2172ee7fb47d8876129d5262e64ac7fba10bdb:232491
    - d37d07a98a16177ffd05bc7b6de3da1a35b378e069e92d6b3bba9fb5cc033c19:6409
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
