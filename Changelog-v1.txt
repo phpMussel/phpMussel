@@ -12,6 +12,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.05.28; Maikuolan]: Performed some minor refactoring.
 
+- [2021.06.06; Maikuolan]: Reworked checkbox support for the front-end
+  configuration page.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 
