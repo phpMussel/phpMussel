@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2021.05.07).
+# This file: Spanish language data for the front-end (last modified: 2021.06.07).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -195,7 +195,6 @@ field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
 label_active_config_file: "Archivo de configuración activo: "
 label_actual: "Actual"
-label_backup_location: "Ubicaciones de copia de seguridad del repositorio (en caso de emergencia, o si todo lo demás falla):"
 label_blocked: "Subidas bloqueadas"
 label_branch: "Branch más nuevo estable:"
 label_clientinfo: "Información del cliente:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.05.07).
+# This file: Italian language data for the front-end (last modified: 2021.06.07).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -193,7 +193,6 @@ field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
 label_active_config_file: "File di configurazione attivo: "
 label_actual: "Effettivo"
-label_backup_location: "Posizioni di backup del repository (in caso di emergenza, o se tutto il resto fallisce):"
 label_blocked: "Caricamenti bloccati"
 label_branch: "Branch più recente stabile:"
 label_clientinfo: "Informazioni sul cliente:"
