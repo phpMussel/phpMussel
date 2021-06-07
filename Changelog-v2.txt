@@ -15,6 +15,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.06.06; Maikuolan]: Reworked checkbox support for the front-end
   configuration page.
 
+- [2021.06.07; Maikuolan]: Since v3, the "repository backup locations" are kind
+  of useless (not linked up with Composer, and only providing metapackage data,
+  rather than all the attached repositories/packages). Removed those links from
+  the front-end home page and v3 documentation accordingly.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 
