@@ -20,6 +20,8 @@ Detailed version release guidelines for phpMussel can be found at:
   rather than all the attached repositories/packages). Removed those links from
   the front-end home page and v3 documentation accordingly.
 
+- [2021.06.08; Maikuolan]: Subtle aesthetic patch.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 

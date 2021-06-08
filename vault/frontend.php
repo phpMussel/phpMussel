@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.07).
+ * This file: Front-end handler (last modified: 2021.06.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1495,9 +1495,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
             } elseif ($phpMussel['DirValue']['type'] === 'bool') {
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
-                        '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
-                        '</select>',
+                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s><option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option></select>',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['ThisDir']['Trigger'],
                     $phpMussel['L10N']->getString('field_true'),
