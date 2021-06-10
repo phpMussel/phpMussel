@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.06.07).
+# This file: Thai language data for the front-end (last modified: 2021.06.10).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -94,6 +94,7 @@ config_general_time_format: "รูปแบบสัญกรณ์สำหร
 config_general_time_offset: "เขตเวลาชดเชยในนาที."
 config_general_timezone: "ใช้เพื่อระบุเขตเวลาที่จะใช้ (เช่น., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ฯลฯ). ระบุ "SYSTEM" เพื่อให้ PHP จัดการสิ่งนี้ให้คุณโดยอัตโนมัติ."
 config_general_truncate: "ตัดทอนแฟ้มบันทึกเมื่อถึงขนาดที่กำหนดหรือไม่? ค่ามีขนาดสูงสุดในรูปแบบ B/KB/MB/GB/TB ที่แฟ้มบันทึกอาจโตขึ้นก่อนที่จะถูกตัดทอน. ค่าเริ่มต้นของ 0KB ปิดการตัดทอน (แฟ้มบันทึกสามารถเติบโตไปเรื่อย). หมายเหตุ: ถูกใช้ด้วยกับล็อกไฟล์แต่ละไฟล์! ขนาดของไฟล์บันทึกไม่ถือเป็นการรวมกัน."
+config_general_unsupported_media_type_header: "phpMussel ควรส่งส่วนหัว 415 เมื่อการอัปโหลดถูกบล็อกเนื่องจากประเภทไฟล์ที่ขึ้นบัญชีดำหรือไม่? เมื่อเป็น true การตั้งค่านี้จะแทนที่ <code>forbid_on_block</code>. False = ไม่ [ค่าเริ่มต้น]; True = ส่ง."
 config_heuristic: "การกำหนดค่าสำหรับการวิเคราะห์ฮิวริสติก."
 config_heuristic_threshold: "ลายเซ็น phpMussel บางตัวมีจุดมุ่งหมายเพื่อระบุลักษณะที่น่าสงสัยและอาจเป็นอันตรายในไฟล์ที่อัปโหลดไม่มีในตัวเองระบุไฟล์ที่อัปโหลดโดยเฉพาะอย่างยิ่งที่เป็นอันตราย. ค่านี้ "threshold" บอก phpMussel น้ำหนักรวมสูงสุดสำหรับคุณภาพที่น่าสงสัยและอาจเป็นอันตรายสำหรับไฟล์ที่อัปโหลดก่อนที่จะถูกระบุว่าเป็นอันตราย. ความหมายของน้ำหนักในบริบทนี้คือจำนวนรวมของคุณลักษณะที่น่าสงสัยและอาจเป็นอันตรายที่ระบุ. โดยค่าเริ่มต้น, ค่านี้จะถูกกำหนดเป็น 3. โดยทั่วไป, ค่าที่ต่ำกว่าจะส่งผลให้เกิดขึ้นมากขึ้น false positive แต่มีการระบุไฟล์ที่เป็นอันตรายจำนวนมากขึ้น, ในขณะที่ค่าที่สูงขึ้นโดยทั่วไปจะทำให้เกิดเหตุการณ์ที่ต่ำลงของ false positive แต่เป็นตัวเลขที่ต่ำกว่าของไฟล์ที่เป็นอันตรายถูกระบุ. เป็นการดีที่สุดที่จะปล่อยให้ค่านี้เป็นค่าเริ่มต้นจนกว่าคุณจะประสบปัญหา."
 config_legal: "การกำหนดค่าสำหรับข้อกำหนดทางกฎหมาย."

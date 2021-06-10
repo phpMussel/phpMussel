@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.06.07).
+# This file: Latvian language data for the front-end (last modified: 2021.06.10).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -94,6 +94,7 @@ config_general_time_format: "phpMussel izmantotais datuma/laika apzīmējuma for
 config_general_time_offset: "Laika joslas nobīde minūtēs."
 config_general_timezone: "To izmanto, lai norādītu izmantojamo laika joslu (piemēram, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, utt). Norādiet “SYSTEM”, lai PHP varētu rīkoties ar to automātiski."
 config_general_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
+config_general_unsupported_media_type_header: "Vai phpMussel vajadzētu nosūtīt 415 galvenes, kad augšupielāde ir bloķētas melnajā sarakstā iekļauto failu tipu dēļ? Ja tā ir true (patiesa), šis iestatījums aizstāj <code>forbid_on_block</code>. False (Nepatiess) = Nē [Noklusējuma]; True (Patiess) = Jā."
 config_heuristic: "Heiristiskās analīzes konfigurācija."
 config_heuristic_threshold: "Daži phpMussel paraksti ir paredzēti, lai failos identificētu aizdomīgus un potenciāli ļaunprātīgus rādītājus, neidentificējot šos failus kā ļaunprātīgus tieši paši par sevi. Šī direktīva nosaka phpMussel maksimālo pieļaujamo svaru pirms šo failu atzīmēšanas kā ļaunprātīgus. Svara definīcija šajā kontekstā ir kopējais identificēto aizdomīgo un potenciāli ļaunprātīgo indikatoru skaits. Pēc noklusējuma šī vērtība ir 3. Zemāka vērtība parasti rada lielāku nepatiesu pozitīvu rezultātu bet tiek atzīmēts lielāku skaits ļaunprātīgu failu, turpretim augstāka vērtība parasti rada mazāku nepatiesu pozitīvu rezultātu atzīmēts bet tiek atzīmēts mazāku skaits ļaunprātīgu failu. Parasti vislabāk ir mainīt šo vērtību tikai tad, ja noklusējums jums rada problēmas."
 config_legal: "Juridisko prasību konfigurācija."

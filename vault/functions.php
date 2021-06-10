@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.07).
+ * This file: Functions file (last modified: 2021.06.10).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -624,11 +624,10 @@ $phpMussel['Quarantine'] = function (string $In, string $Key, string $IP, string
         }
     }
     $Out =
-        "\x2f\x3d\x3d\x20phpMussel\x20Quarantined\x20File\x20Upload\x20\x3d" .
-        "\x3d\x5c\n\x7c\x20Time\x2fDate\x20Uploaded\x3a\x20" .
+        "\x2f\x3d\x3d phpMussel Quarantined File Upload \x3d\x3d\x5c\n\x7c Time\x2fDate Uploaded\x3a " .
         str_pad($phpMussel['Time'], 18, ' ') .
-        "\x7c\n\x7c\x20Uploaded\x20From\x3a\x20" . str_pad($IP, 22, ' ') .
-        "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $Head . $Out;
+        "\x7c\n\x7c Uploaded From\x3a " . str_pad($IP, 22, ' ') .
+        " \x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $Head . $Out;
     $UsedMemory = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
     $UsedMemory['Size'] += strlen($Out);
     $UsedMemory['Count']++;
@@ -3225,6 +3224,7 @@ $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, stri
         if ($phpMussel['ContainsMustAssert']([
             $phpMussel['Config']['files']['filetype_blacklist']
         ], [$xt, $xts], ',', true, true)) {
+            $phpMussel['InstanceCache']['blacklist_triggered'] = true;
             $r = 2;
             $phpMussel['killdata'] .= $Checksum . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .= sprintf(
@@ -3626,6 +3626,7 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
     if ($phpMussel['ContainsMustAssert']([
         $phpMussel['Config']['files']['filetype_blacklist']
     ], [$xt, $xts, $gzxt, $gzxts], ',', true, true)) {
+        $phpMussel['InstanceCache']['blacklist_triggered'] = true;
         $phpMussel['killdata'] .= str_repeat('-', 64) . ':' . $fS . ':' . $OriginalFilename . "\n";
         $phpMussel['whyflagged'] .= sprintf(
             $phpMussel['L10N']->getString('_exclamation'),

@@ -22,6 +22,10 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.06.08; Maikuolan]: Subtle aesthetic patch.
 
+- [2021.06.10; Maikuolan]: Added a configuration directive for returning a 415
+  status code for when an upload is blocked due to its filetype being
+  blacklisted. Also did some very minor refactoring.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.06.07).
+# This file: Norwegian language data for the front-end (last modified: 2021.06.10).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -94,6 +94,7 @@ config_general_time_format: "Dato/tid notasjonsformat som brukes av phpMussel. Y
 config_general_time_offset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
+config_general_unsupported_media_type_header: "Bør phpMussel sende 415 overskrifter når opplastinger er blokkert på grunn av svartypede filtyper? Når det er true, denne erstatter innstillingen <code>forbid_on_block</code>. False = Nei [Standardverdi]; True = Ja."
 config_heuristic: "Konfigurasjon for heuristisk analyse."
 config_heuristic_threshold: "Noen phpMussel-signaturer er ment å identifisere mistenkelige og potensielt skadelige indikatorer i filer, uten i seg selv å identifisere disse filene som direkte skadelige. Denne terskelverdien forteller phpMussel den maksimale tillatte vekten før du flagger disse filene som skadelig. Definisjonen av vekt i denne sammenhengen er det totale antallet mistenkelige og potensielt skadelige indikatorer som er identifisert. Som standard blir denne verdien satt til 3. En lavere verdi vil generelt resultere i en høyere forekomst av falske positiver, men et høyere antall skadelige filer blir flagget, mens en høyere verdi generelt vil føre til en lavere forekomst av falske positiver, men at et lavere antall skadelige filer blir flagget. Det er vanligvis best å forlate denne verdien som standard med mindre du opplever problemer relatert til den."
 config_legal: "Konfigurasjon for juridiske krav."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.06.07).
+# This file: Bangla language data for the front-end (last modified: 2021.06.10).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -94,6 +94,7 @@ config_general_time_format: "phpMussel দ্বারা ব্যবহৃত 
 config_general_time_offset: "টাইমজোন মিনিটে অফসেট।"
 config_general_timezone: "ব্যবহারের সময় অঞ্চল নির্দিষ্ট করে (যেমন, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ইত্যাদি)। আপনার জন্য স্বয়ংক্রিয়ভাবে PHP এটি পরিচালনা করতে "SYSTEM" নির্দিষ্ট করুন।"
 config_general_truncate: "একটি নির্দিষ্ট আকার পৌঁছানোর সময় লগ ফাইলগুলি কেটে ফেলা হবে? মানটি B/KB/MB/GB/TB-এ সর্বোচ্চ আকারের হয় যা একটি লকফিলি ছাঁটাই হওয়ার পূর্বে বাড়তে পারে। 0KB এর ডিফল্ট মান truncation নিষ্ক্রিয় (logfiles অনির্দিষ্টভাবে বৃদ্ধি করতে পারেন)। নোট: এই একবচন লগফাইল প্রয়োগ করা হয়! লগফাইল আকার সম্মিলিতভাবে গণ্য করা হয় না।"
+config_general_unsupported_media_type_header: "কালো তালিকাভুক্ত ফাইল টাইপের কারণে আপলোডগুলি অবরুদ্ধ করা হলে phpMusselকে 415 শিরোলেখ প্রেরণ করা উচিত? সত্য হয়ে গেলে, এই সেটিংটি <code>forbid_on_block</code>টিকে ছাড়িয়ে যায়। False = না [ডিফল্ট]; True = হাঁ।"
 config_heuristic: "হিউরিস্টিক বিশ্লেষণের জন্য কনফিগারেশন।"
 config_heuristic_threshold: "কিছু স্বাক্ষরগুলি ফাইলগুলির সন্দেহজনক এবং সম্ভাব্য ক্ষতিকারক গুণাবলীগুলি চিহ্নিত করার উদ্দেশ্যে তৈরি করা হয়েছে, যা তাদের ফাইলগুলিকে তাদের নিজস্ব অধিকারে দূষিত হিসাবে সনাক্ত না করেই আপলোড করা যায়। এই মান phpMussel কিভাবে এই গুণগুলি নির্ণয় করতে হয়, এবং সর্বাধিক ওজন যতক্ষণ না দূষিত হিসাবে চিহ্নিত করা যায় আগে অনুমতি দেওয়া হয়। এই পরিপ্রেক্ষিতে, ওজন সংজ্ঞা সনাক্ত করা সন্দেহজনক এবং সম্ভাব্য দূষিত গুণাবলী মোট সংখ্যা। সাধারনত, এই মান 3 সেট করা হবে। একটি নিম্ন মান সাধারণত মিথ্যা ইতিবাচক একটি উচ্চ সংঘটন ফলাফল কিন্তু একটি দূষিত ফাইলের উচ্চ নম্বর চিহ্নিত করা হবে। একটি উচ্চ মান সাধারণত মিথ্যা ইতিবাচক একটি নিম্ন ঘটতে হবে কিন্তু নিম্ন সংখ্যক দূষিত ফাইল চিহ্নিত করা। এটির সাথে সম্পর্কিত সমস্যার সম্মুখীন না হওয়া পর্যন্ত এই মানটি ডিফল্টরূপে ছেড়ে দেওয়া সাধারণত ভাল।"
 config_legal: "আইনী প্রয়োজনীয়তার জন্য কনফিগারেশন।"
