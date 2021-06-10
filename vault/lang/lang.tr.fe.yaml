@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.06.07).
+# This file: Turkish language data for the front-end (last modified: 2021.06.10).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -93,6 +93,7 @@ config_general_timeFormat: "phpMussel tarafından kullanılan tarih/saat göster
 config_general_timeOffset: "Dakika cinsinden zaman dilimi farkı."
 config_general_timezone: "Kullanılacak saat dilimini belirtir (örneğin, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vb). PHP'nin bunu sizin için otomatik olarak yapmasına izin vermek için "SYSTEM" i belirtin."
 config_general_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
+config_general_unsupported_media_type_header: "Kara listeye alınmış dosya türleri nedeniyle yüklemeler engellendiğinde phpMussel 415 başlık göndermeli mi? Doğru/True olduğunda, bu ayar <code>forbid_on_block</code>'in yerini alır. Yanlış/False = Hayır [Varsayılan]; Doğru/True = Evet."
 config_heuristic: "Sezgisel analiz için yapılandırma."
 config_heuristic_threshold: "Şüpheli ve potansiyel olarak kötü amaçlı dosya kalitesini tanımlamak için phpMussel'de imzalar var. Bu dosya kalitesi, dosyanın kötü amaçlı olduğu anlamına gelmez, ancak çok sayıda dosya kalitesi dosyanın kötü amaçlı olduğunu gösterebilir. Bu "threshold" değeri, phpMussel'a şüpheli ve potansiyel olarak kötü amaçlı dosya kalitesinin maksimum toplam ağırlığını bildirir. Bu maksimumu aşmak, dosyanın kötü amaçlı olarak tanımlanmasına neden olur. Bu bağlamda ağırlığın tanımı, belirlenen şüpheli ve potansiyel olarak kötü amaçlı özelliklerin toplam sayısıdır. Varsayılan olarak, Bu değer 3'e ayarlanacaktır. Daha düşük bir değer genelde yanlış pozitif sonuçların ortaya çıkmasına neden olur, ancak daha yüksek sayıda kötü amaçlı dosyanın bayraklı olduğu görülürken, daha yüksek bir değer genellikle yanlış pozitiflerin oluşumuyla sonuçlanır, ancak bayrak altındaki kötü amaçlı dosyaların sayısı daha düşük olur. Mümkün olduğunda bu değeri varsayılan değerlerine bırakmak genellikle en iyisidir."
 config_legal: "Yasal gereklilikler için yapılandırma."

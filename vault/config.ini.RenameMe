@@ -71,6 +71,11 @@ enable_plugins=true
 ; stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].
 forbid_on_block=true
 
+; Should phpMussel send 415 headers when uploads are blocked due to blacklisted
+; filetypes? When true, this setting supersedes forbid_on_block. False = No
+; [Default]; True = Yes.
+unsupported_media_type_header=false
+
 ; Enabling this directive will instruct the script to attempt to immediately
 ; delete any scanned attempted file upload matching any detection criteria,
 ; whether via signatures or otherwise. Files determined to be "clean" won't be
