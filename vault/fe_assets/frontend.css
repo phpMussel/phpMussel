@@ -57,8 +57,9 @@ a:active,a:focus{color:red}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
 @keyframes UplT{0%{opacity:0}100%{opacity:1}}
 .mob{display:none}
-input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:center {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}')}
-input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-image:url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
+input[id=logoutbutton],input[id=homebutton]{transition:all .3s ease-out}
+input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:top 1px {FE_Align} 4px,top 1px {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}'),url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
+input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-position:top 3px {FE_Align} 4px,top 1px {FE_Align} 4px}
 input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Align_Reverse}-radius:0;margin-{FE_Align_Reverse}:0}
 .h1f,.h2f,.h3f,.h4f,.rf{white-space:nowrap}
 @media only all and (max-width:640px) {
