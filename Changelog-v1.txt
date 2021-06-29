@@ -26,6 +26,9 @@ Detailed version release guidelines for phpMussel can be found at:
   status code for when an upload is blocked due to its filetype being
   blacklisted. Also did some very minor refactoring.
 
+- [2021.06.29; Bug-fix; Maikuolan]: The front-end file manager's pie chart's
+  components accordion was broken; Fixed.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 

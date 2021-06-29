@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.08).
+ * This file: Front-end handler (last modified: 2021.06.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2626,11 +2626,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             if (!empty($phpMussel['Components']['ComponentFiles'][$phpMussel['Components']['ThisName']])) {
                 $phpMussel['Components']['ThisComponentFiles'] = &$phpMussel['Components']['ComponentFiles'][$phpMussel['Components']['ThisName']];
                 arsort($phpMussel['Components']['ThisComponentFiles']);
-                $phpMussel['Components']['ThisListed'] .= '<ul class="comSub txtBl">';
+                $phpMussel['Components']['ThisListed'] .= '<ul class="comSub">';
                 foreach ($phpMussel['Components']['ThisComponentFiles'] as $phpMussel['Components']['ThisFile'] => $phpMussel['Components']['ThisFileSize']) {
                     $phpMussel['FormatFilesize']($phpMussel['Components']['ThisFileSize']);
                     $phpMussel['Components']['ThisListed'] .= sprintf(
-                        '<li style="font-size:0.9em">%1$s – %2$s</li>',
+                        '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
                         $phpMussel['Components']['ThisFile'],
                         $phpMussel['Components']['ThisFileSize']
                     );
