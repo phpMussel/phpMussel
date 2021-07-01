@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.01).
+ * This file: Front-end functions file (last modified: 2021.07.01).
  */
 
 /**
@@ -1189,6 +1189,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel): void {
         $phpMussel['FetchRemote-ContextFree']($NewMeta, $phpMussel['Components']['Meta'][$ThisTarget]['Remote']);
         $phpMussel['CheckConstraints']($phpMussel['Components']['RemoteMeta'][$ThisTarget], true);
         $UpdateFailed = false;
+        $SafeTarget = preg_quote($ThisTarget);
         if (
             $phpMussel['Components']['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
@@ -1198,9 +1199,9 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel): void {
             ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($phpMussel['Vault'] . $ThisReannotate) &&
             ($OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
-            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
+            preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
-            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
+            preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0])
         ) {
             $Congruents[$ThisReannotate] = $NewMeta;
@@ -1496,7 +1497,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel): void {
     if (is_array($ID)) {
         $ID = current($ID);
     }
-    $phpMussel['Activation'] = [
+    $Activation = [
         'Config' => $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile']),
         'active' => $phpMussel['Config']['signatures']['active'],
         'Modified' => false
@@ -1504,8 +1505,8 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel): void {
     $InUse = $phpMussel['ComponentFunctionUpdatePrep']($ID);
     $phpMussel['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
     if (empty($InUse) && !empty($phpMussel['Components']['Meta'][$ID]['Files']['To'])) {
-        $phpMussel['Activation']['active'] = array_unique(array_filter(
-            explode(',', $phpMussel['Activation']['active']),
+        $Activation['active'] = array_unique(array_filter(
+            explode(',', $Activation['active']),
             function ($Component) use (&$phpMussel) {
                 $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
                 return ($Component && file_exists($phpMussel['sigPath'] . $Component));
@@ -1518,40 +1519,37 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel): void {
                 substr($ThisFile, 0, 11) === 'signatures/' &&
                 $phpMussel['Traverse']($ThisFile)
             ) {
-                $phpMussel['Activation']['active'][] = substr($ThisFile, 11);
+                $Activation['active'][] = substr($ThisFile, 11);
             }
         }
-        if (count($phpMussel['Activation']['active'])) {
-            sort($phpMussel['Activation']['active']);
+        if (count($Activation['active'])) {
+            sort($Activation['active']);
         }
-        $phpMussel['Activation']['active'] = implode(',', $phpMussel['Activation']['active']);
-        if ($phpMussel['Activation']['active'] !== $phpMussel['Config']['signatures']['active']) {
-            $phpMussel['Activation']['Modified'] = true;
+        $Activation['active'] = implode(',', $Activation['active']);
+        if ($Activation['active'] !== $phpMussel['Config']['signatures']['active']) {
+            $Activation['Modified'] = true;
         }
     }
-    if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
+    if (!$Activation['Modified'] || !$Activation['Config']) {
         $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_activation_failed') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Fails'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Fails'], true);
         }
     } else {
-        $EOL = (strpos($phpMussel['Activation']['Config'], "\r\nactive=") !== false) ? "\r\n" : "\n";
-        $phpMussel['Activation']['Config'] = str_replace(
+        $EOL = (strpos($Activation['Config'], "\r\nactive=") !== false) ? "\r\n" : "\n";
+        $Activation['Config'] = str_replace(
             $EOL . "active='" . $phpMussel['Config']['signatures']['active'] . "'" . $EOL,
-            $EOL . "active='" . $phpMussel['Activation']['active'] . "'" . $EOL,
-            $phpMussel['Activation']['Config']
+            $EOL . "active='" . $Activation['active'] . "'" . $EOL,
+            $Activation['Config']
         );
-        $phpMussel['Config']['signatures']['active'] = $phpMussel['Activation']['active'];
-        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], $phpMussel['Activation']['Config']);
+        $phpMussel['Config']['signatures']['active'] = $Activation['active'];
+        $phpMussel['Updater-IO']->writeFile($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], $Activation['Config']);
         $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('response_activated') . '<br />';
         if (!empty($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'])) {
             $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
         $Success = true;
     }
-
-    /** Cleanup. */
-    unset($phpMussel['Activation']);
 
     /** Deal with dependency activation. */
     if (
@@ -1602,10 +1600,10 @@ $phpMussel['UpdatesHandler-Deactivate'] = function ($ID) use (&$phpMussel): void
             sort($phpMussel['Deactivation']['active']);
         }
         $phpMussel['Deactivation']['active'] = ',' . implode(',', $phpMussel['Deactivation']['active']) . ',';
-        foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $phpMussel['Deactivation']['ThisFile']) {
-            if (substr($phpMussel['Deactivation']['ThisFile'], 0, 11) === 'signatures/') {
+        foreach ($phpMussel['Components']['Meta'][$ID]['Files']['To'] as $File) {
+            if (substr($File, 0, 11) === 'signatures/') {
                 $phpMussel['Deactivation']['active'] = preg_replace(
-                    '~,(?:[\w\d]+:)?' . preg_quote(substr($phpMussel['Deactivation']['ThisFile'], 11)) . ',~',
+                    '~,(?:[\w\d]+:)?' . preg_quote(substr($File, 11)) . ',~',
                     ',',
                     $phpMussel['Deactivation']['active']
                 );
@@ -1660,7 +1658,6 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel): void {
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
         $RepairFailed = false;
-        $Reactivate = false;
         if ($Reactivate = $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])) {
             $phpMussel['UpdatesHandler-Deactivate']($ThisTarget);
         }
@@ -1757,6 +1754,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel): void {
         } else {
             $RepairFailed = true;
         }
+        $SafeTarget = preg_quote($ThisTarget);
         if (
             !$RepairFailed &&
             !empty($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
@@ -1764,10 +1762,10 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel): void {
             ($ThisReannotate = $phpMussel['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($phpMussel['Vault'] . $ThisReannotate) &&
             ($OldMeta = $phpMussel['Updater-IO']->readFile($phpMussel['Vault'] . $ThisReannotate)) &&
-            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
+            preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $RemoteData) &&
-            preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
+            preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0])
         ) {
             $NewMeta = str_replace($OldMetaMatches, $NewMetaMatches, $OldMeta);
