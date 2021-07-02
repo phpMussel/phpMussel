@@ -29,6 +29,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.06.29; Bug-fix; Maikuolan]: The front-end file manager's pie chart's
   components accordion was broken; Fixed.
 
+- [2021.07.02; Maikuolan]: Synced common classes package.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2021.05.22).
+ * Operation handler (last modified: 2021.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -27,7 +27,7 @@ class Operation
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.1';
+    const VERSION = '1.6.2';
 
     /**
      * Operators for version numbers.
@@ -220,12 +220,13 @@ class Operation
     public function dataTraverse(&$Data, $Path = [])
     {
         if (!is_array($Path)) {
-            $Path = explode('.', $Path);
+            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
             return is_scalar($Data) ? $Data : '';
         }
+        $Segment = str_replace('\.', '.', $Segment);
         if (is_array($Data) && isset($Data[$Segment])) {
             return $this->dataTraverse($Data[$Segment], $Path);
         }

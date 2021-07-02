@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2021.05.22).
+ * A simple, unified cache handler (last modified: 2021.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -160,7 +160,7 @@ class Cache
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.1';
+    const VERSION = '1.6.2';
 
     /**
      * Construct object and set working data if needed.

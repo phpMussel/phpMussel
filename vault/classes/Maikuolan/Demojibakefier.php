@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2021.05.22).
+ * Demojibakefier (last modified: 2021.07.02).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -57,7 +57,7 @@ class Demojibakefier
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.1';
+    const VERSION = '1.6.2';
 
     /**
      * @param string $NormaliseTo The encoding to normalise to (defaults to UTF-8).
