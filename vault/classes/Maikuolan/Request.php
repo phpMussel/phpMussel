@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2021.05.22).
+ * Request handler (last modified: 2021.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -52,7 +52,7 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.1';
+    public const VERSION = '2.6.2';
 
     /**
      * The main request method.

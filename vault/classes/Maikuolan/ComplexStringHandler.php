@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2021.05.22).
+ * Complex string handler (last modified: 2021.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -37,7 +37,7 @@ class ComplexStringHandler
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.1';
+    public const VERSION = '2.6.2';
 
     /**
      * @param string $Data The data supplied to the class at object instantiation.
