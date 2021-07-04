@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.29).
+ * This file: Front-end handler (last modified: 2021.07.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1155,6 +1155,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     );
     $phpMussel['RegenerateConfig'] = '';
     $phpMussel['ConfigModified'] = (!empty($phpMussel['QueryVars']['updated']) && $phpMussel['QueryVars']['updated'] === 'true');
+
+    /** Iterate through configuration defaults. */
     foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['CatKey'] => $phpMussel['CatValue']) {
         if (!is_array($phpMussel['CatValue'])) {
             continue;
@@ -1873,6 +1875,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         } else {
             $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['L10N']->getString('response_updates_unable_to_determine');
             $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
+        }
+
+        /** Guard against component metadata missing at the upstream. */
+        if (!isset($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']])) {
+            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']] = [];
         }
 
         /** Determine whether all dependency constraints have been met. */
