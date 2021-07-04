@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.01).
+ * This file: Front-end functions file (last modified: 2021.07.04).
  */
 
 /**
@@ -787,22 +787,38 @@ $phpMussel['GetAssetPath'] = function (string $Asset, bool $CanFail = false) use
  */
 $phpMussel['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (&$phpMussel): void {
     if ($Queue && $Closures !== false) {
-        if (empty($phpMussel['FE_Executor_Queue'])) {
+        /** Guard. */
+        if (empty($phpMussel['FE_Executor_Queue']) || !is_array($phpMussel['FE_Executor_Queue'])) {
             $phpMussel['FE_Executor_Queue'] = [];
         }
+
+        /** Add to the executor queue. */
         $phpMussel['FE_Executor_Queue'][] = $Closures;
         return;
     }
-    if ($Closures === false && !empty($phpMussel['FE_Executor_Queue'])) {
-        foreach ($phpMussel['FE_Executor_Queue'] as $QueueItem) {
+
+    if ($Closures === false && !empty($phpMussel['FE_Executor_Queue']) && is_array($phpMussel['FE_Executor_Queue'])) {
+        /** We'll iterate an array from the local scope to guard against infinite loops. */
+        $Items = $phpMussel['FE_Executor_Queue'];
+
+        /** Purge the queue before iterating. */
+        $phpMussel['FE_Executor_Queue'] = [];
+
+        /** Recursively iterate through the executor queue. */
+        foreach ($Items as $QueueItem) {
             $phpMussel['FE_Executor']($QueueItem);
         }
-        $phpMussel['FE_Executor_Queue'] = [];
         return;
     }
+
+    /** Guard. */
     $phpMussel['Arrayify']($Closures);
+
+    /** Recursively execute all closures in the current queue item. */
     foreach ($Closures as $Closure) {
+        /** All logic, data traversal, dot notation, etc handled here. */
         $Closure = $phpMussel['Operation']->ifCompare($phpMussel, $Closure);
+
         if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
             $phpMussel[$Closure]();
         } elseif (($Pos = strpos($Closure, ' ')) !== false) {

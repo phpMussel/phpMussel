@@ -31,6 +31,13 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2021.07.02; Maikuolan]: Synced common classes package.
 
+- [2021.07.04; Bug-fixes; Maikuolan]: When the metadata for an already
+  installed component was missing from the upstream, a wrong parameter type
+  error could occur, causing the updates page to not load correctly; Fixed.
+  Due to the scope that the executor queue would be iterated from, an infinite
+  loop could theoretically occur under certain circumstances when attempting to
+  install or update a component via the front-end updates page; Fixed.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 
