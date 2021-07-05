@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2021.07.02).
+ * Demojibakefier (last modified: 2021.07.05).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -50,7 +50,7 @@ class Demojibakefier
     /**
      * @var string Some early control characters (w/o tabs, CR, or LF).
      */
-    const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
+    protected const CTRL0 = '\x00-\x08\x0b\x0c\x0e-\x1f';
 
     /**
      * @var string The tag/release the version of this file belongs to (might
