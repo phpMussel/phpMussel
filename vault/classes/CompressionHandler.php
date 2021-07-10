@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Compression handler (last modified: 2020.11.27).
+ * This file: Compression handler (last modified: 2021.07.10).
  */
 
 namespace phpMussel\CompressionHandler;
@@ -26,7 +26,10 @@ class CompressionHandler
     public $Errors = [];
 
     /**
+     * Constructor.
+     *
      * @param string $Data The data to be worked upon.
+     * @return void
      */
     public function __construct(string $Data)
     {

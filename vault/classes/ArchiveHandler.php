@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2021.03.11).
+ * This file: Archive handler (last modified: 2021.07.10).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -24,8 +24,9 @@ interface ArchiveHandlerInterface
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
+     * @return string The entry's content, or an empty string if not available.
      */
-    public function EntryRead(int $Bytes = -1);
+    public function EntryRead(int $Bytes = -1): string;
 
     /**
      * Return the compressed size of the entry at the current entry pointer.
@@ -64,8 +65,11 @@ interface ArchiveHandlerInterface
 
     /**
      * Return the name of the entry at the current entry pointer.
+     *
+     * @return string The name of the entry at the current entry pointer, or an
+     *      empty string if there's no entry or if the entry pointer is invalid.
      */
-    public function EntryName();
+    public function EntryName(): string;
 
     /**
      * Move the entry pointer ahead.
@@ -118,6 +122,7 @@ class ZipHandler extends ArchiveHandler
      * Construct the zip archive object.
      *
      * @param string $Pointer
+     * @return void
      */
     public function __construct($Pointer)
     {
@@ -142,7 +147,11 @@ class ZipHandler extends ArchiveHandler
         $this->NumFiles = $this->ZipObject->numFiles;
     }
 
-    /** Destruct the Zip archive object. */
+    /**
+     * Destruct the Zip archive object.
+     *
+     * @return void
+     */
     public function __destruct()
     {
         if (is_object($this->ZipObject) && $this->ErrorState === 0) {
@@ -154,9 +163,9 @@ class ZipHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
-     * @return string The entry's content or an empty string.
+     * @return string The entry's content, or an empty string if not available.
      */
-    public function EntryRead(int $Bytes = -1)
+    public function EntryRead(int $Bytes = -1): string
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -217,10 +226,13 @@ class ZipHandler extends ArchiveHandler
 
     /**
      * Return the name of the entry at the current entry pointer.
+     *
+     * @return string The name of the entry at the current entry pointer, or an
+     *      empty string if there's no entry or if the entry pointer is invalid.
      */
-    public function EntryName()
+    public function EntryName(): string
     {
-        return isset($this->StatIndex['name']) ? $this->StatIndex['name'] : '';
+        return (isset($this->StatIndex['name']) && is_string($this->StatIndex['name'])) ? $this->StatIndex['name'] : '';
     }
 
     /**
@@ -265,6 +277,7 @@ class TarHandler extends ArchiveHandler
      * Construct the tar archive object.
      *
      * @param string $File
+     * @return void
      */
     public function __construct($File)
     {
@@ -288,9 +301,9 @@ class TarHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
-     * @return string The entry's content or an empty string.
+     * @return string The entry's content, or an empty string if not available.
      */
-    public function EntryRead(int $Bytes = -1)
+    public function EntryRead(int $Bytes = -1): string
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -345,7 +358,7 @@ class TarHandler extends ArchiveHandler
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
      *
-     * @return string Empty because TAR doesn't provide internal CRCs.
+     * @return string Empty because Tar doesn't provide internal CRCs.
      */
     public function EntryCRC(): string
     {
@@ -354,8 +367,11 @@ class TarHandler extends ArchiveHandler
 
     /**
      * Return the name of the entry at the current entry pointer.
+     *
+     * @return string The name of the entry at the current entry pointer, or an
+     *      empty string if there's no entry or if the entry pointer is invalid.
      */
-    public function EntryName()
+    public function EntryName(): string
     {
         return preg_replace('/[^\x20-\xff]/', '', substr($this->Data, $this->Offset, 100));
     }
@@ -406,6 +422,7 @@ class RarHandler extends ArchiveHandler
      * Construct the rar archive object.
      *
      * @param string $Pointer
+     * @return void
      */
     public function __construct($Pointer)
     {
@@ -426,7 +443,11 @@ class RarHandler extends ArchiveHandler
         $this->PointerSelf = $Pointer;
     }
 
-    /** Destruct the Rar archive object. */
+    /**
+     * Destruct the Rar archive object.
+     *
+     * @return void
+     */
     public function __destruct()
     {
         if (is_object($this->RarObject) && $this->ErrorState === 0) {
@@ -438,9 +459,9 @@ class RarHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
-     * @return string The entry's content or an empty string.
+     * @return string The entry's content, or an empty string if not available.
      */
-    public function EntryRead(int $Bytes = -1)
+    public function EntryRead(int $Bytes = -1): string
     {
         $Actual = $this->EntryActualSize();
         if ($Bytes < 0 || $Bytes > $Actual) {
@@ -506,10 +527,19 @@ class RarHandler extends ArchiveHandler
 
     /**
      * Return the name of the entry at the current entry pointer.
+     *
+     * @return string The name of the entry at the current entry pointer, or an
+     *      empty string if there's no entry or if the entry pointer is invalid.
      */
-    public function EntryName()
+    public function EntryName(): string
     {
-        return is_object($this->RarEntry) ? $this->RarEntry->getName() : false;
+        if (is_object($this->RarEntry)) {
+            $Try = $this->RarEntry->getName();
+            if (is_string($Try)) {
+                return $Try;
+            }
+        }
+        return '';
     }
 
     /**
@@ -580,6 +610,7 @@ class PdfHandler extends ArchiveHandler
      * Construct the instance.
      *
      * @param string $File
+     * @return void
      */
     public function __construct(string $File)
     {
@@ -848,7 +879,7 @@ class PdfHandler extends ArchiveHandler
      * Return the actual entry in the archive at the current entry pointer.
      *
      * @param int $Bytes Optionally, how many bytes to read from the entry.
-     * @return string The entry's content or an empty string.
+     * @return string The entry's content, or an empty string if not available.
      */
     public function EntryRead(int $Bytes = -1): string
     {
@@ -901,7 +932,7 @@ class PdfHandler extends ArchiveHandler
     /**
      * Return the reported internal CRC hash for the entry, if it exists.
      *
-     * @return string Empty because PDF doesn't provide internal CRCs.
+     * @return string Empty because Pdf doesn't provide internal CRCs.
      */
     public function EntryCRC(): string
     {
@@ -911,11 +942,11 @@ class PdfHandler extends ArchiveHandler
     /**
      * Return the name of the entry at the current entry pointer.
      *
-     * @return string
+     * @return string Using 'PDFStream' because entries here don't have names.
      */
     public function EntryName(): string
     {
-        return $this->Objects[$this->Index]['EntryName'] ?? 'PDFStream';
+        return 'PDFStream';
     }
 
     /**
