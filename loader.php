@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2020.11.29).
+ * This file: The loader (last modified: 2021.07.13).
  */
 
 /**
@@ -140,7 +140,6 @@ if ($phpMussel['Config']['general']['enable_plugins']) {
 
 /** This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
 if (!$phpMussel['Mussel_sapi'] || $phpMussel['Alternate']) {
-
     /**
      * Check whether the upload handler exists and attempt to load it.
      */
@@ -167,7 +166,6 @@ elseif (file_exists($phpMussel['Vault'] . 'cli.php')) {
 }
 
 if ($phpMussel['Config']['general']['cleanup']) {
-
     /** Destroy unrequired plugin closures. */
     if (isset($phpMussel['MusselPlugins']['closures'])) {
         foreach ($phpMussel['MusselPlugins']['closures'] as $x) {
