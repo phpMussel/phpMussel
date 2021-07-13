@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.04).
+ * This file: Front-end functions file (last modified: 2021.07.13).
  */
 
 /**
@@ -898,10 +898,9 @@ $phpMussel['FilterSwitch'] = function (array $Switches, string $Selector, bool &
 /**
  * Quarantined file list generator (returns an array of quarantined files).
  *
- * @param bool $DeleteMode Whether to delete quarantined files when checking.
  * @return array An array of quarantined files.
  */
-$phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use (&$phpMussel): array {
+$phpMussel['Quarantine-RecursiveList'] = function () use (&$phpMussel): array {
     /** Guard against missing quarantine directory. */
     if (!$phpMussel['BuildPath']($phpMussel['qfuPath'], false)) {
         return [];
@@ -917,7 +916,7 @@ $phpMussel['Quarantine-RecursiveList'] = function (bool $DeleteMode = false) use
             continue;
         }
         /** Deletes all files in quarantine. */
-        if ($DeleteMode) {
+        if (!empty($_POST['DeleteAll'])) {
             $DeleteMe = substr($Item, $Offset);
             $phpMussel['FE']['state_msg'] .= '<code>' . $DeleteMe . '</code> ' . $phpMussel['L10N']->getString(
                 unlink($phpMussel['qfuPath'] . $DeleteMe) ? 'response_file_deleted' : 'response_delete_error'
