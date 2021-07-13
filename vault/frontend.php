@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.04).
+ * This file: Front-end handler (last modified: 2021.07.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -116,7 +116,7 @@ $phpMussel['FE'] = [
     ),
 
     /** State reflecting whether the current request is cronable. */
-    'CronMode' => !empty($_POST['CronMode']),
+    'CronMode' => empty($_POST['CronMode']) ? '' : $_POST['CronMode'],
 
     /** The user agent of the current request. */
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
@@ -2831,14 +2831,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
         }
     }
 
-    /** Delete all files in quarantine. */
-    $DeleteMode = !empty($_POST['DeleteAll']);
-
     /** Template for quarantine files row. */
     $phpMussel['FE']['QuarantineRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_quarantine_row.html'));
 
     /** Fetch quarantine data array. */
-    $phpMussel['FilesInQuarantine'] = $phpMussel['Quarantine-RecursiveList']($DeleteMode);
+    $phpMussel['FilesInQuarantine'] = $phpMussel['Quarantine-RecursiveList']();
 
     /** Number of files in quarantine. */
     $phpMussel['FilesInQuarantineCount'] = count($phpMussel['FilesInQuarantine']);
