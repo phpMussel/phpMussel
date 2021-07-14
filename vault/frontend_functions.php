@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.13).
+ * This file: Front-end functions file (last modified: 2021.07.14).
  */
 
 /**
@@ -1413,7 +1413,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
         $phpMussel['FormatFilesize']($BytesAdded);
         $phpMussel['FormatFilesize']($BytesRemoved);
         $phpMussel['FE']['state_msg'] .= sprintf(
-            $phpMussel['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $phpMussel['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesAdded,
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
@@ -1493,7 +1493,7 @@ $phpMussel['UpdatesHandler-Uninstall'] = function ($ID) use (&$phpMussel) {
     }
     $phpMussel['FormatFilesize']($BytesRemoved);
     $phpMussel['FE']['state_msg'] .= sprintf(
-        $phpMussel['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+        $phpMussel['FE']['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
         $BytesRemoved,
         $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
     );
@@ -1805,7 +1805,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
         $phpMussel['FormatFilesize']($BytesAdded);
         $phpMussel['FormatFilesize']($BytesRemoved);
         $phpMussel['FE']['state_msg'] .= sprintf(
-            $phpMussel['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $phpMussel['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesAdded,
             $BytesRemoved,
             $phpMussel['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)

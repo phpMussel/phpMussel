@@ -38,6 +38,9 @@ Detailed version release guidelines for phpMussel can be found at:
   loop could theoretically occur under certain circumstances when attempting to
   install or update a component via the front-end updates page; Fixed.
 
+- [2021.07.14; Maikuolan]: It's now possible, when updating via Cronable, to
+  specify whether to update just the signature files, or to update everything.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 

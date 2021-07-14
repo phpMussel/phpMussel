@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.13).
+ * This file: Front-end handler (last modified: 2021.07.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -140,6 +140,24 @@ $phpMussel['FE'] = [
     'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
     'URL-Website' => 'https://phpmussel.github.io/'
 ];
+
+/** Trace to determine the type of cron operation. */
+if ($phpMussel['FE']['CronMode'] !== '') {
+    $phpMussel['FE']['CronType'] = 'update';
+    $phpMussel['CronDebug'] = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 4);
+    foreach ($phpMussel['CronDebug'] as $phpMussel['ThisCronDebug']) {
+        if (
+            isset($phpMussel['ThisCronDebug']['function'], $phpMussel['ThisCronDebug']['class']) &&
+            $phpMussel['ThisCronDebug']['function'] === 'localUpdate' &&
+            $phpMussel['ThisCronDebug']['class'] === 'Maikuolan\Cronable\Cronable'
+        ) {
+            $phpMussel['FE']['CronType'] = 'localUpdate';
+        }
+    }
+    unset($phpMussel['CronDebug'], $phpMussel['ThisCronDebug']);
+} else {
+    $phpMussel['FE']['CronType'] = '';
+}
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . $phpMussel['FE']['LogoutButton'];
@@ -350,7 +368,7 @@ if (($phpMussel['Failed2FA'] = (int)$phpMussel['FECacheGet'](
 }
 
 /** Attempt to log in the user. */
-if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) {
+if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode'] !== '') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
         $phpMussel['FE']['UserState'] = -1;
         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_login_password_field_empty');
@@ -379,12 +397,12 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
                     'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']]
                 );
                 if (($phpMussel['FE']['Permissions'] === 3 && (
-                    !$phpMussel['FE']['CronMode'] || substr($phpMussel['FE']['UA'], 0, 10) !== 'Cronable v'
+                    $phpMussel['FE']['CronMode'] === '' || substr($phpMussel['FE']['UA'], 0, 10) !== 'Cronable v'
                 )) || !($phpMussel['FE']['Permissions'] > 0 && $phpMussel['FE']['Permissions'] <= 3)) {
                     $phpMussel['FE']['Permissions'] = 0;
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_login_wrong_endpoint');
                 } else {
-                    if (!$phpMussel['FE']['CronMode']) {
+                    if ($phpMussel['FE']['CronMode'] === '') {
                         $phpMussel['FE']['SessionKey'] = hash('md5', $phpMussel['GenerateSalt']());
                         $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
                         setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', $phpMussel['HostnameOverride'] ?: $phpMussel['HTTP_HOST'], false, true);
@@ -458,7 +476,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode']) 
         if ($phpMussel['Config']['general']['FrontEndLog']) {
             $phpMussel['LoggerMessage'] = $phpMussel['FE']['state_msg'];
         }
-        if (!$phpMussel['FE']['CronMode']) {
+        if ($phpMussel['FE']['CronMode'] === '') {
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['FE']['state_msg'] . '<br /><br /></div>';
         }
     } elseif ($phpMussel['Config']['general']['FrontEndLog']) {
@@ -605,7 +623,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['ASYNC']) {
 $phpMussel['MajorVersionNotice'] = '';
 
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
-if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2) && !$phpMussel['FE']['CronMode']) {
+if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2) && $phpMussel['FE']['CronMode'] === '') {
     /** Log out the user. */
     if ($phpMussel['QueryVars']['phpmussel-page'] === 'logout') {
         $phpMussel['FE']['SessionList'] = str_ireplace($phpMussel['FE']['ThisSession'], '', $phpMussel['FE']['SessionList']);
@@ -749,7 +767,7 @@ if ($phpMussel['FE']['UserState'] === 1) {
 }
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
-if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
+if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('title_login'), '', false);
 
@@ -784,7 +802,7 @@ if ($phpMussel['FE']['UserState'] !== 1 && !$phpMussel['FE']['CronMode']) {
  * The user has logged in, but hasn't selected anything to view. Show them the
  * front-end home page.
  */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && !$phpMussel['FE']['CronMode']) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && $phpMussel['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_home'), $phpMussel['L10N']->getString('tip_home'), false);
 
@@ -1721,7 +1739,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
 }
 
 /** Updates. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['FE']['Permissions'] === 1 || ($phpMussel['FE']['Permissions'] === 3 && $phpMussel['FE']['CronMode']))) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['FE']['Permissions'] === 1 || ($phpMussel['FE']['Permissions'] === 3 && $phpMussel['FE']['CronMode'] !== ''))) {
     /** Include major version notice (if relevant). */
     if ($phpMussel['MajorVersionNotice']) {
         $phpMussel['FE']['state_msg'] .= $phpMussel['MajorVersionNotice'] . '<hr />';
@@ -2107,10 +2125,21 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     }
 
     /** Update request via Cronable. */
-    if (!empty($phpMussel['Alternate']) && !empty($UpdateAll) && !empty($phpMussel['Components']['Outdated'])) {
+    if (!empty($phpMussel['Alternate']) && (
+        (
+            $phpMussel['FE']['CronMode'] === 'Signatures' &&
+            !empty($phpMussel['Components']['OutdatedSignatureFiles']) &&
+            ($phpMussel['FE']['BuildUse'] = 'OutdatedSignatureFiles')
+        ) || (
+            $phpMussel['FE']['CronMode'] !== '' &&
+            $phpMussel['FE']['CronMode'] !== 'Signatures' &&
+            !empty($phpMussel['Components']['Outdated']) &&
+            ($phpMussel['FE']['BuildUse'] = 'Outdated')
+        )
+    )) {
         /** Fetch dependency installation triggers. */
-        $phpMussel['Components']['Build'] = $phpMussel['Components']['Outdated'];
-        foreach ($phpMussel['Components']['Outdated'] as $phpMussel['Components']['Key']) {
+        $phpMussel['Components']['Build'] = $phpMussel['Components'][$phpMussel['FE']['BuildUse']];
+        foreach ($phpMussel['Components'][$phpMussel['FE']['BuildUse']] as $phpMussel['Components']['Key']) {
             if (isset($phpMussel['Components']['Install Together'][$phpMussel['Components']['Key']])) {
                 $phpMussel['Components']['Build'] = array_merge(
                     $phpMussel['Components']['Build'],
@@ -2118,10 +2147,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
                 );
             }
         }
-        $phpMussel['Components']['Outdated'] = array_unique($phpMussel['Components']['Build']);
+        $phpMussel['Components'][$phpMussel['FE']['BuildUse']] = array_unique($phpMussel['Components']['Build']);
 
         /** Trigger updates handler. */
-        $phpMussel['UpdatesHandler']('update-component', $phpMussel['Components']['Outdated']);
+        $phpMussel['UpdatesHandler']('update-component', $phpMussel['Components'][$phpMussel['FE']['BuildUse']]);
 
         /** Check again, since the information might've been updated. */
         $phpMussel['CheckVersions']($phpMussel['Components']['Meta'], $phpMussel['Components']['Installed Versions']);
@@ -2343,22 +2372,36 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
     unset($phpMussel['Updater-IO']);
 
     /** Send output. */
-    if (!$phpMussel['FE']['CronMode']) {
+    if ($phpMussel['FE']['CronMode'] === '') {
         /** Normal page output. */
         echo $phpMussel['SendOutput']();
-    } elseif (!empty($UpdateAll)) {
-        /** Returned state message for Cronable (locally updating). */
-        $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])];
+    } elseif ($phpMussel['FE']['CronType'] === 'localUpdate') {
+        /** Returned state message for Cronable (updating locally). */
+        $Results = ['state_msg' => str_ireplace(
+            ['<code>', '</code>', '<br />', '<hr />'],
+            ['[', ']', "\n", "\n---\n"],
+            $phpMussel['FE']['state_msg']
+        )];
     } elseif (!empty($phpMussel['FE']['state_msg'])) {
         /** Returned state message for Cronable. */
-        echo json_encode([
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg'])
-        ]);
-    } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && count($phpMussel['Components']['Outdated'])) {
+        echo json_encode(['state_msg' => str_ireplace(
+            ['<code>', '</code>', '<br />', '<hr />'],
+            ['[', ']', "\n", "\n---\n"],
+            $phpMussel['FE']['state_msg']
+        )]);
+    } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && (
+        $phpMussel['Components']['CountOutdated'] > 0 ||
+        $phpMussel['Components']['CountOutdatedSignatureFiles'] > 0
+    )) {
         /** Returned list of outdated components for Cronable. */
         echo json_encode([
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $phpMussel['FE']['state_msg']),
-            'outdated' => $phpMussel['Components']['Outdated']
+            'state_msg' => str_ireplace(
+                ['<code>', '</code>', '<br />', '<hr />'],
+                ['[', ']', "\n", "\n---\n"],
+                $phpMussel['FE']['state_msg']
+            ),
+            'outdated' => $phpMussel['Components']['CountOutdated'] > 0 ? $phpMussel['Components']['Outdated'] : [],
+            'outdated_signature_files' => $phpMussel['Components']['CountOutdatedSignatureFiles'] > 0 ? $phpMussel['Components']['OutdatedSignatureFiles'] : []
         ]);
     }
 
@@ -3104,15 +3147,15 @@ if ($phpMussel['FE']['Rebuild']) {
 }
 
 /** Print Cronable failure state messages here. */
-if ($phpMussel['FE']['CronMode'] && $phpMussel['FE']['state_msg'] && $phpMussel['FE']['UserState'] !== 1) {
-    if (empty($UpdateAll)) {
-        echo json_encode(['state_msg' => $phpMussel['FE']['state_msg']]);
-    } else {
+if ($phpMussel['FE']['CronMode'] !== '' && $phpMussel['FE']['state_msg'] !== '' && $phpMussel['FE']['UserState'] !== 1) {
+    if ($phpMussel['FE']['CronType'] === 'localUpdate') {
         $Results = ['state_msg' => $phpMussel['FE']['state_msg']];
+    } else {
+        echo json_encode(['state_msg' => $phpMussel['FE']['state_msg']]);
     }
 }
 
 /** Exit front-end. */
-if (empty($phpMussel['Alternate']) && empty($UpdateAll)) {
+if (empty($phpMussel['Alternate']) && $phpMussel['FE']['CronType'] !== 'localUpdate') {
     die;
 }
