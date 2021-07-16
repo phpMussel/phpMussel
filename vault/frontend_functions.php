@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.14).
+ * This file: Front-end functions file (last modified: 2021.07.16).
  */
 
 /**
@@ -1574,7 +1574,7 @@ $phpMussel['UpdatesHandler-Activate'] = function ($ID) use (&$phpMussel) {
                 !isset($phpMussel['Components']['Meta'][$Dependency]) ||
                 empty($phpMussel['Components']['Installed Versions'][$Dependency]) ||
                 !$phpMussel['IsActivable']($phpMussel['Components']['Meta'][$Dependency]) ||
-                $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$ThisTarget])
+                $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$Dependency])
             ) {
                 continue;
             }
