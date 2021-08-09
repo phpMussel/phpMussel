@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.16).
+ * This file: Front-end functions file (last modified: 2021.07.21).
  */
 
 /**
@@ -123,15 +123,16 @@ $phpMussel['ZeroMin'] = function () {
  * Format filesize information.
  *
  * @param int $Filesize
+ * @return void
  */
 $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
     $Iterate = 0;
     $Filesize = (int)$Filesize;
     while ($Filesize > 1024) {
-        $Filesize = $Filesize / 1024;
+        $Filesize /= 1024;
         $Iterate++;
-        if ($Iterate > 4) {
+        if ($Iterate > 3) {
             break;
         }
     }
