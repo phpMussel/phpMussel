@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.06.10).
+# This file: English language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -356,7 +356,7 @@ state_default_password: "Warning: Using default password!"
 state_email_sent: "Email successfully sent to "%s"."
 state_failed_missing: "Task failed because a necessary component is unavailable."
 state_loading: "Loading..."
-state_loadtime: "Page request completed in <span class="txtRd">%s</span> seconds."
+state_loadtime: "Page request completed in %s seconds."
 state_logged_in: "Logged in."
 state_logged_in_2fa_pending: "Logged in + 2FA pending."
 state_logged_out: "Logged out."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.06.10).
+# This file: Italian language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -354,7 +354,7 @@ state_default_password: "Avvertimento: Utilizzando la password predefinita!"
 state_email_sent: "Posta elettronica inviata con successo a "%s"."
 state_failed_missing: "Attività non riuscita perché un componente necessario non è disponibile."
 state_loading: "Caricamento in corso..."
-state_loadtime: "Richiesta di pagina completata in <span class="txtRd">%s</span> secondi."
+state_loadtime: "Richiesta di pagina completata in %s secondi."
 state_logged_in: "Connesso."
 state_logged_in_2fa_pending: "Connesso + 2FA in sospeso."
 state_logged_out: "Disconnesso."

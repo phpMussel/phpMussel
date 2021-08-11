@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.06.10).
+# This file: Indonesian language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -354,7 +354,7 @@ state_default_password: "Peringatan: Menggunakan kata sandi standar!"
 state_email_sent: "Email berhasil dikirim ke "%s"."
 state_failed_missing: "Tugas gagal karena komponen yang diperlukan tidak tersedia."
 state_loading: "Pemuatan..."
-state_loadtime: "Permintaan halaman selesai dalam <span class="txtRd">%s</span> detik."
+state_loadtime: "Permintaan halaman selesai dalam %s detik."
 state_logged_in: "Dimasuk."
 state_logged_in_2fa_pending: "Dimasuk + 2FA sedang menunggu."
 state_logged_out: "Dikeluar."

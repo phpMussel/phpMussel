@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.06.10).
+# This file: Russian language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -357,7 +357,7 @@ state_default_password: "Предупреждение: Использует ст
 state_email_sent: "Электронная почта успешно отправлена на «%s»."
 state_failed_missing: "Не удалось выполнить задачу, потому что необходимый компонент недоступен."
 state_loading: "В ходе выполнения..."
-state_loadtime: "Запрос страницы завершен через <span class="txtRd">%s</span> секунд."
+state_loadtime: "Запрос страницы завершен через %s секунд."
 state_logged_in: "Вошли в систему."
 state_logged_in_2fa_pending: "Вошли в систему + Ожидается 2FA."
 state_logged_out: "Вышел из системы."

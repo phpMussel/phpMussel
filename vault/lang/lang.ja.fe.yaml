@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.06.10).
+# This file: Japanese language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -354,7 +354,7 @@ state_default_password: "警告：デフォルトのパスワードを使用し�
 state_email_sent: "Ｅメールは「%s」に送信されました。"
 state_failed_missing: "必要なコンポーネントが使用できないため、タスクが失敗しました。"
 state_loading: "読み込んでいます..."
-state_loadtime: "ページ要求は<span class="txtRd">%s</span>秒後に完了しました。"
+state_loadtime: "ページ要求は%s秒後に完了しました。"
 state_logged_in: "ログインしました。"
 state_logged_in_2fa_pending: "ログインしました＋２ＦＡを待っています。"
 state_logged_out: "ログアウトしました。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.06.10).
+# This file: German language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -356,7 +356,7 @@ state_default_password: "Warnung: Verwendet das Standard-Passwort!"
 state_email_sent: "E-Mail wurde erfolgreich an "%s" gesendet."
 state_failed_missing: "Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist."
 state_loading: "Wird geladen..."
-state_loadtime: "Seite-Anfrage in <span class="txtRd">%s</span> Sekunden abgeschlossen."
+state_loadtime: "Seite-Anfrage in %s Sekunden abgeschlossen."
 state_logged_in: "Eingeloggt."
 state_logged_in_2fa_pending: "Eingeloggt + Warten auf 2FA."
 state_logged_out: "Ausgeloggt."

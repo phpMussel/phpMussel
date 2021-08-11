@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.06.10).
+# This file: Hindi language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -356,7 +356,7 @@ state_default_password: "चेतावनी: डिफ़ॉल्ट पा�
 state_email_sent: "ईमेल सफलतापूर्वक "%s" को भेजा गया।"
 state_failed_missing: "कार्य विफल रहा क्योंकि एक आवश्यक घटक अनुपलब्ध है।"
 state_loading: "लोड हो रहा है..."
-state_loadtime: "पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।"
+state_loadtime: "पृष्ठ अनुरोध %s सेकंड में पूरा हुआ।"
 state_logged_in: "लॉग इन किया है।"
 state_logged_in_2fa_pending: "लॉग इन किया है + 2FA लंबित है।"
 state_logged_out: "लॉग आउट किया है।"

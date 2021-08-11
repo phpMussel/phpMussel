@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.06.10).
+# This file: Urdu language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -354,7 +354,7 @@ state_default_password: "انتباہ: ڈیفالٹ پاس ورڈ کو استع�
 state_email_sent: "ای میل کامیابی سے "%s" پر بھیجا گیا."
 state_failed_missing: "کام ناکام ہوگیا کیونکہ ایک ضروری جزو دستیاب نہیں ہے."
 state_loading: "لوڈ کر رہا ہے ..."
-state_loadtime: "<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست."
+state_loadtime: "%s سیکنڈ میں مکمل ہونے والی درخواست کی درخواست."
 state_logged_in: "لاگ ان."
 state_logged_in_2fa_pending: "لاگ ان + 2FA زیر التواء."
 state_logged_out: "لاگ آؤٹ."

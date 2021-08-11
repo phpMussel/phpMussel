@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.06.10).
+# This file: Vietnamese language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -354,7 +354,7 @@ state_default_password: "Cảnh báo: Nó là sử dụng mật khẩu mặc đ�
 state_email_sent: "Email được gửi thành công tới "%s"."
 state_failed_missing: "Tác vụ không thành công vì không có thành phần cần thiết."
 state_loading: "Trong tiến trình..."
-state_loadtime: "Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây."
+state_loadtime: "Yêu cầu trang hoàn thành trong %s giây."
 state_logged_in: "Đã đăng nhập."
 state_logged_in_2fa_pending: "Đã đăng nhập + Đang chờ xử lý 2FA."
 state_logged_out: "Đã đăng xuất."

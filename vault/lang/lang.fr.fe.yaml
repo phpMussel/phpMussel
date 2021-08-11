@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.06.10).
+# This file: French language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -357,8 +357,8 @@ state_email_sent: "E-mail envoyé avec succès à « %s »."
 state_failed_missing: "La tâche a échoué car un composant nécessaire n'est pas disponible."
 state_loading: "Chargement..."
 state_loadtime:
- - "Requête de page complétée en <span class="txtRd">%s</span> seconde."
- - "Requête de page complétée en <span class="txtRd">%s</span> secondes."
+ - "Requête de page complétée en %s seconde."
+ - "Requête de page complétée en %s secondes."
 state_logged_in: "Connecté."
 state_logged_in_2fa_pending: "Connecté + 2FA en attente."
 state_logged_out: "Déconnecté."

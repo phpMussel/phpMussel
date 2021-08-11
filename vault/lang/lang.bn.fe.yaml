@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.06.10).
+# This file: Bangla language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -354,7 +354,7 @@ state_default_password: "সতর্কতা: ডিফল্ট পাসও�
 state_email_sent: "ইমেল সফলভাবে "%s" এ পাঠানো হয়েছে।"
 state_failed_missing: "কার্য ব্যর্থ হয়েছে কারণ একটি প্রয়োজনীয় উপাদান অনুপলব্ধ।"
 state_loading: "লোড হচ্ছে ..."
-state_loadtime: "পৃষ্ঠা অনুরোধ সম্পন্ন <span class="txtRd">%s</span> সেকেন্ড।"
+state_loadtime: "পৃষ্ঠা অনুরোধ সম্পন্ন %s সেকেন্ড।"
 state_logged_in: "লগ ইন হয়।"
 state_logged_in_2fa_pending: "লগ ইন হয় + 2FA মুলতুবি।"
 state_logged_out: "লগ আউট হয়।"
