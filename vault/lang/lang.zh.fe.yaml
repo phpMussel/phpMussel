@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.06.10).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -355,7 +355,7 @@ state_default_password: "警告：它使用标准密码！"
 state_email_sent: "电子邮件已成功发送至“%s”。"
 state_failed_missing: "任务失败，因为必要的组件不可用。"
 state_loading: "载入中..."
-state_loadtime: "页面请求在<span class="txtRd">%s</span>秒内完成。"
+state_loadtime: "页面请求在%s秒内完成。"
 state_logged_in: "已登录。"
 state_logged_in_2fa_pending: "已登录，2FA待定。"
 state_logged_out: "已登出。"

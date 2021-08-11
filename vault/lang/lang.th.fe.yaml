@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.06.10).
+# This file: Thai language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -355,7 +355,7 @@ state_default_password: "คำเตือน: ใช้ค่าเริ่�
 state_email_sent: "ส่งอีเมลสำเร็จ "%s" แล้ว."
 state_failed_missing: "ภารกิจล้มเหลวเนื่องจากคอมโพเนนต์ที่จำเป็นไม่พร้อมใช้งาน."
 state_loading: "กำลังโหลด ..."
-state_loadtime: "คำขอหน้าเสร็จสิ้นภายใน <span class="txtRd">%s</span> วินาที."
+state_loadtime: "คำขอหน้าเสร็จสิ้นภายใน %s วินาที."
 state_logged_in: "เข้าสู่ระบบ."
 state_logged_in_2fa_pending: "เข้าสู่ระบบ + รอดำเนินการ 2FA."
 state_logged_out: "ออกจากระบบ."

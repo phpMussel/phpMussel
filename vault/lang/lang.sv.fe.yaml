@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.06.10).
+# This file: Swedish language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -355,7 +355,7 @@ state_default_password: "Varning: Använder standardlösenordet!"
 state_email_sent: "E-post skickades framgångsrikt till "%s"."
 state_failed_missing: "Uppgiften misslyckades eftersom en nödvändig komponent inte är tillgänglig."
 state_loading: "Laddar..."
-state_loadtime: "Sidförfrågan färdigställd om <span class="txtRd">%s</span> sekunder."
+state_loadtime: "Sidförfrågan färdigställd om %s sekunder."
 state_logged_in: "Inloggad."
 state_logged_in_2fa_pending: "Inloggad + 2FA väntar."
 state_logged_out: "Utloggad."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.06.10).
+# This file: Turkish language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -355,7 +355,7 @@ state_default_password: "Uyarı: Varsayılan şifreyi kullanıyor!"
 state_email_sent: "E-posta başarıyla "%s" olarak gönderildi."
 state_failed_missing: "Gerekli bir bileşen kullanılamaması nedeniyle görev başarısız oldu."
 state_loading: "Yükleniyor..."
-state_loadtime: "Sayfa isteği <span class="txtRd">%s</span> saniye içinde tamamlandı."
+state_loadtime: "Sayfa isteği %s saniye içinde tamamlandı."
 state_logged_in: "Giriş yapıldı."
 state_logged_in_2fa_pending: "Giriş yapıldı + 2FA beklemede."
 state_logged_out: "Çıkış yapıldı."

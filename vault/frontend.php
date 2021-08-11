@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.14).
+ * This file: Front-end handler (last modified: 2021.08.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2927,7 +2927,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'siginfo' && $phpMussel['F
     $phpMussel['FE']['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcTime'] = '<div class="s">' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcTime'], 'state_loadtime'),
-        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcTime'], 3)
+        '<span class="txtRd">' . $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcTime'], 3) . '</span>'
     ) . '</div>';
 
     /** Parse output. */
@@ -3117,7 +3117,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
     $phpMussel['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $phpMussel['FE']['ProcessTime'] = '<br />' . sprintf(
         $phpMussel['L10N']->getPlural($phpMussel['FE']['ProcessTime'], 'state_loadtime'),
-        $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcessTime'], 3)
+        '<span class="txtRd">' . $phpMussel['NumberFormatter']->format($phpMussel['FE']['ProcessTime'], 3) . '</span>'
     );
 
     /** Set logfile list or no logfiles available message. */

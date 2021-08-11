@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.06.10).
+# This file: Latvian language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -358,7 +358,7 @@ state_default_password: "Brīdinājums: Izmantojot noklusējuma paroli!"
 state_email_sent: "E-pasts veiksmīgi nosūtīts uz "%s"."
 state_failed_missing: "Uzdevums neizdevās, jo nepieciešamais komponents nav pieejams."
 state_loading: "Ielādēta..."
-state_loadtime: "Lapas pieprasījums ir pabeigts <span class="txtRd">%s</span> sekundēs."
+state_loadtime: "Lapas pieprasījums ir pabeigts %s sekundēs."
 state_logged_in: "Ielogojies."
 state_logged_in_2fa_pending: "Ielogojies + Gaidu 2FA."
 state_logged_out: "Izlogojies."

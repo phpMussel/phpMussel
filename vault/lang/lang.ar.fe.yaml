@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.06.10).
+# This file: Arabic language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -355,7 +355,7 @@ state_default_password: "تحذير: يستخدم الافتراضي كلمه ا
 state_email_sent: "تم إرسال البريد الإلكتروني بنجاح إلى "%s"."
 state_failed_missing: "فشلت المهمة لأن المكون الضروري غير متوفر."
 state_loading: "جار التحميل..."
-state_loadtime: "اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان."
+state_loadtime: "اكتمل طلب الصفحة خلال %s ثوان."
 state_logged_in: "حاليا على."
 state_logged_in_2fa_pending: "حاليا على + 2FA معلقة."
 state_logged_out: "تسجيل الخروج."

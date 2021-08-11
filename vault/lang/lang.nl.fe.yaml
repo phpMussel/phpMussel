@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.06.10).
+# This file: Dutch language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -357,7 +357,7 @@ state_default_password: "Waarschuwing: Gebruikt de standaard wachtwoord!"
 state_email_sent: "E-mail succesvol verzonden naar "%s"."
 state_failed_missing: "Taak mislukt omdat een noodzakelijk component niet beschikbaar is."
 state_loading: "Bezig met laden..."
-state_loadtime: "Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden."
+state_loadtime: "Paginaverzoek voltooid in %s seconden."
 state_logged_in: "Ingelogd."
 state_logged_in_2fa_pending: "Ingelogd + wachten op 2FA."
 state_logged_out: "Uitgelogd."

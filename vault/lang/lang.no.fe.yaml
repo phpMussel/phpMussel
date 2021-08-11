@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.06.10).
+# This file: Norwegian language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -355,7 +355,7 @@ state_default_password: "Advarsel: Bruker standard passordet"
 state_email_sent: "E-post ble sendt til "%s" vellykket."
 state_failed_missing: "Oppgave mislyktes fordi en nødvendig komponent ikke er tilgjengelig."
 state_loading: "Laster ..."
-state_loadtime: "Sideforespørsel avsluttet om <span class="txtRd">%s</span> sekunder."
+state_loadtime: "Sideforespørsel avsluttet om %s sekunder."
 state_logged_in: "Logget inn."
 state_logged_in_2fa_pending: "Logget inn + 2FA venter."
 state_logged_out: "Logget ut."

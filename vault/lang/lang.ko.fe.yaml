@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.06.10).
+# This file: Korean language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -355,7 +355,7 @@ state_default_password: "경고 : 기본 암호를 사용하여!"
 state_email_sent: "이메일이 "%s"로 전송되었습니다."
 state_failed_missing: "필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다."
 state_loading: "로드 중 ..."
-state_loadtime: "페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다."
+state_loadtime: "페이지 요청이 %s 초 후에 완료되었습니다."
 state_logged_in: "로그인 했습니다."
 state_logged_in_2fa_pending: "로그인 했습니다 + 2FA를 기다리는 중."
 state_logged_out: "로그 아웃했습니다."

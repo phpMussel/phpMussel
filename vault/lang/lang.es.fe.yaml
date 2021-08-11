@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2021.06.10).
+# This file: Spanish language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -357,7 +357,7 @@ state_default_password: "¡Advertencia: Usando la contraseña estándar!"
 state_email_sent: "Correo electrónico enviado con éxito a "%s"."
 state_failed_missing: "La tarea falló porque un componente necesario no está disponible."
 state_loading: "Cargando..."
-state_loadtime: "Solicitud de página completada en <span class="txtRd">%s</span> segundos."
+state_loadtime: "Solicitud de página completada en %s segundos."
 state_logged_in: "Conectado."
 state_logged_in_2fa_pending: "Conectado + 2FA pendiente."
 state_logged_out: "Desconectado."

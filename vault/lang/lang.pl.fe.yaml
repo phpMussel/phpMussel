@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.06.10).
+# This file: Polish language data for the front-end (last modified: 2021.08.10).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -358,7 +358,7 @@ state_default_password: "Ostrzeżenie: Używanie domyślnego hasła!"
 state_email_sent: "E-mail został pomyślnie wysłany na „%s”."
 state_failed_missing: "Zadanie nie powiodło się, ponieważ niezbędny komponent jest niedostępny."
 state_loading: "Ładowanie..."
-state_loadtime: "Żądanie strony zakończone w <span class="txtRd">%s</span> sekundy."
+state_loadtime: "Żądanie strony zakończone w %s sekundy."
 state_logged_in: "Zalogowany."
 state_logged_in_2fa_pending: "Zalogowany + Oczekuje na potwierdzenie 2FA."
 state_logged_out: "Wylogowano."
