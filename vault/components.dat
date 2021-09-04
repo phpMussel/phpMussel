@@ -1,8 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.4.0-DEV+21190406
- Minimum Required: 2.0.0
+ Version: 2.4.0-DEV+21236702
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.6.2
@@ -40,18 +39,17 @@ phpMussel Core:
    - a3dc354a5dc5740c3fd327042cd4c2bb51db25b3aa62b5a3fe9d827f84858eea:32504
    - 19e973bdc4e75557ba10d3934e68993956bc24bd57f6f109f9eca159100a7c50:3872
    - 3db7a6ddf3260981ab70f1f53a5d5e72b34c1d24ac120abef65457f5a15ca137:1830
-   - 78e4a9548bc66ea90753ee7337595aae7b73a2d84efa4484033d544c5d91af72:8245
+   - c8376604d4de8e814cdd97f38043f8205c869e2ce46ab225dc6e21cd913e79f4:8360
    - 3ee6fd433c688252e2b185e227dbcfc001ec5a1bfc0df09920ad7556c0fa2304:16895
    - 9798ff7ea07c6a3b2e29aa5bbfc6200f0e05a527e2f6bfaf5f32375e18eb8287:7501
    - 9e0da5d4e3ac811e0375698fc5bb40e50f46c09370f6e21f8865d007c791525c:232580
-   - d37d07a98a16177ffd05bc7b6de3da1a35b378e069e92d6b3bba9fb5cc033c19:6409
+   - 53aee79fad44d5ef071df8434470f3dcd01dace20eac2ee4ca42261a4f7c99db:6549
    - d8f2d65398a01aaaf308425d3dd21b421b7a23c8a20e9e1f5dd3409cad4c4885:4666
    - 2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.4.0-DEV+21220452
- Minimum Required: 2.0.0
+ Version: 2.4.0-DEV+21236702
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.6.2
@@ -139,9 +137,9 @@ phpMussel Front-End:
    - 205e59afd4aa6cb6bbc2f41ac472b3cb552c198beea5be87eb02e4cce794a9e0:2067
    - 0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424
    - e9fab19b6d1eee218d78b453ef9cf19cbe8038901acfd462828b861f94188036:116
-   - 890485d14a72c942e9376055625452b9e73ab1b859bb87d905ad1a88ada9dc9b:893
+   - b48d29e800b1bd47c3b836f3f312f74ceeac5cc03a8c5fa6ca83a4a209ed0f9c:894
    - 248eec685e131d9a719ee8c0d0d10fcd2da681ed399dc57143803f047f5ca8aa:234
-   - 6fb8cfe37a40058d47bfcb79984a7a2c3b352207622c137d58eeaf64edd79894:1184
+   - 4332ecedaeb437463d02d13eec7bac8a2f4f2ee3c35521826fc0a67197ed93e1:1188
    - 9350b3f4081db72181a8fe6229de7f011b6caaaa471de800ea94aa826bee3968:752
    - d24f5b81f21b72cc3980122652386bf2a636c88a86a5d7f0f714c77be77b0860:735
    - 910e667bb03456935bdec49dce6cabac768f618b2ec26b685aff8a49d8559b39:549
@@ -151,14 +149,14 @@ phpMussel Front-End:
    - 502526ae5a9dc576d2709954780443694d7ce3bb7e13db357f5c74f7b5f4740e:1431
    - a9033fec4b01acc6846840d3584f03b6d22ad03ae2ee0f9b0b5ac0edf7a34587:672
    - d5d1fef5b2a1f36b785c93d339ce82ef699e548b92fb1af48f79abcc6064b3cc:706
-   - 786138231444ba70832f7469b68c271b4129bbbb620107430b567dd3eb022f41:1036
+   - db149494dbeee2b214ce694e33ce36a21c7a4e8122a25cffa6186346e4252a13:1041
    - 3e5134dc5eda0470368f7d81d84b2bb5ed9da113acd6653888b4a506db1d0857:634
    - d2f8a234b6fe597a0f76678cdb92f45f34322cab71454f0399e7fa0082a7709c:145
    - fa59c05631ebb5f3b352afaad46d4fdb9b3539311308d8827c976f9af645aacb:3389
    - 79d21a386767688768b0ca8a3d3a08821328e2bafca3238071dabfbddeb6f0ce:954
    - 03f8ad68bbb9053685fd0f2deb1a9a971793eafa7924aca8c6bcd3f99a60a75c:643
    - a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606
-   - d07bb567455c1b9080dee9219ffe7d7e78a8dd1676f00a69205766913041f6a5:8674
+   - 582b83f2bb7589830929167872f0cf32e40730bf218288ac81edc965d20fc8a6:8798
    - 18ff0063d5ee9dd28b2aaaf033fc6fce5b64e325e94eacfb315146f8180c86fe:1023
    - df745c52f9e972b03e016ded19febe371034a8d3c929879a7b624b503ff2e3b3:17518
    - 9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705
@@ -169,13 +167,12 @@ phpMussel Front-End:
    - 3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - b3e71f57c28767ed31125277ab4d629db568c16593a7c67d572feb0106ab9241:176104
-   - 5a66a7c5561085ed99465528ac706321e5b8b0984b3f6620af38612046884fd5:116909
+   - 76c33dee66149db822b696944fc1193baba2b1eadfeacced640509a3599850a7:176318
+   - cfabbb8b5fa650cac4593f914dd54d977a02b8229fc3d81c1e5ca7dfcaf5d568:116912
  Reannotate: components.dat
 phpMussel Upload Handler:
  Name: phpMussel Upload Handler
- Version: 2.4.0-DEV+21160524
- Minimum Required: 2.0.0
+ Version: 2.4.0-DEV+21236702
  Dependencies:
   PHP: >=7.2
   phpMussel Core: ^2
@@ -195,13 +192,12 @@ phpMussel Upload Handler:
    - upload.php
   Checksum:
    - 7b656811c946982d7646c2e03934eb75f256a8c093d21d7caa9e4c0a82ce99b8:1020
-   - ba70f6d5f271714fe04a4fcc466821c5b1605ea4940a30ae46850da128ac45cb:1986
+   - cb51f7f4510c978890469503ea489b976e6a5af260fc8400909036789c385d23:2030
    - 7c3db32d9a88720aa17267430758855b98ceb20ecaf757119d57f0aefd36941e:21853
  Reannotate: components.dat
 phpMussel CLI Handler:
  Name: phpMussel CLI Handler
  Version: 2.3.0
- Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
   phpMussel Core: ^2
@@ -218,8 +214,7 @@ phpMussel CLI Handler:
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.6.3-DEV+21185654
- Minimum Required: 2.0.0
+ Version: 2.7.0-DEV+21236702
  Dependencies:
   PHP: >=7.2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -259,13 +254,12 @@ Common Classes Package:
    - f90cfad287a465486e125cf7c85d1109e0483bd2fce794896a7fbe9c764db34d:37594
    - 15b1bf4b44ba401da37325fc04aa0948d910b26239ba16208272c44f8e65af3e:12035
    - 502f652611b4adaaea655f8824edd8c050e54c1b9f1f4afe30be2b6617abc886:7993
-   - b71a7d42cdd96ba807bb10bb1c36e95254b9e4bd0aed3d57b943cdcb6d6535fc:13160
+   - ca153b60d87b80611b1799c2bac4d5f4396e8e88ccd158c45d8ff5afe9395c2b:14588
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English
  Extended Description: English language data
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -285,7 +279,6 @@ l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -305,7 +298,6 @@ l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -325,7 +317,6 @@ l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -345,7 +336,6 @@ l10n/es:
  Name: L10N: Español
  Extended Description: Lingüísticos datos Español
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -365,7 +355,6 @@ l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -385,7 +374,6 @@ l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -405,7 +393,6 @@ l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description: File Bahasa Indonesia
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -425,7 +412,6 @@ l10n/it:
  Name: L10N: Italiana
  Extended Description: Linguistici dati Italiana
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -445,7 +431,6 @@ l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -465,7 +450,6 @@ l10n/ko:
  Name: L10N: 한국어
  Extended Description: 한국어 언어 데이터
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -485,7 +469,6 @@ l10n/lv:
  Name: L10N: Latviešu
  Extended Description: Latviešu valodas dati
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -505,7 +488,6 @@ l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -525,7 +507,6 @@ l10n/no:
  Name: L10N: Norsk
  Extended Description: Norsk språkdata
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -545,7 +526,6 @@ l10n/pl:
  Name: L10N: Polski
  Extended Description: Dane języku polskim
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -565,7 +545,6 @@ l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -585,7 +564,6 @@ l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -605,7 +583,6 @@ l10n/sv:
  Name: L10N: Svenska
  Extended Description: Svenska språkdata
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -625,7 +602,6 @@ l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -645,7 +621,6 @@ l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -665,7 +640,6 @@ l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -685,7 +659,6 @@ l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -705,7 +678,6 @@ l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description: 中文（傳統）語言數據
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
@@ -725,7 +697,6 @@ l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description: 中文（简体）语言数据
  Version: 2021.160.524
- Minimum Required: 2.0.0
  Dependencies:
   phpMussel Core: ^2
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat
