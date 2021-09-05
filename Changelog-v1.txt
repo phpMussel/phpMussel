@@ -41,6 +41,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.07.14; Maikuolan]: It's now possible, when updating via Cronable, to
   specify whether to update just the signature files, or to update everything.
 
+- [2021.09.05; Maikuolan]: Precaution against potential future undefined index
+  added to fallback closure.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 

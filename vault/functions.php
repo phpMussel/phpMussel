@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.06.10).
+ * This file: Functions file (last modified: 2021.09.05).
  */
 
 /**
@@ -4636,6 +4636,9 @@ $phpMussel['Fallback'] = function (array $Fallbacks, array &$Config) use (&$phpM
             }
             if (isset($Dir)) {
                 unset($Dir);
+            }
+            if (!isset($Cat[$DKey])) {
+                $Cat[$DKey] = '';
             }
             $Dir = &$Cat[$DKey];
             if (isset($DData['value_preg_filter']) && is_array($DData['value_preg_filter'])) {
