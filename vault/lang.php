@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2020.11.27).
+ * This file: Language handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,7 +22,14 @@ if (empty($phpMussel['Config']['general']['lang'])) {
 }
 
 /** L10N data. */
-$phpMussel['L10N'] = ['Configured' => [], 'ConfiguredData' => '', 'Fallbacks' => [], 'FallbackData' => ''];
+$phpMussel['L10N'] = [
+    'Configured' => [],
+    'ConfiguredData' => '',
+    'ConfiguredDataArray' => [],
+    'Fallbacks' => [],
+    'FallbackData' => '',
+    'FallbackDataArray' => []
+];
 
 /**
  * If the language directive is set to English, don't bother about fallbacks.
@@ -92,7 +99,7 @@ foreach ($phpMussel['L10N']['Configured'] as $phpMussel['L10N']['ThisConfigured'
 }
 
 /** Parse the L10N data. */
-$phpMussel['L10N']['ConfiguredData'] = (new \Maikuolan\Common\YAML($phpMussel['L10N']['ConfiguredData']))->Data;
+$phpMussel['YAML']->process($phpMussel['L10N']['ConfiguredData'], $phpMussel['L10N']['ConfiguredDataArray']);
 
 /** Load the L10N fallback data. */
 foreach ($phpMussel['L10N']['Fallbacks'] as $phpMussel['L10N']['ThisFallback']) {
@@ -100,10 +107,10 @@ foreach ($phpMussel['L10N']['Fallbacks'] as $phpMussel['L10N']['ThisFallback']) 
 }
 
 /** Parse the L10N fallback data. */
-$phpMussel['L10N']['FallbackData'] = (new \Maikuolan\Common\YAML($phpMussel['L10N']['FallbackData']))->Data;
+$phpMussel['YAML']->process($phpMussel['L10N']['FallbackData'], $phpMussel['L10N']['FallbackDataArray']);
 
 /** Build final L10N object. */
-$phpMussel['L10N'] = new \Maikuolan\Common\L10N($phpMussel['L10N']['ConfiguredData'], $phpMussel['L10N']['FallbackData']);
+$phpMussel['L10N'] = new \Maikuolan\Common\L10N($phpMussel['L10N']['ConfiguredDataArray'], $phpMussel['L10N']['FallbackDataArray']);
 
 /** Load client-specified L10N data if it's possible to do so. */
 if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
@@ -134,13 +141,14 @@ if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_AC
         $phpMussel['L10N-Lang-Attache'] = '';
         $phpMussel['Client-L10N'] = [];
     } else {
-        $phpMussel['Client-L10N']['Data'] = (new \Maikuolan\Common\YAML($phpMussel['Client-L10N']['Data']))->Data ?: [];
+        $phpMussel['Client-L10N']['DataArray'] = [];
+        $phpMussel['YAML']->process($phpMussel['Client-L10N']['Data'], $phpMussel['Client-L10N']['DataArray']);
         $phpMussel['L10N-Lang-Attache'] = ($phpMussel['Config']['general']['lang'] === $phpMussel['Client-L10N']['Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
             $phpMussel['Client-L10N']['Accepted'],
-            isset($phpMussel['Client-L10N']['Data']['Text Direction']) ? $phpMussel['Client-L10N']['Data']['Text Direction'] : 'ltr'
+            isset($phpMussel['Client-L10N']['DataArray']['Text Direction']) ? $phpMussel['Client-L10N']['DataArray']['Text Direction'] : 'ltr'
         );
-        $phpMussel['Client-L10N'] = $phpMussel['Client-L10N']['Data'];
+        $phpMussel['Client-L10N'] = $phpMussel['Client-L10N']['DataArray'];
     }
 
     /** Build final client-specific L10N object. */

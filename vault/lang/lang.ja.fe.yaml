@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.08.10).
+# This file: Japanese language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
-Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>」ライセンスを介して利用可能です。"
+Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
+Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description phpMussel: "メインパッケージ（シグネチャ、​ドキュメンテーション、​およびコンフィギュレーションは含まれていません）。"
 config_PHPMailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_PHPMailer_Enable2FA: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
@@ -201,7 +201,7 @@ label_default: "デフォルト"
 label_dependencies: "依存関係："
 label_events: "スキャンイベント"
 label_expected: "予想される"
-label_expires: "有効期限： "
+label_expires: "有効期限："
 label_extension: "エクステンション"
 label_flagged: "フラグされたオブジェクト"
 label_fmgr_cache_data: "キャッシュ・データとテンポラリ・ファイル"
@@ -395,36 +395,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel用のツール、リソース、など。</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMusselの問題ページ（サポート、​援助、​など）。</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – その他エキストラ。</li>
+           <li>{{Links.phpMussel.Issues}} – phpMusselの問題ページ（サポート、​援助、​など）。</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
+           <li>{{Links.phpMussel.Extras}} – その他エキストラ。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV用のツール、リソース、など。</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV用の補足シグネチャとModSecurity用の補足規則を提供します。</li>
+           <li>{{Links.ClamavNet}} – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
+           <li>{{Links.SecuriteInfo}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
+           <li>{{Links.Sanesecurity}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
+           <li>{{Links.Malware Expert}} – ClamAV用の補足シグネチャとModSecurity用の補足規則を提供します。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">グループ、フォーラム、コミュニティ、など。</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – ＰＨＰ学習リソースとディスカッション。</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 便利なマルウェア対策ディスカッションフォーラム。</li>
+           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
+           <li>{{Links.MalwareTips}} – 便利なマルウェア対策ディスカッションフォーラム。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">その他の便利なツール、リソース、サービス、など。</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotalは、​疑わしいファイルやURLを分析するための無料サービスです。</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysisは、​<a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>が提供する無料のマルウェア分析サービスで。</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – コンピュータのマルウェア対策専門家。</li>
+           <li>{{Links.PhishTank}} – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
+           <li>{{Links.VirusTotal}} – VirusTotalは、​疑わしいファイルやURLを分析するための無料サービスです。</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysisは、​{{Links.Payload Security}}が提供する無料のマルウェア分析サービスで。</li>
+           <li>{{Links.Malwarebytes}} – コンピュータのマルウェア対策専門家。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">情報および学習用リソース。</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – ＰＨＰ学習リソースとディスカッション。</li>
+           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
          </ul>

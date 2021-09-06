@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.08.10).
+# This file: Korean language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
-Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다."
+Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
+Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br />{{Links.PHPMailer.PHPMailer}}는 {{Links.PHPMailer.License}} 라이센스를 통해 사용 가능합니다."
 Extended Description phpMussel: "메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다)."
 config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_PHPMailer_Enable2FA: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
@@ -153,7 +153,7 @@ field_download_file: "다운로드"
 field_edit_file: "편집"
 field_false: "False (거짓)"
 field_file: "파일"
-field_filename: "파일 이름 : "
+field_filename: "파일 이름 :"
 field_filetype_directory: "디렉토리"
 field_filetype_info: "{EXT} 파일"
 field_filetype_unknown: "알 수없는"
@@ -173,7 +173,7 @@ field_repair_all: "모두 수리"
 field_reset: "재설정"
 field_restore_file: "복구"
 field_set_new_password: "새 암호를 설정합니다"
-field_size: "전체 크기 : "
+field_size: "전체 크기 :"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -192,7 +192,7 @@ field_verify: "검증"
 field_verify_all: "모두 검증"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
-label_active_config_file: "활성 구성 파일 : "
+label_active_config_file: "활성 구성 파일 :"
 label_actual: "현재"
 label_blocked: "차단된 업로드"
 label_branch: "분기 최신 안정 :"
@@ -201,20 +201,20 @@ label_default: "기본값"
 label_dependencies: "종속성 :"
 label_events: "스캔 이벤트"
 label_expected: "예상 된"
-label_expires: "만료일 : "
+label_expires: "만료일 :"
 label_extension: "확장"
 label_flagged: "신고된 개체"
 label_fmgr_cache_data: "캐시 데이터 및 임시 파일 "
-label_fmgr_disk_usage: "phpMussel 디스크 사용 : "
-label_fmgr_free_space: "사용 가능한 디스크 공간 : "
+label_fmgr_disk_usage: "phpMussel 디스크 사용 :"
+label_fmgr_free_space: "사용 가능한 디스크 공간 :"
 label_fmgr_other_sig: "기타 규칙, 서명 파일, 등"
 label_fmgr_safety: "안전 장치"
-label_fmgr_total_disk_usage: "총 디스크 사용 : "
-label_fmgr_total_space: "총 디스크 공간 : "
+label_fmgr_total_disk_usage: "총 디스크 사용 :"
+label_fmgr_total_space: "총 디스크 공간 :"
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
 label_installed_available: "설치되어있다 / 이용 가능"
-label_integrity_check: "무결성 검사 : "
+label_integrity_check: "무결성 검사 :"
 label_never: "못"
 label_os: "사용된 운영 체제 :"
 label_other-Active: "활성 서명 파일"
@@ -223,20 +223,20 @@ label_other: "다른"
 label_php: "사용된 PHP 버전 :"
 label_phpmussel: "사용된 phpMussel 버전 :"
 label_quarantined: "격리된 업로드"
-label_sanity_check: "건강 검사 : "
+label_sanity_check: "건강 검사 :"
 label_sapi: "사용된 SAPI :"
 label_scanned_objects: "스캔한 개체"
 label_scanned_uploads: "스캔한 업로드"
 label_see_also: "또한보십시오 :"
 label_show: "보여"
-label_size_in_quarantine: "격리 크기 : "
+label_size_in_quarantine: "격리 크기 :"
 label_stable: "최신 안정 :"
 label_sysinfo: "시스템 정보 :"
 label_unstable: "최신 불안정 :"
-label_upload_date: "업로드 날짜 : "
-label_upload_hash: "업로드 해시 : "
-label_upload_origin: "업로드 원점 : "
-label_upload_size: "업로드 크기 : "
+label_upload_date: "업로드 날짜 :"
+label_upload_hash: "업로드 해시 :"
+label_upload_origin: "업로드 원점 :"
+label_upload_size: "업로드 크기 :"
 label_your_ip: "당신의 IP :"
 label_your_ua: "당신의 UA :"
 link_accounts: "계정"
@@ -395,36 +395,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV 서명 데이터베이스를 사용하여 phpMussel 서명 파일을 만듭니다.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – 다양한 부가 기능.</li>
+           <li>{{Links.phpMussel.Issues}} – phpMussel 문제 페이지 (지원, 원조 등).</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAV 서명 데이터베이스를 사용하여 phpMussel 서명 파일을 만듭니다.</li>
+           <li>{{Links.phpMussel.Extras}} – 다양한 부가 기능.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV에 대한 보충 서명 및 ModSecurity에 대한 보충 규칙을 제공합니다.</li>
+           <li>{{Links.ClamavNet}} – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
+           <li>{{Links.SecuriteInfo}} – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
+           <li>{{Links.Sanesecurity}} – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
+           <li>{{Links.Malware Expert}} – ClamAV에 대한 보충 서명 및 ModSecurity에 대한 보충 규칙을 제공합니다.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">그룹, 포럼, 커뮤니티, 등.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP 학습 자원과 토론.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – 편리한 맬웨어 방지 토론 포럼.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
+           <li>{{Links.MalwareTips}} – 편리한 맬웨어 방지 토론 포럼.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis는 <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
+           <li>{{Links.PhishTank}} – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis는 {{Links.Payload Security}}가 제공하는 무료 악성 코드 분석 서비스.</li>
+           <li>{{Links.Malwarebytes}} – 컴퓨터의 맬웨어 방지 전문가.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">정보 및 학습 리소스.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP 학습 자원과 토론.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
          </ul>
