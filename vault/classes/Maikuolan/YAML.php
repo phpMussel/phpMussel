@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.08.25).
+ * YAML handler (last modified: 2021.09.06).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -405,7 +405,7 @@ class YAML
         if (
             empty($this->Refs) ||
             !is_string($Data) ||
-            !preg_match_all('~\{\{ ?([.\dA-Z_a-z]+) ?\}\}~', $Data, $VarMatches) ||
+            !preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
             !isset($VarMatches[0][0], $VarMatches[1][0])
         ) {
             return;
