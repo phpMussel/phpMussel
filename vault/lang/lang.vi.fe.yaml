@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.08.10).
+# This file: Vietnamese language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> có sẵn qua giấy phép <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
+Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br />{{Links.PHPMailer.PHPMailer}} có sẵn qua giấy phép {{Links.PHPMailer.License}}."
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
 config_PHPMailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
@@ -154,7 +154,7 @@ field_download_file: "Tải về"
 field_edit_file: "Chỉnh sửa"
 field_false: "False (Sai)"
 field_file: "Tập Tin"
-field_filename: "Tên tập tin: "
+field_filename: "Tên tập tin:"
 field_filetype_directory: "Thư Mục"
 field_filetype_info: "Tập Tin {EXT}"
 field_filetype_unknown: "Không Xác Định"
@@ -174,7 +174,7 @@ field_repair_all: "Sửa chữa tất cả"
 field_reset: "Thiết Lập Lại"
 field_restore_file: "Khôi phục"
 field_set_new_password: "Đặt mật khẩu mới"
-field_size: "Kích thước tổng: "
+field_size: "Kích thước tổng:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -193,7 +193,7 @@ field_verify: "Xác minh"
 field_verify_all: "Xác minh tất cả"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
-label_active_config_file: "Tập tin cấu hình kích hoạt: "
+label_active_config_file: "Tập tin cấu hình kích hoạt:"
 label_actual: "Thực tế"
 label_blocked: "Tải lên bị chặn"
 label_branch: "Chi nhánh ổn định mới nhất:"
@@ -202,20 +202,20 @@ label_default: "Mặc định"
 label_dependencies: "Sự phụ thuộc:"
 label_events: "Sự kiện quét"
 label_expected: "Kỳ vọng"
-label_expires: "Hết hạn: "
+label_expires: "Hết hạn:"
 label_extension: "Phần mở rộng"
 label_flagged: "Đối tượng bị gắn cờ"
 label_fmgr_cache_data: "Dữ liệu bộ nhớ cache và các tập tin tạm thời"
-label_fmgr_disk_usage: "Số lượng sử dụng đĩa bởi phpMussel: "
-label_fmgr_free_space: "Không gian đĩa có sẵn: "
+label_fmgr_disk_usage: "Số lượng sử dụng đĩa bởi phpMussel:"
+label_fmgr_free_space: "Không gian đĩa có sẵn:"
 label_fmgr_other_sig: "Các quy tắc và tập tin chữ ký khác, vv"
 label_fmgr_safety: "Cơ chế an toàn"
-label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số: "
-label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số: "
+label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:"
+label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số:"
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
 label_installed_available: "Được cài đặt / Có sẵn"
-label_integrity_check: "Kiểm tra tính toàn vẹn: "
+label_integrity_check: "Kiểm tra tính toàn vẹn:"
 label_never: "Không bao giờ"
 label_os: "Hệ điều hành đang được dùng:"
 label_other-Active: "Tập tin chữ ký kích hoạt"
@@ -224,20 +224,20 @@ label_other: "Khác"
 label_php: "Phiên bản PHP đang được dùng:"
 label_phpmussel: "Phiên bản phpMussel đang được dùng:"
 label_quarantined: "Tải lên trong kiểm dịch"
-label_sanity_check: "Kiểm tra an toàn: "
+label_sanity_check: "Kiểm tra an toàn:"
 label_sapi: "SAPI đang được dùng:"
 label_scanned_objects: "Đối tượng được quét"
 label_scanned_uploads: "Tải lên được quét"
 label_see_also: "Xem thêm:"
 label_show: "Hiển thị"
-label_size_in_quarantine: "Kích thước trong kiểm dịch: "
+label_size_in_quarantine: "Kích thước trong kiểm dịch:"
 label_stable: "Ổn định mới nhất:"
 label_sysinfo: "Thông tin hệ thống:"
 label_unstable: "Không ổn định mới nhất:"
-label_upload_date: "Ngày tải lên: "
-label_upload_hash: "Băm tải lên: "
-label_upload_origin: "Nguồn gốc tải lên: "
-label_upload_size: "Kích thước tải lên: "
+label_upload_date: "Ngày tải lên:"
+label_upload_hash: "Băm tải lên:"
+label_upload_origin: "Nguồn gốc tải lên:"
+label_upload_size: "Kích thước tải lên:"
 label_your_ip: "IP của bạn:"
 label_your_ua: "UA của bạn:"
 link_accounts: "Tài Khoản"
@@ -396,36 +396,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Bổ sung khác nhau.</li>
+           <li>{{Links.phpMussel.Issues}} – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+           <li>{{Links.phpMussel.SigTool}} – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
+           <li>{{Links.phpMussel.Extras}} – Bổ sung khác nhau.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Cung cấp chữ ký bổ sung cho ClamAV và quy tắc bổ sung cho ModSecurity.</li>
+           <li>{{Links.ClamavNet}} – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
+           <li>{{Links.SecuriteInfo}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Cung cấp chữ ký bổ sung cho ClamAV và quy tắc bổ sung cho ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Nhóm, diễn đàn, cộng đồng, vv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
+           <li>{{Links.MalwareTips}} – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>
+           <li>{{Links.PhishTank}} – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Máy tính chống phần mềm độc hại chuyên gia.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Tài nguyên thông tin và học tập.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
          </ul>

@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.08.10).
+# This file: Dutch language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> is beschikbaar via de <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licentie."
+Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br />{{Links.PHPMailer.PHPMailer}} is beschikbaar via de {{Links.PHPMailer.License}}-licentie."
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
@@ -154,7 +154,7 @@ field_download_file: "Download"
 field_edit_file: "Bewerk"
 field_false: "False (Vals)"
 field_file: "Bestand"
-field_filename: "Bestandsnaam: "
+field_filename: "Bestandsnaam:"
 field_filetype_directory: "Bestandsmap"
 field_filetype_info: "{EXT}-Bestand"
 field_filetype_unknown: "Onbekend"
@@ -174,7 +174,7 @@ field_repair_all: "Repareren alles"
 field_reset: "Resetten"
 field_restore_file: "Herstellen"
 field_set_new_password: "Stel Nieuw Wachtwoord"
-field_size: "Totale Grootte: "
+field_size: "Totale Grootte:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -195,7 +195,7 @@ field_verify: "Verifiëren"
 field_verify_all: "Verifiëren alles"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
-label_active_config_file: "Actief configuratiebestand: "
+label_active_config_file: "Actief configuratiebestand:"
 label_actual: "Actueel"
 label_blocked: "Uploads geblokkeerd"
 label_branch: "Branch laatste stabiele:"
@@ -204,20 +204,20 @@ label_default: "Standaard"
 label_dependencies: "Afhankelijkheden:"
 label_events: "Scan gebeurtenissen"
 label_expected: "Verwacht"
-label_expires: "Verloopt: "
+label_expires: "Verloopt:"
 label_extension: "Extensie"
 label_flagged: "Objecten gemarkeerd"
 label_fmgr_cache_data: "Cache data en tijdelijke bestanden"
-label_fmgr_disk_usage: "phpMussel-schijfgebruik: "
-label_fmgr_free_space: "Vrije schijfruimte: "
+label_fmgr_disk_usage: "phpMussel-schijfgebruik:"
+label_fmgr_free_space: "Vrije schijfruimte:"
 label_fmgr_other_sig: "Andere regels, signatuurbestanden, enz"
 label_fmgr_safety: "Veiligheidsmechanismen"
-label_fmgr_total_disk_usage: "Totaal schijfgebruik: "
-label_fmgr_total_space: "Totale schijfruimte: "
+label_fmgr_total_disk_usage: "Totaal schijfgebruik:"
+label_fmgr_total_space: "Totale schijfruimte:"
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Verbergen"
 label_installed_available: "Geïnstalleerd/Beschikbaar"
-label_integrity_check: "Integriteitscontrole: "
+label_integrity_check: "Integriteitscontrole:"
 label_never: "Nooit"
 label_os: "Besturingssysteem gebruikt:"
 label_other-Active: "Actieve signatuurbestanden"
@@ -226,20 +226,20 @@ label_other: "Anders"
 label_php: "PHP versie gebruikt:"
 label_phpmussel: "phpMussel versie gebruikt:"
 label_quarantined: "Uploads in quarantaine"
-label_sanity_check: "Gezondheidscontrole: "
+label_sanity_check: "Gezondheidscontrole:"
 label_sapi: "SAPI gebruikt:"
 label_scanned_objects: "Objecten gescand"
 label_scanned_uploads: "Uploads gescand"
 label_see_also: "Zie ook:"
 label_show: "Zien"
-label_size_in_quarantine: "Grootte in quarantaine: "
+label_size_in_quarantine: "Grootte in quarantaine:"
 label_stable: "Laatste stabiele:"
 label_sysinfo: "Systeem informatie:"
 label_unstable: "Laatste onstabiele:"
-label_upload_date: "Upload datum: "
-label_upload_hash: "Upload hash: "
-label_upload_origin: "Upload oorsprong: "
-label_upload_size: "Upload grootte: "
+label_upload_date: "Upload datum:"
+label_upload_hash: "Upload hash:"
+label_upload_origin: "Upload oorsprong:"
+label_upload_size: "Upload grootte:"
 label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
@@ -400,36 +400,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Maakt phpMussel-signatuurbestanden aan met behulp van de ClamAV-signatuurdatabase.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Diverse extra's.</li>
+           <li>{{Links.phpMussel.Issues}} – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
+           <li>{{Links.phpMussel.SigTool}} – Maakt phpMussel-signatuurbestanden aan met behulp van de ClamAV-signatuurdatabase.</li>
+           <li>{{Links.phpMussel.Extras}} – Diverse extra's.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Biedt aanvullende signatures voor ClamAV en aanvullende regels voor ModSecurity.</li>
+           <li>{{Links.ClamavNet}} – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
+           <li>{{Links.SecuriteInfo}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Biedt aanvullende signatures voor ClamAV en aanvullende regels voor ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Groepen, forums, communities, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP leermiddelen en discussie.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Nuttig malware-gericht discussiefora.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
+           <li>{{Links.MalwareTips}} – Nuttig malware-gericht discussiefora.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Andere handige tools, bronnen, diensten, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-database gebruikt door de phpMussel URL scanner.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL's.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis is een gratis malware analyse dienst die door <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Computer anti-malware-specialisten.</li>
+           <li>{{Links.PhishTank}} – Phishing-database gebruikt door de phpMussel URL scanner.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL's.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis is een gratis malware analyse dienst die door {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Computer anti-malware-specialisten.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informatie en leermiddelen.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP leermiddelen en discussie.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, enz).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
          </ul>

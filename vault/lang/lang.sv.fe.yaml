@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.08.10).
+# This file: Swedish language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licensen."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br />{{Links.PHPMailer.PHPMailer}} är tillgängligt via {{Links.PHPMailer.License}}-licensen."
 config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
@@ -154,7 +154,7 @@ field_download_file: "Ladda ner"
 field_edit_file: "Redigera"
 field_false: "False (Falsk)"
 field_file: "Fil"
-field_filename: "Filnamn: "
+field_filename: "Filnamn:"
 field_filetype_directory: "Katalog"
 field_filetype_info: "{EXT}-Fil"
 field_filetype_unknown: "Okänd"
@@ -174,7 +174,7 @@ field_repair_all: "Reparera allt"
 field_reset: "Återställa"
 field_restore_file: "Restaurera"
 field_set_new_password: "Ange nytt lösenord"
-field_size: "Total storlek: "
+field_size: "Total storlek:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -193,7 +193,7 @@ field_verify: "Verifiera"
 field_verify_all: "Verifiera allt"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
-label_active_config_file: "Aktiv konfigurationsfil: "
+label_active_config_file: "Aktiv konfigurationsfil:"
 label_actual: "Aktuell"
 label_blocked: "Uppladdningar blockerade"
 label_branch: "Branch senaste stabila:"
@@ -202,20 +202,20 @@ label_default: "Standard"
 label_dependencies: "Programvarukrav:"
 label_events: "Skanna händelser"
 label_expected: "Förväntad"
-label_expires: "Utgår: "
+label_expires: "Utgår:"
 label_extension: "Förlängning"
 label_flagged: "Föremål flaggas"
 label_fmgr_cache_data: "Cacherdata och tillfälliga filer"
-label_fmgr_disk_usage: "phpMussel-diskanvändning: "
-label_fmgr_free_space: "Gratis diskutrymme: "
+label_fmgr_disk_usage: "phpMussel-diskanvändning:"
+label_fmgr_free_space: "Gratis diskutrymme:"
 label_fmgr_other_sig: "Andra regler, signaturfiler, osv"
 label_fmgr_safety: "Säkerhetsmekanismer"
-label_fmgr_total_disk_usage: "Totalt diskanvändning: "
-label_fmgr_total_space: "Totalt diskutrymme: "
+label_fmgr_total_disk_usage: "Totalt diskanvändning:"
+label_fmgr_total_space: "Totalt diskutrymme:"
 label_fmgr_updates_metadata: "Komponentuppdateringsmetadata"
 label_hide: "Dölja"
 label_installed_available: "Installerad/Tillgängliga"
-label_integrity_check: "Integritetskontroll: "
+label_integrity_check: "Integritetskontroll:"
 label_never: "Aldrig"
 label_os: "Operativsystem som används:"
 label_other-Active: "Aktiva signaturfiler"
@@ -224,20 +224,20 @@ label_other: "Andra"
 label_php: "PHP-version som används:"
 label_phpmussel: "phpMussel-version som används:"
 label_quarantined: "Uppladdningar i karantän"
-label_sanity_check: "Säkerhetskontroll: "
+label_sanity_check: "Säkerhetskontroll:"
 label_sapi: "SAPI som används:"
 label_scanned_objects: "Föremål skannade"
 label_scanned_uploads: "Uppladdningar skannade"
 label_see_also: "Se även:"
 label_show: "Visa"
-label_size_in_quarantine: "Storlek i karantän: "
+label_size_in_quarantine: "Storlek i karantän:"
 label_stable: "Senaste stabila:"
 label_sysinfo: "Systeminformation:"
 label_unstable: "Senaste instabil:"
-label_upload_date: "Uppladdningsdatum: "
-label_upload_hash: "Uppladdningskontrollsumma: "
-label_upload_origin: "Uppladdningsursprung: "
-label_upload_size: "Uppladdningsstorlek: "
+label_upload_date: "Uppladdningsdatum:"
+label_upload_hash: "Uppladdningskontrollsumma:"
+label_upload_origin: "Uppladdningsursprung:"
+label_upload_size: "Uppladdningsstorlek:"
 label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Konton"
@@ -398,36 +398,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Issues sida för phpMussel (stöd, hjälp, osv).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Olika extramaterial.</li>
+           <li>{{Links.phpMussel.Issues}} – Issues sida för phpMussel (stöd, hjälp, osv).</li>
+           <li>{{Links.phpMussel.SigTool}} – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
+           <li>{{Links.phpMussel.Extras}} – Olika extramaterial.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Erbjuder kompletterande signaturer för ClamAV och kompletterande regler för ModSecurity.</li>
+           <li>{{Links.ClamavNet}} – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
+           <li>{{Links.SecuriteInfo}} – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Erbjuder kompletterande signaturer för ClamAV och kompletterande regler för ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP lärande resurser och diskussion.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP lärande resurser och diskussion.</li>
+           <li>{{Links.MalwareTips}} – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-databas som används av phpMussel URL-skannern.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal är en gratistjänst för att analysera misstänkta filer och URLer.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis är en gratis skadlig programvara analystjänst tillhandahålls av <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Dator och anti-malware specialister.</li>
+           <li>{{Links.PhishTank}} – Phishing-databas som används av phpMussel URL-skannern.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal är en gratistjänst för att analysera misstänkta filer och URLer.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis är en gratis skadlig programvara analystjänst tillhandahålls av {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Dator och anti-malware specialister.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP lärande resurser och diskussion.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
          </ul>

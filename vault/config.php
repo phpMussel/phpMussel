@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.05.22).
+ * This file: Configuration handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -17,7 +17,7 @@ if (!defined('phpMussel')) {
 }
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '2.3.1';
+$phpMussel['ScriptVersion'] = '2.4.0';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
@@ -109,7 +109,7 @@ if (isset($phpMussel['Overrides']) && $phpMussel['Overrides'] === false) {
 }
 
 /** Attempts to parse the phpMussel configuration defaults file. */
-$phpMussel['YAML']->process($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml'), $phpMussel['Config']);
+$phpMussel['YAML']->process($phpMussel['ReadFile']($phpMussel['Vault'] . 'config.yaml'), $phpMussel['Config'], 0, true);
 
 /** Kills the script if parsing the configuration defaults file fails. */
 if (empty($phpMussel['Config']['Config Defaults'])) {
@@ -175,9 +175,10 @@ if (!empty($phpMussel['Config']['general']['hide_version'])) {
 /** Instantiate the request class. */
 $phpMussel['Request'] = new \Maikuolan\Common\Request();
 $phpMussel['Request']->DefaultTimeout = $phpMussel['Config']['general']['default_timeout'];
-$phpMussel['Request']->Channels = (
-    $Channels = $phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml')
-) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+$phpMussel['ChannelsDataArray'] = [];
+$phpMussel['YAML']->process($phpMussel['ReadFile']($phpMussel['Vault'] . 'channels.yaml'), $phpMussel['ChannelsDataArray']);
+$phpMussel['Request']->Channels = $phpMussel['ChannelsDataArray'] ?: [];
+unset($phpMussel['ChannelsDataArray']);
 if (!isset($phpMussel['Request']->Channels['Triggers'])) {
     $phpMussel['Request']->Channels['Triggers'] = [];
 }

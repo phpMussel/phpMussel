@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.08.10).
+# This file: Russian language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
+Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br />{{Links.PHPMailer.PHPMailer}} доступен через лицензию {{Links.PHPMailer.License}}."
 config_PHPMailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
 config_PHPMailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
 config_PHPMailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
@@ -154,7 +154,7 @@ field_download_file: "Скачать"
 field_edit_file: "Редактировать"
 field_false: "False (Ложный)"
 field_file: "Файл"
-field_filename: "Имя файла: "
+field_filename: "Имя файла:"
 field_filetype_directory: "Каталог"
 field_filetype_info: "Файл {EXT}"
 field_filetype_unknown: "Неизвестный"
@@ -174,7 +174,7 @@ field_repair_all: "Починить все"
 field_reset: "Сбросить"
 field_restore_file: "Восстановить"
 field_set_new_password: "Установить новый пароль"
-field_size: "Общий Размер: "
+field_size: "Общий Размер:"
 field_size_GB: "ГБ"
 field_size_KB: "КБ"
 field_size_MB: "МБ"
@@ -196,7 +196,7 @@ field_verify: "Проверить"
 field_verify_all: "Проверить все"
 field_your_version: "Ваша Версия"
 header_login: "Пожалуйста войдите чтобы продолжить."
-label_active_config_file: "Активный файл конфигурации: "
+label_active_config_file: "Активный файл конфигурации:"
 label_actual: "Текущий"
 label_blocked: "Загружает блокировки"
 label_branch: "Ветвь последние стабильный:"
@@ -205,20 +205,20 @@ label_default: "Стандарт"
 label_dependencies: "Зависимости:"
 label_events: "События сканирования"
 label_expected: "Ожидаемый"
-label_expires: "Истекает: "
+label_expires: "Истекает:"
 label_extension: "Расширение"
 label_flagged: "Помеченные объекты"
 label_fmgr_cache_data: "Данные кэша и временные файлы"
-label_fmgr_disk_usage: "phpMussel Использование диска: "
-label_fmgr_free_space: "Свободное место на диске: "
+label_fmgr_disk_usage: "phpMussel Использование диска:"
+label_fmgr_free_space: "Свободное место на диске:"
 label_fmgr_other_sig: "Другие правила, файлы сигнатуры и т.д."
 label_fmgr_safety: "Механизмы безопасности"
-label_fmgr_total_disk_usage: "Все использование диска: "
-label_fmgr_total_space: "Емкость диска: "
+label_fmgr_total_disk_usage: "Все использование диска:"
+label_fmgr_total_space: "Емкость диска:"
 label_fmgr_updates_metadata: "Метаданные обновлений компонентов"
 label_hide: "Скрывать"
 label_installed_available: "Установлено/Доступно"
-label_integrity_check: "Проверка целостности: "
+label_integrity_check: "Проверка целостности:"
 label_never: "Никогда"
 label_os: "Используемая операционная система:"
 label_other-Active: "Активные файлы сигнатур"
@@ -227,20 +227,20 @@ label_other: "Другие"
 label_php: "Используемая версия PHP:"
 label_phpmussel: "Используемая версия phpMussel:"
 label_quarantined: "Загрузка в карантин"
-label_sanity_check: "Проверка здоровья: "
+label_sanity_check: "Проверка здоровья:"
 label_sapi: "Используемая SAPI:"
 label_scanned_objects: "Объекты сканированные"
 label_scanned_uploads: "Загружает сканированные"
 label_see_also: "Смотрите также:"
 label_show: "Показать"
-label_size_in_quarantine: "Размер в карантине: "
+label_size_in_quarantine: "Размер в карантине:"
 label_stable: "Последние стабильный:"
 label_sysinfo: "Системная информация:"
 label_unstable: "Последние нестабильный:"
-label_upload_date: "Дата загрузки: "
-label_upload_hash: "Хеш загрузки: "
-label_upload_origin: "Происхождение загрузки: "
-label_upload_size: "Размер загрузки: "
+label_upload_date: "Дата загрузки:"
+label_upload_hash: "Хеш загрузки:"
+label_upload_origin: "Происхождение загрузки:"
+label_upload_size: "Размер загрузки:"
 label_your_ip: "Ваш IP:"
 label_your_ua: "Ваш UA:"
 link_accounts: "Аккаунта"
@@ -402,36 +402,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Инструменты, ресурсы и т.д. для phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Создает файлы сигнатур phpMussel с использованием базы данных сигнатур ClamAV.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Различные дополнения.</li>
+           <li>{{Links.phpMussel.Issues}} – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
+           <li>{{Links.phpMussel.SigTool}} – Создает файлы сигнатур phpMussel с использованием базы данных сигнатур ClamAV.</li>
+           <li>{{Links.phpMussel.Extras}} – Различные дополнения.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Инструменты, ресурсы и т.д. для ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Предлагает дополнительные сигнатуры для ClamAV и дополнительные правила для ModSecurity.</li>
+           <li>{{Links.ClamavNet}} – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
+           <li>{{Links.SecuriteInfo}} – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Предлагает дополнительные сигнатуры для ClamAV и дополнительные правила для ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Группы, форумы, сообщества и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Полезные вредоносные программы сфокусированные дискуссионных форумов.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP учебных ресурсов и обсуждение.</li>
+           <li>{{Links.MalwareTips}} – Полезные вредоносные программы сфокусированные дискуссионных форумов.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – Бесплатный сервис для анализа подозрительных файлов и URL-адресов.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis представляет бесплатный сервис для анализа вредоносного программного, предоставленной <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a>.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Специалисты в области защиты от вредоносных программ.</li>
+           <li>{{Links.PhishTank}} – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
+           <li>{{Links.VirusTotal}} – Бесплатный сервис для анализа подозрительных файлов и URL-адресов.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis представляет бесплатный сервис для анализа вредоносного программного, предоставленной {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Специалисты в области защиты от вредоносных программ.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Информационные и учебные ресурсы.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP учебных ресурсов и обсуждение.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (PHP, HHVM, и т.д.).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
          </ul>

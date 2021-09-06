@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.07.02).
+ * YAML handler (last modified: 2021.08.25).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -24,6 +24,11 @@ class YAML
      * @var array An array to contain all the data processed by the handler.
      */
     public $Data = [];
+
+    /**
+     * @var array Used as a data source for inline variables.
+     */
+    public $Refs = [];
 
     /**
      * @var bool Whether to render multi-line values.
@@ -55,12 +60,12 @@ class YAML
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.2';
+    public const VERSION = '2.7.0';
 
     /**
      * Can optionally begin processing data as soon as the object is
      * instantiated, or just instantiate first, and manually make any needed
-     * calls afterwards (though the former is recommended over the latter).
+     * calls afterwards if preferred.
      *
      * @param string $In The data to process.
      * @return void
@@ -68,7 +73,7 @@ class YAML
     public function __construct(string $In = '')
     {
         if ($In) {
-            $this->process($In, $this->Data);
+            $this->process($In, $this->Data, 0, true);
         }
     }
 
@@ -76,11 +81,9 @@ class YAML
      * Normalises the values defined by the processLine method.
      *
      * @param string|int|bool $Value The value to be normalised.
-     * @param int $ValueLen The length of the value to be normalised.
-     * @param string|int|bool $ValueLow The value to be normalised, lowercased.
      * @return void
      */
-    private function normaliseValue(&$Value, int $ValueLen, $ValueLow): void
+    private function normaliseValue(&$Value): void
     {
         /** Check for anchors and populate if necessary. */
         $AnchorMatches = [];
@@ -90,16 +93,18 @@ class YAML
         ) {
             $Value = $AnchorMatches[2];
             $this->Anchors[$AnchorMatches[1]] = $Value;
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
         } elseif (
             preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
             isset($AnchorMatches[1], $this->Anchors[$AnchorMatches[1]])
         ) {
             $Value = $this->Anchors[$AnchorMatches[1]];
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
         }
+
+        /** Check for inline variables. */
+        $this->tryStringDataTraverseByRef($Value);
+
+        $ValueLen = strlen($Value);
+        $ValueLow = strtolower($Value);
 
         /** Check for string quotes. */
         foreach ([
@@ -137,15 +142,21 @@ class YAML
     }
 
     /**
+     * Process YAML data.
+     *
      * @param string $In The data to be processed.
      * @param array $Arr Where to store the processed data.
      * @param int $Depth Tab depth (inherited through recursion; ignore it).
+     * @param bool $Refs Whether to set refs for inline variables.
      * @return bool True when entire process completes successfully. False to exit early.
      */
-    public function process(string $In, array &$Arr, int $Depth = 0): bool
+    public function process(string $In, array &$Arr, int $Depth = 0, bool $Refs = false): bool
     {
         if (strpos($In, "\n") === false) {
             return false;
+        }
+        if ($Refs) {
+            $this->Refs = &$Arr;
         }
         if ($Depth === 0) {
             $this->MultiLine = false;
@@ -198,6 +209,7 @@ class YAML
                         return false;
                     }
                 } else {
+                    $this->tryStringDataTraverseByRef($SendTo);
                     $Arr[$Key] = $SendTo;
                 }
                 $SendTo = '';
@@ -215,6 +227,7 @@ class YAML
                     return false;
                 }
             } else {
+                $this->tryStringDataTraverseByRef($SendTo);
                 $Arr[$Key] = $SendTo;
             }
         }
@@ -239,9 +252,7 @@ class YAML
             $Arr[$Key] = $Value;
         } elseif (substr($ThisLine, -1) === ':' && strpos($ThisLine, ': ') === false) {
             $Key = substr($ThisLine, $ThisTab, -1);
-            $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $this->normaliseValue($Key, $KeyLen, $KeyLow);
+            $this->normaliseValue($Key);
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = false;
             }
@@ -249,16 +260,14 @@ class YAML
         } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
             $Value = substr($ThisLine, $ThisTab + 2);
             $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
-            $this->normaliseValue($Value, $ValueLen, $ValueLow);
+            $this->normaliseValue($Value);
             if ($ValueLen > 0) {
                 $Arr[] = $Value;
             }
         } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
             $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
             $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $this->normaliseValue($Key, $KeyLen, $KeyLow);
+            $this->normaliseValue($Key);
             if (!$Key) {
                 if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
                     return false;
@@ -267,8 +276,7 @@ class YAML
             }
             $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
             $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
-            $this->normaliseValue($Value, $ValueLen, $ValueLow);
+            $this->normaliseValue($Value);
             if ($ValueLen > 0) {
                 $Arr[$Key] = $Value;
             }
@@ -280,9 +288,7 @@ class YAML
             $Value = false;
         } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
             $Key = $ThisLine;
-            $KeyLen = strlen($Key);
-            $KeyLow = strtolower($Key);
-            $this->normaliseValue($Key, $KeyLen, $KeyLow);
+            $this->normaliseValue($Key);
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = false;
             }
@@ -363,5 +369,52 @@ class YAML
     public function __toString(): string
     {
         return $this->reconstruct($this->Data);
+    }
+
+    /**
+     * Traverse data path.
+     *
+     * @param mixed $Data The data to traverse.
+     * @param string|array $Path The path to traverse.
+     * @return mixed The traversed data, or an empty string on failure.
+     */
+    public function dataTraverse(&$Data, $Path = [])
+    {
+        if (!is_array($Path)) {
+            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
+        }
+        $Segment = array_shift($Path);
+        if ($Segment === null || strlen($Segment) === 0) {
+            return is_scalar($Data) ? $Data : '';
+        }
+        $Segment = str_replace('\.', '.', $Segment);
+        if (is_array($Data)) {
+            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path) : '';
+        }
+        return $this->dataTraverse($Data, $Path);
+    }
+
+    /**
+     * Attempt string data path traverse by reference.
+     *
+     * @param mixed $Data The data to traverse.
+     * @return void
+     */
+    public function tryStringDataTraverseByRef(&$Data): void
+    {
+        if (
+            empty($this->Refs) ||
+            !is_string($Data) ||
+            !preg_match_all('~\{\{ ?([.\dA-Z_a-z]+) ?\}\}~', $Data, $VarMatches) ||
+            !isset($VarMatches[0][0], $VarMatches[1][0])
+        ) {
+            return;
+        }
+        $MatchCount = count($VarMatches[0]);
+        for ($Index = 0; $Index < $MatchCount; $Index++) {
+            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && is_string($Extracted)) {
+                $Data = str_replace($VarMatches[0][$Index], $Extracted, $Data);
+            }
+        }
     }
 }

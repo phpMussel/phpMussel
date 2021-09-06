@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.08.10).
+# This file: Hindi language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
-Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> लाइसेंस के माध्यम से उपलब्ध है।"
+Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
+Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} लाइसेंस के माध्यम से उपलब्ध है।"
 config_PHPMailer: "PHPMailer के लिए कॉन्फ़िगरेशन (दो-कारक प्रमाणीकरण के लिए उपयोग किया जाता है)।"
 config_PHPMailer_add_reply_to_address: "ईमेल भेजने के लिए उत्तर पता।"
 config_PHPMailer_add_reply_to_name: "ईमेल भेजने के लिए उत्तर का नाम।"
@@ -154,7 +154,7 @@ field_download_file: "डाउनलोड"
 field_edit_file: "संपादित करें"
 field_false: "False (असत्य)"
 field_file: "फाइल"
-field_filename: "फाइल का नाम: "
+field_filename: "फाइल का नाम:"
 field_filetype_directory: "निर्देशिका"
 field_filetype_info: "{EXT} फाइल"
 field_filetype_unknown: "अनजान"
@@ -174,7 +174,7 @@ field_repair_all: "सभी को मरम्मत करें"
 field_reset: "रीसेट"
 field_restore_file: "पुनर्स्थापित"
 field_set_new_password: "नया पासवर्ड बनाएं"
-field_size: "कुल आकार: "
+field_size: "कुल आकार:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -195,7 +195,7 @@ field_verify: "सत्यापित करें"
 field_verify_all: "सभी को सत्यापित करें"
 field_your_version: "आपका संस्करण"
 header_login: "जारी रखने के लिए कृपया लॉग इन करें।"
-label_active_config_file: "सक्रिय कॉन्फ़िगरेशन फाइल: "
+label_active_config_file: "सक्रिय कॉन्फ़िगरेशन फाइल:"
 label_actual: "वास्तविक"
 label_blocked: "अपलोड अवरुद्ध"
 label_branch: "शाखा नवीनतम स्थिर:"
@@ -204,20 +204,20 @@ label_default: "डिफ़ॉल्ट"
 label_dependencies: "निर्भरता:"
 label_events: "स्कैन घटनाओं"
 label_expected: "अपेक्षित होना"
-label_expires: "समय समाप्ति: "
+label_expires: "समय समाप्ति:"
 label_extension: "विस्तार"
 label_flagged: "फ़्लैग किए गए ऑब्जेक्ट"
 label_fmgr_cache_data: "कैश डेटा और अस्थायी फाइलें"
-label_fmgr_disk_usage: "phpMussel डिस्क उपयोग: "
-label_fmgr_free_space: "खाली डिस्क स्पेस: "
+label_fmgr_disk_usage: "phpMussel डिस्क उपयोग:"
+label_fmgr_free_space: "खाली डिस्क स्पेस:"
 label_fmgr_other_sig: "अन्य नियम, हस्ताक्षर फाइलें, आदि"
 label_fmgr_safety: "सुरक्षा तंत्र"
-label_fmgr_total_disk_usage: "कुल डिस्क उपयोग: "
-label_fmgr_total_space: "कुल डिस्क स्पेस: "
+label_fmgr_total_disk_usage: "कुल डिस्क उपयोग:"
+label_fmgr_total_space: "कुल डिस्क स्पेस:"
 label_fmgr_updates_metadata: "घटक अद्यतन मेटाडेटा"
 label_hide: "छिपाना"
 label_installed_available: "स्थापित/उपलब्ध है"
-label_integrity_check: "अखंडता की जांच: "
+label_integrity_check: "अखंडता की जांच:"
 label_never: "कभी नहीँ"
 label_os: "ऑपरेटिंग सिस्टम का इस्तेमाल किया:"
 label_other-Active: "सक्रिय हस्ताक्षर फाइलें"
@@ -226,20 +226,20 @@ label_other: "अन्य"
 label_php: "PHP संस्करण का इस्तेमाल किया:"
 label_phpmussel: "phpMussel संस्करण का इस्तेमाल किया:"
 label_quarantined: "क्वारंटाइन किए गए अपलोड"
-label_sanity_check: "स्वास्थ्य की जांच: "
+label_sanity_check: "स्वास्थ्य की जांच:"
 label_sapi: "SAPI का इस्तेमाल किया:"
 label_scanned_objects: "स्कैन किए गए ऑब्जेक्ट"
 label_scanned_uploads: "स्कैन किए गए अपलोड"
 label_see_also: "यह सभी देखें:"
 label_show: "दिखाना"
-label_size_in_quarantine: "संगरोध में आकार: "
+label_size_in_quarantine: "संगरोध में आकार:"
 label_stable: "नवीनतम स्थिर:"
 label_sysinfo: "प्रणाली की जानकारी:"
 label_unstable: "नवीनतम अस्थिर:"
-label_upload_date: "अपलोड की तारीख: "
-label_upload_hash: "अपलोड का हैश: "
-label_upload_origin: "अपलोड की उत्पत्ति: "
-label_upload_size: "अपलोड का आकार: "
+label_upload_date: "अपलोड की तारीख:"
+label_upload_hash: "अपलोड का हैश:"
+label_upload_origin: "अपलोड की उत्पत्ति:"
+label_upload_size: "अपलोड का आकार:"
 label_your_ip: "तुम्हारी IP:"
 label_your_ua: "तुम्हारी UA:"
 link_accounts: "खातों"
@@ -400,36 +400,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel के लिए उपकरण, संसाधन, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV हस्ताक्षर डेटाबेस का उपयोग करके phpMussel हस्ताक्षर फ़ाइलें बनाता है।</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – विभिन्न एक्स्ट्रा।</li>
+           <li>{{Links.phpMussel.Issues}} – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAV हस्ताक्षर डेटाबेस का उपयोग करके phpMussel हस्ताक्षर फ़ाइलें बनाता है।</li>
+           <li>{{Links.phpMussel.Extras}} – विभिन्न एक्स्ट्रा।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV के लिए उपकरण, संसाधन, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV के लिए पूरक हस्ताक्षर और ModSecurity के पूरक नियम प्रदान करता है।</li>
+           <li>{{Links.ClamavNet}} – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
+           <li>{{Links.SecuriteInfo}} – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
+           <li>{{Links.Sanesecurity}} – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
+           <li>{{Links.Malware Expert}} – ClamAV के लिए पूरक हस्ताक्षर और ModSecurity के पूरक नियम प्रदान करता है।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">समूह, मंच, समुदाय, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP सीखने संसाधन और चर्चा।</li>
+           <li>{{Links.MalwareTips}} – उपयोगी मैलवेयर केंद्रित चर्चा मंच।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">अन्य उपयोगी उपकरण, संसाधन, सेवाएं, आदि।</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – phpMussel यूआरएल स्कैनर द्वारा उपयोग किए गए फ़िशिंग डेटाबेस।</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal संदिग्ध फाइलें और URL का विश्लेषण करने के लिए एक नि: शुल्क सेवा है।</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a> द्वारा प्रदान की जाने वाली एक मुफ्त मैलवेयर विश्लेषण सेवा है।</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – कंप्यूटर एंटी-मैलवेयर विशेषज्ञ।</li>
+           <li>{{Links.PhishTank}} – phpMussel यूआरएल स्कैनर द्वारा उपयोग किए गए फ़िशिंग डेटाबेस।</li>
+           <li>{{Links.VirusTotal}} – VirusTotal संदिग्ध फाइलें और URL का विश्लेषण करने के लिए एक नि: शुल्क सेवा है।</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis {{Links.Payload Security}} द्वारा प्रदान की जाने वाली एक मुफ्त मैलवेयर विश्लेषण सेवा है।</li>
+           <li>{{Links.Malwarebytes}} – कंप्यूटर एंटी-मैलवेयर विशेषज्ञ।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">सूचनात्मक और सीखने के संसाधन।</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP सीखने संसाधन और चर्चा।</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
          </ul>

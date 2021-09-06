@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.08.10).
+# This file: Urdu language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
-Extended Description PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> لائسنس <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> کے ذریعہ دستیاب ہے."
+Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
+Extended Description PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br />{{Links.PHPMailer.PHPMailer}} لائسنس {{Links.PHPMailer.License}} کے ذریعہ دستیاب ہے."
 config_PHPMailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق کے لئے استعمال کیا جاتا ہےn)."
 config_PHPMailer_add_reply_to_address: "ای میل بھیجنے پر جواب کا پتہ."
 config_PHPMailer_add_reply_to_name: "ای میل بھیجنے پر جواب کا نام."
@@ -154,7 +154,7 @@ field_download_file: "نیچے بوجھ"
 field_edit_file: "میں ترمیم کریں"
 field_false: "False (غلط)"
 field_file: "فائل"
-field_filename: "فائل کا نام: "
+field_filename: "فائل کا نام:"
 field_filetype_directory: "ڈائریکٹری"
 field_filetype_info: "{EXT} فائل"
 field_filetype_unknown: "نامعلوم"
@@ -174,7 +174,7 @@ field_repair_all: "سب کی مرمت کرو"
 field_reset: "پھر سیٹ کریں"
 field_restore_file: "بحال"
 field_set_new_password: "نیا پاس ورڈ مقرر"
-field_size: "کل سائز: "
+field_size: "کل سائز:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -193,7 +193,7 @@ field_verify: "تصدیق کریں"
 field_verify_all: "سب کی توثیق کریں"
 field_your_version: "آپ کے ورژن"
 header_login: "جاری رکھنے کے لیے لاگ ان کریں."
-label_active_config_file: "فعال کنفیگریشن فائل: "
+label_active_config_file: "فعال کنفیگریشن فائل:"
 label_actual: "اس وقت"
 label_blocked: "بلاک اپ لوڈ"
 label_branch: "شاخ تازہ ترین مستحکم:"
@@ -202,20 +202,20 @@ label_default: "پہلے سے طے شدہ"
 label_dependencies: "انحصار:"
 label_events: "واقعات اسکین کریں"
 label_expected: "متوقع"
-label_expires: "ختم ہو جاتی ہے: "
+label_expires: "ختم ہو جاتی ہے:"
 label_extension: "کی توسیع"
 label_flagged: "نشان لگا دیا گیا آبجیکٹ"
 label_fmgr_cache_data: "کیش کردہ ڈیٹا اور عارضی فائلیں"
-label_fmgr_disk_usage: "phpMussel ڈسک استعمال: "
-label_fmgr_free_space: "مفت ڈسک کی جگہ: "
+label_fmgr_disk_usage: "phpMussel ڈسک استعمال:"
+label_fmgr_free_space: "مفت ڈسک کی جگہ:"
 label_fmgr_other_sig: "دیگر قواعد، دستخط فائلیں، وغیرہ"
 label_fmgr_safety: "سیفٹی کے طریقہ کار"
-label_fmgr_total_disk_usage: "کل ڈسک استعمال: "
-label_fmgr_total_space: "کل ڈسک کی جگہ: "
+label_fmgr_total_disk_usage: "کل ڈسک استعمال:"
+label_fmgr_total_space: "کل ڈسک کی جگہ:"
 label_fmgr_updates_metadata: "اجزاء اپ ڈیٹ میٹا ڈیٹا"
 label_hide: "چھپائیں"
 label_installed_available: "انسٹال/دستیاب ہے"
-label_integrity_check: "سالمیت کی جانچ: "
+label_integrity_check: "سالمیت کی جانچ:"
 label_never: "کبھی نہیں"
 label_os: "آپریٹنگ سسٹم استعمال کیا:"
 label_other-Active: "فعال دستخط فائلیں"
@@ -224,20 +224,20 @@ label_other: "دیگر"
 label_php: "PHP ورژن استعمال کیا:"
 label_phpmussel: "phpMussel ورژن استعمال کیا:"
 label_quarantined: "قرنطین میں اپ لوڈ"
-label_sanity_check: "حفاظت کی جانچ: "
+label_sanity_check: "حفاظت کی جانچ:"
 label_sapi: "SAPI استعمال کیا:"
 label_scanned_objects: "سکین کیا آبجیکٹ"
 label_scanned_uploads: "سکین کیا اپ لوڈ"
 label_see_also: "بھی دیکھو:"
 label_show: "دکھائیں"
-label_size_in_quarantine: "قرنطین میں سائز: "
+label_size_in_quarantine: "قرنطین میں سائز:"
 label_stable: "تازہ ترین مستحکم:"
 label_sysinfo: "سسٹم کی معلومات:"
 label_unstable: "تازہ ترین غیر مستحکم:"
-label_upload_date: "اپ لوڈ وقت/تاریخ: "
-label_upload_hash: "اپ لوڈ ہیش: "
-label_upload_origin: "اپ لوڈ کی اصل: "
-label_upload_size: "اپ لوڈ کا سائز: "
+label_upload_date: "اپ لوڈ وقت/تاریخ:"
+label_upload_hash: "اپ لوڈ ہیش:"
+label_upload_origin: "اپ لوڈ کی اصل:"
+label_upload_size: "اپ لوڈ کا سائز:"
 label_your_ip: "آپ کے IP:"
 label_your_ua: "آپ کے UA:"
 link_accounts: "اکاؤنٹس"
@@ -396,36 +396,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel کے لئے اوزار، وسائل، وغیرہ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-           <li><a dir="ltr" href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV دستخط ڈیٹا بیس کا استعمال کرتے ہوئے phpMussel دستخط فائلوں کی تخلیق کرتا ہے.</li>
-           <li><a dir="ltr" href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – مختلف اضافی.</li>
+           <li>{{Links.phpMussel.Issues}} – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAV دستخط ڈیٹا بیس کا استعمال کرتے ہوئے phpMussel دستخط فائلوں کی تخلیق کرتا ہے.</li>
+           <li>{{Links.phpMussel.Extras}} – مختلف اضافی.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV کے لئے اوزار، وسائل، وغیرہ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
-           <li><a dir="ltr" href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
-           <li><a dir="ltr" href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
-           <li><a dir="ltr" href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV کے لئے اضافی دستخط اور ModSecurity کے لئے اضافی قواعد پیش کرتا ہے.</li>
+           <li>{{Links.ClamavNet}} – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
+           <li>{{Links.SecuriteInfo}} – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
+           <li>{{Links.Sanesecurity}} – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
+           <li>{{Links.Malware Expert}} – ClamAV کے لئے اضافی دستخط اور ModSecurity کے لئے اضافی قواعد پیش کرتا ہے.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">گروپ، فورم، کمیونٹی، وغیرہ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-           <li><a dir="ltr" href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP سیکھنے کے وسائل اور بحث.</li>
+           <li>{{Links.MalwareTips}} – مفید میلویئر مرکوز مباحثے فورمس.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">دیگر مفید اوزار، وسائل، خدمات، وغیرہ.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
-           <li><a dir="ltr" href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
-           <li><a dir="ltr" href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">پیلوڈ سیکورٹی</a>.</li>
-           <li><a dir="ltr" href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
+           <li>{{Links.PhishTank}} – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
+           <li>{{Links.Hybrid Analysis}} – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – کمپیوٹر مخالف میلویئر ماہرین.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">معلومات اور سیکھنے کے وسائل.</span>
          <ul class="comSub">
-           <li><a dir="ltr" href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP سیکھنے کے وسائل اور بحث.</li>
            <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
            <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
          </ul>

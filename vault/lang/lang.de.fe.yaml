@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.08.10).
+# This file: German language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
-Extended Description PHPMailer: "Erforderlich für die Verwendung von Funktionen zum Senden von E-Mails.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> ist über die <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-Lizenz verfügbar."
+Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
+Extended Description PHPMailer: "Erforderlich für die Verwendung von Funktionen zum Senden von E-Mails.<br />{{Links.PHPMailer.PHPMailer}} ist über die {{Links.PHPMailer.License}}-Lizenz verfügbar."
 config_PHPMailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
 config_PHPMailer_add_reply_to_address: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
 config_PHPMailer_add_reply_to_name: "Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll."
@@ -154,7 +154,7 @@ field_download_file: "Herunterladen"
 field_edit_file: "Bearbeiten"
 field_false: "False (Falsch)"
 field_file: "Datei"
-field_filename: "Dateiname: "
+field_filename: "Dateiname:"
 field_filetype_directory: "Verzeichnis"
 field_filetype_info: "{EXT}-Datei"
 field_filetype_unknown: "Unbekannt"
@@ -174,7 +174,7 @@ field_repair_all: "Reparieren alle"
 field_reset: "Zurücksetzen"
 field_restore_file: "Wiederherstellen"
 field_set_new_password: "Neues Passwort eingeben"
-field_size: "Gesamtgröße: "
+field_size: "Gesamtgröße:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -195,7 +195,7 @@ field_verify: "Verifizieren"
 field_verify_all: "Verifizieren alle"
 field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
-label_active_config_file: "Aktive Konfigurationsdatei: "
+label_active_config_file: "Aktive Konfigurationsdatei:"
 label_actual: "Aktuell"
 label_blocked: "Uploads blockiert"
 label_branch: "Branch neueste stabil:"
@@ -204,20 +204,20 @@ label_default: "Standardeinstellung"
 label_dependencies: "Abhängigkeiten:"
 label_events: "Scan-Veranstaltungen"
 label_expected: "Erwartet"
-label_expires: "Läuft ab: "
+label_expires: "Läuft ab:"
 label_extension: "Erweiterung"
 label_flagged: "Objekte markiert"
 label_fmgr_cache_data: "Cache-Daten und temporäre Dateien"
-label_fmgr_disk_usage: "phpMussel Speicherplatz verwendet: "
-label_fmgr_free_space: "Speicherplatz verfügbar: "
+label_fmgr_disk_usage: "phpMussel Speicherplatz verwendet:"
+label_fmgr_free_space: "Speicherplatz verfügbar:"
 label_fmgr_other_sig: "Andere Regeln, Signaturdateien, u.s.w."
 label_fmgr_safety: "Sicherheitsmechanismen"
-label_fmgr_total_disk_usage: "Speicherplatz verwendet insgesamt: "
-label_fmgr_total_space: "Speicherplatz insgesamt: "
+label_fmgr_total_disk_usage: "Speicherplatz verwendet insgesamt:"
+label_fmgr_total_space: "Speicherplatz insgesamt:"
 label_fmgr_updates_metadata: "Komponente aktualisiert Metadaten"
 label_hide: "Verstecke"
 label_installed_available: "Installiert/Verfügbar"
-label_integrity_check: "Integritätsprüfung: "
+label_integrity_check: "Integritätsprüfung:"
 label_never: "Noch nie"
 label_os: "Betriebssystem verwendet:"
 label_other-Active: "Aktive Signaturdateien"
@@ -226,20 +226,20 @@ label_other: "Andere"
 label_php: "PHP-Version verwendet:"
 label_phpmussel: "phpMussel-Version verwendet:"
 label_quarantined: "Uploads unter Quarantäne gestellt"
-label_sanity_check: "Gesundheitsüberprüfung: "
+label_sanity_check: "Gesundheitsüberprüfung:"
 label_sapi: "SAPI verwendet:"
 label_scanned_objects: "Objekte gescannt"
 label_scanned_uploads: "Uploads gescannt"
 label_see_also: "Siehe auch:"
 label_show: "Zeig"
-label_size_in_quarantine: "Größe in Quarantäne: "
+label_size_in_quarantine: "Größe in Quarantäne:"
 label_stable: "Neueste stabil:"
 label_sysinfo: "System Information:"
 label_unstable: "Neueste instabil:"
-label_upload_date: "Datum des Hochladens: "
-label_upload_hash: "Hash des Hochladen: "
-label_upload_origin: "Ursprung des Hochladen: "
-label_upload_size: "Größe des Hochladen: "
+label_upload_date: "Datum des Hochladens:"
+label_upload_hash: "Hash des Hochladen:"
+label_upload_origin: "Ursprung des Hochladen:"
+label_upload_size: "Größe des Hochladen:"
 label_your_ip: "Deine IP:"
 label_your_ua: "Deine UA:"
 link_accounts: "Konten"
@@ -400,36 +400,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Werkzeuge, Ressourcen, u.s.w. für phpMussel.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – Erstellt phpMussel-Signaturdateien mit der ClamAV-Signaturdatenbank.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Sonstiges Extras.</li>
+           <li>{{Links.phpMussel.Issues}} – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
+           <li>{{Links.phpMussel.SigTool}} – Erstellt phpMussel-Signaturdateien mit der ClamAV-Signaturdatenbank.</li>
+           <li>{{Links.phpMussel.Extras}} – Sonstiges Extras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Werkzeuge, Ressourcen, u.s.w. für ClamAV.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – Bietet zusätzliche Signaturen für ClamAV und zusätzliche Regeln für ModSecurity.</li>
+           <li>{{Links.ClamavNet}} – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
+           <li>{{Links.SecuriteInfo}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
+           <li>{{Links.Sanesecurity}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
+           <li>{{Links.Malware Expert}} – Bietet zusätzliche Signaturen für ClamAV und zusätzliche Regeln für ModSecurity.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Gruppen, Foren, Gemeinschaften, u.s.w.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP Lernressourcen und Diskussion.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Nützliche Malware konzentrierte Diskussionsforen.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP Lernressourcen und Diskussion.</li>
+           <li>{{Links.MalwareTips}} – Nützliche Malware konzentrierte Diskussionsforen.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Andere nützliche Werkzeuge, Ressourcen, Dienste, u.s.w.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a> zur Verfügung gestellt.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Computer-Anti-Malware-Spezialisten.</li>
+           <li>{{Links.PhishTank}} – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von {{Links.Payload Security}} zur Verfügung gestellt.</li>
+           <li>{{Links.Malwarebytes}} – Computer-Anti-Malware-Spezialisten.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations und Lernressourcen.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP Lernressourcen und Diskussion.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP Lernressourcen und Diskussion.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, u.s.w.).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, u.s.w.).</li>
          </ul>

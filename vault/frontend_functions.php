@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.21).
+ * This file: Front-end functions file (last modified: 2021.08.25).
  */
 
 /**
@@ -1888,7 +1888,7 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel): void {
 
             /** Append results. */
             $Table .= sprintf(
-                '<code>%1$s</code> – %7$s%8$s – %9$s%10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
+                '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
                 $phpMussel['L10N']->getString('label_actual'),
                 $Actual ?: '?',
@@ -2423,7 +2423,7 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKe
                 $Value = $phpMussel['TimeFormat']($Value, $phpMussel['Config']['general']['time_format']);
             }
             $Class = ($Key === $phpMussel['L10N']->getString('field_size') || $Key === $phpMussel['L10N']->getString('label_expires')) ? 'txtRd' : 's';
-            $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : '') . $Value;
+            $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
             $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
         }
         $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');

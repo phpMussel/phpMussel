@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.10).
+ * This file: Front-end handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2045,9 +2045,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         }
         if ($phpMussel['Components']['ThisComponent']['VersionSize'] > 0) {
             $phpMussel['FormatFilesize']($phpMussel['Components']['ThisComponent']['VersionSize']);
-            $phpMussel['Components']['ThisComponent']['VersionSize'] =
-                '<br />' . $phpMussel['L10N']->getString('field_size') .
-                $phpMussel['Components']['ThisComponent']['VersionSize'];
+            $phpMussel['Components']['ThisComponent']['VersionSize'] = sprintf(
+                '<br />%s %s',
+                $phpMussel['L10N']->getString('field_size'),
+                $phpMussel['Components']['ThisComponent']['VersionSize']
+            );
         } else {
             $phpMussel['Components']['ThisComponent']['VersionSize'] = '';
         }
@@ -2064,9 +2066,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         }
         if ($phpMussel['Components']['ThisComponent']['LatestSize'] > 0) {
             $phpMussel['FormatFilesize']($phpMussel['Components']['ThisComponent']['LatestSize']);
-            $phpMussel['Components']['ThisComponent']['LatestSize'] =
-                '<br />' . $phpMussel['L10N']->getString('field_size') .
-                $phpMussel['Components']['ThisComponent']['LatestSize'];
+            $phpMussel['Components']['ThisComponent']['LatestSize'] = sprintf(
+                '<br />%s %s',
+                $phpMussel['L10N']->getString('field_size'),
+                $phpMussel['Components']['ThisComponent']['LatestSize']
+            );
         } else {
             $phpMussel['Components']['ThisComponent']['LatestSize'] = '';
         }
@@ -2089,7 +2093,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
         $phpMussel['Components']['ThisComponent']['Filename'] = (
             empty($phpMussel['Components']['ThisComponent']['Files']['To']) ||
             count($phpMussel['Components']['ThisComponent']['Files']['To']) !== 1
-        ) ? '' : '<br />' . $phpMussel['L10N']->getString('field_filename') . $phpMussel['Components']['ThisComponent']['Files']['To'][0];
+        ) ? '' : '<br />' . $phpMussel['L10N']->getString('field_filename') . ' ' . $phpMussel['Components']['ThisComponent']['Files']['To'][0];
 
         /** Finalise entry. */
         if (
@@ -2240,9 +2244,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
             }
             if ($phpMussel['Components']['ThisComponent']['LatestSize'] > 0) {
                 $phpMussel['FormatFilesize']($phpMussel['Components']['ThisComponent']['LatestSize']);
-                $phpMussel['Components']['ThisComponent']['LatestSize'] =
-                    '<br />' . $phpMussel['L10N']->getString('field_size') .
-                    $phpMussel['Components']['ThisComponent']['LatestSize'];
+                $phpMussel['Components']['ThisComponent']['LatestSize'] = sprintf(
+                    '<br />%s %s',
+                    $phpMussel['L10N']->getString('field_size'),
+                    $phpMussel['Components']['ThisComponent']['LatestSize']
+                );
             } else {
                 $phpMussel['Components']['ThisComponent']['LatestSize'] = '';
             }

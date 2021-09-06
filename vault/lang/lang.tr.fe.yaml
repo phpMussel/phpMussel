@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.08.10).
+# This file: Turkish language data for the front-end (last modified: 2021.09.05).
 ##/
 
-Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
-Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
+Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
+Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
 config_PHPMailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
@@ -154,7 +154,7 @@ field_download_file: "İndir"
 field_edit_file: "Düzenle"
 field_false: "False (Yanlış)"
 field_file: "Dosya"
-field_filename: "Dosya adı: "
+field_filename: "Dosya adı:"
 field_filetype_directory: "Rehber"
 field_filetype_info: "{EXT} Dosya"
 field_filetype_unknown: "Bilinmiyor"
@@ -174,7 +174,7 @@ field_repair_all: "Tümünü tamir"
 field_reset: "Sıfırla"
 field_restore_file: "Canlandır"
 field_set_new_password: "Yeni Şifre Oluştur"
-field_size: "Toplam Boyut: "
+field_size: "Toplam Boyut:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -193,7 +193,7 @@ field_verify: "Doğrula"
 field_verify_all: "Tümünü doğrula"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
-label_active_config_file: "Etkin yapılandırma dosyası: "
+label_active_config_file: "Etkin yapılandırma dosyası:"
 label_actual: "Şimdiki"
 label_blocked: "Yüklemeler engellendi"
 label_branch: "Branşı en yeni kararlı:"
@@ -202,20 +202,20 @@ label_default: "Varsayılan"
 label_dependencies: "Gereksinimler:"
 label_events: "Tara olayları"
 label_expected: "Beklenen"
-label_expires: "Son Geçerlilik Tarihi: "
+label_expires: "Son Geçerlilik Tarihi:"
 label_extension: "Uzantısı"
 label_flagged: "İşaretlenen nesneler"
 label_fmgr_cache_data: "Önbellek verileri ve geçici dosyalar"
-label_fmgr_disk_usage: "phpMussel disk kullanımı: "
-label_fmgr_free_space: "Boş disk alanı: "
+label_fmgr_disk_usage: "phpMussel disk kullanımı:"
+label_fmgr_free_space: "Boş disk alanı:"
 label_fmgr_other_sig: "Diğer kurallar, imza dosyaları, vb"
 label_fmgr_safety: "Güvenlik mekanizmaları"
-label_fmgr_total_disk_usage: "Toplam disk kullanımı: "
-label_fmgr_total_space: "Toplam disk alanı: "
+label_fmgr_total_disk_usage: "Toplam disk kullanımı:"
+label_fmgr_total_space: "Toplam disk alanı:"
 label_fmgr_updates_metadata: "Bileşen güncellemeleri meta verileri"
 label_hide: "Saklamak"
 label_installed_available: "Yüklü/Mevcut"
-label_integrity_check: "Bütünlük denetimi: "
+label_integrity_check: "Bütünlük denetimi:"
 label_never: "Asla"
 label_os: "Kullanılan işletim sistemi:"
 label_other-Active: "Etkin imza dosyaları"
@@ -224,20 +224,20 @@ label_other: "Diğer"
 label_php: "Kullanılan PHP sürümü:"
 label_phpmussel: "Kullanılan phpMussel sürümü:"
 label_quarantined: "Karantinaya yüklenenler"
-label_sanity_check: "Güvenlik denetimi: "
+label_sanity_check: "Güvenlik denetimi:"
 label_sapi: "Kullanılan SAPI:"
 label_scanned_objects: "Nesneler tarandı"
 label_scanned_uploads: "Yüklenenler tarandı"
 label_see_also: "Ayrıca bakınız:"
 label_show: "Göstermek"
-label_size_in_quarantine: "Karantinadaki boyutu: "
+label_size_in_quarantine: "Karantinadaki boyutu:"
 label_stable: "En yeni kararlı:"
 label_sysinfo: "Sistem bilgisi:"
 label_unstable: "En yeni kararsız:"
-label_upload_date: "Yükleme tarihi: "
-label_upload_hash: "Yükleme karması: "
-label_upload_origin: "Yükleme menşe: "
-label_upload_size: "Yükleme boyutu: "
+label_upload_date: "Yükleme tarihi:"
+label_upload_hash: "Yükleme karması:"
+label_upload_origin: "Yükleme menşe:"
+label_upload_size: "Yükleme boyutu:"
 label_your_ip: "Senin IP:"
 label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"
@@ -398,36 +398,36 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">phpMussel için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/phpMussel/phpMussel/issues" hreflang="en" rel="noopener noreferrer external">phpMussel/phpMussel/issues</a> – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
-           <li><a href="https://github.com/phpMussel/SigTool" hreflang="en" rel="noopener noreferrer external">phpMussel SigTool</a> – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
-           <li><a href="https://github.com/phpMussel/extras" hreflang="en" rel="noopener noreferrer external">phpMussel/extras</a> – Çeşitli ekstralar.</li>
+           <li>{{Links.phpMussel.Issues}} – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
+           <li>{{Links.phpMussel.Extras}} – Çeşitli ekstralar.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">ClamAV için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.clamav.net/" hreflang="en" rel="noopener noreferrer external">ClamavNet</a> – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
-           <li><a href="https://www.securiteinfo.com/" hreflang="en" rel="noopener noreferrer external">SecuriteInfo.com</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
-           <li><a href="https://sanesecurity.com/usage/signatures/" hreflang="en" rel="noopener noreferrer external">Sanesecurity</a> – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
-           <li><a href="https://malware.expert/" hreflang="en" rel="noopener noreferrer external">Malware.Expert</a> – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
+           <li>{{Links.ClamavNet}} – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
+           <li>{{Links.SecuriteInfo}} – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li>{{Links.Sanesecurity}} – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
+           <li>{{Links.Malware Expert}} – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-           <li><a href="https://malwaretips.com/" hreflang="en" rel="noopener noreferrer external">MalwareTips</a> – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li>{{Links.MalwareTips}} – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.phishtank.com/" hreflang="en" rel="noopener noreferrer external">PhishTank</a> – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
-           <li><a href="https://www.virustotal.com/" rel="noopener noreferrer external">VirusTotal</a> – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
-           <li><a href="https://www.hybrid-analysis.com/" rel="noopener noreferrer external">Hybrid Analysis</a> – <a href="https://www.payload-security.com/" hreflang="en" rel="noopener noreferrer external">Payload Security</a> tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
-           <li><a href="https://www.malwarebytes.com/" hreflang="en" rel="noopener noreferrer external">Malwarebytes</a> – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
+           <li>{{Links.PhishTank}} – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
+           <li>{{Links.VirusTotal}} – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
+           <li>{{Links.Hybrid Analysis}} – {{Links.Payload Security}} tarafından sağlanan ücretsiz bir kötü amaçlı yazılım analizi hizmeti.</li>
+           <li>{{Links.Malwarebytes}} – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb) güvenli/güvensiz sürümlerini listeler.</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
          </ul>
