@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.25).
+ * This file: Front-end functions file (last modified: 2021.09.09).
  */
 
 /**
@@ -1987,9 +1987,9 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
             continue;
         }
         $Class = substr($Data, 9, 1);
-        $Nibbles = $phpMussel['split_nibble']($Class);
-        $Class = !isset($Classes[$Nibbles[0]]) ? [] : $Classes[$Nibbles[0]];
-        $Totals['Files'][$File] = empty($Class[1]) ? substr_count($Data, ',') + 1 : preg_match_all('/' . $Class[1] . '\S+/', $Data);
+        $Nibbles = strlen($Class) ? $phpMussel['split_nibble']($Class) : [-1, -1];
+        $Class = isset($Classes[$Nibbles[0]]) ? $Classes[$Nibbles[0]] : [];
+        $Totals['Files'][$File] = empty($Class[1]) ? 0 : preg_match_all('/' . $Class[1] . '\S+/', $Data);
         if (isset($Class[0])) {
             $Totals['Classes'][$Class[0]] = isset($Totals['Classes'][$Class[0]]) ? $Totals['Classes'][$Class[0]] + $Totals['Files'][$File] : $Totals['Files'][$File];
         }
@@ -2000,7 +2000,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
         if (isset($Class[1])) {
             foreach (['Vendors', 'SigTypes', 'Targets', 'MalwareTypes'] as $Sub) {
                 foreach ($Arr[$Sub] as $Key => $Pattern) {
-                    $Counts = preg_match_all('/' . $Class[1] . $Pattern . '\S+/', $Data);
+                    $Counts = preg_match_all('/' . $Class[1] . '(?:' . $Pattern . ')\S+/', $Data);
                     $Totals[$Sub][$Key] = isset($Totals[$Sub][$Key]) ? $Totals[$Sub][$Key] + $Counts : $Counts;
                 }
             }
