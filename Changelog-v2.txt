@@ -44,6 +44,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.09.05; Maikuolan]: Precaution against potential future undefined index
   added to fallback closure.
 
+- [2021.09.09; Bug-fix; Maikuolan]: The front-end signature information page
+  reported the wrong counts for unidentified or other under the signature
+  vendor or source counts; Fixed.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 
