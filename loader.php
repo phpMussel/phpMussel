@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2021.07.13).
+ * This file: The loader (last modified: 2021.09.17).
  */
 
 /**
@@ -78,9 +78,7 @@ $phpMussel['Direct'] = function () {
 };
 
 /** Checks whether we're calling phpMussel through an alternative pathway (e.g., Cronable). */
-$phpMussel['Alternate'] = (
-    class_exists('\Maikuolan\Cronable\Cronable')
-);
+$phpMussel['Alternate'] = class_exists('\Maikuolan\Cronable\Cronable');
 
 /** Kill the script if the functions file doesn't exist. */
 if (!file_exists($phpMussel['Vault'] . 'functions.php')) {
