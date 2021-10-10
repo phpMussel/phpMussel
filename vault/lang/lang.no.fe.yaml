@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.09.05).
+# This file: Norwegian language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -381,7 +381,7 @@ tip_fe_cookie_warning: "Merk: phpMussel bruker en informasjonskapsel for å godk
 tip_file_manager: "Hallo, {username}.<br />Filbehandleren lar deg slette, redigere, laste opp og laste ned filer. Bruk med forsiktighet (du kan ødelegge installasjonen din med dette)."
 tip_home: "Hallo, {username}.<br />Dette er hjemmesiden for frontenden av phpMussel. Velg en lenke fra navigasjonsmenyen til venstre for å fortsette."
 tip_logs: "Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen."
-tip_pie_html: "Klikk på komponentnavnet for flere detaljer."
+tip_click_the_component: "Klikk på komponentnavnet for flere detaljer."
 tip_quarantine: "Hallo, {username}.<br />Denne siden viser alle filene som er i karantene, og letter administrasjonen av filene."
 tip_quarantine_disabled: "Merk: Karantene er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden."
 tip_see_the_documentation: "Se <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål."

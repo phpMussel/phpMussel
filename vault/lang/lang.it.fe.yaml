@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.09.05).
+# This file: Italian language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -379,7 +379,7 @@ tip_fe_cookie_warning: "Nota: phpMussel utilizza un cookie per autenticare gli a
 tip_file_manager: "Salve, {username}.<br />Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l'installazione di questo)."
 tip_home: "Salve, {username}.<br />Questa è la pagina principale per il front-end di phpMussel. Selezionare un collegamento dal menu di navigazione a sinistra per continuare."
 tip_logs: "Salve, {username}.<br />Selezionare un file di log dall'elenco sottostante per visualizzare il contenuto di tale file di log."
-tip_pie_html: "Fare clic sul nome del componente per ulteriori dettagli."
+tip_click_the_component: "Fare clic sul nome del componente per ulteriori dettagli."
 tip_quarantine: "Salve, {username}.<br />Questa pagina elenca tutti i file attualmente in quarantena e facilita la gestione di tali file."
 tip_quarantine_disabled: "Nota: La quarantena è attualmente disattivata, ma può essere attivata tramite la pagina di configurazione."
 tip_see_the_documentation: "Vedere la <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.it.md\#SECTION7" hreflang="it" rel="noopener external">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.09.05).
+# This file: Arabic language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -385,7 +385,7 @@ tip_fe_cookie_warning: "الملاحظة: يستخدم phpMussel ملف تعري
 tip_file_manager: "مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا)."
 tip_home: "مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة."
 tip_logs: "مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها."
-tip_pie_html: "انقر فوق اسم المكون لمزيد من التفاصيل."
+tip_click_the_component: "انقر فوق اسم المكون لمزيد من التفاصيل."
 tip_quarantine: "مرحبا، {username}.<br />تسرد هذه الصفحة جميع الملفات الموجودة حاليا في وحدة العزل وتسهل إدارة تلك الملفات."
 tip_quarantine_disabled: "ملحوظة: تم تعطيل وحدة العزل حاليا، ولكن يمكن تمكينها عبر صفحة التهيئة."
 tip_see_the_documentation: "راجع <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ar.md\#SECTION7" hreflang="ar" rel="noopener external">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."

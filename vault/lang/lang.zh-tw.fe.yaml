@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.09.05).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -379,7 +379,7 @@ tip_fe_cookie_warning: "注意：phpMussel使用cookie來驗證登錄。​通�
 tip_file_manager: "你好，​{username}。​<br />文件管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"
 tip_home: "你好，​{username}。​<br />這是phpMussel的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"
 tip_logs: "你好，​{username}。​<br />選擇一個日誌從下面的列表以查看那個日誌的內容。"
-tip_pie_html: "單擊組件名稱以獲取更多詳細信息。"
+tip_click_the_component: "單擊組件名稱以獲取更多詳細信息。"
 tip_quarantine: "你好，​{username}。​<br />此頁面列出當前在隔離中的所有文件，並可以用來管理這些文件。"
 tip_quarantine_disabled: "注意：隔離目前禁用，但可以通過配置頁面啟用。"
 tip_see_the_documentation: "請參閱<a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.zh-TW.md\#SECTION7" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"

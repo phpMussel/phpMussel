@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.09.05).
+# This file: Russian language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -385,7 +385,7 @@ tip_fe_cookie_warning: "Заметка: phpMussel использует cookie д
 tip_file_manager: "Привет, {username}.<br />Файловый менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим)."
 tip_home: "Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить."
 tip_logs: "Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл."
-tip_pie_html: "Нажмите на название компонента для получения более подробной информации."
+tip_click_the_component: "Нажмите на название компонента для получения более подробной информации."
 tip_quarantine: "Привет, {username}.<br />На этой странице перечислены все файлы, находящиеся в настоящее время в карантине, и облегчает управление этими файлами."
 tip_quarantine_disabled: "Заметка: В настоящее время карантин отключен, но может быть включен через страницу конфигурации."
 tip_see_the_documentation: "Просмотреть <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ru.md\#SECTION7" hreflang="ru" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."

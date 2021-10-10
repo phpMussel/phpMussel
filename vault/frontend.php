@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.25).
+ * This file: Front-end handler (last modified: 2021.10.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2412,26 +2412,28 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_file_manager'), $phpMussel['L10N']->getString('tip_file_manager'), false);
 
-    /** Load pie chart template file upon request. */
+    /** Load doughnut template file upon request. */
     if (empty($phpMussel['QueryVars']['show'])) {
-        $phpMussel['FE']['ChartJSPath'] = $phpMussel['PieFile'] = $phpMussel['PiePath'] = '';
+        $phpMussel['FE']['ChartJSPath'] = '';
+        $phpMussel['DoughnutFile'] = '';
+        $phpMussel['DoughnutPath'] = '';
     } else {
-        if ($phpMussel['PiePath'] = $phpMussel['GetAssetPath']('_chartjs.html', true)) {
-            $phpMussel['PieFile'] = $phpMussel['ReadFile']($phpMussel['PiePath']);
+        if ($phpMussel['DoughnutPath'] = $phpMussel['GetAssetPath']('_chartjs.html', true)) {
+            $phpMussel['DoughnutFile'] = $phpMussel['ReadFile']($phpMussel['DoughnutPath']);
         } else {
-            $phpMussel['PieFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{PieChartHTML}</div></td></tr>';
+            $phpMussel['DoughnutFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
         }
-        $phpMussel['FE']['ChartJSPath'] = $phpMussel['GetAssetPath']('Chart.min.js', true) ? '?phpmussel-asset=Chart.min.js&theme=default' : '';
+        $phpMussel['FE']['ChartJSPath'] = $phpMussel['GetAssetPath']('chart.min.js', true) ? '?phpmussel-asset=chart.min.js&theme=default' : '';
     }
 
-    /** Set vault path for pie chart display. */
+    /** Set vault path for doughnut display. */
     $phpMussel['FE']['VaultPath'] = str_replace("\\", '/', $phpMussel['Vault']) . '*';
 
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
-    /** Show/hide pie charts link and etc. */
-    if (!$phpMussel['PieFile']) {
+    /** Show/hide doughnuts link and etc. */
+    if (!$phpMussel['DoughnutFile']) {
         $phpMussel['FE']['FMgrFormTarget'] = 'phpmussel-page=file-manager';
         $phpMussel['FE']['ShowHideLink'] = '<a href="?phpmussel-page=file-manager&show=true">' . $phpMussel['L10N']->getString('label_show') . '</a>';
     } else {
@@ -2645,25 +2647,25 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     /** Fetch files data. */
     $phpMussel['FilesArray'] = $phpMussel['FileManager-RecursiveList']($phpMussel['Vault']);
 
-    if (!$phpMussel['PieFile']) {
-        $phpMussel['FE']['PieChart'] = '';
+    if (!$phpMussel['DoughnutFile']) {
+        $phpMussel['FE']['Doughnut'] = '';
     } else {
-        /** Sort pie chart values. */
+        /** Sort doughnut values. */
         arsort($phpMussel['Components']['Components']);
 
-        /** Initialise pie chart values. */
-        $phpMussel['FE']['PieChartValues'] = [];
+        /** Initialise doughnut values. */
+        $phpMussel['FE']['DoughnutValues'] = [];
 
-        /** Initialise pie chart labels. */
-        $phpMussel['FE']['PieChartLabels'] = [];
+        /** Initialise doughnut labels. */
+        $phpMussel['FE']['DoughnutLabels'] = [];
 
-        /** Initialise pie chart colours. */
-        $phpMussel['FE']['PieChartColours'] = [];
+        /** Initialise doughnut colours. */
+        $phpMussel['FE']['DoughnutColours'] = [];
 
-        /** Initialise pie chart legend. */
-        $phpMussel['FE']['PieChartHTML'] = '<ul class="pieul">' . $phpMussel['L10N']->getString('tip_pie_html');
+        /** Initialise doughnut legend. */
+        $phpMussel['FE']['DoughnutHTML'] = '<ul class="pieul">' . $phpMussel['L10N']->getString('tip_click_the_component');
 
-        /** Building pie chart values. */
+        /** Building doughnut values. */
         foreach ($phpMussel['Components']['Components'] as $phpMussel['Components']['ThisName'] => $phpMussel['Components']['ThisData']) {
             if (empty($phpMussel['Components']['ThisData'])) {
                 continue;
@@ -2686,13 +2688,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 $phpMussel['Components']['ThisListed'] .= '</ul>';
             }
             $phpMussel['Components']['ThisName'] .= ' – ' . $phpMussel['Components']['ThisSize'];
-            $phpMussel['FE']['PieChartValues'][] = $phpMussel['Components']['ThisData'];
-            $phpMussel['FE']['PieChartLabels'][] = $phpMussel['Components']['ThisName'];
-            if ($phpMussel['PiePath']) {
+            $phpMussel['FE']['DoughnutValues'][] = $phpMussel['Components']['ThisData'];
+            $phpMussel['FE']['DoughnutLabels'][] = $phpMussel['Components']['ThisName'];
+            if ($phpMussel['DoughnutPath']) {
                 $phpMussel['Components']['ThisColour'] = $phpMussel['RGB']($phpMussel['Components']['ThisName']);
                 $phpMussel['Components']['RGB'] = implode(',', $phpMussel['Components']['ThisColour']['Values']);
-                $phpMussel['FE']['PieChartColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
-                $phpMussel['FE']['PieChartHTML'] .= sprintf(
+                $phpMussel['FE']['DoughnutColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
+                $phpMussel['FE']['DoughnutHTML'] .= sprintf(
                     '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $phpMussel['Components']['RGB'],
                     $phpMussel['Components']['ThisColour']['Hash'],
@@ -2700,7 +2702,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     $phpMussel['Components']['ThisListed']
                 ) . "\n";
             } else {
-                $phpMussel['FE']['PieChartHTML'] .= sprintf(
+                $phpMussel['FE']['DoughnutHTML'] .= sprintf(
                     '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
                     $phpMussel['Components']['ThisName'],
                     $phpMussel['Components']['ThisListed']
@@ -2708,24 +2710,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
             }
         }
 
-        /** Close pie chart legend and append necessary JavaScript for pie chart menu toggle. */
-        $phpMussel['FE']['PieChartHTML'] .= '</ul>' . $phpMussel['MenuToggle'];
+        /** Close doughnut legend and append necessary JavaScript for doughnut menu toggle. */
+        $phpMussel['FE']['DoughnutHTML'] .= '</ul>' . $phpMussel['MenuToggle'];
 
-        /** Finalise pie chart values. */
-        $phpMussel['FE']['PieChartValues'] = '[' . implode(', ', $phpMussel['FE']['PieChartValues']) . ']';
+        /** Finalise doughnut values. */
+        $phpMussel['FE']['DoughnutValues'] = '[' . implode(', ', $phpMussel['FE']['DoughnutValues']) . ']';
 
-        /** Finalise pie chart labels. */
-        $phpMussel['FE']['PieChartLabels'] = '["' . implode('", "', $phpMussel['FE']['PieChartLabels']) . '"]';
+        /** Finalise doughnut labels. */
+        $phpMussel['FE']['DoughnutLabels'] = '["' . implode('", "', $phpMussel['FE']['DoughnutLabels']) . '"]';
 
-        /** Finalise pie chart colours. */
-        $phpMussel['FE']['PieChartColours'] = '["' . implode('", "', $phpMussel['FE']['PieChartColours']) . '"]';
+        /** Finalise doughnut colours. */
+        $phpMussel['FE']['DoughnutColours'] = '["' . implode('", "', $phpMussel['FE']['DoughnutColours']) . '"]';
 
-        /** Finalise pie chart. */
-        $phpMussel['FE']['PieChart'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['PieFile']);
+        /** Finalise doughnut. */
+        $phpMussel['FE']['Doughnut'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $phpMussel['DoughnutFile']);
     }
 
     /** Cleanup. */
-    unset($phpMussel['PieFile'], $phpMussel['PiePath'], $phpMussel['Components']);
+    unset($phpMussel['DoughnutFile'], $phpMussel['DoughnutPath'], $phpMussel['Components']);
 
     /** Process files data. */
     array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel): void {

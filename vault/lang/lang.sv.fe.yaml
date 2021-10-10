@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.09.05).
+# This file: Swedish language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -381,7 +381,7 @@ tip_fe_cookie_warning: "Notera: phpMussel använder en cookie för att autentise
 tip_file_manager: "Hallå, {username}.<br />Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta)."
 tip_home: "Hallå, {username}.<br />Detta är hemsidan för phpMussel front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta."
 tip_logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen."
-tip_pie_html: "Klicka på komponentnamnet för mer information."
+tip_click_the_component: "Klicka på komponentnamnet för mer information."
 tip_quarantine: "Hallå, {username}.<br />Denna sida visar alla filer som för närvarande är i karantän och underlättar hanteringen av dessa filer."
 tip_quarantine_disabled: "Notera: Karantän är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_see_the_documentation: "Se <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."

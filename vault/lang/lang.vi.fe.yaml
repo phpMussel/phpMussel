@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.09.05).
+# This file: Vietnamese language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -379,7 +379,7 @@ tip_fe_cookie_warning: "Lưu ý: phpMussel sử dụng một cookie để xác t
 tip_file_manager: "Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này)."
 tip_home: "Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục."
 tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này."
-tip_pie_html: "Nhấp vào tên thành phần để biết thêm chi tiết."
+tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_quarantine: "Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó."
 tip_quarantine_disabled: "Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_see_the_documentation: "Xem <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.vi.md\#SECTION7" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
