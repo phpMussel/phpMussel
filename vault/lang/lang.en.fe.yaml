@@ -7,10 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.09.05).
+# This file: English language data for the front-end (last modified: 2021.10.10).
 ##/
 
-Extended Description Chart.js: "Enables the front-end to generate pie charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
 Extended Description phpMussel: "The main package (minus the signatures, documentation, and configuration)."
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
@@ -382,7 +382,7 @@ tip_fe_cookie_warning: "Note: phpMussel uses a cookie to authenticate logins. By
 tip_file_manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
 tip_home: "Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue."
 tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile."
-tip_pie_html: "Click the component name for more details."
+tip_click_the_component: "Click the component name for more details."
 tip_quarantine: "Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files."
 tip_quarantine_disabled: "Note: Quarantine is currently disabled, but can be enabled via the configuration page."
 tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."

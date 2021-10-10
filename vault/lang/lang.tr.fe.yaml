@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.09.05).
+# This file: Turkish language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -380,7 +380,7 @@ tip_fe_cookie_warning: "Not: phpMussel, oturum açma kimlik doğrulamasında çe
 tip_file_manager: "Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz)."
 tip_home: "Merhaba, {username}.<br />Bu, phpMussel ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin."
 tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin."
-tip_pie_html: "Daha fazla ayrıntı için bileşen adına tıklayın."
+tip_click_the_component: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_quarantine: "Merhaba, {username}.<br />Bu sayfada, şu anda karantinadaki tüm dosyaları listeler ve bu dosyaların yönetimini kolaylaştırır."
 tip_quarantine_disabled: "Not: Karantina şu anda devre dışıdır, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
 tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">belgelere</a> bakın."

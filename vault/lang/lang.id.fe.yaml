@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.09.05).
+# This file: Indonesian language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -378,7 +378,7 @@ tip_fe_cookie_warning: "Catat: phpMussel menggunakan cookie untuk mengotentikasi
 tip_file_manager: "Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
 tip_home: "Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan."
 tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log."
-tip_pie_html: "Klik nama komponen untuk detail lebih lanjut."
+tip_click_the_component: "Klik nama komponen untuk detail lebih lanjut."
 tip_quarantine: "Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut."
 tip_quarantine_disabled: "Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi."
 tip_see_the_documentation: "Lihat <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.id.md\#SECTION7" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."

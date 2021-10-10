@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.09.05).
+# This file: Urdu language data for the front-end (last modified: 2021.10.10).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -378,7 +378,7 @@ tip_fe_cookie_warning: "نوٹ: لاگز کی تصدیق کے لئے phpMussel �
 tip_file_manager: "ہیلو، {username}.<br />فائل مینیجر آپ کو، کو حذف ترمیم کریں، اپ لوڈ، اور فائلوں کو ڈاؤن لوڈ کرنے کی اجازت دیتا ہے. احتیاط کے ساتھ استعمال کریں (آپ کو اس کے ساتھ آپ کی تنصیب توڑ سکتا ہے)."
 tip_home: "ہیلو، {username}.<br />یہ phpMussel سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں."
 tip_logs: "ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں."
-tip_pie_html: "مزید تفصیلات کے لئے جزو کا نام پر کلک کریں."
+tip_click_the_component: "مزید تفصیلات کے لئے جزو کا نام پر کلک کریں."
 tip_quarantine: "ہیلو، {username}.<br />انتظامیہ کو سہولت دینے کے لئے، اس صفحہ کو فی الحال قرنطین میں موجود تمام فائلوں کی فہرست."
 tip_quarantine_disabled: "نوٹ: قرنطین فی الحال غیر فعال ہے، لیکن ترتیب ترتیب کے صفحے کے ذریعہ فعال ہوسکتا ہے."
 tip_see_the_documentation: "ملاحظہ کریں <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ur.md\#SECTION7" hreflang="ur" rel="noopener external">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے."
