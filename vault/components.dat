@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.4.0-DEV+21248249
+ Version: 2.4.0-DEV+21290322
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.7.0-DEV
@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: components.dat
 phpMussel Front-End:
  Name: phpMussel Front-End
- Version: 2.4.0-DEV+21282341
+ Version: 2.4.0-DEV+21290322
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.7.0-DEV
@@ -167,7 +167,7 @@ phpMussel Front-End:
    - 3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722
    - bcc32dd57fa1f413a66ae3ae12acf1b27741a69b5d3b986f4f5a6963a6e7a12f:781
    - 0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992
-   - fb8da06727d88c31082cf27af5a004fd931774b162d630c498e00496f5421eb3:176398
+   - 9ee106273c9f81332a002b8626e61d36100525cc5aee4a3dfd117092fa854cc8:176488
    - 0dbb03e8fc2f788115f448246d102e674528d175697f25feda97ac162164e0f3:116891
  Reannotate: components.dat
 phpMussel Upload Handler:
