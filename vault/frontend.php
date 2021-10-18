@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.10).
+ * This file: Front-end handler (last modified: 2021.10.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -673,7 +673,8 @@ if ($phpMussel['FE']['UserState'] === 1) {
         /** phpMussel branch latest stable. */
         $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['L10N']->getString('response_error');
     } else {
-        $phpMussel['Remote-YAML-phpMussel-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-phpMussel']))->Data;
+        $phpMussel['Remote-YAML-phpMussel-Array'] = [];
+        $phpMussel['YAML']->process($phpMussel['Remote-YAML-phpMussel'], $phpMussel['Remote-YAML-phpMussel-Array']);
 
         /** phpMussel latest stable. */
         if (empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable'])) {
@@ -741,7 +742,8 @@ if ($phpMussel['FE']['UserState'] === 1) {
         /** PHP branch latest stable. */
         $phpMussel['FE']['info_php_branch'] = $phpMussel['L10N']->getString('response_error');
     } else {
-        $phpMussel['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($phpMussel['Remote-YAML-PHP']))->Data;
+        $phpMussel['Remote-YAML-PHP-Array'] = [];
+        $phpMussel['YAML']->process($phpMussel['Remote-YAML-PHP'], $phpMussel['Remote-YAML-PHP-Array']);
 
         /** PHP latest stable. */
         $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
