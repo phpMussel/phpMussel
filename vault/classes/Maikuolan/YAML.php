@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2021.09.06).
+ * YAML handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -31,16 +31,6 @@ class YAML
     public $Refs = [];
 
     /**
-     * @var bool Whether to render multi-line values.
-     */
-    private $MultiLine = false;
-
-    /**
-     * @var bool Whether to render folded multi-line values.
-     */
-    private $MultiLineFolded = false;
-
-    /**
      * @var string Default indent to use when reconstructing YAML data.
      */
     public $Indent = ' ';
@@ -54,6 +44,16 @@ class YAML
      * @var array Used to cache any anchors found in the document.
      */
     public $Anchors = [];
+
+    /**
+     * @var bool Whether to render multi-line values.
+     */
+    private $MultiLine = false;
+
+    /**
+     * @var bool Whether to render folded multi-line values.
+     */
+    private $MultiLineFolded = false;
 
     /**
      * @var string The tag/release the version of this file belongs to (might
@@ -78,67 +78,13 @@ class YAML
     }
 
     /**
-     * Normalises the values defined by the processLine method.
+     * PHP's magic "__toString" method to act as an alias for "reconstruct".
      *
-     * @param string|int|bool $Value The value to be normalised.
-     * @return void
+     * @return string
      */
-    private function normaliseValue(&$Value)
+    public function __toString()
     {
-        /** Check for anchors and populate if necessary. */
-        $AnchorMatches = [];
-        if (
-            preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
-            isset($AnchorMatches[1], $AnchorMatches[2])
-        ) {
-            $Value = $AnchorMatches[2];
-            $this->Anchors[$AnchorMatches[1]] = $Value;
-        } elseif (
-            preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
-            isset($AnchorMatches[1], $this->Anchors[$AnchorMatches[1]])
-        ) {
-            $Value = $this->Anchors[$AnchorMatches[1]];
-        }
-
-        /** Check for inline variables. */
-        $this->tryStringDataTraverseByRef($Value);
-
-        $ValueLen = strlen($Value);
-        $ValueLow = strtolower($Value);
-
-        /** Check for string quotes. */
-        foreach ([
-            ['"', '"', 1],
-            ["'", "'", 1],
-            ['`', '`', 1],
-            ["\x91", "\x92", 1],
-            ["\x93", "\x94", 1],
-            ["\xe2\x80\x98", "\xe2\x80\x99", 3],
-            ["\xe2\x80\x9c", "\xe2\x80\x9d", 3]
-        ] as $Wrapper) {
-            if (substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
-                $Value = substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
-                return;
-            }
-        }
-
-        if ($ValueLow === 'true' || $ValueLow === 'y' || $Value === '+') {
-            $Value = true;
-        } elseif ($ValueLow === 'false' || $ValueLow === 'n' || $Value === '-') {
-            $Value = false;
-        } elseif ($ValueLow === 'null' || $Value === '~') {
-            $Value = null;
-        } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
-            $Value = hex2bin($HexTest);
-        } elseif (preg_match('~^\d+$~', $Value)) {
-            $Value = (int)$Value;
-        } elseif (preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
-            $Value = (float)$Value;
-        } elseif (!$ValueLen) {
-            $Value = false;
-        } else {
-            $Value = (string)$Value;
-        }
+        return $this->reconstruct($this->Data);
     }
 
     /**
@@ -232,6 +178,140 @@ class YAML
             }
         }
         return true;
+    }
+
+    /**
+     * Reconstruct YAML.
+     *
+     * @param array $Arr The array to reconstruct from.
+     * @return string The reconstructed YAML.
+     */
+    public function reconstruct(array $Arr)
+    {
+        $Out = '';
+        $this->processInner($Arr, $Out);
+        return $Out . "\n";
+    }
+
+    /**
+     * Traverse data path.
+     *
+     * @param mixed $Data The data to traverse.
+     * @param string|array $Path The path to traverse.
+     * @return mixed The traversed data, or an empty string on failure.
+     */
+    public function dataTraverse(&$Data, $Path = [])
+    {
+        if (!is_array($Path)) {
+            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
+        }
+        $Segment = array_shift($Path);
+        if ($Segment === null || strlen($Segment) === 0) {
+            return is_scalar($Data) ? $Data : '';
+        }
+        $Segment = str_replace('\.', '.', $Segment);
+        if (is_array($Data)) {
+            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path) : '';
+        }
+        return $this->dataTraverse($Data, $Path);
+    }
+
+    /**
+     * Attempt string data path traverse by reference.
+     *
+     * @param mixed $Data The data to traverse.
+     * @return void
+     */
+    public function tryStringDataTraverseByRef(&$Data)
+    {
+        if (
+            empty($this->Refs) ||
+            !is_string($Data) ||
+            !preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
+            !isset($VarMatches[0][0], $VarMatches[1][0])
+        ) {
+            return;
+        }
+        $MatchCount = count($VarMatches[0]);
+        for ($Index = 0; $Index < $MatchCount; $Index++) {
+            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && is_string($Extracted)) {
+                $Data = str_replace($VarMatches[0][$Index], $Extracted, $Data);
+            }
+        }
+    }
+
+    /**
+     * Normalises the values defined by the processLine method.
+     *
+     * @param string|int|bool $Value The value to be normalised.
+     * @return void
+     */
+    private function normaliseValue(&$Value)
+    {
+        /** Check for anchors and populate if necessary. */
+        $AnchorMatches = [];
+        if (
+            preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
+            isset($AnchorMatches[1], $AnchorMatches[2])
+        ) {
+            $Value = $AnchorMatches[2];
+            $this->Anchors[$AnchorMatches[1]] = $Value;
+        } elseif (
+            preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
+            isset($AnchorMatches[1], $this->Anchors[$AnchorMatches[1]])
+        ) {
+            $Value = $this->Anchors[$AnchorMatches[1]];
+        }
+
+        /** Check for inline variables. */
+        $this->tryStringDataTraverseByRef($Value);
+
+        /** Check for inline arrays. */
+        if (substr($Value, 0, 1) === '[' && substr($Value, -1) === ']') {
+            $Value = explode(',', substr($Value, 1, -1));
+            foreach ($Value as &$ThisValue) {
+                $ThisValue = trim($ThisValue);
+                $this->normaliseValue($ThisValue);
+            }
+            return;
+        }
+
+        $ValueLen = strlen($Value);
+        $ValueLow = strtolower($Value);
+
+        /** Check for string quotes. */
+        foreach ([
+            ['"', '"', 1],
+            ["'", "'", 1],
+            ['`', '`', 1],
+            ["\x91", "\x92", 1],
+            ["\x93", "\x94", 1],
+            ["\xe2\x80\x98", "\xe2\x80\x99", 3],
+            ["\xe2\x80\x9c", "\xe2\x80\x9d", 3]
+        ] as $Wrapper) {
+            if (substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
+                $Value = substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
+                return;
+            }
+        }
+
+        if ($ValueLow === 'true' || $ValueLow === 'y' || $Value === '+') {
+            $Value = true;
+        } elseif ($ValueLow === 'false' || $ValueLow === 'n' || $Value === '-') {
+            $Value = false;
+        } elseif ($ValueLow === 'null' || $Value === '~') {
+            $Value = null;
+        } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
+            $Value = hex2bin($HexTest);
+        } elseif (preg_match('~^\d+$~', $Value)) {
+            $Value = (int)$Value;
+        } elseif (preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
+            $Value = (float)$Value;
+        } elseif (!$ValueLen) {
+            $Value = false;
+        } else {
+            $Value = (string)$Value;
+        }
     }
 
     /**
@@ -345,76 +425,6 @@ class YAML
                 $Out .= $Value;
             }
             $Out .= "\n";
-        }
-    }
-
-    /**
-     * Reconstruct YAML.
-     *
-     * @param array $Arr The array to reconstruct from.
-     * @return string The reconstructed YAML.
-     */
-    public function reconstruct(array $Arr)
-    {
-        $Out = '';
-        $this->processInner($Arr, $Out);
-        return $Out . "\n";
-    }
-
-    /**
-     * PHP's magic "__toString" method to act as an alias for "reconstruct".
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->reconstruct($this->Data);
-    }
-
-    /**
-     * Traverse data path.
-     *
-     * @param mixed $Data The data to traverse.
-     * @param string|array $Path The path to traverse.
-     * @return mixed The traversed data, or an empty string on failure.
-     */
-    public function dataTraverse(&$Data, $Path = [])
-    {
-        if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
-        }
-        $Segment = array_shift($Path);
-        if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
-        }
-        $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data)) {
-            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path) : '';
-        }
-        return $this->dataTraverse($Data, $Path);
-    }
-
-    /**
-     * Attempt string data path traverse by reference.
-     *
-     * @param mixed $Data The data to traverse.
-     * @return void
-     */
-    public function tryStringDataTraverseByRef(&$Data)
-    {
-        if (
-            empty($this->Refs) ||
-            !is_string($Data) ||
-            !preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
-            !isset($VarMatches[0][0], $VarMatches[1][0])
-        ) {
-            return;
-        }
-        $MatchCount = count($VarMatches[0]);
-        for ($Index = 0; $Index < $MatchCount; $Index++) {
-            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && is_string($Extracted)) {
-                $Data = str_replace($VarMatches[0][$Index], $Extracted, $Data);
-            }
         }
     }
 }

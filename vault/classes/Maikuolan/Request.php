@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2021.07.02).
+ * Request handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -52,7 +52,17 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.2';
+    const VERSION = '1.7.0';
+
+    /**
+     * Allow calling the instance as a function (proxies to request).
+     *
+     * @return string
+     */
+    public function __invoke($URI, $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0)
+    {
+        return $this->request($URI, $Params, $Timeout, $Headers, $Depth);
+    }
 
     /**
      * The main request method.
@@ -182,14 +192,6 @@ class Request
     }
 
     /**
-     * Allow calling the instance as a function (proxies to request).
-     */
-    public function __invoke($URI, $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0)
-    {
-        return $this->request($URI, $Params, $Timeout, $Headers, $Depth);
-    }
-
-    /**
      * Checks for a value within CSV.
      *
      * @param string $Value The value to look for.
@@ -216,6 +218,7 @@ class Request
      * Sends messages to stdout.
      *
      * @param string $Message The message to send.
+     * @return void
      */
     public function sendMessage($Message)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2021.07.02).
+ * Delayed file IO class (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -47,7 +47,41 @@ class DelayedIO
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.2';
+    const VERSION = '1.7.0';
+
+    /**
+     * All pending modified files are written at object destruction.
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        foreach ($this->NewData as $File => $NewData) {
+            if ($NewData === $this->OldData[$File]) {
+                continue;
+            }
+            $Handle = fopen($File, 'wb');
+            if (!is_resource($Handle)) {
+                continue;
+            }
+            if ($this->Locked[$File]) {
+                $Locked = false;
+                $Time = time();
+                while (!$Locked) {
+                    $Locked = flock($Handle, $this->Locked[$File]);
+                    if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                        break;
+                    }
+                }
+                if (!$Locked) {
+                    fclose($Handle);
+                    continue;
+                }
+            }
+            fwrite($Handle, $NewData);
+            fclose($Handle);
+        }
+    }
 
     /**
      * Read a file, or fetch from object memory if already read before.
@@ -123,39 +157,5 @@ class DelayedIO
             $this->OldData[$File] = '';
         }
         return true;
-    }
-
-    /**
-     * All pending modified files are written at object destruction.
-     *
-     * @return void
-     */
-    public function __destruct()
-    {
-        foreach ($this->NewData as $File => $NewData) {
-            if ($NewData === $this->OldData[$File]) {
-                continue;
-            }
-            $Handle = fopen($File, 'wb');
-            if (!is_resource($Handle)) {
-                continue;
-            }
-            if ($this->Locked[$File]) {
-                $Locked = false;
-                $Time = time();
-                while (!$Locked) {
-                    $Locked = flock($Handle, $this->Locked[$File]);
-                    if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
-                        break;
-                    }
-                }
-                if (!$Locked) {
-                    fclose($Handle);
-                    continue;
-                }
-            }
-            fwrite($Handle, $NewData);
-            fclose($Handle);
-        }
     }
 }

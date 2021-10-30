@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2021.07.02).
+ * L10N handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -17,6 +17,16 @@ namespace Maikuolan\Common;
 
 class L10N
 {
+    /**
+     * @var array All relevant L10N data.
+     */
+    public $Data = [];
+
+    /**
+     * @var array All relevant fallback L10N data.
+     */
+    public $Fallback = [];
+
     /**
      * @var string The pluralisation rule to use for integers.
      */
@@ -38,21 +48,95 @@ class L10N
     private $FallbackFractionRule = 'int1';
 
     /**
-     * @var array All relevant L10N data.
-     */
-    public $Data = [];
-
-    /**
-     * @var array All relevant fallback L10N data.
-     */
-    public $Fallback = [];
-
-    /**
      * @var string The tag/release the version of this file belongs to (might
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.2';
+    const VERSION = '1.7.0';
+
+    /**
+     * Constructor.
+     *
+     * @param array $Data The L10N data.
+     * @param array|\Maikuolan\Common\L10N $Fallback The fallback L10N data (optional).
+     * @return void
+     */
+    public function __construct(array $Data = [], $Fallback = [])
+    {
+        $this->Data = $Data;
+        if (is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
+            $this->Fallback = $Fallback;
+        }
+        if (!empty($Data['IntegerRule']) && method_exists($this, $Data['IntegerRule'])) {
+            $this->IntegerRule = $Data['IntegerRule'];
+        }
+        if (!empty($Data['FractionRule']) && method_exists($this, $Data['FractionRule'])) {
+            $this->FractionRule = $Data['FractionRule'];
+        }
+        if (is_array($Fallback)) {
+            if (!empty($Fallback['IntegerRule']) && method_exists($this, $Fallback['IntegerRule'])) {
+                $this->FallbackIntegerRule = $Fallback['IntegerRule'];
+            }
+            if (!empty($Fallback['FractionRule']) && method_exists($this, $Fallback['FractionRule'])) {
+                $this->FallbackFractionRule = $Fallback['FractionRule'];
+            }
+        }
+    }
+
+    /**
+     * Fetch an L10N string from a range of possible plural forms.
+     *
+     * @param int|float $Number The quantity of the subject.
+     * @param string $String Which L10N strings we're fetching from.
+     * @return string The appropriate plural form as determined.
+     */
+    public function getPlural($Number, $String)
+    {
+        if (isset($this->Data[$String])) {
+            $Choices = $this->Data[$String];
+            $IntegerRule = $this->IntegerRule;
+            $FractionRule = $this->FractionRule;
+        } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+            return $this->Fallback->getPlural($Number, $String);
+        } elseif (isset($this->Fallback[$String])) {
+            $Choices = $this->Fallback[$String];
+            $IntegerRule = $this->FallbackIntegerRule;
+            $FractionRule = $this->FallbackFractionRule;
+        } else {
+            return '';
+        }
+        if (!is_array($Choices)) {
+            return $Choices;
+        }
+        if (is_float($Number)) {
+            $Choice = $this->{$FractionRule}($Number);
+        } elseif (is_int($Number)) {
+            $Choice = $this->{$IntegerRule}($Number);
+        } else {
+            $Choice = 0;
+        }
+        if (isset($Choices[$Choice])) {
+            return $Choices[$Choice];
+        }
+        return isset($Choices[0]) ? $Choices[0] : '';
+    }
+
+    /**
+     * Safely fetch an L10N string.
+     *
+     * @param string $String The L10N string to fetch.
+     * @return string The fetched L10N string.
+     */
+    public function getString($String)
+    {
+        if (isset($this->Data[$String])) {
+            return $this->Data[$String];
+        }
+        if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+            return $this->Fallback->getString($String);
+        }
+        return isset($this->Fallback[$String]) ? $this->Fallback[$String] : '';
+    }
 
     /**
      * For when there aren't multiple forms.
@@ -504,86 +588,5 @@ class L10N
     private function fraction2Type2($Fraction)
     {
         return ($Fraction >= 1) ? 1 : 0;
-    }
-
-    /**
-     * Fetch an L10N string from a range of possible plural forms.
-     *
-     * @param int|float $Number The quantity of the subject.
-     * @param string $String Which L10N strings we're fetching from.
-     * @return string The appropriate plural form as determined.
-     */
-    public function getPlural($Number, $String)
-    {
-        if (isset($this->Data[$String])) {
-            $Choices = $this->Data[$String];
-            $IntegerRule = $this->IntegerRule;
-            $FractionRule = $this->FractionRule;
-        } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
-            return $this->Fallback->getPlural($Number, $String);
-        } elseif (isset($this->Fallback[$String])) {
-            $Choices = $this->Fallback[$String];
-            $IntegerRule = $this->FallbackIntegerRule;
-            $FractionRule = $this->FallbackFractionRule;
-        } else {
-            return '';
-        }
-        if (!is_array($Choices)) {
-            return $Choices;
-        }
-        if (is_float($Number)) {
-            $Choice = $this->{$FractionRule}($Number);
-        } elseif (is_int($Number)) {
-            $Choice = $this->{$IntegerRule}($Number);
-        } else {
-            $Choice = 0;
-        }
-        if (isset($Choices[$Choice])) {
-            return $Choices[$Choice];
-        }
-        return isset($Choices[0]) ? $Choices[0] : '';
-    }
-
-    /**
-     * Safely fetch an L10N string.
-     *
-     * @param string $String The L10N string to fetch.
-     * @return string The fetched L10N string.
-     */
-    public function getString($String)
-    {
-        if (isset($this->Data[$String])) {
-            return $this->Data[$String];
-        }
-        if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
-            return $this->Fallback->getString($String);
-        }
-        return isset($this->Fallback[$String]) ? $this->Fallback[$String] : '';
-    }
-
-    /**
-     * @param array $Data The L10N data.
-     * @param array|\Maikuolan\Common\L10N $Fallback The fallback L10N data (optional).
-     */
-    public function __construct(array $Data = [], $Fallback = [])
-    {
-        $this->Data = $Data;
-        if (is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
-            $this->Fallback = $Fallback;
-        }
-        if (!empty($Data['IntegerRule']) && method_exists($this, $Data['IntegerRule'])) {
-            $this->IntegerRule = $Data['IntegerRule'];
-        }
-        if (!empty($Data['FractionRule']) && method_exists($this, $Data['FractionRule'])) {
-            $this->FractionRule = $Data['FractionRule'];
-        }
-        if (is_array($Fallback)) {
-            if (!empty($Fallback['IntegerRule']) && method_exists($this, $Fallback['IntegerRule'])) {
-                $this->FallbackIntegerRule = $Fallback['IntegerRule'];
-            }
-            if (!empty($Fallback['FractionRule']) && method_exists($this, $Fallback['FractionRule'])) {
-                $this->FallbackFractionRule = $Fallback['FractionRule'];
-            }
-        }
     }
 }

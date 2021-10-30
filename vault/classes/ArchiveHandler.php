@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Archive handler (last modified: 2021.07.10).
+ * This file: Archive handler (last modified: 2021.10.30).
  */
 
 namespace phpMussel\ArchiveHandler;
@@ -556,35 +556,6 @@ class PdfHandler extends ArchiveHandler
     private $Index = -1;
 
     /**
-     * Needed to decode Ascii85 data (since PDF files sometimes use this).
-     * This method adapted from the base85 class authored by Scott Baker.
-     * @link https://bitbucket.org/scottchiefbaker/php-base85/src/master/
-     * @license https://bitbucket.org/scottchiefbaker/php-base85/src/master/LICENSE GNU/GPLv3
-     *
-     * @param string $In The data to be decoded.
-     * @return string The decoded data.
-     */
-    public function base85_decode($In)
-    {
-        $In = str_replace(["\t", "\r", "\n", "\f", '/z/', '/y/'], ['', '', '', '', '!!!!!', '+<VdL/'], $In);
-        $Len = strlen($In);
-        $Padding = ($Len % 5 === 0) ? 0 : 5 - ($Len % 5);
-        $In .= str_repeat('u', $Padding);
-        $Num = 0;
-        $Out = '';
-        while ($Chunk = substr($In, $Num * 5, 5)) {
-            $Char = 0;
-            foreach (unpack('C*', $Chunk) as $ThisChar) {
-                $Char *= 85;
-                $Char += $ThisChar - 33;
-            }
-            $Out .= pack('N', $Char);
-            $Num++;
-        }
-        return substr($Out, 0, strlen($Out) - $Padding);
-    }
-
-    /**
      * Construct the instance.
      *
      * @param string $File
@@ -851,6 +822,35 @@ class PdfHandler extends ArchiveHandler
 
         /** All is good. */
         $this->ErrorState = 0;
+    }
+
+    /**
+     * Needed to decode Ascii85 data (since PDF files sometimes use this).
+     * This method adapted from the base85 class authored by Scott Baker.
+     * @link https://bitbucket.org/scottchiefbaker/php-base85/src/master/
+     * @license https://bitbucket.org/scottchiefbaker/php-base85/src/master/LICENSE GNU/GPLv3
+     *
+     * @param string $In The data to be decoded.
+     * @return string The decoded data.
+     */
+    public function base85_decode($In)
+    {
+        $In = str_replace(["\t", "\r", "\n", "\f", '/z/', '/y/'], ['', '', '', '', '!!!!!', '+<VdL/'], $In);
+        $Len = strlen($In);
+        $Padding = ($Len % 5 === 0) ? 0 : 5 - ($Len % 5);
+        $In .= str_repeat('u', $Padding);
+        $Num = 0;
+        $Out = '';
+        while ($Chunk = substr($In, $Num * 5, 5)) {
+            $Char = 0;
+            foreach (unpack('C*', $Chunk) as $ThisChar) {
+                $Char *= 85;
+                $Char += $ThisChar - 33;
+            }
+            $Out .= pack('N', $Char);
+            $Num++;
+        }
+        return substr($Out, 0, strlen($Out) - $Padding);
     }
 
     /**

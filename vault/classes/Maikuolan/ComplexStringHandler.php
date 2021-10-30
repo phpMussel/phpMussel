@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2021.07.02).
+ * Complex string handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -37,9 +37,11 @@ class ComplexStringHandler
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.6.2';
+    const VERSION = '1.7.0';
 
     /**
+     * Constructor.
+     *
      * @param string $Data The data supplied to the class at object instantiation.
      * @param string $Pattern An optional pattern to immediately call $this->generateMarkers.
      * @param callable $Closure An optional closure to immediately call $this->iterateClosure.
@@ -56,6 +58,16 @@ class ComplexStringHandler
                 }
             }
         }
+    }
+
+    /**
+     * PHP's magic "__toString" method to act as an alias for "recompile".
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->recompile();
     }
 
     /**
@@ -121,15 +133,5 @@ class ComplexStringHandler
             }
         }
         return $Output;
-    }
-
-    /**
-     * PHP's magic "__toString" method to act as an alias for "recompile".
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->recompile();
     }
 }
