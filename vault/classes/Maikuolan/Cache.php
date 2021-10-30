@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2021.07.02).
+ * A simple, unified cache handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -88,14 +88,14 @@ class Cache
     public $FFDefault = '';
 
     /**
-     * @var bool Whether the cache has been modified since instantiation as far as we know.
-     */
-    private $Modified = false;
-
-    /**
      * @var array An array to contain any thrown exceptions.
      */
     public $Exceptions = [];
+
+    /**
+     * @var bool Whether the cache has been modified since instantiation as far as we know.
+     */
+    private $Modified = false;
 
     /**
      * @var mixed Cache working object (needed by a number of mechanisms).
@@ -160,7 +160,7 @@ class Cache
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.2';
+    public const VERSION = '2.7.0';
 
     /**
      * Construct object and set working data if needed.
@@ -766,7 +766,7 @@ class Cache
      *      conform; Does nothing otherwise.
      * @return void
      */
-    private function enforceKeyLimit(string &$Key)
+    private function enforceKeyLimit(string &$Key): void
     {
         /**
          * SHA512 produces a hash equal to the current key size limit, and

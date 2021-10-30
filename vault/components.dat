@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: phpMussel Core
- Version: 2.4.0-DEV+21290322
+ Version: 2.4.0-DEV+21302587
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.7.0-DEV
@@ -36,9 +36,9 @@ phpMussel Core:
    - signatures/switch.dat
   Checksum:
    - 4664d7cae8a441537a1ce25c670a787c220739cc9d2016e9df1ef8d94ee42edd:1540
-   - a3dc354a5dc5740c3fd327042cd4c2bb51db25b3aa62b5a3fe9d827f84858eea:32504
+   - 5fc23d3cba0ac367ab4f06ce186af6d9ca60ded5e65d8f4ba0d57c90185ffe78:32504
    - 19e973bdc4e75557ba10d3934e68993956bc24bd57f6f109f9eca159100a7c50:3872
-   - 3db7a6ddf3260981ab70f1f53a5d5e72b34c1d24ac120abef65457f5a15ca137:1830
+   - 5d14dd147f82ab17416959e50610f0aa94f3b42ac7b86ce610cb5ed93123edeb:1854
    - c8376604d4de8e814cdd97f38043f8205c869e2ce46ab225dc6e21cd913e79f4:8360
    - 7a191bcb02c1f0c34866aac01037c5437a6e00bf7affd72589af7eefbad5ece0:19542
    - 9798ff7ea07c6a3b2e29aa5bbfc6200f0e05a527e2f6bfaf5f32375e18eb8287:7501

@@ -48,6 +48,9 @@ Detailed version release guidelines for phpMussel can be found at:
   reported the wrong counts for unidentified or other under the signature
   vendor or source counts; Fixed.
 
+- [2021.10.30; Maikuolan]: Code-style cleanup: Public before private
+  properties, magic before public before private methods.
+
 === Version/Release 2.3.1 ===
 PATCH RELEASE.
 

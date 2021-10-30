@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2021.07.02).
+ * Request handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -52,7 +52,17 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.2';
+    public const VERSION = '2.7.0';
+
+    /**
+     * Allow calling the instance as a function (proxies to request).
+     *
+     * @return string
+     */
+    public function __invoke(...$Params): string
+    {
+        return $this->request(...$Params);
+    }
 
     /**
      * The main request method.
@@ -179,14 +189,6 @@ class Request
 
         /** Return the results of the request. */
         return $Response;
-    }
-
-    /**
-     * Allow calling the instance as a function (proxies to request).
-     */
-    public function __invoke(...$Params): string
-    {
-        return $this->request(...$Params);
     }
 
     /**

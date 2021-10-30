@@ -8,14 +8,16 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary file handler (last modified: 2021.07.10).
+ * This file: Temporary file handler (last modified: 2021.10.30).
  */
 
 namespace phpMussel\TemporaryFileHandler;
 
 class TemporaryFileHandler
 {
-    /** To be populated by a reference to the temporary file. */
+    /**
+     * @var string To be populated by a reference to the temporary file.
+     */
     public $Filename = '';
 
     /**

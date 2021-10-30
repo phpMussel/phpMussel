@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2021.07.02).
+ * Matrix handler (last modified: 2021.10.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -42,7 +42,7 @@ class Matrix
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.2';
+    public const VERSION = '2.7.0';
 
     /**
      * Create the matrix.
@@ -59,37 +59,6 @@ class Matrix
         $this->Magnitude = $Magnitude;
         $this->Data = $Data;
         $this->populateVector($this->Matrix, 0);
-    }
-
-    /**
-     * Populate each vector and recurse forward for each dimension.
-     *
-     * @param array $Vector The vector we're working on.
-     * @param int $Dimension The dimension we're working on.
-     * @return void
-     */
-    private function populateVector(array &$Vector, int $Dimension): void
-    {
-        /** Fill the coordinate with the specified data and exit. */
-        if ($Dimension >= $this->Dimensions) {
-            $Vector = $this->Data;
-            return;
-        }
-
-        /** Determine magnitude for this vector. */
-        if (is_int($this->Magnitude)) {
-            $ThisMagnitude = $this->Magnitude;
-        } elseif (is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && is_int($this->Magnitude[$Dimension])) {
-            $ThisMagnitude = $this->Magnitude[$Dimension];
-        } else {
-            $ThisMagnitude = 0;
-        }
-
-        /** Populate vector. */
-        for ($Current = 0; $Current < $ThisMagnitude; $Current++) {
-            $Vector[$Current] = [];
-            $this->populateVector($Vector[$Current], $Dimension + 1);
-        }
     }
 
     /**
@@ -170,6 +139,37 @@ class Matrix
 
         /** Exit. */
         return $Out;
+    }
+
+    /**
+     * Populate each vector and recurse forward for each dimension.
+     *
+     * @param array $Vector The vector we're working on.
+     * @param int $Dimension The dimension we're working on.
+     * @return void
+     */
+    private function populateVector(array &$Vector, int $Dimension): void
+    {
+        /** Fill the coordinate with the specified data and exit. */
+        if ($Dimension >= $this->Dimensions) {
+            $Vector = $this->Data;
+            return;
+        }
+
+        /** Determine magnitude for this vector. */
+        if (is_int($this->Magnitude)) {
+            $ThisMagnitude = $this->Magnitude;
+        } elseif (is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && is_int($this->Magnitude[$Dimension])) {
+            $ThisMagnitude = $this->Magnitude[$Dimension];
+        } else {
+            $ThisMagnitude = 0;
+        }
+
+        /** Populate vector. */
+        for ($Current = 0; $Current < $ThisMagnitude; $Current++) {
+            $Vector[$Current] = [];
+            $this->populateVector($Vector[$Current], $Dimension + 1);
+        }
     }
 
     /**

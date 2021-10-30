@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2021.07.05).
+ * Demojibakefier (last modified: 2021.10.30).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -57,9 +57,11 @@ class Demojibakefier
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.6.2';
+    public const VERSION = '2.7.0';
 
     /**
+     * Constructor.
+     *
      * @param string $NormaliseTo The encoding to normalise to (defaults to UTF-8).
      * @return void
      */
@@ -281,6 +283,169 @@ class Demojibakefier
         }
         /** Encoding not recognised; Assuming non-conformant and returning false accordingly. */
         return false;
+    }
+
+    /**
+     * Calculate the shannon entropy of a string.
+     * @link https://en.wikipedia.org/wiki/Entropy_(information_theory)
+     *
+     * @param string $String The string to check.
+     * @return float|int The shannon entropy of the string.
+     */
+    public function shannonEntropy(string $String)
+    {
+        if (!$Len = strlen($String)) {
+            return 0;
+        }
+        $Chars = [];
+        for ($Pos = 0; $Pos < $Len; $Pos++) {
+            $Char = substr($String, $Pos, 1);
+            if (!isset($Chars[$Char])) {
+                $Chars[$Char] = 0;
+            }
+            $Chars[$Char]++;
+        }
+        $Total = 0;
+        foreach ($Chars as $Char) {
+            $Total += abs(($Char / $Len) * log(($Char / $Len), 2));
+        }
+        return $Total;
+    }
+
+    /**
+     * Attempts to normalise a string.
+     *
+     * @param string $String The string to normalise.
+     * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
+     */
+    public function normalise(string $String): string
+    {
+        $this->Last = '';
+        $this->Len = strlen($String);
+
+        /** Return early if the string is empty. */
+        if ($this->Len === 0) {
+            return $String;
+        }
+
+        /** Potential valid candidates will be populated here. */
+        $Valid = [];
+
+        /** Suppress errors (because every failed normalisation attempt will generate errors and fill logs otherwise). */
+        set_error_handler(function ($errno) {
+            return;
+        });
+
+        /** Cycle through supported encodings and attempt to generate valid candidates. */
+        foreach ($this->supported() as $Encoding) {
+            if (!$this->checkConformity($String, $Encoding)) {
+                continue;
+            }
+            $Attempt = iconv($Encoding, $this->NormaliseTo, $String);
+            if ($Attempt === false || !$this->checkConformity($Attempt, $this->NormaliseTo)) {
+                continue;
+            }
+            if (strcmp(iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
+                $Valid[$Encoding] = $Attempt;
+                if ($Encoding === $this->NormaliseTo) {
+                    break;
+                }
+            }
+        }
+
+        /** We're done.. Restore the error handler. */
+        restore_error_handler();
+
+        /** If the string conforms to our desired encoding, and can be reversed to it, we'll go with that. */
+        if (isset($Valid[$this->NormaliseTo])) {
+            $this->Last = $this->NormaliseTo;
+            return $Valid[$this->NormaliseTo];
+        }
+
+        /** Okay.. Doesn't conform or can't be reversed. Time to apply weighting and some fuzzy heuristic guesswork. */
+        foreach ($Valid as $Key => $Value) {
+            $Valid[$Key] = ['String' => $Value, 'Weight' => 0];
+        }
+        $this->weigh($String, $Valid);
+
+        /** Sort weights from highest to lowest and attempt to reduce candidates by the largest weight. */
+        uasort($Valid, function ($A, $B): int {
+            return $A['Weight'] === $B['Weight'] ? 0 : ($A['Weight'] < $B['Weight'] ? 1 : -1);
+        });
+
+        $this->dropVariants($Valid);
+        $Current = key($Valid);
+        foreach ($Valid as $Key => $Value) {
+            if ($Value['Weight'] < $Valid[$Current]['Weight']) {
+                unset($Valid[$Key]);
+            }
+        }
+
+        /** Check whether we can return a single possible value. */
+        if (($Count = count($Valid)) === 1) {
+            $this->Last = $Current;
+            return $Valid[$Current]['String'];
+        }
+
+        /**
+         * Let's try splitting the string into parts and "demojibakefying" the individual parts, in case we have
+         * a little better luck doing it that way (this may be the case if the string contains multiple encodings).
+         */
+        $Length = $this->Len;
+        $Last = $this->Last;
+        foreach ([
+            "\xef\xbf\xbd",
+            "\0\0\0\0",
+            "\0\r\0\n",
+            "\r\0\n\0",
+            "\r\n",
+            "\0\r",
+            "\r\0",
+            "\0\n",
+            "\n\0",
+            "\0\0",
+            "\0\t",
+            "\t\0",
+            "\r",
+            "\n",
+            "\t",
+            "\x0a",
+            "\x0b",
+            "\x0c",
+            "\x15",
+            ': ',
+            "\xef\xbc\x9a",
+            "\x85"
+        ] as $Delimiter) {
+            if (($Count = substr_count($String, $Delimiter)) && $Count < $this->Segments) {
+                $Segments = explode($Delimiter, $String);
+                foreach ($Segments as &$Segment) {
+                    $Segment = $this->normalise($Segment);
+                }
+                $NewString = implode($Delimiter, $Segments);
+                $this->Len = $Length;
+                if ($NewString !== $String) {
+                    $this->Last = 'Mixed';
+                }
+                return $NewString;
+            }
+        }
+
+        /** If we haven't decided on a particular candidate by this point, we'll just return the original string. */
+        return $String;
+    }
+
+    /**
+     * Checks if the class requirements are met. If met, then calls checkConformity. If the string is non-conformant,
+     * then calls normalise. If the class requirements aren't met, or if the string is already conformant, return the
+     * original string immediately.
+     *
+     * @param string $String The string to normalise.
+     * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
+     */
+    public function guard(string $String): string
+    {
+        return !function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
     }
 
     /**
@@ -526,168 +691,5 @@ class Demojibakefier
                 }
             }
         }
-    }
-
-    /**
-     * Calculate the shannon entropy of a string.
-     * @link https://en.wikipedia.org/wiki/Entropy_(information_theory)
-     *
-     * @param string $String The string to check.
-     * @return float|int The shannon entropy of the string.
-     */
-    public function shannonEntropy(string $String)
-    {
-        if (!$Len = strlen($String)) {
-            return 0;
-        }
-        $Chars = [];
-        for ($Pos = 0; $Pos < $Len; $Pos++) {
-            $Char = substr($String, $Pos, 1);
-            if (!isset($Chars[$Char])) {
-                $Chars[$Char] = 0;
-            }
-            $Chars[$Char]++;
-        }
-        $Total = 0;
-        foreach ($Chars as $Char) {
-            $Total += abs(($Char / $Len) * log(($Char / $Len), 2));
-        }
-        return $Total;
-    }
-
-    /**
-     * Attempts to normalise a string.
-     *
-     * @param string $String The string to normalise.
-     * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
-     */
-    public function normalise(string $String): string
-    {
-        $this->Last = '';
-        $this->Len = strlen($String);
-
-        /** Return early if the string is empty. */
-        if ($this->Len === 0) {
-            return $String;
-        }
-
-        /** Potential valid candidates will be populated here. */
-        $Valid = [];
-
-        /** Suppress errors (because every failed normalisation attempt will generate errors and fill logs otherwise). */
-        set_error_handler(function ($errno) {
-            return;
-        });
-
-        /** Cycle through supported encodings and attempt to generate valid candidates. */
-        foreach ($this->supported() as $Encoding) {
-            if (!$this->checkConformity($String, $Encoding)) {
-                continue;
-            }
-            $Attempt = iconv($Encoding, $this->NormaliseTo, $String);
-            if ($Attempt === false || !$this->checkConformity($Attempt, $this->NormaliseTo)) {
-                continue;
-            }
-            if (strcmp(iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
-                $Valid[$Encoding] = $Attempt;
-                if ($Encoding === $this->NormaliseTo) {
-                    break;
-                }
-            }
-        }
-
-        /** We're done.. Restore the error handler. */
-        restore_error_handler();
-
-        /** If the string conforms to our desired encoding, and can be reversed to it, we'll go with that. */
-        if (isset($Valid[$this->NormaliseTo])) {
-            $this->Last = $this->NormaliseTo;
-            return $Valid[$this->NormaliseTo];
-        }
-
-        /** Okay.. Doesn't conform or can't be reversed. Time to apply weighting and some fuzzy heuristic guesswork. */
-        foreach ($Valid as $Key => $Value) {
-            $Valid[$Key] = ['String' => $Value, 'Weight' => 0];
-        }
-        $this->weigh($String, $Valid);
-
-        /** Sort weights from highest to lowest and attempt to reduce candidates by the largest weight. */
-        uasort($Valid, function ($A, $B): int {
-            return $A['Weight'] === $B['Weight'] ? 0 : ($A['Weight'] < $B['Weight'] ? 1 : -1);
-        });
-
-        $this->dropVariants($Valid);
-        $Current = key($Valid);
-        foreach ($Valid as $Key => $Value) {
-            if ($Value['Weight'] < $Valid[$Current]['Weight']) {
-                unset($Valid[$Key]);
-            }
-        }
-
-        /** Check whether we can return a single possible value. */
-        if (($Count = count($Valid)) === 1) {
-            $this->Last = $Current;
-            return $Valid[$Current]['String'];
-        }
-
-        /**
-         * Let's try splitting the string into parts and "demojibakefying" the individual parts, in case we have
-         * a little better luck doing it that way (this may be the case if the string contains multiple encodings).
-         */
-        $Length = $this->Len;
-        $Last = $this->Last;
-        foreach ([
-            "\xef\xbf\xbd",
-            "\0\0\0\0",
-            "\0\r\0\n",
-            "\r\0\n\0",
-            "\r\n",
-            "\0\r",
-            "\r\0",
-            "\0\n",
-            "\n\0",
-            "\0\0",
-            "\0\t",
-            "\t\0",
-            "\r",
-            "\n",
-            "\t",
-            "\x0a",
-            "\x0b",
-            "\x0c",
-            "\x15",
-            ': ',
-            "\xef\xbc\x9a",
-            "\x85"
-        ] as $Delimiter) {
-            if (($Count = substr_count($String, $Delimiter)) && $Count < $this->Segments) {
-                $Segments = explode($Delimiter, $String);
-                foreach ($Segments as &$Segment) {
-                    $Segment = $this->normalise($Segment);
-                }
-                $NewString = implode($Delimiter, $Segments);
-                $this->Len = $Length;
-                if ($NewString !== $String) {
-                    $this->Last = 'Mixed';
-                }
-                return $NewString;
-            }
-        }
-
-        /** If we haven't decided on a particular candidate by this point, we'll just return the original string. */
-        return $String;
-    }
-
-    /**
-     * Checks if the class requirements are met. If met, then calls checkConformity. If the string is non-conformant,
-     * then calls normalise. If the class requirements aren't met, or if the string is already conformant, return the
-     * original string immediately.
-     *
-     * @param string $String The string to normalise.
-     * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
-     */
-    public function guard(string $String): string
-    {
-        return !function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
     }
 }
