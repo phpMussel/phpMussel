@@ -17,7 +17,7 @@
         "ext-pcre": "*"
     },
     "suggest": {
-        "ext-apcu": "*",
+        "ext-apcu": ">=4",
         "ext-bz2": "*",
         "ext-curl": "*",
         "ext-lzf": "*",
