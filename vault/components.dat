@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: phpMussel
- Version: 1.15.0-DEV+21303641
+ Version: 1.15.0
  Dependencies:
   PHP: >=5.4
   l10n/{lang}: >=2021.303.641
