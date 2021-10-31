@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.10.10).
+# This file: Arabic language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -120,6 +120,7 @@ config_supplementary_cache_options_memcached_port: "قيمة منفذ Memcached.
 config_supplementary_cache_options_pdo_dsn: "قيمة PDO DSN. افتراضي = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO كلمه السر."
 config_supplementary_cache_options_pdo_username: "PDO اسم المستخدم."
+config_supplementary_cache_options_prefix: "سيتم إضافة القيمة المحددة هنا إلى جميع مفاتيح إدخال ذاكرة التخزين المؤقت. فارغ بشكل افتراضي. عند وجود عدة عمليات تثبيت على نفس الخادم، يمكن أن يكون ذلك مفيدًا للحفاظ على ذاكرة التخزين المؤقت منفصلة عن بعضها البعض."
 config_supplementary_cache_options_redis_host: "قيمة المضيف Redis. افتراضي = "localhost"."
 config_supplementary_cache_options_redis_port: "قيمة منفذ Redis. افتراضي = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis قيمة المهلة. افتراضي = "2.5"."

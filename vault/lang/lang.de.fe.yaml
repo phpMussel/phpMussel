@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.10.10).
+# This file: German language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -120,6 +120,7 @@ config_supplementary_cache_options_memcached_port: "Memcached Portwert. Standard
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-Wert. Standardeinstellung = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO Passwort."
 config_supplementary_cache_options_pdo_username: "PDO Nutzername."
+config_supplementary_cache_options_prefix: "Dieser Wert hier wird zu allen Cache-Eintragsschlüsseln vorangestellt. Standardmäßig leer. Wenn mehrere Installationen auf demselben Server vorhanden sind, kann dies nützlich sein, um ihre Caches getrennt zu halten."
 config_supplementary_cache_options_redis_host: "Redis Hostwert. Standardeinstellung = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis Portwert. Standardeinstellung = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis Timeout-Wert. Standardeinstellung = "2.5"."

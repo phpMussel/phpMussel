@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.10.10).
+# This file: Bangla language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -120,6 +120,7 @@ config_supplementary_cache_options_memcached_port: "Memcached পোর্ট �
 config_supplementary_cache_options_pdo_dsn: "PDO DSN মান। ডিফল্ট = "mysql:dbname=phpmussel;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
 config_supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"
+config_supplementary_cache_options_prefix: "এখানে উল্লিখিত মানটি সমস্ত ক্যাশে এন্ট্রি কীগুলিতে প্রিপেন্ড করা হবে। ডিফল্টরূপে খালি। যখন একই সার্ভারে একাধিক ইনস্টলেশন বিদ্যমান, এটি তাদের ক্যাশে একে অপরের থেকে আলাদা রাখার জন্য কার্যকর হতে পারে।"
 config_supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = "localhost"।"
 config_supplementary_cache_options_redis_port: "Redis পোর্ট মান। ডিফল্ট = "6379"।"
 config_supplementary_cache_options_redis_timeout: "Redis সময়সীমা মান। ডিফল্ট = "2.5"।"

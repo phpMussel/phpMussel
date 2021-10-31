@@ -633,6 +633,11 @@ addReplyToName=''
 [supplementary_cache_options]
 ; Supplementary cache options.
 
+; The value specified here will be prepended to all cache entry keys. Empty by
+; default. When multiple installations exist at the same server, this can be
+; useful for keeping their caches separate from each other.
+prefix=''
+
 ; Specifies whether to try using APCu for caching. Default = False.
 enable_apcu=false
 

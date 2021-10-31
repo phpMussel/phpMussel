@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.10.10).
+# This file: Urdu language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -120,6 +120,7 @@ config_supplementary_cache_options_memcached_port: "Memcached کے لئے بند
 config_supplementary_cache_options_pdo_dsn: "PDO کے لئے DSN. پہلے سے طے شدہ = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO کیلئے پاس ورڈ."
 config_supplementary_cache_options_pdo_username: "PDO کے لئے صارف نام."
+config_supplementary_cache_options_prefix: "یہاں بیان کردہ قدر کو تمام کیش انٹری کیز کے ساتھ پہلے سے جوڑا جائے گا. بطور ڈیفالٹ خالی. جب ایک ہی سرور پر متعدد تنصیبات موجود ہوں، تو یہ ان کے کیچز کو ایک دوسرے سے الگ رکھنے کے لیے مفید ہو سکتا ہے."
 config_supplementary_cache_options_redis_host: "Redis کے میزبان نام. پہلے سے طے شدہ = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis کے لئے بندرگاہ. پہلے سے طے شدہ = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5"."

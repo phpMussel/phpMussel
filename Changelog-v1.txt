@@ -51,6 +51,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2021.10.30; Maikuolan]: Code-style cleanup: Public before private
   properties, magic before public before private methods.
 
+- [2021.10.31; NEW FEATURE; Maikuolan]: Added the ability to segregate cache
+  data on the basis of prefixes specified by the instance. This could be useful
+  for when different installations are utilising the same caching mechanisms at
+  the same server.
+
 === Version/Release 1.14.2 ===
 PATCH RELEASE.
 
