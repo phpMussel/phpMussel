@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.10.10).
+# This file: Korean language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached 포트 값. Defaul
 config_supplementary_cache_options_pdo_dsn: "PDO DSN 값. Default (기본값) = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO 암호."
 config_supplementary_cache_options_pdo_username: "PDO 사용자 이름."
+config_supplementary_cache_options_prefix: "여기에 지정된 값은 모든 캐시 항목 키 앞에 추가됩니다. 기본적으로 비어 있습니다. 동일한 서버에 여러 설치가 있는 경우, 캐시를 서로 분리하여 유지하는 데 유용할 수 있습니다."
 config_supplementary_cache_options_redis_host: "Redis 호스트 값. Default (기본값) = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis 포트 값. Default (기본값) = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis 시간 초과 값. Default (기본값) = "2.5"."

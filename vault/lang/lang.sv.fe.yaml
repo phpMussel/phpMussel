@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.10.10).
+# This file: Swedish language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached portvärde. Standa
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-värde. Standard = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO lösenord."
 config_supplementary_cache_options_pdo_username: "PDO användarnamn."
+config_supplementary_cache_options_prefix: "Värdet som anges här kommer att läggas till i början av nycklarna för alla cacheposter. Tom som standard. När flera installationer finns på samma server, detta kan vara användbart för att hålla sina cachar åtskilda från varandra."
 config_supplementary_cache_options_redis_host: "Redis värdvärde. Standard = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis portvärde. Standard = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standard = "2.5"."

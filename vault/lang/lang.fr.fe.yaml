@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.10.10).
+# This file: French language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Valeur du port Memcached. D�
 config_supplementary_cache_options_pdo_dsn: "Valeur de DSN de PDO. Défaut = « mysql:dbname=phpmussel;host=localhost;port=3306 »."
 config_supplementary_cache_options_pdo_password: "Mot de passe PDO."
 config_supplementary_cache_options_pdo_username: "Nom d'utilisateur PDO."
+config_supplementary_cache_options_prefix: "La valeur spécifiée ici sera ajoutée à toutes les clés d'entrée du cache. Vide par défaut. Lorsque plusieurs installations existent sur le même serveur, cela peut être utile pour séparer leurs caches les uns des autres."
 config_supplementary_cache_options_redis_host: "Valeur de l'hôte Redis. Défaut = « localhost »."
 config_supplementary_cache_options_redis_port: "Valeur du port Redis. Défaut = « 6379 »."
 config_supplementary_cache_options_redis_timeout: "Valeur du délai d'attente Redis. Défaut = « 2.5 »."

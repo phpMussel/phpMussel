@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.10.10).
+# This file: Vietnamese language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Giá trị cổng Memcached.
 config_supplementary_cache_options_pdo_dsn: "Giá trị DSN PDO. Mặc định = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Mật khẩu PDO."
 config_supplementary_cache_options_pdo_username: "Tên người dùng PDO."
+config_supplementary_cache_options_prefix: "Giá trị được chỉ định ở đây sẽ được thêm vào trước tất cả các khóa mục nhập bộ nhớ cache. Trống theo mặc định. Khi nhiều bản cài đặt tồn tại trên cùng một máy chủ, điều này có thể hữu ích để giữ các bộ nhớ cache của chúng tách biệt với nhau."
 config_supplementary_cache_options_redis_host: "Giá trị máy chủ Redis. Mặc định = "localhost"."
 config_supplementary_cache_options_redis_port: "Giá trị cổng Redis. Mặc định = "6379"."
 config_supplementary_cache_options_redis_timeout: "Giá trị thời gian chờ Redis. Mặc định = "2.5"."

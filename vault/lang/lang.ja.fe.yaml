@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.10.10).
+# This file: Japanese language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcachedのポート値。 
 config_supplementary_cache_options_pdo_dsn: "PDOのDSN値。 Default/デフォルルト = 「mysql:dbname=phpmussel;host=localhost;port=3306」。"
 config_supplementary_cache_options_pdo_password: "PDOのパスワード。"
 config_supplementary_cache_options_pdo_username: "PDOのユーザー名。"
+config_supplementary_cache_options_prefix: "ここで指定された値は、すべてのキャッシュ・エントリ・キーの前に追加されます。​デフォルトでは空です。​同じサーバーに複数のインストールが存在する場合、これはキャッシュを互いに分離しておくのに役立ちます。"
 config_supplementary_cache_options_redis_host: "Redisのホスト値。 Default/デフォルルト = 「localhost」。"
 config_supplementary_cache_options_redis_port: "Redisのポート値。 Default/デフォルルト = 「6379」。"
 config_supplementary_cache_options_redis_timeout: "Redisのタイムアウト値。 Default/デフォルルト = 「2.5」。"

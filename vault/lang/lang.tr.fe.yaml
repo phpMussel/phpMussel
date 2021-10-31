@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.10.10).
+# This file: Turkish language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached port değeri. Vars
 config_supplementary_cache_options_pdo_dsn: "PDO DSN değeri. Varsayılan = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO parola."
 config_supplementary_cache_options_pdo_username: "PDO kullanıcı adı."
+config_supplementary_cache_options_prefix: "Burada belirtilen değer, tüm önbellek giriş anahtarlarının önüne eklenecektir. Varsayılan olarak boş. Aynı sunucuda birden fazla kurulum olduğunda, bu onların önbelleklerini birbirinden ayrı tutmak için faydalı olabilir."
 config_supplementary_cache_options_redis_host: "Redis ana bilgisayar değeri. Varsayılan = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis port değeri. Varsayılan = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis zaman aşımı değeri. Varsayılan = "2.5"."

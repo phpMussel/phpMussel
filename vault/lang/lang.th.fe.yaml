@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.10.10).
+# This file: Thai language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br />{{Links.Chart.js}} สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "ค่าพอร์ต Mem
 config_supplementary_cache_options_pdo_dsn: "ค่า DSN PDO. ค่าเริ่มต้น = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "รหัสผ่าน PDO."
 config_supplementary_cache_options_pdo_username: "ชื่อผู้ใช้ PDO."
+config_supplementary_cache_options_prefix: "ค่าที่ระบุในที่นี้จะถูกเติมไว้ข้างหน้าคีย์รายการแคชทั้งหมด. ว่างเปล่าโดยค่าเริ่มต้น. เมื่อมีการติดตั้งหลายรายการในเซิร์ฟเวอร์เดียวกัน การทำเช่นนี้อาจเป็นประโยชน์ในการแยกแคชออกจากกัน."
 config_supplementary_cache_options_redis_host: "ค่าโฮสต์ Redis. ค่าเริ่มต้น = "localhost"."
 config_supplementary_cache_options_redis_port: "ค่าพอร์ต Redis. ค่าเริ่มต้น = "6379"."
 config_supplementary_cache_options_redis_timeout: "ค่าการหมดเวลา Redis. ค่าเริ่มต้น = "2.5"."

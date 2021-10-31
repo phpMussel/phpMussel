@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.10.10).
+# This file: Russian language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Значение порта 
 config_supplementary_cache_options_pdo_dsn: "Значение DSN PDO. Стандарт = «mysql:dbname=phpmussel;host=localhost;port=3306»."
 config_supplementary_cache_options_pdo_password: "Пароль PDO."
 config_supplementary_cache_options_pdo_username: "Имя пользователя PDO."
+config_supplementary_cache_options_prefix: "Указанное здесь значение будет добавлено в начало всех ключей записи кэша. По стандарту пустой. Когда на одном сервере существует несколько установок, это может быть полезно для хранения их кэшей отдельно."
 config_supplementary_cache_options_redis_host: "Значение хоста Redis. Стандарт = «localhost»."
 config_supplementary_cache_options_redis_port: "Значение порта Redis. Стандарт = «6379»."
 config_supplementary_cache_options_redis_timeout: "Значение тайм-аута Redis. Стандарт = «2.5»."
@@ -379,7 +380,7 @@ switch-sort-by-name-set-false: "Сортировать по ID"
 switch-sort-by-name-set-true: "Сортировать по имени"
 tip_2fa_sent: "На ваш адрес электронной почты отправлено электронное письмо с двухфакторным кодом аутентификации. Пожалуйста, подтвердите этот код ниже, чтобы получить доступ к фронтенд. Если Вы не получили это письмо, попробуйте выйти из системы, ожидая 10 минут, и снова войдите в систему, чтобы получить новое электронное письмо, содержащее новый код."
 tip_accounts: "Привет, {username}.<br />Аккаунта страница позволяет контролировать, кто может получить доступ к phpMussel фронтенд."
-tip_cache_data: "Привет, {username}.<br />Здесь вы можете просмотреть содержимое кеша."
+tip_cache_data: "Привет, {username}.<br />Здесь вы можете просмотреть содержимое кэша."
 tip_config: "Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для phpMussel от фронтенд."
 tip_fe_cookie_warning: "Заметка: phpMussel использует cookie для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла cookie вашим браузером."
 tip_file_manager: "Привет, {username}.<br />Файловый менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим)."

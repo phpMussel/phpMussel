@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.10.10).
+# This file: Hindi language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached पोर्ट �
 config_supplementary_cache_options_pdo_dsn: "PDO DSN वैल्यू। डिफ़ॉल्ट = "mysql:dbname=phpmussel;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO पासवर्ड।"
 config_supplementary_cache_options_pdo_username: "PDO उपयोगकर्ता नाम।"
+config_supplementary_cache_options_prefix: "यहां निर्दिष्ट मान सभी कैश प्रविष्टि कुंजियों के साथ जोड़ा जाएगा। डिफ़ॉल्ट रूप से खाली। जब एक ही सर्वर पर कई संस्थापन मौजूद होते हैं, तो यह उनके कैश को एक दूसरे से अलग रखने के लिए उपयोगी हो सकता है।"
 config_supplementary_cache_options_redis_host: "Redis होस्ट वैल्यू। डिफ़ॉल्ट = "localhost"।"
 config_supplementary_cache_options_redis_port: "Redis पोर्ट वैल्यू। डिफ़ॉल्ट = "6379"।"
 config_supplementary_cache_options_redis_timeout: "Redis मध्यांतर वैल्यू। डिफ़ॉल्ट = "2.5"।"

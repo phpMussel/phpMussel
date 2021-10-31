@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.10.10).
+# This file: Latvian language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached porta vērtību. N
 config_supplementary_cache_options_pdo_dsn: "PDO DSN vērtību. Noklusējuma = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO parole."
 config_supplementary_cache_options_pdo_username: "PDO lietotājvārds."
+config_supplementary_cache_options_prefix: "Šeit norādītā vērtība tiks pievienota visām kešatmiņas ievades atslēgām. Pēc noklusējuma tukšs. Ja vienā serverī ir vairākas instalācijas, tas var būt noderīgi, lai saglabātu to kešatmiņas atsevišķi vienu no otras."
 config_supplementary_cache_options_redis_host: "Redis resursdatora vērtību. Noklusējuma = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis porta vērtību. Noklusējuma = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis taimauta vērtību. Noklusējuma = "2.5"."

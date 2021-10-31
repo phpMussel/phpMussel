@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2021.10.30).
+ * A simple, unified cache handler (last modified: 2021.10.31).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -86,6 +86,11 @@ class Cache
      * @var string The path to a flatfile to use for caching.
      */
     public $FFDefault = '';
+
+    /**
+     * @var string Prepended to all cache entry keys (optional).
+     */
+    public $Prefix = '';
 
     /**
      * @var array An array to contain any thrown exceptions.
@@ -383,6 +388,7 @@ class Cache
      */
     public function getEntry(string $Entry)
     {
+        $Entry = $this->Prefix . $Entry;
         $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
             return $this->unserializeEntry(apcu_fetch($Entry));
@@ -425,6 +431,7 @@ class Cache
      */
     public function setEntry(string $Key, $Value, int $TTL = 3600): bool
     {
+        $Key = $this->Prefix . $Key;
         $this->enforceKeyLimit($Key);
         $Value = $this->serializeEntry($Value);
         if ($this->Using === 'APCu') {
@@ -478,6 +485,7 @@ class Cache
      */
     public function deleteEntry(string $Entry): bool
     {
+        $Entry = $this->Prefix . $Entry;
         $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
             if (apcu_delete($Entry)) {
@@ -508,7 +516,7 @@ class Cache
     }
 
     /**
-     * Clears the entire cache.
+     * Clears the entire cache (prefixes have no effect here).
      *
      * @return bool True on success; False on failure.
      */
@@ -544,6 +552,7 @@ class Cache
      */
     public function getAllEntries(): array
     {
+        $PrefixLen = strlen($this->Prefix);
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
             if (empty($Data['cache_list'])) {
@@ -551,12 +560,17 @@ class Cache
             }
             $Output = [];
             foreach ($Data['cache_list'] as $Entry) {
-                if (empty($Entry['info'])) {
+                if (
+                    empty($Entry['info']) ||
+                    !is_string($Entry['info']) ||
+                    ($PrefixLen && substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
+                ) {
                     continue;
                 }
-                $Creation = isset($Entry['creation_time']) ? $Entry['creation_time'] : 0;
-                $Entry['Data'] = $this->getEntry($Entry['info']);
-                $Output[$Entry['info']] = $Entry['ttl'] > 0 ? [
+                $Key = substr($Entry['info'], $PrefixLen);
+                $Creation = $Entry['creation_time'] ?? 0;
+                $Entry['Data'] = $this->getEntry($Key);
+                $Output[$Key] = $Entry['ttl'] > 0 ? [
                     'Data' => $Entry['Data'],
                     'Time' => $Creation + $Entry['ttl']
                 ] : $Entry['Data'];
@@ -576,15 +590,17 @@ class Cache
                 if (
                     !is_array($Entry) ||
                     !isset($Entry['key'], $Entry['value'], $Entry['cas']) ||
-                    strlen($Entry['key']) > self::KEY_SIZE_LIMIT
+                    strlen($Entry['key']) > self::KEY_SIZE_LIMIT ||
+                    ($PrefixLen && substr($Entry['key'], 0, $PrefixLen) !== $this->Prefix)
                 ) {
                     continue;
                 }
-                $Output[$Entry['key']] = ['Data' => $this->unserializeEntry($Entry['value'])];
+                $Key = substr($Entry['key'], $PrefixLen);
+                $Output[$Key] = ['Data' => $this->unserializeEntry($Entry['value'])];
                 if ($Entry['cas'] > 2592000) {
-                    $Output[$Entry['key']]['Time'] = $Entry['cas'];
+                    $Output[$Key]['Time'] = $Entry['cas'];
                 } else {
-                    $Output[$Entry['key']] = $Output[$Entry['key']]['Data'];
+                    $Output[$Key] = $Output[$Key]['Data'];
                 }
             }
             return $Output;
@@ -593,10 +609,14 @@ class Cache
             $Keys = $this->WorkingData->keys('*') ?: [];
             $Output = [];
             foreach ($Keys as $Key) {
-                if (strlen($Key) > self::KEY_SIZE_LIMIT) {
+                if (
+                    strlen($Key) > self::KEY_SIZE_LIMIT ||
+                    ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)
+                ) {
                     continue;
                 }
-                $Output[$Key] = $this->unserializeEntry($this->WorkingData->get($Key));
+                $DeFixed = substr($Key, $PrefixLen);
+                $Output[$DeFixed] = $this->unserializeEntry($this->WorkingData->get($Key));
             }
             return $Output;
         }
@@ -612,11 +632,13 @@ class Cache
                     if (
                         !is_array($Entry) ||
                         !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) ||
-                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT
+                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT ||
+                        ($PrefixLen && substr($Entry['Key'], 0, $PrefixLen) !== $this->Prefix)
                     ) {
                         continue;
                     }
-                    $Output[$Entry['Key']] = $Entry['Time'] > 0 ? [
+                    $Key = substr($Entry['Key'], $PrefixLen);
+                    $Output[$Key] = $Entry['Time'] > 0 ? [
                         'Data' => $this->unserializeEntry($Entry['Data']),
                         'Time' => $Entry['Time']
                     ] : $this->unserializeEntry($Entry['Data']);
@@ -626,10 +648,17 @@ class Cache
             return [];
         }
         if ($Arr = ($this->exposeWorkingDataArray() ?: [])) {
-            foreach ($Arr as &$Entry) {
-                $Entry = $this->unserializeEntry($Entry);
+            $Out = [];
+            foreach ($Arr as $Key => $Entry) {
+                if ($PrefixLen) {
+                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                        continue;
+                    }
+                    $Key = substr($Key, $PrefixLen);
+                }
+                $Out[$Key] = $this->unserializeEntry($Entry);
             }
-            return $Arr;
+            return $Out;
         }
         return [];
     }
@@ -773,6 +802,14 @@ class Cache
          * provides sufficient noise for our needs here, so we'll use that.
          */
         if (strlen($Key) > self::KEY_SIZE_LIMIT) {
+            if (
+                ($PrefixLen = strlen($this->Prefix)) &&
+                (substr($Key, 0, $PrefixLen) === $this->Prefix) &&
+                ($PrefixLen < self::KEY_SIZE_LIMIT)
+            ) {
+                $Key = $this->Prefix . substr(hash('sha512', substr($Key, $PrefixLen)), 0, self::KEY_SIZE_LIMIT - $PrefixLen);
+                return;
+            }
             $Key = hash('sha512', $Key);
         }
     }

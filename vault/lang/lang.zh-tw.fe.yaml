@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.10.10).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Memcached端口值。​默�
 config_supplementary_cache_options_pdo_dsn: "PDO DSN值。​默認 = 『mysql:dbname=phpmussel;host=localhost;port=3306』。"
 config_supplementary_cache_options_pdo_password: "PDO密碼。"
 config_supplementary_cache_options_pdo_username: "PDO用戶名。"
+config_supplementary_cache_options_prefix: "該值將附加到所有緩存條目的鍵的開頭。​默認值為空。​當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
 config_supplementary_cache_options_redis_host: "Redis主機值。​默認 = 『localhost』。"
 config_supplementary_cache_options_redis_port: "Redis端口值。​默認 = 『6379』。"
 config_supplementary_cache_options_redis_timeout: "Redis超時值。​默認 = 『2.5』。"

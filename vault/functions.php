@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.09.05).
+ * This file: Functions file (last modified: 2021.10.30).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -5196,6 +5196,7 @@ $phpMussel['InitialiseCache'] = function () use (&$phpMussel) {
 
     /** Create new cache object. */
     $phpMussel['Cache'] = new \Maikuolan\Common\Cache();
+    $phpMussel['Cache']->Prefix = $phpMussel['Config']['supplementary_cache_options']['prefix'];
     $phpMussel['Cache']->EnableAPCu = $phpMussel['Config']['supplementary_cache_options']['enable_apcu'];
     $phpMussel['Cache']->EnableMemcached = $phpMussel['Config']['supplementary_cache_options']['enable_memcached'];
     $phpMussel['Cache']->EnableRedis = $phpMussel['Config']['supplementary_cache_options']['enable_redis'];

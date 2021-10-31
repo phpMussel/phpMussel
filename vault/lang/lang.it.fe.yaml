@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.10.10).
+# This file: Italian language data for the front-end (last modified: 2021.10.30).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -121,6 +121,7 @@ config_supplementary_cache_options_memcached_port: "Il valore della porta Memcac
 config_supplementary_cache_options_pdo_dsn: "Il valore della DSN per PDO. Predefinito = "mysql:dbname=phpmussel;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "La password per PDO."
 config_supplementary_cache_options_pdo_username: "Il nome utente per PDO."
+config_supplementary_cache_options_prefix: "Il valore specificato qui verrà anteposto a tutte le chiavi di ingresso della cache. Vuoto per impostazione predefinita. Quando esistono più installazioni sullo stesso server, questo può essere utile per mantenere le loro cache separate l'una dall'altra."
 config_supplementary_cache_options_redis_host: "Il valore dell'host Redis. Predefinito = "localhost"."
 config_supplementary_cache_options_redis_port: "Il valore della porta Redis. Predefinito = "6379"."
 config_supplementary_cache_options_redis_timeout: "Il valore del tempo scaduto per Redis. Predefinito = "2.5"."
