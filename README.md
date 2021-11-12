@@ -60,17 +60,17 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ### Current major version development status:
 
-⬇Stage reached⬇ ➡Major version➡ | v0 | v1 | v2~v3
-:--|:-:|:-:|:-:
-Pre-Alpha<em><br />- Exploring early concepts/ideas. No code written/available yet.</em> | ✔ | ✔ | ✔
-Alpha<em><br />- Branched, but unstable. Not production-ready (high risk if used).</em> | ✔ | ✔ | ✔
-Beta<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> | ✔ | ✔ | ✔
-Stable<em><br />- First production-ready version has been tagged/released.</em> | ✔ | ✔ | ✔
-Mature<em><br />- Multiple stable versions/releases exist.</em> | ✔ | ✔ | ✔
-Locked<em><br />- Still maintained, but new features won't be implemented anymore.</em> | ✔ | ✔
-EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update ASAP.</em> | ✔
+Development stage | Major versions
+:--|:-:
+__Stage 1/7: Pre-Alpha__<em><br />- Exploring early concepts/ideas. No code written/available yet.</em> |
+__Stage 2/7: Alpha__<em><br />- Branched, but unstable. Not production-ready (high risk if used).</em> |
+__Stage 3/7: Beta__<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> |
+__Stage 4/7: Stable__<em><br />- First production-ready version has been tagged/released. Actively maintained.</em> |
+__Stage 5/7: Mature__<em><br />- Multiple stable versions/releases exist. Actively maintained.</em> | __v2~v3__
+__Stage 6/7: Locked__<em><br />- Still maintained (security, etc), but new features won't be implemented anymore.</em> | __v1__
+__Stage 7/7: EoL/Dead__<em><br />- Not maintained anymore, and support not guaranteed. If possible, stop using, and update ASAP.</em> | __v0__
 
 ---
 
 
-Last Updated: 12 December 2020 (2020.12.12).
+Last Updated: 12 November 2021 (2021.11.12).
