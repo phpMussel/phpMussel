@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.10.30).
+# This file: Latvian language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -401,14 +401,14 @@ warning_signatures_1: "Brīdinājums: Neviens paraksta fails nav aktīvs!"
 info_some_useful_links: |
  Dažas noderīgas saites:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel rīki, resursi, utt.</span>
+       <li><span class="comCat">phpMussel rīki, resursi, utt.</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMussel issues lapa (atbalsts, palīdzība, utt).</li>
            <li>{{Links.phpMussel.SigTool}} – Izveido phpMussel parakstu failus, izmantojot ClamAV parakstu datu bāzi.</li>
            <li>{{Links.phpMussel.Extras}} – Dažādas ekstras.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV rīki, resursi, utt.</span>
+       <li><span class="comCat">ClamAV rīki, resursi, utt.</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAV mājas lapa (ClamAV® ir atvērtā koda pretvīrusu dzinējs, lai atklātu trojas zirgus, vīrusus, ļaunprātīgu programmatūru un citus ļaunprātīgus draudus).</li>
            <li>{{Links.SecuriteInfo}} – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
@@ -416,13 +416,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – Piedāvā papildu parakstus ClamAV un papildu noteikumi ModSecurity.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Grupas, forumi, kopienas, utt.</span>
+       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
            <li>{{Links.MalwareTips}} – Noderīgi diskusiju forumi, kas vērsti uz ļaunprātīgu programmatūru.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
+       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – Pikšķerēšanas datu bāze, ko izmanto phpMussel URL skeneris.</li>
            <li>{{Links.VirusTotal}} – VirusTotal ir bezmaksas pakalpojums aizdomīgu failu un vietrāžu URL analīzei.</li>
@@ -430,7 +430,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – Datoru ļaundabīgo programmu speciālisti.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Informācijas un mācību resursi.</span>
+       <li><span class="comCat">Informācijas un mācību resursi.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.10.30).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -395,7 +395,7 @@ warning_signatures_1: "警告：沒有簽名文件是活動的！"
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel的工具，資源，等等。</span>
+       <li><span class="comCat">phpMussel的工具，資源，等等。</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMussel問題頁面（支持，​協助，​等等）。</li>
            <li>{{Links.phpMussel.SigTool}} – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
@@ -403,7 +403,7 @@ info_some_useful_links: |
            <li>{{Links.phpMussel.Extras}} – 各種附加功能。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV的工具，資源，等等。</span>
+       <li><span class="comCat">ClamAV的工具，資源，等等。</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
            <li>{{Links.SecuriteInfo}} – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
@@ -411,13 +411,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – 提供ClamAV的補充簽名和ModSecurity的補充規則。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">團體，論壇，社區，等等。</span>
+       <li><span class="comCat">團體，論壇，社區，等等。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP學習資源和討論。</li>
            <li>{{Links.MalwareTips}} – 有用的討論論壇關於惡意軟件。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">其他有用的工具，資源，服務，等等</span>
+       <li><span class="comCat">其他有用的工具，資源，服務，等等</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>
            <li>{{Links.VirusTotal}} – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
@@ -425,7 +425,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – 電腦反惡意軟件專家。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">信息和學習資源。</span>
+       <li><span class="comCat">信息和學習資源。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP學習資源和討論。</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>

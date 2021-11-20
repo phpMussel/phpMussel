@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.10.30).
+# This file: Japanese language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -395,14 +395,14 @@ warning_signatures_1: "警告：アクティブ・シグネチャ・ファイル
 info_some_useful_links: |
  役に立つリンク：<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel用のツール、リソース、など。</span>
+       <li><span class="comCat">phpMussel用のツール、リソース、など。</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMusselの問題ページ（サポート、​援助、​など）。</li>
            <li>{{Links.phpMussel.SigTool}} – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
            <li>{{Links.phpMussel.Extras}} – その他エキストラ。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV用のツール、リソース、など。</span>
+       <li><span class="comCat">ClamAV用のツール、リソース、など。</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
            <li>{{Links.SecuriteInfo}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
@@ -410,13 +410,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – ClamAV用の補足シグネチャとModSecurity用の補足規則を提供します。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">グループ、フォーラム、コミュニティ、など。</span>
+       <li><span class="comCat">グループ、フォーラム、コミュニティ、など。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
            <li>{{Links.MalwareTips}} – 便利なマルウェア対策ディスカッションフォーラム。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">その他の便利なツール、リソース、サービス、など。</span>
+       <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
            <li>{{Links.VirusTotal}} – VirusTotalは、​疑わしいファイルやURLを分析するための無料サービスです。</li>
@@ -424,7 +424,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – コンピュータのマルウェア対策専門家。</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">情報および学習用リソース。</span>
+       <li><span class="comCat">情報および学習用リソース。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>

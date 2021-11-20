@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.10.30).
+# This file: Korean language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -395,14 +395,14 @@ warning_signatures_1: "경고 : 서명 파일이 활성화되어 있지 않습�
 info_some_useful_links: |
  유용한 링크 :<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel을위한 도구, 리소스, 등.</span>
+       <li><span class="comCat">phpMussel을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMussel 문제 페이지 (지원, 원조 등).</li>
            <li>{{Links.phpMussel.SigTool}} – ClamAV 서명 데이터베이스를 사용하여 phpMussel 서명 파일을 만듭니다.</li>
            <li>{{Links.phpMussel.Extras}} – 다양한 부가 기능.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV을위한 도구, 리소스, 등.</span>
+       <li><span class="comCat">ClamAV을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
            <li>{{Links.SecuriteInfo}} – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
@@ -410,13 +410,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – ClamAV에 대한 보충 서명 및 ModSecurity에 대한 보충 규칙을 제공합니다.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">그룹, 포럼, 커뮤니티, 등.</span>
+       <li><span class="comCat">그룹, 포럼, 커뮤니티, 등.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
            <li>{{Links.MalwareTips}} – 편리한 맬웨어 방지 토론 포럼.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">기타 유용한 도구, 자원, 서비스, 등.</span>
+       <li><span class="comCat">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
            <li>{{Links.VirusTotal}} – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
@@ -424,7 +424,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – 컴퓨터의 맬웨어 방지 전문가.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">정보 및 학습 리소스.</span>
+       <li><span class="comCat">정보 및 학습 리소스.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>

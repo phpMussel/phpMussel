@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.10.30).
+# This file: Swedish language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -397,14 +397,14 @@ warning_signatures_1: "Varning: Inga signaturfiler är aktiva!"
 info_some_useful_links: |
  Några användbara länkar:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för phpMussel.</span>
+       <li><span class="comCat">Verktyg, resurser, osv för phpMussel.</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – Issues sida för phpMussel (stöd, hjälp, osv).</li>
            <li>{{Links.phpMussel.SigTool}} – Skapar phpMussel-signaturfiler med användning av ClamAV-signaturdatabasen.</li>
            <li>{{Links.phpMussel.Extras}} – Olika extramaterial.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för ClamAV.</span>
+       <li><span class="comCat">Verktyg, resurser, osv för ClamAV.</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAVs hemsida (ClamAV® är en antivirusmotor med öppen-källkod för att upptäcka trojaner, virus, skadlig kod och andra skadliga hot).</li>
            <li>{{Links.SecuriteInfo}} – Datasäkerhetsföretag som erbjuder kompletterande signaturer för ClamAV.</li>
@@ -412,13 +412,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – Erbjuder kompletterande signaturer för ClamAV och kompletterande regler för ModSecurity.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
+       <li><span class="comCat">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP lärande resurser och diskussion.</li>
            <li>{{Links.MalwareTips}} – Användbara diskussionsforum fokuserade på skadlig programvara.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
+       <li><span class="comCat">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – Phishing-databas som används av phpMussel URL-skannern.</li>
            <li>{{Links.VirusTotal}} – VirusTotal är en gratistjänst för att analysera misstänkta filer och URLer.</li>
@@ -426,7 +426,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – Dator och anti-malware specialister.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
+       <li><span class="comCat">Informations och lärande resurser.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP lärande resurser och diskussion.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
