@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.09.09).
+ * This file: Front-end functions file (last modified: 2021.11.20).
  */
 
 /**
@@ -2415,7 +2415,7 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '',
                     $Value[$SizeField] = $Size;
                 }
             }
-            $Output .= '<span class="comCat" style="cursor:pointer"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
+            $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
             $Output .= $phpMussel['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
             $Output .= '</ul>';
         } else {

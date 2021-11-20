@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.10.30).
+# This file: Bangla language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -394,14 +394,14 @@ warning_signatures_1: "সতর্কতা: কোন স্বাক্ষর
 info_some_useful_links: |
  কিছু দরকারী লিঙ্ক:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
+       <li><span class="comCat">phpMussel জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMussel সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
            <li>{{Links.phpMussel.SigTool}} – ClamAV স্বাক্ষর ডাটাবেস ব্যবহার করে phpMussel স্বাক্ষর ফাইল তৈরি করে।</li>
            <li>{{Links.phpMussel.Extras}} – বিভিন্ন অতিরিক্ত।</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
+       <li><span class="comCat">ClamAV জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAV হোমপেজে (ClamAV® ট্রোজান, ভাইরাস, ম্যালওয়্যার এবং অন্যান্য দূষিত হুমকি সনাক্ত করার জন্য একটি ওপেন সোর্স অ্যান্টিভাইরাস ইঞ্জিন।)।</li>
            <li>{{Links.SecuriteInfo}} – কম্পিউটার নিরাপত্তা কোম্পানি ClamAV জন্য অনুপূরক স্বাক্ষর প্রস্তাব করে।</li>
@@ -409,13 +409,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – ClamAV জন্য সম্পূরক স্বাক্ষর এবং ModSecurity জন্য সম্পূরক নিয়মগুলি অফার করে।</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">গ্রুপ, ফোরাম, সম্প্রদায়, ইত্যাদি।</span>
+       <li><span class="comCat">গ্রুপ, ফোরাম, সম্প্রদায়, ইত্যাদি।</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
            <li>{{Links.MalwareTips}} – ম্যালওয়ার উপর দৃষ্টি নিবদ্ধ করা দরকারী আলোচনা ফোরাম।</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">অন্যান্য দরকারী সরঞ্জাম, সম্পদ, সেবা, ইত্যাদি।</span>
+       <li><span class="comCat">অন্যান্য দরকারী সরঞ্জাম, সম্পদ, সেবা, ইত্যাদি।</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – phpMussel URL স্ক্যানার দ্বারা ব্যবহৃত ফিশিং ডেটাবেস।</li>
            <li>{{Links.VirusTotal}} – VirusTotal সন্দেহজনক ফাইল এবং URLগুলি বিশ্লেষণ করার জন্য একটি বিনামূল্যে পরিষেবা।</li>
@@ -423,7 +423,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – কম্পিউটার অ্যান্টি-ম্যালওয়্যার বিশেষজ্ঞরা।</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">তথ্য ও শিক্ষা সম্পদ।</span>
+       <li><span class="comCat">তথ্য ও শিক্ষা সম্পদ।</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.18).
+ * This file: Front-end handler (last modified: 2021.11.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -861,7 +861,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && $phpMussel['FE']['Cr
         )) . '</small></li>';
     }
     $phpMussel['FE']['Extensions'] = implode("\n", $phpMussel['FE']['Extensions']);
-    $phpMussel['FE']['ExtensionIsAvailable'] = $phpMussel['LTRinRTF']($phpMussel['L10N']->getString('label_extension') . '➡' . $phpMussel['L10N']->getString('label_installed_available'));
+    $phpMussel['FE']['ExtensionIsAvailable'] = $phpMussel['LTRinRTF'](
+        $phpMussel['L10N']->getString('label_extension') . '➡' . $phpMussel['L10N']->getString('label_installed_available')
+    );
     unset($phpMussel['ExtVer'], $phpMussel['ThisResponse'], $phpMussel['ThisExtension']);
 
     /** Build clipboard data. */
@@ -1210,7 +1212,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             $phpMussel['ThisDir']['DirLangKey'] = 'config_' . $phpMussel['CatKey'] . '_' . $phpMussel['DirKey'];
             $phpMussel['ThisDir']['DirLangKeyOther'] = $phpMussel['ThisDir']['DirLangKey'] . '_other';
-            $phpMussel['ThisDir']['DirName'] = $phpMussel['LTRinRTF']($phpMussel['CatKey'] . '➡' . $phpMussel['DirKey']);
+            $phpMussel['ThisDir']['DirName'] = '<span class="normalHeight">' . $phpMussel['LTRinRTF']($phpMussel['CatKey'] . '➡' . $phpMussel['DirKey']) . '</span>';
             $phpMussel['ThisDir']['Friendly'] = $phpMussel['L10N']->getString($phpMussel['ThisDir']['DirLangKey'] . '_label') ?: (
                 isset($phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label']) ? $phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label'] : ''
             ) ?: $phpMussel['DirKey'];
@@ -1477,7 +1479,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             $phpMussel['ThisDir']['FieldOut'] .= sprintf('<div class="gridboxitem"><span class="s">%s</span></div>', $phpMussel['ChoiceValue']);
                         } else {
                             $phpMussel['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s" style="cursor:pointer">%3$s</label></div>',
+                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s">%3$s</label></div>',
                                 $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
                                 $phpMussel['Request']->inCsv(
                                     $phpMussel['ChoiceKey'],
@@ -1574,7 +1576,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label']) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label'] : ''
         ) ?: $phpMussel['CatKey'];
         $phpMussel['FE']['Indexes'] .= sprintf(
-            '<li><span class="comCat" style="cursor:pointer">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            '<li><span class="comCat">%1$s</span><ul class="comSub">%2$s</ul></li>',
             $phpMussel['CatKeyFriendly'],
             $phpMussel['CatData']
         );
@@ -2705,7 +2707,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 $phpMussel['Components']['RGB'] = implode(',', $phpMussel['Components']['ThisColour']['Values']);
                 $phpMussel['FE']['DoughnutColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
                 $phpMussel['FE']['DoughnutHTML'] .= sprintf(
-                    '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $phpMussel['Components']['RGB'],
                     $phpMussel['Components']['ThisColour']['Hash'],
                     $phpMussel['Components']['ThisName'],
@@ -2713,7 +2715,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 ) . "\n";
             } else {
                 $phpMussel['FE']['DoughnutHTML'] .= sprintf(
-                    '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
+                    '<li><span class="comCat">%1$s</span>%2$s</li>',
                     $phpMussel['Components']['ThisName'],
                     $phpMussel['Components']['ThisListed']
                 ) . "\n";
@@ -2791,13 +2793,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
 
     /** Append upload test JS. */
     $phpMussel['FE']['JS'] .=
-        'var x=1,a=\'<input type="file" name="upload_test[]" value="" />\',more=f' .
-        "unction(){var e='field'+x,t=document.createElement('div');t.setAttribute" .
-        "('class','spanner'),t.setAttribute('id',e),t.setAttribute('style','opaci" .
-        "ty:0.0;animation:UplT 2.0s ease 0s 1 normal'),document.getElementById('u" .
-        "pload_fields').appendChild(t),document.getElementById(e).innerHTML=a,set" .
-        "Timeout(function(){document.getElementById(e).style.opacity='1.0'},1999)" .
-        ',x++};';
+        "var x=1;more=function(){var t='field'+x,e=document.createElement('div');" .
+        "e.setAttribute('class','spanner'),e.setAttribute('id',t),e.setAttribute(" .
+        "'style','opacity:0;animation:UplT 2s ease 0s 1 normal'),(z=document.crea" .
+        "teElement('input')).setAttribute('name','upload_test[]'),z.setAttribute(" .
+        "'type','file'),e.appendChild(z),document.getElementById('upload_fields')" .
+        ".appendChild(e),setTimeout(function(){document.getElementById(t).style.o" .
+        "pacity='1'},1999),x++};";
 
     $phpMussel['FE']['MaxFilesize'] = $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit']);
 

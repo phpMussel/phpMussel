@@ -55,6 +55,7 @@ a:active,a:focus{color:red}
 .txtOe{color:#f60}
 .txtRd{color:red}
 .ufts{width:220px}
+.normalHeight{line-height:100%}
 @media only all and (max-width:230px) {
   .ufts{width:calc(100% - 10px)}
 }
@@ -79,7 +80,8 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-.comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px}
+li>span.comCat:first-child{cursor:pointer}
+.comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
 .comSub{overflow:hidden;transform:scaleY(0);transform-origin:top;opacity:0;max-height:0;transition:all .5s ease-out}

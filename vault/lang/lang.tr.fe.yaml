@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.10.30).
+# This file: Turkish language data for the front-end (last modified: 2021.11.20).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -396,14 +396,14 @@ warning_signatures_1: "Uyarı: Hiçbir imza dosyası aktif değil!"
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">phpMussel için araçlar, kaynaklar, vb.</span>
+       <li><span class="comCat">phpMussel için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
            <li>{{Links.phpMussel.Issues}} – phpMussel için sorunlar sayfası (destek, yardım, vb).</li>
            <li>{{Links.phpMussel.SigTool}} – ClamAV imza veritabanını kullanarak phpMussel imza dosyaları oluşturur.</li>
            <li>{{Links.phpMussel.Extras}} – Çeşitli ekstralar.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">ClamAV için araçlar, kaynaklar, vb.</span>
+       <li><span class="comCat">ClamAV için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
            <li>{{Links.ClamavNet}} – ClamAV anasayfası (Truva atlarını, virüsleri, kötü amaçlı yazılımları ve diğer kötü niyetli tehditleri tespit etmek için kullanılan açık kaynak kodlu bir antivirüs motoru).</li>
            <li>{{Links.SecuriteInfo}} – ClamAV için ek imzalar sunan bilgisayar güvenlik şirketi.</li>
@@ -411,13 +411,13 @@ info_some_useful_links: |
            <li>{{Links.Malware Expert}} – ClamAV için ek imzalar ve ModSecurity için ek kurallar sunar.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
+       <li><span class="comCat">Gruplar, forumlar, topluluklar, vb.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li>{{Links.MalwareTips}} – Yararlı kötü amaçlı yazılım odaklı tartışma forumları.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
+       <li><span class="comCat">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
          <ul class="comSub">
            <li>{{Links.PhishTank}} – Kimlik avı veritabanı (URL tarayıcısı tarafından kullanılır).</li>
            <li>{{Links.VirusTotal}} – Şüpheli dosyaları ve URL'leri analiz etmek için ücretsiz bir hizmet.</li>
@@ -425,7 +425,7 @@ info_some_useful_links: |
            <li>{{Links.Malwarebytes}} – Kötü amaçlı yazılımlarla mücadele uzmanları.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
+       <li><span class="comCat">Bilgi ve öğrenme kaynakları.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb) güvenli/güvensiz sürümlerini listeler.</li>
