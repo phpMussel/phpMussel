@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.11.20).
+# This file: Thai language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br />{{Links.Chart.js}} สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -217,6 +217,9 @@ label_fmgr_updates_metadata: "เมตาดาต้าสำหรับอ�
 label_hide: "ปิดบัง"
 label_installed_available: "การติดตั้ง/ที่มีจำหน่าย"
 label_integrity_check: "การตรวจสอบความสมบูรณ์:"
+label_is_available: "%s สามารถใช้ได้ (%s)."
+label_is_available_class: "%s สามารถใช้ได้."
+label_is_not_available: "%s ไม่สามารถใช้ได้."
 label_never: "ไม่เคย"
 label_os: "ระบบปฏิบัติการในการใช้งาน:"
 label_other-Active: "ไฟล์ลายเซ็นที่ใช้งานอยู่"

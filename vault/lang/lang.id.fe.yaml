@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.11.20).
+# This file: Indonesian language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -217,6 +217,9 @@ label_fmgr_updates_metadata: "Komponen memperbarui metadata"
 label_hide: "Menyembunyikan"
 label_installed_available: "Diinstal/Tersedia"
 label_integrity_check: "Pemeriksaan integritas:"
+label_is_available: "%s tersedia (%s)."
+label_is_available_class: "%s tersedia."
+label_is_not_available: "%s tidak tersedia."
 label_never: "Tak pernah"
 label_os: "Sistem operasi digunakan:"
 label_other-Active: "File tanda tangan aktif"

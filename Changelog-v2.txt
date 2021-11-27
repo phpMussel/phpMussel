@@ -10,7 +10,10 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2021.11.27; Maikuolan]: At the front-end configuration page,
+  configuration directives relying on specific extensions (specifically, at
+  this time, the supplementary cache options) will now include a notice as
+  to whether the extension relied upon is available.
 
 === Version/Release 2.4.0 ===
 MINOR RELEASE.

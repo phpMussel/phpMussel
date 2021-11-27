@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.11.20).
+# This file: Vietnamese language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -217,6 +217,9 @@ label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
 label_installed_available: "Được cài đặt / Có sẵn"
 label_integrity_check: "Kiểm tra tính toàn vẹn:"
+label_is_available: "%s có sẵn (%s)."
+label_is_available_class: "%s có sẵn."
+label_is_not_available: "%s không có sẵn."
 label_never: "Không bao giờ"
 label_os: "Hệ điều hành đang được dùng:"
 label_other-Active: "Tập tin chữ ký kích hoạt"

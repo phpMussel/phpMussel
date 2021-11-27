@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.11.20).
+# This file: Latvian language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -220,6 +220,9 @@ label_fmgr_updates_metadata: "Metadati komponentu atjauninājumiem"
 label_hide: "Slēpt"
 label_installed_available: "Instalēts/Pieejams"
 label_integrity_check: "Integritātes pārbaude:"
+label_is_available: "%s ir pieejams (%s)."
+label_is_available_class: "%s ir pieejams."
+label_is_not_available: "%s nav pieejams."
 label_never: "Nekad"
 label_os: "Izmantotā operētājsistēmu:"
 label_other-Active: "Aktīvie paraksta faili"

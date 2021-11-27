@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.11.20).
+# This file: Polish language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -220,6 +220,9 @@ label_fmgr_updates_metadata: "Metadane aktualizacji komponentów"
 label_hide: "Ukryj"
 label_installed_available: "Zainstalowano/Dostępny"
 label_integrity_check: "Sprawdzanie integralności:"
+label_is_available: "%s jest dostępny (%s)."
+label_is_available_class: "%s jest dostępny."
+label_is_not_available: "%s nie jest dostępny."
 label_never: "Nigdy"
 label_os: "Używany system operacyjny:"
 label_other-Active: "Aktywne pliki podpisów"

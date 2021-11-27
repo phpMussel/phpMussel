@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.11.20).
+# This file: Norwegian language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -217,6 +217,9 @@ label_fmgr_updates_metadata: "Komponentoppdateringsmetadata"
 label_hide: "Gjem"
 label_installed_available: "Installert/Tilgjengelig"
 label_integrity_check: "Integritetskontroll:"
+label_is_available: "%s er tilgjengelig (%s)."
+label_is_available_class: "%s er tilgjengelig."
+label_is_not_available: "%s er ikke tilgjengelig."
 label_never: "Aldri"
 label_os: "Operativsystem brukt:"
 label_other-Active: "Aktive signaturfiler"

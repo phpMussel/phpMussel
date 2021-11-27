@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.11.20).
+# This file: Urdu language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -217,6 +217,9 @@ label_fmgr_updates_metadata: "اجزاء اپ ڈیٹ میٹا ڈیٹا"
 label_hide: "چھپائیں"
 label_installed_available: "انسٹال/دستیاب ہے"
 label_integrity_check: "سالمیت کی جانچ:"
+label_is_available: "%s دستیاب ہے (%s)."
+label_is_available_class: "%s دستیاب ہے."
+label_is_not_available: "%s دستیاب نہیں ہے."
 label_never: "کبھی نہیں"
 label_os: "آپریٹنگ سسٹم استعمال کیا:"
 label_other-Active: "فعال دستخط فائلیں"
