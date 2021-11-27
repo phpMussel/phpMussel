@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2021.11.20).
+# This file: Bangla language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -216,6 +216,9 @@ label_fmgr_updates_metadata: "কম্পোনেন্ট আপডেট ম
 label_hide: "লুকান"
 label_installed_available: "ইনস্টল করা হয়েছে / সহজলভ্য"
 label_integrity_check: "অখণ্ডতা পরীক্ষা:"
+label_is_available: "%s পাওয়া যায় (%s)।"
+label_is_available_class: "%s পাওয়া যায়।"
+label_is_not_available: "%s পাওয়া যায় না।"
 label_never: "না"
 label_os: "অপারেটিং সিস্টেম ব্যবহৃত:"
 label_other-Active: "সক্রিয় স্বাক্ষর ফাইল"

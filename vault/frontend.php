@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.20).
+ * This file: Front-end handler (last modified: 2021.11.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1178,6 +1178,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     $phpMussel['RegenerateConfig'] = '';
     $phpMussel['ConfigModified'] = (!empty($phpMussel['QueryVars']['updated']) && $phpMussel['QueryVars']['updated'] === 'true');
 
+    /** For required extensions, classes, etc. */
+    $phpMussel['ReqsLookupCache'] = [];
+
     /** Iterate through configuration defaults. */
     foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['CatKey'] => $phpMussel['CatValue']) {
         if (!is_array($phpMussel['CatValue'])) {
@@ -1556,6 +1559,38 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 );
             }
             $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ThisDir']['Preview'];
+
+            /** Check extension and class requirements. */
+            if (!empty($phpMussel['DirValue']['required'])) {
+                $phpMussel['ThisDir']['FieldOut'] .= '<small>';
+                foreach ($phpMussel['DirValue']['required'] as $phpMussel['DirValue']['Requirement'] => $phpMussel['DirValue']['Friendly']) {
+                    if (isset($phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']])) {
+                        $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']];
+                        continue;
+                    }
+                    if (substr($phpMussel['DirValue']['Requirement'], 0, 1) === "\\") {
+                        $phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
+                            $phpMussel['L10N']->getString('label_is_available_class'),
+                            $phpMussel['DirValue']['Friendly']
+                        ) . '</span>';
+                    } elseif (extension_loaded($phpMussel['DirValue']['Requirement'])) {
+                        $phpMussel['DirValue']['ReqVersion'] = (new \ReflectionExtension($phpMussel['DirValue']['Requirement']))->getVersion();
+                        $phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
+                            $phpMussel['L10N']->getString('label_is_available'),
+                            $phpMussel['DirValue']['Friendly'],
+                            $phpMussel['DirValue']['ReqVersion']
+                        ) . '</span>';
+                    } else {
+                        $phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']] = '<br /><span class="txtRd">❌ ' . sprintf(
+                            $phpMussel['L10N']->getString('label_is_not_available'),
+                            $phpMussel['DirValue']['Friendly']
+                        ) . '</span>';
+                    }
+                    $phpMussel['ThisDir']['FieldOut'] .= $phpMussel['ReqsLookupCache'][$phpMussel['DirValue']['Requirement']];
+                }
+                $phpMussel['ThisDir']['FieldOut'] .= '</small>';
+            }
+
             if (!empty($phpMussel['DirValue']['See also']) && is_array($phpMussel['DirValue']['See also'])) {
                 $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $phpMussel['L10N']->getString('label_see_also'));
                 foreach ($phpMussel['DirValue']['See also'] as $phpMussel['DirValue']['Ref key'] => $phpMussel['DirValue']['Ref link']) {
@@ -1583,6 +1618,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         $phpMussel['FE']['ConfigFields'] .= "</table></span>\n";
         $phpMussel['RegenerateConfig'] .= "\r\n";
     }
+
+    /** Cleanup. */
+    unset($phpMussel['ReqsLookupCache']);
 
     /** Update the currently active configuration file if any changes were made. */
     if ($phpMussel['ConfigModified']) {

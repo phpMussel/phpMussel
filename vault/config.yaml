@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.10.30).
+# This file: Configuration defaults file (last modified: 2021.11.27).
 ##/
 
 Config Defaults:
@@ -555,15 +555,23 @@ Config Defaults:
   enable_apcu:
    type: "bool"
    default: false
+   required:
+    apcu: "APCu"
   enable_memcached:
    type: "bool"
    default: false
+   required:
+    memcached: "Memcached"
   enable_redis:
    type: "bool"
    default: false
+   required:
+    redis: "Redis"
   enable_pdo:
    type: "bool"
    default: false
+   required:
+    pdo: "PDO"
   memcached_host:
    type: "string"
    default: "localhost"

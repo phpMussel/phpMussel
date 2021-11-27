@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.11.20).
+# This file: Korean language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -216,6 +216,9 @@ label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
 label_installed_available: "설치되어있다 / 이용 가능"
 label_integrity_check: "무결성 검사 :"
+label_is_available: "%s를 사용할 수 있습니다 (%s)."
+label_is_available_class: "%s를 사용할 수 있습니다."
+label_is_not_available: "%s는 사용할 수 없습니다."
 label_never: "못"
 label_os: "사용된 운영 체제 :"
 label_other-Active: "활성 서명 파일"

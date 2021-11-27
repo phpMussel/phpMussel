@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.11.20).
+# This file: Italian language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -216,6 +216,9 @@ label_fmgr_updates_metadata: "Componente aggiorna metadati"
 label_hide: "Nascondere"
 label_installed_available: "Installato/Disponibile"
 label_integrity_check: "Controllo di integrità:"
+label_is_available: "%s è disponibile (%s)."
+label_is_available_class: "%s è disponibile."
+label_is_not_available: "%s non è disponibile."
 label_never: "Mai"
 label_os: "Sistema operativo utilizzata:"
 label_other-Active: "File di firme attivi"

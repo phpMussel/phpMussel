@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.11.20).
+# This file: Arabic language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -216,6 +216,9 @@ label_fmgr_updates_metadata: "تحديثات البيانات الوصفية ل�
 label_hide: "إخفائه"
 label_installed_available: "المثبتة/متاح"
 label_integrity_check: "التحقق من النزاهة:"
+label_is_available: "%s متاح (%s)."
+label_is_available_class: "%s متاح."
+label_is_not_available: "%s غير متاح."
 label_never: "أبدا"
 label_os: "نظام التشغيل المستخدمة:"
 label_other-Active: "ملفات التوقيع النشطة"

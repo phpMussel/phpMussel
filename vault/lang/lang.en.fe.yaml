@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.11.20).
+# This file: English language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -218,6 +218,9 @@ label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Hide"
 label_installed_available: "Installed/Available"
 label_integrity_check: "Integrity check:"
+label_is_available: "%s is available (%s)."
+label_is_available_class: "%s is available."
+label_is_not_available: "%s is not available."
 label_never: "Never"
 label_os: "Operating system used:"
 label_other-Active: "Active signature files"

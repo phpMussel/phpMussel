@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.11.20).
+# This file: Hindi language data for the front-end (last modified: 2021.11.27).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -218,6 +218,9 @@ label_fmgr_updates_metadata: "घटक अद्यतन मेटाडेट
 label_hide: "छिपाना"
 label_installed_available: "स्थापित/उपलब्ध है"
 label_integrity_check: "अखंडता की जांच:"
+label_is_available: "%s उपलब्ध है (%s)।"
+label_is_available_class: "%s उपलब्ध है।"
+label_is_not_available: "%s उपलब्ध नहीं है।"
 label_never: "कभी नहीँ"
 label_os: "ऑपरेटिंग सिस्टम का इस्तेमाल किया:"
 label_other-Active: "सक्रिय हस्ताक्षर फाइलें"
