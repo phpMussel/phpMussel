@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.27).
+ * This file: Front-end handler (last modified: 2021.11.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -215,6 +215,8 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['FE_Align_Reverse'] = 'right';
     $phpMussel['FE']['FE_Align_Mode'] = 'lr';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
+    $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Right_Valid'];
+    $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Right_Invalid'];
     $phpMussel['FE']['Gradient_Degree'] = 90;
     $phpMussel['FE']['Half_Border'] = 'solid solid none none';
     $phpMussel['FE']['45deg'] = '45deg';
@@ -223,6 +225,8 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['FE_Align_Reverse'] = 'left';
     $phpMussel['FE']['FE_Align_Mode'] = 'rl';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
+    $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Left_Valid'];
+    $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Left_Invalid'];
     $phpMussel['FE']['Gradient_Degree'] = 270;
     $phpMussel['FE']['Half_Border'] = 'solid none none solid';
     $phpMussel['FE']['45deg'] = '-45deg';
