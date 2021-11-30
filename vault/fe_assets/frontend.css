@@ -10,6 +10,8 @@ input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
+input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Valid})}
+input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Invalid})}
 input{border-radius:0}
 input[type=button],input[type=submit],input[type=reset]{border-radius:18px}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
