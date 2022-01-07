@@ -4,7 +4,7 @@ body{font-family:'Open Sans',sans-serif,'Lucida Grande',Tahoma,Verdana,Arial,Min
 code{font-family:'Space Mono',monospace;vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
 img.ico{width:16px;height:16px;border:0}
-input,select,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
+input,select,option,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
 input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
@@ -103,7 +103,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 #testnavlink::before{content:"🔬"}
 #updtnavlink::before{content:"🔄"}
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
-select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
+select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
 .trEase{transition:all .5s ease-out}
