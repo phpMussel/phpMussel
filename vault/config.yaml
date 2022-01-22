@@ -626,7 +626,7 @@ Links:
  PHP:
   Earth:
    Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external">PHP.earth@Facebook</a>"
-   Website: "<a id="websitelink" href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"
+   Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"
  PHPMailer:
   License: "<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" dir="ltr" hreflang="en-US" rel="noopener external">LGPLv2.1</a>"
   PHPMailer: "<a href="https://github.com/PHPMailer/PHPMailer" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">PHPMailer</a>"
