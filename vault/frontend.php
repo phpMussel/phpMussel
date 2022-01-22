@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.27).
+ * This file: Front-end handler (last modified: 2022.01.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -130,13 +130,8 @@ $phpMussel['FE'] = [
     /** Will be populated by the page title. */
     'FE_Title' => '',
 
-    /**
-     * Defining some links here instead of in the template files or the L10N
-     * data so that it'll be easier to change them in the future if and when
-     * needed due to less potential duplication across the codebase (this
-     * excludes links shown at the front-end homepage).
-     */
-    'URL-Chat' => 'https://gitter.im/phpMussel2/Lobby',
+    /** Make some of the link references available to the main front-end array. */
+    'Links.Discussions' => $phpMussel['Config']['Links']['Discussions'],
     'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
     'URL-Website' => 'https://phpmussel.github.io/'
 ];
@@ -161,13 +156,6 @@ if ($phpMussel['FE']['CronMode'] !== '') {
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . $phpMussel['FE']['LogoutButton'];
-
-/** Append "@ Gitter" to the chat link text. */
-if (isset($phpMussel['L10N']->Data['link_chat'])) {
-    $phpMussel['L10N']->Data['link_chat'] .= '@Gitter';
-} else {
-    $phpMussel['L10N']->Data['link_chat'] = '@Gitter';
-}
 
 /** Assign website link text. */
 $phpMussel['L10N']->Data['link_website'] = 'phpMussel@GitHub';
@@ -215,6 +203,8 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['FE_Align_Reverse'] = 'right';
     $phpMussel['FE']['FE_Align_Mode'] = 'lr';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
+    $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Right_Valid'];
+    $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Right_Invalid'];
     $phpMussel['FE']['Gradient_Degree'] = 90;
     $phpMussel['FE']['Half_Border'] = 'solid solid none none';
     $phpMussel['FE']['45deg'] = '45deg';
@@ -223,6 +213,8 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['FE_Align_Reverse'] = 'left';
     $phpMussel['FE']['FE_Align_Mode'] = 'rl';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
+    $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Left_Valid'];
+    $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Left_Invalid'];
     $phpMussel['FE']['Gradient_Degree'] = 270;
     $phpMussel['FE']['Half_Border'] = 'solid none none solid';
     $phpMussel['FE']['45deg'] = '-45deg';

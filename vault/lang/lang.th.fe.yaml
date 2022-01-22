@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.11.27).
+# This file: Thai language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br />{{Links.Chart.js}} สามารถใช้ได้ผ่านทาง <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -245,9 +245,9 @@ label_your_ip: "IP ของคุณ:"
 label_your_ua: "UA ของคุณ:"
 link_accounts: "บัญชี"
 link_cache_data: "ข้อมูลแคช"
-link_chat: "แชท"
 link_config: "การกำหนดค่า"
 link_copy_to_clipboard: "คัดลอกไปที่คลิปบอร์ด"
+link_discussions: "การสนทนา"
 link_documentation: "เอกสาร"
 link_file_manager: "ตัวจัดการไฟล์"
 link_home: "โฮมเพจ"

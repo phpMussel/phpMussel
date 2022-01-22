@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.11.27).
+# This file: Russian language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -248,9 +248,9 @@ label_your_ip: "Ваш IP:"
 label_your_ua: "Ваш UA:"
 link_accounts: "Аккаунта"
 link_cache_data: "Данные Кэша"
-link_chat: "Чат"
 link_config: "Конфигурация"
 link_copy_to_clipboard: "Скопировать в буфер обмена"
+link_discussions: "Обсуждения"
 link_documentation: "Документация"
 link_file_manager: "Файловый Менеджер"
 link_home: "Домашняя Страница"

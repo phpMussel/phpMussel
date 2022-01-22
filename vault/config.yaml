@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.11.27).
+# This file: Configuration defaults file (last modified: 2022.01.22).
 ##/
 
 Config Defaults:
@@ -603,6 +603,7 @@ Links:
  Chart:
   js: "<a href="https://github.com/chartjs/Chart.js" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Chart.js</a>"
  ClamavNet: "<a href="https://www.clamav.net/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">ClamavNet</a>"
+ Discussions: "https://github.com/phpMussel/phpMussel/discussions"
  Hybrid Analysis: "<a href="https://www.hybrid-analysis.com/" dir="ltr" hreflang="en" rel="noopener noreferrer external">Hybrid Analysis</a>"
  Malware Expert: "<a href="https://malware.expert/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Malware.Expert</a>"
  MalwareTips: "<a href="https://malwaretips.com/" dir="ltr" hreflang="en" rel="noopener noreferrer external">MalwareTips</a>"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.11.27).
+# This file: Dutch language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -247,9 +247,9 @@ label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
 link_cache_data: "Cachegegevens"
-link_chat: "Chat"
 link_config: "Configuratie"
 link_copy_to_clipboard: "Kopieer naar klembord"
+link_discussions: "Discussies"
 link_documentation: "Documentatie"
 link_file_manager: "Bestandsbeheer"
 link_home: "Startpagina"
