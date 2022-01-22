@@ -615,6 +615,7 @@ Links:
   js: "<a href="https://github.com/chartjs/Chart.js" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Chart.js</a>"
  ClamavNet: "<a href="https://www.clamav.net/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">ClamavNet</a>"
  Discussions: "https://github.com/phpMussel/phpMussel/discussions"
+ Documentation: "https://phpmussel.github.io/\\#documentation"
  Hybrid Analysis: "<a href="https://www.hybrid-analysis.com/" dir="ltr" hreflang="en" rel="noopener noreferrer external">Hybrid Analysis</a>"
  Malware Expert: "<a href="https://malware.expert/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Malware.Expert</a>"
  MalwareTips: "<a href="https://malwaretips.com/" dir="ltr" hreflang="en" rel="noopener noreferrer external">MalwareTips</a>"
@@ -625,7 +626,7 @@ Links:
  PHP:
   Earth:
    Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external">PHP.earth@Facebook</a>"
-   Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"
+   Website: "<a id="websitelink" href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"
  PHPMailer:
   License: "<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" dir="ltr" hreflang="en-US" rel="noopener external">LGPLv2.1</a>"
   PHPMailer: "<a href="https://github.com/PHPMailer/PHPMailer" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">PHPMailer</a>"
@@ -636,3 +637,4 @@ Links:
  Sanesecurity: "<a href="https://sanesecurity.com/usage/signatures/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Sanesecurity</a>"
  SecuriteInfo: "<a href="https://www.securiteinfo.com/" dir="ltr" hreflang="fr-FR" rel="noopener noreferrer external">SecuriteInfo.com</a>"
  VirusTotal: "<a href="https://www.virustotal.com/" dir="ltr" rel="noopener noreferrer external">VirusTotal</a>"
+ Website: "<a id="websitelink" href="https://phpmussel.github.io/" hreflang="en-US" rel="noopener external">phpmussel.github.io</a>"

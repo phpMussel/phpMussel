@@ -132,8 +132,8 @@ $phpMussel['FE'] = [
 
     /** Make some of the link references available to the main front-end array. */
     'Links.Discussions' => $phpMussel['Config']['Links']['Discussions'],
-    'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
-    'URL-Website' => 'https://phpmussel.github.io/'
+    'Links.Documentation' => $phpMussel['Config']['Links']['Documentation'],
+    'Links.Website' => $phpMussel['Config']['Links']['Website']
 ];
 
 /** Trace to determine the type of cron operation. */
@@ -156,9 +156,6 @@ if ($phpMussel['FE']['CronMode'] !== '') {
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . $phpMussel['FE']['LogoutButton'];
-
-/** Assign website link text. */
-$phpMussel['L10N']->Data['link_website'] = 'phpMussel@GitHub';
 
 /** To be populated by warnings. */
 $phpMussel['Warnings'] = [];
