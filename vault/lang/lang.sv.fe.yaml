@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.11.27).
+# This file: Swedish language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -246,9 +246,9 @@ label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Konton"
 link_cache_data: "Cacherdata"
-link_chat: "Chattrum"
 link_config: "Konfiguration"
 link_copy_to_clipboard: "Kopiera till urklipp"
+link_discussions: "Diskussioner"
 link_documentation: "Dokumentation"
 link_file_manager: "Filhanterare"
 link_home: "Hem"

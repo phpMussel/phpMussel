@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.11.27).
+# This file: Norwegian language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -246,9 +246,9 @@ label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Kontoer"
 link_cache_data: "Cache Data"
-link_chat: "Chatterom"
 link_config: "Konfigurasjon"
 link_copy_to_clipboard: "Kopiere til utklippstavle"
+link_discussions: "Diskusjoner"
 link_documentation: "Dokumentasjon"
 link_file_manager: "Filbehandler"
 link_home: "Hjem"

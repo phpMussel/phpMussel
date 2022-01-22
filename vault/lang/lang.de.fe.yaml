@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.11.27).
+# This file: German language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -248,9 +248,9 @@ label_your_ip: "Deine IP:"
 label_your_ua: "Deine UA:"
 link_accounts: "Konten"
 link_cache_data: "Datencache"
-link_chat: "Chat"
 link_config: "Konfiguration"
 link_copy_to_clipboard: "In die Zwischenablage kopieren"
+link_discussions: "Diskussionen"
 link_documentation: "Dokumentation"
 link_file_manager: "Dateimanager"
 link_home: "Startseite"

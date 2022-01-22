@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.11.27).
+# This file: Arabic language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -246,9 +246,9 @@ label_your_ip: "عنوان IP الخاص بك:"
 label_your_ua: "وكيل المستخدم الخاص بك:"
 link_accounts: "حسابات"
 link_cache_data: "بيانات ذاكرة التخزين المؤقت"
-link_chat: "دردشة"
 link_config: "التكوين"
 link_copy_to_clipboard: "نسخ إلى الحافظة"
+link_discussions: "مناقشات"
 link_documentation: "توثيق"
 link_file_manager: "مدير الملفات"
 link_home: "الرئيسية"

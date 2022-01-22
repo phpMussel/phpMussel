@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.11.27).
+# This file: Italian language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -246,9 +246,9 @@ label_your_ip: "Il tuo IP:"
 label_your_ua: "Il tuo UA:"
 link_accounts: "Utenti"
 link_cache_data: "Dati della Cache"
-link_chat: "Chat"
 link_config: "Configurazione"
 link_copy_to_clipboard: "Copia negli appunti"
+link_discussions: "Discussioni"
 link_documentation: "Documentazione"
 link_file_manager: "File Manager"
 link_home: "Pagina Principale"

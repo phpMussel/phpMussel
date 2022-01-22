@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.11.27).
+# This file: Hindi language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -248,9 +248,9 @@ label_your_ip: "तुम्हारी IP:"
 label_your_ua: "तुम्हारी UA:"
 link_accounts: "खातों"
 link_cache_data: "कैश डेटा"
-link_chat: "चैट"
 link_config: "कॉन्फ़िगरेशन"
 link_copy_to_clipboard: "क्लिपबोर्ड पर कॉपी करें"
+link_discussions: "चर्चाएँ"
 link_documentation: "डॉक्यूमेंटेशन"
 link_file_manager: "फाइल प्रबंधक"
 link_home: "होमपेज"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.11.27).
+# This file: Japanese language data for the front-end (last modified: 2022.01.22).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -246,9 +246,9 @@ label_your_ip: "あなたのＩＰ："
 label_your_ua: "あなたのＵＡ："
 link_accounts: "アカウント"
 link_cache_data: "キャッシュ・データ"
-link_chat: "チャット"
 link_config: "コンフィギュレーション"
 link_copy_to_clipboard: "クリップボードにコピー"
+link_discussions: "ディスカッション"
 link_documentation: "ドキュメンテーション"
 link_file_manager: "ファイル・マネージャー"
 link_home: "ホーム"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.30).
+ * This file: Front-end handler (last modified: 2022.01.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -130,13 +130,8 @@ $phpMussel['FE'] = [
     /** Will be populated by the page title. */
     'FE_Title' => '',
 
-    /**
-     * Defining some links here instead of in the template files or the L10N
-     * data so that it'll be easier to change them in the future if and when
-     * needed due to less potential duplication across the codebase (this
-     * excludes links shown at the front-end homepage).
-     */
-    'URL-Chat' => 'https://gitter.im/phpMussel2/Lobby',
+    /** Make some of the link references available to the main front-end array. */
+    'Links.Discussions' => $phpMussel['Config']['Links']['Discussions'],
     'URL-Documentation' => 'https://phpmussel.github.io/#documentation',
     'URL-Website' => 'https://phpmussel.github.io/'
 ];
@@ -161,13 +156,6 @@ if ($phpMussel['FE']['CronMode'] !== '') {
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $phpMussel['FE']['bNav'] = $phpMussel['FE']['HomeButton'] . $phpMussel['FE']['LogoutButton'];
-
-/** Append "@ Gitter" to the chat link text. */
-if (isset($phpMussel['L10N']->Data['link_chat'])) {
-    $phpMussel['L10N']->Data['link_chat'] .= '@Gitter';
-} else {
-    $phpMussel['L10N']->Data['link_chat'] = '@Gitter';
-}
 
 /** Assign website link text. */
 $phpMussel['L10N']->Data['link_website'] = 'phpMussel@GitHub';

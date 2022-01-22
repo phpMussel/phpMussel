@@ -15,6 +15,9 @@ Detailed version release guidelines for phpMussel can be found at:
   this time, the supplementary cache options) will now include a notice as
   to whether the extensions relied upon are available.
 
+- [2022.01.22; Maikuolan]: Dropped Gitter chat in favour of using GitHub
+  Discussions instead.
+
 === Version/Release 2.4.0 ===
 MINOR RELEASE.
 
