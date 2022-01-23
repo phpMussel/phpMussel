@@ -32,3 +32,24 @@ jobs:
 
   - name: Run tests
     run: composer run-script --timeout=360 test
+
+  - name: Lint
+    run: |
+     lintPaths=()
+     lintPaths+=("${GITHUB_WORKSPACE}/vault")
+     lintPaths+=("${GITHUB_WORKSPACE}/loader.php")
+     for lintPath in "${lintPaths[@]}"
+     do
+     for file in `find "$lintPath"`
+     do
+     EXTENSION="${file##*.}"
+     if [ "$EXTENSION" == "php" ]
+     then
+     RESULTS=`php -l "$file"`
+     if [ "$RESULTS" != "No syntax errors detected in $file" ]
+     then
+     echo $RESULTS
+     fi
+     fi
+     done
+     done
