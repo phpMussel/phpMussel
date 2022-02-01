@@ -132,7 +132,11 @@ $phpMussel['IPAddr'] = isset($_SERVER[$phpMussel['IPAddr']]) ? $_SERVER[$phpMuss
 if (is_array($phpMussel['IPAddr'])) {
     $phpMussel['IPAddr'] = array_shift($phpMussel['IPAddr']);
 }
+if (is_string($phpMussel['IPAddr']) && ($phpMussel['Pos'] = strpos($phpMussel['IPAddr'], ', ')) !== false) {
+    $phpMussel['IPAddr'] = substr($phpMussel['IPAddr'], 0, $phpMussel['Pos']);
+}
 $phpMussel['IPAddr'] = (string)$phpMussel['IPAddr'];
+unset($phpMussel['Pos']);
 
 /** Adjusted present time. */
 $phpMussel['Time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
