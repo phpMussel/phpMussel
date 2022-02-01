@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2021.06.10).
+ * This file: Upload handler (last modified: 2022.02.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -195,7 +195,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                     $phpMussel['Quarantine'](
                         $phpMussel['ThisFileData'],
                         $phpMussel['Config']['general']['quarantine_key'],
-                        $_SERVER[$phpMussel['IPAddr']],
+                        $phpMussel['IPAddr'],
                         $phpMussel['ThisFileQuarantinedAs']
                     );
                     $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $phpMussel['ThisFileQuarantinedAs']) . "\n";
@@ -335,9 +335,7 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
                 $phpMussel['L10N']->getString('field_date'),
                 $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
                 $phpMussel['L10N']->getString('field_ip_address'),
-                ($phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP'](
-                    $_SERVER[$phpMussel['IPAddr']]
-                ) : $_SERVER[$phpMussel['IPAddr']]),
+                $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($phpMussel['IPAddr']) : $phpMussel['IPAddr'],
                 $phpMussel['L10N']->getString('field_header_scan_results_why_flagged'),
                 $phpMussel['whyflagged'],
                 $phpMussel['L10N']->getString('field_header_hash_reconstruction'),

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.11.20).
+ * This file: Front-end functions file (last modified: 2022.02.01).
  */
 
 /**
@@ -562,7 +562,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
     array_walk($Path, function ($Segment) use (&$Valid) {
-        if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
+        if (empty($Segment) || preg_match('/(?:[\x00-\x1F\x7F]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
     });
@@ -633,7 +633,7 @@ $phpMussel['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&
     $RemoteData = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], $Remote);
     if ($RemoteData === false) {
         $RemoteData = $phpMussel['Request']($Remote);
-        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
+        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
             $RemoteData = gzdecode($RemoteData);
         }
         if (empty($RemoteData)) {
@@ -946,7 +946,7 @@ $phpMussel['Quarantine-RecursiveList'] = function () use (&$phpMussel) {
         ) ? substr($Head, $OriginStartPos + 15, $OriginEndPos - $OriginStartPos - 15) : $phpMussel['L10N']->getString('field_filetype_unknown');
 
         /** If the phpMussel QFU (Quarantined File Upload) header isn't found, it probably isn't a quarantined file. */
-        if (($HeadPos = strpos($Head, "\xa1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\1")) {
+        if (($HeadPos = strpos($Head, "\xA1phpMussel\x21")) !== false && (substr($Head, $HeadPos + 31, 1) === "\1")) {
             $Head = substr($Head, $HeadPos);
             $Arr[$Key]['Upload-MD5'] = bin2hex(substr($Head, 11, 16));
             $Arr[$Key]['Upload-Size'] = $phpMussel['UnpackSafe']('l*', substr($Head, 27, 4));
@@ -982,7 +982,7 @@ $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
     }
     $Data = $phpMussel['ReadFile']($File);
     /** Fetch headers. */
-    if (($HeadPos = strpos($Data, "\xa1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\1")) {
+    if (($HeadPos = strpos($Data, "\xA1phpMussel\x21")) === false || (substr($Data, $HeadPos + 31, 1) !== "\1")) {
         $phpMussel['RestoreStatus'] = 2;
         return '';
     }
@@ -1025,7 +1025,7 @@ $phpMussel['Quarantine-Restore'] = function ($File, $Key) use (&$phpMussel) {
  */
 $phpMussel['Traverse'] = function ($Path) {
     return !preg_match(
-        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1f\[-^`?*$])~i',
+        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
         str_replace("\\", '/', $Path)
     );
 };
@@ -1276,7 +1276,7 @@ $phpMussel['UpdatesHandler-Update'] = function ($ID) use (&$phpMussel) {
                         substr($phpMussel['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2)
                     ) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
-                    substr($ThisFile, 0, 2) === "\x1f\x8b"
+                    substr($ThisFile, 0, 2) === "\x1F\x8B"
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
@@ -1737,7 +1737,7 @@ $phpMussel['UpdatesHandler-Repair'] = function ($ID) use (&$phpMussel) {
                 if (
                     strtolower(substr($RemoteFileFrom, -2)) === 'gz' &&
                     strtolower(substr($RemoteFileTo, -2)) !== 'gz' &&
-                    substr($RemoteFile, 0, 2) === "\x1f\x8b"
+                    substr($RemoteFile, 0, 2) === "\x1F\x8B"
                 ) {
                     $RemoteFile = gzdecode($RemoteFile);
                 }
@@ -1945,7 +1945,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
     /** Expand patterns for signature metadata. */
     foreach ($Arr['SigTypes'] as &$Type) {
         $Type = sprintf(
-            '\x1a(?![\x80-\x8f])[\x0%1$s\x1%1$s\x2%1$s\x3%1$s\x4%1$s\x5%1$s\x6%1$s\x7%1$s\x8%1$s\x9%1$s\xa%1$s\xb%1$s\xc%1$s\xd%1$s\xe%1$s\ef%1$s].',
+            '\x1A(?![\x80-\x8F])[\x0%1$s\x1%1$s\x2%1$s\x3%1$s\x4%1$s\x5%1$s\x6%1$s\x7%1$s\x8%1$s\x9%1$s\xa%1$s\xb%1$s\xc%1$s\xd%1$s\xe%1$s\ef%1$s].',
             $Type
         );
     }
@@ -2221,7 +2221,7 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body
     /** Prepare event logging. */
     $EventLogData = sprintf(
         '%s - %s - ',
-        $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]) : $_SERVER[$phpMussel['IPAddr']],
+        $phpMussel['Config']['legal']['pseudonymise_ip_addresses'] ? $phpMussel['Pseudonymise-IP']($phpMussel['IPAddr']) : $phpMussel['IPAddr'],
         isset($phpMussel['FE']['DateTime']) ? $phpMussel['FE']['DateTime'] : $phpMussel['TimeFormat'](
             $phpMussel['Time'],
             $phpMussel['Config']['general']['timeFormat']
