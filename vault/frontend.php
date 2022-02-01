@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.01.22).
+ * This file: Front-end handler (last modified: 2022.02.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -119,10 +119,10 @@ $phpMussel['FE'] = [
     'CronMode' => $_POST['CronMode'] ?? '',
 
     /** The user agent of the current request. */
-    'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
+    'UA' => $_SERVER['HTTP_USER_AGENT'] ?? '',
 
     /** The IP address of the current request. */
-    'YourIP' => empty($_SERVER[$phpMussel['IPAddr']]) ? '' : $_SERVER[$phpMussel['IPAddr']],
+    'YourIP' => $phpMussel['IPAddr'],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),
@@ -341,7 +341,7 @@ $phpMussel['InitialiseCache']();
 /** Brute-force security check. */
 if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
     $phpMussel['FE']['Cache'],
-    'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']]
+    'LoginAttempts' . $phpMussel['IPAddr']
 )) && ($phpMussel['LoginAttempts'] >= $phpMussel['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[phpMussel] ' . $phpMussel['L10N']->getString('max_login_attempts_exceeded'));
@@ -350,7 +350,7 @@ if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
 /** Brute-force security check (2FA). */
 if (($phpMussel['Failed2FA'] = (int)$phpMussel['FECacheGet'](
     $phpMussel['FE']['Cache'],
-    'Failed2FA' . $_SERVER[$phpMussel['IPAddr']]
+    'Failed2FA' . $phpMussel['IPAddr']
 )) && ($phpMussel['Failed2FA'] >= $phpMussel['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[phpMussel] ' . $phpMussel['L10N']->getString('max_login_attempts_exceeded'));
@@ -383,7 +383,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode'] !
                 $phpMussel['FECacheRemove'](
                     $phpMussel['FE']['Cache'],
                     $phpMussel['FE']['Rebuild'],
-                    'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']]
+                    'LoginAttempts' . $phpMussel['IPAddr']
                 );
                 if (($phpMussel['FE']['Permissions'] === 3 && (
                     $phpMussel['FE']['CronMode'] === '' || substr($phpMussel['FE']['UA'], 0, 10) !== 'Cronable v'
@@ -458,7 +458,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode'] !
         $phpMussel['FECacheAdd'](
             $phpMussel['FE']['Cache'],
             $phpMussel['FE']['Rebuild'],
-            'LoginAttempts' . $_SERVER[$phpMussel['IPAddr']],
+            'LoginAttempts' . $phpMussel['IPAddr'],
             $phpMussel['LoginAttempts'],
             $phpMussel['Time'] + $phpMussel['TimeToAdd']
         );
@@ -476,11 +476,11 @@ if ($phpMussel['FE']['FormTarget'] === 'login' || $phpMussel['FE']['CronMode'] !
     }
 
     /** Safer for the front-end logger. */
-    $phpMussel['NameToLog'] = preg_replace('~[\x00-\x1f]~', '', $_POST['username'] ?? '');
+    $phpMussel['NameToLog'] = preg_replace('~[\x00-\x1F]~', '', $_POST['username'] ?? '');
 
     /** Handle front-end logging. */
     $phpMussel['FELogger'](
-        $_SERVER[$phpMussel['IPAddr']],
+        $phpMussel['IPAddr'],
         $phpMussel['NameToLog'],
         $phpMussel['LoggerMessage'] ?? ''
     );
@@ -579,22 +579,22 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
             $phpMussel['FECacheAdd'](
                 $phpMussel['FE']['Cache'],
                 $phpMussel['FE']['Rebuild'],
-                'Failed2FA' . $_SERVER[$phpMussel['IPAddr']],
+                'Failed2FA' . $phpMussel['IPAddr'],
                 $phpMussel['Failed2FA'],
                 $phpMussel['Time'] + $phpMussel['TimeToAdd']
             );
             if ($phpMussel['Config']['general']['frontend_log']) {
-                $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_invalid'));
+                $phpMussel['FELogger']($phpMussel['IPAddr'], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_invalid'));
             }
             $phpMussel['FE']['state_msg'] = '<div class="txtRd">' . $phpMussel['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
             $phpMussel['FECacheRemove'](
                 $phpMussel['FE']['Cache'],
                 $phpMussel['FE']['Rebuild'],
-                'Failed2FA' . $_SERVER[$phpMussel['IPAddr']]
+                'Failed2FA' . $phpMussel['IPAddr']
             );
             if ($phpMussel['Config']['general']['frontend_log']) {
-                $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_valid'));
+                $phpMussel['FELogger']($phpMussel['IPAddr'], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('response_2fa_valid'));
             }
         }
     }
@@ -622,7 +622,7 @@ if (($phpMussel['FE']['UserState'] === 1 || $phpMussel['FE']['UserState'] === 2)
         $phpMussel['FE']['Permissions'] = 0;
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', $phpMussel['HostnameOverride'] ?: $phpMussel['HTTP_HOST'], false, true);
         $phpMussel['FECacheRemove']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], '2FA-State:' . $_COOKIE['PHPMUSSEL-ADMIN']);
-        $phpMussel['FELogger']($_SERVER[$phpMussel['IPAddr']], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('state_logged_out'));
+        $phpMussel['FELogger']($phpMussel['IPAddr'], $phpMussel['FE']['UserRaw'], $phpMussel['L10N']->getString('state_logged_out'));
     }
 
     if ($phpMussel['FE']['Permissions'] === 1) {
@@ -1236,7 +1236,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
-                if (!preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
+                if (!preg_match('/[^\x20-\xFF"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
                     !isset($phpMussel['DirValue']['choices']) ||
                     isset($phpMussel['DirValue']['choices'][$_POST[$phpMussel['ThisDir']['DirLangKey']]])
                 )) {
@@ -1246,7 +1246,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     !empty($phpMussel['DirValue']['allow_other']) &&
                     $_POST[$phpMussel['ThisDir']['DirLangKey']] === 'Other' &&
                     isset($_POST[$phpMussel['ThisDir']['DirLangKeyOther']]) &&
-                    !preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKeyOther']])
+                    !preg_match('/[^\x20-\xFF"\']/', $_POST[$phpMussel['ThisDir']['DirLangKeyOther']])
                 ) {
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $_POST[$phpMussel['ThisDir']['DirLangKeyOther']];
                     $phpMussel['ConfigModified'] = true;

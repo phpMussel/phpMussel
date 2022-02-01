@@ -18,6 +18,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.01.22; Maikuolan]: Dropped Gitter chat in favour of using GitHub
   Discussions instead.
 
+- [2022.02.01; Bug-fix; Maikuolan]: Failed to correctly determine the client's
+  IP address under certain circumstances (e.g., multiple choices available via
+  HTTP_X_FORWARDED_FOR); Fixed.
+
 === Version/Release 2.4.0 ===
 MINOR RELEASE.
 
