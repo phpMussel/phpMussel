@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.30).
+ * This file: Functions file (last modified: 2022.02.07).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -3740,7 +3740,7 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
                 $phpMussel['Quarantine'](
                     $in,
                     $phpMussel['Config']['general']['quarantine_key'],
-                    $_SERVER[$phpMussel['IPAddr']],
+                    $phpMussel['IPAddr'],
                     $qfu
                 );
                 $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $qfu) . "\n";
@@ -3817,7 +3817,7 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
             $phpMussel['Quarantine'](
                 $in,
                 $phpMussel['Config']['general']['quarantine_key'],
-                $_SERVER[$phpMussel['IPAddr']],
+                $phpMussel['IPAddr'],
                 $qfu
             );
             $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $qfu);

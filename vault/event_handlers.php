@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.05.28).
+ * This file: Event handlers file (last modified: 2022.02.07).
  */
 
 /**
@@ -29,9 +29,9 @@ $phpMussel['Events']->addHandler('writeToSerialLog', function () use (&$phpMusse
     if ($phpMussel['Mussel_sapi']) {
         $Origin = 'CLI';
     } elseif ($phpMussel['Config']['legal']['pseudonymise_ip_addresses']) {
-        $Origin = $phpMussel['Pseudonymise-IP']($_SERVER[$phpMussel['IPAddr']]);
+        $Origin = $phpMussel['Pseudonymise-IP']($phpMussel['IPAddr']);
     } else {
-        $Origin = $_SERVER[$phpMussel['IPAddr']];
+        $Origin = $phpMussel['IPAddr'];
     }
 
     $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['L10N']->getString('data_not_available') : trim($phpMussel['whyflagged']);
