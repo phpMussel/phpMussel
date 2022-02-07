@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.30).
+ * This file: Functions file (last modified: 2022.02.07).
  */
 
 /**
@@ -3729,7 +3729,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['Quarantine'](
                     $in,
                     $phpMussel['Config']['general']['quarantine_key'],
-                    $_SERVER[$phpMussel['IPAddr']],
+                    $phpMussel['IPAddr'],
                     $qfu
                 );
                 $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $qfu) . "\n";
@@ -3806,7 +3806,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Quarantine'](
                 $in,
                 $phpMussel['Config']['general']['quarantine_key'],
-                $_SERVER[$phpMussel['IPAddr']],
+                $phpMussel['IPAddr'],
                 $qfu
             );
             $phpMussel['killdata'] .= sprintf($phpMussel['L10N']->getString('quarantined_as'), $qfu);
