@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: phpMussel shorthand data (last modified: 2020.10.26).
+# This file: phpMussel shorthand data (last modified: 2022.02.13).
 #
 # Warning: When modifying the information in this file, be careful to ensure
 # that any changes made won't conflict with the what phpMussel recognises as
@@ -19,24 +19,24 @@
 ##/
 
 Vendor Shorthand:
- 2: ClamAV
- 3: phpMussel
- 4: SecuriteInfo
- 5: ZBB
- 6: NLNetLabs
- 7: FoxIT
+ 2: "ClamAV"
+ 3: "phpMussel"
+ 4: "SecuriteInfo"
+ 5: "ZBB"
+ 6: "NLNetLabs"
+ 7: "FoxIT"
  8:
-  0: PhishTank
-  1: Malc0de
-  2: hpHosts
-  3: Spam404
+  0: "PhishTank"
+  1: "Malc0de"
+  2: "hpHosts"
+  3: "Spam404"
   4: Cybercrime.Tracker
   5: abuse.ch
- 9: phpMussel
+ 9: "phpMussel"
  10: Malware.Expert
 Vendor Weight Options:
- 9: Weighted
- 15: Weighted
+ 9: "Weighted"
+ 15: "Weighted"
 Vendor Search Patterns:
  ClamAV: "\x1a[\x20-\x2f]|ClamAV"
  phpMussel: "\x1a[\x30-\x3f\x90-\x9f]|phpMussel"
@@ -52,16 +52,16 @@ Vendor Search Patterns:
  abuse.ch: "\x1a\x85"
  Malware.Expert: "\x1a[\xa0-\xaf]"
 Metadata Shorthand:
- 1: Testfile
- 2: FN
- 3: VT
- 4: META
- 5: Chameleon
- 6: Werewolf
- 7: Suspect
- 8: Fake
- 9: CVE
- 15: HEUR
+ 1: "Testfile"
+ 2: "FN"
+ 3: "VT"
+ 4: "META"
+ 5: "Chameleon"
+ 6: "Werewolf"
+ 7: "Suspect"
+ 8: "Fake"
+ 9: "CVE"
+ 15: "HEUR"
 Metadata Search Pattern Partials:
  Testfile: "1"
  FN: "2"
@@ -75,40 +75,40 @@ Metadata Search Pattern Partials:
  HEUR: "f"
 Vector Shorthand:
  1:
-  1: Win
-  2: W32
-  3: W64
-  4: ELF
-  5: OSX
-  6: Android
-  7: Email
-  8: JS
-  9: Java
-  10: XXE
-  11: Graphics
-  12: OLE
-  13: HTML
-  14: RTF
-  15: Archive
+  1: "Win"
+  2: "W32"
+  3: "W64"
+  4: "ELF"
+  5: "OSX"
+  6: "Android"
+  7: "Email"
+  8: "JS"
+  9: "Java"
+  10: "XXE"
+  11: "Graphics"
+  12: "OLE"
+  13: "HTML"
+  14: "RTF"
+  15: "Archive"
  2:
-  0: PHP
-  1: XML
-  2: ASP
-  3: VBS
-  4: BAT
-  5: PDF
-  6: SWF
-  7: W97M
-  8: X97M
-  9: O97M
-  10: ASCII
-  11: Unix
-  12: Python
-  13: Perl
-  14: Ruby
+  0: "PHP"
+  1: "XML"
+  2: "ASP"
+  3: "VBS"
+  4: "BAT"
+  5: "PDF"
+  6: "SWF"
+  7: "W97M"
+  8: "X97M"
+  9: "O97M"
+  10: "ASCII"
+  11: "Unix"
+  12: "Python"
+  13: "Perl"
+  14: "Ruby"
   15: INF/INI
  3:
-  0: CGI
+  0: "CGI"
 Vector Search Patterns:
  Win: "\x1a.[\x11\x12\x13]|[Ww](?:[Ii][Nn]|32|64)"
  W32: "\x1a.\x12|[Ww](?:[Ii][Nn])?32"
@@ -144,65 +144,65 @@ Vector Search Patterns:
  CGI: "\x1a.\x30"
 Malware Type Shorthand:
  1:
-  1: Worm
-  2: Trojan
-  3: Adware
-  4: Flooder
-  5: IRCBot
-  6: Exploit
-  7: VirTool
-  8: Dialer
+  1: "Worm"
+  2: "Trojan"
+  3: "Adware"
+  4: "Flooder"
+  5: "IRCBot"
+  6: "Exploit"
+  7: "VirTool"
+  8: "Dialer"
   9: Joke/Hoax
-  11: Malware
-  12: Riskware
-  13: Rootkit
-  14: Backdoor
-  15: Hacktool
+  11: "Malware"
+  12: "Riskware"
+  13: "Rootkit"
+  14: "Backdoor"
+  15: "Hacktool"
  2:
-  0: Keylogger
-  1: Ransomware
-  2: Spyware
-  3: Virus
-  4: Dropper
-  5: Dropped
-  6: Downloader
-  7: Obfuscation
-  8: Obfuscator
-  9: Obfuscated
-  10: Packer
-  11: Packed
+  0: "Keylogger"
+  1: "Ransomware"
+  2: "Spyware"
+  3: "Virus"
+  4: "Dropper"
+  5: "Dropped"
+  6: "Downloader"
+  7: "Obfuscation"
+  8: "Obfuscator"
+  9: "Obfuscated"
+  10: "Packer"
+  11: "Packed"
   12: PUA/PUP
-  13: Shell
-  14: Defacer
-  15: Defacement
+  13: "Shell"
+  14: "Defacer"
+  15: "Defacement"
  3:
-  0: Cryptor
-  1: Phish
-  2: Spam
-  3: Spammer
-  4: Scam
-  5: ZipBomb
-  6: ForkBomb
-  7: LogicBomb
-  8: CyberBomb
-  9: Malvertisement
-  13: Encrypted
-  15: BadURL
+  0: "Cryptor"
+  1: "Phish"
+  2: "Spam"
+  3: "Spammer"
+  4: "Scam"
+  5: "ZipBomb"
+  6: "ForkBomb"
+  7: "LogicBomb"
+  8: "CyberBomb"
+  9: "Malvertisement"
+  13: "Encrypted"
+  15: "BadURL"
  4:
-  0: Miner
+  0: "Miner"
 Malware Type Ignore Options:
  1:
-  3: detect_adware
-  9: detect_joke_hoax
+  3: "detect_adware"
+  9: "detect_joke_hoax"
  2:
-  10: detect_packer_packed
-  11: detect_packer_packed
-  12: detect_pua_pup
-  13: detect_shell
-  14: detect_deface
-  15: detect_deface
+  10: "detect_packer_packed"
+  11: "detect_packer_packed"
+  12: "detect_pua_pup"
+  13: "detect_shell"
+  14: "detect_deface"
+  15: "detect_deface"
  3:
-  13: detect_encryption
+  13: "detect_encryption"
 Malware Type Search Patterns:
  Worm: "\x1a..\x11"
  Trojan: "\x1a..\x12"
@@ -247,4 +247,3 @@ Malware Type Search Patterns:
  Encrypted: "\x1a..\x3d"
  BadURL: "\x1a..\x3f"
  Miner: "\x1a..\x40"
-

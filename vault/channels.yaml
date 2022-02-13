@@ -34,5 +34,5 @@ GitHub:
   BitBucket: "https://bitbucket.org/Maikuolan/compatibility-charts/raw/"
 VirusTotal_HTTPS:
  VirusTotal:
-  VirusTotal_HTTPS: https://www.virustotal.com/vtapi
-  VirusTotal_HTTP: http://www.virustotal.com/vtapi
+  VirusTotal_HTTPS: "https://www.virustotal.com/vtapi"
+  VirusTotal_HTTP: "http://www.virustotal.com/vtapi"
