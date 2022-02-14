@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2021.03.20).
+# This file: Vietnamese language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Tiếng Việt"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "Chính sách bảo mật"
 SafeBrowseLookup_200: "URL đó là có khả năng có hại đã được phát hiện"
 SafeBrowseLookup_400: "Lỗi yêu cầu API"
@@ -104,7 +99,6 @@ upload_error_7: "Đĩa ghi bị lỗi! Xin vui lòng liên lạc với hostmaste
 upload_error_8: "Phát hiện PHP sai! Xin vui lòng liên lạc với hostmaster để được giúp đỡ! "
 upload_limit_exceeded: "Đã quá giới hạn tải lên"
 x_does_not_exist: "%s không tồn tại"
-
 cli_commands: |
  ..
  q

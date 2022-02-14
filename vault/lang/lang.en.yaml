@@ -7,21 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2021.03.20).
+# This file: English language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "English"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
-# CLI-mode ASCII art.
 cli_ln1: |
  ..   _____  _     _  _____  _______ _     _ _______ _______ _______
  .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
 PrivacyPolicy: "Privacy Policy"
 SafeBrowseLookup_200: "Potentially harmful URL detected"
 SafeBrowseLookup_400: "API request error"
@@ -111,7 +104,6 @@ upload_error_7: "Disc-write error! Please contact the hostmaster for assistance!
 upload_error_8: "PHP misconfiguration detected! Please contact the hostmaster for assistance! "
 upload_limit_exceeded: "Upload limit exceeded"
 x_does_not_exist: "%s does not exist"
-
 cli_commands: |
  ..
  q

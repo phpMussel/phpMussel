@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2021.03.20).
+# This file: Arabic language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "العربية"
 Text Direction: "rtl"
-IntegerRule: "int6Type1"
-FractionRule: "int1"
-
 PrivacyPolicy: "سياسة الخصوصية"
 SafeBrowseLookup_200: "يحتمل أن تكون ضارة URL الكشف"
 SafeBrowseLookup_400: "API خطأ طلب"
@@ -104,7 +99,6 @@ upload_error_7: "خطأ القرص الكتابة! يرجى الاتصال عل�
 upload_error_8: "الكشف تكوين الخطأ PHP! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! "
 upload_limit_exceeded: "تجاوزت الحد تحميل"
 x_does_not_exist: "لا يوجد %s"
-
 cli_commands: |
  ..
  q

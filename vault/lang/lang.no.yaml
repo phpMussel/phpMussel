@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2021.03.20).
+# This file: Norwegian language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Norsk"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Personvernpolicy"
 SafeBrowseLookup_200: "Potensielt skadelig URL oppdaget"
 SafeBrowseLookup_400: "API-forespørselsfeil"
@@ -105,7 +100,6 @@ upload_error_7: "Disk-skrive feil! Vennligst kontakt vertsmesteren for å få hj
 upload_error_8: "PHP-feilkonfigurasjon oppdaget! Vennligst kontakt vertsmesteren for å få hjelp! "
 upload_limit_exceeded: "Opplastingsgrensen overskredet"
 x_does_not_exist: "%s eksisterer ikke"
-
 cli_commands: |
  ..
  q

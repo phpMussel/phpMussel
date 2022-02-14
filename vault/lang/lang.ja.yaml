@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2021.03.20).
+# This file: Japanese language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "日本語"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "プライバシー・ポリシー"
 SafeBrowseLookup_200: "潜在的に有害なＵＲＬが検出されました"
 SafeBrowseLookup_400: "ＡＰＩリクエストが不正である"
@@ -102,7 +97,6 @@ upload_error_7: "ディスクに書き込めません！​ホスト責任者に
 upload_error_8: "不適切なＰＨＰ設定が検出されました！​ホスト責任者に相談して下さい！"
 upload_limit_exceeded: "アップロードの制限を超えています。"
 x_does_not_exist: "「%s」は存在しません"
-
 cli_commands: |
  ..
  q

@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2021.03.20).
+# This file: Urdu language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "‏اردو‏"
 Text Direction: "rtl"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "رازداری کی پالیسی"
 SafeBrowseLookup_200: "ممکنہ طور پر نقصان دہ URL پتہ چلنے پر"
 SafeBrowseLookup_400: "API کی درخواست کی خرابی"
@@ -106,7 +101,6 @@ upload_error_7: "غلطی کو ڈسک لکھنے! امداد کے لیے میز�
 upload_error_8: "PHP کی غلط کنفیگریشن کے پتہ! امداد کے لیے میزبان ماسٹر سے رابطہ کریں! "
 upload_limit_exceeded: "اپ لوڈ کی حد سے تجاوز کر گئی"
 x_does_not_exist: "%s موجود نہیں ہے"
-
 cli_commands: |
  ..
  q

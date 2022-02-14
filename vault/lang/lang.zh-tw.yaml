@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2021.03.20).
+# This file: Chinese (traditional) language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "中文（傳統）"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "隱私政策"
 SafeBrowseLookup_200: "可能有害的URL檢測"
 SafeBrowseLookup_400: "API請求錯誤"
@@ -100,7 +95,6 @@ upload_error_7: "硬盤寫入錯誤！​請聯繫網站管理員或網站託管
 upload_error_8: "PHP配置錯誤是檢測！​請聯繫網站管理員或網站託管服務！"
 upload_limit_exceeded: "超過上傳限制"
 x_does_not_exist: "%s不存在"
-
 cli_commands: |
  ..
  q

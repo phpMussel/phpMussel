@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2021.03.20).
+# This file: Swedish language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Svenska"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Integritetspolicy"
 SafeBrowseLookup_200: "Potentiellt skadlig URL upptäckt"
 SafeBrowseLookup_400: "API-begäran fel"
@@ -105,7 +100,6 @@ upload_error_7: "Skivskrivningsfel! Vänligen kontakta värdmästaren för hjäl
 upload_error_8: "PHP-felkonfiguration upptäckt! Vänligen kontakta värdmästaren för hjälp! "
 upload_limit_exceeded: "Överföringsgränsen överskred"
 x_does_not_exist: "%s finns inte"
-
 cli_commands: |
  ..
  q

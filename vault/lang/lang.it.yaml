@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2021.03.20).
+# This file: Italian language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Italiano"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Politica sulla Privacy"
 SafeBrowseLookup_200: "URL potenzialmente dannosi rilevati"
 SafeBrowseLookup_400: "Errore di richiesta delle API"
@@ -104,7 +99,6 @@ upload_error_7: "Errore nella scrittura del disco! Contatta l'hostmaster per ass
 upload_error_8: "Rilevata una malconfigurazione di PHP! Contatta l'hostmaster per assistenza! "
 upload_limit_exceeded: "Limite di caricamento superato"
 x_does_not_exist: "%s non esiste"
-
 cli_commands: |
  ..
  q

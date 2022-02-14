@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2021.03.20).
+# This file: Portuguese language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Português"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Política de Privacidade"
 SafeBrowseLookup_200: "URL potencialmente perigoso detectado"
 SafeBrowseLookup_400: "Erro de solicitação do API"
@@ -106,7 +101,6 @@ upload_error_7: "Disco escrita erro! Contato o hostmaster para ajuda! "
 upload_error_8: "PHP mau configuração detectado! Contato o hostmaster para ajuda! "
 upload_limit_exceeded: "Carregar limite excedido"
 x_does_not_exist: "%s não existe"
-
 cli_commands: |
  ..
  q

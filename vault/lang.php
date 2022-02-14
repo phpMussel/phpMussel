@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2021.08.25).
+ * This file: Language handler (last modified: 2022.02.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -104,27 +104,37 @@ $phpMussel['YAML']->process($phpMussel['L10N']['FallbackData'], $phpMussel['L10N
 /** Build final L10N object. */
 $phpMussel['L10N'] = new \Maikuolan\Common\L10N($phpMussel['L10N']['ConfiguredDataArray'], $phpMussel['L10N']['FallbackDataArray']);
 
+/** Assign language rules. */
+if ($phpMussel['Config']['general']['lang'] === 'en') {
+    $phpMussel['L10N']->autoAssignRules('en');
+} else {
+    $phpMussel['L10N']->autoAssignRules($phpMussel['Config']['general']['lang'], 'en');
+}
+
 /** Load client-specified L10N data if it's possible to do so. */
 if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
     $phpMussel['Client-L10N'] = &$phpMussel['L10N'];
     $phpMussel['L10N-Lang-Attache'] = '';
 } else {
-    $phpMussel['Client-L10N'] = [
-        'Accepted' => preg_replace(['~^([^,]*).*$~', '~[^-a-z]~'], ['\1', ''], strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))
-    ];
+    $phpMussel['Client-L10N'] = [];
+    $phpMussel['Client-L10N-Accepted'] = preg_replace(
+        ['~^([^,]*).*$~', '~[^-a-z]~'],
+        ['\1', ''],
+        strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE'])
+    );
     if (
-        $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N']['Accepted'] &&
-        file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml')
+        $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N-Accepted'] &&
+        is_readable($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N-Accepted'] . '.yaml')
     ) {
-        $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml');
+        $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N-Accepted'] . '.yaml');
     }
     if (empty($phpMussel['Client-L10N']['Data'])) {
-        $phpMussel['Client-L10N']['Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $phpMussel['Client-L10N']['Accepted']);
+        $phpMussel['Client-L10N-Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $phpMussel['Client-L10N-Accepted']);
         if (
-            $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N']['Accepted'] &&
-            file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml')
+            $phpMussel['Config']['general']['lang'] !== $phpMussel['Client-L10N-Accepted'] &&
+            is_readable($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N-Accepted'] . '.yaml')
         ) {
-            $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N']['Accepted'] . '.yaml');
+            $phpMussel['Client-L10N']['Data'] = $phpMussel['ReadFile']($phpMussel['langPath'] . 'lang.' . $phpMussel['Client-L10N-Accepted'] . '.yaml');
         }
     }
 
@@ -135,9 +145,9 @@ if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_AC
     } else {
         $phpMussel['Client-L10N']['DataArray'] = [];
         $phpMussel['YAML']->process($phpMussel['Client-L10N']['Data'], $phpMussel['Client-L10N']['DataArray']);
-        $phpMussel['L10N-Lang-Attache'] = ($phpMussel['Config']['general']['lang'] === $phpMussel['Client-L10N']['Accepted']) ? '' : sprintf(
+        $phpMussel['L10N-Lang-Attache'] = ($phpMussel['Config']['general']['lang'] === $phpMussel['Client-L10N-Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
-            $phpMussel['Client-L10N']['Accepted'],
+            $phpMussel['Client-L10N-Accepted'],
             $phpMussel['Client-L10N']['DataArray']['Text Direction'] ?? 'ltr'
         );
         $phpMussel['Client-L10N'] = $phpMussel['Client-L10N']['DataArray'];
@@ -145,4 +155,6 @@ if (!$phpMussel['Config']['general']['lang_override'] || empty($_SERVER['HTTP_AC
 
     /** Build final client-specific L10N object. */
     $phpMussel['Client-L10N'] = new \Maikuolan\Common\L10N($phpMussel['Client-L10N'], $phpMussel['L10N']);
+    $phpMussel['Client-L10N']->autoAssignRules($phpMussel['Client-L10N-Accepted']);
+    unset($phpMussel['Client-L10N-Accepted']);
 }

@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2021.03.20).
+# This file: Latvian language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Latviešu"
 Text Direction: "ltr"
-IntegerRule: "int3Type1"
-FractionRule: "int1"
-
 PrivacyPolicy: "Privātuma Politika"
 SafeBrowseLookup_200: "Atrasts potenciāli kaitīgs URL"
 SafeBrowseLookup_400: "API pieprasījuma kļūda"
@@ -105,7 +100,6 @@ upload_error_7: "Diska rakstīšanas kļūda! Lūdzu, sazinieties ar tīmekļa m
 upload_error_8: "Atrasts nepareiza PHP konfigurācija! Lūdzu, sazinieties ar tīmekļa mitinātājs pārzinis, lai saņemtu palīdzību! "
 upload_limit_exceeded: "Augšupielādes ierobežojums ir pārsniegts"
 x_does_not_exist: "%s neeksistē"
-
 cli_commands: |
  ..
  q

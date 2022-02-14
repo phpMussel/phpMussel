@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2021.03.20).
+# This file: Thai language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "ภาษาไทย"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "นโยบายความเป็นส่วนตัว"
 SafeBrowseLookup_200: "URL อาจเป็นอันตรายถูกตรวจพบ"
 SafeBrowseLookup_400: "ข้อผิดพลาดคำขอ API"
@@ -103,7 +98,6 @@ upload_error_7: "ข้อผิดพลาดในการเขียนด
 upload_error_8: "การกำหนดค่า PHP ที่ไม่ถูกต้องถูกตรวจพบ! โปรดติดต่อผู้ดูแลโฮสต์เพื่อขอความช่วยเหลือ! "
 upload_limit_exceeded: "จำกัดการอัปโหลดเกินแล้วแล้ว"
 x_does_not_exist: "%s ไม่ได้อยู่"
-
 cli_commands: |
  ..
  q

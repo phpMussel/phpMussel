@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2021.03.20).
+# This file: Polish language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Polski"
 Text Direction: "ltr"
-IntegerRule: "int3Type5"
-FractionRule: "int1"
-
 PrivacyPolicy: "Polityka Prywatności"
 SafeBrowseLookup_200: "Wykryto potencjalnie szkodliwy adres URL"
 SafeBrowseLookup_400: "Błąd żądania API"
@@ -105,7 +100,6 @@ upload_error_7: "Błąd zapisu płyty! Proszę skontaktuj się z gospodarzem, ab
 upload_error_8: "Wykryto błędną konfigurację PHP! Proszę skontaktuj się z gospodarzem, aby uzyskać pomoc! "
 upload_limit_exceeded: "Przekroczono limit przesyłania"
 x_does_not_exist: "%s nie istnieje"
-
 cli_commands: |
  ..
  q
