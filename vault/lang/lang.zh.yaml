@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data (last modified: 2021.03.20).
+# This file: Chinese (simplified) language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "中文（简体）"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "隐私政策"
 SafeBrowseLookup_200: "可能有害的URL检测"
 SafeBrowseLookup_400: "API请求错误"
@@ -101,7 +96,6 @@ upload_error_7: "硬盘写入错误！​请联系网站管理员或网站托管
 upload_error_8: "PHP配置错误是检测！​请联系网站管理员或网站托管服务！"
 upload_limit_exceeded: "超过上传限制"
 x_does_not_exist: "%s不存在"
-
 cli_commands: |
  ..
  q

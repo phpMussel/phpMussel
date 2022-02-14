@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2021.03.20).
+# This file: Hindi language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "हिंदी"
 Text Direction: "ltr"
-IntegerRule: "int2Type3"
-FractionRule: "fraction2Type2"
-
 PrivacyPolicy: "गोपनीयता नीति"
 SafeBrowseLookup_200: "संभावित हानिकारक URL का पता चला"
 SafeBrowseLookup_400: "API अनुरोध त्रुटि"
@@ -106,7 +101,6 @@ upload_error_7: "डिस्क-लेखन त्रुटि! कृपय�
 upload_error_8: "PHP गलत कॉन्फ़िगरेशन का पता चला! कृपया सहायता के लिए होस्टमास्टर से संपर्क करें! "
 upload_limit_exceeded: "अपलोड की सीमा पार हो गई"
 x_does_not_exist: "%s मौजूद नहीं है"
-
 cli_commands: |
  ..
  q

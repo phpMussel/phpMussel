@@ -1,10 +1,10 @@
 <?php
 /**
- * Number formatter (last modified: 2021.08.25).
+ * Number formatter (last modified: 2022.02.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
- * Source: https://github.com/Maikuolan/Common
+ * @link https://github.com/Maikuolan/Common
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
@@ -964,6 +964,22 @@ class NumberFormatter
     ];
 
     /**
+     * @var array Conversion set for Ol Chiki numerals (used by Santali).
+     */
+    private $OlChiki = [
+        '0' => '᱐',
+        '1' => '᱑',
+        '2' => '᱒',
+        '3' => '᱓',
+        '4' => '᱔',
+        '5' => '᱕',
+        '6' => '᱖',
+        '7' => '᱗',
+        '8' => '᱘',
+        '9' => '᱙'
+    ];
+
+    /**
      * @var array Symbols quick lookup table.
      */
     private $Symbols = [
@@ -1026,7 +1042,7 @@ class NumberFormatter
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.7.0';
+    const VERSION = '1.8.0';
 
     /**
      * Constructor.

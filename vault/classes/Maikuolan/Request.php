@@ -1,10 +1,10 @@
 <?php
 /**
- * Request handler (last modified: 2021.10.30).
+ * Request handler (last modified: 2022.02.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
- * Source: https://github.com/Maikuolan/Common
+ * @link https://github.com/Maikuolan/Common
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
@@ -52,7 +52,7 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.7.0';
+    const VERSION = '1.8.0';
 
     /**
      * Allow calling the instance as a function (proxies to request).

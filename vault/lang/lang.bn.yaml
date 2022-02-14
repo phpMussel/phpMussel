@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2021.05.09).
+# This file: Bangla language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "বাংলা"
 Text Direction: "ltr"
-IntegerRule: "int2Type3"
-FractionRule: "fraction2Type2"
-
 PrivacyPolicy: "গোপনীয়তা নীতি"
 SafeBrowseLookup_200: "সম্ভাব্য ক্ষতিকারক URL সনাক্ত হয়েছে"
 SafeBrowseLookup_400: "API অনুরোধ ত্রুটি"
@@ -106,7 +101,6 @@ upload_error_7: "ডিস্ক-লিখুন ত্রুটি! সহা�
 upload_error_8: "PHP ভুল কনফিগারেশন সনাক্ত! সহায়তার জন্য হোস্ট মাস্টার যোগাযোগ করুন! "
 upload_limit_exceeded: "আপলোড সীমা অতিক্রম করেছে"
 x_does_not_exist: "%s অস্তিত্ব নেই"
-
 cli_commands: |
  ..
  q

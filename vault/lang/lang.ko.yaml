@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2021.03.20).
+# This file: Korean language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "한국어"
 Text Direction: "ltr"
-IntegerRule: "int1"
-FractionRule: "int1"
-
 PrivacyPolicy: "개인 정보 정책"
 SafeBrowseLookup_200: "잠재적으로 유해한 URL이 감지되었습니다"
 SafeBrowseLookup_400: "API 요청이 부정"
@@ -102,7 +97,6 @@ upload_error_7: "디스크에 쓸 수 없습니다! 호스트 책임자와 상�
 upload_error_8: "잘못된 PHP 설정이 감지되었습니다! 호스트 책임자와 상담하십시오! "
 upload_limit_exceeded: "업로드 제한을 초과합니다."
 x_does_not_exist: "%s는 존재하지 않습니다"
-
 cli_commands: |
  ..
  q

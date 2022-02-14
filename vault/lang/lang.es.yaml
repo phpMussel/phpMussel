@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2021.03.20).
+# This file: Spanish language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Español"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Política de Privacidad"
 SafeBrowseLookup_200: "URL potencialmente dañino detectado"
 SafeBrowseLookup_400: "Error de solicitud de la API"
@@ -105,7 +100,6 @@ upload_error_7: "¡Error en el disco contra escritura! Contacto el hostmaster pa
 upload_error_8: "¡PHP mala configuración detectado! Contacto el hostmaster para ayuda! "
 upload_limit_exceeded: "Subir límite excedido"
 x_does_not_exist: "%s no existe"
-
 cli_commands: |
  ..
  q

@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2021.03.20).
+# This file: German language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Deutsch"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Datenschutz-Bestimmungen"
 SafeBrowseLookup_200: "Potentiell schädliche URL entdeckt"
 SafeBrowseLookup_400: "API-Anforderungsfehler"
@@ -106,7 +101,6 @@ upload_error_7: "Festplatten-Schreibfehler! Bitte kontaktieren Sie den Hostmaste
 upload_error_8: "PHP-Fehlkonfiguration erkannt! Bitte kontaktieren Sie den Hostmaster für Unterstützung! "
 upload_limit_exceeded: "Uploadlimit überschritten"
 x_does_not_exist: "%s existiert nicht"
-
 cli_commands: |
  ..
  q

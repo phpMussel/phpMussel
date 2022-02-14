@@ -7,15 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2021.03.20).
+# This file: Turkish language data (last modified: 2022.02.13).
 ##/
 
-# Language settings.
-Local Name: "Türkçe"
 Text Direction: "ltr"
-IntegerRule: "int2Type4"
-FractionRule: "int1"
-
 PrivacyPolicy: "Gizlilik Politikası"
 SafeBrowseLookup_200: "Potansiyel olarak zararlı URL tespit edildi"
 SafeBrowseLookup_400: "API istek hatası"
@@ -106,7 +101,6 @@ upload_error_7: "Disk yazma hatası! Lütfen yardım için hostmaster ile ileti�
 upload_error_8: "PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! "
 upload_limit_exceeded: "Yükleme sınırı aşıldı"
 x_does_not_exist: "%s mevcut değil"
-
 cli_commands: |
  ..
  q
