@@ -9,17 +9,16 @@
         "issues": "https://github.com/phpMussel/phpMussel/issues",
         "source": "https://github.com/phpMussel/phpMussel",
         "docs": "https://github.com/phpMussel/Docs",
-        "rss": "https://github.com/phpMussel/phpMussel/releases.atom",
-        "chat": "https://gitter.im/phpMussel2/Lobby"
+        "rss": "https://github.com/phpMussel/phpMussel/releases.atom"
     },
     "require": {
         "php": ">=7.2.0",
-        "maikuolan/common": "^2.7",
-        "phpmussel/core": "^3.3",
-        "phpmussel/frontend": "^3.2",
+        "maikuolan/common": "^2.8",
+        "phpmussel/core": "^3.3.1",
+        "phpmussel/frontend": "^3.2.2",
         "phpmussel/cli": "^3.1.1",
-        "phpmussel/web": "^3.2.1",
-        "phpmussel/phpmailer": "^3.1.3",
+        "phpmussel/web": "^3.2.2",
+        "phpmussel/phpmailer": "^3.1.4",
         "ext-pcre": "*"
     },
     "replace": {
