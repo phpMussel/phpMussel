@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.01.22).
+# This file: English language data for the front-end (last modified: 2022.02.15).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -100,7 +100,7 @@ config_legal: "Configuration for legal requirements."
 config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
 config_signatures: "Configuration for signatures, signature files, etc."
-config_signatures_Active: "A list of the active signature files, delimited by commas. Note: Signature files must firstly be installed, before you can activate them. For the test files to work correctly, the signature files must be installed and activated. Note: Signature files must first be installed, before you can activate them."
+config_signatures_Active: "A list of the active signature files, delimited by commas. Note: Signature files must firstly be installed, before you can activate them. For the test files to work correctly, the signature files must be installed and activated."
 config_signatures_detect_adware: "Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default]."
 config_signatures_detect_deface: "Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default]."
 config_signatures_detect_encryption: "Should phpMussel detect and block encrypted files? False = No; True = Yes [Default]."

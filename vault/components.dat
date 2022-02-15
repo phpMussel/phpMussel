@@ -201,7 +201,7 @@ phpMussel:
 l10n/en:
  Name: "L10N: English"
  Extended Description: "English language data"
- Version: "2022.44.0"
+ Version: "2022.45.150"
  Dependencies:
   phpMussel Core: "^1.8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
@@ -213,7 +213,7 @@ l10n/en:
    - "lang/lang.en.fe.yaml"
    - "lang/lang.en.yaml"
   Checksum:
-   - "9e7e2cf89ed8abb6ea29db84a704f0fafdf8d3b3fc4e65174970d35804f0a500:49101"
+   - "0ac42be16a1da59911be491b62e8637d67b156026e0b83c040c2f97bc9cb531b:49024"
    - "b38c2a4c84359232d2290338b3899807e3d9bdca6b66abd0251f55a1789c1afe:5815"
  Reannotate: "components.dat"
 l10n/ar:
