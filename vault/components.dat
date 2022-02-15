@@ -259,7 +259,7 @@ Common Classes Package:
 l10n/en:
  Name: "L10N: English"
  Extended Description: "English language data"
- Version: "2022.44.0"
+ Version: "2022.45.150"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -271,7 +271,7 @@ l10n/en:
    - "lang/lang.en.fe.yaml"
    - "lang/lang.en.yaml"
   Checksum:
-   - "0a7e881e19238f0148eb93b763112585aaf116ca92f6a8322cb24252a778616d:49237"
+   - "787b5f5f4fcbb9715057b3f929df16580dd44e49bf81e1074c847e2cf645a397:49160"
    - "97681410c9bfbfb35f02b083613f75f89be21c60dc6fdd3c682ae4814071e560:5749"
  Reannotate: "components.dat"
 l10n/ar:

@@ -215,7 +215,6 @@ default_timeout=12
 ; A list of the active signature files, delimited by commas. Note: Signature
 ; files must firstly be installed, before you can activate them. For the test
 ; files to work correctly, the signature files must be installed and activated.
-; Note: Signature files must first be installed, before you can activate them.
 active=''
 
 ; Should phpMussel report when signatures files are missing or corrupted? If
