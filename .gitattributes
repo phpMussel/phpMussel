@@ -31,10 +31,9 @@
 *.md linguist-documentation
 *.txt linguist-documentation
 
-vault/* linguist-detectable
 .github/* -linguist-detectable
-_testfiles/* -linguist-detectable
-tests/* -linguist-detectable
+.tests/* -linguist-detectable
+vault/* linguist-detectable
 vault/lang/* -linguist-detectable
 vault/signatures/* -linguist-detectable
 
