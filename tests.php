@@ -6,9 +6,12 @@
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  */
 
-// Prevent running tests outside of Composer (if the package is deployed
-// somewhere live with this file still intact, useful to prevent hammering and
-// cycles being needlessly wasted).
+/**
+ * If this file remains intact after deploying the package to production,
+ * preventing it from running outside of Composer may be useful as a means of
+ * prevent potential attackers from hammering the file and needlessly wasting
+ * cycles at the server.
+ */
 if (!isset($_SERVER['COMPOSER_BINARY'])) {
     die;
 }
@@ -19,11 +22,11 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     exit(1);
 });
 
-// Path to the test files.
-$Testfiles = __DIR__ . DIRECTORY_SEPARATOR . '_testfiles' . DIRECTORY_SEPARATOR;
-
 // Path to the test path.
-$TestPath = __DIR__ . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR;
+$TestPath = __DIR__ . DIRECTORY_SEPARATOR . '.tests' . DIRECTORY_SEPARATOR;
+
+// Path to the test samples.
+$Samples = $TestPath . 'samples' . DIRECTORY_SEPARATOR;
 
 // Path to the vault.
 $Vault = __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR;
@@ -73,9 +76,9 @@ $Expected = [
 ];
 
 // Test scanning against the standard phpMussel test samples.
-$Actual = $phpMussel['Scan']($Testfiles, true, false);
+$Actual = $phpMussel['Scan']($Samples, true, false);
 sort($Actual, SORT_STRING);
-if ($Actual !== $Expected) {
+if (serialize($Actual) !== serialize($Expected)) {
     echo 'Actual scan results does not match expected scan results.' . PHP_EOL;
     exit(5);
 }
