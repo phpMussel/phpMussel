@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2022.02.14).
+ * YAML handler (last modified: 2022.02.21).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -78,6 +78,16 @@ class YAML
     public $AllowedNumericTagsPattern = '~^(?:a(?:bs|cosh?|sinh?|tanh?)|ceil|chr|cosh?|dec(?:bin|hex|oct)|deg2rad|exp(?:m1)?|floor|log1[0p]|rad2deg|round|sinh?|tanh?|sqrt)$~';
 
     /**
+     * @var int The depth at which flows will be rebuilt.
+     */
+    public $FlowRebuildDepth = 32;
+
+    /**
+     * @var bool Whether to quote keys.
+     */
+    public $QuoteKeys = false;
+
+    /**
      * @var bool Whether to render multi-line values.
      */
     private $MultiLine = false;
@@ -122,7 +132,7 @@ class YAML
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.8.0';
+    const VERSION = '1.9.0';
 
     /**
      * Can optionally begin processing data as soon as the object is
@@ -725,74 +735,102 @@ class YAML
     {
         $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
         $NullSet = $this->isNullSet($Arr);
-        foreach ($Arr as $Key => $Value) {
-            if ($Key === '---' && $Value === null) {
-                $Out .= "---\n";
-                continue;
-            }
-            if ($Key === '...' && $Value === null) {
-                $Out .= "...\n";
-                continue;
-            }
-            $ThisDepth = str_repeat($this->Indent, $Depth);
-            if ($NullSet && !$Sequential) {
-                $Out .= $ThisDepth . '?';
-                $Value = $Key;
-            } else {
-                $Out .= $ThisDepth . ($Sequential ? '-' : $Key . ':');
-            }
-            if (is_array($Value)) {
-                $Out .= "\n";
-                $this->processInner($Value, $Out, $Depth + 1);
-                continue;
-            }
-            $Out .= ' ';
-            if ($Value === true) {
-                $ToAdd = 'true';
-            } elseif ($Value === false) {
-                $ToAdd = 'false';
-            } elseif ($Value === null) {
-                $ToAdd = 'null';
-            } elseif ($Value === INF) {
-                $ToAdd = '.inf';
-            } elseif ($Value === -INF) {
-                $ToAdd = '-.inf';
-            } elseif (is_float($Value) && is_nan($Value)) {
-                $ToAdd = '.nan';
-            } elseif (is_string($Value)) {
-                if (strpos($Value, "\n") !== false) {
-                    if (preg_match('~\n{2,}$~m', $Value)) {
-                        $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
-                    } else {
-                        $ToAdd = "|\n" . $ThisDepth . $this->Indent;
-                    }
-                    $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
-                } elseif ($this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
-                    $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
-                        $Value,
-                        $this->FoldedAt,
-                        "\n" . $ThisDepth . $this->Indent
-                    );
+        if ($Depth >= $this->FlowRebuildDepth) {
+            $Out .= $Sequential ? '[' : '{';
+            $First = true;
+            foreach ($Arr as $Key => $Value) {
+                if ($First) {
+                    $First = false;
                 } else {
-                    $ToAdd = $this->Quotes . $this->escape($Value) . $this->Quotes;
+                    $Out .= ',';
                 }
-            } else {
-                $ToAdd = $Value;
-            }
-            if ($this->DoWithAnchors) {
-                foreach ($this->Anchors as $Name => $Data) {
-                    if ($Data === $ToAdd) {
-                        if (empty($this->AnchorsDone[$Name])) {
-                            $ToAdd = '&' . $Name . ' ' . $ToAdd;
-                            $this->AnchorsDone[$Name] = true;
-                        } else {
-                            $ToAdd = '*' . $Name;
+                if (!$Sequential) {
+                    $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':';
+                }
+                if (is_array($Value)) {
+                    $this->processInner($Value, $Out, $Depth + 1);
+                    continue;
+                }
+                $ToAdd = $this->scalarToString($Value);
+                if ($this->DoWithAnchors) {
+                    foreach ($this->Anchors as $Name => $Data) {
+                        if ($Data === $ToAdd) {
+                            if (empty($this->AnchorsDone[$Name])) {
+                                $ToAdd = '&' . $Name . ' ' . $ToAdd;
+                                $this->AnchorsDone[$Name] = true;
+                            } else {
+                                $ToAdd = '*' . $Name;
+                            }
+                            break;
                         }
-                        break;
                     }
                 }
+                $Out .= $ToAdd;
             }
-            $Out .= $ToAdd . "\n";
+            $Out .= $Sequential ? ']' : '}';
+            if ($Depth === $this->FlowRebuildDepth) {
+                $Out .= "\n";
+            }
+        } else {
+            foreach ($Arr as $Key => $Value) {
+                if ($Key === '---' && $Value === null) {
+                    $Out .= "---\n";
+                    continue;
+                }
+                if ($Key === '...' && $Value === null) {
+                    $Out .= "...\n";
+                    continue;
+                }
+                $ThisDepth = str_repeat($this->Indent, $Depth);
+                if ($NullSet && !$Sequential) {
+                    $Out .= $ThisDepth . '?';
+                    $Value = $Key;
+                } else {
+                    $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':');
+                }
+                if (is_array($Value)) {
+                    if ($Depth < $this->FlowRebuildDepth - 1) {
+                        $Out .= "\n";
+                    }
+                    $this->processInner($Value, $Out, $Depth + 1);
+                    continue;
+                }
+                $Out .= ' ';
+                if (is_string($Value)) {
+                    if (strpos($Value, "\n") !== false) {
+                        if (preg_match('~\n{2,}$~m', $Value)) {
+                            $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
+                        } else {
+                            $ToAdd = "|\n" . $ThisDepth . $this->Indent;
+                        }
+                        $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
+                    } elseif ($this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
+                        $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
+                            $Value,
+                            $this->FoldedAt,
+                            "\n" . $ThisDepth . $this->Indent
+                        );
+                    } else {
+                        $ToAdd = $this->Quotes . $this->escape($Value) . $this->Quotes;
+                    }
+                } else {
+                    $ToAdd = $this->scalarToString($Value);
+                }
+                if ($this->DoWithAnchors) {
+                    foreach ($this->Anchors as $Name => $Data) {
+                        if ($Data === $ToAdd) {
+                            if (empty($this->AnchorsDone[$Name])) {
+                                $ToAdd = '&' . $Name . ' ' . $ToAdd;
+                                $this->AnchorsDone[$Name] = true;
+                            } else {
+                                $ToAdd = '*' . $Name;
+                            }
+                            break;
+                        }
+                    }
+                }
+                $Out .= $ToAdd . "\n";
+            }
         }
     }
 
@@ -1362,5 +1400,37 @@ class YAML
             $NewArr[$Key] = $Value;
         }
         return $NewArr;
+    }
+
+    /**
+     * Convert various scalars to strings.
+     *
+     * @param mixed $In The scalar.
+     * @return string The string.
+     */
+    private function scalarToString($In)
+    {
+        if ($In === true) {
+            return 'true';
+        }
+        if ($In === false) {
+            return 'false';
+        }
+        if ($In === null) {
+            return 'null';
+        }
+        if ($In === INF) {
+            return '.inf';
+        }
+        if ($In === -INF) {
+            return '-.inf';
+        }
+        if (is_float($In) && is_nan($In)) {
+            return '.nan';
+        }
+        if (is_string($In)) {
+            return $this->Quotes . $this->escape($In) . $this->Quotes;
+        }
+        return $In;
     }
 }

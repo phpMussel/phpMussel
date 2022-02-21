@@ -10,7 +10,7 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2022.02.21; Maikuolan]: Improved IP address resolution strategy.
 
 === Version/Release 1.15.1 ===
 PATCH RELEASE.

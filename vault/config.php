@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.02.14).
+ * This file: Configuration handler (last modified: 2022.02.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -120,23 +120,8 @@ if (empty($phpMussel['Config']['Config Defaults'])) {
 /** Perform fallbacks and autotyping for missing configuration directives. */
 $phpMussel['Fallback']($phpMussel['Config']['Config Defaults'], $phpMussel['Config']);
 
-/** Failsafe for weird ipaddr configuration. */
-$phpMussel['IPAddr'] = (
-    $phpMussel['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$phpMussel['Config']['general']['ipaddr']])
-) ? 'REMOTE_ADDR' : $phpMussel['Config']['general']['ipaddr'];
-
-/** Ensure we have an IP address available to work with. */
-$phpMussel['IPAddr'] = isset($_SERVER[$phpMussel['IPAddr']]) ? $_SERVER[$phpMussel['IPAddr']] : '';
-
-/** Ensure the IP address we're working with is a string. */
-if (is_array($phpMussel['IPAddr'])) {
-    $phpMussel['IPAddr'] = array_shift($phpMussel['IPAddr']);
-}
-if (is_string($phpMussel['IPAddr']) && ($phpMussel['Pos'] = strpos($phpMussel['IPAddr'], ', ')) !== false) {
-    $phpMussel['IPAddr'] = substr($phpMussel['IPAddr'], 0, $phpMussel['Pos']);
-}
-$phpMussel['IPAddr'] = (string)$phpMussel['IPAddr'];
-unset($phpMussel['Pos']);
+/** Fetch the IP address of the current request. */
+$phpMussel['IPAddr'] = (new \Maikuolan\Common\IPHeader($phpMussel['Config']['general']['ipaddr']))->Resolution;
 
 /** Adjusted present time. */
 $phpMussel['Time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);

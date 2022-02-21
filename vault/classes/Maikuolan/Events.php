@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2022.02.14).
+ * Events orchestrator (last modified: 2022.02.21).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -32,7 +32,7 @@ class Events
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.8.0';
+    const VERSION = '1.9.0';
 
     /**
      * Adds a new event handler.
