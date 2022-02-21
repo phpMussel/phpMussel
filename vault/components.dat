@@ -4,7 +4,7 @@ phpMussel Core:
  Version: "2.4.2-DEV+22051000"
  Dependencies:
   PHP: ">=7.2"
-  Common Classes Package: "^2.9.0-DEV"
+  Common Classes Package: "^2.9"
   phpMussel Front-End: "Latest"
   l10n/{lang}: ">=2021.303.641"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -49,10 +49,10 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.2-DEV+22051000"
+ Version: "2.4.2-DEV+22051400"
  Dependencies:
   PHP: ">=7.2"
-  Common Classes Package: "^2.9.0-DEV"
+  Common Classes Package: "^2.9"
   phpMussel Core: "Latest"
   l10n/{lang}: ">=2021.303.641"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -137,7 +137,7 @@ phpMussel Front-End:
    - "205e59afd4aa6cb6bbc2f41ac472b3cb552c198beea5be87eb02e4cce794a9e0:2067"
    - "0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424"
    - "e9fab19b6d1eee218d78b453ef9cf19cbe8038901acfd462828b861f94188036:116"
-   - "b48d29e800b1bd47c3b836f3f312f74ceeac5cc03a8c5fa6ca83a4a209ed0f9c:894"
+   - "1ada30772dd1565a5efd5d83db83d7a3813b91e93970c07024733325d1952a69:958"
    - "248eec685e131d9a719ee8c0d0d10fcd2da681ed399dc57143803f047f5ca8aa:234"
    - "712ac8dfc8b8fba77c5148b4c723ae3a41631ea6873bb6f58ae5db671ebba317:1188"
    - "9350b3f4081db72181a8fe6229de7f011b6caaaa471de800ea94aa826bee3968:752"
@@ -167,8 +167,8 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992"
-   - "43b9e9c8fa8297fd1cbf966b1dd8d42ca757e54baeca327d9bc3c1b3272aca6d:178514"
-   - "b7a3a060b8439647f017d8932abecc1a06748a640424280d4dffa806d598b0d3:116848"
+   - "a340cc5eccfa644a4dfb3a61cad17ca7ec1ca2f9f62ca3f5fb8b5a7a0e552cb7:178696"
+   - "1b364ed22e6f301aecf3d861da01c0c9a60eb860a8191fc161b5111ea4bc9677:116850"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
