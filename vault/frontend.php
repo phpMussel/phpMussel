@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.01).
+ * This file: Front-end handler (last modified: 2022.02.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1266,14 +1266,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                                 $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'] . ':' . $phpMussel['DirValue']['ThisLabelKey'];
                             }
                         }
-                    } else {
-                        if (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']])) {
-                            $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
-                        }
+                    } elseif (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']])) {
+                        $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
                     }
                 }
                 $phpMussel['DirValue']['Posts'] = implode(',', $phpMussel['DirValue']['Posts']) ?: '';
-                $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $phpMussel['DirValue']['Posts'];
+                if (!empty($_POST['updatingConfig']) && $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] !== $phpMussel['DirValue']['Posts']) {
+                    $phpMussel['ConfigModified'] = true;
+                    $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] = $phpMussel['DirValue']['Posts'];
+                }
             }
             if ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === true) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=true\r\n\r\n";
