@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.01.22).
+# This file: Configuration defaults file (last modified: 2022.02.20).
 ##/
 
 Config Defaults:
@@ -135,10 +135,12 @@ Config Defaults:
     CF-Connecting-IP: "CF-Connecting-IP (Cloudflare)"
     HTTP_X_FORWARDED_FOR: "HTTP_X_FORWARDED_FOR (Cloudbric)"
     X-Forwarded-For: "X-Forwarded-For (Squid)"
+    Forwarded: "Forwarded"
     REMOTE_ADDR: "REMOTE_ADDR ({label_default})"
    See also:
-    NGINX Reverse Proxy: "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"
-    Squid configuration directive forwarded_for: "http://www.squid-cache.org/Doc/config/forwarded_for/"
+    "NGINX Reverse Proxy": "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"
+    "Squid configuration directive forwarded_for": "http://www.squid-cache.org/Doc/config/forwarded_for/"
+    "Forwarded - HTTP | MDN": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded"
   enable_plugins:
    type: "bool"
    default: true
