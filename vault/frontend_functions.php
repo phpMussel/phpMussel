@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.01).
+ * This file: Front-end functions file (last modified: 2022.02.21).
  */
 
 /**
@@ -418,7 +418,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$)~i', $ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('label_fmgr_safety');
-                } elseif (strtolower($ThisNameFixed) === 'config.ini') {
+                } elseif (preg_match('~config\.ini$~i', $ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('link_config');
                 } elseif ($phpMussel['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $phpMussel['L10N']->getString('link_logs');

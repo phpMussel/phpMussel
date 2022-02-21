@@ -12,6 +12,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2022.02.21; Maikuolan]: Improved IP address resolution strategy.
 
+- [2022.02.21; Bug-fix; Maikuolan]: File manager component files categorisation
+  didn't account for multi-domain installation configuration files; Fixed.
+
 === Version/Release 1.15.1 ===
 PATCH RELEASE.
 
