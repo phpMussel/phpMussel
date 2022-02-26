@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.21).
+ * This file: Front-end handler (last modified: 2022.02.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1409,29 +1409,26 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (isset($phpMussel['DirValue']['choices'])) {
                 if ($phpMussel['DirValue']['type'] === 'checkbox') {
                     if (isset($phpMussel['DirValue']['labels']) && is_array($phpMussel['DirValue']['labels'])) {
+                        $phpMussel['DirValue']['gridV'] = 'gridVB';
                         $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;grid-template-columns:%s;text-align:%s">',
-                            str_repeat('18px ', count($phpMussel['DirValue']['labels'])) . 'auto',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
+                            str_repeat('auto ', count($phpMussel['DirValue']['labels'])) . 'auto',
                             $phpMussel['FE']['FE_Align']
                         );
                         $phpMussel['DirValue']['HasLabels'] = true;
                         foreach ($phpMussel['DirValue']['labels'] as $phpMussel['DirValue']['ThisLabel']) {
-                            foreach (['response_', 'label_', 'field_'] as $phpMussel['LabelPrefix']) {
-                                if (array_key_exists($phpMussel['LabelPrefix'] . $phpMussel['DirValue']['ThisLabel'], $phpMussel['L10N']->Data)) {
-                                    $phpMussel['DirValue']['ThisLabel'] = $phpMussel['L10N']->getString($phpMussel['LabelPrefix'] . $phpMussel['DirValue']['ThisLabel']);
-                                    break;
-                                }
-                            }
+                            $phpMussel['DirValue']['gridV'] = ($phpMussel['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
+                            $CIDRAM['ReplaceLabelWithL10N']($CIDRAM['DirValue']['ThisLabel']);
                             $phpMussel['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:right;writing-mode:vertical-%s;height:auto;line-height:18px"><span class="s">%s</span></div>',
-                                $phpMussel['FE']['FE_Align_Mode'],
+                                '<div class="gridboxitem configMatrixLabel %s">%s</div>',
+                                $phpMussel['DirValue']['gridV'],
                                 $phpMussel['DirValue']['ThisLabel']
                             );
                         }
                         $phpMussel['ThisDir']['FieldOut'] .= '<div class="gridboxitem"></div>';
                     } else {
                         $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;grid-template-columns:18px auto;text-align:%s">',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">',
                             $phpMussel['FE']['FE_Align']
                         );
                         $phpMussel['DirValue']['HasLabels'] = false;
@@ -1443,6 +1440,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         $phpMussel['ThisDir']['Trigger']
                     );
                 }
+                $phpMussel['DirValue']['gridH'] = 'gridHB';
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
                     if (isset($phpMussel['DirValue']['choice_filter'])) {
                         if (
@@ -1452,43 +1450,49 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                             continue;
                         }
                     }
+                    $phpMussel['DirValue']['gridV'] = 'gridVB';
+                    $phpMussel['DirValue']['gridH'] = ($phpMussel['DirValue']['gridH']) === 'gridHB' ? 'gridHA': 'gridHB';
                     $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
                     if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
                         $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['L10N']->Data, $phpMussel['ChoiceValue']);
                     }
+                    $phpMussel['ReplaceLabelWithL10N']($phpMussel['ChoiceValue']);
                     if ($phpMussel['DirValue']['type'] === 'checkbox') {
                         if ($phpMussel['DirValue']['HasLabels']) {
                             foreach ($phpMussel['DirValue']['labels'] as $phpMussel['DirValue']['ThisLabelKey'] => $phpMussel['DirValue']['ThisLabel']) {
+                                $phpMussel['DirValue']['gridV'] = ($phpMussel['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
                                 $phpMussel['ThisDir']['FieldOut'] .= sprintf(
-                                    '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div>',
+                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
                                     $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'] . '_' . $phpMussel['DirValue']['ThisLabelKey'],
                                     $phpMussel['Request']->inCsv(
                                         $phpMussel['ChoiceKey'] . ':' . $phpMussel['DirValue']['ThisLabelKey'],
                                         $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
                                     ) ? ' checked' : '',
-                                    $phpMussel['ThisDir']['Trigger']
+                                    $phpMussel['ThisDir']['Trigger'],
+                                    $phpMussel['DirValue']['gridV'],
+                                    $phpMussel['DirValue']['gridH']
                                 );
                             }
-                            $phpMussel['ThisDir']['FieldOut'] .= sprintf('<div class="gridboxitem"><span class="s">%s</span></div>', $phpMussel['ChoiceValue']);
+                            $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxitem %s %s">%s</div>',
+                                $phpMussel['DirValue']['gridH'],
+                                (count($phpMussel['DirValue']['labels']) % 2) === 0 ? 'vrte' : 'vrto',
+                                $phpMussel['ChoiceValue']
+                            );
                         } else {
                             $phpMussel['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s">%3$s</label></div>',
+                                '<div class="gridboxcheckcell gridVA %5$s"><label class="gridlabel"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div><div class="gridboxitem %5$s"><label for="%1$s" class="s">%3$s</label></div>',
                                 $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
                                 $phpMussel['Request']->inCsv(
                                     $phpMussel['ChoiceKey'],
                                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]
                                 ) ? ' checked' : '',
                                 $phpMussel['ChoiceValue'],
-                                $phpMussel['ThisDir']['Trigger']
+                                $phpMussel['ThisDir']['Trigger'],
+                                $phpMussel['DirValue']['gridH']
                             );
                         }
                     } else {
-                        foreach (['response_', 'label_', 'field_'] as $phpMussel['ChoicePrefix']) {
-                            if (array_key_exists($phpMussel['ChoicePrefix'] . $phpMussel['ChoiceValue'], $phpMussel['L10N']->Data)) {
-                                $phpMussel['ChoiceValue'] = $phpMussel['L10N']->getString($phpMussel['ChoicePrefix'] . $phpMussel['ChoiceValue']);
-                                break;
-                            }
-                        }
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf(
                             '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
                             $phpMussel['ChoiceKey'],

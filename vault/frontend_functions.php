@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.21).
+ * This file: Front-end functions file (last modified: 2022.02.25).
  */
 
 /**
@@ -2665,6 +2665,21 @@ $phpMussel['CheckVersions'] = function (array &$Source, array &$To) use (&$phpMu
     foreach ($Source as $Key => &$Component) {
         if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
             $To[$Key] = $Component['Version'];
+        }
+    }
+};
+
+/**
+ * Replaces labels with corresponding L10N data (if there's any).
+ *
+ * @param string $Label The actual label.
+ * @return string The replaced label.
+ */
+$phpMussel['ReplaceLabelWithL10N'] = function (string &$Label) use (&$phpMussel): void {
+    foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
+        if (array_key_exists($Prefix . $Label, $phpMussel['L10N']->Data)) {
+            $Label = preg_replace('~(?: | )?(?:：|:) ?$~', '', $phpMussel['L10N']->getString($Prefix . $Label));
+            return;
         }
     }
 };

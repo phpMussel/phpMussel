@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.2-DEV+22051400"
+ Version: "2.4.2-DEV+22056000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -156,7 +156,7 @@ phpMussel Front-End:
    - "79d21a386767688768b0ca8a3d3a08821328e2bafca3238071dabfbddeb6f0ce:954"
    - "03f8ad68bbb9053685fd0f2deb1a9a971793eafa7924aca8c6bcd3f99a60a75c:643"
    - "a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606"
-   - "2e22f7bdb946540f81728b6a3dfc796465b141a7520c8dfb63bd159c2807fc60:9344"
+   - "b2df8d1995bcac89b54afb3f9bea2b83f51fa418385aa206ce558c715e3ba9e2:10356"
    - "18ff0063d5ee9dd28b2aaaf033fc6fce5b64e325e94eacfb315146f8180c86fe:1023"
    - "df745c52f9e972b03e016ded19febe371034a8d3c929879a7b624b503ff2e3b3:17518"
    - "9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705"
@@ -167,8 +167,8 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992"
-   - "a340cc5eccfa644a4dfb3a61cad17ca7ec1ca2f9f62ca3f5fb8b5a7a0e552cb7:178696"
-   - "1b364ed22e6f301aecf3d861da01c0c9a60eb860a8191fc161b5111ea4bc9677:116850"
+   - "a4601d7d7e11701e12b0e894264199e2fde4bf26f6c172da01205fa8584bcc75:178858"
+   - "c8c612116c58e0e034fa214523beef00f75e30405d83967a696aa107508b4d88:117392"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
