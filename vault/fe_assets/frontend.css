@@ -113,3 +113,18 @@ td code~input,td code~select{vertical-align:middle}
 .pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
 .pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
 input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
+.configMatrixLabel,.vrte,.gridbox,.gridboxcheckcell{text-align:center}
+.gridbox{display:grid;grid-template-columns:auto auto auto}
+.gridboxitem,.gridboxcheckcell{height:19px}
+.configMatrixLabel{height:auto;line-height:19px;font-weight:700}
+.vrte,.vrto{vertical-align:-3px;font-weight:700}
+.gridboxcheckcell{vertical-align:middle;margin:0;padding:auto}
+.gridboxcheckcell>input[type=checkbox]{position:relative;top:1px}
+.gridlabel{display:block;height:100%;width:100%}
+.gridlabel:hover{background-color:rgba(255,255,255,.25);transition:all .2s ease-out;filter:brightness(1.25)}
+.gridHA.vrte{background:linear-gradient(90deg,rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrto{background:linear-gradient(90deg,rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
+.gridHA.gridVA{background-color:rgba(0,0,0,.125)}
+.gridHA.gridVB{background-color:rgba(127,110,85,.6)}
+.gridVB:not(.gridHA){background-color:rgba(251,191,127,.7)}
+.configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.7),rgba(0,0,0,0))}
