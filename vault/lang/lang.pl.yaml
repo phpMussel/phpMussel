@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2022.02.13).
+# This file: Polish language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Polityka Prywatności"
 SafeBrowseLookup_200: "Wykryto potencjalnie szkodliwy adres URL"
 SafeBrowseLookup_400: "Błąd żądania API"
 SafeBrowseLookup_401: "Błąd autoryzacji API"
 SafeBrowseLookup_503: "Usługa API niedostępna"
 SafeBrowseLookup_999: "Nieznany błąd API"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Przepraszam, nie rozumiem tego polecenia."
 cli_algo_not_supported: "Określony algorytm nie jest obsługiwany."
+cli_commands: |
+ ..
+ q
+ - Zamknij CLI.
+ - Aliasy: quit, exit.
+ hash_file:[algo] [nazwa pliku]
+ - Wygeneruj podpisy skrótów z plików.
+ hash:[algo] [dane]
+ - Wygeneruj signature hash z ciągu.
+ algo
+ - Wyświetl wszystkie obsługiwane algorytmy.
+ hex_encode [dane]
+ - Konwertuj dane binarne na szesnastkowe.
+ - Alias: x.
+ hex_decode [dane]
+ - Konwertuj dane szesnastkowe na binarne.
+ base64_encode [dane]
+ - Konwertuj dane binarne na dane base64.
+ - Alias: b.
+ base64_decode [dane]
+ - Konwertuj dane base64 na dane binarne.
+ pe_meta [nazwa pliku]
+ - Wyodrębnij metadane z pliku PE.
+ url_sig [dane]
+ - Wygeneruj podpisy skanera adresów URL.
+ scan [nazwa pliku lub katalogu]
+ - Zeskanuj plik lub katalog.
+ - Alias: s.
+ c
+ - Wydrukuj tę listę poleceń.
 cli_failed_to_complete: "Nie udało się ukończyć procesu skanowania"
 cli_is_not_a: "%s nie jest plikiem ani katalogiem."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Błąd zapisu płyty! Proszę skontaktuj się z gospodarzem, ab
 upload_error_8: "Wykryto błędną konfigurację PHP! Proszę skontaktuj się z gospodarzem, aby uzyskać pomoc! "
 upload_limit_exceeded: "Przekroczono limit przesyłania"
 x_does_not_exist: "%s nie istnieje"
-cli_commands: |
- ..
- q
- - Zamknij CLI.
- - Aliasy: quit, exit.
- hash_file:[algo] [nazwa pliku]
- - Wygeneruj podpisy skrótów z plików.
- hash:[algo] [dane]
- - Wygeneruj signature hash z ciągu.
- algo
- - Wyświetl wszystkie obsługiwane algorytmy.
- hex_encode [dane]
- - Konwertuj dane binarne na szesnastkowe.
- - Alias: x.
- hex_decode [dane]
- - Konwertuj dane szesnastkowe na binarne.
- base64_encode [dane]
- - Konwertuj dane binarne na dane base64.
- - Alias: b.
- base64_decode [dane]
- - Konwertuj dane base64 na dane binarne.
- pe_meta [nazwa pliku]
- - Wyodrębnij metadane z pliku PE.
- url_sig [dane]
- - Wygeneruj podpisy skanera adresów URL.
- scan [nazwa pliku lub katalogu]
- - Zeskanuj plik lub katalog.
- - Alias: s.
- c
- - Wydrukuj tę listę poleceń.

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.01.22).
+# This file: Latvian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -29,7 +29,7 @@ config_PHPMailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu iz
 config_attack_specific: "Attiecas uz konkrētiem uzbrukumu veidiem."
 config_attack_specific_allow_leading_trailing_dots: "Vai failu nosaukumos atļaut vadošos un beigu punktus? Dažreiz to var izmantot, lai slēptu failus vai arī pievilinātu dažas sistēmas, ļaujot direktoriju šķērsošanai. False (Nepatiess) = Neļauj [Noklusējuma]. True (Patiess) = Ļauj."
 config_attack_specific_archive_file_extensions: "Atzīti arhīva failu paplašinājumi (formāts ir CSV; vajadzētu pievienot vai noņemt tikai tad, kad rodas problēmas; nevajadzīga noņemšana var izraisīt nepatiesi pozitīvu rezultātu parādīšanos arhīva failos, tā kā nevajadzīga pievienošana efektīvi iekļaus baltajā sarakstā to, ko pievienojat pret uzbrukuma specifisko atklāšanu; modificēt piesardzīgi; ņemiet vērā arī to, ka tas neietekmē to, kurus arhīvus var un nevar analizēt satura līmenī). Šajā noklusējuma sarakstā ir uzskaitīti formāti, kurus visbiežāk izmanto lielākajā daļā sistēmu un CMS, bet ar nodomu tas nebūt nav visaptverošs."
-config_attack_specific_block_control_characters: "Vai bloķēt failus, kas satur kontroles zīmes (izņemot jaunrindas)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Ja augšupielādējat <em><strong>TIKAI</strong></em> vienkāršu tekstu, varat ieslēgt šo opciju, lai jūsu sistēmai nodrošinātu papildu aizsardzību. Tomēr, ja augšupielādējat kaut ko citu, nevis vienkāršu tekstu, ieslēdzot to, iespējams, tiek iegūti nepatiesi pozitīvu. False (Nepatiess) = Nebloķējiet [Noklusējuma]; True (Patiess) = Bloķējiet."
+config_attack_specific_block_control_characters: "Vai bloķēt failus, kas satur kontroles zīmes (izņemot jaunrindas)? Ja augšupielādējat <em><strong>TIKAI</strong></em> vienkāršu tekstu, varat ieslēgt šo opciju, lai jūsu sistēmai nodrošinātu papildu aizsardzību. Tomēr, ja augšupielādējat kaut ko citu, nevis vienkāršu tekstu, ieslēdzot to, iespējams, tiek iegūti nepatiesi pozitīvu. False (Nepatiess) = Nebloķējiet [Noklusējuma]; True (Patiess) = Bloķējiet."
 config_attack_specific_block_macros: "Vai mēģināt bloķēt failus, kas satur makro? Dažos dokumentu un izklājlapu veidos var saturēt izpildāmie makro, tādējādi nodrošinot bīstamu potenciālo ļaunprātīgas programmatūras vektoru. False (Nepatiess) = Nebloķējiet [Noklusējuma]; True (Patiess) = Bloķējiet."
 config_attack_specific_can_contain_php_file_extensions: "Failu paplašinājumu saraksts, kuriem atļauts saturēt PHP kodu, atdalīts ar komatiem. Ja ir iespējota PHP hameleona uzbrukuma noteikšana, faili, kas satur PHP kodu un kuru paplašinājumi nav šajā sarakstā, tiks atklāti kā PHP hameleonu uzbrukumi."
 config_attack_specific_chameleon_from_exe: "Meklējiet izpildāmās galvenes failos, kas nav izpildāmi un nav atzīti arhīvi, un meklējiet izpildāmās failos, kuru galvenes nav pareizas. False (Nepatiess) = Atspējots; True (Patiess) = Iespējots."
@@ -61,8 +61,8 @@ config_files_max_uploads: "Maksimālais failu skaits, augšupielādes skenēšan
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_cleanup: "Vai atiestatīt mainīgos un kešatmiņu, ko skripts izmanto pēc augšupielādes skenēšanas? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]. Ja skenēšana augšupielāde ir vienīgais, ko vēlaties darīt, jums vajadzētu iestatīt šo mainīgo uz <code>true</code>, lai samazinātu atmiņas izmantošanu. Ja vēlaties, lai phpMussel izdarītu vairāk, jums vajadzētu iestatīt šo mainīgo uz <code>false</code>, lai atmiņā saglabātu datus, kas nepieciešami phpMussel izpildei, bez nevajadzīgi atkārtota ielāde. CLI režīmā nav ietekmes."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
-config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False (Nepatiess) = After scanning, leave the file alone [Noklusējuma]; True (Patiess) = After scanning, if not clean, delete immediately."
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
+config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False (Nepatiess) = After scanning, leave the file alone [Noklusējuma]; True (Patiess) = After scanning, if not clean, delete immediately."
 config_general_disable_cli: "Vai atspējot CLI režīmu? CLI režīms ir iespējots pēc noklusējuma, taču dažreiz tas var traucēt pārbaudes rīku darbībai (piemēram, PHPUnit) un citām CLI balstītām lietojumprogrammām. Ja jums nav jāatspējo CLI režīms, jums vajadzētu ignorēt šo direktīvu. False (Nepatiess) = Iespējot CLI režīmu [Noklusējuma]; True (Patiess) = Atspējot CLI režīmu."
 config_general_disable_frontend: "Vai atspējot administratīvo piekļuvi, kas izmanto tīmekļa pārlūku? Administratīvā piekļuve, izmantojot tīmekļa pārlūku, var padarīt phpMussel pārvaldāmāku, taču tas var būt arī potenciāls drošības risks. phpMussel ieteicams pārvaldīt, izmantojot citus līdzekļus, kad vien iespējams (piemēram, izmantojot FTP), taču administratīvā piekļuve, izmantojot tīmekļa pārlūku, tiek nodrošināta gadījumos, kad citi līdzekļi nav dzīvotspējīgi. Iespējojiet to, ja jums tas ir nepieciešams; Atspējojiet to, ja jums nav. False (Nepatiess) = Iespējojiet to; True (Patiess) = Atspējojiet to [Noklusējuma]."
 config_general_disable_webfonts: "Vai atspējot tīmekļa fontus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -197,6 +197,47 @@ field_verify: "Verificēt"
 field_verify_all: "Verificēt visus"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+info_some_useful_links: |
+ Dažas noderīgas saites:<br />
+     <ul class="pieul">
+       <li><span class="comCat">phpMussel rīki, resursi, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – phpMussel issues lapa (atbalsts, palīdzība, utt).</li>
+           <li>{{Links.phpMussel.SigTool}} – Izveido phpMussel parakstu failus, izmantojot ClamAV parakstu datu bāzi.</li>
+           <li>{{Links.phpMussel.Extras}} – Dažādas ekstras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">ClamAV rīki, resursi, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAV mājas lapa (ClamAV® ir atvērtā koda pretvīrusu dzinējs, lai atklātu trojas zirgus, vīrusus, ļaunprātīgu programmatūru un citus ļaunprātīgus draudus).</li>
+           <li>{{Links.SecuriteInfo}} – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
+           <li>{{Links.Sanesecurity}} – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
+           <li>{{Links.Malware Expert}} – Piedāvā papildu parakstus ClamAV un papildu noteikumi ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
+           <li>{{Links.MalwareTips}} – Noderīgi diskusiju forumi, kas vērsti uz ļaunprātīgu programmatūru.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Pikšķerēšanas datu bāze, ko izmanto phpMussel URL skeneris.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal ir bezmaksas pakalpojums aizdomīgu failu un vietrāžu URL analīzei.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis ir bezmaksas ļaunprātīgas programmatūras analīzes pakalpojums, ko nodrošina uzņēmums {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Datoru ļaundabīgo programmu speciālisti.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informācijas un mācību resursi.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Aktīvs konfigurācijas fails:"
 label_actual: "Faktiskā"
 label_blocked: "Bloķēto augšupielāžu skaits"
@@ -225,9 +266,9 @@ label_is_available_class: "%s ir pieejams."
 label_is_not_available: "%s nav pieejams."
 label_never: "Nekad"
 label_os: "Izmantotā operētājsistēmu:"
+label_other: "Cits"
 label_other-Active: "Aktīvie paraksta faili"
 label_other-Since: "Sākuma datums"
-label_other: "Cits"
 label_php: "Izmantotā PHP versija:"
 label_phpmussel: "Izmantotā phpMussel versija:"
 label_quarantined: "Augšupielāde karantīnā skaits"
@@ -266,7 +307,14 @@ link_upload_test: "Augšupielādes Pārbaude"
 logs_logfile_doesnt_exist: "Atlasītais logfails neeksistē!"
 logs_no_logfile_selected: "Nav atlasīts logfails."
 logs_no_logfiles_available: "Neviens logfails nav pieejams."
-max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Pieeja noliegta."
+max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
+msg_subject_2fa: "Divu-Faktoru Autentifikācija"
+msg_template_2fa: |
+ <center><p>Sveiks, %1$s.<br />
+ <br />
+ Jūsu divu-faktoru autentifikācijas kods, lai ielogotos phpMussel:</p>
+ <h1>%2$s</h1>
+ <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 notice_click_here: "Noklikšķiniet šeit, lai iegūtu papildinformāciju."
 notice_new_major_version: "Paziņojums: Tagad ir pieejama %s (jūs izmantojat %s). Jūs atbilstat šīs versijas minimālajām PHP prasībām. Tomēr ir jāveic dažas manuālās darbības, lai atjauninātu."
 previewer_days: "Dienas"
@@ -384,12 +432,12 @@ switch-sort-by-name-set-true: "Kārtot pēc nosaukuma"
 tip_2fa_sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
 tip_accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties phpMussel."
 tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
+tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_config: "Konfigurācijas lapa ļauj mainīt phpMussel konfigurāciju."
 tip_fe_cookie_warning: "Piezīme: phpMussel izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
 tip_file_manager: "Failu menedžeris ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."
 tip_home: "Šī ir jūsu phpMussel instalācijas mājas lapa. Lai turpinātu, navigācijas izvēlnē kreisajā pusē atlasiet saiti."
 tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
-tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_quarantine: "Šajā lapā ir uzskaitīti visi faili, kas pašlaik atrodas karantīnā, un atvieglo šo failu pārvaldību."
 tip_quarantine_disabled: "Piezīme: Karantīna pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
 tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
@@ -400,52 +448,3 @@ tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt da
 tip_upload_test: "Augšupielādes testa lapā ir standarta failu augšupielādes forma. Varat to izmantot, lai pārbaudītu, vai phpMussel parasti bloķē failu."
 title_login: "Ielogošanās"
 warning_signatures_1: "Brīdinājums: Neviens paraksta fails nav aktīvs!"
-
-info_some_useful_links: |
- Dažas noderīgas saites:<br />
-     <ul class="pieul">
-       <li><span class="comCat">phpMussel rīki, resursi, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – phpMussel issues lapa (atbalsts, palīdzība, utt).</li>
-           <li>{{Links.phpMussel.SigTool}} – Izveido phpMussel parakstu failus, izmantojot ClamAV parakstu datu bāzi.</li>
-           <li>{{Links.phpMussel.Extras}} – Dažādas ekstras.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">ClamAV rīki, resursi, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAV mājas lapa (ClamAV® ir atvērtā koda pretvīrusu dzinējs, lai atklātu trojas zirgus, vīrusus, ļaunprātīgu programmatūru un citus ļaunprātīgus draudus).</li>
-           <li>{{Links.SecuriteInfo}} – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
-           <li>{{Links.Sanesecurity}} – Datoru drošības uzņēmums, kas piedāvā ClamAV papildu parakstus.</li>
-           <li>{{Links.Malware Expert}} – Piedāvā papildu parakstus ClamAV un papildu noteikumi ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
-           <li>{{Links.MalwareTips}} – Noderīgi diskusiju forumi, kas vērsti uz ļaunprātīgu programmatūru.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Pikšķerēšanas datu bāze, ko izmanto phpMussel URL skeneris.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal ir bezmaksas pakalpojums aizdomīgu failu un vietrāžu URL analīzei.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis ir bezmaksas ļaunprātīgas programmatūras analīzes pakalpojums, ko nodrošina uzņēmums {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Datoru ļaundabīgo programmu speciālisti.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informācijas un mācību resursi.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Sveiks, %1$s.<br />
- <br />
- Jūsu divu-faktoru autentifikācijas kods, lai ielogotos phpMussel:</p>
- <h1>%2$s</h1>
- <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
-msg_subject_2fa: "Divu-Faktoru Autentifikācija"

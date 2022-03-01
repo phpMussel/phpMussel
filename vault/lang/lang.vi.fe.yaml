@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.01.22).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -29,7 +29,7 @@ config_PHPMailer_username: "Tên người dùng để sử dụng khi gửi emai
 config_attack_specific: "Liên quan đến các loại tấn công cụ thể."
 config_attack_specific_allow_leading_trailing_dots: "Cho phép các dấu chấm đầu và cuối trong tên tập tin? Điều này đôi khi có thể được sử dụng để ẩn các tập tin hoặc để lừa một số hệ thống cho phép truyền traversal thư mục. False = Không cho phép [Mặc định]. True = Cho phép."
 config_attack_specific_archive_file_extensions: "Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện."
-config_attack_specific_block_control_characters: "Chặn bất kỳ tập tin có chứa bất kỳ ký tự điều khiển (khác hơn so với dòng mới)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Nếu bạn <em><strong>CHỈ</strong></em> tải lên văn bản thô, thế thì bạn có thể kích hoạt tùy chọn này để cung cấp một số bảo vệ bổ sung để hệ thống của bạn. Tuy nhiên, nếu bạn tải lên bất cứ điều gì khác hơn văn bản thô, cho phép điều này có thể dẫn đến sai tích cực. False = Không chặn [Mặc định]; True = Chặn."
+config_attack_specific_block_control_characters: "Chặn bất kỳ tập tin có chứa bất kỳ ký tự điều khiển (khác hơn so với dòng mới)? Nếu bạn <em><strong>CHỈ</strong></em> tải lên văn bản thô, thế thì bạn có thể kích hoạt tùy chọn này để cung cấp một số bảo vệ bổ sung để hệ thống của bạn. Tuy nhiên, nếu bạn tải lên bất cứ điều gì khác hơn văn bản thô, cho phép điều này có thể dẫn đến sai tích cực. False = Không chặn [Mặc định]; True = Chặn."
 config_attack_specific_block_macros: "Thử chặn bất kỳ tập tin nào chứa macro? Một số loại tài liệu và bảng tính có thể chứa macro thực thi, do đó cung cấp một vectơ phần mềm độc hại tiềm ẩn nguy hiểm. False = Không chặn [Mặc định]; True = Chặn."
 config_attack_specific_can_contain_php_file_extensions: "Danh sách các phần mở rộng tập tin được phép chứa mã PHP, được phân tách bằng dấu phẩy. Nếu phát hiện tấn công tắc kè hoa PHP được kích hoạt, các tập tin có chứa mã PHP, mà có các phần mở rộng không có trong danh sách này, sẽ được phát hiện là các tấn công tắc kè hoa PHP."
 config_attack_specific_chameleon_from_exe: "Tìm kiếm cho định danh tập tin thực thi trong các tập tin mà không phải là tập tin thực thi cũng không phải là kho lưu trữ được công nhận, và cho tập tin thực thi tập tin mà có định danh sai. False = Tắt; True = Trên."
@@ -61,8 +61,8 @@ config_files_max_uploads: "Số lượng tối đa của tập tin cho phép đ�
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_cleanup: "Phá hủy các biến và bộ đệm được sử dụng bởi tập lệnh sau khi quét tải lên? False = Không; True = Vâng [Mặc định]. Nếu bạn không sử dụng tập lệnh cho bất cứ điều gì ngoài việc quét tải lên, bạn nên đặt nó thành <code>true</code> để giảm thiểu việc sử dụng bộ nhớ. Mặt khác, bạn nên đặt nó thành <code>false</code>, để giữ lại trong bộ nhớ dữ liệu cần thiết để thực thi phpMussel mà không cần tải lại nó. Không có ảnh hưởng trong CLI."
 config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
-config_general_delete_on_sight: "Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp kho lưu trữ, các toàn bộ kho lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các kho lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức."
 config_general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
+config_general_delete_on_sight: "Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp kho lưu trữ, các toàn bộ kho lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các kho lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức."
 config_general_disable_cli: "Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI."
 config_general_disable_frontend: "Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho phpMussel dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý phpMussel từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định]."
 config_general_disable_webfonts: "Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không."
@@ -194,6 +194,47 @@ field_verify: "Xác minh"
 field_verify_all: "Xác minh tất cả"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+info_some_useful_links: |
+ Một số liên kết hữu ích:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Công cụ, tài nguyên, vv cho phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+           <li>{{Links.phpMussel.SigTool}} – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
+           <li>{{Links.phpMussel.Extras}} – Bổ sung khác nhau.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Công cụ, tài nguyên, vv cho ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
+           <li>{{Links.SecuriteInfo}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Cung cấp chữ ký bổ sung cho ClamAV và quy tắc bổ sung cho ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Nhóm, diễn đàn, cộng đồng, vv.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
+           <li>{{Links.MalwareTips}} – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Máy tính chống phần mềm độc hại chuyên gia.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Tài nguyên thông tin và học tập.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Tập tin cấu hình kích hoạt:"
 label_actual: "Thực tế"
 label_blocked: "Tải lên bị chặn"
@@ -222,9 +263,9 @@ label_is_available_class: "%s có sẵn."
 label_is_not_available: "%s không có sẵn."
 label_never: "Không bao giờ"
 label_os: "Hệ điều hành đang được dùng:"
+label_other: "Khác"
 label_other-Active: "Tập tin chữ ký kích hoạt"
 label_other-Since: "Ngày bắt đầu"
-label_other: "Khác"
 label_php: "Phiên bản PHP đang được dùng:"
 label_phpmussel: "Phiên bản phpMussel đang được dùng:"
 label_quarantined: "Tải lên trong kiểm dịch"
@@ -264,6 +305,13 @@ logs_logfile_doesnt_exist: "Bản ghi đã chọn không tồn tại!"
 logs_no_logfile_selected: "Không có bản ghi được chọn."
 logs_no_logfiles_available: "Không có bản ghi có sẵn."
 max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
+msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
+msg_template_2fa: |
+ <center><p>Xin chào, %1$s.<br />
+ <br />
+ Mã 2FA của bạn để đăng nhập vào front-end của phpMussel:</p>
+ <h1>%2$s</h1>
+ <p>Mã này hết hạn sau 10 phút.</p></center>
 notice_click_here: "Nhấp vào đây để có thêm thông tin."
 notice_new_major_version: "Ghi chú: %s hiện có sẵn (bạn đang sử dụng %s). Bạn đáp ứng yêu cầu PHP tối thiểu của phiên bản này. Tuy nhiên, một số bước thủ công được cần thiết để cập nhật."
 previewer_days: "Ngày"
@@ -378,12 +426,12 @@ switch-sort-by-name-set-true: "Sắp xếp theo tên"
 tip_2fa_sent: "Một email chứa mã 2FA đã được gửi đến địa chỉ email của bạn. Vui lòng xác nhận mã này bên dưới để có quyền truy cập vào front-end. Nếu bạn không nhận được email này, thử đăng xuất, đợi 10 phút, và đăng nhập lại để nhận email mới chứa mã mới."
 tip_accounts: "Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end phpMussel."
 tip_cache_data: "Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache."
+tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_config: "Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình phpMussel từ các front-end."
 tip_fe_cookie_warning: "Lưu ý: phpMussel sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn."
 tip_file_manager: "Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này)."
 tip_home: "Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục."
 tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này."
-tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_quarantine: "Xin chào, {username}.<br />Trang này liệt kê tất cả các tập tin hiện đang được trong kiểm dịch và tạo thuận lợi cho việc quản lý các tập tin đó."
 tip_quarantine_disabled: "Lưu ý: Kiểm dịch hiện đang bị tắt, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_see_the_documentation: "Xem <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.vi.md\#SECTION7" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
@@ -394,52 +442,3 @@ tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cà
 tip_upload_test: "Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên."
 title_login: "Đăng nhập"
 warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"
-
-info_some_useful_links: |
- Một số liên kết hữu ích:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Công cụ, tài nguyên, vv cho phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
-           <li>{{Links.phpMussel.SigTool}} – Tạo tập tin chữ ký phpMussel bằng cơ sở dữ liệu chữ ký ClamAV.</li>
-           <li>{{Links.phpMussel.Extras}} – Bổ sung khác nhau.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Công cụ, tài nguyên, vv cho ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
-           <li>{{Links.SecuriteInfo}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
-           <li>{{Links.Sanesecurity}} – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
-           <li>{{Links.Malware Expert}} – Cung cấp chữ ký bổ sung cho ClamAV và quy tắc bổ sung cho ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Nhóm, diễn đàn, cộng đồng, vv.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
-           <li>{{Links.MalwareTips}} – Diễn đàn thảo luận hữu ích tập trung vào phần mềm độc hại.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Máy tính chống phần mềm độc hại chuyên gia.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Tài nguyên thông tin và học tập.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Xin chào, %1$s.<br />
- <br />
- Mã 2FA của bạn để đăng nhập vào front-end của phpMussel:</p>
- <h1>%2$s</h1>
- <p>Mã này hết hạn sau 10 phút.</p></center>
-msg_subject_2fa: "2FA (Xác thực hai yếu tố)"

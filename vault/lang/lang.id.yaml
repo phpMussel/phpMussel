@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.02.13).
+# This file: Indonesian language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Kebijakan Privasi"
 SafeBrowseLookup_200: "Berpotensi URL berbahaya terdeteksi"
 SafeBrowseLookup_400: "Kesalahan permintaan API"
 SafeBrowseLookup_401: "Kesalahan otorisasi API"
 SafeBrowseLookup_503: "Layanan API tidak tersedia"
 SafeBrowseLookup_999: "Kesalahan API tidak diketahui"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Saya tidak mengerti perintah itu, maaf."
 cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
+cli_commands: |
+ ..
+ q
+ - Berhenti CLI.
+ - Alias: quit, exit.
+ hash_file:[algo] [file]
+ - Menghasilkan tanda tangan hash dari file.
+ hash:[algo] [string]
+ - Menghasilkan tanda tangan hash dari string.
+ algo
+ - Daftar semua algoritma yang didukung.
+ hex_encode [string]
+ - Mengkonversi string biner ke heksadesimal.
+ - Alias: x.
+ hex_decode [string]
+ - Mengkonversi heksadesimal ke string biner.
+ base64_encode [string]
+ - Mengkonversi string biner ke string base64.
+ - Alias: b.
+ base64_decode [string]
+ - Mengkonversi string base64 ke string biner.
+ pe_meta [file]
+ - Ekstrak metadata dari file PE.
+ url_sig [string]
+ - Membuat tanda tangan pemindai URL.
+ scan [file]
+ - Pindai file atau direktori.
+ - Alias: s.
+ c
+ - Cetak ini daftar perintah.
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Disk-menulis kesalahan! Silahkan hubungi hostmaster untuk bantu
 upload_error_8: "PHP salah-konfigurasi terdeteksi! Silahkan hubungi hostmaster untuk bantuan! "
 upload_limit_exceeded: "Upload batas melebihi"
 x_does_not_exist: "%s tidak ada"
-cli_commands: |
- ..
- q
- - Berhenti CLI.
- - Alias: quit, exit.
- hash_file:[algo] [file]
- - Menghasilkan tanda tangan hash dari file.
- hash:[algo] [string]
- - Menghasilkan tanda tangan hash dari string.
- algo
- - Daftar semua algoritma yang didukung.
- hex_encode [string]
- - Mengkonversi string biner ke heksadesimal.
- - Alias: x.
- hex_decode [string]
- - Mengkonversi heksadesimal ke string biner.
- base64_encode [string]
- - Mengkonversi string biner ke string base64.
- - Alias: b.
- base64_decode [string]
- - Mengkonversi string base64 ke string biner.
- pe_meta [file]
- - Ekstrak metadata dari file PE.
- url_sig [string]
- - Membuat tanda tangan pemindai URL.
- scan [file]
- - Pindai file atau direktori.
- - Alias: s.
- c
- - Cetak ini daftar perintah.

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.01.22).
+# This file: Spanish language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br />{{Links.Chart.js}} está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -29,7 +29,7 @@ config_PHPMailer_username: "El nombre de usuario a usar cuando se envía un corr
 config_attack_specific: "Se relaciona con tipos de ataques específicos."
 config_attack_specific_allow_leading_trailing_dots: "¿Permitir puntos iniciales y finales en los nombres de archivo? A veces, esto se puede utilizar para ocultar archivos, o para engañar a algunos sistemas para que permitan el atravesar del directorio. False = No permitir [Predefinido]. True = Permitir."
 config_attack_specific_archive_file_extensions: "Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva."
-config_attack_specific_block_control_characters: "Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear."
+config_attack_specific_block_control_characters: "Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear."
 config_attack_specific_block_macros: "¿Intenta bloquear cualquier archivo que contenga macros? Algunos tipos de documentos y hojas de cálculo pueden contener macros ejecutables, proporcionando así un peligroso vector de malware potencial. False = No bloquear [Predefinido]; True = Bloquear."
 config_attack_specific_can_contain_php_file_extensions: "Una lista de extensiones de archivos permitidos para contener código PHP, separados por comas. Si la detección de ataques de camaleón PHP está habilitada, los archivos que contienen código PHP, que tienen extensiones que no están en esta lista, se detectarán como ataques de camaleón de PHP."
 config_attack_specific_chameleon_from_exe: "Buscar para PE mágico número en archivos que no están ejecutables ni reconocidos compactados archivos y para ejecutables cuyo mágicos números son incorrectas. False = Desactivado; True = Activado."
@@ -61,8 +61,8 @@ config_files_max_uploads: "Máximo permitido número de archivos para escanear d
 config_general: "Configuración general (cualquier configuración que no pertenezca a otras categorías)."
 config_general_cleanup: "Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si no está utilizando el script para otra cosa que no sea escanear subidas, debe configurar esto en <code>true</code> para minimizar el uso de memoria. De lo contrario, debe configurarlo en <code>false</code>, para retener en la memoria los datos necesarios para ejecutar phpMussel sin necesidad de volver a cargarlo. No tiene influencia en CLI modo."
 config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requiere PHP &gt;= 7.3.0)."
-config_general_delete_on_sight: "Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. False = Después escaneando, dejar el archivo solo [Predefinido]; True = Después escaneando, si no se limpia, eliminar inmediatamente."
 config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."
+config_general_delete_on_sight: "Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. False = Después escaneando, dejar el archivo solo [Predefinido]; True = Después escaneando, si no se limpia, eliminar inmediatamente."
 config_general_disable_cli: "¿Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo."
 config_general_disable_frontend: "¿Desactivar el acceso front-end? El acceso front-end puede hacer phpMussel más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar phpMussel a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido]."
 config_general_disable_webfonts: "¿Desactivar webfonts? True = Sí [Predefinido]; False = No."
@@ -196,6 +196,47 @@ field_verify: "Verificar"
 field_verify_all: "Verificar todo"
 field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
+info_some_useful_links: |
+ Algunos enlaces útiles:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Herramientas, recursos, etc. para phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
+           <li>{{Links.phpMussel.SigTool}} – Crea archivos de firma por phpMussel usando la base de datos de firmas ClamAV.</li>
+           <li>{{Links.phpMussel.Extras}} – Varios extras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Herramientas, recursos, etc. para ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – Página principal de ClamAV (ClamAV® es un motor antivirus de código abierto para detectar troyanos, virus, malware y otras amenazas maliciosas).</li>
+           <li>{{Links.SecuriteInfo}} – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Ofrece firmas complementarias para ClamAV y reglas complementarias para ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupos, foros, comunidades, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizaje y discusión.</li>
+           <li>{{Links.MalwareTips}} – Útiles foros de discusión enfocados en el malware.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Otras herramientas, recursos, servicios, etc. que son útiles.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Base de datos de phishing utilizada por el escáner URL de phpMussel.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal es un servicio gratuito para analizar archivos y URL sospechosos.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis es un servicio gratuito para analizar malware proporcionado por {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Especialistas informáticos contra malware.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Recursos informativos y de aprendizaje.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizaje y discusión.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Listas de vulnerabilidades</a> – Lista las versiones seguras/inseguras de varios paquetes (PHP, HHVM, etc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Listas de compatibilidades</a> – Lista información de compatibilidad para varios paquetes (CIDRAM, phpMussel, etc).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Archivo de configuración activo:"
 label_actual: "Actual"
 label_blocked: "Subidas bloqueadas"
@@ -224,9 +265,9 @@ label_is_available_class: "%s está disponible."
 label_is_not_available: "%s no está disponible."
 label_never: "Nunca"
 label_os: "Sistema operativo utilizada:"
+label_other: "Otro"
 label_other-Active: "Archivos de firmas activas"
 label_other-Since: "Fecha de inicio"
-label_other: "Otro"
 label_php: "Versión PHP utilizada:"
 label_phpmussel: "Versión phpMussel utilizada:"
 label_quarantined: "Subidas en cuarentena"
@@ -266,6 +307,13 @@ logs_logfile_doesnt_exist: "¡Archivo de registro seleccionado no existe!"
 logs_no_logfile_selected: "Ningún archivo de registro seleccionado."
 logs_no_logfiles_available: "Ningún archivos de registro disponibles."
 max_login_attempts_exceeded: "Número máximo de intentos de login excedido; Acceso denegado."
+msg_subject_2fa: "Autenticación de dos factores"
+msg_template_2fa: |
+ <center><p>Hola, %1$s.<br />
+ <br />
+ Su código de autenticación de dos factores para iniciar sesión en el front-end de phpMussel:</p>
+ <h1>%2$s</h1>
+ <p>Este código vence en 10 minutos.</p></center>
 notice_click_here: "Haga clic aquí para más información."
 notice_new_major_version: "Aviso: %s ahora está disponible (está utilizando %s). Cumple con los requisitos mínimos de PHP de esta versión. Sin embargo, se requieren algunos pasos manuales para actualizar."
 previewer_days: "Días"
@@ -382,12 +430,12 @@ switch-sort-by-name-set-true: "Ordenar por nombre"
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al phpMussel front-end."
 tip_cache_data: "Hola, {username}.<br />Aquí puede revisar el contenido de la caché."
+tip_click_the_component: "Haga clic en el nombre del componente para más detalles."
 tip_config: "Hola, {username}.<br />La página de configuración permite modificar la configuración para phpMussel desde el front-end."
 tip_fe_cookie_warning: "Nota: phpMussel usa una cookie para autenticar los inicios de sesión. Al iniciar sesión, usted da su consentimiento para que su navegador cree y almacene una cookie."
 tip_file_manager: "Hola, {username}.<br />El administración de archivos permite eliminar, editar, subir y descargar de archivos. Utilizar con precaución (podría romper su instalación con esto)."
 tip_home: "Hola, {username}.<br />Esta es la página principal para el front-end de phpMussel. Seleccione un enlace en el menú de navegación de la izquierda para continuar."
 tip_logs: "Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro."
-tip_click_the_component: "Haga clic en el nombre del componente para más detalles."
 tip_quarantine: "Hola, {username}.<br />Esta página enumera todos los archivos actualmente en cuarentena y facilita la administración de esos archivos."
 tip_quarantine_disabled: "Nota: La cuarentena está actualmente deshabilitada, pero puede habilitarse a través de la página de configuración."
 tip_see_the_documentation: "Ver la <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.es.md\#SECTION7" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
@@ -398,52 +446,3 @@ tip_updates: "Hola, {username}.<br />La página de actualizaciones permite insta
 tip_upload_test: "Hola, {username}.<br />La página para subir pruebas contiene un formulario de subir de archivos estándar, permite probar si un archivo normalmente se bloquea por phpMussel cuando intentar subirlo."
 title_login: "Login"
 warning_signatures_1: "Advertencia: ¡No hay archivos de firma activos!"
-
-info_some_useful_links: |
- Algunos enlaces útiles:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Herramientas, recursos, etc. para phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
-           <li>{{Links.phpMussel.SigTool}} – Crea archivos de firma por phpMussel usando la base de datos de firmas ClamAV.</li>
-           <li>{{Links.phpMussel.Extras}} – Varios extras.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Herramientas, recursos, etc. para ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – Página principal de ClamAV (ClamAV® es un motor antivirus de código abierto para detectar troyanos, virus, malware y otras amenazas maliciosas).</li>
-           <li>{{Links.SecuriteInfo}} – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
-           <li>{{Links.Sanesecurity}} – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
-           <li>{{Links.Malware Expert}} – Ofrece firmas complementarias para ClamAV y reglas complementarias para ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grupos, foros, comunidades, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizaje y discusión.</li>
-           <li>{{Links.MalwareTips}} – Útiles foros de discusión enfocados en el malware.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Otras herramientas, recursos, servicios, etc. que son útiles.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Base de datos de phishing utilizada por el escáner URL de phpMussel.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal es un servicio gratuito para analizar archivos y URL sospechosos.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis es un servicio gratuito para analizar malware proporcionado por {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Especialistas informáticos contra malware.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Recursos informativos y de aprendizaje.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizaje y discusión.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Listas de vulnerabilidades</a> – Lista las versiones seguras/inseguras de varios paquetes (PHP, HHVM, etc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Listas de compatibilidades</a> – Lista información de compatibilidad para varios paquetes (CIDRAM, phpMussel, etc).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hola, %1$s.<br />
- <br />
- Su código de autenticación de dos factores para iniciar sesión en el front-end de phpMussel:</p>
- <h1>%2$s</h1>
- <p>Este código vence en 10 minutos.</p></center>
-msg_subject_2fa: "Autenticación de dos factores"

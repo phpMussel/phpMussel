@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.01.22).
+# This file: Japanese language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -29,7 +29,7 @@ config_PHPMailer_username: "ＳＭＴＰ経由で電子Ｅメールを送信す�
 config_attack_specific: "特定の種類の攻撃に関連します。"
 config_attack_specific_allow_leading_trailing_dots: "ファイル名に先頭と末尾のドットを使用できますか？​これは、ファイルを隠すためや、ディレクトリ・トラバーサルを許可するようにシステムを騙すために使用されることがあります。​False（偽）=許可しない（Default/デフォルト）。<code>true</code>（真）=許可します。"
 config_attack_specific_archive_file_extensions: "認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。"
-config_attack_specific_block_control_characters: "制御文字を含んだファイルをブロックするか否か（改行以外）？​についてです（<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>）。​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​False（偽） = ブロックしない（Default/デフォルト）；​True（真） = ブロックする。"
+config_attack_specific_block_control_characters: "制御文字を含んだファイルをブロックするか否か（改行以外）？​もし、​テキストのみをアップロードするなら、​このオプションを有効にして、​さらにプロテクションを強化できます。​テキスト以外もアップロード対象であれば、​有効にすると誤検出の原因になりえます。​False（偽） = ブロックしない（Default/デフォルト）；​True（真） = ブロックする。"
 config_attack_specific_block_macros: "マクロを含むファイルをブロックしようとしていますか？​ドキュメントやスプレッドシートには実行可能なマクロが含まれている可能性があります。​False（偽） = ブロックしない（Default/デフォルト）；​True（真） = ブロックする。"
 config_attack_specific_can_contain_php_file_extensions: "カンマで区切られたＰＨＰコードを含むことができるファイル拡張子のリスト。​ＰＨＰカメレオン攻撃検出が有効になっている場合、このリストにない拡張子を持つＰＨＰコードを含むファイルは、ＰＨＰカメレオン攻撃として検出されます。"
 config_attack_specific_chameleon_from_exe: "実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。 <code>false</code>（偽） = オフ。 <code>true</code>（真） = オン。"
@@ -61,8 +61,8 @@ config_files_max_uploads: "一度にスキャンできるアップロードフ�
 config_general: "全般的な設定（他のカテゴリに属さないの設定）。"
 config_general_cleanup: "初回アップロード後に変数とキャッシュの設定をクリアするか否かについてのスクリプトです。​False(偽） = いいえ；​True（真） = はい 「Default/デフォルト設定」。​初回アップロードスキャニング以外で使用することがなければ、​True（真）としメモリーの使用量を最小にします。​使用するのであれば、​False（偽）とし、​メモリーに不要な重複データを再ロードするのを防ぎます。​通常は<code>true</code>（真）。​に設定しますが、​初回アップロードスキャニングに対してしか使用できないことを覚えておいて下さい。​ＣＬＩモードでは影響しません。"
 config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I （ＰＨＰ &gt;= 7.2.0 が必要）、​PASSWORD_ARGON2ID （ＰＨＰ &gt;= 7.3.0 が必要）。"
-config_general_delete_on_sight: "このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​False（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​True（真） = スキャニング後、​クリーンでなければ直ちに削除。"
 config_general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
+config_general_delete_on_sight: "このディレクティブを有効にすると、​検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。​クリーンと判断されたファイルはそのままです。​アーカイブの場合、​問題のファイルが一部であってもアーカイブ全てが削除の対象となります。​アップロードファイルのスキャンにおいては、​本ディレクティブを有効にすることは必須ではありません。​なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。​言い換えれば、​ファイルが移動されたか、​コピーされたか、​削除されない限り、​ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。​このディレクティブはセキュリティーに念を入れる目的で設置されています。​ＰＨＰは稀に予測外の振る舞いをすることがあるからです。​False（偽） = スキャニング後、​ファイルはそのまま（デフォルト設定）。​True（真） = スキャニング後、​クリーンでなければ直ちに削除。"
 config_general_disable_cli: "ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​False（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​True（真） = ＣＬＩモードを無効にします。"
 config_general_disable_frontend: "フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​phpMusselをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​False（偽） = フロントエンドへのアクセスを有効にします；​True（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。"
 config_general_disable_webfonts: "ウェブフォンツを無効にしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
@@ -194,6 +194,47 @@ field_verify: "検証する"
 field_verify_all: "すべてを検証する"
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
+info_some_useful_links: |
+ 役に立つリンク：<br />
+     <ul class="pieul">
+       <li><span class="comCat">phpMussel用のツール、リソース、など。</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – phpMusselの問題ページ（サポート、​援助、​など）。</li>
+           <li>{{Links.phpMussel.SigTool}} – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
+           <li>{{Links.phpMussel.Extras}} – その他エキストラ。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">ClamAV用のツール、リソース、など。</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
+           <li>{{Links.SecuriteInfo}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
+           <li>{{Links.Sanesecurity}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
+           <li>{{Links.Malware Expert}} – ClamAV用の補足シグネチャとModSecurity用の補足規則を提供します。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">グループ、フォーラム、コミュニティ、など。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
+           <li>{{Links.MalwareTips}} – 便利なマルウェア対策ディスカッションフォーラム。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
+           <li>{{Links.VirusTotal}} – VirusTotalは、​疑わしいファイルやURLを分析するための無料サービスです。</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysisは、​{{Links.Payload Security}}が提供する無料のマルウェア分析サービスで。</li>
+           <li>{{Links.Malwarebytes}} – コンピュータのマルウェア対策専門家。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">情報および学習用リソース。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "アクティブ・コンフィグレーション・ファイル："
 label_actual: "現在"
 label_blocked: "ブロックされたアップロード"
@@ -222,9 +263,9 @@ label_is_available_class: "%s は使用できます。"
 label_is_not_available: "%s は使用できません。"
 label_never: "決して"
 label_os: "使用されたオペレーティングシステム："
+label_other: "その他"
 label_other-Active: "アクティブなシグネチャ・ファイル"
 label_other-Since: "開始日"
-label_other: "その他"
 label_php: "使用されたPHPバージョン："
 label_phpmussel: "使用されたphpMusselバージョン："
 label_quarantined: "検疫されたアップロード"
@@ -264,6 +305,13 @@ logs_logfile_doesnt_exist: "選択したログは存在しません！"
 logs_no_logfile_selected: "ログが選択されていません。"
 logs_no_logfiles_available: "いいえログが利用可能。"
 max_login_attempts_exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
+msg_subject_2fa: "２ＦＡ（二要素認証）"
+msg_template_2fa: |
+ <center><p>こんにちは、​%1$s。<br />
+ <br />
+ phpMusselフロントエンドにログインするための２ＦＡコード：</p>
+ <h1>%2$s</h1>
+ <p>このコードの有効期限は１０分です。</p></center>
 notice_click_here: "詳細については、ここをクリックしてください。"
 notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。​あなたはこのバージョンの最小ＰＨＰ要件を満たされています。​ただし、更新するにはいくつかの手動手順が必要です。"
 previewer_days: "日"
@@ -378,12 +426,12 @@ switch-sort-by-name-set-true: "名前によるソートしてください"
 tip_2fa_sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
 tip_accounts: "こんにちは、​{username}。​<br />アカウント・ページは、​phpMusselフロントエンドにアクセスできるユーザーを制御できます。"
 tip_cache_data: "こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。"
+tip_click_the_component: "詳細についてはコンポーネント名をクリックしてください。"
 tip_config: "こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからphpMusselの設定を変更することができます。"
 tip_fe_cookie_warning: "注意：phpMusselは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。"
 tip_file_manager: "こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。"
 tip_home: "こんにちは、​{username}。​<br />これはphpMusselフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。"
 tip_logs: "こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。"
-tip_click_the_component: "詳細についてはコンポーネント名をクリックしてください。"
 tip_quarantine: "こんにちは、​{username}。<br />管理を容易にするために、​現在検疫されているすべてのファイルがこのページにリストされています。"
 tip_quarantine_disabled: "注意：検疫は現在無効になっていますが、コンフィギュレーション・ページで有効にすることができます。"
 tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ja.md\#SECTION7" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
@@ -394,52 +442,3 @@ tip_updates: "こんにちは、​{username}。​<br />アップデート・�
 tip_upload_test: "こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。"
 title_login: "ログイン"
 warning_signatures_1: "警告：アクティブ・シグネチャ・ファイルはありません！"
-
-info_some_useful_links: |
- 役に立つリンク：<br />
-     <ul class="pieul">
-       <li><span class="comCat">phpMussel用のツール、リソース、など。</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – phpMusselの問題ページ（サポート、​援助、​など）。</li>
-           <li>{{Links.phpMussel.SigTool}} – ClamAVシグネチャ・データベースを使用してphpMusselシグネチャ・ファイルを作成します。</li>
-           <li>{{Links.phpMussel.Extras}} – その他エキストラ。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">ClamAV用のツール、リソース、など。</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAVホームページ（ClamAV®は、​トロイの木馬、​ウイルス、​マルウェア、​とその他の脅威を検出するための、​オープンソースのウイルス対策エンジンです）。</li>
-           <li>{{Links.SecuriteInfo}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
-           <li>{{Links.Sanesecurity}} – ClamAVの補足的なシグネチャを提供する、​コンピュータセキュリティ会社。</li>
-           <li>{{Links.Malware Expert}} – ClamAV用の補足シグネチャとModSecurity用の補足規則を提供します。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">グループ、フォーラム、コミュニティ、など。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
-           <li>{{Links.MalwareTips}} – 便利なマルウェア対策ディスカッションフォーラム。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – phpMussel URLスキャナーで利用される、​フィッシング詐欺データベース。</li>
-           <li>{{Links.VirusTotal}} – VirusTotalは、​疑わしいファイルやURLを分析するための無料サービスです。</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysisは、​{{Links.Payload Security}}が提供する無料のマルウェア分析サービスで。</li>
-           <li>{{Links.Malwarebytes}} – コンピュータのマルウェア対策専門家。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">情報および学習用リソース。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>こんにちは、​%1$s。<br />
- <br />
- phpMusselフロントエンドにログインするための２ＦＡコード：</p>
- <h1>%2$s</h1>
- <p>このコードの有効期限は１０分です。</p></center>
-msg_subject_2fa: "２ＦＡ（二要素認証）"

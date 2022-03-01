@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.01.22).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -29,7 +29,7 @@ config_PHPMailer_username: "Nama pengguna yang digunakan saat mengirim email mel
 config_attack_specific: "Berhubungan dengan jenis serangan tertentu."
 config_attack_specific_allow_leading_trailing_dots: "Izinkan memimpin dan mengikuti titik-titik dalam nama file? Ini kadang-kadang dapat digunakan untuk menyembunyikan file, atau untuk mengelabui beberapa sistem agar memungkinkan direktori traversal. False = Jangan izinkan [Default]. True = Izinkan."
 config_attack_specific_archive_file_extensions: "Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif."
-config_attack_specific_block_control_characters: "Memblokir file apapun yang berisi karakter pengendali (lain dari baris baru)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokirnya [Default]; True = Memblokirnya."
+config_attack_specific_block_control_characters: "Memblokir file apapun yang berisi karakter pengendali (lain dari baris baru)? Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokirnya [Default]; True = Memblokirnya."
 config_attack_specific_block_macros: "Cobalah untuk memblokir semua file yang mengandung macro? Beberapa jenis dokumen dan spreadsheet mungkin berisi makro yang dapat dijalankan, sehingga menyediakan vektor berbahaya berpotensi. False = Jangan memblokirnya [Default]; True = Memblokirnya."
 config_attack_specific_can_contain_php_file_extensions: "Daftar ekstensi file diperbolehkan untuk berisi kode PHP, dipisahkan oleh koma. Jika deteksi serangan chameleon PHP diaktifkan, file yang berisi kode PHP, yang memiliki ekstensi yang tidak ada dalam daftar ini, akan terdeteksi sebagai serangan chameleon PHP."
 config_attack_specific_chameleon_from_exe: "Cari header yang dapat dieksekusi di dalam file-file yang dapat dieksekusi atau file terkompress yang dikenali dan untuk file dapat dieksekusi yang headernya tidak benar. False = Dinonaktifkan; True = Diaktifkan."
@@ -61,8 +61,8 @@ config_files_max_uploads: "Maksimum jumla file-file yang diizinkan untuk dipinda
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_cleanup: "Membersihkan variabel skrip dan cache setelah eksekusi? False = Tidak; True = Ya [Default]. Jika Anda tidak menggunakan skrip untuk apapun selain memindai unggahan, Anda harus mengkonfigurasikannya ke <code>true</code> untuk meminimalkan penggunaan memori. Jika tidak demikian, Anda harus mengkonfigurasikannya ke <code>false</code>, untuk menyimpan dalam memori data yang diperlukan untuk mengeksekusi phpMussel tanpa perlu memuatnya kembali. Tidak memiliki pengaruh di dalam mode CLI."
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
-config_general_delete_on_sight: "Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus file apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali file yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload file biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus file terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan disini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak selalu bersikap pada perilaku yang diharapkan. False = Setelah pemindahaian, biarkan file [Default]; True = Setelah pemindaian, jika tidak bersih, hapus langsung."
 config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
+config_general_delete_on_sight: "Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus file apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali file yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload file biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus file terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan disini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak selalu bersikap pada perilaku yang diharapkan. False = Setelah pemindahaian, biarkan file [Default]; True = Setelah pemindaian, jika tidak bersih, hapus langsung."
 config_general_disable_cli: "Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI."
 config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat phpMussel lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola phpMussel melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
 config_general_disable_webfonts: "Menonaktifkan webfonts? True = Ya [Default]; False = Tidak."
@@ -194,6 +194,47 @@ field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+info_some_useful_links: |
+ Beberapa link yang berguna:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Alat, sumber daya, dll untuk phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+           <li>{{Links.phpMussel.SigTool}} – Membuat file tanda tangan phpMussel menggunakan database tanda tangan ClamAV.</li>
+           <li>{{Links.phpMussel.Extras}} – Berbagai tambahan.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Alat, sumber daya, dll untuk ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
+           <li>{{Links.SecuriteInfo}} – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Menyediakan tanda tangan tambahan untuk ClamAV dan aturan tambahan untuk ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grup, forum, komunitas, dll.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – Sumber belajar dan diskusi PHP.</li>
+           <li>{{Links.MalwareTips}} – Berguna forum diskusi difokuskan pada malware.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Database phishing digunakan oleh scanner URL phpMussel.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Komputer spesialis anti-malware.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Sumber daya informasi dan pembelajaran.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "File konfigurasi aktif:"
 label_actual: "Sebenarnya"
 label_blocked: "Upload diblokir"
@@ -222,9 +263,9 @@ label_is_available_class: "%s tersedia."
 label_is_not_available: "%s tidak tersedia."
 label_never: "Tak pernah"
 label_os: "Sistem operasi digunakan:"
+label_other: "Lain"
 label_other-Active: "File tanda tangan aktif"
 label_other-Since: "Mulai tanggal"
-label_other: "Lain"
 label_php: "Versi PHP digunakan:"
 label_phpmussel: "Versi phpMussel digunakan:"
 label_quarantined: "Upload dikarantina"
@@ -264,6 +305,13 @@ logs_logfile_doesnt_exist: "Log yang dipilih tidak ada!"
 logs_no_logfile_selected: "Tidak ada log dipilih."
 logs_no_logfiles_available: "Tidak ada log tersedia."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
+msg_subject_2fa: "Otentikasi Dua-Faktor"
+msg_template_2fa: |
+ <center><p>Salam, %1$s.<br />
+ <br />
+ Kode otentikasi dua-faktor Anda untuk masuk ke depan phpMussel:</p>
+ <h1>%2$s</h1>
+ <p>Kode ini berakhir dalam 10 menit.</p></center>
 notice_click_here: "Klik disini untuk informasi lebih lanjut."
 notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. Namun, beberapa langkah manual diperlukan untuk memperbarui."
 previewer_days: "Hari"
@@ -378,12 +426,12 @@ switch-sort-by-name-set-true: "Mengurutkan berdasarkan nama"
 tip_2fa_sent: "Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
 tip_accounts: "Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel."
 tip_cache_data: "Salam, {username}.<br />Disini Anda bisa meninjau isi cache."
+tip_click_the_component: "Klik nama komponen untuk detail lebih lanjut."
 tip_config: "Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan."
 tip_fe_cookie_warning: "Catat: phpMussel menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
 tip_file_manager: "Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
 tip_home: "Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan."
 tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log."
-tip_click_the_component: "Klik nama komponen untuk detail lebih lanjut."
 tip_quarantine: "Salam, {username}.<br />Halaman ini mencantumkan semua file yang saat ini ada di karantina dan memfasilitasi pengelolaan file-file tersebut."
 tip_quarantine_disabled: "Catat: Karantina saat ini dinonaktifkan, namun bisa diaktifkan melalui halaman konfigurasi."
 tip_see_the_documentation: "Lihat <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.id.md\#SECTION7" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
@@ -394,52 +442,3 @@ tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk 
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
 warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"
-
-info_some_useful_links: |
- Beberapa link yang berguna:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Alat, sumber daya, dll untuk phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
-           <li>{{Links.phpMussel.SigTool}} – Membuat file tanda tangan phpMussel menggunakan database tanda tangan ClamAV.</li>
-           <li>{{Links.phpMussel.Extras}} – Berbagai tambahan.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Alat, sumber daya, dll untuk ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
-           <li>{{Links.SecuriteInfo}} – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
-           <li>{{Links.Sanesecurity}} – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
-           <li>{{Links.Malware Expert}} – Menyediakan tanda tangan tambahan untuk ClamAV dan aturan tambahan untuk ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grup, forum, komunitas, dll.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – Sumber belajar dan diskusi PHP.</li>
-           <li>{{Links.MalwareTips}} – Berguna forum diskusi difokuskan pada malware.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Database phishing digunakan oleh scanner URL phpMussel.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Komputer spesialis anti-malware.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Sumber daya informasi dan pembelajaran.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Salam, %1$s.<br />
- <br />
- Kode otentikasi dua-faktor Anda untuk masuk ke depan phpMussel:</p>
- <h1>%2$s</h1>
- <p>Kode ini berakhir dalam 10 menit.</p></center>
-msg_subject_2fa: "Otentikasi Dua-Faktor"

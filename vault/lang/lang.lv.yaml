@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2022.02.13).
+# This file: Latvian language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Privātuma Politika"
 SafeBrowseLookup_200: "Atrasts potenciāli kaitīgs URL"
 SafeBrowseLookup_400: "API pieprasījuma kļūda"
 SafeBrowseLookup_401: "API autorizācijas kļūda"
 SafeBrowseLookup_503: "API pakalpojums nav pieejams"
 SafeBrowseLookup_999: "Nezināma API kļūda"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Es nesaprotu šo komandu, atvainojiet."
 cli_algo_not_supported: "Norādītais algoritms netiek atbalstīts."
+cli_commands: |
+ ..
+ q
+ - Iziet no CLI.
+ - Pseidonīmi: quit, exit.
+ hash_file:[algo] [faila nosaukums]
+ - Ģenerējiet hash parakstus no failiem.
+ hash:[algo] [virkne]
+ - Ģenerējiet hash parakstu no virknes.
+ algo
+ - Uzskaitiet visus atbalstītos algoritmus.
+ hex_encode [virkne]
+ - Konvertēt bināro virkni uz heksadecimālo.
+ - Pseidonīms: x.
+ hex_decode [virkne]
+ - Konvertēt heksadecimālo uz binārā virknē.
+ base64_encode [virkne]
+ - Konvertēt bināro virkni uz base64 virkni.
+ - Pseidonīms: b.
+ base64_decode [virkne]
+ - Konvertēt base64 virkni uz bināro virkni.
+ pe_meta [faila nosaukums]
+ - Ekstrahējiet metadatus no PE faila.
+ url_sig [virkne]
+ - Ģenerējiet URL skeneru parakstus.
+ scan [faila vai direktorijas nosaukums]
+ - Skenēt failu vai direktoriju.
+ - Pseidonīms: s.
+ c
+ - Izdrukājiet šo komandu sarakstu.
 cli_failed_to_complete: "Neizdevās pabeigt skenēšanas procesu"
 cli_is_not_a: "%s nav fails vai direktorijs."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Diska rakstīšanas kļūda! Lūdzu, sazinieties ar tīmekļa m
 upload_error_8: "Atrasts nepareiza PHP konfigurācija! Lūdzu, sazinieties ar tīmekļa mitinātājs pārzinis, lai saņemtu palīdzību! "
 upload_limit_exceeded: "Augšupielādes ierobežojums ir pārsniegts"
 x_does_not_exist: "%s neeksistē"
-cli_commands: |
- ..
- q
- - Iziet no CLI.
- - Pseidonīmi: quit, exit.
- hash_file:[algo] [faila nosaukums]
- - Ģenerējiet hash parakstus no failiem.
- hash:[algo] [virkne]
- - Ģenerējiet hash parakstu no virknes.
- algo
- - Uzskaitiet visus atbalstītos algoritmus.
- hex_encode [virkne]
- - Konvertēt bināro virkni uz heksadecimālo.
- - Pseidonīms: x.
- hex_decode [virkne]
- - Konvertēt heksadecimālo uz binārā virknē.
- base64_encode [virkne]
- - Konvertēt bināro virkni uz base64 virkni.
- - Pseidonīms: b.
- base64_decode [virkne]
- - Konvertēt base64 virkni uz bināro virkni.
- pe_meta [faila nosaukums]
- - Ekstrahējiet metadatus no PE faila.
- url_sig [virkne]
- - Ģenerējiet URL skeneru parakstus.
- scan [faila vai direktorijas nosaukums]
- - Skenēt failu vai direktoriju.
- - Pseidonīms: s.
- c
- - Izdrukājiet šo komandu sarakstu.

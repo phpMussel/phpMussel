@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2022.02.13).
+# This file: German language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Datenschutz-Bestimmungen"
 SafeBrowseLookup_200: "Potentiell schädliche URL entdeckt"
 SafeBrowseLookup_400: "API-Anforderungsfehler"
 SafeBrowseLookup_401: "API-Berechtigungsfehler"
 SafeBrowseLookup_503: "API-Dienst nicht verfügbar"
 SafeBrowseLookup_999: "Unbekannt API-Fehler"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Entschuldigung, ich verstehe diesen Befehl nicht."
 cli_algo_not_supported: "Der angegebene Algorithmus wird nicht unterstützt."
+cli_commands: |
+ ..
+ q
+ - Beendet den CLI-Modus.
+ - Alias: quit, exit.
+ hash_file:[Algo] [Dateiname]
+ - Generiert Hash-Signaturen einer Datei.
+ hash:[Algo] [String]
+ - Generiert Hash-Signaturen eines String-Wertes.
+ algo
+ - Listet alle unterstützten Algorithmen auf.
+ hex_encode [String]
+ - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
+ - Alias: x.
+ hex_decode [String]
+ - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
+ base64_encode [String]
+ - Konvertiert einen Binär-Wert in einen Base64-Wert.
+ - Alias: b.
+ base64_decode [String]
+ - Konvertiert einen Base64-Wert in einen Binär-Wert.
+ pe_meta [Dateiname]
+ - Extrahieren Sie Metadaten aus einer PE-Datei.
+ url_sig [String]
+ - Generiere URL-Scanner-Signaturen.
+ scan [Dateiname oder Verzeichnisname]
+ - Überprüft eine Datei oder ein Verzeichnis.
+ - Alias: s.
+ c
+ - Gibt diese Befehlsliste aus.
 cli_failed_to_complete: "Ein vollständiger Scan konnte nicht durchgeführt werden"
 cli_is_not_a: "%s ist keine Datei oder ein Verzeichnis."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Festplatten-Schreibfehler! Bitte kontaktieren Sie den Hostmaste
 upload_error_8: "PHP-Fehlkonfiguration erkannt! Bitte kontaktieren Sie den Hostmaster für Unterstützung! "
 upload_limit_exceeded: "Uploadlimit überschritten"
 x_does_not_exist: "%s existiert nicht"
-cli_commands: |
- ..
- q
- - Beendet den CLI-Modus.
- - Alias: quit, exit.
- hash_file:[Algo] [Dateiname]
- - Generiert Hash-Signaturen einer Datei.
- hash:[Algo] [String]
- - Generiert Hash-Signaturen eines String-Wertes.
- algo
- - Listet alle unterstützten Algorithmen auf.
- hex_encode [String]
- - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
- - Alias: x.
- hex_decode [String]
- - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
- base64_encode [String]
- - Konvertiert einen Binär-Wert in einen Base64-Wert.
- - Alias: b.
- base64_decode [String]
- - Konvertiert einen Base64-Wert in einen Binär-Wert.
- pe_meta [Dateiname]
- - Extrahieren Sie Metadaten aus einer PE-Datei.
- url_sig [String]
- - Generiere URL-Scanner-Signaturen.
- scan [Dateiname oder Verzeichnisname]
- - Überprüft eine Datei oder ein Verzeichnis.
- - Alias: s.
- c
- - Gibt diese Befehlsliste aus.

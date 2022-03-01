@@ -7,28 +7,58 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2022.02.13).
+# This file: English language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
-cli_ln1: |
- ..   _____  _     _  _____  _______ _     _ _______ _______ _______
- .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 PrivacyPolicy: "Privacy Policy"
 SafeBrowseLookup_200: "Potentially harmful URL detected"
 SafeBrowseLookup_400: "API request error"
 SafeBrowseLookup_401: "API authorisation error"
 SafeBrowseLookup_503: "API service unavailable"
 SafeBrowseLookup_999: "Unknown API error"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "I don't understand that command, sorry."
 cli_algo_not_supported: "Specified algorithm isn't supported."
+cli_commands: |
+ ..
+ q
+ - Quit CLI.
+ - Aliases: quit, exit.
+ hash_file:[algo] [filename]
+ - Generate hash signatures from files.
+ hash:[algo] [string]
+ - Generate hash signature from string.
+ algo
+ - List all supported algorithms.
+ hex_encode [string]
+ - Convert binary string to hexadecimal.
+ - Alias: x.
+ hex_decode [string]
+ - Convert hexadecimal to binary string.
+ base64_encode [string]
+ - Convert binary string to base64 string.
+ - Alias: b.
+ base64_decode [string]
+ - Convert base64 string to binary string.
+ pe_meta [filename]
+ - Extract metadata from a PE file.
+ url_sig [string]
+ - Generate URL scanner signatures.
+ scan [name of the file or directory]
+ - Scan a file or directory.
+ - Alias: s.
+ c
+ - Print this command list.
 cli_failed_to_complete: "Failed to complete scanning process"
 cli_is_not_a: "%s is not a file or directory."
+cli_ln1: |
+ ..   _____  _     _  _____  _______ _     _ _______ _______ _______
+ .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 cli_ln2: |
  Thank you for using phpMussel, a PHP script designed to detect trojans,
  viruses, malware, and other threats within files uploaded to your system
@@ -104,33 +134,3 @@ upload_error_7: "Disc-write error! Please contact the hostmaster for assistance!
 upload_error_8: "PHP misconfiguration detected! Please contact the hostmaster for assistance! "
 upload_limit_exceeded: "Upload limit exceeded"
 x_does_not_exist: "%s does not exist"
-cli_commands: |
- ..
- q
- - Quit CLI.
- - Aliases: quit, exit.
- hash_file:[algo] [filename]
- - Generate hash signatures from files.
- hash:[algo] [string]
- - Generate hash signature from string.
- algo
- - List all supported algorithms.
- hex_encode [string]
- - Convert binary string to hexadecimal.
- - Alias: x.
- hex_decode [string]
- - Convert hexadecimal to binary string.
- base64_encode [string]
- - Convert binary string to base64 string.
- - Alias: b.
- base64_decode [string]
- - Convert base64 string to binary string.
- pe_meta [filename]
- - Extract metadata from a PE file.
- url_sig [string]
- - Generate URL scanner signatures.
- scan [name of the file or directory]
- - Scan a file or directory.
- - Alias: s.
- c
- - Print this command list.

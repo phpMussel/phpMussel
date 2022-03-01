@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2022.02.13).
+# This file: Vietnamese language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Chính sách bảo mật"
 SafeBrowseLookup_200: "URL đó là có khả năng có hại đã được phát hiện"
 SafeBrowseLookup_400: "Lỗi yêu cầu API"
 SafeBrowseLookup_401: "Lỗi ủy quyền API"
 SafeBrowseLookup_503: "Dịch vụ của API không có sẵn"
 SafeBrowseLookup_999: "Lỗi API không xác định"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
 cli_algo_not_supported: "Thuật toán chỉ định không được hỗ trợ."
+cli_commands: |
+ ..
+ q
+ - Thoát ra CLI.
+ - Bí danh: quit, exit.
+ hash_file:[algo] [tên tập tin]
+ - Phát ra mã chử ký từ tập tin.
+ hash:[algo] [dây]
+ - Phát ra mã chử ký từ dây.
+ algo
+ - Liệt kê tất cả các thuật toán được hỗ trợ.
+ hex_encode [dây]
+ - Chuyển đổi dây nhị phân thành hệ thập lục phân.
+ - Bí danh: x.
+ hex_decode [dây]
+ - Chuyển đổi hệ thập lục phân thành dây nhị phân.
+ base64_encode [dây]
+ - Chuyển đổi dây nhị phân thành dây base64.
+ - Bí danh: b.
+ base64_decode [dây]
+ - Chuyển đổi dây base64 thành dây nhị phân.
+ pe_meta [tên tập tin]
+ - Trích xuất siêu dữ liệu từ tập tin PE.
+ url_sig [dây]
+ - Tạo chữ ký của trình quét URL.
+ scan [tên tập tin]
+ - Xem tập tin hoạc hồ sơ.
+ - Bí danh: s.
+ c
+ - In danh sách lệnh này.
 cli_failed_to_complete: "Quá trình quét chưa được hoàn thành"
 cli_is_not_a: "%s không phải là file hoạc thư mục."
 cli_ln2: |
@@ -99,33 +129,3 @@ upload_error_7: "Đĩa ghi bị lỗi! Xin vui lòng liên lạc với hostmaste
 upload_error_8: "Phát hiện PHP sai! Xin vui lòng liên lạc với hostmaster để được giúp đỡ! "
 upload_limit_exceeded: "Đã quá giới hạn tải lên"
 x_does_not_exist: "%s không tồn tại"
-cli_commands: |
- ..
- q
- - Thoát ra CLI.
- - Bí danh: quit, exit.
- hash_file:[algo] [tên tập tin]
- - Phát ra mã chử ký từ tập tin.
- hash:[algo] [dây]
- - Phát ra mã chử ký từ dây.
- algo
- - Liệt kê tất cả các thuật toán được hỗ trợ.
- hex_encode [dây]
- - Chuyển đổi dây nhị phân thành hệ thập lục phân.
- - Bí danh: x.
- hex_decode [dây]
- - Chuyển đổi hệ thập lục phân thành dây nhị phân.
- base64_encode [dây]
- - Chuyển đổi dây nhị phân thành dây base64.
- - Bí danh: b.
- base64_decode [dây]
- - Chuyển đổi dây base64 thành dây nhị phân.
- pe_meta [tên tập tin]
- - Trích xuất siêu dữ liệu từ tập tin PE.
- url_sig [dây]
- - Tạo chữ ký của trình quét URL.
- scan [tên tập tin]
- - Xem tập tin hoạc hồ sơ.
- - Bí danh: s.
- c
- - In danh sách lệnh này.

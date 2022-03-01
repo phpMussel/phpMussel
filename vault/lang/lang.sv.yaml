@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2022.02.13).
+# This file: Swedish language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Integritetspolicy"
 SafeBrowseLookup_200: "Potentiellt skadlig URL upptäckt"
 SafeBrowseLookup_400: "API-begäran fel"
 SafeBrowseLookup_401: "API-godkännande fel"
 SafeBrowseLookup_503: "API-tjänst inte tillgänglig"
 SafeBrowseLookup_999: "Okänt API fel"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Jag förstår inte det kommandot, ledsen."
 cli_algo_not_supported: "Specificerad algoritm stöds inte."
+cli_commands: |
+ ..
+ q
+ - Avsluta CLI.
+ - Alias: quit, exit.
+ hash_file:[algo] [filnamn]
+ - Generera hash-signaturer från filer.
+ hash:[algo] [sträng]
+ - Generera hash-signaturer från strängen.
+ algo
+ - Lista alla algoritmer som stöds.
+ hex_encode [sträng]
+ - Konvertera binär sträng till hexadecimal.
+ - Alias: x.
+ hex_decode [sträng]
+ - Konvertera hexadecimal till binär sträng.
+ base64_encode [sträng]
+ - Konvertera binär sträng till bas64-sträng.
+ - Alias: b.
+ base64_decode [sträng]
+ - Konvertera bas64-sträng till binär sträng.
+ pe_meta [filnamn]
+ - Extrahera metadata från en PE-fil.
+ url_sig [sträng]
+ - Generera URL-skannersignaturer.
+ scan [filnamn]
+ - Skanna fil eller katalog.
+ - Alias: s.
+ c
+ - Skriv ut den här kommandolistan.
 cli_failed_to_complete: "Det gick inte att slutföra skanningsprocessen"
 cli_is_not_a: "%s är inte en fil eller katalog."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Skivskrivningsfel! Vänligen kontakta värdmästaren för hjäl
 upload_error_8: "PHP-felkonfiguration upptäckt! Vänligen kontakta värdmästaren för hjälp! "
 upload_limit_exceeded: "Överföringsgränsen överskred"
 x_does_not_exist: "%s finns inte"
-cli_commands: |
- ..
- q
- - Avsluta CLI.
- - Alias: quit, exit.
- hash_file:[algo] [filnamn]
- - Generera hash-signaturer från filer.
- hash:[algo] [sträng]
- - Generera hash-signaturer från strängen.
- algo
- - Lista alla algoritmer som stöds.
- hex_encode [sträng]
- - Konvertera binär sträng till hexadecimal.
- - Alias: x.
- hex_decode [sträng]
- - Konvertera hexadecimal till binär sträng.
- base64_encode [sträng]
- - Konvertera binär sträng till bas64-sträng.
- - Alias: b.
- base64_decode [sträng]
- - Konvertera bas64-sträng till binär sträng.
- pe_meta [filnamn]
- - Extrahera metadata från en PE-fil.
- url_sig [sträng]
- - Generera URL-skannersignaturer.
- scan [filnamn]
- - Skanna fil eller katalog.
- - Alias: s.
- c
- - Skriv ut den här kommandolistan.

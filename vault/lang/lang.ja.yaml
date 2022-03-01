@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2022.02.13).
+# This file: Japanese language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "プライバシー・ポリシー"
 SafeBrowseLookup_200: "潜在的に有害なＵＲＬが検出されました"
 SafeBrowseLookup_400: "ＡＰＩリクエストが不正である"
 SafeBrowseLookup_401: "ＡＰＩ認証エラー"
 SafeBrowseLookup_503: "ＡＰＩサービス利用不可"
 SafeBrowseLookup_999: "不明なＡＰＩエラー"
+Text Direction: "ltr"
 _exclamation: "%s！"
 _exclamation_final: "%s！"
 _fullstop: "。"
 _fullstop_final: "。"
 bad_command: "すみませんが、​コマンドが理解できません。"
 cli_algo_not_supported: "指定されたアルゴリズムはサポートされていません。"
+cli_commands: |
+ ..
+ q
+ - ＣＬＩ終了。
+ - エイリアス：quit，exit。
+ hash_file:[アルゴ] [ファイル名]
+ - ファイルからハッシュ・シグネチャを作成。
+ hash:[アルゴ] [文字列]
+ - 文字列からハッシュ・シグネチャを作成。
+ algo
+ - サポートされているすべてのアルゴリズムを一覧表示します。
+ hex_encode [文字列]
+ - ２進法文字列を１６進法文字列に変換。
+ - エイリアス：​x。
+ hex_decode [文字列]
+ - １６進法文字列を２進法文字列に変換。
+ base64_encode [文字列]
+ - ２進法文字列をＢＡＳＥ６４文字列に変換。
+ - エイリアス：​b。
+ base64_decode [文字列]
+ - ＢＡＳＥ６４文字列を２進法文字列に変換。
+ pe_meta [ファイル名]
+ - ＰＥファイルからメタデータを抽出する。
+ url_sig [文字列]
+ - ＵＲＬスキャナ・シグネチャを生成する。
+ scan [ファイル名]
+ - ファイルまたはディレクトリをスキャン。
+ - エイリアス：s。
+ c
+ - コマンドリストをプリント。
 cli_failed_to_complete: "スキャンを完了できませんでした"
 cli_is_not_a: "%sはファイルでもディレクトリでもありません。"
 cli_ln2: |
@@ -97,33 +127,3 @@ upload_error_7: "ディスクに書き込めません！​ホスト責任者に
 upload_error_8: "不適切なＰＨＰ設定が検出されました！​ホスト責任者に相談して下さい！"
 upload_limit_exceeded: "アップロードの制限を超えています。"
 x_does_not_exist: "「%s」は存在しません"
-cli_commands: |
- ..
- q
- - ＣＬＩ終了。
- - エイリアス：quit，exit。
- hash_file:[アルゴ] [ファイル名]
- - ファイルからハッシュ・シグネチャを作成。
- hash:[アルゴ] [文字列]
- - 文字列からハッシュ・シグネチャを作成。
- algo
- - サポートされているすべてのアルゴリズムを一覧表示します。
- hex_encode [文字列]
- - ２進法文字列を１６進法文字列に変換。
- - エイリアス：​x。
- hex_decode [文字列]
- - １６進法文字列を２進法文字列に変換。
- base64_encode [文字列]
- - ２進法文字列をＢＡＳＥ６４文字列に変換。
- - エイリアス：​b。
- base64_decode [文字列]
- - ＢＡＳＥ６４文字列を２進法文字列に変換。
- pe_meta [ファイル名]
- - ＰＥファイルからメタデータを抽出する。
- url_sig [文字列]
- - ＵＲＬスキャナ・シグネチャを生成する。
- scan [ファイル名]
- - ファイルまたはディレクトリをスキャン。
- - エイリアス：s。
- c
- - コマンドリストをプリント。

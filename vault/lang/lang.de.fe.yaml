@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.01.22).
+# This file: German language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -29,7 +29,7 @@ config_PHPMailer_username: "Der Benutzername zum Senden von E-Mails über SMTP."
 config_attack_specific: "Bezieht sich auf bestimmte Arten von Angriffen."
 config_attack_specific_allow_leading_trailing_dots: "Erlaube führende und nachfolgende Punkte in Dateinamen? Dies kann manchmal verwendet werden, um Dateien auszublenden oder um einige Systeme dazu zu bringen, Directory Traversal zuzulassen. False = Nicht erlauben [Standardeinstellung]. True = Erlauben."
 config_attack_specific_archive_file_extensions: "Erkannte Archiv-Dateierweiterungen (Format ist CSV; nur bei Problemen hinzufügen oder entfernen; unnötiges Entfernen könnte Fehlalarme für Archive auslösen, unnötiges Hinzufügen fügt das zur Whitelist hinzu, was vorher als möglicher Angriff definiert wurde; Ändern Sie diese Liste äußerst vorsichtig; Beachten Sie, dass dies keinen Einfluss darauf hat, wozu Archive fähig sind und nicht auf Inhaltsebene analysiert werden können). Diese Liste enthält die Archivformate, die am häufigsten von der Mehrzahl der Systeme und CMS verwendet werden, ist aber absichtlich nicht vollständig."
-config_attack_specific_block_control_characters: "Sollen Dateien, welche Steuerzeichen (andere als Newline/Zeilenumbruch) enthalten, blockiert werden? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Sofern Sie <em><strong>NUR</strong></em> reinen Text hochladen, können Sie diese Option aktivieren, um Ihrem System zusätzlichen Schutz zu bieten. Sollten Sie anderes als reinen Text hochladen, werden bei aktivierter Option Fehlalarme ausgelöst. False = Nicht blockieren [Standardeinstellung]; True = Blockieren."
+config_attack_specific_block_control_characters: "Sollen Dateien, welche Steuerzeichen (andere als Newline/Zeilenumbruch) enthalten, blockiert werden? Sofern Sie <em><strong>NUR</strong></em> reinen Text hochladen, können Sie diese Option aktivieren, um Ihrem System zusätzlichen Schutz zu bieten. Sollten Sie anderes als reinen Text hochladen, werden bei aktivierter Option Fehlalarme ausgelöst. False = Nicht blockieren [Standardeinstellung]; True = Blockieren."
 config_attack_specific_block_macros: "Versuchen Sie, alle Dateien die Makros enthalten zu blockieren? Einige Arten von Dokumenten und Tabellen können ausführbare Makros enthalten und somit einen gefährlichen potenziellen Malware-Vektor darstellen. False = Nicht blockieren [Standardeinstellung]; True = Blockieren."
 config_attack_specific_can_contain_php_file_extensions: "Eine Liste von Dateierweiterungen, die PHP-Code enthalten dürfen, getrennt durch Kommas. Wenn die PHP-Chameleon-Angriffserkennung aktiviert ist, werden Dateien mit PHP-Code, die Erweiterungen aufweisen, die nicht in dieser Liste enthalten sind, als PHP-Chameleon-Angriffe erkannt."
 config_attack_specific_chameleon_from_exe: "Suche nach ausführbaren Headern in Dateien, die weder ausführbar noch erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht korrekt sind. False = Deaktiviert; True = Aktiviert."
@@ -61,8 +61,8 @@ config_files_max_uploads: "Maximale erlaubte Anzahl zu überprüfender Dateien w
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_cleanup: "Löscht die Scriptvariablen und den Cache nach der Ausführung. False = Nicht löschen; True = Löschen [Standardeinstellung]. Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen Sie diese Option auf <code>true</code>, um die Speichernutzung zu minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option auf <code>false</code>, um unnötiges mehrfaches Einlesen der Daten in den Speicher zu vermeiden. Normalerweise sollte diese Option auf <code>true</code> gesetzt werden, allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden. Kein Einfluss im CLI-Modus."
 config_general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (erfordert PHP &gt;= 7.3.0)."
-config_general_delete_on_sight: "Diese Option weist das Script an, Dateien während eines Scans sofort zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder andere Methoden, zutrifft. Dateien, die als nicht infiziert eingestuft werden, werden nicht berührt. Im Falle von Archiven wird das gesamte Archiv gelöscht, auch wenn nur eine einzige Datei im Archiv infiziert sein sollte. Normalerweise ist es bei einem Dateiupload nicht notwendig, diese Option zu aktivieren, da PHP nach der Ausführung von Scripten den Inhalt vom Cache löscht, d.h. PHP löscht jede Datei, die über den Server hochgeladen wird, sofern Sie nicht verschoben, kopiert oder bereits gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem üblichen Verhalten entspricht. False = Nach der Überprüfung wird die Datei so belassen [Standardeinstellung]; True = Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie infiziert ist."
 config_general_default_timeout: "Standardzeitlimit für externe Anforderungen? Standardeinstellung = 12 Sekunden."
+config_general_delete_on_sight: "Diese Option weist das Script an, Dateien während eines Scans sofort zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder andere Methoden, zutrifft. Dateien, die als nicht infiziert eingestuft werden, werden nicht berührt. Im Falle von Archiven wird das gesamte Archiv gelöscht, auch wenn nur eine einzige Datei im Archiv infiziert sein sollte. Normalerweise ist es bei einem Dateiupload nicht notwendig, diese Option zu aktivieren, da PHP nach der Ausführung von Scripten den Inhalt vom Cache löscht, d.h. PHP löscht jede Datei, die über den Server hochgeladen wird, sofern Sie nicht verschoben, kopiert oder bereits gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem üblichen Verhalten entspricht. False = Nach der Überprüfung wird die Datei so belassen [Standardeinstellung]; True = Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie infiziert ist."
 config_general_disable_cli: "CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (Beispielsweise PHPUnit) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn Sie den CLI-Modus nicht deaktivieren müssen, sollten Sie diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren."
 config_general_disable_frontend: "Frontend-Access deaktivieren? Frontend-Access kann phpMussel einfacher zu handhaben machen, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, phpMussel über die Back-End-Access zu verwalten, aber Frontend-Access ist für den Fall vorgesehen, wenn dies nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Frontend-Access aktivieren; True = Frontend-Access deaktivieren [Standardeinstellung]."
 config_general_disable_webfonts: "Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein."
@@ -196,6 +196,47 @@ field_verify: "Verifizieren"
 field_verify_all: "Verifizieren alle"
 field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
+info_some_useful_links: |
+ Einige nützliche Links:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Werkzeuge, Ressourcen, u.s.w. für phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
+           <li>{{Links.phpMussel.SigTool}} – Erstellt phpMussel-Signaturdateien mit der ClamAV-Signaturdatenbank.</li>
+           <li>{{Links.phpMussel.Extras}} – Sonstiges Extras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Werkzeuge, Ressourcen, u.s.w. für ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
+           <li>{{Links.SecuriteInfo}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
+           <li>{{Links.Sanesecurity}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
+           <li>{{Links.Malware Expert}} – Bietet zusätzliche Signaturen für ClamAV und zusätzliche Regeln für ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Gruppen, Foren, Gemeinschaften, u.s.w.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP Lernressourcen und Diskussion.</li>
+           <li>{{Links.MalwareTips}} – Nützliche Malware konzentrierte Diskussionsforen.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Andere nützliche Werkzeuge, Ressourcen, Dienste, u.s.w.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von {{Links.Payload Security}} zur Verfügung gestellt.</li>
+           <li>{{Links.Malwarebytes}} – Computer-Anti-Malware-Spezialisten.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informations und Lernressourcen.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP Lernressourcen und Diskussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, u.s.w.).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, u.s.w.).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Aktive Konfigurationsdatei:"
 label_actual: "Aktuell"
 label_blocked: "Uploads blockiert"
@@ -224,9 +265,9 @@ label_is_available_class: "%s ist verfügbar."
 label_is_not_available: "%s ist nicht verfügbar."
 label_never: "Noch nie"
 label_os: "Betriebssystem verwendet:"
+label_other: "Andere"
 label_other-Active: "Aktive Signaturdateien"
 label_other-Since: "Anfangsdatum"
-label_other: "Andere"
 label_php: "PHP-Version verwendet:"
 label_phpmussel: "phpMussel-Version verwendet:"
 label_quarantined: "Uploads unter Quarantäne gestellt"
@@ -266,6 +307,13 @@ logs_logfile_doesnt_exist: "Ausgewählte Protokolldatei existiert nicht!"
 logs_no_logfile_selected: "Keine Protokolldatei ausgewählt."
 logs_no_logfiles_available: "Keine Protokolldateien vorhanden."
 max_login_attempts_exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
+msg_subject_2fa: "Zwei-Faktor-Authentifizierung"
+msg_template_2fa: |
+ <center><p>Hallo, %1$s.<br />
+ <br />
+ Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am phpMussel Frontend:</p>
+ <h1>%2$s</h1>
+ <p>Dieser Code läuft in 10 Minuten ab.</p></center>
 notice_click_here: "Klicken Sie hier für weitere Informationen."
 notice_new_major_version: "Beachten: %s ist jetzt verfügbar (Sie verwenden %s). Sie erfüllen die Mindestanforderungen für PHP für diese Version. Einige manuelle Schritte erforderlich jedoch zum Aktualisieren."
 previewer_days: "Tage"
@@ -382,12 +430,12 @@ switch-sort-by-name-set-true: "Nach Name sortieren"
 tip_2fa_sent: "Eine E-Mail mit einem Zwei-Faktor-Authentifizierungscode wurde an Ihre E-Mail-Adresse gesendet. Bitte bestätigen Sie diesen Code, um Zugang zum Frontend zu erhalten. Wenn Sie diese E-Mail nicht erhalten haben, versuchen Sie sich auszuloggen, warten Sie 10 Minuten, und melden Sie sich einzuloggen, um eine neue E-Mail mit einem neuen Code zu erhalten."
 tip_accounts: "Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der phpMussel Frontend haben."
 tip_cache_data: "Hallo, {username}.<br />Hier können Sie den Inhalt des Cache überprüfen."
+tip_click_the_component: "Klicken Sie auf den Komponentennamen, um weitere Informationen zu erhalten."
 tip_config: "Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für phpMussel von der Frontend."
 tip_fe_cookie_warning: "Hinweis: phpMussel verwendet einen Cookie zum Authentifizieren von Logins. Mit der Einloggen, Sie sich damit einverstanden, dass ein Cookie von Ihrem Browser erstellt und gespeichert wird."
 tip_file_manager: "Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen)."
 tip_home: "Hallo, {username}.<br />Dies ist die Homepage der phpMussel Frontend. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren."
 tip_logs: "Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen."
-tip_click_the_component: "Klicken Sie auf den Komponentennamen, um weitere Informationen zu erhalten."
 tip_quarantine: "Hallo, {username}.<br />Diese Seite erleichtert die Verwaltung von, und listet alle Dateien auf, die sich derzeit in der Quarantäne befinden."
 tip_quarantine_disabled: "Hinweis: Die Quarantäne ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_see_the_documentation: "Siehe die <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.de.md\#SECTION7" hreflang="de" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
@@ -398,52 +446,3 @@ tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich
 tip_upload_test: "Hallo, {username}.<br />Das Upload-Testseite enthält ein Standard-Datei-Upload-Formular, das macht es möglich zu prüfen ob eine Datei normalerweise gestoppt von phpMussel werden soll, wenn Sie versuchen es hochzuladen."
 title_login: "Einloggen"
 warning_signatures_1: "Warnung: Keine Signaturdateien sind aktiv!"
-
-info_some_useful_links: |
- Einige nützliche Links:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Werkzeuge, Ressourcen, u.s.w. für phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Problemseite für phpMussel (Unterstützung, u.s.w.).</li>
-           <li>{{Links.phpMussel.SigTool}} – Erstellt phpMussel-Signaturdateien mit der ClamAV-Signaturdatenbank.</li>
-           <li>{{Links.phpMussel.Extras}} – Sonstiges Extras.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Werkzeuge, Ressourcen, u.s.w. für ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAV Startseite (ClamAV® ClamAV ist ein Open-Source-Antivirus-Modul für die Erkennung von Trojanern, Viren, Malware und anderen bösartigen Bedrohungen).</li>
-           <li>{{Links.SecuriteInfo}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
-           <li>{{Links.Sanesecurity}} – Computer Security Unternehmen, das ergänzende Signaturen für ClamAV bietet.</li>
-           <li>{{Links.Malware Expert}} – Bietet zusätzliche Signaturen für ClamAV und zusätzliche Regeln für ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Gruppen, Foren, Gemeinschaften, u.s.w.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP Lernressourcen und Diskussion.</li>
-           <li>{{Links.MalwareTips}} – Nützliche Malware konzentrierte Diskussionsforen.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Andere nützliche Werkzeuge, Ressourcen, Dienste, u.s.w.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis ist ein kostenloser Malware-Analyse-Service von {{Links.Payload Security}} zur Verfügung gestellt.</li>
-           <li>{{Links.Malwarebytes}} – Computer-Anti-Malware-Spezialisten.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informations und Lernressourcen.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP Lernressourcen und Diskussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, u.s.w.).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, u.s.w.).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
- Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am phpMussel Frontend:</p>
- <h1>%2$s</h1>
- <p>Dieser Code läuft in 10 Minuten ab.</p></center>
-msg_subject_2fa: "Zwei-Faktor-Authentifizierung"

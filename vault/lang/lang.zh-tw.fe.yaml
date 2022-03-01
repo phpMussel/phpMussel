@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.01.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
@@ -29,7 +29,7 @@ config_PHPMailer_username: "通過SMTP發送電子郵件時使用的用戶名。
 config_attack_specific: "與特定類型的攻擊有關。"
 config_attack_specific_allow_leading_trailing_dots: "允許文件名中的前導和尾隨點嗎？​這有時可用於隱藏文件，或欺騙某些系統允許目錄遍歷。​False（假）=不允許【默認】；True（真）=允許。"
 config_attack_specific_archive_file_extensions: "認可存檔文件擴展（格式是CSV；應該只添加或去掉當問題發生；不必要的去掉可能的可以導致假陽性出現為存檔文件，​而不必要的增加將實質上白名單任何事您增加從專用攻擊檢測；修改有慎重；還請注這個無影響在什麼存檔可以和不能被分析在內容級）。​這個名單，​作為是作為標準，​名單那些格式使用最常見的橫過多數的系統和CMS，​但有意是不全面。"
-config_attack_specific_block_control_characters: "受阻任何文件包含任何控製字符嗎（以外換行符）？​(<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) 如果您只上傳純文本，​您可以激活這個指令以提供某些另外保護在您的系統。​然而，​如果您上傳任何事以外純文本，​激活這個可能結果在假陽性。​False（假）=不受阻【默認】；True（真）=受阻。"
+config_attack_specific_block_control_characters: "受阻任何文件包含任何控製字符嗎（以外換行符）？​如果您只上傳純文本，​您可以激活這個指令以提供某些另外保護在您的系統。​然而，​如果您上傳任何事以外純文本，​激活這個可能結果在假陽性。​False（假）=不受阻【默認】；True（真）=受阻。"
 config_attack_specific_block_macros: "嘗試阻止任何包含宏的文件嗎？​某些文檔和電子表格類型可能包含可執行的宏，因此提供了危險的潛在惡意軟件向量。​False（假）=不阻止【默認】；​True（真）=阻止。"
 config_attack_specific_can_contain_php_file_extensions: "允許包含PHP代碼的文件擴展名列表，以逗號分隔。​如果啟用了PHP變色龍攻擊檢測，包含PHP代碼的文件，其擴展名不在此列表中，將被檢測為PHP變色龍攻擊。"
 config_attack_specific_chameleon_from_exe: "尋找可執行頭在文件是不可執行文件也不認可存檔文件和尋找可執行文件誰的頭是不正確。​False（假）=是關閉；True（真）=是激活。"
@@ -61,8 +61,8 @@ config_files_max_uploads: "最大允許數值的文件為掃描當文件上傳�
 config_general: "基本配置（任何不屬於其他類別的核心配置）。"
 config_general_cleanup: "掃描上傳後，銷毀變量和緩存？​False（假）=不要銷毀。​True（真）=銷毀【標準】。​如果您不使用該腳本進行掃描上傳以外的任何操作，您應該將其設置為<code>true</code>以最小化內存使用量。​否則，您應該將其設置為<code>false</code>，以便在內存中保留執行phpMussel所需的數據，而無需不必要地重新加載它。​無影響在CLI模式。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
-config_general_delete_on_sight: "激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。"
 config_general_default_timeout: "用於外部請求的默認超時？ 標準 = 12秒。"
+config_general_delete_on_sight: "激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，​是否通過簽名或任何事其他。​文件已確定是清潔將會忽略。​如果是存檔，​全存檔將會刪除，​不管如果違規文件是只有一個的幾個文件包含在存檔。​為文件上傳掃描，​按說，​它不必要為您激活這個指令，​因為按說，​PHP將自動清洗內容的它的緩存當執行是完，​意思它將按說刪除任何文件上傳從它向服務器如果不已移動，​複製或刪除。​這個指令是添加這里為額外安全為任何人誰的PHP副本可能不始終表現在預期方式。​False【假/負】：之後掃描，​忽略文件【標準】，​True【真/正】：之後掃描，​如果不清潔，​馬上刪除。"
 config_general_disable_cli: "關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】；True（真）=關閉CLI模式。"
 config_general_disable_frontend: "關閉前端訪問嗎？​前端訪問可以使phpMussel更易於管理，​但也可能是潛在的安全風險。​建議管理phpMussel通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問；True（真）=關閉前端訪問【標準】。"
 config_general_disable_webfonts: "關閉網絡字體嗎？​True（真）=關閉【標準】；False（假）=不關閉。"
@@ -194,6 +194,48 @@ field_verify: "驗證"
 field_verify_all: "驗證全部"
 field_your_version: "您的版本"
 header_login: "請登錄以繼續。"
+info_some_useful_links: |
+ 一些有用的链接：<br />
+     <ul class="pieul">
+       <li><span class="comCat">phpMussel的工具，資源，等等。</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – phpMussel問題頁面（支持，​協助，​等等）。</li>
+           <li>{{Links.phpMussel.SigTool}} – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
+           <li>{{Links.OSChina}} – phpMussel頁面託管在開源中國社區。</li>
+           <li>{{Links.phpMussel.Extras}} – 各種附加功能。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">ClamAV的工具，資源，等等。</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
+           <li>{{Links.SecuriteInfo}} – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
+           <li>{{Links.Sanesecurity}} – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
+           <li>{{Links.Malware Expert}} – 提供ClamAV的補充簽名和ModSecurity的補充規則。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">團體，論壇，社區，等等。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP學習資源和討論。</li>
+           <li>{{Links.MalwareTips}} – 有用的討論論壇關於惡意軟件。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">其他有用的工具，資源，服務，等等</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>
+           <li>{{Links.VirusTotal}} – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis是由{{Links.Payload Security}}提供的免費惡意軟件分析服務。</li>
+           <li>{{Links.Malwarebytes}} – 電腦反惡意軟件專家。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">信息和學習資源。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP學習資源和討論。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "活動配置文件："
 label_actual: "目前"
 label_blocked: "上傳已阻止"
@@ -222,9 +264,9 @@ label_is_available_class: "%s可用。"
 label_is_not_available: "%s不可用。"
 label_never: "決不"
 label_os: "目前使用操作系統："
+label_other: "其他"
 label_other-Active: "活動簽名文件"
 label_other-Since: "開始日期"
-label_other: "其他"
 label_php: "目前使用PHP版本："
 label_phpmussel: "目前使用phpMussel版本："
 label_quarantined: "上傳已隔離"
@@ -264,6 +306,13 @@ logs_logfile_doesnt_exist: "選擇的日誌不存在！"
 logs_no_logfile_selected: "沒有選擇的日誌。"
 logs_no_logfiles_available: "沒有日誌可用。"
 max_login_attempts_exceeded: "最大登錄嘗試次數已經超過；拒絕訪問。"
+msg_subject_2fa: "2FA（雙因素身份驗證）"
+msg_template_2fa: |
+ <center><p>你好，%1$s。<br />
+ <br />
+ 用於登錄phpMussel前端的2FA代碼：</p>
+ <h1>%2$s</h1>
+ <p>此代碼將在10分鐘後到期。</p></center>
 notice_click_here: "點擊這裡查看更多信息。"
 notice_new_major_version: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。​但是，需要一些手動步驟來更新。"
 previewer_days: "天"
@@ -378,12 +427,12 @@ switch-sort-by-name-set-true: "按名稱排序"
 tip_2fa_sent: "包含2FA代碼的電子郵件已發送到您的電子郵件地址。​請確認以下代碼以獲取對前端的訪問權限。​如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。"
 tip_accounts: "你好，​{username}。​<br />帳戶頁面允許您控制誰可以訪問phpMussel前端。"
 tip_cache_data: "你好，​{username}。<br />在這裡您可以查看緩存的內容。"
+tip_click_the_component: "單擊組件名稱以獲取更多詳細信息。"
 tip_config: "你好，​{username}。​<br />配置頁面允許您修改phpMussel配置從前端。"
 tip_fe_cookie_warning: "注意：phpMussel使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
 tip_file_manager: "你好，​{username}。​<br />文件管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"
 tip_home: "你好，​{username}。​<br />這是phpMussel的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"
 tip_logs: "你好，​{username}。​<br />選擇一個日誌從下面的列表以查看那個日誌的內容。"
-tip_click_the_component: "單擊組件名稱以獲取更多詳細信息。"
 tip_quarantine: "你好，​{username}。​<br />此頁面列出當前在隔離中的所有文件，並可以用來管理這些文件。"
 tip_quarantine_disabled: "注意：隔離目前禁用，但可以通過配置頁面啟用。"
 tip_see_the_documentation: "請參閱<a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.zh-TW.md\#SECTION7" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
@@ -394,53 +443,3 @@ tip_updates: "你好，​{username}。​<br />更新頁面允許您安裝，�
 tip_upload_test: "你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。"
 title_login: "登錄"
 warning_signatures_1: "警告：沒有簽名文件是活動的！"
-
-info_some_useful_links: |
- 一些有用的链接：<br />
-     <ul class="pieul">
-       <li><span class="comCat">phpMussel的工具，資源，等等。</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – phpMussel問題頁面（支持，​協助，​等等）。</li>
-           <li>{{Links.phpMussel.SigTool}} – 使用ClamAV簽名數據庫創建phpMussel簽名文件。</li>
-           <li>{{Links.OSChina}} – phpMussel頁面託管在開源中國社區。</li>
-           <li>{{Links.phpMussel.Extras}} – 各種附加功能。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">ClamAV的工具，資源，等等。</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，​病毒，​惡意軟件和其他惡意威脅）。</li>
-           <li>{{Links.SecuriteInfo}} – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
-           <li>{{Links.Sanesecurity}} – 一家計算機安全公司。為ClamAV提供補充簽名。</li>
-           <li>{{Links.Malware Expert}} – 提供ClamAV的補充簽名和ModSecurity的補充規則。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">團體，論壇，社區，等等。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP學習資源和討論。</li>
-           <li>{{Links.MalwareTips}} – 有用的討論論壇關於惡意軟件。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">其他有用的工具，資源，服務，等等</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – 網絡釣魚數據庫。由phpMussel URL掃描器使用。</li>
-           <li>{{Links.VirusTotal}} – VirusTotal是一項免費服務，​用於分析可疑文件和URL。</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis是由{{Links.Payload Security}}提供的免費惡意軟件分析服務。</li>
-           <li>{{Links.Malwarebytes}} – 電腦反惡意軟件專家。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">信息和學習資源。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP學習資源和討論。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>你好，%1$s。<br />
- <br />
- 用於登錄phpMussel前端的2FA代碼：</p>
- <h1>%2$s</h1>
- <p>此代碼將在10分鐘後到期。</p></center>
-msg_subject_2fa: "2FA（雙因素身份驗證）"

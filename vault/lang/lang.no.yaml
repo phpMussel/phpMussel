@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2022.02.13).
+# This file: Norwegian language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Personvernpolicy"
 SafeBrowseLookup_200: "Potensielt skadelig URL oppdaget"
 SafeBrowseLookup_400: "API-forespørselsfeil"
 SafeBrowseLookup_401: "API-autorisasjonsfeil"
 SafeBrowseLookup_503: "API-tjenesten er ikke tilgjengelig"
 SafeBrowseLookup_999: "Ukjent API-feil"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Jeg forstår ikke den kommandoen, beklager."
 cli_algo_not_supported: "Spesifisert algoritme støttes ikke."
+cli_commands: |
+ ..
+ q
+ - Avslutt CLI.
+ - Aliaser: quit, exit.
+ hash_file:[algo] [filnavn]
+ - Generer hashsignaturer fra filer.
+ hash:[algo] [streng]
+ - Generer hashsignatur fra streng.
+ algo
+ - Liste over alle støttede algoritmer.
+ hex_encode [streng]
+ - Konverter binær streng til heksadesimal.
+ - Alias: x.
+ hex_decode [streng]
+ - Konverter heksadesimal til binær streng.
+ base64_encode [streng]
+ - Konverter binær streng til base64-streng.
+ - Alias: b.
+ base64_decode [streng]
+ - Konverter base64-streng til binær streng.
+ pe_meta [filnavn]
+ - Pakk ut metadata fra en PE-fil.
+ url_sig [streng]
+ - Generer URL-skannersignaturer.
+ scan [filnavn]
+ - Skann fil eller katalog.
+ - Alias: s.
+ c
+ - Skriv ut denne kommandolisten.
 cli_failed_to_complete: "Kunne ikke fullføre skanneprosessen"
 cli_is_not_a: "%s er ikke en fil eller katalog."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Disk-skrive feil! Vennligst kontakt vertsmesteren for å få hj
 upload_error_8: "PHP-feilkonfigurasjon oppdaget! Vennligst kontakt vertsmesteren for å få hjelp! "
 upload_limit_exceeded: "Opplastingsgrensen overskredet"
 x_does_not_exist: "%s eksisterer ikke"
-cli_commands: |
- ..
- q
- - Avslutt CLI.
- - Aliaser: quit, exit.
- hash_file:[algo] [filnavn]
- - Generer hashsignaturer fra filer.
- hash:[algo] [streng]
- - Generer hashsignatur fra streng.
- algo
- - Liste over alle støttede algoritmer.
- hex_encode [streng]
- - Konverter binær streng til heksadesimal.
- - Alias: x.
- hex_decode [streng]
- - Konverter heksadesimal til binær streng.
- base64_encode [streng]
- - Konverter binær streng til base64-streng.
- - Alias: b.
- base64_decode [streng]
- - Konverter base64-streng til binær streng.
- pe_meta [filnavn]
- - Pakk ut metadata fra en PE-fil.
- url_sig [streng]
- - Generer URL-skannersignaturer.
- scan [filnavn]
- - Skann fil eller katalog.
- - Alias: s.
- c
- - Skriv ut denne kommandolisten.

@@ -7,99 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2022.02.13).
+# This file: French language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Politique de Confidentialité"
 SafeBrowseLookup_200: "URL potentiellement nuisible détecté"
 SafeBrowseLookup_400: "Erreur de requête de l'API"
 SafeBrowseLookup_401: "Erreur d'autorisation de l'API"
 SafeBrowseLookup_503: "Le service de l'API est indisponible"
 SafeBrowseLookup_999: "Erreur API inconnue"
-_exclamation: "%s ! "
-_exclamation_final: "%s !"
+Text Direction: "ltr"
+_exclamation: "%s\_! "
+_exclamation_final: "%s\_!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Je ne comprends pas cette commande, désolé."
 cli_algo_not_supported: "L'algorithme spécifié n'est pas supporté."
-cli_failed_to_complete: "Échec du terminer le processus d'analyse"
-cli_is_not_a: "%s n'est pas un fichier ou un répertoire."
-cli_ln2: |
- Merci d'utiliser phpMussel, un script PHP pour la détection de virus,
- logiciels malveillants et autres menaces dans les fichiers téléchargés sur
- votre système partout où le script est accroché, basé sur les signatures
- de ClamAV et autres.
-                                     ~ ~ ~
- PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).
-                                     ~ ~ ~
-cli_ln3: |
- Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).
- Pour analyser un fichier ou répertoire, tapez « scan », suivi par le nom
- du fichier ou répertoire que vous voulez que phpMussel analyse et appuyez
- sur Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes
- du mode CLI ; Tapez « q » et appuyez sur Entrée pour quitter.
-cli_pe1: "Pas un valide PE fichier !"
-cli_pe2: "Sections du PE :"
-cli_signature_placeholder: "NOM-DE-SIGNATURE"
-cli_working: "En cours"
-corrupted: "PE corrompu détecté"
-data_not_available: "Les données ne sont pas disponibles."
-denied: "Téléchargement Refusé !"
-denied_reason: "Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous :"
-detected: "Détecté %s"
-detected_control_characters: "Caractères de contrôle ont été détectés"
-encrypted_archive: "Archive cryptée détectée ; Archives cryptées interdites"
-error_log_header: "Si les erreurs suivantes persistent, pour les rapporter ou pour obtenir de l'aide, créer un nouveau issue sur la page des issues pour phpMussel à GitHub lorsque vous avez un moment disponible, avec les erreurs en question ainsi que toute autre information pertinente jointe. Merci."
-failed_to_access: "Impossible d'accéder à « %s » !"
-field_date: "Date "
-field_header_hash_reconstruction: "Reconstruction de signatures hachage"
-field_header_pe_reconstruction: "Reconstruction de signatures sectionnelles PE"
-field_header_scan_results_why_flagged: "Résultats d'analyse (pourquoi marqué)"
-field_ip_address: "Adresse IP "
-file: "Fichier"
-filesize_limit_exceeded: "Taille limite fichier dépassée"
-filetype_blacklisted: "Type de fichier sur liste noire"
-finished: "Terminé"
-generated_by: "Généré par %s"
-greylist_cleared: " Greylist vidé."
-greylist_updated: " Liste grise mise à jour."
-honeypot_event: "Honeypot événement. "
-image: "Image"
-instance_already_active: "Instance déjà active ! Veuillez vérifier vos crochets."
-invalid_data: "Données non valides !"
-invalid_file: "Fichier non valide !"
-invalid_url: "URL non valide !"
-macros_not_permitted: "Les macros ne sont pas autorisées"
-ok: "Bien"
-only_allow_images: "Seuls les fichiers images sont autorisés"
-quarantined_as: "Mis en quarantaine comme « /vault/quarantine/%s.qfu »."
-recursive: "Profondeur limite de récursion dépassée"
-required_variables_not_defined: "Les variables requises ne sont pas définies : Vous ne pouvez pas continuer."
-scan_chameleon: "Attaque %s caméléon détectée"
-scan_checking: "Vérification"
-scan_command_injection: "Tentative d'injection de commande détectée"
-scan_complete: "Terminé"
-scan_extensions_missing: "Échec (extensions requises manquantes) !"
-scan_filename_manipulation_detected: "Manipulation de nom de fichier détectée"
-scan_missing_filename: "Nom de fichier manquant"
-scan_no_problems_found: "Pas de problème trouvé."
-scan_reading: "Lecture en cours"
-scan_signature_file_missing: "Fichiers des signatures manquant"
-scan_tampering: "Altération de fichier potentiellement dangereuse détectée"
-scan_unauthorised_upload: "Non autorisée manipulation de téléchargement de fichiers détecté"
-scan_unauthorised_upload_or_misconfig: "Manipulation de téléchargement de fichiers non autorisée ou mauvaise configuration détectée ! "
-started: "Commencé"
-too_many_files_in_archive: "Trop de fichiers dans les archives"
-too_many_urls: "Trop d'URLs"
-upload_error_1: "La taille du fichier dépasse la directive upload_max_filesize. "
-upload_error_2: "La taille du fichier dépasse la limite spécifiée dans le formulaire taille limite. "
-upload_error_34: "Échec du téléchargement ! S'il vous plaît contacter le hostmaster pour obtenir de l'aide ! "
-upload_error_6: "Répertoire de téléchargement manquant ! Veuillez contacter le hostmaster pour obtenir de l'aide ! "
-upload_error_7: "Erreur d'écriture disque ! Veuillez contacter le hostmaster pour obtenir de l'aide ! "
-upload_error_8: "Mauvaise configuration PHP détectée ! Veuillez contacter le hostmaster pour obtenir de l'aide ! "
-upload_limit_exceeded: "Limite de téléchargement dépassée"
-x_does_not_exist: "%s n'existe pas"
 cli_commands: |
  ..
  q
@@ -130,3 +53,80 @@ cli_commands: |
  - Alias : s.
  c
  - Imprimer cette liste des commandes.
+cli_failed_to_complete: "Échec du terminer le processus d'analyse"
+cli_is_not_a: "%s n'est pas un fichier ou un répertoire."
+cli_ln2: |
+ Merci d'utiliser phpMussel, un script PHP pour la détection de virus,
+ logiciels malveillants et autres menaces dans les fichiers téléchargés sur
+ votre système partout où le script est accroché, basé sur les signatures
+ de ClamAV et autres.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).
+ Pour analyser un fichier ou répertoire, tapez « scan », suivi par le nom
+ du fichier ou répertoire que vous voulez que phpMussel analyse et appuyez
+ sur Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes
+ du mode CLI ; Tapez « q » et appuyez sur Entrée pour quitter.
+cli_pe1: "Pas un valide PE fichier\_!"
+cli_pe2: "Sections du PE\_:"
+cli_signature_placeholder: "NOM-DE-SIGNATURE"
+cli_working: "En cours"
+corrupted: "PE corrompu détecté"
+data_not_available: "Les données ne sont pas disponibles."
+denied: "Téléchargement Refusé\_!"
+denied_reason: "Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous\_:"
+detected: "Détecté %s"
+detected_control_characters: "Caractères de contrôle ont été détectés"
+encrypted_archive: "Archive cryptée détectée\_; Archives cryptées interdites"
+error_log_header: "Si les erreurs suivantes persistent, pour les rapporter ou pour obtenir de l'aide, créer un nouveau issue sur la page des issues pour phpMussel à GitHub lorsque vous avez un moment disponible, avec les erreurs en question ainsi que toute autre information pertinente jointe. Merci."
+failed_to_access: "Impossible d'accéder à «\_%s\_»\_!"
+field_date: "Date\_"
+field_header_hash_reconstruction: "Reconstruction de signatures hachage"
+field_header_pe_reconstruction: "Reconstruction de signatures sectionnelles PE"
+field_header_scan_results_why_flagged: "Résultats d'analyse (pourquoi marqué)"
+field_ip_address: "Adresse IP\_"
+file: "Fichier"
+filesize_limit_exceeded: "Taille limite fichier dépassée"
+filetype_blacklisted: "Type de fichier sur liste noire"
+finished: "Terminé"
+generated_by: "Généré par %s"
+greylist_cleared: " Greylist vidé."
+greylist_updated: " Liste grise mise à jour."
+honeypot_event: "Honeypot événement. "
+image: "Image"
+instance_already_active: "Instance déjà active\_! Veuillez vérifier vos crochets."
+invalid_data: "Données non valides\_!"
+invalid_file: "Fichier non valide\_!"
+invalid_url: "URL non valide\_!"
+macros_not_permitted: "Les macros ne sont pas autorisées"
+ok: "Bien"
+only_allow_images: "Seuls les fichiers images sont autorisés"
+quarantined_as: "Mis en quarantaine comme «\_/vault/quarantine/%s.qfu\_»."
+recursive: "Profondeur limite de récursion dépassée"
+required_variables_not_defined: "Les variables requises ne sont pas définies\_: Vous ne pouvez pas continuer."
+scan_chameleon: "Attaque %s caméléon détectée"
+scan_checking: "Vérification"
+scan_command_injection: "Tentative d'injection de commande détectée"
+scan_complete: "Terminé"
+scan_extensions_missing: "Échec (extensions requises manquantes)\_!"
+scan_filename_manipulation_detected: "Manipulation de nom de fichier détectée"
+scan_missing_filename: "Nom de fichier manquant"
+scan_no_problems_found: "Pas de problème trouvé."
+scan_reading: "Lecture en cours"
+scan_signature_file_missing: "Fichiers des signatures manquant"
+scan_tampering: "Altération de fichier potentiellement dangereuse détectée"
+scan_unauthorised_upload: "Non autorisée manipulation de téléchargement de fichiers détecté"
+scan_unauthorised_upload_or_misconfig: "Manipulation de téléchargement de fichiers non autorisée ou mauvaise configuration détectée\_! "
+started: "Commencé"
+too_many_files_in_archive: "Trop de fichiers dans les archives"
+too_many_urls: "Trop d'URLs"
+upload_error_1: "La taille du fichier dépasse la directive upload_max_filesize. "
+upload_error_2: "La taille du fichier dépasse la limite spécifiée dans le formulaire taille limite. "
+upload_error_34: "Échec du téléchargement\_! S'il vous plaît contacter le hostmaster pour obtenir de l'aide\_! "
+upload_error_6: "Répertoire de téléchargement manquant\_! Veuillez contacter le hostmaster pour obtenir de l'aide\_! "
+upload_error_7: "Erreur d'écriture disque\_! Veuillez contacter le hostmaster pour obtenir de l'aide\_! "
+upload_error_8: "Mauvaise configuration PHP détectée\_! Veuillez contacter le hostmaster pour obtenir de l'aide\_! "
+upload_limit_exceeded: "Limite de téléchargement dépassée"
+x_does_not_exist: "%s n'existe pas"
