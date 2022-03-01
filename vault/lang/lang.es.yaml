@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2022.02.13).
+# This file: Spanish language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Política de Privacidad"
 SafeBrowseLookup_200: "URL potencialmente dañino detectado"
 SafeBrowseLookup_400: "Error de solicitud de la API"
 SafeBrowseLookup_401: "Error de autorización de la API"
 SafeBrowseLookup_503: "Servicio de la API no está disponible"
 SafeBrowseLookup_999: "Error da la API desconocido"
+Text Direction: "ltr"
 _exclamation: "¡%s! "
 _exclamation_final: "¡%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "No entiendo ese comando, lo siento."
 cli_algo_not_supported: "El algoritmo especificado no es soportado."
+cli_commands: |
+ ..
+ q
+ - Dejar CLI.
+ - Alias: quit, exit.
+ hash_file:[algo] [nombre del archivo]
+ - Generar firmas hash de archivos.
+ hash:[algo] [string]
+ - Generar firma hash de string.
+ algo
+ - Lista todos los algoritmos soportados.
+ hex_encode [string]
+ - Convertir string binaria a hexadecimal.
+ - Alias: x.
+ hex_decode [string]
+ - Convertir hexadecimal a string binaria.
+ base64_encode [string]
+ - Convertir string binaria a string base64.
+ - Alias: b.
+ base64_decode [string]
+ - Convertir string base64 a string binaria.
+ pe_meta [nombre del archivo]
+ - Extraer metadatos de un archivo PE.
+ url_sig [string]
+ - Generar firmas de escáner de URL.
+ scan [nombre del archivo o directorio]
+ - Escanear un archivo o directorio.
+ - Alias: s.
+ c
+ - Imprimir esta lista de comandos.
 cli_failed_to_complete: "No se pudo completar el proceso de escaneo"
 cli_is_not_a: "%s no es un archivo o directorio."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "¡Error en el disco contra escritura! Contacto el hostmaster pa
 upload_error_8: "¡PHP mala configuración detectado! Contacto el hostmaster para ayuda! "
 upload_limit_exceeded: "Subir límite excedido"
 x_does_not_exist: "%s no existe"
-cli_commands: |
- ..
- q
- - Dejar CLI.
- - Alias: quit, exit.
- hash_file:[algo] [nombre del archivo]
- - Generar firmas hash de archivos.
- hash:[algo] [string]
- - Generar firma hash de string.
- algo
- - Lista todos los algoritmos soportados.
- hex_encode [string]
- - Convertir string binaria a hexadecimal.
- - Alias: x.
- hex_decode [string]
- - Convertir hexadecimal a string binaria.
- base64_encode [string]
- - Convertir string binaria a string base64.
- - Alias: b.
- base64_decode [string]
- - Convertir string base64 a string binaria.
- pe_meta [nombre del archivo]
- - Extraer metadatos de un archivo PE.
- url_sig [string]
- - Generar firmas de escáner de URL.
- scan [nombre del archivo o directorio]
- - Escanear un archivo o directorio.
- - Alias: s.
- c
- - Imprimir esta lista de comandos.

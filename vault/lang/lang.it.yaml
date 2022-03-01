@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2022.02.13).
+# This file: Italian language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Politica sulla Privacy"
 SafeBrowseLookup_200: "URL potenzialmente dannosi rilevati"
 SafeBrowseLookup_400: "Errore di richiesta delle API"
 SafeBrowseLookup_401: "Errore di autorizzazione delle API"
 SafeBrowseLookup_503: "Servizio delle API è non disponibile"
 SafeBrowseLookup_999: "Errore di API è sconosciuto"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Non capisco quel comando, mi dispiace."
 cli_algo_not_supported: "L'algoritmo specificato non è supportato."
+cli_commands: |
+ ..
+ q
+ - Esci dall'interfaccia a riga di comando.
+ - Alias: quit, exit.
+ hash_file:[algo] [nome del file]
+ - Genera le firme hash da file.
+ hash:[algo] [stringa]
+ - Genera le firme hash da stringa.
+ algo
+ - Elenca tutti gli algoritmi supportati.
+ hex_encode [stringa]
+ - Converti la stringa binaria in esadecimale.
+ - Alias: x.
+ hex_decode [stringa]
+ - Converti la stringa esadecimale in binaria.
+ base64_encode [stringa]
+ - Converti la stringa binaria in base64.
+ - Alias: b.
+ base64_decode [stringa]
+ - Converti la stringa da base64 a binaria.
+ pe_meta [nome del file]
+ - Estrarre i metadati da un file PE.
+ url_sig [stringa]
+ - Genera firme di scanner URL.
+ scan [nome del file o della cartella]
+ - Scansiona un file o una cartella.
+ - Alias: s.
+ c
+ - Mostra questa lista di comandi.
 cli_failed_to_complete: "Completamento del processo di controllo fallito"
 cli_is_not_a: "%s non è né un file né una cartella."
 cli_ln2: |
@@ -100,33 +130,3 @@ upload_error_7: "Errore nella scrittura del disco! Contatta l'hostmaster per ass
 upload_error_8: "Rilevata una malconfigurazione di PHP! Contatta l'hostmaster per assistenza! "
 upload_limit_exceeded: "Limite di caricamento superato"
 x_does_not_exist: "%s non esiste"
-cli_commands: |
- ..
- q
- - Esci dall'interfaccia a riga di comando.
- - Alias: quit, exit.
- hash_file:[algo] [nome del file]
- - Genera le firme hash da file.
- hash:[algo] [stringa]
- - Genera le firme hash da stringa.
- algo
- - Elenca tutti gli algoritmi supportati.
- hex_encode [stringa]
- - Converti la stringa binaria in esadecimale.
- - Alias: x.
- hex_decode [stringa]
- - Converti la stringa esadecimale in binaria.
- base64_encode [stringa]
- - Converti la stringa binaria in base64.
- - Alias: b.
- base64_decode [stringa]
- - Converti la stringa da base64 a binaria.
- pe_meta [nome del file]
- - Estrarre i metadati da un file PE.
- url_sig [stringa]
- - Genera firme di scanner URL.
- scan [nome del file o della cartella]
- - Scansiona un file o una cartella.
- - Alias: s.
- c
- - Mostra questa lista di comandi.

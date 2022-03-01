@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2022.02.13).
+# This file: Dutch language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Privacybeleid"
 SafeBrowseLookup_200: "Potentieel schadelijke URL gedetecteerd"
 SafeBrowseLookup_400: "API aanvraag foute"
 SafeBrowseLookup_401: "API niet geautoriseerd"
 SafeBrowseLookup_503: "API dienst niet beschikbaar"
 SafeBrowseLookup_999: "Onbekende API fout"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Ik begrijp niet dat bevel, sorry."
 cli_algo_not_supported: "Opgegeven algoritme wordt niet ondersteund."
+cli_commands: |
+ ..
+ q
+ - Verlaten CLI.
+ - Aliassen: quit, exit.
+ hash_file:[algo] [bestandsnaam]
+ - Genereer hash signatures van bestanden.
+ hash:[algo] [string]
+ - Genereer hash signature van string.
+ algo
+ - Maak een lijst van alle ondersteunde algoritmen.
+ hex_encode [string]
+ - Converteren van binaire string naar hexadecimaal.
+ - Alias: x.
+ hex_decode [string]
+ - Converteren van hexadecimaal naar binaire string.
+ base64_encode [string]
+ - Converteren van binaire string naar base64 string.
+ - Alias: b.
+ base64_decode [string]
+ - Converteren van base64 string naar binaire string.
+ pe_meta [bestandsnaam]
+ - Haal metagegevens uit een PE-bestand.
+ url_sig [string]
+ - Genereren URL-scanner signatures.
+ scan [bestandsnaam]
+ - Scannen bestand of map.
+ - Alias: s.
+ c
+ - Print dit commando lijst.
 cli_failed_to_complete: "Mislukt om het voltooien te scannen"
 cli_is_not_a: "%s is geen bestand of map."
 cli_ln2: |
@@ -101,33 +131,3 @@ upload_error_7: "Disc-schrijffout! Contact op met de hostmaster voor hulp! "
 upload_error_8: "PHP misconfiguratie gedetecteerd! Contact op met de hostmaster voor hulp! "
 upload_limit_exceeded: "Uploadlimiet overschreden"
 x_does_not_exist: "%s bestaat niet"
-cli_commands: |
- ..
- q
- - Verlaten CLI.
- - Aliassen: quit, exit.
- hash_file:[algo] [bestandsnaam]
- - Genereer hash signatures van bestanden.
- hash:[algo] [string]
- - Genereer hash signature van string.
- algo
- - Maak een lijst van alle ondersteunde algoritmen.
- hex_encode [string]
- - Converteren van binaire string naar hexadecimaal.
- - Alias: x.
- hex_decode [string]
- - Converteren van hexadecimaal naar binaire string.
- base64_encode [string]
- - Converteren van binaire string naar base64 string.
- - Alias: b.
- base64_decode [string]
- - Converteren van base64 string naar binaire string.
- pe_meta [bestandsnaam]
- - Haal metagegevens uit een PE-bestand.
- url_sig [string]
- - Genereren URL-scanner signatures.
- scan [bestandsnaam]
- - Scannen bestand of map.
- - Alias: s.
- c
- - Print dit commando lijst.

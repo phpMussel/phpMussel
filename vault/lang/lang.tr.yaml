@@ -7,22 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2022.02.13).
+# This file: Turkish language data (last modified: 2022.03.01).
 ##/
 
-Text Direction: "ltr"
 PrivacyPolicy: "Gizlilik Politikası"
 SafeBrowseLookup_200: "Potansiyel olarak zararlı URL tespit edildi"
 SafeBrowseLookup_400: "API istek hatası"
 SafeBrowseLookup_401: "API yetkilendirme hatası"
 SafeBrowseLookup_503: "API hizmeti kullanılamıyor"
 SafeBrowseLookup_999: "Bilinmeyen API hatası"
+Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
 _fullstop: ". "
 _fullstop_final: "."
 bad_command: "Bu komutu anlamıyorum, üzgünüm."
 cli_algo_not_supported: "Belirtilen algoritma desteklenmiyor."
+cli_commands: |
+ ..
+ q
+ - CLI'den çıkın.
+ - Takma adları: quit, exit.
+ hash_file:[algo] [dosya adı]
+ - Dosyalardan karma imzaları oluştur.
+ hash:[algo] [dizgesi]
+ - Dizeden karma imzası üret.
+ algo
+ - Tüm desteklenen algoritmaları listele.
+ hex_encode [dizgesi]
+ - İkili dizgeyi onaltılık olarak dönüştür.
+ - Takma ad: x.
+ hex_decode [dizgesi]
+ - Onaltılıyı ikili dizeye olarak dönüştür.
+ base64_encode [dizgesi]
+ - İkili'e base64 hale dönüştür.
+ - Takma ad: b.
+ base64_decode [dizgesi]
+ - Base64'ü ikili hale dönüştür.
+ pe_meta [dosya adı]
+ - Meta verileri bir PE dosyasından ayıklayın.
+ url_sig [dizgesi]
+ - URL tarayıcı imzalarını oluştur.
+ scan [dosya adı]
+ - Dosya veya dizini tara.
+ - Takma ad: s.
+ c
+ - Bu komut listesini yazdırın.
 cli_failed_to_complete: "Tarama işlemini tamamlama başarısız"
 cli_is_not_a: "%s bir dosya veya dizin değil."
 cli_ln2: |
@@ -101,33 +131,3 @@ upload_error_7: "Disk yazma hatası! Lütfen yardım için hostmaster ile ileti�
 upload_error_8: "PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! "
 upload_limit_exceeded: "Yükleme sınırı aşıldı"
 x_does_not_exist: "%s mevcut değil"
-cli_commands: |
- ..
- q
- - CLI'den çıkın.
- - Takma adları: quit, exit.
- hash_file:[algo] [dosya adı]
- - Dosyalardan karma imzaları oluştur.
- hash:[algo] [dizgesi]
- - Dizeden karma imzası üret.
- algo
- - Tüm desteklenen algoritmaları listele.
- hex_encode [dizgesi]
- - İkili dizgeyi onaltılık olarak dönüştür.
- - Takma ad: x.
- hex_decode [dizgesi]
- - Onaltılıyı ikili dizeye olarak dönüştür.
- base64_encode [dizgesi]
- - İkili'e base64 hale dönüştür.
- - Takma ad: b.
- base64_decode [dizgesi]
- - Base64'ü ikili hale dönüştür.
- pe_meta [dosya adı]
- - Meta verileri bir PE dosyasından ayıklayın.
- url_sig [dizgesi]
- - URL tarayıcı imzalarını oluştur.
- scan [dosya adı]
- - Dosya veya dizini tara.
- - Takma ad: s.
- c
- - Bu komut listesini yazdırın.

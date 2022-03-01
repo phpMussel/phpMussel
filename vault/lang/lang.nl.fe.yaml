@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.01.22).
+# This file: Dutch language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -30,7 +30,7 @@ config_PHPMailer_setFromName: "De naam van de afzender voor het verzenden van e-
 config_attack_specific: "Heeft betrekking op specifieke soorten aanvallen."
 config_attack_specific_allow_leading_trailing_dots: "Sta voorlopende en achterliggende stippen toe in bestandsnamen? Dit kan soms worden gebruikt om bestanden te verbergen, of om sommige systemen te misleiden om doorverwijzing van mappen mogelijk te maken. False = Niet toestaan [Standaard]. True = Toestaan."
 config_attack_specific_archive_file_extensions: "Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend."
-config_attack_specific_block_control_characters: "Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe regels)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) Als u <em><strong>ALLEEN</strong></em> uploaden platte tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen dit kan leiden tot valse positieven. False = Niet blokkeren [Standaard]; True = Doen blokkeren."
+config_attack_specific_block_control_characters: "Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe regels)? Als u <em><strong>ALLEEN</strong></em> uploaden platte tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen dit kan leiden tot valse positieven. False = Niet blokkeren [Standaard]; True = Doen blokkeren."
 config_attack_specific_block_macros: "Probeer u alle bestanden met macro's te blokkeren? Sommige soorten documenten en spreadsheets kunnen uitvoerbare macro's bevatten, waardoor een gevaarlijke potentiële malwarevector wordt geboden. False = Niet blokkeren [Standaard]; True = Doen blokkeren."
 config_attack_specific_can_contain_php_file_extensions: "Een lijst met bestandsextensies die PHP-code mogen bevatten, gescheiden door komma's. Als PHP chameleon aanval detectie is ingeschakeld, zullen bestanden die PHP-code bevatten, met extensies die niet op deze lijst staan, worden gedetecteerd als PHP chameleon aanvallen."
 config_attack_specific_chameleon_from_exe: "Zoeken naar PHP header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist. False = Uitgeschakeld; True = Ingeschakeld."
@@ -195,6 +195,47 @@ field_verify: "Verifiëren"
 field_verify_all: "Verifiëren alles"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
+info_some_useful_links: |
+ Enkele nuttige links:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Tools, bronnen, enz. voor phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
+           <li>{{Links.phpMussel.SigTool}} – Maakt phpMussel-signatuurbestanden aan met behulp van de ClamAV-signatuurdatabase.</li>
+           <li>{{Links.phpMussel.Extras}} – Diverse extra's.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Tools, bronnen, enz. voor ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
+           <li>{{Links.SecuriteInfo}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Biedt aanvullende signatures voor ClamAV en aanvullende regels voor ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Groepen, forums, communities, enz.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
+           <li>{{Links.MalwareTips}} – Nuttig malware-gericht discussiefora.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Phishing-database gebruikt door de phpMussel URL scanner.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL's.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis is een gratis malware analyse dienst die door {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Computer anti-malware-specialisten.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informatie en leermiddelen.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, enz).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Actief configuratiebestand:"
 label_actual: "Actueel"
 label_blocked: "Uploads geblokkeerd"
@@ -223,9 +264,9 @@ label_is_available_class: "%s is beschikbaar."
 label_is_not_available: "%s is niet beschikbaar."
 label_never: "Nooit"
 label_os: "Besturingssysteem gebruikt:"
+label_other: "Anders"
 label_other-Active: "Actieve signatuurbestanden"
 label_other-Since: "Begin datum"
-label_other: "Anders"
 label_php: "PHP versie gebruikt:"
 label_phpmussel: "phpMussel versie gebruikt:"
 label_quarantined: "Uploads in quarantaine"
@@ -265,6 +306,13 @@ logs_logfile_doesnt_exist: "Geselecteerde logbestand bestaat niet!"
 logs_no_logfile_selected: "Geen logbestand geselecteerd."
 logs_no_logfiles_available: "Geen logbestanden beschikbaar."
 max_login_attempts_exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
+msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"
+msg_template_2fa: |
+ <center><p>Hallo, %1$s.<br />
+ <br />
+ Uw 2FA-code voor in te loggen bij de frontend van phpMussel:</p>
+ <h1>%2$s</h1>
+ <p>Deze code verloopt over 10 minuten.</p></center>
 notice_click_here: "Klik hier voor meer informatie."
 notice_new_major_version: "Notitie: %s is nu beschikbaar (u gebruikt %s). U voldoet aan de minimale PHP-vereiste van deze versie. Er zijn echter enkele handmatige stappen vereist om bij te werken."
 previewer_days: "Dagen"
@@ -283,7 +331,7 @@ response_accounts_doesnt_exist: "Die account bestaat niet."
 response_accounts_password_updated: "Wachtwoord succesvol gewijzigd!"
 response_activated: "Succesvol geactiveerd."
 response_activation_failed: "Mislukt om te activeren!"
-response_checksum_error: "Checksum error! Bestand afgewezen!"
+response_checksum_error: "Checksum fout! Bestand afgewezen!"
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."
@@ -381,12 +429,12 @@ switch-sort-by-name-set-true: "Sorteer op naam"
 tip_2fa_sent: "Een e-mail met een tweefactorauthenticatie code is verzonden naar uw e-mailadres. Bevestig deze code hieronder om toegang te krijgen tot de frontend. Als u deze e-mail niet hebt ontvangen, probeert u uit te loggen, wacht 10 minuten, en in te loggen opnieuw aan om een nieuwe e-mail met een nieuwe code te ontvangen."
 tip_accounts: "Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend."
 tip_cache_data: "Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken."
+tip_click_the_component: "Klik op de componentnaam voor meer details."
 tip_config: "Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor phpMussel te modificeren vanaf de frontend."
 tip_fe_cookie_warning: "Notitie: phpMussel gebruikt een cookie om aanmeldingen te verifiëren. Door in te loggen, geeft u uw toestemming voor het maken en opslaan van een cookie door uw browser."
 tip_file_manager: "Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze)."
 tip_home: "Hallo, {username}.<br />Dit is de startpagina van de phpMussel frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan."
 tip_logs: "Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken."
-tip_click_the_component: "Klik op de componentnaam voor meer details."
 tip_quarantine: "Hallo, {username}.<br />Deze pagina bevat een lijst met alle bestanden die momenteel in quarantaine staan en het beheer van die bestanden vergemakkelijkt."
 tip_quarantine_disabled: "Notitie: Quarantaine is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_see_the_documentation: "Zie de <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.nl.md\#SECTION7" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
@@ -397,52 +445,3 @@ tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de v
 tip_upload_test: "Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden."
 title_login: "Inloggen"
 warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"
-
-info_some_useful_links: |
- Enkele nuttige links:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Tools, bronnen, enz. voor phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Kwesties pagina voor phpMussel (steun, hulp, enz).</li>
-           <li>{{Links.phpMussel.SigTool}} – Maakt phpMussel-signatuurbestanden aan met behulp van de ClamAV-signatuurdatabase.</li>
-           <li>{{Links.phpMussel.Extras}} – Diverse extra's.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Tools, bronnen, enz. voor ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
-           <li>{{Links.SecuriteInfo}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
-           <li>{{Links.Sanesecurity}} – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
-           <li>{{Links.Malware Expert}} – Biedt aanvullende signatures voor ClamAV en aanvullende regels voor ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Groepen, forums, communities, enz.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
-           <li>{{Links.MalwareTips}} – Nuttig malware-gericht discussiefora.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Phishing-database gebruikt door de phpMussel URL scanner.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal is een gratis service voor het analyseren van verdachte bestanden en URL's.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis is een gratis malware analyse dienst die door {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Computer anti-malware-specialisten.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informatie en leermiddelen.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, enz).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
- Uw 2FA-code voor in te loggen bij de frontend van phpMussel:</p>
- <h1>%2$s</h1>
- <p>Deze code verloopt over 10 minuten.</p></center>
-msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"

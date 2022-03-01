@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.02.15).
+# This file: English language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -30,7 +30,7 @@ config_PHPMailer_setFromName: "The sender name to cite when sending email via SM
 config_attack_specific: "Relates to specific types of attacks."
 config_attack_specific_allow_leading_trailing_dots: "Allow leading and trailing dots in filenames? This can sometimes be used to hide files, or to trick some systems into allowing directory traversal. False = Don't allow [Default]. True = Allow."
 config_attack_specific_archive_file_extensions: "Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive."
-config_attack_specific_block_control_characters: "Block any files containing any control characters (other than newlines)? (<code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>) If you're <em><strong>ONLY</strong></em> uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block."
+config_attack_specific_block_control_characters: "Block any files containing any control characters (other than newlines)? If you're <em><strong>ONLY</strong></em> uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block."
 config_attack_specific_block_macros: "Try to block any files containing macros? Some types of documents and spreadsheets may contain executable macros, thus providing a dangerous potential malware vector. False = Don't block [Default]; True = Block."
 config_attack_specific_can_contain_php_file_extensions: "A list of file extensions allowed to contain PHP code, separated by commas. If PHP chameleon attack detection is enabled, files that contain PHP code, which have extensions that aren't on this list, will be detected as PHP chameleon attacks."
 config_attack_specific_chameleon_from_exe: "Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect. False = Off; True = On."
@@ -195,6 +195,47 @@ field_verify: "Verify"
 field_verify_all: "Verify all"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
+info_some_useful_links: |
+ Some useful links:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Tools, resources, etc for phpMussel.</span>
+         <ul class="comSub">
+           <li>{{Links.phpMussel.Issues}} – Issues page for phpMussel (support, assistance, etc).</li>
+           <li>{{Links.phpMussel.SigTool}} – Creates phpMussel signature files using the ClamAV signatures database.</li>
+           <li>{{Links.phpMussel.Extras}} – Various extras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Tools, resources, etc for ClamAV.</span>
+         <ul class="comSub">
+           <li>{{Links.ClamavNet}} – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
+           <li>{{Links.SecuriteInfo}} – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li>{{Links.Sanesecurity}} – Computer security company that offers supplementary signatures for ClamAV.</li>
+           <li>{{Links.Malware Expert}} – Offers supplementary signatures for ClamAV and supplementary rules for ModSecurity.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Groups, forums, communities, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP learning resources and discussion.</li>
+           <li>{{Links.MalwareTips}} – Useful malware focused discussion forums.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Other useful tools, resources, services, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.PhishTank}} – Phishing database utilised by the phpMussel URL scanner.</li>
+           <li>{{Links.VirusTotal}} – VirusTotal is a free service for analysing suspicious files and URLs.</li>
+           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis is a free malware analysis service provided by {{Links.Payload Security}}.</li>
+           <li>{{Links.Malwarebytes}} – Computer anti-malware specialists.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informational and learning resources.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP learning resources and discussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Active configuration file:"
 label_actual: "Actual"
 label_blocked: "Uploads blocked"
@@ -223,9 +264,9 @@ label_is_available_class: "%s is available."
 label_is_not_available: "%s is not available."
 label_never: "Never"
 label_os: "Operating system used:"
+label_other: "Other"
 label_other-Active: "Active signature files"
 label_other-Since: "Start date"
-label_other: "Other"
 label_php: "PHP version used:"
 label_phpmussel: "phpMussel version used:"
 label_quarantined: "Uploads quarantined"
@@ -265,6 +306,13 @@ logs_logfile_doesnt_exist: "Selected logfile doesn't exist!"
 logs_no_logfile_selected: "No logfile selected."
 logs_no_logfiles_available: "No logfiles available."
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
+msg_subject_2fa: "Two-Factor Authentication"
+msg_template_2fa: |
+ <center><p>Hello, %1$s.<br />
+ <br />
+ Your two-factor authentication code for logging into the phpMussel front-end:</p>
+ <h1>%2$s</h1>
+ <p>This code expires in 10 minutes.</p></center>
 notice_click_here: "Click here for more information."
 notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. However, some manual steps are required to update."
 previewer_days: "Days"
@@ -381,12 +429,12 @@ switch-sort-by-name-set-true: "Sort by name"
 tip_2fa_sent: "An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn't receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code."
 tip_accounts: "Hello, {username}.<br />The accounts page allows you to control who can access the phpMussel front-end."
 tip_cache_data: "Hello, {username}.<br />Here you can review the contents of the cache."
+tip_click_the_component: "Click the component name for more details."
 tip_config: "Hello, {username}.<br />The configuration page allows you to modify the configuration for phpMussel from the front-end."
 tip_fe_cookie_warning: "Note: phpMussel uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."
 tip_file_manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
 tip_home: "Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue."
 tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile."
-tip_click_the_component: "Click the component name for more details."
 tip_quarantine: "Hello, {username}.<br />This page lists all files currently in quarantine and facilitates management of those files."
 tip_quarantine_disabled: "Note: Quarantine is currently disabled, but can be enabled via the configuration page."
 tip_see_the_documentation: "See the <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
@@ -397,52 +445,3 @@ tip_updates: "Hello, {username}.<br />The updates page allows you to install, un
 tip_upload_test: "Hello, {username}.<br />The upload test page contains a standard file upload form, allowing you to test whether a file would normally be blocked by phpMussel when attempting to upload it."
 title_login: "Login"
 warning_signatures_1: "Warning: No signature files are active!"
-
-info_some_useful_links: |
- Some useful links:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Tools, resources, etc for phpMussel.</span>
-         <ul class="comSub">
-           <li>{{Links.phpMussel.Issues}} – Issues page for phpMussel (support, assistance, etc).</li>
-           <li>{{Links.phpMussel.SigTool}} – Creates phpMussel signature files using the ClamAV signatures database.</li>
-           <li>{{Links.phpMussel.Extras}} – Various extras.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Tools, resources, etc for ClamAV.</span>
-         <ul class="comSub">
-           <li>{{Links.ClamavNet}} – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
-           <li>{{Links.SecuriteInfo}} – Computer security company that offers supplementary signatures for ClamAV.</li>
-           <li>{{Links.Sanesecurity}} – Computer security company that offers supplementary signatures for ClamAV.</li>
-           <li>{{Links.Malware Expert}} – Offers supplementary signatures for ClamAV and supplementary rules for ModSecurity.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Groups, forums, communities, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP learning resources and discussion.</li>
-           <li>{{Links.MalwareTips}} – Useful malware focused discussion forums.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Other useful tools, resources, services, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.PhishTank}} – Phishing database utilised by the phpMussel URL scanner.</li>
-           <li>{{Links.VirusTotal}} – VirusTotal is a free service for analysing suspicious files and URLs.</li>
-           <li>{{Links.Hybrid Analysis}} – Hybrid Analysis is a free malware analysis service provided by {{Links.Payload Security}}.</li>
-           <li>{{Links.Malwarebytes}} – Computer anti-malware specialists.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informational and learning resources.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP learning resources and discussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hello, %1$s.<br />
- <br />
- Your two-factor authentication code for logging into the phpMussel front-end:</p>
- <h1>%2$s</h1>
- <p>This code expires in 10 minutes.</p></center>
-msg_subject_2fa: "Two-Factor Authentication"
