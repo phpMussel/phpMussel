@@ -1,4 +1,3 @@
-[![Join the chat at https://gitter.im/phpMussel2/Lobby](https://badges.gitter.im/phpMussel2/Lobby.svg)](https://gitter.im/phpMussel2/Lobby)
 [![v1: PHP >= 5.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![v2~v3: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
@@ -58,4 +57,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 ---
 
 
-Last Updated: 21 November 2021 (2021.11.21).
+Last Updated: 1 March 2022 (2022.03.01).
