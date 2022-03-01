@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.26).
+ * This file: Front-end handler (last modified: 2022.03.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,16 +162,19 @@ $phpMussel['Warnings'] = [];
 
 /** Warns if maintenance mode is enabled. */
 if ($phpMussel['Config']['general']['maintenance_mode']) {
-    $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('state_maintenance_mode') . '</u></span>';
+    $phpMussel['Warnings'][] = $phpMussel['L10N']->getString('state_maintenance_mode');
 }
 
 /** Warns if no signature files are active. */
 if (empty($phpMussel['Config']['signatures']['Active'])) {
-    $phpMussel['Warnings'][] = '<span class="txtRd"><u>' . $phpMussel['L10N']->getString('warning_signatures_1') . '</u></span>';
+    $phpMussel['Warnings'][] = $phpMussel['L10N']->getString('warning_signatures_1');
 }
 
 /** Prepare warnings. */
-$phpMussel['FE']['MaintenanceWarning'] = $phpMussel['Warnings'] ? "\n<div class=\"center\">⚠️ " . implode(" ⚠️<br />\n⚠️ ", $phpMussel['Warnings']) . ' ⚠️</div><hr />' : '';
+$phpMussel['FE']['Warnings'] = count($phpMussel['Warnings']) ? "\n<div class=\"center\"><span class=\"warning\">" . implode(
+    "</span><br />\n<span class=\"warning\">",
+    $phpMussel['Warnings']
+) . '</span></div><hr />' : '';
 
 /** Cleanup. */
 unset($phpMussel['Warnings']);
