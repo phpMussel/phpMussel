@@ -2,7 +2,7 @@
 body,input,select,textarea,.idx{font-size:calc((12px * {Magnification}) + .03vw)}
 body{font-family:'Open Sans',sans-serif,'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#ccc;color:#033}
 code{font-family:'Space Mono',monospace;vertical-align:0;display:inline-block;height:calc(1em + 2px)}
-hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
+hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:rgba(153,0,0,.6)}
 img.ico{width:16px;height:16px;border:0}
 input,select,option,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
@@ -13,7 +13,7 @@ input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Valid})}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Invalid})}
 input{border-radius:0}
-input[type=button],input[type=submit],input[type=reset]{border-radius:18px}
+input[type=button],input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
@@ -61,11 +61,10 @@ a:active,a:focus{color:red}
 @media only all and (max-width:230px) {
   .ufts{width:calc(100% - 10px)}
 }
-.vr{float:{FE_Align};width:1px;height:inherit;background-color:#900}
+.vr{float:{FE_Align};width:1px;height:inherit;background-color:rgba(153,0,0,.6)}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
 @keyframes UplT{0%{opacity:0}100%{opacity:1}}
 .mob{display:none}
-input[id=logoutbutton],input[id=homebutton]{transition:all .3s ease-out}
 input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:top 1px {FE_Align} 4px,top 1px {FE_Align} 4px;background-image:url('?phpmussel-asset=lock_rd_o.png&theme={theme}'),url('?phpmussel-asset=lock_rd_c.png&theme={theme}')}
 input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-position:top 3px {FE_Align} 4px,top 1px {FE_Align} 4px}
 input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Align_Reverse}-radius:0;margin-{FE_Align_Reverse}:0}
