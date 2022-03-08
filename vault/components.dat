@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.2-DEV+22059000"
+ Version: "2.4.2-DEV+22065500"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -168,7 +168,7 @@ phpMussel Front-End:
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992"
    - "bb4f7b3b1ef6c880057d3945e16d99a35add5a515bb3f937cf60eda9050b0266:178820"
-   - "c8c612116c58e0e034fa214523beef00f75e30405d83967a696aa107508b4d88:117392"
+   - "52ce9b8768594df626cbc6393811c85d48b2c322ac2df92ed057d56fcdf1cc83:117347"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
@@ -299,7 +299,7 @@ l10n/ar:
 l10n/bn:
  Name: "L10N: বাংলা"
  Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2022.59.0"
+ Version: "2022.65.500"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -312,7 +312,7 @@ l10n/bn:
    - "lang/lang.bn.fe.yaml"
    - "lang/lang.bn.yaml"
   Checksum:
-   - "77634031c8066fea8cb3328230355568140a6cc5b4f2846024e7c1d20c93b0ff:97421"
+   - "b9f1e83eb9bc5345e6a392700ae88dd16406cdb8c0fd8749ecab09ca3617d02e:97420"
    - "04b46ed0b8cd4536a85d13c6544d52998e899a282bcd8e0e9d993714bf67c7a7:11245"
  Reannotate: "components.dat"
 l10n/de:
@@ -356,7 +356,7 @@ l10n/es:
 l10n/fr:
  Name: "L10N: Français"
  Extended Description: "Linguistiques données en Français"
- Version: "2022.59.0"
+ Version: "2022.65.500"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -369,7 +369,7 @@ l10n/fr:
    - "lang/lang.fr.fe.yaml"
    - "lang/lang.fr.yaml"
   Checksum:
-   - "bb729a51d7f26e39317138540e010054f4947d494f4b1fadc251fe010bc58a15:57241"
+   - "09e65a2d61de77c97760399a87a4701afa9cdd461eba84d4f3ead6b12d254d42:57240"
    - "ababac047df7dfc32ab200de7b423438f01d808f0bcccc254adc85ec42740b6e:6485"
  Reannotate: "components.dat"
 l10n/hi:
