@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.01).
+# This file: French language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -427,7 +427,7 @@ switch-hide-non-outdated-set-true: "Masquer non dépassé"
 switch-hide-unused-set-false: "Ne masquer pas inutilisé"
 switch-hide-unused-set-true: "Masquer inutilisé"
 switch-sort-by-name-set-false: "Trier par ID"
-switch-sort-by-name-set-true: ""Trier par nom"
+switch-sort-by-name-set-true: "Trier par nom"
 tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de phpMussel."
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.03.01).
+# This file: Bangla language data for the front-end (last modified: 2022.03.02).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -364,7 +364,7 @@ response_repair_process_failed: "মেরামত প্রক্রিয়�
 response_restore_error_1: "পুনরুদ্ধার করতে ব্যর্থ! দূষিত ফাইল!"
 response_restore_error_2: "পুনরুদ্ধার করতে ব্যর্থ! ভুল সঙ্গরোধ চাবি!"
 response_sanity_1: "ফাইলটিতে অপ্রত্যাশিত সামগ্রী রয়েছে! ফাইল প্রত্যাখ্যাত!"
-response_satisfied: ""সন্তুষ্ট।"
+response_satisfied: "সন্তুষ্ট।"
 response_skipped: "এড়ানো হয়েছে"
 response_statistics_cleared: "পরিসংখ্যান পরিস্কার।"
 response_updates_already_up_to_date: "ইতিমধ্যে আপ-টু-ডেট।"
