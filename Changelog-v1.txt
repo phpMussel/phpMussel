@@ -15,6 +15,11 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.02.21; Bug-fix; Maikuolan]: File manager component files categorisation
   didn't account for multi-domain installation configuration files; Fixed.
 
+- [2022.03.11; Bug-fix; Maikuolan]: Shorthand data was quoted, but needed to be
+  defined as literals in order to avoid being unentitised prior to being parsed
+  as regular expression partials, in order to avoid breaking those expressions
+  and potentially triggering fatal errors; Fixed.
+
 === Version/Release 1.15.1 ===
 PATCH RELEASE.
 
