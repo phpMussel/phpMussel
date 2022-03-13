@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.01).
+# This file: Turkish language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -401,7 +401,7 @@ state_async_deny: "İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek 
 state_cache_is_empty: "Önbellek boş."
 state_complete_access: "Tam erişim"
 state_component_is_active: "Bileşen aktiftir."
-state_component_is_inactive: "Bileşen etkin değil."
+state_component_is_inactive: "Bileşen aktif değil."
 state_component_is_provisional: "Bileşen geçicidir."
 state_default_password: "Uyarı: Varsayılan şifreyi kullanıyor!"
 state_email_sent: "E-posta başarıyla "%s" olarak gönderildi."
