@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: "phpMussel"
- Version: "1.15.2-DEV+22069600"
+ Version: "1.15.2-DEV+22071600"
  Dependencies:
   PHP: ">=5.4"
   l10n/{lang}: ">=2021.303.641"
@@ -179,7 +179,7 @@ phpMussel:
    - "79d21a386767688768b0ca8a3d3a08821328e2bafca3238071dabfbddeb6f0ce:954"
    - "03f8ad68bbb9053685fd0f2deb1a9a971793eafa7924aca8c6bcd3f99a60a75c:643"
    - "a296016dfbda2e78a6af51d852d5439eec563da14a9cd30dd268f0926622cbe1:606"
-   - "a94418d665f29941a2e7ccccbef5ce7f02bd67d468a1ea70b668c3d41a07adf6:10915"
+   - "a69bac0829c8968b2eb4a310cb43068853917c7520c5dab9e11a48c17d1b2653:10941"
    - "28a088a750bdf403afa662ffde8616b5279a7099ee01634186d78dab40ccdf1a:1013"
    - "df745c52f9e972b03e016ded19febe371034a8d3c929879a7b624b503ff2e3b3:17518"
    - "9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705"
@@ -190,7 +190,7 @@ phpMussel:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "0c8236cc080b6138e634977cd57281126e0a6b064920ec9d8979d305cd18f2fb:992"
-   - "593c40d694db4503d7eeda80ebf44843435636f8d4341248d86cb0d91d55c993:179939"
+   - "03877f3f82e591d4da222e533e97f184b72c159abe613e9ceaac801f08abe6d2:179929"
    - "48580da8a12c50af88e75d57cee6157bc11314e982b7b15128f71977e3358c0d:116816"
    - "b71351e1876ff48d069aeaf48e5d9518e38cb85fc9fea758048c9ae78cc5c75e:231788"
    - "6ec0057593f128e583888a688b08aa14dac96b9a1fd4b61df1a44d1f5b17257b:7575"
@@ -488,7 +488,7 @@ l10n/th:
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2022.59.0"
+ Version: "2022.71.600"
  Dependencies:
   phpMussel Core: "^1.8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
@@ -501,7 +501,7 @@ l10n/tr:
    - "lang/lang.tr.fe.yaml"
    - "lang/lang.tr.yaml"
   Checksum:
-   - "5f7f29fbfb96efa4728c20441c12fc0e83045af8b17ea53b30ad5b7cb7a66120:52186"
+   - "91deb6fbbc9d51c6f5684b7a1a9621ffcd76d02122d7e7880b8ce9ad3adf9ada:52186"
    - "9ecdb4dc8bcb14a7af3d3db2419f8e8405d86568bbe850ebf4fbe7a33221c488:6060"
  Reannotate: "components.dat"
 l10n/ur:
