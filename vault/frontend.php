@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.13).
+ * This file: Front-end handler (last modified: 2022.03.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1588,6 +1588,26 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['ThisDir']['FieldOut'] .= '</small>';
             }
 
+            /** Provide hints, useful for users to better understand the directive at hand. */
+            if (!empty($phpMussel['DirValue']['hints'])) {
+                $phpMussel['ThisDir']['Hints'] = $phpMussel['L10N']->Data[$phpMussel['DirValue']['hints']] ?? $phpMussel['DirValue']['hints'];
+                if (!is_array($phpMussel['ThisDir']['Hints'])) {
+                    $phpMussel['ThisDir']['Hints'] = [$phpMussel['ThisDir']['Hints']];
+                }
+                foreach ($phpMussel['ThisDir']['Hints'] as $phpMussel['ThisDir']['HintKey'] => $phpMussel['ThisDir']['HintValue']) {
+                    if (is_int($phpMussel['ThisDir']['HintKey'])) {
+                        $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s", $phpMussel['ThisDir']['HintValue']);
+                        continue;
+                    }
+                    $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                        "\n<br /><br /><span class=\"s\">%s</span> %s",
+                        $phpMussel['ThisDir']['HintKey'],
+                        $phpMussel['ThisDir']['HintValue']
+                    );
+                }
+            }
+
+            /** Provide additional information, useful for users to better understand the directive at hand. */
             if (!empty($phpMussel['DirValue']['See also']) && is_array($phpMussel['DirValue']['See also'])) {
                 $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $phpMussel['L10N']->getString('label_see_also'));
                 foreach ($phpMussel['DirValue']['See also'] as $phpMussel['DirValue']['Ref key'] => $phpMussel['DirValue']['Ref link']) {
@@ -1599,6 +1619,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
                 $phpMussel['ThisDir']['FieldOut'] .= "\n</ul>";
             }
+
+            /** Finalise configuration row. */
             $phpMussel['FE']['ConfigFields'] .= $phpMussel['ParseVars'](
                 $phpMussel['L10N']->Data + $phpMussel['ThisDir'],
                 $phpMussel['FE']['ConfigRow']
