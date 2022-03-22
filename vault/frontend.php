@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.17).
+ * This file: Front-end handler (last modified: 2022.03.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1160,13 +1160,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     $phpMussel['FE']['ConfigRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config_row.html'));
 
     $phpMussel['FE']['Indexes'] = '<ul class="pieul">';
-
-    /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    $phpMussel['FE']['ConfigFields'] = sprintf(
-        '<style>.showlink::before,.hidelink::before{content:"➖";display:inline-block;margin-%1$s:6px}.hidelink::before{transform:rotate(%2$s)}</style>',
-        $phpMussel['FE']['FE_Align_Reverse'],
-        $phpMussel['FE']['45deg']
-    );
+    $phpMussel['FE']['ConfigFields'] = '';
     $phpMussel['RegenerateConfig'] = '';
     $phpMussel['ConfigModified'] = (!empty($phpMussel['QueryVars']['updated']) && $phpMussel['QueryVars']['updated'] === 'true');
 
@@ -1192,13 +1186,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         $phpMussel['RegenerateConfig'] .= "\r\n\r\n";
         $phpMussel['FE']['ConfigFields'] .= sprintf(
             '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-                '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
-                '<a class="hidelink" id="%1$s-hidelink" %2$s href="#" onclick="javascript:showid(\'%1$s-showlink\');hideid(\'%1$s-hidelink\');hide(\'%1$s-row\')">%1$s</a>' .
-                "%3\$s</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+            '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
+            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table>',
             $phpMussel['CatKey'],
             'style="display:none"',
             $phpMussel['CatInfo']
-        );
+        ) . "\n";
         $phpMussel['CatData'] = '';
         foreach ($phpMussel['CatValue'] as $phpMussel['DirKey'] => $phpMussel['DirValue']) {
             $phpMussel['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $phpMussel['CatKey']];
@@ -1212,7 +1205,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 isset($phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label']) ? $phpMussel['Config']['L10N'][$phpMussel['ThisDir']['DirLangKey'] . '_label'] : ''
             ) ?: $phpMussel['DirKey'];
             $phpMussel['CatData'] .= sprintf(
-                '<li><a onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')" href="#%2$s">%3$s</a></li>',
+                '<li><a onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\')" href="#%2$s">%3$s</a></li>',
                 $phpMussel['CatKey'],
                 $phpMussel['ThisDir']['DirLangKey'],
                 $phpMussel['ThisDir']['Friendly']
