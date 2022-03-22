@@ -133,3 +133,6 @@ input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxit
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.7),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:red;background:linear-gradient(90deg,rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
+.showlink::before,.shownlink::before,.unshownlink::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px}
+.shownlink::before{animation:forRotate .5s ease-out 1;animation-fill-mode:both}
+.unshownlink::before{animation:revRotate .5s ease-out 1;animation-fill-mode:both}
