@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2022.02.01).
+ * This file: Upload handler (last modified: 2022.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -169,13 +169,17 @@ if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maint
             if ($phpMussel['Config']['general']['honeypot_mode']) {
                 $phpMussel['ThisFileSize'] = filesize($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]);
                 $phpMussel['ThisFileData'] = $phpMussel['ReadFile'](
-                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']],
-                    (
-                        $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
-                        $phpMussel['ThisFileSize'] > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
-                    ) ? $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']) : $phpMussel['ThisFileSize'],
-                    true
+                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['ThisIter']]
                 );
+
+                /** Enforce scannable threshold. */
+                if (
+                    ($phpMussel['scThr'] = $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])) > 0 &&
+                    strlen($phpMussel['ThisFileData']) > $phpMussel['scThr']
+                ) {
+                    $phpMussel['ThisFileData'] = substr($phpMussel['ThisFileData'], 0, $phpMussel['scThr']);
+                }
+
                 $phpMussel['killdata'] .= sprintf(
                     "%s:%d:%s\n",
                     hash('sha256', $phpMussel['ThisFileData']),
