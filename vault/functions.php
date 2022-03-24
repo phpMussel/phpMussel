@@ -269,7 +269,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
  * @param string $Needle The needle.
  * @return string The substring.
  */
-$phpMussel['substrbf'] = function ($h, $n) {
+$phpMussel['substrbf'] = function ($Haystack, $Needle) {
     return !strlen($Needle) ? '' : substr($Haystack, 0, strpos($Haystack, $Needle));
 };
 
@@ -280,7 +280,7 @@ $phpMussel['substrbf'] = function ($h, $n) {
  * @param string $Needle The needle.
  * @return string The substring.
  */
-$phpMussel['substraf'] = function ($h, $n) {
+$phpMussel['substraf'] = function ($Haystack, $Needle) {
     return !($Length = strlen($Needle)) ? '' : substr($Haystack, strpos($Haystack, $Needle) + $Length);
 };
 
@@ -291,7 +291,7 @@ $phpMussel['substraf'] = function ($h, $n) {
  * @param string $Needle The needle.
  * @return string The substring.
  */
-$phpMussel['substrbl'] = function ($h, $n) {
+$phpMussel['substrbl'] = function ($Haystack, $Needle) {
     return !strlen($Needle) ? '' : substr($Haystack, 0, strrpos($Haystack, $Needle));
 };
 
@@ -302,7 +302,7 @@ $phpMussel['substrbl'] = function ($h, $n) {
  * @param string $Needle The needle.
  * @return string The substring.
  */
-$phpMussel['substral'] = function ($h, $n) {
+$phpMussel['substral'] = function ($Haystack, $Needle) {
     return !($Length = strlen($Needle)) ? '' : substr($Haystack, strrpos($Haystack, $Needle) + $Length);
 };
 
