@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.07).
+ * This file: Front-end functions file (last modified: 2022.03.24).
  */
 
 /**
@@ -929,7 +929,7 @@ $phpMussel['Quarantine-RecursiveList'] = function () use (&$phpMussel) {
             'QFU-Size' => filesize($Item)
         ];
         $phpMussel['FormatFilesize']($Arr[$Key]['QFU-Size']);
-        $Head = $phpMussel['ReadFile']($Item, 256);
+        $Head = $phpMussel['ReadFile']($Item);
 
         /** Upload date/time. */
         $Arr[$Key]['Upload-Date'] = (
@@ -1982,7 +1982,7 @@ $phpMussel['SigInfoHandler'] = function (array $Active) use (&$phpMussel) {
     /** Iterate through active signature files and append totals. */
     foreach ($Active as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
-        $Data = $File && is_readable($phpMussel['sigPath'] . $File) ? $phpMussel['ReadFile']($phpMussel['sigPath'] . $File) : '';
+        $Data = $phpMussel['ReadFile']($phpMussel['sigPath'] . $File);
         if (substr($Data, 0, 9) !== 'phpMussel') {
             continue;
         }

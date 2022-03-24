@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.02.07).
+ * This file: Functions file (last modified: 2022.03.24).
  */
 
 /**
@@ -307,35 +307,19 @@ $phpMussel['substral'] = function ($h, $n) {
 };
 
 /**
- * This function reads files and returns the contents of those files.
+ * Reads and returns the contents of files.
  *
- * @param string $File Path and filename of the file to read.
- * @param int $Size Number of blocks to read from the file (optional).
- * @return string The file's contents (an empty string on failure).
+ * @param string $File The path and the name of the file to read.
+ * @return string The file's content, or an empty string on failure.
  */
-$phpMussel['ReadFile'] = function ($File, $Size = 0) {
-    if (!is_file($File) || !is_readable($File)) {
+$phpMussel['ReadFile'] = function ($File) {
+    /** Guard. */
+    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
         return '';
     }
 
-    /** Default blocksize (128KB). */
-    static $Blocksize = 131072;
-
-    $Filesize = filesize($File);
-    if (!$Size) {
-        $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
-    }
-    $Data = '';
-    if ($Size > 0) {
-        $Handle = fopen($File, 'rb');
-        $r = 0;
-        while ($r < $Size) {
-            $Data .= fread($Handle, $Blocksize);
-            $r++;
-        }
-        fclose($Handle);
-    }
-    return $Data;
+    $Data = file_get_contents($File);
+    return is_string($Data) ? $Data : '';
 };
 
 /**
@@ -515,7 +499,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
         $Expiry = $phpMussel['Time'];
     }
     $File = $phpMussel['cachePath'] . bin2hex($Entry[0]) . '.tmp';
-    $Data = $phpMussel['ReadFile']($File) ?: '';
+    $Data = $phpMussel['ReadFile']($File);
     while (strpos($Data, $Entry . ':') !== false) {
         $Data = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($Data, $Entry . ':'), ';') . ';', '', $Data);
     }
@@ -524,7 +508,7 @@ $phpMussel['SaveCache'] = function ($Entry = '', $Expiry = 0, $ItemData = '') us
     fwrite($Handle, $Data);
     fclose($Handle);
     $IndexFile = $phpMussel['cachePath'] . 'index.dat';
-    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
+    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile);
     while (strpos($IndexNewData, $Entry . ':') !== false) {
         $IndexNewData = str_ireplace($Entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $Entry . ':'), ';') . ';', '', $IndexNewData);
     }
@@ -1334,7 +1318,6 @@ $phpMussel['MatchVarInSigFile'] = function ($Actual, $Expected) {
  *      data handler from completing its normal process.
  */
 $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '') use (&$phpMussel) {
-
     /** If the memory cache isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['InstanceCache'])) {
         throw new \Exception($phpMussel['L10N']->getString(
@@ -1472,11 +1455,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
     /** Indicates whether we're in CLI-mode. */
     $climode = ($phpMussel['Mussel_sapi'] && $phpMussel['Mussel_PHP']) ? 1 : 0;
 
+    /** Enforce scannable threshold. */
     if (
-        $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
-        $StringLength > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
+        ($ScannableThreshold = $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])) > 0 &&
+        $StringLength > $ScannableThreshold
     ) {
-        $StringLength = $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']);
+        $StringLength = $ScannableThreshold;
         $str = substr($str, 0, $StringLength);
         $str_cut = 1;
     } else {
@@ -3651,10 +3635,15 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     }
 
     /** Read in the file to be scanned. */
-    $in = $phpMussel['ReadFile']($f, (
-        $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
-        $fS > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
-    ) ? $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']) : $fS, true);
+    $in = $phpMussel['ReadFile']($f);
+
+    /** Enforce scannable threshold. */
+    if (
+        ($ScannableThreshold = $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])) > 0 &&
+        strlen($in) > $ScannableThreshold
+    ) {
+        $in = substr($in, 0, $ScannableThreshold);
+    }
 
     /** Generate CRC for the file to be scanned. */
     $fdCRC = hash('crc32b', $in);
@@ -4948,7 +4937,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
 
     /** Default process. */
     $File = $phpMussel['cachePath'] . '48.tmp';
-    $Data = $phpMussel['ReadFile']($File) ?: '';
+    $Data = $phpMussel['ReadFile']($File);
     while (strpos($Data, 'HashCache:') !== false) {
         $Data = str_ireplace('HashCache:' . $phpMussel['substrbf']($phpMussel['substraf']($Data, 'HashCache:'), ';') . ';', '', $Data);
     }
@@ -4960,7 +4949,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
         fclose($Handle);
     }
     $IndexFile = $phpMussel['cachePath'] . 'index.dat';
-    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile) ?: '';
+    $IndexNewData = $IndexData = $phpMussel['ReadFile']($IndexFile);
     while (strpos($IndexNewData, 'HashCache:') !== false) {
         $IndexNewData = str_ireplace('HashCache:' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, 'HashCache:'), ';') . ';', '', $IndexNewData);
     }
@@ -5084,7 +5073,7 @@ $phpMussel['BuildLogPattern'] = function ($Str, $GZ = false) {
  */
 $phpMussel['GZCompressFile'] = function ($File) {
     /** Guard. */
-    if (!is_file($File) || !is_readable($File)) {
+    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
         return false;
     }
 

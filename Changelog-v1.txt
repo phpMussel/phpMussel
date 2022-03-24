@@ -20,6 +20,9 @@ Detailed version release guidelines for phpMussel can be found at:
   as regular expression partials, in order to avoid breaking those expressions
   and potentially triggering fatal errors; Fixed.
 
+- [2022.03.24; Bug-fix; Maikuolan]: Fixed a bottleneck in the scan process
+  caused by the ReadFile closure (#231).
+
 === Version/Release 1.15.1 ===
 PATCH RELEASE.
 
