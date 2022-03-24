@@ -280,45 +280,45 @@ $phpMussel['prescan_normalise'] = function (string $str, bool $html = false, boo
 /**
  * Gets substring from haystack prior to the first occurrence of needle.
  *
- * @param string $h The haystack.
- * @param string $n The needle.
+ * @param string $Haystack The haystack.
+ * @param string $Needle The needle.
  * @return string The substring.
  */
 $phpMussel['substrbf'] = function (string $h, string $n): string {
-    return !$n ? '' : substr($h, 0, strpos($h, $n));
+    return !strlen($Needle) ? '' : substr($Haystack, 0, strpos($Haystack, $Needle));
 };
 
 /**
  * Gets substring from haystack after the first occurrence of needle.
  *
- * @param string $h The haystack.
- * @param string $n The needle.
+ * @param string $Haystack The haystack.
+ * @param string $Needle The needle.
  * @return string The substring.
  */
 $phpMussel['substraf'] = function (string $h, string $n): string {
-    return !$n ? '' : substr($h, strpos($h, $n) + strlen($n));
+    return !($Length = strlen($Needle)) ? '' : substr($Haystack, strpos($Haystack, $Needle) + $Length);
 };
 
 /**
  * Gets substring from haystack prior to the last occurrence of needle.
  *
- * @param string $h The haystack.
- * @param string $n The needle.
+ * @param string $Haystack The haystack.
+ * @param string $Needle The needle.
  * @return string The substring.
  */
 $phpMussel['substrbl'] = function (string $h, string $n): string {
-    return !$n ? '' : substr($h, 0, strrpos($h, $n));
+    return !strlen($Needle) ? '' : substr($Haystack, 0, strrpos($Haystack, $Needle));
 };
 
 /**
  * Gets substring from haystack after the last occurrence of needle.
  *
- * @param string $h The haystack.
- * @param string $n The needle.
+ * @param string $Haystack The haystack.
+ * @param string $Needle The needle.
  * @return string The substring.
  */
 $phpMussel['substral'] = function (string $h, string $n): string {
-    return !$n ? '' : substr($h, strrpos($h, $n) + strlen($n));
+    return !($Length = strlen($Needle)) ? '' : substr($Haystack, strrpos($Haystack, $Needle) + $Length);
 };
 
 /**
