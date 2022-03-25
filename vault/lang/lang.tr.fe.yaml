@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.12).
+# This file: Turkish language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -55,7 +55,7 @@ config_files_filesize_response: "Dosya boyutu sınırını aşan dosyalarla ne y
 config_files_filetype_archives: "Arşiv içeriği için dosya türü kara listeyi ve beyaz listeyi devralır mı? Yanlış/False = Hayır [Varsayılan]; Doğru/True = Evet."
 config_files_filetype_blacklist: "Kara liste:"
 config_files_filetype_greylist: "Gri liste:"
-config_files_filetype_whitelist: "Sisteminiz yalnızca belirli dosya türlerinin yüklenmesine izin veriyorsa, veya sisteminiz belli dosya türlerini açıkça reddetiyorsa, bu dosya türlerini beyaz listelerde, kara listelerde ve gri listelerde belirtmek taramanın hızını artırabilir, komut dosyası belirli dosya türlerini atlamak için izin vererek. Biçim CSV (virgülle ayrılmış değerler). Her şeyi taramak istiyorsanız, bu değişkenleri boş bırakın; Bunu yapmak beyaz/kara/gri listeyi devre dışı bırakır. İşlem mantığı şu şekildedir: Dosya türü beyaz listede bulunuyorsa, dosyayı taramayın ve engellemeyin ve dosyayı kara listeye veya gri listeye karşı kontrol etmeyin. Dosya türü kara listede bulunuyorsa, dosyayı taramayın, ancak yine de engelleyin ve dosyayı gri liste karşı kontrol etmeyin. Gri liste boşsa, ya da gri liste boş değilse ve dosya türü gri listede bulunuyorsa, dosyayı normal göre tara ve taramanın sonuçlarına dayanarak engelleyip engellemeyeceğini belirleme, ancak gri liste boş değilse ve dosya türü gri listede değil, dosyayı kara listede olduğu gibi davranın, bu nedenle tarama değil, yine de engelleme. Beyaz liste:"
+config_files_filetype_whitelist: "Beyaz liste:"
 config_files_max_files_in_archives: "Taramayı iptal etmeden önce arşiv içinden taranacak maksimum dosya sayısı. Varsayılan = 0 (maksimum değil)."
 config_files_max_recursion: "Arşivler için maksimum özyineleme derinliği sınırı. Varsayılan = 3."
 config_files_max_uploads: "Yükleme taraması sırasında taranacak maksimum dosya sayısı. Bu sayıyı aşmak taramayı durduracak ve kullanıcıya çok fazla yükleme yaptıkları bildirilecektir! Sisteminizi veya CMS'nizi DDoS girişiminde bulunduran teorik bir saldırıya karşı koruma sağlar. Tavsiye edilen: 10. Donanımınızın hızına bağlı olarak bu sayıyı yükseltebilir veya azaltabilirsiniz. Bu numaranın arşiv içeriğini hesaba katmadığını unutmayın."
@@ -193,6 +193,9 @@ field_verify: "Doğrula"
 field_verify_all: "Tümünü doğrula"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_xlists:
+ Bu nasıl çalışır.: "Sisteminiz yalnızca belirli dosya türlerinin yüklenmesine izin veriyorsa, veya sisteminiz belli dosya türlerini açıkça reddetiyorsa, bu dosya türlerini beyaz listelerde, kara listelerde ve gri listelerde belirtmek taramanın hızını artırabilir, komut dosyası belirli dosya türlerini atlamak için izin vererek. Biçim CSV (virgülle ayrılmış değerler)."
+ İşlem mantığı şu şekildedir: "Dosya türü beyaz listede bulunuyorsa, dosyayı taramayın ve engellemeyin ve dosyayı kara listeye veya gri listeye karşı kontrol etmeyin. Dosya türü kara listede bulunuyorsa, dosyayı taramayın, ancak yine de engelleyin ve dosyayı gri liste karşı kontrol etmeyin. Gri liste boşsa, ya da gri liste boş değilse ve dosya türü gri listede bulunuyorsa, dosyayı normal göre tara ve taramanın sonuçlarına dayanarak engelleyip engellemeyeceğini belirleme, ancak gri liste boş değilse ve dosya türü gri listede değil, dosyayı kara listede olduğu gibi davranın, bu nedenle tarama değil, yine de engelleme."
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">
