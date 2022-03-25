@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: "phpMussel Core"
- Version: "2.4.2-DEV+22083000"
+ Version: "2.4.2"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -39,7 +39,7 @@ phpMussel Core:
    - "5fc23d3cba0ac367ab4f06ce186af6d9ca60ded5e65d8f4ba0d57c90185ffe78:32504"
    - "19e973bdc4e75557ba10d3934e68993956bc24bd57f6f109f9eca159100a7c50:3872"
    - "5d14dd147f82ab17416959e50610f0aa94f3b42ac7b86ce610cb5ed93123edeb:1854"
-   - "2b21479fb284406310f774d906b69264c09e903e5c7fe05a984f8a3bdf9f204c:8103"
+   - "5ac75ec30c6efe0356416d5d857628bd374754484d91e2554fb8bf685499d066:8103"
    - "d6885abb366230012e101f908fd883c554b6fa71d0d9995f8795bba3acaca8e2:20184"
    - "50566be4d8b3455c9c3595fe7245854f01109a9737b7d2599406e7b2289da491:7481"
    - "e8349aab58cb97560460b4db9b8d5136e9c964156df041efec87997995790925:232482"
@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.2-DEV+22082000"
+ Version: "2.4.2"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -172,7 +172,7 @@ phpMussel Front-End:
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
- Version: "2.4.2-DEV+22082000"
+ Version: "2.4.2"
  Dependencies:
   PHP: ">=7.2"
   phpMussel Core: "^2"
@@ -197,7 +197,7 @@ phpMussel Upload Handler:
  Reannotate: "components.dat"
 phpMussel CLI Handler:
  Name: "phpMussel CLI Handler"
- Version: "2.4.2-DEV+22082000"
+ Version: "2.4.2"
  Dependencies:
   PHP: ">=7.2"
   phpMussel Core: "^2"

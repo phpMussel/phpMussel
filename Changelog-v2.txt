@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 2.4.2 ===
+PATCH RELEASE.
+
 - [2022.02.21; Maikuolan]: Improved IP address resolution strategy.
 
 - [2022.02.21; Bug-fix; Maikuolan]: File manager component files categorisation
@@ -22,6 +27,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2022.03.24; Bug-fix; Maikuolan]: Fixed a bottleneck in the scan process
   caused by the ReadFile closure (#231).
+
+Caleb M (Maikuolan),
+March 25, 2022.
 
 === Version/Release 2.4.1 ===
 PATCH RELEASE.
