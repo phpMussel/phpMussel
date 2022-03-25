@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.01).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -54,7 +54,7 @@ config_files_filesize_response: "Hva gjør du med filer som overskrider filstør
 config_files_filetype_archives: "Arv inn svartelisten/hvitelisten for filtyper til innholdet i arkiver? False = Nei (behandle alt som grålistet) [Standardverdi]; True = Ja."
 config_files_filetype_blacklist: "Svarteliste:"
 config_files_filetype_greylist: "Gråliste:"
-config_files_filetype_whitelist: "Hvis systemet bare tillater opplasting av bestemte filtyper, eller hvis systemet eksplisitt avviser visse filtyper, å spesifisere filtypene i hvitelister, svartelister og grålister kan øke hastigheten som skanning utføres ved å la skriptet hoppe over bestemte filtyper. Format er CSV (kommaseparerte verdier). Hvis du vil skanne alt, i stedet for å bruke hvitelisten, svartelisten eller grålisten, du bør la variablene være tomt; Dette vil deaktivere hvitelisten/svartelisten/grålisten. Logisk rekkefølge på behandlingen er: Hvis filtypen er hvitlistet, ikke skanne og ikke blokkere filen, og ikke sjekke filen mot svartelisten eller grålisten. Hvis filtypen er svartelistet, ikke skanne filen, men blokkere den uansett, og ikke sjekk filen mot grålisten. Hvis grålisten er tom, eller hvis grålisten ikke er tom og filtypen er grålistet, skann filen som normalt og bestemme om den skal blokkeres basert på resultatene av skanningen, men hvis grålisten ikke er tom og filtypen ikke er grålistet, behandle filen som svartelistet, derfor ikke skanne den, men blokkerer den uansett. Hviteliste:"
+config_files_filetype_whitelist: "Hviteliste:"
 config_files_max_files_in_archives: "Maksimalt antall filer som skal skannes fra arkiv før abort. Standardverdi = 0 (ikke maksimalt)."
 config_files_max_recursion: "Maksimal rekursjonsdybde for arkiver. Standardverdi = 3."
 config_files_max_uploads: "Maksimalt antall filer som phpMussel har lov til å skanne når den skannes opplastinger før de avbryter skanningen og informerer brukeren om at de laster opp for mye på en gang! Gir beskyttelse mot et teoretisk angrep der en angriper forsøker å DDoS systemet eller CMS ved å overbelaste phpMussel for å bremse PHP-prosessen til en stansing. Anbefalt: 10. Det kan være lurt å heve eller senke dette tallet, avhengig av maskinvarens hastighet. Merk at dette nummeret ikke står for eller inkluderer innholdet i arkiver."
@@ -194,6 +194,9 @@ field_verify: "Verifisere"
 field_verify_all: "Verifisere alt"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_xlists:
+ Hvordan dette fungerer.: "Hvis systemet bare tillater opplasting av bestemte filtyper, eller hvis systemet eksplisitt avviser visse filtyper, å spesifisere filtypene i hvitelister, svartelister og grålister kan øke hastigheten som skanning utføres ved å la skriptet hoppe over bestemte filtyper. Format er CSV (kommaseparerte verdier)."
+ Logisk rekkefølge på behandlingen.: "Hvis filtypen er hvitlistet, ikke skanne og ikke blokkere filen, og ikke sjekke filen mot svartelisten eller grålisten. Hvis filtypen er svartelistet, ikke skanne filen, men blokkere den uansett, og ikke sjekk filen mot grålisten. Hvis grålisten er tom, eller hvis grålisten ikke er tom og filtypen er grålistet, skann filen som normalt og bestemme om den skal blokkeres basert på resultatene av skanningen, men hvis grålisten ikke er tom og filtypen ikke er grålistet, behandle filen som svartelistet, derfor ikke skanne den, men blokkerer den uansett."
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">

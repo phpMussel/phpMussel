@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.07).
+# This file: French language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -54,7 +54,7 @@ config_files_filesize_response: "Que faire avec des fichiers qui dépassent la l
 config_files_filetype_archives: "Étendre type de fichier liste noire/blanche paramètres à le contenu des archives\_? False = Non (énumérer grise tout) [Défaut]\_; True = Oui."
 config_files_filetype_blacklist: "Liste Noire\_:"
 config_files_filetype_greylist: "Liste Gris\_:"
-config_files_filetype_whitelist: "Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc\_; Il va désactiver liste blanche/noire/gris. L'ordre logique de l'application est\_: Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon. Liste Blanche\_:"
+config_files_filetype_whitelist: "Liste Blanche\_:"
 config_files_max_files_in_archives: "Nombre maximal de fichiers à analyser à partir d'archives avant l'abandon de l'analyse. Défaut = 0 (n'est pas un maximum)."
 config_files_max_recursion: "Maximum récursivité profondeur limite pour archives. Défaut = 3."
 config_files_max_uploads: "Maximum admissible nombre de fichiers pour analyse lorsque l'analyse de fichier téléchargements avant d'abandonner l'analyse et informer l'utilisateur qu'ils sont téléchargement trop à la fois\_! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé\_: 10. Vous pouvez désirer d'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives."
@@ -196,6 +196,9 @@ field_verify: "Vérifier"
 field_verify_all: "Vérifier tous"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
+hints_xlists:
+ Comment cela fonctionne.: "Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs)."
+ L'ordre logique de l'application.: "Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon."
 info_some_useful_links: |
  Quelques liens utiles :<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.01).
+# This file: Italian language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -54,7 +54,7 @@ config_files_filesize_response: "Cosa fare con i file che superano il file dimen
 config_files_filetype_archives: "Eredita file tipi blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto) [Predefinito]; True = Sì."
 config_files_filetype_blacklist: "Blacklist:"
 config_files_filetype_greylist: "Greylist:"
-config_files_filetype_whitelist: "Se il vostro sistema permette solo determinati tipi di file per caricamenti, o se il vostra sistema esplicitamente negare determinati tipi di file, specificando i tipi di file nel whitelist, blacklist e/o greylist può aumentare la velocità a cui la scansione viene eseguita da permettendo lo script da ignora alcuni tipi di file. Il formato è CSV (valori separati da virgola). Se si desidera eseguire la scansione tutti, invece del whitelist, la blacklist o la greylist, lasciare le variabili vuoti; Fare questo sarà disabilitali. Logico ordine del trattamento è: Se il tipo di file è nel whitelist, non scansiona e non blocca il file, e non verificare il file contra la blacklist o la greylist. Se il tipo di file è nel blacklist, non scansiona il file ma bloccarlo comunque, e non verificar il file contra la greylist. Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque. Whitelist:"
+config_files_filetype_whitelist: "Whitelist:"
 config_files_max_files_in_archives: "Numero massimo di file da scansionare dagli archivi prima di interrompere la scansione. Predefinito = 0 (nessun massimo)."
 config_files_max_recursion: "Massimo ricorsione profondità limite per gli archivi. Predefinito = 3."
 config_files_max_uploads: "Massimo numero di file per analizzare durante il file caricamenti scansione prima le terminazione del scansione e d'informare dell'utente che essi stai caricando troppo in una volta! Fornisce protezione contro un teorico attacco per cui un malintenzionato utente tenta per DDoS vostra sistema o CMS da sovraccaricamento phpMussel rallentare il PHP processo ad un brusco stop. Raccomandato: 10. Si potrebbe desiderare di aumentare o diminuire che numero basato sulla velocità del vostra sistema e hardware. Si noti che questo numero non tiene conto o includere il contenuti degli archivi."
@@ -194,6 +194,9 @@ field_verify: "Verificarlo"
 field_verify_all: "Verifica tutto"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+hints_xlists:
+ Come funziona.: "Se il vostro sistema permette solo determinati tipi di file per caricamenti, o se il vostra sistema esplicitamente negare determinati tipi di file, specificando i tipi di file nel whitelist, blacklist e/o greylist può aumentare la velocità a cui la scansione viene eseguita da permettendo lo script da ignora alcuni tipi di file. Il formato è CSV (valori separati da virgola)."
+ Logico ordine del trattamento.: "Se il tipo di file è nel whitelist, non scansiona e non blocca il file, e non verificare il file contra la blacklist o la greylist. Se il tipo di file è nel blacklist, non scansiona il file ma bloccarlo comunque, e non verificar il file contra la greylist. Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque."
 info_some_useful_links: |
  Alcuni link utili:<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.01).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -54,7 +54,7 @@ config_files_filesize_response: "如何处理文件超过文件大小限（如�
 config_files_filetype_archives: "继承文件类型黑名单/白名单在存档内容吗？​False（假）=不继承（刚灰名单一切）【默认】；​True（真）=继承。"
 config_files_filetype_blacklist: "黑名单："
 config_files_filetype_greylist: "灰名单："
-config_files_filetype_whitelist: "如果您的系统只允许具体文件类型被上传，​或如果您的系统明确地否认某些文件类型，​指定那些文件类型在白名单，​黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。​格式是CSV（逗号分隔变量）。​如果您想扫描一切，​而不是白名单，​黑名单或灰名单，​留变量空；这样做将关闭白名单/黑名单/灰名单。​进程逻辑顺序是：如果文件类型已白名单，​不扫描和不受阻文件，​和不匹配文件对照黑名单或灰名单。​如果文件类型已黑名单，​不扫描文件但阻止它无论如何，​和不匹配文件对照灰名单。​如果灰名单是空，​或如果灰名单不空和文件类型已灰名单，​扫描文件像正常和确定如果阻止它基于扫描结果，​但如果灰名单不空和文件类型不灰名单，​过程文件仿佛已黑名单，​因此不扫描它但阻止它无论如何。​白名单："
+config_files_filetype_whitelist: "白名单："
 config_files_max_files_in_archives: "在中止扫描之前从档案中扫描的最大文件数。​默认=0（没有最大文件数）。"
 config_files_max_recursion: "最大存档递归深度限。​默认=3。"
 config_files_max_uploads: "最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！​提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。​推荐：10。​您可能想增加或减少这个数值，​根据速度的您的硬件。​注意这个数值不交待为或包括存档内容。"
@@ -194,6 +194,9 @@ field_verify: "验证"
 field_verify_all: "验证全部"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+hints_xlists:
+ 这是如何工作的。: "如果您的系统只允许具体文件类型被上传，​或如果您的系统明确地否认某些文件类型，​指定那些文件类型在白名单，​黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。​格式是CSV（逗号分隔变量）。"
+ 进程的逻辑顺序。: "如果文件类型已白名单，​不扫描和不受阻文件，​和不匹配文件对照黑名单或灰名单。​如果文件类型已黑名单，​不扫描文件但阻止它无论如何，​和不匹配文件对照灰名单。​如果灰名单是空，​或如果灰名单不空和文件类型已灰名单，​扫描文件像正常和确定如果阻止它基于扫描结果，​但如果灰名单不空和文件类型不灰名单，​过程文件仿佛已黑名单，​因此不扫描它但阻止它无论如何。"
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">

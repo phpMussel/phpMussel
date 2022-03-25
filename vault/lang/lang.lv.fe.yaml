@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.01).
+# This file: Latvian language data for the front-end (last modified: 2022.03.25).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -54,7 +54,7 @@ config_files_filesize_response: "Ko darīt ar failiem, kas pārsniedz faila liel
 config_files_filetype_archives: "Vai faila tips melnajā/baltajā sarakstā būtu jāattiecina uz arhīvu saturu? False (Nepatiess) = Nē (visu tikai iekļauj pelēkajā sarakstā) [Noklusējuma]; True (Patiess) = Jā."
 config_files_filetype_blacklist: "Melnais saraksts:"
 config_files_filetype_greylist: "Pelēkais saraksts:"
-config_files_filetype_whitelist: "Ja jūsu sistēma ļauj augšupielādēt tikai noteikta veida failus vai ja jūsu sistēma skaidri noliedz noteikta veida failus, failu tipu norādīšana baltajos sarakstos, melnajos sarakstos un pelēkajos sarakstos var palielināt skenēšanas ātrumu ļaujot skriptam izlaist noteiktus failu tipus. Formāts ir CSV (komatatdalītas vērtības). Ja vēlaties skenēt visu, nevis ievietot to baltajā sarakstā, melnajā sarakstā vai pelēkajā sarakstā, atstājiet mainīgos tukšus. To darot, baltais/melnais/pelēkais saraksts tiks atspējots. Apstrādes loģiskā secība: Ja faila tips ir iekļauts baltajā sarakstā, neskenējiet un nebloķējiet failu, un nepārbaudiet failu pret melno sarakstu vai pelēko sarakstu. Ja faila tips ir iekļauts melnajā sarakstā, neskenējiet failu, bet jebkurā gadījumā to bloķējiet, un nepārbaudiet failu pret pelēko sarakstu. Ja pelēkais saraksts ir tukšs vai, ja pelēkais saraksts nav tukšs un faila tips ir iekļauts pelēkajā sarakstā, skenējiet failu kā parasti un, pamatojoties uz skenēšanas rezultātiem, nosakiet, vai to bloķēt, bet ja pelēkais saraksts nav tukšs un faila tips nav pelēkā sarakstā, apstrādājiet failu kā melnajā sarakstā, tāpēc nevis skenē bet jebkurā gadījumā to bloķēt. Baltais saraksts:"
+config_files_filetype_whitelist: "Baltais saraksts:"
 config_files_max_files_in_archives: "Maksimālais skenējamo failu skaits arhīvos pirms skenēšanas pārtraukšanas. Noklusējuma = 0 (nav maksimālā)."
 config_files_max_recursion: "Maksimālais rekursijas dziļuma ierobežojums arhīviem. Noklusējuma = 3."
 config_files_max_uploads: "Maksimālais failu skaits, augšupielādes skenēšanas laikā, ko phpMussel ir atļauts skenēt, pirms skenēšanas pārtraukšanas un lietotāja informēšanas, ka viņš vienlaikus augšupielādē pārāk daudz! Nodrošina aizsardzību pret teorētisku uzbrukumu, kurā uzbrucējs mēģina DDoS jūsu sistēmā vai CMS, pārslogojot phpMussel, lai palēninātu PHP procesu līdz apturēšanai. Ieteicams: 10. Iespējams, vēlēsities palielināt vai samazināt šo numuru atkarībā no aparatūras ātruma. Ņemiet vērā, ka šis numurs neaptver un neietver arhīvu saturu."
@@ -197,6 +197,9 @@ field_verify: "Verificēt"
 field_verify_all: "Verificēt visus"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+hints_xlists:
+ Kā tas darbojas.: "Ja jūsu sistēma ļauj augšupielādēt tikai noteikta veida failus vai ja jūsu sistēma skaidri noliedz noteikta veida failus, failu tipu norādīšana baltajos sarakstos, melnajos sarakstos un pelēkajos sarakstos var palielināt skenēšanas ātrumu ļaujot skriptam izlaist noteiktus failu tipus. Formāts ir CSV (komatatdalītas vērtības)."
+ Apstrādes loģiskā secība.: "Ja faila tips ir iekļauts baltajā sarakstā, neskenējiet un nebloķējiet failu, un nepārbaudiet failu pret melno sarakstu vai pelēko sarakstu. Ja faila tips ir iekļauts melnajā sarakstā, neskenējiet failu, bet jebkurā gadījumā to bloķējiet, un nepārbaudiet failu pret pelēko sarakstu. Ja pelēkais saraksts ir tukšs vai, ja pelēkais saraksts nav tukšs un faila tips ir iekļauts pelēkajā sarakstā, skenējiet failu kā parasti un, pamatojoties uz skenēšanas rezultātiem, nosakiet, vai to bloķēt, bet ja pelēkais saraksts nav tukšs un faila tips nav pelēkā sarakstā, apstrādājiet failu kā melnajā sarakstā, tāpēc nevis skenē bet jebkurā gadījumā to bloķēt."
 info_some_useful_links: |
  Dažas noderīgas saites:<br />
      <ul class="pieul">
