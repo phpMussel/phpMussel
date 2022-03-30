@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.24).
+ * This file: Functions file (last modified: 2022.03.30).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -4666,35 +4666,23 @@ $phpMussel['GenerateSalt'] = function (): string {
     static $MinChr = 1;
     static $MaxChr = 255;
     $Salt = '';
-    if (function_exists('random_int')) {
-        try {
-            $Length = random_int($MinLen, $MaxLen);
-        } catch (\Exception $e) {
-            $Length = rand($MinLen, $MaxLen);
-        }
-    } else {
+    try {
+        $Length = random_int($MinLen, $MaxLen);
+    } catch (\Exception $e) {
         $Length = rand($MinLen, $MaxLen);
     }
-    if (function_exists('random_bytes')) {
+    try {
+        $Salt = random_bytes($Length);
+    } catch (\Exception $e) {
+        $Salt = '';
+    }
+    if (!strlen($Salt)) {
         try {
-            $Salt = random_bytes($Length);
+            for ($Index = 0; $Index < $Length; $Index++) {
+                $Salt .= chr(random_int($MinChr, $MaxChr));
+            }
         } catch (\Exception $e) {
             $Salt = '';
-        }
-    }
-    if (empty($Salt)) {
-        if (function_exists('random_int')) {
-            try {
-                for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(random_int($MinChr, $MaxChr));
-                }
-            } catch (\Exception $e) {
-                $Salt = '';
-                for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(rand($MinChr, $MaxChr));
-                }
-            }
-        } else {
             for ($Index = 0; $Index < $Length; $Index++) {
                 $Salt .= chr(rand($MinChr, $MaxChr));
             }

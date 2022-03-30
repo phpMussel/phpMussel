@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.28).
+ * This file: Front-end functions file (last modified: 2022.03.30).
  */
 
 /**
@@ -2358,14 +2358,12 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], string $Subject = ''
 $phpMussel['2FA-Number'] = function (): int {
     static $MinInt = 10000000;
     static $MaxInt = 99999999;
-    if (function_exists('random_int')) {
-        try {
-            $Key = random_int($MinInt, $MaxInt);
-        } catch (\Exception $e) {
-            $Key = rand($MinInt, $MaxInt);
-        }
+    try {
+        $Key = random_int($MinInt, $MaxInt);
+    } catch (\Exception $e) {
+        $Key = rand($MinInt, $MaxInt);
     }
-    return isset($Key) ? $Key : rand($MinInt, $MaxInt);
+    return $Key;
 };
 
 /**
