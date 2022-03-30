@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.22).
+ * This file: Front-end handler (last modified: 2022.03.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1583,10 +1583,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
             /** Provide hints, useful for users to better understand the directive at hand. */
             if (!empty($phpMussel['DirValue']['hints'])) {
-                $phpMussel['ThisDir']['Hints'] = $phpMussel['L10N']->Data[$phpMussel['DirValue']['hints']] ?? $phpMussel['DirValue']['hints'];
-                if (!is_array($phpMussel['ThisDir']['Hints'])) {
-                    $phpMussel['ThisDir']['Hints'] = [$phpMussel['ThisDir']['Hints']];
-                }
+                $phpMussel['ThisDir']['Hints'] = $phpMussel['ArrayFromL10NDataToArray']($phpMussel['DirValue']['hints']);
                 foreach ($phpMussel['ThisDir']['Hints'] as $phpMussel['ThisDir']['HintKey'] => $phpMussel['ThisDir']['HintValue']) {
                     if (is_int($phpMussel['ThisDir']['HintKey'])) {
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s", $phpMussel['ThisDir']['HintValue']);

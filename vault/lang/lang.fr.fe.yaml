@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.25).
+# This file: French language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "Quand le honeypot mode est activé, phpMussel va 
 config_general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
 config_general_lang: "Spécifiez la langue défaut pour phpMussel."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
-config_general_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée. Archive = Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
+config_general_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici."
 config_general_log_rotation_limit: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal."
 config_general_maintenance_mode: "Activer le mode de maintenance\_? True = Oui\_; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc."
 config_general_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Inconnu"
 field_install: "Installer"
 field_latest_version: "Dernière Version"
 field_log_in: "Connecter"
+field_log_rotation_archive: "Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
+field_log_rotation_delete: "Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
 field_more_fields: "Plus de Champs"
 field_new_name: "Nouveau nom\_:"
 field_ok: "D'accord"

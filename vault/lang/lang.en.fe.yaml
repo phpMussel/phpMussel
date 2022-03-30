@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.03.25).
+# This file: English language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "When honeypot mode is enabled, phpMussel will att
 config_general_ipaddr: "Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!"
 config_general_lang: "Specify the default language for phpMussel."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
-config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here. Delete = Delete the oldest logfiles, until the limit is no longer exceeded. Archive = Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
+config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here."
 config_general_log_rotation_limit: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
 config_general_maintenance_mode: "Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc."
 config_general_max_login_attempts: "Maximum number of front-end login attempts. Default = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Unknown"
 field_install: "Install"
 field_latest_version: "Latest Version"
 field_log_in: "Log In"
+field_log_rotation_archive: "Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
+field_log_rotation_delete: "Delete the oldest logfiles, until the limit is no longer exceeded."
 field_more_fields: "More Fields"
 field_new_name: "New name:"
 field_ok: "OK"

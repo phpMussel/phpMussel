@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.25).
+# This file: Korean language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "허니팟 모드가 활성화되어 있으면 php
 config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_lang: "phpMussel의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
-config_general_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
+config_general_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다."
 config_general_log_rotation_limit: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다."
 config_general_maintenance_mode: "유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다."
 config_general_max_login_attempts: "로그인 시도 최대 횟수입니다 (프론트 엔드). Default / 기본 설정 = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "알 수없는"
 field_install: "설치"
 field_latest_version: "최신 버전"
 field_log_in: "로그인"
+field_log_rotation_archive: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
+field_log_rotation_delete: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오."
 field_more_fields: "필드를 추가합니다"
 field_new_name: "새 이름\_:"
 field_ok: "승인"

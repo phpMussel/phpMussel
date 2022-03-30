@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.25).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "Når honeypot-modus er aktivert, vil phpMussel fo
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for phpMussel."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
-config_general_log_rotation_action: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her. Delete = Slett de eldste loggfiler, til grensen ikke overskrides. Archive = Først arkiver, og deretter slett de eldste loggfiler, til grensen ikke overskrides."
+config_general_log_rotation_action: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her."
 config_general_log_rotation_limit: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket grense her. En verdi på 0 deaktiverer loggrotasjon."
 config_general_maintenance_mode: "Aktiver vedlikeholdsmodus? True = Ja; False = Nei [Standardverdi]. Deaktiverer alt annet enn frontenden. Noen ganger nyttig for når du oppdaterer CMS, rammeverker, osv."
 config_general_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Ukjent"
 field_install: "Installer"
 field_latest_version: "Siste Versjon"
 field_log_in: "Logg Inn"
+field_log_rotation_archive: "Først arkiver, og deretter slett de eldste loggfiler, til grensen ikke overskrides."
+field_log_rotation_delete: "Slett de eldste loggfiler, til grensen ikke overskrides."
 field_more_fields: "Flere Felt"
 field_new_name: "Nytt navn:"
 field_ok: "OK"

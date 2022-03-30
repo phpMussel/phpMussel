@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.02.20).
+# This file: Configuration defaults file (last modified: 2022.03.30).
 ##/
 
 Config Defaults:
@@ -38,8 +38,8 @@ Config Defaults:
    type: "string"
    default: "Delete"
    choices:
-    Delete: "Delete"
-    Archive: "Archive"
+    Delete: "field_log_rotation_delete"
+    Archive: "field_log_rotation_archive"
   timezone:
    type: "timezone"
    default: "SYSTEM"
@@ -279,7 +279,7 @@ Config Defaults:
    choices:
     PASSWORD_DEFAULT: "PASSWORD_DEFAULT"
     PASSWORD_BCRYPT: "PASSWORD_BCRYPT"
-    PASSWORD_ARGON2I: "PASSWORD_ARGON2I (PHP >= 7.2.0)"
+    PASSWORD_ARGON2I: "PASSWORD_ARGON2I"
     PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
    choice_filter: "FilterByDefined"
   statistics:

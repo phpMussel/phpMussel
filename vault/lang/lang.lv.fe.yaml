@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.25).
+# This file: Latvian language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "Kad medus poda režīms ir iespējots, phpMussel 
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet phpMussel noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību. Delete = Izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts. Archive = Vispirms arhivējiet un pēc tam izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
+config_general_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību."
 config_general_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
 config_general_maintenance_mode: "Vai iespējot apkopes režīmu? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Jūs joprojām varat administrēt, bet viss pārējais ir atspējots. Tas dažreiz var būt noderīgs, atjaunojot CMS, frameworks, utt."
 config_general_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Nezināms"
 field_install: "Instalējiet"
 field_latest_version: "Jaunākā Versija"
 field_log_in: "Ielogoties"
+field_log_rotation_archive: "Vispirms arhivējiet un pēc tam izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
+field_log_rotation_delete: "Izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
 field_more_fields: "Vairāk Lauku"
 field_new_name: "Jauns nosaukums:"
 field_ok: "Labi"

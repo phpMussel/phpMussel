@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.25).
+# This file: Polish language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "Gdy włączony jest tryb honeypot, phpMussel będ
 config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydatny w przypadku usług takich jak Cloudflare i podobnych). Domyślna = REMOTE_ADDR. OSTRZEŻENIE: Nie zmieniaj tego, jeśli nie wiesz, co robisz!"
 config_general_lang: "Określ domyślny język dla phpMussel."
 config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję. Delete = Usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony. Archive = Najpierw zarchiwizuj, a następnie usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
+config_general_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
 config_general_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
 config_general_maintenance_mode: "Włączyć tryb konserwacji? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyłącza wszystko oprócz interfejsu użytkownika. Czasami przydatne w przypadku aktualizacji CMS, frameworków, itp."
 config_general_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Nieznany"
 field_install: "Zainstaluj"
 field_latest_version: "Ostatnia Wersja"
 field_log_in: "Zaloguj sie"
+field_log_rotation_archive: "Najpierw zarchiwizuj, a następnie usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
+field_log_rotation_delete: "Usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
 field_more_fields: "Więcej pól"
 field_new_name: "Nowe imię:"
 field_ok: "OK"

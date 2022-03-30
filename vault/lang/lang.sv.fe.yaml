@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.25).
+# This file: Swedish language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "När honeypot-läget är aktiverat, kommer phpMus
 config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_lang: "Ange standardspråk för phpMussel."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
-config_general_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här. Delete = Radera de äldsta loggfilerna, tills gränsen inte längre överskrids. Archive = För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
+config_general_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här."
 config_general_log_rotation_limit: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad gräns här. Ett värde på 0 kommer att inaktivera loggroteringen."
 config_general_maintenance_mode: "Aktivera underhållsläge? True = Ja; False = Nej [Standard]. Inaktiverar allt annat än front-end. Ibland användbar för när du uppdaterar dina CMS, frameworks, osv."
 config_general_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
@@ -162,6 +162,8 @@ field_filetype_unknown: "Okänd"
 field_install: "Installera"
 field_latest_version: "Senaste versionen"
 field_log_in: "Logga in"
+field_log_rotation_archive: "För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
+field_log_rotation_delete: "Radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
 field_more_fields: "Fler Fält"
 field_new_name: "Nytt namn:"
 field_ok: "OK"

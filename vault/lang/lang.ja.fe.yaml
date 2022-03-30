@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.03.25).
+# This file: Japanese language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -76,7 +76,7 @@ config_general_honeypot_mode: "ハニーポットモードが有効になって�
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"config_general_lang: "phpMusselのデフォルト言語を設定します。"
 config_general_lang: "phpMusselのデフォルト言語を設定します。"
 config_general_lang_override: "可能な限り「HTTP_ACCEPT_LANGUAGE」に従ってローカライズしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_general_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。"
+config_general_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。"
 config_general_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"
 config_general_maintenance_mode: "メンテナンス・モードを有効にしますか？ True = はい。 False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。"
 config_general_max_login_attempts: "ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。"
@@ -162,6 +162,8 @@ field_filetype_unknown: "不明です"
 field_install: "インストール"
 field_latest_version: "最新バージョン"
 field_log_in: "ログイン"
+field_log_rotation_archive: "最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。"
+field_log_rotation_delete: "最も古いログ・ファイルを削除して、制限を超過しないようにします。"
 field_more_fields: "フィールドを追加します"
 field_new_name: "新しい名前："
 field_ok: "ＯＫ"
