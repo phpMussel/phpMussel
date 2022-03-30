@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.03.25).
+# This file: Spanish language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Permite que el front-end genere gráficos circulares.<br />{{Links.Chart.js}} está disponible a través de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -75,7 +75,7 @@ config_general_honeypot_mode: "Cuando la honeypot modo está activado, phpMussel
 config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicitudes entrantes? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_lang: "Especifique la predefinido del lenguaje para phpMussel."
 config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre que sea posible? True = Sí [Predefinido]; False = No."
-config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí. Delete = Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda. Archive = Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
+config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí."
 config_general_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
 config_general_maintenance_mode: "¿Activar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc."
 config_general_max_login_attempts: "Número máximo de intentos de login al front-end. Predefinido = 5."
@@ -161,6 +161,8 @@ field_filetype_unknown: "Desconocido"
 field_install: "Instalar"
 field_latest_version: "Ultima Versión"
 field_log_in: "Iniciar Sesión"
+field_log_rotation_archive: "Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
+field_log_rotation_delete: "Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
 field_more_fields: "Más Campos"
 field_new_name: "Nuevo nombre:"
 field_ok: "OK"

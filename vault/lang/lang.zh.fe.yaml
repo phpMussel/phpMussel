@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.25).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -75,7 +75,7 @@ config_general_honeypot_mode: "当这个指令（蜜罐模式）是激活，​p
 config_general_ipaddr: "在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！"
 config_general_lang: "指定标准phpMussel语言。"
 config_general_lang_override: "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。"
-config_general_log_rotation_action: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。​“Delete”=删除最旧的日志文件，直到不再超出限制。​“Archive”=首先归档，然后删除最旧的日志文件，直到不再超出限制。"
+config_general_log_rotation_action: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。"
 config_general_log_rotation_limit: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。"
 config_general_maintenance_mode: "启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。"
 config_general_max_login_attempts: "最大前端登录尝试次数。​标准=5。"
@@ -161,6 +161,8 @@ field_filetype_unknown: "未知"
 field_install: "安装"
 field_latest_version: "最新版本"
 field_log_in: "登录"
+field_log_rotation_archive: "首先归档，然后删除最旧的日志文件，直到不再超出限制。"
+field_log_rotation_delete: "删除最旧的日志文件，直到不再超出限制。"
 field_more_fields: "更多字段"
 field_new_name: "新名称："
 field_ok: "OK"

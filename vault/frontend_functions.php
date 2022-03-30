@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.24).
+ * This file: Front-end functions file (last modified: 2022.03.28).
  */
 
 /**
@@ -2674,13 +2674,42 @@ $phpMussel['CheckVersions'] = function (array &$Source, array &$To) use (&$phpMu
  * Replaces labels with corresponding L10N data (if there's any).
  *
  * @param string $Label The actual label.
- * @return string The replaced label.
+ * @return void
  */
 $phpMussel['ReplaceLabelWithL10N'] = function (&$Label) use (&$phpMussel) {
     foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
-        if (array_key_exists($Prefix . $Label, $phpMussel['L10N']->Data)) {
+        if (isset($phpMussel['L10N']->Data[$Prefix . $Label])) {
             $Label = $phpMussel['L10N']->getString($Prefix . $Label);
             return;
         }
     }
+};
+
+/**
+ * Parses an array of L10N data references from L10N data to an array.
+ *
+ * @param string|array $References The L10N data references.
+ * @return array An array of L10N data.
+ */
+$phpMussel['ArrayFromL10NDataToArray'] = function ($References) use (&$phpMussel) {
+    if (!is_array($References)) {
+        $References = [$References];
+    }
+    $Out = [];
+    foreach ($References as $Reference) {
+        if (isset($phpMussel['L10N']->Data[$Reference])) {
+            $Reference = $phpMussel['L10N']->Data[$Reference];
+        }
+        if (!is_array($Reference)) {
+            $Reference = [$Reference];
+        }
+        foreach ($Reference as $Key => $Value) {
+            if (is_int($Key)) {
+                $Out[] = $Value;
+                continue;
+            }
+            $Out[$Key] = $Value;
+        }
+    }
+    return $Out;
 };

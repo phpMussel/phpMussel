@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.25).
+# This file: Italian language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -75,7 +75,7 @@ config_general_honeypot_mode: "Quando la honeypot modalità è abilitata, phpMus
 config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!"
 config_general_lang: "Specifica la lingua predefinita per phpMussel."
 config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando possibile? True = Sì [Predefinito]; False = No."
-config_general_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
+config_general_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato."
 config_general_log_rotation_limit: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log."
 config_general_maintenance_mode: "Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l'aggiornamento del CMS, dei framework, ecc."
 config_general_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
@@ -161,6 +161,8 @@ field_filetype_unknown: "Sconosciuto"
 field_install: "Installarlo"
 field_latest_version: "Ultima Versione"
 field_log_in: "Accedi"
+field_log_rotation_archive: "In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
+field_log_rotation_delete: "Elimina i file di log più vecchi, finché il limite non viene più superato."
 field_more_fields: "Più Campi"
 field_new_name: "Nuovo nome:"
 field_ok: "OK"

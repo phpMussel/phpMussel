@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.25).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -75,7 +75,7 @@ config_general_honeypot_mode: "Bila modus honeypot diaktifkan, phpMussel akan me
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk phpMussel."
 config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
-config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini. Delete = Hapus file log tertua, hingga batasnya tidak lagi terlampaui. Archive = Pertama arsipkan, lalu hapus file log tertua, hingga batasnya tidak lagi terlampaui."
+config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
 config_general_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
 config_general_maintenance_mode: "Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll."
 config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
@@ -161,6 +161,8 @@ field_filetype_unknown: "Tidak Diketahui"
 field_install: "Instal"
 field_latest_version: "Versi Terbaru"
 field_log_in: "Masuk"
+field_log_rotation_archive: "Pertama arsipkan, lalu hapus file log tertua, hingga batasnya tidak lagi terlampaui."
+field_log_rotation_delete: "Hapus file log tertua, hingga batasnya tidak lagi terlampaui."
 field_more_fields: "Bidang Lebih"
 field_new_name: "Nama baru:"
 field_ok: "OK"

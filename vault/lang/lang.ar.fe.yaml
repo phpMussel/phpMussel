@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.03.25).
+# This file: Arabic language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -75,7 +75,7 @@ config_general_honeypot_mode: "عند تمكين وضع مصيدة، و phpMusse
 config_general_ipaddr: "أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
 config_general_lang: "تحديد اللغة الافتراضية الخاصة بـ phpMussel."
 config_general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUAGE كلما أمكن ذلك؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
-config_general_log_rotation_action: "يحدد تدوير السجل عدد ملفات السجل التي يجب أن تكون موجودة في أي وقت. عند إنشاء ملفات السجل الجديدة، إذا تجاوز العدد الإجمالي لبيانات السجل الحد المحدد، فسيتم تنفيذ الإجراء المحدد. يمكنك تحديد الإجراء المطلوب هنا. Delete = احذف أقدم السجلات، حتى لا يتم تجاوز الحد. Archive = أرشفة أولاً، ثم احذف أقدم السجلات، حتى لا يتم تجاوز الحد."
+config_general_log_rotation_action: "يحدد تدوير السجل عدد ملفات السجل التي يجب أن تكون موجودة في أي وقت. عند إنشاء ملفات السجل الجديدة، إذا تجاوز العدد الإجمالي لبيانات السجل الحد المحدد، فسيتم تنفيذ الإجراء المحدد. يمكنك تحديد الإجراء المطلوب هنا."
 config_general_log_rotation_limit: "يحدد تدوير السجل عدد ملفات السجل التي يجب أن تكون موجودة في أي وقت. عند إنشاء ملفات السجل الجديدة، إذا تجاوز العدد الإجمالي لبيانات السجل الحد المحدد، فسيتم تنفيذ الإجراء المحدد. يمكنك تحديد الحد المرغوب هنا. ستعمل القيمة 0 على تعطيل تدوير السجل."
 config_general_maintenance_mode: "هل تريد تمكين وضع الصيانة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. تعطيل كل شيء بخلاف front-end. قد تكون مفيدة أحيانا عند تحديث نظام إدارة المحتوى والأطر وما إلى ذلك."
 config_general_max_login_attempts: "الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5."
@@ -161,6 +161,8 @@ field_filetype_unknown: "غير معروف"
 field_install: "تثبيت"
 field_latest_version: "احدث اصدار"
 field_log_in: "تسجيل الدخول"
+field_log_rotation_archive: "أرشفة أولاً، ثم احذف أقدم السجلات، حتى لا يتم تجاوز الحد."
+field_log_rotation_delete: "احذف أقدم السجلات، حتى لا يتم تجاوز الحد."
 field_more_fields: "المزيد من الحقول"
 field_new_name: "اسم جديد:"
 field_ok: "حسنا"
