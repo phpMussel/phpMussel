@@ -199,6 +199,8 @@ field_verify: "Verificēt"
 field_verify_all: "Verificēt visus"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar phpMussel?</a></em>"
 hints_xlists:
  Kā tas darbojas.: "Ja jūsu sistēma ļauj augšupielādēt tikai noteikta veida failus vai ja jūsu sistēma skaidri noliedz noteikta veida failus, failu tipu norādīšana baltajos sarakstos, melnajos sarakstos un pelēkajos sarakstos var palielināt skenēšanas ātrumu ļaujot skriptam izlaist noteiktus failu tipus. Formāts ir CSV (komatatdalītas vērtības)."
  Apstrādes loģiskā secība.: "Ja faila tips ir iekļauts baltajā sarakstā, neskenējiet un nebloķējiet failu, un nepārbaudiet failu pret melno sarakstu vai pelēko sarakstu. Ja faila tips ir iekļauts melnajā sarakstā, neskenējiet failu, bet jebkurā gadījumā to bloķējiet, un nepārbaudiet failu pret pelēko sarakstu. Ja pelēkais saraksts ir tukšs vai, ja pelēkais saraksts nav tukšs un faila tips ir iekļauts pelēkajā sarakstā, skenējiet failu kā parasti un, pamatojoties uz skenēšanas rezultātiem, nosakiet, vai to bloķēt, bet ja pelēkais saraksts nav tukšs un faila tips nav pelēkā sarakstā, apstrādājiet failu kā melnajā sarakstā, tāpēc nevis skenē bet jebkurā gadījumā to bloķēt."

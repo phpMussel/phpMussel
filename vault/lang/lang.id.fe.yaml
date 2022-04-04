@@ -196,6 +196,8 @@ field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.id.md\#HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan phpMussel?</a></em>"
 hints_xlists:
  Bagaimana ini bekerja.: "Jika sistem Anda hanya mengizinkan tipe file spesifik menjadi diupload, atau jika sistem Anda secara eksplisit menolak tipe file-file tertentu, menspesifikasikan tipe file dalam bertanda putih, bertanda hitam dan bertanda abu-abu dapat menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip untuk mengabaikan tipe file tertentu. Format adalah CSV (nilai yang dipisahkan koma)."
  Urutan logis dari pengolahan.: "Jika tipe file bertanda putih, tidak memindai dan tidak memblokir file, dan tidak memeriksa file terhadap daftar hitam atau daftar abu-abu. Jika tipe file bertanda hitem, tidak memindai file tapi memblokir bagaimanapun, dan tidak memeriksa file terhadap daftar abu-abu. Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai file seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe file tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun."

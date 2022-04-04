@@ -196,6 +196,8 @@ field_verify: "Verifisere"
 field_verify_all: "Verifisere alt"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med phpMussel?</a></em>"
 hints_xlists:
  Hvordan dette fungerer.: "Hvis systemet bare tillater opplasting av bestemte filtyper, eller hvis systemet eksplisitt avviser visse filtyper, å spesifisere filtypene i hvitelister, svartelister og grålister kan øke hastigheten som skanning utføres ved å la skriptet hoppe over bestemte filtyper. Format er CSV (kommaseparerte verdier)."
  Logisk rekkefølge på behandlingen.: "Hvis filtypen er hvitlistet, ikke skanne og ikke blokkere filen, og ikke sjekke filen mot svartelisten eller grålisten. Hvis filtypen er svartelistet, ikke skanne filen, men blokkere den uansett, og ikke sjekk filen mot grålisten. Hvis grålisten er tom, eller hvis grålisten ikke er tom og filtypen er grålistet, skann filen som normalt og bestemme om den skal blokkeres basert på resultatene av skanningen, men hvis grålisten ikke er tom og filtypen ikke er grålistet, behandle filen som svartelistet, derfor ikke skanne den, men blokkerer den uansett."

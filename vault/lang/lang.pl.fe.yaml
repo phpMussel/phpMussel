@@ -199,6 +199,8 @@ field_verify: "Zweryfikuj"
 field_verify_all: "Zweryfikuj wszystko"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z phpMussel?</a></em>"
 hints_xlists:
  Jak to działa.: "Jeśli twój system zezwala tylko na przesyłanie określonych typów plików lub jeśli twój system jednoznacznie zaprzecza określonym typom plików, określenie tych typów plików na białych listach, czarnych listach i szarych listach może zwiększyć szybkość skanowania, umożliwiając skryptowi pomijanie niektórych rodzajów plików. Format to CSV (wartości oddzielone przecinkami)."
  Logiczna kolejność przetwarzania.: "Jeśli typ pliku znajduje się na białej liście, nie skanuj i nie blokuj pliku oraz nie porównuj pliku z czarną listą lub szarą listą. Jeśli typ pliku znajduje się na czarnej liście, nie skanuj pliku, ale i tak go zablokuj i nie sprawdzaj pliku z szarą listą. Jeśli szara lista jest pusta lub jeśli szara lista nie jest pusta, a typ pliku znajduje się na szarej liście, zeskanuj plik jak zwykle i ustal, czy chcesz go zablokować na podstawie wyników skanowania, ale jeśli szara lista nie jest pusta, a typu pliku nie ma na szarej liście, traktuj plik tak, jakby znajdował się na czarnej liście, dlatego nie skanuj go, ale i tak go blokuj."

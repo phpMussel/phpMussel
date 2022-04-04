@@ -196,6 +196,8 @@ field_verify: "Doğrula"
 field_verify_all: "Tümünü doğrula"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" nedir? PDO'yu phpMussel ile nasıl kullanabilirim?</a></em>"
 hints_xlists:
  Bu nasıl çalışır.: "Sisteminiz yalnızca belirli dosya türlerinin yüklenmesine izin veriyorsa, veya sisteminiz belli dosya türlerini açıkça reddetiyorsa, bu dosya türlerini beyaz listelerde, kara listelerde ve gri listelerde belirtmek taramanın hızını artırabilir, komut dosyası belirli dosya türlerini atlamak için izin vererek. Biçim CSV (virgülle ayrılmış değerler)."
  İşlem mantığı şu şekildedir: "Dosya türü beyaz listede bulunuyorsa, dosyayı taramayın ve engellemeyin ve dosyayı kara listeye veya gri listeye karşı kontrol etmeyin. Dosya türü kara listede bulunuyorsa, dosyayı taramayın, ancak yine de engelleyin ve dosyayı gri liste karşı kontrol etmeyin. Gri liste boşsa, ya da gri liste boş değilse ve dosya türü gri listede bulunuyorsa, dosyayı normal göre tara ve taramanın sonuçlarına dayanarak engelleyip engellemeyeceğini belirleme, ancak gri liste boş değilse ve dosya türü gri listede değil, dosyayı kara listede olduğu gibi davranın, bu nedenle tarama değil, yine de engelleme."
