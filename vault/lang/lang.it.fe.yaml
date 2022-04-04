@@ -195,6 +195,8 @@ field_verify: "Verificarlo"
 field_verify_all: "Verifica tutto"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.it.md\#HOW_TO_USE_PDO" hreflang="it">Che cos'è un "DSN PDO"? Come posso usare PDO con phpMussel?</a></em>"
 hints_xlists:
  Come funziona.: "Se il vostro sistema permette solo determinati tipi di file per caricamenti, o se il vostra sistema esplicitamente negare determinati tipi di file, specificando i tipi di file nel whitelist, blacklist e/o greylist può aumentare la velocità a cui la scansione viene eseguita da permettendo lo script da ignora alcuni tipi di file. Il formato è CSV (valori separati da virgola)."
  Logico ordine del trattamento.: "Se il tipo di file è nel whitelist, non scansiona e non blocca il file, e non verificare il file contra la blacklist o la greylist. Se il tipo di file è nel blacklist, non scansiona il file ma bloccarlo comunque, e non verificar il file contra la greylist. Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque."

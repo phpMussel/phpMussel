@@ -195,6 +195,8 @@ field_verify: "Xác minh"
 field_verify_all: "Xác minh tất cả"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+hints_pdo_dsn:
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.vi.md\#HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với phpMussel?</a></em>"
 hints_xlists:
  Làm thế nào điều này hoạt động.: "Nếu hệ thống của bạn chỉ cho phép các loại tệp cụ thể được tải lên, hay nếu hệ thống của bạn từ chối một cách rõ ràng các loại tập tin cụ thể, xác định các loại tập tin trong danh sách trắng, danh sách đen và danh sách xám có thể tăng tốc độ quét được tiến hành bằng cách cho phép các kịch bản bỏ qua các loại tập tin nhất định. Định dạng là CSV (dấu phẩy ngăn cách giá trị)."
  Thứ tự hợp lý của chế biến.: "Nếu loại tệp là trên danh sách trắng, không quét và không chặn các tập tin, và không kiểm tra các tập tin chống lại danh sách đen hay danh sách xám. Nếu loại tệp là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám. Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tệp là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tệp không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao."

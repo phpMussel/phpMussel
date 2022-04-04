@@ -195,6 +195,8 @@ field_verify: "تصدیق کریں"
 field_verify_all: "سب کی توثیق کریں"
 field_your_version: "آپ کے ورژن"
 header_login: "جاری رکھنے کے لیے لاگ ان کریں."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ur.md\#HOW_TO_USE_PDO" hreflang="ur">"PDO DSN" کیا ہے؟ میں phpMussel کے ساتھ PDO کیسے استعمال کرسکتا ہوں؟</a></em>"
 hints_xlists:
  یہ کیسے کام کرتا ہے.: "آپ کے سسٹم صرف فائلوں کی مخصوص اقسام اپ لوڈ کیا جا کرنے کی اجازت دیتا ہے، یا آپ کے سسٹم کو واضح طور پر، فائلوں کی بعض اقسام کی تردید کرتے ہیں وائٹ لسٹیں، بلیک لسٹ اور سرمئی فہرستوں میں ان قسم کی فائلوں کی وضاحت جس میں رفتار سکیننگ جائیں کرنے سکرپٹ اجازت دے کر کیا جاتا ہے بڑھا سکتے ہیں اگر تو بعض قسم کی فائلوں کے دوران. ڈاک CSV (علامت سے علیحدہ اقدار) ہے."
 info_some_useful_links: |

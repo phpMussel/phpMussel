@@ -195,6 +195,8 @@ field_verify: "验证"
 field_verify_all: "验证全部"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+hints_pdo_dsn:
+ 常问问题。: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.zh.md\#HOW_TO_USE_PDO" hreflang="zh-CN">“PDO DSN”是什么？如何能PDO与phpMussel一起使用？</a></em>"
 hints_xlists:
  这是如何工作的。: "如果您的系统只允许具体文件类型被上传，​或如果您的系统明确地否认某些文件类型，​指定那些文件类型在白名单，​黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。​格式是CSV（逗号分隔变量）。"
  进程的逻辑顺序。: "如果文件类型已白名单，​不扫描和不受阻文件，​和不匹配文件对照黑名单或灰名单。​如果文件类型已黑名单，​不扫描文件但阻止它无论如何，​和不匹配文件对照灰名单。​如果灰名单是空，​或如果灰名单不空和文件类型已灰名单，​扫描文件像正常和确定如果阻止它基于扫描结果，​但如果灰名单不空和文件类型不灰名单，​过程文件仿佛已黑名单，​因此不扫描它但阻止它无论如何。"
