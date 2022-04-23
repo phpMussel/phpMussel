@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.28).
+ * This file: Front-end handler (last modified: 2022.04.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1403,8 +1403,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 }
             }
             if (isset($phpMussel['DirValue']['choices'])) {
-                if ($phpMussel['DirValue']['type'] === 'checkbox') {
-                    if (isset($phpMussel['DirValue']['labels']) && is_array($phpMussel['DirValue']['labels'])) {
+                if (
+                    $phpMussel['DirValue']['type'] === 'checkbox' ||
+                    (isset($phpMussel['DirValue']['style']) && $phpMussel['DirValue']['style'] === 'radio')
+                ) {
+                    if (
+                        $phpMussel['DirValue']['type'] === 'checkbox' &&
+                        isset($phpMussel['DirValue']['labels']) &&
+                        is_array($phpMussel['DirValue']['labels'])
+                    ) {
                         $phpMussel['DirValue']['gridV'] = 'gridVB';
                         $phpMussel['ThisDir']['FieldOut'] = sprintf(
                             '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
@@ -1488,6 +1495,32 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                                 $phpMussel['DirValue']['gridH']
                             );
                         }
+                    } elseif (isset($phpMussel['DirValue']['style']) && $phpMussel['DirValue']['style'] === 'radio') {
+                        if (strpos($phpMussel['ChoiceValue'], "\n")) {
+                            $phpMussel['ChoiceValue'] = explode("\n", $phpMussel['ChoiceValue']);
+                            $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxstretch gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxstretch %5$s"><label for="%1$s"><span class="s">%3$s</span><br />%8$s</label></div>',
+                                $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
+                                $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' checked' : '',
+                                $phpMussel['ChoiceValue'][0],
+                                $phpMussel['ThisDir']['Trigger'],
+                                $phpMussel['DirValue']['gridH'],
+                                $phpMussel['ThisDir']['DirLangKey'],
+                                $phpMussel['ChoiceKey'],
+                                $phpMussel['ChoiceValue'][1]
+                            );
+                        } else {
+                            $phpMussel['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxcheckcell gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxitem %5$s"><label for="%1$s" class="s">%3$s</label></div>',
+                                $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['ChoiceKey'],
+                                $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' checked' : '',
+                                $phpMussel['ChoiceValue'],
+                                $phpMussel['ThisDir']['Trigger'],
+                                $phpMussel['DirValue']['gridH'],
+                                $phpMussel['ThisDir']['DirLangKey'],
+                                $phpMussel['ChoiceKey']
+                            );
+                        }
                     } else {
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf(
                             '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
@@ -1497,7 +1530,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         );
                     }
                 }
-                if ($phpMussel['DirValue']['type'] === 'checkbox') {
+                if (
+                    $phpMussel['DirValue']['type'] === 'checkbox' ||
+                    (isset($phpMussel['DirValue']['style']) && $phpMussel['DirValue']['style'] === 'radio')
+                ) {
                     $phpMussel['ThisDir']['FieldOut'] .= '</div>';
                 } else {
                     $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);

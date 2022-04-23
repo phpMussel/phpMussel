@@ -112,16 +112,16 @@ td code~input,td code~select{vertical-align:middle}
 .trEase>div{display:inline-block;transition:inherit}
 .pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
 .pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
-input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
-.gridHA:not(.gridVA):not(.gridVB),.gridHB:not(.gridVA):not(.gridVB){white-space:nowrap}
+input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
+.gridHA:not(.gridVA):not(.gridVB):not(.gridboxstretch),.gridHB:not(.gridVA):not(.gridVB):not(.gridboxstretch){white-space:nowrap}
 .configMatrixLabel,.vrte,.gridbox,.gridboxcheckcell{text-align:center}
 .gridbox{display:grid;grid-template-columns:auto auto auto}
 .gridboxitem,.gridboxcheckcell{height:19px}
-.gridHA:not(.gridVA):not(.gridVB),.gridHB:not(.gridVA):not(.gridVB){white-space:nowrap}
+.gridboxstretch{height:100%;white-space:normal}
 .configMatrixLabel{height:auto;line-height:19px;font-weight:700}
 .vrte,.vrto{vertical-align:-3px;font-weight:700}
 .gridboxcheckcell{vertical-align:middle;margin:0;padding:auto}
-.gridboxcheckcell>input[type=checkbox]{position:relative;top:1px}
+.gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.25);transition:all .2s ease-out;filter:brightness(1.25)}
 .gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient(90deg,rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
@@ -129,7 +129,6 @@ input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxit
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.6)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.7)}
-.gridHA:not(.gridVA):not(.gridVB),.gridHB:not(.gridVA):not(.gridVB){white-space:nowrap}
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.7),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:red;background:linear-gradient(90deg,rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
