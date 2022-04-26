@@ -8,7 +8,7 @@
 <input id="password" name="password" type="password" placeholder="{field_password}" onkeyup="javascript:document.getElementById('pgrad').style=RGBW(this.value)" autocomplete="current-password" /><br />
 <div id="pgrad"></div><br />
 <input type="submit" value="{field_log_in}" class="auto" /><br /><br />
-<div class="txtRd"><small>{tip_fe_cookie_warning}</small></div><br /><br />
+<div class="txtRd"><small>{tip_fe_cookie_warning}<noscript><br />{warning_javascript_required}</noscript></small></div><br /><br />
 <div class="icon48x48"></div>
 </form>
 <script type="text/javascript">function RGBHA(x){for(var y=268435455,z=0;z<x.length;z++)y=x.charCodeAt(z)+((y<<5)-y);for(y=(y>>24&255).toString(16)+(y>>16&255).toString(16)+(y>>8&255).toString(16)+(y&255).toString(16);6>y.length;)y+='0';return y.substr(0,6)};function RGBW(i){var i=RGBHA(i);return 'background:linear-gradient(90deg,#'+i+',#'+(i.split("").reverse().join(""))+')'};document.getElementById('pgrad').style=RGBW(document.getElementById('password').value)</script>

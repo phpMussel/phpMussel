@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.03.30).
+# This file: Hindi language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> के माध्यम से उपलब्ध है।"
@@ -451,4 +451,5 @@ tip_statistics_disabled: "नोट: सांख्यिकी ट्रैक
 tip_updates: "हैलो, {username}।<br />अपडेट पेज आपको phpMussel के विभिन्न घटकों को इंस्टॉल, अनइंस्टॉल और अद्यतन करने की अनुमति देता है (मुख्य पैकेज, हस्ताक्षर, स्थानीयकरण फाइलें, आदि)।"
 tip_upload_test: "हैलो, {username}।<br />अपलोड टेस्ट पृष्ठ में एक मानक फाइल अपलोड फॉर्म है। यह आपको यह जांचने में सक्षम बनाता है कि फाइल को सामान्य रूप से इसे अपलोड करने का प्रयास करते समय phpMussel द्वारा अवरुद्ध किया जाएगा या नहीं।"
 title_login: "लॉग इन करें"
+warning_javascript_required: "चेतावनी: कुछ फ्रंट-एंड कार्यक्षमता के लिए जावास्क्रिप्ट की आवश्यकता होती है। यह सुनिश्चित करने के लिए कि पूरा फ्रंट-एंड अपेक्षित व्यवहार करता है, जावास्क्रिप्ट को सक्षम करने की अनुशंसा की जाती है।"
 warning_signatures_1: "चेतावनी: कोई हस्ताक्षर फाइलें सक्रिय नहीं हैं!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.30).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -448,4 +448,5 @@ tip_statistics_disabled: "注意：统计跟踪目前已被禁用，但可以通
 tip_updates: "你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新phpMussel的各种组件（核心包，​签名，​插件，​L10N文件，​等等）。"
 tip_upload_test: "你好，​{username}。​<br />上传测试页面包含标准文件上传表单，​允许您测试是否文件通常会被阻止通过phpMussel当尝试上传他们。"
 title_login: "登录"
+warning_javascript_required: "警告：一些前端功能需要JavaScript。为确保整个前端按预期运行，建议启用JavaScript。"
 warning_signatures_1: "警告：没有签名文件是活动的！"

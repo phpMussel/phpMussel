@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.03.30).
+# This file: Urdu language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
@@ -446,4 +446,5 @@ tip_statistics_disabled: "نوٹ: اعداد و شمار کی ٹریکنگ فی 
 tip_updates: "ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ."
 tip_upload_test: "ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے."
 title_login: "لاگ ان"
+warning_javascript_required: "انتباہ: کچھ فرنٹ اینڈ فعالیت کے لیے JavaScript کی ضرورت ہوتی ہے. اس بات کو یقینی بنانے کے لیے کہ پورا فرنٹ اینڈ توقع کے مطابق برتاؤ کرے، جاوا اسکرپٹ کو فعال کرنے کی سفارش کی جاتی ہے."
 warning_signatures_1: "انتباہ: کوئی دستخط فائلیں فعال نہیں ہیں!"

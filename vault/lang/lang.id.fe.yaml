@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.30).
+# This file: Indonesian language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -447,4 +447,5 @@ tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, nam
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll)."
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
+warning_javascript_required: "Peringatan: Beberapa fungsionalitas memerlukan JavaScript. Untuk memastikan bahwa seluruh antarmuka berperilaku seperti yang diharapkan, disarankan untuk mengaktifkan JavaScript."
 warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"
