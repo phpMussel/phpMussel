@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.30).
+# This file: Swedish language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -450,4 +450,5 @@ tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inakti
 tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i phpMussel (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
 tip_upload_test: "Hallå, {username}.<br />Uppladdningssidan innehåller ett standardformulär för uppladdning av filer, så att du kan testa om en fil normalt skulle blockeras av phpMussel när du försöker ladda upp den."
 title_login: "Inloggning"
+warning_javascript_required: "Varning: Vissa frontend-funktionalitet kräver JavaScript. För att säkerställa att hela gränssnittet beter sig som förväntat, rekommenderas att aktivera JavaScript."
 warning_signatures_1: "Varning: Inga signaturfiler är aktiva!"

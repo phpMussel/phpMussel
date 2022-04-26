@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.03.30).
+# This file: Portuguese language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -452,4 +452,5 @@ tip_statistics_disabled: "Nota: O monitoramento de estatísticas está desativad
 tip_updates: "Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do phpMussel (o pacote principal, assinaturas, plugins, arquivos de L10N, etc)."
 tip_upload_test: "Olá, {username}.<br />A página de carregamento teste contém um formulário padrão para carregando arquivos, permitindo que você teste se um arquivo seria normalmente bloqueado através phpMussel quando carregando."
 title_login: "Login"
+warning_javascript_required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
 warning_signatures_1: "Atenção: Nenhum arquivo de assinaturas está ativo!"

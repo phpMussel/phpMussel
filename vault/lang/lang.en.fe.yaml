@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.03.30).
+# This file: English language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -452,4 +452,5 @@ tip_statistics_disabled: "Note: Statistics tracking is currently disabled, but c
 tip_updates: "Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of phpMussel (the core package, signatures, plugins, L10N files, etc)."
 tip_upload_test: "Hello, {username}.<br />The upload test page contains a standard file upload form, allowing you to test whether a file would normally be blocked by phpMussel when attempting to upload it."
 title_login: "Login"
+warning_javascript_required: "Warning: Some front-end functionality requires JavaScript. To ensure that the entire front-end behaves as expected, enabling JavaScript is recommended."
 warning_signatures_1: "Warning: No signature files are active!"

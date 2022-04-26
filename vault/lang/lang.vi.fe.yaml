@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.30).
+# This file: Vietnamese language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -448,4 +448,5 @@ tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 tip_upload_test: "Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên."
 title_login: "Đăng nhập"
+warning_javascript_required: "Cảnh báo: Một số chức năng yêu cầu JavaScript. Để đảm bảo rằng toàn bộ giao diện hoạt động như mong đợi, bạn nên bật JavaScript."
 warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"

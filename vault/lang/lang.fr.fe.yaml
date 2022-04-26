@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.30).
+# This file: French language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -199,7 +199,7 @@ field_verify_all: "Vérifier tous"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.fr.md\#HOW_TO_USE_PDO" hreflang="fr">Qu'est-ce qu'un « PDO DSN »\_? Comment utiliser PDO avec phpMussel\_?</a></em>"
+ FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.fr.md\#HOW_TO_USE_PDO" hreflang="fr">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec phpMussel\_?</a></em>"
 hints_xlists:
  Comment cela fonctionne.: "Si votre système permettre seulement particuliers types des fichiers à être téléchargé, ou si votre système nie explicitement particuliers types des fichiers, spécifiant les types des fichiers dans listes blanches, listes noires et listes grises peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types des fichiers. Format est CSV (virgule séparées valeurs)."
  L'ordre logique de l'application.: "Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas le fichier, et ne vérifie pas le fichier contre la liste noire ou la liste grise. Si le type de fichier est listé noire, n'analyser pas le fichier mais bloquer de toute façon, et ne vérifie pas le fichier contre la liste grise. Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon."
@@ -454,4 +454,5 @@ tip_statistics_disabled: "Remarque\_: Le suivi des statistiques est actuellement
 tip_updates: "Bonjour, {username}.<br />La page des mises à jour vous permet d'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc)."
 tip_upload_test: "Bonjour, {username}.<br />La page pour tester les téléchargements contient un formulaire pour le téléchargement de fichiers standard, vous permettant de tester si un fichier serait normalement être bloqué par phpMussel quand vous essayez de le télécharger."
 title_login: "Connexion"
+warning_javascript_required: "Attention\_: Certaines fonctionnalités nécessitent JavaScript. Pour garantir que l'ensemble de l'interface se comporte comme prévu, il est recommandé d'activer JavaScript."
 warning_signatures_1: "Avertissement\_: Il n'y a pas fichiers du signatures actifs."

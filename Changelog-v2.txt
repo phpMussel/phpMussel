@@ -10,7 +10,7 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2022.04.26; Maikuolan]: Added a JavaScript warning to the front-end login.
 
 === Version/Release 2.4.2 ===
 PATCH RELEASE.

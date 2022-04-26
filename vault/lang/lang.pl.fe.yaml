@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.30).
+# This file: Polish language data for the front-end (last modified: 2022.04.25).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -454,4 +454,5 @@ tip_statistics_disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, 
 tip_updates: "Witaj, {username}.<br />Strona aktualizacji pozwala instalować, odinstalowywać i aktualizować różne komponenty phpMussel (pakiet podstawowy, podpisy, wtyczki, pliki L10N, itp)."
 tip_upload_test: "Witaj, {username}.<br />Strona testowa przesyłania zawiera standardowy formularz przesyłania pliku. Możesz go użyć do przetestowania, czy plik normalnie zostałby zablokowany przez phpMussel."
 title_login: "Zaloguj sie"
+warning_javascript_required: "Ostrzeżenie: Niektóre funkcjonalność wymagają JavaScript. Aby upewnić się, że cały interfejs zachowuje się zgodnie z oczekiwaniami, zalecane jest włączenie JavaScript."
 warning_signatures_1: "Ostrzeżenie: Żadne pliki podpis nie są aktywne!"
