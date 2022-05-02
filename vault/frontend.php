@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.04.19).
+ * This file: Front-end handler (last modified: 2022.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -764,6 +764,9 @@ if ($phpMussel['FE']['UserState'] === 1) {
 if ($phpMussel['FE']['UserState'] !== 1 && $phpMussel['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('title_login'), '', false);
+
+    /** Hide warnings from non-logged in users. */
+    $phpMussel['FE']['Warnings'] = '';
 
     if ($phpMussel['FE']['UserState'] === 2) {
         /** Provide the option to log out (omit home link). */
