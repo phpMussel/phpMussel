@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.02).
+ * This file: Front-end handler (last modified: 2022.05.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1721,8 +1721,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
             "l-form-target','cdi','do'],null,function(o){hideid(d+'Container')})}wind" .
             "ow['phpmussel-form-target']='cache-data';function fecdd(d,n){window.fecd" .
             "i=d,window.do='delete',$('POST','',['phpmussel-form-target','fecdi','do'" .
-            "],null,function(o){hideid(d+'FEContainer')})}window['phpmussel-form-targ" .
-            "et']='cache-data';";
+            "],null,function(o){hideid(d+'FEContainer')})};";
 
         /** To be populated by the cache data. */
         $phpMussel['FE']['CacheData'] = '';
