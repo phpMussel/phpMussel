@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.24).
+ * This file: Functions file (last modified: 2022.05.05).
  */
 
 /**
@@ -4697,29 +4697,35 @@ $phpMussel['GenerateSalt'] = function () {
  *
  * @param string $List The list to clear from.
  * @param bool $Check A flag indicating when changes have occurred.
+ * @return void
  */
 $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
-    if ($List) {
-        $End = 0;
-        while (true) {
-            $Begin = $End;
-            if (!$End = strpos($List, "\n", $Begin + 1)) {
-                break;
-            }
-            $Line = substr($List, $Begin, $End - $Begin);
-            if ($Split = strrpos($Line, ',')) {
-                $Expiry = (int)substr($Line, $Split + 1);
-                if ($Expiry < $phpMussel['Time']) {
-                    $List = str_replace($Line, '', $List);
-                    $End = 0;
-                    $Check = true;
-                }
+    if (!$List) {
+        return;
+    }
+    $End = 0;
+    while (true) {
+        $Begin = $End;
+        if (!$End = strpos($List, "\n", $Begin + 1)) {
+            break;
+        }
+        $Line = substr($List, $Begin, $End - $Begin);
+        if ($Split = strrpos($Line, ',')) {
+            $Expiry = (int)substr($Line, $Split + 1);
+            if ($Expiry < $phpMussel['Time']) {
+                $List = str_replace($Line, '', $List);
+                $End = 0;
+                $Check = true;
             }
         }
     }
 };
 
-/** Fetch information about signature files and prepare for use with the scan process. */
+/**
+ * Fetch information about signature files for the scan process.
+ *
+ * @return void
+ */
 $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
     $LastActive = $phpMussel['FetchCache']('Active') ?: '';
     if (empty($phpMussel['Config']['signatures']['Active'])) {
