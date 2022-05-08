@@ -15,6 +15,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.05.02; Maikuolan]: Front-end warnings have been hidden from non-logged
   in users.
 
+- [2022.05.08; Maikuolan]: Made the warnings/notices at the front-end accounts
+  page slightly smaller.
+
 === Version/Release 2.4.2 ===
 PATCH RELEASE.
 
