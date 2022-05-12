@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.04.25).
+# This file: German language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -127,7 +127,7 @@ config_supplementary_cache_options_redis_timeout: "Redis Timeout-Wert. Standarde
 config_template_data: "Konfiguration für Vorlagen und Themen."
 config_template_data_Magnification: "Schriftvergrößerung. Standardeinstellung = 1."
 config_template_data_css_url: "Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der <code>css_url</code>-Variable an. Wenn Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das normale Theme verwenden."
-config_template_data_theme: "Standard-Thema für phpMussel verwenden."
+config_template_data_theme: "Standard-Thema für phpMussel zu verwenden."
 config_urlscanner: "Konfiguration für den URL-Scanner."
 config_urlscanner_cache_time: "Wie lange (in Sekunden) sollen die Ergebnisse von API-Abfragen zwischengespeichert werden? Standardeinstellung ist 3600 Sekunden (1 Stunde)."
 config_urlscanner_google_api_key: "Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte API-Schlüssel festgelegt ist."

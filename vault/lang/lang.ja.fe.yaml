@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.04.25).
+# This file: Japanese language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
@@ -127,7 +127,7 @@ config_supplementary_cache_options_redis_timeout: "Redisのタイムアウト値
 config_template_data: "テンプレートとテーマの設定。"
 config_template_data_Magnification: "フォントの倍率。​Default/デフォルルト = １。"
 config_template_data_css_url: "カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。"
-config_template_data_theme: "phpMusselに使用するデフォルトテーマ。"
+config_template_data_theme: "phpMusselに使用するデフォルト・テーマ。"
 config_urlscanner: "URLスキャナーの設定。"
 config_urlscanner_cache_time: "ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？​デフォルトは３６００秒（一時間）。"
 config_urlscanner_google_api_key: "必要なＡＰＩ鍵が定義されれば、​ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。"

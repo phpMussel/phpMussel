@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.04.25).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -127,7 +127,7 @@ config_supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Defa
 config_template_data: "Konfigurasi untuk template dan tema."
 config_template_data_Magnification: "Perbesaran font. Default = 1."
 config_template_data_css_url: "File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default."
-config_template_data_theme: "Tema default untuk phpMussel."
+config_template_data_theme: "Tema default yang digunakan untuk phpMussel."
 config_urlscanner: "Konfigurasi untuk pemindai URL."
 config_urlscanner_cache_time: "Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam)."
 config_urlscanner_google_api_key: "Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan."
