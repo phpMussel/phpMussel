@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.04.25).
+# This file: Bangla language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -128,7 +128,7 @@ config_supplementary_cache_options_redis_timeout: "Redis সময়সীম�
 config_template_data: "টেমপ্লেট এবং থিমগুলির জন্য কনফিগারেশন।"
 config_template_data_css_url: "কাস্টম থিমগুলির জন্য CSS ফাইল URL।"
 config_template_data_magnification: "ফন্ট বৃহত্তরীকরণ। ডিফল্ট = "1"।"
-config_template_data_theme: "phpMussel এর জন্য ডিফল্ট থিম ব্যবহার করুন।"
+config_template_data_theme: "phpMussel এর জন্য ব্যবহার করার জন্য ডিফল্ট থিম।"
 config_urlscanner: "URL স্ক্যানারের জন্য কনফিগারেশন।"
 config_urlscanner_cache_time: "কতক্ষণ (সেকেন্ডে) API অনুসন্ধান ফলাফলের জন্য ক্যাশ করা উচিত? ডিফল্ট 3600 সেকেন্ড (1 ঘন্টা)।"
 config_urlscanner_google_api_key: "যখন প্রয়োজনীয় API কী নির্ধারণ করা হয় তখন Google Safe Browsing API-এ নজরদারি সক্ষম করে।"

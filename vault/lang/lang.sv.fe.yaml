@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.04.25).
+# This file: Swedish language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -128,7 +128,7 @@ config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standar
 config_template_data: "Konfiguration för mallar och teman."
 config_template_data_css_url: "CSS-filadress för anpassade teman."
 config_template_data_magnification: "Font förstoring. Standard = 1."
-config_template_data_theme: "Standardtema som ska användas för phpMussel."
+config_template_data_theme: "Standardtemat som ska användas för phpMussel."
 config_urlscanner: "Konfiguration för URL-skannern."
 config_urlscanner_cache_time: "Hur länge (i sekunder) ska resultaten av API-sökningar cachas för? Standard är 3600 sekunder (1 timme)."
 config_urlscanner_google_api_key: "Aktiverar API-sökningar till Googles Safe Browsing API när den nödvändiga API-nyckeln är definierad."

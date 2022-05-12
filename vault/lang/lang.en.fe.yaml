@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.04.25).
+# This file: English language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -128,7 +128,7 @@ config_supplementary_cache_options_redis_timeout: "Redis timeout value. Default 
 config_template_data: "Configuration for templates and themes."
 config_template_data_css_url: "The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the <code>css_url</code> variable. If you leave this variable blank, phpMussel will use the template file for the default theme."
 config_template_data_magnification: "Font magnification. Default = 1."
-config_template_data_theme: "Default theme to use for phpMussel."
+config_template_data_theme: "The default theme to use for phpMussel."
 config_urlscanner: "Configuration for the URL scanner."
 config_urlscanner_cache_time: "How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour)."
 config_urlscanner_google_api_key: "Enables API lookups to the Google Safe Browsing API when the necessary API key is defined."
