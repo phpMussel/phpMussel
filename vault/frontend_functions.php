@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.28).
+ * This file: Front-end functions file (last modified: 2022.05.19).
  */
 
 /**
@@ -1914,6 +1914,7 @@ $phpMussel['UpdatesHandler-Verify'] = function ($ID) use (&$phpMussel) {
  * Normalise linebreaks.
  *
  * @param string $Data The data to normalise.
+ * @return void
  */
 $phpMussel['NormaliseLinebreaks'] = function (&$Data) {
     if (strpos($Data, "\r")) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.05).
+ * This file: Front-end handler (last modified: 2022.05.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -3123,7 +3123,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'statistics' && $phpMussel
     echo $phpMussel['SendOutput']();
 
     /** Cleanup. */
-    unset($phpMussel['StatColour'], $phpMussel['StatWorking'], $phpMussel['Statistics']);
+    unset($phpMussel['StatWorking'], $phpMussel['Statistics']);
 }
 
 /** Logs. */
