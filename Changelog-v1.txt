@@ -18,6 +18,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.05.08; Maikuolan]: Made the warnings/notices at the front-end accounts
   page slightly smaller.
 
+- [2022.05.26; Bug-fix; Maikuolan]: Instead of "GMT", the "Last modified"
+  header given for front-end assets specified "+0000", which some browsers
+  don't understand properly; Fixed.
+
 === Version/Release 1.15.2 ===
 PATCH RELEASE.
 
