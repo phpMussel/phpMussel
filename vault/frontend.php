@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.22).
+ * This file: Front-end handler (last modified: 2022.05.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -250,7 +250,7 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
             if ($phpMussel['Success']) {
                 if (!empty($phpMussel['QueryVars']['theme'])) {
                     /** Prevents needlessly reloading static assets. */
-                    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($phpMussel['ThisAsset'])));
+                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($phpMussel['ThisAsset'])));
                 }
                 /** Send asset data. */
                 echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
@@ -916,7 +916,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
 
             /** Prevents needlessly reloading static assets. */
             if (!empty($phpMussel['QueryVars']['theme'])) {
-                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($phpMussel['Icons_Handler_Path'])));
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($phpMussel['Icons_Handler_Path'])));
             }
 
             /** Send icon data. */
