@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.05.16).
+# This file: Configuration defaults file (last modified: 2022.06.01).
 ##/
 
 Config Defaults:
@@ -40,6 +40,7 @@ Config Defaults:
    choices:
     Delete: "field_log_rotation_delete"
     Archive: "field_log_rotation_archive"
+   style: "radio"
   timezone:
    type: "timezone"
    default: "SYSTEM"
