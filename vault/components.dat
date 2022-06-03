@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: "phpMussel Core"
- Version: "2.4.3-DEV+22151000"
+ Version: "2.4.3-DEV+22153000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.3-DEV+22145600"
+ Version: "2.4.3-DEV+22153000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -167,7 +167,7 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "fda11f80ecc42ac0e069a3ccbd997f85d4db0cf8c4da4acf0d813e0849ea5292:1349"
-   - "9e5170f8f0bfb984b23a864e9ae3ef044bf668565ddcf2355d3ea2817ed8147a:182115"
+   - "8e4777030ce3cd5032fa45b573ef6d39f84fe89c65a86ab425f0ad245a5f85f2:182326"
    - "a726b44c350018c2ebad06dc3f29fe2f7113f5f44122d4252fba166f02d2a446:118010"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
@@ -622,7 +622,7 @@ l10n/th:
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2022.115.0"
+ Version: "2022.153.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -635,7 +635,7 @@ l10n/tr:
    - "lang/lang.tr.fe.yaml"
    - "lang/lang.tr.yaml"
   Checksum:
-   - "65b4433412ff9f8a027c499532a6cfe0493b3547fa22d6e5584688d0834da77c:52776"
+   - "1efc8db14a481dffb70c4f79a2e017fa8dc8dc84879910e71b8aedb09cee12d4:52777"
    - "90eb26ac3c229534f1d60cac4fa8f91a48e74d1f17f9da60080cac7d3f03c301:6004"
  Reannotate: "components.dat"
 l10n/ur:
