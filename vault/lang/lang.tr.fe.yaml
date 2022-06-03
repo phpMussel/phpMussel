@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.04.25).
+# This file: Turkish language data for the front-end (last modified: 2022.06.01).
 ##/
 
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
@@ -67,7 +67,7 @@ config_general_delete_on_sight: "Bu yönergeyi etkinleştirmek, komut dosyasına
 config_general_disable_cli: "CLI modunu devre dışı bırak? CLI modu varsayılan olarak etkindir, ancak bazen bazı test araçlarına (örneğin PHPUnit) ve diğer CLI tabanlı uygulamalara müdahale edebilir. CLI modunu devre dışı bırakmanız gerekmiyorsa, bu direktif görmezden almalısınız. False = CLI modunu etkinleştir [Varsayılan]; True = CLI modunu devre dışı bırak."
 config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön uç erişimi phpMussel'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. phpMussel'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan]."
 config_general_disable_webfonts: "Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_disabled_channels: "Bu, istek gönderirken phpMussel'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb.)."
+config_general_disabled_channels: "Bu, istek gönderirken phpMussel'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb)."
 config_general_enable_plugins: "phpMussel eklentileri için desteği etkinleştirilsin mi? Yanlış/False = Hayır; Doğru/True = Evet [Varsayılan]."
 config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_forbid_on_block: "phpMussel, dosya yüklemesi engellenen mesajla birlikte hangi başlıkları göndermelidir? Yanlış/False = 200 OK (Tamam); Doğru/True = 403 Forbidden (Yasak) [Varsayılan]."
@@ -77,7 +77,7 @@ config_general_lang: "phpMussel için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz."
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
-config_general_maintenance_mode: "Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS'nizi, çerçeveleri vb. güncellenirken yararlıdır."
+config_general_maintenance_mode: "Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS'nizi, çerçeveleri, vb. güncellenirken yararlıdır."
 config_general_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_quarantine_key: "phpMussel dosyaları karantinaya koyabilir, bunu yapmak istiyorsan. Web sitelerini korumak isteyen, dosyaları derinlemesine analiz etmek istemeyen kullanıcılar bu işlevselliği devre dışı bırakmalıdır. Dosyaları daha derinlemesine analiz etmek isteyen tüm kullanıcılar (ör., kötü amaçlı yazılım araştırmaları) bu işlevselliği etkinleştirmelidir. Dosyaları karantinaya koymak bazen yanlış pozitiflerin hata ayıklanmasına yardımcı olabilir. Bunu devre dışı bırakmak için <code>quarantine_key</code> yönergesini boş bırakın (veya henüz boş değilse içeriğini sil). Etkinleştirmek için bir miktar girin. <code>quarantine_key</code> karantina işlevinin önemli bir güvenlik özelliğidir. Bu yönerge, potansiyel saldırganların karantina içeriğini istismar etmesini önler. <code>quarantine_key</code>, şifrelerinizle aynı şekilde ele alınmalıdır: Dikkatli koruyun, ve uzun olanlar daha iyidir. En iyi efekti elde etmek için <code>delete_on_sight</code> ile birlikte kullanın."
@@ -446,7 +446,7 @@ tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıy
 tip_siginfo: "Merhaba, {username}.<br />İmza bilgisi sayfası, şu anda aktif imzaların kaynakları ve türleri hakkında bazı temel bilgiler sağlar."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, phpMussel kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
-tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
+tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları, vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 tip_upload_test: "Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir."
 title_login: "Giriş"
 warning_javascript_required: "Uyarı: Bazı ön uç işlevsellikleri JavaScript gerektirir. Tüm ön ucun beklendiği gibi davrandığından emin olmak için JavaScript'in etkinleştirilmesi önerilir."

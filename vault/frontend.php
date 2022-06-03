@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.26).
+ * This file: Front-end handler (last modified: 2022.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -840,17 +840,17 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '' && $phpMussel['FE']['Cr
                 $phpMussel['ThisResponse'] .= ', {' . implode(', ', $phpMussel['ThisExtension']['Drivers']) . '}';
             }
             $phpMussel['FE']['ExtensionsCopyData'] .= $phpMussel['LTRinRTF'](
-                sprintf('- %1$s➡%2$s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['ThisResponse'])
+                sprintf('- %s➡%s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['ThisResponse'])
             );
             $phpMussel['ThisResponse'] = '<span class="txtGn">' . $phpMussel['ThisResponse'] . '</span>';
         } else {
             $phpMussel['FE']['ExtensionsCopyData'] .= $phpMussel['LTRinRTF'](
-                sprintf('- %1$s➡%2$s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['L10N']->getString('response_no'))
+                sprintf('- %s➡%s\n', $phpMussel['ThisExtension']['Name'], $phpMussel['L10N']->getString('response_no'))
             );
             $phpMussel['ThisResponse'] = '<span class="txtRd">' . $phpMussel['L10N']->getString('response_no') . '</span>';
         }
         $phpMussel['FE']['Extensions'][] = '    <li><small>' . $phpMussel['LTRinRTF'](sprintf(
-            '%1$s➡%2$s',
+            '%s➡%s',
             $phpMussel['ThisExtension']['Name'],
             $phpMussel['ThisResponse']
         )) . '</small></li>';
@@ -1526,7 +1526,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         }
                     } else {
                         $phpMussel['ThisDir']['FieldOut'] .= sprintf(
-                            '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
+                            '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
                             $phpMussel['ChoiceKey'],
                             $phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] ? ' selected' : '',
                             $phpMussel['ChoiceValue']
@@ -1640,6 +1640,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (!empty($phpMussel['DirValue']['See also']) && is_array($phpMussel['DirValue']['See also'])) {
                 $phpMussel['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $phpMussel['L10N']->getString('label_see_also'));
                 foreach ($phpMussel['DirValue']['See also'] as $phpMussel['DirValue']['Ref key'] => $phpMussel['DirValue']['Ref link']) {
+                    if (isset($phpMussel['L10N']->Data[$phpMussel['DirValue']['Ref key']])) {
+                        $phpMussel['DirValue']['Ref key'] = $phpMussel['L10N']->Data[$phpMussel['DirValue']['Ref key']];
+                    }
                     $phpMussel['ThisDir']['FieldOut'] .= sprintf(
                         '<li><a dir="ltr" href="%s">%s</a></li>',
                         $phpMussel['DirValue']['Ref link'],
@@ -1659,7 +1662,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             isset($phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label']) ? $phpMussel['Config']['L10N']['config_' . $phpMussel['CatKey'] . '_label'] : ''
         ) ?: $phpMussel['CatKey'];
         $phpMussel['FE']['Indexes'] .= sprintf(
-            '<li><span class="comCat">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            '<li><span class="comCat">%s</span><ul class="comSub">%s</ul></li>',
             $phpMussel['CatKeyFriendly'],
             $phpMussel['CatData']
         );
@@ -2777,7 +2780,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 foreach ($phpMussel['Components']['ThisComponentFiles'] as $phpMussel['Components']['ThisFile'] => $phpMussel['Components']['ThisFileSize']) {
                     $phpMussel['FormatFilesize']($phpMussel['Components']['ThisFileSize']);
                     $phpMussel['Components']['ThisListed'] .= sprintf(
-                        '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
+                        '<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>',
                         $phpMussel['Components']['ThisFile'],
                         $phpMussel['Components']['ThisFileSize']
                     );
