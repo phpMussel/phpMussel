@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.19).
+ * This file: Front-end functions file (last modified: 2022.06.09).
  */
 
 /**
@@ -383,7 +383,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
     $Arr = [];
     $Key = -1;
     $Offset = strlen($Base);
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
@@ -578,7 +578,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
  */
 $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     $Arr = [];
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
         if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$phpMussel['FileManager-IsLogFile']($ThisName)) {
@@ -908,7 +908,10 @@ $phpMussel['Quarantine-RecursiveList'] = function () use (&$phpMussel) {
     $Arr = [];
     $Key = -1;
     $Offset = strlen($phpMussel['qfuPath']);
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($phpMussel['qfuPath']), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+        $phpMussel['qfuPath'],
+        \RecursiveDirectoryIterator::FOLLOW_SYMLINKS
+    ), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         /** Skips if not a quarantined file. */
         if (strtolower(substr($Item, -4)) !== '.qfu' || is_dir($Item) || !is_file($Item) || !is_readable($Item)) {
