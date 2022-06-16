@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.02).
+ * This file: Front-end handler (last modified: 2022.06.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1720,11 +1720,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'cache-data' && $phpMussel
     } else {
         /** Append async globals. */
         $phpMussel['FE']['JS'] .=
-            "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['phpmusse" .
-            "l-form-target','cdi','do'],null,function(o){hideid(d+'Container')})}wind" .
-            "ow['phpmussel-form-target']='cache-data';function fecdd(d,n){window.fecd" .
-            "i=d,window.do='delete',$('POST','',['phpmussel-form-target','fecdi','do'" .
-            "],null,function(o){hideid(d+'FEContainer')})};";
+            "function cdd(d){window.cdi=d,window.do='delete',$('POST','',['phpmussel-" .
+            "form-target','cdi','do'],null,function(o){hideid(d+'Container')})}window" .
+            "['phpmussel-form-target']='cache-data';function fecdd(d){window.fecdi=d," .
+            "window.do='delete',$('POST','',['phpmussel-form-target','fecdi','do'],nu" .
+            "ll,function(o){hideid(d+'FEContainer')})};";
 
         /** To be populated by the cache data. */
         $phpMussel['FE']['CacheData'] = '';

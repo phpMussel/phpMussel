@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: "phpMussel"
- Version: "1.15.3-DEV+22159000"
+ Version: "1.15.3-DEV+22166000"
  Dependencies:
   PHP: ">=5.4"
   l10n/{lang}: ">=2021.303.641"
@@ -190,9 +190,9 @@ phpMussel:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "fda11f80ecc42ac0e069a3ccbd997f85d4db0cf8c4da4acf0d813e0849ea5292:1349"
-   - "417e4178734455f65815a5cca635cf3b9e3a1646a6969e4cc3aa3ca71437aa1b:183445"
-   - "d1c569587805befde8a6b68687394b4dd66abcd2b00196710afc19efe154a03e:117738"
-   - "03f7b6df5a6c216be740e1ab2c850445bb3c4d8ea9ffcfbc487b8ff27c18d7de:231501"
+   - "35a898c4f6164da55dfff85dae8973a2b8fcc0d32353f41f43c7f462f6c2f2d5:183441"
+   - "d366536c6e9658c9b18762431dbbec22041f10fb99dee3b99af37da8f5a64ea6:117738"
+   - "772924426ae5501bbe3f7fa344ceaac547931c7415ebdcbb52ffb7eea6ed09bb:231520"
    - "6ec0057593f128e583888a688b08aa14dac96b9a1fd4b61df1a44d1f5b17257b:7575"
    - "a7cc0c8e1bc173269581b3094408d8eed4089d122100e90437f570ccd59eecb8:1659"
    - "94d43f61451420d98f1eff12d78ef3ff045ba4c750d6c9309ee6302357cb7bae:4489"
@@ -317,7 +317,7 @@ l10n/fr:
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.131.0"
+ Version: "2022.166.0"
  Dependencies:
   phpMussel Core: "^1.8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
@@ -330,7 +330,7 @@ l10n/hi:
    - "lang/lang.hi.fe.yaml"
    - "lang/lang.hi.yaml"
   Checksum:
-   - "c4600a18bb6f5679c103a8b4184cea843cf602f338fe2574dfc3dd11344df391:101295"
+   - "d472d95ff4ec6fed72a09d5f66db7801d01a8f50dc3f199a8e7499cc8517a9c1:101295"
    - "34877d18146f1ddd6ad221f2dc2a04347d1cd1dec674c11b14e605bc8ea48cbf:11049"
  Reannotate: "components.dat"
 l10n/id:
