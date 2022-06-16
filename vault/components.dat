@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: "phpMussel Core"
- Version: "2.4.3-DEV+22153000"
+ Version: "2.4.3-DEV+22166000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -42,14 +42,14 @@ phpMussel Core:
    - "5ac75ec30c6efe0356416d5d857628bd374754484d91e2554fb8bf685499d066:8103"
    - "49a4e46a6dc69e5061773ff6a57a184b91bae23f98f32b05cd3286d7600c6a49:20250"
    - "50566be4d8b3455c9c3595fe7245854f01109a9737b7d2599406e7b2289da491:7481"
-   - "deda2691438e0ab794f4f71b5d338f705b31a082442825a2a07275d673d44003:232050"
+   - "965e3aea7ed4c2615a1d600c57c44fd2c2743d9436bfc495787624b09db02425:232069"
    - "72be74d52feabb7bb859f4e1fa061eff913020632fc10307affe1b74e2436039:6928"
    - "94d43f61451420d98f1eff12d78ef3ff045ba4c750d6c9309ee6302357cb7bae:4489"
    - "2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237"
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.3-DEV+22159000"
+ Version: "2.4.3-DEV+22166000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -167,8 +167,8 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "fda11f80ecc42ac0e069a3ccbd997f85d4db0cf8c4da4acf0d813e0849ea5292:1349"
-   - "8e4777030ce3cd5032fa45b573ef6d39f84fe89c65a86ab425f0ad245a5f85f2:182326"
-   - "21414acda65190d4831b429333abd2783c7559ad40be13dd2f6c32cf66855614:118170"
+   - "01c7d51e8099d11854fb176de6247df845b3b74365d7db09928945d543c56308:182322"
+   - "c93be28996a272d97b29b93f8562b175c546ed4c14b32894ea7a6936013db277:118170"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
@@ -375,7 +375,7 @@ l10n/fr:
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.131.0"
+ Version: "2022.166.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -388,7 +388,7 @@ l10n/hi:
    - "lang/lang.hi.fe.yaml"
    - "lang/lang.hi.yaml"
   Checksum:
-   - "1823de6f8ac8b2e1f9e4d3d8f1f9ea7656d59a78ba7f509b8bcfbfbc5e8b1422:101605"
+   - "3ea1e11fc128711b9881587cf826e97278d6d54de13b20353e421d6169424838:101605"
    - "593251c9ca23274ac9444ecc976d8d8ce85473f301a6c32bbeb5884f21340867:10923"
  Reannotate: "components.dat"
 l10n/id:

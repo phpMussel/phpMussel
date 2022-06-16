@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.05.05).
+ * This file: Functions file (last modified: 2022.06.16).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -105,7 +105,7 @@ $phpMussel['ParseVars'] = function (array $Needles, string $Haystack): string {
         return '';
     }
     foreach ($Needles as $Key => $Value) {
-        if (!is_array($Value)) {
+        if (!is_array($Value) && $Value !== null) {
             $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
         }
     }
