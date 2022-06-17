@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.06.16).
+ * This file: Front-end functions file (last modified: 2022.06.17).
  */
 
 /**
@@ -2426,7 +2426,9 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKe
             }
             $Class = ($Key === $phpMussel['L10N']->getString('field_size') || $Key === $phpMussel['L10N']->getString('label_expires')) ? 'txtRd' : 's';
             $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
-            $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
+            $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . $phpMussel['LTRinRTF'](
+                str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)
+            ) . '</code>' . $Delete;
         }
         $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');
     }
@@ -2555,11 +2557,17 @@ $phpMussel['LTRinRTF'] = function (string $String = '') use (&$phpMussel): strin
     }
 
     /** Modify the string to better suit RTL directionality and return it. */
-    return preg_replace(
-        ['~^(.+)-&gt;(.+)$~i', '~^(.+)➡(.+)$~i'],
-        ['\2&lt;-\1', '\2⬅\1'],
-        $String
-    );
+    while (true) {
+        $NewString = preg_replace(
+            ['~^(.+)( +)-&gt;( +)(.+)$~i', '~^(.+)-&gt;(.+)$~i', '~^(.+)( +)➡( +)(.+)$~i', '~^(.+)➡(.+)$~i', '~^(.+)( +)=&gt;( +)(.+)$~i', '~^(.+)=&gt;(.+)$~i'],
+            ['\4\2&lt;-\3\1', '\2&lt;-\1', '\4\2⬅\3\1', '\2⬅\1', '\4\2&lt;=\3\1', '\2&lt;=\1'],
+            $String
+        );
+        if ($NewString === $String) {
+            return $NewString;
+        }
+        $String = $NewString;
+    }
 };
 
 /**

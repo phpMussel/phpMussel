@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.15).
+ * This file: Front-end handler (last modified: 2022.06.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -205,9 +205,9 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
     $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Right_Valid'];
     $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Right_Invalid'];
-    $phpMussel['FE']['Gradient_Degree'] = 90;
     $phpMussel['FE']['Half_Border'] = 'solid solid none none';
     $phpMussel['FE']['45deg'] = '45deg';
+    $phpMussel['FE']['90deg'] = '90deg';
 } else {
     $phpMussel['FE']['FE_Align'] = 'right';
     $phpMussel['FE']['FE_Align_Reverse'] = 'left';
@@ -215,9 +215,9 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
     $phpMussel['FE']['PIP_Input_Valid'] = $phpMussel['FE']['PIP_Left_Valid'];
     $phpMussel['FE']['PIP_Input_Invalid'] = $phpMussel['FE']['PIP_Left_Invalid'];
-    $phpMussel['FE']['Gradient_Degree'] = 270;
     $phpMussel['FE']['Half_Border'] = 'solid none none solid';
     $phpMussel['FE']['45deg'] = '-45deg';
+    $phpMussel['FE']['90deg'] = '270deg';
 }
 
 /** A simple passthru for non-private theme images and related data. */
@@ -2787,11 +2787,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 $phpMussel['Components']['RGB'] = implode(',', $phpMussel['Components']['ThisColour']['Values']);
                 $phpMussel['FE']['DoughnutColours'][] = '#' . $phpMussel['Components']['ThisColour']['Hash'];
                 $phpMussel['FE']['DoughnutHTML'] .= sprintf(
-                    '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,%5$s),rgba(%1$s,%6$s));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $phpMussel['Components']['RGB'],
                     $phpMussel['Components']['ThisColour']['Hash'],
                     $phpMussel['Components']['ThisName'],
-                    $phpMussel['Components']['ThisListed']
+                    $phpMussel['Components']['ThisListed'],
+                    $phpMussel['FE']['FE_Align'] === 'left' ? '.3' : '0',
+                    $phpMussel['FE']['FE_Align'] === 'left' ? '0' : '.3'
                 ) . "\n";
             } else {
                 $phpMussel['FE']['DoughnutHTML'] .= sprintf(
