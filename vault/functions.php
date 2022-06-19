@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.06.16).
+ * This file: Functions file (last modified: 2022.06.19).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -285,7 +285,7 @@ $phpMussel['prescan_normalise'] = function (string $str, bool $html = false, boo
  * @return string The substring.
  */
 $phpMussel['substrbf'] = function (string $Haystack, string $Needle): string {
-    return !strlen($Needle) ? '' : substr($Haystack, 0, strpos($Haystack, $Needle));
+    return $Needle === '' ? '' : substr($Haystack, 0, strpos($Haystack, $Needle));
 };
 
 /**
@@ -307,7 +307,7 @@ $phpMussel['substraf'] = function (string $Haystack, string $Needle): string {
  * @return string The substring.
  */
 $phpMussel['substrbl'] = function (string $Haystack, string $Needle): string {
-    return !strlen($Needle) ? '' : substr($Haystack, 0, strrpos($Haystack, $Needle));
+    return $Needle === '' ? '' : substr($Haystack, 0, strrpos($Haystack, $Needle));
 };
 
 /**
@@ -329,7 +329,7 @@ $phpMussel['substral'] = function (string $Haystack, string $Needle): string {
  */
 $phpMussel['ReadFile'] = function (string $File): string {
     /** Guard. */
-    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+    if ($File === '' || !is_file($File) || !is_readable($File)) {
         return '';
     }
 
@@ -2599,7 +2599,7 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
                 }
                 if (strpos($ThisSig, ':') !== false) {
                     $VN = $phpMussel['SplitSigParts']($ThisSig);
-                    if (!isset($VN[1]) || !strlen($VN[1])) {
+                    if (!isset($VN[1]) || $VN[1] === '') {
                         continue;
                     }
                     if ($ThisConf[3] === 2) {
@@ -4979,7 +4979,7 @@ $phpMussel['ClearHashCache'] = function () use (&$phpMussel) {
  */
 $phpMussel['BuildPath'] = function (string $Path, bool $PointsToFile = true) use (&$phpMussel): string {
     /** Input guard. */
-    if (!strlen($Path)) {
+    if ($Path === '') {
         return '';
     }
 
@@ -5078,7 +5078,7 @@ $phpMussel['BuildLogPattern'] = function (string $Str, bool $GZ = false): string
  */
 $phpMussel['GZCompressFile'] = function (string $File): bool {
     /** Guard. */
-    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+    if ($File === '' || !is_file($File) || !is_readable($File)) {
         return false;
     }
 
