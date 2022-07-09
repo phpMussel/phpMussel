@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.17).
+ * This file: Front-end handler (last modified: 2022.07.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1417,8 +1417,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     ) {
                         $phpMussel['DirValue']['gridV'] = 'gridVB';
                         $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
-                            str_repeat('auto ', count($phpMussel['DirValue']['labels'])) . 'auto',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s) auto;text-align:%s">',
+                            count($phpMussel['DirValue']['labels']) . ',minmax(0, 1fr)',
                             $phpMussel['FE']['FE_Align']
                         );
                         $phpMussel['DirValue']['HasLabels'] = true;
