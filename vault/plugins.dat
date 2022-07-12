@@ -3,7 +3,7 @@ plugin-notifications:
  Name: phpMussel notifications.
  Extended Description: Receive email notifications from phpMussel whenever a file upload is blocked (requires PHP "mail" function to be correctly configured).
  Dependencies:
-  PHP: >=5.4
+  PHP: "^5.4|^7|^8"
   phpMussel Core: ^1.12|^2
  Remote: https://raw.githubusercontent.com/phpMussel/extras/master/plugins/plugins.dat
  Uninstallable: true

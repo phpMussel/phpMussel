@@ -3,7 +3,7 @@ phpMussel Core:
  Name: "phpMussel Core"
  Version: "2.4.3-DEV+22170000"
  Dependencies:
-  PHP: ">=7.2"
+  PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
   phpMussel Front-End: "Latest"
   l10n/{lang}: ">=2021.303.641"
@@ -51,7 +51,7 @@ phpMussel Front-End:
  Name: "phpMussel Front-End"
  Version: "2.4.3-DEV+22189000"
  Dependencies:
-  PHP: ">=7.2"
+  PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
   phpMussel Core: "Latest"
   l10n/{lang}: ">=2021.303.641"
@@ -174,7 +174,7 @@ phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
  Version: "2.4.2"
  Dependencies:
-  PHP: ">=7.2"
+  PHP: "^7.2|^8"
   phpMussel Core: "^2"
   Common Classes Package: "^2.5"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -199,7 +199,7 @@ phpMussel CLI Handler:
  Name: "phpMussel CLI Handler"
  Version: "2.4.2"
  Dependencies:
-  PHP: ">=7.2"
+  PHP: "^7.2|^8"
   phpMussel Core: "^2"
   Common Classes Package: "^2.5"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -216,7 +216,7 @@ Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.9.0"
  Dependencies:
-  PHP: ">=7.2"
+  PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
  Files:
   From:
