@@ -3,7 +3,7 @@ phpMussel:
  Name: "phpMussel"
  Version: "1.15.3-DEV+22191700"
  Dependencies:
-  PHP: ">=5.4"
+  PHP: "^5.4|^7|^8"
   l10n/{lang}: ">=2021.303.641"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/Changelog-v1.txt"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
