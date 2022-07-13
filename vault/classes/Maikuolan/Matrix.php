@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2022.02.21).
+ * Matrix handler (last modified: 2022.07.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -42,7 +42,7 @@ class Matrix
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.0';
+    public const VERSION = '2.9.1';
 
     /**
      * Create the matrix.
@@ -70,7 +70,7 @@ class Matrix
      * @return mixed The return value from the callback function (defaults to
      *      just returning the coordinate value verbatim).
      */
-    public function iterateCallback($Description, callable $Callback = null, ...$Data)
+    public function iterateCallback($Description, ?callable $Callback = null, ...$Data)
     {
         /** Guard. */
         if (!is_string($Description) && !is_int($Description)) {
@@ -196,7 +196,7 @@ class Matrix
      * @param array $Data Other data optionally passed to the callback.
      * @return \Generator
      */
-    private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot = '', callable $Callback, array $Data): \Generator
+    private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot, callable $Callback, array $Data): \Generator
     {
         /** Get current indexes. */
         $Index = $Indexes[$Depth];

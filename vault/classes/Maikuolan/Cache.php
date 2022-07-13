@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2022.02.21).
+ * A simple, unified cache handler (last modified: 2022.07.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -98,6 +98,11 @@ class Cache
     public $Exceptions = [];
 
     /**
+     * @var bool Whether to allow permissions to be enforced.
+     */
+    public $AllowEnforcingPermissions = true;
+
+    /**
      * @var bool Whether the cache has been modified since instantiation as far as we know.
      */
     private $Modified = false;
@@ -165,7 +170,7 @@ class Cache
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.0';
+    public const VERSION = '2.9.1';
 
     /**
      * Construct object and set working data if needed.
@@ -272,56 +277,34 @@ class Cache
             }
             unset($PDO);
         }
-        if ($this->FFDefault) {
-            if (is_file($this->FFDefault)) {
-                if (is_readable($this->FFDefault) && is_writable($this->FFDefault)) {
-                    $this->Using = 'FF';
-                    if (!$Filesize = filesize($this->FFDefault)) {
-                        $this->WorkingData = [];
-                        return $this->Modified = true;
-                    }
-                    $Data = '';
-                    $Handle = false;
-                    $Start = time();
-                    while (true) {
-                        $Handle = fopen($this->FFDefault, 'rb');
-                        if ($Handle !== false || (time() - $Start) > self::FLOCK_TIMEOUT) {
-                            break;
-                        }
-                    }
-                    if ($Handle === false) {
-                        return false;
-                    }
-                    $Locked = false;
-                    while (true) {
-                        if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
-                            break;
-                        }
-                    }
-                    if (!$Locked) {
-                        fclose($Handle);
-                        return false;
-                    }
-                    while (!feof($Handle)) {
-                        $Data .= fread($Handle, self::BLOCKSIZE);
-                    }
-                    flock($Handle, LOCK_UN);
-                    fclose($Handle);
-                    $Data = $Data ? unserialize($Data) : [];
-                    $this->WorkingData = is_array($Data) ? $Data : [];
-                    return true;
-                }
-            } else {
-                $Parent = dirname($this->FFDefault);
-                if (is_dir($Parent) && is_readable($Parent) && is_writable($Parent)) {
-                    $this->WorkingData = [];
-                    $this->Using = 'FF';
-                    return $this->Modified = true;
-                }
-            }
+        if (!is_string($this->FFDefault) || $this->FFDefault === '') {
+            return is_array($this->WorkingData);
+        }
+        $Parent = dirname($this->FFDefault);
+        if (!$this->tryEnforcePermissions($Parent)) {
             return false;
         }
-        return is_array($this->WorkingData);
+        if (is_file($this->FFDefault)) {
+            if (!is_readable($this->FFDefault) || !is_writable($this->FFDefault)) {
+                return false;
+            }
+            $this->Using = 'FF';
+            $Filesize = filesize($this->FFDefault);
+            if ($Filesize < 1) {
+                $this->WorkingData = [];
+                return $this->Modified = true;
+            }
+            $Data = file_get_contents($this->FFDefault);
+            $Data = (is_string($Data) && $Data !== '') ? unserialize($Data) : [];
+            $this->WorkingData = is_array($Data) ? $Data : [];
+            return true;
+        }
+        if (is_dir($Parent) && is_readable($Parent) && is_writable($Parent)) {
+            $this->WorkingData = [];
+            $this->Using = 'FF';
+            return $this->Modified = true;
+        }
+        return false;
     }
 
     /**
@@ -426,7 +409,7 @@ class Cache
      *
      * @param string $Key The name of the cache entry to set.
      * @param mixed $Value The value of the cache entry to set.
-     * @param int $TTL The number of seconds that the cache entry should persist.
+     * @param int $TTL The number of seconds that the cache entry should live.
      * @return bool True on success; False on failure.
      */
     public function setEntry(string $Key, $Value, int $TTL = 3600): bool
@@ -493,8 +476,14 @@ class Cache
             }
             return false;
         }
-        if ($this->Using === 'Memcached' || $this->Using === 'Redis') {
+        if ($this->Using === 'Memcached') {
             if ($this->WorkingData->delete($Entry)) {
+                return $this->Modified = true;
+            }
+            return false;
+        }
+        if ($this->Using === 'Redis') {
+            if ($this->WorkingData->del($Entry)) {
                 return $this->Modified = true;
             }
             return false;
@@ -513,6 +502,161 @@ class Cache
             }
         }
         return false;
+    }
+
+    /**
+     * Delete a limited subset of all cache entries.
+     *
+     * @param string $Pattern The pattern for which entries to delete.
+     * @return bool True on success; False on failure.
+     */
+    public function deleteAllEntriesWhere(string $Pattern): bool
+    {
+        if ($this->Using === 'APCu') {
+            if (strlen($this->Prefix)) {
+                $Pattern = preg_replace('~(?!\\\\)\^~', '^' . $this->Prefix, $Pattern);
+            }
+            $Try = new \APCUIterator($Pattern);
+            if ($Try->getTotalCount() > 0 && apcu_delete($Try)) {
+                return $this->Modified = true;
+            }
+            return false;
+        }
+        $Failure = false;
+        $Hit = false;
+        foreach ($this->getAllEntries() as $EntryName => $EntryData) {
+            if (preg_match($Pattern, $EntryName)) {
+                $Hit = true;
+                if (!$this->deleteEntry($EntryName)) {
+                    $Failure = true;
+                }
+            }
+        }
+        return ($Hit && !$Failure);
+    }
+
+    /**
+     * Increment an integer cache entry.
+     *
+     * @param string $Key The name of the cache entry to increment.
+     * @param int $Value The value to increment.
+     * @param int $TTL The number of seconds that the cache entry should live.
+     * @return bool True on success; False on failure.
+     */
+    public function incEntry(string $Key, int $Value = 1, int $TTL = 0): bool
+    {
+        if ($this->Using !== 'PDO') {
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+        }
+        $Success = null;
+        if ($this->Using === 'APCu') {
+            apcu_inc($Key, $Value, $Success, $TTL);
+        } elseif ($this->Using === 'Memcached') {
+            if ($TTL >= 2592000) {
+                $TTL += time();
+            }
+            $Success = $this->WorkingData->increment($Key, $Value, 1, $TTL);
+        } elseif ($this->Using === 'Redis') {
+            $Success = $this->WorkingData->incrBy($Key, $Value);
+        } elseif ($this->Using === 'PDO') {
+            if ($TTL > 0) {
+                $TTL += time();
+            }
+            $Previous = $this->getEntry($Key);
+            if (is_numeric($Previous)) {
+                $Value += $Previous;
+            }
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
+                $Success = ($PDO->rowCount() > 0);
+            }
+        } elseif (is_array($this->WorkingData)) {
+            if (
+                isset($this->WorkingData[$Key]) &&
+                is_array($this->WorkingData[$Key]) &&
+                isset($this->WorkingData[$Key]['Data']) &&
+                is_numeric($this->WorkingData[$Key]['Data'])
+            ) {
+                $Value += $this->WorkingData[$Key]['Data'];
+            }
+            if ($TTL > 0) {
+                $TTL += time();
+                $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
+            } else {
+                $this->WorkingData[$Key] = $Value;
+            }
+            $Success = true;
+        }
+        if ($Success === null || $Success === false) {
+            return false;
+        }
+        $this->Modified = true;
+        return true;
+    }
+
+    /**
+     * Decrement an integer cache entry.
+     *
+     * @param string $Key The name of the cache entry to decrement.
+     * @param int $Value The value to decrement.
+     * @param int $TTL The number of seconds that the cache entry should live.
+     * @return bool True on success; False on failure.
+     */
+    public function decEntry(string $Key, int $Value = 1, int $TTL = 0): bool
+    {
+        if ($this->Using !== 'PDO') {
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+        }
+        $Success = null;
+        if ($this->Using === 'APCu') {
+            apcu_dec($Key, $Value, $Success, $TTL);
+        } elseif ($this->Using === 'Memcached') {
+            if ($TTL >= 2592000) {
+                $TTL += time();
+            }
+            $Success = $this->WorkingData->decrement($Key, $Value, 1, $TTL);
+        } elseif ($this->Using === 'Redis') {
+            $Success = $this->WorkingData->decrBy($Key, $Value);
+        } elseif ($this->Using === 'PDO') {
+            if ($TTL > 0) {
+                $TTL += time();
+            }
+            $Previous = $this->getEntry($Key);
+            if (is_numeric($Previous)) {
+                $Value -= $Previous;
+            }
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
+                $Success = ($PDO->rowCount() > 0);
+            }
+        } elseif (is_array($this->WorkingData)) {
+            if (
+                isset($this->WorkingData[$Key]) &&
+                is_array($this->WorkingData[$Key]) &&
+                isset($this->WorkingData[$Key]['Data']) &&
+                is_numeric($this->WorkingData[$Key]['Data'])
+            ) {
+                $Value -= $this->WorkingData[$Key]['Data'];
+            }
+            if ($TTL > 0) {
+                $TTL += time();
+                $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
+            } else {
+                $this->WorkingData[$Key] = $Value;
+            }
+            $Success = true;
+        }
+        if ($Success === null || $Success === false) {
+            return false;
+        }
+        $this->Modified = true;
+        return true;
     }
 
     /**
@@ -674,6 +818,7 @@ class Cache
     {
         $Cleared = false;
         $Updated = [];
+        $Now = time();
         foreach ($Data as $Key => $Value) {
             if (is_array($Value)) {
                 foreach ($Value as &$SubValue) {
@@ -684,7 +829,7 @@ class Cache
                     }
                 }
             }
-            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > time()) {
+            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > $Now) {
                 $Updated[$Key] = $Value;
             } else {
                 $Cleared = true;
@@ -812,5 +957,26 @@ class Cache
             }
             $Key = hash('sha512', $Key);
         }
+    }
+
+    /**
+     * Try to enforce the permissions necessary to read and write a file.
+     *
+     * @param string $Directory The directory we're attempting to set
+     *      permissions for.
+     * @return bool True when successful or when not needed; False on failure.
+     */
+    private function tryEnforcePermissions(string $Directory): bool
+    {
+        if ($Directory === '' || !is_dir($Directory)) {
+            return false;
+        }
+        if (is_readable($Directory) && is_writable($Directory)) {
+            return true;
+        }
+        if (!$this->AllowEnforcingPermissions) {
+            return false;
+        }
+        return chmod($Directory, 0755);
     }
 }

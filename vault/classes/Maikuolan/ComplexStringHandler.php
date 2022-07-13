@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2022.02.21).
+ * Complex string handler (last modified: 2022.07.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -37,7 +37,7 @@ class ComplexStringHandler
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.0';
+    public const VERSION = '2.9.1';
 
     /**
      * Constructor.
@@ -47,11 +47,11 @@ class ComplexStringHandler
      * @param callable $Closure An optional closure to immediately call $this->iterateClosure.
      * @return void
      */
-    public function __construct(string $Data = '', string $Pattern = '', callable $Closure = null)
+    public function __construct(string $Data = '', string $Pattern = '', ?callable $Closure = null)
     {
-        if (!empty($Data) && is_string($Data)) {
+        if ($Data !== '') {
             $this->Input = $Data;
-            if (!empty($Pattern) && is_string($Pattern)) {
+            if ($Pattern !== '') {
                 $this->generateMarkers($Pattern);
                 if (is_callable($Closure)) {
                     $this->iterateClosure($Closure);
