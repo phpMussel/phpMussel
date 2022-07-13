@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2022.02.21).
+ * Delayed file IO class (last modified: 2022.07.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -47,7 +47,7 @@ class DelayedIO
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.0';
+    const VERSION = '1.9.1';
 
     /**
      * All pending modified files are written at object destruction.
@@ -92,21 +92,30 @@ class DelayedIO
      */
     public function readFile($File = '', $Lock = 0)
     {
-        if (empty($File) || !is_string($File) || !is_int($Lock)) {
+        if ($File === '' || !is_string($File) || !is_int($Lock)) {
             return '';
         }
         if (isset($this->NewData[$File])) {
             return $this->NewData[$File];
         }
-        if (!is_file($File) || !is_readable($File) || !filesize($File)) {
+        if (!is_file($File) || !is_readable($File)) {
             return '';
+        }
+        if (filesize($File) === 0) {
+            $this->Locked[$File] = 0;
+            return $this->NewData[$File] = $this->OldData[$File] = '';
+        }
+        if ($Lock === 0) {
+            $Data = file_get_contents($File);
+            $this->Locked[$File] = 0;
+            return $this->NewData[$File] = $this->OldData[$File] = is_string($Data) ? $Data : '';
         }
         $Handle = fopen($File, 'rb');
         if (!is_resource($Handle)) {
             return '';
         }
         $Locked = false;
-        if ($Lock) {
+        if ($Lock !== 0) {
             $Time = time();
             while (!$Locked) {
                 $Locked = flock($Handle, $Lock);
