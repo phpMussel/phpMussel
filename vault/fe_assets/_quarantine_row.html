@@ -10,12 +10,10 @@
         </td>
         <td class="h3f">
           <select id="{QFU-JS-ID}-S" name="do" onchange="javascript:qOpt('{QFU-JS-ID}')">
-            <option value="delete-file">{field_delete_file}</option>
+            <option value="delete-file" class="txtRd">{field_delete_file}</option>
             <option value="restore-file">{field_restore_file}</option>
             <option value="download-file">{field_download_file}</option>
-          </select>
-          <input type="text" name="qkey" id="{QFU-JS-ID}" style="display:none" placeholder="{field_quarantine_key}" />
-          <input type="submit" value="{field_ok}" class="auto" />
+          </select><input type="text" name="qkey" id="{QFU-JS-ID}" style="display:none" placeholder="{field_quarantine_key}" /><input type="submit" value="{field_ok}" class="auto" />
         </td>
       </form>
     </tr>

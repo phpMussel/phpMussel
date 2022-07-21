@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.09).
+ * This file: Front-end handler (last modified: 2022.07.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2828,7 +2828,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $phpMussel['L10N']->getString('field_delete_file'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $phpMussel['L10N']->getString('field_delete_file'));
             $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $phpMussel['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
