@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.06.17).
+ * This file: Front-end functions file (last modified: 2022.07.22).
  */
 
 /**
@@ -2387,7 +2387,7 @@ $phpMussel['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '',
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
     foreach ($Arr as $Key => $Value) {
-        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $phpMussel['L10N']->getString('field_delete_file') . '</code></span>)' : '';
+        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $phpMussel['L10N']->getString('field_delete_file') . '</code></span>)' : '';
         $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
         if (is_string($Value)) {
             if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
