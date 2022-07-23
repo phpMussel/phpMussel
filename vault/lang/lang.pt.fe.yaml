@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.04.25).
+# This file: Portuguese language data for the front-end (last modified: 2022.07.22).
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -140,7 +140,8 @@ config_virustotal_vt_quota_rate: "De acordo com o Virus Total API documentação
 config_virustotal_vt_quota_time: "(Ver descrição acima)."
 config_virustotal_vt_suspicion_level: "Por padrão, phpMussel restringirá os arquivos que são verificado usando o Virus Total API a esses arquivos que considera "suspeito". Opcionalmente, você pode ajustar essa restrição via alterando o valor ao <code>vt_suspicion_level</code> directiva."
 config_virustotal_vt_weighting: "Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de arquivos maliciosos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão."
-confirm_action: "Você tem certeza que quer "%s"?"
+confirm_action: "Você tem certeza de que deseja "%s"?"
+confirm_delete: "Você tem certeza de que deseja deletar "%s"?"
 field_2fa: "Código 2FA"
 field_activate: "Ativar"
 field_clear_all: "Cancelar tudo"
@@ -303,16 +304,16 @@ link_documentation: "Documentação"
 link_file_manager: "Gerenciador de Arquivos"
 link_home: "Página Principal"
 link_log_out: "Sair"
-link_logs: "Arquivos de Registro"
+link_logs: "Arquivos de Log"
 link_quarantine: "Quarentena"
 link_siginfo: "Informações de Assinaturas"
 link_statistics: "Estatisticas"
 link_textmode: "Formatação de texto: <a href="%1$sfalse">Simples</a> – <a href="%1$strue">Chique</a>"
 link_updates: "Atualizações"
 link_upload_test: "Carregamento Teste"
-logs_logfile_doesnt_exist: "Arquivo de registro selecionado não existe!"
-logs_no_logfile_selected: "Não qualquer arquivo de registro selecionado."
-logs_no_logfiles_available: "Não quaisquer arquivos de registro disponíveis."
+logs_logfile_doesnt_exist: "O arquivo de log selecionado não existe!"
+logs_no_logfile_selected: "Não qualquer arquivo de log selecionado."
+logs_no_logfiles_available: "Não quaisquer arquivos de log disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
@@ -420,7 +421,7 @@ state_loadtime: "Solicitação de página concluída em %s segundos."
 state_logged_in: "Conectado."
 state_logged_in_2fa_pending: "Conectado + 2FA pendentes."
 state_logged_out: "Desconectado."
-state_logs_access_only: "Acesso aos arquivos de registro somente"
+state_logs_access_only: "Acesso aos arquivos de log somente"
 state_maintenance_mode: "Atenção: O modo de manutenção está ativado!"
 state_password_not_valid: "Atenção: Esta conta não está usando uma senha válida!"
 state_quarantine:
@@ -442,7 +443,7 @@ tip_config: "Olá, {username}.<br />A página de configuração permite que voc�
 tip_fe_cookie_warning: "Nota: phpMussel usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."
 tip_file_manager: "Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
 tip_home: "Olá, {username}.<br />Esta é a página principal do phpMussel front-end. Selecione um link no menu de navegação à esquerda para continuar."
-tip_logs: "Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro."
+tip_logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
 tip_quarantine: "Olá, {username}.<br />Esta página lista todos os arquivos atualmente em quarentena e facilita o gerenciamento desses arquivos."
 tip_quarantine_disabled: "Nota: A quarentena está atualmente desativada, mas pode ser ativada através da página de configuração."
 tip_see_the_documentation: "Consulte a <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.pt.md\#SECTION7" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."

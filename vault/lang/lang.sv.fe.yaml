@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.07).
+# This file: Swedish language data for the front-end (last modified: 2022.07.22).
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -141,6 +141,7 @@ config_virustotal_vt_quota_time: "(Se beskrivning ovan)."
 config_virustotal_vt_suspicion_level: "Som standard kommer phpMussel att begränsa vilka filer den skannar med Virus Total API till de filer som den anser "misstänkta". Du kan valfritt justera denna begränsning genom att ändra värdet på <code>vt_suspicion_level</code> direktivet."
 config_virustotal_vt_weighting: "Ska phpMussel tillämpa resultaten av skanning med Virus Total API som detekteringar eller som detektionsviktning? Skanning av en fil med flera motorer (som hur Virus Total gör det) bör resultera i en ökad upptäcktsfrekvens (och därför att ett högre antal skadliga filer fångas), men det kan också resultera i ett högre antal falska positiver, och därför kan resultaten av skanning under vissa omständigheter bättre utnyttjas som ett konfidensresultat snarare än som en definitiv slutsats (och detta direktiv existerar som sådan för att ge dig det valet). Om ett värde på 0 används kommer resultaten av skanning med Virus Total API att tillämpas som detekteringar (vilket betyder att om några motorer som stöds av Virus Total flaggar filen som skannas, kommer phpMussel att anse filen som skadlig). Om något annat värde används kommer resultaten av skanning med Virus Total API att tillämpas som detekteringsviktning (vilket betyder att resultaten från Virus Total API kommer att tjäna som ett konfidensresultat för huruvida phpMussel ska betrakta filen som skannas som skadlig eller inte, i vilket fall representerar det använda värdet det minsta konfidensresultat som krävs för att filen ska anses vara skadlig). Ett värde på 0 används som standard."
 confirm_action: "Är du säker på att du vill "%s"?"
+confirm_delete: "Är du säker på att du vill radera "%s"?"
 field_2fa: "2FA-kod"
 field_activate: "Aktivera"
 field_clear_all: "Rensa alla"

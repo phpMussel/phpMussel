@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.04.25).
+# This file: Norwegian language data for the front-end (last modified: 2022.07.22).
 ##/
 
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -141,6 +141,7 @@ config_virustotal_vt_quota_time: "(Se beskrivelse over)."
 config_virustotal_vt_suspicion_level: "Som standard vil phpMussel begrense hvilke filer den skanner ved å bruke Virus Total API til de filene den anser som "mistenkelig". Du kan eventuelt justere denne begrensningen ved å endre verdien på <code>vt_suspicion_level</code> direktivet."
 config_virustotal_vt_weighting: "Bør phpMussel bruke resultatene av skanning ved å bruke Virus Total API som deteksjoner eller som deteksjonsvekt? Dette direktivet finnes fordi, selv om skanning av en fil ved hjelp av flere motorer (som Virus Total gjør), bør føre til en økt antall deteksjoner (og derfor i et større antall skadelige filer som blir fanget), det kan også føre til et høyere antall falske positiver, og derfor kan resultatene av skanning under noen omstendigheter bli bedre brukt som en tillitsvurdering i stedet for som en endelig konklusjon. Hvis en verdi på 0 brukes, blir resultatene av skanning ved å bruke Virus Total API brukt som deteksjoner, og derfor, hvis en motor som brukes av Virus Total, flagger filen som skannes som skadelig, vil phpMussel anse filen som skadelig. Hvis det brukes annen verdi, blir resultatene av skanning ved å bruke Virus Total API brukt som deteksjonsvekt, og derfor vil antallet motorer som brukes av Virus Total som flagger filen som skannes som skadelig, tjene som en tillitsscore (eller deteksjonsvekt) for hvorvidt filen som skannes skal anses som skadelig av phpMussel eller ikke (verdien som brukes vil representere den minste konfidenspoeng eller vekt som kreves for å bli vurdert som skadelig). En verdi på 0 er brukes som standard."
 confirm_action: "Er du sikker på at du vil "%s"?"
+confirm_delete: "Er du sikker på at du vil slette "%s"?"
 field_2fa: "2FA kode"
 field_activate: "Aktiver"
 field_clear_all: "Rydde alt"

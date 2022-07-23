@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2022.03.01).
+# This file: German language data (last modified: 2022.07.03).
 ##/
 
 PrivacyPolicy: "Datenschutz-Bestimmungen"
@@ -65,7 +65,7 @@ cli_ln2: |
                                      ~ ~ ~
 cli_ln3: |
  phpMussel befindet sich im CLI-Modus (Command Line Interface). Um eine
- Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie "scan",
+ Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie „scan“,
  gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
  Enter; Geben Sie "c" und Enter für eine Liste der verfügbaren Befehle im
  CLI-Modus ein; Geben Sie "q" und Enter zum Beenden ein.

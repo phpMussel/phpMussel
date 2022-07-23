@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.04.25).
+# This file: Polish language data for the front-end (last modified: 2022.07.22).
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -141,6 +141,7 @@ config_virustotal_vt_quota_time: "(Patrz opis powyżej)."
 config_virustotal_vt_suspicion_level: "Domyślnie phpMussel ograniczy pliki skanowane za pomocą API Virus Total do plików, które uważa za „podejrzane”. Możesz opcjonalnie dostosować to ograniczenie, zmieniając wartość dyrektywy <code>vt_suspicion_level</code>."
 config_virustotal_vt_weighting: "Czy phpMussel powinien stosować wyniki skanowania przy użyciu API Virus Total jako wykrycia czy waga wykrywania? Ta dyrektywa istnieje, ponieważ, chociaż skanowanie pliku przy użyciu wielu silników (tak jak robi to Virus Total) powinno spowodować zwiększenie wskaźnika wykrywalności (i dlatego przechwytuje większą liczbę złośliwych plików), może również powodować większą liczbę fałszywych trafień, i dlatego, w niektórych okolicznościach wyniki skanowania można lepiej wykorzystać jako wynik ufności, a nie jako ostateczny wniosek. Jeśli zostanie użyta wartość 0, wyniki skanowania przy użyciu API Virus Total zostaną zastosowane jako wykrycia, i dlatego, jeśli jakikolwiek silnik używany przez Virus Total oznaczy skanowany plik jako złośliwy, phpMussel uzna plik za złośliwy. Jeśli zostanie użyta jakakolwiek inna wartość, wyniki skanowania przy użyciu API Virus Total zostaną zastosowane jako waga wykrywania, i dlatego, liczba silników używanych przez Virus Total, które oznaczają skanowany plik jako złośliwy, posłuży za wynik ufności (lub waga wykrywania) dla czy skanowany plik powinien zostać uznany przez phpMussel za złośliwy (zastosowana wartość będzie reprezentować minimalny wynik ufności lub wagę wymaganą do tego, aby zostać uznanym za złośliwego). Domyślnie używana jest wartość 0."
 confirm_action: "Czy na pewno chcesz „%s”?"
+confirm_delete: "Czy na pewno chcesz usunąć „%s”?"
 field_2fa: "Kod 2FA"
 field_activate: "Aktywuj"
 field_clear_all: "Wyczyść wszystko"
