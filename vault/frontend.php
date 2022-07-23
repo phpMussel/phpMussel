@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.21).
+ * This file: Front-end handler (last modified: 2022.07.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2997,13 +2997,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
         is_readable($phpMussel['qfuPath'] . $_POST['qfu']) &&
         $phpMussel['FileManager-PathSecurityCheck']($_POST['qfu'])
     ) {
-        /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
             $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['L10N']->getString(
                 unlink($phpMussel['qfuPath'] . $_POST['qfu']) ? 'response_file_deleted' : 'response_delete_error'
             ) . '<br />';
-
-        /** Download or restore a file. */
         } elseif ($_POST['do'] === 'download-file' || $_POST['do'] === 'restore-file') {
             if (empty($_POST['qkey'])) {
                 $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['L10N']->getString('response_restore_error_2') . '<br />';
@@ -3028,15 +3025,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
                     fwrite($phpMussel['Handle'], $phpMussel['Restored']);
                     fclose($phpMussel['Handle']);
                     $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '.restored</code> ' . $phpMussel['L10N']->getString('response_file_restored') . '<br />';
-                }
-
-                /** Corrupted file! */
-                elseif ($phpMussel['RestoreStatus'] === 2) {
+                } elseif ($phpMussel['RestoreStatus'] === 2) {
+                    /** Corrupted file! */
                     $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['L10N']->getString('response_restore_error_1') . '<br />';
-                }
-
-                /** Incorrect quarantine key! */
-                else {
+                } else {
+                    /** Incorrect quarantine key! */
                     $phpMussel['FE']['state_msg'] .= '<code>' . $_POST['qfu'] . '</code> ' . $phpMussel['L10N']->getString('response_restore_error_2') . '<br />';
                 }
 
