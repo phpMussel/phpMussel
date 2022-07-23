@@ -1484,7 +1484,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                                     isset($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default']) && $phpMussel['Request']->inCsv(
                                         $phpMussel['ChoiceKey'] . ':' . $phpMussel['DirValue']['ThisLabelKey'],
                                         $phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default']
-                                    ) ? 'true' : 'false',
+                                    ) ? 'true' : 'false'
                                 );
                             }
                             $phpMussel['ThisDir']['FieldOut'] .= sprintf(
@@ -1511,7 +1511,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                                 isset($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default']) && $phpMussel['Request']->inCsv(
                                     $phpMussel['ChoiceKey'],
                                     $phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default']
-                                ) ? 'true' : 'false',
+                                ) ? 'true' : 'false'
                             );
                         }
                     } elseif (isset($phpMussel['DirValue']['style']) && $phpMussel['DirValue']['style'] === 'radio') {
