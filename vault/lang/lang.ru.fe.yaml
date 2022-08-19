@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.07.22).
+# This file: Russian language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -70,7 +84,7 @@ config_general_disable_webfonts: "Отключить веб-шрифты? True =
 config_general_disabled_channels: "Это можно использовать для предотвращения использования phpMussel определенных каналов при отправке запросов (например, при обновлении, при извлечении метаданных компонента, и т.д.)."
 config_general_enable_plugins: "Включить поддержку phpMussel плагинов? False = Нет; True = Да [Стандарт]."
 config_general_error_log: "Файл для регистрации обнаруженных нефатальных ошибок. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
-config_general_forbid_on_block: "Возвращённый 403-HTTP-заголовок при заблокированной загрузке данных. False = Нет (200); True = Да (403) [Стандарт]."
+config_general_forbid_on_block: "Отправлять заголовок HTTP 403 при отображении сообщения о блокировке загрузки или придерживаться обычного HTTP 200? False = Нет (200); True = Да (403) [Стандарт]."
 config_general_honeypot_mode: "При активированном Honeypot-модуса phpMussel изолирует каждый загружаемый файл без всякой проверки, не обращая внимание на сигнатуры. Эта функция предназначена исключительно для исследования вирусов и вредоносных программ. Мы рекомендуем использовать эту функцию phpMussel исключительно для «Honeypotting», а не для проверки загружаемых файлов или других целей. В стандартной комплектации эта функция деактивирована. False = Деактивировано [стандартное значение]; True = Активировано."
 config_general_ipaddr: "Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. Внимание! Изменяйте это значение только в том случае, если Вы уверены в своих действиях!"
 config_general_lang: "Задаёт phpMussel стандарт языка."
@@ -317,10 +331,9 @@ logs_no_logfiles_available: "Не лог-файлы доступны."
 max_login_attempts_exceeded: "Максимальное количество попыток входа в систему был превышен; Доступ закрыт."
 msg_subject_2fa: "Двухфакторная аутентификация"
 msg_template_2fa: |
- <center><p>Привет, %1$s.<br />
- <br />
+ <center><p>Привет, %s.<br /><br />
  Ваш код 2FA для входа в интерфейс phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Этот код истекает через 10 минут.</p></center>
 notice_click_here: "Для получения дополнительной информации нажмите здесь."
 notice_new_major_version: "Примечание: %s теперь доступен (вы используете %s). Вы соответствуете минимальным требованиям PHP этой версии. Однако для обновления требуются некоторые шаги вручную."

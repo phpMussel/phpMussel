@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.07.22).
+# This file: German language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
@@ -316,10 +330,9 @@ logs_no_logfiles_available: "Keine Protokolldateien vorhanden."
 max_login_attempts_exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
 msg_subject_2fa: "Zwei-Faktor-Authentifizierung"
 msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
+ <center><p>Hallo, %s.<br /><br />
  Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am phpMussel Frontend:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Dieser Code läuft in 10 Minuten ab.</p></center>
 notice_click_here: "Klicken Sie hier für weitere Informationen."
 notice_new_major_version: "Beachten: %s ist jetzt verfügbar (Sie verwenden %s). Sie erfüllen die Mindestanforderungen für PHP für diese Version. Einige manuelle Schritte erforderlich jedoch zum Aktualisieren."

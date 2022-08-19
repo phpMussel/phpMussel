@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.07.22).
+# This file: Bangla language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> মাধ্যমে উপলব্ধ।"
@@ -314,10 +328,9 @@ logs_no_logfiles_available: "কোন লগ ফাইল উপলব্ধ।
 max_login_attempts_exceeded: "লগইন প্রচেষ্টা সর্বাধিক সংখ্যা অতিক্রম করেছে; প্রবেশাধিকার অস্বীকার।"
 msg_subject_2fa: "দুই-ফ্যাক্টর প্রমাণীকরণ"
 msg_template_2fa: |
- <center><p>হ্যালো, %1$s।<br />
- <br />
+ <center><p>হ্যালো, %s।<br /><br />
  phpMussel ফ্রন্ট-এন্ড প্রবেশের জন্য আপনার দুই-ফ্যাক্টর প্রমাণীকরণ কোড:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>এই কোডটি 10 মিনিটের মধ্যে মেয়াদ শেষ হয়ে যায়।</p></center>
 notice_click_here: "আরও তথ্যের জন্য এখানে ক্লিক করুন।"
 notice_new_major_version: "বিজ্ঞপ্তি: %s এখন উপলভ্য (আপনি %s ব্যবহার করছেন)। আপনি এই সংস্করণটির সর্বনিম্ন PHP প্রয়োজনীয়তা পূরণ করেন। তবে আপডেট করার জন্য কিছু ম্যানুয়াল পদক্ষেপের প্রয়োজন।"

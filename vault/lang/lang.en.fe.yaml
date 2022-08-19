@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.07.22).
+# This file: English language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -316,10 +330,9 @@ logs_no_logfiles_available: "No logfiles available."
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |
- <center><p>Hello, %1$s.<br />
- <br />
+ <center><p>Hello, %s.<br /><br />
  Your two-factor authentication code for logging into the phpMussel front-end:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>This code expires in 10 minutes.</p></center>
 notice_click_here: "Click here for more information."
 notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. However, some manual steps are required to update."

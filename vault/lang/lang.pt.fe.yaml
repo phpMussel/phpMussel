@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.07.22).
+# This file: Portuguese language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -316,10 +330,9 @@ logs_no_logfiles_available: "Não quaisquer arquivos de log disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
- <center><p>Olá, %1$s.<br />
- <br />
+ <center><p>Olá, %s.<br /><br />
  Seu código de autenticação de dois fatores para efetuar login no front-end phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Este código expira em 10 minutos.</p></center>
 notice_click_here: "Clique aqui para obter mais informações."
 notice_new_major_version: "Aviso: O %s está agora disponível (você está usando o %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
