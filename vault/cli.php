@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2021.03.18).
+ * This file: CLI handler (last modified: 2022.08.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,7 +26,6 @@ $phpMussel['InitialiseErrorHandler']();
 
 /** If CLI-mode is disabled, nothing here should be executed. */
 if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['general']['maintenance_mode']) {
-
     /** Check if any arguments have been parsed via CLI. */
     $phpMussel['cli_args'] = [
         isset($argv[0]) ? $argv[0] : '',

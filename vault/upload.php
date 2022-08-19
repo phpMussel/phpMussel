@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2022.03.24).
+ * This file: Upload handler (last modified: 2022.08.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -31,7 +31,6 @@ $phpMussel['upload']['count'] = empty($_FILES) ? 0 : count($_FILES);
 
 /** Only continue if there are uploads to deal with. */
 if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maintenance_mode']) {
-
     /**
      * Whenever something is detected in a file being scanned, a human-readable
      * description of what has been detected is appended to

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.07.24).
+ * This file: Configuration handler (last modified: 2022.08.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -68,11 +68,9 @@ if (!is_readable($phpMussel['Vault'] . 'config.yaml')) {
 }
 
 if (isset($GLOBALS['phpMussel_Config'])) {
-
     /** Provides a means of running tests with configuration values specific to those tests. */
     $phpMussel['Config'] = $GLOBALS['phpMussel_Config'];
 } else {
-
     /** Attempts to parse the standard phpMussel configuration file. */
     $phpMussel['Config'] = parse_ini_file($phpMussel['Vault'] . 'config.ini', true);
 }
@@ -90,7 +88,6 @@ if (
     !preg_match('/[^.\da-z-]/', $phpMussel['Domain']) &&
     is_readable($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini')
 ) {
-
     /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
     if ($phpMussel['Overrides'] = parse_ini_file($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini', true)) {
         array_walk($phpMussel['Overrides'], function ($Keys, $Category) use (&$phpMussel) {

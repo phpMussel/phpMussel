@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.07.22).
+ * This file: Front-end functions file (last modified: 2022.08.20).
  */
 
 /**
@@ -2240,7 +2240,6 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body
         $EventLogData .= $phpMussel['L10N']->getString('state_failed_missing') . "\n";
     } else {
         try {
-
             /** Create a new PHPMailer instance. */
             $Mail = new \PHPMailer\PHPMailer\PHPMailer();
 
@@ -2342,7 +2341,6 @@ $phpMussel['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body
                 $SuccessDetails
             ) : $phpMussel['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
         } catch (\Exception $e) {
-
             /** An exeption occurred. Log the information. */
             $EventLogData .= $phpMussel['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
         }
