@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.06.19).
+ * This file: Functions file (last modified: 2022.08.20).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -849,7 +849,6 @@ $phpMussel['implode_bits'] = function (string $Input): string {
  *      identifiers have been decompressed/expanded), or the input verbatim.
  */
 $phpMussel['vn_shorthand'] = function (string $VN) use (&$phpMussel): string {
-
     /** Determine whether the signature is weighted. */
     $phpMussel['InstanceCache']['weighted'] = false;
 
@@ -2705,7 +2704,6 @@ $phpMussel['DataHandler'] = function (string $str = '', int $dpt = 0, string $Or
             ) ? array_chunk($URLScanner['URLParts'], 500) : [$URLScanner['URLParts']];
             $URLScanner['URLChunks'] = count($URLScanner['URLsChunked']);
             for ($i = 0; $i < $URLScanner['URLChunks']; $i++) {
-
                 /** Maximum API lookups reached; abort accordingly. */
                 if (
                     $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
@@ -3163,7 +3161,6 @@ $phpMussel['SplitSigParts'] = function (string $Sig, int $Max = -1): array {
  * @param string $Checksum A hash for the content, inherited from the parent.
  */
 $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, string $ItemRef, string $Filename, string &$Data, int $Depth, string $Checksum) use (&$phpMussel) {
-
     /** Plugin hook: "MetaDataScan_start". */
     $phpMussel['Execute_Hook']('MetaDataScan_start');
 
@@ -3275,7 +3272,6 @@ $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, stri
 
         /** Now we'll try to decompress the file. */
         if (!$CompressionResults = $CompressionObject->TryEverything()) {
-
             /** Success! Now we'll send it to the data handler. */
             try {
                 $Scan = $phpMussel['DataHandler']($CompressionObject->Data, $Depth, $phpMussel['DropTrailingCompressionExtension']($Filename));
@@ -3697,7 +3693,6 @@ $phpMussel['Recursor'] = function ($f = '', bool $n = false, bool $zz = false, i
 
         /** Now we'll try to decompress the file. */
         if (!$CompressionResults = $CompressionObject->TryEverything()) {
-
             /** Success! Now we'll send it to the data handler. */
             try {
                 $z = $phpMussel['DataHandler']($CompressionObject->Data, $dpt, $phpMussel['DropTrailingCompressionExtension']($OriginalFilename));
@@ -3881,7 +3876,6 @@ $phpMussel['ConvertCRX'] = function (string &$Data) use (&$phpMussel): bool {
  * @param string $ItemRef A reference to the parent container (for logging).
  */
 $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, string $File = '', int $ScanDepth = 0, string $ItemRef = '') use (&$phpMussel) {
-
     /** Plugin hook: "ArchiveRecursor_start". */
     $phpMussel['Execute_Hook']('ArchiveRecursor_start');
 
@@ -4032,7 +4026,6 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
 
         /** ZipHandler needs a file pointer. */
         if (!$File || !is_readable($File)) {
-
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
@@ -4041,7 +4034,6 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
             $Pointer = &$PointerObject->Filename;
             $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
-
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
         }
@@ -4082,7 +4074,6 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
 
         /** RarHandler needs a file pointer. */
         if (!$File || !is_readable($File)) {
-
             /**
              * File pointer not available. Probably already inside an
              * archive. Let's create a temporary file for this.
@@ -4091,7 +4082,6 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
             $Pointer = &$PointerObject->Filename;
             $phpMussel['InstanceCache']['tempfilesToDelete'][] = $Pointer;
         } else {
-
             /** File pointer available. Let's reference it. */
             $Pointer = &$File;
         }
@@ -4136,13 +4126,11 @@ $phpMussel['ArchiveRecursor'] = function (string &$x, int &$r, string $Data, str
     if (isset($ArchiveObject) && is_object($ArchiveObject)) {
         /** No errors reported. Let's try checking its contents. */
         if ($ArchiveObject->ErrorState === 0) {
-
             /** Used to count the number of entries processed. */
             $Processed = 0;
 
             /** Iterate through the archive's contents. */
             while ($ArchiveObject->EntryNext()) {
-
                 /** Skip directories (useless for scanning here). */
                 if ($ArchiveObject->EntryIsDirectory()) {
                     continue;

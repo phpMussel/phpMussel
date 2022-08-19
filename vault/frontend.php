@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.24).
+ * This file: Front-end handler (last modified: 2022.08.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -546,7 +546,6 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                         );
                         $phpMussel['FE']['UserState'] = ((int)$phpMussel['2FA-State'] === 1) ? 1 : 2;
                         if ($phpMussel['FE']['UserState'] === 2 && $phpMussel['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
-
                             /** User has submitted a 2FA code. Attempt to verify it. */
                             if (password_verify($_POST['2fa'], substr($phpMussel['2FA-State'], 1))) {
                                 $phpMussel['FECacheAdd'](
@@ -907,7 +906,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
     } elseif (!empty($phpMussel['QueryVars']['icon'])) {
         $phpMussel['Icons_Handler_Path'] = $phpMussel['GetAssetPath']('icons.php');
         if (is_readable($phpMussel['Icons_Handler_Path'])) {
-
             /** Fetch file manager icons data. */
             require $phpMussel['Icons_Handler_Path'];
 
@@ -2692,7 +2690,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         /** Rename a file. */
         if ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
             if (isset($_POST['filename_new'])) {
-
                 /** Check whether safe. */
                 $phpMussel['SafeToContinue'] = (
                     $phpMussel['FileManager-PathSecurityCheck']($_POST['filename']) &&
@@ -3002,7 +2999,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'quarantine' && $phpMussel
 
                 /** Restore success! */
                 if (empty($phpMussel['RestoreStatus'])) {
-
                     /** Download the file. */
                     if ($_POST['do'] === 'download-file') {
                         header('Content-Type: application/octet-stream');

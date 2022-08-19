@@ -1,7 +1,7 @@
 ---
 phpMussel Core:
  Name: "phpMussel Core"
- Version: "2.4.3"
+ Version: "2.4.4-DEV+22231000"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -39,17 +39,17 @@ phpMussel Core:
    - "5fc23d3cba0ac367ab4f06ce186af6d9ca60ded5e65d8f4ba0d57c90185ffe78:32504"
    - "19e973bdc4e75557ba10d3934e68993956bc24bd57f6f109f9eca159100a7c50:3872"
    - "5d14dd147f82ab17416959e50610f0aa94f3b42ac7b86ce610cb5ed93123edeb:1854"
-   - "d109fcc01c1957fb773af5c6b3c48c7d53ba15ffeaff18934f21188189ed2bde:8103"
+   - "58b645e73e8be8d6f73f9dea3a7cfb9a6016890cfe8f936a10c3be7cc242120c:8100"
    - "49a4e46a6dc69e5061773ff6a57a184b91bae23f98f32b05cd3286d7600c6a49:20250"
    - "50566be4d8b3455c9c3595fe7245854f01109a9737b7d2599406e7b2289da491:7481"
-   - "4657ae9d7f3655870c05762b1112848b029fd1a5238b10bce7007dfd87fc415e:232057"
+   - "56c18493fa1b2bf9d174e9b4b5f447fa21be60caba2cdbfce214b0c34d001d9e:232045"
    - "72be74d52feabb7bb859f4e1fa061eff913020632fc10307affe1b74e2436039:6928"
    - "94d43f61451420d98f1eff12d78ef3ff045ba4c750d6c9309ee6302357cb7bae:4489"
    - "2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237"
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.3"
+ Version: "2.4.4-DEV+22231000"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -167,12 +167,12 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "fda11f80ecc42ac0e069a3ccbd997f85d4db0cf8c4da4acf0d813e0849ea5292:1349"
-   - "6ba2424608a99877f9e37564d353a7502af370afabb3d19b6b6956857c0f1d0e:187545"
-   - "a2ed09b93891a125d20c96f993a6b9bf450b30d05e98065feac0e2a3714591de:118586"
+   - "2e4535cf4682c9bc4b425e78de39c4e723e37953f6369d101853d4dbeae9d92e:187541"
+   - "e896af0d56650871d193f7eee64e8db0d96c9c898da04f5dc482a92b495d35b4:118584"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
- Version: "2.4.3"
+ Version: "2.4.4-DEV+22231000"
  Dependencies:
   PHP: "^7.2|^8"
   phpMussel Core: "^2"
@@ -193,11 +193,11 @@ phpMussel Upload Handler:
   Checksum:
    - "7b656811c946982d7646c2e03934eb75f256a8c093d21d7caa9e4c0a82ce99b8:1020"
    - "c78bb17cd1519ee573c64028424e68315e340059f9889f245e90c5f02d523fa0:1847"
-   - "40d1f38051507743f407afef0f04c06a46fb9b5dd5a10d7fcb0e4781ce575cab:21796"
+   - "d257a2b77bdede186caa15cf5cb59c73d7ea47cbc5424a4175b795ca86cccf05:21795"
  Reannotate: "components.dat"
 phpMussel CLI Handler:
  Name: "phpMussel CLI Handler"
- Version: "2.4.3"
+ Version: "2.4.4-DEV+22231000"
  Dependencies:
   PHP: "^7.2|^8"
   phpMussel Core: "^2"
@@ -210,7 +210,7 @@ phpMussel CLI Handler:
   To:
    - "cli.php"
   Checksum:
-   - "54e1720083e4f4aed27fd1816bd4efc3f9df2368178b57cb25deeb98c3f073c9:28438"
+   - "650a35b5b9529586c985fb8b9d1eaa198612561bb161b4fd99b68f04ee4d946f:28437"
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
