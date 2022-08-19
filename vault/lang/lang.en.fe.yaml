@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.07.22).
+# This file: English language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Maximum recursion depth limit for archives. Default
 config_files_max_uploads: "Maximum number of files that phpMussel is allowed to scan when scanning uploads before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives."
 config_general: "General configuration (any core configuration not belonging to other categories)."
 config_general_cleanup: "Unset variables and cache used by the script after scanning uploads? False = No; True = Yes [Default]. If you *aren't* using the script for anything other than scanning uploads, you should set this to <code>true</code> to minimise memory usage. Otherwise, you should set it to <code>false</code>, in order to retain in memory the data necessary to execute phpMussel without needlessly reloading it. Has no influence in CLI mode."
-config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requires PHP &gt;= 7.3.0)."
+config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (requires PHP &gt;= 7.3.0)."
 config_general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
 config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately."
 config_general_disable_cli: "Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode."
@@ -317,10 +331,9 @@ logs_no_logfiles_available: "No logfiles available."
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |
- <center><p>Hello, %1$s.<br />
- <br />
+ <center><p>Hello, %s.<br /><br />
  Your two-factor authentication code for logging into the phpMussel front-end:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>This code expires in 10 minutes.</p></center>
 notice_click_here: "Click here for more information."
 notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. However, some manual steps are required to update."

@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.03.01).
+# This file: Indonesian language data (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 PrivacyPolicy: "Kebijakan Privasi"
@@ -52,25 +66,25 @@ cli_commands: |
  - Pindai file atau direktori.
  - Alias: s.
  c
- - Cetak ini daftar perintah.
+ - Cetak daftar perintah ini.
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
  Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
- mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
- file-file diupload ke system Anda dimana saja skrip di kaitkan,
- berdasarkan tanda tangan dari ClamAV dan lain-lain.
+ mendeteksi trojan, virus, dan serangan lainnya dalam file diupload ke
+ system Anda dimana saja skrip dikaitkan, berdasarkan tanda tangan dari
+ ClamAV dan lain-lain.
                                      ~ ~ ~
  PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
                                      ~ ~ ~
 cli_ln3: |
- Sekarang phpMussel operasi di CLI mode (command line interface). Untuk
- memindai file atau direktori, menulis "scan", diikuti dengan nama file
- atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;
- Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis "q"
- dan tekan Enter untuk keluar.
-cli_pe1: "Tidak valid file PE!"
-cli_pe2: "Seksi PE:"
+ Sekarang menjalankan phpMussel dalam mode CLI (command line interface).
+ Untuk memindai file atau direktori, menulis "scan", diikuti dengan nama
+ file atau direktori yang ingin Anda phpMussel untuk memindai dan tekan
+ Enter; Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis
+ "q" dan tekan Enter untuk keluar.
+cli_pe1: "Bukan file PE yang valid!"
+cli_pe2: "Bagian PE:"
 cli_signature_placeholder: "NAMA-TANDA-TANGAN"
 cli_working: "Dalam proses"
 corrupted: "Terdeteksi rusak PE"
@@ -80,7 +94,7 @@ denied_reason: "Upload diblokir karena alasan yang tercantum dibawah:"
 detected: "Terdeteksi %s"
 detected_control_characters: "Terdeteksi kontrol karakter"
 encrypted_archive: "Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan"
-error_log_header: "Jika kesalahan berikut terus terjadi, untuk melaporkannya atau mencari dukungan, tolong buat issue baru di halaman issue untuk phpMussel di GitHub ketika Anda punya waktu luang, dengan kesalahan yang menjadi perhatian bersama dengan semua informasi terkait terlampir. Terima kasih."
+error_log_header: "Jika kesalahan berikut terus terjadi, untuk melaporkannya atau mencari dukungan, tolong buat issue baru di halaman issue untuk phpMussel di GitHub ketika Anda punya waktu luang, dengan kesalahan tersebut bersama dengan semua informasi terkait terlampir. Terima kasih."
 failed_to_access: "Gagal mengakses "%s"!"
 field_date: "Tanggal"
 field_header_hash_reconstruction: "Rekonstruksi tanda tangan hash"
@@ -106,19 +120,19 @@ only_allow_images: "Hanya file gambar diizinkan"
 quarantined_as: "Dikarantina sebagai "/vault/quarantine/%s.qfu"."
 recursive: "Batas kedalaman rekursi melebihi"
 required_variables_not_defined: "Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan."
-scan_chameleon: "Bunglon %s serangan terdeteksi"
+scan_chameleon: "Serangan bunglon %s terdeteksi"
 scan_checking: "Memeriksa"
-scan_command_injection: "Perintah injeksi terdeteksi"
+scan_command_injection: "Upaya injeksi perintah terdeteksi"
 scan_complete: "Selesai"
 scan_extensions_missing: "Gagal (hilang ekstensi yang dibutuhkan)!"
-scan_filename_manipulation_detected: "File nama manipulasi terdeteksi"
-scan_missing_filename: "Hilang nama file"
+scan_filename_manipulation_detected: "Manipulasi nama file terdeteksi"
+scan_missing_filename: "Nama file hilang"
 scan_no_problems_found: "Tidak ada masalah yang diketahui."
 scan_reading: "Bacaan"
 scan_signature_file_missing: "Tanda tangan file hilang"
 scan_tampering: "Terdeteksi perubahan berpotensi berbahaya dalam file"
 scan_unauthorised_upload: "Tidak sah file nama manipulasi terdeteksi"
-scan_unauthorised_upload_or_misconfig: "Tidak sah file nama manipulasi atau salah-konfigurasi terdeteksi! "
+scan_unauthorised_upload_or_misconfig: "Tidak sah file nama manipulasi atau salah konfigurasi terdeteksi! "
 started: "Dimulai"
 too_many_files_in_archive: "Terlalu banyak file dalam arsip"
 too_many_urls: "Terlalu banyak URL"
@@ -127,6 +141,6 @@ upload_error_2: "File ukuran melebihi formulir ditentukan file ukuran batas. "
 upload_error_34: "Upload gagal! Silahkan hubungi hostmaster untuk bantuan! "
 upload_error_6: "Upload direktori hilang! Silahkan hubungi hostmaster untuk bantuan! "
 upload_error_7: "Disk-menulis kesalahan! Silahkan hubungi hostmaster untuk bantuan! "
-upload_error_8: "PHP salah-konfigurasi terdeteksi! Silahkan hubungi hostmaster untuk bantuan! "
+upload_error_8: "PHP salah konfigurasi terdeteksi! Silahkan hubungi hostmaster untuk bantuan! "
 upload_limit_exceeded: "Upload batas melebihi"
 x_does_not_exist: "%s tidak ada"

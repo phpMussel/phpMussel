@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.07.22).
+# This file: Portuguese language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Máxima recursão profundidade limite por compactad
 config_files_max_uploads: "O máximo permitido número de arquivos para analisar durante os arquivos carregamentos análise antes de abortar a análise e informando ao usuário eles estão carregando demais muito de uma vez! Oferece proteção contra um teórico ataque pelo qual um atacante tenta DDoS o seu sistema ou CMS por meio de sobrecarregando phpMussel a fim de retardar o PHP processo para uma parada. Recomendado: 10. Você pode querer aumentar ou diminuir esse número, dependendo das atributos do seu hardware. Note-se que este número não lev. Em conta ou incluir o conteúdos dos compactados arquivos."
 config_general: "Configuração geral (qualquer configuração principal que não pertença a outras categorias)."
 config_general_cleanup: "Deletar script variáveis e cache após a execução? False = Não; True = Sim [Padrão]. Se você não estiver usando o script para outra coisa senão a verificação de carregamentos, você deve defina-o como <code>true</code> para minimizar o uso de memória. Caso contrário, você deve defini-lo como <code>false</code>, a fim de reter na memória os dados necessários para executar o phpMussel sem recarregá-lo desnecessariamente. Não tem influência em CLI modo."
-config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requer PHP &gt;= 7.3.0)."
+config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (requer PHP &gt;= 7.3.0)."
 config_general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
 config_general_delete_on_sight: "Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. False = Após a análise, deixe o arquivo sozinho [Padrão]; True = Após a análise, se não limpo, deletar imediatamente."
 config_general_disable_cli: "Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode interferir com certas testes ferramentas (tal como PHPUnit, por exemplo) e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI modo, você deve ignorar esta directiva. False = Ativar o CLI modo [Padrão]; True = Desativar o CLI modo."
@@ -317,10 +331,9 @@ logs_no_logfiles_available: "Não quaisquer arquivos de log disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
- <center><p>Olá, %1$s.<br />
- <br />
+ <center><p>Olá, %s.<br /><br />
  Seu código de autenticação de dois fatores para efetuar login no front-end phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Este código expira em 10 minutos.</p></center>
 notice_click_here: "Clique aqui para obter mais informações."
 notice_new_major_version: "Aviso: O %s está agora disponível (você está usando o %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."

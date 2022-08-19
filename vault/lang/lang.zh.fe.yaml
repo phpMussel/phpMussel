@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.22).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
@@ -60,7 +74,7 @@ config_files_max_recursion: "最大存档递归深度限。​默认=3。"
 config_files_max_uploads: "最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！​提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。​推荐：10。​您可能想增加或减少这个数值，​根据速度的您的硬件。​注意这个数值不交待为或包括存档内容。"
 config_general: "基本配置（任何不属于其他类别的核心配置）。"
 config_general_cleanup: "扫描上传后，销毁变量和缓存？​False（假）=不要销毁。​True（真）=销毁【标准】。​如果您不使用该脚本进行扫描上传以外的任何操作，您应该将其设置为<code>true</code>以最小化内存使用量。​否则，您应该将其设置为<code>false</code>，以便在内存中保留执行phpMussel所需的数据，而无需不必要地重新加载它。​无影响在CLI模式。"
-config_general_default_algo: "定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
+config_general_default_algo: "定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I，​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_timeout: "用于外部请求的默认超时？ 标准 = 12秒。"
 config_general_delete_on_sight: "激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，​是否通过签名或任何事其他。​文件已确定是清洁将会忽略。​如果是存档，​全存档将会删除，​不管如果违规文件是只有一个的几个文件包含在存档。​为文件上传扫描，​按说，​它不必要为您激活这个指令，​因为按说，​PHP将自动清洗内容的它的缓存当执行是完，​意思它将按说删除任何文件上传从它向服务器如果不已移动，​复制或删除。​这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。​False【假/负】：之后扫描，​忽略文件【标准】，​True【真/正】：之后扫描，​如果不清洁，​马上删除。"
 config_general_disable_cli: "关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】；True（真）=关闭CLI模式。"
@@ -316,10 +330,9 @@ logs_no_logfiles_available: "没有日志可用。"
 max_login_attempts_exceeded: "最大登录尝试次数已经超过；拒绝访问。"
 msg_subject_2fa: "2FA（双因素身份验证）"
 msg_template_2fa: |
- <center><p>你好，%1$s。<br />
- <br />
+ <center><p>你好，%s。<br /><br />
  用于登录phpMussel前端的2FA代码：</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>此代码将在10分钟后到期。</p></center>
 notice_click_here: "点击这里查看更多信息。"
 notice_new_major_version: "通知：%s现在可用（您正在使用%s）。​您满足此版本的最低PHP要求。​但是，需要一些手动步骤来更新。"

@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.07.22).
+# This file: Korean language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
@@ -60,7 +74,7 @@ config_files_max_recursion: "아카이브에 대한 최대 재귀 깊이입니�
 config_files_max_uploads: "한 번에 스캔 할 수있는 업로드 파일 수 제한으로이를 초과하면 스캔을 중단하고 사용자에게 그 사실을 알리고 논리적 공격으로부터 보호 역할을합니다. 시스템과 CMS가 DDoS 공격을 만나 phpMussel가 오버로드하여 PHP 프로세스에 지장을 초래하는 일이 없도록하기 위해서입니다. 권장 수는 10이지만, 하드웨어의 속도에 따라 더 이상 / 이하이 좋은 것도있을 것입니다. 이 숫자는 아카이브의 내용을 포함하지 않는 것을 기억하십시오."
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_cleanup: "처음 업로드 후 변수 및 캐시 설정을 클리어 여부에 대한 스크립트입니다. False (가짜) = 아니오; True (진정한) = 예 (Default / 기본 설정). 업로드 스캔 이외의 용도로 스크립트를 사용하지 않는 경우 메모리 사용을 최소화하려면이 값을 <code>true</code>로 설정해야합니다. 그렇지 않으면, 필요에 따라 다시로드하지 않고 phpMussel을 실행하는 데 필요한 데이터를 메모리에 유지하려면 <code>false</code>로 설정해야합니다. CLI 모드에서 영향을주지 않습니다."
-config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션\_: PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
+config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션\_: PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
 config_general_default_timeout: "외부 요청에 사용할 기본 제한 시간? Default (기본 설정) = 12 초."
 config_general_delete_on_sight: "이 지시문을 사용하면 감지 기준 (서명이든 뭐든)에 있던 업로드 파일은 즉시 삭제됩니다. 클린 판단 된 파일은 그대로입니다. 아카이브의 경우, 문제의 파일이 일부라도 아카이브 모든이 삭제 대상이됩니다. 업로드 파일 검사에서는 본 지시어를 활성화 할 필요는 없습니다. 왜냐하면 PHP는 스크립트 실행 후 자동으로 캐시의 내용을 파기하기 때문입니다. 즉, 파일이 이동되거나 복사되거나 삭제되지 않는 한, PHP는 서버에 업로드 한 파일을 남겨 두는 것은 보통 없습니다. 이 지시어는 보안에 공을들이는 목적으로 설치되어 있습니다. PHP는 드물게 예상치 못한 행동을 할 수 있기 때문입니다. False = 스캔 후 파일은 그대로 (기본 설정). True = 스캔 후 깨끗해야 즉시 삭제합니다."
 config_general_disable_cli: "CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. False = CLI 모드를 활성화합니다 (Default / 기본 설정); True = CLI 모드를 해제합니다."
@@ -315,10 +329,9 @@ logs_no_logfiles_available: "아니 로그를 사용할 수 있습니다."
 max_login_attempts_exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
 msg_subject_2fa: "2FA (이중 인증)"
 msg_template_2fa: |
- <center><p>안녕하세요, %1$s.<br />
- <br />
+ <center><p>안녕하세요, %s.<br /><br />
  phpMussel 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>이 코드는 10 분 후에 만료됩니다.</p></center>
 notice_click_here: "자세한 내용은 여기를 클릭하십시오."
 notice_new_major_version: "주의\_: %s를 사용할 수 있습니다 (당신은 %s를 사용하고 있습니다). 당신은 이 버전의 최소 PHP 요구 사항을 충족합니다. 그러나, 업데이트하려면 일부 수동 단계가 필요합니다."

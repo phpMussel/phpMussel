@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.07.22).
+# This file: Swedish language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Maximal rekursionsdjupgräns för arkiv. Standard =
 config_files_max_uploads: "Maximalt antal filer som phpMussel tillåter att skanna när skannar uppladdningar innan avbryter skanningen och informerar användaren om att de laddar upp för mycket på en gång! Ger skydd mot en teoretisk attack där en angripare försöker DDoS ditt system eller CMS genom att överbelasta phpMussel för att bromsa PHP-processen till ett slipande stopp. Rekommenderad: 10. Du kanske vill höja eller sänka detta antal beroende på hårdvarans hastighet. Observera att detta nummer inte tar hänsyn till innehållet i arkiven."
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_cleanup: "Förstöra variabler och cache som används av skriptet efter att ha skannat uppladdningar? False = Nej; True = Ja [Standard]. Om du *inte* använder skriptet för något annat än att skanna uppladdningar, du bör ställa in detta till <code>true</code> för att minimera minnesanvändningen. Annars bör du ställa in den till <code>false</code> för att behålla de data som krävs för att köra phpMussel utan att behöva ladda om det onödigt. Har inget inflytande i CLI-läget."
-config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
+config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
 config_general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."
 config_general_delete_on_sight: "Aktivering av detta direktiv kommer att instruera skriptet att omedelbart ta bort alla skannade filuppladdningar som överensstämmer med upptäcktskriterier, oavsett om det är signaturer eller på annat sätt. Filer som fastställts för att vara "rena" kommer inte att beröras. När det gäller arkiv kommer hela arkivet att raderas, oavsett om den kränkande filen endast är en av flera filer som finns i arkivet. För skanning av filuppladdning är det vanligtvis inte nödvändigt att aktivera detta direktiv, för vanligtvis PHP rensar automatiskt innehållet i sin cache när körningen är klar, vilket betyder att det vanligtvis raderar alla filer som laddats upp via den till servern om de inte redan har flyttats, kopierats eller raderats. Detta direktiv läggs till här som ett extra mått på säkerhet för dem vars kopior av PHP inte alltid kan bete sig på det förväntade sättet. False = Efter skanning, lämnar filen ensam [Standard]; True = Ta bort omedelbart efter skanning, om inte ren."
 config_general_disable_cli: "Inaktivera CLI-läge? CLI-läge är som standard aktiverat, men kan ibland störa vissa testverktyg (t.ex., PHPUnit) och andra CLI-baserade applikationer. Om du inte behöver avaktivera CLI-läge, bör du ignorera detta direktiv. False = Aktivera CLI-läge [Standard]; True = Inaktivera CLI-läge."
@@ -315,10 +329,9 @@ logs_no_logfiles_available: "Inga loggfiler finns tillgängliga."
 max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |
- <center><p>Hallå, %1$s.<br />
- <br />
+ <center><p>Hallå, %s.<br /><br />
  Din 2FA-kod för att logga in i phpMussel front-end:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Denna kod löper ut om 10 minuter.</p></center>
 notice_click_here: "Klicka här för mer information."
 notice_new_major_version: "Notera: %s är nu tillgängligt (du använder %s). Du uppfyller denna versions minsta PHP-krav. Vissa manuella steg krävs dock för att uppdatera."

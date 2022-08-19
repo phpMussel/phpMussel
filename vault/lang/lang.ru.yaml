@@ -7,15 +7,29 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2022.03.01).
+# This file: Russian language data (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 PrivacyPolicy: "Политика Конфиденциальности"
 SafeBrowseLookup_200: "Потенциально вредное URL обнаружено"
 SafeBrowseLookup_400: "Ошибка запроса API"
 SafeBrowseLookup_401: "Ошибка авторизации API"
-SafeBrowseLookup_503: "Сервис недоступен API"
-SafeBrowseLookup_999: "Неизвестная API ошибка"
+SafeBrowseLookup_503: "Служба API недоступна"
+SafeBrowseLookup_999: "Неизвестная ошибка API"
 Text Direction: "ltr"
 _exclamation: "%s! "
 _exclamation_final: "%s!"
@@ -74,7 +88,7 @@ cli_signature_placeholder: "ВАШЕ-ИМЯ-СИГНАТУР"
 cli_working: "В действии"
 corrupted: "Обнаружена поврежденная ПЭ"
 data_not_available: "Данные недоступны."
-denied: "Загрузка Отказана!"
+denied: "Загрузка отказана!"
 denied_reason: "Ваша загрузка была заблокирована по причинам перечисленным ниже:"
 detected: "Обнаружено %s"
 detected_control_characters: "Обнаружены символы управления"
@@ -86,7 +100,7 @@ field_header_hash_reconstruction: "Реконструкция хэш-сигна�
 field_header_pe_reconstruction: "Реконструкция секционных сигнатурей PE"
 field_header_scan_results_why_flagged: "Результаты сканирования (почему помечены)"
 field_ip_address: "IP-адрес"
-file: "файл"
+file: "Файл"
 filesize_limit_exceeded: "Размер файла превышает лимит"
 filetype_blacklisted: "Тип файла находится в черном списке"
 finished: "Готово"
@@ -123,7 +137,7 @@ too_many_files_in_archive: "Слишком много файлов в архив
 too_many_urls: "Слишком много URL"
 upload_error_1: "Файл превышает размер директивы upload_max_filesize. "
 upload_error_2: "Файл превышает размер заданных в директиве формы. "
-upload_error_34: "Загрузка Отказана! Пожалуйста свяжитесь с хостмастером о помощи! "
+upload_error_34: "Загрузка отказана! Пожалуйста свяжитесь с хостмастером о помощи! "
 upload_error_6: "Загрузка директорий отсутствует! Пожалуйста свяжитесь с хостмастером о помощи! "
 upload_error_7: "Ошибка диск-записи! Пожалуйста свяжитесь с хостмастером о помощи! "
 upload_error_8: "PHP реконфигурация обнаружена! Пожалуйста свяжитесь с хостмастером о помощи! "

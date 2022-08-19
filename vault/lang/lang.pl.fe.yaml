@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.07.22).
+# This file: Polish language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Maksymalny limit głębokości rekurencji dla archi
 config_files_max_uploads: "Maksymalna liczba plików, które phpMussel może skanować podczas skanowania przesyłanych plików przed przerwaniem skanowania i informowaniem użytkownika, że przesyłają zbyt wiele na raz! Zapewnia ochronę przed teoretycznym atakiem, w którego atakujący próbuje DDoS systemu lub CMS, przeciążając phpMussel, aby spowolnić proces PHP aż w końcu się zatrzyma. Zalecana: 10. Możesz zwiększyć lub zmniejszyć tę liczbę w zależności od szybkości sprzętu. Zauważ, że ten numer nie uwzględnia ani nie zawiera zawartości archiwów."
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
 config_general_cleanup: "Zwolnić zmienne i pamięć podręczną używaną przez skrypt po skanowaniu przesłanych plików? False (Fałszywy) = Nie; True (Prawdziwe) = Tak [Domyślna]. Jeśli używasz skryptu tylko do skanowania przesyłanych plików (t.j., nic więcej), powinieneś ustawić to na <code>true</code>, aby zminimalizować zużycie pamięci. W przeciwnym razie powinieneś ustawić go na <code>false</code>, aby zachować w pamięci dane niezbędne do wykonania phpMussel bez niepotrzebnego przeładowywania. Nie ma wpływu w trybie CLI."
-config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I (wymaga PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
+config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
 config_general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
 config_general_delete_on_sight: "Włączenie tej dyrektywy instruuje skrypt, aby spróbował natychmiast usunąć wszelkie zeskanowane próby przesłania pliku spełniające dowolne kryteria wykrywania, czy to przez podpisy, czy w inny sposób. Pliki oznaczone jako „czyste” nie zostaną dotknięte. W przypadku archiwów całe archiwum zostanie usunięte, niezależnie od tego, czy plik naruszający prawo jest tylko jednym z kilku plików zawartych w archiwum. W przypadku skanowania wysyłania plików zwykle nie jest konieczne włączenie tej dyrektywy, ponieważ PHP zwykle automatycznie wyczyści zawartość swojej pamięci podręcznej po zeskanowaniu wykonywania co oznacza, że zazwyczaj usuwa wszystkie pliki przesłane przez serwer na serwer, chyba że zostały już przeniesione, skopiowane lub usunięte. Ta dyrektywa została dodana tutaj jako dodatkowy środek bezpieczeństwa dla tych, których kopie PHP mogą nie zawsze zachowywać się w oczekiwany sposób. False (Fałszywy) = Po zeskanowaniu skanowania pozostaw plik w spokoju [Domyślna]; True (Prawdziwe) = Po zeskanowaniu, jeśli nie jest czyste, usuń natychmiast."
 config_general_disable_cli: "Wyłączyć tryb CLI? Tryb CLI jest domyślnie włączony, ale czasami może zakłócać działanie niektórych narzędzi testujących (na przykład PHPUnit) i innych aplikacji opartych na CLI. Jeśli nie musisz wyłączać trybu CLI, powinieneś zignorować tę dyrektywę. False (Fałszywy) = Włącz tryb CLI [Domyślna]; True (Prawdziwe) = Wyłącz tryb CLI."
@@ -318,10 +332,9 @@ logs_no_logfiles_available: "Brak dostępnych plików dziennika."
 max_login_attempts_exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
 msg_subject_2fa: "Uwierzytelnianie Dwuskładnikowe"
 msg_template_2fa: |
- <center><p>Cześć, %1$s.<br />
- <br />
+ <center><p>Cześć, %s.<br /><br />
  Twój dwuskładnikowy kod uwierzytelniający do logowania do interfejsu phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Ten kod wygasa za 10 minut.</p></center>
 notice_click_here: "Kliknij tutaj po więcej informacji."
 notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. Jednak do zaktualizowania wymagane są ręczne kroki."

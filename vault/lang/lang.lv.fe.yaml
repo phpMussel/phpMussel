@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.07.22).
+# This file: Latvian language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Maksimālais rekursijas dziļuma ierobežojums arh�
 config_files_max_uploads: "Maksimālais failu skaits, augšupielādes skenēšanas laikā, ko phpMussel ir atļauts skenēt, pirms skenēšanas pārtraukšanas un lietotāja informēšanas, ka viņš vienlaikus augšupielādē pārāk daudz! Nodrošina aizsardzību pret teorētisku uzbrukumu, kurā uzbrucējs mēģina DDoS jūsu sistēmā vai CMS, pārslogojot phpMussel, lai palēninātu PHP procesu līdz apturēšanai. Ieteicams: 10. Iespējams, vēlēsities palielināt vai samazināt šo numuru atkarībā no aparatūras ātruma. Ņemiet vērā, ka šis numurs neaptver un neietver arhīvu saturu."
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_cleanup: "Vai atiestatīt mainīgos un kešatmiņu, ko skripts izmanto pēc augšupielādes skenēšanas? False (Nepatiess) = Nē; True (Patiess) = Jā [Noklusējuma]. Ja skenēšana augšupielāde ir vienīgais, ko vēlaties darīt, jums vajadzētu iestatīt šo mainīgo uz <code>true</code>, lai samazinātu atmiņas izmantošanu. Ja vēlaties, lai phpMussel izdarītu vairāk, jums vajadzētu iestatīt šo mainīgo uz <code>false</code>, lai atmiņā saglabātu datus, kas nepieciešami phpMussel izpildei, bez nevajadzīgi atkārtota ielāde. CLI režīmā nav ietekmes."
-config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
+config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
 config_general_delete_on_sight: "Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False (Nepatiess) = After scanning, leave the file alone [Noklusējuma]; True (Patiess) = After scanning, if not clean, delete immediately."
 config_general_disable_cli: "Vai atspējot CLI režīmu? CLI režīms ir iespējots pēc noklusējuma, taču dažreiz tas var traucēt pārbaudes rīku darbībai (piemēram, PHPUnit) un citām CLI balstītām lietojumprogrammām. Ja jums nav jāatspējo CLI režīms, jums vajadzētu ignorēt šo direktīvu. False (Nepatiess) = Iespējot CLI režīmu [Noklusējuma]; True (Patiess) = Atspējot CLI režīmu."
@@ -318,10 +332,9 @@ logs_no_logfiles_available: "Neviens logfails nav pieejams."
 max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"
 msg_template_2fa: |
- <center><p>Sveiks, %1$s.<br />
- <br />
+ <center><p>Sveiks, %s.<br /><br />
  Jūsu divu-faktoru autentifikācijas kods, lai ielogotos phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 notice_click_here: "Noklikšķiniet šeit, lai iegūtu papildinformāciju."
 notice_new_major_version: "Paziņojums: Tagad ir pieejama %s (jūs izmantojat %s). Jūs atbilstat šīs versijas minimālajām PHP prasībām. Tomēr ir jāveic dažas manuālās darbības, lai atjauninātu."

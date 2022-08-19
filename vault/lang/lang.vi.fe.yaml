@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.07.22).
+# This file: Vietnamese language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
@@ -60,7 +74,7 @@ config_files_max_recursion: "Tối đa đệ quy chiều sâu giới hạn cho k
 config_files_max_uploads: "Số lượng tối đa của tập tin cho phép để quét trong khi quét tập tin tải lên trước khi hủy bỏ quá trình quét và thông báo cho người dùng rằng họ đang tải lên quá nhiều cùng một lúc! Trong lý thuyết, cung cấp bảo vệ chống lại một cuộc tấn công nhờ đó mà một kẻ tấn công cố gắng DDoS hệ thống hay CMS của bạn bằng cách quá tải phpMussel để làm chậm quá trình PHP đến khi nó dừng lại. Đề xuất: 10. Bạn có thể muốn tăng hoặc giảm số này tùy thuộc vào tốc độ của phần cứng của bạn. Chú ý rằng con số này không tính đến hoặc bao gồm các nội dung của kho lưu trữ."
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_cleanup: "Phá hủy các biến và bộ đệm được sử dụng bởi tập lệnh sau khi quét tải lên? False = Không; True = Vâng [Mặc định]. Nếu bạn không sử dụng tập lệnh cho bất cứ điều gì ngoài việc quét tải lên, bạn nên đặt nó thành <code>true</code> để giảm thiểu việc sử dụng bộ nhớ. Mặt khác, bạn nên đặt nó thành <code>false</code>, để giữ lại trong bộ nhớ dữ liệu cần thiết để thực thi phpMussel mà không cần tải lại nó. Không có ảnh hưởng trong CLI."
-config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
+config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
 config_general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
 config_general_delete_on_sight: "Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp kho lưu trữ, các toàn bộ kho lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các kho lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức."
 config_general_disable_cli: "Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI."
@@ -315,10 +329,9 @@ logs_no_logfiles_available: "Không có bản ghi có sẵn."
 max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
 msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
 msg_template_2fa: |
- <center><p>Xin chào, %1$s.<br />
- <br />
+ <center><p>Xin chào, %s.<br /><br />
  Mã 2FA của bạn để đăng nhập vào front-end của phpMussel:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Mã này hết hạn sau 10 phút.</p></center>
 notice_click_here: "Nhấp vào đây để có thêm thông tin."
 notice_new_major_version: "Ghi chú: %s hiện có sẵn (bạn đang sử dụng %s). Bạn đáp ứng yêu cầu PHP tối thiểu của phiên bản này. Tuy nhiên, một số bước thủ công được cần thiết để cập nhật."
