@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.07.28).
+# This file: Indonesian language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,35 @@ bad_command: "Saya tidak mengerti perintah itu, maaf."
 cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
 cli_commands: |
  ..
- q
- - Berhenti CLI.
- - Alias: quit, exit.
- hash_file:[algo] [file]
- - Menghasilkan tanda tangan hash dari file.
- hash:[algo] [string]
- - Menghasilkan tanda tangan hash dari string.
- algo
- - Daftar semua algoritma yang didukung.
- hex_encode [string]
- - Mengkonversi string biner ke heksadesimal.
- - Alias: x.
- hex_decode [string]
- - Mengkonversi heksadesimal ke string biner.
- base64_encode [string]
- - Mengkonversi string biner ke string base64.
- - Alias: b.
+ q | quit | exit -- Berhenti CLI.
+
+ hash_file:[algo] [file] -- Menghasilkan tanda tangan hash dari file.
+
+ hash:[algo] [string] -- Menghasilkan tanda tangan hash dari string.
+ Contoh: >> hash:crc32b Hello World
+         4a17b156:11:NAMA-TANDA-TANGAN
+
+ algo -- Daftar semua algoritma yang didukung.
+
+ (hex_encode | x) [string] -- Mengkonversi string biner ke heksadesimal.
+ Contoh: >> hex_encode Hello World
+         48656c6c6f20576f726c64
+
+ hex_decode [string] -- Mengkonversi heksadesimal ke string biner.
+
+ (base64_encode | b) [string]
+ -- Mengkonversi string biner ke string base64.
+
  base64_decode [string]
- - Mengkonversi string base64 ke string biner.
- pe_meta [file]
- - Ekstrak metadata dari file PE.
- url_sig [string]
- - Membuat tanda tangan pemindai URL.
- scan [file]
- - Pindai file atau direktori.
- - Alias: s.
- c
- - Cetak daftar perintah ini.
+ -- Mengkonversi string base64 ke string biner.
+
+ pe_meta [file] -- Ekstrak metadata dari file PE.
+
+ url_sig [string] -- Membuat tanda tangan pemindai URL.
+
+ (scan | s) [file] -- Pindai file atau direktori.
+
+ c -- Cetak daftar perintah ini.
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |

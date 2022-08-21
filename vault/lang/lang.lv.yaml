@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2022.07.28).
+# This file: Latvian language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,35 @@ bad_command: "Es nesaprotu šo komandu, atvainojiet."
 cli_algo_not_supported: "Norādītais algoritms netiek atbalstīts."
 cli_commands: |
  ..
- q
- - Iziet no CLI.
- - Pseidonīmi: quit, exit.
+ q | quit | exit -- Iziet no CLI.
+
  hash_file:[algo] [faila nosaukums]
- - Ģenerējiet hash parakstus no failiem.
- hash:[algo] [virkne]
- - Ģenerējiet hash parakstu no virknes.
- algo
- - Uzskaitiet visus atbalstītos algoritmus.
- hex_encode [virkne]
- - Konvertēt bināro virkni uz heksadecimālo.
- - Pseidonīms: x.
- hex_decode [virkne]
- - Konvertēt heksadecimālo uz binārā virknē.
- base64_encode [virkne]
- - Konvertēt bināro virkni uz base64 virkni.
- - Pseidonīms: b.
- base64_decode [virkne]
- - Konvertēt base64 virkni uz bināro virkni.
- pe_meta [faila nosaukums]
- - Ekstrahējiet metadatus no PE faila.
- url_sig [virkne]
- - Ģenerējiet URL skeneru parakstus.
- scan [faila vai direktorijas nosaukums]
- - Skenēt failu vai direktoriju.
- - Pseidonīms: s.
- c
- - Izdrukājiet šo komandu sarakstu.
+ -- Ģenerējiet hash parakstus no failiem.
+
+ hash:[algo] [virkne] -- Ģenerējiet hash parakstu no virknes.
+ Piemērs: >> hash:crc32b Hello World
+          4a17b156:11:JŪSU-PARAKSTA-VĀRDS
+
+ algo -- Uzskaitiet visus atbalstītos algoritmus.
+
+ hex_encode [virkne] -- Konvertēt bināro virkni uz heksadecimālo.
+ Piemērs: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [virkne] -- Konvertēt heksadecimālo uz binārā virknē.
+
+ (base64_encode | b) [virkne] -- Konvertēt bināro virkni uz base64 virkni.
+
+ base64_decode [virkne] -- Konvertēt base64 virkni uz bināro virkni.
+
+ pe_meta [faila nosaukums] -- Ekstrahējiet metadatus no PE faila.
+
+ url_sig [virkne] -- Ģenerējiet URL skeneru parakstus.
+
+ (scan | s) [faila vai direktorijas nosaukums]
+ -- Skenēt failu vai direktoriju.
+
+ c -- Izdrukājiet šo komandu sarakstu.
 cli_failed_to_complete: "Neizdevās pabeigt skenēšanas procesu"
 cli_is_not_a: "%s nav fails vai direktorijs."
 cli_ln2: |

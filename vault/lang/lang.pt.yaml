@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2022.07.28).
+# This file: Portuguese language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,34 @@ bad_command: "Eu não entendo esse comando, desculpe."
 cli_algo_not_supported: "Algoritmo especificado não é suportado."
 cli_commands: |
  ..
- q
- - Deixar CLI.
- - Alias: quit, exit.
- hash_file:[algo] [nome do arquivo]
- - Gerar hash assinaturas de arquivos.
- hash:[algo] [string]
- - Gerar hash assinatura de string.
- algo
- - Listar todos os algoritmos suportados.
- hex_encode [string]
- - Converter binária string para hexadecimal.
- - Alias: x.
- hex_decode [string]
- - Converter hexadecimal para binária string.
- base64_encode [string]
- - Converter binária string para base64 string.
- - Alias: b.
- base64_decode [string]
- - Converter base64 string para binária string.
- pe_meta [nome do arquivo]
- - Extrair metadados de um arquivo PE.
- url_sig [string]
- - Gerar assinaturas do scanner de URL.
- scan [nome do arquivo ou diretório]
- - Verificar um arquivo ou diretório.
- - Alias: s.
- c
- - Imprimir esta lista de comandos.
+ q | quit | exit -- Deixar CLI.
+
+ hash_file:[algo] [nome do arquivo] -- Gerar hash assinaturas de arquivos.
+
+ hash:[algo] [string] -- Gerar hash assinatura de string.
+ Exemplo: >> hash:crc32b Hello World
+          4a17b156:11:O-NOME-DA-SUA-ASSINATURA
+
+ algo -- Listar todos os algoritmos suportados.
+
+ (hex_encode | x) [string] -- Converter binária string para hexadecimal.
+ Exemplo: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [string] -- Converter hexadecimal para binária string.
+
+ (base64_encode | b) [string] -- Converter binária string para base64 string.
+
+ base64_decode [string] -- Converter base64 string para binária string.
+
+ pe_meta [nome do arquivo] -- Extrair metadados de um arquivo PE.
+
+ url_sig [string] -- Gerar assinaturas do scanner de URL.
+
+ (scan | s) [nome do arquivo ou diretório]
+ -- Verificar um arquivo ou diretório.
+
+ c -- Imprimir esta lista de comandos.
 cli_failed_to_complete: "Falha ao completar processo de verificação"
 cli_is_not_a: "%s não é um arquivo ou diretório."
 cli_ln2: |

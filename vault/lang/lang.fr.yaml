@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2022.07.28).
+# This file: French language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,35 @@ bad_command: "Je ne comprends pas cette commande, désolé."
 cli_algo_not_supported: "L'algorithme spécifié n'est pas supporté."
 cli_commands: |
  ..
- q
- - Quitter CLI.
- - Alias : quit, exit.
+ q | quit | exit -- Quitter CLI.
+
  hash_file:[algo] [nom du fichier]
- - Générer les signatures hachage des fichiers.
- hash:[algo] [chaîne]
- - Générer une signature hachage à partir d'une chaîne.
- algo
- - Lister tous les algorithmes disponibles.
- hex_encode [chaîne]
- - Convertir une chaîne binaire en hexadécimal.
- - Alias : x.
- hex_decode [chaîne]
- - Convertir hexadécimal en chaîne binaire.
- base64_encode [chaîne]
- - Convertir chaîne binaire en chaîne base64.
- - Alias : b.
- base64_decode [chaîne]
- - Convertir chaîne base64 en chaîne binaire.
- pe_meta [nom du fichier]
- - Extraire les métadonnées d'un fichier PE.
- url_sig [chaîne]
- - Générer des signatures de scanner d'URL.
- scan [nom du fichier ou du répertoire]
- - Analyser un fichier ou un répertoire.
- - Alias : s.
- c
- - Imprimer cette liste des commandes.
+ -- Générer les signatures hachage des fichiers.
+
+ hash:[algo] [chaîne] -- Générer une signature hachage à partir d'une chaîne.
+ Exemple : >> hash:crc32b Hello World
+           4a17b156:11:NOM-DE-SIGNATURE
+
+ algo -- Lister tous les algorithmes disponibles.
+
+ hex_encode [chaîne] -- Convertir une chaîne binaire en hexadécimal.
+ Exemple : >> hex_encode Hello World
+           48656c6c6f20576f726c64
+
+ hex_decode [chaîne] -- Convertir hexadécimal en chaîne binaire.
+
+ (base64_encode | b) [chaîne] -- Convertir chaîne binaire en chaîne base64.
+
+ base64_decode [chaîne] -- Convertir chaîne base64 en chaîne binaire.
+
+ pe_meta [nom du fichier] -- Extraire les métadonnées d'un fichier PE.
+
+ url_sig [chaîne] -- Générer des signatures de scanner d'URL.
+
+ (scan | s) [nom du fichier ou du répertoire]
+ -- Analyser un fichier ou un répertoire.
+
+ c -- Imprimer cette liste des commandes.
 cli_failed_to_complete: "Échec du terminer le processus d'analyse"
 cli_is_not_a: "%s n'est pas un fichier ou un répertoire."
 cli_ln2: |

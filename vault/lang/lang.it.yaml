@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2022.07.28).
+# This file: Italian language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,34 @@ bad_command: "Non capisco quel comando, mi dispiace."
 cli_algo_not_supported: "L'algoritmo specificato non è supportato."
 cli_commands: |
  ..
- q
- - Esci dall'interfaccia a riga di comando.
- - Alias: quit, exit.
- hash_file:[algo] [nome del file]
- - Genera le firme hash da file.
- hash:[algo] [stringa]
- - Genera le firme hash da stringa.
- algo
- - Elenca tutti gli algoritmi supportati.
- hex_encode [stringa]
- - Converti la stringa binaria in esadecimale.
- - Alias: x.
- hex_decode [stringa]
- - Converti la stringa esadecimale in binaria.
- base64_encode [stringa]
- - Converti la stringa binaria in base64.
- - Alias: b.
- base64_decode [stringa]
- - Converti la stringa da base64 a binaria.
- pe_meta [nome del file]
- - Estrarre i metadati da un file PE.
- url_sig [stringa]
- - Genera firme di scanner URL.
- scan [nome del file o della cartella]
- - Scansiona un file o una cartella.
- - Alias: s.
- c
- - Mostra questa lista di comandi.
+ q | quit | exit -- Esci dall'interfaccia a riga di comando.
+
+ hash_file:[algo] [nome del file] -- Genera le firme hash da file.
+
+ hash:[algo] [stringa] -- Genera le firme hash da stringa.
+ Esempio: >> hash:crc32b Hello World
+          4a17b156:11:NOME-DELLA-FIRMA
+
+ algo -- Elenca tutti gli algoritmi supportati.
+
+ hex_encode [stringa] -- Converti la stringa binaria in esadecimale.
+ Esempio: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [stringa] -- Converti la stringa esadecimale in binaria.
+
+ (base64_encode | b) [stringa] -- Converti la stringa binaria in base64.
+
+ base64_decode [stringa] -- Converti la stringa da base64 a binaria.
+
+ pe_meta [nome del file] -- Estrarre i metadati da un file PE.
+
+ url_sig [stringa] -- Genera firme di scanner URL.
+
+ (scan | s) [nome del file o della cartella]
+ -- Scansiona un file o una cartella.
+
+ c -- Mostra questa lista di comandi.
 cli_failed_to_complete: "Completamento del processo di controllo fallito"
 cli_is_not_a: "%s non è né un file né una cartella."
 cli_ln2: |

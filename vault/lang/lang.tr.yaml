@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2022.07.28).
+# This file: Turkish language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,33 @@ bad_command: "Bu komutu anlamıyorum, üzgünüm."
 cli_algo_not_supported: "Belirtilen algoritma desteklenmiyor."
 cli_commands: |
  ..
- q
- - CLI'den çıkın.
- - Takma adları: quit, exit.
- hash_file:[algo] [dosya adı]
- - Dosyalardan karma imzaları oluştur.
- hash:[algo] [dizgesi]
- - Dizeden karma imzası üret.
- algo
- - Tüm desteklenen algoritmaları listele.
- hex_encode [dizgesi]
- - İkili dizgeyi onaltılık olarak dönüştür.
- - Takma ad: x.
- hex_decode [dizgesi]
- - Onaltılıyı ikili dizeye olarak dönüştür.
- base64_encode [dizgesi]
- - İkili'e base64 hale dönüştür.
- - Takma ad: b.
- base64_decode [dizgesi]
- - Base64'ü ikili hale dönüştür.
- pe_meta [dosya adı]
- - Meta verileri bir PE dosyasından ayıklayın.
- url_sig [dizgesi]
- - URL tarayıcı imzalarını oluştur.
- scan [dosya adı]
- - Dosya veya dizini tara.
- - Takma ad: s.
- c
- - Bu komut listesini yazdırın.
+ q | quit | exit -- CLI'den çıkın.
+
+ hash_file:[algo] [dosya adı] -- Dosyalardan karma imzaları oluştur.
+
+ hash:[algo] [dizgesi] -- Dizeden karma imzası üret.
+ Örnek: >> hash:crc32b Hello World
+        4a17b156:11:IMZA-ADINIZ
+
+ algo -- Tüm desteklenen algoritmaları listele.
+
+ hex_encode [dizgesi] -- İkili dizgeyi onaltılık olarak dönüştür.
+ Örnek: >> hex_encode Hello World
+        48656c6c6f20576f726c64
+
+ hex_decode [dizgesi] -- Onaltılıyı ikili dizeye olarak dönüştür.
+
+ (base64_encode | b) [dizgesi] -- İkili'e base64 hale dönüştür.
+
+ base64_decode [dizgesi] -- Base64'ü ikili hale dönüştür.
+
+ pe_meta [dosya adı] -- Meta verileri bir PE dosyasından ayıklayın.
+
+ url_sig [dizgesi] -- URL tarayıcı imzalarını oluştur.
+
+ (scan | s) [dosya adı] -- Dosya veya dizini tara.
+
+ c -- Bu komut listesini yazdırın.
 cli_failed_to_complete: "Tarama işlemini tamamlama başarısız"
 cli_is_not_a: "%s bir dosya veya dizin değil."
 cli_ln2: |
