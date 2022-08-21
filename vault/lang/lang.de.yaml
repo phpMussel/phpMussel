@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2022.07.28).
+# This file: German language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,39 @@ bad_command: "Entschuldigung, ich verstehe diesen Befehl nicht."
 cli_algo_not_supported: "Der angegebene Algorithmus wird nicht unterstützt."
 cli_commands: |
  ..
- q
- - Beendet den CLI-Modus.
- - Alias: quit, exit.
- hash_file:[Algo] [Dateiname]
- - Generiert Hash-Signaturen einer Datei.
- hash:[Algo] [String]
- - Generiert Hash-Signaturen eines String-Wertes.
- algo
- - Listet alle unterstützten Algorithmen auf.
- hex_encode [String]
- - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
- - Alias: x.
+ q | quit | exit -- Beendet den CLI-Modus.
+
+ hash_file:[Algo] [Dateiname] -- Generiert Hash-Signaturen einer Datei.
+
+ hash:[Algo] [String] -- Generiert Hash-Signaturen eines String-Wertes.
+ Beispiel: >> hash:crc32b Hello World
+           4a17b156:11:IHR-SIGNATURNAME
+
+ algo -- Listet alle unterstützten Algorithmen auf.
+
+ (hex_encode | x) [string]
+ -- Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
+ Beispiel: >> hex_encode Hello World
+           48656c6c6f20576f726c64
+
  hex_decode [String]
- - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
- base64_encode [String]
- - Konvertiert einen Binär-Wert in einen Base64-Wert.
- - Alias: b.
+ -- Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
+
+ (base64_encode | b) [String]
+ -- Konvertiert einen Binär-Wert in einen Base64-Wert.
+
  base64_decode [String]
- - Konvertiert einen Base64-Wert in einen Binär-Wert.
+ -- Konvertiert einen Base64-Wert in einen Binär-Wert.
+
  pe_meta [Dateiname]
- - Extrahieren Sie Metadaten aus einer PE-Datei.
- url_sig [String]
- - Generiere URL-Scanner-Signaturen.
- scan [Dateiname oder Verzeichnisname]
- - Überprüft eine Datei oder ein Verzeichnis.
- - Alias: s.
- c
- - Gibt diese Befehlsliste aus.
+ -- Extrahieren Sie Metadaten aus einer PE-Datei.
+
+ url_sig [String] -- Generiere URL-Scanner-Signaturen.
+
+ (scan | s) [Dateiname oder Verzeichnisname]
+ -- Überprüft eine Datei oder ein Verzeichnis.
+
+ c -- Gibt diese Befehlsliste aus.
 cli_failed_to_complete: "Ein vollständiger Scan konnte nicht durchgeführt werden"
 cli_is_not_a: "%s ist keine Datei oder ein Verzeichnis."
 cli_ln2: |

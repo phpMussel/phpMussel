@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2022.07.28).
+# This file: Korean language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,46 +39,49 @@ bad_command: "미안 해요, 명령을 이해할 수 없습니다."
 cli_algo_not_supported: "지정된 알고리즘은 지원되지 않습니다."
 cli_commands: |
  ..
- q
- - CLI 종료.
- - 별칭 : quit, exit.
- hash_file:[연산] [파일 이름]
- - 파일 해시 서명을 작성.
- hash:[연산] [문자열]
- - 문자열에서 해시 서명을 작성.
- algo
- - 지원되는 모든 알고리즘을 나열하십시오.
- hex_encode [문자열]
- - 2 진수 문자열을 16 진수 문자열로 변환.
- - 별칭 : x.
- hex_decode [문자열]
- - 16 진수 문자열을 2 진수 문자열로 변환.
- base64_encode [문자열]
- - 2 진수 문자열을 BASE64 문자열로 변환.
- - 별칭 : b.
+ q | quit | exit -- CLI 종료.
+
+ hash_file:[연산] [파일 이름] -- 파일 해시 서명을 작성.
+
+ hash:[연산] [문자열] -- 문자열에서 해시 서명을 작성.
+ 예시 : >> hash:crc32b Hello World
+        4a17b156:11:서명-이름
+
+ algo -- 지원되는 모든 알고리즘을 나열하십시오.
+
+ hex_encode [문자열] -- 2 진수 문자열을 16 진수 문자열로 변환.
+ 예시 : >> hex_encode Hello World
+        48656c6c6f20576f726c64
+
+ hex_decode [문자열] -- 16 진수 문자열을 2 진수 문자열로 변환.
+
+ (base64_encode | b) [문자열]
+ -- 2 진수 문자열을 BASE64 문자열로 변환.
+
  base64_decode [문자열]
- - BASE64 문자열을 2 진수 문자열로 변환.
- pe_meta [파일 이름]
- - PE 파일에서 메타 데이터 추출.
- url_sig [문자열]
- - URL 스캐너 서명 생성.
- scan [파일 이름]
- - 파일 또는 디렉터리를 검색.
- - 별칭 : s.
- c
- - 명령 목록 프린트.
+ -- BASE64 문자열을 2 진수 문자열로 변환.
+
+ pe_meta [파일 이름] -- PE 파일에서 메타 데이터 추출.
+
+ url_sig [문자열] -- URL 스캐너 서명 생성.
+
+ (scan | s) [파일 이름] -- 파일 또는 디렉터리를 검색.
+
+ c -- 명령 목록 프린트.
 cli_failed_to_complete: "검색을 완료 할 수 없습니다"
 cli_is_not_a: "%s는 파일 또는 디렉토리가 아닙니다."
 cli_ln2: |
- phpMussel을 이용해 주셔서 감사합니다. phpMussel는 ClamAV를 비롯한 서명을 이용하여 시스템에 업로드 된 파일을
- 대상하여 트로이 바이러스 나 악성 코드 등을 감지하도록 설계된 PHP 스크립트입니다.
+ phpMussel을 이용해 주셔서 감사합니다. phpMussel는 ClamAV를
+ 비롯한 서명을 이용하여 시스템에 업로드 된 파일을 대상하여 트로이
+ 바이러스 나 악성 코드 등을 감지하도록 설계된 PHP 스크립트입니다.
                                      ~ ~ ~
  phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
                                      ~ ~ ~
 cli_ln3: |
- CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다. 파일 또는 디렉토리 – 스캔하려면 "scan"를 입력하고
- 계속 파일 또는 디렉터리 이름을 입력하고 엔터를 눌러주세요. CLI 모드 명령의 목록을 얻으려면 'c'를 입력하고 엔터를 눌러주세요;
- 종료는 "q"를 입력하고 엔터를 누릅니다.
+ CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다. 파일 또는
+ 디렉터리를 스캔하려면, "scan"을 입력하고 phpMussel이 스캔할 파일 또는 디렉터리
+ 이름을 입력하고 Enter 키를 누릅니다. CLI 모드 명령 목록을 보려면 "c"를
+ 입력하고 Enter 키를 누릅니다. "q"를 입력하고 Enter 키를 눌러 종료합니다.
 cli_pe1: "올바른 PE 파일이 없습니다!"
 cli_pe2: "PE 섹션\_:"
 cli_signature_placeholder: "서명-이름"

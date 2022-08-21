@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2022.07.28).
+# This file: Chinese (traditional) language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,45 +39,46 @@ bad_command: "我不明白的命令，​對不起。"
 cli_algo_not_supported: "指定的算法不支持。"
 cli_commands: |
  ..
- q
- - 戒菸CLI模式。
- - 別名：quit，​exit。
- hash_file:[算法] [文件名]
- - 生成哈希簽名從文件​。
- hash:[算法] [數據]
- - 生成哈希簽名從數據​。
- algo
- - 列出所有支持的算法。
- hex_encode [數據]
- - 兌換從二進制數據至十六進制​。
- - 別名：x。
- hex_decode [數據]
- - 兌換從十六進制二進制數據至​。
- base64_encode [數據]
- - 兌換從二進制數據至基地64數據​。
- - 別名：b。
- base64_decode [數據]
- - 兌換從基地64數據至二進制數據​。
- pe_meta [文件名]
- - 從PE文件中提取元數據​。
- url_sig [數據]
- - 生成URL掃描器簽名​。
- scan [文件名]
- - 掃描文件或文件夾​。
- - 別名：s。
- c
- - 打印此命令列表。
+ q | quit | exit -- 戒菸CLI模式。
+
+ hash_file:[算法] [文件名] -- 生成哈希簽名從文件​。
+
+ hash:[算法] [數據] -- 生成哈希簽名從數據​。
+ 例子： >> hash:crc32b Hello World
+        4a17b156:11:簽名名稱
+
+ algo -- 列出所有支持的算法。
+
+ hex_encode [數據] -- 兌換從二進制數據至十六進制​。
+ 例子： >> hex_encode Hello World
+        48656c6c6f20576f726c64
+
+ hex_decode [數據] -- 兌換從十六進制二進制數據至​。
+
+ (base64_encode | b) [數據] -- 兌換從二進制數據至基地64數據​。
+
+ base64_decode [數據] -- 兌換從基地64數據至二進制數據​。
+
+ pe_meta [文件名] -- 從PE文件中提取元數據​。
+
+ url_sig [數據] -- 生成URL掃描器簽名​。
+
+ (scan | s) [文件名] -- 掃描文件或文件夾​。
+
+ c -- 打印此命令列表。
 cli_failed_to_complete: "完成掃描過程失敗"
 cli_is_not_a: "%s不是文件或文件夾。"
 cli_ln2: |
- 謝謝對於使用phpMussel，​一個PHP腳本旨在檢測木馬，​病毒，​惡意軟件，​和其他威脅在文件上傳到您的系統隨地這個腳本是叫，​
+ 謝謝對於使用phpMussel，一個PHP腳本旨在檢測木馬，病毒，惡意軟件，
+ 和其他威脅在文件上傳到您的系統隨地這個腳本是叫，
  根據ClamAV的簽名和其他簽名。
                                      ~ ~ ~
  PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
                                      ~ ~ ~
 cli_ln3: |
- 目前經營phpMussel在CLI模式（命令行界面）。掃描一個文件或文件夾，​鍵入『scan』，​其次是名的文件或文件夾您想phpMussel
- 掃描然後按Enter鍵。鍵入『c』然後按Enter鍵對於CLI模式命令名單。鍵入『q』然後按Enter鍵對於戒菸。
+ 目前經營phpMussel在CLI模式（命令行界面）。掃描一個文件或文件夾，鍵入『scan』，
+ 其次是名的文件或文件夾您想phpMussel掃描然後按Enter鍵。
+ 鍵入『c』然後按Enter鍵對於CLI模式命令名單。鍵入『q』然後按Enter鍵對於戒菸。
 cli_pe1: "不PE文件！"
 cli_pe2: "PE部分:"
 cli_signature_placeholder: "簽名名稱"

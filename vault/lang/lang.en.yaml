@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2022.07.28).
+# This file: English language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,33 @@ bad_command: "I don't understand that command, sorry."
 cli_algo_not_supported: "Specified algorithm isn't supported."
 cli_commands: |
  ..
- q
- - Quit CLI.
- - Aliases: quit, exit.
- hash_file:[algo] [filename]
- - Generate hash signatures from files.
- hash:[algo] [string]
- - Generate hash signature from string.
- algo
- - List all supported algorithms.
- hex_encode [string]
- - Convert binary string to hexadecimal.
- - Alias: x.
- hex_decode [string]
- - Convert hexadecimal to binary string.
- base64_encode [string]
- - Convert binary string to base64 string.
- - Alias: b.
- base64_decode [string]
- - Convert base64 string to binary string.
- pe_meta [filename]
- - Extract metadata from a PE file.
- url_sig [string]
- - Generate URL scanner signatures.
- scan [name of the file or directory]
- - Scan a file or directory.
- - Alias: s.
- c
- - Print this command list.
+ q | quit | exit -- Quit CLI.
+
+ hash_file:[algo] [filename] -- Generate hash signatures from files.
+
+ hash:[algo] [string] -- Generate hash signature from string.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:YOUR-SIGNATURE-NAME
+
+ algo -- List all supported algorithms.
+
+ (hex_encode | x) [string] -- Convert binary string to hexadecimal.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [string] -- Convert hexadecimal to binary string.
+
+ (base64_encode | b) [string] -- Convert binary string to base64 string.
+
+ base64_decode [string] -- Convert base64 string to binary string.
+
+ pe_meta [filename] -- Extract metadata from a PE file.
+
+ url_sig [string] -- Generate URL scanner signatures.
+
+ (scan | s) [name of the file or directory] -- Scan a file or directory.
+
+ c -- Print this command list.
 cli_failed_to_complete: "Failed to complete scanning process"
 cli_is_not_a: "%s is not a file or directory."
 cli_ln1: |

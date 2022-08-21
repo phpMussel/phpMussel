@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2022.07.28).
+# This file: Dutch language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,34 +39,37 @@ bad_command: "Ik begrijp niet dat bevel, sorry."
 cli_algo_not_supported: "Opgegeven algoritme wordt niet ondersteund."
 cli_commands: |
  ..
- q
- - Verlaten CLI.
- - Aliassen: quit, exit.
- hash_file:[algo] [bestandsnaam]
- - Genereer hash signatures van bestanden.
- hash:[algo] [string]
- - Genereer hash signature van string.
- algo
- - Maak een lijst van alle ondersteunde algoritmen.
- hex_encode [string]
- - Converteren van binaire string naar hexadecimaal.
- - Alias: x.
+ q | quit | exit -- Verlaten CLI.
+
+ hash_file:[algo] [bestandsnaam] -- Genereer hash signatures van bestanden.
+
+ hash:[algo] [string] -- Genereer hash signature van string.
+ Voorbeeld: >> hash:crc32b Hello World
+            4a17b156:11:UW-SIGNATURE-NAAM
+
+ algo -- Maak een lijst van alle ondersteunde algoritmen.
+
+ (hex_encode | x) [string]
+ -- Converteren van binaire string naar hexadecimaal.
+ Voorbeeld: >> hex_encode Hello World
+            48656c6c6f20576f726c64
+
  hex_decode [string]
- - Converteren van hexadecimaal naar binaire string.
- base64_encode [string]
- - Converteren van binaire string naar base64 string.
- - Alias: b.
+ -- Converteren van hexadecimaal naar binaire string.
+
+ (base64_encode | b) [string]
+ -- Converteren van binaire string naar base64 string.
+
  base64_decode [string]
- - Converteren van base64 string naar binaire string.
- pe_meta [bestandsnaam]
- - Haal metagegevens uit een PE-bestand.
- url_sig [string]
- - Genereren URL-scanner signatures.
- scan [bestandsnaam]
- - Scannen bestand of map.
- - Alias: s.
- c
- - Print dit commando lijst.
+ -- Converteren van base64 string naar binaire string.
+
+ pe_meta [bestandsnaam] -- Haal metagegevens uit een PE-bestand.
+
+ url_sig [string] -- Genereren URL-scanner signatures.
+
+ (scan | s) [bestandsnaam] -- Scannen bestand of map.
+
+ c -- Print dit commando lijst.
 cli_failed_to_complete: "Mislukt om het voltooien te scannen"
 cli_is_not_a: "%s is geen bestand of map."
 cli_ln2: |
