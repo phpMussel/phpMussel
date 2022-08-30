@@ -138,3 +138,4 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .unshownlink::before{animation:revRotate .5s ease-out 1;animation-fill-mode:both}
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:red}
 input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
+.tablend{margin-top:-2px}

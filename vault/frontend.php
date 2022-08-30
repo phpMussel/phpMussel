@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.08.20).
+ * This file: Front-end handler (last modified: 2022.08.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1186,9 +1186,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
         }
         $phpMussel['RegenerateConfig'] .= "\r\n\r\n";
         $phpMussel['FE']['ConfigFields'] .= sprintf(
-            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+            '<table class="tablend"><tr><td class="ng2"><div id="%1$s-container" class="s">' .
             '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
-            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table>',
+            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table class="tablend">',
             $phpMussel['CatKey'],
             'style="display:none"',
             $phpMussel['CatInfo']
@@ -1574,7 +1574,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 } else {
                     $phpMussel['ThisDir']['SelectOther'] = !isset($phpMussel['DirValue']['choices'][$phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]]);
                     $phpMussel['ThisDir']['FieldOut'] .= empty($phpMussel['DirValue']['allow_other']) ? '</select>' : sprintf(
-                        '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                        '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
                         $phpMussel['ThisDir']['SelectOther'] ? ' selected' : '',
                         $phpMussel['L10N']->getString('label_other'),
                         $phpMussel['ThisDir']['SelectOther'] ? '' : ' style="display:none"',
