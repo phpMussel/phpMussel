@@ -6,6 +6,7 @@ hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;co
 img.ico{width:16px;height:16px;border:0}
 input,select,option,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
+input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
 input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
