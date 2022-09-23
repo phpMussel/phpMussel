@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2022.08.21).
+# This file: German language data (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -86,8 +86,8 @@ cli_ln3: |
  phpMussel befindet sich im CLI-Modus (Command Line Interface). Um eine
  Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie „scan“,
  gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
- Enter; Geben Sie "c" und Enter für eine Liste der verfügbaren Befehle im
- CLI-Modus ein; Geben Sie "q" und Enter zum Beenden ein.
+ Enter; Geben Sie „c“ und Enter für eine Liste der verfügbaren Befehle im
+ CLI-Modus ein; Geben Sie „q“ und Enter zum Beenden ein.
 cli_pe1: "Keine gültige PE-Datei!"
 cli_pe2: "PE-Sektionen:"
 cli_signature_placeholder: "IHR-SIGNATURNAME"
@@ -100,7 +100,7 @@ detected: "Entdeckt %s"
 detected_control_characters: "Steuerzeichen erkannt"
 encrypted_archive: "Verschlüsseltes Archiv entdeckt; Verschlüsselte Archive sind nicht erlaubt"
 error_log_header: "Wenn einer der folgenden Fehler weiterhin auftritt, um sie zu melden oder Unterstützung zu suchen, erstellen Sie bitte eine neue Issue auf der phpMussel Issue-seite von GitHub, wenn Sie einen freien Moment haben. Fügen Sie die fraglichen Fehler zusammen mit anderen relevanten Informationen hinzu. Danke."
-failed_to_access: "Fehler beim Zugriff auf "%s"!"
+failed_to_access: "Fehler beim Zugriff auf „%s“!"
 field_date: "Datum"
 field_header_hash_reconstruction: "Rekonstruktion der Hash-Signaturen"
 field_header_pe_reconstruction: "Rekonstruktion der PE-Sektional-Signaturen"
@@ -122,7 +122,7 @@ invalid_url: "Ungültige URL!"
 macros_not_permitted: "Makros sind nicht erlaubt"
 ok: "OK"
 only_allow_images: "Nur Bilddateien erlaubt"
-quarantined_as: "Als "/vault/quarantine/%s.qfu" unter Quarantäne gestellt."
+quarantined_as: "Als „/vault/quarantine/%s.qfu“ unter Quarantäne gestellt."
 recursive: "Rekursionstiefe-Limit überschritten"
 required_variables_not_defined: "Benötigte Variablen sind nicht definiert: Kann nicht fortfahren."
 scan_chameleon: "%s-Chamäleon-Angriff erkannt"

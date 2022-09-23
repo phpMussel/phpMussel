@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.07.28).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,7 @@ field_size: "總大小："
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "字節"
 field_status: "狀態"
@@ -252,7 +253,7 @@ info_some_useful_links: |
        <li><span class="comCat">信息和學習資源。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP學習資源和討論。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python，等等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
          </ul>
        </li>
@@ -463,5 +464,6 @@ tip_statistics_disabled: "注意：統計跟踪目前已被禁用，但可以通
 tip_updates: "你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新phpMussel的各種組件（核心包，​簽名，​插件，​L10N文件，​等等）。"
 tip_upload_test: "你好，​{username}。​<br />上傳測試頁麵包含標准文件上傳表單，​允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。"
 title_login: "登錄"
+warning_file_overwritten: "警告：您當前正在編輯的文件屬於組件『%s』。對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"
 warning_javascript_required: "警告：一些前端功能需要JavaScript。為確保整個前端按預期運行，建議啟用JavaScript。"
 warning_signatures_1: "警告：沒有簽名文件是活動的！"

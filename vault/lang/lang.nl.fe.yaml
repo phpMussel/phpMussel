@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.07.28).
+# This file: Dutch language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,7 @@ field_size: "Totale Grootte:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "byte"
@@ -253,7 +254,7 @@ info_some_useful_links: |
        <li><span class="comCat">Informatie en leermiddelen.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, enz).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, enz).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
          </ul>
        </li>
@@ -466,5 +467,6 @@ tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschak
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende phpMussel componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, plugins, L10N bestanden, enz)."
 tip_upload_test: "Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden."
 title_login: "Inloggen"
+warning_file_overwritten: "Waarschuwing: Het bestand dat u momenteel aan het bewerken bent, behoort tot de component "%s". Alle wijzigingen die in dit bestand zijn aangebracht, zullen zeer waarschijnlijk worden overschreven de volgende keer dat dat component wordt bijgewerkt."
 warning_javascript_required: "Waarschuwing: Voor sommige frontend functionaliteit is JavaScript vereist. Om ervoor te zorgen dat de gehele frontend zich naar verwachting gedraagt, wordt het inschakelen van JavaScript aanbevolen."
 warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"

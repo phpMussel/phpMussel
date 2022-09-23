@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.07.28).
+# This file: Urdu language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,7 @@ field_size: "کل سائز:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "بائٹس"
 field_status: "سٹیٹس"
@@ -250,7 +251,7 @@ info_some_useful_links: |
        <li><span class="comCat">معلومات اور سیکھنے کے وسائل.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP سیکھنے کے وسائل اور بحث.</li>
-           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (HHVM ,PHP ,phpMyAdmin ,Python، وغیرہ).</li>
            <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
          </ul>
        </li>
@@ -461,5 +462,6 @@ tip_statistics_disabled: "نوٹ: اعداد و شمار کی ٹریکنگ فی 
 tip_updates: "ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ."
 tip_upload_test: "ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے."
 title_login: "لاگ ان"
+warning_file_overwritten: "انتباہ: فائل، جس میں آپ فی الحال ترمیم کر رہے ہیں، "%s" جزو سے تعلق رکھتی ہے. اس فائل میں کی گئی کوئی بھی تبدیلی اگلی بار جب اس جزو کو اپ ڈیٹ کیا جائے گا تو اس کے اوور رائٹ ہونے کا بہت امکان ہے."
 warning_javascript_required: "انتباہ: کچھ فرنٹ اینڈ فعالیت کے لیے JavaScript کی ضرورت ہوتی ہے. اس بات کو یقینی بنانے کے لیے کہ پورا فرنٹ اینڈ توقع کے مطابق برتاؤ کرے، جاوا اسکرپٹ کو فعال کرنے کی سفارش کی جاتی ہے."
 warning_signatures_1: "انتباہ: کوئی دستخط فائلیں فعال نہیں ہیں!"

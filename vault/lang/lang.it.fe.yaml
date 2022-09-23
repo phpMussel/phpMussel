@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.07.28).
+# This file: Italian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,7 @@ field_size: "Dimensione Totale:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -251,7 +252,7 @@ info_some_useful_links: |
        <li><span class="comCat">Risorse informative e di apprendimento.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – Risorse di apprendimento e discussione per PHP.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (PHP, HHVM, ecc).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
          </ul>
        </li>
@@ -462,5 +463,6 @@ tip_statistics_disabled: "Nota: Il monitoraggio delle statistiche è attualmente
 tip_updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di phpMussel (il pacchetto di base, le firme, plugins, file per L10N, ecc)."
 tip_upload_test: "Salve, {username}.<br />La pagina di carica testare contiene un modulo per i caricamenti file standard, che permette di verificare se un file viene normalmente essere bloccata da phpMussel quando si cerca di caricarlo."
 title_login: "Accedi"
+warning_file_overwritten: "Avvertimento: Il file che stai attualmente modificando appartiene al componente "%s". È molto probabile che tutte le modifiche apportate a questo file vengano sovrascritte al successivo aggiornamento del componente."
 warning_javascript_required: "Avvertimento: Alcune funzionalità del front-end richiedono JavaScript. Per garantire che l'intero front-end si comporti come previsto, si consiglia di abilitare JavaScript."
 warning_signatures_1: "Avvertimento: Non ci sono file di firme attivi!"

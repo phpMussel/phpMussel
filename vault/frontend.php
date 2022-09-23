@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.08.30).
+ * This file: Front-end handler (last modified: 2022.09.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2599,25 +2599,25 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     } else {
         $phpMussel['FE']['FMgrFormTarget'] = 'phpmussel-page=file-manager&show=true';
         $phpMussel['FE']['ShowHideLink'] = '<a href="?phpmussel-page=file-manager">' . $phpMussel['L10N']->getString('label_hide') . '</a>';
+    }
 
-        /** Fetch components lists. */
-        $phpMussel['FetchComponentsLists']($phpMussel['Vault'], $phpMussel['Components']['Components']);
+    /** Fetch components lists. */
+    $phpMussel['FetchComponentsLists']($phpMussel['Vault'], $phpMussel['Components']['Components']);
 
-        /** Identifying file component correlations. */
-        foreach ($phpMussel['Components']['Components'] as $phpMussel['Components']['ThisName'] => &$phpMussel['Components']['ThisData']) {
-            if (!empty($phpMussel['Components']['ThisData']['Files']['To'])) {
-                $phpMussel['Arrayify']($phpMussel['Components']['ThisData']['Files']['To']);
-                foreach ($phpMussel['Components']['ThisData']['Files']['To'] as $phpMussel['Components']['ThisFile']) {
-                    $phpMussel['Components']['ThisFile'] = str_replace("\\", '/', $phpMussel['Components']['ThisFile']);
-                    $phpMussel['Components']['Files'][$phpMussel['Components']['ThisFile']] = $phpMussel['Components']['ThisName'];
-                }
+    /** Identifying file component correlations. */
+    foreach ($phpMussel['Components']['Components'] as $phpMussel['Components']['ThisName'] => &$phpMussel['Components']['ThisData']) {
+        if (!empty($phpMussel['Components']['ThisData']['Files']['To'])) {
+            $phpMussel['Arrayify']($phpMussel['Components']['ThisData']['Files']['To']);
+            foreach ($phpMussel['Components']['ThisData']['Files']['To'] as $phpMussel['Components']['ThisFile']) {
+                $phpMussel['Components']['ThisFile'] = str_replace("\\", '/', $phpMussel['Components']['ThisFile']);
+                $phpMussel['Components']['Files'][$phpMussel['Components']['ThisFile']] = $phpMussel['Components']['ThisName'];
             }
-            $phpMussel['PrepareName']($phpMussel['Components']['ThisData'], $phpMussel['Components']['ThisName']);
-            if (!empty($phpMussel['Components']['ThisData']['Name'])) {
-                $phpMussel['Components']['Names'][$phpMussel['Components']['ThisName']] = $phpMussel['Components']['ThisData']['Name'];
-            }
-            $phpMussel['Components']['ThisData'] = 0;
         }
+        $phpMussel['PrepareName']($phpMussel['Components']['ThisData'], $phpMussel['Components']['ThisName']);
+        if (!empty($phpMussel['Components']['ThisData']['Name'])) {
+            $phpMussel['Components']['Names'][$phpMussel['Components']['ThisName']] = $phpMussel['Components']['ThisData']['Name'];
+        }
+        $phpMussel['Components']['ThisData'] = 0;
     }
 
     /** Upload a new file. */
@@ -2671,19 +2671,21 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
             if (is_dir($phpMussel['Vault'] . $_POST['filename'])) {
-                if ($phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename'])) {
-                    rmdir($phpMussel['Vault'] . $_POST['filename']);
+                if (
+                    $phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename']) &&
+                    rmdir($phpMussel['Vault'] . $_POST['filename'])
+                ) {
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_directory_deleted');
                 } else {
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_delete_error');
                 }
-            } else {
-                unlink($phpMussel['Vault'] . $_POST['filename']);
-
+            } elseif (unlink($phpMussel['Vault'] . $_POST['filename'])) {
                 /** Remove empty directories. */
                 $phpMussel['DeleteDirectory']($_POST['filename']);
 
                 $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_file_deleted');
+            } else {
+                $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_delete_error');
             }
         }
 
@@ -2704,13 +2706,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                     is_readable($phpMussel['Vault'] . $_POST['filename_new'])
                 ) {
                     if (is_dir($phpMussel['Vault'] . $_POST['filename_new'])) {
-                        if ($phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename_new'])) {
-                            rmdir($phpMussel['Vault'] . $_POST['filename_new']);
-                        } else {
+                        if (
+                            !$phpMussel['IsDirEmpty']($phpMussel['Vault'] . $_POST['filename_new']) ||
+                            !rmdir($phpMussel['Vault'] . $_POST['filename_new'])
+                        ) {
                             $phpMussel['SafeToContinue'] = false;
                         }
-                    } else {
-                        unlink($phpMussel['Vault'] . $_POST['filename_new']);
+                    } elseif (!unlink($phpMussel['Vault'] . $_POST['filename_new'])) {
+                        $phpMussel['SafeToContinue'] = false;
                     }
                 }
 
@@ -2727,8 +2730,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                         $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString(
                             is_dir($phpMussel['Vault'] . $_POST['filename_new']) ? 'response_directory_renamed' : 'response_file_renamed'
                         );
+                    } else {
+                        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_rename_error');
                     }
-                } elseif (!$phpMussel['FE']['state_msg']) {
+                } else {
                     $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_rename_error');
                 }
             } else {
@@ -2765,6 +2770,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 $phpMussel['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
                 $phpMussel['FE']['filename'] = $_POST['filename'];
                 $phpMussel['FE']['content'] = htmlentities($phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']));
+
+                /** Component update file overwrite warning. */
+                if (isset($phpMussel['Components']['Files'][$_POST['filename']])) {
+                    $phpMussel['FE']['state_msg'] = sprintf(
+                        $phpMussel['L10N']->getString('warning_file_overwritten'),
+                        $phpMussel['Components']['Files'][$_POST['filename']]
+                    );
+                }
 
                 /** Parse output. */
                 $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](

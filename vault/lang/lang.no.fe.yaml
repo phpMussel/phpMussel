@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.07.28).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,7 @@ field_size: "Total størrelse:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -464,5 +465,6 @@ tip_statistics_disabled: "Merk: Statistikksporing er for øyeblikket deaktivert,
 tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i phpMussel (kjernepakken, signaturer, L10N filer, osv)."
 tip_upload_test: "Hallo, {username}.<br />Opplastings-testsiden inneholder et standard skjema for opplasting av filer, slik at du kan teste om en fil normalt vil bli blokkert av phpMussel når du prøver å laste den opp."
 title_login: "Innloggingssiden"
+warning_file_overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten "%s". Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
 warning_javascript_required: "Advarsel: Noen frontend-funksjonalitet krever JavaScript. For å sikre at hele grensesnittet oppfører seg som forventet, anbefales det å aktivere JavaScript."
 warning_signatures_1: "Advarsel: Ingen signaturfiler er aktive!"

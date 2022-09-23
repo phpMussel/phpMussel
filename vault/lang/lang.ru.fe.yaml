@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.07.28).
+# This file: Russian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,9 +161,9 @@ field_activate: "Активировать"
 field_clear_all: "Очистить все"
 field_component: "Компонент"
 field_confirm: "Подтвердить"
-field_create_new_account: "Создать Новый Аккаунт"
+field_create_new_account: "Создать новый аккаунт"
 field_deactivate: "Дезактивировать"
-field_delete_account: "Удалить Аккаунт"
+field_delete_account: "Удалить аккаунт"
 field_delete_all: "Удалить все"
 field_delete_file: "Удалить"
 field_download_file: "Скачать"
@@ -192,10 +192,11 @@ field_repair_all: "Починить все"
 field_reset: "Сбросить"
 field_restore_file: "Восстановить"
 field_set_new_password: "Установить новый пароль"
-field_size: "Общий Размер:"
+field_size: "Общий размер:"
 field_size_GB: "ГБ"
 field_size_KB: "КБ"
 field_size_MB: "МБ"
+field_size_PB: "ПБ"
 field_size_TB: "ТБ"
 field_size_bytes:
  - "байт"
@@ -212,7 +213,7 @@ field_upload_file: "Загрузить новый файл"
 field_username: "Имя Пользователя"
 field_verify: "Проверить"
 field_verify_all: "Проверить все"
-field_your_version: "Ваша Версия"
+field_your_version: "Ваша версия"
 header_login: "Пожалуйста войдите чтобы продолжить."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.ru.md\#HOW_TO_USE_PDO" hreflang="ru">Что такое «PDO DSN»? Как я могу использовать PDO с phpMussel?</a></em>"
@@ -254,7 +255,7 @@ info_some_useful_links: |
        <li><span class="comCat">Информационные и учебные ресурсы.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP учебных ресурсов и обсуждение.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (PHP, HHVM, и т.д.).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (HHVM, PHP, phpMyAdmin, Python, и т.д.).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
          </ul>
        </li>
@@ -468,5 +469,6 @@ tip_statistics_disabled: "Заметка: Отслеживание статис�
 tip_updates: "Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов phpMussel (пакет ядра, сигнатуры, плагины, L10N файлы, итд)."
 tip_upload_test: "Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его."
 title_login: "Войти"
+warning_file_overwritten: "Предупреждение: Файл, который вы сейчас редактируете, принадлежит компоненту «%s». Любые изменения, внесенные в этот файл, скорее всего, будут перезаписаны при следующем обновлении этого компонента."
 warning_javascript_required: "Предупреждение: Некоторых функциональность требуется JavaScript. Чтобы весь интерфейс работал должным образом, рекомендуется включить JavaScript."
 warning_signatures_1: "Предупреждение: Активные файлы сигнатуры не активны!"
