@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.07.28).
+# This file: Indonesian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -195,6 +195,7 @@ field_size: "Ukuran Total:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -250,7 +251,7 @@ info_some_useful_links: |
        <li><span class="comCat">Sumber daya informasi dan pembelajaran.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
          </ul>
        </li>
@@ -461,5 +462,6 @@ tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, nam
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll)."
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
+warning_file_overwritten: "Peringatan: File yang sedang Anda mengedit adalah milik komponen "%s". Setiap perubahan yang dibuat pada file ini kemungkinan besar akan ditimpa saat komponen tersebut diperbarui lagi."
 warning_javascript_required: "Peringatan: Beberapa fungsionalitas memerlukan JavaScript. Untuk memastikan bahwa seluruh antarmuka berperilaku seperti yang diharapkan, disarankan untuk mengaktifkan JavaScript."
 warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"

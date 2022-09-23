@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.08.20).
+ * This file: Functions file (last modified: 2022.09.22).
  */
 
 /**
@@ -4812,18 +4812,29 @@ $phpMussel['Arrayify'] = function (&$Input) {
  * @return string|int Output (return type depends on operating mode).
  */
 $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
-    if (preg_match('/[KMGT][oB]$/i', $In)) {
-        $Unit = substr($In, -2, 1);
-    } elseif (preg_match('/[KMGToB]$/i', $In)) {
-        $Unit = substr($In, -1);
+    $Unit = '';
+    if (preg_match('/([KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)([OoBb]|Б|б|Ｂ|ｂ)?$/', $In, $Matches)) {
+        if (preg_match('/^([Kk]|К|к)$/', $Matches[1])) {
+            $Unit = 'K';
+        } elseif (preg_match('/^([Mm]|М|м)$/', $Matches[1])) {
+            $Unit = 'M';
+        } elseif (preg_match('/^([Gg]|Г|г)$/', $Matches[1])) {
+            $Unit = 'G';
+        } elseif (preg_match('/^([Tt]|Т|т)$/', $Matches[1])) {
+            $Unit = 'T';
+        } elseif (preg_match('/^([Pp]|П|п)$/', $Matches[1])) {
+            $Unit = 'P';
+        }
     }
-    $Unit = isset($Unit) ? strtoupper($Unit) : 'K';
     $In = (float)$In;
     if ($Mode === 1) {
-        return $Unit === 'B' || $Unit === 'o' ? $In . 'B' : $In . $Unit . 'B';
+        return $Unit === '' ? $In . 'B' : $In . $Unit . 'B';
     }
-    $Multiply = ['K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776];
-    return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
+    $Multiply = ['K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776, 'P' => 1125899906842620];
+    if (isset($Multiply[$Unit])) {
+        $In *= $Multiply[$Unit];
+    }
+    return (int)floor($In);
 };
 
 /**

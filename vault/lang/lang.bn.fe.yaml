@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.07.28).
+# This file: Bangla language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -195,6 +195,7 @@ field_size: "মোট আকার:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "বাইট"
 field_status: "অবস্থা"
@@ -250,7 +251,7 @@ info_some_useful_links: |
        <li><span class="comCat">তথ্য ও শিক্ষা সম্পদ।</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (HHVM, PHP, phpMyAdmin, Python, ইত্যাদি)।</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি)।</li>
          </ul>
        </li>
@@ -461,5 +462,6 @@ tip_statistics_disabled: "নোট: পরিসংখ্যান ট্র্
 tip_updates: "হ্যালো, {username}।<br />আপডেট পৃষ্ঠাটি আপনাকে phpMussel কম্পোনেন্ট ইনস্টল, আনইনস্টল এবং আপডেট করতে দেয় (কোর প্যাকেজ, স্বাক্ষর, L10N ফাইল, ইত্যাদি)।"
 tip_upload_test: "হ্যালো, {username}।<br />আপলোড টেস্ট পৃষ্ঠাটিতে এটি একটি আপলোড করার চেষ্টা করার সময় একটি ফাইল সাধারণত phpMussel দ্বারা অবরুদ্ধ করা হবে কিনা পরীক্ষা করার জন্য একটি আদর্শ ফাইল আপলোড ফর্ম রয়েছে।"
 title_login: "লগ ইন"
+warning_file_overwritten: "সতর্কতা: ফাইলটি, যা আপনি বর্তমানে সম্পাদনা করছেন, সেটি "%s" কম্পোনেন্টের অন্তর্গত। এই ফাইলে করা যেকোনো পরিবর্তন পরের বার যখন কম্পোনেন্ট আপডেট করা হয় তখন ওভাররাইট হওয়ার সম্ভাবনা থাকে।"
 warning_javascript_required: "সতর্কতা: কিছু ফ্রন্ট-এন্ড কার্যকারিতার জন্য জাভাস্ক্রিপ্ট প্রয়োজন। সম্পূর্ণ ফ্রন্ট-এন্ড আশানুরূপ আচরণ করে তা নিশ্চিত করতে, জাভাস্ক্রিপ্ট সক্রিয় করার সুপারিশ করা হয়।"
 warning_signatures_1: "সতর্কতা: কোন স্বাক্ষর ফাইল সক্রিয় নেই!"

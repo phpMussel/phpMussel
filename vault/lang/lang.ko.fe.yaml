@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.07.28).
+# This file: Korean language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -195,6 +195,7 @@ field_size: "전체 크기\_:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "바이트"
 field_status: "상태"
@@ -250,7 +251,7 @@ info_some_useful_links: |
        <li><span class="comCat">정보 및 학습 리소스.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
          </ul>
        </li>
@@ -461,5 +462,6 @@ tip_statistics_disabled: "노트\_: 통계 추적은 현재 비활성화되어, 
 tip_updates: "안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일, 등)."
 tip_upload_test: "안녕하세요, {username}.<br />업로드 테스트 페이지 표준 파일 업로드 양식을 포함합니다 파일이 일반적 차단 여부를 테스트 할 수 있습니다."
 title_login: "로그인"
+warning_file_overwritten: "경고\_: 현재 편집 중인 파일은 "%s" 구성요소에 속합니다. 이 파일에 대한 모든 변경 사항은 다음에 해당 구성 요소가 업데이트될 때 덮어쓸 가능성이 매우 높습니다."
 warning_javascript_required: "경고\_: 일부 프런트 엔드 기능에는 JavaScript가 필요합니다. 전체 프런트 엔드가 예상대로 작동하도록 하려면 JavaScript를 활성화하는 것이 좋습니다."
 warning_signatures_1: "경고\_: 서명 파일이 활성화되어 있지 않습니다!"
