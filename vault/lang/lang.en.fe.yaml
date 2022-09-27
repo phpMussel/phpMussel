@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.09.22).
+# This file: English language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -466,6 +466,7 @@ tip_statistics_disabled: "Note: Statistics tracking is currently disabled, but c
 tip_updates: "Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of phpMussel (the core package, signatures, plugins, L10N files, etc)."
 tip_upload_test: "Hello, {username}.<br />The upload test page contains a standard file upload form, allowing you to test whether a file would normally be blocked by phpMussel when attempting to upload it."
 title_login: "Login"
+warning_file_php: "Warning: Some webhosting security solutions have been known to automatically ban IP addresses upon detecting PHP tags within requests (e.g., when attempting to modify PHP files through a browser). CIDRAM has no means of knowing whether your webhosting service uses such a security solution. In order to avoid such problems, not editing PHP files in such a way is recommended when possible."
 warning_file_overwritten: "Warning: The file you're currently editing belongs to the component, "%s". Any changes made to this file are very likely to be overwritten the next time that component is updated."
 warning_javascript_required: "Warning: Some front-end functionality requires JavaScript. To ensure that the entire front-end behaves as expected, enabling JavaScript is recommended."
 warning_signatures_1: "Warning: No signature files are active!"

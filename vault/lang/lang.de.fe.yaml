@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.09.22).
+# This file: German language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -466,6 +466,7 @@ tip_statistics_disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktivie
 tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von phpMussel (das Kernpaket, Signaturen, Plugins, L10N-Dateien, u.s.w.)."
 tip_upload_test: "Hallo, {username}.<br />Das Upload-Testseite enthält ein Standard-Datei-Upload-Formular, das macht es möglich zu prüfen ob eine Datei normalerweise gestoppt von phpMussel werden soll, wenn Sie versuchen es hochzuladen."
 title_login: "Einloggen"
+warning_file_php: "Warnung: Es ist bekannt dass einige Webhosting-Sicherheitslösungen IP-Adressen automatisch sperren, wenn PHP-Tags in Anfragen erkannt werden (z.B., beim Versuch PHP-Dateien über einen Browser zu ändern). CIDRAM hat keine Möglichkeit zu wissen ob Ihr Webhosting-Dienst eine solche Sicherheitslösung verwendet. Um solche Probleme zu vermeiden, wird empfohlen für PHP-Dateien nach Möglichkeit nicht auf diese Weise zu bearbeiten."
 warning_file_overwritten: "Warnung: Die aktuell bearbeitete Datei gehört zur Komponente „%s“. Alle an dieser Datei vorgenommenen Änderungen werden sehr wahrscheinlich überschrieben, wenn diese Komponente nächste aktualisiert wird."
 warning_javascript_required: "Warnung: Einige Front-End-Funktionalität erfordern JavaScript. Um sicherzustellen dass sich das gesamte Front-End wie erwartet verhält, wird die Aktivierung von JavaScript empfohlen."
 warning_signatures_1: "Warnung: Keine Signaturdateien sind aktiv!"

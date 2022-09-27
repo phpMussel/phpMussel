@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.09.22).
+# This file: Indonesian language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -462,6 +462,7 @@ tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, nam
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll)."
 tip_upload_test: "Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya."
 title_login: "Masuk"
+warning_file_php: "Peringatan: Beberapa solusi keamanan webhosting diketahui secara otomatis melarang alamat IP setelah mendeteksi tag PHP dalam permintaan (misalnya, ketika memodifikasi file PHP melalui browser). CIDRAM tidak memiliki cara untuk mengetahui apakah layanan webhosting Anda menggunakan solusi keamanan seperti ini. Untuk menghindari masalah seperti tersebut, disarankan jangan mengedit file PHP sedemikian rupa jika memungkinkan."
 warning_file_overwritten: "Peringatan: File yang sedang Anda mengedit adalah milik komponen "%s". Setiap perubahan yang dibuat pada file ini kemungkinan besar akan ditimpa saat komponen tersebut diperbarui lagi."
 warning_javascript_required: "Peringatan: Beberapa fungsionalitas memerlukan JavaScript. Untuk memastikan bahwa seluruh antarmuka berperilaku seperti yang diharapkan, disarankan untuk mengaktifkan JavaScript."
 warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"

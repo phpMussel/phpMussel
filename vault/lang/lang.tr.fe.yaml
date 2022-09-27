@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.09.22).
+# This file: Turkish language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -464,6 +464,7 @@ tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak 
 tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, phpMussel'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları, vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 tip_upload_test: "Merhaba, {username}.<br />Yükleme sınama sayfası, bir dosyanın yüklenmeye çalışılırken normalde phpMussel tarafından engelleneceğini test etmenize izin veren standart bir dosya yükleme formu içerir."
 title_login: "Giriş"
+warning_file_php: "Uyarı: Bazı web barındırma güvenlik çözümlerinin, istekler içinde PHP etiketlerini algıladıktan sonra IP adreslerini otomatik olarak yasakladığı bilinmektedir (örneğin, bir tarayıcı aracılığıyla PHP dosyalarını değiştirmeye çalışırken). CIDRAM, web barındırma hizmetinizin böyle bir güvenlik çözümü kullanıp kullanmadığını bilmenin hiçbir yoluna sahip değildir. Bu tür sorunlardan kaçınmak için PHP dosyalarını mümkün olduğunca bu şekilde düzenlememeniz önerilir."
 warning_file_overwritten: "Uyarı: Şu anda düzenlenmekte olan dosya "%s" bileşenine aittir. Bu dosyada yapılan herhangi bir değişikliğin, bileşenin bir sonraki güncellemesinde büyük olasılıkla üzerine yazılması muhtemeldir."
 warning_javascript_required: "Uyarı: Bazı ön uç işlevsellikleri JavaScript gerektirir. Tüm ön ucun beklendiği gibi davrandığından emin olmak için JavaScript'in etkinleştirilmesi önerilir."
 warning_signatures_1: "Uyarı: Hiçbir imza dosyası aktif değil!"
