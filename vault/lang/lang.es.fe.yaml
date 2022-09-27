@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.09.22).
+# This file: Spanish language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -467,6 +467,7 @@ tip_statistics_disabled: "Nota: El seguimiento de estadísticas está actualment
 tip_updates: "Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de phpMussel (el paquete básico, firmas, plugins, archivos de L10N, etc)."
 tip_upload_test: "Hola, {username}.<br />La página para subir pruebas contiene un formulario de subir de archivos estándar, permite probar si un archivo normalmente se bloquea por phpMussel cuando intentar subirlo."
 title_login: "Login"
+warning_file_php: "Advertencia: Se sabe que algunas soluciones de seguridad de alojamiento web prohíben automáticamente las direcciones IP al detectar etiquetas PHP dentro de las solicitudes (por ejemplo, al modificar archivos PHP a través de un navegador). CIDRAM no tiene forma de saber si su servicio de alojamiento web utiliza una solución de seguridad de este tipo. Para evitar tales problemas, se recomienda no editar los archivos PHP de esa manera cuando sea posible."
 warning_file_overwritten: "Advertencia: El archivo que está editando actualmente pertenece al componente "%s". Es muy probable que cualquier cambio realizado en este archivo se sobrescriba la próxima vez que se actualice ese componente."
 warning_javascript_required: "Advertencia: Algunas funciones del front-end requieren JavaScript. Para garantizar que todo el front-end se comporte como se espera, se recomienda habilitar JavaScript."
 warning_signatures_1: "¡Advertencia: No hay archivos de firma activos!"

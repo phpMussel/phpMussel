@@ -12,7 +12,7 @@
           <td class="ng2"><div class="s">{link_file_manager} – {filename}</div></td>
         </tr>
         <tr>
-          <td class="ng1"><textarea name="content">{content}</textarea></td>
+          <td class="ng1"><textarea id="efta" name="content" onchange="javascript:wfp(this.value)" onkeyup="javascript:wfp(this.value)">{content}</textarea><script type="text/javascript">wfp(document.getElementById('efta').value)</script></td>
         </tr>
         <tr>
           <td class="ng1"><div class="bNav"><input type="submit" value="{field_edit_file}" /> <input type="reset" value="{field_reset}" /></div></td>

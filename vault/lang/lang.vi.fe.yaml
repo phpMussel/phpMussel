@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.09.22).
+# This file: Vietnamese language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -462,7 +462,8 @@ tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số th
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 tip_upload_test: "Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên."
-title_login: "Đăng nhập"
+title_login: "Đăng Nhập"
+warning_file_php: "Cảnh báo: Một số giải pháp bảo mật webhosting đã được biết là tự động cấm địa chỉ IP khi phát hiện các thẻ PHP trong các yêu cầu (ví dụ, khi cố gắng chỉnh sửa tập tin PHP thông qua trình duyệt). CIDRAM không có cách nào để biết liệu dịch vụ webhosting của bạn có sử dụng giải pháp bảo mật như vậy hay không. Để tránh những vấn đề như vậy, khuyến khích không chỉnh sửa tập tin PHP theo cách như vậy khi có thể."
 warning_file_overwritten: "Cảnh báo: Tập tin bạn hiện đang chỉnh sửa thuộc về thành phần, "%s". Bất kỳ thay đổi nào được thực hiện đối với tập tin này rất có thể bị ghi đè vào lần tiếp theo thành phần đó được cập nhật."
 warning_javascript_required: "Cảnh báo: Một số chức năng yêu cầu JavaScript. Để đảm bảo rằng toàn bộ giao diện hoạt động như mong đợi, bạn nên bật JavaScript."
 warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"

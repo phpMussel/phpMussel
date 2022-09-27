@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.09.22).
+# This file: Latvian language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -469,6 +469,7 @@ tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējo
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus phpMussel komponentus (pamata pakete, paraksti, spraudņi, L10N faili, utt)."
 tip_upload_test: "Augšupielādes testa lapā ir standarta failu augšupielādes forma. Varat to izmantot, lai pārbaudītu, vai phpMussel parasti bloķē failu."
 title_login: "Ielogošanās"
+warning_file_php: "Brīdinājums: Ir zināms, ka daži tīmekļa mitināšanas drošības risinājumi automātiski aizliedz IP adreses, kad pieprasījumos tiek atklāti PHP tagi (piemēram, mēģinot modificēt PHP failus, izmantojot pārlūkprogrammu). CIDRAM nevar zināt, vai jūsu tīmekļa mitināšanas pakalpojums izmanto šādu drošības risinājumu. Lai izvairītos no šādām problēmām, pēc iespējas ieteicams nerediģēt PHP failus šādā veidā."
 warning_file_overwritten: "Brīdinājums: Fails, kuru pašlaik rediģējat, pieder komponentam "%s". Visas šajā failā veiktās izmaiņas, visticamāk, tiks pārrakstītas nākamreiz, kad šis komponents tiks atjaunināts."
 warning_javascript_required: "Brīdinājums: Dažām funkcionalitātēm ir nepieciešams JavaScript. Ieteicams iespējot JavaScript, lai nodrošinātu, ka visa interfeiss darbojas, kā paredzēts."
 warning_signatures_1: "Brīdinājums: Neviens paraksta fails nav aktīvs!"

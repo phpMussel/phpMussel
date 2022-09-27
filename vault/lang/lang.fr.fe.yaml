@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.22).
+# This file: French language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -469,6 +469,7 @@ tip_statistics_disabled: "Remarque\_: Le suivi des statistiques est actuellement
 tip_updates: "Bonjour, {username}.<br />La page des mises à jour vous permet d'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc)."
 tip_upload_test: "Bonjour, {username}.<br />La page pour tester les téléchargements contient un formulaire pour le téléchargement de fichiers standard, vous permettant de tester si un fichier serait normalement être bloqué par phpMussel quand vous essayez de le télécharger."
 title_login: "Connexion"
+warning_file_php: "Attention\_: Certaines solutions de sécurité d'hébergement Web sont connues pour interdire automatiquement les adresses IP lors de la détection de balises PHP dans les requêtes (par exemple, lors de la modification de fichiers PHP via un navigateur). CIDRAM n'a aucun moyen de savoir si votre service d'hébergement utilise une telle solution de sécurité. Afin d'éviter de tels problèmes, il est recommandé de ne pas éditer les fichiers PHP de cette manière lorsque cela est possible."
 warning_file_overwritten: "Attention\_: Le fichier que vous modifiez actuellement appartient au composant «\_%s\_». Toute modification apporté à ce fichier sera très probablement écrasé lors de la prochaine mise à jour de ce composant."
 warning_javascript_required: "Attention\_: Certaines fonctionnalités nécessitent JavaScript. Pour garantir que l'ensemble de l'interface se comporte comme prévu, il est recommandé d'activer JavaScript."
 warning_signatures_1: "Avertissement\_: Il n'y a pas fichiers du signatures actifs."

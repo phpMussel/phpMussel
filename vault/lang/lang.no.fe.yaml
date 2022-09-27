@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.22).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -80,7 +80,7 @@ config_general_delete_on_sight: "Aktivering av dette direktivet vil instruere sk
 config_general_disable_cli: "Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (slik som PHPUnit, for eksempel) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus."
 config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre phpMussel mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere phpMussel via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi]."
 config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei."
-config_general_disabled_channels: "Dette kan brukes til å forhindre phpMussel i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
+config_general_disabled_channels: "Dette kan brukes til å forhindre phpMussel i å bruke bestemte kanaler når du sender forespørsler (f.eks., når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_enable_plugins: "Aktivere støtte for phpMussel-plugins? False = Nei; True = Ja [Standardverdi]."
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_forbid_on_block: "Bør phpMussel sende 403 overskrifter med filen lastet opp blokkert melding, eller holde seg til de vanlige 200 OK? False = Nei (200); True = Ja (403) [Standardverdi]."
@@ -106,7 +106,7 @@ config_general_scan_log_serialized: "Filnavn for fil å logge alle skanneresulta
 config_general_statistics: "Spor phpMussel bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av phpMussel. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
-config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
+config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_general_unsupported_media_type_header: "Bør phpMussel sende 415 overskrifter når opplastinger er blokkert på grunn av svartypede filtyper? Når det er true, denne erstatter innstillingen <code>forbid_on_block</code>. False = Nei [Standardverdi]; True = Ja."
 config_heuristic: "Konfigurasjon for heuristisk analyse."
@@ -465,6 +465,7 @@ tip_statistics_disabled: "Merk: Statistikksporing er for øyeblikket deaktivert,
 tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i phpMussel (kjernepakken, signaturer, L10N filer, osv)."
 tip_upload_test: "Hallo, {username}.<br />Opplastings-testsiden inneholder et standard skjema for opplasting av filer, slik at du kan teste om en fil normalt vil bli blokkert av phpMussel når du prøver å laste den opp."
 title_login: "Innloggingssiden"
+warning_file_php: "Advarsel: Noen sikkerhetsløsninger for webhotell har vært kjent for å automatisk forby IP-adresser når de oppdager PHP-koder i forespørsler (f.eks., når du prøver å endre PHP-filer via en nettleser). CIDRAM har ingen mulighet til å vite om webhotell tjenesten din bruker en slik sikkerhetsløsning. For å unngå slike problemer, anbefales det å ikke redigere PHP-filer på en slik måte når det er mulig."
 warning_file_overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten "%s". Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
 warning_javascript_required: "Advarsel: Noen frontend-funksjonalitet krever JavaScript. For å sikre at hele grensesnittet oppfører seg som forventet, anbefales det å aktivere JavaScript."
 warning_signatures_1: "Advarsel: Ingen signaturfiler er aktive!"

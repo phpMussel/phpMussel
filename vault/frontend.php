@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.09.23).
+ * This file: Front-end handler (last modified: 2022.09.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2570,7 +2570,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && ($phpMussel['
 /** File Manager. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMussel['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_file_manager'), $phpMussel['L10N']->getString('tip_file_manager'), false);
+    $phpMussel['InitialPrepwork']($phpMussel['L10N']->getString('link_file_manager'), $phpMussel['L10N']->getString('tip_file_manager'));
 
     /** Load doughnut template file upon request. */
     if (empty($phpMussel['QueryVars']['show'])) {
@@ -2777,6 +2777,19 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                         $phpMussel['L10N']->getString('warning_file_overwritten'),
                         $phpMussel['Components']['Files'][$_POST['filename']]
                     );
+                }
+
+                /** PHP file warning. */
+                if (preg_match('~\.php$~i', $_POST['filename'])) {
+                    $phpMussel['FE']['JS'] .= "\nfunction wfp(d){};";
+                    if ($phpMussel['FE']['state_msg'] !== '') {
+                        $phpMussel['FE']['state_msg'] .= '<br />';
+                    }
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('warning_file_php');
+                } else {
+                    $phpMussel['FE']['JS'] .= "\nfunction wfp(d){d.includes('<?php')?showid('wfps'):hideid('wfps')};";
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['FE']['state_msg'] !== '' ? '<span id="wfps"><br />' : '<span id="wfps">';
+                    $phpMussel['FE']['state_msg'] .= $phpMussel['L10N']->getString('warning_file_php') . '</span>';
                 }
 
                 /** Parse output. */

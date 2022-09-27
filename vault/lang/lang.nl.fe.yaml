@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.09.22).
+# This file: Dutch language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -467,6 +467,7 @@ tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschak
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende phpMussel componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, plugins, L10N bestanden, enz)."
 tip_upload_test: "Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden."
 title_login: "Inloggen"
+warning_file_php: "Waarschuwing: Van sommige webhosting-beveiligingsoplossingen is bekend dat ze IP-adressen automatisch verbieden bij het detecteren van PHP-tags in verzoeken (b.v., bij een poging om PHP-bestanden te wijzigen via een browser). CIDRAM kan niet weten of uw webhosting service een dergelijke beveiligingsoplossing gebruikt. Om dergelijke problemen te voorkomen, wordt aangeraden om PHP-bestanden waar mogelijk niet op een dergelijke manier te bewerken."
 warning_file_overwritten: "Waarschuwing: Het bestand dat u momenteel aan het bewerken bent, behoort tot de component "%s". Alle wijzigingen die in dit bestand zijn aangebracht, zullen zeer waarschijnlijk worden overschreven de volgende keer dat dat component wordt bijgewerkt."
 warning_javascript_required: "Waarschuwing: Voor sommige frontend functionaliteit is JavaScript vereist. Om ervoor te zorgen dat de gehele frontend zich naar verwachting gedraagt, wordt het inschakelen van JavaScript aanbevolen."
 warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"

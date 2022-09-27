@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.09.22).
+# This file: Japanese language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,6 +463,7 @@ tip_statistics_disabled: "注意：統計トラッキングは現在オフライ
 tip_updates: "こんにちは、​{username}。​<br />アップデート・ページは、​phpMusselのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​プラグイン、​L10Nファイル、​等）。"
 tip_upload_test: "こんにちは、​{username}。​<br />アップロード・テスト・ページ、​標準的なファイルアップロードフォームを含んでいます、​ファイルが通常ブロックされるかどうかをテストすることができます。"
 title_login: "ログイン"
+warning_file_php: "警告：一部のウェブホストは、リクエスト内のＰＨＰタグを検出すると、ＩＰアドレスを自動的に禁止します（たとえば、ブラウザを介してＰＨＰファイルを変更しようとする場合）。 あなたのウェブホストがこれを行うかどうか、CIDRAMは知る方法がありません。 問題を回避するために、可能であればそのような方法でＰＨＰファイルを編集しないことをお勧めします。"
 warning_file_overwritten: "警告：この現在編集中のファイルは、コンポーネント「%s」に属しています。このファイルに加えられた変更は、次回そのコンポーネントが更新されたときに上書きされる可能性が高いです。"
 warning_javascript_required: "警告：一部のフロントエンド機能性にはJavaScriptが必要です。フロントエンドの全体が期待どおりに動作するようにするには、JavaScriptを有効にすることをお勧めします。"
 warning_signatures_1: "警告：アクティブ・シグネチャ・ファイルはありません！"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.09.22).
+# This file: Swedish language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -465,6 +465,7 @@ tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inakti
 tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i phpMussel (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
 tip_upload_test: "Hallå, {username}.<br />Uppladdningssidan innehåller ett standardformulär för uppladdning av filer, så att du kan testa om en fil normalt skulle blockeras av phpMussel när du försöker ladda upp den."
 title_login: "Inloggning"
+warning_file_php: "Varning: Vissa webbhotell säkerhetslösningar har varit kända för att automatiskt förbjuda IP-adresser vid upptäckt av PHP-taggar i förfrågningar (t.ex., när du försöker ändra PHP-filer via en webbläsare). CIDRAM har ingen möjlighet att veta om ditt webbhotell använder en sådan säkerhetslösning. För att undvika sådana problem, rekommenderas att inte redigera PHP-filer på ett sådant sätt när det är möjligt."
 warning_file_overwritten: "Varning: Filen du för närvarande redigerar tillhör komponenten "%s". Alla ändringar som görs i den här filen kommer med stor sannolikhet att skrivas över nästa gång den komponenten uppdateras."
 warning_javascript_required: "Varning: Vissa frontend-funktionalitet kräver JavaScript. För att säkerställa att hela gränssnittet beter sig som förväntat, rekommenderas att aktivera JavaScript."
 warning_signatures_1: "Varning: Inga signaturfiler är aktiva!"

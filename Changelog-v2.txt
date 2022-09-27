@@ -10,7 +10,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2022.09.27; Maikuolan]: Added warnings to the edit file feature of the file
+  manager regarding editing PHP files directly via browsers and regarding
+  editing files which belong to components.
 
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
