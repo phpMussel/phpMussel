@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.09.26).
+ * This file: Front-end handler (last modified: 2022.10.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1597,14 +1597,32 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     $phpMussel['ThisDir']['DirLangKey'],
                     empty($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default']) ? 'false' : 'true'
                 );
-            } elseif (in_array($phpMussel['DirValue']['type'], ['float', 'int'], true)) {
+            } elseif ($phpMussel['DirValue']['type'] === 'float' || $phpMussel['DirValue']['type'] === 'int') {
+                $phpMussel['ThisDir']['FieldAppend'] = '';
+                if (isset($phpMussel['DirValue']['step'])) {
+                    $phpMussel['ThisDir']['FieldAppend'] .= ' step="' . $phpMussel['DirValue']['step'] . '"';
+                }
+                $phpMussel['ThisDir']['FieldAppend'] .= $phpMussel['ThisDir']['Trigger'];
+                if ($phpMussel['DirValue']['type'] === 'int') {
+                    $phpMussel['ThisDir']['FieldAppend'] .= ' inputmode="numeric"';
+                    if (isset($phpMussel['DirValue']['pattern'])) {
+                        $phpMussel['ThisDir']['FieldAppend'] .= ' pattern="' . $phpMussel['DirValue']['pattern'] . '"';
+                    } else {
+                        $phpMussel['ThisDir']['FieldAppend'] .= (!isset($phpMussel['DirValue']['min']) || $phpMussel['DirValue']['min'] < 0) ? ' pattern="^-?\d*$"' : ' pattern="^\d*$"';
+                    }
+                } elseif (isset($phpMussel['DirValue']['pattern'])) {
+                    $phpMussel['ThisDir']['FieldAppend'] .= ' pattern="' . $phpMussel['DirValue']['pattern'] . '"';
+                }
+                foreach (['min', 'max'] as $phpMussel['ThisDir']['ParamTry']) {
+                    if (isset($phpMussel['DirValue'][$phpMussel['ThisDir']['ParamTry']])) {
+                        $phpMussel['ThisDir']['FieldAppend'] .= ' ' . $phpMussel['ThisDir']['ParamTry'] . '="' . $phpMussel['DirValue'][$phpMussel['ThisDir']['ParamTry']] . '"';
+                    }
+                }
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
-                    (isset($phpMussel['DirValue']['step']) ? ' step="' . $phpMussel['DirValue']['step'] . '"' : ''),
-                    $phpMussel['ThisDir']['Trigger'],
-                    ($phpMussel['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
+                    $ThisDir['FieldAppend']
                 );
                 if (isset($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default'])) {
                     $phpMussel['ThisDir']['Reset'] .= sprintf(
@@ -1631,12 +1649,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     );
                 }
             } else {
+                $phpMussel['ThisDir']['FieldAppend'] = $phpMussel['ThisDir']['autocomplete'] . $phpMussel['ThisDir']['Trigger'];
+                if (isset($phpMussel['DirValue']['pattern'])) {
+                    $phpMussel['ThisDir']['FieldAppend'] .= ' pattern="' . $phpMussel['DirValue']['pattern'] . '"';
+                }
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
-                    $phpMussel['ThisDir']['autocomplete'],
-                    $phpMussel['ThisDir']['Trigger']
+                    $phpMussel['ThisDir']['FieldAppend']
                 );
                 if (isset($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default'])) {
                     $phpMussel['ThisDir']['Reset'] .= sprintf(
