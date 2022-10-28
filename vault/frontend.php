@@ -1630,7 +1630,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $phpMussel['ThisDir']['DirLangKey'],
                     $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']],
-                    $ThisDir['FieldAppend']
+                    $phpMussel['ThisDir']['FieldAppend']
                 );
                 if (isset($phpMussel['Config']['Config Defaults'][$phpMussel['CatKey']][$phpMussel['DirKey']]['default'])) {
                     $phpMussel['ThisDir']['Reset'] .= sprintf(
