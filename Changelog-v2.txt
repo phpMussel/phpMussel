@@ -16,6 +16,9 @@ Detailed version release guidelines for phpMussel can be found at:
 
 - [2022.10.25; Maikuolan]: Hardened some configuration constraints.
 
+- [2022.10.28; Maikuolan]: Reworked how the configuration page deals with
+  volume-based configuration.
+
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
 

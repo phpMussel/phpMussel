@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.10.25).
+ * This file: Front-end handler (last modified: 2022.10.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1284,32 +1284,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             if (isset($phpMussel['DirValue']['preview'])) {
                 $phpMussel['ThisDir']['Preview'] = ($phpMussel['DirValue']['preview'] === 'allow_other') ? '' : sprintf(
-                    $phpMussel['DirValue']['preview_default_fill'] ?? ' = <span id="%s_preview"></span>',
+                    ' = <span id="%s_preview"></span>',
                     $phpMussel['ThisDir']['DirLangKey']
                 );
                 $phpMussel['ThisDir']['Trigger'] = ' onchange="javascript:' . $phpMussel['ThisDir']['DirLangKey'] . '_function();" onkeyup="javascript:' . $phpMussel['ThisDir']['DirLangKey'] . '_function();"';
-                if ($phpMussel['DirValue']['preview'] === 'kb') {
-                    $phpMussel['ThisDir']['Preview'] .= sprintf(
-                        '<script type="text/javascript">function %1$s_function(){var e=%7$s?%7$s(' .
-                        '\'%1$s_field\').value:%8$s&&!%7$s?%8$s.%1$s_field.value:\'\',z=e.replace' .
-                        '(/o$/i,\'b\').substr(-2).toLowerCase(),y=\'kb\'==z?1:\'mb\'==z?1024:\'gb' .
-                        '\'==z?1048576:\'tb\'==z?1073741824:\'b\'==e.substr(-1)?.0009765625:1,e=e' .
-                        '.replace(/[^0-9]*$/i,\'\'),e=isNaN(e)?0:e*y,t=0>e?\'0 %2$s\':1>e?nft((10' .
-                        '24*e).toFixed(0))+\' %2$s\':1024>e?nft((1*e).toFixed(2))+\' %3$s\':10485' .
-                        '76>e?nft((e/1024).toFixed(2))+\' %4$s\':1073741824>e?nft((e/1048576).toF' .
-                        'ixed(2))+\' %5$s\':nft((e/1073741824).toFixed(2))+\' %6$s\';%7$s?%7$s(\'' .
-                        '%1$s_preview\').innerHTML=t:%8$s&&!%7$s?%8$s.%1$s_preview.innerHTML=t:\'' .
-                        '\'};%1$s_function();</script>',
-                        $phpMussel['ThisDir']['DirLangKey'],
-                        $phpMussel['L10N']->getPlural(0, 'field_size_bytes'),
-                        $phpMussel['L10N']->getString('field_size_KB'),
-                        $phpMussel['L10N']->getString('field_size_MB'),
-                        $phpMussel['L10N']->getString('field_size_GB'),
-                        $phpMussel['L10N']->getString('field_size_TB'),
-                        'document.getElementById',
-                        'document.all'
-                    );
-                } elseif ($phpMussel['DirValue']['preview'] === 'seconds') {
+                if ($phpMussel['DirValue']['preview'] === 'seconds') {
                     $phpMussel['ThisDir']['Preview'] .= sprintf(
                         '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
                         '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
@@ -1396,6 +1375,35 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         $phpMussel['ThisDir']['DirLangKey']
                     ) . '</script>';
                 }
+            } elseif ($phpMussel['DirValue']['type'] === 'kb') {
+                $phpMussel['ThisDir']['Preview'] = sprintf(' = <span id="%s_preview"></span>', $phpMussel['ThisDir']['DirLangKey']);
+                $phpMussel['ThisDir']['Trigger'] = ' onchange="javascript:' . $phpMussel['ThisDir']['DirLangKey'] . '_function();" onkeyup="javascript:' . $phpMussel['ThisDir']['DirLangKey'] . '_function();"';
+                $phpMussel['ThisDir']['Preview'] .= sprintf(
+                    '<script type="text/javascript">function %1$s_function(){const bytesPerUnit={' .
+                    'B:1,K:1024,M:1048576,G:1073741824,T:1099511627776,P:1125899906842620},unitNa' .
+                    'mes=["%2$s","%3$s","%4$s","%5$s","%6$s","%7$s"];var e=%8$s?%8$s(\'%1$s_field' .
+                    '\').value:%9$s&&!%8$s?%9$s.%1$s_field.value:\'\';if((Unit=e.match(/(?<Unit>[' .
+                    'KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)(?:[OoBb]|Б|' .
+                    'б|Ｂ|ｂ)?$/))&&void 0!==Unit.groups.Unit)if((Unit=Unit.groups.Unit).match(/^(?' .
+                    ':[OoBb]|Б|б|Ｂ|ｂ)$/))var Unit=\'B\';else if(Unit.match(/^(?:[Mm]|М|м)$/))Unit' .
+                    '=\'M\';else if(Unit.match(/^(?:[Gg]|Г|г)$/))Unit=\'G\';else if(Unit.match(/^' .
+                    '(?:[Tt]|Т|т)$/))Unit=\'T\';else if(Unit.match(/^(?:[Pp]|П|п)$/))Unit=\'P\';e' .
+                    'lse Unit=\'K\';else Unit=\'K\';var e=parseFloat(e);if(isNaN(e))var fixed=0;e' .
+                    'lse{if(void 0!==bytesPerUnit[Unit])fixed=e*bytesPerUnit[Unit];else fixed=e;f' .
+                    'ixed=Math.floor(fixed)}for(var i=0,p=unitNames[i];fixed>=1024;){fixed=fixed/' .
+                    '1024;i++;p=unitNames[i];if(i>=5)break}t=nft(fixed.toFixed(i===0?0:2))+\' \'+' .
+                    'p;%8$s?%8$s(\'%1$s_preview\').innerHTML=t:%9$s&&!%8$s?%9$s.%1$s_preview.inne' .
+                    'rHTML=t:\'\';};%1$s_function();</script>',
+                    $phpMussel['ThisDir']['DirLangKey'],
+                    $phpMussel['L10N']->getPlural(0, 'field_size_bytes'),
+                    $phpMussel['L10N']->getString('field_size_KB'),
+                    $phpMussel['L10N']->getString('field_size_MB'),
+                    $phpMussel['L10N']->getString('field_size_GB'),
+                    $phpMussel['L10N']->getString('field_size_TB'),
+                    $phpMussel['L10N']->getString('field_size_PB'),
+                    'document.getElementById',
+                    'document.all'
+                );
             }
             if ($phpMussel['DirValue']['type'] === 'timezone') {
                 $phpMussel['DirValue']['choices'] = ['SYSTEM' => $phpMussel['L10N']->getString('field_system_timezone')];
@@ -1652,6 +1660,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['ThisDir']['FieldAppend'] = $phpMussel['ThisDir']['autocomplete'] . $phpMussel['ThisDir']['Trigger'];
                 if (isset($phpMussel['DirValue']['pattern'])) {
                     $phpMussel['ThisDir']['FieldAppend'] .= ' pattern="' . $phpMussel['DirValue']['pattern'] . '"';
+                } elseif ($phpMussel['DirValue']['type'] === 'kb') {
+                    $phpMussel['ThisDir']['FieldAppend'] .= ' pattern="^\d+(\.\d+)?\s*(?:[KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)(?:[OoBb]|Б|б|Ｂ|ｂ)?$"';
                 }
                 $phpMussel['ThisDir']['FieldOut'] = sprintf(
                     '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
