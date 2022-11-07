@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.09.26).
+# This file: Turkish language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -351,7 +351,7 @@ response_accounts_doesnt_exist: "Bu hesap mevcut değil."
 response_accounts_password_updated: "Şifre başarıyla güncellendi!"
 response_activated: "Başarıyla etkinleştirildi."
 response_activation_failed: "Etkinleştirilemedi!"
-response_checksum_error: "Checksum hatası! Dosya reddedildi!"
+response_checksum_error: "Sağlama toplamı hatası! Dosya reddedildi!"
 response_component_successfully_installed: "Bileşen başarıyla yüklendi."
 response_component_successfully_uninstalled: "Bileşen başarıyla kaldırıldı."
 response_component_successfully_updated: "Bileşen başarıyla güncellendi."

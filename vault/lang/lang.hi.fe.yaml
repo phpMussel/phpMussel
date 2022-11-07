@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.09.26).
+# This file: Hindi language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -353,7 +353,7 @@ response_accounts_doesnt_exist: "वह खाता मौजूद नही�
 response_accounts_password_updated: "पासवर्ड सफलतापूर्वक अपडेट किया गया!"
 response_activated: "सफलतापूर्वक सक्रियण।"
 response_activation_failed: "सक्रिय करने में विफल!"
-response_checksum_error: "कुछ त्रुटियों की जांच करें! फाइल अस्वीकृत!"
+response_checksum_error: "चेकसम में त्रुटियां थी! फाइल अस्वीकृत!"
 response_component_successfully_installed: "कंपोनेंट सफलतापूर्वक इंस्टॉल किया गया।"
 response_component_successfully_uninstalled: "कंपोनेंट सफलतापूर्वक अनइंस्टॉल किया गया।"
 response_component_successfully_updated: "कंपोनेंट सफलतापूर्वक अपडेट किया गया"

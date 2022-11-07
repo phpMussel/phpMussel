@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.26).
+# This file: French language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -353,7 +353,7 @@ response_accounts_doesnt_exist: "Ce compte n'existe pas."
 response_accounts_password_updated: "Mot de passe mis à jour avec succès\_!"
 response_activated: "Activé avec succès."
 response_activation_failed: "Échec de l'activation\_!"
-response_checksum_error: "Erreur checksum\_! Fichier rejeté\_!"
+response_checksum_error: "Erreur de la somme de contrôle\_! Fichier rejeté\_!"
 response_component_successfully_installed: "Composant installé avec succès."
 response_component_successfully_uninstalled: "Composant désinstallé avec succès."
 response_component_successfully_updated: "Composant mise à jour avec succès."
