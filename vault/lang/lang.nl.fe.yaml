@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.09.26).
+# This file: Dutch language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -354,7 +354,7 @@ response_accounts_doesnt_exist: "Die account bestaat niet."
 response_accounts_password_updated: "Wachtwoord succesvol gewijzigd!"
 response_activated: "Succesvol geactiveerd."
 response_activation_failed: "Mislukt om te activeren!"
-response_checksum_error: "Checksum fout! Bestand afgewezen!"
+response_checksum_error: "Controlesom fout! Bestand afgewezen!"
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."

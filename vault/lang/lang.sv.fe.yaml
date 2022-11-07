@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.09.26).
+# This file: Swedish language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -352,7 +352,7 @@ response_accounts_doesnt_exist: "Det kontot existerar inte."
 response_accounts_password_updated: "Lösenordet har uppdaterats framgångsrikt!"
 response_activated: "Aktiverad framgångsrikt."
 response_activation_failed: "Misslyckades med att aktivera!"
-response_checksum_error: "Checksumfel! Filen avvisas!"
+response_checksum_error: "Kontrollsumma fel! Filen avvisas!"
 response_component_successfully_installed: "Komponent har installerats framgångsrikt."
 response_component_successfully_uninstalled: "Komponent har avinstallerats framgångsrikt."
 response_component_successfully_updated: "Komponent har uppdaterats framgångsrikt."

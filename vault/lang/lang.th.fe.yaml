@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.09.26).
+# This file: Thai language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -352,7 +352,7 @@ response_accounts_doesnt_exist: "บัญชีไม่มีอยู่จ�
 response_accounts_password_updated: "รหัสผ่านสำเร็จแล้วอัปเดต!"
 response_activated: "สำเร็จแล้วเปิดใช้งาน."
 response_activation_failed: "ล้มเหลวเปิดใช้งาน!"
-response_checksum_error: "ข้อผิดพลาด checksum! ไฟล์ถูกปฏิเสธ!"
+response_checksum_error: "ข้อผิดพลาดเช็คซัม! ไฟล์ถูกปฏิเสธ!"
 response_component_successfully_installed: "คอมโพเนนต์สำเร็จแล้วในการติดตั้ง."
 response_component_successfully_uninstalled: "คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง."
 response_component_successfully_updated: "คอมโพเนนต์สำเร็จแล้วอัปเดต."

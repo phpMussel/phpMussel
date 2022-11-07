@@ -356,7 +356,7 @@ l10n/es:
 l10n/fr:
  Name: "L10N: Français"
  Extended Description: "Linguistiques données en Français"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -369,13 +369,13 @@ l10n/fr:
    - "lang/lang.fr.fe.yaml"
    - "lang/lang.fr.yaml"
   Checksum:
-   - "71a201785f8ef650030fe2e6363ce90906504c547fc81021d8b3fde086f46a61:59375"
+   - "3c87ab811e62a9f3a0194e7260341fe00494f3d3e2107501a3f825725b4de7a5:59391"
    - "6f283c77f8eb64dae06e65691230d51952dc656ce3009f4135137d3e9ec7577e:7557"
  Reannotate: "components.dat"
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -388,7 +388,7 @@ l10n/hi:
    - "lang/lang.hi.fe.yaml"
    - "lang/lang.hi.yaml"
   Checksum:
-   - "d8973023c3a88a1fef8e0b20dcd67db3bc8db9f633b06a95a1b26a116f5f76cc:104266"
+   - "2d623309cf60cdbc9f439595575382032713f269ea3b39be6662b94c51ae0a2d:104256"
    - "fa57b8d9de339633f2bf24b59a6dc907afaeffc9c492a17e3c8d1efa1ad6a9fd:11998"
  Reannotate: "components.dat"
 l10n/id:
@@ -489,7 +489,7 @@ l10n/lv:
 l10n/nl:
  Name: "L10N: Nederlandse"
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -502,13 +502,13 @@ l10n/nl:
    - "lang/lang.nl.fe.yaml"
    - "lang/lang.nl.yaml"
   Checksum:
-   - "9dcbc55dbfa2a4633b2f5473c340c9566a9fedd38b04909a8e3597086ef3dc2e:55899"
+   - "a54eca7e9fa70ee8d06e6b89ffe41a15f1dad86bf255f758f12aeafc80cdb2d7:55902"
    - "b1cbe5162bdb72b6e1637fca8dd0fe9814c0ec9fdb802aa613ed85cb6a039015:6969"
  Reannotate: "components.dat"
 l10n/no:
  Name: "L10N: Norsk"
  Extended Description: "Norsk språkdata"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -521,7 +521,7 @@ l10n/no:
    - "lang/lang.no.fe.yaml"
    - "lang/lang.no.yaml"
   Checksum:
-   - "73b8600407e0e1f1b8dd7cba3f2fd75b149e0027b35f554753fe6d69fd71b31a:52054"
+   - "ad6386e001f3735835e4101224693a414a2fbd7d7beda7a0044eeeffaf0c0ee5:52054"
    - "0cfbf8a39153aac82fe09f3b5fb21f1fc8e3ed69346a3f609c9c4dbc077862b6:6764"
  Reannotate: "components.dat"
 l10n/pl:
@@ -584,7 +584,7 @@ l10n/ru:
 l10n/sv:
  Name: "L10N: Svenska"
  Extended Description: "Svenska språkdata"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -597,13 +597,13 @@ l10n/sv:
    - "lang/lang.sv.fe.yaml"
    - "lang/lang.sv.yaml"
   Checksum:
-   - "01c322675923b9e856ccd9704d29bbc9358101f32ff36ed3ce442b40a3a14ca1:53035"
+   - "021d8b272c135feaf59f44933f807ad00eb6f8a7a8986755e4f6de7e317ab816:53041"
    - "e69666eebbeb5610e144f5d07918cb975c9e599d89b4253b138faba1a9c7d517:6857"
  Reannotate: "components.dat"
 l10n/th:
  Name: "L10N: ภาษาไทย"
  Extended Description: "ข้อมูลภาษาไทย"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -616,13 +616,13 @@ l10n/th:
    - "lang/lang.th.fe.yaml"
    - "lang/lang.th.yaml"
   Checksum:
-   - "0bdee1987c265992202419489a6a37c8b6d3ce91a160c013eba5958f9433a302:99365"
+   - "b71bb1721ec91e95a8f74257d26040813ee8c2bed3a257a7d6745a26cb02eaf9:99377"
    - "c759694820a4f22cd643168e1179f1073e7bcd5d1ed6527a0deae1fa4b048509:11369"
  Reannotate: "components.dat"
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2022.269.0"
+ Version: "2022.277.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -635,7 +635,7 @@ l10n/tr:
    - "lang/lang.tr.fe.yaml"
    - "lang/lang.tr.yaml"
   Checksum:
-   - "f2569745a089ff990a1c7aaca2c951dbab5b6b81bea431e5ea7a2c28aa384862:54584"
+   - "6a072ac45386a8d989be4d1c43b974d3de0164ece9259a24ed0acaf197694d4c:54593"
    - "eb1f311bb67557335f7e165096f0b26a536e852250ac93958c662439492e6c77:7050"
  Reannotate: "components.dat"
 l10n/ur:

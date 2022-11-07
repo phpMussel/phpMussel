@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.26).
+# This file: Norwegian language data for the front-end (last modified: 2022.10.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -352,7 +352,7 @@ response_accounts_doesnt_exist: "Den kontoen eksisterer ikke."
 response_accounts_password_updated: "Passordet oppdatert!"
 response_activated: "Aktivering vellykket."
 response_activation_failed: "Aktivering mislyktes!"
-response_checksum_error: "Checksum feil! Fil avvist!"
+response_checksum_error: "Sjekksum feil! Fil avvist!"
 response_component_successfully_installed: "Komponent installert."
 response_component_successfully_uninstalled: "Komponent avinstallert."
 response_component_successfully_updated: "Komponent oppdatert."
