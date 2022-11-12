@@ -451,7 +451,7 @@ l10n/ja:
 l10n/ko:
  Name: "L10N: 한국어"
  Extended Description: "한국어 언어 데이터"
- Version: "2022.269.0"
+ Version: "2022.315.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -464,13 +464,13 @@ l10n/ko:
    - "lang/lang.ko.fe.yaml"
    - "lang/lang.ko.yaml"
   Checksum:
-   - "2d97f017edb1dbca6fc817b9fad43190c270a039586dc0b8f48012daadec1b34:55505"
+   - "c198062f8e254eff8b321f37c09449adf5368d73754ac6f63a44ab448ce30bb9:55504"
    - "81a23bdb5bb9ed752615b43369d7ed5eac8822fea8cc3ff63a8c237e7d0bf197:7564"
  Reannotate: "components.dat"
 l10n/lv:
  Name: "L10N: Latviešu"
  Extended Description: "Latviešu valodas dati"
- Version: "2022.269.0"
+ Version: "2022.315.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -483,7 +483,7 @@ l10n/lv:
    - "lang/lang.lv.fe.yaml"
    - "lang/lang.lv.yaml"
   Checksum:
-   - "1301c05372499c038d0c7db1081f6f150b5d68c9b8f25bd4b16b922d82491e68:55752"
+   - "e9230b3d747e04ef88fbd1e17bee18d1a7812f5b4799864632c2b1f281aacfc9:55734"
    - "494e4e5e57472f69e9c48502f588b4e83894e68a1fa9be7fe8c99835792fda69:7360"
  Reannotate: "components.dat"
 l10n/nl:

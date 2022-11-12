@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.09.26).
+# This file: Latvian language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -461,11 +461,11 @@ tip_file_manager: "Failu menedžeris ļauj izdzēst, rediģēt, augšupielādēt
 tip_home: "Šī ir jūsu phpMussel instalācijas mājas lapa. Lai turpinātu, navigācijas izvēlnē kreisajā pusē atlasiet saiti."
 tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
 tip_quarantine: "Šajā lapā ir uzskaitīti visi faili, kas pašlaik atrodas karantīnā, un atvieglo šo failu pārvaldību."
-tip_quarantine_disabled: "Piezīme: Karantīna pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
+tip_quarantine_disabled: "Piezīme: Karantīna pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."
 tip_see_the_documentation: "Skatiet <a href="https://github.com/phpMussel/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION7" hreflang="en" rel="noopener external">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
 tip_siginfo: "Parakstu informācijas lapā ir sniegta pamatinformācija par pašlaik aktīvo parakstu avotiem un veidiem."
 tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu phpMussel instalēšanu."
-tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
+tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus phpMussel komponentus (pamata pakete, paraksti, spraudņi, L10N faili, utt)."
 tip_upload_test: "Augšupielādes testa lapā ir standarta failu augšupielādes forma. Varat to izmantot, lai pārbaudītu, vai phpMussel parasti bloķē failu."
 title_login: "Ielogošanās"
