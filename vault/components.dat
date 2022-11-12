@@ -393,7 +393,7 @@ l10n/ja:
 l10n/ko:
  Name: "L10N: 한국어"
  Extended Description: "한국어 언어 데이터"
- Version: "2022.269.0"
+ Version: "2022.315.0"
  Dependencies:
   phpMussel Core: "^1.8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
@@ -406,7 +406,7 @@ l10n/ko:
    - "lang/lang.ko.fe.yaml"
    - "lang/lang.ko.yaml"
   Checksum:
-   - "ad031f4124f6a5b4c14745e26b9870dc3b5aadce8979e25866b7abeff435e7e3:55361"
+   - "26850642bc37e915e5922ea1dc25c2ca4bdd89d9807909a2e4dcd4df0cd1c244:55360"
    - "30f4cfed4df13a12408ac0e52a82aca3986602b181532572df910817fa1604b0:7653"
  Reannotate: "components.dat"
 l10n/nl:
