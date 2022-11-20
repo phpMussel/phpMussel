@@ -41,3 +41,13 @@ components.dat linguist-language=YAML
 plugins.dat linguist-language=YAML
 themes.dat linguist-language=YAML
 config.ini.RenameMe linguist-language=INI
+
+# Stuff not needed for dist installs. Refer to:
+# https://git-scm.com/docs/gitattributes#_creating_an_archive
+# https://getcomposer.org/doc/06-config.md#preferred-install
+
+/.github export-ignore
+/.tests export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/tests.php export-ignore
