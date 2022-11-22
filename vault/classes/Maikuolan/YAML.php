@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2022.10.05).
+ * YAML handler (last modified: 2022.11.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -132,7 +132,7 @@ class YAML
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.2';
+    public const VERSION = '2.9.3';
 
     /**
      * Can optionally begin processing data as soon as the object is
@@ -1426,6 +1426,12 @@ class YAML
         }
         if (is_string($In)) {
             return $this->Quotes . $this->escape($In) . $this->Quotes;
+        }
+        if (is_object($In)) {
+            if (method_exists($In, '__toString')) {
+                return $this->Quotes . $this->escape((string)$In) . $this->Quotes;
+            }
+            throw new \Error('Non-stringable object detected while attempting to reconstruct YAML data');
         }
         return $In;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2022.10.05).
+ * L10N handler (last modified: 2022.11.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -52,7 +52,7 @@ class L10N
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.2';
+    public const VERSION = '2.9.3';
 
     /**
      * Constructor.
@@ -241,7 +241,8 @@ class L10N
     }
 
     /**
-     * Three grammatical numbers, type three. For e.g., Inuktitut.
+     * Three grammatical numbers, type three. For e.g., Inuktitut, Sami,
+     * Santali, Fijian, Hebrew.
      *
      * @param int $Int The plurality/number of things.
      * @return int 0: Singular form. 1: Dual form. 2: Other form.
@@ -448,7 +449,7 @@ class L10N
     }
 
     /**
-     * Four grammatical numbers, type five. For e.g., Hebrew.
+     * Four grammatical numbers, type five. (Not currently used).
      *
      * @param int $Int The plurality/number of things.
      * @return int 0: Singular form. 1: Dual form. 2: Many form. 3: Other form.
@@ -468,7 +469,7 @@ class L10N
     }
 
     /**
-     * Four grammatical numbers, type six. For e.g., Maltese.
+     * Four grammatical numbers, type six. (Not currently used).
      *
      * @param int $Int The plurality/number of things.
      * @return int 0: Singular form. 1: Few form. 2: Many form. 3: Other form.
@@ -523,6 +524,30 @@ class L10N
             return 2;
         }
         if ($Int >= 7 && $Int <= 10) {
+            return 3;
+        }
+        return 4;
+    }
+
+    /**
+     * Five grammatical numbers, type two. For e.g., Maltese.
+     *
+     * @param int $Int The plurality/number of things.
+     * @return int 0: Singular form. 1: Dual form. 2: Few form. 3: Many form. 4: Other form.
+     */
+    private function int5Type2(int $Int): int
+    {
+        if ($Int === 1) {
+            return 0;
+        }
+        if ($Int === 2) {
+            return 1;
+        }
+        $Tail2 = $Int % 100;
+        if ($Int === 0 || ($Tail2 > 2 && $Tail2 < 11)) {
+            return 2;
+        }
+        if ($Tail2 > 10 && $Tail2 < 20) {
             return 3;
         }
         return 4;
@@ -831,6 +856,7 @@ class L10N
 
         if (in_array($Code, [
             'fj',
+            'he',
             'iu',
             'naq',
             'sat',
@@ -921,21 +947,15 @@ class L10N
         }
 
         if (in_array($Code, [
-            'he'
+            'ga'
         ], true)) {
-            return 'int4Type5';
+            return 'int5Type1';
         }
 
         if (in_array($Code, [
             'mt'
         ], true)) {
-            return 'int4Type6';
-        }
-
-        if (in_array($Code, [
-            'ga'
-        ], true)) {
-            return 'int5Type1';
+            return 'int5Type2';
         }
 
         if (in_array($Code, [
@@ -1001,6 +1021,7 @@ class L10N
             'doi',
             'fa',
             'gu',
+            'he',
             'hi',
             'kn',
             'shi',
