@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.09.26).
+# This file: Bangla language data for the front-end (last modified: 2022.12.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -292,7 +292,7 @@ label_other-Since: "শুরুর তারিখ"
 label_php: "PHP সংস্করণ ব্যবহৃত:"
 label_phpmussel: "phpMussel সংস্করণ ব্যবহৃত:"
 label_quarantined: "আপলোডগুলি সঙ্গরোধ মধ্যে"
-label_sanity_check: "বৈধতা পরীক্ষা:"
+label_sanity_check: "স্যানিটি পরীক্ষা:"
 label_sapi: "SAPI ব্যবহৃত:"
 label_scanned_objects: "অবজেক্টস স্ক্যান করা"
 label_scanned_uploads: "আপলোডগুলি স্ক্যান করা"

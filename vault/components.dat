@@ -299,7 +299,7 @@ l10n/ar:
 l10n/bn:
  Name: "L10N: বাংলা"
  Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2022.269.0"
+ Version: "2022.338.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -312,7 +312,7 @@ l10n/bn:
    - "lang/lang.bn.fe.yaml"
    - "lang/lang.bn.yaml"
   Checksum:
-   - "0eff8f97208ca84bd53391626189c9867a6279886f40dd6713b242c871e6ef4b:100633"
+   - "81665cae4841fd0de8e1c43442480409aa386865d1fc8f1c5c961e635dc707ae:100642"
    - "e73e59f276959b25aa10dde5725881bc36af90182639f04c845ae2f965cee77f:12342"
  Reannotate: "components.dat"
 l10n/de:
@@ -432,7 +432,7 @@ l10n/it:
 l10n/ja:
  Name: "L10N: 日本語"
  Extended Description: "日本語言語データ"
- Version: "2022.269.0"
+ Version: "2022.338.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -445,7 +445,7 @@ l10n/ja:
    - "lang/lang.ja.fe.yaml"
    - "lang/lang.ja.yaml"
   Checksum:
-   - "1316ae45f6249388774077b62d35193522d94590813a80ba0f5315f30461ec4e:67466"
+   - "3e2ce10846322786d219ff1f7be11c7a35f9ea0c4ce7017cba3b967a80d324f7:67580"
    - "c4f0eba3c1dba43670d219d2c16c0aa656b11298cb6ebb00ded912f65f6b50df:8798"
  Reannotate: "components.dat"
 l10n/ko:
