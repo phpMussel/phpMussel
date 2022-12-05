@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.09.26).
+# This file: Japanese language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -110,10 +110,10 @@ config_general_truncate: "ログ・ファイルが一定のサイズに達した
 config_general_unsupported_media_type_header: "ブラックリストに登録されているファイル・タイプが原因でアップロードがブロックされた場合、phpMusselは、４１５ヘッダーを送信する必要がありますか？​Trueの場合、この設定は<code>forbid_on_block</code>よりも優先されます。​False（偽）=いいえ「Default/デフォルト設定」；​True（真）=はい。"
 config_heuristic: "ヒューリスティック分析の設定。"
 config_heuristic_threshold: "phpMusselには、​このファイルは疑わしく危険性が高いと判断するシグネチャがあります。​しきい値は、​アップロードされているファイルの危険性の最大値であり、​これを超えるとマルウェアと判断されます。​ここにおける危険性の定義とは、​疑わしいと特定されたものの総数です。​デフォルトでは３に設定されています。​これより低いと誤検出の可能性が増え、​大きすぎると、​誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。​特に問題がなければ、​デフォルト値のままにしておくことお勧めします。"
-config_legal: "法的要件の設定。"
+config_legal: "法的要件のコンフィギュレーション。"
 config_legal_privacy_policy: "生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。"
 config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_signatures: "シグネチャ、シグネチャ・ファイル、などの設定。"
+config_signatures: "シグネチャ、シグネチャ・ファイル、などのコンフィギュレーション。"
 config_signatures_Active: "カンマで区切られたアクティブなシグネチャ・ファイルのリスト。​注意：シグネチャ・ファイルは、アクティブ化する前に、まず、インストールする必要があります。​テスト・ファイルを正しく機能するには、シグネチャ・ファイルを、まず、インストールしてアクティブ化する必要があります。"
 config_signatures_detect_adware: "phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？​False（偽） = いいえ；​True（真） = はい（Default/デフォルト）。"
 config_signatures_detect_deface: "phpMusselは改ざんやディフェーサー検出のためにシグネチャを分析すべきか否か？​False（偽） = いいえ；​True（真） = はい（Default/デフォルト）。"
@@ -142,12 +142,12 @@ config_template_data: "テンプレートとテーマの設定。"
 config_template_data_Magnification: "フォントの倍率。​Default/デフォルルト = １。"
 config_template_data_css_url: "カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。"
 config_template_data_theme: "phpMusselに使用するデフォルト・テーマ。"
-config_urlscanner: "URLスキャナーの設定。"
+config_urlscanner: "ＵＲＬスキャナー・コンフィギュレーション。"
 config_urlscanner_cache_time: "ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？​デフォルトは３６００秒（一時間）。"
 config_urlscanner_google_api_key: "必要なＡＰＩ鍵が定義されれば、​ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。"
 config_urlscanner_maximum_api_lookups: "スキャン反復におけるAPIルックアップの最大回数。​APIルックアップの度にスキャン反復の時間が積み重なってしまうので、​スキャン処理の速度向上のため、​制限を設けたいと考えるかもしれません。​０は制限なしを意味します。​デフォルトは１０です。"
 config_urlscanner_maximum_api_lookups_response: "APIルックアップの回数制限を超えた時の対応です。​False（偽） = 何もしない/処理を継続する（Default/デフォルト）；​True（真） = ファイルにフラグを付ける/ブロックする。"
-config_virustotal: "Virus Total統合の設定。"
+config_virustotal: "Virus Total統合のコンフィギュレーション。"
 config_virustotal_vt_public_api_key: "オプションですが、​phpMusselはVirus Total APIを使ってファイルをスキャンすることができます。​ウィルス、​トロイの木馬、​マルウェア、​その他の攻撃に対して非常に効果的に機能します。​デフォルトではVirus Total APIを使ったスキャニングは無効になっています。​有効にするには、​Virus TotalのAPIキーが必要です。​メリットが極めて大きいため、​有効にすることを強く推奨します。​Virus Total APIの使用にあたっては、​Virus Totalのドキュメンテーションにある通り、​利用規定ならびにガイドラインを遵守しなくてはなりません。​この統合機能を使用するためには：​Virus TotalとAPIのサービス規定を読み同意すること。​最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents「コンテンツ」前まで）。"
 config_virustotal_vt_quota_rate: "Virus Total APIのドキュメンテーションによると「１分間のタイムフレームの間にリクエストは最大４回」の上限があります。​ハニークライアントやハニーポット等のオートメーションを使用し、​リポートを受け取るだけでなく、​VirusTotal にリソースを提供していれば、​上限は引き上げられます。​phpMussel のデフォルトでは最大４回を遵守していますが、​前述の事情から、​この２つのディレクトリを準備し、​状況に合わせて変更できるようになっています。​制限に達してしまうといった不都合や問題がない限りデフォルト値を変更することは勧められませんが、​値を小さくすることが適当なケースもあります。​上限はタイムフレーム<code>vt_quota_time</code>（ヴィティ・クォータ・タイム）「 分内に」<code>vt_quota_rate</code>（ヴィティ・クォータ・レート）で設定します。"
 config_virustotal_vt_quota_time: "（上記の説明を参照）。"
