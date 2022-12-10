@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.10.28).
+ * This file: Front-end handler (last modified: 2022.12.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1744,6 +1744,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
             /** Reset to defaults. */
             if ($phpMussel['ThisDir']['Reset'] !== '') {
+                if (isset($phpMussel['DirValue']['preview'], $phpMussel['DirValue']['default']) && $phpMussel['DirValue']['preview'] === 'allow_other') {
+                    $phpMussel['ThisDir']['Reset'] .= sprintf(
+                        'hideid(\'%1$s_field\');getElementById(\'%1$s_field\').value=\'%2$s\';',
+                        $phpMussel['ThisDir']['DirLangKeyOther'],
+                        $phpMussel['DirValue']['default']
+                    );
+                }
                 $phpMussel['ThisDir']['FieldOut'] .= sprintf(
                     '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
                     $phpMussel['ThisDir']['Reset'],
