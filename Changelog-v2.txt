@@ -24,6 +24,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.11.30; Maikuolan]: Adjusted minimum value for some port directives
   from 1 to 0.
 
+- [2022.12.10; Bug-fix; Maikuolan]: The reset button at the front-end
+  configuration page wasn't resetting the hidden "other" field; Fixed.
+
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
 
