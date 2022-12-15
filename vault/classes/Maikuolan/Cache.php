@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2022.11.22).
+ * A simple, unified cache handler (last modified: 2022.12.15).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -433,6 +433,12 @@ class Cache
             return false;
         }
         if ($this->Using === 'Redis') {
+            if ($TTL < 1) {
+                if ($this->WorkingData->set($Key, $Value)) {
+                    return $this->Modified = true;
+                }
+                return false;
+            }
             if ($this->WorkingData->set($Key, $Value, $TTL)) {
                 return $this->Modified = true;
             }

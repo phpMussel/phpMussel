@@ -27,6 +27,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.12.10; Bug-fix; Maikuolan]: The reset button at the front-end
   configuration page wasn't resetting the hidden "other" field; Fixed.
 
+- [2022.12.15; Bug-fix; Maikuolan]: Redis shouldn't set EXPIRE for TTLs less
+  than 1; Fixed.
+
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
 
