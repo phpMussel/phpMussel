@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.09.22).
+ * This file: Functions file (last modified: 2022.12.26).
  */
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
@@ -3315,12 +3315,13 @@ $phpMussel['MetaDataScan'] = function (string &$x, int &$r, string $Indent, stri
 $phpMussel['Indicator-Image'] = function (string $Ext, string $Head): bool {
     return (
         preg_match(
-            '/^(?:bm[2p]|c(d5|gm)|d(ib|w[fg]|xf)|ecw|fits|gif|img|j(f?if?|p[2s]|pe?g?2?|xr)|p(bm|cx|dd|gm|ic|n[gms]|' .
-            'pm|s[dp])|s(id|v[ag])|tga|w(bmp?|ebp|mp)|x(cf|bmp))$/',
+            '/^(?:bm[2p]|cd5|cgm|d(?:ib|w[fg]|xf)|ecw|fits|gif|img|j(?:f?if?|p[2s' .
+            ']|pe?g?2?|xr)|p(?:bm|cx|dd|gm|ic|n[gms]|pm|s[dp])|s(?:id|v[ag])|tga|' .
+            'w(?:bmp?|ebp|mp)|xcf|xbmp)$/',
             $Ext
         ) ||
         preg_match(
-            '/^(?:0000000c6a502020|25504446|38425053|424d|474946383[79]61|57454250|67696d7020786366|89504e47|ffd8ff)/',
+            '/^(?:0000000c6a502020|38425053|424d|474946383[79]61|57454250|67696d7020786366|89504e47|ffd8ff)/',
             $Head
         )
     );
