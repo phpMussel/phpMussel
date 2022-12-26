@@ -30,6 +30,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.12.15; Bug-fix; Maikuolan]: Redis shouldn't set EXPIRE for TTLs less
   than 1; Fixed.
 
+- [2022.12.26; Bug-fix; Maikuolan]: PDF files were sometimes being flagged as
+  images; Fixed.
+
 === Version/Release 1.15.3 ===
 PATCH RELEASE.
 
