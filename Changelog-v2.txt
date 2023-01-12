@@ -33,6 +33,10 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2022.12.26; Bug-fix; Maikuolan]: PDF files were sometimes being flagged as
   images; Fixed.
 
+- [2023.01.12; Bug-fix; Maikuolan]: Decimals in the names, choice keys, and
+  labels keys of configuration directives were being coerced by PHP to
+  underscores; Fixed.
+
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
 

@@ -49,7 +49,7 @@ phpMussel Core:
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.4-DEV+22343000"
+ Version: "2.4.4-DEV+23011000"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -167,7 +167,7 @@ phpMussel Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "50baf78dac0423846f4115cf3cab9fe4c92f41eda669b9a489efe6216b3a77c1:1319"
    - "fda11f80ecc42ac0e069a3ccbd997f85d4db0cf8c4da4acf0d813e0849ea5292:1349"
-   - "e74a2dc6e72e030fc0bb54e972a2f473bf7341371bc7269d6b25dba1f3d000a8:192316"
+   - "6266187e88c100103382f4229fb44d7bd75254d01dd0068553572f804ad7c115:194177"
    - "60e4870e44cfdd18b2fd01e25a4a7eeb12b6179f354578e6408d53ad6665372e:118607"
  Reannotate: "components.dat"
 phpMussel Upload Handler:
