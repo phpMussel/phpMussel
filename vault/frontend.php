@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.12.10).
+ * This file: Front-end handler (last modified: 2023.01.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1229,6 +1229,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 ['&', '<', '>'],
                 strip_tags($phpMussel['ThisDir']['DirLang'])
             ), 77, "\r\n; ") . "\r\n";
+
+            /** Fix for PHP automatically changing certain kinds of $_POST keys. */
+            if (!isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
+                $phpMussel['Try'] = str_replace('.', '_', $phpMussel['ThisDir']['DirLangKey']);
+                if (isset($_POST[$phpMussel['Try']])) {
+                    $_POST[$phpMussel['ThisDir']['DirLangKey']] = $_POST[$phpMussel['Try']];
+                    unset($_POST[$phpMussel['Try']]);
+                }
+            }
+
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
                 if (in_array($phpMussel['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
@@ -1261,10 +1271,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         foreach ($phpMussel['DirValue']['labels'] as $phpMussel['DirValue']['ThisLabelKey'] => $phpMussel['DirValue']['ThisLabel']) {
                             if (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey'] . '_' . $phpMussel['DirValue']['ThisLabelKey']])) {
                                 $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'] . ':' . $phpMussel['DirValue']['ThisLabelKey'];
+                            } else {
+                                $phpMussel['Try'] = str_replace('.', '_', $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey'] . '_' . $phpMussel['DirValue']['ThisLabelKey']);
+                                if (!empty($_POST[$phpMussel['Try']])) {
+                                    $_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey'] . '_' . $phpMussel['DirValue']['ThisLabelKey']] = $_POST[$phpMussel['Try']];
+                                    unset($_POST[$phpMussel['Try']]);
+                                    $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'] . ':' . $phpMussel['DirValue']['ThisLabelKey'];
+                                }
                             }
                         }
                     } elseif (!empty($_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']])) {
                         $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
+                    } else {
+                        $phpMussel['Try'] = str_replace('.', '_', $phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']);
+                        if (!empty($_POST[$phpMussel['Try']])) {
+                            $_POST[$phpMussel['ThisDir']['DirLangKey'] . '_' . $phpMussel['DirValue']['ThisChoiceKey']] = $_POST[$phpMussel['Try']];
+                            unset($_POST[$phpMussel['Try']]);
+                            $phpMussel['DirValue']['Posts'][] = $phpMussel['DirValue']['ThisChoiceKey'];
+                        }
                     }
                 }
                 $phpMussel['DirValue']['Posts'] = implode(',', $phpMussel['DirValue']['Posts']) ?: '';
