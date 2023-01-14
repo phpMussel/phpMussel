@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.08.21).
+# This file: Indonesian language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -90,7 +90,7 @@ cli_signature_placeholder: "NAMA-TANDA-TANGAN"
 cli_working: "Dalam proses"
 corrupted: "Terdeteksi rusak PE"
 data_not_available: "Data tidak tersedia."
-denied: "Upload Ditolak!"
+denied: "Upload ditolak!"
 denied_reason: "Upload diblokir karena alasan yang tercantum dibawah:"
 detected: "Terdeteksi %s"
 detected_control_characters: "Terdeteksi kontrol karakter"

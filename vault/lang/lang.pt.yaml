@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2022.08.21).
+# This file: Portuguese language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -90,7 +90,7 @@ cli_signature_placeholder: "O-NOME-DA-SUA-ASSINATURA"
 cli_working: "Em processo"
 corrupted: "Detectado corrompido PE"
 data_not_available: "Dados não disponíveis."
-denied: "Carregar Negado!"
+denied: "Carregar negado!"
 denied_reason: "Carregamento tentativa foi bloqueado pelos motivos a seguir indicados:"
 detected: "Detectado %s"
 detected_control_characters: "Caracteres de controle detectado"
