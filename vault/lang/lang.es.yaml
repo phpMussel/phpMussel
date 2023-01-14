@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2022.08.21).
+# This file: Spanish language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -88,7 +88,7 @@ cli_signature_placeholder: "NOMBRE-DE-FIRMA"
 cli_working: "En operación"
 corrupted: "PE corrompido detectado"
 data_not_available: "Informacion no disponible."
-denied: "¡Subida Denegada!"
+denied: "¡Subida denegada!"
 denied_reason: "La subida de archivo fue bloqueada por las razones que se indican a continuación:"
 detected: "Detectado %s"
 detected_control_characters: "Caracteres control detectados"

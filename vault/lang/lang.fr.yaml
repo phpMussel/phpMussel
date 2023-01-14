@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2022.08.21).
+# This file: French language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -90,7 +90,7 @@ cli_signature_placeholder: "NOM-DE-SIGNATURE"
 cli_working: "En cours"
 corrupted: "PE corrompu détecté"
 data_not_available: "Les données ne sont pas disponibles."
-denied: "Téléchargement Refusé\_!"
+denied: "Téléchargement refusé\_!"
 denied_reason: "Votre tentative de téléchargement a été bloquée pour les raisons énumérées ci-dessous\_:"
 detected: "Détecté %s"
 detected_control_characters: "Caractères de contrôle ont été détectés"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2022.08.21).
+# This file: Polish language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -88,7 +88,7 @@ cli_signature_placeholder: "TWOJE-NAZWA-PODPISY"
 cli_working: "Praca w toku"
 corrupted: "Wykryto uszkodzony PE"
 data_not_available: "Dane nie dostępne."
-denied: "Przesyłanie Odrzucone!"
+denied: "Przesyłanie odrzucone!"
 denied_reason: "Twoje przesyłanie zostało zablokowane z powodów wymienionych poniżej:"
 detected: "Wykryto %s"
 detected_control_characters: "Wykryte znaki kontrolne"

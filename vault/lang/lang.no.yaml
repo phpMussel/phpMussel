@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2022.08.21).
+# This file: Norwegian language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -88,7 +88,7 @@ cli_signature_placeholder: "DITT-SIGNATURNAVN"
 cli_working: "I prosess"
 corrupted: "Oppdaget ødelagt PE"
 data_not_available: "Data ikke tilgjengelig."
-denied: "Opplastingen Nektet!"
+denied: "Opplastingen nektet!"
 denied_reason: "Opplastingen din ble blokkert av grunnene nedenfor:"
 detected: "Oppdaget %s"
 detected_control_characters: "Oppdaget kontrolltegn"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2022.08.21).
+# This file: Dutch language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -92,7 +92,7 @@ cli_signature_placeholder: "UW-SIGNATURE-NAAM"
 cli_working: "Aan de gang"
 corrupted: "Gedetecteerd beschadigd PE"
 data_not_available: "Gegevens niet beschikbaar."
-denied: "Upload Geweigerd!"
+denied: "Upload geweigerd!"
 denied_reason: "De upload poging werd geblokkeerd voor de hieronder vermelde redenen:"
 detected: "Gedetecteerd %s"
 detected_control_characters: "Gedetecteerd controle karakters"

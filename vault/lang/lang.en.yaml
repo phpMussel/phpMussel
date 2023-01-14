@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2022.08.21).
+# This file: English language data (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -92,7 +92,7 @@ cli_signature_placeholder: "YOUR-SIGNATURE-NAME"
 cli_working: "In progress"
 corrupted: "Detected corrupted PE"
 data_not_available: "Data not available."
-denied: "Upload Denied!"
+denied: "Upload denied!"
 denied_reason: "Your upload was blocked for the reasons listed below:"
 detected: "Detected %s"
 detected_control_characters: "Detected control characters"
