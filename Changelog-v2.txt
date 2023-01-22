@@ -37,6 +37,8 @@ Detailed version release guidelines for phpMussel can be found at:
   labels keys of configuration directives were being coerced by PHP to
   underscores; Fixed.
 
+- [2023.01.22; Maikuolan]: Synced common classes package.
+
 === Version/Release 2.4.3 ===
 PATCH RELEASE.
 
