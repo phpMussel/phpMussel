@@ -222,7 +222,7 @@ l10n/en:
 l10n/ar:
  Name: "L10N: العربية"
  Extended Description: "ملفات اللغة العربية"
- Version: "2022.269.0"
+ Version: "2023.21.0"
  Dependencies:
   phpMussel Core: "^1.8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v1/vault/components.dat"
@@ -235,7 +235,7 @@ l10n/ar:
    - "lang/lang.ar.fe.yaml"
    - "lang/lang.ar.yaml"
   Checksum:
-   - "f6b3b4325a6c12f2cdb209b9b9a974cd798971d66604373bf2e6c96fb6f1b3ec:72258"
+   - "e69c3819707bc8e12f884ee6f98eadb5159320c6918b1abfd6717e73ccb50638:71954"
    - "273343c15aff646bc6f34d99443c9a7edb7c0f8a8976376f90a0e8c4e0d1b77d:8044"
  Reannotate: "components.dat"
 l10n/bn:

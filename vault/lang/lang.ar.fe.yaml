@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.09.26).
+# This file: Arabic language data for the front-end (last modified: 2023.01.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -437,10 +437,6 @@ state_maintenance_mode: "تحذير: تم تمكين وضع الصيانة!"
 state_password_not_valid: " تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!"
 state_quarantine:
  - "هناك ملف %s موجود حاليا في وحدة العزل."
- - "هناك ملفات %s موجود حاليا في وحدة العزل."
- - "هناك ملفات %s موجود حاليا في وحدة العزل."
- - "هناك ملفات %s موجود حاليا في وحدة العزل."
- - "هناك ملفات %s موجود حاليا في وحدة العزل."
  - "هناك ملفات %s موجود حاليا في وحدة العزل."
 switch-descending-order-set-false: "الترتيب بالترتيب التصاعدي"
 switch-descending-order-set-true: "فرز بالترتيب التنازلي"
