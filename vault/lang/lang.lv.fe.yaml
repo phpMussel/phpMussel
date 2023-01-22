@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.11.11).
+# This file: Latvian language data for the front-end (last modified: 2023.01.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -200,7 +200,6 @@ field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "baits"
- - "baiti"
  - "baiti"
 field_status: "Statuss"
 field_system_timezone: "Izmantojiet sistēmas noklusējuma laika joslu."
@@ -441,7 +440,6 @@ state_maintenance_mode: "Brīdinājums: Apkopes režīms ir iespējots!"
 state_password_not_valid: "Brīdinājums: Šis konts neizmanto derīgu paroli."
 state_quarantine:
  - "Šobrīd karantīnā ir %s fails."
- - "Šobrīd karantīnā ir %s faili."
  - "Šobrīd karantīnā ir %s faili."
 switch-descending-order-set-false: "Kārtot augošā secībā"
 switch-descending-order-set-true: "Kārtot dilstošā secībā"

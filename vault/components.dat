@@ -280,7 +280,7 @@ l10n/en:
 l10n/ar:
  Name: "L10N: العربية"
  Extended Description: "ملفات اللغة العربية"
- Version: "2022.269.0"
+ Version: "2023.21.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -293,7 +293,7 @@ l10n/ar:
    - "lang/lang.ar.fe.yaml"
    - "lang/lang.ar.yaml"
   Checksum:
-   - "a4a5aa6f163e74a3d662f4dda7d2c090031ffa11b9cf2e6eb81caf17588d1252:72493"
+   - "c8e298c5bb80fc1105eae2beebf676946601ea5b3a02dbfe6409bc88d670989c:72189"
    - "15c16f6a54017de0ee7ecac8555f7ca4a8fd3e76418ffc111cd20e29610f9005:7970"
  Reannotate: "components.dat"
 l10n/bn:
@@ -470,7 +470,7 @@ l10n/ko:
 l10n/lv:
  Name: "L10N: Latviešu"
  Extended Description: "Latviešu valodas dati"
- Version: "2022.315.0"
+ Version: "2023.21.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -483,7 +483,7 @@ l10n/lv:
    - "lang/lang.lv.fe.yaml"
    - "lang/lang.lv.yaml"
   Checksum:
-   - "e9230b3d747e04ef88fbd1e17bee18d1a7812f5b4799864632c2b1f281aacfc9:55734"
+   - "e2f3e152f0212aedba052cae3f9a582eb299c79d78c2ddf40e646a45d8c77917:55684"
    - "494e4e5e57472f69e9c48502f588b4e83894e68a1fa9be7fe8c99835792fda69:7360"
  Reannotate: "components.dat"
 l10n/nl:

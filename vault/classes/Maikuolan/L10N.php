@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2022.11.22).
+ * L10N handler (last modified: 2023.01.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -131,7 +131,10 @@ class L10N
         } else {
             $Choice = 0;
         }
-        return $Choices[$Choice] ?? $Choices[0] ?? '';
+        if (isset($Choices[$Choice])) {
+            return $Choices[$Choice];
+        }
+        return $Number > 1 ? array_pop($Choices) : array_shift($Choices);
     }
 
     /**
