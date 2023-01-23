@@ -10,6 +10,11 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.15.4 ===
+PATCH RELEASE.
+
 - [2022.09.27; Maikuolan]: Added warnings to the edit file feature of the file
   manager regarding editing PHP files directly via browsers and regarding
   editing files which belong to components.
@@ -38,6 +43,9 @@ Detailed version release guidelines for phpMussel can be found at:
   underscores; Fixed.
 
 - [2023.01.22; Maikuolan]: Synced common classes package.
+
+Caleb M (Maikuolan),
+January 23, 2023.
 
 === Version/Release 1.15.3 ===
 PATCH RELEASE.
