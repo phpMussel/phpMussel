@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.01.22).
+ * A simple, unified cache handler (last modified: 2023.01.28).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -256,38 +256,46 @@ class Cache
             return true;
         }
         if ($this->EnableMemcached && extension_loaded('memcached')) {
-            $this->WorkingData = new \Memcached();
-            if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
-                $this->Using = 'Memcached';
-                $Indexes = $this->getEntry('__Indexes');
-                if (is_string($Indexes)) {
-                    $this->Indexes = array_fill_keys(explode("\n", $Indexes), true);
+            try {
+                $this->WorkingData = new \Memcached();
+                if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
+                    $this->Using = 'Memcached';
+                    $Indexes = $this->getEntry('__Indexes');
+                    if (is_string($Indexes)) {
+                        $this->Indexes = array_fill_keys(explode("\n", $Indexes), true);
+                    }
+                    return true;
                 }
-                return true;
+                $this->WorkingData = null;
+            } catch (\Exception $Exception) {
+                $this->Exceptions[] = $Exception->getMessage();
             }
-            $this->WorkingData = null;
         }
         if ($this->EnableRedis && extension_loaded('redis')) {
-            $this->WorkingData = new \Redis();
-            if ($this->WorkingData->connect($this->RedisHost, $this->RedisPort, $this->RedisTimeout)) {
-                $this->Using = 'Redis';
-                return true;
+            try {
+                $this->WorkingData = new \Redis();
+                if ($this->WorkingData->connect($this->RedisHost, $this->RedisPort, $this->RedisTimeout)) {
+                    $this->Using = 'Redis';
+                    return true;
+                }
+                $this->WorkingData = null;
+            } catch (\Exception $Exception) {
+                $this->Exceptions[] = $Exception->getMessage();
             }
-            $this->WorkingData = null;
         }
         if ($this->EnablePDO && extension_loaded('pdo')) {
             try {
                 $PDO = new \PDO($this->PDOdsn, $this->PDOusername, $this->PDOpassword);
+                if (is_object($PDO)) {
+                    $this->WorkingData = $PDO;
+                    $this->Using = 'PDO';
+                    return $this->checkTablesPDO();
+                }
+                unset($PDO);
             } catch (\PDOException $Exception) {
                 $this->Exceptions[] = $Exception->getMessage();
                 return false;
             }
-            if (is_object($PDO)) {
-                $this->WorkingData = $PDO;
-                $this->Using = 'PDO';
-                return $this->checkTablesPDO();
-            }
-            unset($PDO);
         }
         if (!is_string($this->FFDefault) || $this->FFDefault === '') {
             return is_array($this->WorkingData);
