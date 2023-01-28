@@ -13,6 +13,9 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2023.01.27; Maikuolan]: Display proper status message when updating
   configuration fails.
 
+- [2023.01.28; Bug-fix; Maikuolan]: Cache handler potentially generating
+  unexpected exceptions in some situations; Fixed.
+
 === Version/Release 1.15.4 ===
 PATCH RELEASE.
 
