@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.01.12).
+ * This file: Front-end handler (last modified: 2023.01.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1805,14 +1805,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
     /** Update the currently active configuration file if any changes were made. */
     if ($phpMussel['ConfigModified']) {
-        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString('response_configuration_updated');
-        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'wb');
-        fwrite($phpMussel['Handle'], $phpMussel['RegenerateConfig']);
-        fclose($phpMussel['Handle']);
-        if (empty($phpMussel['QueryVars']['updated'])) {
-            header('Location: ?phpmussel-page=config&updated=true');
-            die;
+        $phpMussel['UpdateSuccess'] = false;
+        if (($phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['FE']['ActiveConfigFile'], 'wb')) !== false) {
+            $phpMussel['UpdateSuccess'] = fwrite($phpMussel['Handle'], $phpMussel['RegenerateConfig']);
+            fclose($phpMussel['Handle']);
+            if ($phpMussel['UpdateSuccess'] !== false && empty($phpMussel['QueryVars']['updated'])) {
+                header('Location: ?phpmussel-page=config&updated=true');
+                die;
+            }
         }
+        $phpMussel['FE']['state_msg'] = $phpMussel['L10N']->getString($phpMussel['UpdateSuccess'] ? 'response_configuration_updated' : 'response_configuration_update_failed');
     }
 
     $phpMussel['FE']['Indexes'] .= '</ul>';

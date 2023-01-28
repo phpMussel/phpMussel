@@ -10,7 +10,8 @@ Detailed version release guidelines for phpMussel can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2023.01.27; Maikuolan]: Display proper status message when updating
+  configuration fails.
 
 === Version/Release 1.15.4 ===
 PATCH RELEASE.

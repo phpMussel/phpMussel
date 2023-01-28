@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.11.11).
+# This file: Korean language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -356,6 +356,7 @@ response_component_successfully_installed: "구성 요소의 설치에 성공했
 response_component_successfully_uninstalled: "구성 요소의 제거는 성공했습니다."
 response_component_successfully_updated: "구성 요소의 업데이트에 성공했습니다!"
 response_component_uninstall_error: "구성 요소 제거하는 동안 오류가 발생했습니다."
+response_configuration_update_failed: "구성을 업데이트하지 못했습니다!"
 response_configuration_updated: "구성 업데이트가 성공했습니다."
 response_deactivated: "비활성화했습니다."
 response_deactivation_failed: "비활성화에 실패했습니다!"

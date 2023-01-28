@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.09.26).
+# This file: Italian language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -356,6 +356,7 @@ response_component_successfully_installed: "Componente installato con successo."
 response_component_successfully_uninstalled: "Componente disinstallato con successo."
 response_component_successfully_updated: "Componente aggiornato con successo."
 response_component_uninstall_error: "C'è stato un errore durante il tentativo di disinstallare il componente."
+response_configuration_update_failed: "Non è riuscito ad aggiornare la configurazione!"
 response_configuration_updated: "Configurazione aggiornato con successo."
 response_deactivated: "Disattivato con successo."
 response_deactivation_failed: "Non poteva essere disattivato!"

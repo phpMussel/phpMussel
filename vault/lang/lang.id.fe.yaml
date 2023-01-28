@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.09.26).
+# This file: Indonesian language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -356,6 +356,7 @@ response_component_successfully_installed: "Komponen berhasil diinstal."
 response_component_successfully_uninstalled: "Komponen berhasil diuninstal."
 response_component_successfully_updated: "Komponen berhasil diperbarui."
 response_component_uninstall_error: "Terjadi kesalahan saat mencoba untuk menguninstal komponen ini."
+response_configuration_update_failed: "Gagal memperbarui konfigurasi!"
 response_configuration_updated: "Konfigurasi berhasil diperbarui."
 response_deactivated: "Berhasil dinonaktifkan."
 response_deactivation_failed: "Kegagalan penonaktifan!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.10.05).
+# This file: Turkish language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -356,6 +356,7 @@ response_component_successfully_installed: "Bileşen başarıyla yüklendi."
 response_component_successfully_uninstalled: "Bileşen başarıyla kaldırıldı."
 response_component_successfully_updated: "Bileşen başarıyla güncellendi."
 response_component_uninstall_error: "Bileşeni kaldırmaya çalışırken bir hata oluştu."
+response_configuration_update_failed: "Yapılandırma güncellenemedi!"
 response_configuration_updated: "Yapılandırma başarıyla güncellendi."
 response_deactivated: "Başarıyla devre dışı bırakıldı."
 response_deactivation_failed: "Devre dışı bırakılamadı!"
