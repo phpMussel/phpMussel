@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.09.26).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -358,6 +358,7 @@ response_component_successfully_installed: "組件成功安裝。"
 response_component_successfully_uninstalled: "組件成功卸載。"
 response_component_successfully_updated: "組件成功更新。"
 response_component_uninstall_error: "一個錯誤發生當嘗試卸載組件。"
+response_configuration_update_failed: "配置更新失敗！"
 response_configuration_updated: "配置成功更新。"
 response_deactivated: "已成功停用。"
 response_deactivation_failed: "無法停用！"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.12.01).
+# This file: Bangla language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -357,6 +357,7 @@ response_component_successfully_installed: "কম্পোনেন্ট স�
 response_component_successfully_uninstalled: "কম্পোনেন্ট সফলভাবে আনইনস্টল।"
 response_component_successfully_updated: "কম্পোনেন্ট সফলভাবে আপডেট।"
 response_component_uninstall_error: "কম্পোনেন্ট আনইনস্টল করার চেষ্টা করার সময় একটি ত্রুটি ঘটেছে।"
+response_configuration_update_failed: "কনফিগারেশন আপডেট করতে ব্যর্থ!"
 response_configuration_updated: "কনফিগারেশন সফলভাবে আপডেট করা।"
 response_deactivated: "সফলভাবে নিষ্ক্রিয়।"
 response_deactivation_failed: "নিষ্ক্রিয় করতে ব্যর্থ হয়েছে!"

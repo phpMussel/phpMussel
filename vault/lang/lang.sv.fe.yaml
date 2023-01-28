@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.10.05).
+# This file: Swedish language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -357,6 +357,7 @@ response_component_successfully_installed: "Komponent har installerats framgång
 response_component_successfully_uninstalled: "Komponent har avinstallerats framgångsrikt."
 response_component_successfully_updated: "Komponent har uppdaterats framgångsrikt."
 response_component_uninstall_error: "Ett fel uppstod när försöker avinstallera komponenten."
+response_configuration_update_failed: "Det gick inte att uppdatera konfigurationen!"
 response_configuration_updated: "Konfigurationen har uppdaterats framgångsrikt."
 response_deactivated: "Inaktiverad framgångsrikt."
 response_deactivation_failed: "Misslyckades med att inaktivera!"

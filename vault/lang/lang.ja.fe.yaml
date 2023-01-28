@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.11.29).
+# This file: Japanese language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -357,6 +357,7 @@ response_component_successfully_installed: "コンポーネントのインスト
 response_component_successfully_uninstalled: "コンポーネントのアンインストールは成功しました。"
 response_component_successfully_updated: "コンポーネントのアップデートに成功しました！"
 response_component_uninstall_error: "コンポーネントのアンインストール中にエラーが発生しました。"
+response_configuration_update_failed: "コンフィギュレーションの更新に失敗しました！"
 response_configuration_updated: "コンフィギュレーションの更新が成功しました。"
 response_deactivated: "非アクティブにしました。"
 response_deactivation_failed: "非アクティブ化に失敗しました！"

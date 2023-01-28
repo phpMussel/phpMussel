@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.09.26).
+# This file: Urdu language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -356,6 +356,7 @@ response_component_successfully_installed: "اجزاء کامیابی سے نص�
 response_component_successfully_uninstalled: "اجزاء کامیابی سے ان انسٹال."
 response_component_successfully_updated: "اجزاء کامیابی سے اپ ڈیٹ."
 response_component_uninstall_error: "جزو انسٹال کرنے کی کوشش کرتے ہوئے ایک خرابی واقع ہوئی."
+response_configuration_update_failed: "کنفیگریشن کو اپ ڈیٹ کرنے میں ناکام!"
 response_configuration_updated: "کنفگریشن کامیابی سے اپ ڈیٹ."
 response_deactivated: "کامیابی کے ساتھ غیر فعال."
 response_deactivation_failed: "غیر فعال کرنے میں ناکام ہو گیا!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.09.26).
+# This file: Vietnamese language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -357,6 +357,7 @@ response_component_successfully_installed: "Thành phần cài đặt thành cô
 response_component_successfully_uninstalled: "Thành phần gỡ bỏ cài đặt thành công."
 response_component_successfully_updated: "Thành phần cập nhật thành công."
 response_component_uninstall_error: "Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt thành phần."
+response_configuration_update_failed: "Không thể cập nhật cấu hình!"
 response_configuration_updated: "Cấu hình cập nhật thành công."
 response_deactivated: "Vô hiệu hóa thành công."
 response_deactivation_failed: "Không thể vô hiệu hóa!"

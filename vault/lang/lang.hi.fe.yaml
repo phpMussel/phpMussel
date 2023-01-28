@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.12.07).
+# This file: Hindi language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -359,6 +359,7 @@ response_component_successfully_installed: "कंपोनेंट सफल�
 response_component_successfully_uninstalled: "कंपोनेंट सफलतापूर्वक अनइंस्टॉल किया गया।"
 response_component_successfully_updated: "कंपोनेंट सफलतापूर्वक अपडेट किया गया"
 response_component_uninstall_error: "कंपोनेंट को अनइंस्टॉल करते समय त्रुटि।"
+response_configuration_update_failed: "कॉन्फ़िगरेशन अपडेट करने में विफल!"
 response_configuration_updated: "कॉन्फ़िगरेशन सफलतापूर्वक अपडेट किया गया।"
 response_deactivated: "सफलतापूर्वक निष्क्रिय।"
 response_deactivation_failed: "निष्क्रिय करने में विफल!"

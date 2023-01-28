@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.01.22).
+# This file: Arabic language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -350,15 +350,16 @@ response_accounts_created: "تم انشاء الحساب بنجاح!"
 response_accounts_deleted: "تم حذف الحساب بنجاح!"
 response_accounts_doesnt_exist: "حساب غير موجود."
 response_accounts_password_updated: "تم تحديث كلمه السر بنجاح!"
-response_activated: "نجحت في جعل نشطة"
+response_activated: "نجحت في جعل نشطة."
 response_activation_failed: "فشلت في جعله نشطة!"
 response_checksum_error: "خطأ أختباري! تم رفض الملف!"
-response_component_successfully_installed: "تم تثبيت الوحدة بنجاح"
-response_component_successfully_uninstalled: "تم الغاء تثبيت الوحدة بنجاح"
-response_component_successfully_updated: "تم تحديث الوحدة بنجاح"
-response_component_uninstall_error: "حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة."
-response_configuration_updated: "تم تحديث التكوين بنجاح"
-response_deactivated: "نجحت في جعل غير نشطة"
+response_component_successfully_installed: "تم تثبيت المكون بنجاح."
+response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح."
+response_component_successfully_updated: "تم تحديث المكون بنجاح."
+response_component_uninstall_error: "حدث خطأ أثناء محاولة إلغاء تثبيت المكون."
+response_configuration_update_failed: "فشل تحديث التكوين!"
+response_configuration_updated: "تم تحديث التكوين بنجاح."
+response_deactivated: "نجحت في جعل غير نشطة."
 response_deactivation_failed: "فشلت في جعله غير نشطة!"
 response_delete_error: "فشلت في حذف!"
 response_directory_deleted: "تم حذف الدليل بنجاح!"

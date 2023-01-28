@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.10.05).
+# This file: French language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -359,6 +359,7 @@ response_component_successfully_installed: "Composant installé avec succès."
 response_component_successfully_uninstalled: "Composant désinstallé avec succès."
 response_component_successfully_updated: "Composant mise à jour avec succès."
 response_component_uninstall_error: "Une erreur est survenue lors de la désinstallation du composant."
+response_configuration_update_failed: "Échec de la mise à jour de la configuration\_!"
 response_configuration_updated: "Configuration mis à jour avec succès."
 response_deactivated: "Désactivé avec succès."
 response_deactivation_failed: "Échec de la désactivation\_!"

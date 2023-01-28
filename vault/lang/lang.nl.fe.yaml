@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.10.05).
+# This file: Dutch language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -359,6 +359,7 @@ response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."
 response_component_uninstall_error: "Er is een fout opgetreden tijdens een poging om de component te verwijderen."
+response_configuration_update_failed: "Update van configuratie mislukt!"
 response_configuration_updated: "Configuratie succesvol gewijzigd."
 response_deactivated: "Succesvol gedeactiveerd."
 response_deactivation_failed: "Mislukt om te deactiveren!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.09.26).
+# This file: Polish language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -360,6 +360,7 @@ response_component_successfully_installed: "Sukces instalowanie komponentu."
 response_component_successfully_uninstalled: "Sukces odinstalowanie komponentu."
 response_component_successfully_updated: "Sukces aktualizacji komponentu."
 response_component_uninstall_error: "Wystąpił błąd podczas próby odinstalowania komponentu."
+response_configuration_update_failed: "Niepowodzenie zaktualizować konfiguracji!"
 response_configuration_updated: "Konfiguracja pomyślnie zaktualizowana."
 response_deactivated: "Sukces dezaktywacji."
 response_deactivation_failed: "Niepowodzenie dezaktywacji!"
