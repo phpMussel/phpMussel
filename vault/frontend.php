@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.01.27).
+ * This file: Front-end handler (last modified: 2023.02.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -2685,7 +2685,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     }
 
     /** Upload a new file. */
-    if (isset($_POST['do']) && $_POST['do'] === 'upload-file' && isset($_FILES['upload-file']['name'])) {
+    if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
         /** Check whether safe. */
         $phpMussel['SafeToContinue'] = (
             basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
