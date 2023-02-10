@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default theme pips handler (last modified: 2021.12.11).
+ * This file: Default theme pips handler (last modified: 2023.02.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -23,3 +23,4 @@ $phpMussel['FE']['PIP_Left_Valid'] = 'R0lGODlhCAAQAKECAJkCAAKZAAAAAAAAACH5BAEKAA
 $phpMussel['FE']['PIP_Right'] = 'R0lGODlhCAAIAKECAJkCAPv99P///////yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7';
 $phpMussel['FE']['PIP_Right_Invalid'] = 'R0lGODlhCAAQAIABAJkCAAAAACH5BAEKAAEALAAAAAAIABAAAAIWjH+gmwvoUGBSSfPatTVDr10i94lIAQA7';
 $phpMussel['FE']['PIP_Right_Valid'] = 'R0lGODlhCAAQAKECAJkCAAKZAAAAAAAAACH5BAEKAAIALAAAAAAIABAAAAIalH+gmwvokGBSSfOuFuGGLoHId5Ci8Z3ohhQAOw==';
+$phpMussel['FE']['Tick'] = 'R0lGODlhCAAJAIABAAKZAP///yH5BAEKAAEALAAAAAAIAAkAAAINjI8IGbD5VHQNUshYAQA7';
