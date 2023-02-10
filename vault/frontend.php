@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.03).
+ * This file: Front-end handler (last modified: 2023.02.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -222,58 +222,14 @@ if (empty($phpMussel['L10N']->Data['Text Direction']) || $phpMussel['L10N']->Dat
 
 /** A simple passthru for non-private theme images and related data. */
 if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
-    $phpMussel['Success'] = false;
-
-    if (
-        $phpMussel['FileManager-PathSecurityCheck']($phpMussel['QueryVars']['phpmussel-asset']) &&
-        !preg_match('~[^\da-z._]~i', $phpMussel['QueryVars']['phpmussel-asset'])
-    ) {
-        $phpMussel['ThisAsset'] = $phpMussel['GetAssetPath']($phpMussel['QueryVars']['phpmussel-asset'], true);
-        if (
-            $phpMussel['ThisAsset'] &&
-            is_readable($phpMussel['ThisAsset']) &&
-            ($phpMussel['ThisAssetDel'] = strrpos($phpMussel['ThisAsset'], '.')) !== false
-        ) {
-            $phpMussel['ThisAssetType'] = strtolower(substr($phpMussel['ThisAsset'], $phpMussel['ThisAssetDel'] + 1));
-            if ($phpMussel['ThisAssetType'] === 'jpeg') {
-                $phpMussel['ThisAssetType'] = 'jpg';
-            }
-            if (preg_match('/^(gif|jpg|png|webp)$/', $phpMussel['ThisAssetType'])) {
-                /** Set asset mime-type (images). */
-                header('Content-Type: image/' . $phpMussel['ThisAssetType']);
-                $phpMussel['Success'] = true;
-            } elseif ($phpMussel['ThisAssetType'] === 'js') {
-                /** Set asset mime-type (JavaScript). */
-                header('Content-Type: text/javascript');
-                $phpMussel['Success'] = true;
-            }
-            if ($phpMussel['Success']) {
-                if (!empty($phpMussel['QueryVars']['theme'])) {
-                    /** Prevents needlessly reloading static assets. */
-                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($phpMussel['ThisAsset'])));
-                }
-                /** Send asset data. */
-                echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
-            }
-        }
-    }
-
-    if ($phpMussel['Success']) {
-        die;
-    }
-
-    /** Cleanup. */
-    unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
+    $phpMussel['eTaggable']($phpMussel['QueryVars']['phpmussel-asset']);
 }
 
 /** A simple passthru for the front-end CSS. */
 if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
-    header('Content-Type: text/css');
-    echo $phpMussel['ParseVars'](
-        $phpMussel['L10N']->Data + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.css'))
-    );
-    die;
+    $phpMussel['eTaggable']('frontend.css', function ($AssetData) use (&$phpMussel) {
+        return $phpMussel['ParseVars']($phpMussel['L10N']->Data + $phpMussel['FE'], $AssetData);
+    });
 }
 
 /** A simple passthru for the favicon. */

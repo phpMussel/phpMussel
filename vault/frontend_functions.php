@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.09.22).
+ * This file: Front-end functions file (last modified: 2023.02.10).
  */
 
 /**
@@ -2722,4 +2722,62 @@ $phpMussel['ArrayFromL10NDataToArray'] = function ($References) use (&$phpMussel
         }
     }
     return $Out;
+};
+
+/**
+ * Fetch an etaggable asset as requested by the client.
+ *
+ * @param string $Asset The path to the asset.
+ * @param ?callable $Callback An optional callback.
+ * @return exit
+ */
+$phpMussel['eTaggable'] = function ($Asset, $Callback = null) use (&$phpMussel) {
+    if ($phpMussel['FileManager-PathSecurityCheck']($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
+        $ThisAsset = $phpMussel['GetAssetPath']($Asset, true);
+        if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
+            $Success = false;
+            $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
+            if ($Type === 'jpeg') {
+                $Type = 'jpg';
+            }
+            if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
+                $MimeType = 'Content-Type: image/' . $Type;
+                $Success = true;
+            } elseif ($Type === 'js') {
+                $MimeType = 'Content-Type: text/javascript';
+                $Success = true;
+            } elseif ($Type === 'css') {
+                $MimeType = 'Content-Type: text/css';
+                $Success = true;
+            }
+            if ($Success) {
+                $AssetData = $phpMussel['ReadFile']($ThisAsset);
+                $OldETag = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : '';
+                $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
+                header('ETag: "' . $NewETag . '"');
+                header('Expires: ' . gmdate('D, d M Y H:i:s T', $phpMussel['Time'] + 2592000));
+                if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
+                    header('HTTP/1.0 304 Not Modified');
+                    header('HTTP/1.1 304 Not Modified');
+                    header('Status: 304 Not Modified');
+                    die;
+                }
+                header($MimeType);
+                if (is_callable($Callback)) {
+                    $AssetData = $Callback($AssetData);
+                }
+                echo $AssetData;
+                die;
+            }
+        }
+        header('HTTP/1.0 404 Not Found');
+        header('HTTP/1.1 404 Not Found');
+        header('Status: 404 Not Found');
+        die;
+    }
+    header('HTTP/1.0 403 Forbidden');
+    header('HTTP/1.1 403 Forbidden');
+    header('Status: 403 Forbidden');
+    die;
 };
