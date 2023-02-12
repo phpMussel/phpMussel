@@ -235,7 +235,7 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
 /** A simple passthru for the favicon. */
 if ($phpMussel['QueryVars']['phpmussel-page'] === 'favicon') {
     $phpMussel['FavIconData'] = base64_decode($phpMussel['favicon']);
-    $phpMussel['OldETag'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+    $phpMussel['OldETag'] = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : '';
     $phpMussel['NewETag'] = hash('sha256', $phpMussel['FavIconData']) . '-' . strlen($phpMussel['FavIconData']);
     header('ETag: "' . $phpMussel['NewETag'] . '"');
     header('Expires: ' . gmdate('D, d M Y H:i:s T', $phpMussel['Now'] + 2592000));
