@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.10).
+ * This file: Front-end handler (last modified: 2023.02.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -234,8 +234,19 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
 
 /** A simple passthru for the favicon. */
 if ($phpMussel['QueryVars']['phpmussel-page'] === 'favicon') {
+    $phpMussel['FavIconData'] = base64_decode($phpMussel['favicon']);
+    $phpMussel['OldETag'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+    $phpMussel['NewETag'] = hash('sha256', $phpMussel['FavIconData']) . '-' . strlen($phpMussel['FavIconData']);
+    header('ETag: "' . $phpMussel['NewETag'] . '"');
+    header('Expires: ' . gmdate('D, d M Y H:i:s T', $phpMussel['Now'] + 2592000));
+    if (preg_match('~(?:^|, )(?:"' . $phpMussel['NewETag'] . '"|' . $phpMussel['NewETag'] . ')(?:$|, )~', $phpMussel['OldETag'])) {
+        header('HTTP/1.0 304 Not Modified');
+        header('HTTP/1.1 304 Not Modified');
+        header('Status: 304 Not Modified');
+        die;
+    }
     header('Content-Type: image/png');
-    echo base64_decode($phpMussel['favicon']);
+    echo $phpMussel['FavIconData'];
     die;
 }
 
@@ -3305,7 +3316,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs' && $phpMussel['FE']
 
     /** Prepare log data formatting. */
     if (!$phpMussel['FE']['TextMode']) {
-        $phpMussel['FE']['logfileData'] = '<textarea readonly>' . $phpMussel['FE']['logfileData'] . '</textarea>';
+        $phpMussel['FE']['logfileData'] = '<textarea id="logsTA" readonly>' . $phpMussel['FE']['logfileData'] . '</textarea>';
     } else {
         $phpMussel['Formatter']($phpMussel['FE']['logfileData']);
     }

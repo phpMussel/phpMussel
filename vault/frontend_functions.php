@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.10).
+ * This file: Front-end functions file (last modified: 2023.02.11).
  */
 
 /**
@@ -2726,7 +2726,7 @@ $phpMussel['ArrayFromL10NDataToArray'] = function ($References) use (&$phpMussel
  *
  * @param string $Asset The path to the asset.
  * @param ?callable $Callback An optional callback.
- * @return exit
+ * @return never
  */
 $phpMussel['eTaggable'] = function (string $Asset, ?callable $Callback = null) use (&$phpMussel): void {
     if ($phpMussel['FileManager-PathSecurityCheck']($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
