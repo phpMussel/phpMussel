@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.01.28).
+ * A simple, unified cache handler (last modified: 2023.02.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -121,6 +121,11 @@ class Cache
      * @var bool Whether the cache indexes have been modified since instantiation as far as we know.
      */
     private $ModifiedIndexes = false;
+
+    /**
+     * @var bool Whether an attempt has already been made to clear expired PDO entries.
+     */
+    private $PDOAlreadyCleared = false;
 
     /**
      * @var string Prepared set query for PDO.
@@ -1026,9 +1031,10 @@ class Cache
      */
     public function clearExpiredPDO()
     {
-        if ($this->Using !== 'PDO') {
+        if ($this->Using !== 'PDO' || $this->PDOAlreadyCleared) {
             return false;
         }
+        $this->PDOAlreadyCleared = true;
         $PDO = $this->WorkingData->prepare(self::CLEAR_EXPIRED_QUERY);
         if ($PDO !== false && $PDO->execute([':time' => time()])) {
             if ($PDO->rowCount() > 0) {
