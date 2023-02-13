@@ -214,7 +214,7 @@ phpMussel CLI Handler:
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.9.4"
+ Version: "2.9.5-DEV+23043000"
  Dependencies:
   PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -246,7 +246,7 @@ Common Classes Package:
    - "classes/Maikuolan/Request.php"
    - "classes/Maikuolan/YAML.php"
   Checksum:
-   - "153f6436b3c69efa0394cc164e08dbb092f972d404bb2aa066e21240956a34c2:41213"
+   - "d2efbfc035b1aae4d7c0d21b4aec257bcd7eb38879ff8177bf26b990c1b0ee1e:41427"
    - "42fe5083ac6f35cc93e962188ca03607637438fd0768695c28c3a97a587fbc9d:4106"
    - "5c8876566e1ea5510f0201b42b17329a5df1bbe64fd2adefe14a5ad9522ac385:5134"
    - "7a3dcef70c08d15a5b56b2f363f156bccfebba5e0c060bb7074c495a085d9047:30710"

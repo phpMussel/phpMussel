@@ -16,6 +16,8 @@ Detailed version release guidelines for phpMussel can be found at:
 - [2023.01.28; Bug-fix; Maikuolan]: Cache handler potentially generating
   unexpected exceptions in some situations; Fixed.
 
+- [2023.02.13; Maikuolan]: Slightly improved performance for when using PDO.
+
 === Version/Release 2.4.4 ===
 PATCH RELEASE.
 
