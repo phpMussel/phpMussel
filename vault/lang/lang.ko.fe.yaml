@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.01.27).
+# This file: Korean language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -311,7 +311,6 @@ link_accounts: "계정"
 link_cache_data: "데이터 캐쉬"
 link_config: "구성"
 link_copy_to_clipboard: "클립 보드에 복사"
-link_discussions: "토론"
 link_documentation: "문서"
 link_file_manager: "파일 관리자"
 link_home: "홈"

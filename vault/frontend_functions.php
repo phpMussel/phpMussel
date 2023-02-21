@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.11).
+ * This file: Front-end functions file (last modified: 2023.02.20).
  */
 
 /**
@@ -2742,6 +2742,9 @@ $phpMussel['eTaggable'] = function ($Asset, $Callback = null) use (&$phpMussel) 
             }
             if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
                 $MimeType = 'Content-Type: image/' . $Type;
+                $Success = true;
+            } elseif ($Type === 'svg') {
+                $MimeType = 'Content-Type: image/svg+xml';
                 $Success = true;
             } elseif ($Type === 'js') {
                 $MimeType = 'Content-Type: text/javascript';

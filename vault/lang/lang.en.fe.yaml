@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.01.27).
+# This file: English language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -313,7 +313,6 @@ link_accounts: "Accounts"
 link_cache_data: "Cache Data"
 link_config: "Configuration"
 link_copy_to_clipboard: "Copy to clipboard"
-link_discussions: "Discussions"
 link_documentation: "Documentation"
 link_file_manager: "File Manager"
 link_home: "Home"
