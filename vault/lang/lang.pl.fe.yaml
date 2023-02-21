@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.01.27).
+# This file: Polish language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -315,7 +315,6 @@ link_accounts: "Konta"
 link_cache_data: "Dane z pamięci podręcznej"
 link_config: "Konfiguracja"
 link_copy_to_clipboard: "Skopiuj do schowka"
-link_discussions: "Dyskusje"
 link_documentation: "Dokumentacja"
 link_file_manager: "Menedżer Plików"
 link_home: "Główna"

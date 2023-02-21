@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.01.27).
+# This file: Latvian language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -314,7 +314,6 @@ link_accounts: "Konti"
 link_cache_data: "Kešatmiņas Dati"
 link_config: "Konfigurācija"
 link_copy_to_clipboard: "Kopēt starpliktuvē"
-link_discussions: "Diskusijas"
 link_documentation: "Dokumentācija"
 link_file_manager: "Failu Menedžeris"
 link_home: "Mājas"

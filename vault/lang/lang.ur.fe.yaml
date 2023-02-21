@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2023.01.27).
+# This file: Urdu language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -311,7 +311,6 @@ link_accounts: "اکاؤنٹس"
 link_cache_data: "کیش ڈیٹا"
 link_config: "کنفگریشن"
 link_copy_to_clipboard: "کلپ بورڈ پر کاپی کریں"
-link_discussions: "مباحثے"
 link_documentation: "دستاویزی"
 link_file_manager: "فائل منیجر"
 link_home: "ہوم"

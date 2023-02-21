@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2023.01.27).
+# This file: Bangla language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -312,7 +312,6 @@ link_accounts: "অ্যাকাউন্ট"
 link_cache_data: "ক্যাশ ডেটা"
 link_config: "কনফিগারেশন"
 link_copy_to_clipboard: "ক্লিপবোর্ডে অনুলিপি করুন"
-link_discussions: "আলোচনা"
 link_documentation: "ডকুমেন্টেশনটি"
 link_file_manager: "ফাইল ম্যানেজার"
 link_home: "হোম পেজ"

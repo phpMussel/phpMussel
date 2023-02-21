@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.01.27).
+# This file: Japanese language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -312,7 +312,6 @@ link_accounts: "アカウント"
 link_cache_data: "キャッシュ・データ"
 link_config: "コンフィギュレーション"
 link_copy_to_clipboard: "クリップボードにコピー"
-link_discussions: "ディスカッション"
 link_documentation: "ドキュメンテーション"
 link_file_manager: "ファイル・マネージャー"
 link_home: "ホーム"

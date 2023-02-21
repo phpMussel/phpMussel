@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.01.27).
+# This file: Indonesian language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -312,7 +312,6 @@ link_accounts: "Akun"
 link_cache_data: "Data Cache"
 link_config: "Konfigurasi"
 link_copy_to_clipboard: "Menyalin ke clipboard"
-link_discussions: "Diskusi"
 link_documentation: "Dokumentasi"
 link_file_manager: "File Manager"
 link_home: "Halaman Utama"

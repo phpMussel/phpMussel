@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.12).
+ * This file: Front-end handler (last modified: 2023.02.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -131,7 +131,6 @@ $phpMussel['FE'] = [
     'FE_Title' => '',
 
     /** Make some of the link references available to the main front-end array. */
-    'Links.Discussions' => $phpMussel['Config']['Links']['Discussions'],
     'Links.Documentation' => $phpMussel['Config']['Links']['Documentation'],
     'Links.Website' => $phpMussel['Config']['Links']['Website']
 ];

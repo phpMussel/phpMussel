@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.01.27).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -313,7 +313,6 @@ link_accounts: "帳戶"
 link_cache_data: "緩存數據"
 link_config: "配置"
 link_copy_to_clipboard: "複製到剪貼板"
-link_discussions: "討論"
 link_documentation: "文檔"
 link_file_manager: "文件管理器"
 link_home: "主頁"

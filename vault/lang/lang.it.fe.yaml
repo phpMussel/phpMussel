@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.01.27).
+# This file: Italian language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -312,7 +312,6 @@ link_accounts: "Utenti"
 link_cache_data: "Dati della Cache"
 link_config: "Configurazione"
 link_copy_to_clipboard: "Copia negli appunti"
-link_discussions: "Discussioni"
 link_documentation: "Documentazione"
 link_file_manager: "File Manager"
 link_home: "Pagina Principale"

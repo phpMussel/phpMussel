@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.01.27).
+# This file: Dutch language data for the front-end (last modified: 2023.02.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -314,7 +314,6 @@ link_accounts: "Accounts"
 link_cache_data: "Cachegegevens"
 link_config: "Configuratie"
 link_copy_to_clipboard: "Kopieer naar klembord"
-link_discussions: "Discussies"
 link_documentation: "Documentatie"
 link_file_manager: "Bestandsbeheer"
 link_home: "Startpagina"
