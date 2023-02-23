@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2023.01.22).
+ * L10N handler (last modified: 2023.02.23).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -28,6 +28,16 @@ class L10N
     public $Fallback = [];
 
     /**
+     * @var string The directionality for the language.
+     */
+    public $Directionality = '';
+
+    /**
+     * @var string The directionality for the language.
+     */
+    public $FallbackDirectionality = '';
+
+    /**
      * @var string The pluralisation rule to use for integers.
      */
     private $IntegerRule = 'int1';
@@ -52,7 +62,7 @@ class L10N
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.4';
+    const VERSION = '1.9.5';
 
     /**
      * Constructor.
@@ -659,9 +669,8 @@ class L10N
     }
 
     /**
-     * Attempts to automatically determine an appropriate integer rule to use
-     * based upon the specified ISO 639-1/639-2 language code (the former
-     * preferred, the latter used if the former isn't available).
+     * Determine an appropriate integer rule to use based upon the specified
+     * ISO 639-1/639-2 language code.
      * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
      * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
      * @link https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
@@ -984,12 +993,8 @@ class L10N
     }
 
     /**
-     * Attempts to automatically determine an appropriate fraction rule to use
-     * based upon the specified ISO 639-1/639-2 language code (the former
-     * preferred, the latter used if the former isn't available).
-     * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
-     * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
-     * @link https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
+     * Determine an appropriate fraction rule to use based upon the specified
+     * ISO 639-1/639-2 language code.
      *
      * @param string $Code An ISO 639-1/639-2 language code.
      * @return string An appropriate fraction rule to use.
@@ -1006,35 +1011,37 @@ class L10N
             $Code = substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, [
-            'da',
-            'ff',
-            'fr',
-            'hy',
-            'kab',
-            'lag'
-        ], true)) {
+        if (in_array($Code, ['da', 'ff', 'fr', 'hy', 'kab', 'lag'], true)) {
             return 'fraction2Type1';
         }
 
-        if (in_array($Code, [
-            'am',
-            'as',
-            'bn',
-            'doi',
-            'fa',
-            'gu',
-            'he',
-            'hi',
-            'kn',
-            'shi',
-            'zu'
-        ], true)) {
+        if (in_array($Code, ['am', 'as', 'bn', 'doi', 'fa', 'gu', 'he', 'hi', 'kn', 'shi', 'zu'], true)) {
             return 'fraction2Type2';
         }
 
         /** Default rule. */
         return 'int1';
+    }
+
+    /**
+     * Determine the directionality for the specified ISO 639-1/639-2 language code.
+     *
+     * @param string $Code An ISO 639-1/639-2 language code.
+     * @return string The directionality (either ltr or rtl).
+     */
+    public function getDirectionality($Code)
+    {
+        if (($Pos = strpos($Code, '-')) !== false) {
+            $Code = substr($Code, 0, $Pos);
+        }
+
+        /** Right-to-left. */
+        if (in_array($Code, ['ar', 'arc', 'arz', 'az', 'ckb', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'nqo', 'ps', 'sam', 'sd', 'syc', 'syr', 'ug', 'ur', 'uz', 'yi'], true)) {
+            return 'rtl';
+        }
+
+        /** Left-to-right. */
+        return 'ltr';
     }
 
     /**
@@ -1046,13 +1053,15 @@ class L10N
      */
     public function autoAssignRules($Code, $FallbackCode = '')
     {
-        if ($Code) {
+        if ($Code !== '') {
             $this->IntegerRule = $this->getIntegerRule($Code);
             $this->FractionRule = $this->getFractionRule($Code);
+            $this->Directionality = $this->getDirectionality($Code);
         }
-        if ($FallbackCode) {
+        if ($FallbackCode !== '') {
             $this->FallbackIntegerRule = $this->getIntegerRule($FallbackCode);
             $this->FallbackFractionRule = $this->getFractionRule($FallbackCode);
+            $this->FallbackDirectionality = $this->getDirectionality($FallbackCode);
         }
     }
 }
