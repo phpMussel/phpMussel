@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2023.01.22).
+ * Demojibakefier (last modified: 2023.02.23).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -57,7 +57,7 @@ class Demojibakefier
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.4';
+    public const VERSION = '2.9.5';
 
     /**
      * Constructor.

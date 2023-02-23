@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.02.13).
+ * A simple, unified cache handler (last modified: 2023.02.23).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -180,7 +180,7 @@ class Cache
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.4';
+    public const VERSION = '2.9.5';
 
     /**
      * Construct object and set working data if needed.
@@ -423,7 +423,13 @@ class Cache
             $PDO = $this->WorkingData->prepare(self::GET_QUERY);
             if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
-                return isset($Data['Data']) ? $this->unserializeEntry($Data['Data']) : false;
+                if (!isset($Data['Data'])) {
+                    return false;
+                }
+                if (substr($Data['Data'], 0, 3) === 'gz:') {
+                    $Data['Data'] = gzdecode(base64_decode(substr($Data['Data'], 3)));
+                }
+                return $this->unserializeEntry($Data['Data']);
             }
             return false;
         }
@@ -491,6 +497,9 @@ class Cache
                 $TTL += time();
             }
             $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            if (strlen($Value) > 65536) {
+                $Value = 'gz:' . base64_encode(gzencode($Value, 9));
+            }
             if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
@@ -647,8 +656,7 @@ class Cache
         if ($Success === null || $Success === false) {
             return false;
         }
-        $this->Modified = true;
-        return true;
+        return $this->Modified = true;
     }
 
     /**
@@ -710,8 +718,7 @@ class Cache
         if ($Success === null || $Success === false) {
             return false;
         }
-        $this->Modified = true;
-        return true;
+        return $this->Modified = true;
     }
 
     /**
@@ -835,6 +842,9 @@ class Cache
                         continue;
                     }
                     $Key = substr($Entry['Key'], $PrefixLen);
+                    if (substr($Entry['Data'], 0, 3) === 'gz:') {
+                        $Entry['Data'] = gzdecode(base64_decode(substr($Entry['Data'], 3)));
+                    }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Output[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
                 }
@@ -955,6 +965,9 @@ class Cache
                     $Key = substr($Entry['Key'], $PrefixLen);
                     if (!preg_match($Pattern, $Key)) {
                         continue;
+                    }
+                    if (substr($Entry['Data'], 0, 3) === 'gz:') {
+                        $Entry['Data'] = gzdecode(base64_decode(substr($Entry['Data'], 3)));
                     }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Set[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
