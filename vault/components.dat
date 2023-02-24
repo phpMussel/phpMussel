@@ -1,7 +1,7 @@
 ---
 phpMussel:
  Name: "phpMussel"
- Version: "1.15.5-DEV+23053000"
+ Version: "1.15.5"
  Dependencies:
   PHP: "^5.4|^7|^8"
   l10n/{lang}: ">=2022.269"
