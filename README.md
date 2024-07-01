@@ -1,5 +1,5 @@
 [![v1: PHP >= 5.4 < 8.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4%20%3C%208.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
-[![v2: PHP >= 7.2 < 8.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%207.2%20%3C%208.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v2: PHP >= 7.2 < 8.4](https://img.shields.io/badge/v2-PHP%20%3E%3D%207.2%20%3C%208.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![v3: PHP >= 7.2](https://img.shields.io/badge/v3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
