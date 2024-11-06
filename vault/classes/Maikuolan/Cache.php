@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.02.23).
+ * A simple, unified cache handler (last modified: 2024.09.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Cache
+class Cache extends CommonAbstract
 {
     /**
      * @var bool Whether to try using APCu.
@@ -61,6 +61,12 @@ class Cache
      * @var int|float The timeout for Redis to try using.
      */
     public $RedisTimeout = 2.5;
+
+    /**
+     * @var int Which database number Redis should select.
+     * @link https://redis.io/commands/select/
+     */
+    public $RedisDatabaseNumber = 0;
 
     /**
      * @var string The DSN to use for PDO connections.
@@ -176,19 +182,12 @@ class Cache
     public const KEY_SIZE_LIMIT = 128;
 
     /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
-
-    /**
      * Construct object and set working data if needed.
      *
      * @param array|null $WorkingData An optional array of default cache data.
      * @return void
      */
-    public function __construct(array $WorkingData = null)
+    public function __construct(?array $WorkingData = null)
     {
         if (is_array($WorkingData)) {
             $this->WorkingData = $WorkingData;
@@ -281,6 +280,12 @@ class Cache
                 $this->WorkingData = new \Redis();
                 if ($this->WorkingData->connect($this->RedisHost, $this->RedisPort, $this->RedisTimeout)) {
                     $this->Using = 'Redis';
+                    if ($this->RedisDatabaseNumber !== 0) {
+                        $this->WorkingData->select($this->RedisDatabaseNumber);
+                        if ($this->WorkingData->getDbNum() !== $this->RedisDatabaseNumber) {
+                            return false;
+                        }
+                    }
                     return true;
                 }
                 $this->WorkingData = null;
@@ -347,13 +352,13 @@ class Cache
     public function checkTablesPDO(): bool
     {
         /** Try to determine which kind of query to build. */
-        if (preg_match('~^sqlite\:[^\:]~i', $this->PDOdsn)) {
+        if (preg_match('~^sqlite:[^:]~i', $this->PDOdsn)) {
             /** SQLite (excluding usage for in-memory and temporary tables). */
             $Check = 'SELECT count(*) FROM `sqlite_master` WHERE `type` = \'table\' AND `name` = \'Cache\'';
-        } elseif (preg_match('~^informix\:~i', $this->PDOdsn)) {
+        } elseif (preg_match('~^informix:~i', $this->PDOdsn)) {
             /** Informix. */
             $Check = 'SELECT count(*) FROM `systables` WHERE `tabname` = \'Cache\'';
-        } elseif (preg_match('~^firebird\:~i', $this->PDOdsn)) {
+        } elseif (preg_match('~^firebird:~i', $this->PDOdsn)) {
             /** Firebird/Interbase. */
             $Check = 'SELECT 1 FROM RDB$RELATIONS WHERE RDB$RELATION_NAME = \'Cache\'';
         } else {
@@ -637,13 +642,16 @@ class Cache
                 $Success = ($PDO->rowCount() > 0);
             }
         } elseif (is_array($this->WorkingData)) {
-            if (
-                isset($this->WorkingData[$Key]) &&
-                is_array($this->WorkingData[$Key]) &&
-                isset($this->WorkingData[$Key]['Data']) &&
-                is_numeric($this->WorkingData[$Key]['Data'])
-            ) {
-                $Value += $this->WorkingData[$Key]['Data'];
+            if (isset($this->WorkingData[$Key])) {
+                if (
+                    is_array($this->WorkingData[$Key]) &&
+                    isset($this->WorkingData[$Key]['Data']) &&
+                    is_numeric($this->WorkingData[$Key]['Data'])
+                ) {
+                    $Value += $this->WorkingData[$Key]['Data'];
+                } elseif (is_numeric($this->WorkingData[$Key])) {
+                    $Value += $this->WorkingData[$Key];
+                }
             }
             if ($TTL > 0) {
                 $TTL += time();
@@ -699,13 +707,16 @@ class Cache
                 $Success = ($PDO->rowCount() > 0);
             }
         } elseif (is_array($this->WorkingData)) {
-            if (
-                isset($this->WorkingData[$Key]) &&
-                is_array($this->WorkingData[$Key]) &&
-                isset($this->WorkingData[$Key]['Data']) &&
-                is_numeric($this->WorkingData[$Key]['Data'])
-            ) {
-                $Value -= $this->WorkingData[$Key]['Data'];
+            if (isset($this->WorkingData[$Key])) {
+                if (
+                    is_array($this->WorkingData[$Key]) &&
+                    isset($this->WorkingData[$Key]['Data']) &&
+                    is_numeric($this->WorkingData[$Key]['Data'])
+                ) {
+                    $Value -= $this->WorkingData[$Key]['Data'];
+                } elseif (is_numeric($this->WorkingData[$Key])) {
+                    $Value -= $this->WorkingData[$Key];
+                }
             }
             if ($TTL > 0) {
                 $TTL += time();
@@ -1066,7 +1077,7 @@ class Cache
      */
     public function unserializeEntry($Entry)
     {
-        if (!is_string($Entry) || !preg_match('~^a\:\d+\:\{.*\}$~', $Entry)) {
+        if (!is_string($Entry) || !preg_match('~^a:\d+:\{.*\}$~s', $Entry)) {
             return $Entry;
         }
         $Arr = unserialize($Entry);

@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2023.02.23).
+ * Request handler (last modified: 2024.08.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Request
+class Request extends CommonAbstract
 {
     /**
      * @var int The default timeout to use when one isn't specified for a given request.
@@ -38,7 +38,19 @@ class Request
     public $SendToOut = false;
 
     /**
-     * @var string The default user agent to cite.
+     * @var string Object-level logger for the results of outbound requests.
+     */
+    public $ObjLogger = '';
+
+    /**
+     * @var string Whether to dump the object-level logger to a file (and where to find it).
+     */
+    public $ObjLoggerFile = '';
+
+    /**
+     * @var string The default user agent to cite (implementations *should* override
+     *  this with a user agent of their own, in order to properly inform servers of
+     *  the implementation's identity.
      */
     public $UserAgent = 'Request class (https://github.com/Maikuolan/Common)';
 
@@ -48,13 +60,6 @@ class Request
     public $MostRecentStatusCode = 0;
 
     /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
-
-    /**
      * Allow calling the instance as a function (proxies to request).
      *
      * @return string
@@ -62,6 +67,27 @@ class Request
     public function __invoke(...$Params): string
     {
         return $this->request(...$Params);
+    }
+
+    /**
+     * Object destructor. Used to write the object-level logger to a file when necessary.
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        /** Guard. */
+        if ($this->ObjLogger === '' || $this->ObjLoggerFile === '') {
+            return;
+        }
+
+        $WriteMode = file_exists($this->ObjLoggerFile) ? 'ab' : 'wb';
+        $Handle = fopen($this->ObjLoggerFile, $WriteMode);
+        if (!is_resource($Handle)) {
+            return;
+        }
+        fwrite($Handle, $this->ObjLogger);
+        fclose($Handle);
     }
 
     /**
@@ -75,10 +101,16 @@ class Request
      * @param int $Timeout An optional timeout limit.
      * @param array $Headers An optional array of headers to send with the request.
      * @param int $Depth Recursion depth of the current closure instance.
+     * @param string $Method The request method to use (if not GET or POST).
      * @return string The results of the request, or an empty string upon failure.
      */
-    public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0): string
+    public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0, string $Method = ''): string
     {
+        /** Guard. */
+        if (!function_exists('curl_init')) {
+            return '';
+        }
+
         /** Test channel triggers. */
         foreach ($this->Channels['Triggers'] as $TriggerName => $TriggerURI) {
             if (
@@ -105,7 +137,7 @@ class Request
             }
             if ($this->inCsv($TriggerName, $this->Disabled)) {
                 if (isset($AlternateURI)) {
-                    return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth);
+                    return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth, $Method);
                 }
                 return '';
             }
@@ -140,6 +172,12 @@ class Request
                 isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
             ));
         }
+        if ($Method !== '') {
+            curl_setopt($Request, CURLOPT_CUSTOMREQUEST, $Method);
+            $DebugMethod = $Method;
+        } else {
+            $DebugMethod = $Post ? 'POST' : 'GET';
+        }
         curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
         curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
@@ -155,13 +193,7 @@ class Request
 
         /** Check for problems (e.g., resource not found, server errors, etc). */
         if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-            $this->sendMessage(sprintf(
-                "\r%s - %s - %s - %s\n",
-                $Post ? 'POST' : 'GET',
-                $URI,
-                $Info['http_code'],
-                (floor($Time * 100) / 100) . 's'
-            ));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = $Info['http_code'];
@@ -169,16 +201,10 @@ class Request
             /** Request failed. Try again using an alternative address. */
             if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
                 curl_close($Request);
-                return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
+                return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1, $Method);
             }
         } else {
-            $this->sendMessage(sprintf(
-                "\r%s - %s - %s - %s\n",
-                $Post ? 'POST' : 'GET',
-                $URI,
-                200,
-                (floor($Time * 100) / 100) . 's'
-            ));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, 200, (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = 200;
@@ -222,11 +248,12 @@ class Request
      */
     public function sendMessage(string $Message): void
     {
+        $this->ObjLogger .= '[' . date('Y-m-d\Th:i:sO', time()) . '] ' . $Message . "\n";
         if ($this->SendToOut !== true) {
             return;
         }
         $Handle = fopen('php://stdout', 'wb');
-        fwrite($Handle, $Message);
+        fwrite($Handle, "\r" . $Message . "\n");
         fclose($Handle);
     }
 }

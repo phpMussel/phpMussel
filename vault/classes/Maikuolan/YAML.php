@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.02.23).
+ * YAML handler (last modified: 2024.07.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -18,7 +18,7 @@
 
 namespace Maikuolan\Common;
 
-class YAML
+class YAML extends CommonAbstract
 {
     /**
      * @var array An array to contain all the data processed by the handler.
@@ -98,7 +98,7 @@ class YAML
     private $MultiLineFolded = false;
 
     /**
-     * @var string Whether to use chomping for the current multiline block.
+     * @var string Whether to use chomping for the current multi-line block.
      */
     private $Chomp = '';
 
@@ -126,13 +126,6 @@ class YAML
      * @var string Used for coercing blocks.
      */
     private $LastResolvedTag = '';
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Can optionally begin processing data as soon as the object is
@@ -270,8 +263,8 @@ class YAML
             $SoL = ($EoL === false) ? false : $EoL + 1;
 
             /** Strip comments and whitespace. */
-            if (!($ThisLine = preg_replace(['/(?<!\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
-                /** Line preservation for multiline and folded blocks. .*/
+            if (!($ThisLine = preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
+                /** Line preservation for multi-line and folded blocks. .*/
                 if (($this->MultiLine || $this->MultiLineFolded) && strlen($SendTo)) {
                     $SendTo .= "\n";
                 }
@@ -294,7 +287,7 @@ class YAML
 
             /**
              * Data indented further than the current depth can be gathered to
-             * be processed recursively (e.g., sequences, multiline data, etc).
+             * be processed recursively (e.g., sequences, multi-line data, etc).
              */
             if ($ThisTab > $Depth) {
                 if ($TabLen === 0) {
@@ -380,7 +373,7 @@ class YAML
         $Success = true;
 
         /** Needed for processing any remaining data. */
-        if ($SendTo && !empty($Key)) {
+        if ($SendTo) {
             if (!$this->MultiLine && !$this->MultiLineFolded) {
                 if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
                     $Arr[$Key] = [];
@@ -441,29 +434,6 @@ class YAML
         $this->AnchorsDone = [];
         $this->DoWithAnchors = false;
         return $Out;
-    }
-
-    /**
-     * Traverse data path.
-     *
-     * @param mixed $Data The data to traverse.
-     * @param string|array $Path The path to traverse.
-     * @return mixed The traversed data, or an empty string on failure.
-     */
-    public function dataTraverse(&$Data, $Path = [])
-    {
-        if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
-        }
-        $Segment = array_shift($Path);
-        if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
-        }
-        $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data)) {
-            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path) : '';
-        }
-        return $this->dataTraverse($Data, $Path);
     }
 
     /**
@@ -667,6 +637,13 @@ class YAML
             $Key = $this->arrayKeyLast($Arr);
         } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
             $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            if (substr($Key, 0, 1) === '[' && substr($Key, -1) === ']') {
+                $TryList = [];
+                $this->flowControl($Key, $TryList, '[', true);
+                $TryListCount = count($TryList);
+            } else {
+                $TryListCount = 0;
+            }
             $KeyLen = strlen($Key);
             $this->normaliseValue($Key, true);
             if (!$Key) {
@@ -681,6 +658,17 @@ class YAML
             if ($ValueLen > 0) {
                 if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value)) {
                     $Arr += $this->merge($Value);
+                } elseif ($TryListCount !== 0 && (!is_array($Value) || count($Value) === $TryListCount)) {
+                    if (is_array($Value)) {
+                        $Values = $Value;
+                        foreach ($TryList as $Key) {
+                            $Arr[$Key] = array_shift($Values);
+                        }
+                    } else {
+                        foreach ($TryList as $Key) {
+                            $Arr[$Key] = $Value;
+                        }
+                    }
                 } else {
                     $Arr[$Key] = $Value;
                 }
@@ -740,7 +728,7 @@ class YAML
                     $Out .= ',';
                 }
                 if (!$Sequential) {
-                    $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':';
+                    $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':';
                 }
                 if (is_array($Value)) {
                     $this->processInner($Value, $Out, $Depth + 1);
@@ -780,9 +768,9 @@ class YAML
             $ThisDepth = str_repeat($this->Indent, $Depth);
             if ($NullSet && !$Sequential) {
                 $Out .= $ThisDepth . '?';
-                $Value = $Key;
+                $Value = $this->escapeKey($Key);
             } else {
-                $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':');
+                $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':');
             }
             if (is_array($Value)) {
                 if ($Depth < $this->FlowRebuildDepth - 1) {
@@ -840,12 +828,12 @@ class YAML
     private function escape(string $Value = '', bool $Newlines = true): string
     {
         if ($this->Quotes === "'") {
-            return str_replace("'", "''", $Value);
+            return str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
         }
         if ($this->Quotes !== '"') {
-            return $Value;
+            return str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
         }
-        $Value = str_replace("\\", "\\\\", $Value);
+        $Value = str_replace('\\', '\\\\', $Value);
         if ($Newlines) {
             $Value = str_replace("\n", '\n', $Value);
         }
@@ -877,6 +865,20 @@ class YAML
     }
 
     /**
+     * Escape keys if necessary (or else there could be problems with hashes).
+     *
+     * @param string $Key The key to escape.
+     * @return string The escaped key.
+     */
+    private function escapeKey(string $Key = ''): string
+    {
+        if (strpos($Key, '#') === false && strpos($Key, '\\') === false) {
+            return $Key;
+        }
+        return '"' . str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
+    }
+
+    /**
      * Unescape according to the YAML specification.
      *
      * @param string $Value The string to unescape.
@@ -886,58 +888,52 @@ class YAML
     private function unescape(string $Value = '', string $Style = '"'): string
     {
         if ($Style === '"' || $Style === "\xe2\x80\x9c" || $Style === "\x91") {
-            $Value = str_replace(
-                ['\#', '\0', '\a', '\b', '\t', '\n', '\v', '\f', '\r', '\e', '\"', '\/', '\N', '\_', '\L', '\P', "\\\\"],
-                ['#', "\0", "\x07", "\x08", "\t", "\n", "\x0B", "\x0C", "\x0D", "\x1B", '"', '/', "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9", "\\"],
-                $Value
-            );
-            $Captured = [];
-            if (preg_match_all('~\\\\x([\dA-Fa-f]{2})~', $Value, $Captured)) {
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Value = str_replace('\\x' . $Bytes, hex2bin($Bytes), $Value);
+            set_error_handler(function ($errno) {
+                return;
+            });
+            $Value = preg_replace([
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)#~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)0~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)a~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)b~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)t~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)n~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)v~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)f~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)r~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)e~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)"~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)/~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)N~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)_~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)L~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
+            ], ['\1#', "\\1\0", "\\1\7", "\\1\x08", "\\1\t", "\\1\n", "\\1\x0B", "\\1\x0C", "\\1\x0D", "\\1\x1B", '\1"', '\1/', "\\1\xC2\x85", "\\1\xC2\xA0", "\\1\xE2\x80\xA8", "\\1\xE2\x80\xA9"], $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
+                return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
+            }, $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function ($Captured) {
+                if (($Decoded = hex2bin($Captured[2])) === false) {
+                    return $Captured[0];
                 }
-            }
-            $Captured = [];
-            if (preg_match_all('~\\\\u([\dA-Fa-f]{4})~', $Value, $Captured)) {
-                set_error_handler(function ($errno) {
-                    return;
-                });
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Decoded = hex2bin($Bytes);
-                    $Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded);
-                    $Reversed = $Attempt === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
-                    if ($Attempt !== false && strcmp($Reversed, $Decoded) === 0) {
-                        $Decoded = $Attempt;
-                    }
-                    $Value = str_replace('\\u' . $Bytes, $Decoded, $Value);
+                $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+            }, $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
+                if (($Decoded = hex2bin($Captured[2])) === false) {
+                    return $Captured[0];
                 }
-                restore_error_handler();
-            }
-            $Captured = [];
-            if (preg_match_all('~\\\\U([\dA-Fa-f]{8})~', $Value, $Captured)) {
-                set_error_handler(function ($errno) {
-                    return;
-                });
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Decoded = hex2bin($Bytes);
-                    $Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded);
-                    $Reversed = $Attempt === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
-                    if ($Attempt !== false && strcmp($Reversed, $Decoded) === 0) {
-                        $Decoded = $Attempt;
-                    }
-                    $Value = str_replace('\\U' . $Bytes, $Decoded, $Value);
-                }
-                restore_error_handler();
-            }
+                $Reversed = ($Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+            }, $Value);
+            $Value = str_replace('\\\\', '\\', $Value);
+            restore_error_handler();
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {
-            return str_replace("''", "'", $Value);
+            return str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
         }
-        return $Value;
+        return str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
     }
 
     /**
@@ -1206,9 +1202,10 @@ class YAML
      * @param array $Arr Where to process that data.
      * @param string $Brace The type of bracing used (determines whether the
      *      data should be processed as a flow sequence or as flow mappings).
+     * @param bool $SequencesOnly Whether to restrict operation to sequences only.
      * @return bool True for process success. False for process failure.
      */
-    private function flowControl(string $In, array &$Arr, string $Brace): bool
+    private function flowControl(string $In, array &$Arr, string $Brace, bool $SequencesOnly = false): bool
     {
         /** Reset the array where we're processing the data. */
         $Arr = [];
@@ -1241,9 +1238,14 @@ class YAML
             }
 
             foreach ($Arr as &$Working) {
-                $this->normaliseValue($Working);
+                $this->normaliseValue($Working, $SequencesOnly);
             }
             return true;
+        }
+
+        /** Guard. */
+        if ($SequencesOnly) {
+            return false;
         }
 
         /** Flow mappings. */

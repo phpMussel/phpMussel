@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2023.02.23).
+ * Number formatter (last modified: 2024.06.26).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class NumberFormatter
+class NumberFormatter extends CommonAbstract
 {
     /**
      * @var string Identifies the conversion set to use.
@@ -618,33 +618,42 @@ class NumberFormatter
         '^3+7' => 'Ւ',
         '^3+8' => 'Փ',
         '^3+9' => 'Ք',
-        '^4+1' => 'Ժ̅',
-        '^4+2' => 'Ի̅',
-        '^4+3' => 'Լ̅',
-        '^4+4' => 'Խ̅',
-        '^4+5' => 'Ծ̅',
-        '^4+6' => 'Կ̅',
-        '^4+7' => 'Հ̅',
-        '^4+8' => 'Ձ̅',
-        '^4+9' => 'Ղ̅',
-        '^5+1' => 'Ճ̅',
-        '^5+2' => 'Մ̅',
-        '^5+3' => 'Յ̅',
-        '^5+4' => 'Ն̅',
-        '^5+5' => 'Շ̅',
-        '^5+6' => 'Ո̅',
-        '^5+7' => 'Չ̅',
-        '^5+8' => 'Պ̅',
-        '^5+9' => 'Ջ̅',
-        '^6+1' => 'Ռ̅',
-        '^6+2' => 'Ս̅',
-        '^6+3' => 'Վ̅',
-        '^6+4' => 'Տ̅',
-        '^6+5' => 'Ր̅',
-        '^6+6' => 'Ց̅',
-        '^6+7' => 'Ւ̅',
-        '^6+8' => 'Փ̅',
-        '^6+9' => 'Ք̅'
+        '^4+1' => 'Ա̅',
+        '^4+2' => 'Բ̅',
+        '^4+3' => 'Գ̅',
+        '^4+4' => 'Դ̅',
+        '^4+5' => 'Ե̅',
+        '^4+6' => 'Զ̅',
+        '^4+7' => 'Է̅',
+        '^4+8' => 'Ը̅',
+        '^4+9' => 'Թ̅',
+        '^5+1' => 'Ժ̅',
+        '^5+2' => 'Ի̅',
+        '^5+3' => 'Լ̅',
+        '^5+4' => 'Խ̅',
+        '^5+5' => 'Ծ̅',
+        '^5+6' => 'Կ̅',
+        '^5+7' => 'Հ̅',
+        '^5+8' => 'Ձ̅',
+        '^5+9' => 'Ղ̅',
+        '^6+1' => 'Ճ̅',
+        '^6+2' => 'Մ̅',
+        '^6+3' => 'Յ̅',
+        '^6+4' => 'Ն̅',
+        '^6+5' => 'Շ̅',
+        '^6+6' => 'Ո̅',
+        '^6+7' => 'Չ̅',
+        '^6+8' => 'Պ̅',
+        '^6+9' => 'Ջ̅',
+        '^7+1' => 'Ռ̅',
+        '^7+2' => 'Ս̅',
+        '^7+3' => 'Վ̅',
+        '^7+4' => 'Տ̅',
+        '^7+5' => 'Ր̅',
+        '^7+6' => 'Ց̅',
+        '^7+7' => 'Ւ̅',
+        '^7+8' => 'Փ̅',
+        '^7+9' => 'Ք̅'
     ];
 
     /**
@@ -665,51 +674,40 @@ class NumberFormatter
         '9' => '九',
         '^1+1' => '十',
         '^1' => '十',
-        '^2' => '百',
+        'Hundreds' => '百',
         '^3' => '千',
         '^4' => '万',
         '^5' => '十',
-        '^6' => '百',
         '^7' => '千',
         '^8' => '亿',
         '^9' => '十',
-        '^10' => '百',
         '^11' => '千',
         '^12' => '兆',
         '^13' => '十',
-        '^14' => '百',
         '^15' => '千',
         '^16' => '京',
         '^17' => '十',
-        '^18' => '百',
         '^19' => '千',
         '^20' => '垓',
         '^21' => '十',
-        '^22' => '百',
         '^23' => '千',
         '^24' => '秭',
         '^25' => '十',
-        '^26' => '百',
         '^27' => '千',
         '^28' => '穰',
         '^29' => '十',
-        '^30' => '百',
         '^31' => '千',
         '^32' => '沟',
         '^33' => '十',
-        '^34' => '百',
         '^35' => '千',
         '^36' => '涧',
         '^37' => '十',
-        '^38' => '百',
         '^39' => '千',
         '^40' => '正',
         '^41' => '十',
-        '^42' => '百',
         '^43' => '千',
         '^44' => '载',
         '^45' => '十',
-        '^46' => '百',
         '^47' => '千'
     ];
 
@@ -731,51 +729,40 @@ class NumberFormatter
         '9' => '九',
         '^1+1' => '十',
         '^1' => '十',
-        '^2' => '百',
+        'Hundreds' => '百',
         '^3' => '千',
         '^4' => '萬',
         '^5' => '十',
-        '^6' => '百',
         '^7' => '千',
         '^8' => '億',
         '^9' => '十',
-        '^10' => '百',
         '^11' => '千',
         '^12' => '兆',
         '^13' => '十',
-        '^14' => '百',
         '^15' => '千',
         '^16' => '京',
         '^17' => '十',
-        '^18' => '百',
         '^19' => '千',
         '^20' => '垓',
         '^21' => '十',
-        '^22' => '百',
         '^23' => '千',
         '^24' => '秭',
         '^25' => '十',
-        '^26' => '百',
         '^27' => '千',
         '^28' => '穰',
         '^29' => '十',
-        '^30' => '百',
         '^31' => '千',
         '^32' => '溝',
         '^33' => '十',
-        '^34' => '百',
         '^35' => '千',
         '^36' => '澗',
         '^37' => '十',
-        '^38' => '百',
         '^39' => '千',
         '^40' => '正',
         '^41' => '十',
-        '^42' => '百',
         '^43' => '千',
         '^44' => '載',
         '^45' => '十',
-        '^46' => '百',
         '^47' => '千'
     ];
 
@@ -797,51 +784,40 @@ class NumberFormatter
         '9' => '玖',
         '^1+1' => '拾',
         '^1' => '拾',
-        '^2' => '佰',
+        'Hundreds' => '佰',
         '^3' => '仟',
         '^4' => '萬',
         '^5' => '拾',
-        '^6' => '佰',
         '^7' => '仟',
         '^8' => '億',
         '^9' => '拾',
-        '^10' => '佰',
         '^11' => '仟',
         '^12' => '兆',
         '^13' => '拾',
-        '^14' => '佰',
         '^15' => '仟',
         '^16' => '京',
         '^17' => '拾',
-        '^18' => '佰',
         '^19' => '仟',
         '^20' => '垓',
         '^21' => '拾',
-        '^22' => '佰',
         '^23' => '仟',
         '^24' => '秭',
         '^25' => '拾',
-        '^26' => '佰',
         '^27' => '仟',
         '^28' => '穰',
         '^29' => '拾',
-        '^30' => '佰',
         '^31' => '仟',
         '^32' => '沟',
         '^33' => '拾',
-        '^34' => '佰',
         '^35' => '仟',
         '^36' => '涧',
         '^37' => '拾',
-        '^38' => '佰',
         '^39' => '仟',
         '^40' => '正',
         '^41' => '拾',
-        '^42' => '佰',
         '^43' => '仟',
         '^44' => '载',
         '^45' => '拾',
-        '^46' => '佰',
         '^47' => '仟'
     ];
 
@@ -863,51 +839,40 @@ class NumberFormatter
         '9' => '玖',
         '^1+1' => '拾',
         '^1' => '拾',
-        '^2' => '佰',
+        'Hundreds' => '佰',
         '^3' => '仟',
         '^4' => '萬',
         '^5' => '拾',
-        '^6' => '佰',
         '^7' => '仟',
         '^8' => '億',
         '^9' => '拾',
-        '^10' => '佰',
         '^11' => '仟',
         '^12' => '兆',
         '^13' => '拾',
-        '^14' => '佰',
         '^15' => '仟',
         '^16' => '京',
         '^17' => '拾',
-        '^18' => '佰',
         '^19' => '仟',
         '^20' => '垓',
         '^21' => '拾',
-        '^22' => '佰',
         '^23' => '仟',
         '^24' => '秭',
         '^25' => '拾',
-        '^26' => '佰',
         '^27' => '仟',
         '^28' => '穰',
         '^29' => '拾',
-        '^30' => '佰',
         '^31' => '仟',
         '^32' => '沟',
         '^33' => '拾',
-        '^34' => '佰',
         '^35' => '仟',
         '^36' => '涧',
         '^37' => '拾',
-        '^38' => '佰',
         '^39' => '仟',
         '^40' => '正',
         '^41' => '拾',
-        '^42' => '佰',
         '^43' => '仟',
         '^44' => '载',
         '^45' => '拾',
-        '^46' => '佰',
         '^47' => '仟'
     ];
 
@@ -917,7 +882,7 @@ class NumberFormatter
     private $Dwiggins = ['a' => 'X', 'b' => 'E'];
 
     /**
-     * @var array Conversion set for "dozenal" numerals (Dwiggins).
+     * @var array Conversion set for "dozenal" numerals (Pitman).
      */
     private $Pitman = ['a' => '↊', 'b' => '↋'];
 
@@ -1006,6 +971,36 @@ class NumberFormatter
     ];
 
     /**
+     * @var array Conversion set for Ge'ez/Ethiopic numerals.
+     */
+    private $Geez = [
+        '.' => true,
+        '0' => '',
+        'o1' => '፩',
+        'o2' => '፪',
+        'o3' => '፫',
+        'o4' => '፬',
+        'o5' => '፭',
+        'o6' => '፮',
+        'o7' => '፯',
+        'o8' => '፰',
+        'o9' => '፱',
+        'e1' => '፲',
+        'e2' => '፳',
+        'e3' => '፴',
+        'e4' => '፵',
+        'e5' => '፶',
+        'e6' => '፷',
+        'e7' => '፸',
+        'e8' => '፹',
+        'e9' => '፺',
+        'Hundreds' => '፻',
+        'Hundreds+1' => '',
+        'Myriads' => '፼',
+        'Myriads+1' => ''
+    ];
+
+    /**
      * @var array Symbols quick lookup table.
      */
     private $Symbols = [
@@ -1062,13 +1057,6 @@ class NumberFormatter
         'y' => '34',
         'z' => '35'
     ];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Constructor.
@@ -1197,6 +1185,7 @@ class NumberFormatter
         }
         if (
             $Format[0] === 'Armenian' ||
+            $Format[0] === 'Geez' ||
             $Format[0] === 'Hebrew' ||
             $Format[0] === 'Roman' ||
             $Format[0] === 'Tamil'
@@ -1313,12 +1302,19 @@ class NumberFormatter
         } else {
             $WholeLen = strlen($Number);
         }
-        for ($Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $WholeLen - 1; $Pos > -1; $Pos--, $Unit++) {
+        for ($OddEven = 'o', $Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $WholeLen - 1; $Pos > -1; $Pos--, $Unit++, $OddEven = $OddEven === 'o' ? 'e' : 'o') {
             if ($ThouPos >= $this->GroupSize) {
                 $ThouPos = 1;
                 $Formatted = $this->GroupSeparator . $Formatted;
             } else {
                 $ThouPos++;
+            }
+            if ($Unit === 0) {
+                $Myriads = false;
+                $Hundreds = false;
+            } else {
+                $Myriads = ($Unit % 4) === 0;
+                $Hundreds = $Myriads === false && ($Unit % 2) === 0;
             }
             $Key = substr($Number, $Pos, 1);
             $Double = $Pos > 0 ? substr($Number, $Pos - 1, 1) . $Key : '';
@@ -1331,9 +1327,17 @@ class NumberFormatter
             } elseif (isset($CSet['+' . $Key])) {
                 $Digit = $CSet['+' . $Key];
             } else {
-                $Digit = $CSet[$Key] ?? $Key;
-                if (isset($CSet['^' . $Unit . '*' . $Key])) {
-                    $Power = $CSet['^' . $Unit . '*' . $Key];
+                $Digit = $CSet[$OddEven . $Key] ?? $CSet[$Key] ?? $Key;
+                if ($Myriads && isset($CSet['Myriads'])) {
+                    $Power = $CSet['Myriads'];
+                    if (isset($CSet['Myriads+' . $Key])) {
+                        $Digit = $CSet['Myriads+' . $Key];
+                    }
+                } elseif ($Hundreds && isset($CSet['Hundreds'])) {
+                    $Power = $CSet['Hundreds'];
+                    if (isset($CSet['Hundreds+' . $Key])) {
+                        $Digit = $CSet['Hundreds+' . $Key];
+                    }
                 } elseif (isset($CSet['^' . $Unit])) {
                     $Power = $CSet['^' . $Unit];
                 }
@@ -1356,9 +1360,7 @@ class NumberFormatter
                     } else {
                         $Digit = $CSet[$Key] ?? $Key;
                     }
-                    if (isset($CSet['^-' . $Pos . '*' . $Key])) {
-                        $Power = $CSet['^-' . $Pos . '*' . $Key];
-                    } elseif (isset($CSet['^-' . $Pos])) {
+                    if (isset($CSet['^-' . $Pos])) {
                         $Power = $CSet['^-' . $Pos];
                     }
                 }
@@ -1372,18 +1374,14 @@ class NumberFormatter
     }
 
     /**
-     * Gets the specified conversion set and returns it as a CSV string.
+     * Gets the specified conversion set and returns it as a JSON string.
      *
      * @param string $Set The specified conversion set.
-     * @return string A CSV string.
+     * @return string A JSON string.
      */
-    public function getSetCSV(string $Set = ''): string
+    public function getSetJSON(string $Set = ''): string
     {
-        if (!$Set || !isset($this->$Set)) {
-            $Set = $this->ConversionSet;
-        }
-        $CSet = $this->$Set;
-        return "'" . implode("','", $CSet) . "'";
+        return isset($this->{$Set}) ? json_encode($this->{$Set}) : '[]';
     }
 
     /**

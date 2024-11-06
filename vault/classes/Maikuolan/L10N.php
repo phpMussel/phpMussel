@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2023.02.23).
+ * L10N handler (last modified: 2024.08.08).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class L10N
+class L10N extends CommonAbstract
 {
     /**
      * @var array All relevant L10N data.
@@ -38,6 +38,11 @@ class L10N
     public $FallbackDirectionality = '';
 
     /**
+     * @var string Useful in case a string might have variants available.
+     */
+    public $PreferredVariant = '';
+
+    /**
      * @var string The pluralisation rule to use for integers.
      */
     private $IntegerRule = 'int1';
@@ -56,13 +61,6 @@ class L10N
      * @var string The pluralisation rule to use for fractions for the fallback.
      */
     private $FallbackFractionRule = 'int1';
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Constructor.
@@ -118,20 +116,36 @@ class L10N
      */
     public function getPlural($Number, string $String): string
     {
-        if (isset($this->Data[$String])) {
-            $Choices = $this->Data[$String];
-            $IntegerRule = $this->IntegerRule;
-            $FractionRule = $this->FractionRule;
-        } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
-            return $this->Fallback->getPlural($Number, $String);
-        } elseif (is_array($this->Fallback) && isset($this->Fallback[$String])) {
-            $Choices = $this->Fallback[$String];
-            $IntegerRule = $this->FallbackIntegerRule;
-            $FractionRule = $this->FallbackFractionRule;
+        if (strpos($String, '.') === false) {
+            if (isset($this->Data[$String])) {
+                $Choices = $this->Data[$String];
+                $IntegerRule = $this->IntegerRule;
+                $FractionRule = $this->FractionRule;
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                return $this->Fallback->getPlural($Number, $String);
+            } elseif (isset($this->Fallback[$String])) {
+                $Choices = $this->Fallback[$String];
+                $IntegerRule = $this->FallbackIntegerRule;
+                $FractionRule = $this->FallbackFractionRule;
+            } else {
+                return '';
+            }
         } else {
-            return '';
+            if (($Try = $this->dataTraverse($this->Data, $String, true)) !== '') {
+                $Choices = $Try;
+                $IntegerRule = $this->IntegerRule;
+                $FractionRule = $this->FractionRule;
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                return $this->Fallback->getPlural($Number, $String);
+            } elseif (($Try = $this->dataTraverse($this->Fallback, $String, true)) !== '') {
+                $Choices = $Try;
+                $IntegerRule = $this->FallbackIntegerRule;
+                $FractionRule = $this->FallbackFractionRule;
+            } else {
+                return '';
+            }
         }
-        if (!is_array($Choices)) {
+        if (is_string($Choices)) {
             return $Choices;
         }
         if (is_float($Number)) {
@@ -142,9 +156,14 @@ class L10N
             $Choice = 0;
         }
         if (isset($Choices[$Choice])) {
-            return $Choices[$Choice];
+            $Out = $Choices[$Choice];
+        } else {
+            $Out = $Number > 1 ? array_pop($Choices) : array_shift($Choices);
         }
-        return $Number > 1 ? array_pop($Choices) : array_shift($Choices);
+        if (is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
+        }
+        return is_string($Out) ? $Out : '';
     }
 
     /**
@@ -155,13 +174,73 @@ class L10N
      */
     public function getString(string $String): string
     {
-        if (isset($this->Data[$String])) {
-            return $this->Data[$String];
+        if (strpos($String, '.') === false) {
+            if (isset($this->Data[$String])) {
+                $Out = $this->Data[$String];
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                $Out = $this->Fallback->getString($String);
+            } else {
+                $Out = isset($this->Fallback[$String]) ? $this->Fallback[$String] : '';
+            }
+        } elseif (($Out = $this->dataTraverse($this->Data, $String, true)) === '') {
+            $Out = ($this->Fallback instanceof \Maikuolan\Common\L10N) ? $this->Fallback->getString($String) : $this->dataTraverse($this->Fallback, $String, true);
         }
-        if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
-            return $this->Fallback->getString($String);
+        if (is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
         }
-        return $this->Fallback[$String] ?? '';
+        return is_string($Out) ? $Out : '';
+    }
+
+    /**
+     * Parses an array of L10N data references from L10N data to an array.
+     *
+     * @param string|array $References The L10N data references.
+     * @return array An array of L10N data.
+     */
+    public function arrayFromL10nToArray($References): array
+    {
+        if (!is_array($References)) {
+            $References = [$References];
+        }
+        $Out = [];
+        foreach ($References as $Reference) {
+            $Try = '';
+            if (isset($this->Data[$Reference])) {
+                $Try = $this->Data[$Reference];
+            } elseif (is_array($this->Fallback)) {
+                if (isset($this->Fallback[$Reference])) {
+                    $Try = $this->Fallback[$Reference];
+                }
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                if (isset($this->Fallback->Data[$Reference])) {
+                    $Try = $this->Fallback->Data[$Reference];
+                } elseif (is_array($this->Fallback->Fallback) && isset($this->Fallback->Fallback[$Reference])) {
+                    $Try = $this->Fallback->Fallback[$Reference];
+                }
+            }
+            if ($Try === '') {
+                if (($SPos = strpos($Reference, ' ')) !== '') {
+                    $Try = (($TryFrom = $this->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                } else {
+                    $Try = $Reference;
+                }
+            }
+            $Reference = (!is_array($Try) || preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', key($Try))) ? [$Try] : $Try;
+            foreach ($Reference as $Key => $Value) {
+                if (is_array($Value)) {
+                    $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : array_shift($Value);
+                    if (!is_string($Value)) {
+                        $Value = '';
+                    }
+                }
+                if (!is_string($Key)) {
+                    $Out[] = $Value;
+                    continue;
+                }
+                $Out[$Key] = $Value;
+            }
+        }
+        return $Out;
     }
 
     /**
@@ -673,7 +752,7 @@ class L10N
      * ISO 639-1/639-2 language code.
      * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
      * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
-     * @link https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
+     * @link https://www.unicode.org/cldr/charts/46/supplemental/language_plural_rules.html
      *
      * @param string $Code An ISO 639-1/639-2 language code.
      * @return string An appropriate integer rule to use.
@@ -1031,7 +1110,20 @@ class L10N
      */
     public function getDirectionality(string $Code): string
     {
+        /** Right-to-left per locale. */
+        if ($Code === 'pa-PK') {
+            return 'rtl';
+        }
+
         if (($Pos = strpos($Code, '-')) !== false) {
+            /** @link https://en.wikipedia.org/wiki/ISO_15924 */
+            if (preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script)) {
+                if (preg_match('~^(?:1\d\d|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
+                    return 'rtl';
+                }
+                return 'ltr';
+            }
+
             $Code = substr($Code, 0, $Pos);
         }
 

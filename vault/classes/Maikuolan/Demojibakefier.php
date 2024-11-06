@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2023.02.23).
+ * Demojibakefier (last modified: 2023.09.14).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -25,7 +25,7 @@
 
 namespace Maikuolan\Common;
 
-class Demojibakefier
+class Demojibakefier extends CommonAbstract
 {
     /**
      * @var string Supplied to the class at object instantiation or thereafter.
@@ -51,13 +51,6 @@ class Demojibakefier
      * @var string Some early control characters (w/o tabs, CR, or LF).
      */
     protected const CTRL0 = '\x00-\x08\x0B\x0C\x0E-\x1F';
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Constructor.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.02.23).
+ * Operation handler (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,19 +15,12 @@
 
 namespace Maikuolan\Common;
 
-class Operation
+class Operation extends CommonAbstract
 {
     /**
      * @var array Caching to optimise operations.
      */
     private $Cache = [];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Operators for version numbers.
@@ -211,42 +204,14 @@ class Operation
     }
 
     /**
-     * Traverse data path.
-     *
-     * @param mixed $Data The data to traverse.
-     * @param string|array $Path The path to traverse.
-     * @return mixed The traversed data, or an empty string on failure.
-     */
-    public function dataTraverse(&$Data, $Path = [])
-    {
-        if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
-        }
-        $Segment = array_shift($Path);
-        if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
-        }
-        $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path);
-        }
-        if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
-                $Segment = substr($Segment, 0, -2);
-                $Data = $Segment($Data);
-            }
-        }
-        return $this->dataTraverse($Data, $Path);
-    }
-
-    /**
      * If compare operation.
      *
      * @param mixed $Data The data to traverse.
      * @param string $IfString The if string.
+     * @param bool $AllowMethodCalls Whether to allow method calls.
      * @return string The results of the operation (or an empty string on failure).
      */
-    public function ifCompare(&$Data, string $IfString): string
+    public function ifCompare(&$Data, string $IfString, bool $AllowMethodCalls = false): string
     {
         $LCIfString = strtolower($IfString);
 
@@ -254,7 +219,7 @@ class Operation
         if (substr($LCIfString, 0, 3) !== 'if ') {
             $IfString = trim($IfString);
             if (substr($IfString, 0, 1) === '{' && substr($IfString, -1) === '}') {
-                $IfString = $this->dataTraverse($Data, substr($IfString, 1, -1));
+                $IfString = $this->dataTraverse($Data, substr($IfString, 1, -1), false, $AllowMethodCalls);
             }
             return $IfString;
         }
@@ -275,7 +240,7 @@ class Operation
             $IfString = substr($IfString, 0, $ThenPos);
             if (substr($ThenString, 0, 1) === '{') {
                 if (substr($ThenString, -1) === '}') {
-                    $ThenString = substr($ThenString, 1 -1);
+                    $ThenString = substr($ThenString, 1, -1);
                 } elseif (substr($ElseString, 0, 1) !== '{' && substr($ElseString, -1) === '}') {
                     $ThenString = substr($ThenString, 1) . ' else' . substr($ElseString, 0, -1);
                     $ElseString = '';
@@ -283,18 +248,18 @@ class Operation
             }
         }
         if (substr($ElseString, 0, 1) === '{' && substr($ElseString, -1) === '}') {
-            $ElseString = substr($ElseString, 1 -1);
+            $ElseString = substr($ElseString, 1, -1);
         }
 
         /** Process condition. */
         foreach (explode('||', $IfString) as $PartsOr) {
             $IfPass = true;
             foreach (explode('&&', $PartsOr) as $PartsAnd) {
-                $Parts = preg_split('~([<>]=?|[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
+                $Parts = preg_split('~([<>]=?|!?[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
                 foreach ($Parts as &$Part) {
                     $Part = trim($Part);
                     if (substr($Part, 0, 1) === '{' && substr($Part, -1) === '}') {
-                        $Part = $this->dataTraverse($Data, substr($Part, 1, -1));
+                        $Part = $this->dataTraverse($Data, substr($Part, 1, -1), false, $AllowMethodCalls);
                     }
                 }
                 $CParts = count($Parts);
@@ -309,6 +274,12 @@ class Operation
                 } elseif ($CParts === 3) {
                     if ($Parts[1] === '===') {
                         $Try = ($Parts[0] === $Parts[2]);
+                    } elseif ($Parts[1] === '!==') {
+                        $Try = ($Parts[0] !== $Parts[2]);
+                    } elseif ($Parts[1] === '==') {
+                        $Try = ($Parts[0] == $Parts[2]);
+                    } elseif ($Parts[1] === '!=') {
+                        $Try = ($Parts[0] != $Parts[2]);
                     } else {
                         $Initial = substr($Parts[1], 0, 1);
                         if ($Initial === '=' || $Initial === '^') {
@@ -328,10 +299,10 @@ class Operation
         }
 
         if ($IfPass) {
-            return $this->ifCompare($Data, $ThenString);
+            return $this->ifCompare($Data, $ThenString, $AllowMethodCalls);
         }
         if ($ElseString) {
-            return $this->ifCompare($Data, $ElseString);
+            return $this->ifCompare($Data, $ElseString, $AllowMethodCalls);
         }
         return '';
     }

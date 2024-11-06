@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2023.02.23).
+ * Matrix handler (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Matrix
+class Matrix extends CommonAbstract
 {
     /**
      * @var array The actual matrix data.
@@ -36,13 +36,6 @@ class Matrix
      * @var mixed The default data to be used to populate each coordinate.
      */
     public $Data = [];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Create the matrix.

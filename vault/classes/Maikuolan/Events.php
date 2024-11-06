@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2023.02.23).
+ * Events orchestrator (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Events
+class Events extends CommonAbstract
 {
     /**
      * @var array Event handlers.
@@ -26,13 +26,6 @@ class Events
      * @var array The status of various events and their handlers.
      */
     private $Status = [];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * Adds a new event handler.
@@ -100,12 +93,14 @@ class Events
      */
     public function fireEvent(string $Event, string $Data = '', &...$Misc): bool
     {
-        if (!isset($this->Handlers[$Event], $this->Status[$Event])) {
+        if (!isset($this->Handlers[$Event], $this->Status[$Event]) || isset($this->Status[$Event]['In Progress'])) {
             return false;
         }
+        $this->Status[$Event]['In Progress'] = true;
         foreach ($this->Handlers[$Event] as $Handler) {
             $Handler($Data, $Misc);
         }
+        unset($this->Status[$Event]['In Progress']);
         return true;
     }
 

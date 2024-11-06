@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2023.02.23).
+ * Delayed file IO class (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class DelayedIO
+class DelayedIO extends CommonAbstract
 {
     /**
      * @var array Old data for the files being read/written.
@@ -41,13 +41,6 @@ class DelayedIO
      * @var int How many seconds until an attempt to lock the handle should time-out.
      */
     public const LOCK_TIMEOUT = 5;
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.5';
 
     /**
      * All pending modified files are written at object destruction.

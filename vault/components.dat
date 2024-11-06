@@ -1,9 +1,9 @@
 ---
 phpMussel Core:
  Name: "phpMussel Core"
- Version: "2.4.5"
+ Version: "2.4.6"
  Dependencies:
-  PHP: "^7.2|^8"
+  PHP: "^7.2|^8 <8.4"
   Common Classes Package: "^2.9"
   phpMussel Front-End: "Latest"
   l10n/{lang}: ">=2021.303.641"
@@ -36,22 +36,22 @@ phpMussel Core:
    - "signatures/switch.dat"
   Checksum:
    - "298765ad1d0edae184bfbae717a5bc2e4d8429fad64fb5590d334d4058a9e703:1544"
-   - "5fc23d3cba0ac367ab4f06ce186af6d9ca60ded5e65d8f4ba0d57c90185ffe78:32504"
+   - "2e34aeb7eebd4973e8c3b227ad69079c930b99ac098d104a9d05f16097b862eb:32512"
    - "19e973bdc4e75557ba10d3934e68993956bc24bd57f6f109f9eca159100a7c50:3872"
    - "5d14dd147f82ab17416959e50610f0aa94f3b42ac7b86ce610cb5ed93123edeb:1854"
-   - "5fa50777a0501c1ff78fb29795bfeb8181528738b6412e4a1c509fd1f4496a2b:8100"
+   - "14dc09b001bda1e2642d8462329a84b225ea6d5a5ccf4ca991d7de438a1b3fe5:8100"
    - "6bb7fb431e00179e130f10780c183aa7dd49cef49b3e2b57c5f289c3ea8c6ce0:20078"
    - "50566be4d8b3455c9c3595fe7245854f01109a9737b7d2599406e7b2289da491:7481"
-   - "e5427c7cea581e55a780fdfd3d7dcdbe3e1889ed24fd30656c819612d02848a8:232515"
+   - "b1182c2c87b41c54a11a7b75f3aec76ccce347a9db10e97cf6b109e18fd7aeb5:233157"
    - "72be74d52feabb7bb859f4e1fa061eff913020632fc10307affe1b74e2436039:6928"
    - "94d43f61451420d98f1eff12d78ef3ff045ba4c750d6c9309ee6302357cb7bae:4489"
    - "2de3f9d9b9d97414430c5ab2fcafbee4d19ed38373ab2e51ed158f9dd862e1ff:3237"
  Reannotate: "components.dat"
 phpMussel Front-End:
  Name: "phpMussel Front-End"
- Version: "2.4.5"
+ Version: "2.4.6"
  Dependencies:
-  PHP: "^7.2|^8"
+  PHP: "^7.2|^8 <8.4"
   Common Classes Package: "^2.9"
   phpMussel Core: "Latest"
   l10n/{lang}: ">=2022.269"
@@ -172,9 +172,9 @@ phpMussel Front-End:
  Reannotate: "components.dat"
 phpMussel Upload Handler:
  Name: "phpMussel Upload Handler"
- Version: "2.4.5"
+ Version: "2.4.6"
  Dependencies:
-  PHP: "^7.2|^8"
+  PHP: "^7.2|^8 <8.4"
   phpMussel Core: "^2"
   Common Classes Package: "^2.5"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -197,9 +197,9 @@ phpMussel Upload Handler:
  Reannotate: "components.dat"
 phpMussel CLI Handler:
  Name: "phpMussel CLI Handler"
- Version: "2.4.5"
+ Version: "2.4.6"
  Dependencies:
-  PHP: "^7.2|^8"
+  PHP: "^7.2|^8 <8.4"
   phpMussel Core: "^2"
   Common Classes Package: "^2.5"
  Changelog: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/Changelog-v2.txt"
@@ -214,13 +214,14 @@ phpMussel CLI Handler:
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.9.5"
+ Version: "2.12.3"
  Dependencies:
   PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
  Files:
   From:
    - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Cache.php"
+   - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/CommonAbstract.php"
    - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/ComplexStringHandler.php"
    - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/DelayedIO.php"
    - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/Demojibakefier.php"
@@ -234,6 +235,7 @@ Common Classes Package:
    - "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/classes/Maikuolan/YAML.php"
   To:
    - "classes/Maikuolan/Cache.php"
+   - "classes/Maikuolan/CommonAbstract.php"
    - "classes/Maikuolan/ComplexStringHandler.php"
    - "classes/Maikuolan/DelayedIO.php"
    - "classes/Maikuolan/Demojibakefier.php"
@@ -246,18 +248,19 @@ Common Classes Package:
    - "classes/Maikuolan/Request.php"
    - "classes/Maikuolan/YAML.php"
   Checksum:
-   - "397109860f0dcfedf6d0af62f8e78a95d025cbd98a3efd2bbe4814de6f0fa561:42118"
-   - "eb14a2fdcdf966028519febe0a5c1bd1289d808db49b348d12673816ea3f1ada:4106"
-   - "6e5a4495a88f60fd8a0473dd25cccb99c94786e264f7d2998359f057c8484e96:5134"
-   - "312d2537fb60e5bced7ae8ce90a5453243d3aaab27d6d3b7d60d98f5af1cd3d7:30710"
-   - "1625bc9209d25416378cec04d945dadaf25a2eb35beca87587792667db17c287:3908"
-   - "9c464cb952041bbab10f1e5c97ca9cac46ade5889b695a4e5cbbe3d34fdd6388:6056"
-   - "eaea83f83223c8274e5549a311d3c44075f17a4ed8864188c7ad01dedf7409e9:27644"
-   - "0981f489f9eded730007cbb13c86eb7febb6071035e7a6e9d5764f0c3a05af61:9258"
-   - "f24a53ff963580b90252c78034cd760dbe8dd2aa3ad3f5b2de6c38955767fca0:38462"
-   - "d632ac0c3a4e757206e6582650d25b9ea5b4a2d59726491cf0bc525e0621db9d:12033"
-   - "d294c78ff96e32d47fbd4520e4c419f8011615af1c0ed36a1f7307a5f7bfd3f8:8020"
-   - "2580518c7fd6e0a0b543ed6ea7d671fc6e8baa632e0ab2bb0c07cc642d876b69:51576"
+   - "2e5b634f21786c40ea29feb1e357b2762e0f22a03100baf2abb21430910a1105:42691"
+   - "d3e1697a1760c277e1786313b230ed115abc258422131d5f36958bf039caa99a:2388"
+   - "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"
+   - "c2c8f79e3d85b9c9e08b89a516724e0b9db23688ba7be5132e720faa85534d83:4900"
+   - "c59d3b9d21c0a7aee52b55c5da5febbac8477a4fc389dab35a01692236746dfe:30476"
+   - "4bf94fb1c03a573468f2ec05a02b0c721f143edfeee7b5b43688b6c14b2e51c2:3827"
+   - "3b77647c94e3900dff27e1ca0be8952bba33a7f04950ae5320d0ebc706e3c76b:5932"
+   - "17a4dd565498d185d639e6f5a7e62a08d1257f2cd0db2528cba616c0ce7d013f:32007"
+   - "f61e7356587eab6c30a1d97f97b836abda7b90562e2bcb662f360e16aecd5f5e:9024"
+   - "e9416d207e6fad48c899eb36142da8391c02485f55f8c0f790509147fa9f7cb3:38618"
+   - "ed6e285278fda8f08ae7e5865081cdf0f6a9cbce47cda7278a037d25a0d7b13a:11300"
+   - "6b7798051081e9675fa5794191cd13dad52dd3d0e4cfd900a1fff7dcde5bf9ed:9089"
+   - "b631df2c710889778dd89b08d9dbfabb0fc9cc07f8d0dab010001eee61a2f156:52377"
  Reannotate: "components.dat"
 l10n/en:
  Name: "L10N: English"
@@ -432,7 +435,7 @@ l10n/it:
 l10n/ja:
  Name: "L10N: 日本語"
  Extended Description: "日本語言語データ"
- Version: "2023.51.0"
+ Version: "2024.0.0"
  Dependencies:
   phpMussel Core: "^2"
  Remote: "https://raw.githubusercontent.com/phpMussel/phpMussel/v2/vault/components.dat"
@@ -445,7 +448,7 @@ l10n/ja:
    - "lang/lang.ja.fe.yaml"
    - "lang/lang.ja.yaml"
   Checksum:
-   - "55a5d3037740c9439d9d65e6e2bcb053468bb450cefb6e327731a6853c626e03:67642"
+   - "eb121f0277e0e57a27ef712e341587120979064285b13f026e8908976e999229:67565"
    - "c4f0eba3c1dba43670d219d2c16c0aa656b11298cb6ebb00ded912f65f6b50df:8798"
  Reannotate: "components.dat"
 l10n/ko:
