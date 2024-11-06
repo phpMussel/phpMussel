@@ -12,6 +12,12 @@ Detailed version release guidelines for phpMussel can be found at:
 
 (none)
 
+=== Version/Release 1.15.6 ===
+POST-EOL PATCH ROUNDUP.
+
+Caleb M (Maikuolan),
+November 6, 2024.
+
 === Version/Release 1.15.5 ===
 PATCH RELEASE.
 

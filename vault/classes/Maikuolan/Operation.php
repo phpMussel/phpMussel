@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.02.23).
+ * Operation handler (last modified: 2023.12.29).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -27,7 +27,7 @@ class Operation
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.5';
+    const VERSION = '1.11.0';
 
     /**
      * Operators for version numbers.
@@ -215,28 +215,32 @@ class Operation
      *
      * @param mixed $Data The data to traverse.
      * @param string|array $Path The path to traverse.
+     * @param bool $AllowNonScalar Whether to allow non-scalar returns.
      * @return mixed The traversed data, or an empty string on failure.
      */
-    public function dataTraverse(&$Data, $Path = [])
+    public function dataTraverse(&$Data, $Path = [], $AllowNonScalar = false)
     {
         if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
+            $Path = preg_split('~(?<!\\\\)\\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
+            return $AllowNonScalar || is_scalar($Data) ? $Data : '';
         }
         $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path);
+        if (is_array($Data)) {
+            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar) : '';
+        }
+        if (is_object($Data) && property_exists($Data, $Segment)) {
+            return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
         }
         if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
+            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\\(\\)~i', $Segment)) {
                 $Segment = substr($Segment, 0, -2);
                 $Data = $Segment($Data);
             }
         }
-        return $this->dataTraverse($Data, $Path);
+        return $this->dataTraverse($Data, $Path, $AllowNonScalar);
     }
 
     /**
@@ -275,7 +279,7 @@ class Operation
             $IfString = substr($IfString, 0, $ThenPos);
             if (substr($ThenString, 0, 1) === '{') {
                 if (substr($ThenString, -1) === '}') {
-                    $ThenString = substr($ThenString, 1 -1);
+                    $ThenString = substr($ThenString, 1, -1);
                 } elseif (substr($ElseString, 0, 1) !== '{' && substr($ElseString, -1) === '}') {
                     $ThenString = substr($ThenString, 1) . ' else' . substr($ElseString, 0, -1);
                     $ElseString = '';
@@ -283,14 +287,14 @@ class Operation
             }
         }
         if (substr($ElseString, 0, 1) === '{' && substr($ElseString, -1) === '}') {
-            $ElseString = substr($ElseString, 1 -1);
+            $ElseString = substr($ElseString, 1, -1);
         }
 
         /** Process condition. */
         foreach (explode('||', $IfString) as $PartsOr) {
             $IfPass = true;
             foreach (explode('&&', $PartsOr) as $PartsAnd) {
-                $Parts = preg_split('~([<>]=?|[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
+                $Parts = preg_split('~([<>]=?|!?[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
                 foreach ($Parts as &$Part) {
                     $Part = trim($Part);
                     if (substr($Part, 0, 1) === '{' && substr($Part, -1) === '}') {
@@ -309,6 +313,12 @@ class Operation
                 } elseif ($CParts === 3) {
                     if ($Parts[1] === '===') {
                         $Try = ($Parts[0] === $Parts[2]);
+                    } elseif ($Parts[1] === '!==') {
+                        $Try = ($Parts[0] !== $Parts[2]);
+                    } elseif ($Parts[1] === '==') {
+                        $Try = ($Parts[0] == $Parts[2]);
+                    } elseif ($Parts[1] === '!=') {
+                        $Try = ($Parts[0] != $Parts[2]);
                     } else {
                         $Initial = substr($Parts[1], 0, 1);
                         if ($Initial === '=' || $Initial === '^') {

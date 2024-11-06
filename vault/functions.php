@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.12.26).
+ * This file: Functions file (last modified: 2024.11.06).
  */
 
 /**
@@ -1295,6 +1295,18 @@ $phpMussel['MatchVarInSigFile'] = function ($Actual, $Expected) {
 };
 
 /**
+ * Check whether a name is reserved. Important, because attempting to read
+ * from, write to, or otherwise work with names reserved at the file system
+ * can result in unexpected behaviour and potential security risks.
+ *
+ * @param string $Name The name to check.
+ * @return bool True if reserved; False if not.
+ */
+$phpMussel['isReserved'] = function ($Name) {
+    return preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
+};
+
+/**
  * Responsible for handling any data fed to it from the recursor. It shouldn't
  * be called manually nor from any other contexts. It takes the data given to
  * it from the recursor and checks that data against the various signatures of
@@ -2077,7 +2089,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
 
         $SigFiles = isset($phpMussel['InstanceCache'][$ThisConf[0]]) ? explode(',', $phpMussel['InstanceCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
-            if (!$SigFile) {
+            if ($SigFile === '' || $phpMussel['isReserved']($SigFile)) {
                 continue;
             }
             if (!isset($phpMussel['InstanceCache'][$SigFile])) {
@@ -2477,7 +2489,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $OriginalFilename = '
 
         $SigFiles = isset($phpMussel['InstanceCache'][$ThisConf[0]]) ? explode(',', $phpMussel['InstanceCache'][$ThisConf[0]]) : [];
         foreach ($SigFiles as $SigFile) {
-            if (!$SigFile) {
+            if ($SigFile === '' || $phpMussel['isReserved']($SigFile)) {
                 continue;
             }
             if (!isset($phpMussel['InstanceCache'][$SigFile])) {
@@ -3971,8 +3983,8 @@ $phpMussel['ArchiveRecursor'] = function (&$x, &$r, $Data, $File = '', $ScanDept
          * @link https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
          */
         if ($phpMussel['Config']['files']['block_encrypted_archives']) {
-            $Bits = $phpMussel['explode_bits'](substr($Data, 6, 2));
-            if ($Bits && $Bits[7]) {
+            $Bits = $phpMussel['explode_bits'](substr($Data, 6, 1));
+            if ($Bits !== '' && substr($Bits, 7, 1) === '1') {
                 $r = -4;
                 $phpMussel['killdata'] .= $DataHash . ':' . $DataLen . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .= sprintf(
@@ -4991,7 +5003,7 @@ $phpMussel['BuildPath'] = function ($Path, $PointsToFile = true) use (&$phpMusse
     $Restrictions = strlen(ini_get('open_basedir')) > 0;
 
     /** Split path into steps. */
-    $Steps = preg_split('~[\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
+    $Steps = preg_split('~[\\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
 
     /** Separate file from path. */
     $File = $PointsToFile ? array_pop($Steps) : '';
@@ -4999,7 +5011,7 @@ $phpMussel['BuildPath'] = function ($Path, $PointsToFile = true) use (&$phpMusse
     /** Build directories. */
     foreach ($Steps as $Step) {
         if (!isset($Rebuilt)) {
-            $Rebuilt = preg_match('~^[\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
+            $Rebuilt = preg_match('~^[\\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
         } else {
             $Rebuilt .= DIRECTORY_SEPARATOR . $Step;
         }

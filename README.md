@@ -1,5 +1,6 @@
-[![v1: PHP >= 5.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
-[![v2~v3: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v1: PHP >= 5.4 < 8.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4%20%3C%208.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v2: PHP >= 7.2 < 8.4](https://img.shields.io/badge/v2-PHP%20%3E%3D%207.2%20%3C%208.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v3: PHP >= 7.2](https://img.shields.io/badge/v3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -40,8 +41,8 @@ An ideal solution for shared hosting environments, where it's often not possible
 - **[Русский](https://github.com/phpMussel/Docs/blob/master/readme.ru.md)**
 - **[اردو](https://github.com/phpMussel/Docs/blob/master/readme.ur.md)**
 - **[Tiếng Việt](https://github.com/phpMussel/Docs/blob/master/readme.vi.md)**
-- **[中文（简体）](https://github.com/phpMussel/Docs/blob/master/readme.zh.md)**
-- **[中文（傳統）](https://github.com/phpMussel/Docs/blob/master/readme.zh-tw.md)**
+- **[中文（简体）](https://github.com/phpMussel/Docs/blob/master/readme.zh-Hans.md)**
+- **[中文（傳統）](https://github.com/phpMussel/Docs/blob/master/readme.zh-Hant.md)**
 
 #### See also:
 - [**phpMussel/phpMussel**](https://github.com/phpMussel/phpMussel) – The main phpMussel repository (you can get phpMussel versions prior to v3 from here).
@@ -57,4 +58,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 ---
 
 
-Last Updated: 1 March 2022 (2022.03.01).
+Last Updated: 1 July 2024 (2024.07.01).
