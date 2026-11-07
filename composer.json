@@ -14,11 +14,11 @@
     "require": {
         "php": ">=7.2.0",
         "maikuolan/common": "^2.16",
-        "phpmussel/core": "^3.7.2",
-        "phpmussel/frontend": "^3.7.2",
-        "phpmussel/cli": "^3.6",
-        "phpmussel/web": "^3.6.1",
-        "phpmussel/phpmailer": "^3.1.16",
+        "phpmussel/core": "^3.7.3",
+        "phpmussel/frontend": "^3.8.1",
+        "phpmussel/cli": "^3.6.1",
+        "phpmussel/web": "^3.6.2",
+        "phpmussel/phpmailer": "^3.1.17",
         "ext-pcre": "*"
     },
     "replace": {
